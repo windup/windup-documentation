@@ -1,0 +1,39 @@
+=== Glossary of Terms Used in Windup
+
+==== Rules Terms
+
+Rule:: A piece of code that performs a single unit of work during the migration process. Depending on the complexity of the rule, it may or may not include configuration data. Extensive configuration information may be externalized into external configuration, for example, a custom XML file. The following is an example of a Java-based rule added to the `JDKConfig` RuleProvider class.
+
+[source,java]
+----
+.addRule()
+    .when(JavaClass.references("java.lang.ClassLoader$").at(TypeReferenceLocation.TYPE))
+    .perform(Classification.as("Java Classloader, must be migrated.")
+    .with(Link.to("Red Hat Customer Portal: How to get resources via the ClassLoader in a JavaEE application in JBoss EAP",  "https://access.redhat.com/knowledge/solutions/239033"))
+     .withEffort(1))
+----
+
+RuleProvider:: A class that implements one or more rules using the `.addRule()` method. The following are examples of legacy Java RulesProviders that are defined in `rules-java-ee` ruleset.
+
+* EjbConfig
+* JDKConfig
+* SeamToCDI
+
+Ruleset:: A ruleset is a group of one or more RuleProviders that targets a specific area of migration, for example, `Spring -> Java EE 6` or `WebLogic -> JBoss EAP`. A ruleset is packaged as a JAR and contains additional information needed for the migration, such as operations, conditions, report templates, static files, metadata,  and relationships to other rulesets. The following Windup projects are rulesets.
+
+* rules-java-ee
+* rules-xml
+
+Rules Metadata:: Information about whether a particular ruleset applies to a given situation. The metadata can include the source and target platform and frameworks.
+
+Rules Pipeline:: A collection of rules that feed information into the knowledge graph.
+
+==== Reporting Terms
+
+Lift and Shift (Level of effort):: The code or file is standards-based and can be ported to the new environment with no changes.
+
+Mapped (Level of effort):: There is a standard mapping algorithm to port the code or file to the new environment.
+
+Custom (Level of effort):: The code or file must be rewritten or modified to work in the new environment.
+
+Story Point:: A term commonly used in Scrum Agile software development methodology to estimate the level of effort needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks.

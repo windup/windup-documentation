@@ -1,0 +1,52 @@
+= Features of Windup 2.0
+
+[horizontal]
+
+Shared Data Model:: Windup 2.0 creates a shared data model graph that provides the following benefits:
+
+* It enables complex rule interaction, allowing rules to pass findings to other rules.
+* It enables 3rd-party plug-ins to interact with other plugins, rules and reports.
+* The data graph organizes the findings to be searchable and queryable.
+
+Extensibility::
+
+Windup 2.0 can be extended by developers, users, and 3rd-parties.
+
+* It provides a plug-in API to inject other applications into Windup.
+* It enables 3rd-parties to create simple POJO plug-ins that can interact with the data graph.
+* Means we don’t have to invent everything. Users with domain knowledge can implement their own rules.
+
+Better Rules::
+
+Windup 2.0 provides more powerful and complex rules. 
+
+* XML-based rules are simple to write and and easy to implement.
+* Java-based rule addons are based on **ocpsoft rewrite** and provide greater flexibility and power creating when rules.
+* Rules can now be nested to handle more complex situations. This means you can nest simple statements rather than use complex XPATH or REGEX expressions.
+*Rules can be linked using and/or statements
+
+Automation:: 
+
+Windup 2.0 has the ability to automate some of the migration processes.
+
+* Windup is integrated with Forge 2.0, meaning it can generate projects, libraries, and configuration files.
+* Rules can create Forge inputs and put them into the data graph.
+* During the automation phase, the data graph inputs can be processed to generate a new project.
+
+Work Estimation:: 
+
+Estimates for the level of effort is based on the skills required and the classification of migration work needed.
+
+* Lift and Shift - The code or file is standards-based and can be ported to the new environment with no changes.
+* Mapped - There is a standard mapping algorithm to port the code or file to the new environment.
+* Custom – The code or file must be rewritten or modified to work in the new environment.
+
+
+Better Reporting::
+
+Windup 2.0  reports are now targeted for specific audiences.
+
+* IT Management - Applications are ranked by cost of migration.
+* Project Management - Reports detail the type of work and estimation of effort to complete the tasks.
+* Developers - An Eclipse plug-in provides hints and suggested code changes within the IDE.
+

@@ -1,0 +1,6 @@
+=== Install Windup
+
+. Download the latest Windup ZIP distribution from http://repository.jboss.org/nexus/content/groups/public/org/jboss/windup/windup-distribution. This is currently https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.windup&a=windup-distribution&v=2.0.0.Beta5&e=zip&c=offline[windup-distribution-2.0.0.Beta5].
+. Extract the ZIP file in to a directory of your choice. 
+
+NOTE: The documentation uses the replaceable value `WINDUP_HOME` to denote the path to the Windup installation. When you encounter this value in the documentation, be sure to replace it with the actual path to your Windup installation. For more information, see link:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable].
