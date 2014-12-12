@@ -69,7 +69,7 @@ The following is an example of an XML rule.
 The XML rule consists of the following level elements:
 
 * **<ruleset>**: This element defines this as a Windup rule.
-* **<phase>**: This element specifies when the ruleset should execute. See xref:Rules-Rules-Execution-Lifecycle#rule-phases[Rule Phases in the Rule Execution Lifecyle] for more information.
+* **<phase>**: This element specifies when the ruleset should execute. See xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecyle] for more information about rule phases.
 * **<rules>**: element contains the individual rules.
 ** **<rule>**: This element is a child of the **rules** element. One or more rules can be defined for a ruleset. Each `rule` contains the following elements.
 *** **<when>**: This element defines the condition to match on.

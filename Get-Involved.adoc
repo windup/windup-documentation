@@ -10,7 +10,7 @@ To help us make Windup cover most application constructs and server configuratio
 * Identify application components and problem areas that may be difficult to migrate.
 ** Write a short description of these problem migration areas.
 ** Write a brief guide describing how to solve the problem migration areas.
-* link:Execute-Windup[Try Windup] on your application. Be sure to link:Report-Issues-with-Windup[report any issues] you encounter.
+* xref:Execute-Windup[Try Windup] on your application. Be sure to xref:Report-Issues-with-Windup[report any issues] you encounter.
 * Write an Windup rule to automate the migration process.
 ** Create a test for the new rule.
 * You can contribute Windup rules. For details, see the _Windup Rules Development Guide_.

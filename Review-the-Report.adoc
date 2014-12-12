@@ -95,7 +95,7 @@ The `OUTPUT_REPORT_DIRECTORY/reports/ruleproviders.html` page provides the list 
 
 ===== Individual File Analysis Reports
 
-You can directly access the the xref:Review-the-Report#file-analysis-pages[file analysis report pages] described above by browsing for them by name in the `OUTPUT_REPORT_DIRECTORY/reports/` directory. Because the same common file names can exist in multiple archives, for example "manifest.mf" or "web.xml", Windup adds a unique numeric suffix to each report file name.
+You can directly access the the file analysis report pages described above by browsing for them by name in the `OUTPUT_REPORT_DIRECTORY/reports/` directory. Because the same common file names can exist in multiple archives, for example "manifest.mf" or "web.xml", Windup adds a unique numeric suffix to each report file name.
 
 image:images/report-directory-file-list.png[Report Directory File List, 500]
 
