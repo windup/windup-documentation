@@ -70,7 +70,7 @@ Where:
 NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists, it is deleted and recreated by Windup, so be careful not to specify a directory that contains important information!
 
 +
-See xref:_windup_command_examples[Windup Command Examples] below for concrete examples of Windup commands using source code directories and archives located in the Windup GitHub repository.
+See xref:windup-command-examples[Windup Command Examples] below for concrete examples of Windup commands using source code directories and archives located in the Windup GitHub repository.
 
 . You should see the following result upon completion of the command:
 +
@@ -102,7 +102,7 @@ To see the list of available parameters for the `windup-migrate-app` command, ex
 
     man windup-migrate-app
 
-[_windup_command_examples]
+[[windup-command-examples]]
 ==== Windup Command Examples
 
 The following Windup command examples report against applications located in the https://github.com/windup/windup/tree/master/test-files[Windup source test-files] directory.

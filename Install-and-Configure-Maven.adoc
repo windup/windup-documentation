@@ -5,7 +5,7 @@
 
 If you plan to use Eclipse Luna (4.4) to build Windup, you can skip this
 step. This version of Eclipse embeds Maven 3.2.1 so you do not need to
-install it separately. Skip to the section entitled xref:_configure_maven_to_build_windup[Configure Maven to Build Windup].
+install it separately. Skip to the section entitled xref:configure-maven-to-build-windup[Configure Maven to Build Windup].
 
 If you plan to run Maven using the command line or plan to use Red Hat
 JBoss Developer Studio 7.1.1 or an older version of Eclipse, you must
@@ -35,7 +35,7 @@ and click `OK`.
 _Note: If you use another IDE, refer to the product documentation to
 update the Maven installation._
 
-[_configure_maven_to_build_windup]
+[[configure-maven-to-build-windup]]
 ==== Configure Maven to Build Windup
 
 Windup uses artifacts located in the
