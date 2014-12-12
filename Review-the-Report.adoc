@@ -1,3 +1,4 @@
+[[Review-the-Report]]
 === Review the Report
 
 ==== About the Report
@@ -22,7 +23,7 @@ image:images/report-index-page.png[Report Index Page, 500]
 
 Click on the link under the *Name* column to view the Windup application report page.
 
-==== Review the Report
+==== Report Sections
 
 ===== Application Report Page
 
@@ -35,7 +36,7 @@ The following is an example of a Windup Application Report.
 
 image:images/report-javaee-ear-summary.png[Report Summary Page, 500]
 
-====== Archive Analysis Sections
+===== Archive Analysis Sections
 
 Each archive summary begins with a total of the story points assigned to its migration, followed by a table detailing the changes required for each file in the archive. The report contains the following columns.
 
@@ -94,7 +95,7 @@ The `OUTPUT_REPORT_DIRECTORY/reports/ruleproviders.html` page provides the list 
 
 ===== Individual File Analysis Reports
 
-You can directly access the the link:Review-the-Report#file-analysis-pages[file analysis report pages] described above by browsing for them by name in the `OUTPUT_REPORT_DIRECTORY/reports/` directory. Because the same common file names can exist in multiple archives, for example "manifest.mf" or "web.xml", Windup adds a unique numeric suffix to each report file name.
+You can directly access the the xref:Review-the-Report#file-analysis-pages[file analysis report pages] described above by browsing for them by name in the `OUTPUT_REPORT_DIRECTORY/reports/` directory. Because the same common file names can exist in multiple archives, for example "manifest.mf" or "web.xml", Windup adds a unique numeric suffix to each report file name.
 
 image:images/report-directory-file-list.png[Report Directory File List, 500]
 

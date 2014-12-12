@@ -1,0 +1,135 @@
+[[Rules-Java-based-Rule-Structure]]
+=== Java-based Rule Structure
+
+TODO:
+* Add a how-to for compound rules, nested rules, rules over multiple sources, negative queries (not matched by anything).
+// - xref:Rules-Story-Points[How to estimate the migration effort with Story
+Points] https://issues.jboss.org/browse/WINDUP-255[WINDUP-255]
+
+==== Windup Rule Provider 
+
+Windup rules are based on http://ocpsoft.org/rewrite/[OCPsoft Rewrite], an open source routing and URL rewriting solution for Servlets, Java Web Frameworks, and Java EE. The *rewrite* framework allows you to create rule providers and rules in an easy to read format. 
+
+Windup rule add-ons must extend the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupRuleProvider.html[WindupRuleProvider] class.
+
+* If the rule should run in a phase other than the default http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_PHASE[MIGRATION_PHASE], you must implement the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupRuleProvider.html#getPhase%28%29[getPhase()] method and specify in which Windup lifecycle phase the rule should be executed. For more information about rule phases, see xref:./Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle].
+
+* Rules are added using the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupRuleProvider.html[getConfiguration(GraphContext context)] method. This method is inherited from the http://ocpsoft.org/rewrite/[OCPsoft Rewrite] interface org.ocpsoft.rewrite.config.ConfigurationProvider. Rules are discussed in more detail later.
+
+* If other rules must execute after or before the rules in this provider, you must provide the list of WindupRuleProvider classes using the *getExecuteAfter()* or *getExecuteAfter()* methods. 
+
+The following is an example of a simple Java-based rule add-on.
+
+[source,java]
+----
+public class ExampleRuleProvider extends WindupRuleProvider
+{
+    @Override public RulePhase getPhase(){
+        return RulePhase.DISCOVERY;
+    }
+
+    // @formatter:off
+    @Override
+    public Configuration getConfiguration(GraphContext context)
+    {
+        return ConfigurationBuilder.begin()
+        .addRule()
+        .when(
+            // Some implementation of GraphCondition.
+            Query.find(...)....
+        )
+       .perform(
+            ...
+       );
+    }
+    // @formatter:on
+    // (@formatter:off/on prevents Eclipse from formatting the rules.)
+}
+----
+
+==== Add Rule Code Structure
+
+Like most rule-based frameworks, Windup rules consist of the following:
+
+* Condition: This is the *when(condition)* that determines if the rule should execute.
+* Operation: This defines what to *perform()* if the condition is met.
+ 
+Rules consist of the _when_ part, the _perform_, the _otherwise_ part,
+and some others, all of which are optional.
+
+===== when()
+
+In the `.when()` part, the rule typically queries the graph, using the
+`Query` API. Results of the query are put on variables stack
+(`Variables`), many times indirectly through the querying API.
+
+Other way to fill a when part is subclassing the `GraphCondition`.
+Actually, `Query` also implements it, and is only a convenient way to
+create a condition.
+
+Last noticable but important feature is the ability to use
+https://github.com/tinkerpop/gremlin/wiki[Gremlin] queries. See
+http://gremlindocs.com/[Gremlin docs] for reference manual.
+
+===== perform()
+
+In the `.perform()` part, the rule typically scans the items of interest
+(Java files, XML files, querying services, ...), processes them, and
+writes the findings into the graph.
+
+For that, various operations are available. These are subclasses of
+`GraphOperation`. You can also implement your own. See
+Rules-Operations[Rules Operations] for more info. Again, there are
+several convenient implementations for constructs like iteration
+(`Iteration`).
+
+====== Iteration
+
+
+[source,java]
+----
+.perform(
+    Iteration.over(XmlMetaFacetModel.class, "xmlModels").as("xml")
+    .when(...)
+    .perform(
+        new AbstractIterationOperation<XmlMetaFacetModel>(XmlMetaFacetModel.class, "xml"){
+            public void perform(GraphRewrite event, EvaluationContext context, XmlMetaFacetModel xmlFacetModel)
+            {
+            }
+        })
+    .otherwise(
+        new AbstractIterationOperation<XmlMetaFacetModel>(XmlMetaFacetModel.class, "xml"){
+            public void perform(GraphRewrite event, EvaluationContext context, XmlMetaFacetModel payload)
+                { ... }
+        })
+    .endIteration()
+----
+
+====== Nested iterations
+
+TODO
+
+====== otherwise
+
+Windup rules inherit the rule constructs from OCP Rewrite. For example,
+`.otherwise()` Gives you a chance to perform something in case the
+conditions in `.when()` return false (e.g. they do not match anything).
+For more information, see http://ocpsoft.org/rewrite/[OCP Rewrite web].
+
+===== Metadata
+
+Rules can specify metadata. Currently, the only appearing in some rules,
+and not actually used, is `RuleMetadata.CATEGORY`.
+
+[source,java]
+----
+.withMetadata(RuleMetadata.CATEGORY, "Basic")
+----
+
+`.withMetadata()` is basically putting key/value to a
+`Map<Object, Object>`.
+
+==== Available utilities
+
+For a list of what key services and constructs can be used in the rule,
+see xref:Rules-Available-Utilities[Available Rules Utilities].

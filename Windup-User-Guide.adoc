@@ -6,14 +6,22 @@
 
 == Overview
 
-This guide is for engineers, consultants, or others who plan to use 
+This guide is for engineers, consultants, and others who plan to use 
 Windup 2.0 to migrate Java applications or other components.
+
 
 include::What-is-Windup.adoc[tabsize=4]
 
+include::Features-of-Windup-2.0.adoc[tabsize=4]
+
 include::Windup-Processing-Overview.adoc[tabsize=4]
 
+include::Get-Involved.adoc[tabsize=4]
+
+include::Report-Issues-with-Windup.adoc[tabsize=4]
+
 include::About-the-WINDUP_HOME-Variable.adoc[tabsize=4]
+
 
 == Run Windup
 
@@ -27,7 +35,7 @@ include::Review-the-Report.adoc[tabsize=4]
 
 include::Review-the-Windup-Quickstarts.adoc[tabsize=4]
 
-include::Report-Issues-with-Windup.adoc[tabsize=4]
+include::Known-Issues.adoc[Known Issues] 
 
 include::Glossary.adoc[tabsize=4]
 

@@ -1,0 +1,121 @@
+[[Rules-Basic-Rule-Execution-Flow-Patterns]]
+=== Basic Rule Execution Flow Patterns
+
+SGILDA: TODO - Need some links to github to the respective example files.
+
+==== operation();  - single operation
+
+When no iteration or condition is needed.
+
+Example: [CopyJavaConfigToGraphRuleProvider](rules-java/src/main/java/org/jboss/windup/rules/apps/java/config/CopyJavaConfigToGraphRuleProvider.java)
+
+[source,java]
+--------
+return ConfigurationBuilder.begin()
+    .addRule()
+    .perform(new GraphOperation(){
+        @Override
+        public void perform(GraphRewrite event, EvaluationContext context){
+            ...
+        }
+    });
+--------
+
+
+==== if( ... ){ operation(); }  - single conditional operation
+
+
+[source,java]
+--------
+return ConfigurationBuilder.begin()
+    .addRule()
+    .when( ... )
+    .perform(new GraphOperation(){
+        @Override
+        public void perform(GraphRewrite event, EvaluationContext context){
+            ...
+        }
+    });
+--------
+
+
+==== for( FooModel.class ){ ... } - Single iteration
+
+For simple iterations, `IteratingRuleProvider` can be used, which makes the `perform` a bit less verbose:
+
+[source,java]
+--------
+public class ComputeArchivesSHA512 extends IteratingRuleProvider<ArchiveModel>
+{
+    public ConditionBuilder when() {
+        return Query.find(ArchiveModel.class);
+    }
+
+    // @formatter:off
+    public void perform( GraphRewrite event, EvaluationContext context, ArchiveModel archive ){
+        try( InputStream is = archive.asInputStream() ){
+            String hash = DigestUtils.sha512Hex(is);
+            archive.asVertex().setProperty(KEY_SHA512, hash);
+        }
+        catch( IOException e ){
+            throw new WindupException("Failed to read archive: " + archive.getFilePath() +
+                "\n    Due to: " + e.getMessage(), e);
+        }
+    }
+    // @formatter:on
+
+    @Override public String toStringPerform() { return this.getClass().getSimpleName(); }
+}
+--------
+
+
+==== if( ... ){ for( ... ) } - conditional iteration
+
+[source,java]
+--------
+return ConfigurationBuilder.begin()
+    .addRule()
+    .when(
+        new GraphCondition(){ ... }
+    ).perform(
+        Iteration.over(ArchiveModel.class)
+            .perform( ... )
+    )
+--------
+
+
+
+==== for( ... ){ if( ... ){ ... } } - iteration with a condition
+
+[source,java]
+--------
+return ConfigurationBuilder.begin()
+.addRule()
+    .when(
+        // Stores all ArchiveModel's into variables stack, under that type.
+        Query.find(ArchiveModel.class)
+    ).perform(
+        Iteration.over(ArchiveModel.class) // Picks up ArchiveModel's from the varstack.
+            .when(new AbstractIterationFilter<ArchiveModel>(){
+                @Override
+                public boolean evaluate(GraphRewrite event, EvaluationContext context, ArchiveModel payload)
+                {
+                    return payload.getProjectModel() == null;
+                }
+                @Override
+                public String toString()
+                {
+                    return "ProjectModel == null";
+                }
+            })
+            .perform( ... ) 
+--------
+
+
+
+==== for( ... ){ for( ... ) { ... } } - nested iterations
+
+[source,java]
+--------
+
+--------

@@ -1,8 +1,9 @@
-= Features of Windup 2.0
+[[Features-of-Windup-2.0]]
+=== Features of Windup 2.0
 
 [horizontal]
 
-Shared Data Model:: Windup 2.0 creates a shared data model graph that provides the following benefits:
+Shared Data Model:: Windup 2.0 creates a shared data model graph that provides the following benefits.
 
 * It enables complex rule interaction, allowing rules to pass findings to other rules.
 * It enables 3rd-party plug-ins to interact with other plugins, rules and reports.

@@ -1,3 +1,4 @@
+[[Windup-Processing-Overview]]
 === Windup Processing Overview
 
 Windup is a rule-based migration tool that allows you to write customized rules to analyze the APIs, technologies, and architectures used by the applications you plan to migrate. The Windup tool also executes its own core rules through all phases of the migration process. 
@@ -14,12 +15,7 @@ For more information about the graph database components, see xref:Dev-Windup-Ar
 
 The next step in the process is the execution of the migration rules. In this phase, the rules typically do not execute against the application input files. Instead, they execute against the graph database model. Windup rules are independent and decoupled and they communicate with each other using the graph database model. Rules query the graph database to obtain information needed to test the rule condition. They also update the data model with information based on the result of the rule execution. This allows rules to easily interact with other rules and enables the creation of very complex rules.
 
-The Windup distribution contains a large number of migration rules, but in some cases, you may need to create additional custom rules for your specific implementation. Windup's architecture allows you to create Java-based rule addons or XML rules and add easily add them to Windup. Custom rule creation is covered in the Windup Rules Development Guide.
-////
-*Comment* block
-* link:Rules-Development-Guide#create-and-test-java-rule-addons[Create and Test Java Rule Addons]
-* link:Rules-Development-Guide#create-and-test-xml-rules[Create and Test XML Rules]
-////
+The Windup distribution contains a large number of migration rules, but in some cases, you may need to create additional custom rules for your specific implementation. Windup's architecture allows you to create Java-based rule addons or XML rules and add easily add them to Windup. Custom rule creation is covered in the _Windup Rules Development Guide_.
 
 ==== Generate Findings Based on the Rule Execution Results
 
@@ -27,7 +23,7 @@ The final step in the process is to pull data from the graph database model to g
 
 By default, Windup generates the following reports at the end of the application migration process. The reports are located in the `reports/` subdirectory of the output report path specified when you execute Windup:
 
-* Application Report: This report provides a summary of the total estimated effort, or link:Glossary#reporting[story points], that are required for the migration. It also provides a detailed list of issues and suggested changes, broken down by archive or folder. 
+* Application Report: This report provides a summary of the total estimated effort, or xref:Rules-Rule-Story-Points[story points], that are required for the migration. It also provides a detailed list of issues and suggested changes, broken down by archive or folder. 
 * RuleProvider report: This is a detailed listing of the rule providers that fired when running Windup and whether any errors occurred.
 * Additional reports are generated that provide detailed line-by-line migration tips for individual files. 
 

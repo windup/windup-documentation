@@ -10,7 +10,7 @@ familiar with them.
 
 Forge is an open source, extendable, rapid application development tool
 for creating Java EE applications using Maven. For more information
-about Forge, see: http://forge.jboss.org/[JBoss Forge].
+about Forge 2, see: http://forge.jboss.org/[JBoss Forge].
 
 ==== Forge Furnace
 
@@ -36,7 +36,7 @@ a collection of annotated Java Interfaces. For more information, see:
 https://github.com/tinkerpop/frames/wiki[TinkerPop Frames].
 
 Windup includes several Frames extensions, which are documented here:
-link:./Dev:-Frames-extensions[Frames Extensions].
+xref:Dev-Frames-extensions[Frames Extensions].
 
 ==== Gremlin
 

@@ -1,3 +1,4 @@
+[[Execute-Windup]]
 === Execute Windup
 
 These instructions are for users who run Windup using the tool extracted from the ZIP download.
@@ -16,9 +17,7 @@ Before you begin, you must gather the following information.
 * While you can provide package names for standard Java EE 3rd party software like `org.apache`, it is usually best not to include them as they should not impact the migration effort.
 * If you omit the `--packages` argument, every package in the application is scanned, resulting in very slow performance. It is best to provide the argument with one or more packages.
 
-IMPORTANT: There is currently a bug in the parser that does not resolve the tilde (~) in a path name correctly. For now, you must fully spell out the complete path name when it is passed as an argument in the Windup command line. For example, use `/home/username/path-to-file` rather than `~/path-to-file`. For details, see https://issues.jboss.org/browse/WINDUP-305.
-
-==== Run Windup
+==== Start Windup
 
 . Open a terminal and navigate to the `WINDUP_HOME/bin` directory
 
@@ -71,7 +70,7 @@ Where:
 NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists, it is deleted and recreated by Windup, so be careful not to specify a directory that contains important information!
 
 +
-See <<windup-command-examples>> below for concrete examples of Windup commands using source code directories and archives located in the Windup GitHub repository.
+See xref:_windup_command_examples[Windup Command Examples] below for concrete examples of Windup commands using source code directories and archives located in the Windup GitHub repository.
 
 . You should see the following result upon completion of the command:
 +
@@ -95,7 +94,7 @@ The following subdirectories in the `OUTPUT_REPORT_DIRECTORY` contain the suppor
             stats/
             index.html
 
-. For details on how to evaluate the report data, see xref:_review_the_report[Review the Report].
+. For details on how to evaluate the report data, see xref:Review-the-Report[Review the Report].
 
 ==== Windup Help
 
@@ -103,6 +102,7 @@ To see the list of available parameters for the `windup-migrate-app` command, ex
 
     man windup-migrate-app
 
+[_windup_command_examples]
 ==== Windup Command Examples
 
 The following Windup command examples report against applications located in the https://github.com/windup/windup/tree/master/test-files[Windup source test-files] directory.

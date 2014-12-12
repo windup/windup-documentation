@@ -1,0 +1,13 @@
+[[Known-Issues]]
+=== Known Issues
+
+The following is a list of currently known issues.
+
+* https://issues.jboss.org/browse/WINDUP-73[WINDUP-73]
+** If you do not see expected log messages, resort to `System.out.println()` for logging. 
+** You may see too much logging, especially from Forge. This is to be expected. 
+
+* https://issues.jboss.org/browse/WINDUP-197[WINDUP-197]
+** Exceptions in Surefire reports are broken due to the way Forge wraps exceptions and the way Surefire handles them. 
+** You need to debug or rewrap exceptions using TestUtil.rewrap(ex).
+
