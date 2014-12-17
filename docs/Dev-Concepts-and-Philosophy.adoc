@@ -1,0 +1,39 @@
+_TODO - OZIZKA: Can this topic be marked obsolete and be replaced by this one: xref:Windup-Processing-Overview[Windup Processing Overview] ?_
+
+=== Concepts & Philosophy
+
+Windup is a rule-based tool that allows users to write customized rules
+based on the needs, constructs, and custom APIs used in their
+applications.
+
+Individual rules should be decoupled, only expressing what rules should precede and follow, and "communicate" through the graph. Each rule will query
+the graph database, use the results for locating the candidates of it's
+interests, process them, and then write the results to the graph
+database.
+
+==== Graph database and Models (Frames)
+
+As a graph db implementation, we use http://tinkerpop.com/[TinkerPop]
+backed by http://thinkaurelius.github.io/titan/[Titan] backed by
+BerkeleyDB. For explanation of graph database concepts, see
+https://github.com/thinkaurelius/titan/wiki/Beginner%27s-Guide[Titan].
+
+Like there's ORM (like JPA) for JDBC, TinkerPop's BluePrints has
+https://github.com/tinkerpop/frames/wiki[Frames]. This allows you to
+access the graph data in form of your custom Java models (implemented as
+Java Proxies to the querying).
+
+We use this concept heavily. Each ruleset will likely have it's own
+models. (But you can opt to use Blueprints API if you like).
+
+See also the list of xref:Rules-Windup-Models[Windup Models].
+
+==== Examples of breaking non-trivial workflows into rules
+
+. Finding all `@Entity`s which use `org.hibernate` extensions.
++
+TODO
+
+. Finding _MyBatis_ DAOs and classes using them.
++
+TODO

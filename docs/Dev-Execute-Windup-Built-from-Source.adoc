@@ -1,0 +1,161 @@
+[[Dev-Execute-Windup-Built-from-Source]]
+=== Execute Windup (Built from Windup Source)
+
+_These instructions are for Windup core developers who are new to the project and unfamiliar with the procedures to execute Windup._
+
+Experienced users may jump to xref:quick-execute-review-for-experienced-windup-users[Quick Execute Review for Experienced Windup Users].
+
+NOTE: If you used previous versions of Windup, delete the `${user.home}/.forge/addons/` directory. Otherwise you may see errors like the following when you execute Windup:  
+           _Command: windup-migrate-app was not found_
+
+==== Unzip the Windup Distribution
+
+1. Follow the procedures to xref:Dev-Build-Windup-from-Source[build Windup from source]. This creates a `windup-distribution-2.0.0-SNAPSHOT-offline.zip` file in the Windup source `dist/target` directory. Note, the version may be different than the one used in these instructions.
+2. Unzip the `dist/target/windup-distribution-2.0.0-SNAPSHOT-offline.zip` ZIP file.
+
+==== Run Windup
+
+1. Open a terminal and navigate to the unzipped `windup-distribution-2.0.0-SNAPSHOT/` directory. 
+2. Type the following command to start Windup:
++
+---------------------------------------------------------------------------
+For Linux:     $ bin/windup
+For Windows:   > bin\windup.bat
+---------------------------------------------------------------------------
+3. You are presented with the following prompt.
++
+---------------------------------------------------------------------------
+Using Windup at /home/username/windup/dist/target/windup-distribution-2.0.0-SNAPSHOT
+
+ _       ___           __          
+| |     / (_)___  ____/ /_  ______ 
+| | /| / / / __ \/ __  / / / / __ \
+| |/ |/ / / / / / /_/ / /_/ / /_/ /
+|__/|__/_/_/ /_/\__,_/\__,_/ .___/ 
+                          /_/      
+
+JBoss Windup, version [ 2.0.0-SNAPSHOT ] - JBoss, by Red Hat, Inc. [ http://windup.jboss.org ]
+
+[windup-distribution-2.0.0-SNAPSHOT]$ 
+---------------------------------------------------------------------------
+
+4.  The syntax to evaluate an application using the Windup tool requires that you specify the location of the input archive or folder, the location of a folder to contain the output reporting information, and the application packages to evaluate. At the prompt, type:
++
+------------
+windup-migrate-app --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+------------
++
+Where:
+
+* `INPUT_ARCHIVE_OR_FOLDER` is the fully qualified application archive or source path
+* `OUTPUT_REPORT_DIRECTORY` is the fully qualified path to the folder that will contain the the report information produced by Windup.
+* `PACKAGE_1`, `PACKAGE_2`, `PACKAGE_N` are the packages to be evaluated by Windup.
++
+See xref:windup-command-examples[Windup Command Examples] below for concrete examples of Windup commands using source code directories and archives located in the Windup GitHub repository.
+
+5. You should see the following result upon completion of the command:
++
+------------
+***SUCCESS*** Windup execution successful!
+------------
+
+6. To exit Windup, type
++
+------------
+exit
+------------
+
+7.  Open the `OUTPUT_REPORT_DIRECTORY/index.html` file in a browser to access the report.
+The following subdirectories in the `OUTPUT_REPORT_DIRECTORY` contain the supporting information for the report:
+
+        OUTPUT_REPORT_DIRECTORY
+            graph/
+            renderedGraph/
+            reports/
+            stats/
+            index.html
+
+8. For details on how to evaluate the report data, see xref:Review-the-Report[Review the Report].
+
+==== Run Windup in Batch Mode (for a shell script)
+
+1. Open a terminal and navigate to the unzipped `windup-distribution-2.0.0-SNAPSHOT/` directory. 
+2. Type the following command to run Windup in batch mode:
++
+---------------------------------------------------------------------------
+For Linux:     $ bin/windup --evaluate "windup-migrate-app --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N"
+For Windows:   > bin\windup.bat --evaluate "windup-migrate-app --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N"
+---------------------------------------------------------------------------
+
+==== Windup Help
+
+To see the list of available parameters for the `windup-migrate-app` command, execute the following command in the Windup prompt:
+
+    man windup-migrate-app
+
+[[windup-command-examples]]
+==== Windup Command Examples
+
+The following Windup command examples report against applications located in the https://github.com/windup/windup/tree/master/test-files[Windup source test-files] directory.
+
+===== Source Code Example
+
+The following command runs against the https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] application source code. It evaluates all `org.jboss.seam` packages and creates a folder named 'seam-booking-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
+
+   windup-migrate-app --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --packages org.jboss.seam
+
+===== Archive Example
+
+The following command runs against the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] EAR archive. It evaluates all `com.acme` and `org.apache` packages and creates a folder named 'jee-example-app-1.0.0.ear-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
+
+    windup-migrate-app --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --packages com.acme org.apache
+
+[[quick-execute-review-for-experienced-windup-users]]
+==== Quick Execute Review for Experienced Windup Users
+------------------
+mkdir tmp
+cd tmp
+unzip -q ../dist/target/windup-*.zip
+cd windup-*
+rm -rf ~/.forge/addons/
+bin/windup.sh
+
+## Execute Windup
+$ windup-migrate-app --input /home/username/work/Migration/TestApps/_apps/BradApp --output Report --packages org com net
+
+## Exit forge
+$ exit
+
+## View the Report
+firefox Report/index.html
+------------------
+
+==== Execute Windup as an Installed Forge Add-on
+
+------------------
+## Install Forge
+wget -O forge.zip https://repository.jboss.org/nexus/service/local/repositories/releases/content/org/jboss/forge/forge-distribution/2.12.0.Final/forge-distribution-2.12.0.Final-offline.zip
+unzip forge.zip
+mv forge-distribution-2.12.0.Final Forge
+
+## Configure Forge and Install Windup
+export FORGE_HOME=./Forge/
+export PATH=$PATH:$FORGE_HOME/bin
+rm -rf ~/.forge/addons/
+forge -b --install org.jboss.windup:ui,2.0.0-SNAPSHOT
+forge -b --install org.jboss.windup.rules.apps:rules-java,2.0.0-SNAPSHOT
+forge -b --install org.jboss.windup.rules.apps:rules-java-ee,2.0.0-SNAPSHOT
+
+## Start Forge
+forge
+
+## Execute Windup
+$ windup-migrate-app --input /home/username/work/Migration/TestApps/_apps/BradApp --output Report --packages org com net
+
+## Exit forge
+$ exit
+
+## View the Report
+firefox Report/index.html
+------------------
+

@@ -1,0 +1,117 @@
+[[Dev-Build-Windup-from-Source]]
+=== Build Windup from Source
+
+This information is provided for new developers who plan to contribute code
+to the Windup open source project. If you use Linux and are an experienced Windup developer looking for a quick refresher, jump to: xref:quick-build-review-for-experienced-windup-developers[Quick Build Review for Experienced Windup Developers].
+
+==== System Requirements to Build Windup
+
+. Java 1.7.
++
+You can choose from the following:
++
+--------------
+OpenJDK
+Oracle Java SE
+--------------
+. Maven 3.1.1 or newer
++
+If you have not yet installed or configured Maven, see
+xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
++
+If you have installed Maven, you can check the version by typing the
+following in a command prompt:
++
+--------------
+mvn --version 
+--------------
+. IDE requirements
++
+If you prefer, you can work within an IDE. The following IDEs are recommended.
+
+* http://www.jboss.org/products/devstudio/download/[Red Hat JBoss
+Developer Studio 7.1.1] or newer
+* https://www.eclipse.org/downloads/[Eclipse 4.3 (Kepler)] or newer
+
++
+You must also make sure the IDE embeds Maven 3.1.1 or later. See
+xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
+
+
+==== Build Windup Using Maven Command Line
+
+
+. Make sure you have configured Maven as described here:
+xref:Install-and-Configure-Maven[Install and Configure Maven].
+. Check out Windup source code: `git clone git@github.com:windup/windup.git Windup`. See xref:Dev-Get-the-Windup-Source-Code[Get the Windup Source Code] for more info.
+. Open a command terminal and navigate to the root of the Windup project directory.
++
+--------------
+    cd Windup/
+--------------
+. To create a branch and build Windup using the latest version of the source code:
+
+*  Fetch the latest source code from the upstream repository.
++ 
+---------
+git fetch upstream 
+---------
+*  Checkout a local copy of the branch.
++
+-----------------------------------------------
+git checkout -b BRANCH_NAME upstream/master
+-----------------------------------------------
+
+. If, at any point, you want to toss your changes and reset your local branch to the contents of the upstream repository, issue the following 2 commands. Do NOT do this if you have made changes that you don't want to lose!
++
+-----------------------------------------------
+git fetch upstream
+-----------------------------------------------
++ 
+-----------------------------------------------
+git reset --hard upstream/master
+-----------------------------------------------
++ 
+
+. Build the project.
++
+-----------------
+mvn clean install
+-----------------
+
++
+You can also build the project without the tests.
++
+---------------------------------
+mvn clean install -DskipTests
+---------------------------------
+
+==== Build Windup Using Red Hat JBoss Developer Studio or Eclipse
+
+. Make sure you have configured the Maven installation in your IDE as
+described here:
+https://github.com/windup/windup/wiki/Install-and-Configure-Maven[Install
+and Configure Maven].
+. Start JBoss Developer Studio or Eclipse.
+. From the menu, select `File` → `Import`.
+. In the selection list, choose `Maven` → `Existing Maven Projects`,
+then click Next.
+. Click `Browse` and navigate to the root of the Windup
+project directory, then click `OK`.
+. After all projects are listed, click `Next`. Ignore any Maven build
+or dependency errors and click `Finish`. If you get a dialog titled
+_Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
+. In the Project Explorer tab, find the `windup_parent` project in the
+list, right-mouse, and choose `Run As` --> `Maven install`.
+
+[[quick-build-review-for-experienced-windup-developers]]
+==== Quick Build Review for Experienced Windup Developers
+
+---------------
+git clone git@github.com:windup/windup.git Windup
+cd Windup
+mvn clean install -DskipTests
+rm -rf /tmp/windup-zip/ /tmp/windup/
+unzip -q dist/target/windup-distribution-*-offline.zip -d /tmp/windup-zip
+mv /tmp/windup-zip/windup-distribution-* /tmp/windup
+---------------

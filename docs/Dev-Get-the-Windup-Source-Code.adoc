@@ -1,0 +1,45 @@
+=== Get the Windup Source Code
+
+To contribute to the Windup 2.0 project source code, you must fork the Windup repository to your own Git, clone your fork, commit your work on topic branches, and make pull requests back to the Windup repository.
+
+==== Install the Git Client
+
+If you don't have the Git client (`git`), get it from:
+http://git-scm.com/
+
+* Be sure to generate an SSH key and add the public key to your GitHub account: https://help.github.com/articles/generating-ssh-keys. You can verify the key using the following command:
+
+            ssh -T git@github.com
++
+You should see a message indicating your ID has successfully authenticated.
+
+* You should also configure your name and email identity using the following commands:
+
+            git config --global user_name "FIRST_NAME LAST_NAME"
+            git config --global user_email "YOUR_EMAIL_ADDRESS"
+
+==== Fork and Clone the Windup Repository
+
+. https://github.com/windup/windup/fork[Fork] the Windup project. This
+creates the `windup` project in your own Git with the default remote
+name 'origin'.
+. Clone your fork. This creates and populates a directory in your
+local file system.
++
+-------------------------------------------------------
+git clone https://github.com/<your-username>/windup.git
+-------------------------------------------------------
+. Change to the `windup` directory.
+. Add the remote `upstream` repository so you can fetch any changes to
+the original forked repository.
++
+--------------------------------------------------------
+git remote add upstream git@github.com:windup/windup.git
+--------------------------------------------------------
+. Get the latest files from the `upstream` repository.
++
+------------------
+git fetch upstream
+------------------
+
+

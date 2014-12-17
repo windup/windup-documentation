@@ -1,0 +1,12 @@
+=== Create JavaDoc for Windup
+
+Use the following procedure to create JavaDoc for Windup.
+
+. In Windup project root directory, type the following Maven command:
++
+-----------------------------------
+mvn validate -PjavadocDist
+-----------------------------------
+. The JavaDoc is created in the Windup `target/site/apidocs` subdirectory.
+
+NOTE: To cross-link with 3rd-party libraries, see https://issues.jboss.org/browse/WINDUP-422[WINDUP-422} and http://stackoverflow.com/questions/27392535/javadoc-how-to-make-it-link-the-dependencies-maven-project.

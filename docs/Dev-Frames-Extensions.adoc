@@ -1,0 +1,43 @@
+=== Frames Extensions
+
+Windup has several Frames extensions to satisfy its needs.
+
+==== Multiple Types in a Vertex
+
+Frames stores only one type in the _type_ property. To specify multiple types, use the '|' separator. All sub-parts are indexed.
+
+
+==== Map Handler
+
+TBD
+
+To store a map in a single vertexes properties.
+
+
+==== Map
+
+To store a map in as adjacent vertices.
+
+[source,java]
+----
+@TypeValue("MapModelMain")
+public interface MapMainModel extends WindupVertexFrame
+{
+    @AdjacentMap(label = "map") void setMap(Map<String, MapValueModel> map);
+    @AdjacentMap(label = "map") Map<String, MapValueModel> getMap();
+}
+----
+
+See the `FrameMapHandlerTest`.
+
+==== List handler. 
+
+TBD.
+
+To store a list of strings in a single vertexes properties. 
+The keys will be 0, 1, 2, 3, ...
+
+==== List
+
+`WindupVertexListModel` offers a generic model for lists of other 
+models, which are stored as adjacent vertices.

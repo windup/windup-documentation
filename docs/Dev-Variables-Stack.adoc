@@ -1,0 +1,30 @@
+=== Variables Stack
+
+The `Variables` class stores the variables which are available in rules, EL expressions, and FreeMarker and XSLT templates.
+
+==== Accessing variables
+
+===== From a Java-based rule
+
+TODO
+
+===== From a Groovy-based rule
+
+TODO
+
+===== From an EL expression
+
+TODO
+
+===== From a FreeMarker
+
+TODO
+
+===== From XSLT template
+
+TODO
+
+==== Accessing variables as a flat `Map`
+
+TODO
+

@@ -1,0 +1,23 @@
+=== Creating Rule Operations
+
+An operation is a task which can be invoked from within a rule.
+
+It is created by extending GraphOperation.
+
+[source,java]
+----
+public class FooOperation extends GraphOperation
+{
+    @Override
+    public void perform(GraphRewrite event, EvaluationContext context)
+    {
+        
+        ...
+    }
+}
+----
+
+Existing operations:
+
+image:./img/GraphOperationSubtypes.png["Existing operations"]
+

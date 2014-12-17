@@ -1,0 +1,64 @@
+=== Java Basic Ruleset
+
+DRAFT: 
+
+_This is an example page. Content serves for design decision._
+
+Purpose of this ruleset.
+
+==== Metadata
+
+*ID:* myRuleset
+*Graph prefix:* myRuleset
+
+==== Rule providers
+
+_A definition list (dl/dt/dd) of RuleProviders of given Ruleset._
+
+* **JDKconfigRuleProvider** - Targetted towards the classes distributed with JDK, like `java.lang.*`, `java.security.*`, `org.xml.*`, etc.
+* **FooRuleProvider** - blah
+* **BarRuleProvider** - blah 
+* **Maven Project analysis**
+* **Seam 2.0 to CDI**
+
+==== Models
+
+* JavaClassModel
+* AmbiguousJavaClassModel
+* AmbiguousReferenceModel<REFERENCETYPE>
+* ClassificationModel
+* EjbBeanBaseModel
+* EjbEntityBeanModel
+* EjbMessageDrivenModel
+* EjbSessionBeanModel
+* HibernateConfigurationFileModel
+* HibernateEntityModel
+* HibernateMappingFileModel
+* HibernateSessionFactoryModel
+* InlineHintModel
+* JarArchiveModel
+* JarManifestModel
+* JavaClassFileModel
+* JavaClassModel
+* JavaMethodModel
+* JavaParameterModel
+* JavaSourceFileModel
+* JavaTypeReferenceModel
+* LinkModel
+* MavenProjectModel
+* PackageModel
+* ProjectDependencyModel
+* ProjectModel
+* PropertiesModel
+* SourceFileModel
+* SpringBeanModel
+* SpringConfigurationFileModel
+* WarArchiveModel
+* WebXmlModel
+
+==== Configuration
+
+* **--packages** - Which packages to scan.
+
+==== Reports
+

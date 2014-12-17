@@ -1,0 +1,28 @@
+=== Logging
+
+.DRAFT
+
+_This page describes how to log from the Java-based rules._
+
+==== Textual logging
+
+Windup uses `java.util.logging`. Convenient way to get the logger is:
+
+[source,java]
+----
+private static final Logger LOG = Logging.get(MyClass.class);
+----
+
+==== Displaying Progress
+
+IterationProgress
+
+[source,java]
+----
+return ConfigurationBuilder.begin().addRule()
+            .when(Query.find(ArchiveModel.class))
+            .perform(UnzipArchiveToOutputFolder.unzip()
+            .and(IterationProgress.monitoring("Unzipped archive: ", 1))
+            .and(Commit.every(1))
+            );
+----

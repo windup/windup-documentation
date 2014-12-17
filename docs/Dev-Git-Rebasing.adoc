@@ -1,0 +1,60 @@
+=== Git Rebasing
+
+Ondra Zizka wrote this simple script to bring down a series of pull requests into a
+single branch. He then pushes that branch to upstream master-ignore.
+
+----
+pull() {
+  cmd="git fetch upstream master "
+  for PR in "$@"
+  do
+    cmd="$cmd pull/$PR/head:pullRequest$PR"
+  done
+
+  $cmd
+
+  git branch -D pulls
+  git checkout master
+  git rebase upstream/master
+  git checkout -b pulls
+
+  for PR in "$@"
+    do
+    git checkout pullRequest$PR
+    git rebase pulls
+    git checkout pulls
+    git merge pullRequest$PR
+    git branch -D pullRequest$PR
+  done
+}
+----
+
+Fetch using one pull request:
+----
+git fetch upstream master pull/$PR/head:pullRequest$PR
+----
+
+==== Alternate Approach
+
+This is the approach GitHub suggests.
+
+. Checkout the source:
++
+--------------------------------------------------------------
+git checkout -b lincolnthree-WINDUP-133 master
+git pull https://github.com/lincolnthree/windup.git WINDUP-133
+--------------------------------------------------------------
+
+. Run the tests to make sure it builds.
++
+--------
+mvn clean install
+--------
+
+. If they pass, merge and push them to your repository.
++
+-----------------------------------------
+git checkout master
+git merge --no-ff lincolnthree-WINDUP-133
+git push origin master
+-----------------------------------------

@@ -31,7 +31,7 @@ For Windows:  C:\WINDUP_HOME\bin> windup
 . You are presented with the following prompt.
 +
 ---------------------------------------------------------------------------
-Using Windup at /home/username/windup-distribution-2.0.0.Beta4
+Using Windup at /home/username/windup-distribution-VERSION
 
  _       ___           __          
 | |     / (_)___  ____/ /_  ______ 
@@ -40,9 +40,9 @@ Using Windup at /home/username/windup-distribution-2.0.0.Beta4
 |__/|__/_/_/ /_/\__,_/\__,_/ .___/ 
                           /_/      
 
-JBoss Windup, version [ 2.0.0.Beta4 ] - JBoss, by Red Hat, Inc. [ http://windup.jboss.org ]
+JBoss Windup, version [ VERSION ] - JBoss, by Red Hat, Inc. [ http://windup.jboss.org ]
 
-[windup-distribution-2.0.0.Beta4]$ 
+[windup-distribution-VERSION]$ 
 ---------------------------------------------------------------------------
 
 . The syntax to evaluate an application using the Windup tool requires that you specify the location of the input archive or source code folder, the location of a folder to contain the output reporting information, and the application packages to evaluate. To evaluate an application archive, use the following syntax:
