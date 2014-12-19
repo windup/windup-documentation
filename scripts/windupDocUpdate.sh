@@ -38,9 +38,6 @@ cp ../windup.wiki/Review-the-Report.asciidoc docs/Review-the-Report.adoc
 cp ../windup.wiki/Review-the-Windup-Quickstarts.asciidoc docs/Review-the-Windup-Quickstarts.adoc
 cp ../windup.wiki/Known-Issues.asciidoc docs/Known-Issues.adoc
 cp ../windup.wiki/Glossary.asciidoc docs/Glossary.adoc
-## Appendix
-cp ../windup.wiki/Dev-Windup-Architectural-Components.asciidoc docs/Dev-Windup-Architectural-Components.adoc
-cp ../windup.wiki/Rules-Rule-Story-Points.asciidoc docs/Rules-Rule-Story-Points.adoc
 
 
 #################################
@@ -101,7 +98,6 @@ cp ../windup.wiki/What-is-Windup.asciidoc docs/What-is-Windup.adoc
 cp ../windup.wiki/Features-of-Windup-2.0.asciidoc docs/Features-of-Windup-2.0.adoc
 cp ../windup.wiki/Get-Involved.asciidoc docs/Get-Involved.adoc
 cp ../windup.wiki/Dev-Windup-Project-Information.asciidoc docs/Dev-Windup-Project-Information.adoc
-cp '../windup.wiki/Dev-Create-JavaDoc-for-Windup.asciidoc' 'docs/Dev-Create-JavaDoc-for-Windup.adoc'
 cp ../windup.wiki/Report-Issues-with-Windup.asciidoc docs/Report-Issues-with-Windup.adoc
 cp ../windup.wiki/About-the-WINDUP_HOME-Variable.asciidoc docs/About-the-WINDUP_HOME-Variable.adoc
 
@@ -137,6 +133,14 @@ cp ../windup.wiki/Rules-Create-a-Basic-XML-Rule.asciidoc docs/Rules-Create-a-Bas
 ##  Debugging and Troubleshooting
 cp ../windup.wiki/Dev-Debugging-and-Profiling.asciidoc docs/Dev-Debugging-and-Profiling.adoc
 cp ../windup.wiki/Dev-Troubleshoot-Windup-Issues.asciidoc docs/Dev-Troubleshoot-Windup-Issues.adoc
+
+## Wiki and Product Documentation
+
+cp ../windup.wiki/About-the-Windup-Wiki.asciidoc docs/About-the-Windup-Wiki.adoc
+cp ../windup.wiki/Dev-Add-Images-to-the-Windup-Wiki.asciidoc docs/Dev-Add-Images-to-the-Windup-Wiki.adoc
+cp ../windup.wiki/Dev-Create-Windup-JavaDoc.asciidoc docs/Dev-Create-Windup-JavaDoc.adoc
+cp ../windup.wiki/Dev-Windup-Documentation-Process.asciidoc docs/Dev-Windup-Documentation-Process.adoc
+
 ## Additional Resources
 cp ../windup.wiki/Review-the-Windup-Quickstarts.asciidoc docs/Review-the-Windup-Quickstarts.adoc
 cp ../windup.wiki/Known-Issues.asciidoc docs/Known-Issues.adoc

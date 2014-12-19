@@ -1,20 +1,20 @@
-= Windup Core Development Guide
+[[Core-Development-Guide]]
+=== Windup Core Development Guide
 
 This guide is for developers who plan to contribute source code updates
 or core rule add-ons to the Windup 2.0 project.
 
-== Overview
+==== Overview
 
 * link:What-is-Windup[What is Windup]?
 * link:Features-of-Windup-2.0[Features of Windup 2.0]
 * link:Get-Involved[Get Involved] - We need your feedback!
 * link:Dev-Windup-Project-Information[Windup Project Information] - Github
 repository, IRC, Mailing lists, ...
-* link:Dev-Create-JavaDoc-for-Windup[Create JavaDoc for Windup]
 * link:Report-Issues-with-Windup[Report Issues with Windup
 * link:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable]
 
-== Get Started
+==== Get Started
 * link:Install-and-Configure-Maven[Install and Configure Maven]
 * link:Dev-Get-the-Windup-Source-Code[Get the Windup Source Code]
 * link:Dev-Build-Windup-from-Source[Build Windup from Source]
@@ -22,27 +22,25 @@ repository, IRC, Mailing lists, ...
 * link:Review-the-Report[Review the Report]
 * link:Glossary[Glossary of Terms]
 
-== Developer Contributing Information
+==== Developer Contributing Information
 
 * link:Dev-Development-Guidelines[Developer Guidelines]
 * link:Dev-Submit-Code-Updates-to-the-Windup-Project[Submit Code Updates to the Windup Project]
 
-== Understand the Windup Architecture and Structure
+==== Understand the Windup Architecture and Structure
 
 * link:Dev-Windup-Architectural-Components[Windup Architectural Components]
 * link:Dev-Windup-Project-Structure[Windup Project Structure]
 
-== Rules and Rulesets
+==== Rules and Rulesets
 
 
-== Debugging and Troubleshooting
+==== Debugging and Troubleshooting
 
 * link:Dev-Debugging-and-Profiling[Debugging and Profiling]
 * link:Dev-Troubleshooting[Troubleshooting]
 
-== Miscellaneous Pages
-
-=== Developer topics
+==== Developer topics
 
 * link:Dev-Windup-Bootstrap[Bootstrap]
 * link:Dev-Classloading-Notes[Classloading Notes]
@@ -56,7 +54,7 @@ repository, IRC, Mailing lists, ...
 * link:Dev-Port-WindRide-Functionality-to-Windup[Port WindRide Functionality to Windup]
 * link:Dev-Git-Rebasing[Git Rebasing]
 
-=== Rules topics
+==== Rules topics
 
 * link:Rules-Available-Rules-Utilities[Available Utilities]
 * link:Dev-Concepts-and-Philosophy[Concepts and Philosophy]
@@ -79,4 +77,11 @@ repository, IRC, Mailing lists, ...
 * link:Rules-Rule-Execution-Lifecycle[Rules Execution Lifecyle]
 * link:Rules-Java-based-Rule-Structure[Java-Based Rule Structure]
 * link:Rules-Rule-Story-Points[Rule Story Points]
+
+==== Wiki and Product Documentation
+
+* link:About-the-Windup-Wiki[About the Windup Wiki]
+* link:Dev-Add-Images-to-the-Windup-Wiki[Add Images to the Windup Wiki]
+* link:Dev-Create-Windup-JavaDoc[Create Windup JavaDoc]
+* link:Dev-Windup-Documentation-Process[Windup Documentation Process]
 

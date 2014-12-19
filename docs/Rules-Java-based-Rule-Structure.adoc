@@ -59,6 +59,11 @@ and some others, all of which are optional.
 
 ===== when()
 
+[source,java]
+----
+.when(Query.fromType(XmlMetaFacetModel.class))
+----
+
 In the `.when()` part, the rule typically queries the graph, using the
 `Query` API. Results of the query are put on variables stack
 (`Variables`), many times indirectly through the querying API.
@@ -73,7 +78,20 @@ http://gremlindocs.com/[Gremlin docs] for reference manual.
 
 ===== perform()
 
-In the `.perform()` part, the rule typically scans the items of interest
+[source,java]
+----
+.perform(
+   new AbstractIterationOperation<XmlMetaFacetModel>(XmlMetaFacetModel.class, "xml")
+   {
+      public void perform(GraphRewrite event, EvaluationContext context, XmlMetaFacetModel model)
+      {
+         // for each model, do something
+      }
+   }
+)
+----
+
+In the `.perform()` part, the rule typically iterates over the items of interest
 (Java files, XML files, querying services, ...), processes them, and
 writes the findings into the graph.
 
@@ -115,6 +133,24 @@ Windup rules inherit the rule constructs from OCP Rewrite. For example,
 `.otherwise()` Gives you a chance to perform something in case the
 conditions in `.when()` return false (e.g. they do not match anything).
 For more information, see http://ocpsoft.org/rewrite/[OCP Rewrite web].
+
+
+[source,java]
+----
+.otherwise(
+   new AbstractIterationOperation<XmlMetaFacetModel>(XmlMetaFacetModel.class, "xml")
+   {
+      public void perform(GraphRewrite event, EvaluationContext context, XmlMetaFacetModel model)
+      {
+         // for each model, do something altenate
+      }
+   }
+)
+----
+
+===== Where
+
+TODO
 
 ===== Metadata
 

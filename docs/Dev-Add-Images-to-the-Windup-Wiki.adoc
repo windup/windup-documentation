@@ -1,0 +1,48 @@
+[[Dev-Add-Images-to-the-Windup-Wiki]]
+=== Add Images to the Windup Wiki
+
+* Fork https://github.com/windup/windup/wiki
+* Clone the Windup Wiki into a `windup.wiki/` directory using the SSH clone URL: 
+
+         git clone git@github.com:USER_NAME/windup.git windup.wiki
+
+* Navigate to the new `windup.wiki/` directory.
+
+* Add the upstream repository.
+
+        git remote add -f upstream git@github.com:windup/windup.wiki.git
+
+* Check out a branch to work in.
+
+        git checkout -b BRANCH_NAME upstream/master
+
+* Copy the image into the `windup.wiki/images` directory
+
+        cp IMAGE_NAME.png images/
+
+* Add the new image to Git
+
+        git add images/IMAGE_NAME.png
+
+* Commit the change
+
+        git commit -m "Add new image"
+
+* Push the change to your Windup Wiki repository.
+
+        git push origin HEAD:master
+
+* Test the new image in a page on your own Wiki.
+
+        image:images/IMAGE_NAME.png[New Image]
+
++ 
+For example:
+
++
+image:images/windup-logo-large.png[Windup Logo]
+
+* If it works, push the image to the upstream repository
+
+        git push upstream HEAD:master
+

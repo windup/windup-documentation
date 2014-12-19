@@ -1,0 +1,75 @@
+[[Dev-Windup-Documentation-Process]]
+=== Windup Documentation Process
+
+==== Wiki Documentation
+
+* Name wiki pages using only letters, numbers and dashes. Do not include spaces, colons, or other special characters in page names.
+* Use AsciiDoc rather than Markdown for the syntax.
+
+==== Product Documentation  
+
+Windup product documentation is stored here: https://github.com/windup/windup-documentation
+
+See the https://github.com/windup/windup-documentation/blob/master/CONTRIBUTING.adoc[CONTRIBUTING guide] for AsciiDoc syntax rules regarding headers and links to make this process easier.
+
+The https://github.com/windup/windup-documentation/tree/master/scripts/windupDocUpdate.sh script copies the pages from the Windup wiki to the windup-documentation repository, makes minor modifications, and generates each guide in a single HTML page book format. The resulting guides are created in the `html/` directory.
+
+==== Publish the HTML docs to online docs (at GitHub IO)
+
+* The first time, you must fork and clone the windup GitHub repository. After that, just fetch the latest upstream.
++
+----
+git clone https://github.com/windup/windup.git
+git fetch upstream
+----
+    
+* The first time, you must fork and clone the windup-documentation GitHub repository. After that, just fetch the latest upstream.
++
+----
+git clone https://github.com/windup/windup-documentation.git
+git fetch upstream
+----
+    
+* Navigate to the local windup directory.
++
+----
+cd windup
+----
+    
+* Checkout the gh-pages from the windup repository
++
+----
+git checkout -b gh-pages windup
+----
+
+* If the directory does not yet exist, create a docs/WINDUP-RELEASE-html/ directory.
++
+----
+mkdir -p docs/2.0.0.Beta6/html (if it doesn't exist!)
+----
+    
+* Copy any new images, stylesheets, and html files from windup-documentation:
++
+----
+cp ../windup-documentation/html/*.html ../windup-documentation/*.css ../windup-documentation/images/* docs/2.0.0.Beta6/html
+----
+ 
+* Add the updated files to GitHub.
++
+----
+git add docs
+----
+    
+* Commit the changes.
++
+----
+git commit -m "Update message..."
+----
+
+* Push the changes to GitHub.
++
+----
+git push upstream gh-pages
+----
+
+* View the documentation at http://windup.github.io/windup/docs/2.0.0.Beta6/html/WindupUserGuide.html

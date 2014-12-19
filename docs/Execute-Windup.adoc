@@ -19,6 +19,8 @@ Before you begin, you must gather the following information.
 
 ==== Start Windup
 
+For information about the use of WINDUP_HOME in the instructions below, see xref:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable].
+
 . Open a terminal and navigate to the `WINDUP_HOME/bin` directory
 
 . Type the following command to start Windup:
@@ -105,7 +107,7 @@ To see the list of available parameters for the `windup-migrate-app` command, ex
 [[windup-command-examples]]
 ==== Windup Command Examples
 
-The following Windup command examples report against applications located in the https://github.com/windup/windup/tree/master/test-files[Windup source test-files] directory.
+The following Windup command examples report against applications located in the Windup source https://github.com/windup/windup/tree/master/test-files[test-files] directory.
 
 ===== Source Code Example
 

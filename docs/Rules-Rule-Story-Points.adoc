@@ -1,6 +1,8 @@
 [[Rules-Rule-Story-Points]]
 === Rule Story Points
 
+.DRAFT
+
 ==== What are Story Points?
 
 Story points are an abstract metric used in Scrum methodology to estimate the level of effort for various tasks. They are based on a http://scrummethodology.com/scrum-effort-estimation-and-story-points/[modified Fibonacci sequence]. In a similar manner, Windup uses story points to express the level of effort needed to migrate particular application constructs, and in a sum, the application as a whole.
@@ -9,13 +11,12 @@ Story points are an abstract metric used in Scrum methodology to estimate the le
 
 TODO: TBD.
 
-This could contain relative examples like: 
+Estimating story points for a rule can be tricky. The following are 'rules of thumb' or suggestions to use when estimating the level of effort required for a rule.
 
-* Pure copy'n'paste - when we know for sure it will need no migration: 0
-* When we don't know if it will need a migration: Could depend on number of unknown imports, size
+* The level of effort required for "Lift and Shift", which basically means the code or file is standards-based and can be ported to the new environment with no changes, would be '0' story points.
+* Changing a parameter name or value of units might be '2' story points.
+This could contain relative examples like: 
+* Porting a web page (or similar concept) from one web framework to another depends on the complexity and the number of components. You could estimate '20' story points per component.
+* Porting MyBatis to JPA: '20' story points per query.
+* When you don't know if it will need a migration: Could depend on number of unknown imports, size
 of the file, ...
-* Changing parameter name, or value units: 2.
-* Porting one web page (or similar concept) from one web framework to
-the other: Could depend on complexity, e.g. number of components. E.g.
-20 per component.
-* Porting MyBatis to JPA: 20 per query.

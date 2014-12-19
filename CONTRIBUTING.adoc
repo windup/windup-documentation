@@ -78,9 +78,9 @@ cp ../windup.wiki/What-is-Windup.asciidoc docs/What-is-Windup.adoc
 grep 'xref:[a-z]' `find . -name '*.adoc'`
 ----
 
-** Finds and lists pages containing `link:` macros to other pages. These pages must be added to the book.
+** Finds and lists pages containing `xref:` macros to other pages. These pages must be added to the book.
       
-** Replaces the `link:` macros with a `xref:` macros.
+** Replaces the `xref:` macros with a `xref:` macros.
 +
 ----
 asciidoctor -dbook -a toc -o html/WindupUserGuide.html docs/Windup-User-Guide.adoc
