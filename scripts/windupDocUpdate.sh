@@ -201,7 +201,10 @@ grep 'link:[A-Z]' `find . -name '*.adoc'`
 
 ## Replace external links with xrefs
 echo "Replace the external links to other pages with xrefs:"
-find . -name '*.adoc' -print | xargs sed -i 's/link:/xref:/g'
+find . -name 'Windup-User-Guide.adoc' -print | xargs sed -i 's/link:/xref:/g'
+find . -name 'Windup-Rules-Development-Guide.adoc' -print | xargs sed -i 's/link:/xref:/g'
+find . -name 'Windup-Core-Development-Guide.adoc' -print | xargs sed -i 's/link:/xref:/g'
+#find . -name 'Windup-Migration-Planning-Guide.adoc' -print | xargs sed -i 's/link:/xref:/g'
 
 # Build the books
 echo "Building the Windup User Guide..."

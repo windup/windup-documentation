@@ -5,7 +5,7 @@
 
 Logging is currently broken and will not be fixed any time soon. 
 
-See xref:Known-Issues[Known Issues] and https://issues.jboss.org/browse/WINDUP-73[WINDUP-73] for the current status.
+See link:Known-Issues[Known Issues] and https://issues.jboss.org/browse/WINDUP-73[WINDUP-73] for the current status.
 
 ==== Debugging Exceptions
 
@@ -13,9 +13,9 @@ Exceptions in Surefire reports are broken due to the way Forge wraps
 exceptions and the way Surefire handles them. You need to
 debug or rewrap exceptions using `TestUtil.rewrap(ex)`. 
 
-See xref:Known-Issues[Known Issues] and https://issues.jboss.org/browse/WINDUP-197[WINDUP-197] for the current status..
+See link:Known-Issues[Known Issues] and https://issues.jboss.org/browse/WINDUP-197[WINDUP-197] for the current status..
 
 ==== Classloading Problems
 
 Configuring dependencies in a Forge-based project can be a little tricky.
-See xref:Dev-Dependencies[Dependencies] for some hints.
+See link:Dev-Dependencies[Dependencies] for some hints.

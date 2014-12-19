@@ -3,7 +3,7 @@
 
 TODO:
 * Add a how-to for compound rules, nested rules, rules over multiple sources, negative queries (not matched by anything).
-// - xref:Rules-Story-Points[How to estimate the migration effort with Story
+// - link:Rules-Story-Points[How to estimate the migration effort with Story
 Points] https://issues.jboss.org/browse/WINDUP-255[WINDUP-255]
 
 ==== Windup Rule Provider 
@@ -12,7 +12,7 @@ Windup rules are based on http://ocpsoft.org/rewrite/[OCPsoft Rewrite], an open 
 
 Windup rule add-ons must extend the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupRuleProvider.html[WindupRuleProvider] class.
 
-* If the rule should run in a phase other than the default http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_PHASE[MIGRATION_PHASE], you must implement the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupRuleProvider.html#getPhase%28%29[getPhase()] method and specify in which Windup lifecycle phase the rule should be executed. For more information about rule phases, see xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle].
+* If the rule should run in a phase other than the default http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_PHASE[MIGRATION_PHASE], you must implement the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupRuleProvider.html#getPhase%28%29[getPhase()] method and specify in which Windup lifecycle phase the rule should be executed. For more information about rule phases, see link:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle].
 
 * Rules are added using the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupRuleProvider.html[getConfiguration(GraphContext context)] method. This method is inherited from the http://ocpsoft.org/rewrite/[OCPsoft Rewrite] interface org.ocpsoft.rewrite.config.ConfigurationProvider. Rules are discussed in more detail later.
 
@@ -168,4 +168,4 @@ and not actually used, is `RuleMetadata.CATEGORY`.
 ==== Available utilities
 
 For a list of what key services and constructs can be used in the rule,
-see xref:Rules-Available-Rules-Utilities[Available Rules Utilities].
+see link:Rules-Available-Rules-Utilities[Available Rules Utilities].

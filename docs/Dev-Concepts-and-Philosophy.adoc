@@ -1,7 +1,7 @@
 [[Dev-Concepts-and-Philosophy]]
 === Concepts & Philosophy
 
-_TODO - OZIZKA: Can this topic be marked obsolete and be replaced by this one: xref:Windup-Processing-Overview[Windup Processing Overview] ?_
+_TODO - OZIZKA: Can this topic be marked obsolete and be replaced by this one: link:Windup-Processing-Overview[Windup Processing Overview] ?_
 
 Windup is a rule-based tool that allows users to write customized rules
 based on the needs, constructs, and custom APIs used in their
@@ -27,7 +27,7 @@ Java Proxies to the querying).
 We use this concept heavily. Each ruleset will likely have it's own
 models. (But you can opt to use Blueprints API if you like).
 
-See also the list of xref:Rules-Windup-Models[Windup Models].
+See also the list of link:Rules-Windup-Models[Windup Models].
 
 ==== Examples of breaking non-trivial workflows into rules
 

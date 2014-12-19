@@ -10,7 +10,7 @@ NOTE: If you used previous versions of Windup, delete the `${user.home}/.forge/a
 
 ==== Unzip the Windup Distribution
 
-1. Follow the procedures to xref:Dev-Build-Windup-from-Source[build Windup from source]. This creates a `windup-distribution-2.0.0-SNAPSHOT-offline.zip` file in the Windup source `dist/target` directory. Note, the version may be different than the one used in these instructions.
+1. Follow the procedures to link:Dev-Build-Windup-from-Source[build Windup from source]. This creates a `windup-distribution-2.0.0-SNAPSHOT-offline.zip` file in the Windup source `dist/target` directory. Note, the version may be different than the one used in these instructions.
 2. Unzip the `dist/target/windup-distribution-2.0.0-SNAPSHOT-offline.zip` ZIP file.
 
 ==== Run Windup
@@ -75,7 +75,7 @@ The following subdirectories in the `OUTPUT_REPORT_DIRECTORY` contain the suppor
             stats/
             index.html
 
-8. For details on how to evaluate the report data, see xref:Review-the-Report[Review the Report].
+8. For details on how to evaluate the report data, see link:Review-the-Report[Review the Report].
 
 ==== Run Windup in Batch Mode (for a shell script)
 

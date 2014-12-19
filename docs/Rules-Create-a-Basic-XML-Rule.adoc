@@ -5,7 +5,7 @@ You can create a rule addon using Java or a rule using XML or Groovy. This topic
 
 ==== Prerequisites
 
-* You should have already xref:Install-Windup[installed Windup]. 
+* You should have already link:Install-Windup[installed Windup]. 
 * Before you begin, you may also want to be familiar with the following documentation:
 ** Windup rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
 ** The JavaDoc for the Windup API is located here: http://windup.github.io/windup/docs/javadoc/latest/
@@ -69,7 +69,7 @@ The following is an example of an XML rule.
 The XML rule consists of the following level elements:
 
 * **<ruleset>**: This element defines this as a Windup rule.
-* **<phase>**: This element specifies when the ruleset should execute. See xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecyle] for more information about rule phases.
+* **<phase>**: This element specifies when the ruleset should execute. See link:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecyle] for more information about rule phases.
 * **<rules>**: element contains the individual rules.
 ** **<rule>**: This element is a child of the **rules** element. One or more rules can be defined for a ruleset. Each `rule` contains the following elements.
 *** **<when>**: This element defines the condition to match on.
@@ -88,7 +88,7 @@ The XML rule consists of the following level elements:
 A Windup rule is installed simply by copying the rule to the appropriate Windup folder. Windup scans for rules in the following locations:
 
 
-WINDUP_HOME/rules/:: This is the Windup folder where you run the Windup executable. See xref:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable] for details.
+WINDUP_HOME/rules/:: This is the Windup folder where you run the Windup executable. See link:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable] for details.
 
 ${user.home}/.windup/rules/:: This folder is created by Windup the first time you execute Windup.
 +
@@ -99,7 +99,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 
 ==== Test the XML Rule
 
-NOTE: If you have not started Windup, follow the instructions to xref:Execute-Windup[Execute Windup].
+NOTE: If you have not started Windup, follow the instructions to link:Execute-Windup[Execute Windup].
 
 Test the XML rule against your application file by running the `windup-migrate-app` command in the Windup console prompt. 
 
@@ -114,6 +114,6 @@ You should see the following result:
 --------
 ***SUCCESS*** Windup report created: QUICKSTART_HOME/windup-reports-java/index.html
 --------
-For more information and examples of how to run Windup, see: xref:Execute-Windup[Execute Windup] 
+For more information and examples of how to run Windup, see: link:Execute-Windup[Execute Windup] 
 
  
