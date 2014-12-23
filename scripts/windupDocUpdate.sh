@@ -114,6 +114,7 @@ cp ../windup.wiki/Install-and-Configure-Maven.asciidoc docs/Install-and-Configur
 cp ../windup.wiki/Dev-Get-the-Windup-Source-Code.asciidoc docs/Dev-Get-the-Windup-Source-Code.adoc
 cp ../windup.wiki/Dev-Build-Windup-from-Source.asciidoc docs/Dev-Build-Windup-from-Source.adoc
 cp ../windup.wiki/Dev-Execute-Windup-Built-from-Source.asciidoc docs/Dev-Execute-Windup-Built-from-Source.adoc
+cp ../windup.wiki/Execute-Windup.asciidoc docs/Execute-Windup.adoc
 cp ../windup.wiki/Review-the-Report.asciidoc docs/Review-the-Report.adoc
 
 ## Understand the Rule Processing

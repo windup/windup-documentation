@@ -4,4 +4,4 @@
 This documentation uses the `WINDUP_HOME` *replaceable* value to denote the path to the Windup distribution. When you encounter this value in the documentation, be sure to replace it with the actual path to your Windup installation.
 
 * If you download and install the latest distribution of Windup from the JBoss Nexus repository, `WINDUP_HOME` refers to the `windup-distribution-2.0.0.VERSION` folder extracted from the downloaded ZIP file.
-* If you build Windup from GitHub source, `WINDUP_HOME` refers to the `windup-distribution-2.0.0-<version>` folder extracted from the Windup source `dist/target/windup-distribution-2.0.0-VERSION.zip` file.
+* If you build Windup from GitHub source, `WINDUP_HOME` refers to the `windup-distribution-2.0.0-VERSION` folder extracted from the Windup source `dist/target/windup-distribution-2.0.0-VERSION.zip` file.

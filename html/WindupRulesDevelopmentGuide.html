@@ -787,7 +787,7 @@ Better Reporting
 <p>Write a short description of these problem migration areas.</p>
 </li>
 <li>
-<p>Write a brief guide describing how to solve the problem migration areas.</p>
+<p>Write a brief overview describing how to solve the problem migration areas.</p>
 </li>
 </ul>
 </div>
@@ -796,20 +796,36 @@ Better Reporting
 <p><a href="Execute-Windup">Try Windup</a> on your application. Be sure to <a href="Report-Issues-with-Windup">report any issues</a> you encounter.</p>
 </li>
 <li>
-<p>Write an Windup rule to automate the migration process.</p>
+<p>You can contribute Windup rules.</p>
 <div class="ulist">
 <ul>
 <li>
+<p>Write a Windup rule add-on to automate a migration process.</p>
+</li>
+<li>
 <p>Create a test for the new rule.</p>
+</li>
+<li>
+<p>For details, see the <em>Windup Rules Development Guide</em>.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>You can contribute Windup rules. For details, see the <em>Windup Rules Development Guide</em>.</p>
+<p>You can also contribute to the project source code.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a core rule.</p>
 </li>
 <li>
-<p>You can also contribute to the project source code. See the <em>Windup Core Development Guide</em> for information about how to configure your environment and set up the project.</p>
+<p>Improve performance or efficiency.</p>
+</li>
+<li>
+<p>See the_Windup Core Development Guide_ for information about how to configure your environment and set up the project.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -818,14 +834,27 @@ Better Reporting
 </div>
 </div>
 <div class="sect3">
-<h4 id="_basic_links">Basic links</h4>
+<h4 id="_helpful_links">Helpful links</h4>
 <div class="ulist">
 <ul>
 <li>
 <p>Windup Wiki: <a href="https://github.com/windup/windup/wiki" class="bare">https://github.com/windup/windup/wiki</a></p>
 </li>
 <li>
-<p>Windup documentation (generated from above wiki): <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html" class="bare">http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html</a></p>
+<p>Windup documentation (generated from the Wiki documentation at the link above):</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html" class="bare">http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html</a></p>
+</li>
+<li>
+<p><a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html" class="bare">http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html</a></p>
+</li>
+<li>
+<p><a href="http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html" class="bare">http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html</a></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Windup Forums: <a href="https://community.jboss.org/en/windup" class="bare">https://community.jboss.org/en/windup</a></p>
@@ -946,7 +975,7 @@ Better Reporting
 <p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, <code>WINDUP_HOME</code> refers to the <code>windup-distribution-2.0.0.VERSION</code> folder extracted from the downloaded ZIP file.</p>
 </li>
 <li>
-<p>If you build Windup from GitHub source, <code>WINDUP_HOME</code> refers to the <code>windup-distribution-2.0.0-&lt;version&gt;</code> folder extracted from the Windup source <code>dist/target/windup-distribution-2.0.0-VERSION.zip</code> file.</p>
+<p>If you build Windup from GitHub source, <code>WINDUP_HOME</code> refers to the <code>windup-distribution-2.0.0-VERSION</code> folder extracted from the Windup source <code>dist/target/windup-distribution-2.0.0-VERSION.zip</code> file.</p>
 </li>
 </ul>
 </div>
@@ -961,7 +990,7 @@ Better Reporting
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download the latest Windup ZIP distribution from <a href="http://repository.jboss.org/nexus/content/groups/public/org/jboss/windup/windup-distribution" class="bare">http://repository.jboss.org/nexus/content/groups/public/org/jboss/windup/windup-distribution</a>. This is currently <a href="http://repository.jboss.org/nexus/content/groups/public/org/jboss/windup/windup-distribution/2.0.0.Beta6/">windup-distribution-2.0.0.Beta6</a>.</p>
+<p>Download the latest Windup ZIP distribution from <a href="http://repository.jboss.org/nexus/content/groups/public/org/jboss/windup/windup-distribution" class="bare">http://repository.jboss.org/nexus/content/groups/public/org/jboss/windup/windup-distribution</a>. This is currently <a href="https://repository.jboss.org/nexus/service/local/repositories/releases/content/org/jboss/windup/windup-distribution/2.0.0.Beta7/windup-distribution-2.0.0.Beta7-offline.zip">windup-distribution-2.0.0.Beta7</a>.</p>
 </li>
 <li>
 <p>Extract the ZIP file in to a directory of your choice.</p>
@@ -983,8 +1012,18 @@ The documentation uses the replaceable value <code>WINDUP_HOME</code> to denote 
 </div>
 <div class="sect2">
 <h3 id="Execute-Windup">Execute Windup</h3>
-<div class="paragraph">
-<p>These instructions are for users who run Windup using the tool extracted from the ZIP download.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you used previous versions of Windup, delete the <code>${user.home}/.forge/addons/</code> directory. Otherwise you may see errors like the following when you execute Windup:
+           <em>Command: windup-migrate-app was not found</em>
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_prerequisites">Prerequisites</h4>
@@ -997,7 +1036,8 @@ The documentation uses the replaceable value <code>WINDUP_HOME</code> to denote 
 <p>Windup requires that you specify the fully qualified path of the application archive or folder you plan to migrate. This is passed using the <code>--input</code> argument on the command line.</p>
 </li>
 <li>
-<p>You must also specify the fully qualified path to a folder that will contain the resulting report information. If the folder does not exist, it is created by Windup. This path is passed using the <code>--output</code> argument on the command line.</p>
+<p>You also specify the fully qualified path to a folder that will contain the resulting report information. If the folder does not exist, it is created by Windup. If the folder exists, it is deleted and recreated by Windup, so be careful not to specify a directory that contains important information!
+This path is passed using the <code>--output</code> argument on the command line.</p>
 </li>
 <li>
 <p>You must also provide a list of the application packages to be evaluated.</p>
@@ -1041,7 +1081,7 @@ For Windows:  C:\WINDUP_HOME\bin&gt; windup</pre>
 <p>You are presented with the following prompt.</p>
 <div class="listingblock">
 <div class="content">
-<pre>Using Windup at /home/username/windup-distribution-VERSION
+<pre>Using Windup at WINDUP_HOME
 
  _       ___           __
 | |     / (_)___  ____/ /_  ______
@@ -1050,9 +1090,9 @@ For Windows:  C:\WINDUP_HOME\bin&gt; windup</pre>
 |__/|__/_/_/ /_/\__,_/\__,_/ .___/
                           /_/
 
-JBoss Windup, version [ VERSION ] - JBoss, by Red Hat, Inc. [ http://windup.jboss.org ]
+JBoss Windup, version [ 2.0.0-VERSION ] - JBoss, by Red Hat, Inc. [ http://windup.jboss.org ]
 
-[windup-distribution-VERSION]$</pre>
+[windup-distribution-2.0.0-VERSION]$</pre>
 </div>
 </div>
 </li>
@@ -1136,6 +1176,28 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </div>
 </div>
 <div class="sect3">
+<h4 id="_run_windup_in_batch_mode">Run Windup in Batch Mode</h4>
+<div class="paragraph">
+<p>Windup can be also executed in batch mode within a shell or batch script using the <code>--evaluate</code> argument as follows.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open a terminal and navigate to the WINDUP_HOME directory.</p>
+</li>
+<li>
+<p>Type the following command to run Windup in batch mode:</p>
+<div class="listingblock">
+<div class="content">
+<pre>For Linux:     $ bin/windup --evaluate "windup-migrate-app --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N"
+For Windows:   &gt; bin\windup.bat --evaluate "windup-migrate-app --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N"</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_windup_help">Windup Help</h4>
 <div class="paragraph">
 <p>To see the list of available parameters for the <code>windup-migrate-app</code> command, execute the following command in the Windup prompt:</p>
@@ -1170,6 +1232,18 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 <div class="literalblock">
 <div class="content">
 <pre>windup-migrate-app --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --packages com.acme org.apache</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_windup_batch_example">Windup Batch Example</h5>
+<div class="paragraph">
+<p>The following Windup batch command runs against the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> EAR archive. It evaluates all <code>com.acme</code> and <code>org.apache</code> packages and creates a folder named 'jee-example-app-1.0.0.ear-report' in the <code>/home/username/windup-reports/</code> directory to contain the reporting output.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>For Linux: $ bin/windup --evaluate "windup-migrate-app --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --packages com.acme org.apache"
+For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-source\test-files\jee-example-app-1.0.0.ear --output \windup-reports\jee-example-app-1.0.0.ear-report --packages com.acme org.apache</pre>
 </div>
 </div>
 </div>
@@ -1710,32 +1784,51 @@ public List&lt;Class&lt;? extends WindupRuleProvider&gt;&gt; getExecuteAfter()
 <div class="sect3">
 <h4 id="_how_to_estimate_story_points_in_a_rule">How to Estimate Story Points in a Rule</h4>
 <div class="paragraph">
-<p>TODO: TBD.</p>
+<p>Estimating story points for a rule can be tricky. The following are general guidelines or suggestions to use when estimating the level of effort required for a rule.</p>
 </div>
-<div class="paragraph">
-<p>Estimating story points for a rule can be tricky. The following are 'rules of thumb' or suggestions to use when estimating the level of effort required for a rule.</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Level of Effort</th>
+<th class="tableblock halign-left valign-top">Story Points</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lift and Shift</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The code or file is standards-based and requires no effort.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mapped</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1- 2 per file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There is a standard mapping algorithm to port the code or file. The number of story points required is small, but dependent on the number of files to port.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Custom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 - 20 per change or component</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>The number of story points required to modify and rewrite code depends on the complexity of the change, the number of unknown imports, the size of the files, and the number of components. The following are examples of how to estimate story points.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The level of effort required for "Lift and Shift", which basically means the code or file is standards-based and can be ported to the new environment with no changes, would be '0' story points.</p>
+<p>Port MyBatis to JPA: '20' story points per query.</p>
 </li>
 <li>
-<p>Changing a parameter name or value of units might be '2' story points.
-This could contain relative examples like:</p>
-</li>
-<li>
-<p>Porting a web page (or similar concept) from one web framework to another depends on the complexity and the number of components. You could estimate '20' story points per component.</p>
-</li>
-<li>
-<p>Porting MyBatis to JPA: '20' story points per query.</p>
-</li>
-<li>
-<p>When you don&#8217;t know if it will need a migration: Could depend on number of unknown imports, size
-of the file, &#8230;&#8203;</p>
+<p>Port a web page from one web framework to another depends on the complexity and the number of components involved in the migration. You could estimate '20' story points per component.</p>
 </li>
 </ul>
-</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -2137,7 +2230,7 @@ Working examples of Java-based rules can be found in the Windup quickstarts GitH
     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
     &lt;maven.compiler.source&gt;1.7&lt;/maven.compiler.source&gt;
     &lt;maven.compiler.target&gt;1.7&lt;/maven.compiler.target&gt;
-    &lt;version.windup&gt;2.0.0.Beta3&lt;/version.windup&gt;
+    &lt;version.windup&gt;2.0.0.VERSION&lt;/version.windup&gt;
     &lt;version.forge&gt;2.12.1.Final&lt;/version.forge&gt;
 &lt;/properties&gt;</code></pre>
 </div>
@@ -3783,7 +3876,7 @@ They are used to model the data in the graph database to Java objects.</p>
 The complete and up-to-date list of models is in <a href="http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/graph/model/WindupVertexFrame.html">Javadoc</a>.</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="img/WindupModels-NbScreenshot.png" alt="Windup Models Graphic"></span></p>
+<p><span class="image"><img src="images/WindupModels-NbScreenshot.png" alt="Windup Models Graphic"></span></p>
 </div>
 <div class="sect3">
 <h4 id="_meta_models">Meta Models</h4>
@@ -3820,7 +3913,7 @@ The complete and up-to-date list of models is in <a href="http://windup.github.i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-12-19 16:15:05 EST
+Last updated 2014-12-23 14:28:22 EST
 </div>
 </div>
 </body>

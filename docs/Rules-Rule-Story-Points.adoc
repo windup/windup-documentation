@@ -1,7 +1,7 @@
 [[Rules-Rule-Story-Points]]
 === Rule Story Points
-
 .DRAFT
+
 
 ==== What are Story Points?
 
@@ -9,14 +9,27 @@ Story points are an abstract metric used in Scrum methodology to estimate the le
 
 ==== How to Estimate Story Points in a Rule
 
-TODO: TBD.
+Estimating story points for a rule can be tricky. The following are general guidelines or suggestions to use when estimating the level of effort required for a rule.
 
-Estimating story points for a rule can be tricky. The following are 'rules of thumb' or suggestions to use when estimating the level of effort required for a rule.
+[cols="3*", options="header"] 
+|===
+|Level of Effort
+|Story Points
+|Description
 
-* The level of effort required for "Lift and Shift", which basically means the code or file is standards-based and can be ported to the new environment with no changes, would be '0' story points.
-* Changing a parameter name or value of units might be '2' story points.
-This could contain relative examples like: 
-* Porting a web page (or similar concept) from one web framework to another depends on the complexity and the number of components. You could estimate '20' story points per component.
-* Porting MyBatis to JPA: '20' story points per query.
-* When you don't know if it will need a migration: Could depend on number of unknown imports, size
-of the file, ...
+|Lift and Shift
+|0
+|The code or file is standards-based and requires no effort.
+
+|Mapped
+| 1- 2 per file
+|There is a standard mapping algorithm to port the code or file. The number of story points required is small, but dependent on the number of files to port.
+
+|Custom
+|5 - 20 per change or component
+a| The number of story points required to modify and rewrite code depends on the complexity of the change, the number of unknown imports, the size of the files, and the number of components. The following are examples of how to estimate story points.
+
+* Port MyBatis to JPA: '20' story points per query.
+* Port a web page from one web framework to another depends on the complexity and the number of components involved in the migration. You could estimate '20' story points per component.
+|===
+

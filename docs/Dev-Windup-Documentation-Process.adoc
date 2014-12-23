@@ -45,13 +45,13 @@ git checkout -b gh-pages windup
 * If the directory does not yet exist, create a docs/WINDUP-RELEASE-html/ directory.
 +
 ----
-mkdir -p docs/2.0.0.Beta6/html (if it doesn't exist!)
+mkdir -p docs/2.0.0.VERSION/html (if it doesn't exist!)
 ----
     
 * Copy any new images, stylesheets, and html files from windup-documentation:
 +
 ----
-cp ../windup-documentation/html/*.html ../windup-documentation/*.css ../windup-documentation/images/* docs/2.0.0.Beta6/html
+cp ../windup-documentation/html/*.html ../windup-documentation/*.css ../windup-documentation/images/* docs/2.0.0.VERSION/html
 ----
  
 * Add the updated files to GitHub.
@@ -72,4 +72,4 @@ git commit -m "Update message..."
 git push upstream gh-pages
 ----
 
-* View the documentation at http://windup.github.io/windup/docs/2.0.0.Beta6/html/WindupUserGuide.html
+* View the documentation at http://windup.github.io/windup/docs/2.0.0.VERSION/html/WindupUserGuide.html

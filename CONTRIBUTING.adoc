@@ -122,14 +122,14 @@ git checkout -b gh-pages windup
 
 +
 ----
-mkdir -p docs/2.0.0.Beta6/html
+mkdir -p docs/2.0.0.VERSION/html
 ----
 
 * Copy any new images, stylesheets, and html files from windup-documentation:
 
 +
 ----
-cp ../windup-documentation/*.html ../windup-documentation/*.css ../windup-documentation/images/* docs/2.0.0.Beta6/html/
+cp ../windup-documentation/*.html ../windup-documentation/*.css ../windup-documentation/images/* docs/2.0.0.VERSION/html/
 ----
 
 * Add the updated files to GitHub.
@@ -153,5 +153,5 @@ git commit -m "HTML docs"
 git push upstream gh-pages
 ----
 
-* View the documentation at <http://windup.github.io/windup/docs/2.0.0.Beta6/html/>
+* View the documentation at <http://windup.github.io/windup/docs/2.0.0.VERSION/html/>
 
