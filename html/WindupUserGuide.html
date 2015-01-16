@@ -435,8 +435,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_additional_resources">Additional Resources</a>
 <ul class="sectlevel2">
 <li><a href="#Review-the-Windup-Quickstarts">Review the Windup Quickstarts</a></li>
-<li><a href="#Known-Issues">Known Issues</a></li>
+<li><a href="#Known-Issues">Known Windup Issues</a></li>
 <li><a href="#Glossary">Glossary of Terms Used in Windup</a></li>
+<li><a href="#Windup-Architectural-Components">Windup Architectural Components</a></li>
 </ul>
 </li>
 </ul>
@@ -678,7 +679,7 @@ Better Reporting
 <p>Wnen you run the <code>windup-migrate-app</code> command, Windup executes its own core rules to extract files from archives, decompile classes, and analyze the application. In this phase, Windup builds a datamodel, storing component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.</p>
 </div>
 <div class="paragraph">
-<p>For more information about the graph database components, see <a href="Dev-Windup-Architectural-Components">Windup Architectural Components</a>.</p>
+<p>For more information about the graph database components, see <a href="#Windup-Architectural-Components">Windup Architectural Components</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -701,7 +702,7 @@ Better Reporting
 <div class="ulist">
 <ul>
 <li>
-<p>Application Report: This report provides a summary of the total estimated effort, or <a href="Rules-Rule-Story-Points">story points</a>, that are required for the migration. It also provides a detailed list of issues and suggested changes, broken down by archive or folder.</p>
+<p>Application Report: This report provides a summary of the total estimated effort, or <a href="#Rules-Rule-Story-Points">story points</a>, that are required for the migration. It also provides a detailed list of issues and suggested changes, broken down by archive or folder.</p>
 </li>
 <li>
 <p>RuleProvider report: This is a detailed listing of the rule providers that fired when running Windup and whether any errors occurred.</p>
@@ -745,7 +746,7 @@ Better Reporting
 </div>
 </li>
 <li>
-<p><a href="Execute-Windup">Try Windup</a> on your application. Be sure to <a href="Report-Issues-with-Windup">report any issues</a> you encounter.</p>
+<p><a href="#Execute-Windup">Try Windup</a> on your application. Be sure to <a href="#Report-Issues-with-Windup">report any issues</a> you encounter.</p>
 </li>
 <li>
 <p>You can contribute Windup rules.</p>
@@ -942,7 +943,7 @@ Better Reporting
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download the latest Windup ZIP distribution from <a href="http://repository.jboss.org/nexus/content/groups/public/org/jboss/windup/windup-distribution" class="bare">http://repository.jboss.org/nexus/content/groups/public/org/jboss/windup/windup-distribution</a>. This is currently <a href="https://repository.jboss.org/nexus/service/local/repositories/releases/content/org/jboss/windup/windup-distribution/2.0.0.Beta7/windup-distribution-2.0.0.Beta7-offline.zip">windup-distribution-2.0.0.Beta7</a>.</p>
+<p>Download the latest <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.windup&amp;a=windup-distribution&amp;v=LATEST&amp;e=zip&amp;c=offline">Windup ZIP distribution</a>.</p>
 </li>
 <li>
 <p>Extract the ZIP file in to a directory of your choice.</p>
@@ -956,7 +957,8 @@ Better Reporting
 <div class="title">Note</div>
 </td>
 <td class="content">
-The documentation uses the replaceable value <code>WINDUP_HOME</code> to denote the path to the Windup installation. When you encounter this value in the documentation, be sure to replace it with the actual path to your Windup installation. For more information, see <a href="About-the-WINDUP_HOME-Variable">About the WINDUP_HOME Variable</a>.
+If you used previous versions of Windup, delete the <code>${user.home}/.windup/</code> directory. Otherwise you may see errors like the following when you execute Windup:
+           <em>Command: windup-migrate-app was not found</em>
 </td>
 </tr>
 </table>
@@ -964,19 +966,6 @@ The documentation uses the replaceable value <code>WINDUP_HOME</code> to denote 
 </div>
 <div class="sect2">
 <h3 id="Execute-Windup">Execute Windup</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-If you used previous versions of Windup, delete the <code>${user.home}/.forge/addons/</code> directory. Otherwise you may see errors like the following when you execute Windup:
-           <em>Command: windup-migrate-app was not found</em>
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
 <h4 id="_prerequisites">Prerequisites</h4>
 <div class="paragraph">
@@ -988,8 +977,40 @@ If you used previous versions of Windup, delete the <code>${user.home}/.forge/ad
 <p>Windup requires that you specify the fully qualified path of the application archive or folder you plan to migrate. This is passed using the <code>--input</code> argument on the command line.</p>
 </li>
 <li>
-<p>You also specify the fully qualified path to a folder that will contain the resulting report information. If the folder does not exist, it is created by Windup. If the folder exists, it is deleted and recreated by Windup, so be careful not to specify a directory that contains important information!
-This path is passed using the <code>--output</code> argument on the command line.</p>
+<p>You also specify the fully qualified path to a folder that will contain the resulting report information. This path is passed using the <code>--output</code> argument on the command line.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the folder does not exist, it is created by Windup.</p>
+</li>
+<li>
+<p>If the folder exists, you are prompted with the message:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Overwrite all contents of &lt;OUTPUT_DIRECTORY&gt; (anything already in the directory will be deleted)? [y/N]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Choose "y" if you want Windup to delete and recreate the directory.</p>
+</div>
+</li>
+<li>
+<p>If you are confident you want to overwrite the output directory, you can specify <code>--overwrite</code> on the command line to automatically delete and recreate the directory.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Be careful not to specify a directory that contains important information!
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>You must also provide a list of the application packages to be evaluated.</p>
@@ -1013,7 +1034,7 @@ This path is passed using the <code>--output</code> argument on the command line
 <div class="sect3">
 <h4 id="_start_windup">Start Windup</h4>
 <div class="paragraph">
-<p>For information about the use of WINDUP_HOME in the instructions below, see <a href="About-the-WINDUP_HOME-Variable">About the WINDUP_HOME Variable</a>.</p>
+<p>For information about the use of WINDUP_HOME in the instructions below, see <a href="#About-the-WINDUP_HOME-Variable">About the WINDUP_HOME Variable</a>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1048,6 +1069,13 @@ JBoss Windup, version [ 2.0.0-VERSION ] - JBoss, by Red Hat, Inc. [ http://windu
 </div>
 </div>
 </li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_run_the_code_windup_migrate_app_code_command">Run the <code>windup-migrate-app</code> Command</h4>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>The syntax to evaluate an application using the Windup tool requires that you specify the location of the input archive or source code folder, the location of a folder to contain the output reporting information, and the application packages to evaluate. To evaluate an application archive, use the following syntax:</p>
 <div class="listingblock">
@@ -1072,9 +1100,6 @@ JBoss Windup, version [ 2.0.0-VERSION ] - JBoss, by Red Hat, Inc. [ http://windu
 <div class="paragraph">
 <p><strong>OUTPUT_REPORT_DIRECTORY</strong> is the fully qualified path to the folder that will contain the the report information produced by Windup.</p>
 </div>
-<div class="paragraph">
-<p><strong>PACKAGE_1</strong>, <strong>PACKAGE_2</strong>, <strong>PACKAGE_N</strong> are the packages to be evaluated by Windup.</p>
-</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1082,10 +1107,13 @@ JBoss Windup, version [ 2.0.0-VERSION ] - JBoss, by Red Hat, Inc. [ http://windu
 <div class="title">Note</div>
 </td>
 <td class="content">
-If the <strong>OUTPUT_REPORT_DIRECTORY</strong> directory exists, it is deleted and recreated by Windup, so be careful not to specify a directory that contains important information!
+If the <strong>OUTPUT_REPORT_DIRECTORY</strong> directory exists, your are prompted to overwrite the contents. If you respond "y", it is deleted and recreated by Windup, so be careful not to specify an output directory that contains important information!
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p><strong>PACKAGE_1</strong>, <strong>PACKAGE_2</strong>, <strong>PACKAGE_N</strong> are the packages to be evaluated by Windup.</p>
 </div>
 <div class="paragraph">
 <p>See <a href="#windup-command-examples">Windup Command Examples</a> below for concrete examples of Windup commands using source code directories and archives located in the Windup GitHub repository.</p>
@@ -1122,7 +1150,7 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </div>
 </li>
 <li>
-<p>For details on how to evaluate the report data, see <a href="Review-the-Report">Review the Report</a>.</p>
+<p>For details on how to evaluate the report data, see <a href="#Review-the-Report">Review the Report</a>.</p>
 </li>
 </ol>
 </div>
@@ -1473,7 +1501,7 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 </div>
 </div>
 <div class="sect2">
-<h3 id="Known-Issues">Known Issues</h3>
+<h3 id="Known-Issues">Known Windup Issues</h3>
 <div class="paragraph">
 <p>The following is a list of currently known issues.</p>
 </div>
@@ -1597,12 +1625,104 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="Windup-Architectural-Components">Windup Architectural Components</h3>
+<div class="paragraph">
+<p>The following open source software, tools, and APIs are used within
+Windup to analyze and provide migration information. If you plan to
+contribute source code to the core Windup 2.0 project, you should be
+familiar with them.</p>
+</div>
+<div class="sect3">
+<h4 id="_forge">Forge</h4>
+<div class="paragraph">
+<p>Forge is an open source, extendable, rapid application development tool
+for creating Java EE applications using Maven. For more information
+about Forge 2, see: <a href="http://forge.jboss.org/">JBoss Forge</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_forge_furnace">Forge Furnace</h4>
+<div class="paragraph">
+<p>Forge Furnace is a modular runtime container behind Forge that provides
+the ability to run Forge addons in an embedded application. For more
+information about Forge Furnace, see:
+<a href="http://forge.jboss.org/document/run-forge-embedded">Run Forge Embedded</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tinkerpop">TinkerPop</h4>
+<div class="paragraph">
+<p>TinkerPop is an open source graph computing framework. For more
+information, see: <a href="http://www.tinkerpop.com/">TinkerPop</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_titan">Titan</h4>
+<div class="paragraph">
+<p>Titan is a scalable graph database optimized for storing and querying graphs.
+For more information, see: <a href="http://thinkaurelius.github.io/titan/">Titan Distributed Graph Database</a> and <a href="https://github.com/thinkaurelius/titan/wiki/Beginner%27s-Guide">Titan Beginner&#8217;s Guide</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_frames">Frames</h4>
+<div class="paragraph">
+<p>Frames represents graph data in the form of interrelated Java Objects or
+a collection of annotated Java Interfaces. For more information, see:
+<a href="https://github.com/tinkerpop/frames/wiki">TinkerPop Frames</a>.</p>
+</div>
+<div class="paragraph">
+<p>Windup includes several Frames extensions, which are documented here:
+<a href="#Dev-Frames-extensions">Frames Extensions</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gremlin">Gremlin</h4>
+<div class="paragraph">
+<p>Gremlin is a graph traversal language that allows you to query, analyze,
+and manipulate property graphs that implement the Blueprints property
+graph data model. For more information, see:
+<a href="https://github.com/tinkerpop/gremlin/wiki">TinkerPop Gremlin Wiki</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_blueprints">Blueprints</h4>
+<div class="paragraph">
+<p>Blueprints is an industry standard API used to access graph databases.
+For more information about Blueprints, see:
+<a href="https://github.com/tinkerpop/blueprints/wiki">TinkerPop Blueprints Wiki</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pipes">Pipes</h4>
+<div class="paragraph">
+<p>Pipes is a dataflow framework used to process graph data. It for the
+transformation of data from input to output. For more information, see:
+<a href="https://github.com/tinkerpop/pipes/wiki">Tinkerpop Pipes Wiki</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rexster">Rexster</h4>
+<div class="paragraph">
+<p>Rexster is a graph server that exposes any Blueprints graph through HTTP/REST and a binary protocol called RexPro. Rexster makes extensive use of Blueprints, Pipes, and Gremlin. For more information, see:
+<a href="https://github.com/tinkerpop/rexster/wiki">TinkerPop Rexster Wiki</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ocpsoft_rewrite">OCPsoft Rewrite</h4>
+<div class="paragraph">
+<p>OCPsoft Rewrite is an open source routing and URL rewriting solution for
+Servlets, Java Web Frameworks, and Java EE. For more information about
+Ocpsoft Rewrite, see: <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a>.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2014-12-23 14:28:22 EST
+Last updated 2015-01-16 15:13:07 EST
 </div>
 </div>
 </body>

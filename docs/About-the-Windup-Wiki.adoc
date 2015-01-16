@@ -32,17 +32,17 @@ The following is a brief overview.
 
 * At the beginning of each new Wiki page, add an anchor with the exact page name, including the dashes. This generates the correct anchors that are needed when the pages are combined into a book.
 
-        [[Dev-Build-Windup-from-Source]]
-        === Build Windup from Source
+        [[Page-Name]]
+        === Page Name
 
 *   Wiki generates anchors using dashes for spaces. AsciiDoctor generates a leading underscore and underscores for spaces.When referring to another section within the same page, do not use the `<<section-title-anchor>>` syntax. Instead, create an anchor and use the 'xref:' syntax to provide the link. Replace spaces in the section title with dashes.
 
-    Create the anchor at the top of the section using double brackets to force the generation of dashes instead of underscores.
+** Create the anchor at the top of the section using double brackets to force the generation of dashes instead of underscores.
 
-        [[windup-command-examples]]
-        ==== Windup Command Examples
+        [[section-header]]
+        ==== Section Header
 
-    Then use the `xref` to create the link.
+** Then use the `xref` to create the link.
 
-        See xref:windup-command-examples[Windup Command Examples] for more information.
+        See xref:section-header[Section Header] for more information.
     

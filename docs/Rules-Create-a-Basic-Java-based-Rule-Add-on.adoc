@@ -5,8 +5,8 @@ You can create a rule using Java or XML. This topic describes how to create a ru
 
 ==== Prerequisites
 
-* You must link:Install-Windup[Install Windup]. 
-* Be sure you link:Install-and-Configure-Maven[Install and Configure Maven].
+* You must xref:Install-Windup[Install Windup]. 
+* Be sure you xref:Install-and-Configure-Maven[Install and Configure Maven].
 * Before you begin, may want also want to be familiar with the following documentation:
 ** Windup rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
 ** The JavaDoc for the Windup API is located here: http://windup.github.io/windup/docs/javadoc/latest/
@@ -51,7 +51,7 @@ Create a new Maven Java Project. These instructions will refer to the project fo
 </dependencyManagement>
 ----
 
-3. Add a `<dependencies>` section to include Windup, rulesets, and test dependencies required by your rule add-on. Windup is a Forge/Furnace based application and has a modular design, so the dependencies will vary depending on the Windup APIs used by the rule. For more information on Windup dependencies, see link:Dev-Dependencies[Windup Dependencies]. 
+3. Add a `<dependencies>` section to include Windup, rulesets, and test dependencies required by your rule add-on. Windup is a Forge/Furnace based application and has a modular design, so the dependencies will vary depending on the Windup APIs used by the rule. For more information on Windup dependencies, see xref:Dev-Dependencies[Windup Dependencies]. 
 +
 The following are examples of some dependencies you may need for your rule add-on.
 +
@@ -190,7 +190,7 @@ public class MyCustomRuleProvider extends WindupRuleProvider
         return RulePhase.DISCOVERY;
     }
 ----
-For more information about rule phases, see link:Rules-Rule-Execution-Lifecycle[Rules Execution Lifecycles].
+For more information about rule phases, see xref:Rules-Rule-Execution-Lifecycle[Rules Execution Lifecycles].
 
 3. To control the order in which the rule is executed, implement the `getExecuteBefore()` or `getExecuteAfter()` method.
 +
@@ -262,7 +262,7 @@ Windup building elements.
 
 The easiest and fastest way to build the rule add-on, install it into the local Maven repository, and install it into Windup as a rule add-on is to use the Windup `addon-build-and-install` command.
 
-* If you have not started Windup, follow the instructions to link:Execute-Windup[Execute Windup].
+* If you have not started Windup, follow the instructions to xref:Execute-Windup[Execute Windup].
 * At the Windup console prompt, enter the `addon-build-and-install` command:
 
         addon-build-and-install --projectRoot RULE_PROJECT_HOME
@@ -283,7 +283,7 @@ You should see the following result:
 
     ***SUCCESS*** Windup report created: QUICKSTART_HOME/windup-reports-java/index.html
 
-For more information and examples of how to run Windup, see: link:Execute-Windup[Execute Windup] 
+For more information and examples of how to run Windup, see: xref:Execute-Windup[Execute Windup] 
 
 ==== Review the Output Report
 
@@ -296,11 +296,11 @@ TBD.
 
 * Models
 ** https://github.com/tinkerpop/frames/wiki[Frames]
-** link:Rules-Windup-Models[Windup Models]
+** xref:Rules-Windup-Models[Windup Models]
 * Rules
 ** http://ocpsoft.org/rewrite/[OCPSoft Rewrite]
 ** Conditions, Operations
 *** Variables
 ** Inter-rule action
-** link:Rules:-Rules-Execution-Lifecycle[Inter-rule dependency]
+** xref:Rules:-Rules-Execution-Lifecycle[Inter-rule dependency]
 *** Short IDs - https://issues.jboss.org/browse/WINDUP-217[WINDUP-216]

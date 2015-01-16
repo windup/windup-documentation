@@ -9,7 +9,7 @@ The following is a high level conceptual overview of what happens within Windup 
 
 Wnen you run the `windup-migrate-app` command, Windup executes its own core rules to extract files from archives, decompile classes, and analyze the application. In this phase, Windup builds a datamodel, storing component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.
 
-For more information about the graph database components, see link:Dev-Windup-Architectural-Components[Windup Architectural Components].
+For more information about the graph database components, see xref:Windup-Architectural-Components[Windup Architectural Components].
 
 ==== Application Migration
 
@@ -23,7 +23,7 @@ The final step in the process is to pull data from the graph database model to g
 
 By default, Windup generates the following reports at the end of the application migration process. The reports are located in the `reports/` subdirectory of the output report path specified when you execute Windup:
 
-* Application Report: This report provides a summary of the total estimated effort, or link:Rules-Rule-Story-Points[story points], that are required for the migration. It also provides a detailed list of issues and suggested changes, broken down by archive or folder. 
+* Application Report: This report provides a summary of the total estimated effort, or xref:Rules-Rule-Story-Points[story points], that are required for the migration. It also provides a detailed list of issues and suggested changes, broken down by archive or folder. 
 * RuleProvider report: This is a detailed listing of the rule providers that fired when running Windup and whether any errors occurred.
 * Additional reports are generated that provide detailed line-by-line migration tips for individual files. 
 

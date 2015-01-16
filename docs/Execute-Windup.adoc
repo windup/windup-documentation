@@ -1,17 +1,22 @@
 [[Execute-Windup]]
 === Execute Windup
 
-NOTE: If you used previous versions of Windup, delete the `${user.home}/.forge/addons/` directory. Otherwise you may see errors like the following when you execute Windup:  
-           _Command: windup-migrate-app was not found_
-
 ==== Prerequisites
 
 Before you begin, you must gather the following information.
 
 . Windup requires that you specify the fully qualified path of the application archive or folder you plan to migrate. This is passed using the `--input` argument on the command line.
 
-. You also specify the fully qualified path to a folder that will contain the resulting report information. If the folder does not exist, it is created by Windup. If the folder exists, it is deleted and recreated by Windup, so be careful not to specify a directory that contains important information!
-This path is passed using the `--output` argument on the command line.
+. You also specify the fully qualified path to a folder that will contain the resulting report information. This path is passed using the `--output` argument on the command line.
+* If the folder does not exist, it is created by Windup. 
+* If the folder exists, you are prompted with the message:
+
+       Overwrite all contents of <OUTPUT_DIRECTORY> (anything already in the directory will be deleted)? [y/N] 
++
+Choose "y" if you want Windup to delete and recreate the directory. 
+* If you are confident you want to overwrite the output directory, you can specify `--overwrite` on the command line to automatically delete and recreate the directory. 
++
+NOTE: Be careful not to specify a directory that contains important information!
 
 . You must also provide a list of the application packages to be evaluated. 
 
@@ -21,7 +26,7 @@ This path is passed using the `--output` argument on the command line.
 
 ==== Start Windup
 
-For information about the use of WINDUP_HOME in the instructions below, see link:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable].
+For information about the use of WINDUP_HOME in the instructions below, see xref:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable].
 
 . Open a terminal and navigate to the `WINDUP_HOME/bin` directory
 
@@ -49,6 +54,8 @@ JBoss Windup, version [ 2.0.0-VERSION ] - JBoss, by Red Hat, Inc. [ http://windu
 [windup-distribution-2.0.0-VERSION]$ 
 ---------------------------------------------------------------------------
 
+==== Run the `windup-migrate-app` Command
+
 . The syntax to evaluate an application using the Windup tool requires that you specify the location of the input archive or source code folder, the location of a folder to contain the output reporting information, and the application packages to evaluate. To evaluate an application archive, use the following syntax:
 +
 ---------------------------------------------------------------------------
@@ -66,12 +73,12 @@ Where:
 +
 *INPUT_ARCHIVE_OR_FOLDER* is the fully qualified application archive or source path
 +
-*OUTPUT_REPORT_DIRECTORY* is the fully qualified path to the folder that will contain the the report information produced by Windup. 
+*OUTPUT_REPORT_DIRECTORY* is the fully qualified path to the folder that will contain the the report information produced by Windup.
 +
-*PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* are the packages to be evaluated by Windup.
+NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists, your are prompted to overwrite the contents. If you respond "y", it is deleted and recreated by Windup, so be careful not to specify an output directory that contains important information!
 
 +
-NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists, it is deleted and recreated by Windup, so be careful not to specify a directory that contains important information!
+*PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* are the packages to be evaluated by Windup.
 
 +
 See xref:windup-command-examples[Windup Command Examples] below for concrete examples of Windup commands using source code directories and archives located in the Windup GitHub repository.
@@ -98,7 +105,7 @@ The following subdirectories in the `OUTPUT_REPORT_DIRECTORY` contain the suppor
             stats/
             index.html
 
-. For details on how to evaluate the report data, see link:Review-the-Report[Review the Report].
+. For details on how to evaluate the report data, see xref:Review-the-Report[Review the Report].
 
 ==== Run Windup in Batch Mode 
 

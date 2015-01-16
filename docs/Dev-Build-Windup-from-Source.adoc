@@ -19,7 +19,7 @@ Oracle Java SE
 . Maven 3.1.1 or newer
 +
 If you have not yet installed or configured Maven, see
-link:Install-and-Configure-Maven[Install and Configure Maven] for details.
+xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
 +
 If you have installed Maven, you can check the version by typing the
 following in a command prompt:
@@ -37,15 +37,15 @@ Developer Studio 7.1.1] or newer
 
 +
 You must also make sure the IDE embeds Maven 3.1.1 or later. See
-link:Install-and-Configure-Maven[Install and Configure Maven] for details.
+xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
 
 
 ==== Build Windup Using Maven Command Line
 
 
 . Make sure you have configured Maven as described here:
-link:Install-and-Configure-Maven[Install and Configure Maven].
-. Check out Windup source code: `git clone git@github.com:windup/windup.git Windup`. See link:Dev-Get-the-Windup-Source-Code[Get the Windup Source Code] for more info.
+xref:Install-and-Configure-Maven[Install and Configure Maven].
+. Check out Windup source code: `git clone git@github.com:windup/windup.git Windup`. See xref:Dev-Get-the-Windup-Source-Code[Get the Windup Source Code] for more info.
 . Open a command terminal and navigate to the root of the Windup project directory.
 +
 --------------

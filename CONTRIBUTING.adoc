@@ -38,7 +38,13 @@ See xref:windup-command-examples[Windup Command Examples] for more information.
 * If you have not yet done so, install Ascidoctor
 +
 ----
-gem install sciidoctor
+gem install asciidoctor
+----
+
+* Navigate to the root of the windup-documentation directory and check out a branch to work in.
++
+----
+git checkout -b <branch-name> upstream/master
 ----
       
 * A script is provided that updates the documentation with the latest Wiki updates, automatically replaces internal links, and builds the guides. To run it, navigate to the root of the windup-documentation directory and type:
