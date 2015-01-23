@@ -1,33 +1,54 @@
+#!/bin/bash
+if [ "$1" == "" ] || [ "$2" == "" ] || [ "$3" == "" ]; then 
+
+    echo "You must pass the following arguments on the command line:"
+    echo "    Path to the local windup-documentation GitHub directory"
+    echo "    Path to the local windup source GitHub directory"
+    echo "    Name of the new beta version" 
+    echo "For example:"
+    echo "    scripts/windupDocPublish.sh ~/GitRepos/windup-documentation/ ~/GitRepos/windup/ 2.0.0.Beta8"
+    exit
+else
+    echo  "Windup Documentation will be copied from here: " $1
+    echo  "Windup Documentation will be copied to here:  " $2
+fi
 #################################
 # Publish the Windup Guides
 #################################
 
-WINDUP_VERSION=2.0.0.Beta7
-# if [$1 != ""]; then 
-#
-# fi
-echo "Copying the HTML files from windup-documentation/html/"
-cd ~/GitRepos/windup
-git fetch upstream
-git checkout gh-pages 
-cd docs/
+WINDUP_VERSION=$3
+echo "Creating: " $WINDUP_VERSION
 
+echo "Copying the HTML files from windup-documentation/html/"
+cd $2
+pwd
+git fetch upstream
+git checkout gh-pages
+git reset --hard upstream/gh-pages 
+cd docs/
+pwd
 echo Testing for existence of $WINDUP_VERSION
 if [ ! -d  $WINDUP_VERSION ]; then
   echo Creating directory: $WINDUP_VERSION
   mkdir -p $WINDUP_VERSION/html/images
 fi
-cd ../../windup-documentation
- 
-cp html/*.html ../windup/docs/$WINDUP_VERSION/html/
-cp docs/*.css ../windup/docs/$WINDUP_VERSION/html/
-cp docs/images/* ../windup/docs/$WINDUP_VERSION/html/images/
 
-# cd ../windup
+cd $1
+pwd
+cp html/*.html $2/docs/$WINDUP_VERSION/html/
+cp docs/*.css $2/docs/$WINDUP_VERSION/html/
+cp docs/images/* $2/docs/$WINDUP_VERSION/html/images/
+
+echo "Guides can be previewed here: "
+echo "    User Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupUserGuide.html
+echo "    Rules Development Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupRulesDevelopmentGuide.html
+echo "    Core Development Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupCoreDevelopmentGuide.html
+
+# cd $2
 # git add docs
 # git commit -m "Update the docs"
-# git push sgilda HEAD
+# git push origin HEAD
 ## issue a pull and verify
 # git push upstream gh-pages
-#firefox http://windup.github.io/windup/docs/2.0.0.Beta6/html/WindupUserGuide.html
+#firefox http://windup.github.io/windup/docs/$WINDUP_VERSION/html/WindupUserGuide.html
 
