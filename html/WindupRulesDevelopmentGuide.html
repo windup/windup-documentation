@@ -495,20 +495,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide is for engineers, consultants, and others who plan to use
-Windup 2.0 to migrate Java applications or other components.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-This is a very rough first draft!
-</td>
-</tr>
-</table>
+<p>This guide is for engineers, consultants, and others who plan to create
+custom rules for Windup 2.0.</p>
 </div>
 <div class="sect2">
 <h3 id="What-is-Windup">What is Windup?</h3>
@@ -1456,7 +1444,7 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 <div class="sect4">
 <h5 id="_rule_provider_execution_report">Rule Provider Execution Report</h5>
 <div class="paragraph">
-<p>The <code>OUTPUT_REPORT_DIRECTORY/reports/ruleproviders.html</code> page provides the list of rule providers that executed when running the Windup migration command against the application.</p>
+<p>The <code>OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html</code> page provides the list of rule providers that executed when running the Windup migration command against the application.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/report-javaee-ear-ruleprovider.png" alt="RuleProvider Report" width="500"></span></p>
@@ -1465,7 +1453,7 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 <div class="sect4">
 <h5 id="_rule_provider_execution_report_2">Rule Provider Execution Report</h5>
 <div class="paragraph">
-<p>The <code>OUTPUT_REPORT_DIRECTORY/reports/ruleproviders.html</code> page provides the list of rule providers that executed when running the Windup migration command against the application.</p>
+<p>The <code>OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html</code> page provides the list of rule providers that executed when running the Windup migration command against the application.</p>
 </div>
 </div>
 <div class="sect4">
@@ -1675,37 +1663,60 @@ element to make the profile active.</p>
 <div class="sect3">
 <h4 id="_rule_lifecycle">Rule Lifecycle</h4>
 <div class="paragraph">
-<p>Windup executes each rule in a single threaded mode. The following
+<p>Windup executes each rule in sequential order. The following
 sections describe the phases of rule execution and how rules may specify
 that one or more other rules must be executed before or after they are
 run.</p>
 </div>
 <div class="paragraph">
-<p>For graphical overview of rule processing, see
+<p>For a graphical overview of rule processing, see
 <a href="https://docs.google.com/drawings/d/1IMnds3Qu8Wwcf7_mr7NJ9a3YgtcGJ7dejl09EhWl7Vc/edit">this
 diagram</a>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_rule_phases">Rule Phases</h4>
+<div class="listingblock">
+<div class="content">
+<pre>INFO: Loaded [67] org.jboss.windup.config.WindupRuleProvider [
+org.jboss.windup.config.phase.Implicit
+org.jboss.windup.config.phase.Initialization
+org.jboss.windup.config.phase.Discovery
+org.jboss.windup.config.phase.ArchiveExtraction
+org.jboss.windup.config.phase.ArchiveMetadataExtraction
+org.jboss.windup.config.phase.ClassifyFileTypes
+org.jboss.windup.config.phase.DiscoverProjectStructure
+org.jboss.windup.config.phase.Decompilation
+org.jboss.windup.config.phase.InitialAnalysis
+org.jboss.windup.config.phase.MigrationRules
+org.jboss.windup.config.phase.PostMigrationRules
+org.jboss.windup.config.phase.PreReportGeneration
+org.jboss.windup.config.phase.ReportGeneration
+org.jboss.windup.config.phase.PostReportGeneration
+org.jboss.windup.config.phase.ReportRendering
+org.jboss.windup.config.phase.PostReportRendering
+org.jboss.windup.config.phase.Finalize
+org.jboss.windup.config.phase.PostFinalize
+]</pre>
+</div>
+</div>
 <div class="paragraph">
-<p>By default, a rule runs during the <a href="http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_RULES">MIGRATION_RULES</a> phase. However, a
-rule may require certain processing or actions to occur before the it
+<p>By default, a rule runs during the <a href="https://github.com/windup/windup/blob/master/config/api/src/main/java/org/jboss/windup/config/phase/MigrationRules.java">MigrationRules</a> phase. However, a
+rule may require certain processing or actions to occur before it
 executes, such as the extraction of archives and scanning of java or XML
 files.</p>
 </div>
 <div class="paragraph">
-<p>Rule phases provide an way for rule authors to specify and control in
+<p>Rule phases provide a way for rule authors to specify and control in
 which phase of the rule lifecycle the rule should execute. This is done
 by overriding the <code>WindupRuleProvider.getPhase()</code> method. The following
-example specifies this rule should execute during the <a href="http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#INITIAL_ANALYSIS">INITIAL_ANALYSIS</a>
-rule phase.</p>
+example specifies this rule should execute during the <a href="https://github.com/windup/windup/blob/master/config/api/src/main/java/org/jboss/windup/config/phase/InitialAnalysis.java">InitialAnalysis</a> rule phase.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">@Override
 public RulePhase getPhase() {
-    return RulePhase.INITIAL_ANALYSIS;
+    return InitialAnalysis.class;
 }</code></pre>
 </div>
 </div>
@@ -1772,12 +1783,10 @@ before executing the the current rule.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">List&lt;Class&lt;? extends WindupRuleProvider&gt;&gt; executeBeforeList = new ArrayList&lt;&gt;();
-
-@Override
+<pre class="highlight"><code class="language-java" data-lang="java">@Override
 public List&lt;Class&lt;? extends WindupRuleProvider&gt;&gt; getExecuteBefore()
 {
-   return executeBeforeList.add(RuleToFireBefore.class);
+   return asClassList(RuleToFireBefore.class);
 }</code></pre>
 </div>
 </div>
@@ -1788,12 +1797,10 @@ specified after executing the the current rule.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">List&lt;Class&lt;? extends WindupRuleProvider&gt;&gt; executeAfterList = new ArrayList&lt;&gt;();
-
-@Override
+<pre class="highlight"><code class="language-java" data-lang="java">@Override
 public List&lt;Class&lt;? extends WindupRuleProvider&gt;&gt; getExecuteAfter()
 {
-    return executeAfterList.add(RuleToFireAfter.class);
+    return asClassList(RuleToFireAfter.class);
 }</code></pre>
 </div>
 </div>
@@ -2376,7 +2383,7 @@ Working examples of Java-based rules can be found in the Windup quickstarts GitH
     &lt;plugin&gt;
         &lt;groupId&gt;org.jboss.forge.furnace&lt;/groupId&gt;
         &lt;artifactId&gt;furnace-maven-plugin&lt;/artifactId&gt;
-        &lt;version&gt;${version.furnace}&lt;/version&gt;
+        &lt;version&gt;${version.forge}&lt;/version&gt;
         &lt;executions&gt;
             &lt;execution&gt;
                 &lt;id&gt;generate-dot&lt;/id&gt;
@@ -3089,7 +3096,7 @@ If you have not started Windup, follow the instructions to <a href="#Execute-Win
 <div class="sect4">
 <h5 id="_rule_provider_execution_report_3">Rule Provider Execution Report</h5>
 <div class="paragraph">
-<p>The <code>OUTPUT_REPORT_DIRECTORY/reports/ruleproviders.html</code> page provides the list of rule providers that executed when running the Windup migration command against the application.</p>
+<p>The <code>OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html</code> page provides the list of rule providers that executed when running the Windup migration command against the application.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/report-javaee-ear-ruleprovider.png" alt="RuleProvider Report" width="500"></span></p>
@@ -3098,7 +3105,7 @@ If you have not started Windup, follow the instructions to <a href="#Execute-Win
 <div class="sect4">
 <h5 id="_rule_provider_execution_report_4">Rule Provider Execution Report</h5>
 <div class="paragraph">
-<p>The <code>OUTPUT_REPORT_DIRECTORY/reports/ruleproviders.html</code> page provides the list of rule providers that executed when running the Windup migration command against the application.</p>
+<p>The <code>OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html</code> page provides the list of rule providers that executed when running the Windup migration command against the application.</p>
 </div>
 </div>
 <div class="sect4">
@@ -3521,37 +3528,7 @@ FooModel = fooService.create();
 <div class="sect2">
 <h3 id="Known-Issues">Known Windup Issues</h3>
 <div class="paragraph">
-<p>The following is a list of currently known issues.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://issues.jboss.org/browse/WINDUP-73">WINDUP-73</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>If you do not see expected log messages, resort to <code>System.out.println()</code> for logging.</p>
-</li>
-<li>
-<p>You may see too much logging, especially from Forge. This is to be expected.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><a href="https://issues.jboss.org/browse/WINDUP-197">WINDUP-197</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Exceptions in Surefire reports are broken due to the way Forge wraps exceptions and the way Surefire handles them.</p>
-</li>
-<li>
-<p>You need to debug or rewrap exceptions using TestUtil.rewrap(ex).</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<p>Windup known issues are tracked here: <a href="https://issues.jboss.org/browse/WINDUP-496?jql=project%20%3D%20WINDUP%20AND%20issuetype%20%3D%20Bug%20AND%20status%20in%20%28Open%2C%20%22Coding%20In%20Progress%22%2C%20Reopened%2C%20%22Pull%20Request%20Sent%22%29">Open Windup issues</a></p>
 </div>
 </div>
 <div class="sect2">
@@ -3940,7 +3917,7 @@ The complete and up-to-date list of models is in <a href="#http://windup.github.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-01-16 15:13:07 EST
+Last updated 2015-02-04 16:09:16 EST
 </div>
 </div>
 </body>

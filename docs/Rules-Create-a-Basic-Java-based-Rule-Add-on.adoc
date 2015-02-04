@@ -144,7 +144,7 @@ The following are examples of some dependencies you may need for your rule add-o
     <plugin>
         <groupId>org.jboss.forge.furnace</groupId>
         <artifactId>furnace-maven-plugin</artifactId>
-        <version>${version.furnace}</version>
+        <version>${version.forge}</version>
         <executions>
             <execution>
                 <id>generate-dot</id>

@@ -44,11 +44,21 @@ echo "    User Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupUserGuide.html
 echo "    Rules Development Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupRulesDevelopmentGuide.html
 echo "    Core Development Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupCoreDevelopmentGuide.html
 
-# cd $2
-# git add docs
-# git commit -m "Update the docs"
+cd $2
+git add docs
+
+git commit -m "Update the docs for release $3"
+
+echo "The following are manual steps: "
+echo "    git push origin HEAD"
+echo "    (issue a pull and verify)"
+echo "    git push upstream gh-pages"
+echo "    firefox http://windup.github.io/windup/docs/$WINDUP_VERSION/html/WindupUserGuide.html"
+
 # git push origin HEAD
 ## issue a pull and verify
 # git push upstream gh-pages
 #firefox http://windup.github.io/windup/docs/$WINDUP_VERSION/html/WindupUserGuide.html
+
+cd $1
 

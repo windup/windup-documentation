@@ -85,13 +85,13 @@ Explore the Windup `OUTPUT_REPORT_DIRECTORY/reports` folder to find additional r
 
 ===== Rule Provider Execution Report
 
-The `OUTPUT_REPORT_DIRECTORY/reports/ruleproviders.html` page provides the list of rule providers that executed when running the Windup migration command against the application.
+The `OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html` page provides the list of rule providers that executed when running the Windup migration command against the application.
 
 image:images/report-javaee-ear-ruleprovider.png[RuleProvider Report, 500]
 
 ===== Rule Provider Execution Report
 
-The `OUTPUT_REPORT_DIRECTORY/reports/ruleproviders.html` page provides the list of rule providers that executed when running the Windup migration command against the application.
+The `OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html` page provides the list of rule providers that executed when running the Windup migration command against the application.
 
 ===== Individual File Analysis Reports
 
