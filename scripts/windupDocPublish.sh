@@ -2,11 +2,11 @@
 if [ "$1" == "" ] || [ "$2" == "" ] || [ "$3" == "" ]; then 
 
     echo "You must pass the following arguments on the command line:"
-    echo "    Path to the local windup-documentation GitHub directory"
-    echo "    Path to the local windup source GitHub directory"
-    echo "    Name of the new beta version" 
+    echo "    arg 1: Path to the local windup-documentation GitHub directory"
+    echo "    arg 2: Path to the local windup source GitHub directory"
+    echo "    arg 3: New documentation version" 
     echo "For example:"
-    echo "    scripts/windupDocPublish.sh ~/GitRepos/windup-documentation/ ~/GitRepos/windup/ 2.0.0.Beta8"
+    echo "    scripts/windupDocPublish.sh ~/GitRepos/windup-documentation/ ~/GitRepos/windup/ 2.0.0.Final"
     exit
 else
     echo  "Windup Documentation will be copied from here: " $1
@@ -54,6 +54,13 @@ echo "    git push origin HEAD"
 echo "    (issue a pull and verify)"
 echo "    git push upstream gh-pages"
 echo "    firefox http://windup.github.io/windup/docs/$WINDUP_VERSION/html/WindupUserGuide.html"
+echo "    unlink latest"
+echo "    ln -s $3 latest"
+echo "    git add latest"
+echo "    git commit -m 'Replace symlink for latest to point to 2.0.0.Final'"
+echo "    git push origin HEAD"
+echo "    (issue a pull and verify)"
+echo "    git push upstream gh-pages"
 
 # git push origin HEAD
 ## issue a pull and verify
@@ -61,4 +68,16 @@ echo "    firefox http://windup.github.io/windup/docs/$WINDUP_VERSION/html/Windu
 #firefox http://windup.github.io/windup/docs/$WINDUP_VERSION/html/WindupUserGuide.html
 
 cd $1
+
+## Update the symlink to point to the latest docs
+# cd $2/docs
+# unlink latest
+# ln -s $3 latest
+## for example: ln -s 2.0.0.Final latest
+# git add latest
+# git commit -m 'Replace symlink for latest to point to 2.0.0.Final'
+# git push origin HEAD
+## issuw a pull and verify
+# git push upstream gh-pages
+
 
