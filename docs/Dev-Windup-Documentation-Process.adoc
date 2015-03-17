@@ -12,9 +12,70 @@ Windup product documentation is stored here: https://github.com/windup/windup-do
 
 See the https://github.com/windup/windup-documentation/blob/master/CONTRIBUTING.adoc[CONTRIBUTING guide] for AsciiDoc syntax rules regarding headers and links to make this process easier.
 
-The https://github.com/windup/windup-documentation/tree/master/scripts/windupDocUpdate.sh script copies the pages from the Windup wiki to the windup-documentation repository, makes minor modifications, and generates each guide in a single HTML page book format. The resulting guides are created in the `html/` directory.
+==== Update the Windup Documentation with the Latest Wiki Changes
 
-==== Publish the HTML docs to online docs (at GitHub IO)
+===== Summary
+
+The Windup guides are located in the windup-documentation/docs directory. They are named the same as the guides in the Wiki but have a 'Windup-' prefix. The windup-documentation/docs guides should kept synchronized with the versions in the windup.wiki.
+
+[cols="2*", options="header"] 
+|===
+|Wiki Guide
+|Windup Docs Guide
+
+|User-Guide.asciidoc
+|Windup-User-Guide.adoc
+
+|Rules-Development-Guide.asciidoc
+|Windup-Rules-Development-Guide.adoc
+
+|Core-Development-Guide.asciidoc
+|Windup-Core-Development-Guide.adoc
+
+|Migration-Planning-Guide
+|Windup-Migration-Planning-Guide.adoc
+|===
+
+====== Documentation Update Scripts
+
+The https://github.com/windup/windup-documentation/tree/master/scripts/windupDocUpdate.sh script copies the pages from the Windup wiki to the windup-documentation repository, makes minor modifications, and generates each guide in a single HTML page book format. The resulting guides are created in the `WINDUP_DOCUMENTATION_HOME/html/` directory.
+
+The script performs the following steps.
+
+. Copies the Windup wiki pages to the `WINDUP_DOCUMENTATION_HOME/docs/` directory, renaming them with the `.adoc` extension.
+
+. Makes sure each guide includes all pages that are referenced by pages within it. Scripts are provided to search for links within each individual guide. They navigate to the `WINDUP_DOCUMENTATION_HOME/docs/` directory and search using the following command:
+
+    grep 'xref:[A-Z]' `find . -name '*.adoc'`.
+
+. Replaces each `xref:` to external pages with an `xref:` using the following command.
+
+    find . -name '*.adoc' -print | xargs sed -i 's/xref:/xref:/g'
+
+. Navigates to the `WINDUP_DOCUMENTATION_HOME/` directory and builds the books. The single page HTML files are created in the `WINDUP_DOCUMENTATION_HOME/html/` directory.
+
++
+[cols="2*", options="header"] 
+|===
+|Windup Guide
+|Command
+
+|Windup User Guide
+|asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html docs/Windup-User-Guide.adoc
+
+|Windup Rules Development Guide
+|asciidoctor -t -dbook -a toc -o html/WindupRulesDevelopmentGuide.html docs/Windup-Rules-Development-Guide.adoc
+
+|Windup Core Development Guide
+|asciidoctor -t -dbook -a toc -o html/WindupCoreDevelopmentGuide.html docs/Windup-Core-Development-Guide.adoc
+|===
+
+
+==== Publish the HTML Docs for Access at GitHub IO
+
+The https://github.com/windup/windup-documentation/tree/master/scripts/windupPublish.sh script copies the pages from the Windup wiki to the windup-documentation repository, makes minor modifications, and generates each guide in a single HTML page book format. The resulting guides are created in the `WINDUP_DOCUMENTATION_HOME/html/` directory.
+
+The script performs the following steps.
 
 * The first time, you must fork and clone the windup GitHub repository. After that, just fetch the latest upstream.
 +
@@ -23,35 +84,32 @@ git clone https://github.com/windup/windup.git
 git fetch upstream
 ----
     
-* The first time, you must fork and clone the windup-documentation GitHub repository. After that, just fetch the latest upstream.
-+
-----
-git clone https://github.com/windup/windup-documentation.git
-git fetch upstream
-----
-    
-* Navigate to the local windup directory.
+* Navigate to the local `WINDUP_HOME/` directory.
 +
 ----
 cd windup
 ----
     
-* Checkout the gh-pages from the windup repository
+* Checkout the `gh-pages` from the `WINDUP_HOME` repository
 +
 ----
-git checkout -b gh-pages windup
+git checkout -b gh-pages windup/gh-pages
 ----
 
-* If the directory does not yet exist, create a docs/WINDUP-RELEASE-html/ directory.
+* If the `WINDUP_HOME/docs/WINDUP_RELEASE/` directory does not yet exist, create a `docs/WINDUP_RELEASE/html/images/` 
 +
 ----
-mkdir -p docs/2.0.0.VERSION/html (if it doesn't exist!)
+mkdir -p docs/WINDUP_RELEASE/html/images (if it doesn't exist!)
 ----
     
-* Copy any new images, stylesheets, and html files from windup-documentation:
+* Copy any the images, stylesheets, and html files from windup-documentation:
 +
 ----
-cp ../windup-documentation/html/*.html ../windup-documentation/*.css ../windup-documentation/images/* docs/2.0.0.VERSION/html
+
+cp WINDUP_DOCUMENTATION_HOME/html/*.html WINDUP_HOME/docs/WINDUP_RELEASE/html/
+cp WINDUP_DOCUMENTATION_HOME/*.css WINDUP_HOME/docs/WINDUP_RELEASE/html/
+cp WINDUP_DOCUMENTATION_HOME/images/* WINDUP_HOME/docs/WINDUP_RELEASE/html/images/
+
 ----
  
 * Add the updated files to GitHub.
@@ -72,4 +130,35 @@ git commit -m "Update message..."
 git push upstream gh-pages
 ----
 
-* View the documentation at http://windup.github.io/windup/docs/2.0.0.VERSION/html/WindupUserGuide.html
+* View the documentation at http://windup.github.io/windup/docs/WINDUP_RELEASE/html/WindupUserGuide.html
+
+* Update the symlink for `latest` to point to the new version.
+
+** Navigate to the `WINDUP_HOME/docs` directory.
+
+** Remove the existing symlink for "latest".
+
+        unlink latest
+
+** Create a symlink to the new documentation.
+
+        Syntax: ln -s WINDUP_RELEASE latest
+        Example: ln -s 2.0.0.Final latest
+
+** Add the modified "latest" directory to Git.
+
+        git add latest
+
+** Commit the change.
+
+        git commit -m 'Replace symlink for latest to point to 2.0.0.Final'
+
+** Push the changes to your own git repository, verify and issue a pull.
+
+        git push origin HEAD
+
+** Push the changes upstream
+
+        git push upstream gh-pages
+
+** View the documentation at http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html

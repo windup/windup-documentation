@@ -1,0 +1,52 @@
+[[Rules-XML-Rule-Action-Hint-Syntax]]
+=== XML Rule Action - Hint Syntax
+
+==== Summary 
+
+The `hint` element is used to provide a hint or inline information about how to migrate a section of code.
+
+The following is an example of a rule that creates a hint.
+
+_Example:_
+
+    <rule id="WebLogicWebServiceRules_8jyqn">
+        <when>
+            <javaclass references="weblogic.wsee.connection.transport.http.HttpTransportInfo.setUsername({*})" as="default">
+                <location>METHOD</location>
+            </javaclass>
+        </when>
+        <perform>
+            <iteration>
+                <hint message="Replace proprietary web-service authentication with JAX-WS standards." effort="0">
+                    <link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
+                </hint>
+            </iteration>
+        </perform>
+    </rule>
+
+NOTE: The XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
+
+==== Construct a Hint Element
+
+===== Hint Element:  Attributes
+
+message="MESSAGE":: A message describing the migration hint
++
+_Example:_
+
+    message=""
+    
+effort="NUMBER":: The level of effort assigned to this resource. 
++
+_Example:_
+
+    effort="2"
+
+===== Hint Element: Child Elements
+
+xref:: Identify or classify links to informational content. See See xref:Rules-XML-Rule-Action-Link-Syntax
+[XML Rule Action - Link Syntax]
++
+_Example:_
+
+    link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>

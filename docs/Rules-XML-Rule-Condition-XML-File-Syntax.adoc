@@ -1,0 +1,58 @@
+[[Rules-XML-Rule-Condition-XML-File-Syntax]]
+=== XML Rule Condition - XML File Syntax
+
+==== Summary 
+
+Use the `xmlfile` element to find information in XML files. The following is an example of a rule that tests for an `xmlfile`.
+
+    <rule>
+        <when>
+            <xmlfile matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']">
+                <namespace prefix="w" uri="http://java.sun.com/xml/ns/javaee"/>
+            </xmlfile>
+        </when>
+        <perform>
+            <hint title="Title for Hint from XML">
+                <message>Container Auth</message>
+            </hint>
+            <xslt description="Example XSLT Conversion" extension="-converted-example.xml" 
+                  template="/exampleconversion.xsl"/>
+        </perform>
+    </rule>
+
+==== Construct an XmlFile Element
+
+The XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
+
+===== XmlFile Element: Attributes
+
+matches="XPATH":: Match on an XML file condition.
+
+    Example: matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"
+    
+xpathResultMatch="XPATH_RESULT_STRING":: Return results that match the given regex. 
+
+    Example: xpathResultMatch=""
+
+as="VARIABLE_NAME":: A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+    Example: as="MyEjbRule"
+
+in="PATH_FILTER":: Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
+
+    Example: in="{*}File1"
+
+from="VARIABLE_NAME":: Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
+
+    Example: from="MyEjbRule"
+
+public-id="PUBLIC_ID":: The DTD public-id regex.
+
+    Example: public-id="public"
+
+
+===== XmlFile Element: Child Elements
+
+namespace:: The namespace to referenced in XML files. This element contains 2 attributes: The `prefix` and the `uri`.
+
+    Example: <namespace prefix="abc" uri="http://maven.apache.org/POM/4.0.0"/>

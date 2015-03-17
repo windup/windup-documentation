@@ -1,0 +1,48 @@
+[[Rules-XML-Rule-Action-Iteration-Syntax]]
+=== XML Rule Action - Iteration Syntax
+
+==== Summary 
+
+The `iteration` element specifies to iterate over all options.
+
+The following is an example of a rule that preforms an iteration.
+
+_Example:_
+
+   <rule id="XmlWebLogicRules_14wscy">
+        <when>
+            <xmlfile as="1" matches="/wl:weblogic-webservices | /wl9:weblogic-webservices">
+                <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
+                <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
+            </xmlfile>
+            <xmlfile as="2" matches="//wl:webservice-type | //wl9:webservice-type" from="1">
+                <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
+                <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
+            </xmlfile>
+        </when>
+        <perform>
+            <iteration over="1">
+                <classification classification="Weblogic Webservice Descriptor" effort="0"/>
+            </iteration>
+            <iteration over="2">
+                <hint message="Webservice Type" effort="0"/>
+            </iteration>
+        </perform>
+    </rule>
+
+NOTE: The XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
+
+==== Construct an Iteration Element
+
+===== Hint Element:  Attributes
+
+over="NUMBER":: A message describing the migration hint
++
+_Example:_
+
+    over="2"
+    
+
+===== Iteration Element: Child Elements
+
+Iteration child elements include `iteration`, `when`, `classification`, `hint`, `xslt`, `lineitem`, and `otherwise`.

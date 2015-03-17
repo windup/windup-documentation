@@ -1,4 +1,4 @@
-[[Rules-Create-a-Basic-XML-Rule]]
+[[Rules-Create-am-Basic-XML-Rule]]
 === Create a Basic XML Rule
 
 You can create a rule addon using Java or a rule using XML or Groovy. This topic describes how to create a rule using XML.
@@ -9,111 +9,49 @@ You can create a rule addon using Java or a rule using XML or Groovy. This topic
 * Before you begin, you may also want to be familiar with the following documentation:
 ** Windup rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
 ** The JavaDoc for the Windup API is located here: http://windup.github.io/windup/docs/javadoc/latest/
+** The XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
 
-NOTE:  Working examples of XML-based rules can be found in the Windup quickstarts GitHub repository located here: https://github.com/windup/windup-quickstarts
+==== File Naming Convention for XML Rules
 
-==== Create a Rule
+You must name the file containing an XML rule with the `.windup.xml` extension. Windup identifies files with this extension as XML-base rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
 
-The following is an example of an XML rule.
+==== Basic XML Rule Template
 
-        <?xml version="1.0"?>
-        <ruleset xmlns="http://windup.jboss.org/v1/xml"
-          id="customruleprovider">
-          <!-- This defaults to MIGRATION_RULES -->
-          <phase>
-            DISCOVERY
-          </phase>
+XML rules consist of _conditions_ and _actions_ and follow the familiar "if/then/else" construct:
+
+    when(condition)
+        perform(action)
+    otherwise
+        perform(action)
+
+The following is the basic syntax for XML rules.
+
+    <?xml version="1.0"?>
+    <ruleset xmlns="http://windup.jboss.org/v1/xml" id="XmlFileMappings">
+        <phase>
+            <!-- The phase in which to run the rules -->
+        </phase>
+        <rules>
+            <rule>
+                <when>
+                    <!-- Test a condition... -->
+                </when>
+                <perform>
+                    <!-- Perform this action when condition is satisfied -->
+                </perform>
+                <otherwise>
+                    <!-- Perform this action when condition is not satisfied -->
+                </otherwise>
+            </rule>
           <rules>
-            <rule>
-              <when>
-                <javaclass references="javax.servlet.http.HttpServletRequest">
-                  <location>METHOD_PARAMETER</location>
-                </javaclass>
-              </when>
-              <perform>
-                <hint>
-        	  <message>Message from XML Rule</message>
-                  <link href="http://example.com" description="Description from XML Hint Link" />
-                </hint>
-                <log message="test log message"/>
-              </perform>
-              <otherwise>
-                <!--  -->
-              </otherwise>
-            </rule>
-            <rule>
-              <when>
-                <xmlfile xpath="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']">
-                  <namespace prefix="w" uri="http://java.sun.com/xml/ns/javaee"/>
-                </xmlfile>
-              </when>
-              <perform>
-                <hint>
-        	  <message>Container Auth</message>
-                </hint>
-                <xslt description="Example XSLT Conversion" extension="-converted-example.xml" 
-                         xsltFile="/exampleconversion.xsl"/>
-                <log message="test log message"/>
-              </perform>
-              <otherwise>
-                <!--  -->
-              </otherwise>
-            </rule>
-          </rules>
         </ruleset>
 
-===== Create the XML Rule
+==== Create the Rule When Condition
 
-**Note:** Windup only analyzes XML files with names ending in `.windup.xml`. Be sure to name XML-based rules using this naming convention!
+The syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content and is described in more detail here: xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
 
-The XML rule consists of the following level elements:
+==== Create the Rule Perform Action
 
-* **<ruleset>**: This element defines this as a Windup rule.
-* **<phase>**: This element specifies when the ruleset should execute. See xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecyle] for more information about rule phases.
-* **<rules>**: element contains the individual rules.
-** **<rule>**: This element is a child of the **rules** element. One or more rules can be defined for a ruleset. Each `rule` contains the following elements.
-*** **<when>**: This element defines the condition to match on.
-**** **<javaclass references="CLASS_NAME">**
-***** **<location>**: The location where the reference was found in a Java source file. See the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[Enum TypeReferenceLocation] Javadoc for valid values.
-*** **<perform>**: This element is invoked when the condition is met.
-**** **<hint>**: This child element of **perform** is used to create a `hint`
-***** **<message>**: 
-***** **<link>**:
-**** **<xslt>**: This specifies how to transform the the specified XML file
-**** **<log>**: This child element of **perform** is used to log a message. It takes the attribute **message** to define the text message.
-*** The **<otherwise>** element is invoked when the condition is not met.
-
-==== Add the Rule to Windup
-
-A Windup rule is installed simply by copying the rule to the appropriate Windup folder. Windup scans for rules in the following locations:
+Operations allowed in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The syntax is described in detail here: xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
 
 
-WINDUP_HOME/rules/:: This is the Windup folder where you run the Windup executable. See xref:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable] for details.
-
-${user.home}/.windup/rules/:: This folder is created by Windup the first time you execute Windup.
-+
---------
-For Linux or Mac:   ~/.windup/rules/
-For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\USER_NAME\.windup\rules\"
---------
-
-==== Test the XML Rule
-
-NOTE: If you have not started Windup, follow the instructions to xref:Execute-Windup[Execute Windup].
-
-Test the XML rule against your application file by running the `windup-migrate-app` command in the Windup console prompt. 
-
-The command uses this syntax:
-
---------
-windup-migrate-app [--sourceMode true] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
---------
-
-You should see the following result:
-
---------
-***SUCCESS*** Windup report created: QUICKSTART_HOME/windup-reports-java/index.html
---------
-For more information and examples of how to run Windup, see: xref:Execute-Windup[Execute Windup] 
-
- 

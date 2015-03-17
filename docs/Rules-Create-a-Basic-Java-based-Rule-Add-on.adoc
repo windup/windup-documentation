@@ -132,7 +132,6 @@ The following are examples of some dependencies you may need for your rule add-o
     <classifier>forge-addon</classifier>
     <scope>test</scope>
 </dependency>
-
 ----
 
 4. Add the `<plugins>` section to make it a Forge add-on.
@@ -172,7 +171,9 @@ The following are examples of some dependencies you may need for your rule add-o
 
 ===== Create the Java RuleProvider
 
-1. Within your Maven project, create a Java class that extends the `WindupRuleProvider` class. It is suggested that you end the name of the class with `RuleProvider`. For example:
+. Add `beans.xml` file to `META-INF/` dir in resources - typically, `$project-dir/src/main/resources/META-INF/beans.xml`. This file can be empty. It tells CDI to scan your addon for CDI beans.
+
+. Within your Maven project, create a Java class that extends the `WindupRuleProvider` class. It is suggested that you end the name of the class with `RuleProvider`. For example:
 +
 [source,xml]
 ----
@@ -181,7 +182,7 @@ public class MyCustomRuleProvider extends WindupRuleProvider
 }
 ----
 
-2. If the rule provider must run in a phase other than the default `MIGRATION_RULES` phase, override the phase using the `getPhase()` method. For example, you may want the rule provider to perform a task during the initial *DISCOVERY* phase, for example, to ignore files with a specific name or extension.
+. If the rule provider must run in a phase other than the default `MIGRATION_RULES` phase, override the phase using the `getPhase()` method. For example, you may want the rule provider to perform a task during the initial *DISCOVERY* phase, for example, to ignore files with a specific name or extension.
 +
 [source,java]
 ----
@@ -192,7 +193,7 @@ public class MyCustomRuleProvider extends WindupRuleProvider
 ----
 For more information about rule phases, see xref:Rules-Rule-Execution-Lifecycle[Rules Execution Lifecycles].
 
-3. To control the order in which the rule is executed, implement the `getExecuteBefore()` or `getExecuteAfter()` method.
+. To control the order in which the rule is executed, implement the `getExecuteBefore()` or `getExecuteAfter()` method.
 +
 [source,java]
 ----
@@ -216,7 +217,7 @@ public List<Class<? extends WindupRuleProvider>> getExecuteAfter()
 }
 ----
 
-4. Finally, add the rule or rules to the rule provider. 
+. Finally, add the rule or rules to the rule provider. 
 
 * High-level Conditions and Operations
 +

@@ -1,11 +1,13 @@
 [[Install-and-Configure-Maven]]
 === Install and Configure Maven
 
+If you plan to contribute to the core code base or create Java-based rule addons, you must first install and configure Maven to build Windup from source.
+
 ==== Download and Install Maven
 
 If you plan to use Eclipse Luna (4.4) to build Windup, you can skip this
-step. This version of Eclipse embeds Maven 3.2.1 so you do not need to
-install it separately. Skip to the section entitled xref:configure-maven-to-build-windup[Configure Maven to Build Windup].
+step and go directly to the section entitled xref:configure-maven-to-build-windup[Configure Maven to Build Windup]. This version of Eclipse embeds Maven 3.2.1 so you do not need to
+install it separately.
 
 If you plan to run Maven using the command line or plan to use Red Hat
 JBoss Developer Studio 7.1.1 or an older version of Eclipse, you must
@@ -80,5 +82,8 @@ ending `</profiles>` element.
 element to make the profile active.
 +
 ----------------------------------------------------------
-    <activeProfile>jboss-nexus-repository</activeProfile> 
+<activeProfile>jboss-nexus-repository</activeProfile> 
 ----------------------------------------------------------
+
+You are now configured to build Windup.
+ 

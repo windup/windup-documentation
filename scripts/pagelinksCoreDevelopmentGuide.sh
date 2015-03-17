@@ -12,7 +12,7 @@ grep 'link:[A-Z]' `find . -name 'Get-Involved.adoc'`
 grep 'link:[A-Z]' `find . -name 'Dev-Windup-Project-Information.adoc'`
 grep 'link:[A-Z]' `find . -name 'Report-Issues-with-Windup.adoc'`
 grep 'link:[A-Z]' `find . -name 'About-the-WINDUP_HOME-Variable.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Development-Guidelines.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Development-Guidelines-and-Conventions.adoc'`
 grep 'link:[A-Z]' `find . -name 'Dev-Submit-Code-Updates-to-the-Windup-Project.adoc'`
 grep 'link:[A-Z]' `find . -name 'Windup-Architectural-Components.adoc'`
 grep 'link:[A-Z]' `find . -name 'Dev-Windup-Project-Structure.adoc'`

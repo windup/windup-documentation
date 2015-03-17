@@ -75,7 +75,7 @@ Where:
 +
 *OUTPUT_REPORT_DIRECTORY* is the fully qualified path to the folder that will contain the the report information produced by Windup.
 +
-NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists, your are prompted to overwrite the contents. If you respond "y", it is deleted and recreated by Windup, so be careful not to specify an output directory that contains important information!
+NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists, you are prompted to overwrite the contents. If you respond "y", it is deleted and recreated by Windup, so be careful not to specify an output directory that contains important information!
 
 +
 *PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* are the packages to be evaluated by Windup.

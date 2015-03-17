@@ -106,7 +106,7 @@ project directory, then click `OK`.
 or dependency errors and click `Finish`. If you get a dialog titled
 _Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
 . In the Project Explorer tab, find the `windup_parent` project in the
-list, right-mouse, and choose `Run As` --> `Maven install`.
+list, right-click, and choose `Run As` --> `Maven install`.
 
 ==== Extract the Windup Distribution Source File
 

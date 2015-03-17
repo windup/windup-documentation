@@ -19,3 +19,11 @@ See xref:Known-Issues[Known Issues] and https://issues.jboss.org/browse/WINDUP-1
 
 Configuring dependencies in a Forge-based project can be a little tricky.
 See xref:Dev-Dependencies[Dependencies] for some hints.
+
+
+-----
+Caused by: java.lang.IllegalArgumentException: Type value for model 'org.jboss.windup.rules.files.model.FileReferenceModel' is already registered with model org.jboss.windup.rules.files.model.FileReferenceModel
+-----
+
+This means that the model class is loaded twice. I.e. the module containing it is loaded twice. Or, in tests, you may be (accidentally) adding the class to the deployment.
+This may especially happen after Maven coordinates of some module are changed.

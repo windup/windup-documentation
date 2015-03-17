@@ -1,0 +1,176 @@
+[[Rules-XML-Rule-When-Condition-Syntax]]
+=== XML Rule - When Condition Syntax
+
+Conditions allowed in the `when` portion of a rule must extend http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperaton] and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule addons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
+
+The complete XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
+
+The following sections describe the more common XML `when` rule conditions. 
+
+* xref:javaclass-syntax[javaclass Syntax]
+* xref:xmlfile-syntax[xmlfile Syntax]
+* xref:project-syntax[project Syntax]
+* xref:filecontent-syntax[filecontent Syntax]
+
+[[javaclass-syntax]]
+==== javaclass Syntax
+
+===== Summary 
+
+Use the `javaclass` element to find imports, methods, variable declarations, annotations, class implementations, and other items related to Java classes. For a better understanding of the `javaclass` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/condition/JavaClass.html[JavaClass] class.
+
+The following is an example of a rule that tests for a `javaclass`.
+
+    <rule>
+        <when>
+            <javaclass references="org.jboss.ws.api.annotation.WebContext" in="org/jboss/{*}" as="webcontextclasses">
+                <location>IMPORT</location>
+                <location>TYPE</location>
+            </javaclass>
+        </when>
+        <perform>
+            <hint message="WebContext is deprecated." effort="0"/>
+        </perform>
+    </rule>
+
+===== Construct a javaclass Element
+
+====== javaclass Element Attributes
+
+references="CLASS_NAME":: The package or class name to match on. Wildcard characters can be used.
+
+    Example: references="org.apache.commons.{*}"
+    
+as="VARIABLE_NAME":: A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+    Example: as="MyEjbRule"
+
+in="PATH_FILTER":: Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
+
+    Example: in="{*}File1"
+
+from="VARIABLE_NAME":: Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
+
+    Example: from="MyEjbRule"
+
+====== JavaClass Element Child Elements
+
+location:: The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[TypeReferenceLocation].
+
+    Example: <location>IMPORT</location>
+
+
+[[xmlfile-syntax]]
+==== xmlfile Syntax
+
+===== Summary 
+
+Use the `xmlfile` element to find information in XML files. For a better understanding of the `xmlfile` condition, see the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/condition/XmlFile.html[XmlFile] JavaDoc.
+
+The following is an example of a rule that tests for an `xmlfile`.
+
+    <rule>
+        <when>
+            <xmlfile matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']">
+                <namespace prefix="w" uri="http://java.sun.com/xml/ns/javaee"/>
+            </xmlfile>
+        </when>
+        <perform>
+            <hint title="Title for Hint from XML">
+                <message>Container Auth</message>
+            </hint>
+            <xslt description="Example XSLT Conversion" extension="-converted-example.xml" 
+                  template="/exampleconversion.xsl"/>
+        </perform>
+    </rule>
+
+===== Construct an xmlfile Element
+
+
+====== xmlfile Element: Attributes
+
+matches="XPATH":: Match on an XML file condition.
+
+    Example: matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"
+    
+xpathResultMatch="XPATH_RESULT_STRING":: Return results that match the given regex. 
+
+    Example: xpathResultMatch=""
+
+as="VARIABLE_NAME":: A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+    Example: as="MyEjbRule"
+
+in="PATH_FILTER":: Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
+
+    Example: in="{*}File1"
+
+from="VARIABLE_NAME":: Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
+
+    Example: from="MyEjbRule"
+
+public-id="PUBLIC_ID":: The DTD public-id regex.
+
+    Example: public-id="public"
+
+
+====== xmlfile Element: Child Elements
+
+namespace:: The namespace to referenced in XML files. This element contains 2 attributes: The `prefix` and the `uri`.
+
+    Example: <namespace prefix="abc" uri="http://maven.apache.org/POM/4.0.0"/>
+
+[[project-syntax]]
+==== project Syntax
+
+===== Summary 
+
+Use the `project` element to find information in project files. For a better understanding of the `project` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] class.
+
+The following is an example of a rule that tests for an `xmlfile`.
+
+    <rule>
+        <when>
+            <project>
+                <artifact groupId="junit" artifactId="junit" from="MyEjbRule" to="???"/>
+            </project>
+        </when>
+        <perform>
+            <hint title="Title for Hint for Project">
+                <message>Descriptive message</message>
+            </hint>
+        </perform>
+    </rule>
+
+===== Construct a project Element
+
+====== project Element Attributes
+
+The `project` element does not have any attributes.
+
+====== project Element Child Elements
+
+artifact:: The namespace to referenced in XML files. This element contains the following attributes: 
+
+* groupId="PROJECT_GROUP_ID"
++
+Match on the project `<groupId>`
+
+* artifactId="PROJECT_ARTIFACT_ID"
+Match on the project `<artifactId>`
+
+* from="VARIABLE_NAME"
++
+Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. ???
+
+* to = "???"
+
+
+[[filecontent-syntax]]
+==== filecontent Syntax
+
+Use the `filecontent` element to find information in file content.For a better understanding of the `filecontent` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/FileContent.html[FileContent] class.
+TBD : .Draft
+
+Use the `filecontent` element to test for content within files. The following is an example of a rule that tests for `filecontent`.
+

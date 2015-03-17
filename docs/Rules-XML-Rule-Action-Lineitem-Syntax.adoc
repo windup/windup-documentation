@@ -1,0 +1,37 @@
+[[Rules-XML-Rule-Action-Lineitem-Syntax]]
+=== XML Rule Action - Lineitem Syntax
+
+==== Summary 
+
+The `lineitem` element is used to provide line item information about a hint on the project or application overview page. 
+
+The following is an example of a rule that creates a lineitem message.
+
+_Example:_
+
+    <rule>
+        <when>
+            <javaclass references="weblogic.servlet.annotation.WLServlet" as="default">
+                <location>ANNOTATION</location>
+            </javaclass>
+        </when>
+        <perform>
+            <hint message="Replace the proprietary WebLogic @WLServlet annotation with the Java EE 6 standard @WebServlet annotation." effort="1">
+                <link href="https://access.redhat.com/articles/1249423" description="Migrate WebLogic Proprietary Servlet Annotations" />
+                <lineitem message="Proprietary WebLogic @WLServlet annotation found in file."/>
+            </hint>
+        </perform>
+    </rule>
+
+NOTE: The XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
+
+==== Construct a Lineitem Element
+
+===== Hint Element:  Attributes
+
+message="MESSAGE":: A lineitem message
++
+_Example:_
+
+    message="Proprietary code found."
+    

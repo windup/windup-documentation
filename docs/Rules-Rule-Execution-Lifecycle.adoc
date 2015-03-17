@@ -3,7 +3,7 @@
 
 ==== Rule Lifecycle
 
-Windup executes each rule in sequential order. The following
+Windup executes each rule in a sequential order. The following
 sections describe the phases of rule execution and how rules may specify
 that one or more other rules must be executed before or after they are
 run.

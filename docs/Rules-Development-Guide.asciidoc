@@ -4,7 +4,7 @@
 This guide is for engineers, consultants, or others who plan to create
 rules for Windup 2.0.
 
-==== Overview
+==== General Windup Information
 
 * link:What-is-Windup[What is Windup?]
 * link:Features-of-Windup-2.0[Features of Windup 2.0]
@@ -12,7 +12,7 @@ rules for Windup 2.0.
 * link:Report-Issues-with-Windup[Report Issues with Windup]
 * link:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable]
 
-==== Get Started
+==== Get Started with Windup
 
 * link:Install-Windup[Install Windup]
 * link:Execute-Windup[Execute Windup]
@@ -30,6 +30,8 @@ If you plan to create Java-based rule addons, you must also do the following.
 * link:Windup-Processing-Overview[Windup Processing Overview]
 * link:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle]
 * link:Rules-Rule-Story-Points[Rule Story Points]
+* link:Rules-Difference-Between-XML-based-and-Java-based-Rules[
+Difference Between XML-based and Java-based Rules]
 
 ==== Create and Test Java Rule Addons
 
@@ -41,6 +43,7 @@ If you plan to create Java-based rule addons, you must also do the following.
 ==== Create and Test XML Rules
 
 * link:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule]
+* link:Rules-Test-a-Basic-XML-Rule-in-Windup[Test an XML Rule in Windup]
 
 ==== Review the Report
 

@@ -1,0 +1,47 @@
+[[Rules-XML-Rule-Condition-Project-Syntax]]
+=== XML Rule Condition - Project Syntax
+
+==== Summary 
+
+Use the `project` element to find information in project files. The following is an example of a rule that tests for an `xmlfile`.
+
+    <rule>
+        <when>
+            <project>
+                <artifact groupId="junit" artifactId="junit" from="MyEjbRule" to="???"/>
+            </project>
+        </when>
+        <perform>
+            <hint title="Title for Hint for Project">
+                <message>Descriptive message</message>
+            </hint>
+        </perform>
+    </rule>
+
+==== Construct a Project Element
+
+The XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
+
+===== Project Element Attributes
+
+The `project` element does not have any attributes.
+
+===== Project Element Child Elements
+
+artifact:: The namespace to referenced in XML files. This element contains the following attributes: 
+
+* groupId="PROJECT_GROUP_ID"
++
+Match on the project `<groupId>`
+
+* artifactId="PROJECT_ARTIFACT_ID"
+Match on the project `<artifactId>`
+
+* from="VARIABLE_NAME"
++
+Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. ???
+
+* to = "???"
+
+
+

@@ -12,6 +12,9 @@ This covers the specific situations when the Windup core developer needs to look
 [source,java]
 --------
 AddonRegistry.getServices(MyServiceInterface.class)
+
+// To get the AddonRegistry, use Windup's FurnaceHolder:
+FurnaceHolder.getFurnace().getAddonRegistry().getServices(MyServiceInterface.class);
 --------
 or
 [source,java]
@@ -26,6 +29,19 @@ If you want something from the current addon, you need to @Inject its ServiceReg
 
 Depends, if you are in a Furnace Service, then yes, it will use the
 current code's addon's classloader.
+
+==== Reading annotations from classes
+
+Since classes can be proxied by Forge/Furnace, it's safer to read annotations using `Annotations API`:
+
+    Rules annotation = Annotations.getAnnotation(this.getClass(), Rules.class);
+
+Supposedly, Furnace proxies should also be able to handle such call:
+
+    Rules annotation1 = ((FurnaceProxy) proxy).getOriginalClass().getAnnotation(Rules.class);
+
+TODO: Find out how exactly this is done.
+
 
 ==== How do I know if I am in a Furnace service?
 

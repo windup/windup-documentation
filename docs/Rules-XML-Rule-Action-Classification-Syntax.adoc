@@ -1,0 +1,53 @@
+[[Rules-XML-Rule-Action-Classification]]
+=== XML Rule Action - Classification Syntax
+
+==== Summary 
+
+The `classification` element is used to identify or classify application resources. It provides a level of effort and can also provide links to additional information about how to migrate this resource classification.
+
+The following is an example of a rule that classifies a resource as a WebLogic EAR application deployment descriptor file.
+
+_Example:_
+
+    <rule id="XmlWebLogicRules_10vvyf">
+        <when>
+            <xmlfile as="default" matches="/*[local-name()='weblogic-application']">
+            </xmlfile>
+        </when>
+        <perform>
+            <iteration>
+                <classification classification="Weblogic EAR Application Descriptor" effort="3"/>
+            </iteration>
+        </perform>
+    </rule>
+
+
+==== Construct a Classification Element
+
+The XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
+
+===== Classification Element Attributes
+
+classification="STRING":: Classify the resource as the specified string.
++
+_Example:_
+
+    classification="JBoss Seam Components"
+    
+effort="NUMBER":: The level of effort assigned to this resource. 
++
+_Example:_
+
+    effort="2"
+
+===== Classification Element Child Elements
+
+xref:: Provides a link URI and text description for additional information.
++
+_Example:_
+
+   <classification classification="Websphere Startup Service" effort="4">
+       <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Singleton.html" description="EJB3.1 Singleton Bean"/>
+       <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html" description="EJB3.1 Startup Bean"/>
+    </classification>
+

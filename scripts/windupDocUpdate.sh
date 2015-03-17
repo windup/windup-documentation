@@ -96,6 +96,9 @@ cp $1/Rules-Create-a-Basic-Java-based-Rule-Add-on.asciidoc docs/Rules-Create-a-B
 cp $1/Rules-Create-an-Advanced-Ruleset.asciidoc docs/Rules-Create-an-Advanced-Ruleset.adoc
 ## Create and Test XML Rules
 cp $1/Rules-Create-a-Basic-XML-Rule.asciidoc docs/Rules-Create-a-Basic-XML-Rule.adoc
+cp $1/Rules-XML-Rule-When-Condition-Syntax.asciidoc docs/Rules-XML-Rule-When-Condition-Syntax.adoc
+cp $1/Rules-XML-Rule-Perform-Action-Syntax.asciidoc docs/Rules-XML-Rule-Perform-Action-Syntax.adoc
+cp $1/Rules-Test-a-Basic-XML-Rule-in-Windup.asciidoc docs/Rules-Test-a-Basic-XML-Rule-in-Windup.adoc
 ##  Debugging and Troubleshooting
 cp $1/Dev-Debugging-and-Profiling.asciidoc docs/Dev-Debugging-and-Profiling.adoc
 cp $1/Dev-Troubleshoot-Windup-Issues.asciidoc docs/Dev-Troubleshoot-Windup-Issues.adoc
@@ -131,7 +134,7 @@ cp $1/Report-Issues-with-Windup.asciidoc docs/Report-Issues-with-Windup.adoc
 cp $1/About-the-WINDUP_HOME-Variable.asciidoc docs/About-the-WINDUP_HOME-Variable.adoc
 
 ## Developer Contributing Information
-cp $1/Dev-Development-Guidelines.asciidoc docs/Dev-Development-Guidelines.adoc
+cp $1/Dev-Development-Guidelines-and-Conventions.asciidoc docs/Dev-Development-Guidelines-and-Conventions.adoc
 cp $1/Dev-Submit-Code-Updates-to-the-Windup-Project.asciidoc docs/Dev-Submit-Code-Updates-to-the-Windup-Project.adoc
 
 ## Understand the Windup Architecture and Structure
@@ -205,7 +208,7 @@ cp $1/Ruleset-Reporting.asciidoc docs/Ruleset-Reporting.adoc
 cp $1/Ruleset-XML.asciidoc docs/Ruleset-XML.adoc
 cp $1/Rules-Windup-Models.asciidoc docs/Rules-Windup-Models.adoc
 cp $1/Rules-Create-Java-Queries.asciidoc docs/Rules-Create-Java-Queries.adoc
-cp $1/Rules-Rules-Metadata.asciidoc docs/Rules-Rules-Metadata.adoc
+cp $1/Rule-Metadata.asciidoc docs/Rule-Metadata.adoc
 cp $1/Rules-Rules-Operations.asciidoc docs/Rules-Rules-Operations.adoc
 cp $1/Rules-Ops-Reporting-Classification.asciidoc docs/Rules-Ops-Reporting-Classification.adoc
 cp $1/Rules-Ops-Reporting-Hint.asciidoc docs/Rules-Ops-Reporting-Hint.adoc

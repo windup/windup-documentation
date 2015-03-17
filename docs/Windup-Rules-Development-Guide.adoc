@@ -1,14 +1,18 @@
 = Windup Rules Development Guide
 
+:imagesdir: images
+:includedir: .
+
 :toc:
 :toclevels: 4
-
+:numbered:
 
 == Overview
 
 This guide is for engineers, consultants, and others who plan to create 
 custom rules for Windup 2.0.
 
+// include::{includedir}/What-is-Windup.adoc[tabsize=4]
 include::What-is-Windup.adoc[tabsize=4]
 
 include::Features-of-Windup-2.0.adoc[tabsize=4]
@@ -30,13 +34,6 @@ include::Execute-Windup.adoc[tabsize=4]
 
 include::Review-the-Report.adoc[tabsize=4]
 
-
-== Configure Your System for Java-based Rules 
-
-If you plan to create Java-based rule addons, you must also do the following.
-
-include::Install-and-Configure-Maven.adoc[tabsize=4]
-
 include::http://windup.github.io/windup/docs/javadoc/latest/[Windup API JavaDoc reference]: The JavaDoc can serve as a reference for creating Java-based rule addons.
 
 == Understand the Rule Processing
@@ -47,6 +44,7 @@ include::Rules-Rule-Story-Points.adoc[tabsize=4]
 
 == Create and Test Java Rule Addons
 
+include::Install-and-Configure-Maven.adoc[tabsize=4]
 include::Rules-Java-based-Rule-Structure.adoc[tabsize=4]
 include::Rules-Basic-Rule-Execution-Flow-Patterns.adoc[tabsize=4]
 include::Rules-Create-a-Basic-Java-based-Rule-Add-on.adoc[tabsize=4]
@@ -55,6 +53,9 @@ include::Rules-Create-an-Advanced-Ruleset.adoc[tabsize=4]
 == Create and Test XML Rules
 
 include::Rules-Create-a-Basic-XML-Rule.adoc[tabsize=4]
+include::Rules-XML-Rule-When-Condition-Syntax.adoc[tabsize=4]
+include::Rules-XML-Rule-Perform-Action-Syntax.adoc[tabsize=4]
+include::Rules-Test-a-Basic-XML-Rule-in-Windup.adoc[tabsize=4]
 
 == Review the Report
 
