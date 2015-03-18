@@ -1,8 +1,5 @@
 = Windup Rules Development Guide
 
-:imagesdir: images
-:includedir: .
-
 :toc:
 :toclevels: 4
 :numbered:
@@ -12,7 +9,6 @@
 This guide is for engineers, consultants, and others who plan to create 
 custom rules for Windup 2.0.
 
-// include::{includedir}/What-is-Windup.adoc[tabsize=4]
 include::What-is-Windup.adoc[tabsize=4]
 
 include::Features-of-Windup-2.0.adoc[tabsize=4]

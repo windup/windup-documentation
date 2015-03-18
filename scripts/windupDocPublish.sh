@@ -50,6 +50,7 @@ git add docs
 git commit -m "Update the docs for release $3"
 
 echo "The following are manual steps: "
+echo " Navigate to the local windup source GitHub directory and issue the following command.
 echo "    git push origin HEAD"
 echo "    (issue a pull and verify)"
 echo "    git push upstream gh-pages"
