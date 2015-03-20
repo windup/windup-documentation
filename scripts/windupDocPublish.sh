@@ -50,11 +50,20 @@ git add docs
 git commit -m "Update the docs for release $3"
 
 echo "The following are manual steps: "
-echo " Navigate to the local windup source GitHub directory and issue the following command.
-echo "    git push origin HEAD"
-echo "    (issue a pull and verify)"
-echo "    git push upstream gh-pages"
-echo "    firefox http://windup.github.io/windup/docs/$WINDUP_VERSION/html/WindupUserGuide.html"
+echo "    Navigate to the local windup source GitHub directory."
+echo "    Issue the following commands to push the doc upstream."
+echo "        git push origin HEAD"
+echo "        (issue a pull and verify)"
+echo "        git push upstream gh-pages"
+echo "        firefox http://windup.github.io/windup/docs/$WINDUP_VERSION/html/WindupUserGuide.html"
+echo "    Issue the following commands to update the latest link."
+echo "        unlink latest"
+echo "        ln -s WINDUP_RELEASE latest"
+echo "        git add latest"
+echo "        git commit -m 'Replace symlink for latest to point to WINDUP_RELEASE'"
+echo "        git push origin HEAD"
+echo "        git push upstream gh-pages"
+echo "        firefox http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html"
 
 # git push origin HEAD
 ## issue a pull and verify
