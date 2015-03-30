@@ -1,15 +1,15 @@
 [[Rules-Rule-Story-Points]]
 === Rule Story Points
-.DRAFT
-
 
 ==== What are Story Points?
 
-Story points are an abstract metric used in Scrum methodology to estimate the level of effort for various tasks. They are based on a http://scrummethodology.com/scrum-effort-estimation-and-story-points/[modified Fibonacci sequence]. In a similar manner, Windup uses story points to express the level of effort needed to migrate particular application constructs, and in a sum, the application as a whole.
+Story points are an abstract metric commonly used in Scrum Agile software development methodology to estimate the level of effort needed to implement a feature or change. They are based on a http://scrummethodology.com/scrum-effort-estimation-and-story-points/[modified Fibonacci sequence]. 
 
-==== How to Estimate Story Points in a Rule
+In a similar manner, Windup uses story points to express the level of effort needed to migrate particular application constructs, and in a sum, the application as a whole. It does not necessarily translate to man-hours, but the value should be consistent across tasks.
 
-Estimating story points for a rule can be tricky. The following are general guidelines or suggestions to use when estimating the level of effort required for a rule.
+==== How Story Points are Estimated in Rules
+
+Estimating story points for a rule can be tricky. The following are the general guidelines Windup uses when estimating the level of effort required for a rule.
 
 [cols="3*", options="header"] 
 |===
@@ -23,7 +23,7 @@ Estimating story points for a rule can be tricky. The following are general guid
 
 |Mapped
 | 1- 2 per file
-|There is a standard mapping algorithm to port the code or file. The number of story points required is small, but dependent on the number of files to port.
+|There is a standard mapping algorithm to port the code or file. The number of story points required is small, but is dependent on the number of files to port.
 
 |Custom
 |5 - 20 per change or component

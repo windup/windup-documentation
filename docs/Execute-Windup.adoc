@@ -5,9 +5,9 @@
 
 Before you begin, you must gather the following information.
 
-. Windup requires that you specify the fully qualified path of the application archive or folder you plan to migrate. This is passed using the `--input` argument on the command line.
+. The fully qualified path of the application archive or folder you plan to migrate. 
+. The fully qualified path to a folder that will contain the resulting report information.
 
-. You also specify the fully qualified path to a folder that will contain the resulting report information. This path is passed using the `--output` argument on the command line.
 * If the folder does not exist, it is created by Windup. 
 * If the folder exists, you are prompted with the message:
 
@@ -54,9 +54,28 @@ JBoss Windup, version [ 2.0.0-VERSION ] - JBoss, by Red Hat, Inc. [ http://windu
 [windup-distribution-2.0.0-VERSION]$ 
 ---------------------------------------------------------------------------
 
-==== Run the `windup-migrate-app` Command
+==== Run Windup
 
-. The syntax to evaluate an application using the Windup tool requires that you specify the location of the input archive or source code folder, the location of a folder to contain the output reporting information, and the application packages to evaluate. To evaluate an application archive, use the following syntax:
+. The command to run Windup is `windup-migrate-app`.
+
+. The following is a list of the most commonly used command line arguments.
+
++
+--input *INPUT_ARCHIVE_OR_FOLDER*:: This is the fully qualified application archive or source path.
++
+--source-mode true (optional):: This argument is optional and is only required if the application to be evaluated contains source files rather than compiled binaries. The default value is `false`.
++
+--output *OUTPUT_REPORT_DIRECTORY*:: The fully qualified path to the folder that will contain the the report information produced by Windup.
++
+NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists and you do not specify the `--overwrite` argument, you are prompted to overwrite the contents. If you respond "y", it is deleted and recreated by Windup, so be careful not to specify an output directory that contains important information!
++
+--overwrite (optional):: Specify this optional argument only if you are certain you want to force Windup to delete the existing *OUTPUT_REPORT_DIRECTORY*. The default value is `false`.
++
+--packages *PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* (optional):: This is a comma-delimited list of the packages to be evaluated by Windup.
++
+--excludePackages *PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* (optional):: This is a comma-delimited list of the packages to be excluded by Windup.
+
+. To evaluate an application archive, use the following syntax:
 +
 ---------------------------------------------------------------------------
 windup-migrate-app --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
@@ -68,20 +87,7 @@ To run Windup against application source code, you must add the `--sourceMode tr
 windup-migrate-app --sourceMode true --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
 ---------------------------------------------------------------------------
 +
-Where:
-
-+
-*INPUT_ARCHIVE_OR_FOLDER* is the fully qualified application archive or source path
-+
-*OUTPUT_REPORT_DIRECTORY* is the fully qualified path to the folder that will contain the the report information produced by Windup.
-+
-NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists, you are prompted to overwrite the contents. If you respond "y", it is deleted and recreated by Windup, so be careful not to specify an output directory that contains important information!
-
-+
-*PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* are the packages to be evaluated by Windup.
-
-+
-See xref:windup-command-examples[Windup Command Examples] below for concrete examples of Windup commands using source code directories and archives located in the Windup GitHub repository.
+See xref:windup-command-examples[Windup Command Examples] below for concrete examples of commands that use source code directories and archives located in the Windup GitHub repository.
 
 . You should see the following result upon completion of the command:
 +
@@ -121,7 +127,7 @@ For Windows:   > bin\windup.bat --evaluate "windup-migrate-app --input INPUT_ARC
 
 ==== Windup Help
 
-To see the list of available parameters for the `windup-migrate-app` command, execute the following command in the Windup prompt:
+To see the complete list of available arguments for the `windup-migrate-app` command, execute the following command in the Windup prompt:
 
     man windup-migrate-app
 
@@ -155,5 +161,5 @@ For Windows: > bin\windup.bat --evaluate "windup-migrate-app --input \windup-sou
 
 For more concrete examples, see the Windup quickstarts located on GitHub here: https://github.com/windup/windup-quickstarts. If you prefer, you can download the https://github.com/windup/windup-quickstarts/releases/tag/2.0.0.Alpha1[2.0.0.Alpha1 release] ZIP or TAR  distribution of the quickstarts.
 
-The quickstarts provide examples of Java-based and XML-based rule addons you can run and test using Windup. The README instructions provide a step-by-step guide to run the quickstart example. You can also look through the code examples and use them as a starting point for creating your own rule addons.
+The quickstarts provide examples of Java-based and XML-based rules you can run and test using Windup. The README instructions provide a step-by-step guide to run the quickstart example. You can also look through the code examples and use them as a starting point for creating your own rules.
 

@@ -12,11 +12,11 @@ discussion._
 The following is the typical structure of Maven `add-on` modules.
 
 -------------------------------------------
-myaddon-parent
-+--- myaddon - jar, classifier: forge-addon
-+--- myaddon-api - jar
-+--- myaddon-impl - jar
-+--- myaddon-tests - jar
+my-add-on-parent
++--- my-add-on - jar, classifier: forge-addon
++--- my-add-on-api - jar
++--- my-add-on-impl - jar
++--- my-add-on-tests - jar
 -------------------------------------------
 
 The `add-on` POM file can declare dependencies on other forge-addons. 
@@ -89,14 +89,14 @@ dependencies, and these are treated as normal.
 
 [NOTE]
 ==========================
-Add-on depends on API , scope `compile` > Addon
+Add-on depends on API , scope `compile` > Add-on
 depends on Impl , scope `compile` with `<optional>true</optional>` -
 prevents exporting this dependency to consumers of the add-on.
 ==========================
 
 ==== Test dependencies
 
-For test dependencies on add-ons: Any addon/sub-part requiring an addon
+For test dependencies on add-ons: Any add-on/sub-part requiring an add-on
 for testing purposes should use `<scope>test</scope>`.
 
 [source,xml]

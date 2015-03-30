@@ -1,0 +1,158 @@
+[[Rules-Difference-Between-XML-based-and-Java-based-Rules]]
+=== Difference Between XML-based and Java-based Rules
+
+==== First of all, to prevent confusion: 
+
+1. Rules can be _written_ using XML or the Java API. We call them XML-based and Java-based Rules.
+2. Independent of the syntax, the rules may _inspect_ (classify) XML or Java code.
+
+See the examples below.
+
+
+==== Which one to choose?
+
+The XML rules provide a quick, simple way to create rules to analyze Java and XML files. Java rules provide the ability to create very complex rules. 
+
+* If you simply need to highlight a specific section of Java code or XML file content and provide hints for it, it is recommended that you create the rule using XML.
+* If you need to create a new custom report, you need to create the reporting rules using Java.
+* If you need to extend functionality beyond what the XML rules provide, you need to create the rule using Java.
+
+==== Pros and cons - XML
+Pros:
+
+* XML rules are fairly easy to write and require less code.
+* You do not need to configure Maven to build from source because there is no need for compilation of 
+XML rules.
+* Deployment is simple. You simply drop the XML rule into the appropriate path  and Windup automatically scans the new rule.
+
+Cons:
+
+* XML rules only support a simple subset of conditions and operations.
+* XML rules do not provide for direct custom graph data manipulation.
+* XML rules do not support the ability to create custom reports.
+
+==== Pros and Cons - Java
+Pros:
+
+* Java rule add-ons allow you to write custom rules and provide a lot of flexibility.
+* You can set breakpoints and test Java rule add-ons using a debugger.
+* IDEs provide code completion for the Windup API.
+
+Cons:
+
+* You must configure Maven to compile the Windup Java rule add-ons.
+* Java rule add-ons that are not included in the Windup core code base must be a full Forge add-on.
+* Java rule add-ons require writing a lot of Java code/
+* Writing Java rule add-ons are complex and required knowledge of Windup internals.
+
+
+==== Examples
+
+Example of a rule written in XML classifying Java code:
+
+[source,xml]
+----------
+<?xml version="1.0"?>
+<ruleset xmlns="http://windup.jboss.org/v1/xml" id="EjbRules">
+    <rules>
+        <rule id="EjbRules_2fmb">
+            <when>
+                <javaclass references="javax.persistence.Entity" as="default">
+                    <location>TYPE</location>
+                </javaclass>
+            </when>
+            <perform>
+                <iteration>
+                    <classification classification="JPA Entity" effort="0"/>
+                </iteration>
+            </perform>
+        </rule>
+    </rules>
+</ruleset>
+----------
+
+
+Example of a rule written in Java classifying Java code:
+
+[source,java]
+----------
+/**
+ * Scans for classes with EJB related annotations, and adds EJB related metadata for these.
+ */
+public class DiscoverEjbAnnotationsRuleProvider extends WindupRuleProvider
+{
+    @Override
+    public Configuration getConfiguration(GraphContext context) {
+        return ConfigurationBuilder.begin()
+        .addRule()
+        .when(JavaClass.references("javax.ejb.{annotationType}").at(TypeReferenceLocation.ANNOTATION))
+        .perform(new AbstractIterationOperation<JavaTypeReferenceModel>()
+        {
+            public void perform(GraphRewrite event, EvaluationContext context, JavaTypeReferenceModel payload)
+            {
+                extractEJBMetadata(event, payload);
+            };
+        })
+        .where("annotationType").matches("Stateless|Stateful")
+        .withId(ruleIDPrefix + "_StatelessAndStatefulRule")
+        .addRule()
+        .when(JavaClass.references("javax.ejb.MessageDriven").at(TypeReferenceLocation.ANNOTATION))
+        .perform(new AbstractIterationOperation<JavaTypeReferenceModel>() {
+            @Override
+            public void perform(GraphRewrite event, EvaluationContext context, JavaTypeReferenceModel payload) {
+                extractMessageDrivenMetadata(event, payload);
+            }
+        })
+        .withId(ruleIDPrefix + "_MessageDrivenRule")
+        .addRule()
+        .when(JavaClass.references("javax.persistence.Entity").at(TypeReferenceLocation.ANNOTATION).as(ENTITY_ANNOTATIONS)
+                    .or(JavaClass.references("javax.persistence.Table").at(TypeReferenceLocation.ANNOTATION).as(TABLE_ANNOTATIONS_LIST)))
+        .perform(Iteration.over(ENTITY_ANNOTATIONS).perform(new AbstractIterationOperation<JavaTypeReferenceModel>() {
+            @Override public void perform(GraphRewrite event, EvaluationContext context, JavaTypeReferenceModel payload) {
+                extractEntityBeanMetadata(event, payload);
+            }
+        }).endIteration())
+        .withId(ruleIDPrefix + "_EntityBeanRule");
+    }
+    ...
+}
+----------
+
+==== Summary
+
+The following is a draft... it may go.
+
+[cols="3*", options="header"] 
+|===
+|Requirement
+|XML Rule
+|Java Rule Add-on
+
+|Easy to write?
+|Yes
+|Depends on the complexity of the rule
+
+|Requires that you configure Maven?
+|No
+|Yes
+
+|Requires that you compile the rule?
+|No
+|Yes
+
+|Simple deployment?
+|No
+|Yes
+
+|Supports custom reports?
+|No
+|Yes
+
+|Ability to create complex conditions and operations?
+|No
+|Yes
+
+|Ability to directly manipulate the graph data?
+|No
+|Yes
+|===

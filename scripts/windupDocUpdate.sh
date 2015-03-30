@@ -193,6 +193,7 @@ cp $1/Dev-Logging.asciidoc docs/Dev-Logging.adoc
 cp $1/Dev-Variables-Stack.asciidoc docs/Dev-Variables-Stack.adoc
 cp $1/Dev-Port-WindRide-Functionality-to-Windup.asciidoc docs/Dev-Port-WindRide-Functionality-to-Windup.adoc
 cp $1/Dev-Git-Rebasing.asciidoc docs/Dev-Git-Rebasing.adoc
+cp $1/Dev-Windup-Release-Process.asciidoc docs/Dev-Windup-Release-Process.adoc
 
 ## Rule topics
 cp $1/Rules-Windup-Models.asciidoc docs/Rules-Windup-Models.adoc
@@ -217,6 +218,7 @@ cp $1/Rules-Ops-Xml-XsltTransformation.asciidoc docs/Rules-Ops-Xml-XsltTransform
 cp $1/Rules-Rule-Execution-Lifecycle.asciidoc docs/Rules-Rule-Execution-Lifecycle.adoc
 cp $1/Rules-Java-based-Rule-Structure.asciidoc docs/Rules-Java-based-Rule-Structure.adoc
 cp $1/Rules-Rule-Story-Points.asciidoc docs/Rules-Rule-Story-Points.adoc
+cp $1/Rules-Difference-Between-XML-based-and-Java-based-Rules.asciidoc docs/Rules-Difference-Between-XML-based-and-Java-based-Rules.adoc
 echo "Copy complete."
 echo ""
 
@@ -247,7 +249,7 @@ echo "* Make sure the linked to pages are part of the book."
 echo "*******************************************"
 echo ""
 cd docs
-sh $2/scripts/pagelinksUserGuide.sh
+sh $2/scripts/pageLinksUserGuide.sh
 # grep 'link:[A-Z]' `find . -name '*.adoc'`
 cd ../
 echo ""
@@ -262,7 +264,7 @@ echo "* Make sure the linked to pages are part of the book."
 echo "*******************************************"
 echo ""
 cd docs
-sh $2/scripts/pagelinksRulesDevelopmentGuide.sh
+sh $2/scripts/pageLinksRulesDevelopmentGuide.sh
 # grep 'link:[A-Z]' `find . -name '*.adoc'`
 cd ../
 echo ""
@@ -276,7 +278,7 @@ echo "* Make sure the linked to pages are part of the book."
 echo "*******************************************"
 echo ""
 cd docs
-sh $2/scripts/pagelinksCoreDevelopmentGuide.sh
+sh $2/scripts/pageLinksCoreDevelopmentGuide.sh
 # grep 'link:[A-Z]' `find . -name '*.adoc'`
 cd ../
 echo ""
@@ -313,4 +315,7 @@ asciidoctor -t -dbook -a toc -o html/WindupCoreDevelopmentGuide.html docs/Windup
 echo "Guide is located at: " file://$2/html/WindupCoreDevelopmentGuide.html
 echo ""
 
+echo "*******************************************"
+echo "Manually verify the guides and use Maven to check in the new files"
+echo "*******************************************"
 

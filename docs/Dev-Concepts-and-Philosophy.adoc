@@ -1,7 +1,7 @@
 [[Dev-Concepts-and-Philosophy]]
 === Concepts & Philosophy
 
-_TODO - OZIZKA: Can this topic be marked obsolete and be replaced by this one: xref:Windup-Processing-Overview[Windup Processing Overview] ?_
+TO_DO: - OZIZKA: Can this topic be marked obsolete and be replaced by this one: xref:Windup-Processing-Overview[Windup Processing Overview] ?_
 
 Windup is a rule-based tool that allows users to write customized rules
 based on the needs, constructs, and custom APIs used in their
@@ -33,8 +33,8 @@ See also the list of xref:Rules-Windup-Models[Windup Models].
 
 . Finding all `@Entity`s which use `org.hibernate` extensions.
 +
-TODO
+TO_DO
 
 . Finding _MyBatis_ DAOs and classes using them.
 +
-TODO
+TO_DO

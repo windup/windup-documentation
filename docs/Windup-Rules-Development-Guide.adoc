@@ -13,14 +13,7 @@ include::What-is-Windup.adoc[tabsize=4]
 
 include::Features-of-Windup-2.0.adoc[tabsize=4]
 
-include::Windup-Processing-Overview.adoc[tabsize=4]
-
-include::Get-Involved.adoc[tabsize=4]
-
-include::Report-Issues-with-Windup.adoc[tabsize=4]
-
 include::About-the-WINDUP_HOME-Variable.adoc[tabsize=4]
-
 
 == Get Started
 
@@ -30,54 +23,64 @@ include::Execute-Windup.adoc[tabsize=4]
 
 include::Review-the-Report.adoc[tabsize=4]
 
-include::http://windup.github.io/windup/docs/javadoc/latest/[Windup API JavaDoc reference]: The JavaDoc can serve as a reference for creating Java-based rule addons.
-
 == Understand the Rule Processing
 
 include::Windup-Processing-Overview.adoc[tabsize=4]
+
 include::Rules-Rule-Execution-Lifecycle.adoc[tabsize=4]
+
 include::Rules-Rule-Story-Points.adoc[tabsize=4]
+
+include::Rules-Difference-Between-XML-based-and-Java-based-Rules.adoc[tabsize=4]
 
 == Create and Test Java Rule Addons
 
 include::Install-and-Configure-Maven.adoc[tabsize=4]
+
 include::Rules-Java-based-Rule-Structure.adoc[tabsize=4]
+
 include::Rules-Basic-Rule-Execution-Flow-Patterns.adoc[tabsize=4]
+
 include::Rules-Create-a-Basic-Java-based-Rule-Add-on.adoc[tabsize=4]
-include::Rules-Create-an-Advanced-Ruleset.adoc[tabsize=4]
+
+// This is not ready for prime time... include::Rules-Create-an-Advanced-Ruleset.adoc[tabsize=4]
 
 == Create and Test XML Rules
 
 include::Rules-Create-a-Basic-XML-Rule.adoc[tabsize=4]
+
 include::Rules-XML-Rule-When-Condition-Syntax.adoc[tabsize=4]
+
 include::Rules-XML-Rule-Perform-Action-Syntax.adoc[tabsize=4]
+
 include::Rules-Test-a-Basic-XML-Rule-in-Windup.adoc[tabsize=4]
-
-== Review the Report
-
-include::Review-the-Report.adoc[tabsize=4]
-
-== External Rule Examples
-
-include::Review-the-Windup-Quickstarts.adoc[tabsize=4]
 
 == Debugging and Troubleshooting
 
 include::Dev-Debugging-and-Profiling.adoc[tabsize=4]
-include::Dev-Troubleshoot-Windup-Issues.adoc[tabsize=4]
 
+include::Dev-Troubleshoot-Windup-Issues.adoc[tabsize=4]
 
 == Additional Resources
 
-include::Rules-Available-Rules-Utilities.adoc[tabsize=4]
+include::Get-Involved.adoc[tabsize=4]
+
 include::Review-the-Windup-Quickstarts.adoc[tabsize=4]
+
+include::Rules-Available-Rules-Utilities.adoc[tabsize=4]
+
 include::Known-Issues.adoc[tabsize=4] 
-include::Glossary.adoc[tabsize=4]
+
+include::Report-Issues-with-Windup.adoc[tabsize=4]
 
 == Appendix
 
+include::Glossary.adoc[tabsize=4]
+
 include::Windup-Architectural-Components.adoc[tabsize=4]
-include::Dev-Dependencies.adoc[tabsize=4]
+
+// This is not ready for prime time... include::Dev-Dependencies.adoc[tabsize=4]
+
 include::Rules-Windup-Models.adoc[tabsize=4]
 
 

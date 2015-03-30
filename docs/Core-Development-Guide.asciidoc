@@ -20,7 +20,6 @@ repository, IRC, Mailing lists, ...
 * link:Dev-Build-Windup-from-Source[Build Windup from Source]
 * link:Dev-Execute-Windup-Built-from-Source[Execute Windup Built from Source]
 * link:Review-the-Report[Review the Report]
-* link:Glossary[Glossary of Terms]
 
 ==== Developer Contributing Information
 
@@ -29,10 +28,14 @@ repository, IRC, Mailing lists, ...
 
 ==== Understand the Windup Architecture and Structure
 
+* link:Windup-Processing-Overview[Windup Processing Overview]
 * link:Windup-Architectural-Components[Windup Architectural Components]
 * link:Dev-Windup-Project-Structure[Windup Project Structure]
 
 ==== Rules and Rulesets
+
+* link:Rules-Rule-Execution-Lifecycle[Rules Execution Lifecyle]
+* link:Rules-Rule-Story-Points[Rule Story Points]
 
 
 ==== Debugging and Troubleshooting
@@ -53,6 +56,7 @@ repository, IRC, Mailing lists, ...
 * link:Dev-Variables-Stack[Variables Stack]
 * link:Dev-Port-WindRide-Functionality-to-Windup[Port WindRide Functionality to Windup]
 * link:Dev-Git-Rebasing[Git Rebasing]
+* link:Dev-Releasing-Windup[Releasing Windup]
 
 ==== Rules topics
 
@@ -74,9 +78,7 @@ repository, IRC, Mailing lists, ...
 ** link:Rules-Ops-Reporting-Hint[Rules Ops: Reporting: Hint]
 ** link:Rules-Ops-Reporting-TypeReference[Rules Ops: Reporting: TypeReference]
 ** link:Rules-Ops-Xml-XsltTrasformation[Rules Ops: XML: XSLT Transformation]
-* link:Rules-Rule-Execution-Lifecycle[Rules Execution Lifecyle]
 * link:Rules-Java-based-Rule-Structure[Java-Based Rule Structure]
-* link:Rules-Rule-Story-Points[Rule Story Points]
 
 ==== Wiki and Product Documentation
 
@@ -84,4 +86,12 @@ repository, IRC, Mailing lists, ...
 * link:Dev-Add-Images-to-the-Windup-Wiki[Add Images to the Windup Wiki]
 * link:Dev-Create-Windup-JavaDoc[Create Windup JavaDoc]
 * link:Dev-Windup-Documentation-Process[Windup Documentation Process]
+
+==== Additional Resources
+
+* link:Review-the-Windup-Quickstarts[Review the Windup Quickstarts]
+* link:Known-Issues[Known Issues] 
+* link:Glossary[Glossary]
+
+* link:Glossary[Glossary of Terms]
 

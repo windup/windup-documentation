@@ -1,7 +1,7 @@
 [[Rules-XML-Rule-Perform-Action-Syntax]]
 === XML Rule - Perform Action Syntax
 
-Operations allowed in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule addons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
+Operations allowed in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
 
 The complete XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
 

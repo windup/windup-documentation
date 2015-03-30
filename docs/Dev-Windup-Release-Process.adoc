@@ -1,0 +1,14 @@
+[[Dev-Windup-Release-Process]]
+=== Windup Release Process
+
+Windup consists of artifacts from multiple GitHub repositories. Use the following procedure to create a Windup release.
+
+. Release http://github.com/windup/nexus-indexer
++
+----
+mvn release:prepare release:perform -DreleaseVersion=X -Dtag=Y -DdevelopmentVersion=Z
+----
+
+. Release http://github.com/windup/windup _primary reactor_
+. Release http://github.com/windup/windup-rulesets
+. Release http://github.com/windup/windup-distribution

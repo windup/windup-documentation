@@ -6,17 +6,33 @@ Windup project documentation is created collaboratively on the Windup project Wi
 This `windup-documentation` repository takes documentation from that site, makes minor modifications, and publishes the pages in single HTML page book format. 
 This repository will contain the source for the official documentation when the Windup 2.0 ships.
 
-== Procedure to Copy and Modify the Wiki Documentation
+== Procedure to Update the Documentation With the Latest Windup Wiki
 
-Run the scripts/windupDocUpdate.sh script to copy and modify the files. 
+Check out a branch to work in.
 
-. Copies the `.asciidoc` files to the `docs/` directory and renames them with the `.adoc` extension.
-. Replaces the `xref:` macros to other pages with `xref:` macros.
-. Uses AsciiDoctor to create the guides in the `html/` directory.
+Run the `scripts/windupDocUpdate.sh` script to copy the latest pages from the Wiki documentation and modify the files so they can be included in the Windup documentation guides. 
+
+* Copies the latest images and stylesheets.
+* Copies the `.asciidoc` files to the `docs/` directory and renames them with the `.adoc` extension. 
+* Replaces the `link:` macros to other pages with `xref:` macros since they are now included in the same book.
+* Uses AsciiDoctor to generate HTML versions the guides in the `html/` directory.
+
+You must manually verify the following.
+
+* Search the Guide to find pages that link to other pages and make sure the linked to pages are part of the book.
+* Make sure every referenced page and section has a header matching the reference.
++
+----
+[[section-header]]
+=== Section Header
+---
+
+Use Git to add files that have changed and issue the pull to merge them.
 
 == Procedure to Publish the Guides
 
-* The first time, you must fork and clone the windup GitHub repository. After that, just fetch the latest upstream.
+* The first time, you must fork and clone the windup GitHub repository. After that, just fetch the latest upstream. 
+In the following instructions, be sure to replace WINDUP_RELEASE with the actual release number.
 +
 ----
 git clone https://github.com/windup/windup.git
@@ -70,6 +86,18 @@ git commit -m "Update message..."
 +
 ----
 git push upstream gh-pages
+----
+
+* Update the symlink so the "latest" release points to the newly published documentation.
++
+----
+unlink latest
+ln -s WINDUP_RELEASE latest
+git add latest
+git commit -m 'Replace symlink for latest to point to WINDUP_RELEASE'
+git push origin HEAD
+git push upstream gh-pages
+firefox http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html
 ----
 
 == Access the Guides

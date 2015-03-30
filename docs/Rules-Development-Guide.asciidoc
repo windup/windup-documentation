@@ -20,10 +20,10 @@ rules for Windup 2.0.
 
 ==== Configure Your System for Java-based Rules 
 
-If you plan to create Java-based rule addons, you must also do the following.
+If you plan to create Java-based rule add-ons, you must also do the following.
 
 * link:Install-and-Configure-Maven[Install and Configure Maven]
-* link:http://windup.github.io/windup/docs/javadoc/latest/[Windup API JavaDoc reference]: The JavaDoc can serve as a reference for creating Java-based rule addons.
+* link:http://windup.github.io/windup/docs/javadoc/latest/[Windup API JavaDoc reference]: The JavaDoc can serve as a reference for creating Java-based rule add-ons.
 
 ==== Understand the Rule Processing
 
@@ -33,7 +33,7 @@ If you plan to create Java-based rule addons, you must also do the following.
 * link:Rules-Difference-Between-XML-based-and-Java-based-Rules[
 Difference Between XML-based and Java-based Rules]
 
-==== Create and Test Java Rule Addons
+==== Create and Test Java Rule Add-ons
 
 * link:Rules-Java-based-Rule-Structure[Java-based Rule Structure]
 * link:Rules-Basic-Rule-Execution-Flow-Patterns[Basic Rule Execution Flow Patterns]
@@ -43,6 +43,10 @@ Difference Between XML-based and Java-based Rules]
 ==== Create and Test XML Rules
 
 * link:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule]
+
+** link:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
+** link:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax]
+
 * link:Rules-Test-a-Basic-XML-Rule-in-Windup[Test an XML Rule in Windup]
 
 ==== Review the Report

@@ -38,7 +38,7 @@ org.jboss.windup.config.phase.PostFinalize
 -------------
 
 
-By default, a rule runs during the https://github.com/windup/windup/blob/master/config/api/src/main/java/org/jboss/windup/config/phase/MigrationRules.java[MigrationRules] phase. However, a
+By default, a rule runs during the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_RULES[MIGRATION_RULES] phase. However, a
 rule may require certain processing or actions to occur before it
 executes, such as the extraction of archives and scanning of java or XML
 files.
@@ -46,7 +46,7 @@ files.
 Rule phases provide a way for rule authors to specify and control in
 which phase of the rule lifecycle the rule should execute. This is done
 by overriding the `WindupRuleProvider.getPhase()` method. The following
-example specifies this rule should execute during the https://github.com/windup/windup/blob/master/config/api/src/main/java/org/jboss/windup/config/phase/InitialAnalysis.java[InitialAnalysis] rule phase.
+example specifies this rule should execute during the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#INITIAL_ANALYSIS[INITIAL_ANALYSIS] rule phase.
 
 [source,java]
 ----
@@ -66,25 +66,31 @@ by their basic properties, for example, the name, extension, location,
 and fully qualified Java class name. Archives are unzipped in this
 phase. Typically, any rule that only puts data into the graph is
 executed during this phase.
+
 http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#INITIAL_ANALYSIS[INITIAL_ANALYSIS]::
 This phase is called to perform a basic analysis of the files content.
 It extracts all method names from class files, extracts metadata, such
 as the XML namespace and root element, from XML files.
+
 http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#COMPOSITION[COMPOSITION]::
 This phase is called to perform high-level composition operations on the
 graph. For example, it may link items found in XML files to the related
 Java classes or references to server resources in Java classes.
+
 http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_RULES[MIGRATION_RULES]::
-This is the default phase for all rules unless overridden. 
+This phase is the default phase for all rules unless overridden. 
 During this phase, migration rules attach data to the graph associated
 with migration. This could include: - Hints to migrators for manual
 migration - Automated migration of schemas or source segments -
 Blacklists to indicate vendor specific APIs.
+
 http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#REPORT_GENERATION[REPORT_GENERATION]::
 During this phase, reporting visitors produce report data in the graph
 that will later be used by the report rendering phase.
+
 http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#REPORT_RENDERING[REPORT_RENDERING]::
 This is the phase that renders the report.
+
 http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#FINALIZE[FINALIZE]::
 This phase is called to clean up resources and close streams.
 

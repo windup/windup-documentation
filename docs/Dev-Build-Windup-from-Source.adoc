@@ -119,8 +119,10 @@ Unzip the `dist/target/windup-distribution-2.0.0-SNAPSHOT-offline.zip` file into
 ==== Quick Build Review for Experienced Windup Developers
 
 ---------------
-git clone git@github.com:windup/windup.git Windup
-cd Windup
+git clone git@github.com:windup/windup.git windup
+## Or if you haven't set up github account:
+#git clone https://github.com/windup/windup.git
+cd windup
 mvn clean install -DskipTests
 rm -rf /tmp/windup-zip/ /tmp/windup/
 unzip -q dist/target/windup-distribution-*-offline.zip -d /tmp/windup-zip

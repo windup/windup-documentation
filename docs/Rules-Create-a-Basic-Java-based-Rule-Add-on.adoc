@@ -171,7 +171,7 @@ The following are examples of some dependencies you may need for your rule add-o
 
 ===== Create the Java RuleProvider
 
-. Add `beans.xml` file to `META-INF/` dir in resources - typically, `$project-dir/src/main/resources/META-INF/beans.xml`. This file can be empty. It tells CDI to scan your addon for CDI beans.
+. Add `beans.xml` file to `META-INF/` dir in resources - typically, `$project-dir/src/main/resources/META-INF/beans.xml`. This file can be empty. It tells CDI to scan your add-on for CDI beans.
 
 . Within your Maven project, create a Java class that extends the `WindupRuleProvider` class. It is suggested that you end the name of the class with `RuleProvider`. For example:
 +

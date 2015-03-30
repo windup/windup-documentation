@@ -1,3 +1,4 @@
+[[Ruleset-XML]]
 === XML Ruleset
 
 .DRAFT 
@@ -17,7 +18,7 @@ A core ruleset to provide support for XML files.
 
 _A definition list (dl/dt/dd) of RuleProviders of given Ruleset with brief descriptions._
 
-TODO: Not sure if all the `Xml*` really belong here - maybe rather to Java or Java EE?
+TO_DO: Not sure if all the `Xml*` really belong here - maybe rather to Java or Java EE?
 
 * **DiscoverXmlFilesRuleProvider** - 
 * **XmlBaseConfig** - 
@@ -50,7 +51,7 @@ _Subclasses of `WindupVertexFrame`.
 
 ==== Configuration
 
-_Subclasses of `TODO`
+_Subclasses of `TO_DO`
 
 ==== Reports
 

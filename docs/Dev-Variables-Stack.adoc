@@ -1,31 +1,34 @@
 [[Dev-Variables-Stack]]
 === Variables Stack
 
+.DRAFT
+
 The `Variables` class stores the variables which are available in rules, EL expressions, and FreeMarker and XSLT templates.
 
 ==== Accessing variables
 
 ===== From a Java-based rule
 
-TODO
+TO_DO: Describe how to access variables from a Java-based rule.
 
 ===== From a Groovy-based rule
 
-TODO
+TO_DO: Describe how to access variables from a Groovy-based rule.
 
 ===== From an EL expression
 
-TODO
+TO_DO: Describe how to access variables from an EL expression.
 
 ===== From a FreeMarker
 
-TODO
+TO_DO: Describe how to access variables from a FreeMarker.
 
 ===== From XSLT template
 
-TODO
+TO_DO: Describe how to access variables from an XSLT template.
 
 ==== Accessing variables as a flat `Map`
 
-TODO
+TO_DO: Describe how to access variables from a Map.
+
 

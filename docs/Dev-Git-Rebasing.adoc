@@ -1,9 +1,40 @@
 [[Dev-Git-Rebasing]]
 === Git Rebasing
 
-Ondra Zizka wrote this simple script to bring down a series of pull requests into a
-single branch. He then pushes that branch to upstream master-ignore.
+This section describes a few ways you can pull in the code to rebase to the latest code base.
 
+==== Approach Suggested on GitHub
+
+This is the approach suggested on GitHub.
+
+. Checkout the source:
++
+--------------------------------------------------------------
+git checkout -b lincolnthree-WINDUP-133 master
+git pull https://github.com/lincolnthree/windup.git WINDUP-133
+--------------------------------------------------------------
+
+. Run the tests to make sure it builds.
++
+--------
+mvn clean install
+--------
+
+. If they pass, merge and push them to your repository.
++
+-----------------------------------------
+git checkout master
+git merge --no-ff lincolnthree-WINDUP-133
+git push origin master
+-----------------------------------------
+
+==== Script Provided by the Windup Development Team 
+
+Ondra Zizka wrote the following script to bring down a series of pull requests into a
+single branch. It then pushes that branch to upstream master-ignore.
+
+. Bring down the pulls into a single branch.
++
 ----
 pull() {
   cmd="git fetch upstream master "
@@ -30,32 +61,11 @@ pull() {
 }
 ----
 
-Fetch using one pull request:
+. Fetch using the one pull request.
++
 ----
 git fetch upstream master pull/$PR/head:pullRequest$PR
 ----
 
-==== Alternate Approach
+. The branch is now updated with the latest source.
 
-This is the approach GitHub suggests.
-
-. Checkout the source:
-+
---------------------------------------------------------------
-git checkout -b lincolnthree-WINDUP-133 master
-git pull https://github.com/lincolnthree/windup.git WINDUP-133
---------------------------------------------------------------
-
-. Run the tests to make sure it builds.
-+
---------
-mvn clean install
---------
-
-. If they pass, merge and push them to your repository.
-+
------------------------------------------
-git checkout master
-git merge --no-ff lincolnthree-WINDUP-133
-git push origin master
------------------------------------------

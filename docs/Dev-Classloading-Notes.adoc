@@ -1,4 +1,3 @@
-[[Dev-Classloading-Notes]]
 === Classloading Notes
 
 .DRAFT
@@ -6,6 +5,23 @@
 _Page contains temporary notes, to be edited._
 
 This covers the specific situations when the Windup core developer needs to look up certain runtime classes. Does not relate to rules authoring.
+
+==== Forge add-ons transitive dependencies
+
+Let A depend on B depend on C.
+Depending on scope of C in B's POM:
+-------
+<scope>provided</scope>
+-------
+
+`provided` will NOT export C, so A depending on B won't see C's classes.
+Only `compile` scope is exported.
+`compile` will export C, so A depending on B will also see C's classes.
+
+* `provided` == import
+* `compile` == import & export
+* `optional` == optional, not installed automatically
+* `runtime` == export only
 
 
 ==== Finding classes
@@ -23,12 +39,11 @@ or
 --------
 
 ==== Instantiating
-If you want something from the current addon, you need to @Inject its ServiceRegistry and get services from that.
+If you want something from the current add-on, you can simply @Inject the type you wish to use. Alternately you can @Inject an Imported<T> instance, or also @Inject the AddonRegistry itself.
 
-==== Which classloader is used? Always the one of the current code?
+==== Which ClassLoader is used? Always the one of the current code?
 
-Depends, if you are in a Furnace Service, then yes, it will use the
-current code's addon's classloader.
+Depends, if you are in a Furnace Service, then yes, it will use the current code's add-on ClassLoader.
 
 ==== Reading annotations from classes
 
@@ -40,13 +55,13 @@ Supposedly, Furnace proxies should also be able to handle such call:
 
     Rules annotation1 = ((FurnaceProxy) proxy).getOriginalClass().getAnnotation(Rules.class);
 
-TODO: Find out how exactly this is done.
+TO_DO: Find out how exactly this is done.
 
 
 ==== How do I know if I am in a Furnace service?
 
 Every furnace service is wrapped in a proxy. If it came from another
-addon (not your current addon) and was not instantiated with new Blah(),
+add-on (not your current add-on) and was not instantiated with new Blah(),
 you are in a furnace service. So if it was `@Inject`ed or retrieved via
 `addonRegistry.getServices(...)`
 
@@ -56,7 +71,7 @@ you are in a furnace service. So if it was `@Inject`ed or retrieved via
 (16:33:41) LincolnBaxter: ozizka: using a shared Resource.open() APi will actually be sort of a no-op, and just introduce another layer, since you generally need to be able to specify a classloader anyway
 (16:33:53) jsightler: lincolnthree: Well...
 (16:34:09) LincolnBaxter: ozizka: unless I'm misunderstanding the point of this
-(16:34:10) jsightler: lincolnthree: In windup we frequently need resources from the caller's addon
+(16:34:10) jsightler: lincolnthree: In windup we frequently need resources from the caller's add-on
 (16:34:18) LincolnBaxter: ozizka: ah wait
 (16:34:27) LincolnBaxter: ozizka: the *caller*'s classloader
 (16:34:35) LincolnBaxter: ozizka: not the CL of the current operation
@@ -67,18 +82,18 @@ you are in a furnace service. So if it was `@Inject`ed or retrieved via
 (16:35:25) ozizka-FN: which classloader is used?
 (16:35:33) ozizka-FN: Always the one of the current code?
 (16:35:44) ozizka-FN: Implicitly
-(16:35:54) LincolnBaxter: ozizka: depends, if you are in a Furnace Service, then yes, it will use the current code's addon's classloader
+(16:35:54) LincolnBaxter: ozizka: depends, if you are in a Furnace Service, then yes, it will use the current code's add-on's classloader
 (16:36:00) ozizka-FN: Ah
 (16:36:11) ozizka-FN: How do I know if I am in a Furnace service?
 (16:36:14) LincolnBaxter: ozizka: because every furnace service is wrapped in a proxy
-(16:36:31) LincolnBaxter: ozizka: basically if it came from another addon (not your current addon), you are in a furnace service
+(16:36:31) LincolnBaxter: ozizka: basically if it came from another add-on (not your current add-on), you are in a furnace service
 (16:36:43) LincolnBaxter: ozizka: and if you didn't instantiate with new Blah()
 (16:37:00) LincolnBaxter: ozizka: so if it was @Injected or retrieved via addonRegistry.getServices(...)
-(16:37:43) LincolnBaxter: jsightler: ozizka: mbriskar: why do we need the classloader of the calling addon? just curious
+(16:37:43) LincolnBaxter: jsightler: ozizka: mbriskar: why do we need the classloader of the calling add-on? just curious
 (16:37:54) ozizka-FN: So here we would use TCCL right?
 LincolnBaxter lincolnthree 
 (16:38:28) ozizka-FN: lincolnthree:  To load it's resources
-(16:38:31) ozizka-FN: from other addon
+(16:38:31) ozizka-FN: from other add-on
 (16:38:32) ozizka-FN: .
 (16:38:35) ozizka-FN: Or is there other way?
 (16:38:42) LincolnBaxter: ozizka: that's a vague statement ;)
@@ -93,12 +108,12 @@ LincolnBaxter lincolnthree
 ==== Resources loading
 
 ```
-(16:48:30) ozizka-FN: lincolnthree:  Just a note - the potential collisions caused  by addon's CL span is not considered as a risk?
+(16:48:30) ozizka-FN: lincolnthree:  Just a note - the potential collisions caused  by add-on's CL span is not considered as a risk?
 (16:49:25) ozizka-FN: I mean, it could load the file from it's deps.
 (16:49:36) ozizka-FN: * file = resource
 (16:49:50) LincolnBaxter: ozizka1: so the way it works is actually very controlled
-(16:50:06) LincolnBaxter: ozizka1: classloader will always attempt to load its own resources before loading from another addon
-(16:50:23) LincolnBaxter: ozizka1: at which point the order is determined by the order of the addon dependency in the POM
+(16:50:06) LincolnBaxter: ozizka1: classloader will always attempt to load its own resources before loading from another add-on
+(16:50:23) LincolnBaxter: ozizka1: at which point the order is determined by the order of the add-on dependency in the POM
 
 (16:53:26) ozizka-FN: Q: Unwrapping proxies caused the code in invoke() not actually being called?
 (16:53:32) ozizka-FN: Since the method calls were not intercepted?
@@ -123,4 +138,3 @@ https://github.com/forge/furnace/blob/master/proxy/src/main/java/org/jboss/forge
 
 ==== What classloader is used by Freemarker to load resources?
 `org.jboss.windup.reporting.freemarker.FurnaceFreeMarkerTemplateLoader`
-

@@ -22,7 +22,7 @@ Better Rules::
 Windup 2.0 provides more powerful and complex rules. 
 
 * XML-based rules are simple to write and and easy to implement.
-* Java-based rule addons are based on  http://ocpsoft.org/rewrite/[OCPsoft Rewrite] and provide greater flexibility and power creating when rules.
+* Java-based rule add-ons are based on  http://ocpsoft.org/rewrite/[OCPsoft Rewrite] and provide greater flexibility and power creating when rules.
 * Rules can now be nested to handle more complex situations. This means you can nest simple statements rather than use complex XPATH or REGEX expressions.
 *Rules can be linked using and/or statements
 

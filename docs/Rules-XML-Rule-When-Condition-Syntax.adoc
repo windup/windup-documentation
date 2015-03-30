@@ -1,7 +1,7 @@
 [[Rules-XML-Rule-When-Condition-Syntax]]
 === XML Rule - When Condition Syntax
 
-Conditions allowed in the `when` portion of a rule must extend http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperaton] and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule addons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
+Conditions allowed in the `when` portion of a rule must extend http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperaton] and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
 
 The complete XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
 
@@ -161,16 +161,17 @@ Match on the project `<artifactId>`
 
 * from="VARIABLE_NAME"
 +
-Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. ???
+Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
 
-* to = "???"
+* to = TO_DO: complete the project artifact 'to' element syntax
 
 
 [[filecontent-syntax]]
 ==== filecontent Syntax
 
+TO_DO: complete the filecontent element syntax
+
 Use the `filecontent` element to find information in file content.For a better understanding of the `filecontent` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/FileContent.html[FileContent] class.
-TBD : .Draft
 
 Use the `filecontent` element to test for content within files. The following is an example of a rule that tests for `filecontent`.
 

@@ -1,10 +1,7 @@
 [[Rules-Java-based-Rule-Structure]]
 === Java-based Rule Structure
 
-TODO:
-* Add a how-to for compound rules, nested rules, rules over multiple sources, negative queries (not matched by anything).
-// - xref:Rules-Story-Points[How to estimate the migration effort with Story
-Points] https://issues.jboss.org/browse/WINDUP-255[WINDUP-255]
+TO_DO: Add a how-to for compound rules, nested rules, rules over multiple sources, negative queries (not matched by anything).
 
 ==== Windup Rule Provider 
 
@@ -125,7 +122,7 @@ several convenient implementations for constructs like iteration
 
 ====== Nested iterations
 
-TODO
+TO_DO: Provide information about nested iterations
 
 ====== otherwise
 
@@ -150,7 +147,7 @@ For more information, see http://ocpsoft.org/rewrite/[OCP Rewrite web].
 
 ===== Where
 
-TODO
+TO_DO: Provide information about the where clause
 
 ===== Metadata
 

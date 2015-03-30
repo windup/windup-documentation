@@ -3,6 +3,8 @@
 #cd ~/GitRepos/windup-documentation/docs
 pwd
 
+### THIS IS WRONG! IT NEEDS TO BE RECURSIVE
+
 ## Overview
 
 grep 'link:[A-Z]' `find . -name 'What-is-Windup.adoc'`
@@ -22,8 +24,13 @@ grep 'link:[A-Z]' `find . -name 'Review-the-Report.adoc'`
 
 grep 'link:[A-Z]' `find . -name 'Review-the-Windup-Quickstarts.adoc'`
 grep 'link:[A-Z]' `find . -name 'Known-Issues.adoc'`
+
+
+## Appendix
 grep 'link:[A-Z]' `find . -name 'Glossary.adoc'`
 grep 'link:[A-Z]' `find . -name 'Windup-Architectural-Components.adoc'`
+grep 'link:[A-Z]' `find . -name 'Rules-Rule-Execution-Lifecycle.adoc'`
+grep 'link:[A-Z]' `find . -name 'Rules-Rule-Story-Points.adoc'`
 
 
 
