@@ -37,10 +37,15 @@ fi
 
 cd $1
 pwd
-cp html/*.html $2/docs/$WINDUP_VERSION/html/
+## Copy HTML files separately as we do not need the ones with NO-TOC
+cp html/WindupCoreDevelopmentGuide.html $2/docs/$WINDUP_VERSION/html/
+cp html/WindupRulesDevelopmentGuide.html $2/docs/$WINDUP_VERSION/html/
+cp html/WindupUserGuide.html $2/docs/$WINDUP_VERSION/html/
+
 cp docs/*.css $2/docs/$WINDUP_VERSION/html/
 cp docs/images/* $2/docs/$WINDUP_VERSION/html/images/
-
+cp pdf/*.pdf $2/docs/$WINDUP_VERSION/pdf/
+ 
 echo "Guides can be previewed here: "
 echo "    User Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupUserGuide.html
 echo "    Rules Development Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupRulesDevelopmentGuide.html
