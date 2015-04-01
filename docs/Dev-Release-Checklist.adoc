@@ -1,0 +1,15 @@
+[[Dev-Release-Checklist]]
+=== Windup Release Checklist
+
+* Build & upload artifacts
+* Update `<version.windup>...</version.windup>` in:
+  * windup-rulesets
+  * windup-quickstats (each pom.xml separatedly)
+  * windup-distribution
+* Build & upload the distribution zip
+* Javadoc to windup/windup, branch gh-pages
+* HTML single-page docs to windup/windup, branch gh-pages
+* Announce to mailing lists (windup-users@lists.jboss.org, jboss-migration@redhat.com)
+* Mark the version as released in Jira
+* Push the unresolved issues to the next version
+* Roll out the barrels & celebrate

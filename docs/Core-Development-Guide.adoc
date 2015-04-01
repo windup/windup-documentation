@@ -1,0 +1,115 @@
+[[Core-Development-Guide]]
+=== Windup Core Development Guide
+
+This guide is for developers who plan to contribute source code updates
+or core rule add-ons to the Windup 2.0 project.
+
+==== Overview
+
+* xref:What-is-Windup[What is Windup]?
+* xref:Features-of-Windup-2.0[Features of Windup 2.0]
+* xref:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable]
+
+==== Get Started
+
+Before you begin to contribute to Windup, take a quick tour to see how to use it.
+
+* xref:Install-and-Configure-Maven[Install and Configure Maven]
+* xref:Dev-Get-the-Windup-Source-Code[Get the Windup Source Code]
+* xref:Dev-Build-Windup-from-Source[Build Windup from Source]
+* xref:Dev-Execute-Windup-Built-from-Source[Execute Windup Built from Source]
+* xref:Review-the-Report[Review the Report]
+
+==== Developer Contributing Information
+
+* xref:Dev-Development-Guidelines-and-Conventions[Developer Guidelines and Conventions]
+* xref:Dev-Submit-Code-Updates-to-the-Windup-Project[Submit Code Updates to the Windup Project]
+
+==== Understand the Windup Architecture and Structure
+
+* xref:Windup-Processing-Overview[Windup Processing Overview]
+* xref:Windup-Architectural-Components[Windup Architectural Components]
+* xref:Dev-Windup-Project-Structure[Windup Project Structure]
+
+==== Rules and Rulesets
+
+* xref:Windup-Processing-Overview.adoc[Windup Processing Overview]
+* xref:Rules-Rule-Execution-Lifecycle[Rules Execution Lifecyle]
+* xref:Rules-Rule-Story-Points[Rule Story Points]
+* xref:Rules-Difference-Between-XML-based-and-Java-based-Rules[Difference Between XML-based and Java-based Rules]
+
+==== Create and Test Java Rule Add-ons
+
+* xref:Rules-Java-based-Rule-Structure[Java-based Rule Structure]
+* xref:Rules-Basic-Rule-Execution-Flow-Patterns[Basic Rule Execution Flow Patterns]
+* xref:Rules-Create-a-Basic-Java-based-Rule-Add-on[Create a Basic Java-based Rule Add-on]
+* xref:Rules-Create-an-Advanced-Ruleset[Create an Advanced Ruleset]
+
+==== Create and Test XML Rules
+
+* xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule]
+
+* xref:Rules-Test-a-Basic-XML-Rule-in-Windup[Test an XML Rule in Windup]
+
+==== Debugging and Troubleshooting
+
+* xref:Dev-Debugging-and-Profiling[Debugging and Profiling]
+* xref:Dev-Troubleshooting[Troubleshooting]
+
+==== Developer topics
+
+* xref:Dev-Windup-Bootstrap[Bootstrap]
+* xref:Dev-Classloading-Notes[Classloading Notes]
+* xref:Dev-Connect-to-the-Graph-via-Rexster[Connect to the Graph via Rexster]
+* xref:Dev-Decompiling[Decompiling]
+* xref:Dev-Dependencies[Dependencies]
+* xref:Dev-Frames-Extensions[Frames Extensions]
+* xref:Dev-Internal-API-Features[Internal API Features]
+* xref:Dev-Logging[Logging]
+* xref:Dev-Variables-Stack[Variables Stack]
+* xref:Dev-Port-WindRide-Functionality-to-Windup[Port WindRide Functionality to Windup]
+* xref:Dev-Git-Rebasing[Git Rebasing]
+* xref:Dev-Releasing-Windup[Releasing Windup]
+
+==== Rules topics
+
+* xref:Rules-Available-Rules-Utilities[Available Utilities]
+* xref:Dev-Concepts-and-Philosophy[Concepts and Philosophy]
+* xref:Rules-Creating-Rule-Operations[Creating Rules Operations]
+* xref:Rules-Rulesets[Rulesets]
+** xref:Ruleset-Java-Basic-Ruleset[Java Basic Ruleset]
+** xref:Ruleset-Java-Classifications-and-Inline-Hints[Ruleset Java Classifications and Inline Hints]
+** xref:Ruleset-Java-EE-Apps[Java EE Apps Ruleset]
+** xref:Ruleset-Java-EE-Servers[Java EE Servers Ruleset]
+** xref:Ruleset-Reporting[Reporting Ruleset]
+* xref:Ruleset-XML[XML Ruleset]
+* xref:Rules-Windup-Models[Windup Models]
+* xref:Rules-Create-Java-Queries[Create Java Queries]
+* xref:Rules-Rules-Metadata[Rules Metadata]
+* xref:Rules-Rules-Operations[Rules Operations]
+** xref:Rules-Ops-Reporting-Classification[Rules Ops: Reporting: Classification]
+** xref:Rules-Ops-Reporting-Hint[Rules Ops: Reporting: Hint]
+** xref:Rules-Ops-Reporting-TypeReference[Rules Ops: Reporting: TypeReference]
+** xref:Rules-Ops-Xml-XsltTrasformation[Rules Ops: XML: XSLT Transformation]
+* xref:Rules-Java-based-Rule-Structure[Java-Based Rule Structure]
+
+==== Wiki and Product Documentation
+
+* xref:About-the-Windup-Wiki[About the Windup Wiki]
+* xref:Dev-Add-Images-to-the-Windup-Wiki[Add Images to the Windup Wiki]
+* xref:Dev-Create-Windup-JavaDoc[Create Windup JavaDoc]
+* xref:Dev-Windup-Documentation-Process[Windup Documentation Process]
+
+==== Additional Resources
+
+* xref:Review-the-Windup-Quickstarts[Review the Windup Quickstarts]
+* xref:Get-Involved[Get Involved] - We need your feedback!
+* xref:Known-Issues[Known Issues] 
+* xref:Report-Issues-with-Windup[Report Issues with Windup]
+
+==== Appendix
+
+* xref:Glossary[Glossary of Terms]
+* xref:Dev-Windup-Project-Information[Windup Project Information] - Github
+repository, IRC, Mailing lists, ...
+

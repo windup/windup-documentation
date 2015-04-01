@@ -3,15 +3,17 @@
 
 ==== Add the Rule to Windup
 
-A Windup rule is installed simply by copying the rule to the appropriate Windup folder. Windup scans for rules in the following locations:
+A Windup rule is installed simply by copying the rule to the appropriate Windup folder. Windup scans for rules in the following locations for files ending with `*.windup.groovy` and `*.windup.xml`:
 
-* The `WINDUP_HOME/rules/` folder. 
-+
-This is the folder where you run the Windup executable. See xref:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable] for details.
+* The directory specified in the `--userRulesDirectory` option to the `windup-migrate-app`.
 
-* The `${user.home}/.windup/rules/` folder. 
+* The `WINDUP_HOME/rules/` directory. 
 +
-This folder is created by Windup the first time you execute Windup. It used to track rules and add-ons and to contains the Windup log.
+`WINDUP_HOME` is the directory where you run the Windup executable (see xref:About-the-WINDUP_HOME-Variable[here]).
+
+* The `${user.home}/.windup/rules/` directory. 
++
+The `${user.home}/.windup` is a directory created by Windup at first run and contains rules, add-ons, and the Windup log.
 +
 --------
 For Linux or Mac:   ~/.windup/rules/

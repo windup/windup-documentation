@@ -125,20 +125,18 @@ namespace:: The namespace to referenced in XML files. This element contains 2 at
 
 ===== Summary 
 
-Use the `project` element to find information in project files. For a better understanding of the `project` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] class.
+Use the `project` element to query for the project charateristics. For a better understanding of the `project` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] class.
 
-The following is an example of a rule that tests for an `xmlfile`.
+The following is an example of a rule that checks a rule is dependent on the junit in the version between 2.0.0.Final and 2.2.0.Final.
 
     <rule>
         <when>
             <project>
-                <artifact groupId="junit" artifactId="junit" from="MyEjbRule" to="???"/>
+                <artifact groupId="junit" artifactId="junit" from="2.0.0.Final" to="2.2.0.Final"/>
             </project>
         </when>
         <perform>
-            <hint title="Title for Hint for Project">
-                <message>Descriptive message</message>
-            </hint>
+            <lineitem message="The project uses junit with the version between 2.0.0.Final and 2.2.0.Final"/>
         </perform>
     </rule>
 
@@ -146,32 +144,29 @@ The following is an example of a rule that tests for an `xmlfile`.
 
 ====== project Element Attributes
 
-The `project` element does not have any attributes.
+The `project` element is used to match against the project as a whole. You can use this condition to query for dependencies of the project. It does not have any attributes itself.
 
 ====== project Element Child Elements
 
-artifact:: The namespace to referenced in XML files. This element contains the following attributes: 
+artifact:: Subcondition used within `project` to query against project dependencies. This element contains the following attributes: 
 
 * groupId="PROJECT_GROUP_ID"
 +
-Match on the project `<groupId>`
+Match on the project `<groupId>` of the dependency
 
 * artifactId="PROJECT_ARTIFACT_ID"
-Match on the project `<artifactId>`
+Match on the project `<artifactId>` of the dependency
 
-* from="VARIABLE_NAME"
+* fromVersion="FROM_VERSION"
 +
-Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
+Specify the lower version bound of the artifact. For example `2.0.0.Final`
 
-* to = TO_DO: complete the project artifact 'to' element syntax
-
+* toVersion="TO_VERSION"
++
+Specify the upper version bound of the artifact. For example `2.2.0.Final`
 
 [[filecontent-syntax]]
 ==== filecontent Syntax
 
-TO_DO: complete the filecontent element syntax
-
-Use the `filecontent` element to find information in file content.For a better understanding of the `filecontent` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/FileContent.html[FileContent] class.
-
-Use the `filecontent` element to test for content within files. The following is an example of a rule that tests for `filecontent`.
+Use the `filecontent` element to find strings or text within files, for example, a line in a Properties file. For a better understanding of the `filecontent` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/FileContent.html[FileContent] class.
 

@@ -1,0 +1,25 @@
+=== Downloads
+https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.windup&a=windup-distribution&v=LATEST&e=zip&c=offline[Latest Windup ZIP distribution]
+
+=== Windup JavaDoc:
+
+xref:http://windup.github.io/windup/docs/latest/javadoc[Windup JavaDoc] +
+
+=== Wiki Guides:
+
+xref:./User-Guide[User Guide] +
+xref:./Rules-Development-Guide[Rules Development Guide] +
+xref:./Core-Development-Guide[Core Development Guide] +
+xref:./Migration-Planning-Guide[Migration Planning Guide] +
+
+=== Published Guides 
+(Single-page HTML):
+
+xref:http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html[Windup User Guide] +
+xref:http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html[Windup Rules Development Guide] +
+xref:http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html[Windup Core Development Guide] +
+
+=== Developer Materials
+
+xref:http://windup.github.io/windup/docs/latest/javadoc[Windup JavaDoc] +
+xref:https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd[Rule Schema]

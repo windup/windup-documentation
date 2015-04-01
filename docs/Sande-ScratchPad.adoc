@@ -1,0 +1,197 @@
+=== Sande ScratchPad
+
+==== Conditions (<when>)
+
+* **javaclass**: JavaClass class extends ParameterizedGraphCondition 
+* **xmlfile**: XmlFile class extends ParameterizedGraphCondition
+* **project**: Project class extends GraphCondition
+* **filecontent**: FileContent class extends ParameterizedGraphCondition
+
+==== Operations
+
+* **lineitem**: LineItem extends AbstractIterationOperation<ProjectModel>
+* **classification**: Classification extends ParameterizedIterationOperation<FileModel>
+* **hint**: Hint extends ParameterizedIterationOperation<FileLocationModel>
+* **xslt**: XSLTTransformation extends AbstractIterationOperation<XmlFileModel> ??
+
+==== Element Handlers:
+
+===== **<ruleset>** handlers
+
+* **phase**: PhaseHandler implements ElementHandler<Void>
+* **rules**: RulesHandler implements ElementHandler<Void>
+* **rule**: RuleHandler implements ElementHandler<Void>
+
+===== **<rule>** handlers
+
+* **when**: WhenHandler implements ElementHandler<And>
+* **perform**: PerformHandler implements ElementHandler<Operation>
+* **otherwise**: OtherwiseHandler implements ElementHandler<Operation>
+ 
+===== **<when>** conditional handlers
+
+* **javaclass**: JavaClassHandler implements ElementHandler<JavaClassBuilderAt>
+* **project**: ProjectHandler implements ElementHandler<Project>
+* **xmlfile**: XmlFileHandler implements ElementHandler<XmlFile>
+
+=====  **<perform>** and **<otherwise>** action handlers
+
+* HintHandler implements ElementHandler<Hint>
+* IterationHandler implements ElementHandler<Iteration>
+
+
+===== Operation Handlers
+
+* **xslt**: XSLTTransformationHandler implements ElementHandler<XSLTTransformation>
+
+===== Other Handlers
+
+* **artifactId**: ArtifactHandler implements ElementHandler<Artifact>
+* **classification**: ClassificationHandler implements ElementHandler<Classification>
+* **file-mapping**:FileMappingHandler implements ElementHandler<Void>
+* **filecontent**:FileContentHandler implements ElementHandler<FileContent>
+* **lineitem**:LineItemHandler implements ElementHandler<LineItem>
+* **link**: LinkHandler implements ElementHandler<Link>
+* **matches**: MatchesHandler implements ElementHandler<Void>
+* **message**: MessageHandler implements ElementHandler<String>
+* **namespace**: NamespaceHandler implements ElementHandler<NamespaceEntry>
+* **log**: LogHandler implements ElementHandler<Operation>
+* **package-mapping**: PackageNameMappingHandler implements ElementHandler<Void>
+* **param**: ParamHandler implements ElementHandler<Condition>
+
+===== Windup Core Handlers
+
+* RuleHandler implements ElementHandler<Void>
+* RuleProviderHandler implements ElementHandler<Void>
+* RulesHandler implements ElementHandler<Void>
+* TypeReferenceLocationHandler implements ElementHandler<TypeReferenceLocation>; see http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[enum TypeReferenceLocation]
+* WhereHandler implements ElementHandler<Void>
+* XSLTParameterHandler implements ElementHandler<XSLTParameter>
+
+===== Logical Conditions
+
+* AndHandler implements ElementHandler<And>
+* OrHandler implements ElementHandler<Or>
+* NotHandler implements ElementHandler<Not>
+* TrueHandler implements ElementHandler<True>
+
+===== Rules Examples
+
+
+        <?xml version="1.0"?>
+        <ruleset xmlns="http://windup.jboss.org/v1/xml"
+          id="customruleprovider">
+          <!-- This defaults to MIGRATION_RULES -->
+          <phase>
+            DISCOVERY
+          </phase>
+          <rules>
+            <rule>
+              <when>
+                <javaclass references="javax.servlet.http.HttpServletRequest">
+                  <location>METHOD_PARAMETER</location>
+                </javaclass>
+              </when>
+              <perform>
+                <hint>
+        	  <message>Message from XML Rule</message>
+                  <link href="http://example.com" description="Description from XML Hint Link" />
+                </hint>
+                <log message="test log message"/>
+              </perform>
+              <otherwise>
+                <!--  -->
+              </otherwise>
+            </rule>
+            <rule>
+              <when>
+                <xmlfile xpath="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']">
+                  <namespace prefix="w" uri="http://java.sun.com/xml/ns/javaee"/>
+                </xmlfile>
+              </when>
+              <perform>
+                <hint>
+        	  <message>Container Auth</message>
+                </hint>
+                <xslt description="Example XSLT Conversion" extension="-converted-example.xml" 
+                         xsltFile="/exampleconversion.xsl"/>
+                <log message="test log message"/>
+              </perform>
+              <otherwise>
+                <!--  -->
+              </otherwise>
+            </rule>
+          </rules>
+        </ruleset>
+
+
+A file-mapping is a predefined rule. It bundles the condition and perform that maps file extensions to model types. For example:
+
+        <?xml version="1.0"?>
+        <ruleset xmlns="http://windup.jboss.org/v1/xml" id="XmlFileMappings">
+          <rules>
+            <file-mapping from=".*\.tld$" to="XmlFileModel"/>
+            <file-mapping from=".*\.bpel$" to="XmlFileModel"/>
+            <file-mapping from=".*\.wsdl$" to="XmlFileModel"/>
+            <file-mapping from=".*\.wsdd$" to="XmlFileModel"/>
+            <file-mapping from=".*\.bpelex$" to="XmlFileModel"/>
+            <file-mapping from=".*\.mon$" to="XmlFileModel"/>
+            <file-mapping from=".*\.xmi$" to="XmlFileModel"/>
+            <file-mapping from=".*\.export$" to="XmlFileModel"/>
+            <file-mapping from=".*\.import$" to="XmlFileModel"/>
+            <file-mapping from=".*\.bcfg$" to="XmlFileModel"/>
+            <file-mapping from=".*\.map$" to="XmlFileModel"/>
+            <file-mapping from=".*\.brg$" to="XmlFileModel"/>
+            <file-mapping from=".*\.brgt$" to="XmlFileModel"/>
+            <file-mapping from=".*\.ruleset$" to="XmlFileModel"/>
+            <file-mapping from=".*\.module$" to="XmlFileModel"/>
+            <file-mapping from=".*\.modulex$" to="XmlFileModel"/>
+            <file-mapping from=".*\.composite$" to="XmlFileModel"/>
+            <file-mapping from=".*\.requirements$" to="XmlFileModel"/>
+          </rules>
+        </ruleset>
+
+==== XML Rule Element Description
+
+* **<ruleset>**: This element defines this as a Windup rule.
+* **<phase>**: This element specifies when the ruleset should execute. See xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecyle] for more information about rule phases.
+* **<rules>**: element contains the individual rules.
+** **<rule>**: This element is a child of the **rules** element. One or more rules can be defined for a ruleset. Each `rule` contains the following elements.
+*** **<when>**: This element defines the condition to match on.
+**** **<javaclass references="CLASS_NAME">**
+***** **<location>**: The location where the reference was found in a Java source file. See the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[Enum TypeReferenceLocation] Javadoc for valid values.
+*** **<perform>**: This element is invoked when the condition is met.
+**** **<hint>**: This child element of **perform** is used to create a `hint`
+***** **<message>**: 
+***** **<link>**:
+**** **<xslt>**: This specifies how to transform the the specified XML file
+**** **<log>**: This child element of **perform** is used to log a message. It takes the attribute **message** to define the text message.
+*** The **<otherwise>** element is invoked when the condition is not met.
+
+A file-mapping is a predefined rule. For example:
+
+        <?xml version="1.0"?>
+        <ruleset xmlns="http://windup.jboss.org/v1/xml" id="XmlFileMappings">
+          <rules>
+            <file-mapping from=".*\.tld$" to="XmlFileModel"/>
+            <file-mapping from=".*\.bpel$" to="XmlFileModel"/>
+            <file-mapping from=".*\.wsdl$" to="XmlFileModel"/>
+            <file-mapping from=".*\.wsdd$" to="XmlFileModel"/>
+            <file-mapping from=".*\.bpelex$" to="XmlFileModel"/>
+            <file-mapping from=".*\.mon$" to="XmlFileModel"/>
+            <file-mapping from=".*\.xmi$" to="XmlFileModel"/>
+            <file-mapping from=".*\.export$" to="XmlFileModel"/>
+            <file-mapping from=".*\.import$" to="XmlFileModel"/>
+            <file-mapping from=".*\.bcfg$" to="XmlFileModel"/>
+            <file-mapping from=".*\.map$" to="XmlFileModel"/>
+            <file-mapping from=".*\.brg$" to="XmlFileModel"/>
+            <file-mapping from=".*\.brgt$" to="XmlFileModel"/>
+            <file-mapping from=".*\.ruleset$" to="XmlFileModel"/>
+            <file-mapping from=".*\.module$" to="XmlFileModel"/>
+            <file-mapping from=".*\.modulex$" to="XmlFileModel"/>
+            <file-mapping from=".*\.composite$" to="XmlFileModel"/>
+            <file-mapping from=".*\.requirements$" to="XmlFileModel"/>
+          </rules>
+        </ruleset>
+
+

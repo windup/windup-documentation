@@ -58,12 +58,10 @@ JBoss Windup, version [ 2.0.0-VERSION ] - JBoss, by Red Hat, Inc. [ http://windu
 
 . The command to run Windup is `windup-migrate-app`.
 
-. The following is a list of the most commonly used command line arguments.
+. This command can take arbitrary options processed by different addons. The list of options in the core Windup distribution can be found in http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/ConfigurationOption.html[Javadoc]. Most commonly used command line arguments are:
 
 +
 --input *INPUT_ARCHIVE_OR_FOLDER*:: This is the fully qualified application archive or source path.
-+
---source-mode true (optional):: This argument is optional and is only required if the application to be evaluated contains source files rather than compiled binaries. The default value is `false`.
 +
 --output *OUTPUT_REPORT_DIRECTORY*:: The fully qualified path to the folder that will contain the the report information produced by Windup.
 +
@@ -71,9 +69,13 @@ NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists and you do not specify t
 +
 --overwrite (optional):: Specify this optional argument only if you are certain you want to force Windup to delete the existing *OUTPUT_REPORT_DIRECTORY*. The default value is `false`.
 +
+--userRulesDirectory:: Points to a directory to load XML rules from. (Search pattern: *.windup.groovy and *.windup.xml)
++
 --packages *PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* (optional):: This is a comma-delimited list of the packages to be evaluated by Windup.
 +
 --excludePackages *PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* (optional):: This is a comma-delimited list of the packages to be excluded by Windup.
++
+--source-mode true (optional):: This argument is optional and is only required if the application to be evaluated contains source files rather than compiled binaries. The default value is `false`.
 
 . To evaluate an application archive, use the following syntax:
 +

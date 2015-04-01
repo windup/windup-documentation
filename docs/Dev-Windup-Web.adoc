@@ -1,0 +1,17 @@
+[Dev-Windup-Web]
+=== Windup Web
+
+.DRAFT
+
+Hosted by Red Hat / JBoss.org
+
+Source code is currently at https://github.com/windup/windup.jboss.org
+
+==== How to get access
+
+While hosted by Red Hat, the procedure is to send your ssh public key; After adding, you can log in the user `windup` to `filemgmt.jboss.org` and access `www_htdocs/windup`. (eng-ops)
+
+----
+sftp windup@filemgmt.jboss.org
+cd www_htdocs/windup 
+----

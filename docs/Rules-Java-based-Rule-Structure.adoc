@@ -68,10 +68,16 @@ In the `.when()` part, the rule typically queries the graph, using the
 Other way to fill a when part is subclassing the `GraphCondition`.
 Actually, `Query` also implements it, and is only a convenient way to
 create a condition.
+You can also use multiple conditions within one when() call using and().
+Example: 
+----
+.when(Query.fromType(XmlMetaFacetModel.class).and(Query...))
+----
 
 Last noticable but important feature is the ability to use
 https://github.com/tinkerpop/gremlin/wiki[Gremlin] queries. See
 http://gremlindocs.com/[Gremlin docs] for reference manual.
+
 
 ===== perform()
 
@@ -94,7 +100,7 @@ writes the findings into the graph.
 
 For that, various operations are available. These are subclasses of
 `GraphOperation`. You can also implement your own. See
-Rules-Operations[Rules Operations] for more info. Again, there are
+xref:Rules-Rules-Operations[Rules Operations] for more information. Again, there are
 several convenient implementations for constructs like iteration
 (`Iteration`).
 
@@ -122,7 +128,20 @@ several convenient implementations for constructs like iteration
 
 ====== Nested iterations
 
-TO_DO: Provide information about nested iterations
+An iteration is also an operation, so everywhere an operation is expected, you can freely put the Iteration. If the Iteration is put inside the perform method of another Iteration, we speak about nested iterations.
+An example of such nested iteration may be:
+----
+.addRule()
+     .when(...)
+     .perform(
+     Iteration.over("list_variable").as("single_var")
+       .perform(
+         Iteration.over("single_var") //second iteration
+           .perform(...).endIteration()
+     )
+     .endIteration()
+);
+----
 
 ====== otherwise
 
@@ -147,7 +166,16 @@ For more information, see http://ocpsoft.org/rewrite/[OCP Rewrite web].
 
 ===== Where
 
-TO_DO: Provide information about the where clause
+The where clause is used to provide information about used parameters within the rule. So for example if you have used a parameter in some condition like for example `JavaClass.references("{myMatch}")`, you may use the where clause to specify what the `myMatch` is like `.where("myMatch").matches("java.lang.String.toString\(.*\)")`. 
+
+----
+.when(JavaClass.references("{myMatch}").at(TypeReferenceLocation.METHOD))
+.perform(...)
+.where("myMatch").matches("java.lang.String.toString\(.*\)")
+----
+
++
+Please note that within the where clause the regex is used in contrast to JavaClass.references() where a windup specific syntax is expected.
 
 ===== Metadata
 
@@ -166,3 +194,30 @@ and not actually used, is `RuleMetadata.CATEGORY`.
 
 For a list of what key services and constructs can be used in the rule,
 see xref:Rules-Available-Rules-Utilities[Available Rules Utilities].
+
+===== Variable stack
+The communication between the conditions and operations is done using the variable stack that is filled with the output of the condition/s and then given to the Iteration to be processed. 
+Within conditions, you can specify the name of the result iterable that is saved in the stack using `as()` method, the iteration can specify the iterable to iterate over using the `over()` method and even specify the name of for each processed single model of the result being processed.
+Example: 
+
+----
+
+.addRule()
+     .when(Query...as("result_list"))
+     .perform(
+     Iteration.over("result_list").as("single_var")
+          ...
+     )
+);
+
+----
+The varstack may be accesed even from the second condition in order to narrow the result of the previous one. After that the iteration may choose which result it wants to iterate over (it is even possible to have multiple iterations listed in the perform, each of which may access different result saved in the variable stack).
+----
+.addRule()
+     .when(Query...as("result_list").and(Query.from("result_list")....as("second_result_list")))
+     .perform(
+     Iteration.over("second_result_list")
+          ...
+     )
+);
+----

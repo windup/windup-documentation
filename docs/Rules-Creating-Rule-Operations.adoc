@@ -1,6 +1,8 @@
 [[Rules-Creating-Rule-Operations]]
 === Creating Rule Operations
 
+:imagesdir: images
+
 An operation is a task which can be invoked from within a rule.
 
 It is created by extending GraphOperation.
@@ -11,8 +13,7 @@ public class FooOperation extends GraphOperation
 {
     @Override
     public void perform(GraphRewrite event, EvaluationContext context)
-    {
-        
+    {        
         ...
     }
 }
@@ -20,5 +21,5 @@ public class FooOperation extends GraphOperation
 
 Existing operations:
 
-image:images/GraphOperationSubtypes.png["Existing operations"]
+image:GraphOperationSubtypes.png["Existing operations"]
 

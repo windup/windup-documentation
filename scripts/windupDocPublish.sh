@@ -28,10 +28,12 @@ git reset --hard upstream/gh-pages
 cd docs/
 pwd
 echo Testing for existence of $WINDUP_VERSION
-if [ ! -d  $WINDUP_VERSION ]; then
+if [ ! -d  $WINDUP_VERSION ] || [ ! -d  $WINDUP_VERSION/html ] || [ ! -d  $WINDUP_VERSION/pdf ] ; then
   echo Creating directory: $WINDUP_VERSION
   mkdir -p $WINDUP_VERSION/html/images
+  mkdir $WINDUP_VERSION/pdf
 fi
+
 
 cd $1
 pwd
@@ -49,6 +51,7 @@ git add docs
 
 git commit -m "Update the docs for release $3"
 
+echo "*******************************************"
 echo "The following are manual steps: "
 echo "    Navigate to the local windup source GitHub directory."
 echo "    Issue the following commands to push the doc upstream."
@@ -64,6 +67,7 @@ echo "        git commit -m 'Replace symlink for latest to point to WINDUP_RELEA
 echo "        git push origin HEAD"
 echo "        git push upstream gh-pages"
 echo "        firefox http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html"
+echo "*******************************************"
 
 # git push origin HEAD
 ## issue a pull and verify

@@ -1,0 +1,183 @@
+[[Ruleset-Java-Code-Matching-Examples]]
+=== Ruleset: Java Basic: Code Matching Examples
+
+.DRAFT This page will contain rule snippets for Java code matching, AND the java code they are supposed to match. Try `git grep '<when>'` if you want to add.
+.SGILDA 
+.OZIZKA: These are basically 'JavaClass' examples, correct? Would it be okay to change the title to reflect this? For example, something like:  'XML Ruleset Examples: Match on "javaclass"'?
+
+.SGILDA "No" to name change - XML Ruleset is something different - that is a RuleSet dealing with XML matching. This is really "Ruleset: Java: ...". It will also have Java syntax added.
+
+
+=== Example XML snippets
+
+==== Import
+
+[source,java]
+-------------------
+package com.mycompany.app;
+
+import org.jbpm.graph.def.ActionHandler;
+import org.jbpm.graph.def.ProcessDefinition;
+...
+-------------------
+
+[source,xml]
+-------------------
+        <rule>
+            <when>
+                <javaclass references="org.jbpm.graph.def.ActionHandler" as="default">
+                    <location>INHERITANCE</location>
+                </javaclass>
+            </when>
+            <perform>
+                <iteration>
+                    <hint message="Migrate to jBPM 5 org.drools.runtime.process.WorkItemHandler." effort="2">
+                    </hint>
+                </iteration>
+            </perform>
+        </rule>
+-------------------
+(See `rules-java-ee/src/main/resources/legacy/org.jboss.windup.rules.apps.legacy.java.JBossConfig.windup.xml`)
+
+
+==== Method call
+
+[source,java]
+-------------------
+import org.jbpm.graph.exe.ExecutionContext;
+...
+    public void myMethod( ExecutionContext exCtx){
+        exCtx.setVariable("foo", "bar");
+    }
+...
+-------------------
+
+[source,xml]
+-------------------
+        <rule>
+            <when>
+                <javaclass references="org.jbpm.graph.exe.ExecutionContext.setVariable" as="default">
+                    <location>METHOD</location>
+                </javaclass>
+            </when>
+            <perform>
+                <iteration>
+                    <hint effort="0">...</hint>
+                </iteration>
+            </perform>
+        </rule>
+-------------------
+
+
+==== Annotation
+
+[source,java]
+-------------------
+import org.jboss.ejb3.annotation.Management;
+...
+@Service( name = "DeliveryManager" )
+@Local( DeliveryManagerLocal.class )
+@Management( DeliveryManagerManagement.class )
+public class DeliveryManager implements DeliveryManagerManagement
+{
+    @Resource( mappedName = "Delivery/remote" )
+    DeliveryRemote delivery;
+-------------------
+
+[source,xml]
+-------------------
+            <when>
+                <javaclass references="org.jboss.ejb3.annotation.Management" as="default">
+                    <location>ANNOTATION</location>
+                </javaclass>
+            </when>
+-------------------
+
+
+
+
+==== Inheritance (Foo extends Bar)
+
+[source,java]
+-------------------
+public interface StockHome extends javax.ejb.EJBHome
+{
+    Stock create() throws java.rmi.RemoteException, javax.ejb.CreateException;
+}
+...
+-------------------
+
+[source,xml]
+-------------------
+            <when>
+                <javaclass references="javax.ejb.EJBHome" as="default">
+                    <location>INHERITANCE</location>
+                </javaclass>
+            </when>
+-------------------
+
+
+
+
+==== Constructor call
+
+[source,java]
+-------------------
+JMXServiceURL url = new JMXServiceURL("service:jmx:rmi://localhost:1099");
+-------------------
+
+[source,xml]
+-------------------
+            <when>
+                <javaclass references="javax.management.remote.JMXServiceURL({*})" as="default">
+                    <location>CONSTRUCTOR_CALL</location>
+                </javaclass>
+            </when>
+-------------------
+
+
+
+
+==== Type (classes, interfaces, ...) references (anywhere, e.g. as method parameter)
+
+[source,java]
+-------------------
+
+...
+-------------------
+
+[source,xml]
+-------------------
+        <when>
+            <javaclass references="java.awt.Frame.E_RESIZE_CURSOR" as="default">
+                <location>TYPE</location>
+            </javaclass>
+        </when>
+-------------------
+
+
+
+
+
+
+
+
+
+
+
+
+Template:
+
+==== <What is matched>
+
+[source,java]
+-------------------
+<Matched java code example>
+...
+-------------------
+
+[source,xml]
+-------------------
+<rule that matches that construct>
+-------------------
+

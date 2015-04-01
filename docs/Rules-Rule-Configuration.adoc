@@ -1,0 +1,40 @@
+[[Rules-Rule-Configuration]]
+=== Rule Configuration
+
+_How to pass configuration from user input to the rules._
+
+
+==== Configuration of Custom Rules 
+
+The rules can be parametrized by user input (e.g. from a command line argument, like `--packages`).
+When creating a custom rule, you might need to allow the user to change the rule's behavior, or need some input from the user, like, a path to some directory, or address of some online service. This page shows how.
+
+For more information about how configuration is processed, see xref:Dev-Windup-Configuration[Windup Configuration].
+
+===== Getting the options from the options map:
+
+[source,java]
+--------
+GraphOperation copyConfigToGraph = new GraphOperation()
+{
+    @Override
+    public void perform(GraphRewrite event, EvaluationContext context)
+    {
+        Map<String, Object> config = event.getGraphContext().getOptionMap();
+        Boolean sourceMode = (Boolean) config.get(SourceModeOption.NAME);
+        @SuppressWarnings("unchecked")
+        List<String> includeJavaPackages = (List<String>) config.get(ScanPackagesOption.NAME);
+        @SuppressWarnings("unchecked")
+        List<String> excludeJavaPackages = (List<String>) config.get(ExcludePackagesOption.NAME);
+        ...
+--------
+
+Example: Java ruleset uses a model for its options
+[source,java]
+--------
+WindupJavaConfigurationModel javaCfg = WindupJavaConfigurationService.getJavaConfigurationModel(event
+            .getGraphContext());
+javaCfg.setSourceMode(sourceMode == null ? false : sourceMode);
+javaCfg.setScanJavaPackageList(includeJavaPackages);
+javaCfg.setExcludeJavaPackageList(excludeJavaPackages);
+--------

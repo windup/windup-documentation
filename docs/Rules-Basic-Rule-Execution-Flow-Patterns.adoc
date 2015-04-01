@@ -1,15 +1,10 @@
 [[Rules-Basic-Rule-Execution-Flow-Patterns]]
 === Basic Rule Execution Flow Patterns
 
-TO_DO: Need some links to github to the respective example files.
+==== Single Operation - operation();
 
-==== operation();  - single operation
+No condition or iteration is needed. The following is an example of a single operation.
 
-When no iteration or condition is needed.
-
-Example: [CopyJavaConfigToGraphRuleProvider](rules-java/src/main/java/org/jboss/windup/rules/apps/java/config/CopyJavaConfigToGraphRuleProvider.java)
-
-[source,java]
 --------
 return ConfigurationBuilder.begin()
     .addRule()
@@ -21,11 +16,14 @@ return ConfigurationBuilder.begin()
     });
 --------
 
+Windup source code example: https://github.com/windup/windup/blob/master/rules-java/impl/src/main/java/org/jboss/windup/rules/apps/java/config/CopyJavaConfigToGraphRuleProvider.java#L99-L101 
 
-==== if( ... ){ operation(); }  - single conditional operation
+The `copyConfigToGraph` GraphOperation used in the perform() above is defined before the rule.
 
+==== Single Conditional Operation - if( ... ){ operation()}
 
-[source,java]
+A single condition must be met. The following is an example of a single conditional operation.
+ 
 --------
 return ConfigurationBuilder.begin()
     .addRule()
@@ -38,10 +36,11 @@ return ConfigurationBuilder.begin()
     });
 --------
 
+Windup source code example: https://github.com/windup/windup/blob/master/reporting/api/src/main/java/org/jboss/windup/reporting/rules/AttachApplicationReportsToIndexRuleProvider.java#L39-L41
 
-==== for( FooModel.class ){ ... } - Single iteration
+==== Single Iteration - for( FooModel.class ){ ... }
 
-For simple iterations, `IteratingRuleProvider` can be used, which makes the `perform` a bit less verbose:
+For simple iterations, you can extend the `IteratingRuleProvider` class to simplify the `perform` code.
 
 [source,java]
 --------
@@ -67,9 +66,9 @@ public class ComputeArchivesSHA512 extends IteratingRuleProvider<ArchiveModel>
     @Override public String toStringPerform() { return this.getClass().getSimpleName(); }
 }
 --------
+Windup source code example: https://github.com/windup/windup/blob/master/rules-java/api/src/main/java/org/jboss/windup/rules/apps/java/scan/provider/DiscoverArchiveManifestFilesRuleProvider.java
 
-
-==== if( ... ){ for( ... ) } - conditional iteration
+==== Conditional Iteration - if( ... ){ for( ... ) }
 
 [source,java]
 --------
@@ -82,12 +81,11 @@ return ConfigurationBuilder.begin()
             .perform( ... )
     )
 --------
+Windup source code example: https://github.com/windup/windup/blob/master/rules-java-ee/addon/src/main/java/org/jboss/windup/rules/apps/javaee/rules/DiscoverEjbAnnotationsRuleProvider.java#L82-L93
 
 
+==== Iteration With a Condition - for( ... ){ if( ... ){ ... } }
 
-==== for( ... ){ if( ... ){ ... } } - iteration with a condition
-
-[source,java]
 --------
 return ConfigurationBuilder.begin()
 .addRule()
@@ -111,11 +109,21 @@ return ConfigurationBuilder.begin()
             .perform( ... ) 
 --------
 
+Windup source code example: https://github.com/windup/windup/blob/master/reporting/impl/src/main/java/org/jboss/windup/reporting/rules/rendering/RenderReportRuleProvider.java#L46-L66
 
 
-==== for( ... ){ for( ... ) { ... } } - nested iterations
-
-[source,java]
---------
+==== Nested Iterations - for( ... ){ for( ... ) { ... } }
 
 --------
+.addRule()
+     .when(...)
+     .perform(Iteration //first iteration
+     .over("list_variable").as("single_var")
+     .perform(
+         Iteration.over("single_var") //second iteration
+         .perform(...).endIteration()
+     )
+     .endIteration()
+);
+--------
+Windup source code example: https://github.com/windup/windup/blob/master/config/tests/src/test/java/org/jboss/windup/config/iteration/payload/IterationPayLoadPassTest.java#L183-L202

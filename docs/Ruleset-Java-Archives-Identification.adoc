@@ -1,0 +1,25 @@
+[[Ruleset-Java-Archives-Identification]]
+=== Ruleset: Java Archives Identification
+
+ArtifactId: rules-java-archives
+
+==== Rules:
+* `ArchiveIdentificationConfigLoadingRuleProvider` loads identification data from `*.archive-metadata.txt` in `$USER/cache` and `$WINDUP/cache`. The data are added to the distribution in https://github.com/windup/windup/blob/master/dist/src/main/assembly/assembly-offline.xml#L38[`dist/src/main/assembly/assembly-offline.xml`] and created in https://github.com/windup/windup/blob/master/dist/pom.xml#L87[dist/pom.xml]
+* `IgnoredArchivesConfigLoadingRuleProvider`
+
+
+==== Listeners:
+* `ArchiveIdentificationGraphChangedListener`
+  When `ArchiveModel.ARCHIVE_NAME` changes, searches the library for it's SHA1. If found, adds `IdentifiedArchiveModel` type and appends `ArchiveCoordinateModel`.
+*  `ArchiveIdentificationLifecycleListener` registers `ArchiveIdentificationGraphChangedListener`.
+
+==== Models:
+* IgnoredArchiveModel
+
+=== TO_DO: See the following list 
+
+* Split the static classes `SkippedArchives` and `IdentifiedArchives` to an interface and implementations.
+* Copy the binary search (file-seeking) implementation of `IdentifiedArchives` to prevent OOMEx.
+* Since this reacts to write to ARCHIVE_NAME property, there's no guarantee that the ArchiveModel will be complete, and SHA1 already computed. This is overcome by a workaround - `setArchiveHashes()`.
+* All identified archives are ignored. This is not how this archive should work. Identification and ignoring should be separated, because we will definitely add identification of other archives than just the Maven Central Repo (e.g. JDBC drivers).
+*

@@ -1,0 +1,205 @@
+[[Dev-How-to-Write-a-Rule-Test]]
+=== How to Write a Rule Test
+
+.DRAFT
+
+Generally, you can test a rule in one of the following ways.
+
+. Call `perform()` on the given `GraphContext`,
+. Execute Windup using `WindupExecutor`.
+
+Examples of both are below.
+
+==== Follow These Steps to Create a Test
+
+. Create an Arquillian test with a `@Deployment` method.
++
+[source,java]
+----
+@RunWith(Arquillian.class)
+public class MyTest extends AbstractTestCase
+{
+    @Deployment
+    @Dependencies({
+    })
+    public static ForgeArchive getDeployment() {
+        return ShrinkWrap.create(ForgeArchive.class)
+            ...;
+    }
+}
+----
+. Add all the Windup add-ons needed for the rule.
+* Failure to add all necessary dependencies will lead to WARNINGs from Furnace.
+* Transitive dependencies declared by the add-on POM file are loaded automatically, so you should be safe adding the add-ons you use in your code.
+* Remember to add the dependencies to the `pom.xml` file, otherwise Furnace will throw
+a misleading error "Could not find a version for `org.foo:bar`".
++
+[source,java]
+----
+@Dependencies({
+    @AddonDependency(name = "org.jboss.windup.graph:windup-graph"),
+    ...
+})
+...
+    ForgeArchive archive = ShrinkWrap.create(ForgeArchive.class)
+        ...
+        .addAsAddonDependencies(
+            AddonDependencyEntry.create("org.jboss.windup.graph:windup-graph"),
+            ...
+        );
+----
+. Add the test classes to the archive.
++
+This can be tricky because failure to add all test classes can lead to cryptic errors from JBoss Modules, which does not tell you which class was not found. To avoid problems, here are few tips:
+
+* Do not use ShrinkWrap's `.addPackage(...)`. That can lead to duplicated classes since test classes sometimes use the same package name as the tested classes. Also, during refactoring, classes move around but the packages stay the same. It is preferable to add specific classes using the `addClasses(...)` method. +
+Duplicated classes cause problems like same class being treated as different (e.g. when using `class.getAnnotation()`).
+* Do not reuse helper classes between tests. A test should be totally independent. If you use e.g. some rules from implementation, even just when you really need any class, and that is moved, your test starts failing. Also, do not use other test's classes. We recommend to create a package for your test and have everything in it.
+* Test isolated features instead of few big test aiming many features at once.
++
+[source,java]
+----
+ForgeArchive archive = ShrinkWrap.create(ForgeArchive.class)
+    ...
+    .addBeansXML()
+    .addClasses(FooModel.class, TestRuleProvider)
+    //.addPackage(MyRuleTest.class.getPackage())
+    .addAsResource(new File("src/test/resources/reports"))
+    .addAsAddonDependencies(
+        AddonDependencyEntry.create("org.jboss.windup.graph:windup-graph"),
+        ...
+    );
+----
+. `@Inject GraphContext`
+
+For rules testing, we will have a special harness in the future.
+
+==== Test Examples
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+public class MapInPropertiesTest
+{
+    @Deployment
+    @Dependencies({
+        @AddonDependency(name = "org.jboss.windup.graph:windup-graph"),
+        @AddonDependency(name = "org.jboss.windup.utils:utils"),
+        @AddonDependency(name = "org.jboss.forge.furnace.container:cdi")
+    })
+    public static ForgeArchive getDeployment()
+    {
+        ForgeArchive archive = ShrinkWrap.create(ForgeArchive.class)
+            .addBeansXML()
+            .addPackage("org.jboss.windup.graph.typedgraph.mapinprops")
+            .addAsAddonDependencies(
+                AddonDependencyEntry.create("org.jboss.windup.graph:windup-graph"),
+                AddonDependencyEntry.create("org.jboss.windup.utils:utils"),
+                AddonDependencyEntry.create("org.jboss.forge.furnace.container:cdi")
+            );
+        return archive;
+    }
+
+    @Inject private GraphContext context;
+
+    @Test public void testMapHandling() throws Exception {
+        ....
+    }
+}
+----
+
+A test which builds it's own runtime environment:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+public class FreeMarkerIterationOperationTest extends AbstractTestCase
+{
+    @Deployment
+    @Dependencies({
+                @AddonDependency(name = "org.jboss.windup.config:windup-config"),
+                @AddonDependency(name = "org.jboss.windup.graph:windup-graph"),
+                @AddonDependency(name = "org.jboss.windup.reporting:windup-reporting"),
+                @AddonDependency(name = "org.jboss.forge.furnace.container:cdi")
+    })
+    public static ForgeArchive getDeployment()
+    {
+        ForgeArchive archive = ShrinkWrap.create(ForgeArchive.class)
+                    .addBeansXML()
+                    .addClass(AbstractTestCase.class)
+                    .addClass(FreeMarkerOperationRuleProvider.class)
+                    .addAsResource(new File("src/test/resources/reports"))
+                    .addAsAddonDependencies(
+                                AddonDependencyEntry.create("org.jboss.windup.config:windup-config"),
+                                AddonDependencyEntry.create("org.jboss.windup.graph:windup-graph"),
+                                AddonDependencyEntry.create("org.jboss.windup.reporting:windup-reporting"),
+                                AddonDependencyEntry.create("org.jboss.forge.furnace.container:cdi")
+                    );
+        return archive;
+    }
+
+    @Inject
+    private GraphContext context;
+    @Inject
+    private FreeMarkerOperationRuleProvider provider;
+
+    private Path tempFolder;
+
+    @Test
+    public void testApplicationReportFreemarker() throws Exception
+    {
+        GraphRewrite event = new GraphRewrite(context);
+        DefaultEvaluationContext evaluationContext = createEvalContext(event);
+        fillData(context);
+
+        Configuration configuration = provider.getConfiguration(context);
+
+        RuleSubset.evaluate(configuration).perform(event, evaluationContext);
+
+        Path outputFile = tempFolder.resolve(provider.getOutputFilename());
+        String results = FileUtils.readFileToString(outputFile.toFile());
+        Assert.assertEquals("Test freemarker report", results);
+    }
+
+    private void fillData(final GraphContext context) throws Exception
+    {
+        WindupConfigurationModel cfgModel = context.getFramed().addVertex(null, WindupConfigurationModel.class);
+        ...
+
+        ApplicationReportModel appReportModel = context.getFramed().addVertex(null, ApplicationReportModel.class);
+        ...
+    }
+
+    private DefaultEvaluationContext createEvalContext(GraphRewrite event)
+    {
+        final Variables varStack = Variables.instance(event);
+        final DefaultEvaluationContext evaluationContext = new DefaultEvaluationContext();
+        final DefaultParameterValueStore values = new DefaultParameterValueStore();
+        evaluationContext.put(ParameterValueStore.class, values);
+        event.getRewriteContext().put(Variables.class, varStack);
+        return evaluationContext;
+    }
+}
+----
+
+TO_DO: TBD:
+
+[source,java]
+----
+Query.find(FileModel.class).piped( new QueryGremlinCriterion() {
+    @Override
+    public void query( GraphRewrite event, GremlinPipeline<Vertex, Vertex> pipeline ) {
+        pipeline...
+    }
+})
+----
+
+Test a subset of Rules
+
+See
+https://github.com/lincolnthree/windup/tree/WINDUP-133/rules/app/java/src/test/java/org/jboss/windup/rules/java
+(TBD)
+
+==== What is the Module (add-on) _DEFAULT_? What does it's classloader see?
+
+That is the module of the current Forge Test Case. It is created on-the-fly for the purpose of a test.

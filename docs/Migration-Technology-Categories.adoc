@@ -1,0 +1,44 @@
+[[Migration-Technology-Categories]]
+=== Migration Technology Categories
+
+.DRAFT
+
+Windup rules categorize changes by technology to make it easier to understand the development and administration skill sets required for the migration effort.
+
+The following is a partial list of suggested technologies.
+
+CDI::
+
+CLUSTERING:: 
+
+CONFIGURATION:: Requires server configuration
+
+TRANSACTIONS:: Requires understanding of database transactions, SQL...
+
+DATASOURCE:: Requires knowledge of datasource configuration, JBDC Drivers.
+
+EJB3::
+
+JAVACLIENT::
+
+JAXRS::
+
+JMX::
+
+JNDI::
+
+JSF::
+
+LOGGING::
+
+REMOTING::
+
+SECURITY::
+
+SERVLET::
+
+THREADS::
+
+WEB::
+
+WEBSERVICES::

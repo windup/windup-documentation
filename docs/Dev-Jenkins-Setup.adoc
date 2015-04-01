@@ -1,0 +1,63 @@
+[[Dev-Jenkins-Setup]]
+=== Jenkins Setup
+
+Windup team has a Jenkins instance on OpenStack.
+
+This is the description of how to set it up.
+
+==== Requirements
+
+* Instance size: c3.mxlarge or bigger
+* System: RHEL 7 GA Guest
+
+==== Procedure To Set It Up
+
+. Get a RHN account. Your organization should give you one.
+. Add your keys to OpenStack
+. Login to the machine - user is `cloud-user`
+. `sudo su -`
+. `subscription-manager register --auto-attach`
+. `subscription-manager repos` - pick some repo(s) to use.
++
+----
+subscription-manager repos --enable=rhel-7-server-htb-rpms
+subscription-manager repos --enable=rhel-7-server-optional-rpms
+subscription-manager repos --enable=rhel-7-server-rpms/7Server
+subscription-manager repos --enable=rhel-7-server-rt-beta-rpms
+subscription-manager repos --enable=rhel-7-server-rt-htb-rpms
+subscription-manager repos --enable=rhel-7-server-rt-rpms
+subscription-manager repos --enable=rhel-ha-for-rhel-7-server-eus-rpms
+subscription-manager repos --enable=rhel-ha-for-rhel-7-server-htb-rpms
+subscription-manager repos --enable=rhel-ha-for-rhel-7-server-rpms
+subscription-manager repos --enable=rhel-lb-for-rhel-7-server-htb-rpms
+subscription-manager repos --enable=rhel-rs-for-rhel-7-server-eus-rpms
+subscription-manager repos --enable=rhel-rs-for-rhel-7-server-htb-rpms
+subscription-manager repos --enable=rhel-rs-for-rhel-7-server-rpms
+subscription-manager repos --enable=rhel-sap-for-rhel-7-server-rpms
+
+yum install -y java-1.7.0-openjdk java-1.7.0-openjdk-devel
+yum install -y wget git unzip mc lsof
+
+subscription-manager repos \
+--enable  rhel-server-7-ose-beta-rpms \
+--enable jb-eap-6.3-for-rhel-7-server-source-rpms  \
+--enable jb-eap-6-for-rhel-7-server-source-rpms  \
+--enable jb-ews-2-for-rhel-7-server-rpms
+
+yum update -y
+
+wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+yum install -y jenkins
+----
+
+. `service jenkins start` # or stop or restart
+. Install Maven 3.2.5
++
+----
+wget http://apache.miloslavbrada.cz/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.zip
+unzip -q apache-maven-3.3.1-bin.zip
+mkdir /sw
+mv apache-maven-3.3.1 /sw/maven-3.3.1
+ln -s /sw/maven-3.3.1/bin/mvn /usr/bin/mvn
+----
