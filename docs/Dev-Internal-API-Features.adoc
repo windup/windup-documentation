@@ -7,8 +7,8 @@ A `Rule` implements `Context`, which stores metadata. The following example gets
 
 [source,java]
 --------
-WindupRuleProvider ruleProvider = 
-     (WindupRuleProvider) context.get(RuleMetadata.RULE_PROVIDER);
+RuleProvider ruleProvider = 
+     (RuleProvider) context.get(RuleMetadata.RULE_PROVIDER);
 --------
 
 For more information about the metadata stored in the context, see xref:Rules-Metadata[Rules Metadata]

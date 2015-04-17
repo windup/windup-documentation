@@ -1,25 +1,23 @@
 [[Rules-Java-based-Rule-Structure]]
 === Java-based Rule Structure
 
-TO_DO: Add a how-to for compound rules, nested rules, rules over multiple sources, negative queries (not matched by anything).
-
-==== Windup Rule Provider 
+==== RuleProvider 
 
 Windup rules are based on http://ocpsoft.org/rewrite/[OCPsoft Rewrite], an open source routing and URL rewriting solution for Servlets, Java Web Frameworks, and Java EE. The *rewrite* framework allows you to create rule providers and rules in an easy to read format. 
 
-Windup rule add-ons must extend the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupRuleProvider.html[WindupRuleProvider] class.
+Windup rule add-ons can implement the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html[RuleProvider] interface or they can extend the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/AbstractRuleProvider.html[AbstractRuleProvider] class, the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/SingleRuleProvider.html[SingleRuleProvider] class, or the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/IteratingRuleProvider.html[IteratingRuleProvider] class. 
 
-* If the rule should run in a phase other than the default http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_PHASE[MIGRATION_PHASE], you must implement the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupRuleProvider.html#getPhase%28%29[getPhase()] method and specify in which Windup lifecycle phase the rule should be executed. For more information about rule phases, see xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle].
+* If the rule should run in a phase other than the default http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_PHASE[MIGRATION_PHASE], you must implement the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html#getPhase%28%29[getPhase()] method and specify in which Windup lifecycle phase the rule should be executed. For more information about rule phases, see xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle].
 
-* Rules are added using the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupRuleProvider.html[getConfiguration(GraphContext context)] method. This method is inherited from the http://ocpsoft.org/rewrite/[OCPsoft Rewrite] interface org.ocpsoft.rewrite.config.ConfigurationProvider. Rules are discussed in more detail later.
+* Rules are added in the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html[getConfiguration(GraphContext context)] method. This method is inherited from the http://ocpsoft.org/rewrite/[OCPsoft Rewrite] interface org.ocpsoft.rewrite.config.ConfigurationProvider. Rules are discussed in more detail below under xref:add-rule-code-structure[Add Rule Code Structure]
 
-* If other rules must execute after or before the rules in this provider, you must provide the list of WindupRuleProvider classes using the *getExecuteAfter()* or *getExecuteAfter()* methods. 
+* If other rules must execute after or before the rules in this provider, you must provide the list of RuleProvider classes using the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html#getExecuteBefore%28%29[getExecuteBefore()] or http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html#getExecuteAfter%28%29getExecuteAfter()* methods. 
 
 The following is an example of a simple Java-based rule add-on.
 
 [source,java]
 ----
-public class ExampleRuleProvider extends WindupRuleProvider
+public class ExampleRuleProvider extends AbstractRuleProvider
 {
     @Override public RulePhase getPhase(){
         return RulePhase.DISCOVERY;
@@ -44,7 +42,10 @@ public class ExampleRuleProvider extends WindupRuleProvider
 }
 ----
 
+[[add-rule-code-structure]]
 ==== Add Rule Code Structure
+
+As mentioned above, individual rules are added to the ruleset in the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html[getConfiguration(GraphContext context)] method using the http://ocpsoft.org/rewrite/[OCPsoft Rewrite] ConfigurationBuilder class.
 
 Like most rule-based frameworks, Windup rules consist of the following:
 

@@ -3,7 +3,7 @@
 
 .DRAFT
 
-Ozizka: I'm not clear what this is?
+sgilda question for Ozizka: I'm not clear what this is?
 
 _This is an example page. Content serves for design decision. These pages could be generated automatically in the future._
 
@@ -17,7 +17,7 @@ Purpose of this ruleset.
 
 _A definition list (dl/dt/dd) of RuleProviders of given Ruleset with brief descriptions._
 
-_Template hint: Subclasses of http://windup.github.io/windup/docs/javadoc/latest/index.html?org/jboss/windup/graph/model/WindupVertexFrame.html[WindupRuleProvider]._
+_Template hint: Subclasses of http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/AbstractRuleProvider.html[AbstractRuleProvider].
 
 * **JDKconfigRuleProvider** - Targetted towards the classes distributed with JDK, like `java.lang.*`, `java.security.*`, `org.xml.*`, etc.
 * **AnalyzeJavaFilesRuleProvider** - 
@@ -60,7 +60,7 @@ _Template hint: Subclasses of http://windup.github.io/windup/docs/javadoc/latest
 * **WebLogicConfig** - 
 * **WebServiceConfig** - 
 * **WebsphereConfig** - 
-* **WindupRuleProviderBuilder** - 
+* **RuleProviderBuilder** - 
 * **XmlBaseConfig** - 
 * **XmlGlassfishConfig** - 
 * **XmlJbossConfig** - 

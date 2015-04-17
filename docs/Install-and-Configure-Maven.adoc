@@ -49,6 +49,7 @@ build Windup.
 . Copy the following `jboss-nexus-repository` profile XML prior to the
 ending `</profiles>` element.
 +
+[source,xml]
 -------------------------------------------------------------------------
 <profile>
   <id>jboss-nexus-repository</id>
@@ -81,6 +82,7 @@ ending `</profiles>` element.
 . Copy the following XML prior to the ending `</activeprofiles>`
 element to make the profile active.
 +
+[source,xml]
 ----------------------------------------------------------
 <activeProfile>jboss-nexus-repository</activeProfile> 
 ----------------------------------------------------------

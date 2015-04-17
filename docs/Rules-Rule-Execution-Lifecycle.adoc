@@ -1,125 +1,63 @@
 [[Rules-Rule-Execution-Lifecycle]]
 === Rule Execution Lifecycle
 
-==== Rule Lifecycle
+Rule phases provide a way for rule authors to control the rule lifecycle by specifying the phase in which the rule should execute. Windup executes rules sequentially within rule phases, however, you can also provide more fine-grained control over the order of rule execution within a phase. A rule may specify that one or more rules must be executed before it this rule is run. All named rules will be fired in the order specified before executing the the current rule. A rule may also specify that one or more rules must be executed after it is run. In this case, all named rules will be fired in the order specified after executing the the current rule.
 
-Windup executes each rule in a sequential order. The following
-sections describe the phases of rule execution and how rules may specify
-that one or more other rules must be executed before or after they are
-run.
+The rule phase and execution order is stored in the associated rule's http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RuleMetadata.html[RuleMetadata].
 
-For a graphical overview of rule processing, see
-https://docs.google.com/drawings/d/1IMnds3Qu8Wwcf7_mr7NJ9a3YgtcGJ7dejl09EhWl7Vc/edit[this
+For a detailed description of Windup rule phases and the order of their execution, see: xref:Rule-Phases[Rule Phases]
+
+==== Set the Rule Execution Phase 
+
+You can set the phase in which the rule executes in one of the following ways. 
+
+* Add the `@RuleMetadata(phase = RulePhase)` annotation to the rule.
+* Code the `setPhase(RulePhase)` method in the constructor of the rule.
+
+==== Control the Execution Order Within the Rule Phase
+
+You can also provide more fine-grained control over the order of rule execution within a phase. A rule may specify that one or more rules must be executed before it this rule is run. All named rules will be fired in the order specified before executing the the current rule. A rule may also specify that one or more rules must be executed after it is run. In this case, all named rules will be fired in the order specified after executing the the current rule.
+
+This is done in one of the following ways.
+
+* Add the `@RuleMetadata(after = PreviousRuleProvider, before = NextRuleProvider)` annotation to the rule.
+* Use the `addExecuteAfter(NextRuleProvider)` or `addExecuteBefore(PreviousRuleProvider)` methods in the constructor, specifying the rules that should precede or follow this rule.
+
+==== Code Example Using the Annotation Method
+
+The following is an example of a rule that overrides the rule phase and sets the ordering using the `@RuleMetaData` annotation.
+
+[source,java]
+----
+@RuleMetadata(id = "MyCustomRuleProvider",
+            phase = DependentPhase.class,
+            after = { MyFirstRuleProvider.class, MySecondRuleProvider.class },
+            before = { MyFinalRuleProvider1.class })
+public class MyCustomRuleProvider extends AbstractRuleProvider
+{
+----
+
+==== Code Example Using the Constructor Method
+
+
+The following example provides the same results using constructor methods.
+
+[source,java]
+----
+public MyCustomRuleProvider extends AbstractRuleProvider
+{
+    super(MetadataBuilder.forProvider(MyCustomRuleProvider.class)
+                .setPhase(DiscoveryPhase.class)
+                .addExecuteAfter({ MyFirstRuleProvider.class, MySecondRuleProvider.class }),
+                .addExecuteBefore({MyLastRuleProvider.class}));
+}
+----
+
+==== Additional Information
+
+For more information about what can be specified in the `@RuleMetadata` annotation, see the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RuleMetadata.html[RuleMetadata] JavaDoc.
+
+For more information about RuleProvider constructor MetadataBuilder methods, see the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/MetadataBuilder.html[MetadataBuilder] JavaDoc.
+
+For a graphical overview of rule processing, see https://docs.google.com/drawings/d/1IMnds3Qu8Wwcf7_mr7NJ9a3YgtcGJ7dejl09EhWl7Vc/edit[this
 diagram].
-
-==== Rule Phases
-
--------------
-INFO: Loaded [67] org.jboss.windup.config.WindupRuleProvider [
-org.jboss.windup.config.phase.Implicit
-org.jboss.windup.config.phase.Initialization
-org.jboss.windup.config.phase.Discovery
-org.jboss.windup.config.phase.ArchiveExtraction
-org.jboss.windup.config.phase.ArchiveMetadataExtraction
-org.jboss.windup.config.phase.ClassifyFileTypes
-org.jboss.windup.config.phase.DiscoverProjectStructure
-org.jboss.windup.config.phase.Decompilation
-org.jboss.windup.config.phase.InitialAnalysis
-org.jboss.windup.config.phase.MigrationRules
-org.jboss.windup.config.phase.PostMigrationRules
-org.jboss.windup.config.phase.PreReportGeneration
-org.jboss.windup.config.phase.ReportGeneration
-org.jboss.windup.config.phase.PostReportGeneration
-org.jboss.windup.config.phase.ReportRendering
-org.jboss.windup.config.phase.PostReportRendering
-org.jboss.windup.config.phase.Finalize
-org.jboss.windup.config.phase.PostFinalize
-]
--------------
-
-
-By default, a rule runs during the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_RULES[MIGRATION_RULES] phase. However, a
-rule may require certain processing or actions to occur before it
-executes, such as the extraction of archives and scanning of java or XML
-files.
-
-Rule phases provide a way for rule authors to specify and control in
-which phase of the rule lifecycle the rule should execute. This is done
-by overriding the `WindupRuleProvider.getPhase()` method. The following
-example specifies this rule should execute during the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#INITIAL_ANALYSIS[INITIAL_ANALYSIS] rule phase.
-
-[source,java]
-----
-@Override
-public RulePhase getPhase() {
-    return InitialAnalysis.class;
-}
-----
-
-The following is the list of rule phases as defined in the `RulePhase`
-enum class. Note that there are also `PRE_` processing and `POST_`
-processing phases for each of the following rule phases.
-
-http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#DISCOVERY[DISCOVERY]::
-This phase is called during resource discovery. Static files are scanned
-by their basic properties, for example, the name, extension, location,
-and fully qualified Java class name. Archives are unzipped in this
-phase. Typically, any rule that only puts data into the graph is
-executed during this phase.
-
-http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#INITIAL_ANALYSIS[INITIAL_ANALYSIS]::
-This phase is called to perform a basic analysis of the files content.
-It extracts all method names from class files, extracts metadata, such
-as the XML namespace and root element, from XML files.
-
-http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#COMPOSITION[COMPOSITION]::
-This phase is called to perform high-level composition operations on the
-graph. For example, it may link items found in XML files to the related
-Java classes or references to server resources in Java classes.
-
-http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_RULES[MIGRATION_RULES]::
-This phase is the default phase for all rules unless overridden. 
-During this phase, migration rules attach data to the graph associated
-with migration. This could include: - Hints to migrators for manual
-migration - Automated migration of schemas or source segments -
-Blacklists to indicate vendor specific APIs.
-
-http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#REPORT_GENERATION[REPORT_GENERATION]::
-During this phase, reporting visitors produce report data in the graph
-that will later be used by the report rendering phase.
-
-http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#REPORT_RENDERING[REPORT_RENDERING]::
-This is the phase that renders the report.
-
-http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#FINALIZE[FINALIZE]::
-This phase is called to clean up resources and close streams.
-
-For more information about rule phases, see the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html[RulePhase Javadoc].
-
-==== Execute Before and Execute After
-
-A rule may specify that one or more rules must be executed before it is
-run. In this case, all named rules will be fired in the order specified
-before executing the the current rule.
-
-[source,java]
-----
-@Override
-public List<Class<? extends WindupRuleProvider>> getExecuteBefore()
-{
-   return asClassList(RuleToFireBefore.class);
-}
-----
-
-A rule may also specify that one or more rules must be executed after it
-is run. In this case, all named rules will be fired in the order
-specified after executing the the current rule.
-
-[source,java]
-----
-@Override
-public List<Class<? extends WindupRuleProvider>> getExecuteAfter()
-{
-    return asClassList(RuleToFireAfter.class);
-}
-----

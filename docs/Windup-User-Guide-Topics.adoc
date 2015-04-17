@@ -1,11 +1,11 @@
 == Overview
 
 This guide is for engineers, consultants, and others who plan to use 
-Windup 2.0 to migrate Java applications or other components. 
+Windup 2 to migrate Java applications or other components. 
 
 include::What-is-Windup.adoc[tabsize=4]
 
-include::Features-of-Windup-2.0.adoc[tabsize=4]
+include::Features-of-Windup-2.adoc[tabsize=4]
 
 include::About-the-WINDUP_HOME-Variable.adoc[tabsize=4]
 
@@ -35,7 +35,7 @@ include::Windup-Processing-Overview.adoc[tabsize=4]
 
 include::Windup-Architectural-Components.adoc[tabsize=4]
 
-include::Rules-Rule-Execution-Lifecycle.adoc[tabsize=4]
+include::Rule-Phases.adoc[tabsize=4]
 
 include::Rules-Rule-Story-Points.adoc[tabsize=4]
 

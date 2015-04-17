@@ -2,12 +2,12 @@
 === Windup Core Development Guide
 
 This guide is for developers who plan to contribute source code updates
-or core rule add-ons to the Windup 2.0 project.
+or core rule add-ons to the Windup 2 project.
 
 ==== Overview
 
 * xref:What-is-Windup[What is Windup]?
-* xref:Features-of-Windup-2.0[Features of Windup 2.0]
+* xref:Features-of-Windup-2[Features of Windup 2]
 * xref:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable]
 
 ==== Get Started
@@ -35,6 +35,7 @@ Before you begin to contribute to Windup, take a quick tour to see how to use it
 
 * xref:Windup-Processing-Overview.adoc[Windup Processing Overview]
 * xref:Rules-Rule-Execution-Lifecycle[Rules Execution Lifecyle]
+* xref:Rule-Phases[Rule Phases]
 * xref:Rules-Rule-Story-Points[Rule Story Points]
 * xref:Rules-Difference-Between-XML-based-and-Java-based-Rules[Difference Between XML-based and Java-based Rules]
 
@@ -85,7 +86,7 @@ Before you begin to contribute to Windup, take a quick tour to see how to use it
 * xref:Ruleset-XML[XML Ruleset]
 * xref:Rules-Windup-Models[Windup Models]
 * xref:Rules-Create-Java-Queries[Create Java Queries]
-* xref:Rules-Rules-Metadata[Rules Metadata]
+* xref:Rule-Metadata[Rule Metadata]
 * xref:Rules-Rules-Operations[Rules Operations]
 ** xref:Rules-Ops-Reporting-Classification[Rules Ops: Reporting: Classification]
 ** xref:Rules-Ops-Reporting-Hint[Rules Ops: Reporting: Hint]

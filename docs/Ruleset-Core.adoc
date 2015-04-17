@@ -15,7 +15,7 @@ Purpose of this ruleset.
 
 _A definition list (dl/dt/dd) of RuleProviders of given Ruleset with brief descriptions._
 
-_Template hint: Subclasses of [`WindupRuleProvider`](http://windup.github.io/windup/docs/javadoc/latest/index.html?org/jboss/windup/graph/model/WindupVertexFrame.html)._
+_Template hint: Subclasses of http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/AbstractRuleProvider.html[AbstractRuleProvider]
 
 * **AttachApplicationReportsToIndexRuleProvider** - 
 * **BaseConfig** - 
@@ -33,7 +33,7 @@ _Template hint: Subclasses of [`WindupRuleProvider`](http://windup.github.io/win
 * **UnzipArchivesToOutputRuleProvider** - 
 
 * **IteratingRuleProvider** - 
-* **WindupRuleProviderBuilder** - 
+* **RuleProviderBuilder** - 
 
 
 ==== Models

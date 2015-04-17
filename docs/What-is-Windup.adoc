@@ -13,9 +13,9 @@ JAR deployments (or a project source directory) and produces an HTML report deta
 the Java application to simplify migration efforts. It seeks to make
 migrating from other containers to JBoss EAP a piece of cake.
 
-==== Windup 2.0 vs. Windup 0.7.x
+==== Windup 2 vs. Windup 0.7.x
 
-Windup 2.0 aims to deliver the same functionality as legacy Windup, however, the internal architecture and rule structure is very different and allows for the creation of much more complex rules.
+Windup 2 aims to deliver the same functionality as legacy Windup, however, the internal architecture and rule structure is very different and allows for the creation of much more complex rules.
 
 ==== How Does Windup Simplify Migration?
 

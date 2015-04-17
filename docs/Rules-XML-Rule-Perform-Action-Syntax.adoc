@@ -1,21 +1,21 @@
 [[Rules-XML-Rule-Perform-Action-Syntax]]
 === XML Rule - Perform Action Syntax
 
-Operations allowed in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
+Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
 
 The complete XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
 
 The following sections describe the more common XML rule perform actions. 
 
-* xref:classification-syntax[classification Syntax]
-* xref:link-syntax[link Syntax]
-* xref:hint-syntax[hint Syntax]
-* xref:xslt-syntax[xslt Syntax]
-* xref:lineitem-syntax[lineitem Syntax]
-* xref:iteration-syntax[iteration Syntax]
+* xref:classification-syntax[Classification Syntax]
+* xref:link-syntax[Link Syntax]
+* xref:hint-syntax[Hint Syntax]
+* xref:xslt-syntax[XSLT Syntax]
+* xref:lineitem-syntax[Lineitem Syntax]
+* xref:iteration-syntax[Iteration Syntax]
 
 [[classification-syntax]]
-==== classification Syntax
+==== Classification Syntax
 
 ===== Summary 
 
@@ -38,9 +38,7 @@ _Example:_
     </rule>
 
 
-===== Construct a classification Element
-
-====== classification Element Attributes
+===== `classification` Element: Attributes
 
 classification="STRING":: Classify the resource as the specified string.
 +
@@ -54,7 +52,7 @@ _Example:_
 
     effort="2"
 
-====== classification Element Child Elements
+===== `classification` Element: Child Elements
 
 xref:: Provides a link URI and text description for additional information.
 +
@@ -66,7 +64,7 @@ _Example:_
     </classification>
 
 [[link-syntax]]
-==== link Syntax
+==== Link Syntax
 
 ===== Summary 
 
@@ -92,9 +90,7 @@ _Example:_
         </perform>
     </rule>
 
-===== Construct a link Element
-
-====== link Element: Attributes
+===== `link` Element: Attributes
 
 href="URI":: The URI for the referenced link/.
 +
@@ -109,7 +105,7 @@ _Example:_
     description="Migrate WebLogic Proprietary Servlet Annotations"
 
 [[hint-syntax]]
-==== hint Syntax
+==== Hint Syntax
 
 ===== Summary 
 
@@ -134,9 +130,7 @@ _Example:_
         </perform>
     </rule>
 
-===== Construct a hint Element
-
-====== hint Element:  Attributes
+===== `hint` Element:  Attributes
 
 message="MESSAGE":: A message describing the migration hint
 +
@@ -150,17 +144,17 @@ _Example:_
 
     effort="2"
 
-====== hint Element: Child Elements
+===== `hint` Element: Child Elements
 
-xref:: Identify or classify links to informational content. See the section on xref:link-syntax[link Syntax] for details.
+xref:: Identify or classify links to informational content. See the section on xref:link-syntax[Link Syntax] for details.
 
 +
 _Example:_
 
     link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
 
-[[xslt-syntax]]
-==== xslt Syntax
+[[xslt-action]]
+==== XSLT Syntax
 
 ===== Summary 
 
@@ -182,9 +176,7 @@ _Example:_
         </perform>
     </rule>
 
-===== Construct an xslt Element
-
-====== xslt Element:  Attributes
+===== `xslt` Element:  Attributes
 
 of="STRING":: Create a new transformation for the given reference.
 +
@@ -211,7 +203,7 @@ _Example:_
 
     template="simpleXSLT.xsl"
 
-====== xslt Element: Child Elements
+===== `xslt` Element: Child Elements
 
 xslt-parameter=Map<String,String> :: Specify XSLTTransformation parameters as property value pairs 
 +
@@ -219,8 +211,8 @@ _Example:_
 
     <xslt-parameter property="title" value="EJB Transformation"/>
 
-[[lineitem-syntax]]
-==== lineitem Syntax
+[[lineitem-action]]
+==== Lineitem Syntax
 
 ===== Summary 
 
@@ -244,9 +236,7 @@ _Example:_
         </perform>
     </rule>
 
-===== Construct a lineitem Element
-
-====== lineitem Element:  Attributes
+===== `lineitem` Element:  Attributes
 
 message="MESSAGE":: A lineitem message
 +
@@ -254,8 +244,8 @@ _Example:_
 
     message="Proprietary code found."
     
-[[iteration-syntax]]
-==== iteration Syntax
+[[iteration-action]]
+==== Iteration Syntax
 
 ===== Summary 
 
@@ -286,16 +276,14 @@ _Example:_
         </perform>
     </rule>
 
-===== Construct an iteration Element
+===== `iteration` Element:  Attributes
 
-====== iteration Element:  Attributes
-
-over="NUMBER":: ??
+over="VARIABLE_NAME":: Iterate over the condition identified by this VARIABLE_NAME.
 +
 _Example:_
 
     over="2"
     
-====== iteration Element: Child Elements
+===== `iteration` Element: Child Elements
 
 iteration child elements include a `when` condition, along with the actions `iteration`, `classification`, `hint`, `xslt`, `lineitem`, and `otherwise`.

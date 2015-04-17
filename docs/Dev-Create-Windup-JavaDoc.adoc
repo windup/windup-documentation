@@ -10,6 +10,6 @@ If you want to build an updated version, use the following procedure to create J
 -----------------------------------
 mvn validate -PjavadocDist
 -----------------------------------
-. The JavaDoc is created in the Windup `target/site/apidocs` subdirectory.
+. The JavaDoc is created in the Windup `target/apidocs` subdirectory.
 
 NOTE: To cross-link with 3rd-party libraries, see https://issues.jboss.org/browse/WINDUP-422[WINDUP-422} and http://stackoverflow.com/questions/27392535/javadoc-how-to-make-it-link-the-dependencies-maven-project.

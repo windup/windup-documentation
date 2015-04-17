@@ -2,12 +2,12 @@
 === Rules Development Guide
 
 This guide is for engineers, consultants, or others who plan to create
-rules for Windup 2.0.
+rules for Windup 2.
 
 ==== General Windup Information
 
 * xref:What-is-Windup[What is Windup?]
-* xref:Features-of-Windup-2.0[Features of Windup 2.0]
+* xref:Features-of-Windup-2[Features of Windup 2]
 * xref:Get-Involved[Get Involved]
 * xref:Report-Issues-with-Windup[Report Issues with Windup]
 * xref:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable]
@@ -29,6 +29,7 @@ If you plan to create Java-based rule add-ons, you must also do the following.
 
 * xref:Windup-Processing-Overview[Windup Processing Overview]
 * xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle]
+* xref:Rule-Phases[Rule Phases]
 * xref:Rules-Rule-Story-Points[Rule Story Points]
 * xref:Rules-Difference-Between-XML-based-and-Java-based-Rules[
 Difference Between XML-based and Java-based Rules]

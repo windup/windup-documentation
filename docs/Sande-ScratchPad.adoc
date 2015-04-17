@@ -1,197 +1,73 @@
-=== Sande ScratchPad
+[Dev-Windup-Web]
+=== Windup Web
 
-==== Conditions (<when>)
+.DRAFT
 
-* **javaclass**: JavaClass class extends ParameterizedGraphCondition 
-* **xmlfile**: XmlFile class extends ParameterizedGraphCondition
-* **project**: Project class extends GraphCondition
-* **filecontent**: FileContent class extends ParameterizedGraphCondition
+The http://windup.jboss.org[windup.jboss.org] web site is hosted by Red Hat / JBoss.org
 
-==== Operations
+==== Get the Source Code
 
-* **lineitem**: LineItem extends AbstractIterationOperation<ProjectModel>
-* **classification**: Classification extends ParameterizedIterationOperation<FileModel>
-* **hint**: Hint extends ParameterizedIterationOperation<FileLocationModel>
-* **xslt**: XSLTTransformation extends AbstractIterationOperation<XmlFileModel> ??
+The source code for http://windup.jboss.org[windup.jboss.org] is currently located at https://github.com/windup/windup.jboss.org.
 
-==== Element Handlers:
+. https://github.com/windup/windup.jboss.org./fork[Fork] the windup.jboss.org project. This creates the `windup.jboss.org` project in your own Git with the default remote name 'origin'.
+. Clone your fork. This creates and populates a `windup.jboss.org` directory in your local file system.
++
+-------------------------------------------------------
+git clone https://github.com/<your-username>/windup.git
+-------------------------------------------------------
+. Navigate to the `windup.jboss.org` directory, then add and fetch the `upstream` repository so you can update your git with any changes.
++
+--------------------------------------------------------
+git remote add -f upstream git@github.com:windup/windup.jboss.org.git
+--------------------------------------------------------
 
-===== **<ruleset>** handlers
+==== Request Write Access to the Web Site Remote Server 
 
-* **phase**: PhaseHandler implements ElementHandler<Void>
-* **rules**: RulesHandler implements ElementHandler<Void>
-* **rule**: RuleHandler implements ElementHandler<Void>
+The http://windup.jboss.org[windup.jboss.org] web site is hosted on the `filemgmt.jboss.org` remote server. Follow these steps to request write access.
 
-===== **<rule>** handlers
+. Send an email to eng-ops@redhat.com requesting write access to `filemgmt.jboss.org` for `windup.jboss.org`.
+. Attach your ssh public key to the email request.
+. When you receive confirmation, you can test access in a terminal with the following command. If you are prompted for a password, you do not have proper access.
++
+--------
+sftp windup@filemgmt.jboss.org
+--------
 
-* **when**: WhenHandler implements ElementHandler<And>
-* **perform**: PerformHandler implements ElementHandler<Operation>
-* **otherwise**: OtherwiseHandler implements ElementHandler<Operation>
- 
-===== **<when>** conditional handlers
+==== Push Updates to the Web Site Remote Server
 
-* **javaclass**: JavaClassHandler implements ElementHandler<JavaClassBuilderAt>
-* **project**: ProjectHandler implements ElementHandler<Project>
-* **xmlfile**: XmlFileHandler implements ElementHandler<XmlFile>
+. Log into the remote server and navigate to www_htdocs/windup/
++
+----
+$ sftp windup@filemgmt.jboss.org
+sftp> cd www_htdocs/windup 
+----
+. Use the `lcd` command to navigate to the directory on your local machine that contains your updates. You can verify the path on the local machine using the `lpwd` command. For example:
++
+----
+sftp> lcd ~/MyGitRepos/windup.jboss.org/assets/js
+sftp> lpwd 
+Local working directory: /home/username/MyGitRepos/windup.jboss.org/assets/js
+----
+. Use the `cd` command to navigate to the corresponding directory on the remote server. You can verify the path on the remote machine using the `pwd` command.
++
+----
+sftp> cd www_htdocs/windup/assets/js/
+sftp> pwd
+Remote working directory: /www_htdocs/windup/assets/js
+----
+. Upload the modified file to the remote server.
++
+----
+sftp> put windup.js 
+Uploading windup.js to /www_htdocs/windup/assets/js/windup.js
+windup.js                                        100% 1316     1.3KB/s   00:00    
+----
+. Test the change on http://windup.jboss.org[windup.jboss.org].
 
-=====  **<perform>** and **<otherwise>** action handlers
+==== Additional Help
 
-* HintHandler implements ElementHandler<Hint>
-* IterationHandler implements ElementHandler<Iteration>
-
-
-===== Operation Handlers
-
-* **xslt**: XSLTTransformationHandler implements ElementHandler<XSLTTransformation>
-
-===== Other Handlers
-
-* **artifactId**: ArtifactHandler implements ElementHandler<Artifact>
-* **classification**: ClassificationHandler implements ElementHandler<Classification>
-* **file-mapping**:FileMappingHandler implements ElementHandler<Void>
-* **filecontent**:FileContentHandler implements ElementHandler<FileContent>
-* **lineitem**:LineItemHandler implements ElementHandler<LineItem>
-* **link**: LinkHandler implements ElementHandler<Link>
-* **matches**: MatchesHandler implements ElementHandler<Void>
-* **message**: MessageHandler implements ElementHandler<String>
-* **namespace**: NamespaceHandler implements ElementHandler<NamespaceEntry>
-* **log**: LogHandler implements ElementHandler<Operation>
-* **package-mapping**: PackageNameMappingHandler implements ElementHandler<Void>
-* **param**: ParamHandler implements ElementHandler<Condition>
-
-===== Windup Core Handlers
-
-* RuleHandler implements ElementHandler<Void>
-* RuleProviderHandler implements ElementHandler<Void>
-* RulesHandler implements ElementHandler<Void>
-* TypeReferenceLocationHandler implements ElementHandler<TypeReferenceLocation>; see http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[enum TypeReferenceLocation]
-* WhereHandler implements ElementHandler<Void>
-* XSLTParameterHandler implements ElementHandler<XSLTParameter>
-
-===== Logical Conditions
-
-* AndHandler implements ElementHandler<And>
-* OrHandler implements ElementHandler<Or>
-* NotHandler implements ElementHandler<Not>
-* TrueHandler implements ElementHandler<True>
-
-===== Rules Examples
-
-
-        <?xml version="1.0"?>
-        <ruleset xmlns="http://windup.jboss.org/v1/xml"
-          id="customruleprovider">
-          <!-- This defaults to MIGRATION_RULES -->
-          <phase>
-            DISCOVERY
-          </phase>
-          <rules>
-            <rule>
-              <when>
-                <javaclass references="javax.servlet.http.HttpServletRequest">
-                  <location>METHOD_PARAMETER</location>
-                </javaclass>
-              </when>
-              <perform>
-                <hint>
-        	  <message>Message from XML Rule</message>
-                  <link href="http://example.com" description="Description from XML Hint Link" />
-                </hint>
-                <log message="test log message"/>
-              </perform>
-              <otherwise>
-                <!--  -->
-              </otherwise>
-            </rule>
-            <rule>
-              <when>
-                <xmlfile xpath="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']">
-                  <namespace prefix="w" uri="http://java.sun.com/xml/ns/javaee"/>
-                </xmlfile>
-              </when>
-              <perform>
-                <hint>
-        	  <message>Container Auth</message>
-                </hint>
-                <xslt description="Example XSLT Conversion" extension="-converted-example.xml" 
-                         xsltFile="/exampleconversion.xsl"/>
-                <log message="test log message"/>
-              </perform>
-              <otherwise>
-                <!--  -->
-              </otherwise>
-            </rule>
-          </rules>
-        </ruleset>
-
-
-A file-mapping is a predefined rule. It bundles the condition and perform that maps file extensions to model types. For example:
-
-        <?xml version="1.0"?>
-        <ruleset xmlns="http://windup.jboss.org/v1/xml" id="XmlFileMappings">
-          <rules>
-            <file-mapping from=".*\.tld$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bpel$" to="XmlFileModel"/>
-            <file-mapping from=".*\.wsdl$" to="XmlFileModel"/>
-            <file-mapping from=".*\.wsdd$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bpelex$" to="XmlFileModel"/>
-            <file-mapping from=".*\.mon$" to="XmlFileModel"/>
-            <file-mapping from=".*\.xmi$" to="XmlFileModel"/>
-            <file-mapping from=".*\.export$" to="XmlFileModel"/>
-            <file-mapping from=".*\.import$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bcfg$" to="XmlFileModel"/>
-            <file-mapping from=".*\.map$" to="XmlFileModel"/>
-            <file-mapping from=".*\.brg$" to="XmlFileModel"/>
-            <file-mapping from=".*\.brgt$" to="XmlFileModel"/>
-            <file-mapping from=".*\.ruleset$" to="XmlFileModel"/>
-            <file-mapping from=".*\.module$" to="XmlFileModel"/>
-            <file-mapping from=".*\.modulex$" to="XmlFileModel"/>
-            <file-mapping from=".*\.composite$" to="XmlFileModel"/>
-            <file-mapping from=".*\.requirements$" to="XmlFileModel"/>
-          </rules>
-        </ruleset>
-
-==== XML Rule Element Description
-
-* **<ruleset>**: This element defines this as a Windup rule.
-* **<phase>**: This element specifies when the ruleset should execute. See xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecyle] for more information about rule phases.
-* **<rules>**: element contains the individual rules.
-** **<rule>**: This element is a child of the **rules** element. One or more rules can be defined for a ruleset. Each `rule` contains the following elements.
-*** **<when>**: This element defines the condition to match on.
-**** **<javaclass references="CLASS_NAME">**
-***** **<location>**: The location where the reference was found in a Java source file. See the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[Enum TypeReferenceLocation] Javadoc for valid values.
-*** **<perform>**: This element is invoked when the condition is met.
-**** **<hint>**: This child element of **perform** is used to create a `hint`
-***** **<message>**: 
-***** **<link>**:
-**** **<xslt>**: This specifies how to transform the the specified XML file
-**** **<log>**: This child element of **perform** is used to log a message. It takes the attribute **message** to define the text message.
-*** The **<otherwise>** element is invoked when the condition is not met.
-
-A file-mapping is a predefined rule. For example:
-
-        <?xml version="1.0"?>
-        <ruleset xmlns="http://windup.jboss.org/v1/xml" id="XmlFileMappings">
-          <rules>
-            <file-mapping from=".*\.tld$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bpel$" to="XmlFileModel"/>
-            <file-mapping from=".*\.wsdl$" to="XmlFileModel"/>
-            <file-mapping from=".*\.wsdd$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bpelex$" to="XmlFileModel"/>
-            <file-mapping from=".*\.mon$" to="XmlFileModel"/>
-            <file-mapping from=".*\.xmi$" to="XmlFileModel"/>
-            <file-mapping from=".*\.export$" to="XmlFileModel"/>
-            <file-mapping from=".*\.import$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bcfg$" to="XmlFileModel"/>
-            <file-mapping from=".*\.map$" to="XmlFileModel"/>
-            <file-mapping from=".*\.brg$" to="XmlFileModel"/>
-            <file-mapping from=".*\.brgt$" to="XmlFileModel"/>
-            <file-mapping from=".*\.ruleset$" to="XmlFileModel"/>
-            <file-mapping from=".*\.module$" to="XmlFileModel"/>
-            <file-mapping from=".*\.modulex$" to="XmlFileModel"/>
-            <file-mapping from=".*\.composite$" to="XmlFileModel"/>
-            <file-mapping from=".*\.requirements$" to="XmlFileModel"/>
-          </rules>
-        </ruleset>
-
+* Type `man sftp` for a list of commands.
+* https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html-single/Deployment_Guide/index.html#s2-ssh-clients-sftp
+* http://www.tecmint.com/sftp-command-examples/
+* https://docs.oracle.com/cd/E26502_01/html/E29001/remotehowtoaccess-14.html
 

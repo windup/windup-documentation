@@ -110,9 +110,9 @@ list, right-click, and choose `Run As` --> `Maven install`.
 
 ==== Extract the Windup Distribution Source File
 
-The build process creates a `windup-distribution-2.0.0-SNAPSHOT-offline.zip file` in the Windup source `dist/target/` directory. 
+The build process creates a `windup-distribution-2.2.0-SNAPSHOT-offline.zip file` in the Windup source `dist/target/` directory. 
 
-Unzip the `dist/target/windup-distribution-2.0.0-SNAPSHOT-offline.zip` file into a directory of your choice.
+Unzip the `dist/target/windup-distribution-2.2.0-SNAPSHOT-offline.zip` file into a directory of your choice.
 
 
 [[quick-build-review-for-experienced-windup-developers]]

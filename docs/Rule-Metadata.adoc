@@ -4,7 +4,8 @@
 .Draft
 
 ==== Overview
-Rule metadata is used for ordering, filtering, debugging and performance reasons.
+
+Rule metadata is used to store and track information such as the rule ID, origin, required addons, tags applied to the rule. related to ordering, filtering, debugging and performance reasons.
 
 ==== Metadata used by Windup
 
@@ -19,9 +20,9 @@ To control *ordering*, override `getExecuteAfter()` and `getExecuteBefore()`.
 
 [source,java]
 --------
-public class MyRules extends WindupRuleProvider
+public class MyRules extends AbstractRuleProvider
 {
-    public List<Class<? extends WindupRuleProvider>> getExecuteAfter() {
+    public List<Class<? extends AbstractRuleProvider>> getExecuteAfter() {
         return asClassList(UpdateVictimsDbRules.class, ComputeArchivesSHA512.class);
     }
 --------
@@ -52,7 +53,7 @@ For its metadata, Windup uses the keys defined in `RuleMetadata`:
 
 * http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/metadata/RuleMetadata.html#TREAT_EXCEPTIONS_AS_FATAL[TREAT_EXCEPTIONS_AS_FATAL] (boolean): Whether all Exceptions from this Rule are to be treated as fatal. The default is non-fatal.
 
-* http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/metadata/RuleMetadata.html#RULE_PROVIDER[RULE_PROVIDER]: The `WindupRuleProvider` that originated the rule. This is used internally, not to be specified by rule author.
+* http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/metadata/RuleMetadata.html#RULE_PROVIDER[RULE_PROVIDER]: The `RuleProvider` that originated the rule. This is used internally, not to be specified by rule author.
 
 You can find out more information about rule metadata here: http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/metadata/RuleMetadata.html[RuleMetadata] Javadoc. 
 
@@ -74,7 +75,7 @@ In case you want to apply the same metadata to all rules in some `RuleProvider`,
 
 [source,java]
 --------
-public class MyRules extends WindupRuleProvider
+public class MyRules extends AbstractRuleProvider
 {
     public void enhanceMetadata(Context context) {
         if( ! context.containsKey(RuleMetadata.CATEGORY) )
@@ -96,7 +97,6 @@ This map is typically not used by rule authors, unless they use a custom Windup 
 ==== Ruleset metadata
 
 Ruleset metadata cover the whole Ruleset, not individual rules.
-For ruleset metadata, unlike rules, Windup uses a type-safe interface `WindupRulesetMetadata`
-(see http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupRulesetMetadata.html[javadoc]).
+For ruleset metadata, unlike rules, Windup uses a type-safe interface http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RulesetMetadata.html[RulesetMetadata].
 
 Currently, it only defines Ruleset ID.

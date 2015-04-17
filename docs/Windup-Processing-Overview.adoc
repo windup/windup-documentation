@@ -9,7 +9,7 @@ The following is a high level conceptual overview of what happens within Windup 
 
 Wnen you run the `windup-migrate-app` command, Windup executes its own core rules to extract files from archives, decompile classes, and analyze the application. In this phase Windup builds a data model and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.
 
-For more information about the phases of rule execution and how to control rule dependencies, see xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle].
+For more information about the phases of rule execution, see xref:Rule-Phases[Rule Phases].
 
 For more information about the graph database components, see xref:Windup-Architectural-Components[Windup Architectural Components].
 

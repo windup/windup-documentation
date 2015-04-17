@@ -47,7 +47,7 @@ cp $1/Dev-Windup-Release-Process.asciidoc docs/Dev-Windup-Release-Process.adoc
 cp $1/Dev-Windup-Web.asciidoc docs/Dev-Windup-Web.adoc  ## this topic is not used
 cp $1/Execute-Windup.asciidoc docs/Execute-Windup.adoc
 cp $1/Extend-Windup-Rules.asciidoc docs/Extend-Windup-Rules.adoc  ## this topic is not used
-cp $1/Features-of-Windup-2.0.asciidoc docs/Features-of-Windup-2.0.adoc
+cp $1/Features-of-Windup-2.asciidoc docs/Features-of-Windup-2.adoc
 cp $1/Get-Involved.asciidoc docs/Get-Involved.adoc
 cp $1/Glossary.asciidoc docs/Glossary.adoc
 cp $1/Home.asciidoc docs/Home.adoc  ## this topic is not used
@@ -63,6 +63,7 @@ cp $1/Report-Issues-with-Windup.asciidoc docs/Report-Issues-with-Windup.adoc
 cp $1/Review-the-Report.asciidoc docs/Review-the-Report.adoc
 cp $1/Review-the-Windup-Quickstarts.asciidoc docs/Review-the-Windup-Quickstarts.adoc
 cp $1/Rule-Metadata.asciidoc docs/Rule-Metadata.adoc
+cp $1/Rule-Phases.asciidoc docs/Rule-Phases.adoc
 cp $1/Rules-Available-Rules-Utilities.asciidoc docs/Rules-Available-Rules-Utilities.adoc
 cp $1/Rules-Basic-Rule-Execution-Flow-Patterns.asciidoc docs/Rules-Basic-Rule-Execution-Flow-Patterns.adoc
 cp $1/Rules-Create-a-Basic-Java-based-Rule-Add-on.asciidoc docs/Rules-Create-a-Basic-Java-based-Rule-Add-on.adoc

@@ -1,29 +1,24 @@
 [[Rules-Difference-Between-XML-based-and-Java-based-Rules]]
 === Difference Between XML-based and Java-based Rules
 
-==== First of all, to prevent confusion: 
+==== Summary
 
-1. Rules can be _written_ using XML or the Java API. We call them XML-based and Java-based Rules.
-2. Independent of the syntax, the rules may _inspect_ (classify) XML or Java code.
-
-See the examples below.
-
+As mentioned before, Windup provides a core and a default set of rules to analyze and report on migration of application code. Windup also allows you to write your own custom rules. These rules can be written using either XML or Java. Rules written using XML are referred to as _XML-based_ rules. Rules written using the Java API are referred to as _Java-based_ rule add-ons. Both _XML-based_ and _Java-based_ rule add-ons can be used to inspect (classify) and report on Java source, XML, properties, archives, and other types of files,
 
 ==== Which one to choose?
 
-The XML rules provide a quick, simple way to create rules to analyze Java and XML files. Java rules provide the ability to create very complex rules. 
+_XML-based_ rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of _XML-based_ rules is the recommended approach.
 
-* If you simply need to highlight a specific section of Java code or XML file content and provide hints for it, it is recommended that you create the rule using XML.
-* If you need to create a new custom report, you need to create the reporting rules using Java.
-* If you need to extend functionality beyond what the XML rules provide, you need to create the rule using Java.
+_Java-based_ rule add-ons provide the ability to create very complex rules, manipulate the shared data model graph, and customize the resulting reports. If you need to test or perform complex conditions and operations or want to manipulate the shared data model graph, create custom reports, or extend the functionality in any other way beyond what the _XML-based_ rules provide, you must create _Java-based_ rules.
 
-==== Pros and cons - XML
+
+==== Pros and Cons of XML-based Rules
+
 Pros:
 
 * XML rules are fairly easy to write and require less code.
-* You do not need to configure Maven to build from source because there is no need for compilation of 
-XML rules.
-* Deployment is simple. You simply drop the XML rule into the appropriate path  and Windup automatically scans the new rule.
+* XML rules are not compiled so you do not need to configure Maven to build from source.
+* XML rules are simple to deploy. You simply drop the rule into the appropriate path and Windup automatically scans the new rule.
 
 Cons:
 
@@ -34,21 +29,21 @@ Cons:
 ==== Pros and Cons - Java
 Pros:
 
-* Java rule add-ons allow you to write custom rules and provide a lot of flexibility.
+* Java rule add-ons allow you to write custom conditions and operations and provide a lot of flexibility.
+* Java rule add-ons allow you to access and manipulate the shared data model graph and to customize reports.
 * You can set breakpoints and test Java rule add-ons using a debugger.
 * IDEs provide code completion for the Windup API.
 
 Cons:
 
-* You must configure Maven to compile the Windup Java rule add-ons.
+* You must configure Maven to compile Java rule add-ons.
 * Java rule add-ons that are not included in the Windup core code base must be a full Forge add-on.
-* Java rule add-ons require writing a lot of Java code/
-* Writing Java rule add-ons are complex and required knowledge of Windup internals.
-
+* Java rule add-ons require that you write Java code.
+* Writing Java rule add-ons can be complex and require knowledge of Windup internals.
 
 ==== Examples
 
-Example of a rule written in XML classifying Java code:
+The following is an example of a rule written in XML that classifies Java code:
 
 [source,xml]
 ----------
@@ -72,14 +67,14 @@ Example of a rule written in XML classifying Java code:
 ----------
 
 
-Example of a rule written in Java classifying Java code:
+The following is an example of a rule written in Java that classifies Java code:
 
 [source,java]
 ----------
 /**
  * Scans for classes with EJB related annotations, and adds EJB related metadata for these.
  */
-public class DiscoverEjbAnnotationsRuleProvider extends WindupRuleProvider
+public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 {
     @Override
     public Configuration getConfiguration(GraphContext context) {
@@ -118,9 +113,7 @@ public class DiscoverEjbAnnotationsRuleProvider extends WindupRuleProvider
 }
 ----------
 
-==== Summary
-
-The following is a draft... it may go.
+==== Quick Comparison Summary
 
 [cols="3*", options="header"] 
 |===
