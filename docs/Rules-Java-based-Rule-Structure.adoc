@@ -93,7 +93,8 @@ One last but important feature is the ability to use https://github.com/tinkerpo
 
 The `.perform()` clause of the rule typically iterates over the items of interest, such as Java and XML files and querying services, processes them, and writes the findings into the graph.
 
-For that, various operations are available, which are subclasses of http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperation]. You can also implement your own operations. See xref:Rules-Rules-Operations[Rules Operations] for more information. 
+For that, various operations are available, which are subclasses of http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperation]. You can also implement your own operations. 
+
 
 There are several convenient implementations for constructs like iteration (`Iteration`).
 
