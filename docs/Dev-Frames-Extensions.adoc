@@ -5,14 +5,21 @@ Windup has several Frames extensions to satisfy its needs.
 
 ==== Multiple Types in a Vertex
 
-Frames stores only one type in the _type_ property. To specify multiple types, use the '|' separator. All sub-parts are indexed.
-
+The upstream frames project only stores one type in the _type_ property by default. Windup extends this default type resolver behavior to support multiple types. The values themselves are stored in a multi-valued Titan property on each Vertex.
 
 ==== Map Handler
 
-TBD
+To store a map in a single vertexes properties:
 
-To store a map in a single vertexes properties.
+[source,java]
+----
+@TypeValue("MapModelMain")
+public interface MapMainModel extends WindupVertexFrame
+{
+    @MapInProperties void setMap(Map<String, MapValueModel> map);
+    @MapInProperties Map<String, MapValueModel> getMap();
+}
+----
 
 
 ==== Map
@@ -24,19 +31,12 @@ To store a map in as adjacent vertices.
 @TypeValue("MapModelMain")
 public interface MapMainModel extends WindupVertexFrame
 {
-    @AdjacentMap(label = "map") void setMap(Map<String, MapValueModel> map);
-    @AdjacentMap(label = "map") Map<String, MapValueModel> getMap();
+    @MapInAdjacentProperties(label = "map") void setMap(Map<String, MapValueModel> map);
+    @MapInAdjacentProperties(label = "map") Map<String, MapValueModel> getMap();
 }
 ----
 
-See the `FrameMapHandlerTest`.
-
-==== List handler. 
-
-TBD.
-
-To store a list of strings in a single vertexes properties. 
-The keys will be 0, 1, 2, 3, ...
+See the https://github.com/windup/windup/blob/master/graph/tests/src/test/java/org/jboss/windup/graph/typedgraph/map/FrameMapHandlerTest.java[FrameMapHandlerTest].
 
 ==== List
 

@@ -45,15 +45,16 @@ public class ExampleRuleProvider extends AbstractRuleProvider
 [[add-rule-code-structure]]
 ==== Add Rule Code Structure
 
-As mentioned above, individual rules are added to the ruleset in the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html[getConfiguration(GraphContext context)] method using the http://ocpsoft.org/rewrite/[OCPsoft Rewrite] ConfigurationBuilder class.
+As mentioned above, individual rules are added to a ruleset in the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html[getConfiguration(GraphContext context)] method using the http://ocpsoft.org/rewrite/[OCPsoft Rewrite] ConfigurationBuilder class.
 
 Like most rule-based frameworks, Windup rules consist of the following:
 
 * Condition: This is the *when(condition)* that determines if the rule should execute.
 * Operation: This defines what to *perform()* if the condition is met.
- 
-Rules consist of the _when_ part, the _perform_, the _otherwise_ part,
-and some others, all of which are optional.
+* Otherwise: The *when(condition)* is not met
+* Operation: This defines what to *perform()* if the condition is not met.
+
+Rules must define the condition, or _when_, and an operation, or _perform_. However, the otherwise and remainder are optional.
 
 ===== when()
 
@@ -62,22 +63,17 @@ and some others, all of which are optional.
 .when(Query.fromType(XmlMetaFacetModel.class))
 ----
 
-In the `.when()` part, the rule typically queries the graph, using the
-`Query` API. Results of the query are put on variables stack
-(`Variables`), many times indirectly through the querying API.
+The `.when()` clause of a rule typically queries the graph using the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/query/Query.html[Query] API. Results of the query are put on variables stack (`Variables`), many times indirectly through the querying API.
 
-Other way to fill a when part is subclassing the `GraphCondition`.
-Actually, `Query` also implements it, and is only a convenient way to
-create a condition.
-You can also use multiple conditions within one when() call using and().
+The `.when()` clause can also subclass http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/condition/GraphCondition.html[GraphCondition]. The http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/query/Query.html[Query] class extends http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/condition/GraphCondition.html[GraphCondition] and is  a convenient way to create a condition. You can also use multiple conditions within one when() call using and().
+
 Example: 
+[source,java]
 ----
 .when(Query.fromType(XmlMetaFacetModel.class).and(Query...))
 ----
 
-Last noticable but important feature is the ability to use
-https://github.com/tinkerpop/gremlin/wiki[Gremlin] queries. See
-http://gremlindocs.com/[Gremlin docs] for reference manual.
+One last but important feature is the ability to use https://github.com/tinkerpop/gremlin/wiki[Gremlin] queries. See the http://gremlindocs.com/[Gremlin Documentation] reference manual for more information.
 
 
 ===== perform()
@@ -95,18 +91,13 @@ http://gremlindocs.com/[Gremlin docs] for reference manual.
 )
 ----
 
-In the `.perform()` part, the rule typically iterates over the items of interest
-(Java files, XML files, querying services, ...), processes them, and
-writes the findings into the graph.
+The `.perform()` clause of the rule typically iterates over the items of interest, such as Java and XML files and querying services, processes them, and writes the findings into the graph.
 
-For that, various operations are available. These are subclasses of
-`GraphOperation`. You can also implement your own. See
-xref:Rules-Rules-Operations[Rules Operations] for more information. Again, there are
-several convenient implementations for constructs like iteration
-(`Iteration`).
+For that, various operations are available, which are subclasses of http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperation]. You can also implement your own operations. See xref:Rules-Rules-Operations[Rules Operations] for more information. 
+
+There are several convenient implementations for constructs like iteration (`Iteration`).
 
 ====== Iteration
-
 
 [source,java]
 ----
@@ -129,8 +120,10 @@ several convenient implementations for constructs like iteration
 
 ====== Nested iterations
 
-An iteration is also an operation, so everywhere an operation is expected, you can freely put the Iteration. If the Iteration is put inside the perform method of another Iteration, we speak about nested iterations.
-An example of such nested iteration may be:
+An iteration is also an operation, so anywhere an operation is expected, you can use the Iteration. If the Iteration is placed within the perform method of another Iteration, it is called nested iteration.
+
+The following is an example of a nested iteration. 
+[source,java]
 ----
 .addRule()
      .when(...)
@@ -146,12 +139,9 @@ An example of such nested iteration may be:
 
 ====== otherwise
 
-Windup rules inherit the rule constructs from OCP Rewrite. For example,
-`.otherwise()` Gives you a chance to perform something in case the
-conditions in `.when()` return false (e.g. they do not match anything).
-For more information, see http://ocpsoft.org/rewrite/[OCP Rewrite web].
+As previously mentioned, Windup rules are based on http://ocpsoft.org/rewrite/[OCPsoft Rewrite]. The `.otherwise()` clause allows you to perform something if the condition specified in `.when()` clause is not matched. For more information, see http://ocpsoft.org/rewrite/[OCP Rewrite web].
 
-
+The following is an example of an otherwise operation.
 [source,java]
 ----
 .otherwise(
@@ -167,8 +157,10 @@ For more information, see http://ocpsoft.org/rewrite/[OCP Rewrite web].
 
 ===== Where
 
-The where clause is used to provide information about used parameters within the rule. So for example if you have used a parameter in some condition like for example `JavaClass.references("{myMatch}")`, you may use the where clause to specify what the `myMatch` is like `.where("myMatch").matches("java.lang.String.toString\(.*\)")`. 
+The `where()` clause is used to provide information about used parameters within the rule. So for example if you have used a parameter in some condition like for example `JavaClass.references("{myMatch}")`, you may use the where clause to specify what the `myMatch` is like `.where("myMatch").matches("java.lang.String.toString\(.*\)")`. 
 
+The following is an example 
+[source,java]
 ----
 .when(JavaClass.references("{myMatch}").at(TypeReferenceLocation.METHOD))
 .perform(...)
@@ -201,8 +193,8 @@ The communication between the conditions and operations is done using the variab
 Within conditions, you can specify the name of the result iterable that is saved in the stack using `as()` method, the iteration can specify the iterable to iterate over using the `over()` method and even specify the name of for each processed single model of the result being processed.
 Example: 
 
+[source,java]
 ----
-
 .addRule()
      .when(Query...as("result_list"))
      .perform(
@@ -210,9 +202,11 @@ Example:
           ...
      )
 );
-
 ----
+
 The varstack may be accesed even from the second condition in order to narrow the result of the previous one. After that the iteration may choose which result it wants to iterate over (it is even possible to have multiple iterations listed in the perform, each of which may access different result saved in the variable stack).
+
+[source,java]
 ----
 .addRule()
      .when(Query...as("result_list").and(Query.from("result_list")....as("second_result_list")))

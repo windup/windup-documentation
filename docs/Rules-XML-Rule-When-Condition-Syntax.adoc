@@ -20,45 +20,71 @@ The following sections describe the more common XML `when` rule conditions.
 Use the `javaclass` element to find imports, methods, variable declarations, annotations, class implementations, and other items related to Java classes. For a better understanding of the `javaclass` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/condition/JavaClass.html[JavaClass] class.
 
 The following is an example of a rule that tests for a `javaclass`.
-
-    <rule>
-        <when>
-            <javaclass references="org.jboss.ws.api.annotation.WebContext" in="org/jboss/{*}" as="webcontextclasses">
-                <location>IMPORT</location>
-                <location>TYPE</location>
-            </javaclass>
-        </when>
-        <perform>
-            <hint message="WebContext is deprecated." effort="0"/>
-        </perform>
-    </rule>
+[source,xml]
+--------
+<rule>
+    <when>
+        <javaclass references="org.jboss.ws.api.annotation.WebContext" in="org/jboss/{*}" as="webcontextclasses">
+            <location>IMPORT</location>
+            <location>TYPE</location>
+        </javaclass>
+    </when>
+    <perform>
+        <hint message="WebContext is deprecated." effort="0"/>
+    </perform>
+</rule>
+--------
 
 ===== Construct a javaclass Element
 
 ====== javaclass Element Attributes
 
 references="CLASS_NAME":: The package or class name to match on. Wildcard characters can be used.
-
-    Example: references="org.apache.commons.{*}"
++
+_Example:_
++
+[source,xml]
+--------
+references="org.apache.commons.{*}"
+--------
     
 as="VARIABLE_NAME":: A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
-
-    Example: as="MyEjbRule"
++
+_Example:_
++
+[source,xml]
+--------
+as="MyEjbRule"
+--------
 
 in="PATH_FILTER":: Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
-
-    Example: in="{*}File1"
++
+_Example:_
++
+[source,xml]
+--------
+in="{*}File1"
+--------
 
 from="VARIABLE_NAME":: Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
-
-    Example: from="MyEjbRule"
++
+_Example:_
++
+[source,xml]
+--------
+from="MyEjbRule"
+--------
 
 ====== JavaClass Element Child Elements
 
 location:: The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[TypeReferenceLocation].
-
-    Example: <location>IMPORT</location>
-
++
+_Example:_
++
+[source,xml]
+--------
+<location>IMPORT</location>
+--------
 
 [[xmlfile-syntax]]
 ==== xmlfile Syntax
@@ -68,21 +94,23 @@ location:: The location where the reference was found in a Java class. Location 
 Use the `xmlfile` element to find information in XML files. For a better understanding of the `xmlfile` condition, see the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/condition/XmlFile.html[XmlFile] JavaDoc.
 
 The following is an example of a rule that tests for an `xmlfile`.
-
-    <rule>
-        <when>
-            <xmlfile matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']">
-                <namespace prefix="w" uri="http://java.sun.com/xml/ns/javaee"/>
-            </xmlfile>
-        </when>
-        <perform>
-            <hint title="Title for Hint from XML">
-                <message>Container Auth</message>
-            </hint>
-            <xslt description="Example XSLT Conversion" extension="-converted-example.xml" 
-                  template="/exampleconversion.xsl"/>
-        </perform>
-    </rule>
+[source,xml]
+--------
+<rule>
+    <when>
+        <xmlfile matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']">
+            <namespace prefix="w" uri="http://java.sun.com/xml/ns/javaee"/>
+        </xmlfile>
+    </when>
+    <perform>
+        <hint title="Title for Hint from XML">
+            <message>Container Auth</message>
+        </hint>
+        <xslt description="Example XSLT Conversion" extension="-converted-example.xml" 
+              template="/exampleconversion.xsl"/>
+    </perform>
+</rule>
+--------
 
 ===== Construct an xmlfile Element
 
@@ -90,35 +118,69 @@ The following is an example of a rule that tests for an `xmlfile`.
 ====== xmlfile Element: Attributes
 
 matches="XPATH":: Match on an XML file condition.
-
-    Example: matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"
++
+_Example:_
++
+[source,xml]
+--------
+matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"
+--------
     
 xpathResultMatch="XPATH_RESULT_STRING":: Return results that match the given regex. 
-
-    Example: xpathResultMatch=""
++
+_Example:_
++
+[source,xml]
+--------
+xpathResultMatch=""
+--------
 
 as="VARIABLE_NAME":: A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
-
-    Example: as="MyEjbRule"
++
+_Example:_
++
+[source,xml]
+--------
+as="MyEjbRule"
+--------
 
 in="PATH_FILTER":: Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
-
-    Example: in="{*}File1"
++
+_Example:_
++
+[source,xml]
+--------
+in="{*}File1"
+--------
 
 from="VARIABLE_NAME":: Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
-
-    Example: from="MyEjbRule"
++
+_Example:_
++
+[source,xml]
+--------
+from="MyEjbRule"
+--------
 
 public-id="PUBLIC_ID":: The DTD public-id regex.
-
-    Example: public-id="public"
-
++
+_Example:_
++
+[source,xml]
+--------
+public-id="public"
+--------
 
 ====== xmlfile Element: Child Elements
 
 namespace:: The namespace to referenced in XML files. This element contains 2 attributes: The `prefix` and the `uri`.
-
-    Example: <namespace prefix="abc" uri="http://maven.apache.org/POM/4.0.0"/>
++
+_Example:_
++
+[source,xml]
+--------
+<namespace prefix="abc" uri="http://maven.apache.org/POM/4.0.0"/>
+--------
 
 [[project-syntax]]
 ==== project Syntax
@@ -128,17 +190,19 @@ namespace:: The namespace to referenced in XML files. This element contains 2 at
 Use the `project` element to query for the project charateristics. For a better understanding of the `project` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] class.
 
 The following is an example of a rule that checks a rule is dependent on the junit in the version between 2.0.0.Final and 2.2.0.Final.
-
-    <rule>
-        <when>
-            <project>
-                <artifact groupId="junit" artifactId="junit" from="2.0.0.Final" to="2.2.0.Final"/>
-            </project>
-        </when>
-        <perform>
-            <lineitem message="The project uses junit with the version between 2.0.0.Final and 2.2.0.Final"/>
-        </perform>
-    </rule>
+[source,xml]
+--------
+<rule>
+    <when>
+        <project>
+            <artifact groupId="junit" artifactId="junit" from="2.0.0.Final" to="2.2.0.Final"/>
+        </project>
+    </when>
+    <perform>
+        <lineitem message="The project uses junit with the version between 2.0.0.Final and 2.2.0.Final"/>
+    </perform>
+</rule>
+--------
 
 ===== Construct a project Element
 

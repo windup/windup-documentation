@@ -7,6 +7,7 @@ This section describes how to configure different logging utilities to control l
 
 . Find your JRE using the command for your operating system.
 +
+[source]
 --------
 For Linux: 
    Command: $ readlink -f `which java`
@@ -16,6 +17,7 @@ For Windows: C:> echo %JAVA_HOME%.
 --------
 . Add the following to the `JAVA_HOME/lib/logging.properties` file:
 +
+[source]
 --------
 # Valid levels are SEVERE, WARNING, INFO, FINE, FINER, FINEST, CONFIG
 
@@ -35,7 +37,7 @@ com.thinkaurelius.titan.level = SEVERE
 --------
 
 ==== Slf4j (Weld, ...)
-
+[source]
 --------
 -Dorg.slf4j.simpleLogger.defaultLogLevel=ERROR
 -Dorg.slf4j.simpleLogger.log.org.jboss.weld.event.ExtensionObserverMethodImpl=ERROR

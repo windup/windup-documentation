@@ -150,6 +150,7 @@ echo "* Building the Windup Rules Development Guide..."
 echo "*******************************************"
 asciidoctor -t -dbook -a toc -o html/WindupRulesDevelopmentGuide.html docs/Windup-Rules-Development-Guide.adoc
 asciidoctor -t -dbook -o html/WindupRulesDevelopmentGuide-NO-TOC.html docs/Windup-Rules-Development-Guide.adoc
+## Docbook: asciidoctor -b docbook docs/Windup-User-Guide.adoc
 ##wkhtmltopdf --disable-smart-shrinking html/WindupRulesDevelopmentGuide-NO-TOC.html html/WindupRulesDevelopmentGuide.pdf
 wkhtmltopdf --page-size Letter html/WindupRulesDevelopmentGuide-NO-TOC.html pdf/WindupRulesDevelopmentGuide.pdf
 echo "Guide is located at: " file://$2/html/WindupRulesDevelopmentGuide.html

@@ -24,44 +24,53 @@ The `classification` element is used to identify or classify application resourc
 The following is an example of a rule that classifies a resource as a WebLogic EAR application deployment descriptor file.
 
 _Example:_
-
-    <rule id="XmlWebLogicRules_10vvyf">
-        <when>
-            <xmlfile as="default" matches="/*[local-name()='weblogic-application']">
-            </xmlfile>
-        </when>
-        <perform>
-            <iteration>
-                <classification classification="Weblogic EAR Application Descriptor" effort="3"/>
-            </iteration>
-        </perform>
-    </rule>
-
+[source,xml]
+--------
+<rule id="XmlWebLogicRules_10vvyf">
+    <when>
+        <xmlfile as="default" matches="/*[local-name()='weblogic-application']"></xmlfile>
+    </when>
+    <perform>
+        <iteration>
+            <classification classification="Weblogic EAR Application Descriptor" effort="3"/>
+        </iteration>
+    </perform>
+</rule>
+--------
 
 ===== `classification` Element: Attributes
 
 classification="STRING":: Classify the resource as the specified string.
 +
 _Example:_
++
+[source,xml]
+--------
+classification="JBoss Seam Components"
+--------    
 
-    classification="JBoss Seam Components"
-    
 effort="NUMBER":: The level of effort assigned to this resource. 
 +
 _Example:_
-
-    effort="2"
++
+[source,xml]
+--------
+effort="2"
+--------
 
 ===== `classification` Element: Child Elements
 
 xref:: Provides a link URI and text description for additional information.
 +
 _Example:_
-
-   <classification classification="Websphere Startup Service" effort="4">
-       <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Singleton.html" description="EJB3.1 Singleton Bean"/>
-       <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html" description="EJB3.1 Startup Bean"/>
-    </classification>
++
+[source,xml]
+--------
+<classification classification="Websphere Startup Service" effort="4">
+   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Singleton.html" description="EJB3.1 Singleton Bean"/>
+   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html" description="EJB3.1 Startup Bean"/>
+</classification>
+--------
 
 [[link-syntax]]
 ==== Link Syntax
@@ -73,36 +82,44 @@ The `link` element is used in classifications or hints to identify or classify l
 The following is an example of a rule that creates links to additional information.
 
 _Example:_
-
-    <rule id="SeamToCDIRules_2fmb">
-        <when>
-            <javaclass references="org.jboss.seam.{*}" as="default"/>
-        </when>
-        <perform>
-            <iteration>
-                <classification classification="SEAM Component" effort="1">
-                    <link href="http://www.seamframework.org/Seam3/Seam2ToSeam3MigrationNotes" description="Seam 2 to Seam 3 Migration Notes"/>
-                    <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/example.html" description="JSF Web Application Example"/>
-                    <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/contexts.html" description="JBoss Context Documentation"/>
-                    <link href="http://www.andygibson.net/blog/tutorial/cdi-conversations-part-2/" description="CDI Conversations Blog Post"/>
-                </classification>
-            </iteration>
-        </perform>
-    </rule>
+[source,xml]
+--------
+<rule id="SeamToCDIRules_2fmb">
+    <when>
+        <javaclass references="org.jboss.seam.{*}" as="default"/>
+    </when>
+    <perform>
+        <iteration>
+            <classification classification="SEAM Component" effort="1">
+                <link href="http://www.seamframework.org/Seam3/Seam2ToSeam3MigrationNotes" description="Seam 2 to Seam 3 Migration Notes"/>
+                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/example.html" description="JSF Web Application Example"/>
+                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/contexts.html" description="JBoss Context Documentation"/>
+                <link href="http://www.andygibson.net/blog/tutorial/cdi-conversations-part-2/" description="CDI Conversations Blog Post"/>
+            </classification>
+        </iteration>
+    </perform>
+</rule>
+--------
 
 ===== `link` Element: Attributes
 
 href="URI":: The URI for the referenced link/.
 +
 _Example:_
-
-    href="https://access.redhat.com/articles/1249423"
++
+[source,xml]
+--------
+href="https://access.redhat.com/articles/1249423"
+--------
     
 description="URI_DESCRIPTION":: A description for the link. 
 +
 _Example:_
-
-    description="Migrate WebLogic Proprietary Servlet Annotations"
++
+[source,xml]
+--------
+description="Migrate WebLogic Proprietary Servlet Annotations"
+--------
 
 [[hint-syntax]]
 ==== Hint Syntax
@@ -114,35 +131,43 @@ The `hint` element is used to provide a hint or inline information about how to 
 The following is an example of a rule that creates a hint.
 
 _Example:_
-
-    <rule id="WebLogicWebServiceRules_8jyqn">
-        <when>
-            <javaclass references="weblogic.wsee.connection.transport.http.HttpTransportInfo.setUsername({*})" as="default">
-                <location>METHOD</location>
-            </javaclass>
-        </when>
-        <perform>
-            <iteration>
-                <hint message="Replace proprietary web-service authentication with JAX-WS standards." effort="0">
-                    <link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
-                </hint>
-            </iteration>
-        </perform>
-    </rule>
+[source,xml]
+--------
+<rule id="WebLogicWebServiceRules_8jyqn">
+    <when>
+        <javaclass references="weblogic.wsee.connection.transport.http.HttpTransportInfo.setUsername({*})" as="default">
+            <location>METHOD</location>
+        </javaclass>
+    </when>
+    <perform>
+        <iteration>
+            <hint message="Replace proprietary web-service authentication with JAX-WS standards." effort="0">
+                <link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
+            </hint>
+        </iteration>
+    </perform>
+</rule>
+--------
 
 ===== `hint` Element:  Attributes
 
 message="MESSAGE":: A message describing the migration hint
 +
 _Example:_
++
+[source,xml]
+--------
+message="See this KnowledgeBase article on the Customer Portal: <some-url>"
+--------
 
-    message=""
-    
 effort="NUMBER":: The level of effort assigned to this resource. 
 +
 _Example:_
-
-    effort="2"
++
+[source,xml]
+--------
+effort="2"
+--------
 
 ===== `hint` Element: Child Elements
 
@@ -150,8 +175,11 @@ xref:: Identify or classify links to informational content. See the section on x
 
 +
 _Example:_
-
-    link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
++
+[source,xml]
+--------
+link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
+--------
 
 [[xslt-action]]
 ==== XSLT Syntax
@@ -163,53 +191,69 @@ The `xslt` element specifies how to transform an XML file. For a better understa
 The following is an example of rule that defines an XSLT action.
 
 _Example:_
-
-    <rule id="XmlWebLogicRules_6bcvk">
-        <when>
-            <xmlfile as="default" matches="/weblogic-ejb-jar"/>
-        </when>
-        <perform>
-            <iteration>
-                <classification classification="Weblogic EJB XML" effort="3"/>
-                <xslt description="JBoss EJB Descriptor (Windup-Generated)" template="transformations/xslt/weblogic-ejb-to-jboss.xsl" extension="-jboss.xml"/>
-            </iteration>
-        </perform>
-    </rule>
+[source,xml]
+--------
+<rule id="XmlWebLogicRules_6bcvk">
+    <when>
+        <xmlfile as="default" matches="/weblogic-ejb-jar"/>
+    </when>
+    <perform>
+        <iteration>
+            <classification classification="Weblogic EJB XML" effort="3"/>
+            <xslt description="JBoss EJB Descriptor (Windup-Generated)" template="transformations/xslt/weblogic-ejb-to-jboss.xsl" extension="-jboss.xml"/>
+        </iteration>
+    </perform>
+</rule>
+--------
 
 ===== `xslt` Element:  Attributes
 
 of="STRING":: Create a new transformation for the given reference.
 +
 _Example:_
-
-    of="testVariable_instance"
++
+[source,xml]
+--------
+of="testVariable_instance"
+--------
     
 description="String":: Sets the description of this XSLTTransformation.
 +
 _Example:_
-
-    description="XSLT Transformed Output"
++
+[source,xml]
+--------
+description="XSLT Transformed Output"
+--------
 
 extension="String":: Sets the extension for this XSLTTransformation.
 +
 _Example:_
-
-    extension="-result.html"
-
++
+[source,xml]
+--------
+extension="-result.html"
+--------
 
 template=String:: Sets the XSL template.
 +
 _Example:_
-
-    template="simpleXSLT.xsl"
++
+[source,xml]
+--------
+template="simpleXSLT.xsl"
+--------
 
 ===== `xslt` Element: Child Elements
 
 xslt-parameter=Map<String,String> :: Specify XSLTTransformation parameters as property value pairs 
 +
 _Example:_
-
-    <xslt-parameter property="title" value="EJB Transformation"/>
++
+[source,xml]
+--------
+<xslt-parameter property="title" value="EJB Transformation"/>
+--------
 
 [[lineitem-action]]
 ==== Lineitem Syntax
@@ -221,28 +265,32 @@ The `lineitem` element is used to provide line item information about a hint on 
 The following is an example of a rule that creates a lineitem message.
 
 _Example:_
-
-    <rule>
-        <when>
-            <javaclass references="weblogic.servlet.annotation.WLServlet" as="default">
-                <location>ANNOTATION</location>
-            </javaclass>
-        </when>
-        <perform>
-            <hint message="Replace the proprietary WebLogic @WLServlet annotation with the Java EE 6 standard @WebServlet annotation." effort="1">
-                <link href="https://access.redhat.com/articles/1249423" description="Migrate WebLogic Proprietary Servlet Annotations" />
-                <lineitem message="Proprietary WebLogic @WLServlet annotation found in file."/>
-            </hint>
-        </perform>
-    </rule>
-
+[source,xml]
+--------
+<rule>
+    <when>
+        <javaclass references="weblogic.servlet.annotation.WLServlet" as="default">
+            <location>ANNOTATION</location>
+        </javaclass>
+    </when>
+    <perform>
+        <hint message="Replace the proprietary WebLogic @WLServlet annotation with the Java EE 6 standard @WebServlet annotation." effort="1">
+            <link href="https://access.redhat.com/articles/1249423" description="Migrate WebLogic Proprietary Servlet Annotations" />
+            <lineitem message="Proprietary WebLogic @WLServlet annotation found in file."/>
+        </hint>
+    </perform>
+</rule>
+--------
 ===== `lineitem` Element:  Attributes
 
 message="MESSAGE":: A lineitem message
 +
 _Example:_
-
-    message="Proprietary code found."
++
+[source,xml]
+--------
+message="Proprietary code found."
+--------
     
 [[iteration-action]]
 ==== Iteration Syntax
@@ -254,35 +302,40 @@ The `iteration` element specifies to iterate over an implicit or explicit variab
 The following is an example of a rule that preforms an iteration.
 
 _Example:_
-
-   <rule id="XmlWebLogicRules_14wscy">
-        <when>
-            <xmlfile as="1" matches="/wl:weblogic-webservices | /wl9:weblogic-webservices">
-                <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
-                <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
-            </xmlfile>
-            <xmlfile as="2" matches="//wl:webservice-type | //wl9:webservice-type" from="1">
-                <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
-                <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
-            </xmlfile>
-        </when>
-        <perform>
-            <iteration over="1">
-                <classification classification="Weblogic Webservice Descriptor" effort="0"/>
-            </iteration>
-            <iteration over="2">
-                <hint message="Webservice Type" effort="0"/>
-            </iteration>
-        </perform>
-    </rule>
+[source,xml]
+--------
+<rule id="XmlWebLogicRules_14wscy">
+    <when>
+        <xmlfile as="1" matches="/wl:weblogic-webservices | /wl9:weblogic-webservices">
+            <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
+            <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
+        </xmlfile>
+        <xmlfile as="2" matches="//wl:webservice-type | //wl9:webservice-type" from="1">
+            <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
+            <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
+        </xmlfile>
+    </when>
+    <perform>
+        <iteration over="1">
+            <classification classification="Weblogic Webservice Descriptor" effort="0"/>
+        </iteration>
+        <iteration over="2">
+            <hint message="Webservice Type" effort="0"/>
+        </iteration>
+    </perform>
+</rule>
+--------
 
 ===== `iteration` Element:  Attributes
 
 over="VARIABLE_NAME":: Iterate over the condition identified by this VARIABLE_NAME.
 +
 _Example:_
-
-    over="2"
++
+[source,xml]
+--------
+over="2"
+--------
     
 ===== `iteration` Element: Child Elements
 

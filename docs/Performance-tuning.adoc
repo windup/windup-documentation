@@ -10,6 +10,7 @@ This functionality is provided by the xref:Ruleset-Java-Archives-Identification[
 #### Ignore custom Maven artifacts
 Maven artifacts can be excluded from unzipping and decompilation by declaring ignored artifacts coordinates in a file `~/.windup/conf/ignore/example.archive-ignore.txt`, using the following syntax:
 
+[source,xml]
 ----
 <groupId>:<artifactId>:<version or version range>[:<classifier>]
 ----

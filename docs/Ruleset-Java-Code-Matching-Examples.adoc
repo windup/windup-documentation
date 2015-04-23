@@ -23,20 +23,21 @@ import org.jbpm.graph.def.ProcessDefinition;
 
 [source,xml]
 -------------------
-        <rule>
-            <when>
-                <javaclass references="org.jbpm.graph.def.ActionHandler" as="default">
-                    <location>INHERITANCE</location>
-                </javaclass>
-            </when>
-            <perform>
-                <iteration>
-                    <hint message="Migrate to jBPM 5 org.drools.runtime.process.WorkItemHandler." effort="2">
-                    </hint>
-                </iteration>
-            </perform>
-        </rule>
+<rule>
+    <when>
+        <javaclass references="org.jbpm.graph.def.ActionHandler" as="default">
+            <location>INHERITANCE</location>
+        </javaclass>
+    </when>
+    <perform>
+        <iteration>
+            <hint message="Migrate to jBPM 5 org.drools.runtime.process.WorkItemHandler." effort="2">
+            </hint>
+        </iteration>
+    </perform>
+</rule>
 -------------------
+
 (See `rules-java-ee/src/main/resources/legacy/org.jboss.windup.rules.apps.legacy.java.JBossConfig.windup.xml`)
 
 
@@ -54,18 +55,18 @@ import org.jbpm.graph.exe.ExecutionContext;
 
 [source,xml]
 -------------------
-        <rule>
-            <when>
-                <javaclass references="org.jbpm.graph.exe.ExecutionContext.setVariable" as="default">
-                    <location>METHOD</location>
-                </javaclass>
-            </when>
-            <perform>
-                <iteration>
-                    <hint effort="0">...</hint>
-                </iteration>
-            </perform>
-        </rule>
+<rule>
+    <when>
+        <javaclass references="org.jbpm.graph.exe.ExecutionContext.setVariable" as="default">
+            <location>METHOD</location>
+        </javaclass>
+    </when>
+    <perform>
+        <iteration>
+            <hint effort="0">...</hint>
+        </iteration>
+    </perform>
+</rule>
 -------------------
 
 
@@ -86,14 +87,12 @@ public class DeliveryManager implements DeliveryManagerManagement
 
 [source,xml]
 -------------------
-            <when>
-                <javaclass references="org.jboss.ejb3.annotation.Management" as="default">
-                    <location>ANNOTATION</location>
-                </javaclass>
-            </when>
+<when>
+    <javaclass references="org.jboss.ejb3.annotation.Management" as="default">
+        <location>ANNOTATION</location>
+    </javaclass>
+</when>
 -------------------
-
-
 
 
 ==== Inheritance (Foo extends Bar)
@@ -109,11 +108,11 @@ public interface StockHome extends javax.ejb.EJBHome
 
 [source,xml]
 -------------------
-            <when>
-                <javaclass references="javax.ejb.EJBHome" as="default">
-                    <location>INHERITANCE</location>
-                </javaclass>
-            </when>
+<when>
+    <javaclass references="javax.ejb.EJBHome" as="default">
+        <location>INHERITANCE</location>
+    </javaclass>
+</when>
 -------------------
 
 
@@ -128,11 +127,11 @@ JMXServiceURL url = new JMXServiceURL("service:jmx:rmi://localhost:1099");
 
 [source,xml]
 -------------------
-            <when>
-                <javaclass references="javax.management.remote.JMXServiceURL({*})" as="default">
-                    <location>CONSTRUCTOR_CALL</location>
-                </javaclass>
-            </when>
+<when>
+    <javaclass references="javax.management.remote.JMXServiceURL({*})" as="default">
+        <location>CONSTRUCTOR_CALL</location>
+    </javaclass>
+</when>
 -------------------
 
 
@@ -148,11 +147,11 @@ JMXServiceURL url = new JMXServiceURL("service:jmx:rmi://localhost:1099");
 
 [source,xml]
 -------------------
-        <when>
-            <javaclass references="java.awt.Frame.E_RESIZE_CURSOR" as="default">
-                <location>TYPE</location>
-            </javaclass>
-        </when>
+<when>
+    <javaclass references="java.awt.Frame.E_RESIZE_CURSOR" as="default">
+        <location>TYPE</location>
+    </javaclass>
+</when>
 -------------------
 
 

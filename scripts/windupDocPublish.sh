@@ -54,7 +54,7 @@ echo "    Core Development Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupCo
 cd $2
 git add docs
 
-git commit -m "Update the docs for release $3"
+git commit -m "Another update of the docs for release $3"
 
 echo "*******************************************"
 echo "The following are manual steps: "

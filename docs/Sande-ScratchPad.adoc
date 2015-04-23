@@ -1,73 +1,309 @@
-[Dev-Windup-Web]
-=== Windup Web
+[[Rules-XML-Rule-Perform-Action-Syntax]]
+=== XML Rule - Perform Action Syntax
 
-.DRAFT
+Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
 
-The http://windup.jboss.org[windup.jboss.org] web site is hosted by Red Hat / JBoss.org
+The complete XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
 
-==== Get the Source Code
+The following sections describe the more common XML rule perform actions. 
 
-The source code for http://windup.jboss.org[windup.jboss.org] is currently located at https://github.com/windup/windup.jboss.org.
+* xref:classification-syntax[Classification Syntax]
+* xref:link-syntax[Link Syntax]
+* xref:hint-syntax[Hint Syntax]
+* xref:xslt-syntax[XSLT Syntax]
+* xref:lineitem-syntax[Lineitem Syntax]
+* xref:iteration-syntax[Iteration Syntax]
 
-. https://github.com/windup/windup.jboss.org./fork[Fork] the windup.jboss.org project. This creates the `windup.jboss.org` project in your own Git with the default remote name 'origin'.
-. Clone your fork. This creates and populates a `windup.jboss.org` directory in your local file system.
-+
--------------------------------------------------------
-git clone https://github.com/<your-username>/windup.git
--------------------------------------------------------
-. Navigate to the `windup.jboss.org` directory, then add and fetch the `upstream` repository so you can update your git with any changes.
-+
---------------------------------------------------------
-git remote add -f upstream git@github.com:windup/windup.jboss.org.git
---------------------------------------------------------
+[[classification-syntax]]
+==== Classification Syntax
 
-==== Request Write Access to the Web Site Remote Server 
+===== Summary 
 
-The http://windup.jboss.org[windup.jboss.org] web site is hosted on the `filemgmt.jboss.org` remote server. Follow these steps to request write access.
+The `classification` element is used to identify or classify application resources. It provides a level of effort and can also provide links to additional information about how to migrate this resource classification. For a better understanding of the `classification` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html[Classification] class.
 
-. Send an email to eng-ops@redhat.com requesting write access to `filemgmt.jboss.org` for `windup.jboss.org`.
-. Attach your ssh public key to the email request.
-. When you receive confirmation, you can test access in a terminal with the following command. If you are prompted for a password, you do not have proper access.
-+
+The following is an example of a rule that classifies a resource as a WebLogic EAR application deployment descriptor file.
+
+_Example:_
+[source,xml]
 --------
-sftp windup@filemgmt.jboss.org
+<rule id="XmlWebLogicRules_10vvyf">
+    <when>
+        <xmlfile as="default" matches="/*[local-name()='weblogic-application']"></xmlfile>
+    </when>
+    <perform>
+        <iteration>
+            <classification classification="Weblogic EAR Application Descriptor" effort="3"/>
+        </iteration>
+    </perform>
+</rule>
 --------
 
-==== Push Updates to the Web Site Remote Server
+===== `classification` Element: Attributes
 
-. Log into the remote server and navigate to www_htdocs/windup/
+classification="STRING":: Classify the resource as the specified string.
 +
-----
-$ sftp windup@filemgmt.jboss.org
-sftp> cd www_htdocs/windup 
-----
-. Use the `lcd` command to navigate to the directory on your local machine that contains your updates. You can verify the path on the local machine using the `lpwd` command. For example:
-+
-----
-sftp> lcd ~/MyGitRepos/windup.jboss.org/assets/js
-sftp> lpwd 
-Local working directory: /home/username/MyGitRepos/windup.jboss.org/assets/js
-----
-. Use the `cd` command to navigate to the corresponding directory on the remote server. You can verify the path on the remote machine using the `pwd` command.
-+
-----
-sftp> cd www_htdocs/windup/assets/js/
-sftp> pwd
-Remote working directory: /www_htdocs/windup/assets/js
-----
-. Upload the modified file to the remote server.
-+
-----
-sftp> put windup.js 
-Uploading windup.js to /www_htdocs/windup/assets/js/windup.js
-windup.js                                        100% 1316     1.3KB/s   00:00    
-----
-. Test the change on http://windup.jboss.org[windup.jboss.org].
+_Example:_
+[source,xml]
+--------
+classification="JBoss Seam Components"
+--------    
 
-==== Additional Help
+effort="NUMBER":: The level of effort assigned to this resource. 
++
+_Example:_
+[source,xml]
+--------
+effort="2"
+--------
 
-* Type `man sftp` for a list of commands.
-* https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html-single/Deployment_Guide/index.html#s2-ssh-clients-sftp
-* http://www.tecmint.com/sftp-command-examples/
-* https://docs.oracle.com/cd/E26502_01/html/E29001/remotehowtoaccess-14.html
+===== `classification` Element: Child Elements
 
+xref:: Provides a link URI and text description for additional information.
++
+_Example:_
+[source,xml]
+--------
+<classification classification="Websphere Startup Service" effort="4">
+   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Singleton.html" description="EJB3.1 Singleton Bean"/>
+   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html" description="EJB3.1 Startup Bean"/>
+</classification>
+--------
+
+[[link-syntax]]
+==== Link Syntax
+
+===== Summary 
+
+The `link` element is used in classifications or hints to identify or classify links to informational content. For a better understanding of the `link` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html[Link] class.
+
+The following is an example of a rule that creates links to additional information.
+
+_Example:_
+[source,xml]
+--------
+<rule id="SeamToCDIRules_2fmb">
+    <when>
+        <javaclass references="org.jboss.seam.{*}" as="default"/>
+    </when>
+    <perform>
+        <iteration>
+            <classification classification="SEAM Component" effort="1">
+                <link href="http://www.seamframework.org/Seam3/Seam2ToSeam3MigrationNotes" description="Seam 2 to Seam 3 Migration Notes"/>
+                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/example.html" description="JSF Web Application Example"/>
+                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/contexts.html" description="JBoss Context Documentation"/>
+                <link href="http://www.andygibson.net/blog/tutorial/cdi-conversations-part-2/" description="CDI Conversations Blog Post"/>
+            </classification>
+        </iteration>
+    </perform>
+</rule>
+--------
+
+===== `link` Element: Attributes
+
+href="URI":: The URI for the referenced link/.
++
+_Example:_
+[source,xml]
+--------
+href="https://access.redhat.com/articles/1249423"
+--------
+    
+description="URI_DESCRIPTION":: A description for the link. 
++
+_Example:_
+[source,xml]
+--------
+description="Migrate WebLogic Proprietary Servlet Annotations"
+--------
+
+[[hint-syntax]]
+==== Hint Syntax
+
+===== Summary 
+
+The `hint` element is used to provide a hint or inline information about how to migrate a section of code. For a better understanding of the `hint` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Hint.html[Hint] class.
+
+The following is an example of a rule that creates a hint.
+
+_Example:_
+[source,xml]
+--------
+<rule id="WebLogicWebServiceRules_8jyqn">
+    <when>
+        <javaclass references="weblogic.wsee.connection.transport.http.HttpTransportInfo.setUsername({*})" as="default">
+            <location>METHOD</location>
+        </javaclass>
+    </when>
+    <perform>
+        <iteration>
+            <hint message="Replace proprietary web-service authentication with JAX-WS standards." effort="0">
+                <link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
+            </hint>
+        </iteration>
+    </perform>
+</rule>
+--------
+
+===== `hint` Element:  Attributes
+
+message="MESSAGE":: A message describing the migration hint
++
+_Example:_
+[source,xml]
+--------
+message="See this KnowledgeBase article on the Customer Portal: <some-url>"
+--------
+
+effort="NUMBER":: The level of effort assigned to this resource. 
++
+_Example:_
+[source,xml]
+--------
+effort="2"
+--------
+
+===== `hint` Element: Child Elements
+
+xref:: Identify or classify links to informational content. See the section on xref:link-syntax[Link Syntax] for details.
+
++
+_Example:_
+[source,xml]
+--------
+link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
+--------
+
+[[xslt-action]]
+==== XSLT Syntax
+
+===== Summary 
+
+The `xslt` element specifies how to transform an XML file. For a better understanding of the `xslt` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/operation/xslt/XSLTTransformation.html[XSLTTransformation]  class.
+
+The following is an example of rule that defines an XSLT action.
+
+_Example:_
+
+    <rule id="XmlWebLogicRules_6bcvk">
+        <when>
+            <xmlfile as="default" matches="/weblogic-ejb-jar"/>
+        </when>
+        <perform>
+            <iteration>
+                <classification classification="Weblogic EJB XML" effort="3"/>
+                <xslt description="JBoss EJB Descriptor (Windup-Generated)" template="transformations/xslt/weblogic-ejb-to-jboss.xsl" extension="-jboss.xml"/>
+            </iteration>
+        </perform>
+    </rule>
+
+===== `xslt` Element:  Attributes
+
+of="STRING":: Create a new transformation for the given reference.
++
+_Example:_
+
+    of="testVariable_instance"
+    
+description="String":: Sets the description of this XSLTTransformation.
++
+_Example:_
+
+    description="XSLT Transformed Output"
+
+extension="String":: Sets the extension for this XSLTTransformation.
++
+_Example:_
+
+    extension="-result.html"
+
+
+template=String:: Sets the XSL template.
++
+_Example:_
+
+    template="simpleXSLT.xsl"
+
+===== `xslt` Element: Child Elements
+
+xslt-parameter=Map<String,String> :: Specify XSLTTransformation parameters as property value pairs 
++
+_Example:_
+
+    <xslt-parameter property="title" value="EJB Transformation"/>
+
+[[lineitem-action]]
+==== Lineitem Syntax
+
+===== Summary 
+
+The `lineitem` element is used to provide line item information about a hint on the project or application overview page. For a better understanding of the `lineitem` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html[Lineitem] class.
+
+The following is an example of a rule that creates a lineitem message.
+
+_Example:_
+
+    <rule>
+        <when>
+            <javaclass references="weblogic.servlet.annotation.WLServlet" as="default">
+                <location>ANNOTATION</location>
+            </javaclass>
+        </when>
+        <perform>
+            <hint message="Replace the proprietary WebLogic @WLServlet annotation with the Java EE 6 standard @WebServlet annotation." effort="1">
+                <link href="https://access.redhat.com/articles/1249423" description="Migrate WebLogic Proprietary Servlet Annotations" />
+                <lineitem message="Proprietary WebLogic @WLServlet annotation found in file."/>
+            </hint>
+        </perform>
+    </rule>
+
+===== `lineitem` Element:  Attributes
+
+message="MESSAGE":: A lineitem message
++
+_Example:_
+
+    message="Proprietary code found."
+    
+[[iteration-action]]
+==== Iteration Syntax
+
+===== Summary 
+
+The `iteration` element specifies to iterate over an implicit or explicit variable defined within the rule. For a better understanding of the `iteration` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/Iteration.html[Iteration] class.
+
+The following is an example of a rule that preforms an iteration.
+
+_Example:_
+
+   <rule id="XmlWebLogicRules_14wscy">
+        <when>
+            <xmlfile as="1" matches="/wl:weblogic-webservices | /wl9:weblogic-webservices">
+                <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
+                <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
+            </xmlfile>
+            <xmlfile as="2" matches="//wl:webservice-type | //wl9:webservice-type" from="1">
+                <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
+                <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
+            </xmlfile>
+        </when>
+        <perform>
+            <iteration over="1">
+                <classification classification="Weblogic Webservice Descriptor" effort="0"/>
+            </iteration>
+            <iteration over="2">
+                <hint message="Webservice Type" effort="0"/>
+            </iteration>
+        </perform>
+    </rule>
+
+===== `iteration` Element:  Attributes
+
+over="VARIABLE_NAME":: Iterate over the condition identified by this VARIABLE_NAME.
++
+_Example:_
+
+    over="2"
+    
+===== `iteration` Element: Child Elements
+
+iteration child elements include a `when` condition, along with the actions `iteration`, `classification`, `hint`, `xslt`, `lineitem`, and `otherwise`.

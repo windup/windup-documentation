@@ -5,9 +5,9 @@ Windup is a rule-based migration tool that allows you to write customized rules 
 
 The following is a high level conceptual overview of what happens within Windup when you execute the tool against your application or archive.
 
-==== Discovery Phase
+==== Run Windup Against Your Application
 
-Wnen you run the `windup-migrate-app` command, Windup executes its own core rules to extract files from archives, decompile classes, and analyze the application. In this phase Windup builds a data model and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.
+Wnen you run the `windup-migrate-app` command against your application, Windup executes its own core rules to extract files from archives, decompile classes, and analyze the application. In this phase Windup builds a data model and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.
 
 For more information about the phases of rule execution, see xref:Rule-Phases[Rule Phases].
 
