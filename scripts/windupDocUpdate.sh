@@ -139,8 +139,8 @@ echo "* Building the Windup User Guide..."
 echo "*******************************************"
 asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html docs/Windup-User-Guide.adoc
 asciidoctor -t -dbook -o html/WindupUserGuide-NO-TOC.html docs/Windup-User-Guide-NO-TOC.adoc
-##wkhtmltopdf --disable-smart-shrinking html/WindupUserGuide-NO-TOC.html html/WindupUserGuide.pdf
 wkhtmltopdf --page-size Letter html/WindupUserGuide-NO-TOC.html pdf/WindupUserGuide.pdf
+## Build docbook xml: asciidoctor -b docbook docs/Windup-User-Guide.adoc
 
 echo "Guide is located at: " file://$2/html/WindupUserGuide.html
 echo ""
@@ -150,9 +150,8 @@ echo "* Building the Windup Rules Development Guide..."
 echo "*******************************************"
 asciidoctor -t -dbook -a toc -o html/WindupRulesDevelopmentGuide.html docs/Windup-Rules-Development-Guide.adoc
 asciidoctor -t -dbook -o html/WindupRulesDevelopmentGuide-NO-TOC.html docs/Windup-Rules-Development-Guide.adoc
-## Docbook: asciidoctor -b docbook docs/Windup-User-Guide.adoc
-##wkhtmltopdf --disable-smart-shrinking html/WindupRulesDevelopmentGuide-NO-TOC.html html/WindupRulesDevelopmentGuide.pdf
 wkhtmltopdf --page-size Letter html/WindupRulesDevelopmentGuide-NO-TOC.html pdf/WindupRulesDevelopmentGuide.pdf
+## Build docbook xml: asciidoctor -b docbook docs/Windup-Rules-Development-Guide.adoc
 echo "Guide is located at: " file://$2/html/WindupRulesDevelopmentGuide.html
 echo ""
 
@@ -161,8 +160,8 @@ echo "* Building the Windup Core Development Guide..."
 echo "*******************************************"
 asciidoctor -t -dbook -a toc -o html/WindupCoreDevelopmentGuide.html docs/Windup-Core-Development-Guide.adoc
 asciidoctor -t -dbook -o html/WindupCoreDevelopmentGuide-NO-TOC.html docs/Windup-Core-Development-Guide-NO-TOC.adoc
-##wkhtmltopdf --disable-smart-shrinking html/WindupCoreDevelopmentGuide-NO-TOC.html html/WindupCoreDevelopmentGuide.pdf
 wkhtmltopdf --page-size Letter html/WindupCoreDevelopmentGuide-NO-TOC.html pdf/WindupCoreDevelopmentGuide.pdf
+## Build docbook xml: asciidoctor -b docbook docs/Windup-Core-Development-Guide.adoc
 echo "Guide is located at: " file://$2/html/WindupCoreDevelopmentGuide.html
 echo ""
 

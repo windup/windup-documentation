@@ -181,7 +181,7 @@ _Example:_
 link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
 --------
 
-[[xslt-action]]
+[[xslt-syntax]]
 ==== XSLT Syntax
 
 ===== Summary 
@@ -255,7 +255,7 @@ _Example:_
 <xslt-parameter property="title" value="EJB Transformation"/>
 --------
 
-[[lineitem-action]]
+[[lineitem-syntax]]
 ==== Lineitem Syntax
 
 ===== Summary 
@@ -292,7 +292,7 @@ _Example:_
 message="Proprietary code found."
 --------
     
-[[iteration-action]]
+[[iteration-syntax]]
 ==== Iteration Syntax
 
 ===== Summary 

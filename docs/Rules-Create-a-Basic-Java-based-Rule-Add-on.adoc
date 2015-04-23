@@ -47,7 +47,8 @@ Create a new Maven Java Project. These instructions will refer to the project fo
 </dependencyManagement>
 ----
 
-3. Add a `<dependencies>` section to include Windup, rulesets, and test dependencies required by your rule add-on. Windup is a Forge/Furnace based application and has a modular design, so the dependencies will vary depending on the Windup APIs used by the rule. For more information on Windup dependencies, see xref:Dev-Dependencies[Windup Dependencies]. 
+3. Add a `<dependencies>` section to include Windup, rulesets, and test dependencies required by your rule add-on. Windup is a Forge/Furnace based application and has a modular design, so the dependencies will vary depending on the Windup APIs used by the rule. 
+// For more information on Windup dependencies, see xref:Dev-Dependencies[Windup Dependencies]. 
 +
 The following are examples of some dependencies you may need for your rule add-on.
 +

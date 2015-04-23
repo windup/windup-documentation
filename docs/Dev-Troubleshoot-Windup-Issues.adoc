@@ -18,8 +18,7 @@ See xref:Known-Issues[Known Issues] and https://issues.jboss.org/browse/WINDUP-1
 ==== Classloading Problems
 
 Configuring dependencies in a Forge-based project can be a little tricky.
-See xref:Dev-Dependencies[Dependencies] for some hints.
-
+// See xref:Dev-Dependencies[Dependencies] for some hints.
 
 -----
 Caused by: java.lang.IllegalArgumentException: Type value for model 'org.jboss.windup.rules.files.model.FileReferenceModel' is already registered with model org.jboss.windup.rules.files.model.FileReferenceModel

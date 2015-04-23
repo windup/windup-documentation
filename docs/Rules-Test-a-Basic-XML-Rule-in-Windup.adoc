@@ -3,7 +3,7 @@
 
 ==== Add the Rule to Windup
 
-A Windup rule is installed simply by copying the rule to the appropriate Windup folder. Windup scans for rules in the following locations for files ending with `*.windup.groovy` and `*.windup.xml`:
+A Windup rule is installed simply by copying the rule to the appropriate Windup folder. Windup scans for rules in the following locations for files ending with `.windup.groovy` and `.windup.xml`:
 
 * The directory specified in the `--userRulesDirectory` option to the `windup-migrate-app`.
 
