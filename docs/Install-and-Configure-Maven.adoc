@@ -1,12 +1,17 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Install-and-Configure-Maven]]
 === Install and Configure Maven
 
-If you plan to contribute to the core code base or create Java-based rule add-ons, you must first install and configure Maven to build Windup from source.
+If you plan to contribute to the core code base or create Java-based rule add-ons, you must first install and configure Maven to build {ProductName} from source.
 
 ==== Download and Install Maven
 
-If you plan to use Eclipse Luna (4.4) to build Windup, you can skip this
-step and go directly to the section entitled xref:configure-maven-to-build-windup[Configure Maven to Build Windup]. This version of Eclipse embeds Maven 3.2.1 so you do not need to
+If you plan to use Eclipse Luna (4.4) to build {ProductName}, you can skip this
+step and go directly to the section entitled xref:configure-maven-to-build-windup[Configure Maven to Build {ProductName}]. This version of Eclipse embeds Maven 3.2.1 so you do not need to
 install it separately.
 
 If you plan to run Maven using the command line or plan to use Red Hat
@@ -38,12 +43,12 @@ _Note: If you use another IDE, refer to the product documentation to
 update the Maven installation._
 
 [[configure-maven-to-build-windup]]
-==== Configure Maven to Build Windup
+==== Configure Maven to Build {ProductName}
 
-Windup uses artifacts located in the
+{ProductName} uses artifacts located in the
 http://repository.jboss.org/nexus/content/groups/public/[JBoss Nexus]
 repository. You must configure Maven to use this repository before you
-build Windup.
+build {ProductName}.
 
 . Open your `${user.home}/.m2/settings.xml` file for editing.
 . Copy the following `jboss-nexus-repository` profile XML prior to the
@@ -87,5 +92,5 @@ element to make the profile active.
 <activeProfile>jboss-nexus-repository</activeProfile> 
 ----------------------------------------------------------
 
-You are now configured to build Windup.
+You are now configured to build {ProductName}.
  

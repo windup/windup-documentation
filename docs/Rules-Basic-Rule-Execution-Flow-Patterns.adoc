@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rules-Basic-Rule-Execution-Flow-Patterns]]
 === Basic Rule Execution Flow Patterns
 
@@ -16,7 +21,7 @@ return ConfigurationBuilder.begin()
     });
 --------
 
-Windup source code example: https://github.com/windup/windup/blob/master/rules-java/impl/src/main/java/org/jboss/windup/rules/apps/java/config/CopyJavaConfigToGraphRuleProvider.java#L99-L101 
+{ProductName} source code example: https://github.com/windup/windup/blob/master/rules-java/impl/src/main/java/org/jboss/windup/rules/apps/java/config/CopyJavaConfigToGraphRuleProvider.java#L99-L101 
 
 The `copyConfigToGraph` GraphOperation used in the perform() above is defined before the rule.
 
@@ -36,7 +41,7 @@ return ConfigurationBuilder.begin()
     });
 --------
 
-Windup source code example: https://github.com/windup/windup/blob/master/reporting/api/src/main/java/org/jboss/windup/reporting/rules/AttachApplicationReportsToIndexRuleProvider.java#L39-L41
+{ProductName} source code example: https://github.com/windup/windup/blob/master/reporting/api/src/main/java/org/jboss/windup/reporting/rules/AttachApplicationReportsToIndexRuleProvider.java#L39-L41
 
 ==== Single Iteration - for( FooModel.class ){ ... }
 
@@ -66,7 +71,7 @@ public class ComputeArchivesSHA512 extends IteratingRuleProvider<ArchiveModel>
     @Override public String toStringPerform() { return this.getClass().getSimpleName(); }
 }
 --------
-Windup source code example: https://github.com/windup/windup/blob/master/rules-java/api/src/main/java/org/jboss/windup/rules/apps/java/scan/provider/DiscoverArchiveManifestFilesRuleProvider.java
+{ProductName} source code example: https://github.com/windup/windup/blob/master/rules-java/api/src/main/java/org/jboss/windup/rules/apps/java/scan/provider/DiscoverArchiveManifestFilesRuleProvider.java
 
 ==== Conditional Iteration - if( ... ){ for( ... ) }
 
@@ -81,7 +86,7 @@ return ConfigurationBuilder.begin()
             .perform( ... )
     )
 --------
-Windup source code example: https://github.com/windup/windup/blob/master/rules-java-ee/addon/src/main/java/org/jboss/windup/rules/apps/javaee/rules/DiscoverEjbAnnotationsRuleProvider.java#L82-L93
+{ProductName} source code example: https://github.com/windup/windup/blob/master/rules-java-ee/addon/src/main/java/org/jboss/windup/rules/apps/javaee/rules/DiscoverEjbAnnotationsRuleProvider.java#L82-L93
 
 
 ==== Iteration With a Condition - for( ... ){ if( ... ){ ... } }
@@ -109,7 +114,7 @@ return ConfigurationBuilder.begin()
             .perform( ... ) 
 --------
 
-Windup source code example: https://github.com/windup/windup/blob/master/reporting/impl/src/main/java/org/jboss/windup/reporting/rules/rendering/RenderReportRuleProvider.java#L46-L66
+{ProductName} source code example: https://github.com/windup/windup/blob/master/reporting/impl/src/main/java/org/jboss/windup/reporting/rules/rendering/RenderReportRuleProvider.java#L46-L66
 
 
 ==== Nested Iterations - for( ... ){ for( ... ) { ... } }
@@ -126,4 +131,4 @@ Windup source code example: https://github.com/windup/windup/blob/master/reporti
      .endIteration()
 );
 --------
-Windup source code example: https://github.com/windup/windup/blob/master/config/tests/src/test/java/org/jboss/windup/config/iteration/payload/IterationPayLoadPassTest.java#L183-L202
+{ProductName} source code example: https://github.com/windup/windup/blob/master/config/tests/src/test/java/org/jboss/windup/config/iteration/payload/IterationPayLoadPassTest.java#L183-L202

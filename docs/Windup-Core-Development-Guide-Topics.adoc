@@ -1,47 +1,53 @@
 == Overview
 
 This guide is for developers who plan to contribute source code updates
-or core rule add-ons to the Windup 2 project.
+or core rule add-ons to the {ProductName} project.
 
-include::What-is-Windup.adoc[tabsize=4]
+include::What-is-it.adoc[tabsize=4]
 
-include::Features-of-Windup-2.adoc[tabsize=4]
+include::Features.adoc[tabsize=4]
 
-include::About-the-WINDUP_HOME-Variable.adoc[tabsize=4]
+include::About-the-HOME-Variable.adoc[tabsize=4]
 
 == Get Started
 
-Before you begin to contribute to Windup, take a quick tour to see how to use it.
+Before you begin to contribute to {ProductName}, take a quick tour to see how to use it.
+
+include::Install.adoc[tabsize=4]
+
+include::Execute.adoc[tabsize=4]
+
+include::Review-the-Report.adoc[tabsize=4]
+
+== Prepare Your Development Environment
+
+Now that you've seen {ProductName} in action, prepare your development environment.
 
 include::Install-and-Configure-Maven.adoc[tabsize=4]
 
-include::Dev-Get-the-Windup-Source-Code.adoc[tabsize=4]
+include::Dev-Get-the-Source-Code.adoc[tabsize=4]
 
-include::Dev-Build-Windup-from-Source.adoc[tabsize=4]
+include::Dev-Build-from-Source.adoc[tabsize=4]
 
-include::Dev-Execute-Windup-Built-from-Source.adoc[tabsize=4]
-
-include::Execute-Windup.adoc[tabsize=4]
-
-include::Review-the-Report.adoc[tabsize=4]
+include::Dev-Execute-Built-from-Source.adoc[tabsize=4]
 
 == Developer Contributing Information
 
 include::Dev-Development-Guidelines-and-Conventions.adoc[tabsize=4]
 
-include::Dev-Submit-Code-Updates-to-the-Windup-Project.adoc[tabsize=4]
+include::Dev-Submit-Code-Updates-to-the-Project.adoc[tabsize=4]
 
-== Understand the Windup Architecture and Structure
+== Understand the {ProductName} Architecture and Structure
 
-include::Windup-Architectural-Components.adoc[tabsize=4]
+include::Architectural-Components.adoc[tabsize=4]
 
 include::Dev-Frames-Extensions.adoc[tabsize=4]
 
-include::Dev-Windup-Project-Structure.adoc[tabsize=4]
+include::Dev-Project-Structure.adoc[tabsize=4]
 
 == Rules and Rulesets
 
-include::Windup-Processing-Overview.adoc[tabsize=4]
+include::Processing-Overview.adoc[tabsize=4]
 
 include::Rules-Rule-Execution-Lifecycle.adoc[tabsize=4]
 
@@ -52,8 +58,6 @@ include::Rules-Rule-Story-Points.adoc[tabsize=4]
 include::Rules-Difference-Between-XML-based-and-Java-based-Rules.adoc[tabsize=4]
 
 == Create and Test Java Rule Add-ons
-
-include::Install-and-Configure-Maven.adoc[tabsize=4]
 
 include::Rules-Java-based-Rule-Structure.adoc[tabsize=4]
 
@@ -71,11 +75,11 @@ include::Rules-XML-Rule-When-Condition-Syntax.adoc[tabsize=4]
 
 include::Rules-XML-Rule-Perform-Action-Syntax.adoc[tabsize=4]
 
-include::Rules-Test-a-Basic-XML-Rule-in-Windup.adoc[tabsize=4]
+include::Rules-Test-a-Basic-XML-Rule.adoc[tabsize=4]
 
 == Core Developer topics
 
-include::Dev-Windup-Bootstrap.adoc[tabsize=4]
+include::Dev-Bootstrap-Process.adoc[tabsize=4]
 
 include::Dev-Classloading-Notes.adoc[tabsize=4]
 
@@ -85,15 +89,13 @@ include::Dev-Decompiling.adoc[tabsize=4]
 
 include::Dev-Dependencies.adoc[tabsize=4]
 
-include::Dev-Frames-Extensions.adoc[tabsize=4]
-
 include::Dev-Internal-API-Features.adoc[tabsize=4]
 
 include::Dev-Logging.adoc[tabsize=4]
 
 include::Dev-Variables-Stack.adoc[tabsize=4]
 
-// include::Dev-Port-WindRide-Functionality-to-Windup.adoc[tabsize=4]
+// include::Dev-Port-WindRide-Functionality.adoc[tabsize=4]
 
 include::Dev-Git-Rebasing.adoc[tabsize=4]
 
@@ -119,7 +121,7 @@ include::Ruleset-Reporting.adoc[tabsize=4]
 
 include::Ruleset-XML.adoc[tabsize=4]
 
-include::Rules-Windup-Models.adoc[tabsize=4]
+include::Rules-Models.adoc[tabsize=4]
 
 include::Rules-Create-Java-Queries.adoc[tabsize=4]
 
@@ -139,36 +141,38 @@ include::Rules-Ops-Xml-XsltTransformation.adoc[tabsize=4]
 
 include::Dev-Debugging-and-Profiling.adoc[tabsize=4]
 
-include::Dev-Troubleshoot-Windup-Issues.adoc[tabsize=4]
+include::Dev-Troubleshoot-Issues.adoc[tabsize=4]
 
 == Wiki Information
 
-include::About-the-Windup-Wiki.adoc[tabsize=4]
+include::About-this-Wiki.adoc[tabsize=4]
 
-include::Dev-Add-Images-to-the-Windup-Wiki.adoc[tabsize=4]
+include::Dev-Add-Images-to-the-Wiki.adoc[tabsize=4]
 
-== Windup Product Release and Documentation Process
+== {ProductName} Product Release and Documentation Process
 
-include::Dev-Windup-Release-Process.adoc[tabsize=4]]
+include::Dev-Release-Process.adoc[tabsize=4]]
 
-include::Dev-Create-Windup-JavaDoc.adoc[tabsize=4]
+include::Dev-Create-the-JavaDoc.adoc[tabsize=4]
 
-include::Dev-Windup-Documentation-Process.adoc[tabsize=4]
+include::Dev-Documentation-Process.adoc[tabsize=4]
 
 == Additional Resources
 
-include::Review-the-Windup-Quickstarts.adoc[tabsize=4]
+include::Review-the-Quickstarts.adoc[tabsize=4]
 
 include::Get-Involved.adoc[tabsize=4]
 
+include::Important-Links.adoc[tabsize=4]
+
 include::Known-Issues.adoc[tabsize=4] 
 
-include::Report-Issues-with-Windup.adoc[tabsize=4]
+include::Report-Issues.adoc[tabsize=4]
 
 == Appendix
 
 include::Glossary.adoc[tabsize=4]
 
-include::Dev-Windup-Project-Information.adoc[tabsize=4]
+include::Dev-Project-Information.adoc[tabsize=4]
 
 

@@ -1,11 +1,16 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rules-Rule-Execution-Lifecycle]]
 === Rule Execution Lifecycle
 
-Rule phases provide a way for rule authors to control the rule lifecycle by specifying the phase in which the rule should execute. Windup executes rules sequentially within rule phases, however, you can also provide more fine-grained control over the order of rule execution within a phase. A rule may specify that one or more rules must be executed before it this rule is run. All named rules will be fired in the order specified before executing the the current rule. A rule may also specify that one or more rules must be executed after it is run. In this case, all named rules will be fired in the order specified after executing the the current rule.
+Rule phases provide a way for rule authors to control the rule lifecycle by specifying the phase in which the rule should execute. {ProductName} executes rules sequentially within rule phases, however, you can also provide more fine-grained control over the order of rule execution within a phase. A rule may specify that one or more rules must be executed before it this rule is run. All named rules will be fired in the order specified before executing the the current rule. A rule may also specify that one or more rules must be executed after it is run. In this case, all named rules will be fired in the order specified after executing the the current rule.
 
 The rule phase and execution order is stored in the associated rule's http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RuleMetadata.html[RuleMetadata].
 
-For a detailed description of Windup rule phases and the order of their execution, see: xref:Rule-Phases[Rule Phases]
+For a detailed description of {ProductName} rule phases and the order of their execution, see: xref:Rule-Phases[Rule Phases]
 
 ==== Set the Rule Execution Phase 
 

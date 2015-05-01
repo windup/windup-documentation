@@ -1,9 +1,14 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Migration-Technology-Categories]]
 === Migration Technology Categories
 
 .DRAFT
 
-Windup rules categorize changes by technology to make it easier to understand the development and administration skill sets required for the migration effort.
+{ProductName} rules categorize changes by technology to make it easier to understand the development and administration skill sets required for the migration effort.
 
 The following is a partial list of suggested technologies.
 

@@ -4,5 +4,15 @@
 :toclevels: 4
 :numbered:
 
+:imagesdir: images
+
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+:ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME
+:ProductSrcHomeVar: WINDUP_SOURCE_HOME
+:ProductReleaseVar: WINDUP_RELEASE
+
 include::Windup-User-Guide-Topics.adoc[tabsize=4]
 

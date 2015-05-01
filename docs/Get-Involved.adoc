@@ -1,41 +1,33 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Get-Involved]]
 === Get Involved
 
 ==== How can you help?
 
-To help us make Windup cover most application constructs and server configurations, including yours, you can help with any of the following items. Some items require only a few minutes of your time!
+To help us make {ProductName} cover most application constructs and server configurations, including yours, you can help with any of the following items. Many require only a few minutes of your time!
 
-* mailto:windup-users@redhat.com[Let us know] what Windup migration rules should cover.
+* Send an email to windup-users@lists.jboss.org and let us know what {ProductName} migration rules should cover.
 * Provide example applications to test migration rules.
 * Identify application components and problem areas that may be difficult to migrate.
 ** Write a short description of these problem migration areas.
 ** Write a brief overview describing how to solve the problem migration areas.
-* xref:Execute-Windup[Try Windup] on your application. Be sure to xref:Report-Issues-with-Windup[report any issues] you encounter.
-* You can contribute Windup rules. 
-** Write a Windup rule add-on to automate a migration process.
+* xref:Execute[Try {ProductName}] on your application. Be sure to xref:Report-Issues[report any issues] you encounter.
+* You can contribute to the {ProductName} rules repository. 
+** Write a {ProductName} rule to identify or automate a migration process.
 ** Create a test for the new rule.
-** For details, see the _Windup Rules Development Guide_.
+** Details are provided in the _{ProductName} Rules Development Guide_.
 * You can also contribute to the project source code. 
 ** Create a core rule.
-** Improve performance or efficiency.
-** See the_Windup Core Development Guide_ for information about how to configure your environment and set up the project.
+** Improve {ProductName} performance or efficiency.
+** See the_{ProductName} Core Development Guide_ for information about how to configure your environment and set up the project.
 
 Any level of involvement is greatly appreciated!
 
 
-==== Helpful links
+==== Important links
 
-* Windup Wiki: https://github.com/windup/windup/wiki
-* Windup documentation (generated from the Wiki documentation at the link above): 
-** http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html
-** http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html
-** http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html
-* Windup Forums: https://community.jboss.org/en/windup
-* Windup Forums: https://developer.jboss.org/en/windup (inherited from Windup 0.x)
-* Windup Issue Tracker: https://issues.jboss.org/browse/WINDUP
-* Windup Users Mailing List: windup-users@lists.jboss.org
-* Windup Developers Mailing List: windup-dev@lists.jboss.org
-* Windup Commits Mailing List: windup-commits@lists.jboss.org
-* Windup on Twitter: https://twitter.com/jbosswindup[@JBossWindup]
-
-You can also follow us on this IRC channel: `irc.freenode.net#windup`.
+See the xref:Important-Links[list of links to {ProductName} resources].

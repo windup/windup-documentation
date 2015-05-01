@@ -1,0 +1,146 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
+[[Ruleset-Docs-Template]]
+=== Ruleset Template
+
+.DRAFT
+
+sgilda question for Ozizka: I'm not clear what this is?
+
+_This is an example page. Content serves for design decision. These pages could be generated automatically in the future._
+
+Purpose of this ruleset.
+
+==== Metadata
+**ID:** myRuleset  
+**Graph prefix:** myRuleset
+
+==== Rule providers
+
+_A definition list (dl/dt/dd) of RuleProviders of given Ruleset with brief descriptions._
+
+_Template hint: Subclasses of http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/AbstractRuleProvider.html[AbstractRuleProvider].
+
+* **JDKconfigRuleProvider** - Targetted towards the classes distributed with JDK, like `java.lang.*`, `java.security.*`, `org.xml.*`, etc.
+* **AnalyzeJavaFilesRuleProvider** - 
+* **AttachApplicationReportsToIndexRuleProvider** - 
+* **BaseConfig** - 
+* **Config** - 
+* **CopyJavaConfigToGraphRuleProvider** - 
+* **CreateApplicationReportIndexRuleProvider** - 
+* **CreateJavaApplicationOverviewReportRuleProvider** - 
+* **CreateJavaNonClassifiedFileReportRuleProvider** - 
+* **CreateSourceReportRuleProvider** - 
+* **CssJsResourceRenderingRuleProvider** - 
+* **DecompileArchivesRuleProvider** - 
+* **DiscoverArchiveTypesRuleProvider** - 
+* **DiscoverFileTypesRuleProvider** - 
+* **DiscoverJavaFilesRuleProvider** - 
+* **DiscoverMavenHierarchyRuleProvider** - 
+* **DiscoverMavenProjectsRuleProvider** - 
+* **DiscoverNonMavenArchiveProjectsRuleProvider** - 
+* **DiscoverNonMavenSourceProjectsRuleProvider** - 
+* **DiscoverXmlFilesRuleProvider** - 
+* **EjbConfig** - 
+* **EjbConfig** - 
+* **IndexClassFilesRuleProvider** - 
+* **IteratingRuleProvider** - 
+* **JBossConfig** - 
+* **JBossEsbConfig** - 
+* **JBossJBPMConfig** - 
+* **JDKConfig** - 
+* **JPPConfig** - 
+* **PersistenceConfig** - 
+* **RenderGraphRuleProvider** - 
+* **RenderOverviewPageRuleProvider** - 
+* **RenderReportRuleProvider** - 
+* **RenderRuleProviderReportRuleProvider** - 
+* **RuleExecutionTimeReportRuleProvider** - 
+* **SeamToCDI** - 
+* **SonicESBConfig** - 
+* **UnzipArchivesToOutputRuleProvider** - 
+* **WebLogicConfig** - 
+* **WebServiceConfig** - 
+* **WebsphereConfig** - 
+* **RuleProviderBuilder** - 
+* **XmlBaseConfig** - 
+* **XmlGlassfishConfig** - 
+* **XmlJbossConfig** - 
+* **XmlJbossEsbConfig** - 
+* **XmlJonasConfig** - 
+* **XmlJppConfig** - 
+* **XmlJrunConfig** - 
+* **XmlKnowHowConfig** - 
+* **XmlOrionConfig** - 
+* **XmlPersistanceConfig** - 
+* **XmlResinConfig** - 
+* **XmlSoa5Config** - 
+* **XmlSonicEsbConfig** - 
+* **XmlSpringConfig** - 
+* **XmlWeblogicConfig** - 
+* **XmlWebserviceConfig** - 
+* **XmlWebsphereConfig** -
+
+
+==== Models
+
+_Subclasses of `WindupVertexFrame`.
+
+* org.jboss.windup.graph.model.ApplicationArchiveModel
+* org.jboss.windup.graph.model.ApplicationModel
+* org.jboss.windup.graph.model.ArchiveModel
+* org.jboss.windup.graph.model.ProjectDependencyModel
+* org.jboss.windup.graph.model.ProjectModel
+* org.jboss.windup.graph.model.WindupConfigurationModel
+* org.jboss.windup.graph.model.performance.RulePhaseExecutionStatisticsModel
+* org.jboss.windup.graph.model.performance.RuleProviderExecutionStatisticsModel
+* org.jboss.windup.graph.model.report.IgnoredFileRegexModel
+* org.jboss.windup.graph.model.resource.FileModel
+* org.jboss.windup.graph.model.resource.SourceFileModel
+* org.jboss.windup.reporting.model.ApplicationReportIndexModel
+* org.jboss.windup.reporting.model.ApplicationReportModel
+* org.jboss.windup.reporting.model.ClassificationModel
+* org.jboss.windup.reporting.model.FileLocationModel
+* org.jboss.windup.reporting.model.FileReferenceModel
+* org.jboss.windup.reporting.model.FreeMarkerSourceReportModel
+* org.jboss.windup.reporting.model.IgnoredFilesReportModel
+* org.jboss.windup.reporting.model.InlineHintModel
+* org.jboss.windup.reporting.model.LinkModel
+* org.jboss.windup.reporting.model.ReportFileModel
+* org.jboss.windup.reporting.model.ReportModel
+* org.jboss.windup.reporting.model.TechnologyTagModel
+* org.jboss.windup.reporting.model.source.SourceReportModel
+* org.jboss.windup.rules.apps.java.model.AmbiguousJavaClassModel
+* org.jboss.windup.rules.apps.java.model.AmbiguousReferenceModel
+* org.jboss.windup.rules.apps.java.model.EarArchiveModel
+* org.jboss.windup.rules.apps.java.model.IgnoredFileModel
+* org.jboss.windup.rules.apps.java.model.JarArchiveModel
+* org.jboss.windup.rules.apps.java.model.JarManifestModel
+* org.jboss.windup.rules.apps.java.model.JavaClassFileModel
+* org.jboss.windup.rules.apps.java.model.JavaClassModel
+* org.jboss.windup.rules.apps.java.model.JavaMethodModel
+* org.jboss.windup.rules.apps.java.model.JavaParameterModel
+* org.jboss.windup.rules.apps.java.model.JavaSourceFileModel
+* org.jboss.windup.rules.apps.java.model.PackageModel
+* org.jboss.windup.rules.apps.java.model.PropertiesModel
+* org.jboss.windup.rules.apps.java.model.WarArchiveModel
+* org.jboss.windup.rules.apps.java.model.WindupJavaConfigurationModel
+* org.jboss.windup.rules.apps.java.model.project.MavenProjectModel
+* org.jboss.windup.rules.apps.java.scan.ast.JavaTypeReferenceModel
+* org.jboss.windup.rules.apps.xml.model.DoctypeMetaModel
+* org.jboss.windup.rules.apps.xml.model.NamespaceMetaModel
+* org.jboss.windup.rules.apps.xml.model.XmlFileModel
+* org.jboss.windup.rules.apps.xml.model.XmlTypeReferenceModel
+* org.jboss.windup.rules.apps.xml.model.XsltTransformationModel
+
+
+==== Configuration
+
+_Subclasses of http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupConfigurationOption.html[WindupConfigurationOption]
+
+==== Reports
+
+_Report files or report parts created by this ruleset._

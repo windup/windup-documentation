@@ -1,0 +1,20 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
+[[Dev-Create-the-JavaDoc]]
+=== Create {ProductName} JavaDoc
+
+The most recent {ProductName} JavaDoc build is located here: http://windup.github.io/windup/docs/javadoc/latest/index.html
+
+If you want to build an updated version, use the following procedure to create JavaDoc for {ProductName}.
+
+. In {ProductName} project root directory, type the following Maven command:
++
+-----------------------------------
+mvn validate -PjavadocDist
+-----------------------------------
+. The JavaDoc is created in the {ProductName} `target/apidocs` subdirectory.
+
+NOTE: To cross-link with 3rd-party libraries, see https://issues.jboss.org/browse/WINDUP-422[WINDUP-422} and http://stackoverflow.com/questions/27392535/javadoc-how-to-make-it-link-the-dependencies-maven-project.

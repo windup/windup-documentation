@@ -1,5 +1,10 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Dev-Release-Checklist]]
-=== Windup Release Checklist
+=== {ProductName} Release Checklist
 
 * Build & upload artifacts
 * Update `<version.windup>...</version.windup>` in:

@@ -1,9 +1,10 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 === Downloads
-https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.windup&a=windup-distribution&v=LATEST&e=zip&c=offline[Latest Windup ZIP distribution]
-
-=== Windup JavaDoc:
-
-xref:http://windup.github.io/windup/docs/latest/javadoc[Windup JavaDoc] +
+https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.windup&a=windup-distribution&v=LATEST&e=zip&c=offline[Latest {ProductName} ZIP distribution]
 
 === Wiki Guides:
 
@@ -16,17 +17,17 @@ xref:./Migration-Planning-Guide[Migration Planning Guide] +
 
 ==== Single-page HTML Format
 
-xref:http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html[Windup User Guide] +
-xref:http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html[Windup Rules Development Guide] +
-xref:http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html[Windup Core Development Guide] +
+http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html[{ProductName} User Guide] +
+http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html[{ProductName} Rules Development Guide] +
+http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html[{ProductName} Core Development Guide] +
 
 ==== PDF Format
 
-xref:http://windup.github.io/windup/docs/latest/pdf/WindupUserGuide.pdf[Windup User Guide] +
-xref:http://windup.github.io/windup/docs/latest/pdf/WindupRulesDevelopmentGuide.pdf[Windup Rules Development Guide] +
-xref:http://windup.github.io/windup/docs/latest/pdf/WindupCoreDevelopmentGuide.pdf[Windup Core Development Guide] +
+http://windup.github.io/windup/docs/latest/pdf/WindupUserGuide.pdf[{ProductName} User Guide] +
+http://windup.github.io/windup/docs/latest/pdf/WindupRulesDevelopmentGuide.pdf[{ProductName} Rules Development Guide] +
+http://windup.github.io/windup/docs/latest/pdf/WindupCoreDevelopmentGuide.pdf[{ProductName} Core Development Guide] +
 
 === Developer Materials
 
-xref:http://windup.github.io/windup/docs/latest/javadoc[Windup JavaDoc] +
-xref:https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd[Rule Schema]
+http://windup.github.io/windup/docs/latest/javadoc[{ProductName} Javadoc] +
+https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd[Rule Schema]

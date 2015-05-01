@@ -135,15 +135,49 @@ echo "Replacement of links with xrefs is complete."
 echo ""
 
 echo "*******************************************"
+echo "* Modifying variables                      "
+echo "*******************************************"
+echo ""
+cd docs
+## find . -name '*.adoc' -print | xargs sed -i 's/:ProductName: Windup//g'
+## find . -name '*.adoc' -print | xargs sed -i 's/:ProductVersion: 2.2.0-Final//g'
+## find . -name '*.adoc' -print | xargs sed -i 's/:ProductDistribution: windup-distribution-2.2.0-Final//g'
+## find . -name '*.adoc' -print | xargs sed -i 's/:ProductHomeVar: WINDUP_HOME//g'
+## find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME//g'
+## find . -name '*.adoc' -print | xargs sed -i 's/:ProductSrcHomeVar: WINDUP_SOURCE_HOME//g'
+## find . -name '*.adoc' -print | xargs sed -i 's/:ProductReleaseVar: WINDUP_RELEASE//g'
+
+##find . -name '*.adoc' -print | xargs sed -i 's/{ProductName}/Windup/g'
+##find . -name '*.adoc' -print | xargs sed -i 's/{ProductVersion}/2.2.0-Final/g'
+##find . -name '*.adoc' -print | xargs sed -i 's/{ProductDistribution}/windup-distribution-2.2.0-Final/g'
+##find . -name '*.adoc' -print | xargs sed -i 's/{ProductHomeVar}/WINDUP_HOME/g'
+##find . -name '*.adoc' -print | xargs sed -i 's/{ProductDocHomeVar}/WINDUP_DOCUMENTATION_HOME/g'
+##find . -name '*.adoc' -print | xargs sed -i 's/{ProductSrcHomeVar}/WINDUP_SOURCE_HOME/g'
+##find . -name '*.adoc' -print | xargs sed -i 's/{ProductReleaseVar}/WINDUP_RELEASE/g'
+## Restore the top level files
+cd ../
+##cp Windup-User-Guide.adoc docs/
+
+echo "Removal of variables is complete."
+echo ""
+
+echo "*******************************************"
 echo "* Building the Windup User Guide..."
 echo "*******************************************"
 asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html docs/Windup-User-Guide.adoc
 asciidoctor -t -dbook -o html/WindupUserGuide-NO-TOC.html docs/Windup-User-Guide-NO-TOC.adoc
 wkhtmltopdf --page-size Letter html/WindupUserGuide-NO-TOC.html pdf/WindupUserGuide.pdf
-## Build docbook xml: asciidoctor -b docbook docs/Windup-User-Guide.adoc
-
 echo "Guide is located at: " file://$2/html/WindupUserGuide.html
 echo ""
+
+## Build docbook xml: asciidoctor -b docbook docs/Windup-User-Guide.adoc
+## Build using ccutils: 
+ccutil compile --lang en_US --main-file ~/GitRepos/windup-documentation/docs/Windup-User-Guide.adoc
+cp -r docs/images/ build/tmp/en_US/html-single/images/
+cp -r docs/images/ build/en_US/images/
+mv build/ build-user-guide
+
+## Save the documentation so it is not lost when building another doc: cp -r build/ build-windup-user-guide/ 
 
 echo "*******************************************"
 echo "* Building the Windup Rules Development Guide..."
@@ -154,6 +188,10 @@ wkhtmltopdf --page-size Letter html/WindupRulesDevelopmentGuide-NO-TOC.html pdf/
 ## Build docbook xml: asciidoctor -b docbook docs/Windup-Rules-Development-Guide.adoc
 echo "Guide is located at: " file://$2/html/WindupRulesDevelopmentGuide.html
 echo ""
+ccutil compile --lang en_US --main-file ~/GitRepos/windup-documentation/docs/Windup-Rules-Development-Guide.adoc
+cp -r docs/images/ build/tmp/en_US/html-single/images/
+cp -r docs/images/ build/en_US/images/
+mv build/ build-rules-guide
 
 echo "*******************************************"
 echo "* Building the Windup Core Development Guide..."
@@ -164,6 +202,11 @@ wkhtmltopdf --page-size Letter html/WindupCoreDevelopmentGuide-NO-TOC.html pdf/W
 ## Build docbook xml: asciidoctor -b docbook docs/Windup-Core-Development-Guide.adoc
 echo "Guide is located at: " file://$2/html/WindupCoreDevelopmentGuide.html
 echo ""
+
+ccutil compile --lang en_US --main-file ~/GitRepos/windup-documentation/docs/Windup-Core-Development-Guide.adoc
+cp -r docs/images/ build/tmp/en_US/html-single/images/
+cp -r docs/images/ build/en_US/images/
+mv build/ build-core-guide
 
 echo "*******************************************"
 echo "Manually verify the guides and use Maven to check in the new files"

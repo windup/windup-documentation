@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rules-Rule-Configuration]]
 === Rule Configuration
 
@@ -9,7 +14,7 @@ _How to pass configuration from user input to the rules._
 The rules can be parametrized by user input (e.g. from a command line argument, like `--packages`).
 When creating a custom rule, you might need to allow the user to change the rule's behavior, or need some input from the user, like, a path to some directory, or address of some online service. This page shows how.
 
-For more information about how configuration is processed, see xref:Dev-Windup-Configuration[Windup Configuration].
+For more information about how configuration is processed, see xref:Dev-{ProductName}-Configuration[{ProductName} Configuration].
 
 ===== Getting the options from the options map:
 

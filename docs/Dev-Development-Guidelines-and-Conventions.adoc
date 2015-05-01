@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Dev-Development-Guidelines-and-Conventions]]
 === Development Guidelines and Conventions
 
@@ -8,24 +13,24 @@
 [[project-source-code-formatting]]
 ==== Project Source Code Formatting
 
-All project source code contributed to Windup should be formatted using the settings defined in the `Eclipse_Code_Format_Profile.xml` file located in the root directory of the Windup project.
+All project source code contributed to {ProductName} should be formatted using the settings defined in the `Eclipse_Code_Format_Profile.xml` file located in the root directory of the {ProductName} project.
 
 ===== Eclipse IDE
 
 . In Eclipse, choose Windows -> Preferences.
 . Expand Java -> Code Style -> Formatter
 . Click Import
-. Browse to the `Eclipse_Code_Format_Profile.xml` located in the root of the Windup project directory, then click 'OK'.
+. Browse to the `Eclipse_Code_Format_Profile.xml` located in the root of the {ProductName} project directory, then click 'OK'.
 
 ===== Netbeans IDE
 
-Use this file to format Windup source code: 
+Use this file to format {ProductName} source code: 
 
 http://plugins.netbeans.org/plugin/50877/eclipse-code-formatter-for-java[http://plugins.netbeans.org/plugin/50877/eclipse-code-formatter-for-java] 
 
 ===== IntelliJ IDEA
 
-Use this file to format Windup source code: 
+Use this file to format {ProductName} source code: 
 
 http://plugins.jetbrains.com/plugin/?id=6546[http://plugins.jetbrains.com/plugin/?id=6546]
 

@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Dev-Connect-to-the-Graph-via-Rexster]]
 === Connect to the Graph via Rexster
 
@@ -11,14 +16,14 @@ Deploy the Rexster add-on by adding the Rexster add-on to the dependencies.
 @Deployment
     @Dependencies({
                 ....
-                @AddonDependency(name = "org.jboss.windup.rexster:rexster", version = "2.0.0-SNAPSHOT"),
+                @AddonDependency(name = "org.jboss.windup.rexster:windup-rexster", version = "2.3.0-SNAPSHOT"),
                 ....
     })
 --------
 
 Then put some debug breakpoint in the specific phase of graph you are interested in and browse http://localhost:8182/ to enjoy the graph! Username and password: rexster
 
-==== Run Rexster within Windup
+==== Run Rexster within {ProductName}
 
 Make sure the Rexster add-on is deployed in Furnace and is accessible on http://localhost:8182/. 
 

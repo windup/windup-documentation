@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Dev-How-to-Write-a-Rule-Test]]
 === How to Write a Rule Test
 
@@ -6,7 +11,7 @@
 Generally, you can test a rule in one of the following ways.
 
 . Call `perform()` on the given `GraphContext`,
-. Execute Windup using `WindupExecutor`.
+. Execute {ProductName} using `WindupExecutor`.
 
 Examples of both are below.
 
@@ -28,7 +33,7 @@ public class MyTest extends AbstractTestCase
     }
 }
 ----
-. Add all the Windup add-ons needed for the rule.
+. Add all the {ProductName} add-ons needed for the rule.
 * Failure to add all necessary dependencies will lead to WARNINGs from Furnace.
 * Transitive dependencies declared by the add-on POM file are loaded automatically, so you should be safe adding the add-ons you use in your code.
 * Remember to add the dependencies to the `pom.xml` file, otherwise Furnace will throw

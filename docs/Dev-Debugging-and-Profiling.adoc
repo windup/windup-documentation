@@ -1,11 +1,16 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Dev-Debugging-and-Profiling]]
 === Debugging and Profiling
 
-==== Debug the Windup Distribution Runtime
+==== Debug the {ProductName} Distribution Runtime
 
-You can debug the Windup distribution using one of the following approaches.
+You can debug the {ProductName} distribution using one of the following approaches.
 
-. Pass the `--debug` argument on the command line when you execute Windup.
+. Pass the `--debug` argument on the command line when you execute {ProductName}.
 +
 --------
 For Linux:    WINDUP_HOME/bin $ ./windup --debug

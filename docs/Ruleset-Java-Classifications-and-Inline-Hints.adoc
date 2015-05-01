@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Ruleset-Java-Classifications-and-Inline-Hints]]
 === Ruleset Java Classifications and Inline Hints
 
@@ -23,10 +28,10 @@ and also at the resource report level.
 
 ==== Inline Hints
 
-Windup takes the approach of profiling resources and providing
+{ProductName} takes the approach of profiling resources and providing
 syntactically highlighted resource reports. The resource report will
 show the resource with potentially highlighted lines that may contain
 inline hints to help the developers migrate a piece of code.
 
 Adding inline hints for Java and XML are as simple as adding Regular
-Expressions or XPath Expressions to the Windup rules.
+Expressions or XPath Expressions to the {ProductName} rules.

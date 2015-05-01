@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rules-Rulesets]]
 === Rulesets
 
@@ -7,7 +12,7 @@ Example page for design decisions. Could be generated automatically in the futur
 
 ==== What is a Ruleset?
 
-A ruleset is a Windup "plug-in" targetting a specific area of migration (e.g. Spring to Java EE 6 migration). Underhood, it is a set of rules, and everything they might need: Operations and Conditions, Report templates (if needed), and  static files (e.g. images, XML or CSV files, etc.).
+A ruleset is a {ProductName} "plug-in" targetting a specific area of migration (e.g. Spring to Java EE 6 migration). Underhood, it is a set of rules, and everything they might need: Operations and Conditions, Report templates (if needed), and  static files (e.g. images, XML or CSV files, etc.).
 A ruleset may also declare metadata, like ruleset ID, dependencies on other rulesets, etc.
 
 xref:Ruleset-Java-Basic-Ruleset
@@ -32,7 +37,7 @@ Besides that, you may use any custom tag.
 
 ===== Core rulesets
 
-Rulesets distributed with Windup and maintained by the Windup team.
+Rulesets distributed with {ProductName} and maintained by the {ProductName} team.
 
 * xref:Ruleset-Java-Basic-Ruleset[Java Basic Ruleset]
 * Tags: java, app
@@ -47,4 +52,4 @@ Rulesets distributed with Windup and maintained by the Windup team.
 
 ===== Community rulesets
 
-Rulesets contributed by Windup users.
+Rulesets contributed by {ProductName} users.

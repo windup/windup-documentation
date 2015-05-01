@@ -1,5 +1,10 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Glossary]]
-=== Glossary of Terms Used in Windup
+=== Glossary of Terms Used in {ProductName}
 
 ==== Rules Terms
 
@@ -14,9 +19,9 @@ Rule:: A piece of code that performs a single unit of work during the migration 
      .withEffort(1))
 ----
 
-RuleProvider::  A Windup-specific implementation of OCPSoft ConfigurationProvider class. It provides Rule instances and the relevant RuleProviderMetadata for those Java-based and XML-based Rule instances. 
+RuleProvider::  An implementation of OCPSoft ConfigurationProvider class specifically for {ProductName}. It provides Rule instances and the relevant RuleProviderMetadata for those Java-based and XML-based Rule instances. 
 
-Ruleset:: A ruleset is a group of one or more RuleProviders that targets a specific area of migration, for example, `Spring -> Java EE 6` or `WebLogic -> JBoss EAP`. A ruleset is packaged as a JAR and contains additional information needed for the migration, such as operations, conditions, report templates, static files, metadata,  and relationships to other rulesets. The following Windup projects are rulesets.
+Ruleset:: A ruleset is a group of one or more RuleProviders that targets a specific area of migration, for example, `Spring -> Java EE 6` or `WebLogic -> JBoss EAP`. A ruleset is packaged as a JAR and contains additional information needed for the migration, such as operations, conditions, report templates, static files, metadata,  and relationships to other rulesets. The following {ProductName} projects are rulesets.
 
 * rules-java-ee
 * rules-xml

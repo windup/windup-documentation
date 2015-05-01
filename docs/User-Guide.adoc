@@ -1,36 +1,41 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[User-Guide]]
-=== Windup User Guide
+=== {ProductName} User Guide
 
 :toc:
 :toclevels: 4
 
 ==== Overview
 
-This guide is for engineers, consultants, and others who plan to use 
-Windup 2 to migrate Java applications or other components.
+This guide is for engineers, consultants, and others who plan to use {ProductName} to migrate Java applications or other components.
 
-* xref:What-is-Windup[What is Windup?]
-* xref:Features-of-Windup-2[Features of Windup 2]
-* xref:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable]
+* xref:What-is-it[What is {ProductName}?]
+* xref:Features[Features of {ProductName}]
+* xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable]
 
 ==== Get Started
 
-* xref:Install-Windup[Install Windup]
-* xref:Execute-Windup[Execute Windup]
+* xref:Install[Install {ProductName}]
+* xref:Execute[Execute {ProductName}]
 * xref:Review-the-Report[Review the Report]
 
 ==== Additional Resources
 
-* xref:Review-the-Windup-Quickstarts[Review the Windup Quickstarts]
+* xref:Review-the-Quickstarts[Review the {ProductName} Quickstarts]
 * xref:Get-Involved[Get Involved]
 * xref:Known-Issues[Known Issues] 
-* xref:Report-Issues-with-Windup[Report Issues with Windup]
+* xref:Report-Issues[Report Issues with {ProductName}]
 
 ==== Appendix
 
-* xref:Glossary[Glossary of Terms Used in Windup]
-* xref:Windup-Processing-Overview[Windup Processing Overview]
-* xref:Windup-Architectural-Components[Windup Architectural Components]
+* xref:Glossary[Glossary of Terms Used in {ProductName}]
+* xref:Processing-Overview[{ProductName} Processing Overview]
+* xref:Architectural-Components[{ProductName} Architectural Components]
 * xref:Rule-Phases[Rule Phases]
-* xref:Rule-Story-Points[Rule Story Points]
+* xref:Rules-Rule-Story-Points[Rule-Story-Points]
 

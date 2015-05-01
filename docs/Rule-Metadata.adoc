@@ -1,13 +1,18 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rule-Metadata]]
 === Rule Metadata
 
-.Draft
+.DRAFT
 
 ==== Overview
 
 Rule metadata is used to store and track information such as the rule ID, origin, required addons, tags applied to the rule. related to ordering, filtering, debugging and performance reasons.
 
-==== Metadata used by Windup
+==== Metadata used by {ProductName}
 
 NOTE: The ruleset metadata will be set using annotations in the future.
 [source,java]
@@ -43,7 +48,7 @@ To specify the *rule ID*, use `.withId("...")`.
 For *other metadata*, either use `.withMetadata()` or override `enhanceMetadata()`.
 To provide categorization for filtering, use `CATEGORY`.
 
-For its metadata, Windup uses the keys defined in `RuleMetadata`:
+For its metadata, {ProductName} uses the keys defined in `RuleMetadata`:
 
 * http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/metadata/RuleMetadata.html#CATEGORY[CATEGORY] (String): Define which category the rule belongs to, which can be then used to filter the rules to execute (plus all those they depend on). Not implemented yet.
 
@@ -89,14 +94,14 @@ public class MyRules extends AbstractRuleProvider
 
 ===== Why a Map?
 
-For the rules definition, Windup uses the OCPsoft Rewrite library. Whenever there is something Windup specific which can't be pulled to the upstream implementation, Windup resorts to putting data into a metadata map.
+For the rules definition, {ProductName} uses the OCPsoft Rewrite library. Whenever there is something {ProductName} specific which can't be pulled to the upstream implementation, {ProductName} resorts to putting data into a metadata map.
 
-This map is typically not used by rule authors, unless they use a custom Windup extension (don't confuse that with custom Ruleset).
+This map is typically not used by rule authors, unless they use a custom {ProductName} extension (don't confuse that with custom Ruleset).
 
 
 ==== Ruleset metadata
 
 Ruleset metadata cover the whole Ruleset, not individual rules.
-For ruleset metadata, unlike rules, Windup uses a type-safe interface http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RulesetMetadata.html[RulesetMetadata].
+For ruleset metadata, unlike rules, {ProductName} uses a type-safe interface http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RulesetMetadata.html[RulesetMetadata].
 
 Currently, it only defines Ruleset ID.

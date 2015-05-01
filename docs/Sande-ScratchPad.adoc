@@ -1,309 +1,174 @@
-[[Rules-XML-Rule-Perform-Action-Syntax]]
-=== XML Rule - Perform Action Syntax
+:ProductName: JBoss Migration Toolkit
+:ProductShortName: JMT
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
 
-Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
 
-The complete XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
+[[Dev-Build-{ProductName}-from-Source]]
+=== Build {ProductName} from Source
 
-The following sections describe the more common XML rule perform actions. 
+This information is provided for new developers who plan to contribute code
+to the {ProductName} open source project. This section describes how to build {ProductName} from source and how to extract the {ProductName} distribution that is created during the build process.
 
-* xref:classification-syntax[Classification Syntax]
-* xref:link-syntax[Link Syntax]
-* xref:hint-syntax[Hint Syntax]
-* xref:xslt-syntax[XSLT Syntax]
-* xref:lineitem-syntax[Lineitem Syntax]
-* xref:iteration-syntax[Iteration Syntax]
+If you use Linux and are an experienced {ProductName} developer looking for a quick refresher, jump to: xref:quick-build-review-for-experienced-windup-developers[Quick Build Review for Experienced Windup Developers].
 
-[[classification-syntax]]
-==== Classification Syntax
+==== System Requirements to Build {ProductName}
 
-===== Summary 
-
-The `classification` element is used to identify or classify application resources. It provides a level of effort and can also provide links to additional information about how to migrate this resource classification. For a better understanding of the `classification` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html[Classification] class.
-
-The following is an example of a rule that classifies a resource as a WebLogic EAR application deployment descriptor file.
-
-_Example:_
-[source,xml]
---------
-<rule id="XmlWebLogicRules_10vvyf">
-    <when>
-        <xmlfile as="default" matches="/*[local-name()='weblogic-application']"></xmlfile>
-    </when>
-    <perform>
-        <iteration>
-            <classification classification="Weblogic EAR Application Descriptor" effort="3"/>
-        </iteration>
-    </perform>
-</rule>
---------
-
-===== `classification` Element: Attributes
-
-classification="STRING":: Classify the resource as the specified string.
+. Java 1.7.
 +
-_Example:_
-[source,xml]
---------
-classification="JBoss Seam Components"
---------    
-
-effort="NUMBER":: The level of effort assigned to this resource. 
+You can choose from the following:
 +
-_Example:_
-[source,xml]
---------
-effort="2"
---------
-
-===== `classification` Element: Child Elements
-
-xref:: Provides a link URI and text description for additional information.
+--------------
+OpenJDK
+Oracle Java SE
+--------------
+. Maven 3.1.1 or newer
 +
-_Example:_
-[source,xml]
---------
-<classification classification="Websphere Startup Service" effort="4">
-   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Singleton.html" description="EJB3.1 Singleton Bean"/>
-   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html" description="EJB3.1 Startup Bean"/>
-</classification>
---------
-
-[[link-syntax]]
-==== Link Syntax
-
-===== Summary 
-
-The `link` element is used in classifications or hints to identify or classify links to informational content. For a better understanding of the `link` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html[Link] class.
-
-The following is an example of a rule that creates links to additional information.
-
-_Example:_
-[source,xml]
---------
-<rule id="SeamToCDIRules_2fmb">
-    <when>
-        <javaclass references="org.jboss.seam.{*}" as="default"/>
-    </when>
-    <perform>
-        <iteration>
-            <classification classification="SEAM Component" effort="1">
-                <link href="http://www.seamframework.org/Seam3/Seam2ToSeam3MigrationNotes" description="Seam 2 to Seam 3 Migration Notes"/>
-                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/example.html" description="JSF Web Application Example"/>
-                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/contexts.html" description="JBoss Context Documentation"/>
-                <link href="http://www.andygibson.net/blog/tutorial/cdi-conversations-part-2/" description="CDI Conversations Blog Post"/>
-            </classification>
-        </iteration>
-    </perform>
-</rule>
---------
-
-===== `link` Element: Attributes
-
-href="URI":: The URI for the referenced link/.
+If you have not yet installed or configured Maven, see
+xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
 +
-_Example:_
-[source,xml]
---------
-href="https://access.redhat.com/articles/1249423"
---------
-    
-description="URI_DESCRIPTION":: A description for the link. 
+If you have installed Maven, you can check the version by typing the
+following in a command prompt:
 +
-_Example:_
-[source,xml]
---------
-description="Migrate WebLogic Proprietary Servlet Annotations"
---------
-
-[[hint-syntax]]
-==== Hint Syntax
-
-===== Summary 
-
-The `hint` element is used to provide a hint or inline information about how to migrate a section of code. For a better understanding of the `hint` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Hint.html[Hint] class.
-
-The following is an example of a rule that creates a hint.
-
-_Example:_
-[source,xml]
---------
-<rule id="WebLogicWebServiceRules_8jyqn">
-    <when>
-        <javaclass references="weblogic.wsee.connection.transport.http.HttpTransportInfo.setUsername({*})" as="default">
-            <location>METHOD</location>
-        </javaclass>
-    </when>
-    <perform>
-        <iteration>
-            <hint message="Replace proprietary web-service authentication with JAX-WS standards." effort="0">
-                <link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
-            </hint>
-        </iteration>
-    </perform>
-</rule>
---------
-
-===== `hint` Element:  Attributes
-
-message="MESSAGE":: A message describing the migration hint
+--------------
+mvn --version 
+--------------
+. IDE requirements
 +
-_Example:_
-[source,xml]
---------
-message="See this KnowledgeBase article on the Customer Portal: <some-url>"
---------
+If you prefer, you can work within an IDE. The following IDEs are recommended.
 
-effort="NUMBER":: The level of effort assigned to this resource. 
-+
-_Example:_
-[source,xml]
---------
-effort="2"
---------
-
-===== `hint` Element: Child Elements
-
-xref:: Identify or classify links to informational content. See the section on xref:link-syntax[Link Syntax] for details.
+* http://www.jboss.org/products/devstudio/download/[Red Hat JBoss
+Developer Studio 7.1.1] or newer
+* https://www.eclipse.org/downloads/[Eclipse 4.3 (Kepler)] or newer
 
 +
-_Example:_
-[source,xml]
---------
-link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
---------
+You must also make sure the IDE embeds Maven 3.1.1 or later. See
+xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
 
-[[xslt-action]]
-==== XSLT Syntax
+==== Prerequisites
 
-===== Summary 
+* Make sure you have configured Maven as described here: xref:Install-and-Configure-Maven[Install and Configure Maven].
 
-The `xslt` element specifies how to transform an XML file. For a better understanding of the `xslt` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/operation/xslt/XSLTTransformation.html[XSLTTransformation]  class.
+* {ProductName} source code is located in 3 GitHub projects. Follow the instructions to xref:Dev-Get-the-Windup-Source-Code[Get the Windup Source Code].
 
-The following is an example of rule that defines an XSLT action.
 
-_Example:_
+==== Build Windup Using Maven Command Line
 
-    <rule id="XmlWebLogicRules_6bcvk">
-        <when>
-            <xmlfile as="default" matches="/weblogic-ejb-jar"/>
-        </when>
-        <perform>
-            <iteration>
-                <classification classification="Weblogic EJB XML" effort="3"/>
-                <xslt description="JBoss EJB Descriptor (Windup-Generated)" template="transformations/xslt/weblogic-ejb-to-jboss.xsl" extension="-jboss.xml"/>
-            </iteration>
-        </perform>
-    </rule>
+{ProductName} source code consists of 3 projects: 
 
-===== `xslt` Element:  Attributes
+* https://github.com/windup/windup-rulesets[windup-ruleset]
+* https://github.com/windup/windup[windup]
+* https://github.com/windup/windup-distribution[windup-distribution]
 
-of="STRING":: Create a new transformation for the given reference.
+The `windup-distribution` project has dependencies on the other 2 projects, so you must build the `windup-ruleset` and `windup` projects first. Use the following steps to build the {ProductName} distribution.
+
+. Build the https://github.com/windup/windup-rulesets[windup-ruleset] project.
 +
-_Example:_
-
-    of="testVariable_instance"
-    
-description="String":: Sets the description of this XSLTTransformation.
+* Open a command terminal and navigate to the root of the windup-ruleset project directory. 
 +
-_Example:_
-
-    description="XSLT Transformed Output"
-
-extension="String":: Sets the extension for this XSLTTransformation.
+--------------
+    cd windup-ruleset/
+--------------
++ 
+* Build the project.
 +
-_Example:_
-
-    extension="-result.html"
-
-
-template=String:: Sets the XSL template.
+-----------------
+mvn clean install
+-----------------
+. Build the https://github.com/windup/windup[windup] project.
 +
-_Example:_
-
-    template="simpleXSLT.xsl"
-
-===== `xslt` Element: Child Elements
-
-xslt-parameter=Map<String,String> :: Specify XSLTTransformation parameters as property value pairs 
+* Open a command terminal and navigate to the root of the {ProductName} project directory. 
 +
-_Example:_
-
-    <xslt-parameter property="title" value="EJB Transformation"/>
-
-[[lineitem-action]]
-==== Lineitem Syntax
-
-===== Summary 
-
-The `lineitem` element is used to provide line item information about a hint on the project or application overview page. For a better understanding of the `lineitem` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html[Lineitem] class.
-
-The following is an example of a rule that creates a lineitem message.
-
-_Example:_
-
-    <rule>
-        <when>
-            <javaclass references="weblogic.servlet.annotation.WLServlet" as="default">
-                <location>ANNOTATION</location>
-            </javaclass>
-        </when>
-        <perform>
-            <hint message="Replace the proprietary WebLogic @WLServlet annotation with the Java EE 6 standard @WebServlet annotation." effort="1">
-                <link href="https://access.redhat.com/articles/1249423" description="Migrate WebLogic Proprietary Servlet Annotations" />
-                <lineitem message="Proprietary WebLogic @WLServlet annotation found in file."/>
-            </hint>
-        </perform>
-    </rule>
-
-===== `lineitem` Element:  Attributes
-
-message="MESSAGE":: A lineitem message
+--------------
+    cd windup/
+--------------
++ 
+* Build the project.
 +
-_Example:_
+-----------------
+mvn clean install
+-----------------
 
-    message="Proprietary code found."
-    
-[[iteration-action]]
-==== Iteration Syntax
-
-===== Summary 
-
-The `iteration` element specifies to iterate over an implicit or explicit variable defined within the rule. For a better understanding of the `iteration` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/Iteration.html[Iteration] class.
-
-The following is an example of a rule that preforms an iteration.
-
-_Example:_
-
-   <rule id="XmlWebLogicRules_14wscy">
-        <when>
-            <xmlfile as="1" matches="/wl:weblogic-webservices | /wl9:weblogic-webservices">
-                <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
-                <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
-            </xmlfile>
-            <xmlfile as="2" matches="//wl:webservice-type | //wl9:webservice-type" from="1">
-                <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
-                <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
-            </xmlfile>
-        </when>
-        <perform>
-            <iteration over="1">
-                <classification classification="Weblogic Webservice Descriptor" effort="0"/>
-            </iteration>
-            <iteration over="2">
-                <hint message="Webservice Type" effort="0"/>
-            </iteration>
-        </perform>
-    </rule>
-
-===== `iteration` Element:  Attributes
-
-over="VARIABLE_NAME":: Iterate over the condition identified by this VARIABLE_NAME.
 +
-_Example:_
+* You can also build the project without the tests.
++
+---------------------------------
+mvn clean install -DskipTests
+---------------------------------
+. Build the https://github.com/windup/windup-distribution[windup-distribution] project.
++
+* Open a command terminal and navigate to the root of the Windup-distribution project directory. 
++
+--------------
+    cd windup-distribution/
+--------------
++ 
+* Build the project.
++
+-----------------
+mvn clean install
+-----------------
+* The windup distribution ZIP file is located in the `windup-distribution/target/` directory.
 
-    over="2"
-    
-===== `iteration` Element: Child Elements
+==== Build Windup Using Red Hat JBoss Developer Studio or Eclipse
 
-iteration child elements include a `when` condition, along with the actions `iteration`, `classification`, `hint`, `xslt`, `lineitem`, and `otherwise`.
+If you prefer, you can use an IDE to build {ProductName}.
+
+. Make sure you have configured the Maven installation in your IDE as described here:
+https://github.com/windup/windup/wiki/Install-and-Configure-Maven[Install and Configure Maven].
+. Start JBoss Developer Studio or Eclipse.
+. Import the `windup-ruleset` project.
+* From the menu, select `File` → `Import`.
+* In the selection list, choose `Maven` → `Existing Maven Projects`,
+then click Next.
+* Click `Browse` and navigate to the root of the `windup-ruleset` project directory, then click `OK`.
+* After all projects are listed, click `Next`. Ignore any Maven build
+or dependency errors and click `Finish`. If you get a dialog titled
+_Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
+* In the Project Explorer tab, right-click on the `windup-ruleset` project and choose `Run As` --> `Maven install`.
+. Import the `windup` project.
+* From the menu, select `File` → `Import`.
+* In the selection list, choose `Maven` → `Existing Maven Projects`,
+then click Next.
+* Click `Browse` and navigate to the root of the `windup` project directory, then click `OK`.
+* After all projects are listed, click `Next`. Ignore any Maven build
+or dependency errors and click `Finish`. If you get a dialog titled
+_Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
+* In the Project Explorer tab, find the `windup_parent` project in the
+list, right-click, and choose `Run As` --> `Maven install`.
+. Import the `windup-distribution` project.
+* From the menu, select `File` → `Import`.
+* In the selection list, choose `Maven` → `Existing Maven Projects`,
+then click Next.
+* Click `Browse` and navigate to the root of the `windup-distribution` project directory, then click `OK`.
+* After all projects are listed, click `Next`. Ignore any Maven build
+or dependency errors and click `Finish`. If you get a dialog titled
+_Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
+* In the Project Explorer tab, right-click on the `windup-distribution` project and choose `Run As` --> `Maven install`.
+
+==== Extract the Windup Distribution Source File
+
+The build process creates a `windup-distribution-<VERSION>-offline.zip file` in the `windup-distribution/target/` directory. 
+
+Unzip the file into a directory of your choice.
+
+
+[[quick-build-review-for-experienced-windup-developers]]
+==== Quick Build Review for Experienced Windup Developers
+
+---------------
+git clone git@github.com:windup/windup-ruleset.git windup
+cd windup-ruleset
+mvn clean install
+git clone git@github.com:windup/windup.git windup
+## Or if you haven't set up github account:
+#git clone https://github.com/windup/windup.git
+cd windup
+mvn clean install -DskipTests
+git clone git@github.com:windup/windup-distribution.git windup
+cd windup-distribution
+mvn clean install
+unzip target/windup-distribution-<VERSION-offline.zip -d <WINDUP-DIRECTORY>
+mv /tmp/windup-zip/windup-distribution-* /tmp/windup
+---------------

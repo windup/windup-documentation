@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Dev-Logging]]
 === Logging
 
@@ -7,7 +12,7 @@ _This page describes how to log from the Java-based rules._
 
 ==== Textual logging
 
-Windup uses `java.util.logging`. Convenient way to get the logger is:
+{ProductName} uses `java.util.logging`. Convenient way to get the logger is:
 
 [source,java]
 ----

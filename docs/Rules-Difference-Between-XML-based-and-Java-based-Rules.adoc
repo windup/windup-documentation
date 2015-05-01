@@ -1,9 +1,14 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rules-Difference-Between-XML-based-and-Java-based-Rules]]
 === Difference Between XML-based and Java-based Rules
 
 ==== Summary
 
-As mentioned before, Windup provides a core and a default set of rules to analyze and report on migration of application code. Windup also allows you to write your own custom rules. These rules can be written using either XML or Java. Rules written using XML are referred to as _XML-based_ rules. Rules written using the Java API are referred to as _Java-based_ rule add-ons. Both _XML-based_ and _Java-based_ rule add-ons can be used to inspect (classify) and report on Java source, XML, properties, archives, and other types of files,
+As mentioned before, {ProductName} provides a core and a default set of rules to analyze and report on migration of application code. {ProductName} also allows you to write your own custom rules. These rules can be written using either XML or Java. Rules written using XML are referred to as _XML-based_ rules. Rules written using the Java API are referred to as _Java-based_ rule add-ons. Both _XML-based_ and _Java-based_ rule add-ons can be used to inspect (classify) and report on Java source, XML, properties, archives, and other types of files,
 
 ==== Which one to choose?
 
@@ -18,7 +23,7 @@ Pros:
 
 * XML rules are fairly easy to write and require less code.
 * XML rules are not compiled so you do not need to configure Maven to build from source.
-* XML rules are simple to deploy. You simply drop the rule into the appropriate path and Windup automatically scans the new rule.
+* XML rules are simple to deploy. You simply drop the rule into the appropriate path and {ProductName} automatically scans the new rule.
 
 Cons:
 
@@ -32,14 +37,14 @@ Pros:
 * Java rule add-ons allow you to write custom conditions and operations and provide a lot of flexibility.
 * Java rule add-ons allow you to access and manipulate the shared data model graph and to customize reports.
 * You can set breakpoints and test Java rule add-ons using a debugger.
-* IDEs provide code completion for the Windup API.
+* IDEs provide code completion for the {ProductName} API.
 
 Cons:
 
 * You must configure Maven to compile Java rule add-ons.
-* Java rule add-ons that are not included in the Windup core code base must be a full Forge add-on.
+* Java rule add-ons that are not included in the {ProductName} core code base must be a full Forge add-on.
 * Java rule add-ons require that you write Java code.
-* Writing Java rule add-ons can be complex and require knowledge of Windup internals.
+* Writing Java rule add-ons can be complex and require knowledge of {ProductName} internals.
 
 ==== Examples
 

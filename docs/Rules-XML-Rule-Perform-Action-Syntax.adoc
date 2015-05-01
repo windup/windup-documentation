@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rules-XML-Rule-Perform-Action-Syntax]]
 === XML Rule - Perform Action Syntax
 
@@ -200,7 +205,7 @@ _Example:_
     <perform>
         <iteration>
             <classification classification="Weblogic EJB XML" effort="3"/>
-            <xslt description="JBoss EJB Descriptor (Windup-Generated)" template="transformations/xslt/weblogic-ejb-to-jboss.xsl" extension="-jboss.xml"/>
+            <xslt description="JBoss EJB Descriptor ({ProductName}-Generated)" template="transformations/xslt/weblogic-ejb-to-jboss.xsl" extension="-jboss.xml"/>
         </iteration>
     </perform>
 </rule>

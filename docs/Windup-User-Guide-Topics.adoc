@@ -3,39 +3,41 @@
 This guide is for engineers, consultants, and others who plan to use 
 Windup 2 to migrate Java applications or other components. 
 
-include::What-is-Windup.adoc[tabsize=4]
+include::What-is-it.adoc[tabsize=4]
 
-include::Features-of-Windup-2.adoc[tabsize=4]
+include::Features.adoc[tabsize=4]
 
-include::About-the-WINDUP_HOME-Variable.adoc[tabsize=4]
+include::About-the-HOME-Variable.adoc[tabsize=4]
 
 == Get Started
 
-include::Install-Windup.adoc[tabsize=4]
+include::Install.adoc[tabsize=4]
 
-include::Execute-Windup.adoc[tabsize=4]
+include::Execute.adoc[tabsize=4]
 
 include::Review-the-Report.adoc[tabsize=4]
 
 == Additional Resources
 
-include::Review-the-Windup-Quickstarts.adoc[tabsize=4]
+include::Review-the-Quickstarts.adoc[tabsize=4]
 
 include::Get-Involved.adoc[tabsize=4]
 
+include::Important-Links.adoc[tabsize=4]
+
 include::Known-Issues.adoc[tabsize=4] 
 
-include::Report-Issues-with-Windup.adoc[tabsize=4]
+include::Report-Issues.adoc[tabsize=4]
 
 == Appendix
 
 include::Glossary.adoc[tabsize=4]
 
-include::Windup-Processing-Overview.adoc[tabsize=4]
+include::Processing-Overview.adoc[tabsize=4]
 
-include::Windup-Architectural-Components.adoc[tabsize=4]
+include::Architectural-Components.adoc[tabsize=4]
 
-include::Dev-Frames-Extensions.adoc[tabsize=4]
+// include::Dev-Frames-Extensions.adoc[tabsize=4]
 
 include::Rule-Phases.adoc[tabsize=4]
 

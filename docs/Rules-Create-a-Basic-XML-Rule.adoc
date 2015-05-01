@@ -1,19 +1,24 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rules-Create-a-Basic-XML-Rule]]
 === Create a Basic XML Rule
 
-You can create a Windup rule using Java, XML, or Groovy. This topic describes how to create a rule using XML.
+You can create a {ProductName} rule using Java, XML, or Groovy. This topic describes how to create a rule using XML.
 
 ==== Prerequisites
 
-* You should have already xref:Install-Windup[installed Windup]. 
+* You should have already xref:Install[installed {ProductName}]. 
 * Before you begin, you may also want to be familiar with the following documentation:
-** Windup rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
-** The JavaDoc for the Windup API is located here: http://windup.github.io/windup/docs/javadoc/latest/
+** {ProductName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
+** The JavaDoc for the {ProductName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
 ** The XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
 
 ==== File Naming Convention for XML Rules
 
-You must name the file containing an XML rule with the `.windup.xml` extension. Windup identifies files with this extension as XML-base rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
+You must name the file containing an XML rule with the `.windup.xml` extension. {ProductName} identifies files with this extension as XML-base rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
 
 ==== Basic XML Rule Template
 

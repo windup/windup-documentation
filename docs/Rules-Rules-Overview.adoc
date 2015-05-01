@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rules-Rules-Overview]]
 === Rules Overview
 
@@ -5,7 +10,7 @@
 
 _This page is under construction_
 
-Ruleset:: A ruleset is a Forge add-on that contains one or more RuleProviders. The following Windup projects are rulesets.
+Ruleset:: A ruleset is a Forge add-on that contains one or more RuleProviders. The following {ProductName} projects are rulesets.
 
 * rules-java-ee
 * rules-xml

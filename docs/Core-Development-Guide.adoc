@@ -1,39 +1,51 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Core-Development-Guide]]
-=== Windup Core Development Guide
+=== {ProductName} Core Development Guide
 
 This guide is for developers who plan to contribute source code updates
-or core rule add-ons to the Windup 2 project.
+or core rule add-ons to the {ProductName} project.
 
 ==== Overview
 
-* xref:What-is-Windup[What is Windup]?
-* xref:Features-of-Windup-2[Features of Windup 2]
-* xref:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable]
+* xref:What-is-it[What is {ProductName}]?
+* xref:Features[Features of {ProductName}]
+* xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable]
 
 ==== Get Started
 
-Before you begin to contribute to Windup, take a quick tour to see how to use it.
+Before you begin to contribute to {ProductName}, take a quick tour to see how to use it.
+
+* xref:Install[Install {ProductName}]
+* xref:Execute[Execute {ProductName}]
+* xref:Review-the-Report[Review the Report]
+
+==== Prepare Your Development Environment
+
+Now that you've seen {ProductName} in action, prepare your development environment.
 
 * xref:Install-and-Configure-Maven[Install and Configure Maven]
-* xref:Dev-Get-the-Windup-Source-Code[Get the Windup Source Code]
-* xref:Dev-Build-Windup-from-Source[Build Windup from Source]
-* xref:Dev-Execute-Windup-Built-from-Source[Execute Windup Built from Source]
-* xref:Review-the-Report[Review the Report]
+* xref:Dev-Get-the-Source-Code[Get the {ProductName} Source Code]
+* xref:Dev-Build-from-Source[Build {ProductName} from Source]
+* xref:Dev-Execute-Built-from-Source[Execute {ProductName} Built from Source]
 
 ==== Developer Contributing Information
 
 * xref:Dev-Development-Guidelines-and-Conventions[Developer Guidelines and Conventions]
-* xref:Dev-Submit-Code-Updates-to-the-Windup-Project[Submit Code Updates to the Windup Project]
+* xref:Dev-Submit-Code-Updates-to-the-Project[Submit Code Updates to the {ProductName} Project]
 
-==== Understand the Windup Architecture and Structure
+==== Understand the {ProductName} Architecture and Structure
 
-* xref:Windup-Processing-Overview[Windup Processing Overview]
-* xref:Windup-Architectural-Components[Windup Architectural Components]
-* xref:Dev-Windup-Project-Structure[Windup Project Structure]
+* xref:Processing-Overview[{ProductName} Processing Overview]
+* xref:Architectural-Components[{ProductName} Architectural Components]
+* xref:Dev-Project-Structure[{ProductName} Project Structure]
+* xref:Dev-Configuration[{ProductName} Configuration]
 
 ==== Rules and Rulesets
 
-* xref:Windup-Processing-Overview.adoc[Windup Processing Overview]
 * xref:Rules-Rule-Execution-Lifecycle[Rules Execution Lifecyle]
 * xref:Rule-Phases[Rule Phases]
 * xref:Rules-Rule-Story-Points[Rule Story Points]
@@ -50,7 +62,7 @@ Before you begin to contribute to Windup, take a quick tour to see how to use it
 
 * xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule]
 
-* xref:Rules-Test-a-Basic-XML-Rule-in-Windup[Test an XML Rule in Windup]
+* xref:Rules-Test-a-Basic-XML-Rule[Test an XML Rule in {ProductName}]
 
 ==== Debugging and Troubleshooting
 
@@ -59,7 +71,7 @@ Before you begin to contribute to Windup, take a quick tour to see how to use it
 
 ==== Developer topics
 
-* xref:Dev-Windup-Bootstrap[Bootstrap]
+* xref:Dev-Bootstrap-Process[Bootstrap]
 * xref:Dev-Classloading-Notes[Classloading Notes]
 * xref:Dev-Connect-to-the-Graph-via-Rexster[Connect to the Graph via Rexster]
 * xref:Dev-Decompiling[Decompiling]
@@ -68,9 +80,8 @@ Before you begin to contribute to Windup, take a quick tour to see how to use it
 * xref:Dev-Internal-API-Features[Internal API Features]
 * xref:Dev-Logging[Logging]
 * xref:Dev-Variables-Stack[Variables Stack]
-* xref:Dev-Port-WindRide-Functionality-to-Windup[Port WindRide Functionality to Windup]
 * xref:Dev-Git-Rebasing[Git Rebasing]
-* xref:Dev-Releasing-Windup[Releasing Windup]
+* xref:Dev-Release-Process[{ProductName} Release Process]
 
 ==== Rules topics
 
@@ -84,7 +95,7 @@ Before you begin to contribute to Windup, take a quick tour to see how to use it
 ** xref:Ruleset-Java-EE-Servers[Java EE Servers Ruleset]
 ** xref:Ruleset-Reporting[Reporting Ruleset]
 * xref:Ruleset-XML[XML Ruleset]
-* xref:Rules-Windup-Models[Windup Models]
+* xref:Rules-Models[{ProductName} Models]
 * xref:Rules-Create-Java-Queries[Create Java Queries]
 * xref:Rule-Metadata[Rule Metadata]
 * xref:Rules-Rules-Operations[Rules Operations]
@@ -96,21 +107,21 @@ Before you begin to contribute to Windup, take a quick tour to see how to use it
 
 ==== Wiki and Product Documentation
 
-* xref:About-the-Windup-Wiki[About the Windup Wiki]
-* xref:Dev-Add-Images-to-the-Windup-Wiki[Add Images to the Windup Wiki]
-* xref:Dev-Create-Windup-JavaDoc[Create Windup JavaDoc]
-* xref:Dev-Windup-Documentation-Process[Windup Documentation Process]
+* xref:About-the-Wiki[About the {ProductName} Wiki]
+* xref:Dev-Add-Images-to-the-Wiki[Add Images to the {ProductName} Wiki]
+* xref:Dev-Create-the-JavaDoc[Create {ProductName} JavaDoc]
+* xref:Dev-Documentation-Process[{ProductName} Documentation Process]
 
 ==== Additional Resources
 
-* xref:Review-the-Windup-Quickstarts[Review the Windup Quickstarts]
+* xref:Review-the-Quickstarts[Review the {ProductName} Quickstarts]
 * xref:Get-Involved[Get Involved] - We need your feedback!
 * xref:Known-Issues[Known Issues] 
-* xref:Report-Issues-with-Windup[Report Issues with Windup]
+* xref:Report-Issues[Report Issues with {ProductName}]
 
 ==== Appendix
 
 * xref:Glossary[Glossary of Terms]
-* xref:Dev-Windup-Project-Information[Windup Project Information] - Github
+* xref:Dev-Project-Information[{ProductName} Project Information] - Github
 repository, IRC, Mailing lists, ...
 

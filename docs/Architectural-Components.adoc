@@ -1,0 +1,75 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
+[[Architectural-Components]]
+=== {ProductName} Architectural Components
+
+The following open source software, tools, and APIs are used within
+{ProductName} to analyze and provide migration information. If you plan to
+contribute source code to the core {ProductName} project, you should be
+familiar with them.
+
+==== Forge
+
+Forge is an open source, extendable, rapid application development tool
+for creating Java EE applications using Maven. For more information
+about Forge 2, see: http://forge.jboss.org/[JBoss Forge].
+
+==== Forge Furnace
+
+Forge Furnace is a modular runtime container behind Forge that provides
+the ability to run Forge add-ons in an embedded application. For more
+information about Forge Furnace, see:
+http://forge.jboss.org/document/run-forge-embedded[Run Forge Embedded].
+
+==== TinkerPop
+
+TinkerPop is an open source graph computing framework. For more
+information, see: http://www.tinkerpop.com/[TinkerPop].
+
+==== Titan
+
+Titan is a scalable graph database optimized for storing and querying graphs. 
+For more information, see: http://thinkaurelius.github.io/titan/[Titan Distributed Graph Database] and https://github.com/thinkaurelius/titan/wiki/Beginner%27s-Guide[Titan Beginner's Guide].
+
+==== Frames
+
+Frames represents graph data in the form of interrelated Java Objects or
+a collection of annotated Java Interfaces. For more information, see:
+https://github.com/tinkerpop/frames/wiki[TinkerPop Frames].
+
+// Commenting the following because we don't want to bring this topic into the User Guide.
+// {ProductName} includes several Frames extensions, which are documented here: xref:Dev-Frames-Extensions[Frames Extensions].
+
+==== Gremlin
+
+Gremlin is a graph traversal language that allows you to query, analyze,
+and manipulate property graphs that implement the Blueprints property
+graph data model. For more information, see:
+https://github.com/tinkerpop/gremlin/wiki[TinkerPop Gremlin Wiki].
+
+==== Blueprints
+
+Blueprints is an industry standard API used to access graph databases.
+For more information about Blueprints, see:
+https://github.com/tinkerpop/blueprints/wiki[TinkerPop Blueprints Wiki].
+
+==== Pipes
+
+Pipes is a dataflow framework used to process graph data. It for the
+transformation of data from input to output. For more information, see:
+https://github.com/tinkerpop/pipes/wiki[Tinkerpop Pipes Wiki].
+
+==== Rexster
+
+Rexster is a graph server that exposes any Blueprints graph through HTTP/REST and a binary protocol called RexPro. Rexster makes extensive use of Blueprints, Pipes, and Gremlin. For more information, see:
+https://github.com/tinkerpop/rexster/wiki[TinkerPop Rexster Wiki].
+
+==== OCPsoft Rewrite
+
+OCPsoft Rewrite is an open source routing and URL rewriting solution for
+Servlets, Java Web Frameworks, and Java EE. For more information about
+Ocpsoft Rewrite, see: http://ocpsoft.org/rewrite/[OCPsoft Rewrite].

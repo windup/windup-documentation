@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Review-the-Report]]
 === Review the Report
 
@@ -5,15 +10,15 @@
 
 ==== About the Report
 
-When you execute Windup, the report is generated in the `OUTPUT_REPORT_DIRECTORY` you specify for the `--output` argument in the command line. This output directory contains the following files and subdirectories:
+When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` you specify for the `--output` argument in the command line. This output directory contains the following files and subdirectories:
 
 * `index.html`: This is the landing page for the report.
 * `archives/`: Contains the archives extracted from the application
 * `graph/`: Contains binary graph database files
 * `reports/`: This directory contains the generated HTML report files
-* `stats/`: Contains Windup performance statistics
+* `stats/`: Contains {ProductName} performance statistics
 
-The examples below use the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[test-files/jee-example-app-1.0.0.ear] located in the Windup GitHub source repository for input and specify the `com.acme` and `org.apache` package name prefixes to scan. For example:
+The examples below use the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[test-files/jee-example-app-1.0.0.ear] located in the {ProductName} GitHub source repository for input and specify the `com.acme` and `org.apache` package name prefixes to scan. For example:
 
         windup-migrate-app --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --packages com.acme org.apache
 
@@ -23,7 +28,7 @@ Use your favorite browser to open the `index.html` file located in the output re
 
 image:report-index-page.png[Report Index Page, 500]
 
-Click on the link under the *Name* column to view the Windup application report page.
+Click on the link under the *Name* column to view the {ProductName} application report page.
 
 ==== Report Sections
 
@@ -34,7 +39,7 @@ The first section of the application report page summarizes the migration effort
 * The migration of the *JEE Example App* EAR is assigned a total of 42 story points. A pie chart shows the breakdown of story points by package. 
 * This is followed by a section for each of the archives contained in the EAR. It provides the total of the story points assigned to the archive and lists the files contained in archive along with the warnings and story point assigned to each file.
 
-The following is an example of a Windup Application Report. 
+The following is an example of a {ProductName} Application Report. 
 
 image:report-javaee-ear-summary.png[Report Summary Page, 500]
 
@@ -61,7 +66,7 @@ Issues:: Warnings about areas of code that need review or changes.
 
 Estimated Story Points:: Level of effort required for migrating the file.
 
-The following is an example of the archive analysis summary section of a Windup Report. In this example, it's the analysis of the `WINDUP_SOURCE/test-files/jee-example-app-1.0.0.ear/jee-example-services.jar`.
+The following is an example of the archive analysis summary section of a {ProductName} Report. In this example, it's the analysis of the `WINDUP_SOURCE/test-files/jee-example-app-1.0.0.ear/jee-example-services.jar`.
 
 image:report-javaee-ear-03-services-jar.png[Report Archive Page, 500]
 
@@ -69,7 +74,7 @@ image:report-javaee-ear-03-services-jar.png[Report Archive Page, 500]
 
 The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file has 5 warnings and is assigned 7 story points. Click on the file to see the detail. 
 
-* The *Information* section provides a summary of the story points and notes that the file was decompiled by Windup. 
+* The *Information* section provides a summary of the story points and notes that the file was decompiled by {ProductName}. 
 * This is followed by the file source code listing. Warnings appear in the file at the point where  migration is required. 
 
 
@@ -83,21 +88,21 @@ image:report-javaee-ear-file-detail-part2.png[File Detail - Part 2, 500]
 
 ==== Additional Reports
 
-Explore the Windup `OUTPUT_REPORT_DIRECTORY/reports` folder to find additional reporting information.
+Explore the {ProductName} `OUTPUT_REPORT_DIRECTORY/reports` folder to find additional reporting information.
 
 ===== Rule Provider Execution Report
 
-The `OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html` page provides the list of rule providers that executed when running the Windup migration command against the application.
+The `OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html` page provides the list of rule providers that executed when running the {ProductName} migration command against the application.
 
 image:report-javaee-ear-ruleprovider.png[RuleProvider Report, 500]
 
 ===== Rule Provider Execution Report
 
-The `OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html` page provides the list of rule providers that executed when running the Windup migration command against the application.
+The `OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html` page provides the list of rule providers that executed when running the {ProductName} migration command against the application.
 
 ===== Individual File Analysis Reports
 
-You can directly access the the file analysis report pages described above by browsing for them by name in the `OUTPUT_REPORT_DIRECTORY/reports/` directory. Because the same common file names can exist in multiple archives, for example "manifest.mf" or "web.xml", Windup adds a unique numeric suffix to each report file name.
+You can directly access the the file analysis report pages described above by browsing for them by name in the `OUTPUT_REPORT_DIRECTORY/reports/` directory. Because the same common file names can exist in multiple archives, for example "manifest.mf" or "web.xml", {ProductName} adds a unique numeric suffix to each report file name.
 
 image:report-directory-file-list.png[Report Directory File List, 500]
 

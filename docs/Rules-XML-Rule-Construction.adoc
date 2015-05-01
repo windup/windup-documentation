@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rules-XML-Rule-Construction]]
 === XML-Rule-Construction
 
@@ -9,7 +14,7 @@ This section describes the basic construction of XML rules. All XML rules are de
 
 A  ruleset is a group of one or more rules that targets a specific area of migration. This is the basic construct for the `<ruleset>` element.
 
-* **<ruleset>**: This element defines this as a Windup ruleset.
+* **<ruleset>**: This element defines this as a {ProductName} ruleset.
 ** **<phase/>**: This element specifies when the ruleset should execute.
 + 
 See xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecyle] for more information about rule phases.
@@ -137,7 +142,7 @@ This element can contain the following elements:
 
 ==== Predefined Rules
 
-Windup provides some predefined rules for more common migration requirements, for example, mapping files from the source platform to target platform. The following is an example of the predefined "XmlFileMappings" rule.
+{ProductName} provides some predefined rules for more common migration requirements, for example, mapping files from the source platform to target platform. The following is an example of the predefined "XmlFileMappings" rule.
 
         <?xml version="1.0"?>
         <ruleset xmlns="http://windup.jboss.org/v1/xml" id="XmlFileMappings">

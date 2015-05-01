@@ -1,24 +1,28 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rules-Development-Guide]]
 === Rules Development Guide
 
-This guide is for engineers, consultants, or others who plan to create
-rules for Windup 2.
+This guide is for engineers, consultants, or others who plan to create rules for {ProductName}.
 
 ==== Overview
 
-* xref:What-is-Windup[What is Windup?]
-* xref:Features-of-Windup-2[Features of Windup 2]
-* xref:About-the-WINDUP_HOME-Variable[About the WINDUP_HOME Variable]
+* xref:What-is-it[What is {ProductName}?]
+* xref:Features[Features of {ProductName}]
+* xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable]
 
 ==== Get Started
 
-* xref:Install-Windup[Install Windup]
-* xref:Execute-Windup[Execute Windup]
+* xref:Install-[Install {ProductName}]
+* xref:Execute[Execute {ProductName}]
 * xref:Review-the-Report[Review the Report]
 
 ==== Understand Rule Processing
 
-* xref:Windup-Processing-Overview[Windup Processing Overview]
+* xref:Processing-Overview[{ProductName} Processing Overview]
 * xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle]
 * xref:Rule-Phases[Rule Phases]
 * xref:Rules-Rule-Story-Points[Rule Story Points]
@@ -37,26 +41,26 @@ Difference Between XML-based and Java-based Rules]
 * xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule]
 * xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
 * xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax]
-* xref:Rules-Test-a-Basic-XML-Rule-in-Windup[Test an XML Rule in Windup]
+* xref:Rules-Test-a-Basic-XML-Rule[Test an XML Rule in {ProductName}]
 
 ==== Debugging and Troubleshooting
 
 * xref:Dev-Debugging-and-Profiling[Debugging and Profiling]
-* xref:Dev-Troubleshoot-Windup-Issues[Troubleshoot Windup Issues]
+* xref:Dev-Troubleshoot-Issues[Troubleshoot {ProductName} Issues]
 
 ==== Additional Resources
 
 * xref:Get-Involved[Get Involved]
-* xref:Review-the-Windup-Quickstarts[Review the Windup Quickstarts]
+* xref:Review-the-Quickstarts[Review the {ProductName} Quickstarts]
 * xref:Rules-Available-Rules-Utilities[Available Rules Utilities]
 * xref:Known-Issues[Known Issues]
-* xref:Report-Issues-with-Windup[Report Issues with Windup]
+* xref:Report-Issues[Report Issues with {ProductName}]
 
 ==== Appendix
 
 * xref:Glossary[Glossary of Terms]
-* xref:Windup-Architectural-Components[Windup Architectural Components]
-* xref:Rules-Windup-Models[Windup Model]
+* xref:Architectural-Components[{ProductName} Architectural Components]
+* xref:Rules-Models[{ProductName} Model]
 
 
 

@@ -1,12 +1,17 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Rules-Create-Custom-Reports]]
 === Create Custom Reports
 
 .DRAFT
 
-Most custom rules use high-level operations distributed with Windup, such as `Hint`.
+Most custom rules use high-level operations distributed with {ProductName}, such as `Hint`.
 Their results will appear in the report automatically - or better said, the respective rule will add it.
 
-When implemeting a brand new rule with your own conditions and operations, you also need to take care of adding the information to the report - either to some existing report (will appear as new box in one of report Windup creates), or create a new report (will appear as a new file in the output directory).
+When implemeting a brand new rule with your own conditions and operations, you also need to take care of adding the information to the report - either to some existing report (will appear as new box in one of report {ProductName} creates), or create a new report (will appear as a new file in the output directory).
 
 This page describes how to do both.
 

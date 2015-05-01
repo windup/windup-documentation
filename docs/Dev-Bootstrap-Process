@@ -1,0 +1,61 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
+[[Dev-{ProductName}-Bootstrap]]
+=== {ProductName} Bootstrap
+
+.DRAFT
+
+This section describes how {ProductName} starts up, finds the resources, loads the rules, and executes them.
+
+==== Boot
+
+. `@Inject WindupProcessor` 
++
+--------
+CDI instantiates `WindupProcessorImpl`
+--------
+
+. Create `WindupProcessorConfig`
+
+. WindupProcessorImpl.execute( WindupProcessorConfig )
++
+--------
+WindupProcessorImpl instantiates `@Inject GraphContext graphContext`, which holds
+graph-related objects.
+--------
+
+. `GraphContextFactoryImpl`: 
++
+--------
+`create()`
+`@Produces GraphContext produceGraphContext()`
+--------
+
+==== GraphContext
+
+==== RuleSubset
+
+==== Frames creation
+
+In the `GraphContextImpl` constructor. For additonal method Handlers,
+see
+
+[source,java]
+----
+final Module addModules = new Module()
+{
+    @Override
+    public Graph configure(Graph baseGraph, FramedGraphConfiguration config)
+    {
+        config.setFrameClassLoaderResolver(fclr);
+        // Java Handlers
+        config.addMethodHandler(new FrameMapHandler());
+        config.addMethodHandler(new MapInPropertiesHandler());
+        config.addMethodHandler(new MapInAdjacentPropertiesHandler());
+        return baseGraph;
+     }
+};
+----

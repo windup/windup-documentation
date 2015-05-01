@@ -1,0 +1,71 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
+[[Dev-Startup-Configuration-Arguments]]
+=== {ProductName} Startup Configuration Arguments
+
+This section describes the how {ProductName} processes configuration arguments. {ProductName} configuration handles of the following types of arguments.
+
+* {ProductName} Core arguments
+* {ProductName} Rules arguments
+* Forge related arguments
+
+== {ProductName} Core arguments
+
+The following are {ProductName} core arguments:
+
+* `--input` - `InputPathOption`
+* `--output` - `OutputPathOption`
+* `--offline` - `OfflineModeOption`
+* `--userRules` - `UserRulesDirectoryOption`
+* `--userIgnoreFiles` - `UserIgnoreFilesOption`
+
+==== Getting the arguments value
+You can either get a specific option
+
+-------
+WindupConfiguration.getOptionValue(OfflineModeOption.NAME)
+-------
+
+or iterate over all options:
+
+-------
+WindupConfiguration.getWindupConfigurationOptions()
+-------
+
+== Custom Arguments for Rules
+
+Additional arguments are made available to {ProductName} rules using a special API. For more information about  {ProductName} rules arguments, see xref:Rules-Rule-Configuration[Rule Configuration].
+
+Each option is an implementation of http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupConfigurationOption.html[WindupConfigurationOption].
+  
+Examples:
+
+* `org.jboss.windup.rules.apps.java.config.ScanPackagesOption`
+* `org.jboss.windup.rules.apps.java.config.ExcludePackagesOption`
+* `org.jboss.windup.rules.apps.java.config.SourceModeOption`
+
+== Forge related arguments
+
+Forge related arguments are those that process add-ons and affect Forge execution mode.
+
+* --install
+* --remove
+* --list
+* --addonDir
+* --immutableAddonDir
+* --batchMode
+* --evaluate
+* --debug
+* --version
+
+These arguments are handled in the {ProductName} `Bootstrap` class.
+
+===== Processing Argument Sequence
+
+When the user runs ./windup, the `Bootstrap` class intercepts the Forge arguments and processes them. The other arguments are passed to {ProductName}, which processes them and then distributes them to the right place. During rule execution, the {ProductName} rule arguments are accessed and evaluated.
+
+
+

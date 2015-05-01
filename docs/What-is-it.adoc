@@ -1,0 +1,55 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
+:imagesdir: images
+
+[[What-is-it]]
+=== What is {ProductName}?
+
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+image:windup-logo-large.png[{ProductName} Logo] 
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+{ProductName} is a rule-based tool to simplify application migrations.
+
+Running from a http://forge.jboss.org[Forge] environment, the tool examines EAR, WAR, and
+JAR deployments (or a project source directory) and produces an HTML report detailing the inner workings of
+the Java application to simplify migration efforts. It seeks to make
+migrating from other containers to JBoss EAP a piece of cake.
+
+==== How Does {ProductName} Simplify Migration?
+
+{ProductName} looks for common resources and highlight technologies and known “trouble
+spots” in migrating applications. The goal of {ProductName} is to provide a
+high level view into relevant technologies in use within the
+application, and provide a consumable report for organizations to
+estimate, document, and migrate enterprise applications to Java EE and JBoss EAP.
+
+These are some of the of the areas targetted by current core {ProductName} rulesets:
+
+.OUTDATED .SGILDA This is outdated, we need a list of Rulesets and what do they cover.
+
+[cols="2*", options="header"] 
+|===
+|Ruleset
+|Description
+
+|Java code
+|Reads compiled Java files, determines if blacklisted classes are imported, and if so, continues to profile the resource.
+
+|JSP code
+|Reads JSP files, extracts the JSP imports and taglibs, and continues to
+profile the resource
+
+|XML configuration
+|Reads XML files into a DOM objects and continues to profile the resource.
+|===
+
+==== Follow {ProductName} on Twitter!
+
+Follow {ProductName} on Twitter https://twitter.com/jbosswindup[@JBossWindup] for updates and more!

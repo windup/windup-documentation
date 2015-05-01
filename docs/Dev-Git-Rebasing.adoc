@@ -1,3 +1,8 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
 [[Dev-Git-Rebasing]]
 === Git Rebasing
 
@@ -28,7 +33,7 @@ git merge --no-ff lincolnthree-WINDUP-133
 git push origin master
 -----------------------------------------
 
-==== Script Provided by the Windup Development Team 
+==== Script Provided by the {ProductName} Development Team 
 
 Ondra Zizka wrote the following script to bring down a series of pull requests into a
 single branch. It then pushes that branch to upstream master-ignore.

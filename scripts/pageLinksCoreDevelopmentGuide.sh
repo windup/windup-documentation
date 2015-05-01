@@ -5,28 +5,28 @@
 pwd
 
 ## Overview
-grep 'link:[A-Z]' `find . -name 'What-is-Windup.adoc'`
-grep 'link:[A-Z]' `find . -name 'Features-of-Windup-2.adoc'`
-grep 'link:[A-Z]' `find . -name 'About-the-WINDUP_HOME-Variable.adoc'`
+grep 'link:[A-Z]' `find . -name 'What-is-it.adoc'`
+grep 'link:[A-Z]' `find . -name 'Features.adoc'`
+grep 'link:[A-Z]' `find . -name 'About-the-HOME-Variable.adoc'`
 
 ## Get Started
 grep 'link:[A-Z]' `find . -name 'Install-and-Configure-Maven.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Get-the-Windup-Source-Code.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Build-Windup-from-Source.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Execute-Windup-Built-from-Source.adoc'`
-grep 'link:[A-Z]' `find . -name 'Execute-Windup.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Get-the-Source-Code.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Build-from-Source.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Execute-Built-from-Source.adoc'`
+grep 'link:[A-Z]' `find . -name 'Execute.adoc'`
 grep 'link:[A-Z]' `find . -name 'Review-the-Report.adoc'`
 
 ## Developer Contributing Information
 grep 'link:[A-Z]' `find . -name 'Dev-Development-Guidelines-and-Conventions.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Submit-Code-Updates-to-the-Windup-Project.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Submit-Code-Updates-to-the-Project.adoc'`
 
-## Understand the Windup Architecture and Structure
-grep 'link:[A-Z]' `find . -name 'Windup-Architectural-Components.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Windup-Project-Structure.adoc'`
+## Understand the Architecture and Structure
+grep 'link:[A-Z]' `find . -name 'Architectural-Components.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Project-Structure.adoc'`
 
 ## Rules and Rulesets
-grep 'link:[A-Z]' `find . -name 'Windup-Processing-Overview.adoc'`
+grep 'link:[A-Z]' `find . -name 'Processing-Overview.adoc'`
 grep 'link:[A-Z]' `find . -name 'Rules-Rule-Execution-Lifecycle.adoc'`
 grep 'link:[A-Z]' `find . -name 'Rule-Phases.adoc'`
 grep 'link:[A-Z]' `find . -name 'Rules-Rule-Story-Points.adoc'`
@@ -44,7 +44,7 @@ grep 'link:[A-Z]' `find . -name 'Rules-Create-a-Basic-XML-Rule.adoc'`
 
 ## Core Developer topics
 
-grep 'link:[A-Z]' `find . -name 'Dev-Windup-Bootstrap.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Bootstrap-Process.adoc'`
 grep 'link:[A-Z]' `find . -name 'Dev-Classloading-Notes.adoc'`
 grep 'link:[A-Z]' `find . -name 'Dev-Connect-to-the-Graph-via-Rexster.adoc'`
 grep 'link:[A-Z]' `find . -name 'Dev-Decompiling.adoc'`
@@ -53,7 +53,7 @@ grep 'link:[A-Z]' `find . -name 'Dev-Frames-Extensions.adoc'`
 grep 'link:[A-Z]' `find . -name 'Dev-Internal-API-Features.adoc'`
 grep 'link:[A-Z]' `find . -name 'Dev-Logging.adoc'`
 grep 'link:[A-Z]' `find . -name 'Dev-Variables-Stack.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Port-WindRide-Functionality-to-Windup.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Port-WindRide-Functionality.adoc'`
 grep 'link:[A-Z]' `find . -name 'Dev-Git-Rebasing.adoc'`
 
 ## Rules topics
@@ -67,7 +67,7 @@ grep 'link:[A-Z]' `find . -name 'Ruleset-Java-EE-Apps.adoc'`
 grep 'link:[A-Z]' `find . -name 'Ruleset-Java-EE-Servers.adoc'`
 grep 'link:[A-Z]' `find . -name 'Ruleset-Reporting.adoc'`
 grep 'link:[A-Z]' `find . -name 'Ruleset-XML.adoc'`
-grep 'link:[A-Z]' `find . -name 'Rules-Windup-Models.adoc'`
+grep 'link:[A-Z]' `find . -name 'Rules-Models.adoc'`
 grep 'link:[A-Z]' `find . -name 'Rules-Create-Java-Queries.adoc'`
 grep 'link:[A-Z]' `find . -name 'Rule-Metadata.adoc'`
 grep 'link:[A-Z]' `find . -name 'Rules-Rules-Operations.adoc'`
@@ -78,23 +78,25 @@ grep 'link:[A-Z]' `find . -name 'Rules-Ops-Xml-XsltTransformation.adoc'`
 
 ## Debugging and Troubleshooting
 grep 'link:[A-Z]' `find . -name 'Dev-Debugging-and-Profiling.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Troubleshoot-Windup-Issues.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Troubleshoot-Issues.adoc'`
 
 #### Wiki and Product Documentation
-grep 'link:[A-Z]' `find . -name 'About-the-Windup-Wiki.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Add-Images-to-the-Windup-Wiki.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Create-Windup-JavaDoc.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Windup-Documentation-Process.adoc'`
+grep 'link:[A-Z]' `find . -name 'About-this-Wiki.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Add-Images-to-the-Wiki.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Create-the-JavaDoc.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Documentation-Process.adoc'`
 
 ## Additional Resources
 
-grep 'link:[A-Z]' `find . -name 'Review-the-Windup-Quickstarts.adoc'`
+grep 'link:[A-Z]' `find . -name 'Review-the-Quickstarts.adoc'`
 grep 'link:[A-Z]' `find . -name 'Get-Involved.adoc'`
+grep 'link:[A-Z]' `find . -name 'Important-Links.adoc'`
 grep 'link:[A-Z]' `find . -name 'Known-Issues.adoc'` 
-grep 'link:[A-Z]' `find . -name 'Report-Issues-with-Windup.adoc'`
+grep 'link:[A-Z]' `find . -name 'Report-Issues.adoc'`
+echo "Appendix topics...."
 
 ## Appendix
 grep 'link:[A-Z]' `find . -name 'Glossary.adoc'`
-grep 'link:[A-Z]' `find . -name 'Dev-Windup-Project-Information.adoc'`
+grep 'link:[A-Z]' `find . -name 'Dev-Project-Information.adoc'`
 
 

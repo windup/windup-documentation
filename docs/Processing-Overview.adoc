@@ -1,0 +1,38 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
+[[Processing-Overview]]
+=== {ProductName} Processing Overview
+
+{ProductName} is a rule-based migration tool that allows you to write customized rules to analyze the APIs, technologies, and architectures used by the applications you plan to migrate. The {ProductName} tool also executes its own core rules through all phases of the migration process. 
+
+The following is a high level conceptual overview of what happens within {ProductName} when you execute the tool against your application or archive.
+
+==== Run {ProductName} Against Your Application
+
+Wnen you run the `windup-migrate-app` command against your application, {ProductName} executes its own core rules to extract files from archives, decompile classes, and analyze the application. In this phase {ProductName} builds a data model and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.
+
+For more information about the phases of rule execution, see xref:Rule-Phases[Rule Phases].
+
+For more information about the graph database components, see xref:Architectural-Components[{ProductName} Architectural Components].
+
+==== Application Migration
+
+The next step in the process is the execution of the migration rules. In this phase, the rules typically do not execute against the application input files. Instead, they execute against the graph database model. {ProductName} rules are independent and decoupled and they communicate with each other using the graph database model. Rules query the graph database to obtain information needed to test the rule condition. They also update the data model with information based on the result of the rule execution. This allows rules to easily interact with other rules and enables the creation of very complex rules.
+
+The {ProductName} distribution contains a large number of migration rules, but in some cases, you may need to create additional custom rules for your specific implementation. {ProductName} is architected to allow you to create Java-based rule addons or XML rules and add easily add them to {ProductName}. Custom rule creation is covered in the _{ProductName} Rules Development Guide_.
+
+==== Generate Findings Based on the Rule Execution Results
+
+The final step in the process is to pull data from the graph database model to generate of reports and optionally generate scripts. Again, {ProductName} uses rules to generate the final output.
+
+By default, {ProductName} generates the following reports at the end of the application migration process. The reports are located in the `reports/` subdirectory of the output report path specified when you execute {ProductName}:
+
+* Application Report: This report provides a summary of the total estimated effort, or xref:Rules-Rule-Story-Points[story points], that are required for the migration. It also provides a detailed list of issues and suggested changes, broken down by archive or folder. 
+* RuleProvider report: This is a detailed listing of the rule providers that fired when running {ProductName} and whether any errors occurred.
+* Additional reports are generated that provide detailed line-by-line migration tips for individual files. 
+
+{ProductName} can also generate scripts to automate migration processes based on the findings. For example, some configuration files are easily mapped and can be automatically generated as part of the migration process.

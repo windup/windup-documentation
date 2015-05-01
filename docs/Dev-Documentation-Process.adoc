@@ -1,0 +1,176 @@
+:ProductName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+:ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME
+:ProductSrcHomeVar: WINDUP_SOURCE_HOME
+:ProductReleaseVar: WINDUP_RELEASE
+
+[[Dev-Documentation-Process]]
+=== {ProductName} Documentation Process
+
+==== Wiki Documentation
+
+* Name wiki pages using only letters, numbers and dashes. Do not include spaces, colons, or other special characters in page names.
+* Use AsciiDoc rather than Markdown for the syntax.
+
+==== {ProductName} JavaDoc
+
+Instructions to build the {ProductName} JavaDoc are located here: xref:Dev-Create-the-JavaDoc[Create {ProductName} JavaDoc].
+
+==== Product Documentation  
+
+{ProductName} product documentation is stored here: https://github.com/windup/windup-documentation
+
+See the https://github.com/windup/windup-documentation/blob/master/CONTRIBUTING.adoc[CONTRIBUTING guide] for AsciiDoc syntax rules regarding headers and links to make this process easier.
+
+==== Update the {ProductName} Documentation with the Latest Wiki Changes
+
+===== Summary
+
+The {ProductName} guides are located in the windup-documentation/docs directory. They are named the same as the guides in the Wiki but have a 'Windup-' prefix. The windup-documentation/docs guides should kept synchronized with the versions in the windup.wiki.
+
+[cols="2*", options="header"] 
+|===
+|Wiki Guide
+|Windup Docs Guide
+
+|User-Guide.asciidoc
+|Windup-User-Guide.adoc
+
+|Rules-Development-Guide.asciidoc
+|Windup-Rules-Development-Guide.adoc
+
+|Core-Development-Guide.asciidoc
+|Windup-Core-Development-Guide.adoc
+
+|Migration-Planning-Guide
+|Windup-Migration-Planning-Guide.adoc
+|===
+
+====== Documentation Update Scripts
+
+The https://github.com/windup/windup-documentation/tree/master/scripts/windupDocUpdate.sh script copies the pages from the {ProductName} wiki to the windup-documentation repository, makes minor modifications, and generates each guide in a single HTML page book format. The resulting guides are created in the `{productdochomevar}/html/` directory.
+
+The script performs the following steps.
+
+. Copies the {ProductName} wiki pages to the `{productdochomevar}/docs/` directory, renaming them with the `.adoc` extension.
+
+. Makes sure each guide includes all pages that are referenced by pages within it. Scripts are provided to search for links within each individual guide. They navigate to the `{productdochomevar}/docs/` directory and search using the following command:
+
+    grep 'xref:[A-Z]' `find . -name '*.adoc'`.
+
+. Replaces each `xref:` to external pages with an `xref:` using the following command.
+
+    find . -name '*.adoc' -print | xargs sed -i 's/xref:/xref:/g'
+
+. Navigates to the `{productdochomevar}/` directory and builds the books. The single page HTML files are created in the `{productdochomevar}/html/` directory.
+
++
+[cols="2*", options="header"] 
+|===
+|Windup Guide
+|Command
+
+|Windup User Guide
+|asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html docs/Windup-User-Guide.adoc
+
+|Windup Rules Development Guide
+|asciidoctor -t -dbook -a toc -o html/WindupRulesDevelopmentGuide.html docs/Windup-Rules-Development-Guide.adoc
+
+|Windup Core Development Guide
+|asciidoctor -t -dbook -a toc -o html/WindupCoreDevelopmentGuide.html docs/Windup-Core-Development-Guide.adoc
+|===
+
+
+==== Publish the HTML Docs for Access at GitHub IO
+
+The https://github.com/windup/windup-documentation/tree/master/scripts/windupPublish.sh script copies the pages from the {ProductName} wiki to the windup-documentation repository, makes minor modifications, and generates each guide in a single HTML page book format. The resulting guides are created in the `{productsrchomevar}/html/` directory.
+
+The script performs the following steps.
+
+* The first time, you must fork and clone the windup GitHub repository. After that, just fetch the latest upstream.
++
+----
+git clone https://github.com/windup/windup.git
+git fetch upstream
+----
+    
+* Navigate to the local `{productsrchomevar}/` directory.
++
+----
+cd windup
+----
+    
+* Checkout the `gh-pages` from the {ProductName} repository
++
+----
+git checkout -b gh-pages windup/gh-pages
+----
+
+* If the `{productsrchomevar}/docs/{productreleasevar}/` directory does not yet exist, create a `docs/{productreleasevar}/html/images/` 
++
+----
+mkdir -p docs/WINDUP_RELEASE/html/images (if it doesn't exist!)
+----
+    
+* Copy any the images, stylesheets, and html files from windup-documentation:
++
+----
+
+cp {productdochome}/html/*.html {productsrchome}/docs/{productreleasevar}/html/
+cp {productdochomevar}/*.css {productsrchomevar}/docs/{productrelease}/html/
+cp {productdochomevar}/images/* {productsrchomevar}/docs/{productreleasevar}/html/images/
+
+----
+ 
+* Add the updated files to GitHub.
++
+----
+git add docs
+----
+    
+* Commit the changes.
++
+----
+git commit -m "Update message..."
+----
+
+* Push the changes to GitHub.
++
+----
+git push upstream gh-pages
+----
+
+* View the documentation at http://windup.github.io/windup/docs/WINDUP_RELEASE/html/WindupUserGuide.html
+
+* Update the symlink for `latest` to point to the new version.
+
+** Navigate to the `WINDUP_HOME/docs` directory.
+
+** Remove the existing symlink for "latest".
+
+        unlink latest
+
+** Create a symlink to the new documentation.
+
+        Syntax: ln -s WINDUP_RELEASE latest
+        Example: ln -s 2.0.0.Final latest
+
+** Add the modified "latest" directory to Git.
+
+        git add latest
+
+** Commit the change.
+
+        git commit -m 'Replace symlink for latest to point to 2.0.0.Final'
+
+** Push the changes to your own git repository, verify and issue a pull.
+
+        git push origin HEAD
+
+** Push the changes upstream
+
+        git push upstream gh-pages
+
+** View the documentation at http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html
