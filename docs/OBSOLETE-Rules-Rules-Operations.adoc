@@ -1,11 +1,9 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
-
 [[Rules-Rules-Operations]]
 === Rules Operations
 
+OBSOLETE: See Rules-XML-Rule-Construction, Rules-XML-Rule-When-Condition-Syntax, Rules-XML-Rule-Perform-Action-Syntax
+
+ 
 _A list of high-level operations across rulesets._
 
 * `JavaClass`

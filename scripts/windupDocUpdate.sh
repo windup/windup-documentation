@@ -40,90 +40,68 @@ echo "*******************************************"
 
 sh scripts/windupDocCopyWiki.sh $1
 
-## Copy the current guide to a text file for conversion to a script
-###cp docs/Windup-User-Guide.adoc scripts/pageLinksUserGuide.txt
-
-## Copy the guide page as-is to use for comparison
-##cp $1/User-Guide.asciidoc docs/
-
-## Copy the current guide to a text file for conversion to a script
-##cp docs/Windup-Rules-Development-Guide.adoc scripts/pageLinksRulesDevelopmentGuide.txt
- 
-## Copy the guide page as-is to use for comparison
-##cp $1/Rules-Development-Guide.asciidoc docs/
-
-
-## Copy the current guide to a text file for conversion to a script
-##cp docs/Windup-Core-Development-Guide.adoc scripts/pageLinksCoreDevelopmentGuide.txt
-
-## Copy the guide page as-is to use for comparison
-##cp $1/Core-Development-Guide.asciidoc docs/
-
 echo "Copy complete."
 echo ""
 
-echo "*******************************************"
-echo "* MANUAL STEP!"
-echo "*"
-echo "* Find the internal links within the following pages and make sure "
-echo "* each referenced section has an anchor defined with dashes and double brackets." 
-echo "* For example: "
-echo "*"
-echo "*     [[section-header]]"
-echo "*     === Section Header"
-echo "*******************************************"
-echo ""
-cd docs
-grep 'xref:[a-z]' `find . -name '*.adoc'`
-cd ../
-echo ""
-echo "Verify items in list above. ^^"
-echo ""
-echo ""
-echo ""
-echo "*******************************************"
-echo "* MANUAL STEP!"
-echo "*"
-echo "* Search the User Guide to find pages that link to other pages."
-echo "* Make sure the linked to pages are part of the book."
-echo "*******************************************"
-echo ""
-cd docs
-sh $2/scripts/pageLinksUserGuide.sh
-# grep 'link:[A-Z]' `find . -name '*.adoc'`
-cd ../
-echo ""
-echo "Verify items in list above. ^^"
-echo ""
-echo ""
-echo "*******************************************"
-echo "* MANUAL STEP!"
-echo "*"
-echo "* Search the Rule Development Guide to find pages that link to other pages."
-echo "* Make sure the linked to pages are part of the book."
-echo "*******************************************"
-echo ""
-cd docs
-sh $2/scripts/pageLinksRulesDevelopmentGuide.sh
-# grep 'link:[A-Z]' `find . -name '*.adoc'`
-cd ../
-echo ""
-echo "Verify items in list above. ^^"
-echo ""
-echo "*******************************************"
-echo "* MANUAL STEP!"
-echo "*"
-echo "* Search the Core Development Guide to find pages that link to other pages."
-echo "* Make sure the linked to pages are part of the book."
-echo "*******************************************"
-echo ""
-cd docs
-sh $2/scripts/pageLinksCoreDevelopmentGuide.sh
-# grep 'link:[A-Z]' `find . -name '*.adoc'`
-cd ../
-echo ""
-echo "Verify items in list above. ^^"
-echo ""
+## echo "*******************************************"
+## echo "* MANUAL STEP!"
+## echo "*"
+## echo "* Find the internal links within the following pages and make sure "
+## echo "* each referenced section has an anchor defined with dashes and double brackets." 
+## echo "* For example: "
+## echo "*"
+## echo "*     [[section-header]]"
+## echo "*     === Section Header"
+## echo "*******************************************"
+## echo ""
+## cd docs
+## grep 'xref:[a-z]' `find . -name '*.adoc'`
+## cd ../
+## echo ""
+## echo "Verify items in list above. ^^"
+## echo ""
+## echo ""
+## echo ""
+## echo "*******************************************"
+## echo "* MANUAL STEP!"
+## echo "*"
+## echo "* Search the User Guide to find pages that link to other pages."
+## echo "* Make sure the linked to pages are part of the book."
+## echo "*******************************************"
+## echo ""
+## cd docs
+## sh $2/scripts/pageLinksUserGuide.sh
+## cd ../
+## echo ""
+## echo "Verify items in list above. ^^"
+## echo ""
+## echo ""
+## echo "*******************************************"
+## echo "* MANUAL STEP!"
+## echo "*"
+## echo "* Search the Rule Development Guide to find pages that link to other pages."
+## echo "* Make sure the linked to pages are part of the book."
+## echo "*******************************************"
+## echo ""
+## cd docs
+## sh $2/scripts/pageLinksRulesDevelopmentGuide.sh
+## cd ../
+## echo ""
+## echo "Verify items in list above. ^^"
+## echo ""
+## echo "*******************************************"
+## echo "* MANUAL STEP!"
+## echo "*"
+## echo "* Search the Core Development Guide to find pages that link to other pages."
+## echo "* Make sure the linked to pages are part of the book."
+## echo "*******************************************"
+## echo ""
+## cd docs
+## sh $2/scripts/pageLinksCoreDevelopmentGuide.sh
+## cd ../
+## echo ""
+## echo "Verify items in list above. ^^"
+## echo ""
 echo "*******************************************"
 echo "* Replacing the links: to external pages with xrefs:"
 echo "*******************************************"
@@ -139,13 +117,14 @@ echo "* Modifying variables                      "
 echo "*******************************************"
 echo ""
 cd docs
-## find . -name '*.adoc' -print | xargs sed -i 's/:ProductName: Windup//g'
-## find . -name '*.adoc' -print | xargs sed -i 's/:ProductVersion: 2.2.0-Final//g'
-## find . -name '*.adoc' -print | xargs sed -i 's/:ProductDistribution: windup-distribution-2.2.0-Final//g'
-## find . -name '*.adoc' -print | xargs sed -i 's/:ProductHomeVar: WINDUP_HOME//g'
-## find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME//g'
-## find . -name '*.adoc' -print | xargs sed -i 's/:ProductSrcHomeVar: WINDUP_SOURCE_HOME//g'
-## find . -name '*.adoc' -print | xargs sed -i 's/:ProductReleaseVar: WINDUP_RELEASE//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductName: Windup//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductShortName: Windup//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductVersion: 2.2.0-Final//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductDistribution: windup-distribution-2.2.0-Final//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductHomeVar: WINDUP_HOME//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductSrcHomeVar: WINDUP_SOURCE_HOME//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductReleaseVar: WINDUP_RELEASE//g'
 
 ##find . -name '*.adoc' -print | xargs sed -i 's/{ProductName}/Windup/g'
 ##find . -name '*.adoc' -print | xargs sed -i 's/{ProductVersion}/2.2.0-Final/g'
@@ -156,7 +135,13 @@ cd docs
 ##find . -name '*.adoc' -print | xargs sed -i 's/{ProductReleaseVar}/WINDUP_RELEASE/g'
 ## Restore the top level files
 cd ../
-##cp Windup-User-Guide.adoc docs/
+cp Windup-User-Guide.adoc docs/
+cp Windup-Rules-Development-Guide.adoc docs/
+cp Windup-Core-Development-Guide.adoc docs/
+
+cp Windup-User-Guide-NO-TOC.adoc docs/
+cp Windup-Rules-Development-Guide-NO-TOC.adoc docs/
+cp Windup-Core-Development-Guide-NO-TOC.adoc docs/
 
 echo "Removal of variables is complete."
 echo ""
@@ -167,7 +152,7 @@ echo "*******************************************"
 asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html docs/Windup-User-Guide.adoc
 asciidoctor -t -dbook -o html/WindupUserGuide-NO-TOC.html docs/Windup-User-Guide-NO-TOC.adoc
 wkhtmltopdf --page-size Letter html/WindupUserGuide-NO-TOC.html pdf/WindupUserGuide.pdf
-echo "Guide is located at: " file://$2/html/WindupUserGuide.html
+echo "User Guide is located at: " file://$2/html/WindupUserGuide.html
 echo ""
 
 ## Build docbook xml: asciidoctor -b docbook docs/Windup-User-Guide.adoc
@@ -175,7 +160,10 @@ echo ""
 ccutil compile --lang en_US --main-file ~/GitRepos/windup-documentation/docs/Windup-User-Guide.adoc
 cp -r docs/images/ build/tmp/en_US/html-single/images/
 cp -r docs/images/ build/en_US/images/
+rm -r build-user-guide
 mv build/ build-user-guide
+echo "DocBook User Guide is located at: " file://$2/build-user-guide/tmp/en_US/html-single/index.html
+echo ""
 
 ## Save the documentation so it is not lost when building another doc: cp -r build/ build-windup-user-guide/ 
 
@@ -191,7 +179,10 @@ echo ""
 ccutil compile --lang en_US --main-file ~/GitRepos/windup-documentation/docs/Windup-Rules-Development-Guide.adoc
 cp -r docs/images/ build/tmp/en_US/html-single/images/
 cp -r docs/images/ build/en_US/images/
+rm -r build-rules-guide
 mv build/ build-rules-guide
+echo "DocBook Guide is located at: " file://$2/build-rules-guide/tmp/en_US/html-single/index.html
+echo ""
 
 echo "*******************************************"
 echo "* Building the Windup Core Development Guide..."
@@ -206,9 +197,26 @@ echo ""
 ccutil compile --lang en_US --main-file ~/GitRepos/windup-documentation/docs/Windup-Core-Development-Guide.adoc
 cp -r docs/images/ build/tmp/en_US/html-single/images/
 cp -r docs/images/ build/en_US/images/
+rm -r build-core-guide
 mv build/ build-core-guide
+echo "DocBook Guide is located at: " file://$2/build-core-guide/tmp/en_US/html-single/index.html
+echo ""
 
 echo "*******************************************"
 echo "Manually verify the guides and use Maven to check in the new files"
 echo "*******************************************"
 
+echo "User Guide is located at: " file://$2/html/WindupUserGuide.html
+echo "User Guide (DocBook) is located at: " file://$2/build-user-guide/tmp/en_US/html-single/index.html
+echo "User Guide (PDF) is located at: " file://$2/pdf/WindupUserGuide.pdf
+echo ""
+
+echo "Rules Guide is located at: " file://$2/html/WindupRulesDevelopmentGuide.html
+echo "Rules Guide (DocBook) is located at: " file://$2/build-rules-guide/tmp/en_US/html-single/index.html
+echo "Rules Guide (PDF) is located at: " file://$2/pdf/WindupRulesDevelopmentGuide.pdf
+echo ""
+
+echo "Core Guide is located at: " file://$2/html/WindupCoreDevelopmentGuide.html
+echo "Core Guide (DocBook) is located at: " file://$2/build-core-guide/tmp/en_US/html-single/index.html
+echo "Core Guide (PDF) is located at: " file://$2/pdf/WindupCoreDevelopmentGuide.pdf
+echo ""

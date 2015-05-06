@@ -1,8 +1,8 @@
-:ProductName: Windup
-:ProductShortName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
+
+
+ 
 
 [[Start]]
 === Start {ProductName}
@@ -11,7 +11,7 @@ For information about the use of {ProductHomeVar} in the instructions below, see
 
 1. Open a terminal and navigate to the `{ProductHomeVar}/bin` directory
 
-2. Type the following command to start {ProductName}:
+2. Type the following command to start {ProductShortName}:
 +
 ---------------------------------------------------------------------------
 For Linux:    WINDUP_HOME/bin $ ./windup

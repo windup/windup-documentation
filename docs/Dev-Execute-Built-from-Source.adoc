@@ -1,7 +1,7 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
+
+ 
 
 [[Dev-Execute-Built-from-Source]]
 === Execute {ProductName} (Built from {ProductName} Source)
@@ -20,10 +20,10 @@ cd windup-*
 rm -rf ~/.forge/addons/
 bin/windup.sh
 
-## Execute {ProductName}
+## Execute 
 $ windup-migrate-app --input /home/username/work/Migration/TestApps/_apps/BradApp --output Report --packages org com net
 
-## Exit {ProductName}
+## Exit
 $ exit
 
 ## View the Report

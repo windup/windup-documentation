@@ -1,10 +1,10 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
-:ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME
-:ProductSrcHomeVar: WINDUP_SOURCE_HOME
-:ProductReleaseVar: WINDUP_RELEASE
+
+
+
+ 
+
+
+
 
 [[Dev-Documentation-Process]]
 === {ProductName} Documentation Process
@@ -50,13 +50,13 @@ The {ProductName} guides are located in the windup-documentation/docs directory.
 
 ====== Documentation Update Scripts
 
-The https://github.com/windup/windup-documentation/tree/master/scripts/windupDocUpdate.sh script copies the pages from the {ProductName} wiki to the windup-documentation repository, makes minor modifications, and generates each guide in a single HTML page book format. The resulting guides are created in the `{productdochomevar}/html/` directory.
+The https://github.com/windup/windup-documentation/tree/master/scripts/windupDocUpdate.sh script copies the pages from the {ProductName} wiki to the windup-documentation repository, makes minor modifications, and generates each guide in a single HTML page book format. The resulting guides are created in the _{ProductDocHomeVar}/html/_ directory.
 
 The script performs the following steps.
 
-. Copies the {ProductName} wiki pages to the `{productdochomevar}/docs/` directory, renaming them with the `.adoc` extension.
+. Copies the {ProductName} wiki pages to the _{ProductDocHomeVar}/docs/_ directory, renaming them with the `.adoc` extension.
 
-. Makes sure each guide includes all pages that are referenced by pages within it. Scripts are provided to search for links within each individual guide. They navigate to the `{productdochomevar}/docs/` directory and search using the following command:
+. Makes sure each guide includes all pages that are referenced by pages within it. Scripts are provided to search for links within each individual guide. They navigate to the _{ProductDocHomeVar}/docs/_ directory and search using the following command:
 
     grep 'xref:[A-Z]' `find . -name '*.adoc'`.
 
@@ -64,7 +64,7 @@ The script performs the following steps.
 
     find . -name '*.adoc' -print | xargs sed -i 's/xref:/xref:/g'
 
-. Navigates to the `{productdochomevar}/` directory and builds the books. The single page HTML files are created in the `{productdochomevar}/html/` directory.
+. Navigates to the _{ProductDocHomeVar}/_ directory and builds the books. The single page HTML files are created in the _{ProductDocHomeVar}/html/_ directory.
 
 +
 [cols="2*", options="header"] 
@@ -85,7 +85,7 @@ The script performs the following steps.
 
 ==== Publish the HTML Docs for Access at GitHub IO
 
-The https://github.com/windup/windup-documentation/tree/master/scripts/windupPublish.sh script copies the pages from the {ProductName} wiki to the windup-documentation repository, makes minor modifications, and generates each guide in a single HTML page book format. The resulting guides are created in the `{productsrchomevar}/html/` directory.
+The https://github.com/windup/windup-documentation/tree/master/scripts/windupPublish.sh script copies the pages from the {ProductName} wiki to the windup-documentation repository, makes minor modifications, and generates each guide in a single HTML page book format. The resulting guides are created in the _{ProductSrcHomeVar}/html/_ directory.
 
 The script performs the following steps.
 
@@ -95,35 +95,33 @@ The script performs the following steps.
 git clone https://github.com/windup/windup.git
 git fetch upstream
 ----
-    
-* Navigate to the local `{productsrchomevar}/` directory.
+  
+* Navigate to the local _{ProductSrcHomeVar}/_ directory.
 +
 ----
 cd windup
 ----
-    
+   
 * Checkout the `gh-pages` from the {ProductName} repository
 +
 ----
 git checkout -b gh-pages windup/gh-pages
 ----
 
-* If the `{productsrchomevar}/docs/{productreleasevar}/` directory does not yet exist, create a `docs/{productreleasevar}/html/images/` 
+* If the _{ProductSrcHomeVar}/docs/{ProductReleaseVar}/_ directory does not yet exist, create a _docs/{ProductReleaseVar}/html/images/_ directory. 
 +
 ----
-mkdir -p docs/WINDUP_RELEASE/html/images (if it doesn't exist!)
+mkdir -p docs/2.2.0-Final/html/images (if it doesn't exist!)
 ----
     
 * Copy any the images, stylesheets, and html files from windup-documentation:
 +
 ----
-
-cp {productdochome}/html/*.html {productsrchome}/docs/{productreleasevar}/html/
-cp {productdochomevar}/*.css {productsrchomevar}/docs/{productrelease}/html/
-cp {productdochomevar}/images/* {productsrchomevar}/docs/{productreleasevar}/html/images/
-
+cp windup-documentation/html/*.html windup/docs/2.2.0-Final/html/
+cp windup-documentation/*.css windup/docs/2.2.0-Final/html/
+cp windup-documentation/images/* windup/docs/2.2.0-Final/html/images/
 ----
- 
+
 * Add the updated files to GitHub.
 +
 ----
@@ -155,7 +153,7 @@ git push upstream gh-pages
 ** Create a symlink to the new documentation.
 
         Syntax: ln -s WINDUP_RELEASE latest
-        Example: ln -s 2.0.0.Final latest
+        Example: ln -s 2.2.0-Final latest
 
 ** Add the modified "latest" directory to Git.
 
@@ -163,7 +161,7 @@ git push upstream gh-pages
 
 ** Commit the change.
 
-        git commit -m 'Replace symlink for latest to point to 2.0.0.Final'
+        git commit -m 'Replace symlink for latest to point to 2.2.0-Final'
 
 ** Push the changes to your own git repository, verify and issue a pull.
 

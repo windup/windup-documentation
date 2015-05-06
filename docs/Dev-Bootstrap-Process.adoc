@@ -1,14 +1,12 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
 
 [[Dev-Bootstrap-Process]]
 === {ProductName} Bootstrap Process
 
 .DRAFT
 
-This section describes how {ProductName} starts up, finds the resources, loads the rules, and executes them.
+This section describes how {ProductShortName} starts up, finds the resources, loads the rules, and executes them.
 
 ==== Boot
 

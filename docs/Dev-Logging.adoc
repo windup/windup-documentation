@@ -1,18 +1,16 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
 
 [[Dev-Logging]]
 === Logging
 
 .DRAFT
 
-_This page describes how to log from the Java-based rules._
+This section describes how to use logging from the Java-based rules in {ProductName}.
 
 ==== Textual logging
 
-{ProductName} uses `java.util.logging`. Convenient way to get the logger is:
+{ProductShortName} uses `java.util.logging`. The following is a convenient way to get access to the logger.
 
 [source,java]
 ----

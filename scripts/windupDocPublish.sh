@@ -47,14 +47,17 @@ cp docs/images/* $2/docs/$WINDUP_VERSION/html/images/
 cp pdf/*.pdf $2/docs/$WINDUP_VERSION/pdf/
  
 echo "Guides can be previewed here: "
-echo "    User Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupUserGuide.html
-echo "    Rules Development Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupRulesDevelopmentGuide.html
-echo "    Core Development Guide: " file://$2/docs/$WINDUP_VERSION/html/WindupCoreDevelopmentGuide.html
+echo "    User Guide (HTML): " file://$2/docs/$WINDUP_VERSION/html/WindupUserGuide.html
+echo "    User Guide (PDF):  " file://$2/docs/$WINDUP_VERSION/pdf/WindupUserGuide.pdf
+echo "    Rules Development Guide (HTML): " file://$2/docs/$WINDUP_VERSION/html/WindupRulesDevelopmentGuide.html
+echo "    Rules Development Guide (PDF): " file://$2/docs/$WINDUP_VERSION/pdf/WindupRulesDevelopmentGuide.pdf
+echo "    Core Development Guide (HTML): " file://$2/docs/$WINDUP_VERSION/html/WindupCoreDevelopmentGuide.html
+echo "    Core Development Guide (PDF): " file://$2/docs/$WINDUP_VERSION/pdf/WindupCoreDevelopmentGuide.pdf
 
 cd $2
 git add docs
 
-git commit -m "Another update of the docs for release $3"
+git commit -m "Documentation update for release $3"
 
 echo "*******************************************"
 echo "The following are manual steps: "

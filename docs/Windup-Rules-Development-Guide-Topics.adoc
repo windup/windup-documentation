@@ -1,4 +1,4 @@
-== Overview
+== Introduction
 
 This guide is for engineers, consultants, and others who plan to create 
 custom rules for {ProductName}.
@@ -23,13 +23,29 @@ include::Review-the-Report.adoc[tabsize=4]
 
 include::Processing-Overview.adoc[tabsize=4]
 
+include::Architectural-Components.adoc[tabsize=4]
+
 include::Rules-Rule-Execution-Lifecycle.adoc[tabsize=4]
 
 include::Rule-Phases.adoc[tabsize=4]
 
+include::Rules-Models.adoc[tabsize=4]
+
+include::Rules-Available-Rules-Utilities.adoc[tabsize=4]
+
 include::Rules-Rule-Story-Points.adoc[tabsize=4]
 
 include::Rules-Difference-Between-XML-based-and-Java-based-Rules.adoc[tabsize=4]
+
+== Create and Test XML Rules
+
+include::Rules-Create-a-Basic-XML-Rule.adoc[tabsize=4]
+
+include::Rules-XML-Rule-When-Condition-Syntax.adoc[tabsize=4]
+
+include::Rules-XML-Rule-Perform-Action-Syntax.adoc[tabsize=4]
+
+include::Rules-Test-a-Basic-XML-Rule.adoc[tabsize=4]
 
 == Create and Test Java Rule Add-ons
 
@@ -42,16 +58,6 @@ include::Rules-Basic-Rule-Execution-Flow-Patterns.adoc[tabsize=4]
 include::Rules-Create-a-Basic-Java-based-Rule-Add-on.adoc[tabsize=4]
 
 // This is not ready for prime time... include::Rules-Create-an-Advanced-Ruleset.adoc[tabsize=4]
-
-== Create and Test XML Rules
-
-include::Rules-Create-a-Basic-XML-Rule.adoc[tabsize=4]
-
-include::Rules-XML-Rule-When-Condition-Syntax.adoc[tabsize=4]
-
-include::Rules-XML-Rule-Perform-Action-Syntax.adoc[tabsize=4]
-
-include::Rules-Test-a-Basic-XML-Rule.adoc[tabsize=4]
 
 == Debugging and Troubleshooting
 
@@ -67,8 +73,6 @@ include::Important-Links.adoc[tabsize=4]
 
 include::Review-the-Quickstarts.adoc[tabsize=4]
 
-include::Rules-Available-Rules-Utilities.adoc[tabsize=4]
-
 include::Known-Issues.adoc[tabsize=4] 
 
 include::Report-Issues.adoc[tabsize=4]
@@ -77,13 +81,9 @@ include::Report-Issues.adoc[tabsize=4]
 
 include::Glossary.adoc[tabsize=4]
 
-include::Architectural-Components.adoc[tabsize=4]
-
 include::Dev-Frames-Extensions.adoc[tabsize=4]
 
 // This is not ready for prime time... include::Dev-Dependencies.adoc[tabsize=4]
-
-include::Rules-Models.adoc[tabsize=4]
 
 
 

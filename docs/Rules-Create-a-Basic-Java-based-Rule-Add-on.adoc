@@ -1,28 +1,26 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
 
 [[Rules-Create-a-Basic-Java-based-Rule-Add-on]]
 === Create a Basic Java-based Rule Add-on
 
-You can create a rule using Java or XML. This topic describes how to create a rule add-on using Java.
+You can create a {ProductName} rule using Java or XML. This topic describes how to create a rule add-on using Java.
 
 ==== Prerequisites
 
-* You must xref:Install[Install {ProductName}]. 
+* You must xref:Install[Install {ProductShortName}]. 
 * Be sure you xref:Install-and-Configure-Maven[Install and Configure Maven].
 * Before you begin, may want also want to be familiar with the following documentation:
-** {ProductName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
-** The JavaDoc for the {ProductName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
+** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
+** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
 
-Working examples of Java-based rules can be found in the https://github.com/windup/windup-quickstarts[{ProductName} quickstarts] and https://github.com/windup/windup[{ProductName} source code] repositories.
+Working examples of Java-based rules can be found in the https://github.com/windup/windup-quickstarts[{ProductShortName} quickstarts] and https://github.com/windup/windup[{ProductShortName} source code] repositories.
  
 ==== Create the Maven Project
 
 Create a new Maven Java Project. These instructions will refer to the project folder location with the *replaceable* variable 'RULE_PROJECT_HOME'. Modify the project `pom.xml` file as follows
 
-1. Add the following properties. Be sure to replace `WINDUP_VERSION` with the current version of {ProductName}, for example: `2.2.0.Final`.
+1. Add the following properties. Be sure to replace `WINDUP_VERSION` with the current version of {ProductShortName}, for example: `2.2.0.Final`.
 +
 [source,xml]
 ----
@@ -34,13 +32,13 @@ Create a new Maven Java Project. These instructions will refer to the project fo
 </properties>
 ----
 
-2. Add a dependency management section for the {ProductName} BOM. 
+2. Add a dependency management section for the {ProductShortName} BOM. 
 +
 [source,xml]
 ----
 <dependencyManagement>
     <dependencies>
-        <!-- {ProductName} BOM -->
+        <!-- BOM -->
         <dependency>
             <groupId>org.jboss.windup</groupId>
             <artifactId>windup-bom</artifactId>
@@ -52,14 +50,14 @@ Create a new Maven Java Project. These instructions will refer to the project fo
 </dependencyManagement>
 ----
 
-3. Add a `<dependencies>` section to include {ProductName}, rulesets, and test dependencies required by your rule add-on. {ProductName} is a Forge/Furnace based application and has a modular design, so the dependencies will vary depending on the {ProductName} APIs used by the rule. 
-// For more information on {ProductName} dependencies, see xref:Dev-Dependencies[{ProductName} Dependencies]. 
+3. Add a `<dependencies>` section to include {ProductShortName}, rulesets, and test dependencies required by your rule add-on. {ProductShortName} is a Forge/Furnace based application and has a modular design, so the dependencies will vary depending on the {ProductShortName} APIs used by the rule. 
+// For more information on {ProductShortName} dependencies, see xref:Dev-Dependencies[{ProductShortName} Dependencies]. 
 +
 The following are examples of some dependencies you may need for your rule add-on.
 +
 [source,xml]
 ----
-<!-- {ProductName} API dependencies -->
+<!-- API dependencies -->
 <dependency>
     <groupId>org.jboss.windup.graph</groupId>
     <artifactId>windup-graph</artifactId>
@@ -238,7 +236,7 @@ public Configuration getConfiguration(GraphContext context)
 }
 ----
 +
-Working examples of Java-based rules can be found in the https://github.com/windup/windup-quickstarts[{ProductName} quickstarts] and https://github.com/windup/windup[{ProductName} source code] repositories.
+Working examples of Java-based rules can be found in the https://github.com/windup/windup-quickstarts[{ProductShortName} quickstarts] and https://github.com/windup/windup[{ProductShortName} source code] repositories.
 * Low-level Conditions and Operations
 +
 As you can see, the conditions and operations above are Java-specific.
@@ -249,7 +247,7 @@ accompanied with a documentation for its `Condition`s and `Operation`s
 +
 These high-level elements provided by rulesets may cover majority of
 cases, but not all. Then, you will need to dive into the mid-level
-{ProductName} building elements.
+{ProductShortName} building elements.
 * Mid-level Conditions and Operations
 
 . Create a `beans.xml` file in the project `META-INF/` directory, for example:
@@ -273,10 +271,10 @@ This file tells CDI to scan your add-on for CDI beans. The file can be empty, bu
 
 ==== Install the Java-based Rule Add-on
 
-The easiest and fastest way to build the rule add-on, install it into the local Maven repository, and install it into {ProductName} as a rule add-on is to use the {ProductName} `addon-build-and-install` command.
+The easiest and fastest way to build the rule add-on, install it into the local Maven repository, and install it into {ProductShortName} as a rule add-on is to use the {ProductShortName} `addon-build-and-install` command.
 
-* If you have not started {ProductName}, follow the instructions to xref:Execute[Execute {ProductName}].
-* At the {ProductName} console prompt, enter the `addon-build-and-install` command:
+* If you have not started {ProductShortName}, follow the instructions to xref:Execute[Execute {ProductShortName}].
+* At the {ProductShortName} console prompt, enter the `addon-build-and-install` command:
 
         addon-build-and-install --projectRoot RULE_PROJECT_HOME
 
@@ -286,7 +284,7 @@ The easiest and fastest way to build the rule add-on, install it into the local 
 
 ==== Test the Java-based Rule Add-on
 
-Test the Java-based rule add-on against your application file by running the `windup-migrate-app` command in the {ProductName} console prompt.
+Test the Java-based rule add-on against your application file by running the `windup-migrate-app` command in the {ProductShortName} console prompt.
 
 The command uses this syntax:
 
@@ -296,7 +294,7 @@ You should see the following result:
 
     ***SUCCESS*** Windup report created: QUICKSTART_HOME/windup-reports-java/index.html
 
-For more information and examples of how to run {ProductName}, see: xref:Execute[Execute {ProductName}] 
+For more information and examples of how to run {ProductShortName}, see: xref:Execute[Execute {ProductShortName}] 
 
 ==== Review the Output Report
 

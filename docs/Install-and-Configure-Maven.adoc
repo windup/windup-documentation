@@ -1,54 +1,43 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
 
 [[Install-and-Configure-Maven]]
 === Install and Configure Maven
 
-If you plan to contribute to the core code base or create Java-based rule add-ons, you must first install and configure Maven to build {ProductName} from source.
+==== Overview 
+
+If you plan to contribute to the core code base or create Java-based rule add-ons, you must first configure Maven to build {ProductName} from source.The procedure you follow depends on whether you plan to build {ProductShortName} using an IDE or Maven Command line.
 
 ==== Download and Install Maven
 
-If you plan to use Eclipse Luna (4.4) to build {ProductName}, you can skip this
-step and go directly to the section entitled xref:configure-maven-to-build-windup[Configure Maven to Build {ProductName}]. This version of Eclipse embeds Maven 3.2.1 so you do not need to
-install it separately.
+If you plan to use Eclipse Luna (4.4) to build {ProductShortName}, you can skip this step and go directly to the section entitled xref:configure-maven-to-build-using-your-ide[Configure Maven to Build Using Your IDE]. This version of Eclipse embeds Maven 3.2.1 so you do not need to install it separately.
 
-If you plan to run Maven using the command line or plan to use Red Hat
-JBoss Developer Studio 7.1.1 or an older version of Eclipse, you must
-install Maven 3.1.1. or later.
+If you plan to run Maven using the command line or plan to use Red Hat JBoss Developer Studio 7.1.1 or an older version of Eclipse, you must install Maven 3.1.1. or later.
 
-. Go to http://maven.apache.org/download.html[Apache Maven Project -
-Download Maven] and download the latest distribution for your operating
-system.
-. See the Maven documentation for information on how to download and
-install Apache Maven for your operating system.
+. Go to http://maven.apache.org/download.html[Apache Maven Project - Download Maven] and download the latest distribution for your operating system.
+. See the Maven documentation for information on how to download and install Apache Maven for your operating system.
 
-==== Configure the Maven Installation in Your IDE
+[[configure-maven-to-build-using-your-ide]]
+==== Configure Maven to Build Using Your IDE
 
-JBoss Developer Studio 7.1.1 is built upon Eclipse Kepler (4.3), which
-embeds Maven 3.0.4. If you plan to use JBoss Developer Studio 7.1.1 or
-an Eclipse version earier than Eclipse Luna (4.4), you must replace the
-embedded 3.0.4 version of Maven with this newer version.
+Follow this procedure if you plan to build {ProductShortName} using an IDE.
+
+JBoss Developer Studio 7.1.1 is built upon Eclipse Kepler (4.3), which embeds Maven 3.0.4. If you plan to use JBoss Developer Studio 7.1.1 or an Eclipse version earlier than Eclipse Luna (4.4), you must replace the embedded 3.0.4 version of Maven with this newer version.
 
 . From the menu, choose `Window` --> `Preferences`.
 . Expand `Maven` and click on `Installations`.
 . Uncheck `Embedded (3.0.4/1.4.0.20130531-2315)`
-. Click `Add` and navigate to your Maven install directory. Select it
-and click `OK`.
-. Make sure the new external Maven installation is checked and click
-`OK` to return to JBoss Developer Studio.
+. Click `Add` and navigate to your Maven install directory. Select it and click `OK`.
+. Make sure the new external Maven installation is checked and click `OK` to return to JBoss Developer Studio.
 
-_Note: If you use another IDE, refer to the product documentation to
-update the Maven installation._
+_Note: If you use another IDE, refer to the product documentation to update the Maven installation._
 
-[[configure-maven-to-build-windup]]
-==== Configure Maven to Build {ProductName}
+[[configure-maven-to-build-using-command-line]]
+==== Configure Maven to Build Using Command Line
 
-{ProductName} uses artifacts located in the
-http://repository.jboss.org/nexus/content/groups/public/[JBoss Nexus]
-repository. You must configure Maven to use this repository before you
-build {ProductName}.
+Follow this procedure to configure the Maven settings if you plan to build {ProductShortName} using the command line.
+
+{ProductShortName} uses artifacts located in the http://repository.jboss.org/nexus/content/groups/public/[JBoss Nexus] repository. You must configure Maven to use this repository before you build {ProductShortName}.
 
 . Open your `${user.home}/.m2/settings.xml` file for editing.
 . Copy the following `jboss-nexus-repository` profile XML prior to the
@@ -92,5 +81,6 @@ element to make the profile active.
 <activeProfile>jboss-nexus-repository</activeProfile> 
 ----------------------------------------------------------
 
-You are now configured to build {ProductName}.
- 
+You are now configured to build {ProductShortName}.
+
+

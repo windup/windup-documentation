@@ -1,22 +1,20 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
 
 [[About-this-Wiki]]
 === About the {ProductName} Wiki
 
 ==== Purpose
 
-This wiki is a place to create {ProductName} documentation in a collaborative manner, a bit wildly, and on the fly. It is intended to reflect the state of the {ProductName} source code master branch, however pages may become obsolete as the master changes quickly.
+This wiki is a place to create {ProductName} documentation in a collaborative manner, a bit wildly, and on the fly. It is intended to reflect the state of the {ProductShortName} source code master branch, however pages may become obsolete as the master changes quickly.
 
 ==== Areas of Interest
 
 The Wiki pages are divided into the following main areas of interest, which may often overlap. The page names use these prefixes:
 
-* *Dev-: ...*: These pages are of interest to {ProductName} core developers.
+* *Dev-: ...*: These pages are of interest to {ProductShortName} core developers.
 * *Rules- ...*: These pages are of interest to rules developers.
-* *User- ...*: These pages that are of interest to {ProductName} users.
+* *User- ...*: These pages that are of interest to {ProductShortName} users.
 * no prefix: These pages that are also of interest to all users.
 
 ==== AsciiDoc
@@ -31,9 +29,25 @@ The following is a brief overview.
 
 * Name wiki pages using only letters, numbers and dashes. Do not include spaces, colons, or other special characters in page names.
 
+* Always use the `ProductName` or `ProductShortName` variables when referring to the product name/
+
+* Do not use the product name in page names or in headers. This is because you should always use the variables when referring to the product names and the variables do not work in generated anchors.
+
+* Use the following variables instead of hard-coded values
++
+----
+{ProductName} - The full product name
+{ProductShortName} - The abbreviated product name
+{ProductVersion} - The current product version
+{ProductDistribution} - The distribution file name
+{ProductHomeVar} - The installation home variable
+{ProductDocHomeVar} - The documentation home variable
+{ProductSrcHomeVar} - The source home variable
+{ProductReleaseVar} - The product release variable
+----
 * Be sure to add a level 3 page heading (===) at the top of each page. When compiled in a book, the Guide name is the top level, chapters are level 2, and the page is level  3. This is the title that appears in the table of contents for the page.
 
-        === Build {ProductName} from Source
+        === Review the Quickstarts
 
 * At the beginning of each new Wiki page, add an anchor with the exact page name, including the dashes. This generates the correct anchors that are needed when the pages are combined into a book.
 

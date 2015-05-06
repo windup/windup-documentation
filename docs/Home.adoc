@@ -1,7 +1,11 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: JMT_HOME 
+
+:ProductAbbreviatedName: Windup
+
+
+ 
+
+
+
 
 = Welcome to {ProductName}
 
@@ -12,18 +16,18 @@ mailing list]._
 
 // include::News.asciidoc[]
 
-== About {ProductName}
+== About {ProductAbbreviatedName}
 
-{ProductName} is a tool used to simplify Java application migrations. It is the 
+{ProductAbbreviatedName} is a tool used to simplify Java application migrations. It is the 
 sequel to the original Windup 0.7.x, which has moved to the 
 https://github.com/windup/windup-legacy[windup-legacy] GitHub repository.
 
-* xref:What-is-{ProductName}[What is {ProductName}?] 
+* xref:What-is-it[What is {ProductAbbreviatedName}?] 
 * https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.windup&a=windup-distribution&v=LATEST&e=zip&c=offline[Download Latest {ProductName} Release]
-* xref:Features[Features of {ProductName}]
+* xref:Features[Features of {ProductAbbreviatedName}]
 * xref:Get-Involved[Get Involved] - We need your feedback!
 * xref:Known-Issues[Known Issues] - Review the known issues to find out how to work around problems.
-* xref:Report-Issues{ProductName}[Report Issues] - If you run into any problems executing {ProductName} or understanding the instructions, please report it so we can make it better. (https://issues.jboss.org/browse/WINDUP[Quick link to Jira])
+* xref:Report-Issues[Report Issues] - If you run into any problems executing {ProductName} or understanding the instructions, please report it so we can make it better. (https://issues.jboss.org/browse/WINDUP[Quick link to Jira])
 
 == {ProductName} Guides
 
@@ -34,11 +38,11 @@ https://github.com/windup/windup-legacy[windup-legacy] GitHub repository.
 * xref:./Rules-Development-Guide[{ProductName} Rules Development Guide] provides details for developers, consultants, and others who plan to create custom rule add-ons for the {ProductName} project. For a single page HTML version, see the http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html[{ProductName} Rules Development Guide].
 * xref:./Core-Development-Guide[{ProductName} Core Development Guide] provides information for developers who plan to contribute source code updates or core rule add-ons to the {ProductName} project. For a single page HTML version, see the http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html[{ProductName} Core Development Guide].
 * xref:./Migration-Planning-Guide[Migration Planning Guide] is for developers, Project Managers, or IT managers who must 
-interpret the {ProductName} reports and develop a project plan.
+interpret the {ProductAbbreviatedName} reports and develop a project plan.
 
 == Additional Resources
 
-* {ProductName} documentation (generated from the Wiki documentation at the link above): 
+* {ProductAbbreviatedName} documentation (generated from the Wiki documentation at the link above): 
 ** http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html[{ProductName} User Guide]
 ** http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html[{ProductName} Rules Development Guide]
 ** http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html[{ProductName} Core Development Guide]

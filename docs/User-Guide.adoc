@@ -1,8 +1,11 @@
-:ProductName: Windup
-:ProductShortName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
+
+
+ 
+
+
+
 
 [[User-Guide]]
 === {ProductName} User Guide
@@ -10,7 +13,7 @@
 :toc:
 :toclevels: 4
 
-==== Overview
+==== Introduction
 
 This guide is for engineers, consultants, and others who plan to use {ProductName} to migrate Java applications or other components.
 
@@ -24,6 +27,13 @@ This guide is for engineers, consultants, and others who plan to use {ProductNam
 * xref:Execute[Execute {ProductName}]
 * xref:Review-the-Report[Review the Report]
 
+==== How {ProductName} Works
+
+* xref:Processing-Overview[{ProductName} Processing Overview]
+* xref:Architectural-Components[{ProductName} Architectural Components]
+* xref:Rule-Phases[Rule Phases]
+* xref:Rules-Rule-Story-Points[Rule-Story-Points]
+
 ==== Additional Resources
 
 * xref:Review-the-Quickstarts[Review the {ProductName} Quickstarts]
@@ -34,8 +44,4 @@ This guide is for engineers, consultants, and others who plan to use {ProductNam
 ==== Appendix
 
 * xref:Glossary[Glossary of Terms Used in {ProductName}]
-* xref:Processing-Overview[{ProductName} Processing Overview]
-* xref:Architectural-Components[{ProductName} Architectural Components]
-* xref:Rule-Phases[Rule Phases]
-* xref:Rules-Rule-Story-Points[Rule-Story-Points]
 

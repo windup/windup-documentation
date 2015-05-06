@@ -70,11 +70,11 @@ grep 'link:[A-Z]' `find . -name 'Ruleset-XML.adoc'`
 grep 'link:[A-Z]' `find . -name 'Rules-Models.adoc'`
 grep 'link:[A-Z]' `find . -name 'Rules-Create-Java-Queries.adoc'`
 grep 'link:[A-Z]' `find . -name 'Rule-Metadata.adoc'`
-grep 'link:[A-Z]' `find . -name 'Rules-Rules-Operations.adoc'`
-grep 'link:[A-Z]' `find . -name 'Rules-Ops-Reporting-Classification.adoc'`
-grep 'link:[A-Z]' `find . -name 'Rules-Ops-Reporting-Hint.adoc'`
-grep 'link:[A-Z]' `find . -name 'Rules-Ops-Reporting-TypeReference.adoc'`
-grep 'link:[A-Z]' `find . -name 'Rules-Ops-Xml-XsltTransformation.adoc'`
+# grep 'link:[A-Z]' `find . -name 'Rules-Rules-Operations.adoc'`
+# grep 'link:[A-Z]' `find . -name 'Rules-Ops-Reporting-Classification.adoc'`
+# grep 'link:[A-Z]' `find . -name 'Rules-Ops-Reporting-Hint.adoc'`
+# grep 'link:[A-Z]' `find . -name 'Rules-Ops-Reporting-TypeReference.adoc'`
+# grep 'link:[A-Z]' `find . -name 'Rules-Ops-Xml-XsltTransformation.adoc'`
 
 ## Debugging and Troubleshooting
 grep 'link:[A-Z]' `find . -name 'Dev-Debugging-and-Profiling.adoc'`

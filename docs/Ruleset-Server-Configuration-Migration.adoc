@@ -1,0 +1,48 @@
+[Ruleset-Server-Configuration-Migration]
+=== Ruleset: Server Configuration Migration
+
+.DRAFT Intended as dev notes. User instructions to be added later.
+
+
+==== Input
+
+* `ServerDirOption`
+
+
+==== Migration of CLI commands/script
+-
+This is something the EAP team (Eduardo Martins) works on now.
+
+Ondra suggested generic CLI commands migration rules like this:
+
+```xml
+<transition>
+     <from command="/subsystem=logging/logger=org.jboss.as:add">
+            <param name="level" equals="EVERYTHING">
+     </from>
+     <to command="/subsystem=logging/logger=org.jboss.as:add">
+            <param name="level" equals="ALL">
+     </to>
+     <from command="/subsystem=logging/logger=org.jboss.as:add">
+            <param name="level" equals="NOTHING">
+     </from>
+     <to command="/subsystem=logging/logger=org.jboss.as:add">
+            <param name="level" equals="NONE">
+     </to>
+     <hint>The add operation now doesn't support EVERYTHING and NOTHING, the value ${level} needs to be changed to either "ALL" or "NONE"</hint>
+</transition>
+```
+
+
+
+==== Server Recognizers
+
+
+Classes implementing `ServerRecognizer` can:
+
+. Quickly tell if given directory contains a server of some vendor/modele
+. Recognize which version it is; could be quick - by looking at a specific file - or slower, by files comparison.
+. Compare the files in the given server directory and tell which files are missing, added or changed against the default distribution of that version.
+
+Part 3. needs pre-created data distributed with/along Windup. It would be a list of files and hashes.
+The recognizers would also specify masks of files to include/exclude in the comparison.

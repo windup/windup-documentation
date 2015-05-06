@@ -1,4 +1,4 @@
-== Overview
+== Introduction
 
 This guide is for developers who plan to contribute source code updates
 or core rule add-ons to the {ProductName} project.
@@ -127,15 +127,15 @@ include::Rules-Create-Java-Queries.adoc[tabsize=4]
 
 include::Rule-Metadata.adoc[tabsize=4]
 
-include::Rules-Rules-Operations.adoc[tabsize=4]
+// OBSOLETE include::Rules-Rules-Operations.adoc[tabsize=4]
 
-include::Rules-Ops-Reporting-Classification.adoc[tabsize=4]
+// OBSOLETE include::Rules-Ops-Reporting-Classification.adoc[tabsize=4]
 
-include::Rules-Ops-Reporting-Hint.adoc[tabsize=4]
+// OBSOLETE include::Rules-Ops-Reporting-Hint.adoc[tabsize=4]
 
-include::Rules-Ops-Reporting-TypeReference.adoc[tabsize=4]
+// OBSOLETE include::Rules-Ops-Reporting-TypeReference.adoc[tabsize=4]
 
-include::Rules-Ops-Xml-XsltTransformation.adoc[tabsize=4]
+// OBSOLETE include::Rules-Ops-Xml-XsltTransformation.adoc[tabsize=4]
 
 == Debugging and Troubleshooting
 

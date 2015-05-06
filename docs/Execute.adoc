@@ -1,7 +1,6 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
+ 
 
 [[Execute]]
 === Execute {ProductName}
@@ -18,7 +17,7 @@ Before you begin, you must gather the following information.
 
        Overwrite all contents of <OUTPUT_DIRECTORY> (anything already in the directory will be deleted)? [y/N] 
 +
-Choose "y" if you want {ProductName} to delete and recreate the directory. 
+Choose "y" if you want {ProductShortName} to delete and recreate the directory. 
 * If you are confident you want to overwrite the output directory, you can specify `--overwrite` on the command line to automatically delete and recreate the directory. 
 +
 NOTE: Be careful not to specify a directory that contains important information!
@@ -29,16 +28,16 @@ NOTE: Be careful not to specify a directory that contains important information!
 * While you can provide package names for standard Java EE 3rd party software like `org.apache`, it is usually best not to include them as they should not impact the migration effort.
 * If you omit the `--packages` argument, every package in the application is scanned, resulting in very slow performance. It is best to provide the argument with one or more packages.
 
-==== Start {ProductName}
+==== Start {ProductShortName}
 
 For information about the use of {ProductHomeVar} in the instructions below, see xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable].
 
 . Open a terminal and navigate to the {ProductHomeVar}/bin directory
 
-. Type the following command to start {ProductName}:
+. Type the following command to start {ProductShortName}:
 +
 ---------------------------------------------------------------------------
-For Linux:    WINDUP_HOME/bin $ ./windup
+For Linux:    windup/bin $ ./windup
 For Windows:  C:\WINDUP_HOME\bin> windup
 ---------------------------------------------------------------------------
 
@@ -59,26 +58,26 @@ JBoss Windup, version [ 2.2.0.Final ] - JBoss, by Red Hat, Inc. [ http://windup.
 [windup-distribution-2.2.0.Final]$ 
 ---------------------------------------------------------------------------
 
-==== Run {ProductName}
+==== Run {ProductShortName}
 
-. The command to run {ProductName} is `windup-migrate-app`.
+. The command to run {ProductShortName} is `windup-migrate-app`.
 
-. This command can take arbitrary options processed by different addons. The list of options in the core {ProductName} distribution can be found in http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/ConfigurationOption.html[Javadoc]. Most commonly used command line arguments are:
+. This command can take arbitrary options processed by different addons. The list of options in the core {ProductShortName} distribution can be found in http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/ConfigurationOption.html[Javadoc]. Most commonly used command line arguments are:
 
 +
 --input *INPUT_ARCHIVE_OR_FOLDER*:: This is the fully qualified application archive or source path.
 +
---output *OUTPUT_REPORT_DIRECTORY*:: The fully qualified path to the folder that will contain the the report information produced by {ProductName}.
+--output *OUTPUT_REPORT_DIRECTORY*:: The fully qualified path to the folder that will contain the the report information produced by {ProductShortName}.
 +
-NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists and you do not specify the `--overwrite` argument, you are prompted to overwrite the contents. If you respond "y", it is deleted and recreated by {ProductName}, so be careful not to specify an output directory that contains important information!
+NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists and you do not specify the `--overwrite` argument, you are prompted to overwrite the contents. If you respond "y", it is deleted and recreated by {ProductShortName}, so be careful not to specify an output directory that contains important information!
 +
---overwrite (optional):: Specify this optional argument only if you are certain you want to force {ProductName} to delete the existing *OUTPUT_REPORT_DIRECTORY*. The default value is `false`.
+--overwrite (optional):: Specify this optional argument only if you are certain you want to force {ProductShortName} to delete the existing *OUTPUT_REPORT_DIRECTORY*. The default value is `false`.
 +
 --userRulesDirectory:: Points to a directory to load XML rules from. (Search pattern: *.windup.groovy and *.windup.xml)
 +
---packages *PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* (optional):: This is a comma-delimited list of the packages to be evaluated by {ProductName}.
+--packages *PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* (optional):: This is a comma-delimited list of the packages to be evaluated by {ProductShortName}.
 +
---excludePackages *PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* (optional):: This is a comma-delimited list of the packages to be excluded by {ProductName}.
+--excludePackages *PACKAGE_1*, *PACKAGE_2*, *PACKAGE_N* (optional):: This is a comma-delimited list of the packages to be excluded by {ProductShortName}.
 +
 --source-mode true (optional):: This argument is optional and is only required if the application to be evaluated contains source files rather than compiled binaries. The default value is `false`.
 
@@ -88,13 +87,13 @@ NOTE: If the *OUTPUT_REPORT_DIRECTORY* directory exists and you do not specify t
 windup-migrate-app --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
 ---------------------------------------------------------------------------
 +
-To run {ProductName} against application source code, you must add the `--sourceMode true` argument:
+To run {ProductShortName} against application source code, you must add the `--sourceMode true` argument:
 +
 ---------------------------------------------------------------------------
 windup-migrate-app --sourceMode true --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
 ---------------------------------------------------------------------------
 +
-See xref:command-examples[{ProductName} Command Examples] below for concrete examples of commands that use source code directories and archives located in the {ProductName} GitHub repository.
+See xref:command-examples[{ProductShortName} Command Examples] below for concrete examples of commands that use source code directories and archives located in the {ProductShortName} GitHub repository.
 
 . You should see the following result upon completion of the command:
 +
@@ -102,7 +101,7 @@ See xref:command-examples[{ProductName} Command Examples] below for concrete exa
 ***SUCCESS*** Windup execution successful!
 --------
 
-. To exit {ProductName}, type:
+. To exit {ProductShortName}, type:
 +
 --------
 exit
@@ -120,28 +119,28 @@ The following subdirectories in the `OUTPUT_REPORT_DIRECTORY` contain the suppor
 
 . For details on how to evaluate the report data, see xref:Review-the-Report[Review the Report].
 
-==== Run {ProductName} in Batch Mode 
+==== Run {ProductShortName} in Batch Mode 
 
-{ProductName} can be also executed in batch mode within a shell or batch script using the `--evaluate` argument as follows.
+{ProductShortName} can be also executed in batch mode within a shell or batch script using the `--evaluate` argument as follows.
 
 . Open a terminal and navigate to the {ProductHomeVar} directory. 
-. Type the following command to run {ProductName} in batch mode:
+. Type the following command to run {ProductShortName} in batch mode:
 +
 ---------------------------------------------------------------------------
 For Linux:     $ bin/windup --evaluate "windup-migrate-app --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N"
 For Windows:   > bin\windup.bat --evaluate "windup-migrate-app --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N"
 ---------------------------------------------------------------------------
 
-==== {ProductName} Help
+==== {ProductShortName} Command Line Help
 
-To see the complete list of available arguments for the `windup-migrate-app` command, execute the following command in the {ProductName} prompt:
+To see the complete list of available arguments for the `windup-migrate-app` command, execute the following command in the {ProductShortName} prompt:
 
     man windup-migrate-app
 
 [[command-examples]]
 ==== Command Examples
 
-The following {ProductName} command examples report against applications located in the {ProductName} source https://github.com/windup/windup/tree/master/test-files[test-files] directory.
+The following command examples report against applications located in the {ProductShortName} source https://github.com/windup/windup/tree/master/test-files[test-files] directory.
 
 ===== Source Code Example
 
@@ -155,18 +154,18 @@ The following command runs against the https://github.com/windup/windup/blob/mas
 
     windup-migrate-app --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --packages com.acme org.apache
 
-===== {ProductName} Batch Example
+===== {ProductShortName} Batch Example
 
-The following {ProductName} batch command runs against the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] EAR archive. It evaluates all `com.acme` and `org.apache` packages and creates a folder named 'jee-example-app-1.0.0.ear-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
+The following {ProductShortName} batch command runs against the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] EAR archive. It evaluates all `com.acme` and `org.apache` packages and creates a folder named 'jee-example-app-1.0.0.ear-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
 
 ----
 For Linux: $ bin/windup --evaluate "windup-migrate-app --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --packages com.acme org.apache"
 For Windows: > bin\windup.bat --evaluate "windup-migrate-app --input \windup-source\test-files\jee-example-app-1.0.0.ear --output \windup-reports\jee-example-app-1.0.0.ear-report --packages com.acme org.apache
 ----
 
-===== {ProductName} Quickstart Examples
+===== {ProductShortName} Quickstart Examples
 
-For more concrete examples, see the {ProductName} quickstarts located on GitHub here: https://github.com/windup/windup-quickstarts. If you prefer, you can download the https://github.com/windup/windup-quickstarts/releases/[latest release] ZIP or TAR  distribution of the quickstarts.
+For more concrete examples, see the {ProductShortName} quickstarts located on GitHub here: https://github.com/windup/windup-quickstarts. If you prefer, you can download the https://github.com/windup/windup-quickstarts/releases/[latest release] ZIP or TAR  distribution of the quickstarts.
 
-The quickstarts provide examples of Java-based and XML-based rules you can run and test using {ProductName}. The README instructions provide a step-by-step guide to run the quickstart example. You can also look through the code examples and use them as a starting point for creating your own rules.
+The quickstarts provide examples of Java-based and XML-based rules you can run and test using {ProductShortName}. The README instructions provide a step-by-step guide to run the quickstart example. You can also look through the code examples and use them as a starting point for creating your own rules.
 

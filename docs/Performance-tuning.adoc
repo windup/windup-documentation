@@ -1,13 +1,13 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
 
 [[Performance-tuning]]
 === Performance Tuning
 
 .DRAFT
 TO_DO: This page should link to the Rulesets pages, namely their configuration sections.
+
+This section describes how to fine tune {ProductName} to improve performance.
 
 ==== Performance tweaks
 
@@ -29,13 +29,13 @@ Each line in the file is one pattern. All artifacts matched by these patterns wi
 
 
 ===== Ignore Java Packages (and sub-packages)
-{ProductName} may be configured to ignore packages during decompilation and analysis. 
+{ProductShortName} may be configured to ignore packages during decompilation and analysis. 
 
 When running windup via the command line, you may specify `--excludePackages com.foo` to exclude packages (and all sub-packages.)
 
 Ignored packages may also be configured via a text file with the naming convention `*.package-ignore.txt`.
 
-{ProductName} looks for these files in multiple locations:
+{ProductShortName} looks for these files in multiple locations:
 
   * `~/.windup/ignore/` folder
   * `$WINDUP_HOME/ignore/` folder
@@ -50,9 +50,9 @@ com.acme
 ----
 
 ===== Ignore Files
-{ProductName} may be configured to ignore files during scanning and report generation. Ignored files may be configured via a text file with the naming convention `*.windup-ignore.txt`.
+{ProductShortName} may be configured to ignore files during scanning and report generation. Ignored files may be configured via a text file with the naming convention `*.windup-ignore.txt`.
 
-{ProductName} looks for these files in multiple locations:
+{ProductShortName} looks for these files in multiple locations:
 
   * `~/.windup/ignore/` folder
   * `$WINDUP_HOME/ignore/` folder

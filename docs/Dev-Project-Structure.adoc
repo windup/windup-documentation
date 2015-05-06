@@ -1,7 +1,5 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
 
 [[Dev-Project-Structure]]
 === {ProductName} Core Project Structure
@@ -12,7 +10,7 @@
 * https://github.com/windup/windup[windup core]
 * https://github.com/windup/windup-distribution[windup-distribution]
  
-The {ProductName} core project contains the executable source code and consists of the following subprojects.
+The {ProductShortName} core project contains the executable source code and consists of the following subprojects.
 
 config/::
 
@@ -21,11 +19,11 @@ This project is for the engine that runs the rules and abstracts the graph opera
 decompiler/::
 
 This subproject contains an API that wraps calls to the decompiler. 
-{ProductName} currently uses only one decompiler: _Procyon_
+{ProductShortName} currently uses only one decompiler: _Procyon_
 
 exec/::
 
-This subproject contains the bootstrap code to run the {ProductName} application.
+This subproject contains the bootstrap code to run the {ProductShortName} application.
 
 ext/::
 

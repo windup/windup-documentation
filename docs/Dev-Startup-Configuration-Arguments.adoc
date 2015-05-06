@@ -1,20 +1,18 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
 
 [[Dev-Startup-Configuration-Arguments]]
 === {ProductName} Startup Configuration Arguments
 
-This section describes the how {ProductName} processes configuration arguments. {ProductName} configuration handles of the following types of arguments.
+This section describes the how {ProductName} processes configuration arguments. {ProductShortName} configuration handles of the following types of arguments.
 
-* {ProductName} Core arguments
-* {ProductName} Rules arguments
+* {ProductShortName} Core arguments
+* {ProductShortName} Rules arguments
 * Forge related arguments
 
-== {ProductName} Core arguments
+== {ProductShortName} Core arguments
 
-The following are {ProductName} core arguments:
+The following are {ProductShortName} core arguments:
 
 * `--input` - `InputPathOption`
 * `--output` - `OutputPathOption`
@@ -37,7 +35,7 @@ WindupConfiguration.getWindupConfigurationOptions()
 
 == Custom Arguments for Rules
 
-Additional arguments are made available to {ProductName} rules using a special API. For more information about  {ProductName} rules arguments, see xref:Rules-Rule-Configuration[Rule Configuration].
+Additional arguments are made available to {ProductShortName} rules using a special API. For more information about  {ProductShortName} rules arguments, see xref:Rules-Rule-Configuration[Rule Configuration].
 
 Each option is an implementation of http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupConfigurationOption.html[WindupConfigurationOption].
   
@@ -61,11 +59,11 @@ Forge related arguments are those that process add-ons and affect Forge executio
 * --debug
 * --version
 
-These arguments are handled in the {ProductName} `Bootstrap` class.
+These arguments are handled in the {ProductShortName} `Bootstrap` class.
 
 ===== Processing Argument Sequence
 
-When the user runs ./windup, the `Bootstrap` class intercepts the Forge arguments and processes them. The other arguments are passed to {ProductName}, which processes them and then distributes them to the right place. During rule execution, the {ProductName} rule arguments are accessed and evaluated.
+When the user runs ./windup, the `Bootstrap` class intercepts the Forge arguments and processes them. The other arguments are passed to {ProductShortName}, which processes them and then distributes them to the right place. During rule execution, the {ProductShortName} rule arguments are accessed and evaluated.
 
 
 

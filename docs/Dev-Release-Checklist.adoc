@@ -1,7 +1,4 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
 
 [[Dev-Release-Checklist]]
 === {ProductName} Release Checklist
@@ -11,7 +8,7 @@
   * windup-rulesets
   * windup-quickstats (each pom.xml separatedly)
   * windup-distribution
-* Build & upload the distribution zip
+* Build & upload the distribution ZIP
 * Javadoc to windup/windup, branch gh-pages
 * HTML single-page docs to windup/windup, branch gh-pages
 * Announce to mailing lists (windup-users@lists.jboss.org, jboss-migration@redhat.com)

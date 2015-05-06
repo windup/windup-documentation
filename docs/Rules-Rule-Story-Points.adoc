@@ -1,7 +1,5 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
 
 [[Rules-Rule-Story-Points]]
 === Rule Story Points
@@ -14,7 +12,7 @@ In a similar manner, {ProductName} uses story points to express the level of eff
 
 ==== How Story Points are Estimated in Rules
 
-Estimating story points for a rule can be tricky. The following are the general guidelines {ProductName} uses when estimating the level of effort required for a rule.
+Estimating story points for a rule can be tricky. The following are the general guidelines {ProductShortName} uses when estimating the level of effort required for a rule.
 
 [cols="3*", options="header"] 
 |===

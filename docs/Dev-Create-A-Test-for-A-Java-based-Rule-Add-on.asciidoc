@@ -1,17 +1,15 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+:ProcuctShortName: Windup
 
 [[Dev-How-to-Write-a-Rule-Test]]
 === How to Write a Rule Test
 
 .DRAFT
 
-Generally, you can test a rule in one of the following ways.
+You can test a {ProductName} rule in one of the following ways.
 
 . Call `perform()` on the given `GraphContext`,
-. Execute {ProductName} using `WindupExecutor`.
+. Execute {ProductShortName} using `WindupExecutor`.
 
 Examples of both are below.
 

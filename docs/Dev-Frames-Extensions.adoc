@@ -1,7 +1,5 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
 
 [[Dev-Frames-Extensions]]
 === Frames Extensions
@@ -10,7 +8,7 @@
 
 ==== Multiple Types in a Vertex
 
-The upstream frames project only stores one type in the _type_ property by default. {ProductName} extends this default type resolver behavior to support multiple types. The values themselves are stored in a multi-valued Titan property on each Vertex.
+The upstream frames project only stores one type in the _type_ property by default. {ProductShortName} extends this default type resolver behavior to support multiple types. The values themselves are stored in a multi-valued Titan property on each Vertex.
 
 ==== Map Handler
 

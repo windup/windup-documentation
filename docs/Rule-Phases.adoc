@@ -1,7 +1,5 @@
-:ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+
+
 
 [[Rule-Phases]]
 === Rule Phases
@@ -10,10 +8,10 @@ Rule phases provide a way for rule authors to control the rule lifecycle by spec
 
 By default, rules run in the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/MigrationRulesPhase.html[MigrationRulesPhase].  However, a rule may require certain processing or actions to occur before it executes, such as the extraction of archives and scanning of java or XML files, so a rule can specify that it is run during another phase in the process. 
 
-The rule phases below are listed in the order in which they are executed by {ProductName}. The exception is the last phase, which can occur during any phase of the execution lifecycle.
+The rule phases below are listed in the order in which they are executed by {ProductShortName}. The exception is the last phase, which can occur during any phase of the execution lifecycle.
 
 http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/InitializationPhase.html[InitializationPhase]:: 
-This is the first phase of {ProductName} Execution. Initialization related tasks, such as copying configuration data to the graph, should occur during this phase. 
+This is the first phase of {ProductShortName} Execution. Initialization related tasks, such as copying configuration data to the graph, should occur during this phase. 
 
 http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/DiscoveryPhase.html[DiscoveryPhase]:: 
 This resource discovery phase immediately follows the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/InitializationPhase.html[InitializationPhase]. During this phase, input files are identified by the name, extension, location, and fully qualified Java class names. Typically, any rule that only puts data into the graph is executed during this phase.
