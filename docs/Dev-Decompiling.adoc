@@ -1,25 +1,26 @@
 
 
-
- 
-
 [[Dev-Decompiling]]
 === Decompiling
 
-.DRAFT
+.DRAFT : Needs work!
+
 
 ==== The *Decompiler* API
 
-* The 3 main use cases for the decompiler API are to process: 
+{ProductName} provides a decompiler API to process the following application artifacts.
 
-. Directories
-. JARS or Archives
-. Class files
+* Directories
+* JARS or Archives
+* Class files
 
 * The  `DecompilerConfig` should also contain `Filter<String>` (or maybe `Filter<TypeReference>`) to decide whether to decompile the class or not.
 * `windup.ProcyonConfiguration` should extend abstract windup.DecompilerConfig<T>, which would contain the configurables common to all decompilers. In case of Procyon, `outputDir` would be delegated to `procyon.DecompilerSettings`.
 
 ==== Procyon
+
+{ProductShortName} includes the https://bitbucket.org/mstrobel/procyon[Procyon] decompiler as the default decompiler, but other decompilers can be swapped in if preferred.
+
 
 ===== Config
 

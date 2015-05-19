@@ -578,6 +578,9 @@ Better Reporting
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>Unresolved directive in Windup-Core-Development-Guide-Topics.adoc - include::System-Requirements[tabsize=4]</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="About-the-HOME-Variable">About the WINDUP_HOME Variable</h3>
@@ -605,29 +608,16 @@ Better Reporting
 </div>
 <div class="sect2">
 <h3 id="Install">Install Windup</h3>
-<div class="sect3">
-<h4 id="_minimum_system_requirements">Minimum System Requirements</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Java Platform, Enterprise Edition 7</p>
-</li>
-<li>
-<p>A minimum of 4 GB RAM. For better performance, a 4-core processor with 8 GB RAM is recommended. This allows 3 - 4 GB RAM for use by the JVM.</p>
-</li>
-<li>
-<p>A minimum of 4 GB of free disk space. A fast disk, especially a Solid State Drive (SSD), will improve performance.</p>
-</li>
-<li>
-<p>Windup is tested on Linux, Mac OS X, and Windows. Other Operating Systems with Java 7 support should work equally well.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_download_and_install_windup">Download and Install Windup</h4>
 <div class="olist arabic">
 <ol class="arabic">
+<li>
+<p>If you installed previous versions of Windup, delete the <code>${user.home}/.windup/</code> directory. Otherwise you may see errors like the following when you execute Windup.</p>
+<div class="listingblock">
+<div class="content">
+<pre>Command: windup-migrate-app was not found</pre>
+</div>
+</div>
+</li>
 <li>
 <p>Download the latest <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.windup&amp;a=windup-distribution&amp;v=LATEST&amp;e=zip&amp;c=offline">Windup ZIP distribution</a>.</p>
 </li>
@@ -635,20 +625,6 @@ Better Reporting
 <p>Extract the ZIP file in to a directory of your choice.</p>
 </li>
 </ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-If you used previous versions of Windup, delete the <code>${user.home}/.windup/</code> directory. Otherwise you may see errors like the following when you execute Windup:
-           <em>Command: windup-migrate-app was not found</em>
-</td>
-</tr>
-</table>
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -1003,20 +979,29 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 <div class="sect4">
 <h5 id="_application_report_page">Application Report Page</h5>
 <div class="paragraph">
-<p>The first section of the application report page summarizes the migration effort. It provides the total <em>Story Points</em> and a graphically displays the effort by technology. A <em>Story Point</em> is a term commonly used in Scrum Agile software development methodology to estimate the level of effort needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks.</p>
+<p>The first section of the application report page summarizes the migration effort. It displays the following information both graphically and in list form by application artifact for each file that is analyzed.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The migration of the <strong>JEE Example App</strong> EAR is assigned a total of 42 story points. A pie chart shows the breakdown of story points by package.</p>
+<p>The file name</p>
 </li>
 <li>
-<p>This is followed by a section for each of the archives contained in the EAR. It provides the total of the story points assigned to the archive and lists the files contained in archive along with the warnings and story point assigned to each file.</p>
+<p>The file type</p>
+</li>
+<li>
+<p>A list of issues, if any, that were found in the file</p>
+</li>
+<li>
+<p>The estimated total <em>Story Points</em> to migrate the file. A <em>Story Point</em> is a term commonly used in Scrum Agile software development methodology to estimate the level of effort needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The following is an example of a Windup Application Report.</p>
+<p>In the following  Windup Application Report example, the migration of the <strong>JEE Example App</strong> EAR is assigned a total of 42 story points. A pie chart shows the breakdown of story points by package. This is followed by a section for each of the archives contained in the EAR. It provides the total of the story points assigned to the archive and lists the files contained in archive along with the warnings and story point assigned to each file.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Example of a Windup Application Report</em></strong></p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/report-javaee-ear-summary.png" alt="Report Summary Page" width="500"></span></p>
@@ -2355,7 +2340,29 @@ related to the rules or the core code base.</p>
 <div class="sect3">
 <h4 id="_run_windup_against_your_application">Run Windup Against Your Application</h4>
 <div class="paragraph">
-<p>Wnen you run the <code>windup-migrate-app</code> command against your application, Windup executes its own core rules to extract files from archives, decompile classes, and analyze the application. In this phase Windup builds a data model and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.</p>
+<p>Wnen you run the <code>windup-migrate-app</code> command against your application, Windup executes its own core rules to process the following types of application input artifacts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Archive files such as EARs, WARs, JARs</p>
+</li>
+<li>
+<p>Java classes</p>
+</li>
+<li>
+<p>JSP files</p>
+</li>
+<li>
+<p>Manifest files</p>
+</li>
+<li>
+<p>XML files</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Windup extracts files from archives, decompiles classes, and analyzes the application code. In this phase, it builds a data model and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.</p>
 </div>
 <div class="paragraph">
 <p>For more information about the phases of rule execution, see <a href="#Rule-Phases">Rule Phases</a>.</p>
@@ -2653,10 +2660,10 @@ It extracts all method names from class files and extracts metadata, such as the
 <div class="sect3">
 <h4 id="_which_one_to_choose">Which one to choose?</h4>
 <div class="paragraph">
-<p><em>XML-based</em> rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of <em>XML-based</em> rules is the recommended approach.</p>
+<p><em>XML-based</em> rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of <em>XML-based</em> rules is the recommended approach. Creation of custom <em>XML-based</em> rules is covered in the <em>Windup Rules Development Guide</em>.</p>
 </div>
 <div class="paragraph">
-<p><em>Java-based</em> rule add-ons provide the ability to create very complex rules, manipulate the shared data model graph, and customize the resulting reports. If you need to test or perform complex conditions and operations or want to manipulate the shared data model graph, create custom reports, or extend the functionality in any other way beyond what the <em>XML-based</em> rules provide, you must create <em>Java-based</em> rules.</p>
+<p><em>Java-based</em> rule add-ons provide the ability to create very complex rules, manipulate the shared data model graph, and customize the resulting reports. If you need to test or perform complex conditions and operations or want to manipulate the shared data model graph, create custom reports, or extend the functionality in any other way beyond what the <em>XML-based</em> rules provide, you must create <em>Java-based</em> rules. Creation of custom <em>Java-based</em> rules is covered in the <em>Windup Core Development Guide</em>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3814,6 +3821,30 @@ otherwise
 <div class="paragraph">
 <p>Operations allowed in the <code>perform</code> section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The syntax is described in detail here: <a href="#Rules-XML-Rule-Perform-Action-Syntax">XML Rule - Perform Action Syntax</a>.</p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_test_multiple_xml_rulesets_with_xsd_schema">Test multiple XML rulesets with .xsd schema</h3>
+<div class="paragraph">
+<p>To test all the xml rules with the .xsd schema, follow this steps</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Download <a href="https://github.com/amouat/xsd-validator" class="bare">https://github.com/amouat/xsd-validator</a> and unzip it into your selected folder (referred to as $XSD_VAL)</p>
+</li>
+<li>
+<p>prepare ruleset directory as $RULESET_DIRECTORY and assume the xsd file is placed in $XSD_SCHEMA path</p>
+</li>
+<li>
+<p>run the command</p>
+<div class="literalblock">
+<div class="content">
+<pre>find $RULESET_DIRECTORY -type f -iname "*windup.xml" -exec $XSD_VAL./xsdv.sh $XSD_SCHEMA {} \;</pre>
+</div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -5025,13 +5056,12 @@ password: rexster</pre>
 <h3 id="Dev-Decompiling">Decompiling</h3>
 <div class="sect3">
 <h4 id="_the_strong_decompiler_strong_api">The <strong>Decompiler</strong> API</h4>
+<div class="paragraph">
+<div class="title">DRAFT : Needs work!</div>
+<p>Windup provides a decompiler API to process the following application artifacts.</p>
+</div>
 <div class="ulist">
-<div class="title">DRAFT</div>
 <ul>
-<li>
-<p>The 3 main use cases for the decompiler API are to process:</p>
-<div class="olist arabic">
-<ol class="arabic">
 <li>
 <p>Directories</p>
 </li>
@@ -5040,9 +5070,6 @@ password: rexster</pre>
 </li>
 <li>
 <p>Class files</p>
-</li>
-</ol>
-</div>
 </li>
 <li>
 <p>The  <code>DecompilerConfig</code> should also contain <code>Filter&lt;String&gt;</code> (or maybe <code>Filter&lt;TypeReference&gt;</code>) to decide whether to decompile the class or not.</p>
@@ -5055,6 +5082,9 @@ password: rexster</pre>
 </div>
 <div class="sect3">
 <h4 id="_procyon">Procyon</h4>
+<div class="paragraph">
+<p>Windup includes the <a href="https://bitbucket.org/mstrobel/procyon">Procyon</a> decompiler as the default decompiler, but other decompilers can be swapped in if preferred.</p>
+</div>
 <div class="sect4">
 <h5 id="_config">Config</h5>
 <div class="ulist">
@@ -6589,7 +6619,7 @@ This may especially happen after Maven coordinates of some module are changed.</
 <p>Name wiki pages using only letters, numbers and dashes. Do not include spaces, colons, or other special characters in page names.</p>
 </li>
 <li>
-<p>Always use the <code>ProductName</code> or <code>ProductShortName</code> variables when referring to the product name/</p>
+<p>Always use the <code>ProductName</code> or <code>ProductShortName</code> variables when referring to the product name.</p>
 </li>
 <li>
 <p>Do not use the product name in page names or in headers. This is because you should always use the variables when referring to the product names and the variables do not work in generated anchors.</p>
@@ -6658,7 +6688,15 @@ This may especially happen after Maven coordinates of some module are changed.</
 </div>
 </div>
 <div class="paragraph">
-<p>Wildcard characters (*) within tick marks must be preceded by <code>[t-]</code>. This is described in further detail here: <a href="https://github.com/asciidoctor/asciidoctor/issues/1045" class="bare">https://github.com/asciidoctor/asciidoctor/issues/1045</a></p>
+<p>Wildcard characters (*) within tick marks must be preceded by <code>[x-]</code>, for example"</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[x-]`org.apache.commons.{*}`</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is described in further detail here: <a href="https://github.com/asciidoctor/asciidoctor/issues/1045" class="bare">https://github.com/asciidoctor/asciidoctor/issues/1045</a></p>
 </div>
 </li>
 </ul>
@@ -6952,6 +6990,35 @@ To cross-link with 3rd-party libraries, see <a href="https://issues.jboss.org/br
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Windup Core Development Guide</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">asciidoctor -t -dbook -a toc -o html/WindupCoreDevelopmentGuide.html docs/Windup-Core-Development-Guide.adoc</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Navigates to the <em>WINDUP_DOCUMENTATION_HOME/</em> directory and builds the DocBook Customer Portal books. The files are created in the <em>WINDUP_DOCUMENTATION_HOME/build/</em> directory.</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Windup Guide</th>
+<th class="tableblock halign-left valign-top">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windup User Guide</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ccutil compile --lang en_US --main-file ~/windup-documentation/docs/Windup-User-Guide.adoc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windup Rules Development Guide</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ccutil compile --lang en_US --main-file ~/windup-documentation/docs/Windup-Rules-Development-Guide.adoc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Windup Core Development Guide</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ccutil compile --lang en_US --main-file ~/windup-documentation/docs/Windup-Core-Development-Guide.adoc</p></td>
 </tr>
 </tbody>
 </table>
@@ -7471,17 +7538,22 @@ Example: ln -s 2.2.0-Final latest</pre>
 <h4 id="_reporting_terms">Reporting Terms</h4>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Lift and Shift (Level of effort)</dt>
+<dt class="hdlist1">Level of effort</dt>
 <dd>
-<p>The code or file is standards-based and can be ported to the new environment with no changes.</p>
-</dd>
-<dt class="hdlist1">Mapped (Level of effort)</dt>
-<dd>
-<p>There is a standard mapping algorithm to port the code or file to the new environment.</p>
-</dd>
-<dt class="hdlist1">Custom (Level of effort)</dt>
-<dd>
-<p>The code or file must be rewritten or modified to work in the new environment.</p>
+<p>The level of effort required for the migration task. The following values are used in the reports.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Lift and Shift</em>: The code or file is standards-based and can be ported to the new environment with no changes.</p>
+</li>
+<li>
+<p><em>Known Solution</em>: There is a standard mapping algorithm to port the code or file to the new environment.</p>
+</li>
+<li>
+<p><em>Custom</em>: The code or file must be rewritten or modified to work in the new environment.</p>
+</li>
+</ul>
+</div>
 </dd>
 <dt class="hdlist1">Story Point</dt>
 <dd>
@@ -7573,7 +7645,7 @@ Useful Commands: #action #agreed #help #info #idea #link #topic.</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-05-06 11:48:31 EDT
+Last updated 2015-05-19 17:11:25 EDT
 </div>
 </div>
 </body>

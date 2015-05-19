@@ -10,7 +10,15 @@ The following is a high level conceptual overview of what happens within {Produc
 
 ==== Run {ProductShortName} Against Your Application
 
-Wnen you run the `windup-migrate-app` command against your application, {ProductShortName} executes its own core rules to extract files from archives, decompile classes, and analyze the application. In this phase {ProductShortName} builds a data model and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.
+Wnen you run the `windup-migrate-app` command against your application, {ProductShortName} executes its own core rules to process the following types of application input artifacts:
+
+* Archive files such as EARs, WARs, JARs
+* Java classes
+* JSP files
+* Manifest files
+* XML files
+
+{ProductShortName} extracts files from archives, decompiles classes, and analyzes the application code. In this phase, it builds a data model and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.
 
 For more information about the phases of rule execution, see xref:Rule-Phases[Rule Phases].
 

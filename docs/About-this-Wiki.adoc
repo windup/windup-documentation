@@ -29,7 +29,7 @@ The following is a brief overview.
 
 * Name wiki pages using only letters, numbers and dashes. Do not include spaces, colons, or other special characters in page names.
 
-* Always use the `ProductName` or `ProductShortName` variables when referring to the product name/
+* Always use the `ProductName` or `ProductShortName` variables when referring to the product name.
 
 * Do not use the product name in page names or in headers. This is because you should always use the variables when referring to the product names and the variables do not work in generated anchors.
 
@@ -71,4 +71,9 @@ The following is a brief overview.
 parser error : Opening and ending tag mismatch
 ----
 +
-Wildcard characters (*) within tick marks must be preceded by `[t-]`. This is described in further detail here: https://github.com/asciidoctor/asciidoctor/issues/1045 
+Wildcard characters (*) within tick marks must be preceded by `[x-]`, for example"
++
+----
+[x-]`org.apache.commons.{*}`
+----
+This is described in further detail here: https://github.com/asciidoctor/asciidoctor/issues/1045 

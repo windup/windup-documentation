@@ -16,45 +16,28 @@ This guide is for engineers, consultants, or others who plan to create rules for
 
 * xref:What-is-it[What is {ProductName}?]
 * xref:Features[Features of {ProductName}]
+* xref:System-Requirements[System Requirements]
 * xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable]
 
 ==== Get Started
 
-* xref:Install-[Install {ProductName}]
-* xref:Execute[Execute {ProductName}]
-* xref:Review-the-Report[Review the Report]
-
-==== Understand Rule Processing
-
-* xref:Processing-Overview[{ProductName} Processing Overview]
-* xref:Architectural-Components[{ProductName} Architectural Components]
-* xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle]
-* xref:Rule-Phases[Rule Phases]
-* xref:Rules-Models[{ProductName} Model]
-* xref:Rules-Available-Rules-Utilities[Available Rules Utilities]
-* xref:Rules-Rule-Story-Points[Rule Story Points]
-* xref:Rules-Difference-Between-XML-based-and-Java-based-Rules[
-Difference Between XML-based and Java-based Rules]
+* xref:Install[Install {ProductName}]
+* xref:Rules-Write-Your-First-Rule[Write Your First Rule]
 
 ==== Create and Test XML Rules
 
+* xref:Rules-Difference-Between-XML-based-and-Java-based-Rules[Difference Between XML-based and Java-based Rules]
+* xref:Rules-XML-Rule-Construction[XML Rule Construction]
 * xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule]
 * xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
 * xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax]
 * xref:Rules-Test-a-Basic-XML-Rule[Test an XML Rule in {ProductName}]
 
-==== Create and Test Java Rule Add-ons
+==== {ProductName} Processing
 
-* xref:Install-and-Configure-Maven[Install and Configure Maven]
-* xref:Rules-Java-based-Rule-Structure[Java-based Rule Structure]
-* xref:Rules-Basic-Rule-Execution-Flow-Patterns[Basic Rule Execution Flow Patterns]
-* xref:Rules-Create-a-Basic-Java-based-Rule-Add-on[Create a Basic Java-based Rule Add-on]
-* xref:Dev-Create-A-Test-for-A-Java-based-Rule-Add-on[Create a Test for a Java-based Rule Add-on]
+* xref:Execute[Execute {ProductName}]
+* xref:Review-the-Report[Review the Report]
 
-==== Debugging and Troubleshooting
-
-* xref:Dev-Debugging-and-Profiling[Debugging and Profiling]
-* xref:Dev-Troubleshoot-Issues[Troubleshoot {ProductName} Issues]
 
 ==== Additional Resources
 
@@ -67,6 +50,8 @@ Difference Between XML-based and Java-based Rules]
 ==== Appendix
 
 * xref:Glossary[Glossary of Terms]
+* xref:Rules-Rule-Story-Points[Rule Story Points]
+
 
 
 

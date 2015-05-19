@@ -1,43 +1,28 @@
 == Introduction
 
 This guide is for engineers, consultants, and others who plan to create 
-custom rules for {ProductName}.
+custom XML-based rules for {ProductName}.
 
 include::What-is-it.adoc[tabsize=4]
 
 include::Features.adoc[tabsize=4]
 
+include::System-Requirements.adoc[tabsize=4]
+
 include::About-the-HOME-Variable.adoc[tabsize=4]
 
 == Get Started
 
-Before you begin, it is helpful to understand how {ProductName} works.
-
 include::Install.adoc[tabsize=4]
 
-include::Execute.adoc[tabsize=4]
+include::Rules-Write-Your-First-Rule.adoc[tabsize=4]
 
-include::Review-the-Report.adoc[tabsize=4]
 
-== Understand the Rule Processing
-
-include::Processing-Overview.adoc[tabsize=4]
-
-include::Architectural-Components.adoc[tabsize=4]
-
-include::Rules-Rule-Execution-Lifecycle.adoc[tabsize=4]
-
-include::Rule-Phases.adoc[tabsize=4]
-
-include::Rules-Models.adoc[tabsize=4]
-
-include::Rules-Available-Rules-Utilities.adoc[tabsize=4]
-
-include::Rules-Rule-Story-Points.adoc[tabsize=4]
+== Create and Test XML Rules
 
 include::Rules-Difference-Between-XML-based-and-Java-based-Rules.adoc[tabsize=4]
 
-== Create and Test XML Rules
+include::Rules-XML-Rule-Construction.adoc[tabsize=4]
 
 include::Rules-Create-a-Basic-XML-Rule.adoc[tabsize=4]
 
@@ -47,23 +32,13 @@ include::Rules-XML-Rule-Perform-Action-Syntax.adoc[tabsize=4]
 
 include::Rules-Test-a-Basic-XML-Rule.adoc[tabsize=4]
 
-== Create and Test Java Rule Add-ons
 
-include::Install-and-Configure-Maven.adoc[tabsize=4]
+== {ProductName} Processing
 
-include::Rules-Java-based-Rule-Structure.adoc[tabsize=4]
+include::Execute.adoc[tabsize=4]
 
-include::Rules-Basic-Rule-Execution-Flow-Patterns.adoc[tabsize=4]
+include::Review-the-Report.adoc[tabsize=4]
 
-include::Rules-Create-a-Basic-Java-based-Rule-Add-on.adoc[tabsize=4]
-
-// This is not ready for prime time... include::Rules-Create-an-Advanced-Ruleset.adoc[tabsize=4]
-
-== Debugging and Troubleshooting
-
-include::Dev-Debugging-and-Profiling.adoc[tabsize=4]
-
-include::Dev-Troubleshoot-Issues.adoc[tabsize=4]
 
 == Additional Resources
 
@@ -81,9 +56,9 @@ include::Report-Issues.adoc[tabsize=4]
 
 include::Glossary.adoc[tabsize=4]
 
-include::Dev-Frames-Extensions.adoc[tabsize=4]
+include::Rules-Rule-Story-Points.adoc[tabsize=4]
 
-// This is not ready for prime time... include::Dev-Dependencies.adoc[tabsize=4]
+
 
 
 

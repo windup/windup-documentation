@@ -59,4 +59,11 @@ The syntax is dependent on whether you are creating a rule to evaluate Java clas
 
 Operations allowed in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The syntax is described in detail here: xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
 
+=== Test multiple XML rulesets with .xsd schema 
+To test all the xml rules with the .xsd schema, follow this steps
 
+* Download https://github.com/amouat/xsd-validator and unzip it into your selected folder (referred to as $XSD_VAL)
+* prepare ruleset directory as $RULESET_DIRECTORY and assume the xsd file is placed in $XSD_SCHEMA path
+* run the command 
+
+         find $RULESET_DIRECTORY -type f -iname "*windup.xml" -exec $XSD_VAL./xsdv.sh $XSD_SCHEMA {} \;

@@ -165,10 +165,10 @@ windup-migrate-app sourceMode true --input ~/migration-rules/data --output ~/mig
 +
 image:CreateYourFirstRule-ReportOverview.png[Overview, 500]
 
-* Drill down into the _Application Report_ detail by clicking on the "data" link. This report displays the name of the file, "jboss-web.xml", the warning "seam.jboss.org:loader=@projectName@ java2ParentDelegation=false" in the *Issues* column, and displays "1" *Estimated Story Points", as expected.
+* Drill down into the _Application Report_ detail by clicking on the "data" link. This report displays the *Name* of the file, "jboss-web.xml", the warning "seam.jboss.org:loader=@projectName@ java2ParentDelegation=false" in the *Issues* column, and displays "1" *Estimated Story Points", as expected.
 +
 image:CreateYourFirstRule-ReportApplication.png[Overview, 500]
 
-* Drill down into _Source Report_ by clicking on the "jboss-web.xml" file link. This report highlights the `<class-loading>` line in the `jboss-web.xml` file, provides the message "The class-loading element is no longer valid in the jboss-web.xml file.", and provides a link to the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6[Create or Modify Files That Control Class Loading in JBoss EAP 6] topic in the JBoss EAP 6 Migration Guide. Click on the link to make sure the documentation is accessible.
+* Drill down into _Source Report_ by clicking on the "jboss-web.xml" file link. This report provides information about the file and summarizes the story points. It also highlights the `<class-loading>` line in the `jboss-web.xml` file, provides the message "The class-loading element is no longer valid in the jboss-web.xml file.", and provides a link to the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6[Create or Modify Files That Control Class Loading in JBoss EAP 6] topic in the JBoss EAP 6 Migration Guide. Click on the link to make sure the link to the documentation is valid.
 +
 image:CreateYourFirstRule-ReportSource.png[Overview, 500]

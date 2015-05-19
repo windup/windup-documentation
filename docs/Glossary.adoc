@@ -32,10 +32,12 @@ Rules Pipeline:: A collection of rules that feed information into the knowledge 
 
 ==== Reporting Terms
 
-Lift and Shift (Level of effort):: The code or file is standards-based and can be ported to the new environment with no changes.
+Level of effort:: The level of effort required for the migration task. The following values are used in the reports.
 
-Mapped (Level of effort):: There is a standard mapping algorithm to port the code or file to the new environment.
+* _Lift and Shift_: The code or file is standards-based and can be ported to the new environment with no changes.
 
-Custom (Level of effort):: The code or file must be rewritten or modified to work in the new environment.
+* _Known Solution_: There is a standard mapping algorithm to port the code or file to the new environment.
+
+* _Custom_: The code or file must be rewritten or modified to work in the new environment.
 
 Story Point:: A term commonly used in Scrum Agile software development methodology to estimate the level of effort needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks.

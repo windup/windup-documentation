@@ -82,6 +82,24 @@ The script performs the following steps.
 |asciidoctor -t -dbook -a toc -o html/WindupCoreDevelopmentGuide.html docs/Windup-Core-Development-Guide.adoc
 |===
 
+. Navigates to the _{ProductDocHomeVar}/_ directory and builds the DocBook Customer Portal books. The files are created in the _{ProductDocHomeVar}/build/_ directory.
+
++
+[cols="2*", options="header"] 
+|===
+|Windup Guide
+|Command
+
+|Windup User Guide
+|ccutil compile --lang en_US --main-file ~/windup-documentation/docs/Windup-User-Guide.adoc
+
+|Windup Rules Development Guide
+|ccutil compile --lang en_US --main-file ~/windup-documentation/docs/Windup-Rules-Development-Guide.adoc
+
+|Windup Core Development Guide
+|ccutil compile --lang en_US --main-file ~/windup-documentation/docs/Windup-Core-Development-Guide.adoc
+|===
+
 
 ==== Publish the HTML Docs for Access at GitHub IO
 

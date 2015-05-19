@@ -1,8 +1,15 @@
 <title>Windup User Guide</title>
-<productname>Windup</productname>
-<productnumber>2.2.0.Final</productnumber>
-<subtitle>User Guide</subtitle>
+<productname>Red Hat JBoss Migration Toolkit - Windup</productname>
+<productnumber>2.2</productnumber>
+<!--
+<mediaobject>
+    <imageobject>
+        <imagedata fileref="images/windup-logo-large.png" format="PNG" />
+     </imageobject>
+</mediaobject>
+--> 
+<subtitle>Simplify Migration of Java Applications</subtitle>
 <abstract>
-    <para>Use Windup to Simplify Java Application Migrations</para>
+    <para>This guide describes how to use Windup to simplify migration of Java applications.</para>
 </abstract>
 <xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />

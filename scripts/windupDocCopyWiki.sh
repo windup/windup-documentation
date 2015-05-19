@@ -104,6 +104,7 @@ cp $1/Rules-Rulesets.asciidoc docs/Rules-Rulesets.adoc
 cp $1/Rules-Rules-Overview.asciidoc docs/Rules-Rules-Overview.adoc   ## this topic is not used
 cp $1/Rules-Rule-Story-Points.asciidoc docs/Rules-Rule-Story-Points.adoc
 cp $1/Rules-Test-a-Basic-XML-Rule.asciidoc docs/Rules-Test-a-Basic-XML-Rule.adoc
+cp $1/Rules-Write-Your-First-Rule.asciidoc docs/Rules-Write-Your-First-Rule.adoc
 cp $1/Rules-XML-Rule-Construction.asciidoc docs/Rules-XML-Rule-Construction.adoc  ## this topic is not used
 cp $1/Rules-XML-Rule-Perform-Action-Syntax.asciidoc docs/Rules-XML-Rule-Perform-Action-Syntax.adoc
 cp $1/Rules-XML-Rule-When-Condition-Syntax.asciidoc docs/Rules-XML-Rule-When-Condition-Syntax.adoc
@@ -111,6 +112,7 @@ cp $1/Rule-XML-Ruleset-Examples-Match-on-XMLFile.asciidoc docs/Rule-XML-Ruleset-
 cp $1/Sande-ScratchPad.asciidoc docs/Sande-ScratchPad.adoc  ## this topic is not used
 cp $1/_Sidebar.asciidoc docs/_Sidebar.adoc  ## this topic is not used
 cp $1/Start.asciidoc docs/Start.adoc  ## this topic is not used
+cp $1/System-Requirements.asciidoc docs/System-Requirements.adoc  ## this topic is not used
 cp $1/User-Guide.asciidoc docs/User-Guide.adoc  ## this topic is not used
 cp $1/What-is-it.asciidoc docs/What-is-it.adoc
 
