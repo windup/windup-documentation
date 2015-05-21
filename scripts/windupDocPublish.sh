@@ -55,9 +55,9 @@ echo "    Core Development Guide (HTML): " file://$2/docs/$WINDUP_VERSION/html/W
 echo "    Core Development Guide (PDF): " file://$2/docs/$WINDUP_VERSION/pdf/WindupCoreDevelopmentGuide.pdf
 
 cd $2
-#git add docs
+git add docs
 
-#git commit -m "Documentation update for release $3"
+git commit -m "Documentation update for release $3"
 
 echo "*******************************************"
 echo "The following are manual steps: "
@@ -72,7 +72,7 @@ echo "        unlink latest"
 echo "        ln -s WINDUP_RELEASE latest"
 echo "        git add latest"
 echo "        git commit -m 'Replace symlink for latest to point to WINDUP_RELEASE'"
-echo "        git push origin HEAD"
+echo "        git push origin gh-pages"
 echo "        git push upstream gh-pages"
 echo "        firefox http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html"
 echo "*******************************************"
