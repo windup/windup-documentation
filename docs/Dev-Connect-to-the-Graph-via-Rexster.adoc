@@ -23,7 +23,7 @@ Then put some debug breakpoint in the specific phase of graph you are interested
 
 ==== Run Rexster within {ProductName}
 
-Make sure the Rexster add-on is deployed in Furnace and is accessible on http://localhost:8182/. 
+Be sure the Rexster add-on is deployed in Furnace and is accessible on http://localhost:8182/. 
 
 --------
 username: rexster

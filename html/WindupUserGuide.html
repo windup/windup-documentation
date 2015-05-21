@@ -424,7 +424,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#Features">1.2. Features of Windup</a></li>
-<li><a href="#System-Requirements">1.3. System Requirements</a></li>
+<li><a href="#System-Requirements">1.3. System Requirements</a>
+<ul class="sectlevel3">
+<li><a href="#_software">1.3.1. Software</a></li>
+<li><a href="#_hardware">1.3.2. Hardware</a></li>
+</ul>
+</li>
 <li><a href="#About-the-HOME-Variable">1.4. About the WINDUP_HOME Variable</a></li>
 </ul>
 </li>
@@ -489,6 +494,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_how_story_points_are_estimated_in_rules">4.2.2. How Story Points are Estimated in Rules</a></li>
 </ul>
 </li>
+<li><a href="#Optimize-Performance">4.3. Optimize Windup Performance</a>
+<ul class="sectlevel3">
+<li><a href="#_overview_2">4.3.1. Overview</a></li>
+<li><a href="#_tips_to_optimize_performance">4.3.2. Tips to Optimize Performance</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -542,10 +553,10 @@ Shared Data Model
 <p>It enables complex rule interaction, allowing rules to pass findings to other rules.</p>
 </li>
 <li>
-<p>It enables 3rd-party plug-ins to interact with other plugins, rules and reports.</p>
+<p>It enables 3rd-party plug-ins to interact with other plug-ins, rules and reports.</p>
 </li>
 <li>
-<p>The data graph organizes the findings to be searchable and queryable.</p>
+<p>The findings in data graph model can be searched and queried during rule execution and used for reporting purposes.</p>
 </li>
 </ul>
 </div>
@@ -556,7 +567,7 @@ Shared Data Model
 Extensibility
 </td>
 <td class="hdlist2">
-<p>Windup can be extended by developers, users, and 3rd-parties.</p>
+<p>Windup can be extended by developers, users, and 3rd-party software.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -627,7 +638,7 @@ Work Estimation
 <p>Lift and Shift - The code or file is standards-based and can be ported to the new environment with no changes.</p>
 </li>
 <li>
-<p>Mapped - There is a standard mapping algorithm to port the code or file to the new environment.</p>
+<p>Known Solution - There is a standard mapping algorithm to port the code or file to the new environment.</p>
 </li>
 <li>
 <p>Custom – The code or file must be rewritten or modified to work in the new environment.</p>
@@ -662,9 +673,8 @@ Better Reporting
 </div>
 <div class="sect2">
 <h3 id="System-Requirements">1.3. System Requirements</h3>
-<div class="paragraph">
-<p>Software</p>
-</div>
+<div class="sect3">
+<h4 id="_software">1.3.1. Software</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -675,8 +685,11 @@ Better Reporting
 </li>
 </ul>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_hardware">1.3.2. Hardware</h4>
 <div class="paragraph">
-<p>Hardware</p>
+<p>The following memory and disk space requirements are the minimum needed to run Windup. If your application is very large or you need to evaluate multiple applications, you make want to increase these values to improve performance.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -687,6 +700,7 @@ Better Reporting
 <p>A minimum of 4 GB of free disk space. A fast disk, especially a Solid State Drive (SSD), will improve performance.</p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -847,7 +861,7 @@ JBoss Windup, version [ 2.2.0.Final ] - JBoss, by Red Hat, Inc. [ http://windup.
 <p>The command to run Windup is <code>windup-migrate-app</code>.</p>
 </li>
 <li>
-<p>This command can take arbitrary options processed by different addons. The list of options in the core Windup distribution can be found in <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/ConfigurationOption.html">Javadoc</a>. Most commonly used command line arguments are:</p>
+<p>This command can take arbitrary options processed by different add-ons. The list of options in the core Windup distribution can be found in <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/ConfigurationOption.html">Javadoc</a>. Most commonly used command line arguments are:</p>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">--input <strong>INPUT_ARCHIVE_OR_FOLDER</strong></dt>
@@ -918,6 +932,18 @@ If the <strong>OUTPUT_REPORT_DIRECTORY</strong> directory exists and you do not 
 <div class="content">
 <pre>***SUCCESS*** Windup execution successful!</pre>
 </div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+Depending on the size of the application and the hardware Windup is running on, this command can take a very long time. For tips on how to improve performance, see <a href="#Optimize-Performance">Optimize Windup Performance</a>.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
@@ -1071,8 +1097,18 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 <div class="paragraph">
 <p>Use your favorite browser to open the <code>index.html</code> file located in the output report directory. You should see something like the following:</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Windup Report: Overview</em></strong></p>
+</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/report-index-page.png" alt="Report Index Page" width="500"></span></p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>This page lists the applications that were processed along with the technologies that were encountered.</p>
 </div>
 <div class="paragraph">
 <p>Click on the link under the <strong>Name</strong> column to view the Windup application report page.</p>
@@ -1098,17 +1134,33 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 </li>
 <li>
 <p>The estimated total <em>Story Points</em> to migrate the file. A <em>Story Point</em> is a term commonly used in Scrum Agile software development methodology to estimate the level of effort needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The estimated Story Points change as new rules are added to Windup. The values here may not match what you see when you test this application.
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>In the following  Windup Application Report example, the migration of the <strong>JEE Example App</strong> EAR is assigned a total of 42 story points. A pie chart shows the breakdown of story points by package. This is followed by a section for each of the archives contained in the EAR. It provides the total of the story points assigned to the archive and lists the files contained in archive along with the warnings and story point assigned to each file.</p>
+<p>In the following  Windup Application Report example, the migration of the <strong>JEE Example App</strong> EAR is assigned a total of 34 story points. A pie chart shows the breakdown of story points by package. This is followed by a section for each of the archives contained in the EAR. It provides the total of the story points assigned to the archive and lists the files contained in archive along with the warnings and story point assigned to each file.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p><strong><em>Example of a Windup Application Report</em></strong></p>
+<p><strong><em>Windup Report: Application Report</em></strong></p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/report-javaee-ear-summary.png" alt="Report Summary Page" width="500"></span></p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect4">
@@ -1168,16 +1220,23 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 </dl>
 </div>
 <div class="paragraph">
-<p>The following is an example of the archive analysis summary section of a Windup Report. In this example, it&#8217;s the analysis of the <code>WINDUP_SOURCE/test-files/jee-example-app-1.0.0.ear/jee-example-services.jar</code>.</p>
+<p>The following is an example of the archive analysis summary section of a Windup Report. The following is an the analysis of the <code>WINDUP_SOURCE/test-files/jee-example-app-1.0.0.ear/jee-example-services.jar</code>.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Windup Report: Application Report (jee-example-app-1.0.0.ear/jee-example-services.jar)</em></strong></p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/report-javaee-ear-03-services-jar.png" alt="Report Archive Page" width="500"></span></p>
 </div>
 </div>
+</div>
+</div>
 <div class="sect4">
 <h5 id="_file_analysis_pages">File Analysis Pages</h5>
 <div class="paragraph">
-<p>The analysis of the <code>jee-example-services.jar</code> lists the files in the JAR and the warnings and story points assigned to each one. Notice the <code>com.acme.anvil.listener.AnvilWebLifecycleListener</code> file has 5 warnings and is assigned 7 story points. Click on the file to see the detail.</p>
+<p>The analysis of the <code>jee-example-services.jar</code> lists the files in the JAR and the warnings and story points assigned to each one. Notice the <code>com.acme.anvil.listener.AnvilWebLifecycleListener</code> file, at the time of this test, has 6 warnings and is assigned 16 story points. Click on the file to see the detail.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1192,14 +1251,28 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 <div class="paragraph">
 <p>In this example, warnings appear at the import of <code>weblogic.application.ApplicationLifecycleEvent</code> and report that the class is proprietary to WebLogic and must be removed.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Windup Report: Source Report - Part 1</em></strong></p>
+</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/report-javaee-ear-file-detail-part1.png" alt="File Detail - Part 1" width="500"></span></p>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Later in the code, warnings appear for the creation of the InitialContext and for the object name when registering and unregistering an MBeans</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Windup Report: Source Report - Part 2</em></strong></p>
+</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/report-javaee-ear-file-detail-part2.png" alt="File Detail - Part 2" width="500"></span></p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1213,8 +1286,15 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 <div class="paragraph">
 <p>The <code>OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html</code> page provides the list of rule providers that executed when running the Windup migration command against the application.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Windup Report: Rule Provider Report</em></strong></p>
+</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/report-javaee-ear-ruleprovider.png" alt="RuleProvider Report" width="500"></span></p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect4">
@@ -1228,8 +1308,15 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 <div class="paragraph">
 <p>You can directly access the the file analysis report pages described above by browsing for them by name in the <code>OUTPUT_REPORT_DIRECTORY/reports/</code> directory. Because the same common file names can exist in multiple archives, for example "manifest.mf" or "web.xml", Windup adds a unique numeric suffix to each report file name.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong><em>Windup Report: Report Directory List</em></strong></p>
+</div>
 <div class="paragraph">
 <p><span class="image"><img src="images/report-directory-file-list.png" alt="Report Directory File List" width="500"></span></p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1659,9 +1746,9 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 <td class="tableblock halign-left valign-top"><p class="tableblock">The code or file is standards-based and requires no effort.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mapped</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Known Solution</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1- 2 per file</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">There is a standard mapping algorithm to port the code or file. The number of story points required is small, but is dependent on the number of files to port.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There is a standard mapping algorithm to port the code or file to the new environment. The number of story points required is small, but is dependent on the number of files to port.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Custom</p></td>
@@ -1684,12 +1771,71 @@ For Windows: &gt; bin\windup.bat --evaluate "windup-migrate-app --input \windup-
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="Optimize-Performance">4.3. Optimize Windup Performance</h3>
+<div class="sect3">
+<h4 id="_overview_2">4.3.1. Overview</h4>
+<div class="paragraph">
+<p>Windup performance depends on a number of factors, including hardware configuration, the number and types of files in the application, the size and number of applications to be evaluated, and whether the application contains source or compiled code. For example, a file that is larger than 10 MB may need a lot of time to process.</p>
+</div>
+<div class="paragraph">
+<p>In general, Windup spends about 40% of the time decompiling classes, 40% of the time executing rules, and the remainder of the time processing other tasks and generating rules. This section describes what you can do to improve the performance of Windup.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tips_to_optimize_performance">4.3.2. Tips to Optimize Performance</h4>
+<div class="sect4">
+<h5 id="_application_and_command_line_suggestions">Application and Command Line Suggestions</h5>
+<div class="paragraph">
+<p>Try these suggestions first before upgrading hardware.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If possible, execute Windup against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.</p>
+</li>
+<li>
+<p>Specify the <code>--target</code> platform on the on the <code>windup-migrate-app</code> command line to limit the execution of rules to only those that apply to this target platform.</p>
+</li>
+<li>
+<p>Be sure to specify a comma-delimited list of the packages to be evaluated by Windup using the <code>--packages</code> argument on the <code>windup-migrate-app</code> command line. If you omit this argument, Windup will decompile everything, which has a big impact on performance.</p>
+</li>
+<li>
+<p>Specify the <code>--excludePackages</code> and <code>--excludeTags</code> where possible to exclude them from processing.</p>
+</li>
+<li>
+<p>Add additional proprietary packages that should not be processed to the <code>ignore/proprietary.package-ignore.txt</code> file in the Windup distribution directory. Windup can still find the references to the packages in the application source code, but avoids the need to decompile and analyze the proprietary classes.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_hardware_upgrade_suggestions">Hardware Upgrade Suggestions</h5>
+<div class="paragraph">
+<p>If the steps above do not improve performance, you may need to upgrade your hardware.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Very large applications that require decompilation have large memory requirements. 8 GB RAM is recommended. This allows 3 - 4 GB RAM for use by the JVM.</p>
+</li>
+<li>
+<p>An upgrade from a single or dual-core to a 4-core CPU processor provides better performance.</p>
+</li>
+<li>
+<p>Disk space and fragmentation can impact performance. A fast disk, especially a Solid State Drive (SSD), with greater than 4 GB of defragmented disk space should improve performance.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-05-19 17:11:25 EDT
+Last updated 2015-05-21 11:40:20 EDT
 </div>
 </div>
 </body>

@@ -62,7 +62,7 @@ JBoss Windup, version [ 2.2.0.Final ] - JBoss, by Red Hat, Inc. [ http://windup.
 
 . The command to run {ProductShortName} is `windup-migrate-app`.
 
-. This command can take arbitrary options processed by different addons. The list of options in the core {ProductShortName} distribution can be found in http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/ConfigurationOption.html[Javadoc]. Most commonly used command line arguments are:
+. This command can take arbitrary options processed by different add-ons. The list of options in the core {ProductShortName} distribution can be found in http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/ConfigurationOption.html[Javadoc]. Most commonly used command line arguments are:
 
 +
 --input *INPUT_ARCHIVE_OR_FOLDER*:: This is the fully qualified application archive or source path.
@@ -100,6 +100,8 @@ See xref:command-examples[{ProductShortName} Command Examples] below for concret
 --------
 ***SUCCESS*** Windup execution successful!
 --------
++
+WARNING: Depending on the size of the application and the hardware {ProductShortName} is running on, this command can take a very long time. For tips on how to improve performance, see xref:Optimize-Performance[Optimize {ProductShortName} Performance].
 
 . To exit {ProductShortName}, type:
 +

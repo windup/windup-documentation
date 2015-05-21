@@ -4,8 +4,8 @@
 
 :imagesdir: images
 
-[[Rules-Write-Your-First-Rule]]
-=== Write Your First Rule
+[[Rules-Create-Your-First-Rule]]
+=== Create Your First Rule
 
 ==== Overview 
 
@@ -18,7 +18,7 @@ This topic guides you through the process of creating and testing your first rul
     otherwise 
         perform(action)
 
-As you create your first rule, refer to the https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd[Rules Schema] for valid XML syntax. 
+As you create your first rule, refer to the http://windup.jboss.org/schema/rule-schema.xsd[Rules Schema] for valid XML syntax. 
 
 For more information about XML rule construction, see xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule].
 
@@ -136,6 +136,10 @@ Copy the `JBoss5-web-class-loading.windup.xml` file to your `${user.home}/.windu
 For Linux or Mac: ~/.windup/rules/
 For Windows: "\Documents and Settings\USER_NAME\.windup\rules\" or "\Users\USER_NAME\.windup\rules\"
 ----
+
+==== Validate the Rule Against the Schema
+
+To validate your XML rule using the {ProductShortName} `rule-schema.xsd` schema, see xref:Rules-Validate-Rulesets-Against-the-Schema[Validate Rulesets Against the Schema].
 
 
 ==== Test the Rule

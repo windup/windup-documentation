@@ -1,10 +1,8 @@
 
 
 
- 
-
 [Dev-Web-Instructions]
-=== {ProductName} Web Instructions
+=== {ProductShortName} Web Instructions
 
 The http://windup.jboss.org[windup.jboss.org] web site is hosted by Red Hat / JBoss.org
 
@@ -47,9 +45,9 @@ sftp> cd www_htdocs/windup
 . Use the `lcd` command to navigate to the directory on your local machine that contains your updates. You can verify the path on the local machine using the `lpwd` command. For example:
 +
 ----
-sftp> lcd ~/MyGitRepos/windup.jboss.org/assets/js
+sftp> lcd ~/windup.jboss.org/assets/js
 sftp> lpwd 
-Local working directory: /home/username/MyGitRepos/windup.jboss.org/assets/js
+Local working directory: /home/username/windup.jboss.org/assets/js
 ----
 . Use the `cd` command to navigate to the corresponding directory on the remote server. You can verify the path on the remote machine using the `pwd` command.
 +
@@ -66,6 +64,38 @@ Uploading windup.js to /www_htdocs/windup/assets/js/windup.js
 windup.js                                        100% 1316     1.3KB/s   00:00    
 ----
 . Test the change on http://windup.jboss.org[windup.jboss.org].
+
+==== Push the Rule Schema to the Web Site Remote Server 
+
+*_Upload Schema Example_* 
+
+----
+### Navigate to your local cloned windup.jboss.org directory
+cd ~/windup.jboss.org/
+
+### Fetch the latest and check out a branch to work in
+git fetch upstream
+git checkout -b update-schema upstream/master
+
+### sftp into the remote repository
+sftp windup@filemgmt.jboss.org
+
+### Navidate to the remote schema directory
+sftp> cd www_htdocs/windup/schema/
+
+### Navigate to the local directory containing the schema
+sftp> lcd /home/username/windup/config-xml/
+
+### Push the schema to the remote repository
+sftp> put rule-schema.xsd
+
+### You should see "Uploading rule-schema.xsd to /www_htdocs/windup/schema/rule-schema.xsd" rule-schema.xsd  100%   10KB   9.9KB/s   00:00    
+
+### Exit sftp
+sftp> exit
+----
+
+Use your favorite browser to browse to http://windup.jboss.org/schema/rule-schema.xsd
 
 ==== Additional Help
 

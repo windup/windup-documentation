@@ -22,19 +22,22 @@ This guide is for engineers, consultants, or others who plan to create rules for
 ==== Get Started
 
 * xref:Install[Install {ProductName}]
-* xref:Rules-Write-Your-First-Rule[Write Your First Rule]
+* xref:Rules-Create-Your-First-Rule[Write Your First Rule]
 
 ==== Create and Test XML Rules
 
 * xref:Rules-Difference-Between-XML-based-and-Java-based-Rules[Difference Between XML-based and Java-based Rules]
+* xref:Rules-Review-the-Existing-XML-Rules[Review the Existing Windup XML Rules]
 * xref:Rules-XML-Rule-Construction[XML Rule Construction]
 * xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule]
 * xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
 * xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax]
 * xref:Rules-Test-a-Basic-XML-Rule[Test an XML Rule in {ProductName}]
+* xref:Rules-Validate-Rulesets-Against-the-Schema[Validate Rulesets Against the Schema]
 
 ==== {ProductName} Processing
 
+* xref:Rules-Review-the-Existing-XML-Rules[Review the Existing {ProductShortName} XML Rules]
 * xref:Execute[Execute {ProductName}]
 * xref:Review-the-Report[Review the Report]
 

@@ -11,12 +11,12 @@
 Shared Data Model:: {ProductName} creates a shared data model graph that provides the following benefits.
 
 * It enables complex rule interaction, allowing rules to pass findings to other rules.
-* It enables 3rd-party plug-ins to interact with other plugins, rules and reports.
-* The data graph organizes the findings to be searchable and queryable.
+* It enables 3rd-party plug-ins to interact with other plug-ins, rules and reports.
+* The findings in data graph model can be searched and queried during rule execution and used for reporting purposes.
 
 Extensibility::
 
-{ProductName} can be extended by developers, users, and 3rd-parties.
+{ProductName} can be extended by developers, users, and 3rd-party software.
 
 * It provides a plug-in API to inject other applications into {ProductName}.
 * It enables 3rd-parties to create simple POJO plug-ins that can interact with the data graph.
@@ -44,7 +44,7 @@ Work Estimation::
 Estimates for the level of effort is based on the skills required and the classification of migration work needed.
 
 * Lift and Shift - The code or file is standards-based and can be ported to the new environment with no changes.
-* Mapped - There is a standard mapping algorithm to port the code or file to the new environment.
+* Known Solution - There is a standard mapping algorithm to port the code or file to the new environment.
 * Custom – The code or file must be rewritten or modified to work in the new environment.
 
 

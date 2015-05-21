@@ -15,7 +15,7 @@ include::About-the-HOME-Variable.adoc[tabsize=4]
 
 include::Install.adoc[tabsize=4]
 
-include::Rules-Write-Your-First-Rule.adoc[tabsize=4]
+include::Rules-Create-Your-First-Rule.adoc[tabsize=4]
 
 
 == Create and Test XML Rules
@@ -26,19 +26,17 @@ include::Rules-XML-Rule-Construction.adoc[tabsize=4]
 
 include::Rules-Create-a-Basic-XML-Rule.adoc[tabsize=4]
 
-include::Rules-XML-Rule-When-Condition-Syntax.adoc[tabsize=4]
-
-include::Rules-XML-Rule-Perform-Action-Syntax.adoc[tabsize=4]
+include::Rules-Validate-Rulesets-Against-the-Schema.adoc[tabsize=4]
 
 include::Rules-Test-a-Basic-XML-Rule.adoc[tabsize=4]
 
-
-== {ProductName} Processing
+== Learn More About {ProductName}
 
 include::Execute.adoc[tabsize=4]
 
 include::Review-the-Report.adoc[tabsize=4]
 
+include::Rules-Review-the-Existing-XML-Rules.adoc[tabsize=4]
 
 == Additional Resources
 
@@ -58,6 +56,11 @@ include::Glossary.adoc[tabsize=4]
 
 include::Rules-Rule-Story-Points.adoc[tabsize=4]
 
+include::Rules-XML-Rule-When-Condition-Syntax.adoc[tabsize=4]
+
+include::Rules-XML-Rule-Perform-Action-Syntax.adoc[tabsize=4]
+
+include::Optimize-Performance.adoc[tabsize=4]
 
 
 

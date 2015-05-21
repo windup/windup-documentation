@@ -66,6 +66,7 @@ cp $1/OBSOLETE-Rules-Ops-Reporting-Hint.asciidoc docs/OBSOLETE-Rules-Ops-Reporti
 cp $1/OBSOLETE-Rules-Ops-Reporting-TypeReference.asciidoc docs/OBSOLETE-Rules-Ops-Reporting-TypeReference.adoc
 cp $1/OBSOLETE-Rules-Ops-Xml-XsltTransformation.asciidoc docs/OBSOLETE-Rules-Ops-Xml-XsltTransformation.adoc
 cp $1/OBSOLETE:-Rules-Rules-Operations.asciidoc docs/OBSOLETE-Rules-Rules-Operations.adoc
+cp $1/Optimize-Performance.asciidoc docs/Optimize-Performance.adoc
 cp $1/Performance-tuning.asciidoc docs/Performance-tuning.adoc  ## this topic is not used
 cp $1/Processing-Overview.asciidoc docs/Processing-Overview.adoc
 cp $1/Report-Issues.asciidoc docs/Report-Issues.adoc
@@ -96,15 +97,17 @@ cp $1/Ruleset-Reporting.asciidoc docs/Ruleset-Reporting.adoc
 cp $1/Ruleset-Server-Configuration-Migration.asciidoc docs/Ruleset-Server-Configuration-Migration.adoc
 cp $1/Ruleset-XML.asciidoc docs/Ruleset-XML.adoc
 cp $1/Ruleset-XML-Ruleset-Element-Reference.asciidoc docs/Ruleset-XML-Ruleset-Element-Reference.adoc  ## this topic is not used
+cp $1/Rules-Create-Your-First-Rule.asciidoc docs/Rules-Create-Your-First-Rule.adoc
 cp $1/Rules-Java-based-Rule-Structure.asciidoc docs/Rules-Java-based-Rule-Structure.adoc
 cp $1/Rules-Models.asciidoc docs/Rules-Models.adoc
+cp $1/Rules-Review-the-Existing-XML-Rules.asciidoc docs/Rules-Review-the-Existing-XML-Rules.adoc
 cp $1/Rules-Rule-Configuration.asciidoc docs/Rules-Rule-Configuration.adoc  ## this topic is not used
 cp $1/Rules-Rule-Execution-Lifecycle.asciidoc docs/Rules-Rule-Execution-Lifecycle.adoc
 cp $1/Rules-Rulesets.asciidoc docs/Rules-Rulesets.adoc
 cp $1/Rules-Rules-Overview.asciidoc docs/Rules-Rules-Overview.adoc   ## this topic is not used
 cp $1/Rules-Rule-Story-Points.asciidoc docs/Rules-Rule-Story-Points.adoc
 cp $1/Rules-Test-a-Basic-XML-Rule.asciidoc docs/Rules-Test-a-Basic-XML-Rule.adoc
-cp $1/Rules-Write-Your-First-Rule.asciidoc docs/Rules-Write-Your-First-Rule.adoc
+cp $1/Rules-Validate-Rulesets-Against-the-Schema.asciidoc docs/Rules-Validate-Rulesets-Against-the-Schema.adoc
 cp $1/Rules-XML-Rule-Construction.asciidoc docs/Rules-XML-Rule-Construction.adoc  ## this topic is not used
 cp $1/Rules-XML-Rule-Perform-Action-Syntax.asciidoc docs/Rules-XML-Rule-Perform-Action-Syntax.adoc
 cp $1/Rules-XML-Rule-When-Condition-Syntax.asciidoc docs/Rules-XML-Rule-When-Condition-Syntax.adoc

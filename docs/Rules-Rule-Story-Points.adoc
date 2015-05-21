@@ -24,9 +24,9 @@ Estimating story points for a rule can be tricky. The following are the general 
 |0
 |The code or file is standards-based and requires no effort.
 
-|Mapped
+|Known Solution
 | 1- 2 per file
-|There is a standard mapping algorithm to port the code or file. The number of story points required is small, but is dependent on the number of files to port.
+|There is a standard mapping algorithm to port the code or file to the new environment. The number of story points required is small, but is dependent on the number of files to port.
 
 |Custom
 |5 - 20 per change or component

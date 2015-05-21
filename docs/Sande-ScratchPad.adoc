@@ -1,174 +1,101 @@
 
 
+
  
 
-:imagesdir: images
+[Dev-Web-Instructions]
+=== {ProductName} Web Instructions
 
-[[Rules-Write-Your-First-Rule]]
-=== Write Your First Rule
+The http://windup.jboss.org[windup.jboss.org] web site is hosted by Red Hat / JBoss.org
 
-==== Overview 
+==== Get the Source Code
 
-This topic guides you through the process of creating and testing your first rule.
+The source code for http://windup.jboss.org[windup.jboss.org] is currently located at https://github.com/windup/windup.jboss.org.
 
-{ProductName} XML-base rules use the following familiar rule pattern:
+. https://github.com/windup/windup.jboss.org./fork[Fork] the windup.jboss.org project. This creates the `windup.jboss.org` project in your own Git with the default remote name 'origin'.
+. Clone your fork. This creates and populates a `windup.jboss.org` directory in your local file system.
++
+-------------------------------------------------------
+git clone https://github.com/<your-username>/windup.git
+-------------------------------------------------------
+. Navigate to the `windup.jboss.org` directory, then add and fetch the `upstream` repository so you can update your git with any changes.
++
+--------------------------------------------------------
+git remote add -f upstream git@github.com:windup/windup.jboss.org.git
+--------------------------------------------------------
 
-    when(condition)
-        perform(action)
-    otherwise 
-        perform(action)
+==== Request Write Access to the Web Site Remote Server 
 
-As you create your first rule, refer to the https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd[Rules Schema] for valid XML syntax. 
+The http://windup.jboss.org[windup.jboss.org] web site is hosted on the `filemgmt.jboss.org` remote server. Follow these steps to request write access.
 
-For more information about XML rule construction, see xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule].
+. Send an email to eng-ops@redhat.com requesting write access to `filemgmt.jboss.org` for `windup.jboss.org`.
+. Attach your ssh public key to the email request.
+. When you receive confirmation, you can test access in a terminal with the following command. If you are prompted for a password, you do not have proper access.
++
+--------
+sftp windup@filemgmt.jboss.org
+--------
 
-==== Rule Example Description
+==== Push Updates to the Web Site Remote Server
 
-In previous releases of Red Hat JBoss Enterprise Application, you could ensure application class namespace isolation during deployment by defining a `<class-loading>` element in the `jboss-web.xml` file. Due to the change in JBoss EAP 6 to use modular class loading, this element is no longer necessary, and can result in `ParseError` and `XMLStreamException` errors in the server log. This issue is described in the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6[JBoss EAP Migration Guide]. 
-
-In this example, you write a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and provide a link to the documentation that describes how to migrate the code. 
-
-==== Create the Directory Structure for the Rule
-
-. Create a directory structure to contain your first rule and the data file to use for testing. 
+. Log into the remote server and navigate to www_htdocs/windup/
 +
 ----
-$ mkdir -p migration-rules/rules
-$ mkdir -p migration-rules/data
+$ sftp windup@filemgmt.jboss.org
+sftp> cd www_htdocs/windup 
 ----
-
-. This directory structure will also be used to hold the generated {ProductShortName} reports.
-
-==== Create Data to Test the Rule
-
-. Use your favorite editor or IDE to create a `jboss-web.xml` file in the `~/migration-rules/data/` subdirectory. 
-. Copy in the following content.
+. Use the `lcd` command to navigate to the directory on your local machine that contains your updates. You can verify the path on the local machine using the `lpwd` command. For example:
 +
 ----
-<!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Application 4.2//EN" "http://www.jboss.org/j2ee/dtd/jboss-web_4_2.dtd">
-<jboss-web>
-    <class-loading java2ClassLoadingCompliance="false">
-        <loader-repository>
-            seam.jboss.org:loader=@projectName@
-            <loader-repository-config>java2ParentDelegation=false</loader-repository-config>
-        </loader-repository>
-    </class-loading>
-</jboss-web>
+sftp> lcd ~/windup.jboss.org/assets/js
+sftp> lpwd 
+Local working directory: /home/username/windup.jboss.org/assets/js
 ----
-
-==== Create the Rule
-
-. Use your favorite editor or IDE to create an XML file in the `~/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
+. Use the `cd` command to navigate to the corresponding directory on the remote server. You can verify the path on the remote machine using the `pwd` command.
 +
 ----
-<?xml version="1.0"?>
-<ruleset xmlns="http://windup.jboss.org/v1/xml" id="UNIQUE_RULESET_ID">
-    <rules>
-        <rule id="UNIQUE_RULE_ID">
-            <when>
-                <!-- Test for a condition here -->
-            </when>
-            <perform>
-                <!-- Perform an action -->
-            </perform>
-        </rule>
-     </rules>
-</ruleset>
+sftp> cd www_htdocs/windup/assets/js/
+sftp> pwd
+Remote working directory: /www_htdocs/windup/assets/js
 ----
-NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XML-based rules, so make sure to use this naming convention, otherwise the rule will not be evaluated!
-
-. Add the unique identifier for the ruleset and rule.
-* Replace the UNIQUE_RULESET_ID with the file name: "JBoss5-web-class-loading"
-* Replace the UNIQUE_RULE_ID with the ruleset ID appended with '_001': "JBoss5-web-class-loading_001"
-. Complete the `when` condition. 
-* Because this rule finds `jboss-web.xml` files containing the `class-loading` element, we use `xmlfile` to evaluate the files. 
-* To match on the `class-loading` element that is a child of `jboss-web`, use the xpath expression "jboss-web/class-loading".
+. Upload the modified file to the remote server.
 +
 ----
-<when>
-    <xmlfile matches="jboss-web/class-loading" />
-</when>
+sftp> put windup.js 
+Uploading windup.js to /www_htdocs/windup/assets/js/windup.js
+windup.js                                        100% 1316     1.3KB/s   00:00    
 ----
-. Complete the `perform` action for this rule. 
-* Provide an informative message.
-* Provide a link to documentation that describes the migration details. 
-* Assign a level of effort of "1" to this task.
-+
-----
-<perform>
-    <iteration>
-        <classification classification="JBoss Web Application Descriptor" effort="0"/>
-        <hint message="The class-loading element is no longer valid in the jboss-web.xml file." effort="1">
-            <link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" description="Create or Modify Files That Control Class Loading in JBoss EAP 6"/>
-        </hint>
-    </iteration>
-</perform>
-----
-. The rule is now complete and should look like the following example.
-+
-----
-<?xml version="1.0"?>
-<ruleset xmlns="http://windup.jboss.org/v1/xml" id="JBoss5-web-class-loading">
-    <rules>
-        <rule id="JBoss5-web-class-loading_001">
-            <when>
-                <xmlfile matches="jboss-web/class-loading" />
-            </when>
-            <perform>
-                <iteration>
-                    <classification classification="JBoss Web Application Descriptor" effort="0"/>
-                    <hint message="The class-loading element is no longer valid in the jboss-web.xml file." effort="1">
-                        <link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" description="Create or Modify Files That Control Class Loading in JBoss EAP 6"/>
-                    </hint>
-                </iteration>
-            </perform>
-        </rule>
-     </rules>
-</ruleset>
-----
+. Test the change on http://windup.jboss.org[windup.jboss.org].
 
-==== Install the Rule
+==== Push the Rule Schema to the Web Site Remote Server 
 
-A {ProductShortName} rule is installed simply by copying the rule to the appropriate folder. 
-
-Copy the `JBoss5-web-class-loading.windup.xml` file to your `${user.home}/.windup/rules/` directory.
-----
-For Linux or Mac: ~/.windup/rules/
-For Windows: "\Documents and Settings\USER_NAME\.windup\rules\" or "\Users\USER_NAME\.windup\rules\"
-----
-
-
-==== Test the Rule
-
-. Open a terminal and navigate to the {ProductHomeVar}/bin directory
-
-. Type the following command to start {ProductShortName}:
-+
----------------------------------------------------------------------------
-For Linux:    windup/bin $ ./windup
-For Windows:  C:\WINDUP_HOME\bin> windup
----------------------------------------------------------------------------
-. Execute the `windup-migrate-app` command, passing the test data file as the input parameter.
-+
-----
-windup-migrate-app sourceMode true --input ~/migration-rules/data --output ~/migration-rules/reports
-----
-. You should see this result.
-+
-----
-***SUCCESS*** Windup report created: /home/your-username/migration-rules/reports/index.html
-              Access it at this URL: file:///home/your-username/migration-rules/reports/index.html
+*_Upload Schema Example_* 
 
 ----
-. Access the report at ~/migration-rules/reports/index.html to make sure it provides the expected results. 
-* The _Overview_ page displays the *Name* of the input folder, "data", along with the expected *Effort* of "1 Story Points".
-+
-image:CreateYourFirstRule-ReportOverview.png[Overview, 500]
+# Navigate to your local cloned windup.jboss.org directory
+cd ~/windup.jboss.org/
+# Fetch the latest and check out a branch to work in
+git fetch upstream
+git checkout -b update-schema upstream/master
+# sftp into the remote repository
+sftp windup@filemgmt.jboss.org
+# Navidate to the remote schema directory
+sftp> cd www_htdocs/windup/schema/
+# Navigate to the local directory containing the schema
+sftp> lcd /home/username/windup/config-xml/
+# Push the schema to the remote repository
+sftp> put rule-schema.xsd
+# You should see "Uploading rule-schema.xsd to /www_htdocs/windup/schema/rule-schema.xsd" rule-schema.xsd  100%   10KB   9.9KB/s   00:00    
+# Exit sftp
+sftp> exit
+----
 
-* Drill down into the _Application Report_ detail by clicking on the "data" link. This report displays the name of the file, "jboss-web.xml", the warning "seam.jboss.org:loader=@projectName@ java2ParentDelegation=false" in the *Issues* column, and displays "1" *Estimated Story Points", as expected.
-+
-image:CreateYourFirstRule-ReportApplication.png[Overview, 500]
+Use your favorite browser to browse to http://windup.jboss.org/schema/rule-schema.xsd
 
-* Drill down into _Source Report_ by clicking on the "jboss-web.xml" file link. This report highlights the `<class-loading>` line in the `jboss-web.xml` file, provides the message "The class-loading element is no longer valid in the jboss-web.xml file.", and provides a link to the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6[Create or Modify Files That Control Class Loading in JBoss EAP 6] topic in the JBoss EAP 6 Migration Guide. Click on the link to make sure the documentation is accessible.
-+
-image:CreateYourFirstRule-ReportSource.png[Overview, 500]
+==== Additional Help
+
+* Type `man sftp` for a list of commands.
+* https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html-single/Deployment_Guide/index.html#s2-ssh-clients-sftp
+* http://www.tecmint.com/sftp-command-examples/
+* https://docs.oracle.com/cd/E26502_01/html/E29001/remotehowtoaccess-14.html
+

@@ -16,7 +16,7 @@ git checkout -b lincolnthree-WINDUP-133 master
 git pull https://github.com/lincolnthree/windup.git WINDUP-133
 --------------------------------------------------------------
 
-. Run the tests to make sure it builds.
+. Run the tests to be sure it builds.
 +
 --------
 mvn clean install

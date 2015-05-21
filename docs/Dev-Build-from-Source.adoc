@@ -41,12 +41,11 @@ Developer Studio 7.1.1] or newer
 * https://www.eclipse.org/downloads/[Eclipse 4.3 (Kepler)] or newer
 
 +
-You must also make sure the IDE embeds Maven 3.1.1 or later. See
-xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
+The IDE must embed Maven 3.1.1 or later. See xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
 
 ==== Prerequisites
 
-* Make sure you have configured Maven as described here: xref:Install-and-Configure-Maven[Install and Configure Maven].
+* Be sure you have configured Maven as described here: xref:Install-and-Configure-Maven[Install and Configure Maven].
 
 * {ProductShortName} source code is located in 3 GitHub projects. Follow the instructions to xref:Dev-Get-the-Source-Code[Get the {ProductShortName} Source Code].
 
@@ -55,7 +54,7 @@ xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
 
 If you prefer, you can use an IDE to build {ProductShortName}.
 
-. Make sure you have configured the Maven installation in your IDE as described here:
+. Configure the Maven installation in your IDE as described here:
 https://github.com/windup/windup/wiki/Install-and-Configure-Maven[Install and Configure Maven].
 . Start JBoss Developer Studio or Eclipse.
 . Import the `windup-ruleset` project.
@@ -150,7 +149,7 @@ mvn clean install
 
 If you prefer, you can use an IDE to build {ProductShortName}.
 
-. Make sure you have configured the Maven installation in your IDE as described here:
+. Configure the Maven installation in your IDE as described here:
 https://github.com/windup/windup/wiki/Install-and-Configure-Maven[Install and Configure Maven].
 . Start JBoss Developer Studio or Eclipse.
 . Import the `windup-ruleset` project.

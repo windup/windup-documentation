@@ -1,8 +1,6 @@
 
 
 
- 
-
 [[Rules-Create-a-Basic-XML-Rule]]
 === Create a Basic XML Rule
 
@@ -10,15 +8,15 @@ You can create a {ProductName} rule using Java, XML, or Groovy. This topic descr
 
 ==== Prerequisites
 
-* You should have already xref:Install[installed {ProductName}]. 
+* You should have already xref:Install[installed {ProductShortName}]. 
 * Before you begin, you may also want to be familiar with the following documentation:
-** {ProductName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
-** The JavaDoc for the {ProductName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
-** The XML rule schema is located here: https://github.com/windup/windup/blob/master/config-xml/rule-schema.xsd.
+** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
+** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
+** The XML rule schema is located here: http://windup.jboss.org/schema/rule-schema.xsd
 
 ==== File Naming Convention for XML Rules
 
-You must name the file containing an XML rule with the `.windup.xml` extension. {ProductName} identifies files with this extension as XML-base rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
+You must name the file containing an XML rule with the `.windup.xml` extension. {ProductShortName} identifies files with this extension as XML-base rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
 
 ==== Basic XML Rule Template
 
@@ -59,11 +57,5 @@ The syntax is dependent on whether you are creating a rule to evaluate Java clas
 
 Operations allowed in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The syntax is described in detail here: xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
 
-=== Test multiple XML rulesets with .xsd schema 
-To test all the xml rules with the .xsd schema, follow this steps
 
-* Download https://github.com/amouat/xsd-validator and unzip it into your selected folder (referred to as $XSD_VAL)
-* prepare ruleset directory as $RULESET_DIRECTORY and assume the xsd file is placed in $XSD_SCHEMA path
-* run the command 
 
-         find $RULESET_DIRECTORY -type f -iname "*windup.xml" -exec $XSD_VAL./xsdv.sh $XSD_SCHEMA {} \;
