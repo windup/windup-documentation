@@ -7,7 +7,7 @@
 === XML Ruleset Element Reference
 
 ruleset:: Defines this as a {ProductName} rule.
-phase:: Specifies when the ruleset should execute. See xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecyle] for more information about rule phases.
+metadata:: Specifies additional information about the ruleset, such as a description, rule add-on dependencies, and the source and target technologies.
 rules:: Encapsulates all the the individual rules for this ruleset.
 rule:: Child of the the `rules` element. One or more rules can be defined for a ruleset.
 when:: Child of `rule`. Defines the condition to match on.

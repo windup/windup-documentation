@@ -80,22 +80,22 @@ git checkout -b update-schema upstream/master
 ### sftp into the remote repository
 sftp windup@filemgmt.jboss.org
 
-### Navidate to the remote schema directory
+### Navigate to the remote schema directory
 sftp> cd www_htdocs/windup/schema/
 
 ### Navigate to the local directory containing the schema
 sftp> lcd /home/username/windup/config-xml/
 
 ### Push the schema to the remote repository
-sftp> put rule-schema.xsd
+sftp> put rule-schema_1_0.xsd
 
-### You should see "Uploading rule-schema.xsd to /www_htdocs/windup/schema/rule-schema.xsd" rule-schema.xsd  100%   10KB   9.9KB/s   00:00    
+### You should see "Uploading rule-schema_1_0.xsd to /www_htdocs/windup/schema/rule-schema_1_0.xsd" rule-schema_1_0.xsd  100%   10KB   9.9KB/s   00:00    
 
 ### Exit sftp
 sftp> exit
 ----
 
-Use your favorite browser to browse to http://windup.jboss.org/schema/rule-schema.xsd
+Use your favorite browser to browse to http://windup.jboss.org/schema/rule-schema_1_0.xsd
 
 ==== Additional Help
 

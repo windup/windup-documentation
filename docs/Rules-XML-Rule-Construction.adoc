@@ -1,15 +1,21 @@
 
 
+
 [[Rules-XML-Rule-Construction]]
 === XML-Rule-Construction
 
-This section describes the basic construction of XML rules. All XML rules are defined as elements within rulesets. Rulesets also define the phase in which the rules are run. 
+This section describes the basic construction of XML rules. All XML rules are defined as elements within rulesets. 
 
 ==== Ruleset Element
 
 A  ruleset is a group of one or more rules that targets a specific area of migration. This is the basic construct for the `<ruleset>` element.
 
 * **<ruleset>**: This element defines this as a {ProductName} ruleset.
+** **<metadata>**: Provide metadata about the ruleset.
+*** **<description>**: Description of the ruleset.
+*** **<dependencies/>**: Rule add-ons required by this ruleset.
+*** ** <sourceTechnology/>**: Source technology
+*** ** <targetTechnology/>**: Target technology
 ** **<rules>**: This element contains the individual rules.
 *** **<rule/>**: This element is defines the rule.
 + 

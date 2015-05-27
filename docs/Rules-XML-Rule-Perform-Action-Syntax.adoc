@@ -3,7 +3,7 @@
 
 Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
 
-The complete XML rule schema is located here: http://windup.jboss.org/schema/rule-schema.xsd
+The complete XML rule schema is located here: http://windup.jboss.org/schema/rule-schema_1_0.xsd
 
 The following sections describe the more common XML rule perform actions. 
 

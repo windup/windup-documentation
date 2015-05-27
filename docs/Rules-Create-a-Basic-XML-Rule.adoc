@@ -12,7 +12,7 @@ You can create a {ProductName} rule using Java, XML, or Groovy. This topic descr
 * Before you begin, you may also want to be familiar with the following documentation:
 ** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
 ** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
-** The XML rule schema is located here: http://windup.jboss.org/schema/rule-schema.xsd
+** The XML rule schema is located here: http://windup.jboss.org/schema/rule-schema_1_0.xsd
 
 ==== File Naming Convention for XML Rules
 
@@ -30,10 +30,12 @@ XML rules consist of _conditions_ and _actions_ and follow the familiar "if/then
 The following is the basic syntax for XML rules.
 
     <?xml version="1.0"?>
-    <ruleset xmlns="http://windup.jboss.org/v1/xml" id="XmlFileMappings">
-        <phase>
-            <!-- The phase in which to run the rules -->
-        </phase>
+    <ruleset xmlns="http://windup.jboss.org/v1/xml" id="<unique-rule-identifier">
+        <metadata>
+            <!-- Metadata about the rule including a description, 
+                 source technology, target technology, and any
+                 add-on dependencies -->
+        </metadata>
         <rules>
             <rule>
                 <when>
@@ -48,6 +50,38 @@ The following is the basic syntax for XML rules.
             </rule>
           <rules>
         </ruleset>
+
+==== Create the Ruleset Metadata
+
+The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset.
+
+_Example:_
+[source,xml]
+--------
+<ruleset id=”ruleset-id”>
+<metadata>
+        <description>
+                This is the description.
+        </description>
+        <dependencies>
+                <addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final"/>    
+                <addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final"/>
+        </dependencies>
+        <sourceTechnology id="weblogic" versionRange="(10,12]"/>
+        <sourceTechnology id="ejb" versionRange="(2,3]"/>
+        <targetTechnology id="eap" versionRange="(5,6]"/>
+        <targetTechnology id="ejb" versionRange="(2,3]"/>
+        <tags>
+                <tag>require-stateless</tag>
+                <tag>require-nofilesystem-io</tag>
+        </tags>
+        <executeAfter>AfterId</executeAfter>
+        <executeBefore>BeforeId</executeBefore>
+    </metadata>
+    <rules>
+    </rules>
+</ruleset>
+--------
 
 ==== Create the Rule When Condition
 

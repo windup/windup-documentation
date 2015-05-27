@@ -18,7 +18,7 @@ This topic guides you through the process of creating and testing your first rul
     otherwise 
         perform(action)
 
-As you create your first rule, refer to the http://windup.jboss.org/schema/rule-schema.xsd[Rules Schema] for valid XML syntax. 
+As you create your first rule, refer to the http://windup.jboss.org/schema/rule-schema_1_0.xsd[Rules Schema] for valid XML syntax. 
 
 For more information about XML rule construction, see xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule].
 
@@ -63,6 +63,13 @@ $ mkdir -p migration-rules/data
 ----
 <?xml version="1.0"?>
 <ruleset xmlns="http://windup.jboss.org/v1/xml" id="UNIQUE_RULESET_ID">
+    <metadata>
+        <description>
+            <!-- Ruleset Description -->
+        </description>
+        <sourceTechnology id="SOURCE_ID" versionRange="VERSION-RANGE"/>
+        <targetTechnology id="TARGET_ID" versionRange="VERSION-RANGE"/>
+    </metadata>
     <rules>
         <rule id="UNIQUE_RULE_ID">
             <when>
@@ -109,6 +116,13 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 ----
 <?xml version="1.0"?>
 <ruleset xmlns="http://windup.jboss.org/v1/xml" id="JBoss5-web-class-loading">
+    <metadata>
+        <description>
+            This ruleset looks for the class-loading element in a jboss-web.xml file, which is no longer valid in JBoss EAP 6
+        </description>
+        <sourceTechnology id="eap" versionRange="(4,5)"/>
+        <targetTechnology id="eap" versionRange="[6,)"/>
+    </metadata>
     <rules>
         <rule id="JBoss5-web-class-loading_001">
             <when>
@@ -139,7 +153,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\" or "\Users\USER_
 
 ==== Validate the Rule Against the Schema
 
-To validate your XML rule using the {ProductShortName} `rule-schema.xsd` schema, see xref:Rules-Validate-Rulesets-Against-the-Schema[Validate Rulesets Against the Schema].
+To validate your XML rule using the {ProductShortName} rule schema, see xref:Rules-Validate-Rulesets-Against-the-Schema[Validate Rulesets Against the Schema].
 
 
 ==== Test the Rule

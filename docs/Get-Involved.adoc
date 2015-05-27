@@ -10,7 +10,7 @@
 
 To help us make {ProductName} cover most application constructs and server configurations, including yours, you can help with any of the following items. Many require only a few minutes of your time!
 
-* Send an email to windup-users@lists.jboss.org and let us know what {ProductName} migration rules should cover.
+* Send an email to windup-users@lists.jboss.org and let us know what should {ProductName} migration rules  cover.
 * Provide example applications to test migration rules.
 * Identify application components and problem areas that may be difficult to migrate.
 ** Write a short description of these problem migration areas.
@@ -19,11 +19,12 @@ To help us make {ProductName} cover most application constructs and server confi
 * You can contribute to the {ProductName} rules repository. 
 ** Write a {ProductName} rule to identify or automate a migration process.
 ** Create a test for the new rule.
-** Details are provided in the _{ProductName} Rules Development Guide_.
+** Fork the `windup-rulesets` Github repository and put the rule therein. 
+** Details are provided in the _http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html#_fork_and_clone_the_quickstart_github_project[{ProductName} Rules Development Guide]_.
 * You can also contribute to the project source code. 
 ** Create a core rule.
 ** Improve {ProductName} performance or efficiency.
-** See the_{ProductName} Core Development Guide_ for information about how to configure your environment and set up the project.
+** See the _http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html[{ProductName} Core Development Guide]_ for information about how to configure your environment and set up the project.
 
 Any level of involvement is greatly appreciated!
 

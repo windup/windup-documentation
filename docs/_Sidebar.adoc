@@ -5,6 +5,7 @@
 
 === Downloads
 https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.windup&a=windup-distribution&v=LATEST&e=zip&c=offline[Latest {ProductName} ZIP distribution]
+https://github.com/windup/windup-quickstarts/releases[{ProductName} Quickstarts]
 
 === Wiki Guides:
 
@@ -30,4 +31,4 @@ http://windup.github.io/windup/docs/latest/pdf/WindupCoreDevelopmentGuide.pdf[{P
 === Developer Materials
 
 http://windup.github.io/windup/docs/latest/javadoc[{ProductName} Javadoc] +
-http://windup.jboss.org/schema/rule-schema.xsd[Rule Schema]
+http://windup.jboss.org/schema/rule-schema_1_0.xsd[Rule Schema]
