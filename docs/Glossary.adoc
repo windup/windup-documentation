@@ -1,10 +1,7 @@
 
 
-
- 
-
 [[Glossary]]
-=== Glossary of Terms Used in {ProductName}
+=== Glossary of Terms Used in {ProductShortName}
 
 ==== Rules Terms
 
@@ -19,9 +16,9 @@ Rule:: A piece of code that performs a single unit of work during the migration 
      .withEffort(1))
 ----
 
-RuleProvider::  An implementation of OCPSoft ConfigurationProvider class specifically for {ProductName}. It provides Rule instances and the relevant RuleProviderMetadata for those Java-based and XML-based Rule instances. 
+RuleProvider::  An implementation of OCPSoft ConfigurationProvider class specifically for {ProductShortName}. It provides Rule instances and the relevant RuleProviderMetadata for those Java-based and XML-based Rule instances. 
 
-Ruleset:: A ruleset is a group of one or more RuleProviders that targets a specific area of migration, for example, `Spring -> Java EE 6` or `WebLogic -> JBoss EAP`. A ruleset is packaged as a JAR and contains additional information needed for the migration, such as operations, conditions, report templates, static files, metadata,  and relationships to other rulesets. The following {ProductName} projects are rulesets.
+Ruleset:: A ruleset is a group of one or more RuleProviders that targets a specific area of migration, for example, `Spring -> Java EE 6` or `WebLogic -> JBoss EAP`. A ruleset is packaged as a JAR and contains additional information needed for the migration, such as operations, conditions, report templates, static files, metadata,  and relationships to other rulesets. The following {ProductShortName} projects are rulesets.
 
 * rules-java-ee
 * rules-xml
@@ -32,12 +29,6 @@ Rules Pipeline:: A collection of rules that feed information into the knowledge 
 
 ==== Reporting Terms
 
-Level of effort:: The level of effort required for the migration task. The following values are used in the reports.
+Level of effort:: The effort required to complete the migration task. _Level of effort_ is represented as _story points_ in the {ProductShortName} reports.
 
-* _Lift and Shift_: The code or file is standards-based and can be ported to the new environment with no changes.
-
-* _Known Solution_: There is a standard mapping algorithm to port the code or file to the new environment.
-
-* _Custom_: The code or file must be rewritten or modified to work in the new environment.
-
-Story Point:: A term commonly used in Scrum Agile software development methodology to estimate the level of effort needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks.
+Story Point:: A term commonly used in Scrum Agile software development methodology to estimate the _level of effort_ needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks.  _Story points_ and _level of effort_ are described in more detail here: xref:Rules-Rule-Story-Points[Rule Story Points].

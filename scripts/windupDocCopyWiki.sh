@@ -7,6 +7,7 @@ fi
 echo "*******************************************"
 echo "Copying files from: " $1
 echo "*******************************************"
+cp $1/About-Rules.asciidoc docs/About-Rules.adoc
 cp $1/About-the-HOME-Variable.asciidoc docs/About-the-HOME-Variable.adoc
 cp $1/About-this-Wiki.asciidoc docs/About-this-Wiki.adoc
 cp $1/Architectural-Components.asciidoc docs/Architectural-Components.adoc

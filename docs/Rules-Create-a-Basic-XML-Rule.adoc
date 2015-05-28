@@ -24,8 +24,7 @@ XML rules consist of _conditions_ and _actions_ and follow the familiar "if/then
 
     when(condition)
         perform(action)
-    otherwise
-        perform(action)
+    otherwise(action)
 
 The following is the basic syntax for XML rules.
 

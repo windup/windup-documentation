@@ -16,42 +16,44 @@ or core rule add-ons to the {ProductName} project.
 ==== Overview
 
 * xref:What-is-it[What is {ProductName}]?
-* xref:Features[Features of {ProductName}]
+* xref:Features[Features of {ProductShortName}]
+* xref:About-Rules[About {ProductShortName} Rules]
+* xref:System-Requirements[System Requirements]
 * xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable]
 
 ==== Get Started
 
-Before you begin to contribute to {ProductName}, take a quick tour to see how to use it.
+Before you begin to contribute to {ProductShortName}, take a quick tour to see how to use it.
 
-* xref:Install[Install {ProductName}]
-* xref:Execute[Execute {ProductName}]
+* xref:Install[Install {ProductShortName}]
+* xref:Execute[Execute {ProductShortName}]
 * xref:Review-the-Report[Review the Report]
 
 ==== Prepare Your Development Environment
 
-Now that you've seen {ProductName} in action, prepare your development environment.
+Now that you've seen {ProductShortName} in action, prepare your development environment.
 
 * xref:Install-and-Configure-Maven[Install and Configure Maven]
-* xref:Dev-Get-the-Source-Code[Get the {ProductName} Source Code]
-* xref:Dev-Build-from-Source[Build {ProductName} from Source]
-* xref:Dev-Execute-Built-from-Source[Execute {ProductName} Built from Source]
+* xref:Dev-Get-the-Source-Code[Get the {ProductShortName} Source Code]
+* xref:Dev-Build-from-Source[Build {ProductShortName} from Source]
+* xref:Dev-Execute-Built-from-Source[Execute {ProductShortName} Built from Source]
 
 ==== Developer Contributing Information
 
 * xref:Dev-Development-Guidelines-and-Conventions[Developer Guidelines and Conventions]
-* xref:Dev-Submit-Code-Updates-to-the-Project[Submit Code Updates to the {ProductName} Project]
+* xref:Dev-Submit-Code-Updates-to-the-Project[Submit Code Updates to the {ProductShortName} Project]
 
-==== Understand the {ProductName} Architecture and Structure
+==== Understand the {ProductShortName} Architecture and Structure
 
-* xref:Processing-Overview[{ProductName} Processing Overview]
-* xref:Architectural-Components[{ProductName} Architectural Components]
-* xref:Dev-Project-Structure[{ProductName} Project Structure]
-* xref:Dev-Configuration[{ProductName} Configuration]
+* xref:Architectural-Components[{ProductShortName} Architectural Components]
+* xref:Dev-Project-Structure[{ProductShortName} Project Structure]
 
 ==== Rules and Rulesets
 
+* xref:Processing-Overview[{ProductShortName} Processing Overview]
 * xref:Rules-Rule-Execution-Lifecycle[Rules Execution Lifecyle]
 * xref:Rule-Phases[Rule Phases]
+* xref:Rules-Available-Rules-Utilities[Available Rules Utilities]
 * xref:Rules-Rule-Story-Points[Rule Story Points]
 * xref:Rules-Difference-Between-XML-based-and-Java-based-Rules[Difference Between XML-based and Java-based Rules]
 
@@ -60,72 +62,28 @@ Now that you've seen {ProductName} in action, prepare your development environme
 * xref:Rules-Java-based-Rule-Structure[Java-based Rule Structure]
 * xref:Rules-Basic-Rule-Execution-Flow-Patterns[Basic Rule Execution Flow Patterns]
 * xref:Rules-Create-a-Basic-Java-based-Rule-Add-on[Create a Basic Java-based Rule Add-on]
-* xref:Rules-Create-an-Advanced-Ruleset[Create an Advanced Ruleset]
 
 ==== Create and Test XML Rules
 
-* xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule]
-
-* xref:Rules-Test-a-Basic-XML-Rule[Test an XML Rule in {ProductName}]
+See the {ProductName} Rules Development Guide for instructions to create XML-based rules.
 
 ==== Debugging and Troubleshooting
 
 * xref:Dev-Debugging-and-Profiling[Debugging and Profiling]
 * xref:Dev-Troubleshooting[Troubleshooting]
 
-==== Developer topics
-
-* xref:Dev-Bootstrap-Process[Bootstrap]
-* xref:Dev-Classloading-Notes[Classloading Notes]
-* xref:Dev-Connect-to-the-Graph-via-Rexster[Connect to the Graph via Rexster]
-* xref:Dev-Decompiling[Decompiling]
-* xref:Dev-Dependencies[Dependencies]
-* xref:Dev-Frames-Extensions[Frames Extensions]
-* xref:Dev-Internal-API-Features[Internal API Features]
-* xref:Dev-Logging[Logging]
-* xref:Dev-Variables-Stack[Variables Stack]
-* xref:Dev-Git-Rebasing[Git Rebasing]
-* xref:Dev-Release-Process[{ProductName} Release Process]
-
-==== Rules topics
-
-* xref:Rules-Available-Rules-Utilities[Available Utilities]
-* xref:Dev-Concepts-and-Philosophy[Concepts and Philosophy]
-* xref:Rules-Creating-Rule-Operations[Creating Rules Operations]
-* xref:Rules-Rulesets[Rulesets]
-** xref:Ruleset-Java-Basic-Ruleset[Java Basic Ruleset]
-** xref:Ruleset-Java-Classifications-and-Inline-Hints[Ruleset Java Classifications and Inline Hints]
-** xref:Ruleset-Java-EE-Apps[Java EE Apps Ruleset]
-** xref:Ruleset-Java-EE-Servers[Java EE Servers Ruleset]
-** xref:Ruleset-Reporting[Reporting Ruleset]
-* xref:Ruleset-XML[XML Ruleset]
-* xref:Rules-Models[{ProductName} Models]
-* xref:Rules-Create-Java-Queries[Create Java Queries]
-* xref:Rule-Metadata[Rule Metadata]
-* xref:Rules-Rules-Operations[Rules Operations]
-** xref:Rules-Ops-Reporting-Classification[Rules Ops: Reporting: Classification]
-** xref:Rules-Ops-Reporting-Hint[Rules Ops: Reporting: Hint]
-** xref:Rules-Ops-Reporting-TypeReference[Rules Ops: Reporting: TypeReference]
-** xref:Rules-Ops-Xml-XsltTrasformation[Rules Ops: XML: XSLT Transformation]
-* xref:Rules-Java-based-Rule-Structure[Java-Based Rule Structure]
-
-==== Wiki and Product Documentation
-
-* xref:About-the-Wiki[About the {ProductName} Wiki]
-* xref:Dev-Add-Images-to-the-Wiki[Add Images to the {ProductName} Wiki]
-* xref:Dev-Create-the-JavaDoc[Create {ProductName} JavaDoc]
-* xref:Dev-Documentation-Process[{ProductName} Documentation Process]
-
 ==== Additional Resources
 
-* xref:Review-the-Quickstarts[Review the {ProductName} Quickstarts]
+* xref:Review-the-Quickstarts[Review the {ProductShortName} Quickstarts]
 * xref:Get-Involved[Get Involved] - We need your feedback!
+* xref:Important Links[Important Links]
 * xref:Known-Issues[Known Issues] 
-* xref:Report-Issues[Report Issues with {ProductName}]
+* xref:Report-Issues[Report Issues with {ProductShortName}]
 
 ==== Appendix
 
 * xref:Glossary[Glossary of Terms]
-* xref:Dev-Project-Information[{ProductName} Project Information] - Github
+* xref:Dev-Project-Information[{ProductShortName} Project Information] - Github
 repository, IRC, Mailing lists, ...
+* xref:Optimize-Performance[Optimize {ProductShortName} Performance]
 

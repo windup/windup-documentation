@@ -15,7 +15,8 @@ This guide is for engineers, consultants, or others who plan to create rules for
 ==== Introduction
 
 * xref:What-is-it[What is {ProductName}?]
-* xref:Features[Features of {ProductName}]
+* xref:Features[Features of {ProductShortName}]
+* xref:About-Rules[About {ProductShortName} Rules]
 * xref:System-Requirements[System Requirements]
 * xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable]
 
@@ -27,20 +28,16 @@ This guide is for engineers, consultants, or others who plan to create rules for
 ==== Create and Test XML Rules
 
 * xref:Rules-Difference-Between-XML-based-and-Java-based-Rules[Difference Between XML-based and Java-based Rules]
-* xref:Rules-Review-the-Existing-XML-Rules[Review the Existing Windup XML Rules]
 * xref:Rules-XML-Rule-Construction[XML Rule Construction]
 * xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule]
-* xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
-* xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax]
-* xref:Rules-Test-a-Basic-XML-Rule[Test an XML Rule in {ProductName}]
 * xref:Rules-Validate-Rulesets-Against-the-Schema[Validate Rulesets Against the Schema]
+* xref:Rules-Test-a-Basic-XML-Rule[Test an XML Rule in {ProductName}]
 
-==== {ProductName} Processing
+== Learn More About {ProductName}
 
-* xref:Rules-Review-the-Existing-XML-Rules[Review the Existing {ProductShortName} XML Rules]
 * xref:Execute[Execute {ProductName}]
 * xref:Review-the-Report[Review the Report]
-
+* xref:Rules-Review-the-Existing-XML-Rules[Review the Existing Windup XML Rules]
 
 ==== Additional Resources
 
@@ -54,7 +51,9 @@ This guide is for engineers, consultants, or others who plan to create rules for
 
 * xref:Glossary[Glossary of Terms]
 * xref:Rules-Rule-Story-Points[Rule Story Points]
-
+* xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
+* xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax]
+* xref:Optimize-Performance[Optimize {ProductShortName} Performance]
 
 
 

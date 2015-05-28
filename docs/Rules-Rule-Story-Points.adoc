@@ -6,13 +6,13 @@
 
 ==== What are Story Points?
 
-Story points are an abstract metric commonly used in Scrum Agile software development methodology to estimate the level of effort needed to implement a feature or change. They are based on a http://scrummethodology.com/scrum-effort-estimation-and-story-points/[modified Fibonacci sequence]. 
+_Story Points_ are an abstract metric commonly used in Scrum Agile software development methodology to estimate the _level of effort_ needed to implement a feature or change. They are based on a http://scrummethodology.com/scrum-effort-estimation-and-story-points/[modified Fibonacci sequence]. 
 
-In a similar manner, {ProductName} uses story points to express the level of effort needed to migrate particular application constructs, and in a sum, the application as a whole. It does not necessarily translate to man-hours, but the value should be consistent across tasks.
+In a similar manner, {ProductName} uses _story points_ to express the _level of effort_ needed to migrate particular application constructs, and in a sum, the application as a whole. It does not necessarily translate to man-hours, but the value should be consistent across tasks.
 
 ==== How Story Points are Estimated in Rules
 
-Estimating story points for a rule can be tricky. The following are the general guidelines {ProductShortName} uses when estimating the level of effort required for a rule.
+Estimating the _level of effort_ for the _story points_ for a rule can be tricky. The following are the general guidelines {ProductShortName} uses when estimating the _level of effort_ required for a rule.
 
 [cols="3*", options="header"] 
 |===
@@ -20,19 +20,31 @@ Estimating story points for a rule can be tricky. The following are the general 
 |Story Points
 |Description
 
-|Lift and Shift
-|0
-|The code or file is standards-based and requires no effort.
+|Trivial
+|1
+|The migration is a trivial change or a simple library swap with no or minimal API changes.
 
-|Known Solution
-| 1- 2 per file
-|There is a standard mapping algorithm to port the code or file to the new environment. The number of story points required is small, but is dependent on the number of files to port.
+|Complex
+| 3
+|The changes required for the migration task are complex, but have a documented solution.
 
-|Custom
-|5 - 20 per change or component
-a| The number of story points required to modify and rewrite code depends on the complexity of the change, the number of unknown imports, the size of the files, and the number of components. The following are examples of how to estimate story points.
+|Redesign
+|5
+|The migration task requires a redesign or a complete library change, with significant API changes.
 
-* Port MyBatis to JPA: '20' story points per query.
-* Port a web page from one web framework to another depends on the complexity and the number of components involved in the migration. You could estimate '20' story points per component.
+|Rearchitecture
+|7
+|The migration requires a complete rearchitecture of the component or subsystem.
+
+|Unknown
+|13
+|The migration solution is not known and may need a complete rewrite.
 |===
+
+==== Task Severity
+
+In addition to the _level of effort_, migration tasks can be assigned a _severity_ that indicates whether the task must be completed or can be postponed.
+
+Mandatory:: The task must be completed for a successful migration. If the changes are not made, the resulting application will not build or run successfully. Examples include replacement of proprietary APIs that are not supported in the target platform. 
+Optional:: If the migration task is not completed, the application will work, but the results may not be the optimal. If the change is not made at the time of migration, it is recommended to put it on the schedule soon after migration is completed. An example of this would be the upgrade of EJB 2.x code to EJB 3.
 

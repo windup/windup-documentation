@@ -18,31 +18,29 @@
 This guide is for engineers, consultants, and others who plan to use {ProductName} to migrate Java applications or other components.
 
 * xref:What-is-it[What is {ProductName}?]
-* xref:Features[Features of {ProductName}]
+* xref:Features[Features of {ProductShortName}]
+* xref:About-Rules[About {ProductShortName} Rules]
 * xref:System-Requirements[System Requirements]
 * xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable]
 
 ==== Get Started
 
-* xref:Install[Install {ProductName}]
-* xref:Execute[Execute {ProductName}]
+* xref:Install[Install {ProductShortName}]
+* xref:Execute[Execute {ProductShortName}]
 * xref:Review-the-Report[Review the Report]
-
-==== How {ProductName} Works
-
-* xref:Processing-Overview[{ProductName} Processing Overview]
-* xref:Architectural-Components[{ProductName} Architectural Components]
-* xref:Rule-Phases[Rule Phases]
-* xref:Rules-Rule-Story-Points[Rule-Story-Points]
 
 ==== Additional Resources
 
 * xref:Review-the-Quickstarts[Review the {ProductName} Quickstarts]
 * xref:Get-Involved[Get Involved]
+* xref:Important-Links[Important Links]
 * xref:Known-Issues[Known Issues] 
 * xref:Report-Issues[Report Issues with {ProductName}]
 
 ==== Appendix
 
 * xref:Glossary[Glossary of Terms Used in {ProductName}]
+* xref:Rules-Rule-Story-Points[Rule Story Points]
+* xref:Optimize-Performance[Optimize Performance]
+
 

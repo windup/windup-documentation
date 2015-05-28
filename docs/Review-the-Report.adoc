@@ -45,7 +45,7 @@ The first section of the application report page summarizes the migration effort
 * The file name
 * The file type
 * A list of issues, if any, that were found in the file
-* The estimated total _Story Points_ to migrate the file. A _Story Point_ is a term commonly used in Scrum Agile software development methodology to estimate the level of effort needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks.
+* The estimated total _Story Points_ to migrate the file. A _Story Point_ is a term commonly used in Scrum Agile software development methodology to estimate the level of effort needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks. For more information about _Story Points_, see xref:Rules-Rule-Story-Points[Rule Story Points].
 
 +
 NOTE: The estimated Story Points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.

@@ -1,6 +1,7 @@
 
 
 
+
  
 
 [[Features]]
@@ -41,12 +42,7 @@ Automation::
 
 Work Estimation:: 
 
-Estimates for the level of effort is based on the skills required and the classification of migration work needed.
-
-* Lift and Shift - The code or file is standards-based and can be ported to the new environment with no changes.
-* Known Solution - There is a standard mapping algorithm to port the code or file to the new environment.
-* Custom – The code or file must be rewritten or modified to work in the new environment.
-
+Estimates for the _level of effort_ are based on the skills required and the classification of migration work needed. _Level of effort_ is represented as _story points_ in the {ProductShortName} reports and are described in more detail here: xref:Rules-Rule-Story-Points[Rule Story Points].
 
 Better Reporting::
 

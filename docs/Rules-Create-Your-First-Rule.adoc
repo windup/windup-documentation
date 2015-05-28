@@ -15,8 +15,7 @@ This topic guides you through the process of creating and testing your first rul
 
     when(condition)
         perform(action)
-    otherwise 
-        perform(action)
+    otherwise(action)
 
 As you create your first rule, refer to the http://windup.jboss.org/schema/rule-schema_1_0.xsd[Rules Schema] for valid XML syntax. 
 

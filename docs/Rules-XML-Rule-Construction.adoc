@@ -42,8 +42,7 @@ Rule elements follow the familiar construct:
 
     when(condition)
         perform(action)
-    otherwise 
-        perform(action)
+    otherwise(action)
 
 The following section describes the more commonly used elements in a `<rule.`.
 
