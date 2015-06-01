@@ -17,9 +17,11 @@ This topic guides you through the process of creating and testing your first rul
         perform(action)
     otherwise(action)
 
-As you create your first rule, refer to the http://windup.jboss.org/schema/rule-schema_1_0.xsd[Rules Schema] for valid XML syntax. 
+Ruleset and Rule XML elements are covered in more detail here: xref:Rules-XML-Rule-Construction[XML Rule Construction].
 
-For more information about XML rule construction, see xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule].
+Additional details about creating XML rules, with example syntax, can be found here: xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule].
+
+As you create your first rule, refer to the http://windup.jboss.org/schema/rule-schema_1_0.xsd[Rules Schema] for valid XML syntax. 
 
 ==== Rule Example Description
 
