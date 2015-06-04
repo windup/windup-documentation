@@ -12,25 +12,28 @@ This section describes how {ProductShortName} starts up, finds the resources, lo
 
 . `@Inject WindupProcessor` 
 +
---------
+[options="nowrap"]
+----
 CDI instantiates `WindupProcessorImpl`
---------
+----
 
 . Create `WindupProcessorConfig`
 
 . WindupProcessorImpl.execute( WindupProcessorConfig )
 +
---------
+[options="nowrap"]
+----
 WindupProcessorImpl instantiates `@Inject GraphContext graphContext`, which holds
 graph-related objects.
---------
+----
 
 . `GraphContextFactoryImpl`: 
 +
---------
+[options="nowrap"]
+----
 `create()`
 `@Produces GraphContext produceGraphContext()`
---------
+----
 
 ==== GraphContext
 
@@ -41,7 +44,7 @@ graph-related objects.
 In the `GraphContextImpl` constructor. For additonal method Handlers,
 see
 
-[source,java]
+[source,java,options="nowrap"]
 ----
 final Module addModules = new Module()
 {

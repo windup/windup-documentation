@@ -23,23 +23,27 @@ If you don't have the GitHub client (`git`), download it from: <http://git-scm.c
 . Click the `Fork` link on the https://github.com/windup/windup-quickstarts/[{ProductName} quickstart] GitHub page to create the project in your own Git. The forked GitHub repository URL created by the fork should look like this: https://github.com/YOUR_USER_NAME/windup-quickstarts.git
 . Clone your {ProductName} quickstart repository to your local file system:
 +
---------
+[options="nowrap"]
+----
 git clone https://github.com/YOUR_USER_NAME/windup-quickstarts.git
---------
+----
 . This creates and populates a `windup-quickstarts` directory on your local file system. Navigate to the newly created directory, for example 
 +
---------
+[options="nowrap"]
+----
 cd windup-quickstarts/
---------
+----
 . If you want to be able to retrieve the lates code updates, add the remote `upstream` repository so you can fetch any changes to the original forked repository.
 +
---------
+[options="nowrap"]
+----
 git remote add upstream https://github.com/windup/windup-quickstarts.git
---------
+----
 . To get the latest files from the `upstream` repository.
 +
---------
+[options="nowrap"]
+----
 git reset --hard upstream/master
---------
+----
 
 

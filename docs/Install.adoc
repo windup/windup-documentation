@@ -6,7 +6,8 @@
 
 . If you installed previous versions of {ProductShortName}, delete the `${user.home}/.windup/` directory. Otherwise you may see errors like the following when you execute {ProductShortName}.
 +
-----  
+[options="nowrap"]
+----
 Command: windup-migrate-app was not found
 ----
 

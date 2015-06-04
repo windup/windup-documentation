@@ -1,9 +1,3 @@
-
-
-
- 
-
-
 [[Dev-Rule-Metadata-and-API-Discrepancies]]
 === Rule Metadata and API Discrepancies
 
@@ -13,19 +7,28 @@ These are notes about technical debt, which will probably never be removed.
 
 ==== API
 
-    public void perform(GraphRewrite event, EvaluationContext evCtx)
+[source,java,options="nowrap"]
+----
+public void perform(GraphRewrite event, EvaluationContext evCtx)
+----
 
 Why do we need both event and evaluation context? I think we don't, they could be merged.
 What is an "event"? The name doesn't fit.
 
-    GraphContext#setOptions()
+[source,java,options="nowrap"]
+----
+GraphContext#setOptions()
+----
 
 What is this? Is it really related to graph?
 
 
 ==== Metadata
 
-    Object cat = event.getRewriteContext().get(RuleMetadata.CATEGORY);
+[source,java,options="nowrap"]
+----
+Object cat = event.getRewriteContext().get(RuleMetadata.CATEGORY);
+----
 
 What does it do in `RewriteContext`? That should be bound to `Rule(Provider)`, not a context.
 More, this metadata needs the executor to run, wheares other like `getExecuteAfter()` don't.
@@ -35,10 +38,13 @@ This leads to every rule having a `contextMap` where identical values are refere
 
 They are under:
 
-    context.map[WindupRuleMetadata].providersToRules[?RuleProvider][?].contextMap
-      [CATEGORY] = "java,security"
-      [RULE_PROVIDER] = ...
-      [ORIGIN] = ...
+[source,java,options="nowrap"]
+----
+context.map[WindupRuleMetadata].providersToRules[?RuleProvider][?].contextMap
+  [CATEGORY] = "java,security"
+  [RULE_PROVIDER] = ...
+  [ORIGIN] = ...
+----
 
 Why does `enhanceMetadata(Context rewriteCtx)` get a `rewrite.Context`? Why not some `RuleProvider`-related object?
 
@@ -46,8 +52,8 @@ Why does `enhanceMetadata(Context rewriteCtx)` get a `rewrite.Context`? Why not 
 
 The event object is actually not an event. It does not bear any aspects of any event. It is a context. As such, it would be practical to have it injected by CDI, from appropriate scope - in this case, application scope.
 
-[source,java]
-------------------
+[source,java,options="nowrap"]
+----
 @Override
 public void beforeExecution(GraphRewrite event)
 {
@@ -55,4 +61,4 @@ public void beforeExecution(GraphRewrite event)
                 + "- Archives will be identified automatically.");
     event.getGraphContext().getGraph().addListener(new ArchiveIdentificationGraphChangedListener(event));
 }
-------------------
+----

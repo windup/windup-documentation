@@ -21,14 +21,20 @@ http://git-scm.com/
 
 * Be sure to generate an SSH key and add the public key to your GitHub account: https://help.github.com/articles/generating-ssh-keys. You can verify the key using the following command:
 
-            ssh -T git@github.com
+[options="nowrap"]
+----
+ssh -T git@github.com
+----
 +
 You should see a message indicating your ID has successfully authenticated.
 
 * You should also configure your name and email identity using the following commands:
 
-            git config --global user_name "FIRST_NAME LAST_NAME"
-            git config --global user_email "YOUR_EMAIL_ADDRESS"
+[options="nowrap"]
+----
+git config --global user_name "FIRST_NAME LAST_NAME"
+git config --global user_email "YOUR_EMAIL_ADDRESS"
+----
 
 ==== Fork and Clone the {ProductName} Repository
 
@@ -38,22 +44,24 @@ name 'origin'.
 . Clone your fork. This creates and populates a directory in your
 local file system.
 +
--------------------------------------------------------
+[options="nowrap"]
+----
 git clone https://github.com/<your-username>/windup.git
--------------------------------------------------------
+----
 . Change to the `windup` directory.
 . Add the remote `upstream` repository so you can fetch any changes to
 the original forked repository.
 +
---------------------------------------------------------
+[options="nowrap"]
+----
 git remote add upstream git@github.com:windup/windup.git
---------------------------------------------------------
+----
 . Get the latest files from the `upstream` repository.
 +
-------------------
+[options="nowrap"]
+----
 git fetch upstream
-------------------
-
+----
 
 ==== Fork and Clone the {ProductName} Rulesets Repository
 
@@ -64,21 +72,24 @@ creates the `windup-rulesets` project in your own Git with the default remote
 name 'origin'.
 . Clone your fork. This creates and populates a directory in your local file system.
 +
--------------------------------------------------------
+[options="nowrap"]
+----
 git clone https://github.com/<your-username>/windup-rulesets.git
--------------------------------------------------------
+----
 . Change to the `windup-rulesets` directory.
 . Add the remote `upstream` repository so you can fetch any changes to
 the original forked repository.
 +
---------------------------------------------------------
+[options="nowrap"]
+----
 git remote add upstream git@github.com:windup/windup-rulesets.git
---------------------------------------------------------
+----
 . Get the latest files from the `upstream` repository.
 +
-------------------
+[options="nowrap"]
+----
 git fetch upstream
-------------------
+----
 
 
 ==== Fork and Clone the {ProductName} Distribution Repository
@@ -89,20 +100,23 @@ creates the `windup-distribution` project in your own Git with the default remot
 name 'origin'.
 . Clone your fork. This creates and populates a directory in your local file system.
 +
--------------------------------------------------------
+[options="nowrap"]
+----
 git clone https://github.com/<your-username>/windup-distribution.git
--------------------------------------------------------
+----
 . Change to the `windup-distribution` directory.
 . Add the remote `upstream` repository so you can fetch any changes to
 the original forked repository.
 +
---------------------------------------------------------
+[options="nowrap"]
+----
 git remote add upstream git@github.com:windup/windup-distribution.git
---------------------------------------------------------
+----
 . Get the latest files from the `upstream` repository.
 +
-------------------
+[options="nowrap"]
+----
 git fetch upstream
-------------------
+----
 
 

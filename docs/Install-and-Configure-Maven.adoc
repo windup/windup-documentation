@@ -43,8 +43,8 @@ Follow this procedure to configure the Maven settings if you plan to build {Prod
 . Copy the following `jboss-nexus-repository` profile XML prior to the
 ending `</profiles>` element.
 +
-[source,xml]
--------------------------------------------------------------------------
+[source,xml,options="nowrap"]
+----
 <profile>
   <id>jboss-nexus-repository</id>
   <repositories>
@@ -72,14 +72,14 @@ ending `</profiles>` element.
     </pluginRepository>
   </pluginRepositories>
 </profile>
--------------------------------------------------------------------------
+----
 . Copy the following XML prior to the ending `</activeprofiles>`
 element to make the profile active.
 +
-[source,xml]
-----------------------------------------------------------
+[source,xml,options="nowrap"]
+----
 <activeProfile>jboss-nexus-repository</activeProfile> 
-----------------------------------------------------------
+----
 
 You are now configured to build {ProductShortName}.
 

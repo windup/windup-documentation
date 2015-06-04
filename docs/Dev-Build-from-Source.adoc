@@ -17,10 +17,11 @@ If you use Linux and are an experienced {ProductShortName} developer looking for
 +
 You can choose from the following:
 +
---------------
+[options="nowrap"]
+----
 OpenJDK
 Oracle Java SE
---------------
+----
 . Maven 3.1.1 or newer
 +
 If you have not yet installed or configured Maven, see
@@ -29,9 +30,10 @@ xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
 If you have installed Maven, you can check the version by typing the
 following in a command prompt:
 +
---------------
+[options="nowrap"]
+----
 mvn --version 
---------------
+----
 . IDE requirements
 +
 If you prefer, you can work within an IDE. The following IDEs are recommended.
@@ -101,48 +103,55 @@ The `windup-distribution` project has dependencies on the other 2 projects, so y
 +
 * Open a command terminal and navigate to the root of the {ProductShortName} Ruleset project directory. 
 +
---------------
+[options="nowrap"]
+----
     cd windup-ruleset/
---------------
+----
 + 
 * Build the project.
 +
------------------
+[options="nowrap"]
+----
 mvn clean install
------------------
+----
 . Build the https://github.com/windup/windup[windup] project.
 +
 * Open a command terminal and navigate to the root of the windup project directory. 
 +
---------------
-    cd windup/
---------------
+[options="nowrap"]
+----
+cd windup/
+----
 + 
 * Build the project.
 +
------------------
+[options="nowrap"]
+----
 mvn clean install
------------------
+----
 
 +
 * You can also build the project without the tests.
 +
----------------------------------
+[options="nowrap"]
+----
 mvn clean install -DskipTests
----------------------------------
+----
 . Build the https://github.com/windup/windup-distribution[windup-distribution] project.
 +
 * Open a command terminal and navigate to the root of the {ProductShortName} distribution project directory. 
 +
---------------
-    cd windup-distribution/
---------------
+[options="nowrap"]
+----
+cd windup-distribution/
+----
 + 
 * Build the project.
 +
------------------
+[options="nowrap"]
+----
 mvn clean install
------------------
+----
 * This creates a `windup-distribution-<VERSION>-offline.zip` file in the `windup-distribution/target/` directory.
 
 ==== Build Using Red Hat JBoss Developer Studio or Eclipse
@@ -191,7 +200,8 @@ Unzip the file into a directory of your choice.
 [[quick-build-review-for-experienced-developers]]
 ==== Quick Build Review for Experienced Developers
 
----------------
+[options="nowrap"]
+----
 git clone git@github.com:windup/windup-ruleset.git windup
 cd windup-ruleset
 mvn clean install
@@ -202,4 +212,4 @@ git clone git@github.com:windup/windup-distribution.git windup
 cd windup-distribution
 mvn clean install
 unzip target/windup-distribution-<VERSION-offline.zip -d <WINDUP-DIRECTORY>
----------------
+----

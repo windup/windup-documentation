@@ -50,8 +50,8 @@ Cons:
 
 The following is an example of a rule written in XML that classifies Java code:
 
-[source,xml]
-----------
+[source,xml,options="nowrap"]
+----
 <?xml version="1.0"?>
 <ruleset xmlns="http://windup.jboss.org/v1/xml" id="EjbRules">
     <rules>
@@ -69,13 +69,13 @@ The following is an example of a rule written in XML that classifies Java code:
         </rule>
     </rules>
 </ruleset>
-----------
+----
 
 
 The following is an example of a rule written in Java that classifies Java code:
 
-[source,java]
-----------
+[source,java,options="nowrap"]
+----
 /**
  * Scans for classes with EJB related annotations, and adds EJB related metadata for these.
  */
@@ -116,11 +116,11 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
     }
     ...
 }
-----------
+----
 
 ==== Quick Comparison Summary
 
-[cols="3*", options="header"] 
+[cols="3,1,1", options="header"] 
 |===
 |Requirement
 |XML Rule

@@ -3,7 +3,7 @@
 
 Conditions allowed in the `when` portion of a rule must extend http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperation] and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
 
-The complete XML rule schema is located here: http://windup.jboss.org/schema/rule-schema_1_0.xsd
+The complete XML rule schema is located here: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd
 
 The following sections describe the more common XML `when` rule conditions. 
 
@@ -20,8 +20,8 @@ The following sections describe the more common XML `when` rule conditions.
 Use the `javaclass` element to find imports, methods, variable declarations, annotations, class implementations, and other items related to Java classes. For a better understanding of the `javaclass` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/condition/JavaClass.html[JavaClass] class.
 
 The following is an example of a rule that tests for a `javaclass`.
-[source,xml]
---------
+[source,xml,options="nowrap"]
+----
 <rule>
     <when>
         <javaclass references="org.jboss.ws.api.annotation.WebContext" in="org/jboss/{*}" as="webcontextclasses">
@@ -33,58 +33,91 @@ The following is an example of a rule that tests for a `javaclass`.
         <hint message="WebContext is deprecated." effort="0"/>
     </perform>
 </rule>
---------
+----
 
 ===== Construct a javaclass Element
 
 ====== javaclass Element Attributes
 
-references="CLASS_NAME":: The package or class name to match on. Wildcard characters can be used.
-+
+[cols="1,1,3", options="header"] 
+|===
+|Attribute Name
+|Type
+|Description
+
+|references
+|CLASS_NAME
+a|The package or class name to match on. Wildcard characters can be used.
+
 _Example:_
-+
-[source,xml]
---------
+[options="nowrap"]
+----
 references="org.apache.commons.{*}"
---------
-    
-as="VARIABLE_NAME":: A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
-+
+----
+|sourceMatch
+|STRING
+a|An exact regex to match. This is useful to distinguish hard-coded strings.
+
 _Example:_
-+
-[source,xml]
---------
+
+[options="nowrap"]
+----
+sourceMatch="log4j.logger"
+----
+
+|as
+|VARIABLE_NAME
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+_Example:_
+
+[options="nowrap"]
+----
 as="MyEjbRule"
---------
+----
 
-in="PATH_FILTER":: Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
-+
+|in
+|PATH_FILTER
+a|Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
+
 _Example:_
-+
-[source,xml]
---------
+[options="nowrap"]
+
+----
 in="{*}File1"
---------
+----
 
-from="VARIABLE_NAME":: Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
-+
+|from
+|VARIABLE_NAME
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
+
 _Example:_
-+
-[source,xml]
---------
+
+[options="nowrap"]
+----
 from="MyEjbRule"
---------
+----
+
+|===
 
 ====== JavaClass Element Child Elements
 
-location:: The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[TypeReferenceLocation].
-+
+[cols="1,4", options="header"] 
+|===
+|Child Element
+|Description
+
+|<location>
+a|The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[TypeReferenceLocation].
+
 _Example:_
-+
-[source,xml]
---------
+
+[source,xml,options="nowrap"]
+----
 <location>IMPORT</location>
---------
+----
+
+|===
 
 [[xmlfile-syntax]]
 ==== xmlfile Syntax
@@ -94,8 +127,8 @@ _Example:_
 Use the `xmlfile` element to find information in XML files. For a better understanding of the `xmlfile` condition, see the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/condition/XmlFile.html[XmlFile] JavaDoc.
 
 The following is an example of a rule that tests for an `xmlfile`.
-[source,xml]
---------
+[source,xml,options="nowrap"]
+----
 <rule>
     <when>
         <xmlfile matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']">
@@ -110,77 +143,105 @@ The following is an example of a rule that tests for an `xmlfile`.
               template="/exampleconversion.xsl"/>
     </perform>
 </rule>
---------
+----
 
 ===== Construct an xmlfile Element
 
 
 ====== xmlfile Element: Attributes
 
-matches="XPATH":: Match on an XML file condition.
-+
+[cols="1,1,3", options="header"] 
+|===
+|Attribute Name
+|Type
+|Description
+
+|matches
+|XPATH
+a|Match on an XML file condition.
+
 _Example:_
-+
-[source,xml]
---------
+
+[options="nowrap"]
+----
 matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"
---------
-    
-xpathResultMatch="XPATH_RESULT_STRING":: Return results that match the given regex. 
-+
+----
+   
+|xpathResultMatch
+|XPATH_RESULT_STRING
+a|Return results that match the given regex. 
+
 _Example:_
-+
-[source,xml]
---------
+
+[options="nowrap"]
+----
 xpathResultMatch=""
---------
+----
 
-as="VARIABLE_NAME":: A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
-+
+|as
+|VARIABLE_NAME
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
 _Example:_
-+
-[source,xml]
---------
+
+[options="nowrap"]
+----
 as="MyEjbRule"
---------
+----
 
-in="PATH_FILTER":: Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
-+
+|in
+|PATH_FILTER
+a|Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
+
 _Example:_
-+
-[source,xml]
---------
+
+[options="nowrap"]
+----
 in="{*}File1"
---------
+----
 
-from="VARIABLE_NAME":: Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
-+
+|from
+|VARIABLE_NAME
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
+
 _Example:_
-+
-[source,xml]
---------
+
+[options="nowrap"]
+----
 from="MyEjbRule"
---------
+----
 
-public-id="PUBLIC_ID":: The DTD public-id regex.
-+
+|public-id
+|PUBLIC_ID
+a|The DTD public-id regex.
+
 _Example:_
-+
-[source,xml]
---------
+
+[options="nowrap"]
+----
 public-id="public"
---------
+----
+
+|===
 
 ====== xmlfile Element: Child Elements
 
-namespace:: The namespace to referenced in XML files. This element contains 2 attributes: The `prefix` and the `uri`.
-+
+[cols="1,4", options="header"] 
+|===
+|Child Element
+|Description
+
+|<namespace>
+a|The namespace to referenced in XML files. This element contains 2 attributes: The `prefix` and the `uri`.
+
 _Example:_
-+
-[source,xml]
---------
+
+[source,xml,options="nowrap"]
+----
 <namespace prefix="abc" uri="http://maven.apache.org/POM/4.0.0"/>
---------
+----
+
+|===
 
 [[project-syntax]]
 ==== project Syntax
@@ -190,8 +251,8 @@ _Example:_
 Use the `project` element to query for the project charateristics. For a better understanding of the `project` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] class.
 
 The following is an example of a rule that checks a rule is dependent on the junit in the version between 2.0.0.Final and 2.2.0.Final.
-[source,xml]
---------
+[source,xml,options="nowrap"]
+----
 <rule>
     <when>
         <project>
@@ -202,7 +263,7 @@ The following is an example of a rule that checks a rule is dependent on the jun
         <lineitem message="The project uses junit with the version between 2.0.0.Final and 2.2.0.Final"/>
     </perform>
 </rule>
---------
+----
 
 ===== Construct a project Element
 
@@ -212,25 +273,63 @@ The `project` element is used to match against the project as a whole. You can u
 
 ====== project Element Child Elements
 
-artifact:: Subcondition used within `project` to query against project dependencies. This element contains the following attributes: 
+[cols="1,4", options="header"] 
+|===
+|Child Element
+|Description
 
-* groupId="PROJECT_GROUP_ID"
-+
-Match on the project `<groupId>` of the dependency
+|<artifact>
+a|Subcondition used within `project` to query against project dependencies. The `artifact` element attributes are described below.
+|===
 
-* artifactId="PROJECT_ARTIFACT_ID"
-Match on the project `<artifactId>` of the dependency
+====== artifact Element Attributes
 
-* fromVersion="FROM_VERSION"
-+
-Specify the lower version bound of the artifact. For example `2.0.0.Final`
+[cols="1,1,3", options="header"] 
+|===
+|Attribute Name
+|Type
+|Description
 
-* toVersion="TO_VERSION"
-+
-Specify the upper version bound of the artifact. For example `2.2.0.Final`
+|groupId
+|PROJECT_GROUP_ID
+|Match on the project `<groupId>` of the dependency
+
+|artifactId
+|PROJECT_ARTIFACT_ID
+|Match on the project `<artifactId>` of the dependency
+
+|fromVersion
+|FROM_VERSION
+|Specify the lower version bound of the artifact. For example `2.0.0.Final`
+
+|toVersion
+|TO_VERSION
+|Specify the upper version bound of the artifact. For example `2.2.0.Final`
+|===
 
 [[filecontent-syntax]]
 ==== filecontent Syntax
 
+===== Summary
+
 Use the `filecontent` element to find strings or text within files, for example, a line in a Properties file. For a better understanding of the `filecontent` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/FileContent.html[FileContent] class.
 
+===== Construct a filecontent Element
+
+====== filecontent Element Attributes
+
+[cols="1,1,3", options="header"] 
+|===
+|Attribute Name
+|Type
+|Description
+
+|pattern
+|String
+|Match the file contents against the provided parameterized string
+
+|filename
+|String
+|Match the file names against the provided parameterized string.
+
+|===

@@ -13,13 +13,12 @@ You can create a {ProductName} rule add-on using Java or a rule using XML or Gro
 ** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
 ** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
 
-NOTE:  Working examples of Groovy-based rules can be found in the {ProductShortName} quickstarts GitHub repository located here: https://github.com/windup/windup-quickstarts
-
 ==== Groovy Rule Add-on Example
 
 The following is an example of a Groovy rule add-on.
 
---------
+[source,groovy,options="nowrap"]
+----
 ruleSet("ExampleBlacklistRule").setPhase(RulePhase.MIGRATION_RULES)
 
     .addRule()
@@ -36,7 +35,7 @@ ruleSet("ExampleBlacklistRule").setPhase(RulePhase.MIGRATION_RULES)
         )
     )
     .withMetadata(RuleMetadata.CATEGORY, "Java")
---------    
+----    
 
 NOTE: {ProductShortName} only analyzes Groovy rule files with names ending in `.windup.groovy`. Be sure to name Groovy-based rules using this naming convention!
 

@@ -13,14 +13,16 @@ The source code for http://windup.jboss.org[windup.jboss.org] is currently locat
 . https://github.com/windup/windup.jboss.org./fork[Fork] the windup.jboss.org project. This creates the `windup.jboss.org` project in your own Git with the default remote name 'origin'.
 . Clone your fork. This creates and populates a `windup.jboss.org` directory in your local file system.
 +
--------------------------------------------------------
+[options="nowrap"]
+----
 git clone https://github.com/<your-username>/windup.git
--------------------------------------------------------
+----
 . Navigate to the `windup.jboss.org` directory, then add and fetch the `upstream` repository so you can update your git with any changes.
 +
---------------------------------------------------------
+[options="nowrap"]
+----
 git remote add -f upstream git@github.com:windup/windup.jboss.org.git
---------------------------------------------------------
+----
 
 ==== Request Write Access to the Web Site Remote Server 
 
@@ -30,20 +32,23 @@ The http://windup.jboss.org[windup.jboss.org] web site is hosted on the `filemgm
 . Attach your ssh public key to the email request.
 . When you receive confirmation, you can test access in a terminal with the following command. If you are prompted for a password, you do not have proper access.
 +
---------
+[options="nowrap"]
+----
 sftp windup@filemgmt.jboss.org
---------
+----
 
 ==== Push Updates to the Web Site Remote Server
 
 . Log into the remote server and navigate to www_htdocs/windup/
 +
+[options="nowrap"]
 ----
 $ sftp windup@filemgmt.jboss.org
 sftp> cd www_htdocs/windup 
 ----
 . Use the `lcd` command to navigate to the directory on your local machine that contains your updates. You can verify the path on the local machine using the `lpwd` command. For example:
 +
+[options="nowrap"]
 ----
 sftp> lcd ~/windup.jboss.org/assets/js
 sftp> lpwd 
@@ -51,6 +56,7 @@ Local working directory: /home/username/windup.jboss.org/assets/js
 ----
 . Use the `cd` command to navigate to the corresponding directory on the remote server. You can verify the path on the remote machine using the `pwd` command.
 +
+[options="nowrap"]
 ----
 sftp> cd www_htdocs/windup/assets/js/
 sftp> pwd
@@ -58,6 +64,7 @@ Remote working directory: /www_htdocs/windup/assets/js
 ----
 . Upload the modified file to the remote server.
 +
+[options="nowrap"]
 ----
 sftp> put windup.js 
 Uploading windup.js to /www_htdocs/windup/assets/js/windup.js
@@ -69,6 +76,7 @@ windup.js                                        100% 1316     1.3KB/s   00:00
 
 *_Upload Schema Example_* 
 
+[options="nowrap"]
 ----
 ### Navigate to your local cloned windup.jboss.org directory
 cd ~/windup.jboss.org/
@@ -84,18 +92,19 @@ sftp windup@filemgmt.jboss.org
 sftp> cd www_htdocs/windup/schema/
 
 ### Navigate to the local directory containing the schema
-sftp> lcd /home/username/windup/config-xml/
+sftp> lcd /home/username/windup/config-xml/schema
 
 ### Push the schema to the remote repository
-sftp> put rule-schema_1_0.xsd
+sftp> put windup-jboss-ruleset.xsd
 
-### You should see "Uploading rule-schema_1_0.xsd to /www_htdocs/windup/schema/rule-schema_1_0.xsd" rule-schema_1_0.xsd  100%   10KB   9.9KB/s   00:00    
+### You should see "Uploading  windup-jboss-ruleset.xsd to /www_htdocs/windup/schema/ windup-jboss-ruleset.xsd"  
+windup-jboss-ruleset.xsd  100%   10KB   9.9KB/s   00:00    
 
 ### Exit sftp
 sftp> exit
 ----
 
-Use your favorite browser to browse to http://windup.jboss.org/schema/rule-schema_1_0.xsd
+Use your favorite browser to browse to http://windup.jboss.org/schema/windup-jboss-ruleset.xsd
 
 ==== Additional Help
 

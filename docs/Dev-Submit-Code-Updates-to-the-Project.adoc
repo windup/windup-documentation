@@ -10,49 +10,55 @@ To get the {ProductName} Source Code, see xref:Dev-Get-the-Source-Code[Get the S
 
 . Create a new topic branch to contain your features, changes, or fixes using the `git checkout` command:
 +
------------------------------------------------------
+[options="nowrap"]
+----
  git checkout -b  <topic-branch-name> upstream/master
------------------------------------------------------
+----
 
 +
 If you are fixing a JIRA, it is a good practice to use the number in the
 branch name. For example:
 +
-----------------------------------------------
+[options="nowrap"]
+----
 git checkout -b WINDUP-225 upstream/master
-----------------------------------------------
+----
 
 . Make changes or updates to the source files. Be sure to test the changes thoroughly!
 
 . When you are sure your updates are ready and working, use the `git add` command to add new or changed file contents to the
 staging area.
 +
-----------------------
+[options="nowrap"]
+----
 git add <folder-name>/
 git add <file-name>
-----------------------
+----
 
 . Use the `git status` command to view the status of the files in the
 directory and in the staging area and ensure that all modified files are
 properly staged:
 +
-------------------
+[options="nowrap"]
+----
 git status        
-------------------
+----
 
 . Commit your changes to your local topic branch. For example:
 +
----------------------------------------------------------
+[options="nowrap"]
+----
 git commit -m 'WINDUP-225: Description of change...'     
----------------------------------------------------------
+----
 
 . Push your local topic branch to your GitHub forked repository. This
 will create a branch on your GitHub fork repository with the same name as
 your local topic branch name.
 +
---------------------------------
+[options="nowrap"]
+----
 git push origin HEAD            
---------------------------------
+----
 +
 _Note: The above command assumes your remote repository is named
 'origin'. You can verify your forked remote repository name using the
@@ -60,9 +66,10 @@ command `git remote -v`_.
 
 . Browse to the newly created branch on your forked GitHub repository.
 +
---------------------------------------------------------------------
+[options="nowrap"]
+----
 https://github.com/<your-username>/windup/tree/<topic-branch-name> 
---------------------------------------------------------------------
+----
 
 . Open a Pull Request. For details, see
 https://help.github.com/articles/using-pull-requests[Using Pull

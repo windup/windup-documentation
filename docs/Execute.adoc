@@ -42,10 +42,11 @@ This is the quickest way to run {ProductShortName}.
 . Open a terminal and navigate to the {ProductHomeVar} directory. 
 . Type the following command to run {ProductShortName} in batch mode:
 +
----------------------------------------------------------------------------
+[options="nowrap"]
+----
 For Linux:     $ WINDUP_HOME/bin/windup --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
 For Windows:   > WINDUP_HOME\bin\windup.bat --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
----------------------------------------------------------------------------
+----
 
 . This command can take arbitrary options processed by different add-ons. The list of options in the core {ProductShortName} distribution can be found in the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/ConfigurationOption.html[Javadoc]. Most commonly used command line arguments are:
 
@@ -70,24 +71,27 @@ For Windows:   > WINDUP_HOME\bin\windup.bat --input INPUT_ARCHIVE --output OUTPU
 
 . To evaluate an application archive, use the following syntax:
 +
----------------------------------------------------------------------------
+[options="nowrap"]
+----
 WINDUP_HOME/bin/windup --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
----------------------------------------------------------------------------
+----
 +
 To run {ProductShortName} against application source code, you must add the `--sourceMode true` argument:
 +
----------------------------------------------------------------------------
+[options="nowrap"]
+----
 WINDUP_HOME/bin/windup  --sourceMode true --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
----------------------------------------------------------------------------
+----
 +
 See xref:command-examples[{ProductShortName} Command Examples] below for concrete examples of commands that use source code directories and archives located in the {ProductShortName} GitHub repository.
 
 . You should see the following result upon completion of the command:
 +
---------
+[options="nowrap"]
+----
 **SUCCESS*** Windup report created: PATH_TO_REPORTS/index.html
               Access it at this URL: file:///home/username/PATH_TO_REPORTS/index.html
---------
+----
 +
 WARNING: Depending on the size of the application and the hardware {ProductShortName} is running on, this command can take a very long time. For tips on how to improve performance, see xref:Optimize-Performance[Optimize {ProductShortName} Performance].
 
@@ -118,14 +122,16 @@ To see the complete list of available arguments for the `windup` command, execut
 
 . Type the following command to start {ProductShortName}:
 +
----------------------------------------------------------------------------
+[options="nowrap"]
+----
 For Linux:    WINDUP_HOME/bin $ ./windup
 For Windows:  C:\WINDUP_HOME\bin> windup
----------------------------------------------------------------------------
+----
 
 . You are presented with the following prompt.
 +
----------------------------------------------------------------------------
+[options="nowrap"]
+----
 Using Windup at WINDUP_HOME
 
  _       ___           __          
@@ -138,35 +144,39 @@ Using Windup at WINDUP_HOME
 JBoss Windup, version [ 2.2.0.Final ] - JBoss, by Red Hat, Inc. [ http://windup.jboss.org ]
 
 [windup-distribution-2.2.0.Final]$ 
----------------------------------------------------------------------------
+----
 
 . The command to run {ProductShortName} is `windup-migrate-app`. It uses the same arguments as batch mode. If you are unsure of valid arguement values, hit the `tab` a few times to see what is available.
 
 . To evaluate an application archive, use the following syntax:
 +
----------------------------------------------------------------------------
+[options="nowrap"]
+----
 windup-migrate-app --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY -source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY--packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
----------------------------------------------------------------------------
+----
 +
 To run {ProductShortName} against application source code, you must add the `--sourceMode true` argument:
 +
----------------------------------------------------------------------------
+[options="nowrap"]
+----
 windup-migrate-app --sourceMode true --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY -source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
----------------------------------------------------------------------------
+----
 
 . You should see the following result upon completion of the command:
 +
---------
+[options="nowrap"]
+----
 ***SUCCESS*** Windup execution successful!
---------
+----
 +
 WARNING: Depending on the size of the application and the hardware {ProductShortName} is running on, this command can take a very long time. For tips on how to improve performance, see xref:Optimize-Performance[Optimize {ProductShortName} Performance].
 
 . To exit {ProductShortName}, type:
 +
---------
+[options="nowrap"]
+----
 exit
---------
+----
 
 .  Review the report as described for batch mode.
 

@@ -10,16 +10,18 @@ You can debug the {ProductShortName} distribution using one of the following app
 
 . Pass the `--debug` argument on the command line when you execute {ProductShortName}.
 +
---------
+[options="nowrap"]
+----
 For Linux:    WINDUP_HOME/bin $ ./windup --debug
 For Windows:  C:\WINDUP_HOME\bin> windup --debug
---------
+----
 
 . Configure the `FORGE_OPTS` for debugging.
 +
---------
+[options="nowrap"]
+----
 export FORGE_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000"
---------
+----
 
 ==== Debug a Test Using NetBeans
 
@@ -32,17 +34,19 @@ Click the `Debug Test File` button, or choose `Menu` → `Debug` → `Debug Test
 * Find the line with `netbeans_default_options=`
 * Add the following option
 +
---------
+[options="nowrap"]
+----
 -J-Xmx5200m -J-XX:MaxPermSize=1024m
---------
+----
 * Restart NetBeans.
 
 . Click `Menu > Profile > Profile Test File`.
 . In the resulting dialog, enter the following.
 +
---------
+[options="nowrap"]
+----
 exec.args=-Djboss.modules.system.pkgs=org.netbeans
---------
+----
 
 ==== Profile Forge Runtime Using YourKit
 
@@ -50,17 +54,19 @@ exec.args=-Djboss.modules.system.pkgs=org.netbeans
 . Download and unzip http://www.yourkit.com/[YourKit]. Be sure to get the trial license.
 . Configure the `FORGE_OPTS` for Yourkit:
 +
---------
+[options="nowrap"]
+----
 export YOURKIT_HOME=/home/ondra/sw/prog/YourKit-b14092
 export FORGE_OPTS="-Djboss.modules.system.pkgs=com.yourkit -agentpath:$YOURKIT_HOME/bin/linux-x86-64/libyjpagent.so=sampling,onexit=snapshot,delay=0"
---------
+----
 
 . Run `forge`. For details, see http://forge.jboss.org/1.x/docs/using/profiling-forge.html[Profiling
 Forge], but skip the first 2 points that direct you to copy the YourKit module and JAR into the Forge installation. Forge 2 already contains the YourKit module and JAR>.
 
 . Run `windup-analyze-app`.
 +
----------------------------
+[options="nowrap"]
+----
 forge -e windup-migrate-app
----------------------------
+----
 

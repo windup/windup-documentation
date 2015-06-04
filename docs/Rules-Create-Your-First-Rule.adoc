@@ -21,7 +21,7 @@ Ruleset and Rule XML elements are covered in more detail here: xref:Rules-XML-Ru
 
 Additional details about creating XML rules, with example syntax, can be found here: xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule].
 
-As you create your first rule, refer to the http://windup.jboss.org/schema/rule-schema_1_0.xsd[Rules Schema] for valid XML syntax. 
+As you create your first rule, refer to the http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[Rules Schema] for valid XML syntax. 
 
 ==== Rule Example Description
 
@@ -33,6 +33,7 @@ In this example, you write a rule to discover instances where an application def
 
 . Create a directory structure to contain your first rule and the data file to use for testing. 
 +
+[options="nowrap"]
 ----
 $ mkdir -p migration-rules/rules
 $ mkdir -p migration-rules/data
@@ -45,6 +46,7 @@ $ mkdir -p migration-rules/data
 . Use your favorite editor or IDE to create a `jboss-web.xml` file in the `~/migration-rules/data/` subdirectory. 
 . Copy in the following content.
 +
+[source,xml,options="nowrap"]
 ----
 <!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Application 4.2//EN" "http://www.jboss.org/j2ee/dtd/jboss-web_4_2.dtd">
 <jboss-web>
@@ -61,6 +63,7 @@ $ mkdir -p migration-rules/data
 
 . Use your favorite editor or IDE to create an XML file in the `~/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
 +
+[source,xml,options="nowrap"]
 ----
 <?xml version="1.0"?>
 <ruleset xmlns="http://windup.jboss.org/v1/xml" id="UNIQUE_RULESET_ID">
@@ -70,6 +73,7 @@ $ mkdir -p migration-rules/data
         </description>
         <sourceTechnology id="SOURCE_ID" versionRange="VERSION-RANGE"/>
         <targetTechnology id="TARGET_ID" versionRange="VERSION-RANGE"/>
+        <tag>Reviewed-2015-05-01</tag>
     </metadata>
     <rules>
         <rule id="UNIQUE_RULE_ID">
@@ -92,6 +96,7 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 * Because this rule finds `jboss-web.xml` files containing the `class-loading` element, we use `xmlfile` to evaluate the files. 
 * To match on the `class-loading` element that is a child of `jboss-web`, use the xpath expression "jboss-web/class-loading".
 +
+[source,xml,options="nowrap"]
 ----
 <when>
     <xmlfile matches="jboss-web/class-loading" />
@@ -102,6 +107,7 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 * Provide a link to documentation that describes the migration details. 
 * Assign a level of effort of "1" to this task.
 +
+[source,xml,options="nowrap"]
 ----
 <perform>
     <iteration>
@@ -114,6 +120,7 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 ----
 . The rule is now complete and should look like the following example.
 +
+[source,xml,options="nowrap"]
 ----
 <?xml version="1.0"?>
 <ruleset xmlns="http://windup.jboss.org/v1/xml" id="JBoss5-web-class-loading">
@@ -147,6 +154,7 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 A {ProductShortName} rule is installed simply by copying the rule to the appropriate folder. 
 
 Copy the `JBoss5-web-class-loading.windup.xml` file to your `${user.home}/.windup/rules/` directory.
+[options="nowrap"]
 ----
 For Linux or Mac: ~/.windup/rules/
 For Windows: "\Documents and Settings\USER_NAME\.windup\rules\" or "\Users\USER_NAME\.windup\rules\"
@@ -159,21 +167,18 @@ To validate your XML rule using the {ProductShortName} rule schema, see xref:Rul
 
 ==== Test the Rule
 
-. Open a terminal and navigate to the {ProductHomeVar}/bin directory
+. Open a terminal and navigate to the {ProductHomeVar} directory.
 
-. Type the following command to start {ProductShortName}:
+. Type the following command to test the rule in batch mode, passing the test file as an input argument and a directory for the output report.
 +
----------------------------------------------------------------------------
-For Linux:    windup/bin $ ./windup
-For Windows:  C:\WINDUP_HOME\bin> windup
----------------------------------------------------------------------------
-. Execute the `windup-migrate-app` command, passing the test data file as the input parameter.
-+
+[options="nowrap"]
 ----
-windup-migrate-app sourceMode true --input ~/migration-rules/data --output ~/migration-rules/reports
+For Linux:    WINDUP_HOME/bin/windup --sourceMode true --input ~/migration-rules/data --output ~/migration-rules/reports
+For Windows:  WINDUP_HOME\bin\windup.bat --sourceMode true --input migration-rules\data --output migration-rules\reports
 ----
 . You should see this result.
 +
+[options="nowrap"]
 ----
 ***SUCCESS*** Windup report created: /home/your-username/migration-rules/reports/index.html
               Access it at this URL: file:///home/your-username/migration-rules/reports/index.html

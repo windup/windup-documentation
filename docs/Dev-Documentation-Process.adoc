@@ -30,7 +30,7 @@ See the https://github.com/windup/windup-documentation/blob/master/CONTRIBUTING.
 
 The {ProductName} guides are located in the windup-documentation/docs directory. They are named the same as the guides in the Wiki but have a 'Windup-' prefix. The windup-documentation/docs guides should kept synchronized with the versions in the windup.wiki.
 
-[cols="2*", options="header"] 
+[cols="1,1", options="header"] 
 |===
 |Wiki Guide
 |Windup Docs Guide
@@ -67,7 +67,7 @@ The script performs the following steps.
 . Navigates to the _{ProductDocHomeVar}/_ directory and builds the books. The single page HTML files are created in the _{ProductDocHomeVar}/html/_ directory.
 
 +
-[cols="2*", options="header"] 
+[cols="1,4", options="header"] 
 |===
 |Windup Guide
 |Command
@@ -85,7 +85,7 @@ The script performs the following steps.
 . Navigates to the _{ProductDocHomeVar}/_ directory and builds the DocBook Customer Portal books. The files are created in the _{ProductDocHomeVar}/build/_ directory.
 
 +
-[cols="2*", options="header"] 
+[cols="1,4", options="header"] 
 |===
 |Windup Guide
 |Command

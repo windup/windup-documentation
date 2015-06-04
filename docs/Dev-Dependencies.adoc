@@ -14,18 +14,19 @@ discussion._
 
 The following is the typical structure of Maven `add-on` modules.
 
--------------------------------------------
+[options="nowrap"]
+----
 my-add-on-parent
 +--- my-add-on - jar, classifier: forge-addon
 +--- my-add-on-api - jar
 +--- my-add-on-impl - jar
 +--- my-add-on-tests - jar
--------------------------------------------
+----
 
 The `add-on` POM file can declare dependencies on other forge-addons. 
 To prevent exporting the add-on to dependent modules, use `<optional>true</optional>`.
 
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <dependency>
     <groupId>org.jboss.forge.furnace.container</groupId>
@@ -38,7 +39,7 @@ To prevent exporting the add-on to dependent modules, use `<optional>true</optio
 The `add-on` POM files may also declare a dependency on typical Maven artifacts.
 To prevent exporting the add-on to dependent modules, use `<optional>true</optional>`.
 
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <dependency>
     <groupId>com.thinkaurelius.titan</groupId>
@@ -59,7 +60,7 @@ Add-on sub-parts declare dependency preferably on forge add-on APIs, not
 on the add-ons themselves, wherever possible (wherever an add-on has an
 explicit API). These dependencies must be marked as `provided` scope.
 
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <dependency>
     <groupId>org.jboss.forge.furnace.container</groupId>
@@ -74,7 +75,7 @@ They may instead depend on the primary add-on dependency, e.g.
 because the add-on dependency still needs to be declared in the depending
 add-on's POM.
 
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <dependency>
     <groupId>org.jboss.forge.furnace.container</groupId>
@@ -91,18 +92,18 @@ Add-on's sub-parts may also declare dependencies on other normal maven
 dependencies, and these are treated as normal.
 
 [NOTE]
-==========================
+----
 Add-on depends on API , scope `compile` > Add-on
 depends on Impl , scope `compile` with `<optional>true</optional>` -
 prevents exporting this dependency to consumers of the add-on.
-==========================
+----
 
 ==== Test dependencies
 
 For test dependencies on add-ons: Any add-on/sub-part requiring an add-on
 for testing purposes should use `<scope>test</scope>`.
 
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <dependency>
     <groupId>org.jboss.windup.graph</groupId>
@@ -120,7 +121,7 @@ Subpart may declare dependency on other subpart. E.g. `impl` typically
 depends on `api`. In that case, the scope should be set appropriately
 for the given situation - typically `provided` or `compile` scope.
 
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <dependency>
     <groupId>org.jboss.windup.graph</groupId>

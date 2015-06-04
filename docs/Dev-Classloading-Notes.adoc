@@ -15,9 +15,10 @@ This covers the specific situations when the {ProductName} core developer needs 
 
 Let A depend on B depend on C.
 Depending on scope of C in B's POM:
--------
+[source,xml,options="nowrap"]
+----
 <scope>provided</scope>
--------
+----
 
 `provided` will NOT export C, so A depending on B won't see C's classes.
 Only `compile` scope is exported.
@@ -30,18 +31,18 @@ Only `compile` scope is exported.
 
 
 ==== Finding classes
-[source,java]
---------
+[source,java,options="nowrap"]
+----
 AddonRegistry.getServices(MyServiceInterface.class)
 
 // Use the FurnaceHolder class to access the AddonRegistry
 FurnaceHolder.getFurnace().getAddonRegistry().getServices(MyServiceInterface.class);
---------
+----
 or
-[source,java]
---------
+[source,java,options="nowrap"]
+----
 @Inject Imported<MyServiceInterface.class) imported;
---------
+----
 
 ==== Instantiating
 If you want something from the current add-on, you can simply @Inject the type you wish to use. Alternately you can @Inject an Imported<T> instance, or also @Inject the AddonRegistry itself.

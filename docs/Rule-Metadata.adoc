@@ -13,34 +13,34 @@
 ==== Metadata used by {ProductShortName}
 
 NOTE: The ruleset metadata will be set using annotations in the future.
-[source,java]
----------------
+[source,java,options="nowrap"]
+----
 @Rules(id="", after=[...], ...)
----------------
+----
 
 
 To control *ordering*, override `getExecuteAfter()` and `getExecuteBefore()`.
 
-[source,java]
---------
+[source,java,options="nowrap"]
+----
 public class MyRules extends AbstractRuleProvider
 {
     public List<Class<? extends AbstractRuleProvider>> getExecuteAfter() {
         return asClassList(UpdateVictimsDbRules.class, ComputeArchivesSHA512.class);
     }
---------
+----
 
 NOTE: The order is set for whole `RuleProvider`. There's no way to set it for individual rules.
 
 
 To specify the *rule ID*, use `.withId("...")`.
 
-[source,java]
---------
-            .addRule()
-            .perform(...)
-            .withId("CheckArchivesWithVictims")
---------
+[source,java,options="nowrap"]
+----
+    .addRule()
+    .perform(...)
+    .withId("CheckArchivesWithVictims")
+----
 
 
 For *other metadata*, either use `.withMetadata()` or override `enhanceMetadata()`.
@@ -65,19 +65,19 @@ You can find out more information about rule metadata here: http://windup.github
 
 The `RuleMetadata` is defined using the `.withMetadata(Object key, Object value)`.
 
-[source,java]
---------
-            .addRule()
-            .when(...)
-            .perform(...)
-            .withId("CheckArchivesWithVictims")
-            .withMetadata(RuleMetadata.CATEGORY, ...)
---------
+[source,javaoptions="nowrap"]
+----
+.addRule()
+.when(...)
+.perform(...)
+.withId("CheckArchivesWithVictims")
+.withMetadata(RuleMetadata.CATEGORY, ...)
+----
 
-In case you want to apply the same metadata to all rules in some `RuleProvider`, override it's `enhanceMetadata()` method. The default implementations sets `CATEGORY` to "Uncategorized", `ORIGIN` to it's class'es name, and `RULE_PROVIDER` to the `RuleProvider` object:
+In case you want to apply the same metadata to all rules in some `RuleProvider`, override it's `enhanceMetadata()` method. The default implementations sets `CATEGORY` to "Uncategorized", `ORIGIN` to its class name, and `RULE_PROVIDER` to the `RuleProvider` object:
 
-[source,java]
---------
+[source,java,options="nowrap"]
+----
 public class MyRules extends AbstractRuleProvider
 {
     public void enhanceMetadata(Context context) {
@@ -88,7 +88,7 @@ public class MyRules extends AbstractRuleProvider
         if( ! context.containsKey(RuleMetadata.RULE_PROVIDER) )
             context.put(RuleMetadata.RULE_PROVIDER, this);
     }
---------
+----
 
 ===== Why a Map?
 

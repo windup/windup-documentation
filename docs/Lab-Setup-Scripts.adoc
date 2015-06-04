@@ -8,8 +8,8 @@ Semi-automated installation script (for Linux).
 
 This is a basis for a script that will automatically install everything in one run. Appropriate for multiple machines in a lab.
 
-[source,bash]
---------------------------------------------------------------------------------------------
+[source,bash,options="nowrap"]
+----
 ## Check if installed
 HAS_MVN=$(echo $((`mvn -v > /dev/null ; echo $?` == 0)) )
 MVN='mvn'
@@ -76,7 +76,7 @@ cd ..
 
 wait $(<nb.pid) $(<windup-rs.pid) $(<windup-qs.pid)
 rm *.pid
---------------------------------------------------------------------------------------------
+----
 
 
 
@@ -84,8 +84,8 @@ rm *.pid
 
 Appropriate for interactive shell session, e.g. for live demos, to have these bits ready for copy and paste.
 
-[source,bash]
---------------------------------------------------------------------------------------------
+[source,bash,options="nowrap"]
+----
 ##  Java 8 download
 firefox http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html &
 
@@ -119,5 +119,4 @@ cd ..
 ##  {ProductName} Example ruleset
 mkdir windup-demo
 cd windup-demo
---------------------------------------------------------------------------------------------
-
+----

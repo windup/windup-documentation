@@ -12,7 +12,8 @@ These instructions are for {ProductName} core developers who plan to build {Prod
 
 * Experienced users who need a refresher can follow the steps below.
 +
-------------------
+[options="nowrap"]
+----
 mkdir tmp
 cd tmp
 unzip -q ../dist/target/windup-*.zip
@@ -28,13 +29,14 @@ $ exit
 
 ## View the Report
 firefox Report/index.html
-------------------
+----
 
 ////
 I believe the following is obsolete
 ==== Execute {ProductName} as an Installed Forge Add-on
 
-------------------
+[options="nowrap"]
+----
 ## Install Forge
 wget -O forge.zip https://repository.jboss.org/nexus/service/local/repositories/releases/content/org/jboss/forge/forge-distribution/2.12.0.Final/forge-distribution-2.12.0.Final-offline.zip
 unzip forge.zip
@@ -59,5 +61,5 @@ $ exit
 
 ## View the Report
 firefox Report/index.html
-------------------
+----
 ////

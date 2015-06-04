@@ -6,149 +6,30 @@
 
 This section describes the basic construction of XML rules. All XML rules are defined as elements within rulesets. 
 
-==== Ruleset Element
+==== Rulesets
 
 A  ruleset is a group of one or more rules that targets a specific area of migration. This is the basic construct for the `<ruleset>` element.
 
-* **<ruleset>**: This element defines this as a {ProductName} ruleset.
+* **<ruleset id="UNIQUE_RULESET_ID>**: This element defines this as a {ProductShortName} ruleset and gives it a unique ruleset ID.
 ** **<metadata>**: Provide metadata about the ruleset.
 *** **<description>**: Description of the ruleset.
 *** **<dependencies/>**: Rule add-ons required by this ruleset.
 *** ** <sourceTechnology/>**: Source technology
 *** ** <targetTechnology/>**: Target technology
 ** **<rules>**: This element contains the individual rules.
-*** **<rule/>**: This element is defines the rule.
-+ 
-One or more rules can be defined for a ruleset. 
-See xref:rule-elements[Rule Elements] in the following section for details on how to define `<rule>` elements.
-*** **<rule/>**
-+
-Defines an individual rule.
-*** **<file-mapping/>**
-+
-Map an extension to a graph type  
-*** **<package-mapping/>**
-+
-Maps from a package pattern (regular expression) to a organization name.
+*** **<rule id=UNIQUE_RULESET_ID_UNIQUE_RULE_ID>**: This element is defines the rule and gives it a unique ID. One or more rules can be defined for a ruleset. 
+**** **<when>**: This element defines the condition or conditions to match on. For a detailed description of the elements allowed in a `<when>`, see xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax].
+**** **<perform>**: This element defines the action to be performed when the rule condition is matched. For a detailed description of the elements allowed in a `<perform>`, see xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
+**** **<otherwise>**: This element defines the action to be performed when the rule condition is not matched. This element takes the same child elements as the `<perform>` element.
+**** **<where>**: This element matches on a string pattern.
 
-** **</rules>**
-* **</ruleset>**: 
+*** **<file-mapping/>**: Mapa an extension to a graph type  
+*** **<package-mapping/>**: Maps from a package pattern (regular expression) to a organization name.
 
-
-[[rule-elements]]
-==== Rule Elements
-
-Rule elements follow the familiar construct:
-
-    when(condition)
-        perform(action)
-    otherwise(action)
-
-The following section describes the more commonly used elements in a `<rule.`.
-
-* **<when>**: This element defines the condition or conditions to match on.
-** **<javaclass/>**: Match on a Java class. 
-+
-This element can have the following attributes:
-+
-[cols="2*", options="header"] 
-|===
-|Attribute
-|Description
-|references="CLASS_NAME"
-|Match on the fully qualified class name. Wildcards can be specified using [x-]`{*}` syntax. For example: "org.apache.commons.{*}"
-|in="FILE_NAME"
-|The file name
-|as="VARIABLE_NAME"
-|An optional variable name that can be used in later processing.
-|===
-+
-This element can contain the following elements:
-+
-[cols="2*", options="header"] 
-|===
-|Element
-|Description
-|<location>
-|The location where the reference was found in a Java source file, for example, in the IMPORT, ANNOTATION, METHOD, VARIABLE_DECLARATION. You can specify multiple locations. See the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[TypeReferenceLocation] Javadoc for the full list of valid values.
-|===
-+
-For more information, see the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/condition/JavaClass.html[JavaClass] JavaDoc.
-
-** **<xmlfile/>**: Match on an XML file. The following table lists some of the most commonly used attributes and elements. 
-+
-This element can have the following attributes:
-+
-[cols="2*", options="header"] 
-|===
-|Attribute
-|Description
-|matches="XPATH_PATH"
-|Match on the XPath, for example: "/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']". Wildcards can be specified using `{*}` syntax.
-|in="FILE_NAME"
-|The file name
-|as="VARIABLE_NAME"
-|An optional variable name that can be used in later processing.
-|===
-+
-This element can contain the following elements:
-+
-[cols="2*", options="header"] 
-|===
-|Element
-|Description
-|<namespace>
-|The namespace prefix and URI
-|===
-+
-For more information, see the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/condition/XmlFile.html[XmlFile] JavaDoc.
-
-** **<project/>**: Match on a project. The following table lists some of the most commonly used attributes and elements. For more information, see the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] JavaDoc.
-
-* **</when>**
-
-* **<perform>**: This element is invoked when the condition is met.
-
-** **<hint>**: This child element of **perform** is used to create a `hint`
-This element can have the following attributes:
-+
-[cols="2*", options="header"] 
-|===
-|Attribute
-|Description
-|effort=LEVEL_OF_EFFORT
-|A level of effort assigned to this rule
-|message="MESSAGE"
-|The message ??
-|in="VARIABLE_NAME"
-|A variable to use for substitution.
-|title="Title"
-|The title ??.
-|===
-+
-This element can contain the following elements:
-+
-[cols="2*", options="header"] 
-|===
-|Element
-|Description
-|<message>
-|The message to display in the report.
-|<link>
-|An HREF link and description for further information.
-|===
-
-** **<xslt>**: This specifies how to transform the the specified XML file
-
-** **<log>**: This child element of **perform** is used to log a message. It takes the attribute **message** to define the text message.
-
-* **</perform>**
-
-* The **<otherwise/>** element is invoked when the condition is not met.
 
 ==== Predefined Rules
 
-{ProductName} provides some predefined rules for more common migration requirements, for example, mapping files from the source platform to target platform. The following is an example of the predefined "XmlFileMappings" rule.
+{ProductShortName} provides some predefined rules for more common migration requirements, for example, mapping files from the source platform to target platform. The following is an example of the predefined "XmlFileMappings" rule.
 
         <?xml version="1.0"?>
         <ruleset xmlns="http://windup.jboss.org/v1/xml" id="XmlFileMappings">

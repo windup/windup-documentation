@@ -19,10 +19,11 @@ xref:About-the-HOME-Variable[{ProductHomeVar}] is the directory where you instal
 +
 The `${user.home}/.windup` is a directory created by {ProductShortName} at first run and contains rules, add-ons, and the {ProductShortName} log.
 +
---------
+[options="nowrap"]
+----
 For Linux or Mac:   ~/.windup/rules/
 For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\USER_NAME\.windup\rules\"
---------
+----
 
 ==== Test the XML Rule
 
@@ -32,15 +33,17 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 +
 The command uses this syntax:
 +
---------
+[options="nowrap"]
+----
 windup-migrate-app [--sourceMode true] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
---------
+----
 +
 You should see the following result:
 +
---------
+[options="nowrap"]
+----
 ***SUCCESS*** Windup report created: OUTPUT_REPORT_DIRECTORY/index.html
---------
+----
 
 ==== Additional Resources
 

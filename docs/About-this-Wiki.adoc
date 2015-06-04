@@ -35,6 +35,7 @@ The following is a brief overview.
 
 * Use the following variables instead of hard-coded values
 +
+[options="nowrap"]
 ----
 {ProductName} - The full product name
 {ProductShortName} - The abbreviated product name
@@ -54,6 +55,13 @@ The following is a brief overview.
         [[Page-Name]]
         === Page Name
 
+* When creating code blocks, use 4 dashes ("----") to begin and end it, and add the "[options="nowrap"]" directive preceding the block, otherwise the code will wrap when the HTML is created.
+
+        [options="nowrap"]
+        ----
+        code goes here...
+        ----
+ 
 *   Wiki generates anchors using dashes for spaces. AsciiDoctor generates a leading underscore and underscores for spaces. When referring to another section within the same page, do not use the [x-]`<<section-title-anchor>>` syntax. Instead, create an anchor and use the 'xref:' syntax to provide the link. Replace spaces in the section title with dashes.
 
 ** Create the anchor at the top of the section using double brackets to force the generation of dashes instead of underscores.
@@ -67,12 +75,14 @@ The following is a brief overview.
     
 * In Asciidoctor 1.5.0, the backtick is no longer an inline monospaced literal. This means that the wildcard character (*) within backticks renders as an emphasis tag, resulting in the following build error.
 +
+[options="nowrap"]
 ----
 parser error : Opening and ending tag mismatch
 ----
 +
 Wildcard characters (*) within tick marks must be preceded by `[x-]`, for example"
 +
+[source,java,options="nowrap"]
 ----
 [x-]`org.apache.commons.{*}`
 ----
