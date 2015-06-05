@@ -69,9 +69,21 @@ The following is a brief overview.
         [[section-header]]
         ==== Section Header
 
-** Then use the `xref` to create the link.
+** Then use the `xref` to create the link within the page.
 
         See xref:section-header[Section Header] for more information.
+
+** To create a link to a section within another page, first create the section anchor in the other page, then create the reference.
++
+Anchor within `Execute` page
+
+        [[start-windup-in-interactive-mode]]
+        ==== Start {ProductShortName} in Interactive Mode
++
+Reference from `Rules-Create-a-Basic-Java-based-Rule-Add-on` page: 
+
+        xref:Execute#start-windup-in-interactive-mode[Start {ProductShortName} in Interactive Mode]. 
+
     
 * In Asciidoctor 1.5.0, the backtick is no longer an inline monospaced literal. This means that the wildcard character (*) within backticks renders as an emphasis tag, resulting in the following build error.
 +

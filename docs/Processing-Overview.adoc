@@ -10,7 +10,7 @@ The following is a high level conceptual overview of what happens within {Produc
 
 ==== Run {ProductShortName} Against Your Application
 
-Wnen you run the `windup-migrate-app` command against your application, {ProductShortName} executes its own core rules to process the following types of application input artifacts:
+Wnen you run the `WINDUP_HOME/bin/windup` command against your application, {ProductShortName} executes its own core rules to process the following types of application input artifacts:
 
 * Archive files such as EARs, WARs, JARs
 * Java classes

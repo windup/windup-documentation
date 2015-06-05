@@ -19,7 +19,7 @@ When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DI
 
 The examples below use the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[test-files/jee-example-app-1.0.0.ear] located in the {ProductShortName} GitHub source repository for input and specify the `com.acme` and `org.apache` package name prefixes to scan. For example:
 
-        windup-migrate-app --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --packages com.acme org.apache
+        WINDUP_HOME/bin/windup --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --packages com.acme org.apache
 
 ==== Open the Report
 

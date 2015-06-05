@@ -1,154 +1,101 @@
 
 
 
-[[Rules-Create-a-Basic-XML-Rule]]
-=== Create a Basic XML Rule
+[[About-this-Wiki]]
+=== About the {ProductName} Wiki
 
-You can create a {ProductName} rule using Java, XML, or Groovy. This topic describes how to create a rule using XML.
+==== Purpose
 
-==== Prerequisites
+This wiki is a place to create {ProductName} documentation in a collaborative manner, a bit wildly, and on the fly. It is intended to reflect the state of the {ProductShortName} source code master branch, however pages may become obsolete as the master changes quickly.
 
-* You should have already xref:Install[installed {ProductShortName}]. 
-* Before you begin, you may also want to be familiar with the following documentation:
-** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
-** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
-** The XML rule schema is located here: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd
+==== Areas of Interest
 
-==== File Naming Convention for XML Rules
+The Wiki pages are divided into the following main areas of interest, which may often overlap. The page names use these prefixes:
 
-You must name the file containing an XML rule with the `.windup.xml` extension. {ProductShortName} identifies files with this extension as XML-base rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
+* *Dev-: ...*: These pages are of interest to {ProductShortName} core developers.
+* *Rules- ...*: These pages are of interest to rules developers.
+* *User- ...*: These pages that are of interest to {ProductShortName} users.
+* no prefix: These pages that are also of interest to all users.
 
-==== Basic XML Rule Template
+==== AsciiDoc
 
-XML rules consist of _conditions_ and _actions_ and follow the familiar "if/then/else" construct:
+This Wiki uses AsciiDoc because it is capable of handling the publishing requirements and structural elements needed to create technical books. If you would like to contribute to the documentation, feel free to use your favorite Wiki language, however, it will ultimately be converted to AsciiDoc.
 
-    when(condition)
-        perform(action)
-    otherwise(action)
+==== Contributor Guidelines
 
-The following is the basic syntax for XML rules.
+Please see the https://github.com/windup/windup-documentation/blob/master/CONTRIBUTING.adoc[Contributing Guidelines] for details about how to name pages and use the correct AsciiDoc syntax to make the transition to the final documentation go more smoothly. 
 
-[source,xml,options="nowrap"]
+The following is a brief overview.
+
+* Name wiki pages using only letters, numbers and dashes. Do not include spaces, colons, or other special characters in page names.
+
+* Always use the `ProductName` or `ProductShortName` variables when referring to the product name.
+
+* Do not use the product name in page names or in headers. This is because you should always use the variables when referring to the product names and the variables do not work in generated anchors.
+
+* Use the following variables instead of hard-coded values
++
+[options="nowrap"]
 ----
-<?xml version="1.0"?>
-<ruleset xmlns="http://windup.jboss.org/v1/xml" id="<unique-rule-identifier">
-    <metadata>
-        <!-- Metadata about the rule including a description, 
-             source technology, target technology, and any
-             add-on dependencies -->
-    </metadata>
-    <rules>
-        <rule>
-            <when>
-                <!-- Test a condition... -->
-            </when>
-            <perform>
-                <!-- Perform this action when condition is satisfied -->
-            </perform>
-            <otherwise>
-                <!-- Perform this action when condition is not satisfied -->
-            </otherwise>
-        </rule>
-    <rules>
-</ruleset>
+{ProductName} - The full product name
+{ProductShortName} - The abbreviated product name
+{ProductVersion} - The current product version
+{ProductDistribution} - The distribution file name
+{ProductHomeVar} - The installation home variable
+{ProductDocHomeVar} - The documentation home variable
+{ProductSrcHomeVar} - The source home variable
+{ProductReleaseVar} - The product release variable
 ----
+* Be sure to add a level 3 page heading (===) at the top of each page. When compiled in a book, the Guide name is the top level, chapters are level 2, and the page is level  3. This is the title that appears in the table of contents for the page.
 
-==== Create the Ruleset Metadata
+        === Review the Quickstarts
 
-The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset.
+* At the beginning of each new Wiki page, add an anchor with the exact page name, including the dashes. This generates the correct anchors that are needed when the pages are combined into a book.
 
-_Example:_
-[source,xml,options="nowrap"]
+        [[Page-Name]]
+        === Page Name
+
+* When creating code blocks, use 4 dashes ("----") to begin and end it, and add the "[options="nowrap"]" directive preceding the block, otherwise the code will wrap when the HTML is created.
+
+        [options="nowrap"]
+        ----
+        code goes here...
+        ----
+ 
+*   Wiki generates anchors using dashes for spaces. AsciiDoctor generates a leading underscore and underscores for spaces. When referring to another section within the same page, do not use the [x-]`<<section-title-anchor>>` syntax. Instead, create an anchor and use the 'xref:' syntax to provide the link. Replace spaces in the section title with dashes.
+
+** Create the anchor at the top of the section using double brackets to force the generation of dashes instead of underscores.
+
+        [[section-header]]
+        ==== Section Header
+
+** Then use the `xref` to create the link within the page.
+
+        See xref:section-header[Section Header] for more information.
+
+** To create a link to a section within another page, first create the section anchor in the other page, then create the reference.
++
+Anchor within `Execute` page
+
+        [[start-windup-in-interactive-mode]]
+        ==== Start {ProductShortName} in Interactive Mode
++
+Reference from `Rules-Create-a-Basic-Java-based-Rule-Add-on` page: 
+
+        xref:Execute#start-windup-in-interactive-mode[Start {ProductShortName} in Interactive Mode]. 
+
+    
+* In Asciidoctor 1.5.0, the backtick is no longer an inline monospaced literal. This means that the wildcard character (*) within backticks renders as an emphasis tag, resulting in the following build error.
++
+[options="nowrap"]
 ----
-<ruleset id=”ruleset-id”>
-<metadata>
-        <description>
-                This is the description.
-        </description>
-        <dependencies>
-                <addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final"/>    
-                <addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final"/>
-        </dependencies>
-        <sourceTechnology id="weblogic" versionRange="(10,12]"/>
-        <sourceTechnology id="ejb" versionRange="(2,3]"/>
-        <targetTechnology id="eap" versionRange="(5,6]"/>
-        <targetTechnology id="ejb" versionRange="(2,3]"/>
-        <tag>require-stateless</tag>
-        <tag>require-nofilesystem-io</tag>
-        <executeAfter>AfterRulesetId</executeAfter>
-        <executeBefore>BeforeRulesetId</executeBefore>
-    </metadata>
-    <rules>
-    </rules>
-</ruleset>
+parser error : Opening and ending tag mismatch
 ----
-
-==== Create the Rule When Condition
-
-The XML rule `<when>` element tests for a condition. The following is a list of valid `<when>` conditions.
-
-[cols="1,4", options="header"] 
-|===
-|Element
-|Description
-
-|<true>
-|Always match.
-
-a|<or>
-
-<and>
-
-<not>
-
-|These are the standard logical operators.
-
-|<javaclass>
-|Test for a match in a Java class.
-
-<xmlfile>
-|Test for a match in an XML file.
-
-|<project>
-|Test for project characteristics, such as dependencies.
-
-|<filecontent>
-|Find strings or text within files, for example, properties files.
-
-|===
-
-The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content and is described in more detail here: xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
-
-==== Create the Rule Perform Action
-
-The XML rule `<perform>` element performs the action when the condition is met. Operations allowed in this ection of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The following is a list of valid `<peform>` actions.
-
-[cols="1,4", options="header"] 
-|===
-|Element
-|Description
-
-|<classification>
-|Identify or classify a resource.
-
-|<link>
-|Provide links or references to additional information.
-
-|<hint>
-|Provide a hint or inline information. 
-
-|<xslt>
-|Specify how to transform an XML file.
-
-|<lineitem>
-| Provide line item information about a hint on the project or application overview page.
-
-|<iteration>
-|Specify to iterate over an implicit or explicit variable defined within the rule.
-
-|===
-
-The syntax is described in more detail here: xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
-
-
-
++
+Wildcard characters (*) within tick marks must be preceded by `[x-]`, for example"
++
+[source,java,options="nowrap"]
+----
+[x-]`org.apache.commons.{*}`
+----
+This is described in further detail here: https://github.com/asciidoctor/asciidoctor/issues/1045 

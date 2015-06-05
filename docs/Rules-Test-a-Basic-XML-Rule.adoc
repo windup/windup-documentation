@@ -9,15 +9,11 @@
 
 A {ProductName} rule is installed simply by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files that end with either `*.windup.groovy` or `.windup.xml`, in the following locations:
 
-* In the directory specified on the `windup-migrate-app` using the `--userRulesDirectory` argument.
+* Copy the rule to a directory specified by the `--userRulesDirectory` argument on the {ProductShortName} command line.
 
-* In the {ProductHomeVar}/rules/ directory. 
-+
-xref:About-the-HOME-Variable[{ProductHomeVar}] is the directory where you install and run the {ProductName} executable.
+* Copy the rule to the {ProductHomeVar}/rules/ directory. xref:About-the-HOME-Variable[{ProductHomeVar}] is the directory where you install and run the {ProductName} executable.
 
-* In the `${user.home}/.windup/rules/` directory. 
-+
-The `${user.home}/.windup` is a directory created by {ProductShortName} at first run and contains rules, add-ons, and the {ProductShortName} log.
+* Copy the rule to the `${user.home}/.windup/rules/` directory. This directory is created by {ProductShortName} the first time it is executed and contains rules, add-ons, and the {ProductShortName} log.
 +
 [options="nowrap"]
 ----
@@ -29,13 +25,13 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 
 . If you have not started {ProductShortName}, follow the instructions to xref:Execute[Execute {ProductShortName}].
 
-. Test the XML rule against your application file by running the `windup-migrate-app` command in the {ProductShortName} console prompt. 
+. Test the XML rule against your application file by running {ProductShortName} in a terminal.
 +
 The command uses this syntax:
 +
 [options="nowrap"]
 ----
-windup-migrate-app [--sourceMode true] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+WINDUP_HOME/bin/windup [--sourceMode true] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
 ----
 +
 You should see the following result:

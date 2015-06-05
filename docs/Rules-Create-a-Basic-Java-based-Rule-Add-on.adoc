@@ -273,7 +273,8 @@ This file tells CDI to scan your add-on for CDI beans. The file can be empty, bu
 
 The easiest and fastest way to build the rule add-on, install it into the local Maven repository, and install it into {ProductShortName} as a rule add-on is to use the {ProductShortName} `addon-build-and-install` command.
 
-* If you have not started {ProductShortName}, follow the instructions to xref:Execute[Execute {ProductShortName}].
+* If you have not started {ProductShortName}, follow the instructions to xref:Execute#start-windup-in-interactive-mode[Start {ProductShortName} in Interactive Mode].
+
 * At the {ProductShortName} console prompt, enter the `addon-build-and-install` command:
 
         addon-build-and-install --projectRoot RULE_PROJECT_HOME
@@ -284,11 +285,11 @@ The easiest and fastest way to build the rule add-on, install it into the local 
 
 ==== Test the Java-based Rule Add-on
 
-Test the Java-based rule add-on against your application file by running the `windup-migrate-app` command in the {ProductShortName} console prompt.
+Test the Java-based rule add-on against your application file by running {ProductShortName} in a terminal.
 
 The command uses this syntax:
 
-    windup-migrate-app [--sourceMode true] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+    WINDUP_HOME/bin/windup [--sourceMode true] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
 
 You should see the following result:
 

@@ -35,6 +35,7 @@ WARNING: Be careful not to specify a report output directory that contains impor
 
 . For information about the use of {ProductHomeVar} in the instructions below, see xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable].
 
+[[run-windup-in-batch-mode]]
 ==== Run {ProductShortName} in Batch Mode 
 
 This is the quickest way to run {ProductShortName}.
@@ -114,6 +115,7 @@ To see the complete list of available arguments for the `windup` command, execut
 
     WINDUP_HOME/bin/windup --help
 
+[[start-windup-in-interactive-mode]]
 ==== Start {ProductShortName} in Interactive Mode
 
 {ProductShortName} can also be run in interactive mode. This mode offers tab completion, which is useful if you need assistance with valid argument values, for example, valid `--source` or `--target` technologies. 

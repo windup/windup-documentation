@@ -18,9 +18,9 @@ Try these suggestions first before upgrading hardware.
 
 * If possible, execute {ProductShortName} against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.
 
-* Specify the `--target` platform on the on the `windup-migrate-app` command line to limit the execution of rules to only those that apply to this target platform.
+* Specify the `--target` platform on the on the `WINDUP_HOME/bin/windup` or `windup-migrate-app` command line to limit the execution of rules to only those that apply to this target platform.
 
-* Be sure to specify a comma-delimited list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `windup-migrate-app` command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
+* Be sure to specify a comma-delimited list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `WINDUP_HOME/bin/windup` or `windup-migrate-app` command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
 
 * Specify the `--excludePackages` and `--excludeTags` where possible to exclude them from processing.
 
