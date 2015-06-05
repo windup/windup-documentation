@@ -1,57 +1,154 @@
 
 
 
-[[Rules-XML-Rule-Construction]]
-=== XML-Rule-Construction
+[[Rules-Create-a-Basic-XML-Rule]]
+=== Create a Basic XML Rule
 
-This section describes the basic construction of XML rules. All XML rules are defined as elements within rulesets. 
+You can create a {ProductName} rule using Java, XML, or Groovy. This topic describes how to create a rule using XML.
 
-==== Rulesets
+==== Prerequisites
 
-A  ruleset is a group of one or more rules that targets a specific area of migration. This is the basic construct for the `<ruleset>` element.
+* You should have already xref:Install[installed {ProductShortName}]. 
+* Before you begin, you may also want to be familiar with the following documentation:
+** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
+** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
+** The XML rule schema is located here: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd
 
-* **<ruleset id="UNIQUE_RULESET_ID>**: This element defines this as a {ProductShortName} ruleset and gives it a unique ruleset ID.
-** **<metadata>**: Provide metadata about the ruleset.
-*** **<description>**: Description of the ruleset.
-*** **<dependencies/>**: Rule add-ons required by this ruleset.
-*** ** <sourceTechnology/>**: Source technology
-*** ** <targetTechnology/>**: Target technology
-** **<rules>**: This element contains the individual rules.
-*** **<rule id=UNIQUE_RULESET_ID_UNIQUEID>**: This element is defines the rule and gives it a unique ID. One or more rules can be defined for a ruleset. 
-**** **<when>**: This element defines the condition or conditions to match on. For a detailed description of the elements allowed in a `<when>`, see xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax].
-**** **<perform>**: This element defines the action to be performed when the rule condition is matched. For a detailed description of the elements allowed in a `<perform>`, see xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
-**** **<otherwise>**: This element defines the action to be performed when the rule condition is not matched. This element takes the same child elements as the `<perform>` element.
-**** **<where>**: This element matches on a string pattern.
+==== File Naming Convention for XML Rules
 
-*** **<file-mapping/>**: Mapa an extension to a graph type  
-*** **<package-mapping/>**: Maps from a package pattern (regular expression) to a organization name.
+You must name the file containing an XML rule with the `.windup.xml` extension. {ProductShortName} identifies files with this extension as XML-base rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
+
+==== Basic XML Rule Template
+
+XML rules consist of _conditions_ and _actions_ and follow the familiar "if/then/else" construct:
+
+    when(condition)
+        perform(action)
+    otherwise(action)
+
+The following is the basic syntax for XML rules.
+
+[source,xml,options="nowrap"]
+----
+<?xml version="1.0"?>
+<ruleset xmlns="http://windup.jboss.org/v1/xml" id="<unique-rule-identifier">
+    <metadata>
+        <!-- Metadata about the rule including a description, 
+             source technology, target technology, and any
+             add-on dependencies -->
+    </metadata>
+    <rules>
+        <rule>
+            <when>
+                <!-- Test a condition... -->
+            </when>
+            <perform>
+                <!-- Perform this action when condition is satisfied -->
+            </perform>
+            <otherwise>
+                <!-- Perform this action when condition is not satisfied -->
+            </otherwise>
+        </rule>
+    <rules>
+</ruleset>
+----
+
+==== Create the Ruleset Metadata
+
+The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset.
+
+_Example:_
+[source,xml,options="nowrap"]
+----
+<ruleset id=”ruleset-id”>
+<metadata>
+        <description>
+                This is the description.
+        </description>
+        <dependencies>
+                <addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final"/>    
+                <addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final"/>
+        </dependencies>
+        <sourceTechnology id="weblogic" versionRange="(10,12]"/>
+        <sourceTechnology id="ejb" versionRange="(2,3]"/>
+        <targetTechnology id="eap" versionRange="(5,6]"/>
+        <targetTechnology id="ejb" versionRange="(2,3]"/>
+        <tag>require-stateless</tag>
+        <tag>require-nofilesystem-io</tag>
+        <executeAfter>AfterRulesetId</executeAfter>
+        <executeBefore>BeforeRulesetId</executeBefore>
+    </metadata>
+    <rules>
+    </rules>
+</ruleset>
+----
+
+==== Create the Rule When Condition
+
+The XML rule `<when>` element tests for a condition. The following is a list of valid `<when>` conditions.
+
+[cols="1,4", options="header"] 
+|===
+|Element
+|Description
+
+|<true>
+|Always match.
+
+a|<or>
+
+<and>
+
+<not>
+
+|These are the standard logical operators.
+
+|<javaclass>
+|Test for a match in a Java class.
+
+<xmlfile>
+|Test for a match in an XML file.
+
+|<project>
+|Test for project characteristics, such as dependencies.
+
+|<filecontent>
+|Find strings or text within files, for example, properties files.
+
+|===
+
+The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content and is described in more detail here: xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
+
+==== Create the Rule Perform Action
+
+The XML rule `<perform>` element performs the action when the condition is met. Operations allowed in this ection of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The following is a list of valid `<peform>` actions.
+
+[cols="1,4", options="header"] 
+|===
+|Element
+|Description
+
+|<classification>
+|Identify or classify a resource.
+
+|<link>
+|Provide links or references to additional information.
+
+|<hint>
+|Provide a hint or inline information. 
+
+|<xslt>
+|Specify how to transform an XML file.
+
+|<lineitem>
+| Provide line item information about a hint on the project or application overview page.
+
+|<iteration>
+|Specify to iterate over an implicit or explicit variable defined within the rule.
+
+|===
+
+The syntax is described in more detail here: xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
 
 
-==== Predefined Rules
-
-{ProductShortName} provides some predefined rules for more common migration requirements, for example, mapping files from the source platform to target platform. The following is an example of the predefined "XmlFileMappings" rule.
-
-        <?xml version="1.0"?>
-        <ruleset xmlns="http://windup.jboss.org/v1/xml" id="XmlFileMappings">
-          <rules>
-            <file-mapping from=".*\.tld$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bpel$" to="XmlFileModel"/>
-            <file-mapping from=".*\.wsdl$" to="XmlFileModel"/>
-            <file-mapping from=".*\.wsdd$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bpelex$" to="XmlFileModel"/>
-            <file-mapping from=".*\.mon$" to="XmlFileModel"/>
-            <file-mapping from=".*\.xmi$" to="XmlFileModel"/>
-            <file-mapping from=".*\.export$" to="XmlFileModel"/>
-            <file-mapping from=".*\.import$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bcfg$" to="XmlFileModel"/>
-            <file-mapping from=".*\.map$" to="XmlFileModel"/>
-            <file-mapping from=".*\.brg$" to="XmlFileModel"/>
-            <file-mapping from=".*\.brgt$" to="XmlFileModel"/>
-            <file-mapping from=".*\.ruleset$" to="XmlFileModel"/>
-            <file-mapping from=".*\.module$" to="XmlFileModel"/>
-            <file-mapping from=".*\.modulex$" to="XmlFileModel"/>
-            <file-mapping from=".*\.composite$" to="XmlFileModel"/>
-            <file-mapping from=".*\.requirements$" to="XmlFileModel"/>
-          </rules>
-        </ruleset>
 

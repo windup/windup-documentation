@@ -1550,13 +1550,100 @@ otherwise(action)</pre>
 <div class="sect3">
 <h4 id="_create_the_rule_when_condition">3.3.5. Create the Rule When Condition</h4>
 <div class="paragraph">
-<p>The syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content and is described in more detail here: <a href="#Rules-XML-Rule-When-Condition-Syntax">XML Rule - When Condition Syntax</a></p>
+<p>The XML rule <code>&lt;when&gt;</code> element tests for a condition. The following is a list of valid <code>&lt;when&gt;</code> conditions.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;true&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Always match.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>&lt;or&gt;</p>
+</div>
+<div class="paragraph">
+<p>&lt;and&gt;</p>
+</div>
+<div class="paragraph">
+<p>&lt;not&gt;</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These are the standard logical operators.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;javaclass&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test for a match in a Java class.
+</p><p class="tableblock">&lt;xmlfile&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test for a match in an XML file.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;project&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test for project characteristics, such as dependencies.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;filecontent&gt;</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content and is described in more detail here: <a href="#Rules-XML-Rule-When-Condition-Syntax">XML Rule - When Condition Syntax</a></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_create_the_rule_perform_action">3.3.6. Create the Rule Perform Action</h4>
 <div class="paragraph">
-<p>Operations allowed in the <code>perform</code> section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The syntax is described in detail here: <a href="#Rules-XML-Rule-Perform-Action-Syntax">XML Rule - Perform Action Syntax</a>.</p>
+<p>The XML rule <code>&lt;perform&gt;</code> element performs the action when the condition is met. Operations allowed in this ection of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The following is a list of valid <code>&lt;peform&gt;</code> actions.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;classification&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identify or classify a resource.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;link&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provide links or references to additional information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;hint&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provide a hint or inline information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;xslt&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify how to transform an XML file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;lineitem&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provide line item information about a hint on the project or application overview page.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;iteration&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify to iterate over an implicit or explicit variable defined within the rule.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The syntax is described in more detail here: <a href="#Rules-XML-Rule-Perform-Action-Syntax">XML Rule - Perform Action Syntax</a>.</p>
 </div>
 </div>
 </div>
@@ -4110,7 +4197,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-06-04 15:38:28 EDT
+Last updated 2015-06-05 12:56:59 EDT
 </div>
 </div>
 </body>

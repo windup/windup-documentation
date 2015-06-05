@@ -85,11 +85,70 @@ _Example:_
 
 ==== Create the Rule When Condition
 
-The syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content and is described in more detail here: xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
+The XML rule `<when>` element tests for a condition. The following is a list of valid `<when>` conditions.
+
+[cols="1,4", options="header"] 
+|===
+|Element
+|Description
+
+|<true>
+|Always match.
+
+a|<or>
+
+<and>
+
+<not>
+
+|These are the standard logical operators.
+
+|<javaclass>
+|Test for a match in a Java class.
+
+<xmlfile>
+|Test for a match in an XML file.
+
+|<project>
+|Test for project characteristics, such as dependencies.
+
+|<filecontent>
+|Find strings or text within files, for example, properties files.
+
+|===
+
+The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content and is described in more detail here: xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
 
 ==== Create the Rule Perform Action
 
-Operations allowed in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The syntax is described in detail here: xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
+The XML rule `<perform>` element performs the action when the condition is met. Operations allowed in this ection of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The following is a list of valid `<peform>` actions.
+
+[cols="1,4", options="header"] 
+|===
+|Element
+|Description
+
+|<classification>
+|Identify or classify a resource.
+
+|<link>
+|Provide links or references to additional information.
+
+|<hint>
+|Provide a hint or inline information. 
+
+|<xslt>
+|Specify how to transform an XML file.
+
+|<lineitem>
+| Provide line item information about a hint on the project or application overview page.
+
+|<iteration>
+|Specify to iterate over an implicit or explicit variable defined within the rule.
+
+|===
+
+The syntax is described in more detail here: xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
 
 
 
