@@ -55,14 +55,16 @@ echo "    Core Development Guide (HTML): " file://$2/docs/$WINDUP_VERSION/html/W
 echo "    Core Development Guide (PDF): " file://$2/docs/$WINDUP_VERSION/pdf/WindupCoreDevelopmentGuide.pdf
 
 cd $2
-git add docs
+##git add docs
 
-git commit -m "Documentation update for release $3"
+##git commit -m "Documentation update for release $3"
 
 echo "*******************************************"
 echo "The following are manual steps: "
 echo "    Navigate to the local windup source GitHub directory."
 echo "    Issue the following commands to push the doc upstream."
+echo "        git add docs"
+echo "        git commit -m 'Documentation update for release "$3"'"
 echo "        git push origin HEAD"
 echo "        (issue a pull and verify)"
 echo "        git push upstream gh-pages"

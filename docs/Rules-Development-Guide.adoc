@@ -10,9 +10,12 @@
 [[Rules-Development-Guide]]
 === Rules Development Guide
 
-This guide is for engineers, consultants, or others who plan to create rules for {ProductName}.
-
 ==== Introduction
+
+This guide is for engineers, consultants, and others who plan to create custom XML-based rules for {ProductName}. 
+
+If you are new to _{ProductName}, review the _{ProductName} User Guide_ first. It provides detailed information about system requirements and detailed instructions on how to install and execute {ProductName}.
+
 
 * xref:What-is-it[What is {ProductName}?]
 * xref:Features[Features of {ProductShortName}]
@@ -22,7 +25,6 @@ This guide is for engineers, consultants, or others who plan to create rules for
 
 ==== Get Started
 
-* xref:Install[Install {ProductName}]
 * xref:Rules-Create-Your-First-Rule[Write Your First Rule]
 
 ==== Create and Test XML Rules
@@ -30,30 +32,21 @@ This guide is for engineers, consultants, or others who plan to create rules for
 * xref:Rules-Difference-Between-XML-based-and-Java-based-Rules[Difference Between XML-based and Java-based Rules]
 * xref:Rules-XML-Rule-Construction[XML Rule Construction]
 * xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule]
+* xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
+* xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax]
 * xref:Rules-Validate-Rulesets-Against-the-Schema[Validate Rulesets Against the Schema]
 * xref:Rules-Test-a-Basic-XML-Rule[Test an XML Rule in {ProductName}]
 
-== Learn More About {ProductName}
-
-* xref:Execute[Execute {ProductName}]
-* xref:Review-the-Report[Review the Report]
-* xref:Rules-Review-the-Existing-XML-Rules[Review the Existing Windup XML Rules]
 
 ==== Additional Resources
 
-* xref:Get-Involved[Get Involved]
-* xref:Important-Links[Important Links]
-* xref:Review-the-Quickstarts[Review the {ProductName} Quickstarts]
-* xref:Known-Issues[Known Issues]
-* xref:Report-Issues[Report Issues with {ProductName}]
+* xref:Rules-Review-the-Existing-XML-Rules[Review the Existing Windup XML Rules]
+* xref:Rules-Important-Links[Important Links]
 
 ==== Appendix
 
-* xref:Glossary[Glossary of Terms]
 * xref:Rules-Rule-Story-Points[Rule Story Points]
-* xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
-* xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax]
-* xref:Optimize-Performance[Optimize {ProductShortName} Performance]
+* xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable]
 
 
 
