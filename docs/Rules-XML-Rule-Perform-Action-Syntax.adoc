@@ -421,7 +421,7 @@ The following is an example of a rule that creates a lineitem message.
 _Example:_
 [source,xml,options="nowrap"]
 ----
-<rule>
+<rule id="weblogic_servlet_annotation_1000">
     <when>
         <javaclass references="weblogic.servlet.annotation.WLServlet" as="default">
             <location>ANNOTATION</location>

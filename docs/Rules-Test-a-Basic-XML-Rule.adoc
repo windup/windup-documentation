@@ -23,8 +23,6 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 
 ==== Test the XML Rule
 
-. If you have not started {ProductShortName}, follow the instructions to xref:Execute[Execute {ProductShortName}].
-
 . Test the XML rule against your application file by running {ProductShortName} in a terminal.
 +
 The command uses this syntax:
@@ -43,6 +41,6 @@ You should see the following result:
 
 ==== Additional Resources
 
-* For more information and examples of how to run {ProductShortName}, see: xref:Execute[Execute {ProductShortName}] 
+* More examples of how to run {ProductShortName} are located in the _{ProductName} User Guide_. 
 * Working examples of XML-based rules can be found on GitHub in the https://github.com/windup/windup/[{ProductShortName} source code] GitHub repository and the {ProductShortName} quickstarts https://github.com/windup/windup-quickstarts/[GitHub repository] or https://github.com/windup/windup-quickstarts/releases[latest release ZIP download].
  

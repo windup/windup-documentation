@@ -7,10 +7,6 @@
 === Ruleset: Java Basic: Code Matching Examples
 
 .DRAFT This page will contain rule snippets for Java code matching, AND the java code they are supposed to match. Try `git grep '<when>'` if you want to add.
-.SGILDA 
-.OZIZKA: These are basically 'JavaClass' examples, correct? Would it be okay to change the title to reflect this? For example, something like:  'XML Ruleset Examples: Match on "javaclass"'?
-
-.SGILDA "No" to name change - XML Ruleset is something different - that is a RuleSet dealing with XML matching. This is really "Ruleset: Java: ...". It will also have Java syntax added.
 
 
 === Example XML snippets
@@ -28,7 +24,7 @@ import org.jbpm.graph.def.ProcessDefinition;
 
 [source,xml,options="nowrap"]
 ----
-<rule>
+<rule id="UNIQUE_RULE_ID">
     <when>
         <javaclass references="org.jbpm.graph.def.ActionHandler" as="default">
             <location>INHERITANCE</location>
@@ -60,7 +56,7 @@ import org.jbpm.graph.exe.ExecutionContext;
 
 [source,xml,options="nowrap"]
 ----
-<rule>
+<rule id="UNIQUE_RULE_ID">
     <when>
         <javaclass references="org.jbpm.graph.exe.ExecutionContext.setVariable" as="default">
             <location>METHOD</location>

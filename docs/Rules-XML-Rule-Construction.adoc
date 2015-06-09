@@ -31,9 +31,25 @@ A  ruleset is a group of one or more rules that targets a specific area of migra
 
 {ProductShortName} provides some predefined rules for more common migration requirements, for example, mapping files from the source platform to target platform. The following is an example of the predefined "XmlFileMappings" rule.
 
-        <?xml version="1.0"?>
-        <ruleset xmlns="http://windup.jboss.org/v1/xml" id="XmlFileMappings">
-          <rules>
+[source,xml,options="nowrap"]
+----
+<?xml version="1.0"?>
+    <ruleset id="XmlFileMappings"
+        xmlns="http://windup.jboss.org/schema/jboss-ruleset" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+        <metadata>
+            <description>
+                This ruleset maps files to the Model.
+            </description>
+            <dependencies>
+                <addon id="org.jboss.windup.rules.files.FileMappingHandler"/>
+            </dependencies>
+            <sourceTechnology id="eap" versionRange="(4,5)"/>
+            <targetTechnology id="eap" versionRange="[6,)"/>
+            <tag>reviewed-2015-05-27</tag>
+        </metadata>
+        <rules>
             <file-mapping from=".*\.tld$" to="XmlFileModel"/>
             <file-mapping from=".*\.bpel$" to="XmlFileModel"/>
             <file-mapping from=".*\.wsdl$" to="XmlFileModel"/>
@@ -54,4 +70,5 @@ A  ruleset is a group of one or more rules that targets a specific area of migra
             <file-mapping from=".*\.requirements$" to="XmlFileModel"/>
           </rules>
         </ruleset>
+----
 

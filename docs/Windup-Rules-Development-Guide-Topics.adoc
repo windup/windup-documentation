@@ -1,21 +1,12 @@
-== Introduction
+// == Introduction
 
-This guide is for engineers, consultants, and others who plan to create 
-custom XML-based rules for {ProductName}.
-
-include::What-is-it.adoc[tabsize=4]
-
-include::Features.adoc[tabsize=4]
-
-include::About-Rules.adoc[tabsize=4]
-
-include::System-Requirements.adoc[tabsize=4]
-
-include::About-the-HOME-Variable.adoc[tabsize=4]
 
 == Get Started
 
-include::Install.adoc[tabsize=4]
+=== Introduction 
+
+This guide is for engineers, consultants, and others who plan to create custom XML-based rules for {ProductName}. 
+See the _{ProductName} User Guide_ for information about system requirements and instructions on how to install and execute {ProductName}.
 
 include::Rules-Create-Your-First-Rule.adoc[tabsize=4]
 
@@ -27,42 +18,28 @@ include::Rules-XML-Rule-Construction.adoc[tabsize=4]
 
 include::Rules-Create-a-Basic-XML-Rule.adoc[tabsize=4]
 
-include::Rules-Validate-Rulesets-Against-the-Schema.adoc[tabsize=4]
-
-include::Rules-Test-a-Basic-XML-Rule.adoc[tabsize=4]
-
-== Learn More About {ProductName}
-
-include::Execute.adoc[tabsize=4]
-
-include::Review-the-Report.adoc[tabsize=4]
-
-include::Rules-Review-the-Existing-XML-Rules.adoc[tabsize=4]
-
-== Additional Resources
-
-include::Get-Involved.adoc[tabsize=4]
-
-include::Important-Links.adoc[tabsize=4]
-
-include::Review-the-Quickstarts.adoc[tabsize=4]
-
-include::Known-Issues.adoc[tabsize=4] 
-
-include::Report-Issues.adoc[tabsize=4]
-
-== Appendix
-
-include::Glossary.adoc[tabsize=4]
-
-include::Rules-Rule-Story-Points.adoc[tabsize=4]
-
 include::Rules-XML-Rule-When-Condition-Syntax.adoc[tabsize=4]
 
 include::Rules-XML-Rule-Perform-Action-Syntax.adoc[tabsize=4]
 
-include::Optimize-Performance.adoc[tabsize=4]
+include::Rules-Validate-Rulesets-Against-the-Schema.adoc[tabsize=4]
 
+include::Rules-Test-a-Basic-XML-Rule.adoc[tabsize=4]
+
+== Additional Resources
+
+include::Rules-Review-the-Existing-XML-Rules.adoc[tabsize=4]
+
+include::Rules-Important-Links.adoc[tabsize=4]
+
+
+== Appendix
+
+//include::Glossary.adoc[tabsize=4]
+
+include::Rules-Rule-Story-Points.adoc[tabsize=4]
+
+include::About-the-HOME-Variable.adoc[tabsize=4]
 
 
 

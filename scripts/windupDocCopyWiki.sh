@@ -99,6 +99,7 @@ cp $1/Ruleset-Server-Configuration-Migration.asciidoc docs/Ruleset-Server-Config
 cp $1/Ruleset-XML.asciidoc docs/Ruleset-XML.adoc
 cp $1/Ruleset-XML-Ruleset-Element-Reference.asciidoc docs/Ruleset-XML-Ruleset-Element-Reference.adoc  ## this topic is not used
 cp $1/Rules-Create-Your-First-Rule.asciidoc docs/Rules-Create-Your-First-Rule.adoc
+cp $1/Rules-Important-Links.asciidoc docs/Rules-Important-Links.adoc
 cp $1/Rules-Java-based-Rule-Structure.asciidoc docs/Rules-Java-based-Rule-Structure.adoc
 cp $1/Rules-Models.asciidoc docs/Rules-Models.adoc
 cp $1/Rules-Review-the-Existing-XML-Rules.asciidoc docs/Rules-Review-the-Existing-XML-Rules.adoc

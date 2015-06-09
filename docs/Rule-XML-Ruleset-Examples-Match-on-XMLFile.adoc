@@ -11,9 +11,12 @@
 
 [source,xml]
 ----
-<ruleset xmlns="http://windup.jboss.org/v1/xml" id="xmltestrules_1">
+<ruleset  id="xmltestrules_1"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
     <rules>
-        <rule>
+        <rule id="xmltestrules_1_1000>
             <when>
                 <xmlfile matches="/abc:project" in="{*}" as="testVariable">
                     <namespace prefix="abc" uri="http://maven.apache.org/POM/4.0.0"/>
@@ -31,7 +34,7 @@
 
 [source,xml]
 ----
-<rule>
+<rule id=xmltestrules_1_2000>
     <when>
         <xmlfile as="default" matches="/*[local-name()='jrun-ejb-jar']">
         </xmlfile>

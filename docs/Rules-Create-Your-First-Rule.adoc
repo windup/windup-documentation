@@ -25,8 +25,6 @@ As you create your first rule, refer to the http://windup.jboss.org/schema/windu
 
 ==== Rule Example Description
 
-In previous releases of Red Hat JBoss Enterprise Application, you could ensure application class namespace isolation during deployment by defining a `<class-loading>` element in the `jboss-web.xml` file. Due to the change in JBoss EAP 6 to use modular class loading, this element is no longer necessary, and can result in `ParseError` and `XMLStreamException` errors in the server log. This issue is described in the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6[JBoss EAP Migration Guide]. 
-
 In this example, you write a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and provide a link to the documentation that describes how to migrate the code. 
 
 ==== Create the Directory Structure for the Rule
@@ -66,7 +64,10 @@ $ mkdir -p migration-rules/data
 [source,xml,options="nowrap"]
 ----
 <?xml version="1.0"?>
-<ruleset xmlns="http://windup.jboss.org/v1/xml" id="UNIQUE_RULESET_ID">
+<ruleset id="UNIQUE_RULESET_ID"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
     <metadata>
         <description>
             <!-- Ruleset Description -->
@@ -123,7 +124,10 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 [source,xml,options="nowrap"]
 ----
 <?xml version="1.0"?>
-<ruleset xmlns="http://windup.jboss.org/v1/xml" id="JBoss5-web-class-loading">
+<ruleset id="JBoss5-web-class-loading"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
     <metadata>
         <description>
             This ruleset looks for the class-loading element in a jboss-web.xml file, which is no longer valid in JBoss EAP 6
@@ -132,7 +136,7 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
         <targetTechnology id="eap" versionRange="[6,)"/>
     </metadata>
     <rules>
-        <rule id="JBoss5-web-class-loading_001">
+        <rule id="JBoss5-web-class-loading_1000">
             <when>
                 <xmlfile matches="jboss-web/class-loading" />
             </when>

@@ -25,6 +25,6 @@ For example:
 +
 [options="nowrap"]
 ----
- find ~/MigrationRules/ -type f -iname "*.windup.xml" -exec ~/Downloads/xsdv/xsdv.sh ~/windup/config-xml/windup-jboss-ruleset.xsd {} \;
+ find ~/MigrationRules/ -type f -iname "*.windup.xml" -exec ~/tools/xsdv/xsdv.sh ~/windup/config-xml/schema/windup-jboss-ruleset.xsd {} \;
 ----
 . The console displays the results of each ruleset validation. If a ruleset fails to validate, the content causing the error is printed to the console.
