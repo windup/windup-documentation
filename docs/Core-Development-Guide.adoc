@@ -1,47 +1,34 @@
 
 
-
-
  
-
-
 
 
 [[Core-Development-Guide]]
 === {ProductName} Core Development Guide
 
-This guide is for developers who plan to contribute source code updates
-or core rule add-ons to the {ProductName} project.
 
-==== Overview
+==== Introduction
 
-* xref:What-is-it[What is {ProductName}]?
-* xref:Features[Features of {ProductShortName}]
-* xref:About-Rules[About {ProductShortName} Rules]
-* xref:System-Requirements[System Requirements]
-* xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable]
+This guide is for developers who plan to contribute to the {ProductName} source code base or provide Java-based rule add-ons.
+
+If you are new to {ProductShortName}, it is recommended that you start with the _{ProductName} User Guide_. It provides detailed information about system requirements and detailed instructions on how to install and execute {ProductShortName}. It also contains tips to optimize performance and provides links to other sources of information about {ProductShortName}.
+
+If you would like to contribute custom XML-based rules, see the _{ProductName} Rules Development Guide_.
 
 ==== Get Started
 
-Before you begin to contribute to {ProductShortName}, take a quick tour to see how to use it.
+After you configure Maven, you are ready to create, install, and test your first {ProductShortName} Java-based rule add-on.
 
-* xref:Install[Install {ProductShortName}]
-* xref:Execute[Execute {ProductShortName}]
-* xref:Review-the-Report[Review the Report]
+* xref:Install-and-Configure-Maven[Install and Configure Maven]
+* xref:Dev-Create-Your-First-Java-based-Rule-Add-on[Create Your First Java-based Rule Add-on]
 
 ==== Prepare Your Development Environment
 
-Now that you've seen {ProductShortName} in action, prepare your development environment.
+If you only plan to create custom {ProductShortName} Java-based rule add-ons, you can skip this chapter. However, if plan to contribute back to the core code base, the following sections describe how to access and build the {ProductShortName} source code.
 
-* xref:Install-and-Configure-Maven[Install and Configure Maven]
 * xref:Dev-Get-the-Source-Code[Get the {ProductShortName} Source Code]
 * xref:Dev-Build-from-Source[Build {ProductShortName} from Source]
-* xref:Dev-Execute-Built-from-Source[Execute {ProductShortName} Built from Source]
-
-==== Developer Contributing Information
-
-* xref:Dev-Development-Guidelines-and-Conventions[Developer Guidelines and Conventions]
-* xref:Dev-Submit-Code-Updates-to-the-Project[Submit Code Updates to the {ProductShortName} Project]
+// I don't think this is needed: * xref:Dev-Execute-Built-from-Source[Execute {ProductShortName} Built from Source]
 
 ==== Understand the {ProductShortName} Architecture and Structure
 
@@ -59,31 +46,25 @@ Now that you've seen {ProductShortName} in action, prepare your development envi
 
 ==== Create and Test Java Rule Add-ons
 
+This guide focuses on how to create Java-based rule add-ons. For instructions on how to create XML-based rules, see the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide].
+
 * xref:Rules-Java-based-Rule-Structure[Java-based Rule Structure]
 * xref:Rules-Basic-Rule-Execution-Flow-Patterns[Basic Rule Execution Flow Patterns]
 * xref:Rules-Create-a-Basic-Java-based-Rule-Add-on[Create a Basic Java-based Rule Add-on]
 
-==== Create and Test XML Rules
+==== Debugging, Profiling, and Logging
 
-See the {ProductName} Rules Development Guide for instructions to create XML-based rules.
+* xref:Dev-Debugging-and-Profiling[Debugging, Profiling, and Logging]
 
-==== Debugging and Troubleshooting
+==== Developer Contributing Information
 
-* xref:Dev-Debugging-and-Profiling[Debugging and Profiling]
-* xref:Dev-Troubleshooting[Troubleshooting]
+* xref:Dev-Development-Guidelines-and-Conventions[Developer Guidelines and Conventions]
+* xref:Dev-Submit-Code-Updates-to-the-Project[Submit Code Updates to the {ProductShortName} Project]
 
-==== Additional Resources
-
-* xref:Review-the-Quickstarts[Review the {ProductShortName} Quickstarts]
-* xref:Get-Involved[Get Involved] - We need your feedback!
-* xref:Important Links[Important Links]
-* xref:Known-Issues[Known Issues] 
-* xref:Report-Issues[Report Issues with {ProductShortName}]
 
 ==== Appendix
 
-* xref:Glossary[Glossary of Terms]
+* xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable]
 * xref:Dev-Project-Information[{ProductShortName} Project Information] - Github
 repository, IRC, Mailing lists, ...
-* xref:Optimize-Performance[Optimize {ProductShortName} Performance]
 

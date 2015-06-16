@@ -1,11 +1,12 @@
 
 
 
- 
+
+
 
 === Downloads
 https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.windup&a=windup-distribution&v=LATEST&e=zip&c=offline[Latest {ProductName} ZIP distribution]
-https://github.com/windup/windup-quickstarts/releases[{ProductName} Quickstarts]
+https://github.com/windup/windup-quickstarts/releases[{ProductShortName} Quickstarts]
 
 === Wiki Guides:
 
@@ -18,9 +19,9 @@ xref:./Migration-Planning-Guide[Migration Planning Guide] +
 
 ==== Single-page HTML Format
 
-http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html[{ProductName} User Guide] +
-http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html[{ProductName} Rules Development Guide] +
-http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html[{ProductName} Core Development Guide] +
+{ProductDocUserGuideURL}[{ProductName} User Guide] +
+{ProductDocRulesGuideURL}[{ProductName} Rules Development Guide] +
+{ProductDocCoreGuideURL}[{ProductName} Core Development Guide] +
 
 ==== PDF Format
 

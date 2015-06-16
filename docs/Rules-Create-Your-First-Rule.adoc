@@ -1,17 +1,16 @@
 
-
  
 
 :imagesdir: images
 
 [[Rules-Create-Your-First-Rule]]
-=== Create Your First Rule
+=== Create Your First XML Rule
 
 ==== Overview 
 
-This topic guides you through the process of creating and testing your first rule.
+This topic guides you through the process of creating and testing your first {ProductShortName} XML-based rule.
 
-{ProductName} XML-base rules use the following familiar rule pattern:
+{ProductShortName} XML-base rules use the following familiar rule pattern:
 
     when(condition)
         perform(action)
@@ -173,7 +172,7 @@ To validate your XML rule using the {ProductShortName} rule schema, see xref:Rul
 
 . Open a terminal and navigate to the {ProductHomeVar} directory.
 
-. Type the following command to test the rule in batch mode, passing the test file as an input argument and a directory for the output report.
+. Type the following command to test the rule in {ProductShortName}, passing the test file as an input argument and a directory for the output report.
 +
 [options="nowrap"]
 ----

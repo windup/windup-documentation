@@ -70,24 +70,13 @@ effort="2"
 
 |severity
 |STRING
-a|Whether this classification is mandatory or optional
+a|Whether this classification is "mandatory" or "optional"
 
 _Example:_ 
 
 [options="nowrap"]
 ----
 severity="mandatory"
-----
-
-|description
-|STRING
-a|Description of this resource
-
-_Example:_ 
-
-[options="nowrap"]
-----
-description="JBoss Seam components must be replaced"
 ----
 
 |of
@@ -111,15 +100,15 @@ of="MySeamRule"
 |Description
 
 |<link>
-a|Provides a link URI and text description for additional information.
+a|Provides a link URI and text title for additional information.
 
 _Example:_   
 
 [source,xml,options="nowrap"]
 ----
 <classification title="Websphere Startup Service" effort="4">
-   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Singleton.html" description="EJB3.1 Singleton Bean"/>
-   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html" description="EJB3.1 Startup Bean"/>
+   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Singleton.html" title="EJB3.1 Singleton Bean"/>
+   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html" title="EJB3.1 Startup Bean"/>
 </classification>
 ----
 
@@ -132,7 +121,19 @@ _Example:_
 ----
 <tag>Seam3</tag>
 ----
+
+|<description>
+a|Description of this resource
+
+_Example:_ 
+
+[source,xml,options="nowrap"]
+----
+<description>JBoss Seam components must be replaced</description>
+----
+
 |===
+
 
 [[link-syntax]]
 ==== Link Syntax
@@ -153,10 +154,10 @@ _Example:_
     <perform>
         <iteration>
             <classification title="SEAM Component" effort="1">
-                <link href="http://www.seamframework.org/Seam3/Seam2ToSeam3MigrationNotes" description="Seam 2 to Seam 3 Migration Notes"/>
-                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/example.html" description="JSF Web Application Example"/>
-                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/contexts.html" description="JBoss Context Documentation"/>
-                <link href="http://www.andygibson.net/blog/tutorial/cdi-conversations-part-2/" description="CDI Conversations Blog Post"/>
+                <link href="http://www.seamframework.org/Seam3/Seam2ToSeam3MigrationNotes" title="Seam 2 to Seam 3 Migration Notes"/>
+                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/example.html" title="JSF Web Application Example"/>
+                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/contexts.html" title="JBoss Context Documentation"/>
+                <link href="http://www.andygibson.net/blog/tutorial/cdi-conversations-part-2/" title="CDI Conversations Blog Post"/>
             </classification>
         </iteration>
     </perform>
@@ -182,15 +183,15 @@ _Example:_
 href="https://access.redhat.com/articles/1249423"
 ----
 
-|description
+|title
 |STRING
-a|A description for the link. 
+a|A title for the link. 
 
 _Example:_ 
 
 [options="nowrap"]
 ----
-description="Migrate WebLogic Proprietary Servlet Annotations"
+title="Migrate WebLogic Proprietary Servlet Annotations"
 ----
 
 |===
@@ -217,7 +218,7 @@ _Example:_
         <iteration>
             <hint effort="3">
                 <message>Replace proprietary web-service authentication with JAX-WS standards.</message>
-                <link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" description="JAX-WS Proxy Password Example"/>
+                <link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" title="JAX-WS Proxy Password Example"/>
             </hint>
         </iteration>
     </perform>
@@ -245,7 +246,7 @@ title="JBoss Seam Component Hint"
 
 |severity
 |STRING
-a|Whether this hint is mandatory or optional
+a|Whether this hint is "mandatory" or "optional"
 
 _Example:_ 
 
@@ -302,7 +303,8 @@ _Example:_
 
 [source,xml,options="nowrap"]
 ----
-<link href="" description="" />
+<link href="http://docs.oracle.com/javaee/6/api/" title="Java Platform, Enterprise Edition 6
+API Specification" />
 ----
 
 |<tag>
@@ -335,7 +337,7 @@ _Example:_
     <perform>
         <iteration>
             <classification title="Weblogic EJB XML" effort="3"/>
-            <xslt description="JBoss EJB Descriptor (Windup-Generated)" template="transformations/xslt/weblogic-ejb-to-jboss.xsl" extension="-jboss.xml"/>
+            <xslt title="JBoss EJB Descriptor (Windup-Generated)" template="transformations/xslt/weblogic-ejb-to-jboss.xsl" extension="-jboss.xml"/>
         </iteration>
     </perform>
 </rule>
@@ -360,11 +362,16 @@ _Example:_
 of="testVariable_instance"
 ----
 
-|description
+|title
 |STRING
-a|Sets the description of this XSLTTransformation.
+a|Sets the title for this XSLTTransformation.
 
-_Example:_ description="XSLT Transformed Output"
+_Example:_ 
+
+[options="nowrap"]
+----
+title="XSLT Transformed Output"
+----
 
 |extension
 |STRING
@@ -430,7 +437,7 @@ _Example:_
     <perform>
         <hint effort="1">
             <message>Replace the proprietary WebLogic @WLServlet annotation with the Java EE 6 standard @WebServlet annotation.</message>
-            <link href="https://access.redhat.com/articles/1249423" description="Migrate WebLogic Proprietary Servlet Annotations" />
+            <link href="https://access.redhat.com/articles/1249423" title="Migrate WebLogic Proprietary Servlet Annotations" />
             <lineitem message="Proprietary WebLogic @WLServlet annotation found in file."/>
         </hint>
     </perform>

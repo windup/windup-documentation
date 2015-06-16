@@ -2,6 +2,7 @@
 
 
 
+
 [[Review-the-Report]]
 === Review the Report
 
@@ -45,7 +46,7 @@ The first section of the application report page summarizes the migration effort
 * The file name
 * The file type
 * A list of issues, if any, that were found in the file
-* The estimated total _Story Points_ to migrate the file. _Story Points_ are covered in more detail in the _{ProductName} Rules Development Guide_.
+* The estimated total _Story Points_ to migrate the file. _Story Points_ are covered in more detail in the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide].
 
 +
 NOTE: The estimated Story Points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.

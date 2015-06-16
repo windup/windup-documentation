@@ -4,7 +4,7 @@
 [[Dev-Rule-Documentation-Tracker]]
 === Rule Documentation Tracker
 
-==== Rule Tracker 
+==== Rule Tracker Spreadsheet
 
 * This page tracks the existing rules. It also tracks JBoss Migration Documentation and Windup KBase article that need rules to point to them.
 
@@ -12,17 +12,26 @@
 +
 _NOTE: (OBSOLETE) The content for the page has been moved to the above spreadsheet and is now obsolete:https://docs.google.com/spreadsheets/d/1XJ1LNqhtT8ijZTFROx5OjezOii8TBDI4Us7M9q1rQLo/edit#gid=0_
 
-==== KBase Articles - Written
+==== Documentation You Can Refer To
 
-The following links provide a list of available {ProductShortName} Kbase articles is located here: 
+* JBoss Migration Guide: https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html
 
-* https://access.redhat.com/search/#/?q=tag:%28%22windup%22%29&p=2&srch=any&language=en&documentKind=
+The following links provide a list of available Kbase articles is located here: 
+
 * https://access.redhat.com/taxonomy/tags/windup
+* (Alternate link): https://access.redhat.com/search/#/?q=tag:%28%22windup%22%29&p=2&srch=any&language=en&documentKind=
+
 
 ==== KBase Articles - Needed
 
-The following is a link to Kbase articles that need to be written:
+The following guides are NOT published and the topics are in the process of being converted to the KBase articles. JIRAs need to be created for the ones not yet converted.
 
-* https://issues.jboss.org/issues?jql=project%20%3D%20WINDUP%20AND%20status%20in%20%28Open%2C%20%22Coding%20In%20Progress%22%2C%20Reopened%2C%20%22Pull%20Request%20Sent%22%29%20AND%20component%20%3D%20Documentation
+* WebLogic Migration Guide: http://docbuilder.usersys.redhat.com/13710/
+* WebSphere Migration Guide: http://docbuilder.usersys.redhat.com/22175/
 
-* https://issues.jboss.org/issues/?filter=12323929
+The following is a link to the JIRAs (Project: Windup, Component: Documentation) for Kbase articles that need to be written:
+
+* https://issues.jboss.org/browse/issues?filter=12323966
+
+* https://issues.jboss.org/issues?jql=project%20%3D%20WINDUP%20AND%20status%20in%20%28Open%2C%20%22Coding%20In%20Progress%22%2C%20Reopened%2C%20%22Pull%20Request%20Sent%22%29%20AND%20component%20%3D%20Documentation%22%29%20AND%20labels%20%3D%20kbase
+

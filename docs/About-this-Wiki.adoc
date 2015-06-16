@@ -42,7 +42,6 @@ The following is a brief overview.
 {ProductVersion} - The current product version
 {ProductDistribution} - The distribution file name
 {ProductHomeVar} - The installation home variable
-{ProductDocHomeVar} - The documentation home variable
 {ProductSrcHomeVar} - The source home variable
 {ProductReleaseVar} - The product release variable
 ----
@@ -77,12 +76,12 @@ The following is a brief overview.
 +
 Anchor within `Execute` page
 
-        [[start-windup-in-interactive-mode]]
-        ==== Start {ProductShortName} in Interactive Mode
+        [[start-windup]]
+        ==== Start {ProductShortName}
 +
 Reference from `Rules-Create-a-Basic-Java-based-Rule-Add-on` page: 
 
-        xref:Execute#start-windup-in-interactive-mode[Start {ProductShortName} in Interactive Mode]. 
+        xref:Execute#start-windup[Start {ProductShortName}]. 
 
     
 * In Asciidoctor 1.5.0, the backtick is no longer an inline monospaced literal. This means that the wildcard character (*) within backticks renders as an emphasis tag, resulting in the following build error.

@@ -1,18 +1,21 @@
 
 
 
+
  
 
 [[Dev-Get-the-Source-Code]]
 === Get the {ProductName} Source Code
 
-The source code for the {ProductName} project is located in 2 repositories:
+If you just plan to create Java-based rule add-ons, you do not need to get the {ProductShortName} source code. You only need to configure Maven to build your Java-base rule add-on project.
 
-* {ProductName} core code base: https://github.com/windup/windup
-* {ProductName} XML-based rulesets: https://github.com/windup/windup-rulesets
-* {ProductName} distribution: https://github.com/windup/windup-distribution
+However, if you plan to contribute to the {ProductShortName} code base, you need to fork and clone the 3 following {ProductShortName} GitHub repositories. 
 
-To contribute to the {ProductName} project source code, you must fork the {ProductName}, {ProductName} ruleset, and {ProductName} distribution repositories to your own Git, clone your forks, commit your work on topic branches, and make pull requests back to the corresponding repository.
+* {ProductShortName} core code base: https://github.com/windup/windup
+* {ProductShortName} XML-based rulesets: https://github.com/windup/windup-rulesets
+* {ProductShortName} distribution: https://github.com/windup/windup-distribution
+
+The basic workflow process is to fork the above {ProductShortName} repositories to your own Git, clone your forks, commit your work in topic branches, and make pull requests back to the corresponding repository.
 
 ==== Install the Git Client
 
@@ -36,9 +39,9 @@ git config --global user_name "FIRST_NAME LAST_NAME"
 git config --global user_email "YOUR_EMAIL_ADDRESS"
 ----
 
-==== Fork and Clone the {ProductName} Repository
+==== Fork and Clone the {ProductShortName} Repository
 
-. https://github.com/windup/windup/fork[Fork] the {ProductName} project. This
+. https://github.com/windup/windup/fork[Fork] the {ProductShortName} project. This
 creates the `windup` project in your own Git with the default remote
 name 'origin'.
 . Clone your fork. This creates and populates a directory in your
@@ -63,11 +66,11 @@ git remote add upstream git@github.com:windup/windup.git
 git fetch upstream
 ----
 
-==== Fork and Clone the {ProductName} Rulesets Repository
+==== Fork and Clone the {ProductShortName} Rulesets Repository
 
-The {ProductName} XML rulesets now live in a separate repository. Follow these instructions to fork and clone them.
+The {ProductShortName} XML rulesets live in a separate repository. Follow these instructions to fork and clone them.
 
-. https://github.com/windup/windup-rulesets/fork[Fork] the {ProductName} Rulesets project. This
+. https://github.com/windup/windup-rulesets/fork[Fork] the {ProductShortName} Rulesets project. This
 creates the `windup-rulesets` project in your own Git with the default remote
 name 'origin'.
 . Clone your fork. This creates and populates a directory in your local file system.
@@ -92,10 +95,10 @@ git fetch upstream
 ----
 
 
-==== Fork and Clone the {ProductName} Distribution Repository
+==== Fork and Clone the {ProductShortName} Distribution Repository
 
 
-. https://github.com/windup/windup-distribution/fork[Fork] the {ProductName} distribution project. This
+. https://github.com/windup/windup-distribution/fork[Fork] the {ProductShortName} distribution project. This
 creates the `windup-distribution` project in your own Git with the default remote
 name 'origin'.
 . Clone your fork. This creates and populates a directory in your local file system.

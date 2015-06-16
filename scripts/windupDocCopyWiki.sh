@@ -19,6 +19,7 @@ cp $1/Dev-Classloading-Notes.asciidoc docs/Dev-Classloading-Notes.adoc
 cp $1/Dev-Concepts-and-Philosophy.asciidoc docs/Dev-Concepts-and-Philosophy.adoc
 cp $1/Dev-Connect-to-the-Graph-via-Rexster.asciidoc docs/Dev-Connect-to-the-Graph-via-Rexster.adoc
 cp $1/Dev-Create-A-Test-for-A-Java-based-Rule-Add-on.asciidoc docs/Dev-Create-A-Test-for-A-Java-based-Rule-Add-on.adoc 
+cp $1/Dev-Create-Your-First-Java-based-Rule-Add-on.asciidoc docs/Dev-Create-Your-First-Java-based-Rule-Add-on.adoc
 cp $1/Dev-Create-the-JavaDoc.asciidoc docs/Dev-Create-the-JavaDoc.adoc
 cp $1/Dev-Customer-Portal-Tags.asciidoc docs/Dev-Customer-Portal-Tags.adoc  ## this topic is not used
 cp $1/Dev-Debugging-and-Profiling.asciidoc docs/Dev-Debugging-and-Profiling.adoc

@@ -1,6 +1,7 @@
 
 
 
+
 [[Rules-Create-a-Basic-Java-based-Rule-Add-on]]
 === Create a Basic Java-based Rule Add-on
 
@@ -8,21 +9,23 @@ You can create a {ProductName} rule using Java or XML. This topic describes how 
 
 ==== Prerequisites
 
-* You must xref:Install[Install {ProductShortName}]. 
-* Be sure you xref:Install-and-Configure-Maven[Install and Configure Maven].
-* Before you begin, may want also want to be familiar with the following documentation:
+* You must install {ProductShortName}. 
+* You must install and configure Maven. Follow the instructions here: xref:Install-and-Configure-Maven[Install and Configure Maven].
+* Before you begin, you may want also want to be familiar with the following documentation:
 ** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
 ** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
 
-Working examples of Java-based rules can be found in the https://github.com/windup/windup-quickstarts[{ProductShortName} quickstarts] and https://github.com/windup/windup[{ProductShortName} source code] repositories.
+Working examples of Java-based rules can be found in the https://github.com/windup/windup[{ProductShortName} source code] and the https://github.com/windup/windup-quickstarts[{ProductShortName} quickstarts] repositories.
  
 ==== Create the Maven Project
 
-Create a new Maven Java Project. These instructions will refer to the project folder location with the *replaceable* variable 'RULE_PROJECT_HOME'. Modify the project `pom.xml` file as follows
+Create a new Maven Java Project. The instructions below refer to the project folder location with the *replaceable* variable `RULE_PROJECT_HOME`. 
 
-1. Add the following properties. Be sure to replace `WINDUP_VERSION` with the current version of {ProductShortName}, for example: `2.2.0.Final`.
+Modify the project `pom.xml` file as follows.
+
+. Add the following properties. Be sure to replace `WINDUP_VERSION` with the current version of {ProductShortName}, for example: `2.2.0.Final`.
 +
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,9 +35,9 @@ Create a new Maven Java Project. These instructions will refer to the project fo
 </properties>
 ----
 
-2. Add a dependency management section for the {ProductShortName} BOM. 
+. Add a dependency management section for the {ProductShortName} BOM. 
 +
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <dependencyManagement>
     <dependencies>
@@ -50,12 +53,12 @@ Create a new Maven Java Project. These instructions will refer to the project fo
 </dependencyManagement>
 ----
 
-3. Add a `<dependencies>` section to include {ProductShortName}, rulesets, and test dependencies required by your rule add-on. {ProductShortName} is a Forge/Furnace based application and has a modular design, so the dependencies will vary depending on the {ProductShortName} APIs used by the rule. 
+. Add a `<dependencies>` section to include {ProductShortName}, rulesets, and test dependencies required by your rule add-on. {ProductShortName} is a Forge/Furnace based application and has a modular design, so the dependencies will vary depending on the {ProductShortName} APIs used by the rule. 
 // For more information on {ProductShortName} dependencies, see xref:Dev-Dependencies[{ProductShortName} Dependencies]. 
 +
 The following are examples of some dependencies you may need for your rule add-on.
 +
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <!-- API dependencies -->
 <dependency>
@@ -146,9 +149,9 @@ The following are examples of some dependencies you may need for your rule add-o
 </dependency>
 ----
 
-4. Add the `<plugins>` section to make it a Forge add-on.
+. Add the `<plugins>` section to make it a Forge add-on.
 +
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <build>
     <plugins>
@@ -218,17 +221,17 @@ For more information about rule phases, see xref:Rules-Rule-Execution-Lifecycle[
 +
 The following is a specific high-level rule which uses high-level conditions (`JavaClass`) and operations (`Classification`). See the documentation of those conditions and operations for the details.
 +
-[source,java]
+[source,java,options="nowrap"]
 ----
 @Override
 public Configuration getConfiguration(GraphContext context)
 {
     return ConfigurationBuilder.begin()
         .addRule()
-        .when(JavaClass.references("weblogic.servlet.annotation.WLServlet").at(TypeReferenceLocation.ANNOTATION)
+        .when(JavaClass.references("com.example.proprietary.servlet.annotation.ProprietaryServlet").at(TypeReferenceLocation.ANNOTATION)
         )
         .perform(
-            Classification.as("WebLogic @WLServlet")
+            Classification.as("Proprietary @ProprietaryServlet")
                .with(Link.to("Java EE 6 @WebServlet", "https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/index.html"))
                .withEffort(0)
                .and(Hint.withText("Migrate to Java EE 6 @WebServlet.").withEffort(8))
@@ -258,7 +261,7 @@ PROJECT_DIRECTORY/src/main/resources/META-INF/beans.xml
 +
 This file tells CDI to scan your add-on for CDI beans. The file can be empty, but it is a good practice to include the basic schema information.
 +
-[source,xml]
+[source,xml,options="nowrap"]
 ----
 <!-- Marker file indicating CDI 1.0 should be enabled -->
 <beans xmlns="http://java.sun.com/xml/ns/javaee"
@@ -269,19 +272,58 @@ This file tells CDI to scan your add-on for CDI beans. The file can be empty, bu
 </beans>
 ----
 
-==== Install the Java-based Rule Add-on
+==== Install the Java-based Rule Add-on in Your Local Maven Repository
 
-The easiest and fastest way to build the rule add-on, install it into the local Maven repository, and install it into {ProductShortName} as a rule add-on is to use the {ProductShortName} `addon-build-and-install` command.
+Before you can add the rule to {ProductShortName}, you must compile it and install it in your local Maven repository. 
 
-* If you have not started {ProductShortName}, follow the instructions to xref:Execute#start-windup-in-interactive-mode[Start {ProductShortName} in Interactive Mode].
+. Open a command prompt and navigate to `RULE_PROJECT_HOME` directory.
+. Type the following command to compile the rule and install it into the local Maven repository:
++
+----
+mvn clean install
+----
+. You should see the message `BUILD SUCCESS`
 
-* At the {ProductShortName} console prompt, enter the `addon-build-and-install` command:
+[[add-the-rule-to-windup]]
+==== Add the Rule to {ProductShortName}
 
-        addon-build-and-install --projectRoot RULE_PROJECT_HOME
+The command to install the rule in {ProductShortName} uses the Maven GAV (groupId, artifactId, and version) to locate the rule in the Maven repository. The command uses the following syntax:
 
-* You should see a result similar to the following.
+[options="nowrap"]
+----
+WINDUP_HOME/bin/windup --install GROUP_ID:ARTIFACT_ID[,VERSION]
+----
 
-        ***SUCCESS*** Addon MyCustomRuleProvider:::2.2.0.Final was installed successfully.
+The Maven groupId, artifactId, and version are the values you provided when you generated the Maven project and can be found in the project POM file. The following is an example of these values in a POM file.
+
+[source,xml]
+----
+<groupId>com.example.rules</groupId>
+<artifactId>my-custom-rule-provider</artifactId>
+<version>1.0.0-SNAPSHOT</version>
+----
+
+Follow these steps to add the rule to Windup.
+
+. Open a command prompt and navigate to the `WINDUP_HOME` directory.
+. Type the following command, replacing the example rule GAV values with your project values.
++
+----
+WINDUP_HOME/bin/windup --install org.example.rules:my-custom-rule-provider,1.0.0-SNAPSHOT
+----
+. At the following prompt, choose `Y`.
++
+----
+Confirm installation [Y/n]? Y
+----
+
+. You should see the following result.
++
+----
+Installation completed successfully.
+----
+. Type `exit` to exit the Windup console.
+
 
 ==== Test the Java-based Rule Add-on
 
@@ -295,7 +337,7 @@ You should see the following result:
 
     ***SUCCESS*** Windup report created: QUICKSTART_HOME/windup-reports-java/index.html
 
-For more information and examples of how to run {ProductShortName}, see: xref:Execute[Execute {ProductShortName}] 
+For more detailed instructions on how to execute {ProductShortName}, see the {ProductDocUserGuideURL}[{ProductShortName} User Guide]. 
 
 ==== Review the Output Report
 

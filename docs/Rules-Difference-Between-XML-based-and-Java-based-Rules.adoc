@@ -1,20 +1,21 @@
 
 
 
- 
+
+
 
 [[Rules-Difference-Between-XML-based-and-Java-based-Rules]]
 === Difference Between XML-based and Java-based Rules
 
 ==== Summary
 
-As mentioned before, {ProductName} provides a core and a default set of rules to analyze and report on migration of application code. {ProductName} also allows you to write your own custom rules. These rules can be written using either XML or Java. Rules written using XML are referred to as _XML-based_ rules. Rules written using the Java API are referred to as _Java-based_ rule add-ons. Both _XML-based_ and _Java-based_ rule add-ons can be used to inspect (classify) and report on Java source, XML, properties, archives, and other types of files,
+As mentioned before, {ProductName} provides a core and a default set of rules to analyze and report on migration of application code. {ProductShortName} also allows you to write your own custom rules. These rules can be written using either XML or Java. Rules written using XML are referred to as _XML-based_ rules. Rules written using the Java API are referred to as _Java-based_ rule add-ons. Both _XML-based_ and _Java-based_ rule add-ons can be used to inspect (classify) and report on Java source, XML, properties, archives, and other types of files,
 
 ==== Which one to choose?
 
-_XML-based_ rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of _XML-based_ rules is the recommended approach. Creation of custom _XML-based_ rules is covered in the _{ProductName} Rules Development Guide_.
+_XML-based_ rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of _XML-based_ rules is the recommended approach. Creation of custom _XML-based_ rules is covered in the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide].
 
-_Java-based_ rule add-ons provide the ability to create very complex rules, manipulate the shared data model graph, and customize the resulting reports. If you need to test or perform complex conditions and operations or want to manipulate the shared data model graph, create custom reports, or extend the functionality in any other way beyond what the _XML-based_ rules provide, you must create _Java-based_ rules. Creation of custom _Java-based_ rules is covered in the _{ProductName} Core Development Guide_.
+_Java-based_ rule add-ons provide the ability to create very complex rules, manipulate the shared data model graph, and customize the resulting reports. If you need to test or perform complex conditions and operations or want to manipulate the shared data model graph, create custom reports, or extend the functionality in any other way beyond what the _XML-based_ rules provide, you must create _Java-based_ rules. Creation of custom _Java-based_ rules is covered in the {ProductDocCoreGuideURL}[{ProductName} Core Development Guide].
 
 
 ==== Pros and Cons of XML-based Rules
@@ -23,7 +24,7 @@ Pros:
 
 * XML rules are fairly easy to write and require less code.
 * XML rules are not compiled so you do not need to configure Maven to build from source.
-* XML rules are simple to deploy. You simply drop the rule into the appropriate path and {ProductName} automatically scans the new rule.
+* XML rules are simple to deploy. You simply drop the rule into the appropriate path and {ProductShortName} automatically scans the new rule.
 
 Cons:
 
@@ -37,14 +38,14 @@ Pros:
 * Java rule add-ons allow you to write custom conditions and operations and provide a lot of flexibility.
 * Java rule add-ons allow you to access and manipulate the shared data model graph and to customize reports.
 * You can set breakpoints and test Java rule add-ons using a debugger.
-* IDEs provide code completion for the {ProductName} API.
+* IDEs provide code completion for the {ProductShortName} API.
 
 Cons:
 
 * You must configure Maven to compile Java rule add-ons.
-* Java rule add-ons that are not included in the {ProductName} core code base must be a full Forge add-on.
+* Java rule add-ons that are not included in the {ProductShortName} core code base must be a full Forge add-on.
 * Java rule add-ons require that you write Java code.
-* Writing Java rule add-ons can be complex and require knowledge of {ProductName} internals.
+* Writing Java rule add-ons can be complex and require knowledge of {ProductShortName} internals.
 
 ==== Examples of XML-based and Java Based Rules 
 

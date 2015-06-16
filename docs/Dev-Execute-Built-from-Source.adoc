@@ -6,6 +6,8 @@
 [[Dev-Execute-Built-from-Source]]
 === Execute {ProductName} (Built from {ProductName} Source)
 
+TODO: This page needs review! Is it still valid or necessary??
+
 These instructions are for {ProductName} core developers who plan to build {ProductName} from source to test code updates. 
 
 * If you are new to the project and not familiar with the procedures to execute {ProductName}, see xref:Execute[Execute {ProductName}]. It contains complete step-by-step instructions to execute {ProductName} and also provides command line examples.
@@ -18,14 +20,10 @@ mkdir tmp
 cd tmp
 unzip -q ../dist/target/windup-*.zip
 cd windup-*
-rm -rf ~/.forge/addons/
+rm -rf ~/.windup/addons/
 
-## Execute using Batch Mode
+## Execute Windup
 bin/windup.sh --input /home/username/work/Migration/TestApps/_apps/BradApp --output Report --packages org com net
-
-## Execute using Interactive Mode
-bin/windup.sh
-$ windup-migrate-app --input /home/username/work/Migration/TestApps/_apps/BradApp --output Report --packages org com net
 
 ## Exit
 $ exit

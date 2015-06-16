@@ -1,11 +1,6 @@
 
 
-
-
  
-
-
-
 
 [[Rules-Development-Guide]]
 === Rules Development Guide
@@ -14,18 +9,13 @@
 
 This guide is for engineers, consultants, and others who plan to create custom XML-based rules for {ProductName}. 
 
-If you are new to _{ProductName}, review the _{ProductName} User Guide_ first. It provides detailed information about system requirements and detailed instructions on how to install and execute {ProductName}.
+If you are new to {ProductName}, it is recommended that you start with the _{ProductName} User Guide_. It provides detailed information about system requirements and detailed instructions on how to install and execute {ProductShortName}. It also contains tips to optimize performance and provides links to other sources of information about {ProductShortName}.
 
-
-* xref:What-is-it[What is {ProductName}?]
-* xref:Features[Features of {ProductShortName}]
-* xref:About-Rules[About {ProductShortName} Rules]
-* xref:System-Requirements[System Requirements]
-* xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable]
+If you would like to contribute to the {ProductName} source code base or provide Java-based rule add-ons, see the _{ProductName} Core Development Guide_.
 
 ==== Get Started
 
-* xref:Rules-Create-Your-First-Rule[Write Your First Rule]
+* xref:Rules-Create-Your-First-Rule[Create Your First Rule]
 
 ==== Create and Test XML Rules
 
@@ -36,7 +26,6 @@ If you are new to _{ProductName}, review the _{ProductName} User Guide_ first. I
 * xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax]
 * xref:Rules-Validate-Rulesets-Against-the-Schema[Validate Rulesets Against the Schema]
 * xref:Rules-Test-a-Basic-XML-Rule[Test an XML Rule in {ProductName}]
-
 
 ==== Additional Resources
 

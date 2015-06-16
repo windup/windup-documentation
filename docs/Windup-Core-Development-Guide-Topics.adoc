@@ -1,53 +1,35 @@
 == Introduction
 
-This guide is for developers who plan to contribute source code updates
-or core rule add-ons to the {ProductName} project.
+This guide is for developers who plan to contribute to the {ProductName} source code base or provide Java-based rule add-ons. 
 
-include::What-is-it.adoc[tabsize=4]
+If you are new to {ProductShortName}, it is recommended that you start with the {ProductDocUserGuideURL}[{ProductName} User Guide]. It provides detailed information about system requirements and detailed instructions on how to install and execute {ProductShortName}. It also contains tips to optimize performance and provides links to other sources of information about {ProductShortName}.
 
-include::Features.adoc[tabsize=4]
+If you would like to create custom XML-based rules for {ProductShortName}, see the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide].
 
-include::About-Rules.adoc[tabsize=4]
+== Get Started 
 
-include::System-Requirements.adoc[tabsize=4]
+After you configure Maven, you are ready to create, install, and test your first {ProductShortName} Java-based rule add-on.
 
-include::About-the-HOME-Variable.adoc[tabsize=4]
+include::Install-and-Configure-Maven.adoc[tabsize=4]
 
-== Get Started
-
-Before you begin to contribute to {ProductName}, take a quick tour to see how to use it.
-
-include::Install.adoc[tabsize=4]
-
-include::Execute.adoc[tabsize=4]
-
-include::Review-the-Report.adoc[tabsize=4]
+include::Dev-Create-Your-First-Java-based-Rule-Add-on.adoc[tabsize=4]
 
 == Prepare Your Development Environment
 
-Now that you've seen {ProductName} in action, prepare your development environment.
-
-include::Install-and-Configure-Maven.adoc[tabsize=4]
+If you only plan to create custom {ProductShortName} Java-based rule add-ons, you can skip this chapter. However, if plan to contribute back to the core code base, the following sections describe how to access and build the {ProductShortName} source code.
 
 include::Dev-Get-the-Source-Code.adoc[tabsize=4]
 
 include::Dev-Build-from-Source.adoc[tabsize=4]
 
-include::Dev-Execute-Built-from-Source.adoc[tabsize=4]
-
-== Developer Contributing Information
-
-include::Dev-Development-Guidelines-and-Conventions.adoc[tabsize=4]
-
-include::Dev-Submit-Code-Updates-to-the-Project.adoc[tabsize=4]
+// include::Dev-Execute-Built-from-Source.adoc[tabsize=4]
 
 == Understand the {ProductName} Architecture and Structure
 
 include::Architectural-Components.adoc[tabsize=4]
 
-//include::Dev-Frames-Extensions.adoc[tabsize=4]
-
 include::Dev-Project-Structure.adoc[tabsize=4]
+
 
 == Rules and Rulesets
 
@@ -65,121 +47,45 @@ include::Rules-Difference-Between-XML-based-and-Java-based-Rules.adoc[tabsize=4]
 
 == Create and Test Java Rule Add-ons
 
+This guide focuses on how to create Java-based rule add-ons. For instructions on how to create XML-based rules, see the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide].
+
 include::Rules-Java-based-Rule-Structure.adoc[tabsize=4]
 
 include::Rules-Basic-Rule-Execution-Flow-Patterns.adoc[tabsize=4]
 
 include::Rules-Create-a-Basic-Java-based-Rule-Add-on.adoc[tabsize=4]
 
-// == Create and Test XML Rules
-
-// include::Rules-Create-a-Basic-XML-Rule.adoc[tabsize=4]
-
-// include::Rules-XML-Rule-When-Condition-Syntax.adoc[tabsize=4]
-
-// include::Rules-XML-Rule-Perform-Action-Syntax.adoc[tabsize=4]
-
-// include::Rules-Validate-Rulesets-Against-the-Schema.adoc[tabsize=4]
-
-// include::Rules-Test-a-Basic-XML-Rule.adoc[tabsize=4]
-
-// == Core Developer topics
-
-// include::Dev-Bootstrap-Process.adoc[tabsize=4]
-
-// include::Dev-Classloading-Notes.adoc[tabsize=4]
-
-// include::Dev-Connect-to-the-Graph-via-Rexster.adoc[tabsize=4]
-
-// include::Dev-Decompiling.adoc[tabsize=4]
-
-// include::Dev-Dependencies.adoc[tabsize=4]
-
-// include::Dev-Internal-API-Features.adoc[tabsize=4]
-
-// include::Dev-Logging.adoc[tabsize=4]
-
-// include::Dev-Variables-Stack.adoc[tabsize=4]
-
-// include::Dev-Port-WindRide-Functionality.adoc[tabsize=4]
-
-// include::Dev-Git-Rebasing.adoc[tabsize=4]
-
-// == Rules topics
-
-
-// include::Dev-Concepts-and-Philosophy.adoc[tabsize=4]
-
-// include::Rules-Creating-Rule-Operations.adoc[tabsize=4]
-
-// include::Rules-Rulesets.adoc[tabsize=4]
-
-// include::Ruleset-Java-Basic-Ruleset.adoc[tabsize=4]
-
-// include::Ruleset-Java-Classifications-and-Inline-Hints.adoc[tabsize=4]
-
-// include::Ruleset-Java-EE-Apps.adoc[tabsize=4]
-
-// include::Ruleset-Java-EE-Servers.adoc[tabsize=4]
-
-// include::Ruleset-Reporting.adoc[tabsize=4]
-
-// include::Ruleset-XML.adoc[tabsize=4]
-
-// include::Rules-Models.adoc[tabsize=4]
-
-// include::Rules-Create-Java-Queries.adoc[tabsize=4]
-
-// include::Rule-Metadata.adoc[tabsize=4]
-
-// OBSOLETE include::Rules-Rules-Operations.adoc[tabsize=4]
-
-// OBSOLETE include::Rules-Ops-Reporting-Classification.adoc[tabsize=4]
-
-// OBSOLETE include::Rules-Ops-Reporting-Hint.adoc[tabsize=4]
-
-// OBSOLETE include::Rules-Ops-Reporting-TypeReference.adoc[tabsize=4]
-
-// OBSOLETE include::Rules-Ops-Xml-XsltTransformation.adoc[tabsize=4]
-
-== Debugging and Troubleshooting
+==== Debugging, Profiling, and Logging
 
 include::Dev-Debugging-and-Profiling.adoc[tabsize=4]
 
-include::Dev-Troubleshoot-Issues.adoc[tabsize=4]
+==== Developer Contributing Information
 
-// == Wiki Information
+include::Dev-Development-Guidelines-and-Conventions.adoc[tabsize=4]
 
-// include::About-this-Wiki.adoc[tabsize=4]
+include::Dev-Submit-Code-Updates-to-the-Project.adoc[tabsize=4]
 
-// include::Dev-Add-Images-to-the-Wiki.adoc[tabsize=4]
 
-// == {ProductName} Product Release and Documentation Process
 
-// include::Dev-Release-Process.adoc[tabsize=4]]
+// == Additional Resources
 
-// include::Dev-Create-the-JavaDoc.adoc[tabsize=4]
+// include::Review-the-Quickstarts.adoc[tabsize=4]
 
-// include::Dev-Documentation-Process.adoc[tabsize=4]
+// include::Get-Involved.adoc[tabsize=4]
 
-== Additional Resources
+// include::Important-Links.adoc[tabsize=4]
 
-include::Review-the-Quickstarts.adoc[tabsize=4]
+// include::Known-Issues.adoc[tabsize=4] 
 
-include::Get-Involved.adoc[tabsize=4]
-
-include::Important-Links.adoc[tabsize=4]
-
-include::Known-Issues.adoc[tabsize=4] 
-
-include::Report-Issues.adoc[tabsize=4]
+// include::Report-Issues.adoc[tabsize=4]
 
 == Appendix
 
-include::Glossary.adoc[tabsize=4]
+// include::Glossary.adoc[tabsize=4]
+
+include::About-the-HOME-Variable.adoc[tabsize=4]
 
 include::Dev-Project-Information.adoc[tabsize=4]
 
-include::Optimize-Performance.adoc[tabsize=4]
 
 

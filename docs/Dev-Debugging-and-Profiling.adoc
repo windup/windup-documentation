@@ -4,6 +4,14 @@
 [[Dev-Debugging-and-Profiling]]
 === Debugging and Profiling
 
+==== Configure Logging
+
+Frequently the first step in debugging is to produce more verbose logs. Windup uses JDK logging, which can be configured by editing `$WINDUP_HOME/logging.properties`. 
+
+Alternatively, you can create a logging.properties file and `export WINDUP_OPTS="-Djava.util.logging.config.file=/path/to/logging.properties"` before running windup. 
+
+On Windows, the command would be `set WINDUP_OPTS="-Djava.util.logging.config.file=c:\path\to\logging.properties"`
+
 ==== Debug the {ProductName} Distribution Runtime
 
 You can debug the {ProductShortName} distribution using one of the following approaches.

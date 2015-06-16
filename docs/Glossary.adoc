@@ -1,6 +1,8 @@
 
 
 
+
+
 [[Glossary]]
 === Glossary of Terms Used in {ProductShortName}
 
@@ -32,4 +34,4 @@ Rules Pipeline:: A collection of rules that feed information into the knowledge 
 
 Level of effort:: The effort required to complete the migration task. _Level of effort_ is represented as _story points_ in the {ProductShortName} reports.
 
-Story Point:: A term commonly used in Scrum Agile software development methodology to estimate the _level of effort_ needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks. Story points are covered in more detail in the _{ProductName} Rules Development Guide_.
+Story Point:: A term commonly used in Scrum Agile software development methodology to estimate the _level of effort_ needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks. Story points are covered in more detail in the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide].
