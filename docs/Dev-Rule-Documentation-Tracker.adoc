@@ -31,7 +31,4 @@ The following guides are NOT published and the topics are in the process of bein
 
 The following is a link to the JIRAs (Project: Windup, Component: Documentation) for Kbase articles that need to be written:
 
-* https://issues.jboss.org/browse/issues?filter=12323966
-
-* https://issues.jboss.org/issues?jql=project%20%3D%20WINDUP%20AND%20status%20in%20%28Open%2C%20%22Coding%20In%20Progress%22%2C%20Reopened%2C%20%22Pull%20Request%20Sent%22%29%20AND%20component%20%3D%20Documentation%22%29%20AND%20labels%20%3D%20kbase
-
+https://issues.jboss.org/issues?jql=project%20%3D%20WINDUP%20AND%20status%20in%20%28Open%2C%20Reopened%29%20AND%20component%20%3D%20Documentation%20AND%20labels%20%3D%20kbase

@@ -881,6 +881,14 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </div>
 </li>
 <li>
+<p>To override the default <em>Fernflower</em> decompiler, pass the <code>-Dwindup.decompiler</code> argument on the command line. For example, to use the <em>Procyon</em> compiler, use the following syntax:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">WINDUP_HOME/bin/windup -Dwindup.decompiler=procyon INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+</div>
+</div>
+</li>
+<li>
 <p>To evaluate an application archive, use the following syntax:</p>
 <div class="listingblock">
 <div class="content">
@@ -1645,7 +1653,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-06-16 15:45:42 EDT
+Last updated 2015-06-19 11:54:58 EDT
 </div>
 </div>
 </body>

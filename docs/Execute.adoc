@@ -82,6 +82,13 @@ WARNING: If you omit the `--packages` argument, every package in the application
 +
 --sourceMode (optional):: This argument is optional and is only required if the application to be evaluated contains source files rather than compiled binaries. The default value is `false`.
 
+. To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` argument on the command line. For example, to use the _Procyon_ compiler, use the following syntax:
++
+[options="nowrap"]
+----
+WINDUP_HOME/bin/windup -Dwindup.decompiler=procyon INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
+----
+
 . To evaluate an application archive, use the following syntax:
 +
 [options="nowrap"]

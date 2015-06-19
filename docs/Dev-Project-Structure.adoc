@@ -19,7 +19,9 @@ This project is for the engine that runs the rules and abstracts the graph opera
 decompiler/::
 
 This subproject contains an API that wraps calls to the decompiler. 
-{ProductShortName} currently uses only one decompiler: _Procyon_
+{ProductShortName} currently uses only one decompiler: _FernFlower_
+
+To use a different compiler, pass the `-Dwindup.decompiler` argument on the {ProductShortName} command line. For example, to use the _Procyon_ compiler, specify `-Dwindup.decompiler=procyon`.
 
 exec/::
 

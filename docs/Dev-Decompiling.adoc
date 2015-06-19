@@ -1,10 +1,11 @@
 
 
+
 [[Dev-Decompiling]]
 === Decompiling
 
 .DRAFT : Needs work!
-
+THIS IS NOT UP TO DATE! There is no DecompilerConfig!
 
 ==== The *Decompiler* API
 
@@ -15,17 +16,21 @@
 * Class files
 
 * The  `DecompilerConfig` should also contain `Filter<String>` (or maybe `Filter<TypeReference>`) to decide whether to decompile the class or not.
+
+The following is not right!
+
 * `windup.ProcyonConfiguration` should extend abstract windup.DecompilerConfig<T>, which would contain the configurables common to all decompilers. In case of Procyon, `outputDir` would be delegated to `procyon.DecompilerSettings`.
 
-==== Procyon
+==== Fernflower
 
-{ProductShortName} includes the https://bitbucket.org/mstrobel/procyon[Procyon] decompiler as the default decompiler, but other decompilers can be swapped in if preferred.
+{ProductShortName} includes the https://github.com/JetBrains/intellij-community/tree/master/plugins/java-decompiler/engine[Fernflower] decompiler as the default decompiler, but other decompilers can be swapped in if preferred.
 
+To use a different compiler, pass the `-Dwindup.decompiler` argument on the {ProductShortName} command line. For example, to use the _Procyon_ compiler, specify `-Dwindup.decompiler=procyon`.
 
 ===== Config
 
-* `windup.ProcyonConfiguration` contains `procyon.DecompilerSettings`.
-* `procyon.DecompilerSettings` contains `outputDir` (the others are not much important). 
+Decompiler settings and preferences...
+
 TO_DO: Make that a parameter to method call?
 
 ===== TypeReference
