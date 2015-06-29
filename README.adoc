@@ -1,10 +1,10 @@
-=  Windup 2.0 Product Documentation
+=  Windup Product Documentation
 
 == Overview
 
 Windup project documentation is created collaboratively on the Windup project Wiki site located here: <https://github.com/windup/windup/wiki>. 
 This `windup-documentation` repository takes documentation from that site, makes minor modifications, and publishes the pages in single HTML page book format. 
-This repository will contain the source for the official documentation when the Windup 2.0 ships.
+This repository will contain the source for the official documentation when the Windup ships.
 
 == Procedure to Update the Documentation With the Latest Windup Wiki
 
@@ -61,13 +61,13 @@ git checkout -b gh-pages windup
 * If the directory does not yet exist, create a docs/WINDUP-RELEASE-html/ directory.
 +
 ----
-mkdir -p docs/2.0.0.VERSION/html (if it doesn't exist!)
+mkdir -p docs/2.VERSION/html (if it doesn't exist!)
 ----
     
 * Copy any new images, stylesheets, and html files from windup-documentation:
 +
 ----
-cp ../windup-documentation/html/*.html ../windup-documentation/*.css ../windup-documentation/images/* docs/2.0.0.VERSION/html
+cp ../windup-documentation/html/*.html ../windup-documentation/*.css ../windup-documentation/images/* docs/2.VERSION/html
 ----
  
 * Add the updated files to GitHub.
@@ -107,9 +107,9 @@ View the documentation at the following URLs.
 [cols="2*"]
 |===
 | **Guide** | **URL**
-| Windup User Guide | http://windup.github.io/windup/docs/2.0.0.Beta7/html/WindupUserGuide.html
-| Windup Rules Development Guide | http://windup.github.io/windup/docs/2.0.0.Beta7/html/WindupRulesDevelopmentGuide.html
-| Windup Core Development Guide | http://windup.github.io/windup/docs/2.0.0.Beta7/html/WindupCoreDevelopmentGuide.html
+| Windup User Guide | http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html
+| Windup Rules Development Guide | http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html
+| Windup Core Development Guide | http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html
 | Windup Migration Planning Guide | TBD
 |===
 
