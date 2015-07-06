@@ -15,7 +15,7 @@ Deploy the Rexster add-on by adding the Rexster add-on to the dependencies.
 @Deployment
     @Dependencies({
                 ....
-                @AddonDependency(name = "org.jboss.windup.rexster:windup-rexster", version = "2.3.0-SNAPSHOT"),
+                @AddonDependency(name = "org.jboss.windup.rexster:windup-rexster", version = "2.3.0-SNAPSHOT", imported=false),
                 ....
     })
 ----

@@ -176,8 +176,8 @@ To validate your XML rule using the {ProductShortName} rule schema, see xref:Rul
 +
 [options="nowrap"]
 ----
-For Linux:    WINDUP_HOME/bin/windup --sourceMode true --input ~/migration-rules/data --output ~/migration-rules/reports
-For Windows:  WINDUP_HOME\bin\windup.bat --sourceMode true --input migration-rules\data --output migration-rules\reports
+For Linux:    WINDUP_HOME/bin/windup --sourceMode --input ~/migration-rules/data --output ~/migration-rules/reports
+For Windows:  WINDUP_HOME\bin\windup.bat --sourceMode --input migration-rules\data --output migration-rules\reports
 ----
 . You should see this result.
 +
