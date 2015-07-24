@@ -1,0 +1,41 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Rules-Create-a-Groovy-Rule-Add-on]]
+=== Create a Groovy Rule Add-on
+
+You can create a {ProductName} rule add-on using Java or a rule using XML or Groovy. This topic describes how to create a rule add-on using Groovy.
+
+==== Prerequisites
+
+* You should have already link:Install[installed {ProductShortName}]. 
+* Before you begin, you may also want to be familiar with the following documentation:
+** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
+** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
+
+==== Groovy Rule Add-on Example
+
+The following is an example of a Groovy rule add-on.
+
+[source,groovy,options="nowrap"]
+----
+ruleSet("ExampleBlacklistRule").setPhase(RulePhase.MIGRATION_RULES)
+
+    .addRule()
+    .when(
+        Query.find(JavaClassModel.class).as("javaClasses")
+    )
+    .perform(
+        Iteration.over("javaClasses").perform(
+            new GraphOperation  () {
+                public void perform(GraphRewrite event, EvaluationContext context) {
+                    // System.out.println("Performing rewrite operation")
+                }
+            }
+        )
+    )
+    .withMetadata(RuleMetadata.CATEGORY, "Java")
+----    
+
+NOTE: {ProductShortName} only analyzes Groovy rule files with names ending in `.windup.groovy`. Be sure to name Groovy-based rules using this naming convention!
+

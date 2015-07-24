@@ -1,0 +1,82 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Dev-Add-Images-to-the-Wiki]]
+=== Add Images to the {ProductName} Wiki
+
+:imagesdir: images
+
+* Fork https://github.com/windup/windup/wiki
+* Clone the {ProductShortName} Wiki into a `windup.wiki/` directory using the SSH clone URL: 
+
+[options="nowrap"]
+----
+git clone git@github.com:USER_NAME/windup.git windup.wiki
+----
+
+* Navigate to the new `windup.wiki/` directory.
+
+* Add the upstream repository.
+
+[options="nowrap"]
+----
+git remote add -f upstream git@github.com:windup/windup.wiki.git
+----
+
+* Check out a branch to work in.
+
+[options="nowrap"]
+----
+git checkout -b BRANCH_NAME upstream/master
+----
+
+* Copy the image into the `windup.wiki/images` directory
+
+[options="nowrap"]
+----
+cp IMAGE_NAME.png images/
+----
+
+* Add the new image to Git
+
+[options="nowrap"]
+----
+git add images/IMAGE_NAME.png
+----
+
+* Commit the change
+
+[options="nowrap"]
+----
+git commit -m "Add new image"
+----
+
+* Push the change to your {ProductShortName} Wiki repository.
+
+[options="nowrap"]
+----
+git push origin HEAD:master
+----
+
+* Test the new image in a page on your own Wiki. Don't forget to add the `:imagesdir: images` directive to the beginning of the page to point to the images directory. 
+
+        image:IMAGE_NAME.png[New Image]
+
++ 
+For example:
+
++
+:imagesdir: images
+
+*My Image*
+
+image:windup-logo-large.png[{ProductShortName} Logo]
+
+* If it works, push the image to the upstream repository
+
+[options="nowrap"]
+----
+git push upstream HEAD:master
+----
+
+

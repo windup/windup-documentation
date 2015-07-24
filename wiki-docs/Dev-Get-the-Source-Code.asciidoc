@@ -1,0 +1,125 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
+[[Dev-Get-the-Source-Code]]
+=== Get the {ProductName} Source Code
+
+If you just plan to create Java-based rule add-ons, you do not need to get the {ProductShortName} source code. You only need to configure Maven to build your Java-base rule add-on project.
+
+However, if you plan to contribute to the {ProductShortName} code base, you need to fork and clone the 3 following {ProductShortName} GitHub repositories. 
+
+* {ProductShortName} core code base: https://github.com/windup/windup
+* {ProductShortName} XML-based rulesets: https://github.com/windup/windup-rulesets
+* {ProductShortName} distribution: https://github.com/windup/windup-distribution
+
+The basic workflow process is to fork the above {ProductShortName} repositories to your own Git, clone your forks, commit your work in topic branches, and make pull requests back to the corresponding repository.
+
+==== Install the Git Client
+
+If you don't have the Git client (`git`), get it from:
+http://git-scm.com/
+
+* Be sure to generate an SSH key and add the public key to your GitHub account: https://help.github.com/articles/generating-ssh-keys. You can verify the key using the following command:
+
+[options="nowrap"]
+----
+ssh -T git@github.com
+----
++
+You should see a message indicating your ID has successfully authenticated.
+
+* You should also configure your name and email identity using the following commands:
+
+[options="nowrap"]
+----
+git config --global user_name "FIRST_NAME LAST_NAME"
+git config --global user_email "YOUR_EMAIL_ADDRESS"
+----
+
+==== Fork and Clone the {ProductShortName} Repository
+
+. https://github.com/windup/windup/fork[Fork] the {ProductShortName} project. This
+creates the `windup` project in your own Git with the default remote
+name 'origin'.
+. Clone your fork. This creates and populates a directory in your
+local file system.
++
+[options="nowrap"]
+----
+git clone https://github.com/<your-username>/windup.git
+----
+. Change to the `windup` directory.
+. Add the remote `upstream` repository so you can fetch any changes to
+the original forked repository.
++
+[options="nowrap"]
+----
+git remote add upstream git@github.com:windup/windup.git
+----
+. Get the latest files from the `upstream` repository.
++
+[options="nowrap"]
+----
+git fetch upstream
+----
+
+==== Fork and Clone the {ProductShortName} Rulesets Repository
+
+The {ProductShortName} XML rulesets live in a separate repository. Follow these instructions to fork and clone them.
+
+. https://github.com/windup/windup-rulesets/fork[Fork] the {ProductShortName} Rulesets project. This
+creates the `windup-rulesets` project in your own Git with the default remote
+name 'origin'.
+. Clone your fork. This creates and populates a directory in your local file system.
++
+[options="nowrap"]
+----
+git clone https://github.com/<your-username>/windup-rulesets.git
+----
+. Change to the `windup-rulesets` directory.
+. Add the remote `upstream` repository so you can fetch any changes to
+the original forked repository.
++
+[options="nowrap"]
+----
+git remote add upstream git@github.com:windup/windup-rulesets.git
+----
+. Get the latest files from the `upstream` repository.
++
+[options="nowrap"]
+----
+git fetch upstream
+----
+
+
+==== Fork and Clone the {ProductShortName} Distribution Repository
+
+
+. https://github.com/windup/windup-distribution/fork[Fork] the {ProductShortName} distribution project. This
+creates the `windup-distribution` project in your own Git with the default remote
+name 'origin'.
+. Clone your fork. This creates and populates a directory in your local file system.
++
+[options="nowrap"]
+----
+git clone https://github.com/<your-username>/windup-distribution.git
+----
+. Change to the `windup-distribution` directory.
+. Add the remote `upstream` repository so you can fetch any changes to
+the original forked repository.
++
+[options="nowrap"]
+----
+git remote add upstream git@github.com:windup/windup-distribution.git
+----
+. Get the latest files from the `upstream` repository.
++
+[options="nowrap"]
+----
+git fetch upstream
+----
+
+

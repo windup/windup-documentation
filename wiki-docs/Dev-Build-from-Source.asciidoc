@@ -1,0 +1,162 @@
+:ProductName: Windup
+:ProductShortName: Windup
+ 
+[[Dev-Build-from-Source]]
+=== Build {ProductName} from Source
+
+==== Overview
+
+This information is provided for new developers who plan to contribute code
+to the {ProductName} open source project. It describes how to build {ProductShortName} from source using an IDE or command line and to extract the {ProductShortName} distribution that is created during the build process.
+
+==== System Requirements
+
+. Java 1.7.
++
+You can choose from the following:
++
+[options="nowrap"]
+----
+OpenJDK
+Oracle Java SE
+----
+. Maven 3.1.1 or newer
++
+If you have not yet installed or configured Maven, see
+link:Install-and-Configure-Maven[Install and Configure Maven] for details.
++
+If you have installed Maven, you can check the version by typing the
+following in a command prompt:
++
+[options="nowrap"]
+----
+mvn --version 
+----
+. IDE requirements
++
+If you prefer, you can work within an IDE. The following IDEs are recommended.
+
+* http://www.jboss.org/products/devstudio/download/[Red Hat JBoss
+Developer Studio 7.1.1] or newer
+* https://www.eclipse.org/downloads/[Eclipse 4.3 (Kepler)] or newer
+
++
+The IDE must embed Maven 3.1.1 or later. See link:Install-and-Configure-Maven[Install and Configure Maven] for details.
+
+==== Prerequisites
+
+* Be sure you have configured Maven as described here: link:Install-and-Configure-Maven[Install and Configure Maven].
+
+* {ProductShortName} source code is located in 3 GitHub projects. Follow the instructions to link:Dev-Get-the-Source-Code[Get the {ProductShortName} Source Code].
+
+
+==== Build Using Red Hat JBoss Developer Studio or Eclipse
+
+If you prefer, you can use an IDE to build {ProductShortName}.
+
+. Configure the Maven installation in your IDE as described here:
+https://github.com/windup/windup/wiki/Install-and-Configure-Maven[Install and Configure Maven].
+. Start JBoss Developer Studio or Eclipse.
+. Import the `windup-ruleset` project.
+* From the menu, select `File` → `Import`.
+* In the selection list, choose `Maven` → `Existing Maven Projects`,
+then click Next.
+* Click `Browse` and navigate to the root of the `windup-ruleset` project directory, then click `OK`.
+* After all projects are listed, click `Next`. Ignore any Maven build
+or dependency errors and click `Finish`. If you get a dialog titled
+_Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
+* In the Project Explorer tab, right-click on the `windup-ruleset` project and choose `Run As` --> `Maven install`.
+. Import the `windup` project.
+* From the menu, select `File` → `Import`.
+* In the selection list, choose `Maven` → `Existing Maven Projects`,
+then click Next.
+* Click `Browse` and navigate to the root of the `windup` project directory, then click `OK`.
+* After all projects are listed, click `Next`. Ignore any Maven build
+or dependency errors and click `Finish`. If you get a dialog titled
+_Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
+* In the Project Explorer tab, find the `windup_parent` project in the
+list, right-click, and choose `Run As` --> `Maven install`.
+. Import the `windup-distribution` project.
+* From the menu, select `File` → `Import`.
+* In the selection list, choose `Maven` → `Existing Maven Projects`,
+then click Next.
+* Click `Browse` and navigate to the root of the `windup-distribution` project directory, then click `OK`.
+* After all projects are listed, click `Next`. Ignore any Maven build
+or dependency errors and click `Finish`. If you get a dialog titled
+_Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
+* In the Project Explorer tab, right-click on the `windup-distribution` project and choose `Run As` --> `Maven install`.
+
+
+==== Build Using Maven Command Line
+
+{ProductShortName} source code consists of 3 projects: 
+
+* https://github.com/windup/windup-rulesets[windup-ruleset]
+* https://github.com/windup/windup[windup]
+* https://github.com/windup/windup-distribution[windup-distribution]
+
+The `windup-distribution` project has dependencies on the other 2 projects, so you must build the `windup-ruleset` and `windup` projects first. Use the following steps to build the {ProductShortName} distribution.
+
+. Build the https://github.com/windup/windup-rulesets[windup-ruleset] project.
++
+* Open a command terminal and navigate to the root of the {ProductShortName} Ruleset project directory. 
++
+[options="nowrap"]
+----
+    cd windup-ruleset/
+----
++ 
+* Build the project.
++
+[options="nowrap"]
+----
+mvn clean install
+----
+. Build the https://github.com/windup/windup[windup] project.
++
+* Open a command terminal and navigate to the root of the windup project directory. 
++
+[options="nowrap"]
+----
+cd windup/
+----
++ 
+* Build the project.
++
+[options="nowrap"]
+----
+mvn clean install
+----
+
++
+* You can also build the project without the tests.
++
+[options="nowrap"]
+----
+mvn clean install -DskipTests
+----
+. Build the https://github.com/windup/windup-distribution[windup-distribution] project.
++
+* Open a command terminal and navigate to the root of the {ProductShortName} distribution project directory. 
++
+[options="nowrap"]
+----
+cd windup-distribution/
+----
++ 
+* Build the project.
++
+[options="nowrap"]
+----
+mvn clean install
+----
+* This creates a `windup-distribution-<VERSION>-offline.zip` file in the `windup-distribution/target/` directory.
+
+
+==== Extract the Distribution Source File
+
+The build process creates a `windup-distribution-<VERSION>-offline.zip file` in the `windup-distribution/target/` directory. 
+
+Unzip the file into a directory of your choice.
+
+

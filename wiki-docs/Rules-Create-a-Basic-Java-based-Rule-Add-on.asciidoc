@@ -1,0 +1,347 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductDocUserGuideURL: http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html
+
+[[Rules-Create-a-Basic-Java-based-Rule-Add-on]]
+=== Create a Basic Java-based Rule Add-on
+
+You can create a {ProductName} rule using Java or XML. This topic describes how to create a rule add-on using Java.
+
+==== Prerequisites
+
+* You must install {ProductShortName}. 
+* You must install and configure Maven. Follow the instructions here: link:Install-and-Configure-Maven[Install and Configure Maven].
+* Before you begin, you may want also want to be familiar with the following documentation:
+** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
+** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
+
+Working examples of Java-based rules can be found in the https://github.com/windup/windup[{ProductShortName} source code] and the https://github.com/windup/windup-quickstarts[{ProductShortName} quickstarts] repositories.
+ 
+==== Create the Maven Project
+
+Create a new Maven Java Project. The instructions below refer to the project folder location with the *replaceable* variable `RULE_PROJECT_HOME`. 
+
+Modify the project `pom.xml` file as follows.
+
+. Add the following properties. Be sure to replace `WINDUP_VERSION` with the current version of {ProductShortName}, for example: `2.2.0.Final`.
++
+[source,xml,options="nowrap"]
+----
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+    <version.windup>WINDUP_VERSION</version.windup>
+</properties>
+----
+
+. Add a dependency management section for the {ProductShortName} BOM. 
++
+[source,xml,options="nowrap"]
+----
+<dependencyManagement>
+    <dependencies>
+        <!-- BOM -->
+        <dependency>
+            <groupId>org.jboss.windup</groupId>
+            <artifactId>windup-bom</artifactId>
+            <version>${version.windup}</version>
+            <type>pom</type>
+               <scope>import</scope>
+         </dependency>
+    </dependencies>
+</dependencyManagement>
+----
+
+. Add a `<dependencies>` section to include {ProductShortName}, rulesets, and test dependencies required by your rule add-on. {ProductShortName} is a Forge/Furnace based application and has a modular design, so the dependencies will vary depending on the {ProductShortName} APIs used by the rule. 
+// For more information on {ProductShortName} dependencies, see link:Dev-Dependencies[{ProductShortName} Dependencies]. 
++
+The following are examples of some dependencies you may need for your rule add-on.
++
+[source,xml,options="nowrap"]
+----
+<!-- API dependencies -->
+<dependency>
+    <groupId>org.jboss.windup.graph</groupId>
+    <artifactId>windup-graph</artifactId>
+    <classifier>forge-addon</classifier>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.windup.config</groupId>
+    <artifactId>windup-config</artifactId>
+    <classifier>forge-addon</classifier>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.windup.config</groupId>
+    <artifactId>windup-config-xml</artifactId>
+    <classifier>forge-addon</classifier>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.windup.config</groupId>
+    <artifactId>windup-config-groovy</artifactId>
+    <classifier>forge-addon</classifier>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.windup.utils</groupId>
+    <artifactId>windup-utils</artifactId>
+    <classifier>forge-addon</classifier>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.windup.reporting</groupId>
+    <artifactId>windup-reporting</artifactId>
+    <classifier>forge-addon</classifier>
+    <scope>provided</scope>
+</dependency>
+
+<!-- Dependencies on other rulesets -->
+<dependency>
+    <groupId>org.jboss.windup.rules.apps</groupId>
+    <artifactId>windup-rules-java</artifactId>
+    <classifier>forge-addon</classifier>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.windup.rules.apps</groupId>
+    <artifactId>windup-rules-java-ee</artifactId>
+    <classifier>forge-addon</classifier>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.forge.furnace.container</groupId>
+    <artifactId>cdi-api</artifactId>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.forge.furnace.container</groupId>
+    <artifactId>cdi</artifactId>
+    <classifier>forge-addon</classifier>
+    <scope>provided</scope>
+</dependency>
+
+<!-- Test dependencies -->
+<dependency>
+    <groupId>org.jboss.forge.furnace.test</groupId>
+    <artifactId>furnace-test-harness</artifactId>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.jboss.forge.furnace.test</groupId>
+    <artifactId>arquillian-furnace-classpath</artifactId>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.11</version>
+    <type>jar</type>
+</dependency>
+
+<dependency>
+    <groupId>org.jboss.windup.exec</groupId>
+    <artifactId>windup-exec</artifactId>
+    <classifier>forge-addon</classifier>
+    <scope>test</scope>
+</dependency>
+----
+
+. Add the `<plugins>` section to make it a Forge add-on.
++
+[source,xml,options="nowrap"]
+----
+<build>
+    <plugins>
+        <!-- This plugin makes this artifact a Forge add-on. -->
+        <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>create-forge-addon</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>jar</goal>
+                    </goals>
+                    <configuration>
+                        <classifier>forge-addon</classifier>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+<build>
+----
+
+==== Create the Java RuleProvider Class
+
+. Within your Maven project, create the Java RuleProvider class.
+
+* This class can extend http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/AbstractRuleProvider.html[AbstractRuleProvider] or one of the following helper classes: http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/SingleRuleProvider.html[SingleRuleProvider] or  http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/IteratingRuleProvider.html[IteratingRuleProvider]. 
+* If you prefer not to extend one of these classes, you can implement the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html[RuleProvider] interface.
+* It is recommended that you end the name of the class with `RuleProvider`. For example:
++
+[source,java]
+----
+public class MyCustomRuleProvider extends AbstractRuleProvider
+{
+}
+----
+
+. Provide a constructor for your rule class. 
+
+* In the constructor, you can create a new http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RuleProviderMetadata.html[RuleProviderMetadata] builder instance for thisn RuleProvider type, using the provided parameters and http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RulesetMetadata.html[RulesetMetadata]. 
+* By default, rules run in the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/MigrationRulesPhase.html[MigrationRulesPhase]. If your rule should run earlier during the initial http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/DiscoveryPhase.html[DiscoveryPhase], this can be overridden in the constructor using the `setPhase()` method.
+* Use the `addExecuteAfter()` or `addExecuteBefore()` method to control the order in which the rule is executed, 
++
+[source,java]
+----
+public MyCustomRuleProvider()
+{
+    super(MetadataBuilder.forProvider(MyCustomRuleProvider.class)
+                .setPhase(DiscoveryPhase.class)
+                .addExecuteBefore(MyOtherRuleProvider.class));
+}
+----
++
+For more information about rule phases, see link:Rules-Rule-Execution-Lifecycle[Rules Execution Lifecycles].
+. Finally, add rules to the rule provider. Rules are added in the `getConfiguration()` method using the `ConfigurationBuilder.begin().addRule()` code construct. 
+* Java rules consist of _conditions_ and _actions_ and follow the familiar "if/then/else" construct:
+
+    when(condition)
+        perform(action)
+    otherwise
+        perform(action
+
+** Conditions are specified using `.when()`.
+** Actions are performed using `.perform()`.
+* High-level Conditions and Operations
++
+The following is a specific high-level rule which uses high-level conditions (`JavaClass`) and operations (`Classification`). See the documentation of those conditions and operations for the details.
++
+[source,java,options="nowrap"]
+----
+@Override
+public Configuration getConfiguration(GraphContext context)
+{
+    return ConfigurationBuilder.begin()
+        .addRule()
+        .when(JavaClass.references("com.example.proprietary.servlet.annotation.ProprietaryServlet").at(TypeReferenceLocation.ANNOTATION)
+        )
+        .perform(
+            Classification.as("Proprietary @ProprietaryServlet")
+               .with(Link.to("Java EE 6 @WebServlet", "https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/index.html"))
+               .withEffort(0)
+               .and(Hint.withText("Migrate to Java EE 6 @WebServlet.").withEffort(8))
+        );
+}
+----
++
+Working examples of Java-based rules can be found in the https://github.com/windup/windup-quickstarts[{ProductShortName} quickstarts] and https://github.com/windup/windup[{ProductShortName} source code] repositories.
+* Low-level Conditions and Operations
++
+As you can see, the conditions and operations above are Java-specific.
+They come with the `Java Basic` ruleset. The list of existing rulesets
+will be part of the project documentation. Each ruleset will be
+accompanied with a documentation for its `Condition`s and `Operation`s
+(and also `Model`s).
++
+These high-level elements provided by rulesets may cover majority of
+cases, but not all. Then, you will need to dive into the mid-level
+{ProductShortName} building elements.
+* Mid-level Conditions and Operations
+
+. Create a `beans.xml` file in the project `META-INF/` directory, for example:
++
+----
+PROJECT_DIRECTORY/src/main/resources/META-INF/beans.xml
+----
++
+This file tells CDI to scan your add-on for CDI beans. The file can be empty, but it is a good practice to include the basic schema information.
++
+[source,xml,options="nowrap"]
+----
+<!-- Marker file indicating CDI 1.0 should be enabled -->
+<beans xmlns="http://java.sun.com/xml/ns/javaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="
+      http://java.sun.com/xml/ns/javaee 
+      http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
+</beans>
+----
+
+==== Install the Java-based Rule Add-on in Your Local Maven Repository
+
+Before you can add the rule to {ProductShortName}, you must compile it and install it in your local Maven repository. 
+
+. Open a command prompt and navigate to `RULE_PROJECT_HOME` directory.
+. Type the following command to compile the rule and install it into the local Maven repository:
++
+----
+mvn clean install
+----
+. You should see the message `BUILD SUCCESS`
+
+[[add-the-rule-to-windup]]
+==== Add the Rule to {ProductShortName}
+
+The command to install the rule in {ProductShortName} uses the Maven GAV (groupId, artifactId, and version) to locate the rule in the Maven repository. The command uses the following syntax:
+
+[options="nowrap"]
+----
+WINDUP_HOME/bin/windup --install GROUP_ID:ARTIFACT_ID[,VERSION]
+----
+
+The Maven groupId, artifactId, and version are the values you provided when you generated the Maven project and can be found in the project POM file. The following is an example of these values in a POM file.
+
+[source,xml]
+----
+<groupId>com.example.rules</groupId>
+<artifactId>my-custom-rule-provider</artifactId>
+<version>1.0.0-SNAPSHOT</version>
+----
+
+Follow these steps to add the rule to Windup.
+
+. Open a command prompt and navigate to the `WINDUP_HOME` directory.
+. Type the following command, replacing the example rule GAV values with your project values.
++
+----
+WINDUP_HOME/bin/windup --install org.example.rules:my-custom-rule-provider,1.0.0-SNAPSHOT
+----
+. At the following prompt, choose `Y`.
++
+----
+Confirm installation [Y/n]? Y
+----
+
+. You should see the following result.
++
+----
+Installation completed successfully.
+----
+. Type `exit` to exit the Windup console.
+
+
+==== Test the Java-based Rule Add-on
+
+Test the Java-based rule add-on against your application file by running {ProductShortName} in a terminal.
+
+The command uses this syntax:
+
+    WINDUP_HOME/bin/windup [--sourceMode] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+
+You should see the following result:
+
+    ***SUCCESS*** Windup report created: QUICKSTART_HOME/windup-reports-java/index.html
+
+For more detailed instructions on how to execute {ProductShortName}, see the {ProductDocUserGuideURL}[{ProductShortName} User Guide]. 
+
+==== Review the Output Report
+
+1. Open OUTPUT_REPORT_DIRECTORY /index.html file in a browser.
+2. You are presented with an Overview page containing the application profiles.
+3. Click on the application link to review the detail page. Check to be sure the warning messages, links, and story points match what you expect to see.
+

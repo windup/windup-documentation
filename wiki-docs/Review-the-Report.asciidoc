@@ -1,0 +1,143 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductDocRulesGuideURL: http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html
+
+
+[[Review-the-Report]]
+=== Review the Report
+
+:imagesdir: images
+
+==== About the Report
+
+When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` you specify for the `--output` argument in the command line. This output directory contains the following files and subdirectories:
+
+* `index.html`: This is the landing page for the report.
+* `archives/`: Contains the archives extracted from the application
+* `graph/`: Contains binary graph database files
+* `reports/`: This directory contains the generated HTML report files
+* `stats/`: Contains {ProductShortName} performance statistics
+
+The examples below use the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[test-files/jee-example-app-1.0.0.ear] located in the {ProductShortName} GitHub source repository for input and specify the `com.acme` and `org.apache` package name prefixes to scan. For example:
+
+        WINDUP_HOME/bin/windup --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --packages com.acme org.apache
+
+==== Open the Report
+
+Use your favorite browser to open the `index.html` file located in the output report directory. You should see something like the following:
+
+
+====
+*_{ProductShortName} Report: Overview_*
+
+image:report-index-page.png[Report Index Page, 500]
+====
+
+This page lists the applications that were processed along with the technologies that were encountered.
+
+Click on the link under the *Name* column to view the {ProductShortName} application report page.
+
+==== Report Sections
+
+===== Application Report Page
+
+The first section of the application report page summarizes the migration effort. It displays the following information both graphically and in list form by application artifact for each file that is analyzed.
+
+* The file name
+* The file type
+* A list of issues, if any, that were found in the file
+* The estimated total _Story Points_ to migrate the file. _Story Points_ are covered in more detail in the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide].
+
++
+NOTE: The estimated Story Points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
+
+In the following  {ProductShortName} Application Report example, the migration of the *JEE Example App* EAR is assigned a total of 34 story points. A pie chart shows the breakdown of story points by package. This is followed by a section for each of the archives contained in the EAR. It provides the total of the story points assigned to the archive and lists the files contained in archive along with the warnings and story point assigned to each file.
+
+====
+*_{ProductShortName} Report: Application Report_*
+
+image:report-javaee-ear-summary.png[Report Summary Page, 500]
+====
+
+===== Archive Analysis Sections
+
+Each archive summary begins with a total of the story points assigned to its migration, followed by a table detailing the changes required for each file in the archive. The report contains the following columns.
+
+Name:: 
+The name of the file being analyzed
+
+Technology::
+The type of file being analyzed. For example:
+* Java Source
+* Decompiled Java File
+* Manifest
+* Properties
+* EJB XML
+* Spring XML
+* Web XML
+* Hibernate Cfg
+* Hibernate Mapping
+
+Issues:: Warnings about areas of code that need review or changes.
+
+Estimated Story Points:: Level of effort required for migrating the file.
+
+The following is an example of the archive analysis summary section of a {ProductShortName} Report. The following is an the analysis of the `WINDUP_SOURCE/test-files/jee-example-app-1.0.0.ear/jee-example-services.jar`.
+
+====
+*_{ProductShortName} Report: Application Report (jee-example-app-1.0.0.ear/jee-example-services.jar)_*
+
+image:report-javaee-ear-03-services-jar.png[Report Archive Page, 500]
+====
+
+===== File Analysis Pages
+
+The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 6 warnings and is assigned 16 story points. Click on the file to see the detail. 
+
+* The *Information* section provides a summary of the story points and notes that the file was decompiled by {ProductShortName}. 
+* This is followed by the file source code listing. Warnings appear in the file at the point where  migration is required. 
+
+
+In this example, warnings appear at the import of `weblogic.application.ApplicationLifecycleEvent` and report that the class is proprietary to WebLogic and must be removed.
+
+====
+*_{ProductShortName} Report: Source Report - Part 1_*
+
+image:report-javaee-ear-file-detail-part1.png[File Detail - Part 1, 500]
+====
+
+Later in the code, warnings appear for the creation of the InitialContext and for the object name when registering and unregistering an MBeans
+
+====
+*_{ProductShortName} Report: Source Report - Part 2_*
+
+image:report-javaee-ear-file-detail-part2.png[File Detail - Part 2, 500]
+==== 
+
+==== Additional Reports
+
+Explore the {ProductShortName} `OUTPUT_REPORT_DIRECTORY/reports` folder to find additional reporting information.
+
+===== Rule Provider Execution Report
+
+The `OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html` page provides the list of rule providers that executed when running the {ProductShortName} migration command against the application.
+
+====
+*_{ProductShortName} Report: Rule Provider Report_*
+
+image:report-javaee-ear-ruleprovider.png[RuleProvider Report, 500]
+====
+
+===== Rule Provider Execution Report
+
+The `OUTPUT_REPORT_DIRECTORY/reports/windup_ruleproviders.html` page provides the list of rule providers that executed when running the {ProductShortName} migration command against the application.
+
+===== Individual File Analysis Reports
+
+You can directly access the the file analysis report pages described above by browsing for them by name in the `OUTPUT_REPORT_DIRECTORY/reports/` directory. Because the same common file names can exist in multiple archives, for example "manifest.mf" or "web.xml", {ProductShortName} adds a unique numeric suffix to each report file name.
+
+====
+*_{ProductShortName} Report: Report Directory List_*
+
+image:report-directory-file-list.png[Report Directory File List, 500]
+====

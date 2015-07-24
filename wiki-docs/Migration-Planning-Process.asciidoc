@@ -1,0 +1,44 @@
+[[Migration-Planning-Process]]
+=== Migration Planning Process
+
+
+Before you attempt to migrate your application to JBoss Enterprise Application Platform, it helps to have an understanding of the process.
+
+Become familiar with Java Enterprise Edition 6::
+
+JBoss Enterprise Application Platform 6 is a fast, lightweight, powerful implementation of the Java Enterprise Edition 6 specification, so understanding Java EE 6 is a great place to start. If you are not familiar with Java EE 6, review the http://www.oracle.com/technetwork/java/javaee/tech/index.html[Java Enterprise Edition 6 documentation] and the http://docs.oracle.com/javaee/6/tutorial/doc/[Java EE 6 tutorial].
+
+Familiarize yourself with Red Hat JBoss Enterprise Application Platform 6::
+
+Documentation for JBoss EAP 6 is located on the Red Hat Customer Portal at https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/. The _Getting Started Guide provides a quick introduction to the product. The other guides provide detailed information on how to install, configure, and develop applications for Jboess EAP. 
+
+Identify the current hardware and operating systems::
+
+This includes the operating systems and versions, number of processors, memory capacity, disk usage and capacity.
+
+Examine the existing application server and platform::
+
+Examine the existing application server and platform, including the operating systems, JVMs, databases, and web servers, and determine the equivalent capabilities in JBoss Enterprise Application Platform 6. The supported JBoss configurations can be found on the Customer Portal at https://access.redhat.com/support/configurations/jboss/.
+
+Examine and understand the existing application::
+
+Thoroughly examine the existing application. Be totally familiar with its architecture, functions, features and components. Inventory the technologies used by the application for database access, security, caching, clustering, and failover. Identify any dependencies on 3rd party software. In particular, note the proprietary APIs and features and determine the JBoss EAP or Java EE 6 equivalents.
+
+Review monitoring and administration procedures and tools::
+
+Perform a review of all monitoring and administration procedures and tools in place to identify any that may need modification or replacement to work with the JBoss Enterprise Application Platform.
+
+Have a backup plan in place::
+
+Before you begin, be sure to have a backup plan in place. This needs to not only the application source code, but must include any production data accessed by the application. 
+Review resources available for the migration process::
+
+Resources include people, software, and hardware. Assess the skills of the development team that will be doing the work and plan for training or additional consulting help. Also be aware that additional hardware and other resources will be required during the migration process until the effort is completed.
+
+Prepare a migration plan:: 
+
+Develop a migration plan including a detailed roadmap and resources that will be needed.
+
+Execute the plan::
+
+Implement the strategic migration plan and employ implementation support strategies.

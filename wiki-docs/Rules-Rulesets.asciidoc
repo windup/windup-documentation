@@ -1,0 +1,53 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Rules-Rulesets]]
+=== Rulesets
+
+DRAFT
+
+Example page for design decisions. Could be generated automatically in the future.
+
+==== What is a Ruleset?
+
+A ruleset is a {ProductName} "plug-in" targeting a specific area of migration, for example, migration from Spring to Java EE 6 . Under the hood, it is a set of rules, and everything they might need: Operations and Conditions, Report templates (if needed), and  static files (e.g. images, XML or CSV files, etc.).
+A ruleset may also declare metadata, like ruleset ID, dependencies on other rulesets, etc.
+
+link:Ruleset-Java-Basic-Ruleset
+Forge add-on (i.e. a `.jar` file). 
+
+Groovy-based ruleset is a directory with `.windup.groovy` script(s) and its static files, possibly in a `.zip` file.
+
+See ? to read about how to create your own Ruleset.
+
+
+==== Basic tags
+
+* app - denotes the rules which help migrating applications.
+* server - denotes the rules which help migrating server configuration.
+* java - denotes the rules treating Java source code.
+* java-ee - denotes the rules treating Java EE applications or Java EE
+containers.
+
+Besides that, you may use any custom tag.
+
+==== Rulesets
+
+===== Core rulesets
+
+Rulesets distributed with {ProductShortName} and maintained by the development team.
+
+* link:Ruleset-Java-Basic-Ruleset[Java Basic Ruleset]
+* Tags: java, app
+* Java EE Applications
+* java-ee, app
+* Java EE Servers
+* java-ee, server
+* Reporting
+    ** CreateApplicationReportIndexRuleProvider
+    ** CreateJavaApplicationOverviewReportRuleProvider
+    ** RenderSourceReportRuleProvider
+
+===== Community rulesets
+
+Rulesets contributed by {ProductShortName} users.

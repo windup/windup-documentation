@@ -1,0 +1,13 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductVersion: 2.2.0-Final
+:ProductDistribution: windup-distribution-2.2.0-Final
+:ProductHomeVar: WINDUP_HOME 
+
+[[About-the-HOME-Variable]]
+=== About the {ProductHomeVar} Variable
+
+This documentation uses the *{ProductHomeVar}* _replaceable_ value to denote the path to the {ProductName} distribution. When you encounter this value in the documentation, be sure to replace it with the actual path to your {ProductShortName} installation.
+
+* If you download and install the latest distribution of {ProductShortName} from the JBoss Nexus repository, {ProductHomeVar} refers to the {ProductDistribution} folder extracted from the downloaded ZIP file.
+* If you build {ProductShortName} from GitHub source, {ProductHomeVar} refers to the {ProductDistribution} folder extracted from the windup-distribution/target/{ProductDistribution}.zip file.

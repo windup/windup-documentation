@@ -1,0 +1,74 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Rules-XML-Rule-Construction]]
+=== XML-Rule-Construction
+
+This section describes the basic construction of XML rules. All XML rules are defined as elements within rulesets. 
+
+==== Rulesets
+
+A  ruleset is a group of one or more rules that targets a specific area of migration. This is the basic construct for the `<ruleset>` element.
+
+* **<ruleset id="UNIQUE_RULESET_ID>**: This element defines this as a {ProductShortName} ruleset and gives it a unique ruleset ID.
+** **<metadata>**: Provide metadata about the ruleset.
+*** **<description>**: Description of the ruleset.
+*** **<dependencies/>**: Rule add-ons required by this ruleset.
+*** ** <sourceTechnology/>**: Source technology
+*** ** <targetTechnology/>**: Target technology
+** **<rules>**: This element contains the individual rules.
+*** **<rule id=UNIQUE_RULESET_ID_UNIQUE_RULE_ID>**: This element is defines the rule and gives it a unique ID. One or more rules can be defined for a ruleset. 
+**** **<when>**: This element defines the condition or conditions to match on. For a detailed description of the elements allowed in a `<when>`, see link:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax].
+**** **<perform>**: This element defines the action to be performed when the rule condition is matched. For a detailed description of the elements allowed in a `<perform>`, see link:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
+**** **<otherwise>**: This element defines the action to be performed when the rule condition is not matched. This element takes the same child elements as the `<perform>` element.
+**** **<where>**: This element matches on a string pattern.
+
+*** **<file-mapping/>**: Mapa an extension to a graph type  
+*** **<package-mapping/>**: Maps from a package pattern (regular expression) to a organization name.
+
+
+==== Predefined Rules
+
+{ProductShortName} provides some predefined rules for more common migration requirements, for example, mapping files from the source platform to target platform. The following is an example of the predefined "XmlFileMappings" rule.
+
+[source,xml,options="nowrap"]
+----
+<?xml version="1.0"?>
+    <ruleset id="XmlFileMappings"
+        xmlns="http://windup.jboss.org/schema/jboss-ruleset" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+        <metadata>
+            <description>
+                This ruleset maps files to the Model.
+            </description>
+            <dependencies>
+                <addon id="org.jboss.windup.rules.files.FileMappingHandler"/>
+            </dependencies>
+            <sourceTechnology id="eap" versionRange="(4,5)"/>
+            <targetTechnology id="eap" versionRange="[6,)"/>
+            <tag>reviewed-2015-05-27</tag>
+        </metadata>
+        <rules>
+            <file-mapping from=".*\.tld$" to="XmlFileModel"/>
+            <file-mapping from=".*\.bpel$" to="XmlFileModel"/>
+            <file-mapping from=".*\.wsdl$" to="XmlFileModel"/>
+            <file-mapping from=".*\.wsdd$" to="XmlFileModel"/>
+            <file-mapping from=".*\.bpelex$" to="XmlFileModel"/>
+            <file-mapping from=".*\.mon$" to="XmlFileModel"/>
+            <file-mapping from=".*\.xmi$" to="XmlFileModel"/>
+            <file-mapping from=".*\.export$" to="XmlFileModel"/>
+            <file-mapping from=".*\.import$" to="XmlFileModel"/>
+            <file-mapping from=".*\.bcfg$" to="XmlFileModel"/>
+            <file-mapping from=".*\.map$" to="XmlFileModel"/>
+            <file-mapping from=".*\.brg$" to="XmlFileModel"/>
+            <file-mapping from=".*\.brgt$" to="XmlFileModel"/>
+            <file-mapping from=".*\.ruleset$" to="XmlFileModel"/>
+            <file-mapping from=".*\.module$" to="XmlFileModel"/>
+            <file-mapping from=".*\.modulex$" to="XmlFileModel"/>
+            <file-mapping from=".*\.composite$" to="XmlFileModel"/>
+            <file-mapping from=".*\.requirements$" to="XmlFileModel"/>
+          </rules>
+        </ruleset>
+----
+

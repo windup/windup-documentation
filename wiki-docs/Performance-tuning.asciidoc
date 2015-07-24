@@ -1,0 +1,87 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Performance-tuning]]
+=== Performance Tuning
+
+.DRAFT
+TO_DO: This page should link to the Rulesets pages, namely their configuration sections.
+
+This section describes how to fine tune {ProductName} to improve performance.
+
+==== Performance tweaks
+
+===== All artifacts from Maven Central repository are ignored.
+Any jar that comes from Maven Central is omitted from unzipping and decompiling.
+The identity is verified by the archive's SHA1 hash.
+This functionality is provided by the link:Ruleset-Java-Archives-Identification[_Java Archives Identification Ruleset_].
+
+===== Ignore custom Maven artifacts
+Maven artifacts can be excluded from unzipping and decompilation by declaring ignored artifacts coordinates in a file `~/.windup/conf/ignore/example.archive-ignore.txt`, using the following syntax:
+
+[source,xml]
+----
+<groupId>:<artifactId>:<version or version range>[:<classifier>]
+----
+All values can use wildcards at the end. For example, `org.jboss.wildfly.*:*:*` will ignore all artifacts from groups whose groupId starts with `org.jboss.wildfly.`.
+
+Each line in the file is one pattern. All artifacts matched by these patterns will be ignored.
+
+
+===== Ignore Java Packages (and sub-packages)
+{ProductShortName} may be configured to ignore packages during decompilation and analysis. 
+
+When running windup via the command line, you may specify `--excludePackages com.foo` to exclude packages (and all sub-packages.)
+
+Ignored packages may also be configured via a text file with the naming convention `*.package-ignore.txt`.
+
+{ProductShortName} looks for these files in multiple locations:
+
+  * `~/.windup/ignore/` folder
+  * `$WINDUP_HOME/ignore/` folder
+  * The folder/file specified by the `--userIgnorePath "/custom/ignore/folder/"` option
+
+**Example use case:** Imagine you want to ignore the packages com.acme, com.acme.roadrunner, etc. All you would need to do is create the following file in one of the ignore directories:
+
+[source,text]
+.~/.windup/ignore/example.package-ignore.txt
+----
+com.acme
+----
+
+===== Ignore Files
+{ProductShortName} may be configured to ignore files during scanning and report generation. Ignored files may be configured via a text file with the naming convention `*.windup-ignore.txt`.
+
+{ProductShortName} looks for these files in multiple locations:
+
+  * `~/.windup/ignore/` folder
+  * `$WINDUP_HOME/ignore/` folder
+  * The folder/file specified by the `--userIgnorePath "/custom/ignore/folder/"` option
+
+**Example use case:** Imagine you want to ignore the library "ant.jar". If you want to ignore this file globally (for example: every time you run windup regardless of where exactly is your windup installation is located), then you would simply create a file in the `~/.windup/ignore/` folder (this folder is shared for all the local windup instances). The file would be named "example.windup-ignore.txt", and should contain a single line: ".*ant.jar". To ignore for only a single windup installation located in `$WINDUP_HOME`, the file should be created in the `$WINDUP_HOME/ignore/` directory. 
+
+[source,text]
+.~/.windup/ignore/example.windup-ignore.txt
+----
+.*ant.jar
+----
+
+[TIP]
+====
+You can use this same approach to ignore files of any type, not just archives. For example, we can also use this same technique to ignore Java source files matching a certain pattern.
+
+[source,text]
+.~/.windup/ignore/java.windup-ignore.txt
+----
+.*/org/example/.*/Example.*\.java
+.*DTO\.java
+----
+
+
+_(Developers: see also `UserIgnorePathOption` and `GatherIgnoredFileNamesRuleProvider`.)_
+
+
+==== Ignore Java files: By package 
+
+Java files may also be excluded by package: This is functionality specific to the Java rule-set, and you should consult the link:Ruleset-Java-Basic-Ruleset#configuration[`--packages`] user input option.
+

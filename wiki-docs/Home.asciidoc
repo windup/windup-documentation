@@ -1,0 +1,51 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductDocUserGuideURL: http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html
+:ProductDocRulesGuideURL: http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html
+:ProductDocCoreGuideURL: http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html
+
+= Welcome to {ProductName}
+
+_NOTE: {ProductName} is still under development. 
+If you want to contribute or participate in developer discussions, join us on
+the irc.freenode.net #windup channel or subscribe to the https://lists.jboss.org/mailman/listinfo/windup-dev[windup-dev
+mailing list]._
+
+// include::News.asciidoc[]
+
+== About {ProductShortName}
+
+{ProductShortName} is a tool used to simplify Java application migrations. It is the 
+sequel to the original Windup 0.7.x, which has moved to the 
+https://github.com/windup/windup-legacy[windup-legacy] GitHub repository.
+
+* link:What-is-it[What is {ProductShortName}?] 
+* https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.windup&a=windup-distribution&v=LATEST&e=zip&c=offline[Download Latest {ProductName} Release]
+* link:Features[Features of {ProductShortName}]
+* link:Get-Involved[Get Involved] - We need your feedback!
+* link:Known-Issues[Known Issues] - Review the known issues to find out how to work around problems.
+* link:Report-Issues[Report Issues] - If you run into any problems executing {ProductName} or understanding the instructions, please report it so we can make it better. (https://issues.jboss.org/browse/WINDUP[Quick link to Jira])
+
+== {ProductName} Guides
+
+{ProductName} documentation is organized into guides that target specific audiences.
+
+* link:./User-Guide[{ProductName} User Guide] is for engineers, consultants, or others who plan to use
+{ProductName} to migrate applications or other components. For a single page HTML version, see the {ProductDocUserGuideURL}[{ProductName} User Guide single HTML].
+* link:./Rules-Development-Guide[{ProductName} Rules Development Guide] provides details for developers, consultants, and others who plan to create custom rule add-ons for the {ProductName} project. For a single page HTML version, see the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide single HTML].
+* link:./Core-Development-Guide[{ProductName} Core Development Guide] provides information for developers who plan to contribute source code updates or core rule add-ons to the {ProductName} project. For a single page HTML version, see the {ProductDocCoreGuideURL}[{ProductName} Core Development Guide single HTML].
+* link:./Migration-Planning-Guide[Migration Planning Guide] is for developers, Project Managers, or IT managers who must interpret the {ProductShortName} reports and develop a project plan.
+
+== Additional Resources
+
+* {ProductShortName} documentation (generated from the Wiki documentation at the link above): 
+** {ProductDocUserGuideURL}[{ProductName} User Guide]
+** {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide]
+** {ProductDocCoreGuideURL}[{ProductName} Core Development Guide]
+* {ProductShortName} Javadoc: http://windup.github.io/windup/docs/latest/javadoc[{ProductName} JavaDoc]
+* {ProductShortName} Forums: https://community.jboss.org/en/windup
+* {ProductShortName} Issue Tracker: https://issues.jboss.org/browse/WINDUP
+* {ProductShortName} Users Mailing List: windup-users@lists.jboss.org
+* {ProductShortName} Developers Mailing List: windup-dev@lists.jboss.org
+* {ProductShortName} Commits Mailing List: windup-commits@lists.jboss.org
+* {ProductShortName} on Twitter: https://twitter.com/jbosswindup[@JBossWindup], https://twitter.com/search?q=%23windup%20OR%20%23jboss%20AND%20%23migration&src=typd[#windup OR #jboss AND #migration]

@@ -1,0 +1,111 @@
+[[Rules-Available-Rules-Utilities]]
+=== Available Rule Utilities
+
+==== Programmatically Access the Graph
+
+_Note: Needs update. This is out of date!_
+
+(Lower Level API, to cover cases not provided by high level API)
+
+
+This topic describes how to to programmatically access or update graph data when you create a Java-based rule add-on.
+
+===== Query the graph
+
+There are several ways - including Query API, Gremlin support, or
+GraphService methods.
+
+====== Query the Graph Within the .when() method
+
+Building a rule contains the method when(), which is used to create a
+*condition*. Vertices that fulfill the condition, are passed to the
+perform() method.
+
+For the queries in the when() method, class Query is used. There are
+several methods which you can use to specify the condition. For example:
+* *find()* specifies the Model type of the vertex * *as()* method
+specifies the name of the final list, that is passed to the perform()
+method * *from(String name)* starts the query not on the all vertices,
+but only on the vertices already stored in the the given *name* (used to
+begin query on the result of the other one) * *withProperty()* specify
+the property value of the given vertex
+
+The following are examples of simple queries.
+
+Return a list of archives
+
+[source,java]
+----
+Query.find(ArchiveModel.class)
+----
+
+[source,java]
+----
+Query.find(ApplicationReportModel.class).as(VAR_APPLICATION_REPORTS)
+----
+
+
+====== Iteration
+
+[source,java]
+----
+ConfigurationBuilder.begin().addRule()
+    .when(
+        GraphSearchConditionBuilderGremlin.create("javaFiles", new ArrayList())
+        .V().framedType( JavaFileModel.class ).has("analyze")
+    )
+    .perform(
+        // For all java files...
+        Iteration.over("javaFiles").var("javaFile").perform(
+----
+
+====== Nested Iteration
+
+[source,java]
+----
+code,java
+// For all java files...
+Iteration.over("javaFiles").var("javaFile").perform(
+    // A nested rule.
+    RuleSubset.evaluate(
+        ConfigurationBuilder.begin().addRule()
+        .when(...)
+        .perform(
+            Iteration.over("regexes").var(RegexModel.class, "regex").perform(
+                new AbstractIterationOperator<RegexModel>( RegexModel.class, "regex" ) {
+                    public void perform( GraphRewrite event, EvaluationContext context, RegexModel regex ) { 
+                        //...
+                    }
+                }
+            )
+            .endIteration()
+        )// perform()
+    )
+)
+----
+
+==== Modify Graph Data
+
+For more custom operations dealing with Graph data that are not covered by the `Query` mechanism, use the GraphService.
+
+[source,java]
+----
+GraphService<FooModel> fooService = new GraphService<FooModel>(graph,FooModel.class);
+
+List<FooModel> = fooService.findAll();
+FooModel = fooService.create();
+
+// etc ...
+----
+
+GraphService<> can also be used to query the graph for models of the specified type:
+
+[source,java]
+----
+FooModel foo = new GraphService<>(graphContext, FooModel.class).getUnique();
+----
+
+[source,java]
+----
+FooModel foo = new GraphService<>(graphContext, FooModel.class).getUniqueByProperty("size", 1);
+----

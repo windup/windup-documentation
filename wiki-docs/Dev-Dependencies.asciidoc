@@ -1,0 +1,131 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Dev-Dependencies]]
+=== Dependencies (Forge add-ons)
+
+.DRAFT 
+
+_Based on 
+https://github.com/OndraZizka/windup/commit/3574e81900cbad2b3a83d0bd6c263eb22c48e55e[this]
+discussion._
+
+==== Maven Add-on Structure
+
+The following is the typical structure of Maven `add-on` modules.
+
+[options="nowrap"]
+----
+my-add-on-parent
++--- my-add-on - jar, classifier: forge-addon
++--- my-add-on-api - jar
++--- my-add-on-impl - jar
++--- my-add-on-tests - jar
+----
+
+The `add-on` POM file can declare dependencies on other forge-addons. 
+To prevent exporting the add-on to dependent modules, use `<optional>true</optional>`.
+
+[source,xml,options="nowrap"]
+----
+<dependency>
+    <groupId>org.jboss.forge.furnace.container</groupId>
+    <artifactId>cdi</artifactId>
+    <classifier>forge-addon</classifier>
+    <optional>true</optional>
+</dependency>
+----
+
+The `add-on` POM files may also declare a dependency on typical Maven artifacts.
+To prevent exporting the add-on to dependent modules, use `<optional>true</optional>`.
+
+[source,xml,options="nowrap"]
+----
+<dependency>
+    <groupId>com.thinkaurelius.titan</groupId>
+    <artifactId>titan-lucene</artifactId>
+    <version>${version.titangraph.lucene}</version>
+</dependency>
+----
+
+_One more question regarding dependencies. Is it advisable to depend on the`forge-addon`
+artifact from add-on's subparts?_
+
+Add-ons should reference the `<classifier>forge-addon</classifier>`
+artifact from other add-ons.
+
+==== Add-on sub-parts
+
+Add-on sub-parts declare dependency preferably on forge add-on APIs, not
+on the add-ons themselves, wherever possible (wherever an add-on has an
+explicit API). These dependencies must be marked as `provided` scope.
+
+[source,xml,options="nowrap"]
+----
+<dependency>
+    <groupId>org.jboss.forge.furnace.container</groupId>
+    <artifactId>cdi-api</artifactId>
+    <classifier>forge-addon</classifier>
+    <scope>provided</scope>
+</dependency>
+----
+
+They may instead depend on the primary add-on dependency, e.g.
+`forge-addon`. The latter makes the POM files simpler, but can be confusing,
+because the add-on dependency still needs to be declared in the depending
+add-on's POM.
+
+[source,xml,options="nowrap"]
+----
+<dependency>
+    <groupId>org.jboss.forge.furnace.container</groupId>
+    <artifactId>cdi-api</artifactId>
+</dependency>
+----
+
+Declaring a `forge-addon` depencendy anywhere else than the
+`forge-addon` pom doesn't actually cause Furnace to establish an add-on
+dependency. I.e. classes from the dep won't be available unless you
+declare it in the `forge-addon`'s pom.
+
+Add-on's sub-parts may also declare dependencies on other normal maven
+dependencies, and these are treated as normal.
+
+[NOTE]
+----
+Add-on depends on API , scope `compile` > Add-on
+depends on Impl , scope `compile` with `<optional>true</optional>` -
+prevents exporting this dependency to consumers of the add-on.
+----
+
+==== Test dependencies
+
+For test dependencies on add-ons: Any add-on/sub-part requiring an add-on
+for testing purposes should use `<scope>test</scope>`.
+
+[source,xml,options="nowrap"]
+----
+<dependency>
+    <groupId>org.jboss.windup.graph</groupId>
+    <artifactId>windup-graph</artifactId>
+    <version>${project.version}</version>
+    <classifier>forge-addon</classifier>
+    <scope>test</scope>
+</dependency>
+----
+
+==== Dependencies between sub-parts within the same add-on
+
+
+Subpart may declare dependency on other subpart. E.g. `impl` typically
+depends on `api`. In that case, the scope should be set appropriately
+for the given situation - typically `provided` or `compile` scope.
+
+[source,xml,options="nowrap"]
+----
+<dependency>
+    <groupId>org.jboss.windup.graph</groupId>
+    <artifactId>windup-graph-api</artifactId>
+    <scope>compile</scope>
+</dependency>
+----

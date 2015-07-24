@@ -1,0 +1,30 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Rules-Validate-Rulesets-Against-the-Schema]]
+=== Validate Rulesets Against the Schema
+
+To validate XML rules using the {ProductShortName} rule schema, follow these steps.
+
+. Download this XML validator: https://github.com/amouat/xsd-validator https://github.com/amouat/xsd-validator/releases/download/v1.0/xsdv-1.0.zip 
+. Extract the ZIP file in to a directory of your choice.
+. The xsd-validator requires the schema file to be located on the local file system. Download the {ProductShortName} rule schema from one of the following locations to a directory of your choice.
+* http://windup.jboss.org/schema/windup-jboss-ruleset.xsd
+* https://github.com/windup/windup/blob/master/config-xml/windup-jboss-ruleset.xsd
+. Run the following command, replacing the variables as follows.
+* RULESET_DIRECTORY: The path to the top level folder that contains the rules.
+* XSD_VALIDATOR: The path to the extracted xsd-validator.
+* XSD_SCHEMA: The path to the local {ProductShortName} windup-jboss-ruleset.xsd file.
++
+[options="nowrap"]
+----
+find RULESET_DIRECTORY -type f -iname "*.windup.xml" -exec XSD_VALIDATOR./xsdv.sh XSD_SCHEMA {} \;
+----
++
+For example: 
++
+[options="nowrap"]
+----
+ find ~/MigrationRules/ -type f -iname "*.windup.xml" -exec ~/tools/xsdv/xsdv.sh ~/windup/config-xml/schema/windup-jboss-ruleset.xsd {} \;
+----
+. The console displays the results of each ruleset validation. If a ruleset fails to validate, the content causing the error is printed to the console.

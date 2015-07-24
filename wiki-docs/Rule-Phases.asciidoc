@@ -1,0 +1,66 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Rule-Phases]]
+=== Rule Phases
+
+Rule phases provide a way for rule authors to control the rule lifecycle by specifying the phase in which the rule should execute. {ProductName} executes rules sequentially within rule phases, however, the order of rule execution within a phase can be controlled by specifying other rules that should be run before or after the rule. 
+
+By default, rules run in the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/MigrationRulesPhase.html[MigrationRulesPhase].  However, a rule may require certain processing or actions to occur before it executes, such as the extraction of archives and scanning of java or XML files, so a rule can specify that it is run during another phase in the process. 
+
+The rule phases below are listed in the order in which they are executed by {ProductShortName}. The exception is the last phase, which can occur during any phase of the execution lifecycle.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/InitializationPhase.html[InitializationPhase]:: 
+This is the first phase of {ProductShortName} Execution. Initialization related tasks, such as copying configuration data to the graph, should occur during this phase. 
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/DiscoveryPhase.html[DiscoveryPhase]:: 
+This resource discovery phase immediately follows the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/InitializationPhase.html[InitializationPhase]. During this phase, input files are identified by the name, extension, location, and fully qualified Java class names. Typically, any rule that only puts data into the graph is executed during this phase.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/ArchiveExtractionPhase.html[ArchiveExtractionPhase]::
+This phase immediately follows the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/DiscoveryPhase.html[DiscoveryPhase]. During this phase, input files such and EARs, WARs, JARs, and other zipped files are unzipped during this phase.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/ArchiveMetadataExtractionPhase.html[ArchiveMetadataExtractionPhase]::
+This phase occurs immediately after http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/ArchiveExtractionPhase.html[ArchiveExtractionPhase]. It calculates checksums for archives and determines whether the archive is an EAR, WAR, JAR, or some other type of compressed file.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/ClassifyFileTypesPhase.html[ClassifyFileTypesPhase]::
+This phase follows the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/ArchiveMetadataExtractionPhase.html[ArchiveMetadataExtractionPhase]. During this phase, files are scanned and metadata is created for them.For example, this phase may find all of the Java files in an application and mark them as Java, or it may find all of the bash scripts in an input and identify them appropriately. 
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/DiscoverProjectStructurePhase.html[DiscoverProjectStructurePhase]::
+This phase, which follows http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/ClassifyFileTypesPhase.html[ClassifyFileTypesPhase], identifies the project structure of the input application. This includes identification of project files, any subprojects, and the type of project, for example Maven or Ant.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/DecompilationPhase.html[DecompilationPhase]::
+This phase follows the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/DiscoverProjectStructurePhase.html[DiscoverProjectStructurePhase]. This phase is responsible for identifying and decompiling classes included in the input application.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/InitialAnalysisPhase.html[InitialAnalysisPhase]::
+This phase follows the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/DecompilationPhase.html[DecompilationPhase] and is called to perform a basic analysis of file content.
+It extracts all method names from class files and extracts metadata, such as the XML namespace and root element, from XML files.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/MigrationRulesPhase.html[MigrationRulesPhase]::
+This phase, which follows the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/InitialAnalysisPhase.html[InitialAnalysisPhase], is the default phase for all rules unless it is specifically overridden. During this phase, migration rules attach data to the graph associated with migration. This can include hints to migrators for manual migration, automated migration of schemas or source segments, blacklists to indicate vendor specific APIs.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/PostMigrationRulesPhase.html[PostMigrationRulesPhase]::
+This phase occurs immediately after http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/MigrationRulesPhase.html[MigrationRulesPhase]. This phase can be used to execute a rule that must follow all other migration rules. The primary use case at the moment involves unit tests. 
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/PreReportGenerationPhase.html[PreReportGenerationPhase]::
+This phase occurs after the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/PostMigrationRulesPhase.html[PostMigrationRulesPhase] and immediately before the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/ReportGenerationPhase.html[ReportGenerationPhase]. It can be used for initialization tasks that will be needed by all reports during that phase.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/ReportGenerationPhase.html[ReportGenerationPhase]::
+During this phase, reporting visitors produce report data in the graph that is used later by the report rendering phase.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/PostReportGenerationPhase.html[PostReportGenerationPhase]::
+This phase occurs immediately after the main tasks of report generation. It can be used to generate reports that need data from all of the previously generated reports.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/ReportRenderingPhase.html[ReportRenderingPhase]::
+This is the phase that renders the report.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/PostReportRenderingPhase.html[PostReportRenderingPhase]::
+This phase occurs immediately after reports have been rendered. It can be used to render any reports that need to execute last. One possible use is to render all the entire contents of the graph itself. 
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/FinalizePhase.html[FinalizePhase]::
+This phase is called to clean up resources and close streams. This phase occurs at the end of execution. Rules in this phase are responsible for any cleanup of resources and closing any streams that may have been opened. 
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/PostFinalizePhase.html[PostFinalizePhase]::
+This occurs immediately after the FinalizePhase. This is an ideal place to put Rules that would like to be the absolute last things to fire, for example reporting on the execution time of previous rules or reporting on all of the rules that have executed and which AbstractRuleProviders executed them.
+
+http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/phase/DependentPhase.html[DependentPhase]:: 
+This phase can occur during any phase of the execution lifecycle. It's exact placement is determine by the code within the rule.

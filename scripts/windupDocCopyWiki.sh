@@ -5,7 +5,12 @@ if [ "$1" == "" ]; then
     exit
 fi
 echo "*******************************************"
-echo "Copying files from: " $1
+echo "Copy the original wiki files from: " $1
+echo "*******************************************"
+cp $1/*.asciidoc wiki-docs/
+
+echo "*******************************************"
+echo "Copying and convert files from: " $1
 echo "*******************************************"
 cp $1/About-Rules.asciidoc docs/About-Rules.adoc
 cp $1/About-the-HOME-Variable.asciidoc docs/About-the-HOME-Variable.adoc

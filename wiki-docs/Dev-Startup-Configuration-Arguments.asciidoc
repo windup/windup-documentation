@@ -1,0 +1,71 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Dev-Startup-Configuration-Arguments]]
+=== {ProductName} Startup Configuration Arguments
+
+This section describes the how {ProductName} processes configuration arguments. {ProductShortName} configuration handles of the following types of arguments.
+
+* {ProductShortName} Core arguments
+* {ProductShortName} Rules arguments
+* Forge related arguments
+
+== {ProductShortName} Core arguments
+
+The following are {ProductShortName} core arguments:
+
+* `--input` - `InputPathOption`
+* `--output` - `OutputPathOption`
+* `--offline` - `OfflineModeOption`
+* `--userRules` - `UserRulesDirectoryOption`
+* `--userIgnoreFiles` - `UserIgnoreFilesOption`
+
+==== Getting the arguments value
+You can either get a specific option
+
+[options="nowrap"]
+----
+WindupConfiguration.getOptionValue(OfflineModeOption.NAME)
+----
+
+or iterate over all options:
+
+[options="nowrap"]
+----
+WindupConfiguration.getWindupConfigurationOptions()
+----
+
+== Custom Arguments for Rules
+
+Additional arguments are made available to {ProductShortName} rules using a special API. For more information about  {ProductShortName} rules arguments, see link:Rules-Rule-Configuration[Rule Configuration].
+
+Each option is an implementation of http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupConfigurationOption.html[WindupConfigurationOption].
+  
+Examples:
+
+* `org.jboss.windup.rules.apps.java.config.ScanPackagesOption`
+* `org.jboss.windup.rules.apps.java.config.ExcludePackagesOption`
+* `org.jboss.windup.rules.apps.java.config.SourceModeOption`
+
+== Forge related arguments
+
+Forge related arguments are those that process add-ons and affect Forge execution mode.
+
+* --install
+* --remove
+* --list
+* --addonDir
+* --immutableAddonDir
+* --batchMode
+* --evaluate
+* --debug
+* --version
+
+These arguments are handled in the {ProductShortName} `Bootstrap` class.
+
+===== Processing Argument Sequence
+
+When the user runs ./windup, the `Bootstrap` class intercepts the Forge arguments and processes them. The other arguments are passed to {ProductShortName}, which processes them and then distributes them to the right place. During rule execution, the {ProductShortName} rule arguments are accessed and evaluated.
+
+
+

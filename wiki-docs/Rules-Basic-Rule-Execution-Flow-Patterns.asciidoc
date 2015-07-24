@@ -1,0 +1,136 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Rules-Basic-Rule-Execution-Flow-Patterns]]
+=== Basic Rule Execution Flow Patterns
+
+==== Single Operation - operation();
+
+No condition or iteration is needed. The following is an example of a single operation.
+
+[source,java,options="nowrap"]
+----
+return ConfigurationBuilder.begin()
+    .addRule()
+    .perform(new GraphOperation(){
+        @Override
+        public void perform(GraphRewrite event, EvaluationContext context){
+            ...
+        }
+    });
+----
+
+{ProductName} source code example: https://github.com/windup/windup/blob/master/rules-java/impl/src/main/java/org/jboss/windup/rules/apps/java/config/CopyJavaConfigToGraphRuleProvider.java#L99-L101 
+
+The `copyConfigToGraph` GraphOperation used in the perform() above is defined before the rule.
+
+==== Single Conditional Operation - if( ... ){ operation()}
+
+A single condition must be met. The following is an example of a single conditional operation.
+ 
+[source,java,options="nowrap"]
+----
+return ConfigurationBuilder.begin()
+    .addRule()
+    .when( ... )
+    .perform(new GraphOperation(){
+        @Override
+        public void perform(GraphRewrite event, EvaluationContext context){
+            ...
+        }
+    });
+----
+
+{ProductShortName} source code example: https://github.com/windup/windup/blob/master/reporting/api/src/main/java/org/jboss/windup/reporting/rules/AttachApplicationReportsToIndexRuleProvider.java#L39-L41
+
+==== Single Iteration - for( FooModel.class ){ ... }
+
+For simple iterations, you can extend the `IteratingRuleProvider` class to simplify the `perform` code.
+
+[source,java,options="nowrap"]
+----
+public class ComputeArchivesSHA512 extends IteratingRuleProvider<ArchiveModel>
+{
+    public ConditionBuilder when() {
+        return Query.find(ArchiveModel.class);
+    }
+
+    // @formatter:off
+    public void perform( GraphRewrite event, EvaluationContext context, ArchiveModel archive ){
+        try( InputStream is = archive.asInputStream() ){
+            String hash = DigestUtils.sha512Hex(is);
+            archive.asVertex().setProperty(KEY_SHA512, hash);
+        }
+        catch( IOException e ){
+            throw new WindupException("Failed to read archive: " + archive.getFilePath() +
+                "\n    Due to: " + e.getMessage(), e);
+        }
+    }
+    // @formatter:on
+
+    @Override public String toStringPerform() { return this.getClass().getSimpleName(); }
+}
+----
+{ProductShortName} source code example: https://github.com/windup/windup/blob/master/rules-java/api/src/main/java/org/jboss/windup/rules/apps/java/scan/provider/DiscoverArchiveManifestFilesRuleProvider.java
+
+==== Conditional Iteration - if( ... ){ for( ... ) }
+
+[source,java,options="nowrap"]
+----
+return ConfigurationBuilder.begin()
+    .addRule()
+    .when(
+        new GraphCondition(){ ... }
+    ).perform(
+        Iteration.over(ArchiveModel.class)
+            .perform( ... )
+    )
+----
+{ProductShortName} source code example: https://github.com/windup/windup/blob/master/rules-java-ee/addon/src/main/java/org/jboss/windup/rules/apps/javaee/rules/DiscoverEjbAnnotationsRuleProvider.java#L82-L93
+
+
+==== Iteration With a Condition - for( ... ){ if( ... ){ ... } }
+
+[source,java,options="nowrap"]
+----
+return ConfigurationBuilder.begin()
+.addRule()
+    .when(
+        // Stores all ArchiveModel's into variables stack, under that type.
+        Query.find(ArchiveModel.class)
+    ).perform(
+        Iteration.over(ArchiveModel.class) // Picks up ArchiveModel's from the varstack.
+            .when(new AbstractIterationFilter<ArchiveModel>(){
+                @Override
+                public boolean evaluate(GraphRewrite event, EvaluationContext context, ArchiveModel payload)
+                {
+                    return payload.getProjectModel() == null;
+                }
+                @Override
+                public String toString()
+                {
+                    return "ProjectModel == null";
+                }
+            })
+            .perform( ... ) 
+----
+
+{ProductShortName} source code example: https://github.com/windup/windup/blob/master/reporting/impl/src/main/java/org/jboss/windup/reporting/rules/rendering/RenderReportRuleProvider.java#L46-L66
+
+
+==== Nested Iterations - for( ... ){ for( ... ) { ... } }
+
+[source,java,options="nowrap"]
+----
+.addRule()
+     .when(...)
+     .perform(Iteration //first iteration
+     .over("list_variable").as("single_var")
+     .perform(
+         Iteration.over("single_var") //second iteration
+         .perform(...).endIteration()
+     )
+     .endIteration()
+);
+----
+{ProductShortName} source code example: https://github.com/windup/windup/blob/master/config/tests/src/test/java/org/jboss/windup/config/iteration/payload/IterationPayLoadPassTest.java#L186-L202

@@ -1,0 +1,47 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductHomeVar: WINDUP_HOME 
+:ProductDocUserGuideURL: http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html
+
+[[Rules-Test-an-XML-Rule]]
+=== Test an XML Rule in {ProductName}
+
+==== Add the Rule to {ProductName}
+
+A {ProductName} rule is installed simply by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files that end with either `*.windup.groovy` or `.windup.xml`, in the following locations:
+
+* Copy the rule to a directory specified by the `--userRulesDirectory` argument on the {ProductShortName} command line.
+
+* Copy the rule to the {ProductHomeVar}/rules/ directory. link:About-the-HOME-Variable[{ProductHomeVar}] is the directory where you install and run the {ProductName} executable.
+
+* Copy the rule to the `${user.home}/.windup/rules/` directory. This directory is created by {ProductShortName} the first time it is executed and contains rules, add-ons, and the {ProductShortName} log.
++
+[options="nowrap"]
+----
+For Linux or Mac:   ~/.windup/rules/
+For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\USER_NAME\.windup\rules\"
+----
+
+==== Test the XML Rule
+
+. Test the XML rule against your application file by running {ProductShortName} in a terminal.
++
+The command uses this syntax:
++
+[options="nowrap"]
+----
+WINDUP_HOME/bin/windup [--sourceMode] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+----
++
+You should see the following result:
++
+[options="nowrap"]
+----
+***SUCCESS*** Windup report created: OUTPUT_REPORT_DIRECTORY/index.html
+----
+
+==== Additional Resources
+
+* More examples of how to run {ProductShortName} are located in the {ProductDocUserGuideURL}[{ProductName} User Guide]. 
+* Working examples of XML-based rules can be found on GitHub in the https://github.com/windup/windup/[{ProductShortName} source code] GitHub repository and the {ProductShortName} quickstarts https://github.com/windup/windup-quickstarts/[GitHub repository] or https://github.com/windup/windup-quickstarts/releases[latest release ZIP download].
+ 

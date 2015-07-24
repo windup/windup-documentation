@@ -1,0 +1,29 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductDocRulesGuideURL: http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html
+:ProductDocCoreGuideURL: http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html
+
+[[Get-Involved]]
+=== Get Involved
+
+==== How can you help?
+
+To help us make {ProductName} cover most application constructs and server configurations, including yours, you can help with any of the following items. Many require only a few minutes of your time!
+
+* Send an email to windup-users@lists.jboss.org and let us know what should {ProductShortName} migration rules  cover.
+* Provide example applications to test migration rules.
+* Identify application components and problem areas that may be difficult to migrate.
+** Write a short description of these problem migration areas.
+** Write a brief overview describing how to solve the problem migration areas.
+* link:Execute[Try {ProductName}] on your application. Be sure to link:Report-Issues[report any issues] you encounter.
+* You can contribute to the {ProductName} rules repository. 
+** Write a {ProductName} rule to identify or automate a migration process.
+** Create a test for the new rule.
+** Details are provided in the {ProductDocRulesGuideURL}[{ProductShortName} Rules Development Guide].
+* You can also contribute to the project source code. 
+** Create a core rule.
+** Improve {ProductShortName} performance or efficiency.
+** See the {ProductDocCoreGuideURL}[{ProductShortName} Core Development Guide] for information about how to configure your environment and set up the project.
+
+Any level of involvement is greatly appreciated!
+

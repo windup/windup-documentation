@@ -1,0 +1,58 @@
+[[Ruleset-XML]]
+=== XML Ruleset
+
+.DRAFT 
+
+* XPathMatch
+* XsltTransformation
+
+
+A core ruleset to provide support for XML files.
+
+==== Metadata
+
+**ID:** xml  
+**Graph prefix:** xml
+
+==== Rule providers
+
+_A definition list (dl/dt/dd) of RuleProviders of given Ruleset with brief descriptions._
+
+TO_DO: Not sure if all the `Xml*` really belong here - maybe rather to Java or Java EE?
+
+* **DiscoverXmlFilesRuleProvider** - 
+* **XmlBaseConfig** - 
+* **XmlGlassfishConfig** - 
+* **XmlJbossConfig** - 
+* **XmlJbossEsbConfig** - 
+* **XmlJonasConfig** - 
+* **XmlJppConfig** - 
+* **XmlJrunConfig** - 
+* **XmlKnowHowConfig** - 
+* **XmlOrionConfig** - 
+* **XmlPersistanceConfig** - 
+* **XmlResinConfig** - 
+* **XmlSoa5Config** - 
+* **XmlSonicEsbConfig** - 
+* **XmlSpringConfig** - 
+* **XmlWeblogicConfig** - 
+* **XmlWebserviceConfig** - 
+* **XmlWebsphereConfig** -
+
+
+==== Models
+
+_Subclasses of `WindupVertexFrame`.
+
+* DoctypeMetaModel
+* XmlFileModel
+* XmlTypeReferenceModel
+* XsltTransformationModel
+
+==== Configuration
+
+_Subclasses of `TO_DO`
+
+==== Reports
+
+_Report files or report parts created by this ruleset._

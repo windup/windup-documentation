@@ -1,0 +1,13 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Install]]
+=== Install {ProductName}
+
+. If you installed previous versions of {ProductShortName}, delete the `${user.home}/.windup/` directory. Otherwise you may see errors when you execute {ProductShortName}.
+
+. Download the latest https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.windup&a=windup-distribution&v=LATEST&e=zip&c=offline[{ProductShortName} ZIP distribution].
+
+. Extract the ZIP file in to a directory of your choice. 
+
+

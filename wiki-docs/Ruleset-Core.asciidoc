@@ -1,0 +1,108 @@
+[[Ruleset-Core]]
+=== Core
+
+.DRAFT
+
+_This is an example page. Content serves for design decision. These pages could be generated automatically in the future._
+
+Purpose of this ruleset.
+
+==== Metadata
+**ID:** N/A  
+**Graph prefix:** w:
+
+ Rule providers
+
+_A definition list (dl/dt/dd) of RuleProviders of given Ruleset with brief descriptions._
+
+_Template hint: Subclasses of http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/AbstractRuleProvider.html[AbstractRuleProvider]
+
+* **AttachApplicationReportsToIndexRuleProvider** - 
+* **BaseConfig** - 
+* **Config** - 
+* **CreateApplicationReportIndexRuleProvider** - 
+* **CreateSourceReportRuleProvider** - 
+* **CssJsResourceRenderingRuleProvider** - 
+* **DiscoverArchiveTypesRuleProvider** - 
+* **DiscoverFileTypesRuleProvider** - 
+* **RenderGraphRuleProvider** - 
+* **RenderOverviewPageRuleProvider** - 
+* **RenderReportRuleProvider** - 
+* **RenderRuleProviderReportRuleProvider** - 
+* **RuleExecutionTimeReportRuleProvider** - 
+* **UnzipArchivesToOutputRuleProvider** - 
+
+* **IteratingRuleProvider** - 
+* **RuleProviderBuilder** - 
+
+
+==== Models
+
+_Subclasses of `WindupVertexFrame`.
+
+* AmbiguousJavaClassModel
+* AmbiguousReferenceModel<REFERENCETYPE>
+* ApplicationArchiveModel
+* ApplicationModel
+* ApplicationReportIndexModel
+* ApplicationReportModel
+* ArchiveModel
+* ClassificationModel
+* DoctypeMetaModel
+* EarArchiveModel
+* EjbBeanBaseModel
+* EjbDeploymentDescriptorModel
+* EjbEntityBeanModel
+* EjbMessageDrivenModel
+* EjbSessionBeanModel
+* EnvironmentReferenceModel
+* FileLocationModel
+* FileModel
+* FileReferenceModel
+* FreeMarkerSourceReportModel
+* HibernateConfigurationFileModel
+* HibernateEntityModel
+* HibernateMappingFileModel
+* HibernateSessionFactoryModel
+* InlineHintModel
+* JarArchiveModel
+* JarManifestModel
+* JavaClassFileModel
+* JavaClassModel
+* JavaMethodModel
+* JavaParameterModel
+* JavaSourceFileModel
+* JavaTypeReferenceModel
+* LinkModel
+* MavenProjectModel
+* NamespaceMetaModel
+* PackageModel
+* ProjectDependencyModel
+* ProjectModel
+* PropertiesModel
+* ReportFileModel
+* ReportModel
+* ResourceModel
+* RulePhaseExecutionStatisticsModel
+* RuleProviderExecutionStatisticsModel
+* SourceFileModel
+* SourceReportModel
+* SpringBeanModel
+* SpringConfigurationFileModel
+* TechnologyTagModel
+* WarArchiveModel
+* WebXmlModel
+* WindupConfigurationModel
+* WindupJavaConfigurationModel
+* WindupVertexListModel
+* XmlFileModel
+* XmlTypeReferenceModel
+* XsltTransformationModel
+
+==== Configuration
+
+_Subclasses of `TO_DO`
+
+==== Reports
+
+_Report files or report parts created by this ruleset._

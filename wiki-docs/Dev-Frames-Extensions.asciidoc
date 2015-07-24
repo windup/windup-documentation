@@ -1,0 +1,47 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Dev-Frames-Extensions]]
+=== Frames Extensions
+
+{ProductName} has several Frames extensions to satisfy its needs.
+
+==== Multiple Types in a Vertex
+
+The upstream frames project only stores one type in the _type_ property by default. {ProductShortName} extends this default type resolver behavior to support multiple types. The values themselves are stored in a multi-valued Titan property on each Vertex.
+
+==== Map Handler
+
+To store a map in a single vertexes properties:
+
+[source,java]
+----
+@TypeValue("MapModelMain")
+public interface MapMainModel extends WindupVertexFrame
+{
+    @MapInProperties void setMap(Map<String, MapValueModel> map);
+    @MapInProperties Map<String, MapValueModel> getMap();
+}
+----
+
+
+==== Map
+
+To store a map in as adjacent vertices.
+
+[source,java]
+----
+@TypeValue("MapModelMain")
+public interface MapMainModel extends WindupVertexFrame
+{
+    @MapInAdjacentProperties(label = "map") void setMap(Map<String, MapValueModel> map);
+    @MapInAdjacentProperties(label = "map") Map<String, MapValueModel> getMap();
+}
+----
+
+See the https://github.com/windup/windup/blob/master/graph/tests/src/test/java/org/jboss/windup/graph/typedgraph/map/FrameMapHandlerTest.java[FrameMapHandlerTest].
+
+==== List
+
+`WindupVertexListModel` offers a generic model for lists of other 
+models, which are stored as adjacent vertices.

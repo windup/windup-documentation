@@ -1,0 +1,38 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Install-and-Configure-Maven]]
+=== Install and Configure Maven
+
+==== Overview 
+
+If you plan to build {ProductShortName} Java-based rule add-ons or contribute to the core source code base, you must first configure Maven.
+
+You should already be configured correctly to build {ProductShortName} and can skip these instructions if you meet one of the following criteria:
+
+* You plan to use Maven command line and have already installed Maven 3.1.1 or later.
+* You plan to use Red Hat JBoss Developer Studio (8 or above) or Eclipse Luna (4.4) to build {ProductShortName} Java-based rule add-ons or source code. These IDEs embed Maven 3.2.1 so you do not need to install it separately.
+
+==== Download and Install Maven
+
+If plan to use the command line and have not yet installed Maven, or if you plan to use Red Hat JBoss Developer Studio 7.1.1 or an older version of Eclipse, you must download and install Maven 3.1.1. or later.
+
+. Go to http://maven.apache.org/download.html[Apache Maven Project - Download Maven] and download the latest distribution for your operating system.
+. See the Maven documentation for information on how to download and install Apache Maven for your operating system.
+
+[[configure-the-ide-to-use-the-updated-maven]]
+==== Configure the IDE to Use the Updated Maven 
+
+If you plan to  use JBoss Developer Studio 7.1.1 or an Eclipse version earlier than Eclipse Luna (4.4), follow this procedure to replace the embedded 3.0.4 version of Maven with this newer version.
+
+. From the menu, choose `Window` --> `Preferences`.
+. Expand `Maven` and click on `Installations`.
+. Uncheck `Embedded (3.0.4/1.4.0.20130531-2315)`
+. Click `Add` and navigate to your Maven install directory. Select it and click `OK`.
+. Be sure the new external Maven installation is checked and click `OK` to return to JBoss Developer Studio.
+
+_NOTE: If you use another IDE, refer to the product documentation to update the Maven installation._
+
+
+
+

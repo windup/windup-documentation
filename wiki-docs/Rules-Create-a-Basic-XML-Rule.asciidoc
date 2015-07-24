@@ -1,0 +1,165 @@
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductDocUserGuideURL: http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html
+
+[[Rules-Create-a-Basic-XML-Rule]]
+=== Create a Basic XML Rule
+
+You can create a {ProductName} rule using Java, XML, or Groovy. This topic describes how to create a rule using XML.
+
+==== Prerequisites
+
+* You should have already installed {ProductShortName}. Installation instruction are provided in the {ProductDocUserGuideURL}[{ProductName} User Guide].
+* Before you begin, you may also want to be familiar with the following documentation:
+** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
+** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
+** The XML rule schema is located here: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd
+
+==== File Naming Convention for XML Rules
+
+You must name the file containing an XML rule with the `.windup.xml` extension. {ProductShortName} identifies files with this extension as XML-base rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
+
+==== Basic XML Rule Template
+
+XML rules consist of _conditions_ and _actions_ and follow the familiar "if/then/else" construct:
+
+    when(condition)
+        perform(action)
+    otherwise(action)
+
+The following is the basic syntax for XML rules.
+
+[source,xml,options="nowrap"]
+----
+<?xml version="1.0"?>
+<ruleset id="unique-ruleset-id" 
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        <!-- Metadata about the rule including a description, 
+             source technology, target technology, and any
+             add-on dependencies -->
+    </metadata>
+    <rules>
+        <rule id="unique-ruleset-id-01000">
+            <when>
+                <!-- Test a condition... -->
+            </when>
+            <perform>
+                <!-- Perform this action when condition is satisfied -->
+            </perform>
+            <otherwise>
+                <!-- Perform this action when condition is not satisfied -->
+            </otherwise>
+        </rule>
+    <rules>
+</ruleset>
+----
+
+==== Create the Ruleset Metadata
+
+The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset.
+
+_Example:_
+[source,xml,options="nowrap"]
+----
+<ruleset id=”unique-ruleset-id”
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        <description>
+                This is the description.
+        </description>
+        <dependencies>
+                <addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final"/>    
+                <addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final"/>
+        </dependencies>
+        <sourceTechnology id="weblogic" versionRange="(10,12]"/>
+        <sourceTechnology id="ejb" versionRange="(2,3]"/>
+        <targetTechnology id="eap" versionRange="(5,6]"/>
+        <targetTechnology id="ejb" versionRange="(2,3]"/>
+        <tag>require-stateless</tag>
+        <tag>require-nofilesystem-io</tag>
+        <executeAfter>AfterRulesetId</executeAfter>
+        <executeBefore>BeforeRulesetId</executeBefore>
+    </metadata>
+    <rules>
+    </rules>
+</ruleset>
+----
+
+==== Create the Rule
+
+Individual rules are contained within a `<rules>` element and consist of one or more conditions and actions.
+
+
+===== Create the Rule When Condition
+
+The XML rule `<when>` element tests for a condition. The following is a list of valid `<when>` conditions.
+
+[cols="1,4", options="header"] 
+|===
+|Element
+|Description
+
+|<true>
+|Always match.
+
+a|<or>
+
+<and>
+
+<not>
+
+|These are the standard logical operators.
+
+|<javaclass>
+|Test for a match in a Java class.
+
+|<xmlfile>
+|Test for a match in an XML file.
+
+|<project>
+|Test for project characteristics, such as dependencies.
+
+|<filecontent>
+|Find strings or text within files, for example, properties files.
+
+|===
+
+The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content and is described in more detail here: link:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax]
+
+===== Create the Rule Perform Action
+
+The XML rule `<perform>` element performs the action when the condition is met. Operations allowed in this ection of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The following is a list of valid `<peform>` actions.
+
+[cols="1,4", options="header"] 
+|===
+|Element
+|Description
+
+|<classification>
+|Identify or classify a resource.
+
+|<link>
+|Provide links or references to additional information.
+
+|<hint>
+|Provide a hint or inline information. 
+
+|<xslt>
+|Specify how to transform an XML file.
+
+|<lineitem>
+| Provide line item information about a hint on the project or application overview page.
+
+|<iteration>
+|Specify to iterate over an implicit or explicit variable defined within the rule.
+
+|===
+
+The syntax is described in more detail here: link:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
+
+
