@@ -54,6 +54,7 @@ cp $1/Dev-Troubleshoot-Issues.asciidoc docs/Dev-Troubleshoot-Issues.adoc
 cp $1/Dev-Variables-Stack.asciidoc docs/Dev-Variables-Stack.adoc
 cp $1/Dev-Web-Instructions.asciidoc docs/Dev-Web-Instructions.adoc  ## this topic is not used
 cp $1/Execute.asciidoc docs/Execute.adoc
+cp $1/Export-the-Report-for-Use-by-Spreadsheet-Programs.asciidoc docs/Export-the-Report-for-Use-by-Spreadsheet-Programs.adoc
 cp $1/Extend-the-Rules.asciidoc docs/Extend-the-Rules.adoc  ## this topic is not used
 cp $1/Features.asciidoc docs/Features.adoc
 cp $1/Get-Involved.asciidoc docs/Get-Involved.adoc
