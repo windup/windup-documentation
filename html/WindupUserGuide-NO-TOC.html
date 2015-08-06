@@ -561,7 +561,7 @@ otherwise(action)</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Windup provides comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, Windup allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset. If you plan to write your own custom rules, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">
+<p>Windup provides comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, Windup allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset. If you plan to write your own custom rules, see the <a href="https://access.stage.redhat.com/beta/documentation/en/red-hat-jboss-migration-toolkit-windup-22-windup-rules-development-guide">
 Windup Rules Development Guide</a> for detailed instructions.</p>
 </div>
 </div>
@@ -653,8 +653,8 @@ Windup Rules Development Guide</a> for detailed instructions.</p>
 <p>The command to run Windup uses the following syntax.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">For Linux:     $ WINDUP_HOME/bin/windup --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
-For Windows:   &gt; WINDUP_HOME\bin\windup.bat --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+<pre class="nowrap">For Linux:     $ bin/windup --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 </li>
@@ -717,7 +717,7 @@ For Windows:   &gt; WINDUP_HOME\bin\windup.bat --input INPUT_ARCHIVE --output OU
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">WINDUP_HOME/bin/windup --listSourceTechnologies</pre>
+<pre class="nowrap">bin/windup --listSourceTechnologies</pre>
 </div>
 </div>
 </td>
@@ -740,7 +740,7 @@ For Windows:   &gt; WINDUP_HOME\bin\windup.bat --input INPUT_ARCHIVE --output OU
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">WINDUP_HOME/bin/windup --listTargetTechnologies</pre>
+<pre class="nowrap">bin/windup --listTargetTechnologies</pre>
 </div>
 </div>
 </td>
@@ -800,7 +800,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 <p>To override the default <em>Fernflower</em> decompiler, pass the <code>-Dwindup.decompiler</code> argument on the command line. For example, to use the <em>Procyon</em> compiler, use the following syntax:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">WINDUP_HOME/bin/windup -Dwindup.decompiler=procyon INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+<pre class="nowrap">bin/windup -Dwindup.decompiler=procyon INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 </li>
@@ -808,7 +808,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 <p>To evaluate an application archive, use the following syntax:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">WINDUP_HOME/bin/windup --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+<pre class="nowrap">bin/windup --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -816,7 +816,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">WINDUP_HOME/bin/windup  --sourceMode --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+<pre class="nowrap">bin/windup  --sourceMode --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -867,11 +867,11 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 <div class="sect3">
 <h4 id="_windup_help">Windup Help</h4>
 <div class="paragraph">
-<p>To see the complete list of available arguments for the <code>windup</code> command, execute the following command in the terminal:</p>
+<p>To see the complete list of available arguments for the <code>windup</code> command, open a terminal, navigate to the WINDUP_HOME directory, and execute the following command:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>WINDUP_HOME/bin/windup --help</pre>
+<pre>bin/windup --help</pre>
 </div>
 </div>
 </div>
@@ -887,7 +887,7 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>WINDUP_HOME/bin/windup --sourceMode --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --source eap4,eap5 --target eap6 --packages org.jboss.seam</pre>
+<pre>bin/windup --sourceMode --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --source eap4,eap5 --target eap6 --packages org.jboss.seam</pre>
 </div>
 </div>
 </div>
@@ -898,7 +898,7 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>WINDUP_HOME/bin/windup  --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --source eap4,eap5 --target eap6 --packages com.acme org.apache</pre>
+<pre>bin/windup  --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --source eap4,eap5 --target eap6 --packages com.acme org.apache</pre>
 </div>
 </div>
 </div>
@@ -989,7 +989,7 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 <p>A list of issues, if any, that were found in the file</p>
 </li>
 <li>
-<p>The estimated total <em>Story Points</em> to migrate the file. <em>Story Points</em> are covered in more detail in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>The estimated total <em>Story Points</em> to migrate the file. <em>Story Points</em> are covered in more detail in the <a href="https://access.stage.redhat.com/beta/documentation/en/red-hat-jboss-migration-toolkit-windup-22-windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1174,6 +1174,9 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>Unresolved directive in Windup-User-Guide-Topics.adoc - include::Export-the-Report-for-Use-by-Spreadsheet-Programs[tabsize=4]</p>
+</div>
 </div>
 </div>
 </div>
@@ -1287,7 +1290,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Create a test for the new rule.</p>
 </li>
 <li>
-<p>Details are provided in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>Details are provided in the <a href="https://access.stage.redhat.com/beta/documentation/en/red-hat-jboss-migration-toolkit-windup-22-windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </li>
 </ul>
 </div>
@@ -1303,7 +1306,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Improve Windup performance or efficiency.</p>
 </li>
 <li>
-<p>See the <a href="http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html">Windup Core Development Guide</a> for information about how to configure your environment and set up the project.</p>
+<p>See the <a href="https://access.stage.redhat.com/beta/documentation/en/red-hat-jboss-migration-toolkit-windup-22-windup-core-development-guide">Windup Core Development Guide</a> for information about how to configure your environment and set up the project.</p>
 </li>
 </ul>
 </div>
@@ -1499,7 +1502,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </dd>
 <dt class="hdlist1">Story Point</dt>
 <dd>
-<p>A term commonly used in Scrum Agile software development methodology to estimate the <em>level of effort</em> needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks. Story points are covered in more detail in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>A term commonly used in Scrum Agile software development methodology to estimate the <em>level of effort</em> needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks. Story points are covered in more detail in the <a href="https://access.stage.redhat.com/beta/documentation/en/red-hat-jboss-migration-toolkit-windup-22-windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </dd>
 </dl>
 </div>
@@ -1569,7 +1572,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-07-06 08:51:41 EDT
+Last updated 2015-07-23 13:17:12 EDT
 </div>
 </div>
 </body>
