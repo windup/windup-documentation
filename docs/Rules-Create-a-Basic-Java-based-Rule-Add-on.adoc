@@ -287,11 +287,11 @@ mvn clean install
 [[add-the-rule-to-windup]]
 ==== Add the Rule to {ProductShortName}
 
-The command to install the rule in {ProductShortName} uses the Maven GAV (groupId, artifactId, and version) to locate the rule in the Maven repository. The command uses the following syntax:
+{ProductShortName} uses the Maven GAV (groupId, artifactId, and version) that is specified in the project POM file to locate the installed rule in the local Maven repository. The command to add the rule to {ProductShortName} is executed in a terminal from the `WINDUP_HOME` directory and uses the following syntax.
 
 [options="nowrap"]
 ----
-WINDUP_HOME/bin/windup --install GROUP_ID:ARTIFACT_ID[,VERSION]
+bin/windup --install GROUP_ID:ARTIFACT_ID[,VERSION]
 ----
 
 The Maven groupId, artifactId, and version are the values you provided when you generated the Maven project and can be found in the project POM file. The following is an example of these values in a POM file.
@@ -309,7 +309,7 @@ Follow these steps to add the rule to Windup.
 . Type the following command, replacing the example rule GAV values with your project values.
 +
 ----
-WINDUP_HOME/bin/windup --install org.example.rules:my-custom-rule-provider,1.0.0-SNAPSHOT
+bin/windup --install org.example.rules:my-custom-rule-provider,1.0.0-SNAPSHOT
 ----
 . At the following prompt, choose `Y`.
 +
@@ -327,11 +327,11 @@ Installation completed successfully.
 
 ==== Test the Java-based Rule Add-on
 
-Test the Java-based rule add-on against your application file by running {ProductShortName} in a terminal.
+Test the Java-based rule add-on against your application file by running {ProductShortName} from the WINDUP_HOME directory in a terminal.
 
 The command uses this syntax:
 
-    WINDUP_HOME/bin/windup [--sourceMode] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+    bin/windup [--sourceMode] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
 
 You should see the following result:
 

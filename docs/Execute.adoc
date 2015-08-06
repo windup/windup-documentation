@@ -18,8 +18,8 @@ These instructions use the replaceable variable `{ProductHomeVar}` to refer to t
 +
 [options="nowrap"]
 ----
-For Linux:     $ WINDUP_HOME/bin/windup --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
-For Windows:   > WINDUP_HOME\bin\windup.bat --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+For Linux:     $ bin/windup --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+For Windows:   > bin\windup.bat --input INPUT_ARCHIVE --output OUTPUT_REPORT --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
 ----
 
 . This command takes arbitrary options processed by different add-ons. The list of options in the core {ProductShortName} distribution can be found in the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/ConfigurationOption.html[Javadoc]. Most commonly used command line arguments are:
@@ -50,7 +50,7 @@ Be careful not to specify a report output directory that contains important info
 For the list of the available `--source` servers or frameworks, use the `--listSourceTechnologies` argument on the `windup` command line as in the following example.
 [options="nowrap"]
 ----
-WINDUP_HOME/bin/windup --listSourceTechnologies
+bin/windup --listSourceTechnologies
 ----
 ====
 +
@@ -61,7 +61,7 @@ WINDUP_HOME/bin/windup --listSourceTechnologies
 For the list of the available `--target` servers or frameworks, use the `--listTargetTechnologies` argument on the `windup` command line as in the following example.
 [options="nowrap"]
 ----
-WINDUP_HOME/bin/windup --listTargetTechnologies
+bin/windup --listTargetTechnologies
 ----
 ====
 +
@@ -86,21 +86,21 @@ WARNING: If you omit the `--packages` argument, every package in the application
 +
 [options="nowrap"]
 ----
-WINDUP_HOME/bin/windup -Dwindup.decompiler=procyon INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
+bin/windup -Dwindup.decompiler=procyon INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
 ----
 
 . To evaluate an application archive, use the following syntax:
 +
 [options="nowrap"]
 ----
-WINDUP_HOME/bin/windup --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
+bin/windup --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
 ----
 +
 To run {ProductShortName} against application source code, you must add the `--sourceMode` argument:
 +
 [options="nowrap"]
 ----
-WINDUP_HOME/bin/windup  --sourceMode --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
+bin/windup  --sourceMode --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
 ----
 +
 See xref:command-examples[{ProductShortName} Command Examples] below for concrete examples of commands that use source code directories and archives located in the {ProductShortName} GitHub repository.
@@ -130,9 +130,9 @@ The following subdirectories in the `OUTPUT_REPORT_DIRECTORY` contain the suppor
 
 ==== {ProductShortName} Help
 
-To see the complete list of available arguments for the `windup` command, execute the following command in the terminal:
+To see the complete list of available arguments for the `windup` command, open a terminal, navigate to the {ProductHomeVar} directory, and execute the following command:
 
-    WINDUP_HOME/bin/windup --help
+    bin/windup --help
 
 [[command-examples]]
 ==== {ProductShortName} Command Examples
@@ -143,13 +143,13 @@ The following examples report against applications located in the {ProductShortN
 
 The following command runs against the https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] application source code. It evaluates all `org.jboss.seam` packages and creates a folder named 'seam-booking-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
 
-   WINDUP_HOME/bin/windup --sourceMode --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --source eap4,eap5 --target eap6 --packages org.jboss.seam
+   bin/windup --sourceMode --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --source eap4,eap5 --target eap6 --packages org.jboss.seam
 
 ===== Archive Example
 
 The following command runs against the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] EAR archive. It evaluates all `com.acme` and `org.apache` packages and creates a folder named 'jee-example-app-1.0.0.ear-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
 
-    WINDUP_HOME/bin/windup  --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --source eap4,eap5 --target eap6 --packages com.acme org.apache
+    bin/windup  --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --source eap4,eap5 --target eap6 --packages com.acme org.apache
 
 
 ===== {ProductShortName} Quickstart Examples
