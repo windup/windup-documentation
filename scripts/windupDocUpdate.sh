@@ -191,7 +191,7 @@ cd docs/
 
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocUserGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupUserGuide.html/:ProductDocUserGuideURL: https:\/\/access.redhat.com\/documentation\/en\/red-hat-jboss-migration-toolkit-windup\/version-2.3\/windup-user-guide/g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocRulesGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupRulesDevelopmentGuide.html/:ProductDocRulesGuideURL: https:\/\/access.redhat.com\/documentation\/en\/red-hat-jboss-migration-toolkit-windup\/version-2.3\/windup-rules-development-guide/g'
-find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocCoreGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupCoreDevelopmentGuide.html/:ProductDocCoreGuideURL: https:\/\/access.redhat.com\/documentation\/en\/red-hat-jboss-migration-toolkit-windup\/version-2.3\/windup-rules-development-guidewindup-core-development-guide/g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocCoreGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupCoreDevelopmentGuide.html/:ProductDocCoreGuideURL: https:\/\/access.redhat.com\/documentation\/en\/red-hat-jboss-migration-toolkit-windup\/version-2.3\/windup-core-development-guide/g'
 
 cd ../
 
