@@ -453,6 +453,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_additional_reports">2.3.4. Additional Reports</a></li>
 </ul>
 </li>
+<li><a href="#Export-the-Report-for-Use-by-Spreadsheet-Programs">2.4. Export the Report for Use by Spreadsheet Programs</a>
+<ul class="sectlevel3">
+<li><a href="#_enable_the_export_functionality">2.4.1. Enable the Export Functionality</a></li>
+<li><a href="#_import_the_csv_file_into_a_spreadsheet">2.4.2. Import the CSV File into a Spreadsheet</a></li>
+<li><a href="#_overview_of_the_csv_data_structure">2.4.3. Overview of the CSV data structure</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#_additional_resources">3. Additional Resources</a>
@@ -618,7 +625,7 @@ spots” when migrating applications. The goal is to provide a high level view i
 <p>Project Management - Reports detail the type of work and estimation of effort to complete the tasks.</p>
 </li>
 <li>
-<p>Developers - An Eclipse plug-in provides hints and suggested code changes within the IDE.</p>
+<p>Developers: Reports provide hints and suggested code changes by class or file.</p>
 </li>
 </ul>
 </div>
@@ -645,7 +652,7 @@ otherwise(action)</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Windup provides comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, Windup allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset. If you plan to write your own custom rules, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">
+<p>Windup provides comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, Windup allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset. If you plan to write your own custom rules, see the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.4/windup-rules-development-guide">
 Windup Rules Development Guide</a> for detailed instructions.</p>
 </div>
 </div>
@@ -656,10 +663,10 @@ Windup Rules Development Guide</a> for detailed instructions.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Java Platform, Enterprise Edition 7</p>
+<p>Java Platform, JRE version 7+</p>
 </li>
 <li>
-<p>Windup is tested on Linux, Mac OS X, and Windows. Other Operating Systems with Java 7 support should work equally well.</p>
+<p>Windup is tested on Linux, Mac OS X, and Windows. Other Operating Systems with Java 7+ support should work equally well.</p>
 </li>
 </ul>
 </div>
@@ -689,10 +696,10 @@ Windup Rules Development Guide</a> for detailed instructions.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.3.0-Final folder extracted from the downloaded ZIP file.</p>
+<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the downloaded ZIP file.</p>
 </li>
 <li>
-<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.3.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.3.0-Final.zip file.</p>
+<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.4.0-Final.zip file.</p>
 </li>
 </ul>
 </div>
@@ -786,6 +793,10 @@ For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE --output OUTPUT_REPORT 
 </ul>
 </div>
 </dd>
+<dt class="hdlist1">--exportCSV (optional)</dt>
+<dd>
+<p>Export the report data to a CSV formatted file on your local file system. Windup creates the file in the folder specified by the <code>--output</code> argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see <a href="#Export-the-Report-for-Use-by-Spreadsheet-Programs">Export the Report for Use by Spreadsheet Programs</a>.</p>
+</dd>
 <dt class="hdlist1">--source (optional)</dt>
 <dd>
 <p>One or more source technologies, servers, platforms, or frameworks to migrate from.</p>
@@ -809,9 +820,9 @@ For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE --output OUTPUT_REPORT 
 </table>
 </div>
 </dd>
-<dt class="hdlist1">--target (optional)</dt>
+<dt class="hdlist1">--target</dt>
 <dd>
-<p>One or more source technologies, servers, platforms, or frameworks to migrate to.</p>
+<p>One or more source technologies, servers, platforms, or frameworks to migrate to. If you do not make this selection, interactive mode will prompt you for a choice.</p>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -835,6 +846,33 @@ For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE --output OUTPUT_REPORT 
 <dt class="hdlist1">--overwrite (optional)</dt>
 <dd>
 <p>Specify this optional argument only if you are certain you want to force Windup to delete the existing <strong>OUTPUT_REPORT_DIRECTORY</strong> folder. The default value is <code>false</code>.</p>
+</dd>
+<dt class="hdlist1">--batchMode (optional)</dt>
+<dd>
+<p>Specifies that Windup should be run in a non-interactive mode that will not prompt for anything. This will take the default values for any parameters not passed in via the command line. The default value is 'false'.</p>
+</dd>
+<dt class="hdlist1">--updateRulesets (optional)</dt>
+<dd>
+<p>Update the core rulesets distributed with Windup. First, it checks for an existence of newer release, and if found, replaces the current rulesets directory with the new one.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To update the rulesets without analyzing an application, pass only this argument on the <code>windup</code> command line as in the following example.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">bin/windup --updateRulesets</pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </dd>
 <dt class="hdlist1">--userRulesDirectory (optional)</dt>
 <dd>
@@ -876,6 +914,10 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 <dt class="hdlist1">--sourceMode (optional)</dt>
 <dd>
 <p>This argument is optional and is only required if the application to be evaluated contains source files rather than compiled binaries. The default value is <code>false</code>.</p>
+</dd>
+<dt class="hdlist1">--additionalClasspath JAR_OR_DIRECTORY (optional)</dt>
+<dd>
+<p>This argument is optional and will add an additional jar to the classpath of the given application. This will assist in determining class reachability for the application itself. The parameter can be specified multiple times.</p>
 </dd>
 </dl>
 </div>
@@ -1073,7 +1115,7 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 <p>A list of issues, if any, that were found in the file</p>
 </li>
 <li>
-<p>The estimated total <em>Story Points</em> to migrate the file. <em>Story Points</em> are covered in more detail in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>The estimated total <em>Story Points</em> to migrate the file. <em>Story Points</em> are covered in more detail in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1258,9 +1300,130 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>#include::Export-the-Report-for-Use-by-Spreadsheet-Programs[tabsize=4]</p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Export-the-Report-for-Use-by-Spreadsheet-Programs">2.4. Export the Report for Use by Spreadsheet Programs</h3>
+<div class="paragraph">
+<p>Windup provides the ability to export the report data, including the <strong>Classifications</strong> and <strong>Hints</strong>, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields delimited by a semicolon (;) separator.</p>
+</div>
+<div class="paragraph">
+<p>Windup follows the <a href="https://tools.ietf.org/html/rfc4180">Common Format and MIME Type for Comma-Separated Values (CSV) Files</a> standard for escaping special characters contained within each field in the file. The exported file has the following characteristics.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The file is named with the `.csv' file extension.</p>
+</li>
+<li>
+<p>The first row is a header listing the names of the fields.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">"Rule Id";"Problem type";"Title";"Description";"Links";"Application";"File Name";"File Path";"Line";"Story points"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Each field is enclosed in double quotes (").</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">"FindUnboundJavaReferencesRuleProvider";"hint";"Unresolved Class Binding";"";"";"JEE Example EJB Services (org.windup.example:jee-example-services:1.0.0)";"ProductCatalogLocalHome.java";"/home/username/windup-reports/jee-example-app-1.0.0.ear-report/archives/jee-example-services.jar/com/acme/anvil/service/ProductCatalogLocalHome.java";"9";"5"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Any double quote (") appearing within a field is preceded with another double quote.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">"MyWindupRule";"hint";""Replace the ""foo"" class";"Replace the ""foo"" class instances with ""bar""";;"MyApp";"MyApp.java";"home/username/MyApp";"200";"8"</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The CSV formatted file can be imported and manipulated by spreadsheet software such as Microsoft Excel and OpenOffice or LibreOffice Calc. Spreadsheet software provide the ability to sort, analyze, evaluate, and manage the result data from a Windup report.</p>
+</div>
+<div class="sect3">
+<h4 id="_enable_the_export_functionality">2.4.1. Enable the Export Functionality</h4>
+<div class="paragraph">
+<p>To enable export of the report into CSV file, run Windup with <code>--exportCSV</code> argument. The CSV file will be created in the directory specified by the <code>--output</code> argument.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_import_the_csv_file_into_a_spreadsheet">2.4.2. Import the CSV File into a Spreadsheet</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Start the spreadsheet software (LibreOffice Calc, OpenOffice Calc, Microsoft Excel, etc.).</p>
+</li>
+<li>
+<p>Choose <code>File</code> -&#8594; `Open'.</p>
+</li>
+<li>
+<p>Navigate to the CSV exported file and select it.</p>
+</li>
+<li>
+<p>Under <code>Separator options, be sure to check `Semicolon</code>. Keep the rest of the defaults and click <code>OK</code>.</p>
+</li>
+<li>
+<p>The data is now ready to analyze in the spreadsheet software.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For more information or to resolve any issues, check the help for your spreadsheet software.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_overview_of_the_csv_data_structure">2.4.3. Overview of the CSV data structure</h4>
+<div class="paragraph">
+<p>The CSV formatted output file contains the following data fields:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Rule Id</dt>
+<dd>
+<p>The ID of the rule that generated the given item.</p>
+</dd>
+<dt class="hdlist1">Problem type</dt>
+<dd>
+<p>"Hint" or "Classification"</p>
+</dd>
+<dt class="hdlist1">Title</dt>
+<dd>
+<p>The title of the <em>Classification</em> or <em>Hint</em>. This field summarizes the issue for the given item.</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>The detailed description of the issue for the given item.</p>
+</dd>
+<dt class="hdlist1">Links</dt>
+<dd>
+<p>URLs that provide additional information about the issue. A link consists of two attributes: the link and a description of the link.</p>
+</dd>
+<dt class="hdlist1">Application</dt>
+<dd>
+<p>The name of the application for which this item was generated.</p>
+</dd>
+<dt class="hdlist1">File Name</dt>
+<dd>
+<p>The name of the file for the given item.</p>
+</dd>
+<dt class="hdlist1">File Path</dt>
+<dd>
+<p>The file path of the file for the given item.</p>
+</dd>
+<dt class="hdlist1">Line</dt>
+<dd>
+<p>The line number of the file for the given item.</p>
+</dd>
+<dt class="hdlist1">Story points</dt>
+<dd>
+<p>The number of story points, which represent the level of effort, assigned to the given item.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -1374,7 +1537,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Create a test for the new rule.</p>
 </li>
 <li>
-<p>Details are provided in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>Details are provided in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </li>
 </ul>
 </div>
@@ -1586,7 +1749,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </dd>
 <dt class="hdlist1">Story Point</dt>
 <dd>
-<p>A term commonly used in Scrum Agile software development methodology to estimate the <em>level of effort</em> needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks. Story points are covered in more detail in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>A term commonly used in Scrum Agile software development methodology to estimate the <em>level of effort</em> needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks. Story points are covered in more detail in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </dd>
 </dl>
 </div>
@@ -1656,7 +1819,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-08-06 10:50:22 EDT
+Last updated 2015-09-03 11:23:18 EDT
 </div>
 </div>
 </body>

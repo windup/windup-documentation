@@ -1,15 +1,17 @@
 :ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
 
 === Classloading Notes
 
-.DRAFT
-
-_Page contains temporary notes, to be edited._
-
 This covers the specific situations when the {ProductName} core developer needs to look up certain runtime classes. Does not relate to rules authoring.
+
+==== Getting a service through Furnace
+
+[source,java,options="nowrap"]
+----
+Imported<ResourceFactory> services = furnace.getAddonRegistry().getServices(ResourceFactory.class);
+ResourceFactory factory = services.get();
+----
+
 
 ==== Forge add-ons transitive dependencies
 

@@ -1,7 +1,4 @@
 :ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
 
 [[Ruleset-XML-Ruleset-Element-Reference]]
 === XML Ruleset Element Reference
@@ -12,7 +9,7 @@ rules:: Encapsulates all the the individual rules for this ruleset.
 rule:: Child of the the `rules` element. One or more rules can be defined for a ruleset.
 when:: Child of `rule`. Defines the condition to match on.
 javaclass:: Child of `when`. Match on Java class condition.
-location:: Child of `javaclass`. The location where the reference was found in a Java source file. See the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[Enum TypeReferenceLocation] Javadoc for valid values.
+location:: Child of `javaclass`. The location where the reference was found in a Java source file. See the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[Enum TypeReferenceLocation] Javadoc for valid values.
 xmlfile:: Match on XML file condition.
 xslt:: This specifies how to transform the the specified XML file
 perform:: This element is invoked when the condition is met.

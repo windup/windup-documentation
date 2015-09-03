@@ -1,6 +1,7 @@
 :ProductName: Windup
 :ProductShortName: Windup
 :ProductDocUserGuideURL: http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html
+:ProductVersion: 2.4.0-Final
 
 [[Rules-Create-a-Basic-Java-based-Rule-Add-on]]
 === Create a Basic Java-based Rule Add-on
@@ -13,7 +14,7 @@ You can create a {ProductName} rule using Java or XML. This topic describes how 
 * You must install and configure Maven. Follow the instructions here: link:Install-and-Configure-Maven[Install and Configure Maven].
 * Before you begin, you may want also want to be familiar with the following documentation:
 ** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
-** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
+** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/latest/javadoc/
 
 Working examples of Java-based rules can be found in the https://github.com/windup/windup[{ProductShortName} source code] and the https://github.com/windup/windup-quickstarts[{ProductShortName} quickstarts] repositories.
  
@@ -23,7 +24,7 @@ Create a new Maven Java Project. The instructions below refer to the project fol
 
 Modify the project `pom.xml` file as follows.
 
-. Add the following properties. Be sure to replace `WINDUP_VERSION` with the current version of {ProductShortName}, for example: `2.2.0.Final`.
+. Add the following properties. Be sure to replace `WINDUP_VERSION` with the current version of {ProductShortName}, for example: {ProductVersion}.
 +
 [source,xml,options="nowrap"]
 ----

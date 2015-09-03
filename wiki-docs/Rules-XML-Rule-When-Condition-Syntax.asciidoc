@@ -109,7 +109,7 @@ from="MyEjbRule"
 |Description
 
 |<location>
-a|The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html[TypeReferenceLocation].
+a|The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/ast/java/data/TypeReferenceLocation.html[TypeReferenceLocation].
 
 _Example:_
 
@@ -176,7 +176,8 @@ _Example:_
 
 [options="nowrap"]
 ----
-xpathResultMatch=""
+<xmlfile matches="//foo/text()"
+  xpathResultMatch="Text from foo."/>
 ----
 
 |as
@@ -225,7 +226,44 @@ public-id="public"
 
 |===
 
-====== xmlfile Element: Child Elements
+
+====== xmlfile Element: `matches` - Advanced usage: Custom Windup XPath functions
+
+The `matches` attribute may use several built-in custom XPath functions,
+which may have useful side effects, like setting the matched value on the rule variables stack.
+
+This is a brief list of these functions:
+
+
+[cols="1,1", options="header"] 
+|===
+|Function
+|Description
+
+|`windup:matches()`
+a|Match a XPath expression against a string, possibly containing Windup parametrization placeholders.
+
+_Example:_
+
+[options="nowrap"]
+----
+matches="windup:matches(//foo/@class, '{javaclassname}'"
+----
+This will match all `<foo/>` elements with a `class` attribute and store their value into `javaclassname` parameter for each iteration.
+
+
+|===
+
+
+
+
+
+
+
+
+
+
+===== xmlfile Element: Child Elements
 
 [cols="1,4", options="header"] 
 |===

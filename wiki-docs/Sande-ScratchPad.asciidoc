@@ -1,37 +1,30 @@
 :ProductName: Windup
 :ProductShortName: Windup
 
-[[Dev-Quickstart-Release-Instructions]]
-=== {ProductName} Quickstart Release Instructions
+[[Export-the-Report-to-a-File]]
+=== Export report in a CSV file
 
-Follow these instructions to tag a release of the {ProductShortName} quickstarts.
+{ProductShortName} provides the ability to export the report data, including the *Classifications* and *Hitns*, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields delimited by a comma separator. The CSV format can then be imported and manipulated by spreadsheet software such as Microsoft Excel and OpenOffice or LibreOffice Calc. Spreadsheet software provide the ability to sort, analyze, evaluate, and manage the result data from a Windup report.  
 
-. Check out the master branch and update it.
+==== Enable the Export Functionality
+
+To enable export of the report into CSV file, run {ProductShortName} with `--exportCSV` argument. The CSV file will be created in the directory specified by the `--output` argument.
+
+====  Overview of the CSV data structure
+
+The CSV output file contains the following data fields:
 +
-[options="nowrap"] 
-----
-git checkout master
-git fetch upstream
-git reset –hard upstream/master
-----
+Rule Id:: The ID of the rule that generated the given item.
+Problem type:: "Hint" or "Classification"
+Title:: The title of the _Classification_ or _Hint_. This field summarizes the issue for the given item.
+Description:: The detailed description of the issue for the given item.
+Links:: URLs that provide additional information about the issue. A link consists of two attributes:
+* The link
+* A description of the link
+Application:: The name of the application for which this item was generated.
+File Name:: The name of the file for the given item.
+File Path:: The file path of the file for the given item.
+Line:: The line number on the file for the given item.
+Story points:: The number of story points, which represent the level of effort, assigned to the given item. 
 
-. Create the tag.
-+
-[options="nowrap"] 
-----
-git tag 2.3.0.Final -m "Tag 2.3.0.Final release" 
-----
 
-. Push it to your own repository to verify that it looks correct.
-+
-[options="nowrap"] 
-----
-git push origin HEAD --tags 2.3.0.Final
-----
-
-. If it looks correct, push the tag upstream.
-+
-[options="nowrap"] 
-----
-git push upstream HEAD --tags --tags 2.3.0.Final
-----

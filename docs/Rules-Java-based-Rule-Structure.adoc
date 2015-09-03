@@ -1,8 +1,6 @@
 
 
 
- 
-
 [[Rules-Java-based-Rule-Structure]]
 === Java-based Rule Structure
 
@@ -10,13 +8,13 @@
 
 {ProductName} rules are based on http://ocpsoft.org/rewrite/[OCPsoft Rewrite], an open source routing and URL rewriting solution for Servlets, Java Web Frameworks, and Java EE. The *rewrite* framework allows you to create rule providers and rules in an easy to read format. 
 
-{ProductName} rule add-ons can implement the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html[RuleProvider] interface or they can extend the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/AbstractRuleProvider.html[AbstractRuleProvider] class, the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/SingleRuleProvider.html[SingleRuleProvider] class, or the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/IteratingRuleProvider.html[IteratingRuleProvider] class. 
+{ProductShortName} rule add-ons can implement the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html[RuleProvider] interface or they can extend the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/AbstractRuleProvider.html[AbstractRuleProvider] class, the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/SingleRuleProvider.html[SingleRuleProvider] class, or the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/IteratingRuleProvider.html[IteratingRuleProvider] class. 
 
-* If the rule should run in a phase other than the default http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_PHASE[MIGRATION_PHASE], you must implement the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html#getPhase%28%29[getPhase()] method and specify in which {ProductName} lifecycle phase the rule should be executed. For more information about rule phases, see xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle].
+* If the rule should run in a phase other than the default http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RulePhase.html#MIGRATION_PHASE[MIGRATION_PHASE], you must implement the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html#getPhase%28%29[getPhase()] method and specify in which {ProductShortName} lifecycle phase the rule should be executed. For more information about rule phases, see xref:Rules-Rule-Execution-Lifecycle[Rule Execution Lifecycle].
 
-* Rules are added in the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html[getConfiguration(GraphContext context)] method. This method is inherited from the http://ocpsoft.org/rewrite/[OCPsoft Rewrite] interface org.ocpsoft.rewrite.config.ConfigurationProvider. Rules are discussed in more detail below under xref:add-rule-code-structure[Add Rule Code Structure]
+* Rules are added in the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html[getConfiguration(GraphContext context)] method. This method is inherited from the http://ocpsoft.org/rewrite/[OCPsoft Rewrite] interface org.ocpsoft.rewrite.config.ConfigurationProvider. Rules are discussed in more detail below under xref:add-rule-code-structure[Add Rule Code Structure]
 
-* If other rules must execute after or before the rules in this provider, you must provide the list of RuleProvider classes using the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html#getExecuteBefore%28%29[getExecuteBefore()] or http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html#getExecuteAfter%28%29getExecuteAfter()* methods. 
+* If other rules must execute after or before the rules in this provider, you must provide the list of RuleProvider classes using the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html#getExecuteBefore%28%29[getExecuteBefore()] or http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html#getExecuteAfter%28%29getExecuteAfter()* methods. 
 
 The following is an example of a simple Java-based rule add-on.
 
@@ -50,9 +48,9 @@ public class ExampleRuleProvider extends AbstractRuleProvider
 [[add-rule-code-structure]]
 ==== Add Rule Code Structure
 
-As mentioned above, individual rules are added to a ruleset in the http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html[getConfiguration(GraphContext context)] method using the http://ocpsoft.org/rewrite/[OCPsoft Rewrite] ConfigurationBuilder class.
+As mentioned above, individual rules are added to a ruleset in the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html[getConfiguration(GraphContext context)] method using the http://ocpsoft.org/rewrite/[OCPsoft Rewrite] ConfigurationBuilder class.
 
-Like most rule-based frameworks, {ProductName} rules consist of the following:
+Like most rule-based frameworks, {ProductShortName} rules consist of the following:
 
 * Condition: This is the *when(condition)* that determines if the rule should execute.
 * Operation: This defines what to *perform()* if the condition is met.
@@ -145,7 +143,7 @@ The following is an example of a nested iteration.
 
 ====== otherwise
 
-As previously mentioned, {ProductName} rules are based on http://ocpsoft.org/rewrite/[OCPsoft Rewrite]. The `.otherwise()` clause allows you to perform something if the condition specified in `.when()` clause is not matched. For more information, see http://ocpsoft.org/rewrite/[OCP Rewrite web].
+As previously mentioned, {ProductShortName} rules are based on http://ocpsoft.org/rewrite/[OCPsoft Rewrite]. The `.otherwise()` clause allows you to perform something if the condition specified in `.when()` clause is not matched. For more information, see http://ocpsoft.org/rewrite/[OCP Rewrite web].
 
 The following is an example of an otherwise operation.
 [source,java]

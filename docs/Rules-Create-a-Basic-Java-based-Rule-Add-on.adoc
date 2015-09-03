@@ -1,6 +1,7 @@
 
 
 
+:ProductVersion: 2.4.0-Final
 
 [[Rules-Create-a-Basic-Java-based-Rule-Add-on]]
 === Create a Basic Java-based Rule Add-on
@@ -13,7 +14,7 @@ You can create a {ProductName} rule using Java or XML. This topic describes how 
 * You must install and configure Maven. Follow the instructions here: xref:Install-and-Configure-Maven[Install and Configure Maven].
 * Before you begin, you may want also want to be familiar with the following documentation:
 ** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
-** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/javadoc/latest/
+** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/latest/javadoc/
 
 Working examples of Java-based rules can be found in the https://github.com/windup/windup[{ProductShortName} source code] and the https://github.com/windup/windup-quickstarts[{ProductShortName} quickstarts] repositories.
  
@@ -23,7 +24,7 @@ Create a new Maven Java Project. The instructions below refer to the project fol
 
 Modify the project `pom.xml` file as follows.
 
-. Add the following properties. Be sure to replace `WINDUP_VERSION` with the current version of {ProductShortName}, for example: `2.2.0.Final`.
+. Add the following properties. Be sure to replace `WINDUP_VERSION` with the current version of {ProductShortName}, for example: {ProductVersion}.
 +
 [source,xml,options="nowrap"]
 ----
@@ -287,11 +288,11 @@ mvn clean install
 [[add-the-rule-to-windup]]
 ==== Add the Rule to {ProductShortName}
 
-{ProductShortName} uses the Maven GAV (groupId, artifactId, and version) that is specified in the project POM file to locate the installed rule in the local Maven repository. The command to add the rule to {ProductShortName} is executed in a terminal from the `WINDUP_HOME` directory and uses the following syntax.
+The command to install the rule in {ProductShortName} uses the Maven GAV (groupId, artifactId, and version) to locate the rule in the Maven repository. The command uses the following syntax:
 
 [options="nowrap"]
 ----
-bin/windup --install GROUP_ID:ARTIFACT_ID[,VERSION]
+WINDUP_HOME/bin/windup --install GROUP_ID:ARTIFACT_ID[,VERSION]
 ----
 
 The Maven groupId, artifactId, and version are the values you provided when you generated the Maven project and can be found in the project POM file. The following is an example of these values in a POM file.
@@ -309,7 +310,7 @@ Follow these steps to add the rule to Windup.
 . Type the following command, replacing the example rule GAV values with your project values.
 +
 ----
-bin/windup --install org.example.rules:my-custom-rule-provider,1.0.0-SNAPSHOT
+WINDUP_HOME/bin/windup --install org.example.rules:my-custom-rule-provider,1.0.0-SNAPSHOT
 ----
 . At the following prompt, choose `Y`.
 +
@@ -327,11 +328,11 @@ Installation completed successfully.
 
 ==== Test the Java-based Rule Add-on
 
-Test the Java-based rule add-on against your application file by running {ProductShortName} from the WINDUP_HOME directory in a terminal.
+Test the Java-based rule add-on against your application file by running {ProductShortName} in a terminal.
 
 The command uses this syntax:
 
-    bin/windup [--sourceMode] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+    WINDUP_HOME/bin/windup [--sourceMode] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
 
 You should see the following result:
 

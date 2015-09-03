@@ -1,7 +1,5 @@
 :ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
+:ProductShortName: Windup
 
 === Customer Portal Tags
 
@@ -11,9 +9,9 @@ _This is a work in progress, so please feel free to update this page with new ta
 
 The following is a list and description of tags that currently exist on the Customer Portal that we should use when writing {ProductName} migration articles for the Customer Portal. 
 
-windup:: All {ProductName} articles should use this tag so we can quickly find all the {ProductName} articles.
+windup:: All {ProductShortName} articles should use this tag so we can quickly find all the {ProductShortName} articles.
 
-migration:: All {ProductName} articles should use this tag so a search includes the articles.
+migration:: All {ProductShortName} articles should use this tag so a search includes the articles.
 
 jboss-eap:: Migration material for JBoss EAP platforms.
 

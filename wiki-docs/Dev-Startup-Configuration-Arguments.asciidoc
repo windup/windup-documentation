@@ -39,7 +39,7 @@ WindupConfiguration.getWindupConfigurationOptions()
 
 Additional arguments are made available to {ProductShortName} rules using a special API. For more information about  {ProductShortName} rules arguments, see link:Rules-Rule-Configuration[Rule Configuration].
 
-Each option is an implementation of http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/WindupConfigurationOption.html[WindupConfigurationOption].
+Each option is an implementation of http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/WindupConfigurationOption.html[WindupConfigurationOption].
   
 Examples:
 

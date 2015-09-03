@@ -603,10 +603,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>This guide is for developers who plan to contribute to the Windup source code base or provide Java-based rule add-ons.</p>
 </div>
 <div class="paragraph">
-<p>If you are new to Windup, it is recommended that you start with the <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a>. It provides detailed information about system requirements and detailed instructions on how to install and execute Windup. It also contains tips to optimize performance and provides links to other sources of information about Windup.</p>
+<p>If you are new to Windup, it is recommended that you start with the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.4/windup-user-guide">Windup User Guide</a>. It provides detailed information about system requirements and detailed instructions on how to install and execute Windup. It also contains tips to optimize performance and provides links to other sources of information about Windup.</p>
 </div>
 <div class="paragraph">
-<p>If you would like to create custom XML-based rules for Windup, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>If you would like to create custom XML-based rules for Windup, see the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </div>
 </div>
 </div>
@@ -760,7 +760,7 @@ Description: Rule that finds a proprietary annotation and provides recommendatio
     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
     &lt;maven.compiler.source&gt;1.7&lt;/maven.compiler.source&gt;
     &lt;maven.compiler.target&gt;1.7&lt;/maven.compiler.target&gt;
-    &lt;version.windup&gt;2.3.0-SNAPSHOT&lt;/version.windup&gt;
+    &lt;version.windup&gt;2.4.0-SNAPSHOT&lt;/version.windup&gt;
 &lt;/properties&gt;
 
 &lt;dependencyManagement&gt;
@@ -1065,11 +1065,11 @@ public class MyProprietaryAnnotationClass extends HttpServlet {
 <div class="sect3">
 <h4 id="_add_the_rule_to_windup">2.2.8. Add the Rule to Windup</h4>
 <div class="paragraph">
-<p>Windup uses the Maven GAV (groupId, artifactId, and version) that is specified in the project POM file to locate the installed rule in the local Maven repository. The command to add the rule to Windup uses the following syntax.</p>
+<p>Windup uses the Maven GAV (groupId, artifactId, and version) that is specified in the project POM file to locate the installed rule in the local Maven repository. The command to add the rule to Windup is executed in a terminal from the WINDUP_HOME directory and uses the following syntax.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">WINDUP_HOME/bin/windup --install GROUP_ID:ARTIFACT_ID[,VERSION]</pre>
+<pre class="nowrap">bin/windup --install GROUP_ID:ARTIFACT_ID[,VERSION]</pre>
 </div>
 </div>
 <div class="olist arabic">
@@ -1081,7 +1081,7 @@ public class MyProprietaryAnnotationClass extends HttpServlet {
 <p>Type the following command.</p>
 <div class="listingblock">
 <div class="content">
-<pre>WINDUP_HOME/bin/windup --install org.jboss.windup.rules.examples:proprietary-annotation-example,1.0.0-SNAPSHOT</pre>
+<pre>bin/windup --install org.jboss.windup.rules.examples:proprietary-annotation-example,1.0.0-SNAPSHOT</pre>
 </div>
 </div>
 </li>
@@ -1118,9 +1118,9 @@ public class MyProprietaryAnnotationClass extends HttpServlet {
 <p>Type the following command to test the rule, passing the test file as an input argument and a directory for the output report.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">For Linux:    WINDUP_HOME/bin/windup --sourceMode --input WORKSPACE_PATH/proprietary-annotation-example/src/test/ --output WORKSPACE_PATH/proprietary-annotation-example/windup-reports --packages com.proprietary
+<pre class="nowrap">For Linux:    bin/windup --sourceMode --input WORKSPACE_PATH/proprietary-annotation-example/src/test/ --output WORKSPACE_PATH/proprietary-annotation-example/windup-reports --packages com.proprietary
 
-For Windows:  WINDUP_HOME\bin\windup.bat --sourceMode --input WORKSPACE_PATH\proprietary-annotation-example\src\test\ --output WORKSPACE_PATH\proprietary-annotation-example\windup-reports --packages com.proprietary</pre>
+For Windows:  bin\windup.bat --sourceMode --input WORKSPACE_PATH\proprietary-annotation-example\src\test\ --output WORKSPACE_PATH\proprietary-annotation-example\windup-reports --packages com.proprietary</pre>
 </div>
 </div>
 </li>
@@ -1359,7 +1359,7 @@ Oracle Java SE</pre>
 </div>
 </li>
 <li>
-<p>Maven 3.1.1 or newer</p>
+<p>Maven 3.2.5 or newer</p>
 <div class="paragraph">
 <p>If you have not yet installed or configured Maven, see
 <a href="#Install-and-Configure-Maven">Install and Configure Maven</a> for details.</p>
@@ -1391,7 +1391,7 @@ Developer Studio 7.1.1</a> or newer</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The IDE must embed Maven 3.1.1 or later. See <a href="#Install-and-Configure-Maven">Install and Configure Maven</a> for details.</p>
+<p>The IDE must embed Maven 3.2.5 or later. See <a href="#Install-and-Configure-Maven">Install and Configure Maven</a> for details.</p>
 </div>
 </li>
 </ol>
@@ -1425,31 +1425,6 @@ Developer Studio 7.1.1</a> or newer</p>
 <p>Start JBoss Developer Studio or Eclipse.</p>
 </li>
 <li>
-<p>Import the <code>windup-ruleset</code> project.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>From the menu, select <code>File</code> → <code>Import</code>.</p>
-</li>
-<li>
-<p>In the selection list, choose <code>Maven</code> → <code>Existing Maven Projects</code>,
-then click Next.</p>
-</li>
-<li>
-<p>Click <code>Browse</code> and navigate to the root of the <code>windup-ruleset</code> project directory, then click <code>OK</code>.</p>
-</li>
-<li>
-<p>After all projects are listed, click <code>Next</code>. Ignore any Maven build
-or dependency errors and click <code>Finish</code>. If you get a dialog titled
-<em>Incomplete Maven Goal Execution</em>, ignore it and click <code>OK</code> to continue.</p>
-</li>
-<li>
-<p>In the Project Explorer tab, right-click on the <code>windup-ruleset</code> project and choose <code>Run As</code> -&#8594; <code>Maven install</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
 <p>Import the <code>windup</code> project.</p>
 <div class="ulist">
 <ul>
@@ -1471,6 +1446,31 @@ or dependency errors and click <code>Finish</code>. If you get a dialog titled
 <li>
 <p>In the Project Explorer tab, find the <code>windup_parent</code> project in the
 list, right-click, and choose <code>Run As</code> -&#8594; <code>Maven install</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Import the <code>windup-ruleset</code> project.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>From the menu, select <code>File</code> → <code>Import</code>.</p>
+</li>
+<li>
+<p>In the selection list, choose <code>Maven</code> → <code>Existing Maven Projects</code>,
+then click Next.</p>
+</li>
+<li>
+<p>Click <code>Browse</code> and navigate to the root of the <code>windup-ruleset</code> project directory, then click <code>OK</code>.</p>
+</li>
+<li>
+<p>After all projects are listed, click <code>Next</code>. Ignore any Maven build
+or dependency errors and click <code>Finish</code>. If you get a dialog titled
+<em>Incomplete Maven Goal Execution</em>, ignore it and click <code>OK</code> to continue.</p>
+</li>
+<li>
+<p>In the Project Explorer tab, right-click on the <code>windup-ruleset</code> project and choose <code>Run As</code> -&#8594; <code>Maven install</code>.</p>
 </li>
 </ul>
 </div>
@@ -1511,10 +1511,10 @@ or dependency errors and click <code>Finish</code>. If you get a dialog titled
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/windup/windup-rulesets">windup-ruleset</a></p>
+<p><a href="https://github.com/windup/windup">windup</a></p>
 </li>
 <li>
-<p><a href="https://github.com/windup/windup">windup</a></p>
+<p><a href="https://github.com/windup/windup-rulesets">windup-ruleset</a></p>
 </li>
 <li>
 <p><a href="https://github.com/windup/windup-distribution">windup-distribution</a></p>
@@ -1522,33 +1522,26 @@ or dependency errors and click <code>Finish</code>. If you get a dialog titled
 </ul>
 </div>
 <div class="paragraph">
-<p>The <code>windup-distribution</code> project has dependencies on the other 2 projects, so you must build the <code>windup-ruleset</code> and <code>windup</code> projects first. Use the following steps to build the Windup distribution.</p>
+<p>The <code>windup-rulesets</code> project has a dependency on the <code>windup</code> project and the <code>windup-distribution</code> project has dependencies on the other 2 projects, so you must build the projects in the following order:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Build the <a href="https://github.com/windup/windup-rulesets">windup-ruleset</a> project.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Open a command terminal and navigate to the root of the Windup Ruleset project directory.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="nowrap">    cd windup-ruleset/</pre>
-</div>
-</div>
+<p><code>windup</code> project</p>
 </li>
 <li>
-<p>Build the project.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="nowrap">mvn clean install</pre>
-</div>
-</div>
+<p><code>windup-rulesets</code> project</p>
 </li>
-</ul>
-</div>
+<li>
+<p><code>windup-distribution</code> project</p>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Follow the steps below to build the Windup distribution.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Build the <a href="https://github.com/windup/windup">windup</a> project.</p>
 <div class="ulist">
@@ -1574,6 +1567,29 @@ or dependency errors and click <code>Finish</code>. If you get a dialog titled
 <div class="listingblock">
 <div class="content">
 <pre class="nowrap">mvn clean install -DskipTests</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Build the <a href="https://github.com/windup/windup-rulesets">windup-ruleset</a> project.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Open a command terminal and navigate to the root of the Windup Ruleset project directory.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">    cd windup-ruleset/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Build the project.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">mvn clean install</pre>
 </div>
 </div>
 </li>
@@ -1847,7 +1863,7 @@ related to the rules or the core code base.</p>
 <p>The next step in the process is the execution of the migration rules. In this phase, the rules typically do not execute against the application input files. Instead, they execute against the graph database model. Windup rules are independent and decoupled and they communicate with each other using the graph database model. Rules query the graph database to obtain information needed to test the rule condition. They also update the data model with information based on the result of the rule execution. This allows rules to easily interact with other rules and enables the creation of very complex rules.</p>
 </div>
 <div class="paragraph">
-<p>The Windup distribution contains a large number of migration rules, but in some cases, you may need to create additional custom rules for your specific implementation. Windup is architected to allow you to create Java-based rule addons or XML rules and add easily add them to Windup. Custom rule creation is covered in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>The Windup distribution contains a large number of migration rules, but in some cases, you may need to create additional custom rules for your specific implementation. Windup is architected to allow you to create Java-based rule addons or XML rules and add easily add them to Windup. Custom rule creation is covered in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2272,7 +2288,7 @@ FooModel = fooService.create();
 <div class="sect3">
 <h4 id="_which_one_to_choose">5.6.2. Which one to choose?</h4>
 <div class="paragraph">
-<p><em>XML-based</em> rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of <em>XML-based</em> rules is the recommended approach. Creation of custom <em>XML-based</em> rules is covered in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p><em>XML-based</em> rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of <em>XML-based</em> rules is the recommended approach. Creation of custom <em>XML-based</em> rules is covered in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </div>
 <div class="paragraph">
 <p><em>Java-based</em> rule add-ons provide the ability to create very complex rules, manipulate the shared data model graph, and customize the resulting reports. If you need to test or perform complex conditions and operations or want to manipulate the shared data model graph, create custom reports, or extend the functionality in any other way beyond what the <em>XML-based</em> rules provide, you must create <em>Java-based</em> rules. Creation of custom <em>Java-based</em> rules is covered in the <a href="http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html">Windup Core Development Guide</a>.</p>
@@ -2492,7 +2508,7 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 <h2 id="_create_and_test_java_rule_add_ons">6. Create and Test Java Rule Add-ons</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide focuses on how to create Java-based rule add-ons. For instructions on how to create XML-based rules, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>This guide focuses on how to create Java-based rule add-ons. For instructions on how to create XML-based rules, see the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="Rules-Java-based-Rule-Structure">6.1. Java-based Rule Structure</h3>
@@ -2507,13 +2523,13 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 <div class="ulist">
 <ul>
 <li>
-<p>If the rule should run in a phase other than the default <a href="http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RulePhase.html#MIGRATION_PHASE">MIGRATION_PHASE</a>, you must implement the <a href="http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html#getPhase%28%29">getPhase()</a> method and specify in which Windup lifecycle phase the rule should be executed. For more information about rule phases, see <a href="#Rules-Rule-Execution-Lifecycle">Rule Execution Lifecycle</a>.</p>
+<p>If the rule should run in a phase other than the default <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RulePhase.html#MIGRATION_PHASE">MIGRATION_PHASE</a>, you must implement the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html#getPhase%28%29">getPhase()</a> method and specify in which Windup lifecycle phase the rule should be executed. For more information about rule phases, see <a href="#Rules-Rule-Execution-Lifecycle">Rule Execution Lifecycle</a>.</p>
 </li>
 <li>
-<p>Rules are added in the <a href="http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html">getConfiguration(GraphContext context)</a> method. This method is inherited from the <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a> interface org.ocpsoft.rewrite.config.ConfigurationProvider. Rules are discussed in more detail below under <a href="#add-rule-code-structure">Add Rule Code Structure</a></p>
+<p>Rules are added in the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html">getConfiguration(GraphContext context)</a> method. This method is inherited from the <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a> interface org.ocpsoft.rewrite.config.ConfigurationProvider. Rules are discussed in more detail below under <a href="#add-rule-code-structure">Add Rule Code Structure</a></p>
 </li>
 <li>
-<p>If other rules must execute after or before the rules in this provider, you must provide the list of RuleProvider classes using the <a href="http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html#getExecuteBefore%28%29">getExecuteBefore()</a> or <a href="http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html#getExecuteAfter%28%29getExecuteAfter()*" class="bare">http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html#getExecuteAfter%28%29getExecuteAfter()*</a> methods.</p>
+<p>If other rules must execute after or before the rules in this provider, you must provide the list of RuleProvider classes using the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html#getExecuteBefore%28%29">getExecuteBefore()</a> or <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html#getExecuteAfter%28%29getExecuteAfter()*" class="bare">http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html#getExecuteAfter%28%29getExecuteAfter()*</a> methods.</p>
 </li>
 </ul>
 </div>
@@ -2551,7 +2567,7 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 <div class="sect3">
 <h4 id="add-rule-code-structure">6.1.2. Add Rule Code Structure</h4>
 <div class="paragraph">
-<p>As mentioned above, individual rules are added to a ruleset in the <a href="http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/RuleProvider.html">getConfiguration(GraphContext context)</a> method using the <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a> ConfigurationBuilder class.</p>
+<p>As mentioned above, individual rules are added to a ruleset in the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html">getConfiguration(GraphContext context)</a> method using the <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a> ConfigurationBuilder class.</p>
 </div>
 <div class="paragraph">
 <p>Like most rule-based frameworks, Windup rules consist of the following:</p>
@@ -2944,7 +2960,7 @@ Example:</p>
 <p>Windup rules are based on the ocpsoft <strong>rewrite</strong> project. You can find more information about ocpsoft <strong>rewrite</strong> here: <a href="http://ocpsoft.org/rewrite/" class="bare">http://ocpsoft.org/rewrite/</a></p>
 </li>
 <li>
-<p>The JavaDoc for the Windup API is located here: <a href="http://windup.github.io/windup/docs/javadoc/latest/" class="bare">http://windup.github.io/windup/docs/javadoc/latest/</a></p>
+<p>The JavaDoc for the Windup API is located here: <a href="http://windup.github.io/windup/docs/latest/javadoc/" class="bare">http://windup.github.io/windup/docs/latest/javadoc/</a></p>
 </li>
 </ul>
 </div>
@@ -2966,7 +2982,7 @@ Example:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add the following properties. Be sure to replace <code>WINDUP_VERSION</code> with the current version of Windup, for example: <code>2.2.0.Final</code>.</p>
+<p>Add the following properties. Be sure to replace <code>WINDUP_VERSION</code> with the current version of Windup, for example: 2.4.0-Final.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;properties&gt;
@@ -3305,11 +3321,11 @@ Windup building elements.</p>
 <div class="sect3">
 <h4 id="add-the-rule-to-windup">6.3.5. Add the Rule to Windup</h4>
 <div class="paragraph">
-<p>Windup uses the Maven GAV (groupId, artifactId, and version) that is specified in the project POM file to locate the installed rule in the local Maven repository. The command to add the rule to Windup is executed in a terminal from the <code>WINDUP_HOME</code> directory and uses the following syntax.</p>
+<p>The command to install the rule in Windup uses the Maven GAV (groupId, artifactId, and version) to locate the rule in the Maven repository. The command uses the following syntax:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">bin/windup --install GROUP_ID:ARTIFACT_ID[,VERSION]</pre>
+<pre class="nowrap">WINDUP_HOME/bin/windup --install GROUP_ID:ARTIFACT_ID[,VERSION]</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3334,7 +3350,7 @@ Windup building elements.</p>
 <p>Type the following command, replacing the example rule GAV values with your project values.</p>
 <div class="listingblock">
 <div class="content">
-<pre>bin/windup --install org.example.rules:my-custom-rule-provider,1.0.0-SNAPSHOT</pre>
+<pre>WINDUP_HOME/bin/windup --install org.example.rules:my-custom-rule-provider,1.0.0-SNAPSHOT</pre>
 </div>
 </div>
 </li>
@@ -3363,14 +3379,14 @@ Windup building elements.</p>
 <div class="sect3">
 <h4 id="_test_the_java_based_rule_add_on">6.3.6. Test the Java-based Rule Add-on</h4>
 <div class="paragraph">
-<p>Test the Java-based rule add-on against your application file by running Windup from the WINDUP_HOME directory in a terminal.</p>
+<p>Test the Java-based rule add-on against your application file by running Windup in a terminal.</p>
 </div>
 <div class="paragraph">
 <p>The command uses this syntax:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>bin/windup [--sourceMode] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+<pre>WINDUP_HOME/bin/windup [--sourceMode] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3382,7 +3398,7 @@ Windup building elements.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>For more detailed instructions on how to execute Windup, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a>.</p>
+<p>For more detailed instructions on how to execute Windup, see the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.4/windup-user-guide">Windup User Guide</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3763,10 +3779,10 @@ only the changes you expect.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.3.0-Final folder extracted from the downloaded ZIP file.</p>
+<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the downloaded ZIP file.</p>
 </li>
 <li>
-<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.3.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.3.0-Final.zip file.</p>
+<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.4.0-Final.zip file.</p>
 </li>
 </ul>
 </div>
@@ -3788,7 +3804,7 @@ only the changes you expect.</p>
 <p>The latest Windup documentation is currently located here in the Windup project <a href="https://github.com/windup/windup/wiki/">Wiki</a>.</p>
 </div>
 <div class="paragraph">
-<p>For additional information, refer to the Windup <a href="http://windup.github.io/windup/docs/javadoc/latest/index.html">Javadoc</a>.</p>
+<p>For additional information, refer to the Windup <a href="http://windup.github.io/windup/docs/latest/javadoc/index.html">Javadoc</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3853,7 +3869,7 @@ Useful Commands: #action #agreed #help #info #idea #link #topic.</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-08-06 10:51:09 EDT
+Last updated 2015-09-03 11:23:18 EDT
 </div>
 </div>
 </body>

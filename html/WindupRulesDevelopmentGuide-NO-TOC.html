@@ -465,6 +465,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#xmlfile-syntax">3.4.2. xmlfile Syntax</a></li>
 <li><a href="#project-syntax">3.4.3. project Syntax</a></li>
 <li><a href="#filecontent-syntax">3.4.4. filecontent Syntax</a></li>
+<li><a href="#file-syntax">3.4.5. file Syntax</a></li>
 </ul>
 </li>
 <li><a href="#Rules-XML-Rule-Perform-Action-Syntax">3.5. XML Rule - Perform Action Syntax</a>
@@ -516,10 +517,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>This guide is for engineers, consultants, and others who plan to create custom XML-based rules for Windup.</p>
 </div>
 <div class="paragraph">
-<p>If you are new to Windup, it is recommended that you start with the <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a>. It provides detailed information about system requirements and detailed instructions on how to install and execute Windup. It also contains tips to optimize performance and provides links to other sources of information about Windup.</p>
+<p>If you are new to Windup, it is recommended that you start with the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.3/windup-user-guide">Windup User Guide</a>. It provides detailed information about system requirements and detailed instructions on how to install and execute Windup. It also contains tips to optimize performance and provides links to other sources of information about Windup.</p>
 </div>
 <div class="paragraph">
-<p>If you would like to contribute to the Windup source code base or provide Java-based rule add-ons, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html">Windup Core Development Guide</a>.</p>
+<p>If you would like to contribute to the Windup source code base or provide Java-based rule add-ons, see the <a href="https://github.com/windup/windup/wiki">Windup Wiki</a>.</p>
 </div>
 </div>
 </div>
@@ -782,8 +783,8 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\" or "\Users\USER_
 <p>Type the following command to test the rule in Windup, passing the test file as an input argument and a directory for the output report.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">For Linux:    bin/windup --sourceMode --input ~/migration-rules/data --output ~/migration-rules/reports
-For Windows:  bin\windup.bat --sourceMode --input migration-rules\data --output migration-rules\reports</pre>
+<pre class="nowrap">For Linux:    WINDUP_HOME/bin/windup --sourceMode --input ~/migration-rules/data --output ~/migration-rules/reports
+For Windows:  WINDUP_HOME\bin\windup.bat --sourceMode --input migration-rules\data --output migration-rules\reports</pre>
 </div>
 </div>
 </li>
@@ -841,7 +842,7 @@ For Windows:  bin\windup.bat --sourceMode --input migration-rules\data --output 
 <div class="sect3">
 <h4 id="_which_one_to_choose">3.1.2. Which one to choose?</h4>
 <div class="paragraph">
-<p><em>XML-based</em> rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of <em>XML-based</em> rules is the recommended approach. Creation of custom <em>XML-based</em> rules is covered in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p><em>XML-based</em> rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of <em>XML-based</em> rules is the recommended approach. Creation of custom <em>XML-based</em> rules is covered in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.3/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </div>
 <div class="paragraph">
 <p><em>Java-based</em> rule add-ons provide the ability to create very complex rules, manipulate the shared data model graph, and customize the resulting reports. If you need to test or perform complex conditions and operations or want to manipulate the shared data model graph, create custom reports, or extend the functionality in any other way beyond what the <em>XML-based</em> rules provide, you must create <em>Java-based</em> rules. Creation of custom <em>Java-based</em> rules is covered in the <a href="http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html">Windup Core Development Guide</a>.</p>
@@ -1186,7 +1187,7 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 <div class="ulist">
 <ul>
 <li>
-<p>You should have already installed Windup. Installation instruction are provided in the <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a>.</p>
+<p>You should have already installed Windup. Installation instruction are provided in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.3/windup-user-guide">Windup User Guide</a>.</p>
 </li>
 <li>
 <p>Before you begin, you may also want to be familiar with the following documentation:</p>
@@ -1196,7 +1197,7 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 <p>Windup rules are based on the ocpsoft <strong>rewrite</strong> project. You can find more information about ocpsoft <strong>rewrite</strong> here: <a href="http://ocpsoft.org/rewrite/" class="bare">http://ocpsoft.org/rewrite/</a></p>
 </li>
 <li>
-<p>The JavaDoc for the Windup API is located here: <a href="http://windup.github.io/windup/docs/javadoc/latest/" class="bare">http://windup.github.io/windup/docs/javadoc/latest/</a></p>
+<p>The JavaDoc for the Windup API is located here: <a href="http://windup.github.io/windup/docs/latest/javadoc/" class="bare">http://windup.github.io/windup/docs/latest/javadoc/</a></p>
 </li>
 <li>
 <p>The XML rule schema is located here: <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd" class="bare">http://windup.jboss.org/schema/windup-jboss-ruleset.xsd</a></p>
@@ -1428,6 +1429,9 @@ otherwise(action)</pre>
 <li>
 <p><a href="#filecontent-syntax">filecontent Syntax</a></p>
 </li>
+<li>
+<p><a href="#file-syntax">file Syntax</a></p>
+</li>
 </ul>
 </div>
 <div class="sect3">
@@ -1569,7 +1573,7 @@ otherwise(action)</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;location&gt;</p></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for <a href="http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/rules/apps/java/scan/ast/TypeReferenceLocation.html">TypeReferenceLocation</a>.</p>
+<p>The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/ast/java/data/TypeReferenceLocation.html">TypeReferenceLocation</a>.</p>
 </div>
 <div class="paragraph">
 <p><em>Example:</em></p>
@@ -1658,7 +1662,8 @@ otherwise(action)</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">xpathResultMatch=""</pre>
+<pre class="nowrap">&lt;xmlfile matches="//foo/text()"
+  xpathResultMatch="Text from foo."/&gt;</pre>
 </div>
 </div></div></td>
 </tr>
@@ -1726,7 +1731,49 @@ otherwise(action)</pre>
 </table>
 </div>
 <div class="sect5">
-<h6 id="_xmlfile_element_child_elements">xmlfile Element: Child Elements</h6>
+<h6 id="_xmlfile_element_code_matches_code_advanced_usage_custom_windup_xpath_functions">xmlfile Element: <code>matches</code> - Advanced usage: Custom Windup XPath functions</h6>
+<div class="paragraph">
+<p>The <code>matches</code> attribute may use several built-in custom XPath functions,
+which may have useful side effects, like setting the matched value on the rule variables stack.</p>
+</div>
+<div class="paragraph">
+<p>This is a brief list of these functions:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>windup:matches()</code></p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Match a XPath expression against a string, possibly containing Windup parametrization placeholders.</p>
+</div>
+<div class="paragraph">
+<p><em>Example:</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">matches="windup:matches(//foo/@class, '{javaclassname}'"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will match all <code>&lt;foo/&gt;</code> elements with a <code>class</code> attribute and store their value into <code>javaclassname</code> parameter for each iteration.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_xmlfile_element_child_elements">xmlfile Element: Child Elements</h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -1755,7 +1802,6 @@ otherwise(action)</pre>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -1896,6 +1942,52 @@ otherwise(action)</pre>
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="file-syntax">3.4.5. file Syntax</h4>
+<div class="sect4">
+<h5 id="_summary_6">Summary</h5>
+<div class="paragraph">
+<p>Use the <code>file</code> element to find the existence of files with a specific name, for example, a ' ibm-webservices-ext.xmi' file. For a better understanding of the <code>file</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/File.html">File</a> class.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_construct_a_file_element">Construct a file Element</h5>
+<div class="sect5">
+<h6 id="_file_element_attributes">file Element Attributes</h6>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filename</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match the file names against the provided parameterized string.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A variable name assigned to the rule so that it can be used as a reference in later processing. See the <code>from</code> attribute below.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Begin the search query with the filtered result from a previous search identified by its <code>as</code> VARIABLE_NAME.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="Rules-XML-Rule-Perform-Action-Syntax">3.5. XML Rule - Perform Action Syntax</h3>
@@ -1933,7 +2025,7 @@ otherwise(action)</pre>
 <div class="sect3">
 <h4 id="classification-syntax">3.5.1. Classification Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_6">Summary</h5>
+<h5 id="_summary_7">Summary</h5>
 <div class="paragraph">
 <p>The <code>classification</code> element is used to identify or classify application resources. It provides a level of effort and can also provide links to additional information about how to migrate this resource classification. For a better understanding of the <code>classification</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html">Classification</a> class.</p>
 </div>
@@ -2103,7 +2195,7 @@ otherwise(action)</pre>
 <div class="sect3">
 <h4 id="link-syntax">3.5.2. Link Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_7">Summary</h5>
+<h5 id="_summary_8">Summary</h5>
 <div class="paragraph">
 <p>The <code>link</code> element is used in classifications or hints to identify or classify links to informational content. For a better understanding of the <code>link</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html">Link</a> class.</p>
 </div>
@@ -2186,7 +2278,7 @@ otherwise(action)</pre>
 <div class="sect3">
 <h4 id="hint-syntax">3.5.3. Hint Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_8">Summary</h5>
+<h5 id="_summary_9">Summary</h5>
 <div class="paragraph">
 <p>The <code>hint</code> element is used to provide a hint or inline information about how to migrate a section of code. For a better understanding of the <code>hint</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Hint.html">Hint</a> class.</p>
 </div>
@@ -2359,7 +2451,7 @@ API Specification" /&gt;</code></pre>
 <div class="sect3">
 <h4 id="xslt-syntax">3.5.4. XSLT Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_9">Summary</h5>
+<h5 id="_summary_10">Summary</h5>
 <div class="paragraph">
 <p>The <code>xslt</code> element specifies how to transform an XML file. For a better understanding of the <code>xslt</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/operation/xslt/XSLTTransformation.html">XSLTTransformation</a>  class.</p>
 </div>
@@ -2499,7 +2591,7 @@ API Specification" /&gt;</code></pre>
 <div class="sect3">
 <h4 id="lineitem-syntax">3.5.5. Lineitem Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_10">Summary</h5>
+<h5 id="_summary_11">Summary</h5>
 <div class="paragraph">
 <p>The <code>lineitem</code> element is used to provide line item information about a hint on the project or application overview page. For a better understanding of the <code>lineitem</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html">Lineitem</a> class.</p>
 </div>
@@ -2566,7 +2658,7 @@ API Specification" /&gt;</code></pre>
 <div class="sect3">
 <h4 id="iteration-syntax">3.5.6. Iteration Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_11">Summary</h5>
+<h5 id="_summary_12">Summary</h5>
 <div class="paragraph">
 <p>The <code>iteration</code> element specifies to iterate over an implicit or explicit variable defined within the rule. For a better understanding of the <code>iteration</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/Iteration.html">Iteration</a> class.</p>
 </div>
@@ -2778,7 +2870,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 <div class="ulist">
 <ul>
 <li>
-<p>More examples of how to run Windup are located in the <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a>.</p>
+<p>More examples of how to run Windup are located in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.3/windup-user-guide">Windup User Guide</a>.</p>
 </li>
 <li>
 <p>Working examples of XML-based rules can be found on GitHub in the <a href="https://github.com/windup/windup/">Windup source code</a> GitHub repository and the Windup quickstarts <a href="https://github.com/windup/windup-quickstarts/">GitHub repository</a> or <a href="https://github.com/windup/windup-quickstarts/releases">latest release ZIP download</a>.</p>
@@ -2819,10 +2911,10 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a></p>
+<p><a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.3/windup-user-guide">Windup User Guide</a></p>
 </li>
 <li>
-<p><a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a></p>
+<p><a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit-windup/version-2.3/windup-rules-development-guide">Windup Rules Development Guide</a></p>
 </li>
 <li>
 <p><a href="http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html">Windup Core Development Guide</a></p>
@@ -2964,10 +3056,10 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 <div class="ulist">
 <ul>
 <li>
-<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.3.0-Final folder extracted from the downloaded ZIP file.</p>
+<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the downloaded ZIP file.</p>
 </li>
 <li>
-<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.3.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.3.0-Final.zip file.</p>
+<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.4.0-Final.zip file.</p>
 </li>
 </ul>
 </div>
@@ -2977,7 +3069,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-08-06 10:50:54 EDT
+Last updated 2015-09-03 11:23:18 EDT
 </div>
 </div>
 </body>

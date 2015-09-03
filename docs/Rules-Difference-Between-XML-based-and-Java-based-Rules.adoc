@@ -1,7 +1,7 @@
 
 
 
-
+:ProductDocCoreGuideURL: http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html
 
 
 [[Rules-Difference-Between-XML-based-and-Java-based-Rules]]
@@ -15,7 +15,7 @@ As mentioned before, {ProductName} provides a core and a default set of rules to
 
 _XML-based_ rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of _XML-based_ rules is the recommended approach. Creation of custom _XML-based_ rules is covered in the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide].
 
-_Java-based_ rule add-ons provide the ability to create very complex rules, manipulate the shared data model graph, and customize the resulting reports. If you need to test or perform complex conditions and operations or want to manipulate the shared data model graph, create custom reports, or extend the functionality in any other way beyond what the _XML-based_ rules provide, you must create _Java-based_ rules. Creation of custom _Java-based_ rules is covered in the https://github.com/windup/windup/wiki[{ProductName} Wiki].
+_Java-based_ rule add-ons provide the ability to create very complex rules, manipulate the shared data model graph, and customize the resulting reports. If you need to test or perform complex conditions and operations or want to manipulate the shared data model graph, create custom reports, or extend the functionality in any other way beyond what the _XML-based_ rules provide, you must create _Java-based_ rules. Creation of custom _Java-based_ rules is covered in the {ProductDocCoreGuideURL}[{ProductName} Core Development Guide].
 
 
 ==== Pros and Cons of XML-based Rules

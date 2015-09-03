@@ -1,16 +1,16 @@
 
 
+:ProductVersion: 2.4.0-Final
 
- 
 
 [[Dev-Execute-Built-from-Source]]
 === Execute {ProductName} (Built from {ProductName} Source)
 
 TODO: This page needs review! Is it still valid or necessary??
 
-These instructions are for {ProductName} core developers who plan to build {ProductName} from source to test code updates. 
+These instructions are for {ProductName} core developers who plan to build {ProductShortName} from source to test code updates. 
 
-* If you are new to the project and not familiar with the procedures to execute {ProductName}, see xref:Execute[Execute {ProductName}]. It contains complete step-by-step instructions to execute {ProductName} and also provides command line examples.
+* If you are new to the project and not familiar with the procedures to execute {ProductShortName}, see xref:Execute[Execute {ProductName}]. It contains complete step-by-step instructions to execute {ProductShortName} and also provides command line examples.
 
 * Experienced users who need a refresher can follow the steps below.
 +
@@ -48,8 +48,8 @@ export FORGE_HOME=./Forge/
 export PATH=$PATH:$FORGE_HOME/bin
 rm -rf ~/.forge/addons/
 forge -b --install org.jboss.windup:ui,2.0.0-SNAPSHOT
-forge -b --install org.jboss.windup.rules.apps:rules-java,2.0.0-SNAPSHOT
-forge -b --install org.jboss.windup.rules.apps:rules-java-ee,2.0.0-SNAPSHOT
+forge -b --install org.jboss.windup.rules.apps:rules-java,{ProductVersion}
+forge -b --install org.jboss.windup.rules.apps:rules-java-ee,{ProductVersion}
 
 ## Start Forge
 forge

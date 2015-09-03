@@ -1,14 +1,11 @@
 :ProductName: Windup
-:ProductVersion: 2.2.0-Final
-:ProductDistribution: windup-distribution-2.2.0-Final
-:ProductHomeVar: WINDUP_HOME 
 
 [[Dev-Release-Process]]
 === {ProductName} Release Process
 
 {ProductName} consists of artifacts from multiple GitHub repositories. Use the following procedure to create a Windup release.
 
-. Release http://github.com/windup/nexus-indexer
+. Release http://github.com/windup/nexus-repository-indexer
 +
 ----
 mvn release:prepare release:perform -DreleaseVersion=X -Dtag=Y -DdevelopmentVersion=Z

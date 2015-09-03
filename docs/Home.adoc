@@ -2,7 +2,7 @@
 
 
 
-
+:ProductDocCoreGuideURL: http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html
 
 = Welcome to {ProductName}
 
@@ -31,11 +31,10 @@ https://github.com/windup/windup-legacy[windup-legacy] GitHub repository.
 {ProductName} documentation is organized into guides that target specific audiences.
 
 * xref:./User-Guide[{ProductName} User Guide] is for engineers, consultants, or others who plan to use
-{ProductName} to migrate applications or other components. For a single page HTML version, see the {ProductDocUserGuideURL}[{ProductName} User Guide].
-* xref:./Rules-Development-Guide[{ProductName} Rules Development Guide] provides details for developers, consultants, and others who plan to create custom rule add-ons for the {ProductName} project. For a single page HTML version, see the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide].
-* xref:./Core-Development-Guide[{ProductName} Core Development Guide] provides information for developers who plan to contribute source code updates or core rule add-ons to the {ProductName} project. For a single page HTML version, see the {ProductDocCoreGuideURL}[{ProductName} Core Development Guide].
-* xref:./Migration-Planning-Guide[Migration Planning Guide] is for developers, Project Managers, or IT managers who must 
-interpret the {ProductShortName} reports and develop a project plan.
+{ProductName} to migrate applications or other components. For a single page HTML version, see the {ProductDocUserGuideURL}[{ProductName} User Guide single HTML].
+* xref:./Rules-Development-Guide[{ProductName} Rules Development Guide] provides details for developers, consultants, and others who plan to create custom rule add-ons for the {ProductName} project. For a single page HTML version, see the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide single HTML].
+* xref:./Core-Development-Guide[{ProductName} Core Development Guide] provides information for developers who plan to contribute source code updates or core rule add-ons to the {ProductName} project. For a single page HTML version, see the {ProductDocCoreGuideURL}[{ProductName} Core Development Guide single HTML].
+* xref:./Migration-Planning-Guide[Migration Planning Guide] is for developers, Project Managers, or IT managers who must interpret the {ProductShortName} reports and develop a project plan.
 
 == Additional Resources
 
@@ -44,6 +43,10 @@ interpret the {ProductShortName} reports and develop a project plan.
 ** {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide]
 ** {ProductDocCoreGuideURL}[{ProductName} Core Development Guide]
 * {ProductShortName} Javadoc: http://windup.github.io/windup/docs/latest/javadoc[{ProductName} JavaDoc]
+*  https://access.redhat.com/taxonomy/tags/windup[{ProductShortName} Knowledgebase articles on the Customer Portal]
+* {ProductShortName} Knowledgebase migration articles:
+** https://access.redhat.com/search/#/?q=tag:%28%22websphere%22%29+tag:%28%22windup%22%29&p=1&srch=any&language=en&documentKind=[WebSphere migration articles]
+** https://access.redhat.com/search/#/?q=tag:%28%22websphere%22%29+tag:%28%22windup%22%29&p=1&srch=any&language=en&documentKind=[WebLogic migration articles]
 * {ProductShortName} Forums: https://community.jboss.org/en/windup
 * {ProductShortName} Issue Tracker: https://issues.jboss.org/browse/WINDUP
 * {ProductShortName} Users Mailing List: windup-users@lists.jboss.org

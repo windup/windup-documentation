@@ -5,22 +5,20 @@
 === Connect to the Graph via Rexster
 
 There is a specific add-on for running Rexster along your graph with 
-groupId *org.jboss.windup.rexster* and *artifactId* Rexster.
+groupId *org.jboss.windup.rexster* and *artifactId* Rexster. This addon is by default deployed to each arquillian test within core windup addons. This however happens only if -Dmaven.surefire.debug is set to true . To make it deploy by default in some arbitrary addon, make the addon dependent on the windup-test-harness and it will make the default rexster deployment for you.
 
 ==== Running Rexster Within Your Test
+As it was already said, rexster is usually deployed by default along your tests while debugging, your addon just need to be dependent on windup-test-harness. However if the default functionality is not enough, or you need to deploy rexster even if not using debugging, you may instruct arquillian to deploy rexster addon:
 
-Deploy the Rexster add-on by adding the Rexster add-on to the dependencies.
 [source,java,options="nowrap"]
 ----
 @Deployment
     @Dependencies({
                 ....
-                @AddonDependency(name = "org.jboss.windup.rexster:windup-rexster", version = "2.3.0-SNAPSHOT", imported=false),
+                @AddonDependency(name = "org.jboss.windup.rexster:windup-rexster", version = "2.4.0-SNAPSHOT", imported=false),
                 ....
     })
 ----
-
-Then put some debug breakpoint in the specific phase of graph you are interested in and browse http://localhost:8182/ to enjoy the graph! Username and password: rexster
 
 ==== Run Rexster within {ProductName}
 

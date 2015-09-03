@@ -15,7 +15,7 @@ As it was already said, rexster is usually deployed by default along your tests 
 @Deployment
     @Dependencies({
                 ....
-                @AddonDependency(name = "org.jboss.windup.rexster:windup-rexster", version = "2.3.0-SNAPSHOT", imported=false),
+                @AddonDependency(name = "org.jboss.windup.rexster:windup-rexster", version = "2.4.0-SNAPSHOT", imported=false),
                 ....
     })
 ----

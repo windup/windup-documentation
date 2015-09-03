@@ -48,17 +48,17 @@ To provide categorization for filtering, use `CATEGORY`.
 
 For its metadata, {ProductShortName} uses the keys defined in `RuleMetadata`:
 
-* http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/metadata/RuleMetadata.html#CATEGORY[CATEGORY] (String): Define which category the rule belongs to, which can be then used to filter the rules to execute (plus all those they depend on). Not implemented yet.
+* http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RuleMetadata.html#CATEGORY[CATEGORY] (String): Define which category the rule belongs to, which can be then used to filter the rules to execute (plus all those they depend on). Not implemented yet.
 
-* http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/metadata/RuleMetadata.html#ORIGIN[ORIGIN] (String): The rule origin. Typically a class name.
+* http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RuleMetadata.html#ORIGIN[ORIGIN] (String): The rule origin. Typically a class name.
 
-* http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/metadata/RuleMetadata.html#[AUTO_COMMIT] (boolean): Whether to call database `commit()` after the rule executes.
+* http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RuleMetadata.html#[AUTO_COMMIT] (boolean): Whether to call database `commit()` after the rule executes.
 
-* http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/metadata/RuleMetadata.html#TREAT_EXCEPTIONS_AS_FATAL[TREAT_EXCEPTIONS_AS_FATAL] (boolean): Whether all Exceptions from this Rule are to be treated as fatal. The default is non-fatal.
+* http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RuleMetadata.html#TREAT_EXCEPTIONS_AS_FATAL[TREAT_EXCEPTIONS_AS_FATAL] (boolean): Whether all Exceptions from this Rule are to be treated as fatal. The default is non-fatal.
 
-* http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/metadata/RuleMetadata.html#RULE_PROVIDER[RULE_PROVIDER]: The `RuleProvider` that originated the rule. This is used internally, not to be specified by rule author.
+* http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RuleMetadata.html#RULE_PROVIDER[RULE_PROVIDER]: The `RuleProvider` that originated the rule. This is used internally, not to be specified by rule author.
 
-You can find out more information about rule metadata here: http://windup.github.io/windup/docs/javadoc/latest/org/jboss/windup/config/metadata/RuleMetadata.html[RuleMetadata] Javadoc. 
+You can find out more information about rule metadata here: http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RuleMetadata.html[RuleMetadata] Javadoc. 
 
 
 ==== How to define rule metadata

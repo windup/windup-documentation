@@ -1,0 +1,61 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Export-the-Report-for-Use-by-Spreadsheet-Programs]]
+=== Export the Report for Use by Spreadsheet Programs 
+
+{ProductShortName} provides the ability to export the report data, including the *Classifications* and *Hints*, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields delimited by a semicolon (;) separator.
+
+{ProductShortName} follows the https://tools.ietf.org/html/rfc4180[Common Format and MIME Type for Comma-Separated Values (CSV) Files] standard for escaping special characters contained within each field in the file. The exported file has the following characteristics.
+
+. The file is named with the `.csv' file extension.
+. The first row is a header listing the names of the fields.
++
+[options="nowrap"]
+----
+"Rule Id";"Problem type";"Title";"Description";"Links";"Application";"File Name";"File Path";"Line";"Story points"
+----
+. Each field is enclosed in double quotes (").
++
+[options="nowrap"]
+----
+"FindUnboundJavaReferencesRuleProvider";"hint";"Unresolved Class Binding";"";"";"JEE Example EJB Services (org.windup.example:jee-example-services:1.0.0)";"ProductCatalogLocalHome.java";"/home/username/windup-reports/jee-example-app-1.0.0.ear-report/archives/jee-example-services.jar/com/acme/anvil/service/ProductCatalogLocalHome.java";"9";"5"
+----
+. Any double quote (") appearing within a field is preceded with another double quote. 
++
+[options="nowrap"]
+----
+"MyWindupRule";"hint";""Replace the ""foo"" class";"Replace the ""foo"" class instances with ""bar""";;"MyApp";"MyApp.java";"home/username/MyApp";"200";"8"
+----
+
+The CSV formatted file can be imported and manipulated by spreadsheet software such as Microsoft Excel and OpenOffice or LibreOffice Calc. Spreadsheet software provide the ability to sort, analyze, evaluate, and manage the result data from a Windup report.  
+
+==== Enable the Export Functionality
+
+To enable export of the report into CSV file, run {ProductShortName} with `--exportCSV` argument. The CSV file will be created in the directory specified by the `--output` argument.
+
+==== Import the CSV File into a Spreadsheet
+
+. Start the spreadsheet software (LibreOffice Calc, OpenOffice Calc, Microsoft Excel, etc.).
+. Choose `File` --> `Open'.
+. Navigate to the CSV exported file and select it.
+. Under `Separator options, be sure to check `Semicolon`. Keep the rest of the defaults and click `OK`.
+. The data is now ready to analyze in the spreadsheet software.
+
+For more information or to resolve any issues, check the help for your spreadsheet software.
+
+====  Overview of the CSV data structure
+
+The CSV formatted output file contains the following data fields:
+
+Rule Id:: The ID of the rule that generated the given item.
+Problem type:: "Hint" or "Classification"
+Title:: The title of the _Classification_ or _Hint_. This field summarizes the issue for the given item.
+Description:: The detailed description of the issue for the given item.
+Links:: URLs that provide additional information about the issue. A link consists of two attributes: the link and a description of the link.
+Application:: The name of the application for which this item was generated.
+File Name:: The name of the file for the given item.
+File Path:: The file path of the file for the given item.
+Line:: The line number of the file for the given item.
+Story points:: The number of story points, which represent the level of effort, assigned to the given item. 
+

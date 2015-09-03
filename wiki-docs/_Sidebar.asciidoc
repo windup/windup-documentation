@@ -8,26 +8,23 @@
 https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&g=org.jboss.windup&a=windup-distribution&v=LATEST&e=zip&c=offline[Latest {ProductName} ZIP distribution]
 https://github.com/windup/windup-quickstarts/releases[{ProductShortName} Quickstarts]
 
+=== Published Guides 
+
+https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.3/windup-user-guide[{ProductName} User Guide] +
+https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.3/windup-rules-development-guide[{ProductName} Rules Development Guide] +
+
+=== Unpublished Pre-Release Preview of the Guides
+
+http://windup.github.io/windup/docs/latest/pdf/WindupUserGuide.pdf[{ProductName} User Guide] +
+http://windup.github.io/windup/docs/latest/pdf/WindupRulesDevelopmentGuide.pdf[{ProductName} Rules Development Guide] +
+http://windup.github.io/windup/docs/latest/pdf/WindupCoreDevelopmentGuide.pdf[{ProductName} Core Development Guide] +
+
 === Wiki Guides:
 
 link:./User-Guide[User Guide] +
 link:./Rules-Development-Guide[Rules Development Guide] +
 link:./Core-Development-Guide[Core Development Guide] +
 link:./Migration-Planning-Guide[Migration Planning Guide] +
-
-=== Published Guides 
-
-==== Single-page HTML Format
-
-{ProductDocUserGuideURL}[{ProductName} User Guide] +
-{ProductDocRulesGuideURL}[{ProductName} Rules Development Guide] +
-{ProductDocCoreGuideURL}[{ProductName} Core Development Guide] +
-
-==== PDF Format
-
-http://windup.github.io/windup/docs/latest/pdf/WindupUserGuide.pdf[{ProductName} User Guide] +
-http://windup.github.io/windup/docs/latest/pdf/WindupRulesDevelopmentGuide.pdf[{ProductName} Rules Development Guide] +
-http://windup.github.io/windup/docs/latest/pdf/WindupCoreDevelopmentGuide.pdf[{ProductName} Core Development Guide] +
 
 === Developer Materials
 

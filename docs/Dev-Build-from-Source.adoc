@@ -20,7 +20,7 @@ You can choose from the following:
 OpenJDK
 Oracle Java SE
 ----
-. Maven 3.1.1 or newer
+. Maven 3.2.5 or newer
 +
 If you have not yet installed or configured Maven, see
 xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
@@ -41,7 +41,7 @@ Developer Studio 7.1.1] or newer
 * https://www.eclipse.org/downloads/[Eclipse 4.3 (Kepler)] or newer
 
 +
-The IDE must embed Maven 3.1.1 or later. See xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
+The IDE must embed Maven 3.2.5 or later. See xref:Install-and-Configure-Maven[Install and Configure Maven] for details.
 
 ==== Prerequisites
 
@@ -57,15 +57,6 @@ If you prefer, you can use an IDE to build {ProductShortName}.
 . Configure the Maven installation in your IDE as described here:
 https://github.com/windup/windup/wiki/Install-and-Configure-Maven[Install and Configure Maven].
 . Start JBoss Developer Studio or Eclipse.
-. Import the `windup-ruleset` project.
-* From the menu, select `File` → `Import`.
-* In the selection list, choose `Maven` → `Existing Maven Projects`,
-then click Next.
-* Click `Browse` and navigate to the root of the `windup-ruleset` project directory, then click `OK`.
-* After all projects are listed, click `Next`. Ignore any Maven build
-or dependency errors and click `Finish`. If you get a dialog titled
-_Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
-* In the Project Explorer tab, right-click on the `windup-ruleset` project and choose `Run As` --> `Maven install`.
 . Import the `windup` project.
 * From the menu, select `File` → `Import`.
 * In the selection list, choose `Maven` → `Existing Maven Projects`,
@@ -76,6 +67,15 @@ or dependency errors and click `Finish`. If you get a dialog titled
 _Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
 * In the Project Explorer tab, find the `windup_parent` project in the
 list, right-click, and choose `Run As` --> `Maven install`.
+. Import the `windup-ruleset` project.
+* From the menu, select `File` → `Import`.
+* In the selection list, choose `Maven` → `Existing Maven Projects`,
+then click Next.
+* Click `Browse` and navigate to the root of the `windup-ruleset` project directory, then click `OK`.
+* After all projects are listed, click `Next`. Ignore any Maven build
+or dependency errors and click `Finish`. If you get a dialog titled
+_Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
+* In the Project Explorer tab, right-click on the `windup-ruleset` project and choose `Run As` --> `Maven install`.
 . Import the `windup-distribution` project.
 * From the menu, select `File` → `Import`.
 * In the selection list, choose `Maven` → `Existing Maven Projects`,
@@ -91,27 +91,18 @@ _Incomplete Maven Goal Execution_, ignore it and click `OK` to continue.
 
 {ProductShortName} source code consists of 3 projects: 
 
-* https://github.com/windup/windup-rulesets[windup-ruleset]
 * https://github.com/windup/windup[windup]
+* https://github.com/windup/windup-rulesets[windup-ruleset]
 * https://github.com/windup/windup-distribution[windup-distribution]
 
-The `windup-distribution` project has dependencies on the other 2 projects, so you must build the `windup-ruleset` and `windup` projects first. Use the following steps to build the {ProductShortName} distribution.
+The `windup-rulesets` project has a dependency on the `windup` project and the `windup-distribution` project has dependencies on the other 2 projects, so you must build the projects in the following order:
 
-. Build the https://github.com/windup/windup-rulesets[windup-ruleset] project.
-+
-* Open a command terminal and navigate to the root of the {ProductShortName} Ruleset project directory. 
-+
-[options="nowrap"]
-----
-    cd windup-ruleset/
-----
-+ 
-* Build the project.
-+
-[options="nowrap"]
-----
-mvn clean install
-----
+. `windup` project
+. `windup-rulesets` project
+. `windup-distribution` project
+
+Follow the steps below to build the {ProductShortName} distribution.
+
 . Build the https://github.com/windup/windup[windup] project.
 +
 * Open a command terminal and navigate to the root of the windup project directory. 
@@ -134,6 +125,21 @@ mvn clean install
 [options="nowrap"]
 ----
 mvn clean install -DskipTests
+----
+. Build the https://github.com/windup/windup-rulesets[windup-ruleset] project.
++
+* Open a command terminal and navigate to the root of the {ProductShortName} Ruleset project directory. 
++
+[options="nowrap"]
+----
+    cd windup-ruleset/
+----
++ 
+* Build the project.
++
+[options="nowrap"]
+----
+mvn clean install
 ----
 . Build the https://github.com/windup/windup-distribution[windup-distribution] project.
 +
