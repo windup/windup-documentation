@@ -4,7 +4,7 @@
 [[Export-the-Report-for-Use-by-Spreadsheet-Programs]]
 === Export the Report for Use by Spreadsheet Programs 
 
-{ProductShortName} provides the ability to export the report data, including the *Classifications* and *Hints*, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields delimited by a semicolon (;) separator.
+{ProductShortName} provides the ability to export the report data, including the *Classifications* and *Hints*, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields delimited by a comma (,) separator.
 
 {ProductShortName} follows the https://tools.ietf.org/html/rfc4180[Common Format and MIME Type for Comma-Separated Values (CSV) Files] standard for escaping special characters contained within each field in the file. The exported file has the following characteristics.
 
@@ -13,19 +13,19 @@
 +
 [options="nowrap"]
 ----
-"Rule Id";"Problem type";"Title";"Description";"Links";"Application";"File Name";"File Path";"Line";"Story points"
+"Rule Id","Problem type","Title","Description","Links","Application","File Name","File Path","Line","Story points"
 ----
 . Each field is enclosed in double quotes (").
 +
 [options="nowrap"]
 ----
-"FindUnboundJavaReferencesRuleProvider";"hint";"Unresolved Class Binding";"";"";"JEE Example EJB Services (org.windup.example:jee-example-services:1.0.0)";"ProductCatalogLocalHome.java";"/home/username/windup-reports/jee-example-app-1.0.0.ear-report/archives/jee-example-services.jar/com/acme/anvil/service/ProductCatalogLocalHome.java";"9";"5"
+"FindUnboundJavaReferencesRuleProvider","hint","Unresolved Class Binding","","","JEE Example EJB Services (org.windup.example:jee-example-services:1.0.0)","ProductCatalogLocalHome.java","/home/username/windup-reports/jee-example-app-1.0.0.ear-report/archives/jee-example-services.jar/com/acme/anvil/service/ProductCatalogLocalHome.java","9","5"
 ----
 . Any double quote (") appearing within a field is preceded with another double quote. 
 +
 [options="nowrap"]
 ----
-"MyWindupRule";"hint";""Replace the ""foo"" class";"Replace the ""foo"" class instances with ""bar""";;"MyApp";"MyApp.java";"home/username/MyApp";"200";"8"
+"MyWindupRule","hint",""Replace the ""foo"" class","Replace the ""foo"" class instances with ""bar""",,"MyApp","MyApp.java","home/username/MyApp","200","8"
 ----
 
 The CSV formatted file can be imported and manipulated by spreadsheet software such as Microsoft Excel and OpenOffice or LibreOffice Calc. Spreadsheet software provide the ability to sort, analyze, evaluate, and manage the result data from a Windup report.  
@@ -39,7 +39,7 @@ To enable export of the report into CSV file, run {ProductShortName} with `--exp
 . Start the spreadsheet software (LibreOffice Calc, OpenOffice Calc, Microsoft Excel, etc.).
 . Choose `File` --> `Open'.
 . Navigate to the CSV exported file and select it.
-. Under `Separator options, be sure to check `Semicolon`. Keep the rest of the defaults and click `OK`.
+. Under `Separator options, be sure to check `Comma`. Keep the rest of the defaults and click `OK`.
 . The data is now ready to analyze in the spreadsheet software.
 
 For more information or to resolve any issues, check the help for your spreadsheet software.
