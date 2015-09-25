@@ -1338,9 +1338,6 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Navigate to the CSV exported file and select it.</p>
 </li>
 <li>
-<p>Under <code>Separator options, be sure to check `Comma</code>. Keep the rest of the defaults and click <code>OK</code>.</p>
-</li>
-<li>
 <p>The data is now ready to analyze in the spreadsheet software.</p>
 </li>
 </ol>
@@ -1549,7 +1546,17 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Windup forums: <a href="https://community.jboss.org/en/windup" class="bare">https://community.jboss.org/en/windup</a></p>
 </li>
 <li>
-<p>Windup issue tracker: <a href="https://issues.jboss.org/browse/WINDUP" class="bare">https://issues.jboss.org/browse/WINDUP</a></p>
+<p>Windup JIRA issue trackers</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Core Windup: <a href="https://issues.jboss.org/browse/WINDUP" class="bare">https://issues.jboss.org/browse/WINDUP</a></p>
+</li>
+<li>
+<p>Windup Rules: <a href="https://issues.jboss.org/browse/WINDUPRULE" class="bare">https://issues.jboss.org/browse/WINDUPRULE</a></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Windup users mailing List: <a href="mailto:windup-users@lists.jboss.org">windup-users@lists.jboss.org</a></p>
@@ -1621,7 +1628,13 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Project</strong>:  <em>Windup</em></p>
+<p><strong>Project</strong></p>
+<div class="paragraph">
+<p>For core Windup issues, choose <em>Windup: (WINDUP)</em>.</p>
+</div>
+<div class="paragraph">
+<p>For issues with Windup rules, choose: <em>Windup rules (WINDUPRULES)</em>.</p>
+</div>
 </li>
 <li>
 <p><strong>Issue Type</strong>:  <em>Bug</em></p>
@@ -1668,21 +1681,23 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <dl>
 <dt class="hdlist1">Rule</dt>
 <dd>
-<p>A piece of code that performs a single unit of work during the migration process. Depending on the complexity of the rule, it may or may not include configuration data. Extensive configuration information may be externalized into external configuration, for example, a custom XML file. The following is an example of a Java-based rule added to the <code>JDKConfig</code> RuleProvider class.</p>
-</dd>
-</dl>
-</div>
+<p>A piece of code that performs a single unit of work during the migration process. The following is an example of am XML-based rule that finds and reports on instances of <code>weblogic-ejb-jar</code> XML files and provides a link to a article on the Red Hat Customer Portal that describes how to migrate the file.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">.addRule()
-    .when(JavaClass.references("java.lang.ClassLoader$").at(TypeReferenceLocation.TYPE))
-    .perform(Classification.as("Java Classloader, must be migrated.")
-    .with(Link.to("Red Hat Customer Portal: How to get resources via the ClassLoader in a JavaEE application in JBoss EAP",  "https://access.redhat.com/knowledge/solutions/239033"))
-     .withEffort(1))</code></pre>
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;rule id="weblogic-xml-descriptor-04000"&gt;
+    &lt;when&gt;
+        &lt;xmlfile matches="/weblogic-ejb-jar" /&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;classification title="WebLogic EJB XML" severity="mandatory" effort="3"&gt;
+            &lt;link href="https://access.redhat.com/articles/1326823" title="Map weblogic-ejb-jar.xml Elements to the jboss-ejb3.xml Descriptor" /&gt;
+            &lt;tag&gt;ejb&lt;/tag&gt;
+        &lt;/classification&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
 </div>
 </div>
-<div class="dlist">
-<dl>
+</dd>
 <dt class="hdlist1">RuleProvider</dt>
 <dd>
 <p>An implementation of OCPSoft ConfigurationProvider class specifically for Windup. It provides Rule instances and the relevant RuleProviderMetadata for those Java-based and XML-based Rule instances.</p>
@@ -1763,6 +1778,9 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <li>
 <p>Add additional proprietary packages that should not be processed to the <code>ignore/proprietary.package-ignore.txt</code> file in the Windup distribution directory. Windup can still find the references to the packages in the application source code, but avoids the need to decompile and analyze the proprietary classes.</p>
 </li>
+<li>
+<p>If you have access to a server that has better resources than your laptop or desktop machine, you may want to consider running Windup on that server.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -1773,6 +1791,9 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p>If you have access to a server that has better resources than your laptop/desktop, than you may want to consider running Windup on that server.</p>
+</li>
 <li>
 <p>Very large applications that require decompilation have large memory requirements. 8 GB RAM is recommended. This allows 3 - 4 GB RAM for use by the JVM.</p>
 </li>
@@ -1792,7 +1813,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-25 13:50:46 EDT
+Last updated 2015-09-25 15:04:57 EDT
 </div>
 </div>
 </body>

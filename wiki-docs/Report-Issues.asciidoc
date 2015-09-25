@@ -25,7 +25,12 @@ If you do not yet have a JIRA account, create one using the following procedure.
 
 2. Choose the following options and click the `Next` button.
 
-* *Project*:  _Windup_ 
+* *Project* 
++
+For core Windup issues, choose _Windup: (WINDUP)_.
++ 
+For issues with Windup rules, choose: _Windup rules (WINDUPRULES)_.
+
 * *Issue Type*:  _Bug_
 
 3. On the next screen complete the following fields:

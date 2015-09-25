@@ -26,9 +26,13 @@ Try these suggestions first before upgrading hardware.
 
 * Add additional proprietary packages that should not be processed to the `ignore/proprietary.package-ignore.txt` file in the {ProductShortName} distribution directory. {ProductShortName} can still find the references to the packages in the application source code, but avoids the need to decompile and analyze the proprietary classes.
 
+* If you have access to a server that has better resources than your laptop or desktop machine, you may want to consider running {ProductShortName} on that server.
+
 ===== Hardware Upgrade Suggestions
 
 If the steps above do not improve performance, you may need to upgrade your hardware.
+
+* If you have access to a server that has better resources than your laptop/desktop, than you may want to consider running {ProductShortName} on that server.
 
 * Very large applications that require decompilation have large memory requirements. 8 GB RAM is recommended. This allows 3 - 4 GB RAM for use by the JVM.
 
