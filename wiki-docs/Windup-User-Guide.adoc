@@ -1,0 +1,26 @@
+:toc:
+:toclevels: 3
+:numbered:
+
+:imagesdir: images
+
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductVersion: 2.4.0-Final
+:ProductDistribution: windup-distribution-2.4.0-Final
+:ProductHomeVar: WINDUP_HOME 
+:ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME
+:ProductSrcHomeVar: WINDUP_SOURCE_HOME
+:ProductReleaseVar: WINDUP_RELEASE
+
+:ProductDocVersion: version-2.4
+
+:ProductDocUserGuideURL: http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html
+:ProductDocRulesGuideURL: http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html
+:ProductDocCoreGuideURL: http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html
+
+= {ProductName} User Guide
+
+include::Windup-User-Guide-Topics.adoc[tabsize=4]
+
+

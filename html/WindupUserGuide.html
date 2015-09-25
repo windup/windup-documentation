@@ -1306,7 +1306,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <div class="sect2">
 <h3 id="Export-the-Report-for-Use-by-Spreadsheet-Programs">2.4. Export the Report for Use by Spreadsheet Programs</h3>
 <div class="paragraph">
-<p>Windup provides the ability to export the report data, including the <strong>Classifications</strong> and <strong>Hints</strong>, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields delimited by a semicolon (;) separator.</p>
+<p>Windup provides the ability to export the report data, including the <strong>Classifications</strong> and <strong>Hints</strong>, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields delimited by a comma (,) separator.</p>
 </div>
 <div class="paragraph">
 <p>Windup follows the <a href="https://tools.ietf.org/html/rfc4180">Common Format and MIME Type for Comma-Separated Values (CSV) Files</a> standard for escaping special characters contained within each field in the file. The exported file has the following characteristics.</p>
@@ -1320,7 +1320,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>The first row is a header listing the names of the fields.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">"Rule Id";"Problem type";"Title";"Description";"Links";"Application";"File Name";"File Path";"Line";"Story points"</pre>
+<pre class="nowrap">"Rule Id","Problem type","Title","Description","Links","Application","File Name","File Path","Line","Story points"</pre>
 </div>
 </div>
 </li>
@@ -1328,7 +1328,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Each field is enclosed in double quotes (").</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">"FindUnboundJavaReferencesRuleProvider";"hint";"Unresolved Class Binding";"";"";"JEE Example EJB Services (org.windup.example:jee-example-services:1.0.0)";"ProductCatalogLocalHome.java";"/home/username/windup-reports/jee-example-app-1.0.0.ear-report/archives/jee-example-services.jar/com/acme/anvil/service/ProductCatalogLocalHome.java";"9";"5"</pre>
+<pre class="nowrap">"FindUnboundJavaReferencesRuleProvider","hint","Unresolved Class Binding","","","JEE Example EJB Services (org.windup.example:jee-example-services:1.0.0)","ProductCatalogLocalHome.java","/home/username/windup-reports/jee-example-app-1.0.0.ear-report/archives/jee-example-services.jar/com/acme/anvil/service/ProductCatalogLocalHome.java","9","5"</pre>
 </div>
 </div>
 </li>
@@ -1336,7 +1336,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Any double quote (") appearing within a field is preceded with another double quote.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">"MyWindupRule";"hint";""Replace the ""foo"" class";"Replace the ""foo"" class instances with ""bar""";;"MyApp";"MyApp.java";"home/username/MyApp";"200";"8"</pre>
+<pre class="nowrap">"MyWindupRule","hint",""Replace the ""foo"" class","Replace the ""foo"" class instances with ""bar""",,"MyApp","MyApp.java","home/username/MyApp","200","8"</pre>
 </div>
 </div>
 </li>
@@ -1365,7 +1365,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Navigate to the CSV exported file and select it.</p>
 </li>
 <li>
-<p>Under <code>Separator options, be sure to check `Semicolon</code>. Keep the rest of the defaults and click <code>OK</code>.</p>
+<p>Under <code>Separator options, be sure to check `Comma</code>. Keep the rest of the defaults and click <code>OK</code>.</p>
 </li>
 <li>
 <p>The data is now ready to analyze in the spreadsheet software.</p>
@@ -1819,7 +1819,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-09-09 16:15:24 EDT
+Last updated 2015-09-23 09:45:11 EDT
 </div>
 </div>
 </body>

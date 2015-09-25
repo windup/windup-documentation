@@ -1,5 +1,5 @@
-:ProductName: Windup
-:ProductShortName: Windup
+
+
 
 [[Dev-Create-the-JavaDoc]]
 === Create {ProductName} JavaDoc
@@ -14,7 +14,7 @@ If you want to build an updated version, use the following procedure to create J
 * {ProductShortName} XML-based rulesets (windup-rulesets): https://github.com/windup/windup-rulesets
 * {ProductShortName} distribution (windup-distribution): https://github.com/windup/windup-distribution
 
-. Build each of the projects as described here: link:Dev-Build-from-Source[Build {ProductName} from Source] 
+. Build each of the projects as described here: xref:Dev-Build-from-Source[Build {ProductName} from Source] 
 . In `windup` core project root directory, type the following Maven command:
 +
 [options="nowrap"]
@@ -22,6 +22,6 @@ If you want to build an updated version, use the following procedure to create J
 mvn validate -PjavadocDist
 ----
 . The JavaDoc is created in the {ProductShortName} `target/apidocs` subdirectory.
-. If you want to add the JavaDoc to the latest published release, copy this folder to a backup location and then see link:Dev-Documentation-Process[Documentation Process] for instructions.
+. If you want to add the JavaDoc to the latest published release, copy this folder to a backup location and then see xref:Dev-Documentation-Process[Documentation Process] for instructions.
 
 NOTE: To cross-link with 3rd-party libraries, see https://issues.jboss.org/browse/WINDUP-422[WINDUP-422} and http://stackoverflow.com/questions/27392535/javadoc-how-to-make-it-link-the-dependencies-maven-project.

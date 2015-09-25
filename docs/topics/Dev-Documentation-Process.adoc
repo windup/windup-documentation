@@ -16,6 +16,8 @@
 
 Instructions to build the {ProductName} JavaDoc are located here: xref:Dev-Create-the-JavaDoc[Create {ProductName} JavaDoc].
 
+After you have built the JavaDoc, back up the `target/apidocs` to a location outside of the `windup` project directory because it will disappear when you checkout the gh-pages branch.
+
 ==== Product Documentation  
 
 {ProductName} product documentation is stored here: https://github.com/windup/windup-documentation
@@ -52,15 +54,15 @@ The https://github.com/windup/windup-documentation/tree/master/scripts/windupDoc
 
 The script performs the following steps.
 
-. Copies the {ProductName} wiki pages to the _{ProductDocHomeVar}/docs/_ directory, renaming them with the `.adoc` extension.
+. Copies the {ProductName} wiki pages to the _{ProductDocHomeVar}/docs/topics/_ directory, renaming them with the `.adoc` extension.
 
-. Makes sure each guide includes all pages that are referenced by pages within it. Scripts are provided to search for links within each individual guide. They navigate to the _{ProductDocHomeVar}/docs/_ directory and search using the following command:
+. Copies the images from the wiki to the docs/images and html/images folder.
 
-    grep 'xref:[A-Z]' `find . -name '*.adoc'`.
-
-. Replaces each `xref:` to external pages with an `xref:` using the following command.
+. Replaces each `xref:` to external pages with an `xref:` in the docs/topics/ folder using the following command.
 
     find . -name '*.adoc' -print | xargs sed -i 's/xref:/xref:/g'
+
+. Copies the backup copy of the top level docs used to build the latest HTML and PDF versions back into the docs/topics/ folder
 
 . Navigates to the _{ProductDocHomeVar}/_ directory and builds the books. The single page HTML files are created in the _{ProductDocHomeVar}/html/_ directory.
 
@@ -71,33 +73,23 @@ The script performs the following steps.
 |Command
 
 |Windup User Guide
-|asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html docs/Windup-User-Guide.adoc
+|asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html docs/topics/Windup-User-Guide.adoc
 
 |Windup Rules Development Guide
-|asciidoctor -t -dbook -a toc -o html/WindupRulesDevelopmentGuide.html docs/Windup-Rules-Development-Guide.adoc
+|asciidoctor -t -dbook -a toc -o html/WindupRulesDevelopmentGuide.html docs/topics/Windup-Rules-Development-Guide.adoc
 
 |Windup Core Development Guide
-|asciidoctor -t -dbook -a toc -o html/WindupCoreDevelopmentGuide.html docs/Windup-Core-Development-Guide.adoc
+|asciidoctor -t -dbook -a toc -o html/WindupRulesDevelopmentGuide.html docs/topics/Windup-Rules-Development-Guide.adoc
 |===
 
-. Navigates to the _{ProductDocHomeVar}/_ directory and builds the DocBook Customer Portal books. The files are created in the _{ProductDocHomeVar}/build/_ directory.
+. Navigates to each _{ProductDocHomeVar}/<guide-subdirectory>_ directory and builds the DocBook Customer Portal books using the following command.
 
 +
-[cols="1,4", options="header"] 
-|===
-|Windup Guide
-|Command
-
-|Windup User Guide
-|ccutil compile --lang en_US --main-file ~/windup-documentation/docs/Windup-User-Guide.adoc
-
-|Windup Rules Development Guide
-|ccutil compile --lang en_US --main-file ~/windup-documentation/docs/Windup-Rules-Development-Guide.adoc
-
-|Windup Core Development Guide
-|ccutil compile --lang en_US --main-file ~/windup-documentation/docs/Windup-Core-Development-Guide.adoc
-|===
-
+----
+ccutil compile --lang en_US --main-file master.adoc
+----
++
+The files are created in the _{ProductDocHomeVar}/<guide-subdirectory>/build/_ directory.
 
 ==== Publish the HTML Docs for Access at GitHub IO
 
@@ -127,17 +119,22 @@ git checkout -b gh-pages windup/gh-pages
 * If the _{ProductSrcHomeVar}/docs/{ProductReleaseVar}/_ directory does not yet exist, create a _docs/{ProductReleaseVar}/html/images/_ directory. 
 +
 ----
-mkdir -p docs/2.4.0-Final/html/images (if it doesn't exist!)
+mkdir -p docs/2.4.0.Final/html/images (if it doesn't exist!)
 ----
     
 * Copy any the images, stylesheets, and html files from windup-documentation:
 +
 ----
-cp windup-documentation/html/*.html windup/docs/2.4.0-Final/html/
-cp windup-documentation/*.css windup/docs/2.4.0-Final/html/
-cp windup-documentation/images/* windup/docs/2.4.0-Final/html/images/
+cp windup-documentation/html/*.html windup/docs/2.4.0.Final/html/
+cp windup-documentation/*.css windup/docs/2.4.0.Final/html/
+cp windup-documentation/images/* windup/docs/2.4.0.Final/html/images/
 ----
 
+* Copy the JavaDoc files that were backed up from `target/apidocs` to a javadoc folder:
++
+----
+cp -r temp/target/apidocs windup/docs/2.4.0.Final/javadocs/
+----
 * Add the updated files to GitHub.
 +
 ----
@@ -169,7 +166,7 @@ git push upstream gh-pages
 ** Create a symlink to the new documentation.
 
         Syntax: ln -s WINDUP_RELEASE latest
-        Example: ln -s 2.4.0-Final latest
+        Example: ln -s 2.4.0.Final latest
 
 ** Add the modified "latest" directory to Git.
 
@@ -177,7 +174,7 @@ git push upstream gh-pages
 
 ** Commit the change.
 
-        git commit -m 'Replace symlink for latest to point to 2.4.0-Final'
+        git commit -m 'Replace symlink for latest to point to 2.4.0.Final'
 
 ** Push the changes to your own git repository, verify and issue a pull.
 

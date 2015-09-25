@@ -6,16 +6,18 @@
 
 The http://windup.jboss.org[windup.jboss.org] web site is hosted by Red Hat / JBoss.org
 
-==== Get the Source Code
+==== Configure Your Environment
+
+===== Get the Source Code
 
 The source code for http://windup.jboss.org[windup.jboss.org] is currently located at https://github.com/windup/windup.jboss.org.
 
-. https://github.com/windup/windup.jboss.org./fork[Fork] the windup.jboss.org project. This creates the `windup.jboss.org` project in your own Git with the default remote name 'origin'.
+. https://github.com/windup/windup.jboss.org/fork[Fork] the windup.jboss.org project. This creates the `windup.jboss.org` project in your own Git with the default remote name 'origin'.
 . Clone your fork. This creates and populates a `windup.jboss.org` directory in your local file system.
 +
 [options="nowrap"]
 ----
-git clone https://github.com/<your-username>/windup.git
+git clone https://github.com/<your-username>/windup.jboss.org.git
 ----
 . Navigate to the `windup.jboss.org` directory, then add and fetch the `upstream` repository so you can update your git with any changes.
 +
@@ -24,7 +26,7 @@ git clone https://github.com/<your-username>/windup.git
 git remote add -f upstream git@github.com:windup/windup.jboss.org.git
 ----
 
-==== Request Write Access to the Web Site Remote Server 
+===== Request Write Access to the Web Site Remote Server 
 
 The http://windup.jboss.org[windup.jboss.org] web site is hosted on the `filemgmt.jboss.org` remote server. Follow these steps to request write access.
 
@@ -37,16 +39,30 @@ The http://windup.jboss.org[windup.jboss.org] web site is hosted on the `filemgm
 sftp windup@filemgmt.jboss.org
 ----
 
-==== Push Updates to the Web Site Remote Server
+==== Update the Web Site
 
-. Log into the remote server and navigate to www_htdocs/windup/
+===== Make the Code Updates
+
+. Checkout a branch to work in.
+. Update the files as needed.
+. Commit the changes.
+. Push the changes to your forked repository.
+. Request a merge to the upstream repository and merge the changs.
+
+===== Push Updates to the Web Site Remote Server
+
+Use `sftp` to transfer files to the remote server. You an use linux commands to navigate on the remote file system. Use the same commands with an 'l' prefix to navigate to the files on your local file system.
+
+The following example assumes you have modified the `windup.jboss.org/assets/windup.js` file, committed the change, and pushed it to the upstream repository. 
+
+. Log into the remote server and navigate to the `www_htdocs/windup/` directory on the remote server.
 +
 [options="nowrap"]
 ----
 $ sftp windup@filemgmt.jboss.org
 sftp> cd www_htdocs/windup 
 ----
-. Use the `lcd` command to navigate to the directory on your local machine that contains your updates. You can verify the path on the local machine using the `lpwd` command. For example:
+. Use the `lcd` command to navigate to the directory containing your updates on your local machine. You can verify the path on the local machine using the `lpwd` command. For example:
 +
 [options="nowrap"]
 ----
@@ -72,18 +88,12 @@ windup.js                                        100% 1316     1.3KB/s   00:00
 ----
 . Test the change on http://windup.jboss.org[windup.jboss.org].
 
-==== Push the Rule Schema to the Web Site Remote Server 
+===== Push the Rule Schema to the Web Site Remote Server 
 
 *_Upload Schema Example_* 
 
 [options="nowrap"]
 ----
-### Navigate to your local cloned windup.jboss.org directory
-cd ~/windup.jboss.org/
-
-### Fetch the latest and check out a branch to work in
-git fetch upstream
-git checkout -b update-schema upstream/master
 
 ### sftp into the remote repository
 sftp windup@filemgmt.jboss.org

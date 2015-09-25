@@ -13,7 +13,7 @@ This document describes the tasks needed to contribute to JBoss EAP documentatio
 
 * After you have completed the previous tasks, you may want to xref:configure-your-environment-to-build-the-documentation[configure your environment to build the documentation]. This allows you to verify the books build successfully and your changes render as expected before you submit your merge request.
 
-For more details and background about the GitLab repository structure, see the link:https://docs.google.com/presentation/d/1AV-qETM104Nuff43ryPR4hBqfY_knB6rF4ozDE_UXvw/edit#slide=id.gc740769cb_0_5[EAP Docs Writing Workflow] document.
+For more details and background about the GitLab repository structure, see the xref:https://docs.google.com/presentation/d/1AV-qETM104Nuff43ryPR4hBqfY_knB6rF4ozDE_UXvw/edit#slide=id.gc740769cb_0_5[EAP Docs Writing Workflow] document.
 
 [IMPORTANT]
 If at *ANY TIME* you feel lost or don't know what to do, contact one of the admins (mailto:zrhoads@redhat.com[Zach], mailto:sgilda@redhat.com[Sande], mailto:dmichael@redhat.com[David], mailto:anrobert@redhat.com[Angie]) or start asking questions on the _#eap-docs_ IRC channel.
@@ -33,7 +33,7 @@ The Git client allows you to access the `eap-documentation` GitLab repository fr
 
 Fork the `eap-documentation` upstream repository to create a copy under your own GitLab ID. This allows you to work on multiple features and push changes to branches in your own GitLab instance so you don't have to worry about losing work. When you are ready, you can request the changes to be merged back into the upstream repository.
  
-. Open a browser and navigate to the link:https://gitlab.cee.redhat.com/eap-docs/eap-documentation[upstream] repository located at https://gitlab.cee.redhat.com/eap-docs/eap-documentation.
+. Open a browser and navigate to the xref:https://gitlab.cee.redhat.com/eap-docs/eap-documentation[upstream] repository located at https://gitlab.cee.redhat.com/eap-docs/eap-documentation.
 . Click the https://gitlab.cee.redhat.com/eap-docs/eap-documentation/fork/new[Fork] link in the upper right corner. 
 . Choose your user account for the location of the forked repository. This creates your own copy of the repository under your own GitLab ID.
 
@@ -55,11 +55,11 @@ $ git clone git@gitlab.cee.redhat.com:USERNAME/eap-documentation.git
 $ cd eap-documentation/
 ----
 
-For more information about link:http://doc.gitlab.com/ee/workflow/forking_workflow.html[forking] and link:http://doc.gitlab.com/ce/gitlab-basics/command-line-commands.html#clone-your-project[cloning], consult the official link:http://doc.gitlab.com/ce/[Gitlab documentation].
+For more information about xref:http://doc.gitlab.com/ee/workflow/forking_workflow.html[forking] and xref:http://doc.gitlab.com/ce/gitlab-basics/command-line-commands.html#clone-your-project[cloning], consult the official xref:http://doc.gitlab.com/ce/[Gitlab documentation].
 
 === Add the Upstream as a Remote Repository
 
-Once you have your fork checked out and cloned locally, add the link:https://gitlab.cee.redhat.com/eap-docs/eap-documentation[upstream] repository as a remote:
+Once you have your fork checked out and cloned locally, add the xref:https://gitlab.cee.redhat.com/eap-docs/eap-documentation[upstream] repository as a remote:
 
 . List the current list of remote repositories:
 +
@@ -203,7 +203,7 @@ Using the GitLab Web interface:
 . Click on the _Changes_ tab to view the changes that were committed. Make sure only the changes you expect are in the commit.
 . Fill in the details about your, assign it to an administrator, and click _Submit new merge request_/
 
-For more details on creating a merge request, see the link:http://doc.gitlab.com/ce/gitlab-basics/add-merge-request.html[GitLab documentation].
+For more details on creating a merge request, see the xref:http://doc.gitlab.com/ce/gitlab-basics/add-merge-request.html[GitLab documentation].
 
 [[additional-operations]]
 == Additional Operations
@@ -330,10 +330,10 @@ asciidoctor -t -dbook -a toc -o ../html/GUIDE_NAME.html GUIDE_NAME.adoc
 
 Useful links:
 
-* link:https://mojo.redhat.com/docs/DOC-154514[Mojo:  Getting Started with GitHub]
-* link:https://mojo.redhat.com/docs/DOC-1027078[Mojo:  Getting Started with GitLab]
-* link:https://git-scm.com/documentation[Git Reference Manual]
-* link:http://doc.gitlab.com/ce/[Gitlab Documentation]
+* xref:https://mojo.redhat.com/docs/DOC-154514[Mojo:  Getting Started with GitHub]
+* xref:https://mojo.redhat.com/docs/DOC-1027078[Mojo:  Getting Started with GitLab]
+* xref:https://git-scm.com/documentation[Git Reference Manual]
+* xref:http://doc.gitlab.com/ce/[Gitlab Documentation]
 
 IRC Channel: _#eap-docs_
 

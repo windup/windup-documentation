@@ -216,7 +216,7 @@ _Example:_
     </when>
     <perform>
         <iteration>
-            <hint effort="3">
+            <hint title="Proprietary web-service" severity="mandatory" effort="3">
                 <message>Replace proprietary web-service authentication with JAX-WS standards.</message>
                 <link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" title="JAX-WS Proxy Password Example"/>
             </hint>
@@ -235,7 +235,7 @@ _Example:_
 
 |title
 |STRING
-a|Title this hint using the specified string.
+a|Title this hint using the specified string. Title is required attribute.
 
 _Example:_ 
 
