@@ -1,345 +1,185 @@
-[[sande]]
-= sande
-[[JBoss-EAP-Documentation-Contributing-Guide]]
-= JBoss EAP Documentation Contributing Guide
-
-== Overview
-
-This document describes the tasks needed to contribute to JBoss EAP documentation.
-
-* Before you begin, you need to perform the following one time process to xref:install-and-configure-git[install and configure Git].
-
-* Once you have configured *Git* and set up your repositories, use this xref:documentation-update-process[documentation update process] to make changes to the JBoss EAP documentation.
-
-* After you have completed the previous tasks, you may want to xref:configure-your-environment-to-build-the-documentation[configure your environment to build the documentation]. This allows you to verify the books build successfully and your changes render as expected before you submit your merge request.
-
-For more details and background about the GitLab repository structure, see the link:https://docs.google.com/presentation/d/1AV-qETM104Nuff43ryPR4hBqfY_knB6rF4ozDE_UXvw/edit#slide=id.gc740769cb_0_5[EAP Docs Writing Workflow] document.
-
-[IMPORTANT]
-If at *ANY TIME* you feel lost or don't know what to do, contact one of the admins (mailto:zrhoads@redhat.com[Zach], mailto:sgilda@redhat.com[Sande], mailto:dmichael@redhat.com[David], mailto:anrobert@redhat.com[Angie]) or start asking questions on the _#eap-docs_ IRC channel.
+:ProductName: Windup
+:ProductShortName: Windup
+:ProductDocRulesGuideURL: http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html
 
 
-[[install-and-configure-git]]
-== Install and Configure Git
+[[Review-the-Report]]
+=== Review the Report
 
-===  Install Git
+:imagesdir: images
 
-The Git client allows you to access the `eap-documentation` GitLab repository from a command line in your local file system.
+==== About the Report
 
-. https://help.github.com/articles/set-up-git/[Set up Git] to allow command line access to the repositories.
-. Set up https://gitlab.cee.redhat.com/help/ssh/README.md[authentication] to GitLab.
+When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` you specify for the `--output` argument in the command line. This output directory contains the following files and subdirectories:
 
-=== Fork the Upstream Repository
-
-Fork the `eap-documentation` upstream repository to create a copy under your own GitLab ID. This allows you to work on multiple features and push changes to branches in your own GitLab instance so you don't have to worry about losing work. When you are ready, you can request the changes to be merged back into the upstream repository.
- 
-. Open a browser and navigate to the link:https://gitlab.cee.redhat.com/eap-docs/eap-documentation[upstream] repository located at https://gitlab.cee.redhat.com/eap-docs/eap-documentation.
-. Click the https://gitlab.cee.redhat.com/eap-docs/eap-documentation/fork/new[Fork] link in the upper right corner. 
-. Choose your user account for the location of the forked repository. This creates your own copy of the repository under your own GitLab ID.
-
-=== Clone Your Forked Repository
-
-Clone your forked repository to bring your GitLab repository files to your local machine. Your forked repository is now the `origin` repository for your local files.
-
-. Open a terminal and navigate to the directory where you want to create the new repository folder. 
-. Type the following command.
-+
-[source,bash,options="nowrap"]
+[options="nowrap"]
 ----
-$ git clone git@gitlab.cee.redhat.com:USERNAME/eap-documentation.git
-----
-. Navigate to the newly created `eap-documentation` folder.
-+
-[source,bash,options="nowrap"]
-----
-$ cd eap-documentation/
+OUTPUT_REPORT_DIRECTORY/
+├── index.html          (landing page for the report)
+├── EXPORT_FILE.csv     (optional export of data in CSV format)
+├── archives/           (archives extracted from the application, for information only)
+├── graph/              (binary graph database files generated during the run, for information only) 
+├── reports/            (generated HTML reports)
+├── stats/              (performance statistics)
 ----
 
-For more information about link:http://doc.gitlab.com/ee/workflow/forking_workflow.html[forking] and link:http://doc.gitlab.com/ce/gitlab-basics/command-line-commands.html#clone-your-project[cloning], consult the official link:http://doc.gitlab.com/ce/[Gitlab documentation].
+The report examples shown are a result of analyzing `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[test-files/jee-example-app-1.0.0.ear] application, which is located in the {ProductShortName} core source repository. The report was generated using the  using the following command.
 
-=== Add the Upstream as a Remote Repository
-
-Once you have your fork checked out and cloned locally, add the link:https://gitlab.cee.redhat.com/eap-docs/eap-documentation[upstream] repository as a remote:
-
-. List the current list of remote repositories:
-+
-[source,bash] 
+[options="nowrap"]
 ----
-$ git remote -v
-origin git@gitlab.cee.redhat.com:zrhoads/eap-documentation.git (fetch)
-origin git@gitlab.cee.redhat.com:zrhoads/eap-documentation.git (push)
+WINDUP_HOME/bin/windup --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --target eap --packages com.acme org.apache
 ----
 
-. Add the upstream as a remote repository and fetch its contents. This allows you to check out and work with the latest source code.
-+
-[source,bash]
-----
-$ git remote add upstream -f git@gitlab.cee.redhat.com:eap-docs/eap-documentation.git
-----
+==== Access the Reports
 
-. Verify the new remote was added:
-+
-[source,bash]
-----
-$ git remote -v
-origin git@gitlab.cee.redhat.com:zrhoads/eap-documentation.git (fetch)
-origin git@gitlab.cee.redhat.com:zrhoads/eap-documentation.git (push)
-upstream git@gitlab.cee.redhat.com:eap-docs/eap-documentation.git (fetch)
-upstream git@gitlab.cee.redhat.com:eap-docs/eap-documentation.git (push)
-----
-. Use the follwoing command any time you need to fetch the latest source code locally.
-+
-[source,bash]
-----
-$ git fetch upstream
-----
+Use your favorite browser to open the `index.html` file located in the output report directory. You should see something like the following:
 
-[[documentation-update-process]]
-== Documentation Update Process
+====
+*{ProductShortName} Report: Index Page*
+image:report-jee-example-index-page.png[Report Index Page, 600]
+====
 
-You should now have a clone of your forked repository on your local machine and added the upstream repository as a remote.  Let's get to work on committing and bubbling those changes upstream!  The basic process is as follows:
+This page lists the application that was processed along with the technologies that were encountered. It also provides links to the following additional reports.
 
-* xref:checkout-a-topic-branch-from-the-upstream-repository[Checkout a topic branch from the upstream repository]
-* xref:make-your-changes-and-add-them-to-git[Make your changes and add them to Git]
-* xref:commit-your-changes-and-push-them-to-your-own-repository[Commit your changes and push them to your own repository]
-* xref:verify-your-changes-and-open-a-merge-request-to-upstream[Verify your changes and open a merge request to upstream]
-
-You may want to do some xref:additional-operations[additional operations] such as sync up your GitLab repository instance with the official upstream repository. There is also a list of xref:useful-git-commands[useful Git commands]. Feel free to add to this list.
-
-[[checkout-a-topic-branch-from-the-upstream-repository]]
-=== Checkout a Topic Branch from the Upstream Repository 
-
-. _Fetch_ the latest from the upstream repository to make sure you are working with the latest code base.
-+
-[source,bash]
-----
-$ git fetch upstream
-----
-. Create a local topic branch based on an upstream branch. The topic branch name should be descriptive, for example, the JIRA, bugzilla, or feature name.
-+
-[source,bash]
-----
-$ git checkout -b TOPIC_BRANCH_NAME upstream/master
----- 
-+
-NOTE: You can check out multiple topic branches and work on multiple features at one time, with no impact on each other.
-
-[[make-your-changes-and-add-them-to-git]]
-=== Make Your Changes and Add Them to Git
-
-. When you have completed your changes, check the status of your topic branch. The status command tells you the topic branch you are on and lets you know which files have been changed or removed. It also lists any new untracked files you may want to add.
-+
-[source,bash]
-----
-$ git status
-----
-+
-You should see something like the following:
-+
-[source,bash]
-----
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   internal-resources/contributor-guide.adoc
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	internal-resources/some-new-test-guide.adoc
-----
-. Follow the instructions to add changes, add files, or unstage changes.
-+
-[source,bash]
-----
-$ git add internal-resources/contributor-guide.adoc
-$ git add internal-resources/some-new-test-guide.adoc
-----
-
-[[commit-your-changes-and-push-them-to-your-own-repository]]
-=== Commit Your Changes and Push Them to Your Own Repository
-
-. _Commit_ your changes to your local file system.
-+
-[source,bash]
-----
-$ git commit -am "commit message"
-----
-. Use Git `status` to verify all your changes are commited. 
-+
-[source,bash]
-----
-$ git status
-----
-+
-You should see this result:
-+
-[source,bash]
-----
-nothing to commit, working directory clean
-----
-. _Push_ your changes to your forked repository (origin)
-+
-[source,bash]
-----
-$ git push origin HEAD
-----
-
-[[verify-your-changes-and-open-a-merge-request-to-upstream]]
-=== Verify Your Changes and Open a Merge Request to Upstream
-
-After you push your changes to your forked repository (origin), you should verify the changes are correct and then request they be merged back into the upstream repository.  
-
-Using the GitLab Web interface:
-
-. Navigate to your forked repository, for example, https://gitlab.cee.redhat.com/zrhoads/eap-documentation.
-. Click _Merge Requests_ on the left side
-. Click the _New Merge Request_ button on the right side
-. Select the source and destination branches:
-.. _USERNAME/eap-documentation_ and your branch for source (e.g. _zrhoads/eap-documentation_ and _myBugFix_)
-.. _eap-docs/eap-documentation_ and the corresponding upstream branch for destination (e.g. _eap-docs/eap-documentation_ and _master_)
-. Click _Compare Branches_
-. Click on the _Changes_ tab to view the changes that were committed. Make sure only the changes you expect are in the commit.
-. Fill in the details about your, assign it to an administrator, and click _Submit new merge request_/
-
-For more details on creating a merge request, see the link:http://doc.gitlab.com/ce/gitlab-basics/add-merge-request.html[GitLab documentation].
-
-[[additional-operations]]
-== Additional Operations
-
-==== Keeping Origin in Sync with Upstream
-
-While you should never work in the `master` branch, you may want to sync the `master` branch in your forked repository to mirror that of the `master` branch in the `upstream` repository. You can do that using either of the following procedures.
-
-===== Use the Rebase Method
-
-This method rebases any changes upstream into your master.
-
-. _Checkout_ the branch from origin you want to sync up (e.g. _master_)
-+
-[source,bash]
-----
-$ git checkout -b sync-master origin/master
-----
-. _Fetch_ the latest from upstream
-+
-[source,bash]
-----
-$ git fetch upstream
-----
-. _Rebase_ the latest from upstream onto your branch
-+
-[source,bash]
-----
-$ git rebase upstream/master
-----
-. Resolve any conflicts.  If you have any questions, reach out to one of the admins.
-. _Push_ the updates to origin (your fork)
-+
-[source,bash]
-----
-$ git push origin HEAD:master
-----
-
-===== Use the Reset Hard Method
-
-The method just replaces your `master` branch with the upstream `master`.
-
-WARNING: This method overwrites the master branch of your forked repository, so use it only if you do NOT have code you need to preserve.
-
-. _Checkout_ the master branch
-+
-[source,bash]
-----
-$ git checkout master
-----
-. _Fetch_ the latest code from upstream.
-+
-[source,bash]
-----
-$ git fetch upstream
-----
-. Reset it to the upstream `master`
-+
-[source,bash]
-----
-$ git reset --hard upstream/master
-----
-. _Push_ the changes back to your forked repository (origin).
-+
-[source,bash]
-----
-$ git push -f origin HEAD
-----
-
-[[useful-git-commands]]
-== Useful Git Commands
-
-[cols="1,1", options="header"] 
+[cols="1,3", options="header"] 
 |===
-|Command
-|Description
+| Report
+| How to Access the Report
 
-|git log
-|View the commit log for the local branch
+| xref:review-the-report-application-report[Application Report]
+| Click on the link under the `Name` column to view this report.
 
-|git status
-|View the files that have changed but are not committed.
+| xref:review-the-report-rule-provider-executions-report[Rule Provider Executions Report]
+| Click on the `All Rules` link at the bottom of the index page. 
 
-|git diff _FILE_NAME_
-|View the changes made to a file.
+| xref:review-the-report-freemarker-report[Windup Freemarker Functions and Directives Report]
+| Click on the `Windup FreeMarker Methods` link at the bottom of the index page. 
 
+| xref:review-the-report-send-feedback[Send Feedback Form]
+| Click on the `Send Feedback` link at the bottom of the index page to open a form that allows you to provide feedback to the {ProductShortName} team. .
 |===
 
-[[configure-your-environment-to-build-the-documentation]]
-== Configure Your Environment to Build the Documentation
 
-When you make changes to the documentation, it is a good practice to do a local test build to verify the book builds successfully and renders as you expect before you submit the merge request back to upstream master. This section describes that process. You can build the books using either AsciiDoctor or `ccutil`, however, be aware that only `ccutil` catches build errors like invalid xfrefs and missing includes.
+[[review-the-report-application-report]]
+===== Application Report
 
-. Follow these instructions to install `ccutil`: https://gitlab.cee.redhat.com/docs2drupal-dev/documentation-templates/blob/master/user-guide/ccutil-install.adoc
- 
-. To build the books, navigate to the root folder of the GitLab eap-documentation folder and type:
-+
-[source,bash]
-----
-scripts/buildGuides.sh
-----
-+
-The script builds 2 versions for each guide:
+====== Overview and Application Messages
 
-* An HTML version using AsciiDoc
-* An epub/PDF/HTML version using ccutil
-. You can also build a book manually. Navigate to the eap-documentation/docs/ folder.
+The first section of the application report page summarizes the entire application migration effort by technology type both graphically and in list format. This is followed by the `Application Messages` section, which contains useful information about general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues.
 
-* To build using ccutil, type:
-+
-[source,bash]
-----
-ccutil compile --lang en_US --main-file GUIDE_NAME.adoc
-----
+In the following example, the "JEE Example App" is assigned 102 story points related to 10 different technologies. It also displays one application message.
 
-* To build using AsciiDoctor, type:
-+
-[source,bash]
-----
-asciidoctor -t -dbook -a toc -o ../html/GUIDE_NAME.html GUIDE_NAME.adoc
-----
+NOTE: The estimated Story Points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
 
-== Additional Guides and Resources
+====
+*{ProductShortName} Report: Overview and Application Messages*
+image:report-jee-example-application-overview.png[Report Overview and Application Messages, 500]
+====
 
-Useful links:
+====== Archive Analysis Sections
 
-* link:https://mojo.redhat.com/docs/DOC-154514[Mojo:  Getting Started with GitHub]
-* link:https://mojo.redhat.com/docs/DOC-1027078[Mojo:  Getting Started with GitLab]
-* link:https://git-scm.com/documentation[Git Reference Manual]
-* link:http://doc.gitlab.com/ce/[Gitlab Documentation]
+Depending on whether you run {ProductShortName} against source or compiled code, the report next provides details by file, or by file within each archive. Each archive summary begins with a total of the story points assigned to its migration, followed by a table detailing the changes required for each file in the archive. The report contains the following columns.
 
-IRC Channel: _#eap-docs_
+[cols="1,3", options="header"] 
+|===
+| Column Name
+| Description
 
-Admins:
+| Name 
+| The name of the file being analyzed.
 
-* mailto:zrhoads@redhat.com[Zach] (zrhoads)
-* mailto:sgilda@redhat.com[Sande] (sgilda)
-* mailto:dmichael@redhat.com[David] (dmichael)
-* mailto:anrobert@redhat.com[Angie] (anrobert)
+| Technology
+| The type of file being analyzed, for example: Java Source, Decompiled Java File, Manifest, Properties, EJB XML, Spring XML, Web XML, Hibernate Cfg, Hibernate Mapping
+
+| Issues
+| Warnings about areas of code that need review or changes.
+
+| Estimated Story Points
+a| Level of effort required to migrate the file.
+
+_Story Points_ are covered in more detail in the {ProductDocRulesGuideURL}#Rules-Rule-Story-Points[{ProductName} Rules Development Guide].
+|===
+
+The following is an example of the archive analysis summary section of a {ProductShortName} Report. The following is an the analysis of the `WINDUP_SOURCE/test-files/jee-example-app-1.0.0.ear/jee-example-services.jar`.
+
+====
+*{ProductShortName} Report: Archive Detail*
+image:report-jee-example-services-jar.png[Report Archive Detail, 500]
+====
+
+====== File Analysis Pages
+
+The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 23 warnings and is assigned 21 story points. Click on the file to see the detail. 
+
+* The *Information* section provides a summary of the story points and notes that the file was decompiled by {ProductShortName}. 
+* This is followed by the file source code listing. Warnings appear in the file at the point where  migration is required. 
+
+In this example, warnings appear at various import statements, declarations, and method calls. Each warning describes the issue and the action that should be taken.
+
+====
+*{ProductShortName} Report: Source Report - Part 1*
+image:report-jee-example-source-1.png[File Detail - Part 1, 500]
+====
+
+Later in the source code, warnings appear for the creation of the InitialContext and for JNDI lookup names.
+
+====
+*{ProductShortName} Report: Source Report - Part 2*
+image:report-jee-example-source-2.png[File Detail - Part 2, 500]
+==== 
+
+[[review-the-report-rule-provider-executions-report]]
+===== Rule Provider Execution Report
+
+This report provides the list of rule providers that executed when running the {ProductShortName} migration command against the application. The report contains the following columns.
+
+[cols="1,3", options="header"] 
+|===
+| Column Name
+| Description
+
+| Rule-ID
+| The Rule ID
+
+| Rule
+| The Java code for the rule
+
+| Statistics
+| Statistics behind the graph
+
+| Status?
+| Whether the rule execute or not
+
+| Result?
+| Whether the execution was successful or not
+
+| Failure Cause
+| The reason for an execution failure 
+|===
+
+====
+*{ProductShortName} Report: Rule Provider Report*
+image:report-jee-example-ruleprovider.png[RuleProvider Report, 500]
+====
+
+[[review-the-report-freemarker-report]]
+===== Windup FreeMarker Functions and Directives Report
+
+Access this report from the `Windup FreeMarker Methods` link on the initial index page. This report lists all the registered functions and directives that were used to build the report. It is useful if you plan to build your own custom report or for debugging purposes.
+
+====
+*{ProductShortName} Report: FreeMarker Functions and Directives*
+image:report-jee-example-freemarker.png[FreeMarker Functions and Directives, 500]
+====
+
+[[review-the-report-send-feedback]]
+===== Send Feedback Form
+
+Access the feedback form by clicking on the `Send Feedback` link on the initial index page. The form allows you to rate the product, talk about what you like and what needs to be improved. You can also attach a file.
+
+====
+*Send Feedback Form*
+image:report-jee-example-send-feedback.png[Form to send feedback, 500]
+====
+
+

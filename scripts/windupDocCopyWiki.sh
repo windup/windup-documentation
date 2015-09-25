@@ -50,7 +50,7 @@ cp $1/Dev-Startup-Configuration-Arguments.asciidoc docs/topics/Dev-Startup-Confi
 cp $1/Dev-Submit-Code-Updates-to-the-Project.asciidoc docs/topics/Dev-Submit-Code-Updates-to-the-Project.adoc
 cp $1/Dev-Team-Meeting.asciidoc docs/topics/Dev-Team-Meeting.adoc  ## this topic is not used
 cp $1/Dev-Test-Logging.asciidoc docs/topics/Dev-Test-Logging.adoc  ## this topic is not used
-cp $1/Dev-Troubleshoot-Issues.asciidoc docs/topics/Dev-Troubleshoot-Issues.adoc
+## cp $1/Dev-Troubleshoot-Issues.asciidoc docs/topics/Dev-Troubleshoot-Issues.adoc
 cp $1/Dev-Variables-Stack.asciidoc docs/topics/Dev-Variables-Stack.adoc
 cp $1/Dev-Web-Instructions.asciidoc docs/topics/Dev-Web-Instructions.adoc  ## this topic is not used
 cp $1/Execute.asciidoc docs/topics/Execute.adoc
@@ -89,7 +89,7 @@ cp $1/Rules-Create-a-Basic-XML-Rule.asciidoc docs/topics/Rules-Create-a-Basic-XM
 cp $1/Rules-Create-a-Groovy-Rule-Add-on.asciidoc docs/topics/Rules-Create-a-Groovy-Rule-Add-on.adoc  ## this topic is not used
 cp $1/Rules-Create-an-Advanced-Ruleset.asciidoc docs/topics/Rules-Create-an-Advanced-Ruleset.adoc
 cp $1/Rules-Create-Custom-Reports.asciidoc docs/topics/Rules-Create-Custom-Reports.adoc  ## this topic is not used
-cp $1/Rules-Create-Java-Queries.asciidoc docs/topics/Rules-Create-Java-Queries.adoc
+##cp $1/Rules-Create-Java-Queries.asciidoc docs/topics/Rules-Create-Java-Queries.adoc
 cp $1/Rules-Creating-Rule-Operations.asciidoc docs/topics/Rules-Creating-Rule-Operations.adoc
 cp $1/Rules-Development-Guide.asciidoc docs/topics/Rules-Development-Guide.adoc  ## this topic is not used
 cp $1/Rules-Difference-Between-XML-based-and-Java-based-Rules.asciidoc docs/topics/Rules-Difference-Between-XML-based-and-Java-based-Rules.adoc

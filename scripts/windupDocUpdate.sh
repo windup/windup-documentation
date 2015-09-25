@@ -30,7 +30,8 @@ echo ""
 echo "*******************************************"
 echo "* Copying the latest images and stylesheets..."
 echo "*******************************************"
-cp -r $1/topics/images html/
+cp -r $1/images/*.* docs/topics/images/
+cp -r $1/images/*.*  html/images/
 echo "Copy complete."
 echo ""
 
