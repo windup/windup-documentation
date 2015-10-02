@@ -20,18 +20,20 @@ The following sections describe the more common XML `when` rule conditions.
 
 Use the `javaclass` element to find imports, methods, variable declarations, annotations, class implementations, and other items related to Java classes. For a better understanding of the `javaclass` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/condition/JavaClass.html[JavaClass] class.
 
-The following is an example of a rule that tests for a `javaclass`.
+The following is an example of a rule that tests for WebLogic-specific Apache XML `javaclass` packages.
 [source,xml,options="nowrap"]
 ----
-<rule id="UNIQUE_RULE_ID">
+<rule id="weblogic-03000">
     <when>
-        <javaclass references="org.jboss.ws.api.annotation.WebContext" in="org/jboss/{*}" as="webcontextclasses">
-            <location>IMPORT</location>
-            <location>TYPE</location>
-        </javaclass>
+        <javaclass references="weblogic.apache.xml.{*}" />
     </when>
     <perform>
-        <hint message="WebContext is deprecated." effort="0"/>
+        <hint title="WebLogic Specific Apache XML Package" effort="1" severity="mandatory">
+            <message>
+                Code using this package should be replaced with code using the org.apache.xml package from [Apache
+                Xerces](http://xerces.apache.org/).
+            </message>
+        </hint>
     </perform>
 </rule>
 ----
@@ -50,12 +52,14 @@ The following is an example of a rule that tests for a `javaclass`.
 |CLASS_NAME
 a|The package or class name to match on. Wildcard characters can be used.
 
+TIP: For performance reasons, you should not start the reference with wildcard characters. For example, use [x-]`weblogic.apache.xml.{*}` instead of [x-]`{web}.apache.xml.{*}`.  
+
 _Example:_
 [options="nowrap"]
 ----
-references="org.apache.commons.{*}"
+references="weblogic.apache.xml.{*}"
 ----
-|sourceMatch
+|matchesSource
 |STRING
 a|An exact regex to match. This is useful to distinguish hard-coded strings.
 
@@ -68,7 +72,7 @@ sourceMatch="log4j.logger"
 
 |as
 |VARIABLE_NAME
-a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below. (Optional)
 
 _Example:_
 
@@ -77,26 +81,26 @@ _Example:_
 as="MyEjbRule"
 ----
 
-|in
-|PATH_FILTER
-a|Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
-
-_Example:_
-[options="nowrap"]
-
-----
-in="{*}File1"
-----
-
 |from
 |VARIABLE_NAME
-a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. (Optional)
 
 _Example:_
 
 [options="nowrap"]
 ----
 from="MyEjbRule"
+----
+
+|in
+|PATH_FILTER
+a|Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used. (Optional)
+
+_Example:_
+[options="nowrap"]
+
+----
+in="{*}File1"
 ----
 
 |===
@@ -159,7 +163,7 @@ The following is an example of a rule that tests for an `xmlfile`.
 
 |matches
 |XPATH
-a|Match on an XML file condition.
+a|Match on an XML file condition. (Optional)
 
 _Example:_
 
@@ -170,7 +174,7 @@ matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"
    
 |xpathResultMatch
 |XPATH_RESULT_STRING
-a|Return results that match the given regex. 
+a|Return results that match the given regex. (Optional)
 
 _Example:_
 
@@ -182,7 +186,7 @@ _Example:_
 
 |as
 |VARIABLE_NAME
-a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below. (Optional)
 
 _Example:_
 
@@ -193,7 +197,7 @@ as="MyEjbRule"
 
 |in
 |PATH_FILTER
-a|Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
+a|Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used. (Optional)
 
 _Example:_
 
@@ -204,7 +208,7 @@ in="{*}File1"
 
 |from
 |VARIABLE_NAME
-a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. (Optional)
 
 _Example:_
 
@@ -215,7 +219,7 @@ from="MyEjbRule"
 
 |public-id
 |PUBLIC_ID
-a|The DTD public-id regex.
+a|The DTD public-id regex. (Optional)
 
 _Example:_
 
@@ -232,16 +236,13 @@ public-id="public"
 The `matches` attribute may use several built-in custom XPath functions,
 which may have useful side effects, like setting the matched value on the rule variables stack.
 
-This is a brief list of these functions:
-
-
 [cols="1,1", options="header"] 
 |===
 |Function
 |Description
 
 |`windup:matches()`
-a|Match a XPath expression against a string, possibly containing Windup parametrization placeholders.
+a|Match a XPath expression against a string, possibly containing Windup parameterization placeholders.
 
 _Example:_
 
@@ -271,7 +272,7 @@ This will match all `<foo/>` elements with a `class` attribute and store their v
 |Description
 
 |<namespace>
-a|The namespace to referenced in XML files. This element contains 2 attributes: The `prefix` and the `uri`.
+a|The namespace referenced in XML files. This element contains 2 optional attributes: The `prefix` and the `uri`.
 
 _Example:_
 
@@ -287,9 +288,9 @@ _Example:_
 
 ===== Summary 
 
-Use the `project` element to query for the project charateristics. For a better understanding of the `project` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] class.
+Use the `project` element to query the Maven POM file for the project charateristics. For a better understanding of the `project` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] class.
 
-The following is an example of a rule that checks a rule is dependent on the junit in the version between 2.0.0.Final and 2.2.0.Final.
+The following is an example of a rule that checks for a junit dependency version between 2.0.0.Final and 2.2.0.Final.
 [source,xml,options="nowrap"]
 ----
 <rule id="UNIQUE_RULE_ID">
@@ -308,7 +309,7 @@ The following is an example of a rule that checks a rule is dependent on the jun
 
 ====== project Element Attributes
 
-The `project` element is used to match against the project as a whole. You can use this condition to query for dependencies of the project. It does not have any attributes itself.
+The `project` element is used to match against the project's Maven POM file. You can use this condition to query for dependencies of the project. It does not have any attributes itself.
 
 ====== project Element Child Elements
 
@@ -371,6 +372,28 @@ Use the `filecontent` element to find strings or text within files, for example,
 |String
 |Match the file names against the provided parameterized string.
 
+|as
+|VARIABLE_NAME
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+_Example:_
+
+[options="nowrap"]
+----
+as="MyEjbRule"
+----
+
+|from
+|VARIABLE_NAME
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. (Optional)
+
+_Example:_
+
+[options="nowrap"]
+----
+from="MyEjbRule"
+----
+
 |===
 
 
@@ -397,9 +420,24 @@ Use the `file` element to find the existence of files with a specific name, for 
 
 |as
 |VARIABLE_NAME
-|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+_Example:_
+
+[options="nowrap"]
+----
+as="MyEjbRule"
+----
+
 |from
 |VARIABLE_NAME
-|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. 
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. (Optional)
+ 
+_Example:_
+
+[options="nowrap"]
+----
+from="MyEjbRule"
+----
 
 |===

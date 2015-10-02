@@ -362,9 +362,9 @@ Installation completed successfully.
 +
 [options="nowrap"]
 ----
-For Linux:    bin/windup --sourceMode --input WORKSPACE_PATH/proprietary-annotation-example/src/test/ --output WORKSPACE_PATH/proprietary-annotation-example/windup-reports --packages com.proprietary
+For Linux:    bin/windup --sourceMode --input WORKSPACE_PATH/proprietary-annotation-example/src/test/ --output WORKSPACE_PATH/proprietary-annotation-example/windup-reports --target eap --packages com.proprietary
 
-For Windows:  bin\windup.bat --sourceMode --input WORKSPACE_PATH\proprietary-annotation-example\src\test\ --output WORKSPACE_PATH\proprietary-annotation-example\windup-reports --packages com.proprietary
+For Windows:  bin\windup.bat --sourceMode --input WORKSPACE_PATH\proprietary-annotation-example\src\test\ --output WORKSPACE_PATH\proprietary-annotation-example\windup-reports --target eap --packages com.proprietary
 ----
 
 . You should see this result.

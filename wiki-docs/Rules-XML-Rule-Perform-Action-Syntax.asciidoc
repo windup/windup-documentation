@@ -19,7 +19,7 @@ The following sections describe the more common XML rule perform actions.
 
 ===== Summary 
 
-The `classification` element is used to identify or classify application resources. It provides a level of effort and can also provide links to additional information about how to migrate this resource classification. For a better understanding of the `classification` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html[Classification] class.
+The `classification` element is used to identify or classify application resources that match the rule. It provides a title that is displayed in the report, a level of effort, and it can also provide links to additional information about how to migrate this resource classification. For a better understanding of the `classification` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html[Classification] class.
 
 The following is an example of a rule that classifies a resource as a WebLogic EAR application deployment descriptor file.
 
@@ -58,8 +58,8 @@ title="JBoss Seam Components"
 ----
 
 |effort
-|NUMBER
-a|The level of effort assigned to this resource. 
+|BYTE
+a|The level of effort assigned to this resource. (Optional)
 
 _Example:_ 
 
@@ -70,7 +70,7 @@ effort="2"
 
 |severity
 |STRING
-a|Whether this classification is "mandatory" or "optional"
+a|Whether this classification is "mandatory" or "optional". (Optional)
 
 _Example:_ 
 
@@ -81,7 +81,7 @@ severity="mandatory"
 
 |of
 |VARIABLE_NAME
-a|Create a new classification for the given reference.
+a|Create a new classification for the given reference. (Optional)
 
 _Example:_ 
 
@@ -140,7 +140,7 @@ _Example:_
 
 ===== Summary 
 
-The `link` element is used in classifications or hints to identify or classify links to informational content. For a better understanding of the `link` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html[Link] class.
+The `link` element is used in classifications or hints to provide links to informational content. For a better understanding of the `link` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html[Link] class.
 
 The following is an example of a rule that creates links to additional information.
 
@@ -246,7 +246,7 @@ title="JBoss Seam Component Hint"
 
 |severity
 |STRING
-a|Whether this hint is "mandatory" or "optional"
+a|Whether this hint is "mandatory" or "optional". (Optional)
 
 _Example:_ 
 
@@ -257,7 +257,7 @@ severity="mandatory"
 
 |in
 |VARIABLE_NAME
-a|Create a new Hint in the FileLocationModel resolved by the given variable.
+a|Create a new Hint in the FileLocationModel resolved by the given variable. (Optional)
 
 _Example:_ 
 
@@ -267,8 +267,8 @@ in="Foo"
 ----
 
 |effort
-|NUMBER
-a|The level of effort assigned to this resource. 
+|BYTE
+a|The level of effort assigned to this resource.  (Optional)
 
 _Example:_ 
 
@@ -353,7 +353,7 @@ _Example:_
 
 |of
 |STRING
-a|Create a new transformation for the given reference.
+a|Create a new transformation for the given reference. (Optional)
 
 _Example:_ 
 
@@ -364,7 +364,7 @@ of="testVariable_instance"
 
 |title
 |STRING
-a|Sets the title for this XSLTTransformation.
+a|Sets the title for this XSLTTransformation in the report.
 
 _Example:_ 
 
@@ -395,6 +395,10 @@ _Example:_
 template="simpleXSLT.xsl"
 ----
 
+|effort
+|BYTE
+| The level of effort required for the tranformation. (Optional)
+
 |===
 
 ===== `xslt` Element: Child Elements
@@ -421,7 +425,7 @@ _Example:_
 
 ===== Summary 
 
-The `lineitem` element is used to provide line item information about a hint on the project or application overview page. For a better understanding of the `lineitem` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html[Lineitem] class.
+The `lineitem` element is used to provide  general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues. This information is displayed on the project or application overview page. For a better understanding of the `lineitem` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html[Lineitem] class.
 
 The following is an example of a rule that creates a lineitem message.
 
@@ -470,29 +474,25 @@ message="Proprietary code found."
 
 The `iteration` element specifies to iterate over an implicit or explicit variable defined within the rule. For a better understanding of the `iteration` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/Iteration.html[Iteration] class.
 
-The following is an example of a rule that preforms an iteration.
+The following is an example of a rule that performs an iteration.
 
 _Example:_
 [source,xml,options="nowrap"]
 ----
-<rule id="XmlWebLogicRules_14wscy">
+<rule id="jboss-eap5-xml-19000">
     <when>
-        <xmlfile as="1" matches="/wl:weblogic-webservices | /wl9:weblogic-webservices">
-            <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
-            <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
-        </xmlfile>
-        <xmlfile as="2" matches="//wl:webservice-type | //wl9:webservice-type" from="1">
-            <namespace prefix="wl9" uri="http://www.bea.com/ns/weblogic/90"/>
-            <namespace prefix="wl" uri="http://www.bea.com/ns/weblogic/weblogic-webservices"/>
-        </xmlfile>
+        <xmlfile as="jboss-app" matches="/jboss-app"/>
+        <xmlfile as="jboss-app-no-DTD" matches="/jboss-app" public-id=""/>
     </when>
     <perform>
-        <iteration over="1">
-            <classification title="Weblogic Webservice Descriptor" effort="0"/>
+        <iteration over="jboss-app">
+            <classification title="JBoss application Descriptor" effort="5"/>
         </iteration>
-        <iteration over="2">
-            <hint effort="1">
-                <message>Webservice Type</message>
+        <iteration over="jboss-app-no-DTD">
+            <classification title="JBoss application descriptor with missing DTD" effort="5"/>
+        </iteration>
+        <iteration over="jboss-app-no-DTD">
+            <xslt title="JBoss application descriptor - JBoss 5 (Windup-generated)" template="transformations/xslt/jboss-app-to-jboss5.xsl" extension="-jboss5.xml"/>
         </iteration>
     </perform>
 </rule>
@@ -514,7 +514,7 @@ _Example:_
 
 [options="nowrap"]
 ----
-over="2"
+over="jboss-app"
 ----
 
 |===

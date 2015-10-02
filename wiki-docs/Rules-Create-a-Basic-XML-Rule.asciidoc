@@ -59,7 +59,7 @@ The following is the basic syntax for XML rules.
 
 ==== Create the Ruleset Metadata
 
-The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset.
+The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset. For more information about ruleset metadata, see link:Rules-XML-Rule-Construction[XML Rule Construction].
 
 _Example:_
 [source,xml,options="nowrap"]
@@ -133,7 +133,7 @@ The specific syntax is dependent on whether you are creating a rule to evaluate 
 
 ===== Create the Rule Perform Action
 
-The XML rule `<perform>` element performs the action when the condition is met. Operations allowed in this ection of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The following is a list of valid `<peform>` actions.
+The XML rule `<perform>` element performs the action when the condition is met. Operations allowed in this section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The following is a list of valid `<peform>` actions.
 
 [cols="1,4", options="header"] 
 |===
@@ -141,19 +141,19 @@ The XML rule `<perform>` element performs the action when the condition is met. 
 |Description
 
 |<classification>
-|Identify or classify a resource.
+|This operation adds metadata that is intended to apply to the entire file. For example, if the Java Class is a JMS Message Listener, you might want to add a Classification with the title "JMS Message Listener". Information that would apply to the entire file would go here. Also, if an effort level is set, that information would apply to the entire file.
 
 |<link>
-|Provide links or references to additional information.
+|Provides an HTML link to additional information or documentation that provides more information about the migration task.
 
 |<hint>
-|Provide a hint or inline information. 
+|This operation adds metadata to a line within the file. For example, if the rule were set to apply to all instances of "javax.jms.TextMessage.setText(java.lang.String)" this would highlight every instance of that method call. This is frequently used when there is detailed information to attach that applies at the line level. Each time this operation is fired, the effort level will be added. In our example, if the effort level were 3 and there were 4 instances of "javax.jms.TextMessage.setText(java.lang.String)", then this would add 9 total story points. Whether or not to apply effort at this level or in a classification depends upon the amount of effort required during the migration.
 
 |<xslt>
 |Specify how to transform an XML file.
 
 |<lineitem>
-| Provide line item information about a hint on the project or application overview page.
+| This provides a high level message that will appear in the application overview page.
 
 |<iteration>
 |Specify to iterate over an implicit or explicit variable defined within the rule.

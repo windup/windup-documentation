@@ -23,7 +23,7 @@ cd windup-*
 rm -rf ~/.windup/addons/
 
 ## Execute Windup
-bin/windup.sh --input /home/username/work/Migration/TestApps/_apps/BradApp --output Report --packages org com net
+bin/windup.sh --input /home/username/work/Migration/TestApps/_apps/BradApp --output Report --target eap --packages org com net
 
 ## Exit
 $ exit
@@ -55,7 +55,7 @@ forge -b --install org.jboss.windup.rules.apps:rules-java-ee,{ProductVersion}
 forge
 
 ## Execute {ProductName}
-$ windup-migrate-app --input /home/username/work/Migration/TestApps/_apps/BradApp --output Report --packages org com net
+$ windup-migrate-app --input /home/username/work/Migration/TestApps/_apps/BradApp --output Report --target eap --packages org com net
 
 ## Exit forge
 $ exit

@@ -29,7 +29,7 @@ Pros:
 Cons:
 
 * XML rules only support a simple subset of conditions and operations.
-* XML rules do not provide for direct custom graph data manipulation.
+* XML rules do not provide for direct custom graph data manipulation that can be used later by other rules or the generation of reports.
 * XML rules do not support the ability to create custom reports.
 
 ==== Pros and Cons of Java-based Rules
@@ -143,8 +143,8 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 |Yes
 
 |Simple deployment?
-|No
 |Yes
+|No
 
 |Supports custom reports?
 |No

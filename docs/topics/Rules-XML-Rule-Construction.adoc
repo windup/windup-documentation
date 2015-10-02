@@ -17,13 +17,13 @@ A  ruleset is a group of one or more rules that targets a specific area of migra
 *** ** <sourceTechnology/>**: Source technology
 *** ** <targetTechnology/>**: Target technology
 ** **<rules>**: This element contains the individual rules.
-*** **<rule id=UNIQUE_RULESET_ID_UNIQUE_RULE_ID>**: This element is defines the rule and gives it a unique ID. One or more rules can be defined for a ruleset. 
+*** **<rule id=UNIQUE_RULESET_ID_UNIQUE_RULE_ID>**: This element defines the rule and gives it a unique ID. One or more rules can be defined for a ruleset. 
 **** **<when>**: This element defines the condition or conditions to match on. For a detailed description of the elements allowed in a `<when>`, see xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax].
 **** **<perform>**: This element defines the action to be performed when the rule condition is matched. For a detailed description of the elements allowed in a `<perform>`, see xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
 **** **<otherwise>**: This element defines the action to be performed when the rule condition is not matched. This element takes the same child elements as the `<perform>` element.
 **** **<where>**: This element matches on a string pattern.
 
-*** **<file-mapping/>**: Mapa an extension to a graph type  
+*** **<file-mapping/>**: Map an extension to a graph type  
 *** **<package-mapping/>**: Maps from a package pattern (regular expression) to a organization name.
 
 
