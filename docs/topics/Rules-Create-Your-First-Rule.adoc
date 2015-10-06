@@ -197,7 +197,7 @@ For Windows:  bin\windup.bat --sourceMode --input migration-rules\data --output 
 +
 image:CreateYourFirstRule-ReportOverview.png[Overview, 500]
 
-* Drill down into the _Application Report_ detail by clicking on the "data" link under the `Name` column. This report displays a link for the name of the file, "jboss-web.xml", the warning "seam.jboss.org:loader=@projectName@ java2ParentDelegation=false" in the *Issues* column, and displays "1" *Estimated Story Points", as expected.
+* Drill down into the _Application Report_ detail by clicking on the "data" link under the `Name` column. This report displays a link for the name of the file, "jboss-web.xml", the warning "seam.jboss.org:loader=@projectName@ java2ParentDelegation=false" in the *Issues* column, and displays "1 Story Points", as expected.
 +
 image:CreateYourFirstRule-ReportApplication.png[Overview, 500]
 

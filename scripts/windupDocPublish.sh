@@ -43,7 +43,7 @@ cp html/WindupRulesDevelopmentGuide.html $2/docs/$WINDUP_VERSION/html/
 cp html/WindupUserGuide.html $2/docs/$WINDUP_VERSION/html/
 
 cp docs/*.css $2/docs/$WINDUP_VERSION/html/
-cp docs/images/* $2/docs/$WINDUP_VERSION/html/images/
+cp docs/topics/images/* $2/docs/$WINDUP_VERSION/html/images/
 cp pdf/*.pdf $2/docs/$WINDUP_VERSION/pdf/
  
 echo "Guides can be previewed here: "
