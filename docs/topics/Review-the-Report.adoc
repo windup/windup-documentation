@@ -67,7 +67,7 @@ This page lists the application that was processed along with the technologies t
 
 The first section of the application report page summarizes the entire application migration effort by technology type both graphically and in list format. This is followed by the `Application Messages` section, which contains useful information about general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues.
 
-In the following example, the "JEE Example App" is assigned 102 story points related to 10 different technologies. It also displays one application message.
+In the following example, the "JEE Example App" is assigned 73 story points related to 10 different technologies. It also displays one application message "Deploying log4j.jar can result in non-deterministic ClassLoading issues. It is recommended to use the built-in JBoss EAP Log4j module configured via `jboss-deployment-structure.xml`" with a link to the rule that triggered it.
 
 NOTE: The estimated Story Points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
 
@@ -109,7 +109,7 @@ image:report-jee-example-services-jar.png[Report Archive Detail, 600]
 
 ====== File Analysis Pages
 
-The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 23 warnings and is assigned 21 story points. Click on the file to see the detail. 
+The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 20 warnings and is assigned 10 story points. Click on the file to see the detail. 
 
 * The *Information* section provides a summary of the story points and notes that the file was decompiled by {ProductShortName}. 
 * This is followed by the file source code listing. Warnings appear in the file at the point where  migration is required. 
@@ -131,7 +131,7 @@ image:report-jee-example-source-2.png[File Detail - Part 2, 600]
 [[review-the-report-rule-provider-executions-report]]
 ===== Rule Provider Execution Report
 
-This report provides the list of rule providers that executed when running the {ProductShortName} migration command against the application. The report contains the following columns.
+As stated above,access this report by clicking on the `All Rules` link at the bottom of the index page. This report provides the list of rule providers that executed when running the {ProductShortName} migration command against the application. The report contains the following columns.
 
 [cols="1,3", options="header"] 
 |===
@@ -165,7 +165,7 @@ image:report-jee-example-ruleprovider.png[RuleProvider Report, 600]
 [[review-the-report-freemarker-report]]
 ===== Windup FreeMarker Functions and Directives Report
 
-Access this report from the `Windup FreeMarker Methods` link on the initial index page. This report lists all the registered functions and directives that were used to build the report. It is useful if you plan to build your own custom report or for debugging purposes.
+Access this report by clicking on the `Windup FreeMarker Methods` link on the initial index page. This report lists all the registered functions and directives that were used to build the report. It is useful if you plan to build your own custom report or for debugging purposes.
 
 ====
 *{ProductShortName} Report: FreeMarker Functions and Directives*

@@ -622,6 +622,9 @@ $ mkdir -p migration-rules/data</pre>
         &lt;description&gt;
             &lt;!-- Ruleset Description --&gt;
         &lt;/description&gt;
+        &lt;dependencies&gt;
+            &lt;!-- Ruleset Dependencies --&gt;
+        &lt;/dependencies&gt;
         &lt;sourceTechnology id="SOURCE_ID" versionRange="VERSION_RANGE"/&gt;
         &lt;targetTechnology id="TARGET_ID" versionRange="VERSION_RANGE"/&gt;
         &lt;tag&gt;Reviewed-2015-05-01&lt;/tag&gt;
@@ -663,6 +666,15 @@ Windup identifies files with the <code>.windup.xml</code> extension as XML-based
 <p>Replace the <code>UNIQUE_RULE_ID</code> with the ruleset ID appended with '_001': "JBoss5-web-class-loading_001"</p>
 </li>
 </ul>
+</div>
+</li>
+<li>
+<p>Add the following ruleset addon dependencies.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;addon id="org.jboss.windup.rules,windup-rules-javaee,2.4.0.Final"/&gt;
+&lt;addon id="org.jboss.windup.rules,windup-rules-java,2.4.0.Final"/&gt;</code></pre>
+</div>
 </div>
 </li>
 <li>
@@ -709,20 +721,23 @@ Windup identifies files with the <code>.windup.xml</code> extension as XML-based
 <div class="ulist">
 <ul>
 <li>
-<p>Provide an informative message.</p>
-</li>
-<li>
-<p>Provide a link to documentation that describes the migration details.</p>
+<p>Add a classification and descriptive title.</p>
 </li>
 <li>
 <p>Assign a level of effort of "1" to this task.</p>
+</li>
+<li>
+<p>Provide a hint with an informative message and a link to documentation that describes the migration details.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;perform&gt;
     &lt;iteration&gt;
-        &lt;classification title="JBoss Web Application Descriptor" effort="0"/&gt;
-        &lt;hint message="The class-loading element is no longer valid in the jboss-web.xml file." effort="1"&gt;
-            &lt;link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" title="Create or Modify Files That Control Class Loading in JBoss EAP 6"/&gt;
+        &lt;classification title="JBoss Web Application Descriptor" effort="1"/&gt;
+        &lt;hint title="JBoss Web XML class-loading element is no longer valid"&gt;
+          &lt;message&gt;
+            The class-loading element is no longer valid in the jboss-web.xml file.
+          &lt;/message&gt;
+          &lt;link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" title="Create or Modify Files That Control Class Loading in JBoss EAP 6"/&gt;
         &lt;/hint&gt;
     &lt;/iteration&gt;
 &lt;/perform&gt;</code></pre>
@@ -745,6 +760,10 @@ Windup identifies files with the <code>.windup.xml</code> extension as XML-based
         &lt;description&gt;
             This ruleset looks for the class-loading element in a jboss-web.xml file, which is no longer valid in JBoss EAP 6
         &lt;/description&gt;
+         &lt;dependencies&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-javaee,2.4.0.Final"/&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-java,2.4.0.Final"/&gt;
+        &lt;/dependencies&gt;
         &lt;sourceTechnology id="eap" versionRange="(4,5)"/&gt;
         &lt;targetTechnology id="eap" versionRange="[6,)"/&gt;
     &lt;/metadata&gt;
@@ -755,9 +774,12 @@ Windup identifies files with the <code>.windup.xml</code> extension as XML-based
             &lt;/when&gt;
             &lt;perform&gt;
                 &lt;iteration&gt;
-                    &lt;classification title="JBoss Web Application Descriptor" effort="0"/&gt;
-                    &lt;hint message="The class-loading element is no longer valid in the jboss-web.xml file." effort="1"&gt;
-                        &lt;link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" title="Create or Modify Files That Control Class Loading in JBoss EAP 6"/&gt;
+                    &lt;classification title="JBoss Web Application Descriptor" effort="1"/&gt;
+                    &lt;hint title="JBoss Web XML class-loading element is no longer valid"&gt;
+                      &lt;message&gt;
+                        The class-loading element is no longer valid in the jboss-web.xml file.
+                      &lt;/message&gt;
+                      &lt;link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" title="Create or Modify Files That Control Class Loading in JBoss EAP 6"/&gt;
                     &lt;/hint&gt;
                 &lt;/iteration&gt;
             &lt;/perform&gt;
@@ -821,15 +843,28 @@ For Windows:  bin\windup.bat --sourceMode --input migration-rules\data --output 
 <div class="ulist">
 <ul>
 <li>
-<p>The <em>Overview</em> page displays the <strong>Name</strong> of the input folder, "data", along with the expected <strong>Effort</strong> of "1 Story Points".</p>
+<p>The <em>Overview</em> page displays the <strong>Name</strong> of the input folder, "data", along with the  <strong>Effort</strong> of "1 Story Points".</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/CreateYourFirstRule-ReportOverview.png" alt="Overview" width="500"></span></p>
 </div>
 </li>
 <li>
-<p>Drill down into the <em>Application Report</em> detail by clicking on the "data" link under the <code>Name</code> column. This report displays a link for the name of the file, "jboss-web.xml", the warning "seam.jboss.org:loader=@projectName@ java2ParentDelegation=false" in the <strong>Issues</strong> column, and displays "1" *Estimated Story Points", as expected.</p>
+<p>Drill down into the <em>Application Report</em> detail by clicking on the "data" link under the <code>Name</code> column. This report displays a link for the name of the file, "jboss-web.xml", along with 3 warnings under <strong>Issues</strong> and 1 <strong>Story Points</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>JBoss Web Application Descriptor</p>
+</li>
+<li>
+<p>JBoss Web XML</p>
+</li>
+<li>
+<p>JBoss Web XML class-loading element is no longer valid</p>
 <div class="paragraph">
 <p><span class="image"><img src="images/CreateYourFirstRule-ReportApplication.png" alt="Overview" width="500"></span></p>
+</div>
+</li>
+</ul>
 </div>
 </li>
 <li>
@@ -837,6 +872,9 @@ For Windows:  bin\windup.bat --sourceMode --input migration-rules\data --output 
 <div class="paragraph">
 <p><span class="image"><img src="images/CreateYourFirstRule-ReportSource.png" alt="Overview" width="500"></span></p>
 </div>
+</li>
+<li>
+<p>Return to the <em>Overview Page</em> and click on the "All Rule" link to view the <em>Rule Provider Executions</em> report. Find the 'JBoss5-web-class-loading' rule in the report and verify that the <strong>Status</strong> shows "Condition met" and the <strong>Result</strong> shows "success".</p>
 </li>
 </ul>
 </div>
@@ -3150,7 +3188,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-10-02 08:46:24 EDT
+Last updated 2015-10-12 13:09:42 EDT
 </div>
 </div>
 </body>

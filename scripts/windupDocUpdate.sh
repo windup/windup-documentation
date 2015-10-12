@@ -141,17 +141,17 @@ cd ../../
 
 echo "User Guide is located at: " file://$2/html/WindupUserGuide.html
 echo "User Guide (PDF) is located at: " file://$2/pdf/WindupUserGuide.pdf
-echo "User Guide (DocBook) is located at: " file://$2/docs/windup-user-guide/build/tmp/en-US/html-single/index.html
+echo "User Guide (ccutil) is located at: " file://$2/docs/windup-user-guide/build/tmp/en-US/html-single/index.html
 echo ""
 
 echo "Rules Guide is located at: " file://$2/html/WindupRulesDevelopmentGuide.html
 echo "Rules Guide (PDF) is located at: " file://$2/pdf/WindupRulesDevelopmentGuide.pdf
-echo "Rules Guide (DocBook) is located at: " file://$2/docs/windup-rules-development-guide/build/tmp/en-US/html-single/index.html
+echo "Rules Guide (ccutil) is located at: " file://$2/docs/windup-rules-development-guide/build/tmp/en-US/html-single/index.html
 echo ""
 
 echo "Core Guide is located at: " file://$2/html/WindupCoreDevelopmentGuide.html
 echo "Core Guide (PDF) is located at: " file://$2/pdf/WindupCoreDevelopmentGuide.pdf
-echo "Core Guide (DocBook) is located at: " file://$2/docs/windup-core-development-guide/build/tmp/en-US/html-single/index.html
+echo "Core Guide (ccutil) is located at: " file://$2/docs/windup-core-development-guide/build/tmp/en-US/html-single/index.html
 echo ""
 echo "*******************************************"
 echo "Manually verify the guides and use Maven to check in the new files"
