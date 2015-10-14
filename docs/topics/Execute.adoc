@@ -91,13 +91,13 @@ The following is a detailed description of the available {ProductShortName} comm
 --output *OUTPUT_REPORT_DIRECTORY* (optional):: This is the fully qualified path to the folder that will contain the the report information produced by {ProductShortName}. 
 +
 * If omitted, the report will be generated in a  *INPUT_ARCHIVE_OR_FOLDER.report* folder. 
-* If the output directory exists, you will see the following error. 
+* If the output directory exists, you will be prompted with the following (with a default of N). 
 +
 ----
-***ERROR*** Files exist in /home/username/OUTPUT_REPORT_DIRECTORY, but --overwrite not specified. Aborting!
+Overwrite all contents of "/home/username/OUTPUT_REPORT_DIRECTORY" (anything already in the directory will be deleted)? [y,N]
 ----
 +
-You must specify the `--overwrite` argument to proceed. This forces {ProductShortName} to delete and recreate the folder.
+However, if you specify the `--overwrite` argument, {ProductShortName} will proceed to delete and recreate the folder.
 +
 [WARNING]
 ====

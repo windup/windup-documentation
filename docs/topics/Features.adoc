@@ -30,14 +30,6 @@ Better Rules::
 * Rules can now be nested to handle more complex situations. This means you can nest simple statements rather than use complex XPATH or REGEX expressions.
 *Rules can be linked using and/or statements
 
-Automation:: 
-
-{ProductName} has the ability to automate some of the migration processes.
-
-* {ProductName} is integrated with Forge 2, meaning it can generate projects, libraries, and configuration files.
-* Rules can create Forge inputs and put them into the data graph.
-* During the automation phase, the data graph inputs can be processed to generate a new project.
-
 Work Estimation:: 
 
 Estimates for the _level of effort_ are based on the skills required and the classification of migration work needed. _Level of effort_ is represented as _story points_ in the {ProductShortName} reports.
@@ -46,7 +38,6 @@ Better Reporting::
 
 {ProductName}  reports are now targeted for specific audiences.
 
-* IT Management - Applications are ranked by cost of migration.
 * Project Management - Reports detail the type of work and estimation of effort to complete the tasks.
 * Developers: Reports provide hints and suggested code changes by class or file.
 
