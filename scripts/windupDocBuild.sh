@@ -1,4 +1,8 @@
 #!/bin/bash
+echo "This script is outdated."
+echo "Please use buildGuide.sh instead."
+exit
+
 if [ "$1" == "?" ]  || [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ "$1" == "" ] || [ "$2" == "" ]; then 
 
     echo "Run this script from the root of the windup-documentation directory." 
