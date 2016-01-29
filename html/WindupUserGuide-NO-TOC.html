@@ -412,33 +412,123 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <body class="book">
 <div id="header">
 <h1>Windup User Guide</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#What-is-it">1.1. What is Windup?</a>
+<ul class="sectlevel3">
+<li><a href="#_overview">1.1.1. Overview</a></li>
+<li><a href="#_how_does_windup_simplify_migration">1.1.2. How Does Windup Simplify Migration?</a></li>
+</ul>
+</li>
+<li><a href="#Features">1.2. Features of Windup</a></li>
+<li><a href="#_about_windup_rules">1.3. About Windup Rules</a></li>
+<li><a href="#System-Requirements">1.4. System Requirements</a>
+<ul class="sectlevel3">
+<li><a href="#_software">1.4.1. Software</a></li>
+<li><a href="#_hardware">1.4.2. Hardware</a></li>
+</ul>
+</li>
+<li><a href="#About-the-HOME-Variable">1.5. About the WINDUP_HOME Variable</a></li>
+</ul>
+</li>
+<li><a href="#_get_started">2. Get Started</a>
+<ul class="sectlevel2">
+<li><a href="#Install">2.1. Install Windup</a></li>
+<li><a href="#Execute">2.2. Execute Windup</a>
+<ul class="sectlevel3">
+<li><a href="#overview">2.2.1. Overview</a></li>
+<li><a href="#run-windup">2.2.2. Run Windup</a></li>
+<li><a href="#_windup_help">2.2.3. Windup Help</a></li>
+<li><a href="#command-line-arguments">2.2.4. Windup Command Line Arguments</a></li>
+<li><a href="#command-examples">2.2.5. Windup Command Examples</a></li>
+</ul>
+</li>
+<li><a href="#Review-the-Report">2.3. Review the Report</a>
+<ul class="sectlevel3">
+<li><a href="#_about_the_report">2.3.1. About the Report</a></li>
+<li><a href="#_access_the_reports">2.3.2. Access the Reports</a></li>
+</ul>
+</li>
+<li><a href="#Export-the-Report-for-Use-by-Spreadsheet-Programs">2.4. Export the Report for Use by Spreadsheet Programs</a>
+<ul class="sectlevel3">
+<li><a href="#_enable_the_export_functionality">2.4.1. Enable the Export Functionality</a></li>
+<li><a href="#_import_the_csv_file_into_a_spreadsheet">2.4.2. Import the CSV File into a Spreadsheet</a></li>
+<li><a href="#_overview_of_the_csv_data_structure">2.4.3. Overview of the CSV data structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_additional_resources">3. Additional Resources</a>
+<ul class="sectlevel2">
+<li><a href="#Review-the-Quickstarts">3.1. Review the Windup Quickstarts</a>
+<ul class="sectlevel3">
+<li><a href="#_download_the_latest_quickstart_zip">3.1.1. Download the Latest Quickstart ZIP</a></li>
+<li><a href="#_fork_and_clone_the_quickstart_github_project">3.1.2. Fork and Clone the Quickstart GitHub Project</a></li>
+</ul>
+</li>
+<li><a href="#Get-Involved">3.2. Get Involved</a>
+<ul class="sectlevel3">
+<li><a href="#_how_can_you_help">3.2.1. How can you help?</a></li>
+</ul>
+</li>
+<li><a href="#Important-Links">3.3. Important Links</a></li>
+<li><a href="#Known-Issues">3.4. Known Windup Issues</a></li>
+<li><a href="#Report-Issues">3.5. Report Issues with Windup</a>
+<ul class="sectlevel3">
+<li><a href="#_create_a_jira_account">3.5.1. Create a JIRA Account</a></li>
+<li><a href="#_create_a_jira_issue">3.5.2. Create a JIRA Issue</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_appendix">4. Appendix</a>
+<ul class="sectlevel2">
+<li><a href="#Glossary">4.1. Glossary of Terms Used in Windup</a>
+<ul class="sectlevel3">
+<li><a href="#_rules_terms">4.1.1. Rules Terms</a></li>
+<li><a href="#_reporting_terms">4.1.2. Reporting Terms</a></li>
+</ul>
+</li>
+<li><a href="#Optimize-Performance">4.2. Optimize Windup Performance</a>
+<ul class="sectlevel3">
+<li><a href="#_overview_2">4.2.1. Overview</a></li>
+<li><a href="#_tips_to_optimize_performance">4.2.2. Tips to Optimize Performance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_introduction">Introduction</h2>
+<h2 id="_introduction">1. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This guide is for engineers, consultants, and others who plan to use
 Windup to migrate Java applications or other components.</p>
 </div>
 <div class="sect2">
-<h3 id="What-is-it">What is Windup?</h3>
+<h3 id="What-is-it">1.1. What is Windup?</h3>
 <hr>
 <div class="paragraph">
 <p><span class="image"><img src="images/windup-logo-large.png" alt="Windup Logo"></span></p>
 </div>
 <hr>
 <div class="sect3">
-<h4 id="_overview">Overview</h4>
+<h4 id="_overview">1.1.1. Overview</h4>
 <div class="paragraph">
 <p>Windup is an extensible and customizable rule-based tool that helps simplify migration of Java applications.</p>
 </div>
 <div class="paragraph">
-<p>Running from a <a href="http://forge.jboss.org">Forge</a> environment, Windup examines application artifacts, including project source directories and applications archives, then produces an HTML report highlighting areas that need changes. Windup can be used to migrate Java applications from previous versions of <em>Red Hat JBoss Enterprise Application Platform</em> or from other containers, such as <em>Oracle WebLogic Server</em> or <em>IBM® WebSphere® Application Server</em>.</p>
+<p>Running from a <a href="http://forge.jboss.org">Forge</a> environment, Windup examines application artifacts, including project source directories and applications archives, then produces an HTML report highlighting areas that need changes. Windup can be used to migrate Java applications from previous versions of <em>Red Hat JBoss Enterprise Application Platform</em> or from other containers, such as <em>Oracle® WebLogic Server</em> or <em>IBM® WebSphere® Application Server</em>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_how_does_windup_simplify_migration">How Does Windup Simplify Migration?</h4>
+<h4 id="_how_does_windup_simplify_migration">1.1.2. How Does Windup Simplify Migration?</h4>
 <div class="paragraph">
 <p>Windup looks for common resources and highlights technologies and known “trouble
 spots” when migrating applications. The goal is to provide a high level view into the technologies used by the application and provide a detailed report organizations can use to estimate, document, and migrate enterprise applications to Java EE and JBoss EAP.</p>
@@ -446,7 +536,7 @@ spots” when migrating applications. The goal is to provide a high level view i
 </div>
 </div>
 <div class="sect2">
-<h3 id="Features">Features of Windup</h3>
+<h3 id="Features">1.2. Features of Windup</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Shared Data Model</dt>
@@ -523,7 +613,7 @@ spots” when migrating applications. The goal is to provide a high level view i
 </div>
 </div>
 <div class="sect2">
-<h3 id="_about_windup_rules">About Windup Rules</h3>
+<h3 id="_about_windup_rules">1.3. About Windup Rules</h3>
 <div class="paragraph">
 <p>Windup is a rule-based migration tool that analyzes the APIs, technologies, and architectures used by the applications you plan to migrate. In fact, the Windup tool executes its own core set of rules through all phases of the migration process. It uses rules to extract files from archives, decompile files, scan and classify file types, analyze XML and other file content, analyze the application code, and build the reports.</p>
 </div>
@@ -541,14 +631,14 @@ otherwise(action)</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Windup provides comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, Windup allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset. If you plan to write your own custom rules, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">
+<p>Windup provides comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, Windup allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset. If you plan to write your own custom rules, see the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide">
 Windup Rules Development Guide</a> for detailed instructions.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="System-Requirements">System Requirements</h3>
+<h3 id="System-Requirements">1.4. System Requirements</h3>
 <div class="sect3">
-<h4 id="_software">Software</h4>
+<h4 id="_software">1.4.1. Software</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -561,7 +651,7 @@ Windup Rules Development Guide</a> for detailed instructions.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_hardware">Hardware</h4>
+<h4 id="_hardware">1.4.2. Hardware</h4>
 <div class="paragraph">
 <p>The following memory and disk space requirements are the minimum needed to run Windup. If your application is very large or you need to evaluate multiple applications, you may want to increase these values to improve performance. For tips on how to optimize performance, see <a href="#Optimize-Performance">Optimize Windup Performance</a>.</p>
 </div>
@@ -578,17 +668,17 @@ Windup Rules Development Guide</a> for detailed instructions.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="About-the-HOME-Variable">About the WINDUP_HOME Variable</h3>
+<h3 id="About-the-HOME-Variable">1.5. About the WINDUP_HOME Variable</h3>
 <div class="paragraph">
 <p>This documentation uses the <strong>WINDUP_HOME</strong> <em>replaceable</em> value to denote the path to the Windup distribution. When you encounter this value in the documentation, be sure to replace it with the actual path to your Windup installation.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the downloaded ZIP file.</p>
+<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.5.0-Final folder extracted from the downloaded ZIP file.</p>
 </li>
 <li>
-<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.4.0-Final.zip file.</p>
+<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.5.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.5.0-Final.zip file.</p>
 </li>
 </ul>
 </div>
@@ -596,14 +686,14 @@ Windup Rules Development Guide</a> for detailed instructions.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_get_started">Get Started</h2>
+<h2 id="_get_started">2. Get Started</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Install">Install Windup</h3>
+<h3 id="Install">2.1. Install Windup</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download the latest <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.windup&amp;a=windup-distribution&amp;v=LATEST&amp;e=zip&amp;c=offline">Windup ZIP distribution</a>.</p>
+<p>Download the latest <a href="http://windup.jboss.org/download.html">Windup ZIP distribution</a>.</p>
 </li>
 <li>
 <p>Extract the ZIP file in to a directory of your choice.</p>
@@ -612,15 +702,15 @@ Windup Rules Development Guide</a> for detailed instructions.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Execute">Execute Windup</h3>
+<h3 id="Execute">2.2. Execute Windup</h3>
 <div class="sect3">
-<h4 id="overview">Overview</h4>
+<h4 id="overview">2.2.1. Overview</h4>
 <div class="paragraph">
 <p>These instructions use the replaceable variable <code>WINDUP_HOME</code> to refer to the fully qualified path to your Windup installation. For more information, see <a href="#About-the-HOME-Variable">About the WINDUP_HOME Variable</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="run-windup">Run Windup</h4>
+<h4 id="run-windup">2.2.2. Run Windup</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -637,8 +727,12 @@ Windup Rules Development Guide</a> for detailed instructions.</p>
 <p>The basic command to run Windup uses the following syntax.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">For Linux:     $ bin/windup --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
-For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+<pre class="nowrap">For Linux:
+$ bin/windup --input INPUT_ARCHIVE_OR_DIRECTORY ... --output OUTPUT_REPORT_DIRECTORY \
+   --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+For Windows:
+&gt; bin\windup.bat --input INPUT_ARCHIVE_OR_DIRECTORY ... --output OUTPUT_REPORT_DIRECTORY
+    --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 </li>
@@ -646,7 +740,8 @@ For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE_OR_FOLDER --output OUTP
 <p>To evaluate an application archive, use the following syntax:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">bin/windup --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N --target eap</pre>
+<pre class="nowrap">bin/windup --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY
+  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 </li>
@@ -654,7 +749,8 @@ For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE_OR_FOLDER --output OUTP
 <p>To run Windup against application source code, add the <code>--sourceMode</code> argument:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">bin/windup  --sourceMode --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+<pre class="nowrap">bin/windup  --sourceMode --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY
+  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 </li>
@@ -662,7 +758,8 @@ For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE_OR_FOLDER --output OUTP
 <p>To override the default <em>Fernflower</em> decompiler, pass the <code>-Dwindup.decompiler</code> argument on the command line. For example, to use the <em>Procyon</em> compiler, use the following syntax:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+<pre class="nowrap">bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY
+  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 </li>
@@ -715,7 +812,7 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </div>
 </div>
 <div class="sect3">
-<h4 id="_windup_help">Windup Help</h4>
+<h4 id="_windup_help">2.2.3. Windup Help</h4>
 <div class="paragraph">
 <p>To see the complete list of available arguments for the <code>windup</code> command, open a terminal, navigate to the WINDUP_HOME directory, and execute the following command:</p>
 </div>
@@ -726,23 +823,57 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </div>
 </div>
 <div class="sect3">
-<h4 id="command-line-arguments">Windup Command Line Arguments</h4>
+<h4 id="command-line-arguments">2.2.4. Windup Command Line Arguments</h4>
 <div class="paragraph">
 <p>The following is a detailed description of the available Windup command line arguments.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">--input <strong>INPUT_ARCHIVE_OR_FOLDER</strong></dt>
+<dt class="hdlist1">--input <strong>INPUT_ARCHIVE_OR_DIRECTORY</strong> [&#8230;&#8203;]</dt>
 <dd>
-<p>This is the fully qualified path of the application archive or folder you plan to migrate. This argument is required.</p>
+<p>Each input argument is a fully qualified path to a file or directory containing one or more applications to be migrated. This argument is required. Multiple paths are separated by a space. The argument might appear multiple times in the command.</p>
+<div class="paragraph">
+<p>When used in combination with the following arguments, the file input type is evaluated as follows.</p>
+</div>
+<table id="input-file-argument-description-table" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Input File Argument Description Table</caption>
+<colgroup>
+<col style="width: 14%;">
+<col style="width: 28%;">
+<col style="width: 28%;">
+<col style="width: 28%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input File Type</th>
+<th class="tableblock halign-left valign-top">&#8201;&#8212;&#8201;explodedApp argument</th>
+<th class="tableblock halign-left valign-top">&#8201;&#8212;&#8201;sourceMode argument</th>
+<th class="tableblock halign-left valign-top">Neither argument specified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DIRECTORY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Directory evaluated as a single application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Directory evaluated as a single application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each directory entry is evaluated as a single application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FILE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Argument is ignored and the file is evaluated as a single application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The file is evaluated as a compressed project.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The file is evaluated as a single application.</p></td>
+</tr>
+</tbody>
+</table>
 </dd>
 <dt class="hdlist1">--output <strong>OUTPUT_REPORT_DIRECTORY</strong> (optional)</dt>
 <dd>
-<p>This is the fully qualified path to the folder that will contain the the report information produced by Windup.</p>
+<p>This is the fully qualified path to the directory that will contain the the report information produced by Windup.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If omitted, the report will be generated in a  <strong>INPUT_ARCHIVE_OR_FOLDER.report</strong> folder.</p>
+<p>If omitted, the report will be generated in a  <strong>INPUT_ARCHIVE_OR_DIRECTORY.report</strong> directory.</p>
 </li>
 <li>
 <p>If the output directory exists, you will be prompted with the following (with a default of N).</p>
@@ -752,7 +883,7 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </div>
 </div>
 <div class="paragraph">
-<p>However, if you specify the <code>--overwrite</code> argument, Windup will proceed to delete and recreate the folder.</p>
+<p>However, if you specify the <code>--overwrite</code> argument, Windup will proceed to delete and recreate the directory.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -774,7 +905,11 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </dd>
 <dt class="hdlist1">--sourceMode (optional)</dt>
 <dd>
-<p>If specified, indicates the application to be evaluated contains source files rather than compiled binaries.</p>
+<p>If specified, indicates the application to be evaluated contains source files rather than compiled binaries. See the the <a href="#input-file-argument-description-table">Input File Argument Description Table</a> above for details.</p>
+</dd>
+<dt class="hdlist1">--explodedApp</dt>
+<dd>
+<p>If specified, indicates the directory contains source files for a single application or directory entries for multiple applications. See the the <a href="#input-file-argument-description-table">Input File Argument Description Table</a> above for details.</p>
 </dd>
 <dt class="hdlist1">--source SOURCE_1 SOURCE_2 (optional)</dt>
 <dd>
@@ -853,7 +988,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </dd>
 <dt class="hdlist1">--overwrite (optional)</dt>
 <dd>
-<p>Specify this argument only if you are certain you want to force Windup to delete the existing <strong>OUTPUT_REPORT_DIRECTORY</strong> folder. If you do not specify this argument and the <code>--output</code> folder exists, you are prompted to choose whether to overwrite the contents.</p>
+<p>Specify this argument only if you are certain you want to force Windup to delete the existing <strong>OUTPUT_REPORT_DIRECTORY</strong> directory. If you do not specify this argument and the <code>--output</code> directory exists, you are prompted to choose whether to overwrite the contents.</p>
 </dd>
 <dt class="hdlist1">--includeTags TAG_1 TAG_2 (optional)</dt>
 <dd>
@@ -892,7 +1027,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </dd>
 <dt class="hdlist1">--exportCSV (optional)</dt>
 <dd>
-<p>Export the report data to a CSV formatted file on your local file system. Windup creates the file in the folder specified by the <code>--output</code> argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see <a href="#Export-the-Report-for-Use-by-Spreadsheet-Programs">Export the Report for Use by Spreadsheet Programs</a>.</p>
+<p>Export the report data to a CSV formatted file on your local file system. Windup creates the file in the directory specified by the <code>--output</code> argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see <a href="#Export-the-Report-for-Use-by-Spreadsheet-Programs">Export the Report for Use by Spreadsheet Programs</a>.</p>
 </dd>
 <dt class="hdlist1">--additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2 (optional)</dt>
 <dd>
@@ -942,14 +1077,14 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </div>
 </div>
 <div class="sect3">
-<h4 id="command-examples">Windup Command Examples</h4>
+<h4 id="command-examples">2.2.5. Windup Command Examples</h4>
 <div class="paragraph">
 <p>The following examples report against applications located in the Windup source <a href="https://github.com/windup/windup/tree/master/test-files">test-files</a> directory.</p>
 </div>
 <div class="sect4">
 <h5 id="_source_code_example">Source Code Example</h5>
 <div class="paragraph">
-<p>The following command runs against the <a href="https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2">seam-booking-5.2</a> application source code. It evaluates all <code>org.jboss.seam</code> packages and creates a folder named 'seam-booking-report' in the <code>/home/username/windup-reports/</code> directory to contain the reporting output.</p>
+<p>The following command runs against the <a href="https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2">seam-booking-5.2</a> application source code. It evaluates all <code>org.jboss.seam</code> packages and creates a directory named 'seam-booking-report' in the <code>/home/username/windup-reports/</code> directory to contain the reporting output.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -960,7 +1095,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 <div class="sect4">
 <h5 id="_archive_example">Archive Example</h5>
 <div class="paragraph">
-<p>The following command runs against the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> EAR archive. It evaluates all <code>com.acme</code> and <code>org.apache</code> packages and creates a folder named 'jee-example-app-1.0.0.ear-report' in the <code>/home/username/windup-reports/</code> directory to contain the reporting output.</p>
+<p>The following command runs against the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> EAR archive. It evaluates all <code>com.acme</code> and <code>org.apache</code> packages and creates a directory named 'jee-example-app-1.0.0.ear-report' in the <code>/home/username/windup-reports/</code> directory to contain the reporting output.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -980,9 +1115,9 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </div>
 </div>
 <div class="sect2">
-<h3 id="Review-the-Report">Review the Report</h3>
+<h3 id="Review-the-Report">2.3. Review the Report</h3>
 <div class="sect3">
-<h4 id="_about_the_report">About the Report</h4>
+<h4 id="_about_the_report">2.3.1. About the Report</h4>
 <div class="paragraph">
 <p>When you execute Windup, the report is generated in the <code>OUTPUT_REPORT_DIRECTORY</code> you specify for the <code>--output</code> argument in the command line. This output directory contains the following files and subdirectories:</p>
 </div>
@@ -1007,7 +1142,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </div>
 </div>
 <div class="sect3">
-<h4 id="_access_the_reports">Access the Reports</h4>
+<h4 id="_access_the_reports">2.3.2. Access the Reports</h4>
 <div class="paragraph">
 <p>Use your favorite browser to open the <code>index.html</code> file located in the output report directory. You should see something like the following:</p>
 </div>
@@ -1118,7 +1253,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Level of effort required to migrate the file.</p>
 </div>
 <div class="paragraph">
-<p><em>Story Points</em> are covered in more detail in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html#Rules-Rule-Story-Points">Windup Rules Development Guide</a>.</p>
+<p><em>Story Points</em> are covered in more detail in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide#Rules-Rule-Story-Points">Windup Rules Development Guide</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1257,7 +1392,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 <div class="sect2">
-<h3 id="Export-the-Report-for-Use-by-Spreadsheet-Programs">Export the Report for Use by Spreadsheet Programs</h3>
+<h3 id="Export-the-Report-for-Use-by-Spreadsheet-Programs">2.4. Export the Report for Use by Spreadsheet Programs</h3>
 <div class="paragraph">
 <p>Windup provides the ability to export the report data, including the <strong>Classifications</strong> and <strong>Hints</strong>, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields delimited by a comma (,) separator.</p>
 </div>
@@ -1299,13 +1434,13 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>The CSV formatted file can be imported and manipulated by spreadsheet software such as Microsoft Excel and OpenOffice or LibreOffice Calc. Spreadsheet software provide the ability to sort, analyze, evaluate, and manage the result data from a Windup report.</p>
 </div>
 <div class="sect3">
-<h4 id="_enable_the_export_functionality">Enable the Export Functionality</h4>
+<h4 id="_enable_the_export_functionality">2.4.1. Enable the Export Functionality</h4>
 <div class="paragraph">
 <p>To enable export of the report into CSV file, run Windup with <code>--exportCSV</code> argument. The CSV file will be created in the directory specified by the <code>--output</code> argument.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_import_the_csv_file_into_a_spreadsheet">Import the CSV File into a Spreadsheet</h4>
+<h4 id="_import_the_csv_file_into_a_spreadsheet">2.4.2. Import the CSV File into a Spreadsheet</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1327,7 +1462,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 <div class="sect3">
-<h4 id="_overview_of_the_csv_data_structure">Overview of the CSV data structure</h4>
+<h4 id="_overview_of_the_csv_data_structure">2.4.3. Overview of the CSV data structure</h4>
 <div class="paragraph">
 <p>The CSV formatted output file contains the following data fields:</p>
 </div>
@@ -1380,10 +1515,10 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 <div class="sect1">
-<h2 id="_additional_resources">Additional Resources</h2>
+<h2 id="_additional_resources">3. Additional Resources</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Review-the-Quickstarts">Review the Windup Quickstarts</h3>
+<h3 id="Review-the-Quickstarts">3.1. Review the Windup Quickstarts</h3>
 <div class="paragraph">
 <p>The Windup quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.</p>
 </div>
@@ -1391,7 +1526,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>You can download a ZIP file of the latest released version of the quickstarts. Or, if you prefer to play around with the source code, you can fork and clone the windup-quickstarts project repository.</p>
 </div>
 <div class="sect3">
-<h4 id="_download_the_latest_quickstart_zip">Download the Latest Quickstart ZIP</h4>
+<h4 id="_download_the_latest_quickstart_zip">3.1.1. Download the Latest Quickstart ZIP</h4>
 <div class="paragraph">
 <p>To download the latest quickstart ZIP file, browse to: <a href="https://github.com/windup/windup-quickstarts/releases" class="bare">https://github.com/windup/windup-quickstarts/releases</a></p>
 </div>
@@ -1400,7 +1535,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 <div class="sect3">
-<h4 id="_fork_and_clone_the_quickstart_github_project">Fork and Clone the Quickstart GitHub Project</h4>
+<h4 id="_fork_and_clone_the_quickstart_github_project">3.1.2. Fork and Clone the Quickstart GitHub Project</h4>
 <div class="paragraph">
 <p>If you don&#8217;t have the GitHub client (<code>git</code>), download it from: <a href="http://git-scm.com/" class="bare">http://git-scm.com/</a></p>
 </div>
@@ -1446,9 +1581,9 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 <div class="sect2">
-<h3 id="Get-Involved">Get Involved</h3>
+<h3 id="Get-Involved">3.2. Get Involved</h3>
 <div class="sect3">
-<h4 id="_how_can_you_help">How can you help?</h4>
+<h4 id="_how_can_you_help">3.2.1. How can you help?</h4>
 <div class="paragraph">
 <p>To help us make Windup cover most application constructs and server configurations, including yours, you can help with any of the following items. Many require only a few minutes of your time!</p>
 </div>
@@ -1487,7 +1622,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Create a test for the new rule.</p>
 </li>
 <li>
-<p>Details are provided in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>Details are provided in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </li>
 </ul>
 </div>
@@ -1516,7 +1651,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 <div class="sect2">
-<h3 id="Important-Links">Important Links</h3>
+<h3 id="Important-Links">3.3. Important Links</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -1551,18 +1686,18 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 <div class="sect2">
-<h3 id="Known-Issues">Known Windup Issues</h3>
+<h3 id="Known-Issues">3.4. Known Windup Issues</h3>
 <div class="paragraph">
 <p>Windup known issues are tracked here: <a href="https://issues.jboss.org/browse/WINDUP-496?jql=project%20%3D%20WINDUP%20AND%20issuetype%20%3D%20Bug%20AND%20status%20in%20%28Open%2C%20%22Coding%20In%20Progress%22%2C%20Reopened%2C%20%22Pull%20Request%20Sent%22%29">Open Windup issues</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Report-Issues">Report Issues with Windup</h3>
+<h3 id="Report-Issues">3.5. Report Issues with Windup</h3>
 <div class="paragraph">
 <p>Windup uses JIRA as its issue tracking system. If you encounter an issue executing Windup, please file a JIRA Issue.</p>
 </div>
 <div class="sect3">
-<h4 id="_create_a_jira_account">Create a JIRA Account</h4>
+<h4 id="_create_a_jira_account">3.5.1. Create a JIRA Account</h4>
 <div class="paragraph">
 <p>If you do not yet have a JIRA account, create one using the following procedure.</p>
 </div>
@@ -1584,7 +1719,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_a_jira_issue">Create a JIRA Issue</h4>
+<h4 id="_create_a_jira_issue">3.5.2. Create a JIRA Issue</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1651,12 +1786,12 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 <div class="sect1">
-<h2 id="_appendix">Appendix</h2>
+<h2 id="_appendix">4. Appendix</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Glossary">Glossary of Terms Used in Windup</h3>
+<h3 id="Glossary">4.1. Glossary of Terms Used in Windup</h3>
 <div class="sect3">
-<h4 id="_rules_terms">Rules Terms</h4>
+<h4 id="_rules_terms">4.1.1. Rules Terms</h4>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Rule</dt>
@@ -1708,7 +1843,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 <div class="sect3">
-<h4 id="_reporting_terms">Reporting Terms</h4>
+<h4 id="_reporting_terms">4.1.2. Reporting Terms</h4>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Level of effort</dt>
@@ -1717,16 +1852,16 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </dd>
 <dt class="hdlist1">Story Point</dt>
 <dd>
-<p>A term commonly used in Scrum Agile software development methodology to estimate the <em>level of effort</em> needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks. Story points are covered in more detail in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>A term commonly used in Scrum Agile software development methodology to estimate the <em>level of effort</em> needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks. Story points are covered in more detail in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </dd>
 </dl>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Optimize-Performance">Optimize Windup Performance</h3>
+<h3 id="Optimize-Performance">4.2. Optimize Windup Performance</h3>
 <div class="sect3">
-<h4 id="_overview_2">Overview</h4>
+<h4 id="_overview_2">4.2.1. Overview</h4>
 <div class="paragraph">
 <p>Windup performance depends on a number of factors, including hardware configuration, the number and types of files in the application, the size and number of applications to be evaluated, and whether the application contains source or compiled code. For example, a file that is larger than 10 MB may need a lot of time to process.</p>
 </div>
@@ -1735,7 +1870,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 </div>
 <div class="sect3">
-<h4 id="_tips_to_optimize_performance">Tips to Optimize Performance</h4>
+<h4 id="_tips_to_optimize_performance">4.2.2. Tips to Optimize Performance</h4>
 <div class="sect4">
 <h5 id="_application_and_command_line_suggestions">Application and Command Line Suggestions</h5>
 <div class="paragraph">
@@ -1793,7 +1928,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-10-13 21:49:50 EDT
+Last updated 2016-01-29 09:14:05 EST
 </div>
 </div>
 </body>

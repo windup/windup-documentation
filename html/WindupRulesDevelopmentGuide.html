@@ -517,7 +517,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>This guide is for engineers, consultants, and others who plan to create custom XML-based rules for Windup.</p>
 </div>
 <div class="paragraph">
-<p>If you are new to Windup, it is recommended that you start with the <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a>. It provides detailed information about system requirements and detailed instructions on how to install and execute Windup. It also contains tips to <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html#Optimize-Performance">optimize performance</a> and provides links to other sources of information about Windup.</p>
+<p>If you are new to Windup, it is recommended that you start with the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-user-guide">Windup User Guide</a>. It provides detailed information about system requirements and detailed instructions on how to install and execute Windup. It also contains tips to <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-user-guide#Optimize-Performance">optimize performance</a> and provides links to other sources of information about Windup.</p>
 </div>
 <div class="paragraph">
 <p>If you would like to contribute to the Windup source code base or provide Java-based rule add-ons, see the <a href="https://github.com/windup/windup/wiki">Windup Wiki</a>.</p>
@@ -672,8 +672,8 @@ Windup identifies files with the <code>.windup.xml</code> extension as XML-based
 <p>Add the following ruleset addon dependencies.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;addon id="org.jboss.windup.rules,windup-rules-javaee,2.4.0.Final"/&gt;
-&lt;addon id="org.jboss.windup.rules,windup-rules-java,2.4.0.Final"/&gt;</code></pre>
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;addon id="org.jboss.windup.rules,windup-rules-javaee,2.5.0.Final"/&gt;
+&lt;addon id="org.jboss.windup.rules,windup-rules-java,2.5.0.Final"/&gt;</code></pre>
 </div>
 </div>
 </li>
@@ -761,8 +761,8 @@ Windup identifies files with the <code>.windup.xml</code> extension as XML-based
             This ruleset looks for the class-loading element in a jboss-web.xml file, which is no longer valid in JBoss EAP 6
         &lt;/description&gt;
          &lt;dependencies&gt;
-            &lt;addon id="org.jboss.windup.rules,windup-rules-javaee,2.4.0.Final"/&gt;
-            &lt;addon id="org.jboss.windup.rules,windup-rules-java,2.4.0.Final"/&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-javaee,2.5.0.Final"/&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-java,2.5.0.Final"/&gt;
         &lt;/dependencies&gt;
         &lt;sourceTechnology id="eap" versionRange="(4,5)"/&gt;
         &lt;targetTechnology id="eap" versionRange="[6,)"/&gt;
@@ -1244,7 +1244,7 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 <div class="ulist">
 <ul>
 <li>
-<p>You should have already installed Windup. Installation instruction are provided in the <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a>.</p>
+<p>You should have already installed Windup. Installation instruction are provided in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-user-guide">Windup User Guide</a>.</p>
 </li>
 <li>
 <p>Before you begin, you may also want to be familiar with the following documentation:</p>
@@ -1395,6 +1395,10 @@ otherwise(action)</pre>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Test for a match in a Java class.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;javaclass-ignore&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exclude javaclass which you would like to ignore in processing discovery.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;xmlfile&gt;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Test for a match in an XML file.</p></td>
 </tr>
@@ -1405,6 +1409,14 @@ otherwise(action)</pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;filecontent&gt;</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Find strings or text within files, for example, properties files.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;file-mapping&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define file names to internal stored File model.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;package-mapping&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define package names to organization or libraries.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2989,7 +3001,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 <div class="ulist">
 <ul>
 <li>
-<p>More examples of how to run Windup are located in the <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a>.</p>
+<p>More examples of how to run Windup are located in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-user-guide">Windup User Guide</a>.</p>
 </li>
 <li>
 <p>Working examples of XML-based rules can be found on GitHub in the <a href="https://github.com/windup/windup/">Windup source code</a> GitHub repository and the Windup quickstarts <a href="https://github.com/windup/windup-quickstarts/">GitHub repository</a> or <a href="https://github.com/windup/windup-quickstarts/releases">latest release ZIP download</a>.</p>
@@ -3030,10 +3042,10 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a></p>
+<p><a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-user-guide">Windup User Guide</a></p>
 </li>
 <li>
-<p><a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a></p>
+<p><a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a></p>
 </li>
 <li>
 <p><a href="http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html">Windup Core Development Guide</a></p>
@@ -3175,10 +3187,10 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 <div class="ulist">
 <ul>
 <li>
-<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the downloaded ZIP file.</p>
+<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.5.0-Final folder extracted from the downloaded ZIP file.</p>
 </li>
 <li>
-<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.4.0-Final.zip file.</p>
+<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.5.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.5.0-Final.zip file.</p>
 </li>
 </ul>
 </div>
@@ -3188,7 +3200,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-10-13 21:49:50 EDT
+Last updated 2016-01-28 14:29:24 EST
 </div>
 </div>
 </body>

@@ -119,21 +119,21 @@ git checkout -b gh-pages windup/gh-pages
 * If the _{ProductSrcHomeVar}/docs/{ProductReleaseVar}/_ directory does not yet exist, create a _docs/{ProductReleaseVar}/html/images/_ directory. 
 +
 ----
-mkdir -p docs/2.4.0.Final/html/images (if it doesn't exist!)
+mkdir -p docs/2.5.0.Final/html/images (if it doesn't exist!)
 ----
     
 * Copy any the images, stylesheets, and html files from windup-documentation:
 +
 ----
-cp windup-documentation/html/*.html windup/docs/2.4.0.Final/html/
-cp windup-documentation/*.css windup/docs/2.4.0.Final/html/
-cp windup-documentation/images/* windup/docs/2.4.0.Final/html/images/
+cp windup-documentation/html/*.html windup/docs/2.5.0.Final/html/
+cp windup-documentation/*.css windup/docs/2.5.0.Final/html/
+cp windup-documentation/images/* windup/docs/2.5.0.Final/html/images/
 ----
 
 * Copy the JavaDoc files that were backed up from `target/apidocs` to a javadoc folder:
 +
 ----
-cp -r temp/target/apidocs windup/docs/2.4.0.Final/javadocs/
+cp -r temp/target/apidocs windup/docs/2.5.0.Final/javadocs/
 ----
 * Add the updated files to GitHub.
 +
@@ -166,7 +166,7 @@ git push upstream gh-pages
 ** Create a symlink to the new documentation.
 
         Syntax: ln -s WINDUP_RELEASE latest
-        Example: ln -s 2.4.0.Final latest
+        Example: ln -s 2.5.0.Final latest
 
 ** Add the modified "latest" directory to Git.
 
@@ -174,7 +174,7 @@ git push upstream gh-pages
 
 ** Commit the change.
 
-        git commit -m 'Replace symlink for latest to point to 2.4.0.Final'
+        git commit -m 'Replace symlink for latest to point to 2.5.0.Final'
 
 ** Push the changes to your own git repository, verify and issue a pull.
 

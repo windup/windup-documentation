@@ -22,8 +22,12 @@ See xref:command-line-arguments[{ProductShortName} Command Line Arguments] below
 +
 [options="nowrap"]
 ----
-For Linux:     $ bin/windup --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
-For Windows:   > bin\windup.bat --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+For Linux:
+$ bin/windup --input INPUT_ARCHIVE_OR_DIRECTORY ... --output OUTPUT_REPORT_DIRECTORY \
+   --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+For Windows:
+> bin\windup.bat --input INPUT_ARCHIVE_OR_DIRECTORY ... --output OUTPUT_REPORT_DIRECTORY
+    --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
 ----
 +
 
@@ -31,21 +35,24 @@ For Windows:   > bin\windup.bat --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_
 +
 [options="nowrap"]
 ----
-bin/windup --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N --target eap
+bin/windup --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY 
+  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
 ----
 
 * To run {ProductShortName} against application source code, add the `--sourceMode` argument:
 +
 [options="nowrap"]
 ----
-bin/windup  --sourceMode --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
+bin/windup  --sourceMode --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY
+  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
 ----
 
 * To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` argument on the command line. For example, to use the _Procyon_ compiler, use the following syntax:
 +
 [options="nowrap"]
 ----
-bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
+bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY 
+  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
 ----
 
 +
@@ -86,25 +93,49 @@ To see the complete list of available arguments for the `windup` command, open a
 
 The following is a detailed description of the available {ProductShortName} command line arguments.
 
---input *INPUT_ARCHIVE_OR_FOLDER*:: This is the fully qualified path of the application archive or folder you plan to migrate. This argument is required.
-
---output *OUTPUT_REPORT_DIRECTORY* (optional):: This is the fully qualified path to the folder that will contain the the report information produced by {ProductShortName}. 
+--input *INPUT_ARCHIVE_OR_DIRECTORY* [...]:: Each input argument is a fully qualified path to a file or directory containing one or more applications to be migrated. This argument is required. Multiple paths are separated by a space. The argument might appear multiple times in the command.
 +
-* If omitted, the report will be generated in a  *INPUT_ARCHIVE_OR_FOLDER.report* folder. 
+When used in combination with the following arguments, the file input type is evaluated as follows.
++
+[[input-file-argument-description-table]]
+.Input File Argument Description Table
+[cols="1,2,2,2",options="header"]
+|====
+| Input File Type
+| -- explodedApp argument
+| -- sourceMode argument
+| Neither argument specified
+
+| DIRECTORY
+| Directory evaluated as a single application
+| Directory evaluated as a single application
+| Each directory entry is evaluated as a single application
+
+| FILE
+| Argument is ignored and the file is evaluated as a single application.
+| The file is evaluated as a compressed project.
+| The file is evaluated as a single application.
+|====
+
+--output *OUTPUT_REPORT_DIRECTORY* (optional):: This is the fully qualified path to the directory that will contain the the report information produced by {ProductShortName}. 
++
+* If omitted, the report will be generated in a  *INPUT_ARCHIVE_OR_DIRECTORY.report* directory. 
 * If the output directory exists, you will be prompted with the following (with a default of N). 
 +
 ----
 Overwrite all contents of "/home/username/OUTPUT_REPORT_DIRECTORY" (anything already in the directory will be deleted)? [y,N]
 ----
 +
-However, if you specify the `--overwrite` argument, {ProductShortName} will proceed to delete and recreate the folder.
+However, if you specify the `--overwrite` argument, {ProductShortName} will proceed to delete and recreate the directory.
 +
 [WARNING]
 ====
 Be careful not to specify a report output directory that contains important information!
 ====
 
---sourceMode (optional):: If specified, indicates the application to be evaluated contains source files rather than compiled binaries.
+--sourceMode (optional):: If specified, indicates the application to be evaluated contains source files rather than compiled binaries. See the the xref:input-file-argument-description-table[Input File Argument Description Table] above for details.
+
+--explodedApp:: If specified, indicates the directory contains source files for a single application or directory entries for multiple applications. See the the xref:input-file-argument-description-table[Input File Argument Description Table] above for details.
 
 --source SOURCE_1 SOURCE_2 (optional):: A space delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. 
 +
@@ -136,7 +167,7 @@ bin/windup --listTargetTechnologies
 +
 WARNING: If you omit the `--packages` argument, every package in the application is scanned, which can impact performance. It is best to provide this argument with one or more packages.
 
---overwrite (optional):: Specify this argument only if you are certain you want to force {ProductShortName} to delete the existing *OUTPUT_REPORT_DIRECTORY* folder. If you do not specify this argument and the `--output` folder exists, you are prompted to choose whether to overwrite the contents.
+--overwrite (optional):: Specify this argument only if you are certain you want to force {ProductShortName} to delete the existing *OUTPUT_REPORT_DIRECTORY* directory. If you do not specify this argument and the `--output` directory exists, you are prompted to choose whether to overwrite the contents.
 
 --includeTags TAG_1 TAG_2 (optional):: Limit processing to rules that contain the specified tags. If this option is not specified, all tags are processed. Multiple tags are delimited by spaces.
 +
@@ -155,7 +186,7 @@ bin/windup --listTag
 
 --userIgnorePath CUSTOM_IGNORE_DIRECTORY (optional):: {ProductShortName} looks for file names matching the pattern `*windup-ignore.txt` to identify files that should be ignored. By default, it looks for these files in the `~/.windup/ignore/` and `WINDUP_HOME/ignore/` directories, but this option allows you to create files with this pattern name in a different directory. 
 
---exportCSV (optional):: Export the report data to a CSV formatted file on your local file system. {ProductShortName} creates the file in the folder specified by the `--output` argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see xref:Export-the-Report-for-Use-by-Spreadsheet-Programs[Export the Report for Use by Spreadsheet Programs].
+--exportCSV (optional):: Export the report data to a CSV formatted file on your local file system. {ProductShortName} creates the file in the directory specified by the `--output` argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see xref:Export-the-Report-for-Use-by-Spreadsheet-Programs[Export the Report for Use by Spreadsheet Programs].
 
 --additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2 (optional):: Use this option to add additional JAR files or directories to the classpath. For example:
 +
@@ -187,13 +218,13 @@ The following examples report against applications located in the {ProductShortN
 
 ===== Source Code Example
 
-The following command runs against the https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] application source code. It evaluates all `org.jboss.seam` packages and creates a folder named 'seam-booking-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
+The following command runs against the https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] application source code. It evaluates all `org.jboss.seam` packages and creates a directory named 'seam-booking-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
 
    bin/windup --sourceMode --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --target eap --packages org.jboss.seam
 
 ===== Archive Example
 
-The following command runs against the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] EAR archive. It evaluates all `com.acme` and `org.apache` packages and creates a folder named 'jee-example-app-1.0.0.ear-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
+The following command runs against the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] EAR archive. It evaluates all `com.acme` and `org.apache` packages and creates a directory named 'jee-example-app-1.0.0.ear-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
 
     bin/windup  --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --target eap --packages com.acme org.apache
 

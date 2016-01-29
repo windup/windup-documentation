@@ -1,152 +1,16 @@
-[[Port-an-Existing-Guide]]
-= Port an Existing Guide
+topics/templates/document-attributes.adoc[]
 
-== Introduction
+//
+//
+//
+//
+// 
 
-This reference describes how to port an existing JBoss EAP guide from PressGang to GitLab. 
-It describes the process that was used to port the Getting Started Guide Alpha 7. 
 
-Be sure to review the internal resource, *Create a New Guide*, to understand the new directory structure. 
-It also describes how to create the `master.doc`, which corresponds to the content specification in PressGang, how to layout chapter and topic headings, and how to use the topics generated from the legacy DocBook XML topics.
+[[About-the-HOME-Variable]]
+=== About the {ProductHomeVar} Variable
 
-Review the internal resource, *AsciiDoc Guide*, for information about issues that need to be fixed in the legacy asciidoc files.
+This documentation uses the *{ProductHomeVar}* _replaceable_ value to denote the path to the {ProductName} distribution. When you encounter this value in the documentation, be sure to replace it with the actual path to your {ProductShortName} installation.
 
-== Process Used to Port the Getting Started Guide
-
-. Checkout a topic branch to work in.
-. Create the directory structure for the *Getting Started Guide*. See *Create a New Guide* for details. 
-+
-[source,options="nowrap"]
-----
-$ cd docs/
-$ mkdir getting-started
-----
-+
-Continue to create the `master.adoc`, `master-docinfo.xml`, and create the required symlinks.
-. Fill in the `master.adoc` file.
-* Open the xref:http://skynet.usersys.redhat.com:8080/pressgang-ccms-ui/#ContentSpecFilteredResultsAndContentSpecView;query;contentSpecIds=23122[Getting Started content spec] in Pressgang. 
-* Then open the `docs/getting-started/master.adoc` file.
-* For each `Chapter: CHAPTER_NAME' in the content spec, add a `== CHAPTER_NAME` in the master.adoc file.
-* For each topic in the content spec, add an include::topics/TOPIC_ID.adoc[tabsize=4]
-. The following table shows the content spec and corresponding master.adoc content.
-+
-[cols="2*", options="header"] 
-|===
-| Content Spec 23087
-| master.adoc
-
-| Chapter: Introduction
-| == Introduction
-
-| About Red Hat JBoss Enterprise Application Platform 7 [44696]
-| include::topics/44696.adoc[tabsize=4]
-
-| About the Red Hat Customer Portal [254]
-| include::topics/254.adoc[tabsize=4]
-
-| About the Red Hat JBoss Developer Program [26695]
-| include::topics/26695.adoc[tabsize=4]
-
-| About the Full Red Hat JBoss Commercial Program [26698]
-| include::topics/26698.adoc[tabsize=4]
-
-| How to Find More Information [26504]
-| include::topics/26504.adoc[tabsize=4]
-
-| Chapter: Download and Install JBoss EAP
-| == Download and Install JBoss EAP
-
-| JBoss EAP Installation Overview [44815]
-| include::topics/44815.adoc[tabsize=4]
-
-| JBoss EAP Installation Prerequisites [44697]
-| include::topics/44697.adoc[tabsize=4]
-|===
-
-. Check to see if each topic included in the master.adoc file has already been copied to the `docs/topics/` directory and cleaned up. 
-* If the `.adoc` file already exists in the `docs/topics/` directory, someone has already cleaned it up. Do NOT copy the legacy-topics/asciidoc version over it or you will lose all the edits. You only need to see if the topic has been updated in PressGang and manually modify it to synchronize the changes.
-* If the `.adoc` file does NOT exist in the `docs/topics/` directory, copy the topic from the `legacy-topics/asciidoc` directory to the `docs/topics/' directory. Then edit the topic to clean up any Pandoc issues. See the "Asciidoc Guide" for details.
-. Determine if any images are included in the topic. If so, be sure to save the included images from PressGang into the `docs/images/images/` directory.
-
-== Synchronize Topics Changed in PressGang
-
-Work is continuing in PressGang, so it is important to find changes made in PressGang and apply them in GitLab. 
-
-. Navigate to the root directory and run the command to update the legacy content.
-+
-[source,options="nowrap"]
-----
-$ scripts/processPressgangTopics.sh
-----
-. Use the Git diff command to get the list of modified files.
-+
-[source,options="nowrap"]
-----
-$ git diff
-----
-. Find the `Changes not staged for commit` for modified files in the `legacy-topics/asciidoc/` directory, for example:
-+
-----
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	modified:   legacy-topics/asciidoc/11727.adoc
-	modified:   legacy-topics/asciidoc/13604.adoc
-	modified:   legacy-topics/asciidoc/14175.adoc
-	modified:   legacy-topics/asciidoc/26682.adoc
-	modified:   legacy-topics/asciidoc/26710.adoc
-	modified:   legacy-topics/asciidoc/28310.adoc
-	modified:   legacy-topics/asciidoc/28311.adoc
-----
-. If the modified topic has already been used in a guide, an updated version will be located in the `docs/topics/` directory. 
-. For each modified file that has already been cleaned up and added to the `docs/topics/` directory, you must make the change to the topic in that directory.
-* It is easier to see what has changed in the original DocBook source file, so run `git diff legacy-topics/docbook/TOPIC_ID.xml` version of the file. You should see something like the following.
-+
-[source,options="nowrap"]
-----
-$ git diff legacy-topics/docbook-xml/26710.xml
-diff --git a/legacy-topics/docbook-xml/26710.xml b/legacy-topics/docbook-xml/26710.xml
-index 24f0e19..065a92f 100644
---- a/legacy-topics/docbook-xml/26710.xml
-+++ b/legacy-topics/docbook-xml/26710.xml
-@@ -10,7 +10,7 @@
-                <step>
-                        <para>
-                                Run the following command to launch the GUI installation program: 
--                               <screen>java -jar jbdevstudio-<replaceable>build_version</replaceable>.jar</screen>
-+                               <screen>java -jar jboss-devstudio-<replaceable>build_version</replaceable>.jar</screen>
-                        </para>
-                        <para>
-                                <note>
----- 
-* Make the update directly in the `docs/topics/TOPIC_ID` file. This file has already been cleaned up and it is safer than copying the Pandoc generated file and repeating the process. The following is the example of the change made to the `docs/topics/27610.xml file. 
-+
-[source,options="nowrap"]
-----
-java -jar jboss-devstudio-VERSION.jar
-----
-. You need to manually check for any image updates in PressGang. 
-
-== Build the Guides
-
-A `scripts/buildGuides.sh` script is provided to build and test the guides. Before you can run this script, be sure to install `ccutil`. This is documented in the *Contributor Guide*.
-
-To run the scripts, navigate to the root directory and type the following command.
-
-[source,options="nowrap"]
-----
-$ scripts/buildGuides.sh
-----
-
-[NOTE]
-====
-You will see the following warnings and errors. They are expected and you can ignore them.
-
-    WARNING: Image missing: tmp/en-US/xml/images/IMAGE_NAME.png
-    RelaxNG Validation failed for '/home/username/path-to-doc/build/tmp/en-US/xml/master.xml': 
-    IGNORING: Validation is broken, see BZ #1097495
-====
-
-The `ccutil` build catches most compile errors. Be sure to resolve any issues before you issue a merge request.
-
+* If you download and install the latest distribution of {ProductShortName} from the JBoss Nexus repository, {ProductHomeVar} refers to the {ProductDistribution} folder extracted from the downloaded ZIP file.
+* If you build {ProductShortName} from GitHub source, {ProductHomeVar} refers to the {ProductDistribution} folder extracted from the windup-distribution/target/{ProductDistribution}.zip file.

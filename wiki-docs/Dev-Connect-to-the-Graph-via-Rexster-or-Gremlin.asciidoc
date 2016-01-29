@@ -1,0 +1,108 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+=== Connect to the Graph via Rexster
+
+==== Connect Running from within Windup
+
+There is a specific add-on for running Rexster along your graph with 
+groupId *org.jboss.windup.rexster* and *artifactId* Rexster. 
+This add-on is by default deployed to each Arquillian test within core Windup add-ons. 
+This however happens only if `-Dmaven.surefire.debug` is set to *true* . 
+To make it deploy by default in some arbitrary add-on, make the add-on dependent on the windup-test-harness and it will make the default Rexster deployment for you.
+
+===== Running Rexster Within Your Test
+
+As previously stated, Rexster is usually deployed by default along your with tests while debugging. Your add-on just needs to be dependent on the windup-test-harness. However, if the default functionality is not sufficient, or if you need to deploy Rexster even when not debugging, you may instruct Arquillian to deploy the Rexster add-on:
+
+[source,java,options="nowrap"]
+----
+@Deployment
+    @Dependencies({
+                ....
+                @AddonDependency(name = "org.jboss.windup.rexster:windup-rexster", version = "2.5.0-SNAPSHOT", imported=false),
+                ....
+    })
+----
+
+===== Run Rexster within {ProductName}
+
+Be sure the Rexster add-on is deployed in Furnace and is accessible on http://localhost:8182/. 
+
+[options="nowrap"]
+----
+username: rexster
+password: rexster
+----
+
+==== Connect to the Titan Database Eternally (even after Windup finishes)
+
+===== Using the Gremlin Console
+
+On each run, Windup saves a file `graph/TitanConfiguration.properties`, which you can use to connect to with the Gremlin console.
+
+----
+ondra@lenovo:~/tmp/windup-distribution-2.5.0-SNAPSHOT$ gremlin 
+
+         \,,,/
+         (o o)
+-----oOOo-(_)-oOOo-----
+gremlin> import com.thinkaurelius.titan.core.TitanFactory;
+g = TitanFactory.open("Foo.war-report/graph/TitanConfiguration.properties");
+...
+----
+Now you can cast Gremlin queries.
+
+==== Using special Rexster distribution which works with Titan
+
+* Download and unzip https://drive.google.com/a/redhat.com/file/d/0B38Q1IfkPpZnWVRHUmNsM3ExR28/view?usp=sharing
+* then run the `bin/gremlin.sh`
+
+Here is an example script to run it, import the necessary classes and load the graph (edit for your paths):
+
+[source,bash]
+-----------
+
+
+RESULT_DIR="$1"
+CONFIG_SUBPATH="graph/TitanConfiguration.properties"
+
+if [ "" = "$RESULT_DIR" ]; then
+    RESULT_DIR="/tmp/Windup/resJee"
+fi
+
+if [ ! -d "$RESULT_DIR" ]; then
+    echo "Given report directory does not exist: $RESULT_DIR"
+    exit;
+fi
+if [ ! -d "$RESULT_DIR/$CONFIG_SUBPATH" ]; then
+    echo "No Titan config in given report directory: $RESULT_DIR/$CONFIG_SUBPATH"
+fi
+
+
+cat << EOF > ./script.tmp
+spawn gremlin
+expect ">"
+send "import com.thinkaurelius.titan.core.TitanFactory;
+"
+expect ">"
+send "g = TitanFactory.open('$RESULT_DIR/$CONFIG_SUBPATH');
+"
+expect ">"
+send "g.log.setLevel(ch.qos.logback.classic.Level.INFO);
+"
+expect ">"
+# turn it back over to interactive user
+interact
+EOF
+
+expect ./script.tmp
+-----------
+
+After that, you may do Gremlin queries like this:
+
+[source,java]
+----------------------
+> g.V().has('w:vertextype', 'ProjectModel').as('prj').in('fileToProjectModel').has('parseError').as('file').table().iterator()
+----------------------
+

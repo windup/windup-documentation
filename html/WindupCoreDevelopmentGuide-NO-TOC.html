@@ -412,32 +412,214 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <body class="book">
 <div id="header">
 <h1>Windup Core Development Guide</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">1. Introduction</a></li>
+<li><a href="#_get_started">2. Get Started</a>
+<ul class="sectlevel2">
+<li><a href="#Install-and-Configure-Maven">2.1. Install and Configure Maven</a>
+<ul class="sectlevel3">
+<li><a href="#_overview">2.1.1. Overview</a></li>
+<li><a href="#_download_and_install_maven">2.1.2. Download and Install Maven</a></li>
+<li><a href="#configure-the-ide-to-use-the-updated-maven">2.1.3. Configure the IDE to Use the Updated Maven</a></li>
+</ul>
+</li>
+<li><a href="#Dev-Create-Your-First-Java-based-Rule-Add-on">2.2. Create Your First Java-based Rule Add-on</a>
+<ul class="sectlevel3">
+<li><a href="#_overview_2">2.2.1. Overview</a></li>
+<li><a href="#_rule_example_description">2.2.2. Rule Example Description</a></li>
+<li><a href="#_create_the_maven_project">2.2.3. Create the Maven Project</a></li>
+<li><a href="#_configure_the_maven_pom_for_windup">2.2.4. Configure the Maven POM for Windup</a></li>
+<li><a href="#_create_the_rule_provider_class">2.2.5. Create the Rule Provider Class</a></li>
+<li><a href="#_create_data_to_test_the_rule">2.2.6. Create Data to Test the Rule</a></li>
+<li><a href="#_compile_and_install_the_rule_in_the_local_maven_repository">2.2.7. Compile and Install the Rule in the Local Maven Repository</a></li>
+<li><a href="#_add_the_rule_to_windup">2.2.8. Add the Rule to Windup</a></li>
+<li><a href="#_test_the_rule">2.2.9. Test the Rule</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_prepare_your_development_environment">3. Prepare Your Development Environment</a>
+<ul class="sectlevel2">
+<li><a href="#Dev-Get-the-Source-Code">3.1. Get the Windup Source Code</a>
+<ul class="sectlevel3">
+<li><a href="#_install_the_git_client">3.1.1. Install the Git Client</a></li>
+<li><a href="#_fork_and_clone_the_windup_repository">3.1.2. Fork and Clone the Windup Repository</a></li>
+<li><a href="#_fork_and_clone_the_windup_rulesets_repository">3.1.3. Fork and Clone the Windup Rulesets Repository</a></li>
+<li><a href="#_fork_and_clone_the_windup_distribution_repository">3.1.4. Fork and Clone the Windup Distribution Repository</a></li>
+</ul>
+</li>
+<li><a href="#Dev-Build-from-Source">3.2. Build Windup from Source</a>
+<ul class="sectlevel3">
+<li><a href="#_overview_3">3.2.1. Overview</a></li>
+<li><a href="#_system_requirements">3.2.2. System Requirements</a></li>
+<li><a href="#_prerequisites">3.2.3. Prerequisites</a></li>
+<li><a href="#_build_using_red_hat_jboss_developer_studio_or_eclipse">3.2.4. Build Using Red Hat JBoss Developer Studio or Eclipse</a></li>
+<li><a href="#_build_using_maven_command_line">3.2.5. Build Using Maven Command Line</a></li>
+<li><a href="#_extract_the_distribution_source_file">3.2.6. Extract the Distribution Source File</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_understand_the_windup_architecture_and_structure">4. Understand the Windup Architecture and Structure</a>
+<ul class="sectlevel2">
+<li><a href="#Architectural-Components">4.1. Windup Architectural Components</a>
+<ul class="sectlevel3">
+<li><a href="#_forge">4.1.1. Forge</a></li>
+<li><a href="#_forge_furnace">4.1.2. Forge Furnace</a></li>
+<li><a href="#_tinkerpop">4.1.3. TinkerPop</a></li>
+<li><a href="#_titan">4.1.4. Titan</a></li>
+<li><a href="#_frames">4.1.5. Frames</a></li>
+<li><a href="#_gremlin">4.1.6. Gremlin</a></li>
+<li><a href="#_blueprints">4.1.7. Blueprints</a></li>
+<li><a href="#_pipes">4.1.8. Pipes</a></li>
+<li><a href="#_rexster">4.1.9. Rexster</a></li>
+<li><a href="#_ocpsoft_rewrite">4.1.10. OCPsoft Rewrite</a></li>
+</ul>
+</li>
+<li><a href="#Dev-Project-Structure">4.2. Windup Core Project Structure</a></li>
+</ul>
+</li>
+<li><a href="#_rules_and_rulesets">5. Rules and Rulesets</a>
+<ul class="sectlevel2">
+<li><a href="#Processing-Overview">5.1. Windup Processing Overview</a>
+<ul class="sectlevel3">
+<li><a href="#_windup_core_rules">5.1.1. Windup Core Rules</a></li>
+<li><a href="#_application_migration">5.1.2. Application Migration</a></li>
+<li><a href="#_generate_findings_based_on_the_rule_execution_results">5.1.3. Generate Findings Based on the Rule Execution Results</a></li>
+</ul>
+</li>
+<li><a href="#Rules-Rule-Execution-Lifecycle">5.2. Rule Execution Lifecycle</a>
+<ul class="sectlevel3">
+<li><a href="#_set_the_rule_execution_phase">5.2.1. Set the Rule Execution Phase</a></li>
+<li><a href="#_control_the_execution_order_within_the_rule_phase">5.2.2. Control the Execution Order Within the Rule Phase</a></li>
+<li><a href="#_code_example_using_the_annotation_method">5.2.3. Code Example Using the Annotation Method</a></li>
+<li><a href="#_code_example_using_the_constructor_method">5.2.4. Code Example Using the Constructor Method</a></li>
+<li><a href="#_additional_information">5.2.5. Additional Information</a></li>
+</ul>
+</li>
+<li><a href="#Rule-Phases">5.3. Rule Phases</a></li>
+<li><a href="#Rules-Available-Rules-Utilities">5.4. Available Rule Utilities</a>
+<ul class="sectlevel3">
+<li><a href="#_programmatically_access_the_graph">5.4.1. Programmatically Access the Graph</a></li>
+<li><a href="#_modify_graph_data">5.4.2. Modify Graph Data</a></li>
+</ul>
+</li>
+<li><a href="#Rules-Rule-Story-Points">5.5. Rule Story Points</a>
+<ul class="sectlevel3">
+<li><a href="#_what_are_story_points">5.5.1. What are Story Points?</a></li>
+<li><a href="#_how_story_points_are_estimated_in_rules">5.5.2. How Story Points are Estimated in Rules</a></li>
+<li><a href="#_task_severity">5.5.3. Task Severity</a></li>
+</ul>
+</li>
+<li><a href="#Rules-Difference-Between-XML-based-and-Java-based-Rules">5.6. Difference Between XML-based and Java-based Rules</a>
+<ul class="sectlevel3">
+<li><a href="#_summary">5.6.1. Summary</a></li>
+<li><a href="#_which_one_to_choose">5.6.2. Which one to choose?</a></li>
+<li><a href="#_pros_and_cons_of_xml_based_rules">5.6.3. Pros and Cons of XML-based Rules</a></li>
+<li><a href="#_pros_and_cons_of_java_based_rules">5.6.4. Pros and Cons of Java-based Rules</a></li>
+<li><a href="#_examples_of_xml_based_and_java_based_rules">5.6.5. Examples of XML-based and Java Based Rules</a></li>
+<li><a href="#_quick_comparison_summary">5.6.6. Quick Comparison Summary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_create_and_test_java_rule_add_ons">6. Create and Test Java Rule Add-ons</a>
+<ul class="sectlevel2">
+<li><a href="#Rules-Java-based-Rule-Structure">6.1. Java-based Rule Structure</a>
+<ul class="sectlevel3">
+<li><a href="#_ruleprovider">6.1.1. RuleProvider</a></li>
+<li><a href="#add-rule-code-structure">6.1.2. Add Rule Code Structure</a></li>
+<li><a href="#_available_utilities">6.1.3. Available utilities</a></li>
+</ul>
+</li>
+<li><a href="#Rules-Basic-Rule-Execution-Flow-Patterns">6.2. Basic Rule Execution Flow Patterns</a>
+<ul class="sectlevel3">
+<li><a href="#_single_operation_operation">6.2.1. Single Operation - operation();</a></li>
+<li><a href="#_single_conditional_operation_if_operation">6.2.2. Single Conditional Operation - if( &#8230;&#8203; ){ operation()}</a></li>
+<li><a href="#_single_iteration_for_foomodel_class">6.2.3. Single Iteration - for( FooModel.class ){ &#8230;&#8203; }</a></li>
+<li><a href="#_conditional_iteration_if_for">6.2.4. Conditional Iteration - if( &#8230;&#8203; ){ for( &#8230;&#8203; ) }</a></li>
+<li><a href="#_iteration_with_a_condition_for_if">6.2.5. Iteration With a Condition - for( &#8230;&#8203; ){ if( &#8230;&#8203; ){ &#8230;&#8203; } }</a></li>
+<li><a href="#_nested_iterations_for_for">6.2.6. Nested Iterations - for( &#8230;&#8203; ){ for( &#8230;&#8203; ) { &#8230;&#8203; } }</a></li>
+</ul>
+</li>
+<li><a href="#Rules-Create-a-Basic-Java-based-Rule-Add-on">6.3. Create a Basic Java-based Rule Add-on</a>
+<ul class="sectlevel3">
+<li><a href="#_prerequisites_2">6.3.1. Prerequisites</a></li>
+<li><a href="#_create_the_maven_project_2">6.3.2. Create the Maven Project</a></li>
+<li><a href="#_create_the_java_ruleprovider_class">6.3.3. Create the Java RuleProvider Class</a></li>
+<li><a href="#_install_the_java_based_rule_add_on_in_your_local_maven_repository">6.3.4. Install the Java-based Rule Add-on in Your Local Maven Repository</a></li>
+<li><a href="#add-the-rule-to-windup">6.3.5. Add the Rule to Windup</a></li>
+<li><a href="#_test_the_java_based_rule_add_on">6.3.6. Test the Java-based Rule Add-on</a></li>
+<li><a href="#_review_the_output_report">6.3.7. Review the Output Report</a></li>
+<li><a href="#_debugging_profiling_and_logging">6.3.8. Debugging, Profiling, and Logging</a></li>
+</ul>
+</li>
+<li><a href="#Dev-Debugging-and-Profiling">6.4. Debugging and Profiling</a>
+<ul class="sectlevel3">
+<li><a href="#_configure_logging">6.4.1. Configure Logging</a></li>
+<li><a href="#_debug_the_windup_distribution_runtime">6.4.2. Debug the Windup Distribution Runtime</a></li>
+<li><a href="#_debug_a_test_using_netbeans">6.4.3. Debug a Test Using NetBeans</a></li>
+<li><a href="#_profile_a_test_using_netbeans">6.4.4. Profile a Test Using NetBeans</a></li>
+<li><a href="#_profile_forge_runtime_using_yourkit">6.4.5. Profile Forge Runtime Using YourKit</a></li>
+<li><a href="#_developer_contributing_information">6.4.6. Developer Contributing Information</a></li>
+</ul>
+</li>
+<li><a href="#Dev-Development-Guidelines-and-Conventions">6.5. Development Guidelines and Conventions</a>
+<ul class="sectlevel3">
+<li><a href="#project-source-code-formatting">6.5.1. Project Source Code Formatting</a></li>
+<li><a href="#source-code-naming-conventions">6.5.2. Source Code Naming Conventions</a></li>
+<li><a href="#maven-project-naming-conventions">6.5.3. Maven Project Naming Conventions</a></li>
+</ul>
+</li>
+<li><a href="#Dev-Submit-Code-Updates-to-the-Project">6.6. Submit Code Updates to the Windup Project</a></li>
+</ul>
+</li>
+<li><a href="#_appendix">7. Appendix</a>
+<ul class="sectlevel2">
+<li><a href="#About-the-HOME-Variable">7.1. About the WINDUP_HOME Variable</a></li>
+<li><a href="#Dev-Project-Information">7.2. Windup Project Information</a>
+<ul class="sectlevel3">
+<li><a href="#_github_repository">7.2.1. Github Repository</a></li>
+<li><a href="#_documentation">7.2.2. Documentation</a></li>
+<li><a href="#_website">7.2.3. Website</a></li>
+<li><a href="#_irc_chat">7.2.4. IRC chat</a></li>
+<li><a href="#_mailing_lists">7.2.5. Mailing lists</a></li>
+<li><a href="#_core_development_team_and_irc_nicks">7.2.6. Core development team (and IRC nicks)</a></li>
+<li><a href="#_irc_meeting_bot_commands_hint_for_the_moderator">7.2.7. IRC meeting bot commands (hint for the moderator)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_introduction">Introduction</h2>
+<h2 id="_introduction">1. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This guide is for developers who plan to contribute to the Windup source code base or provide Java-based rule add-ons.</p>
 </div>
 <div class="paragraph">
-<p>If you are new to Windup, it is recommended that you start with the <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a>. It provides detailed information about system requirements and detailed instructions on how to install and execute Windup. It also contains tips to optimize performance and provides links to other sources of information about Windup.</p>
+<p>If you are new to Windup, it is recommended that you start with the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-user-guide">Windup User Guide</a>. It provides detailed information about system requirements and detailed instructions on how to install and execute Windup. It also contains tips to optimize performance and provides links to other sources of information about Windup.</p>
 </div>
 <div class="paragraph">
-<p>If you would like to create custom XML-based rules for Windup, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>If you would like to create custom XML-based rules for Windup, see the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_get_started">Get Started</h2>
+<h2 id="_get_started">2. Get Started</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>After you configure Maven, you are ready to create, install, and test your first Windup Java-based rule add-on.</p>
 </div>
 <div class="sect2">
-<h3 id="Install-and-Configure-Maven">Install and Configure Maven</h3>
+<h3 id="Install-and-Configure-Maven">2.1. Install and Configure Maven</h3>
 <div class="sect3">
-<h4 id="_overview">Overview</h4>
+<h4 id="_overview">2.1.1. Overview</h4>
 <div class="paragraph">
 <p>If you plan to build Windup Java-based rule add-ons or contribute to the core source code base, you must first configure Maven.</p>
 </div>
@@ -456,7 +638,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_download_and_install_maven">Download and Install Maven</h4>
+<h4 id="_download_and_install_maven">2.1.2. Download and Install Maven</h4>
 <div class="paragraph">
 <p>If plan to use the command line and have not yet installed Maven, or if you plan to use Red Hat JBoss Developer Studio 7.1.1 or an older version of Eclipse, you must download and install Maven 3.1.1. or later.</p>
 </div>
@@ -472,7 +654,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="configure-the-ide-to-use-the-updated-maven">Configure the IDE to Use the Updated Maven</h4>
+<h4 id="configure-the-ide-to-use-the-updated-maven">2.1.3. Configure the IDE to Use the Updated Maven</h4>
 <div class="paragraph">
 <p>If you plan to  use JBoss Developer Studio 7.1.1 or an Eclipse version earlier than Eclipse Luna (4.4), follow this procedure to replace the embedded 3.0.4 version of Maven with this newer version.</p>
 </div>
@@ -501,9 +683,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="Dev-Create-Your-First-Java-based-Rule-Add-on">Create Your First Java-based Rule Add-on</h3>
+<h3 id="Dev-Create-Your-First-Java-based-Rule-Add-on">2.2. Create Your First Java-based Rule Add-on</h3>
 <div class="sect3">
-<h4 id="_overview_2">Overview</h4>
+<h4 id="_overview_2">2.2.1. Overview</h4>
 <div class="paragraph">
 <p>This topic guides you through the process of creating and testing your first Windup Java rule-addon using Red Hat JBoss Developer Studio.</p>
 </div>
@@ -515,7 +697,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_rule_example_description">Rule Example Description</h4>
+<h4 id="_rule_example_description">2.2.2. Rule Example Description</h4>
 <div class="paragraph">
 <p>In this example, you write a ruleset to discover instances where an application Java file uses the proprietary servlet annotations. The ruleset adds the following rules.</p>
 </div>
@@ -534,7 +716,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_the_maven_project">Create the Maven Project</h4>
+<h4 id="_create_the_maven_project">2.2.3. Create the Maven Project</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -560,7 +742,7 @@ Description: Rule that finds a proprietary annotation and provides recommendatio
 </div>
 </div>
 <div class="sect3">
-<h4 id="_configure_the_maven_pom_for_windup">Configure the Maven POM for Windup</h4>
+<h4 id="_configure_the_maven_pom_for_windup">2.2.4. Configure the Maven POM for Windup</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -578,7 +760,7 @@ Description: Rule that finds a proprietary annotation and provides recommendatio
     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
     &lt;maven.compiler.source&gt;1.7&lt;/maven.compiler.source&gt;
     &lt;maven.compiler.target&gt;1.7&lt;/maven.compiler.target&gt;
-    &lt;version.windup&gt;2.4.0-SNAPSHOT&lt;/version.windup&gt;
+    &lt;version.windup&gt;2.5.0-SNAPSHOT&lt;/version.windup&gt;
 &lt;/properties&gt;
 
 &lt;dependencyManagement&gt;
@@ -720,7 +902,7 @@ Description: Rule that finds a proprietary annotation and provides recommendatio
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_the_rule_provider_class">Create the Rule Provider Class</h4>
+<h4 id="_create_the_rule_provider_class">2.2.5. Create the Rule Provider Class</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -813,7 +995,7 @@ import org.ocpsoft.rewrite.config.ConfigurationBuilder;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_data_to_test_the_rule">Create Data to Test the Rule</h4>
+<h4 id="_create_data_to_test_the_rule">2.2.6. Create Data to Test the Rule</h4>
 <div class="olist arabic">
 <div class="title">In JBoss Developer Studio, select the <code>src/test/resources</code> directory, right-click, and choose <code>New</code> -&#8594; <code>Class</code>.</div>
 <ol class="arabic">
@@ -861,7 +1043,7 @@ public class MyProprietaryAnnotationClass extends HttpServlet {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_compile_and_install_the_rule_in_the_local_maven_repository">Compile and Install the Rule in the Local Maven Repository</h4>
+<h4 id="_compile_and_install_the_rule_in_the_local_maven_repository">2.2.7. Compile and Install the Rule in the Local Maven Repository</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -881,7 +1063,7 @@ public class MyProprietaryAnnotationClass extends HttpServlet {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_add_the_rule_to_windup">Add the Rule to Windup</h4>
+<h4 id="_add_the_rule_to_windup">2.2.8. Add the Rule to Windup</h4>
 <div class="paragraph">
 <p>Windup uses the Maven GAV (groupId, artifactId, and version) that is specified in the project POM file to locate the installed rule in the local Maven repository. The command to add the rule to Windup is executed in a terminal from the WINDUP_HOME directory and uses the following syntax.</p>
 </div>
@@ -926,7 +1108,7 @@ public class MyProprietaryAnnotationClass extends HttpServlet {
 </div>
 </div>
 <div class="sect3">
-<h4 id="_test_the_rule">Test the Rule</h4>
+<h4 id="_test_the_rule">2.2.9. Test the Rule</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -961,13 +1143,13 @@ For Windows:  bin\windup.bat --sourceMode --input WORKSPACE_PATH\proprietary-ann
 </div>
 </div>
 <div class="sect1">
-<h2 id="_prepare_your_development_environment">Prepare Your Development Environment</h2>
+<h2 id="_prepare_your_development_environment">3. Prepare Your Development Environment</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>If you only plan to create custom Windup Java-based rule add-ons, you can skip this chapter. However, if plan to contribute back to the core code base, the following sections describe how to access and build the Windup source code.</p>
 </div>
 <div class="sect2">
-<h3 id="Dev-Get-the-Source-Code">Get the Windup Source Code</h3>
+<h3 id="Dev-Get-the-Source-Code">3.1. Get the Windup Source Code</h3>
 <div class="paragraph">
 <p>If you just plan to create Java-based rule add-ons, you do not need to get the Windup source code. You only need to configure Maven to build your Java-base rule add-on project.</p>
 </div>
@@ -991,7 +1173,7 @@ For Windows:  bin\windup.bat --sourceMode --input WORKSPACE_PATH\proprietary-ann
 <p>The basic workflow process is to fork the above Windup repositories to your own Git, clone your forks, commit your work in topic branches, and make pull requests back to the corresponding repository.</p>
 </div>
 <div class="sect3">
-<h4 id="_install_the_git_client">Install the Git Client</h4>
+<h4 id="_install_the_git_client">3.1.1. Install the Git Client</h4>
 <div class="paragraph">
 <p>If you don&#8217;t have the Git client (<code>git</code>), get it from:
 <a href="http://git-scm.com/" class="bare">http://git-scm.com/</a></p>
@@ -1027,7 +1209,7 @@ git config --global user_email "YOUR_EMAIL_ADDRESS"</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_fork_and_clone_the_windup_repository">Fork and Clone the Windup Repository</h4>
+<h4 id="_fork_and_clone_the_windup_repository">3.1.2. Fork and Clone the Windup Repository</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1068,7 +1250,7 @@ the original forked repository.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_fork_and_clone_the_windup_rulesets_repository">Fork and Clone the Windup Rulesets Repository</h4>
+<h4 id="_fork_and_clone_the_windup_rulesets_repository">3.1.3. Fork and Clone the Windup Rulesets Repository</h4>
 <div class="paragraph">
 <p>The Windup XML rulesets live in a separate repository. Follow these instructions to fork and clone them.</p>
 </div>
@@ -1111,7 +1293,7 @@ the original forked repository.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_fork_and_clone_the_windup_distribution_repository">Fork and Clone the Windup Distribution Repository</h4>
+<h4 id="_fork_and_clone_the_windup_distribution_repository">3.1.4. Fork and Clone the Windup Distribution Repository</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1152,16 +1334,16 @@ the original forked repository.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Dev-Build-from-Source">Build Windup from Source</h3>
+<h3 id="Dev-Build-from-Source">3.2. Build Windup from Source</h3>
 <div class="sect3">
-<h4 id="_overview_3">Overview</h4>
+<h4 id="_overview_3">3.2.1. Overview</h4>
 <div class="paragraph">
 <p>This information is provided for new developers who plan to contribute code
 to the Windup open source project. It describes how to build Windup from source using an IDE or command line and to extract the Windup distribution that is created during the build process.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_system_requirements">System Requirements</h4>
+<h4 id="_system_requirements">3.2.2. System Requirements</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1216,7 +1398,7 @@ Developer Studio 7.1.1</a> or newer</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites">Prerequisites</h4>
+<h4 id="_prerequisites">3.2.3. Prerequisites</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1229,7 +1411,7 @@ Developer Studio 7.1.1</a> or newer</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_build_using_red_hat_jboss_developer_studio_or_eclipse">Build Using Red Hat JBoss Developer Studio or Eclipse</h4>
+<h4 id="_build_using_red_hat_jboss_developer_studio_or_eclipse">3.2.4. Build Using Red Hat JBoss Developer Studio or Eclipse</h4>
 <div class="paragraph">
 <p>If you prefer, you can use an IDE to build Windup.</p>
 </div>
@@ -1322,7 +1504,7 @@ or dependency errors and click <code>Finish</code>. If you get a dialog titled
 </div>
 </div>
 <div class="sect3">
-<h4 id="_build_using_maven_command_line">Build Using Maven Command Line</h4>
+<h4 id="_build_using_maven_command_line">3.2.5. Build Using Maven Command Line</h4>
 <div class="paragraph">
 <p>Windup source code consists of 3 projects:</p>
 </div>
@@ -1444,7 +1626,7 @@ or dependency errors and click <code>Finish</code>. If you get a dialog titled
 </div>
 </div>
 <div class="sect3">
-<h4 id="_extract_the_distribution_source_file">Extract the Distribution Source File</h4>
+<h4 id="_extract_the_distribution_source_file">3.2.6. Extract the Distribution Source File</h4>
 <div class="paragraph">
 <p>The build process creates a <code>windup-distribution-&lt;VERSION&gt;-offline.zip file</code> in the <code>windup-distribution/target/</code> directory.</p>
 </div>
@@ -1456,10 +1638,10 @@ or dependency errors and click <code>Finish</code>. If you get a dialog titled
 </div>
 </div>
 <div class="sect1">
-<h2 id="_understand_the_windup_architecture_and_structure">Understand the Windup Architecture and Structure</h2>
+<h2 id="_understand_the_windup_architecture_and_structure">4. Understand the Windup Architecture and Structure</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Architectural-Components">Windup Architectural Components</h3>
+<h3 id="Architectural-Components">4.1. Windup Architectural Components</h3>
 <div class="paragraph">
 <p>The following open source software, tools, and APIs are used within
 Windup to analyze and provide migration information. If you plan to
@@ -1467,7 +1649,7 @@ contribute source code to the core Windup project, you should be
 familiar with them.</p>
 </div>
 <div class="sect3">
-<h4 id="_forge">Forge</h4>
+<h4 id="_forge">4.1.1. Forge</h4>
 <div class="paragraph">
 <p>Forge is an open source, extendable, rapid application development tool
 for creating Java EE applications using Maven. For more information
@@ -1475,7 +1657,7 @@ about Forge 2, see: <a href="http://forge.jboss.org/">JBoss Forge</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_forge_furnace">Forge Furnace</h4>
+<h4 id="_forge_furnace">4.1.2. Forge Furnace</h4>
 <div class="paragraph">
 <p>Forge Furnace is a modular runtime container behind Forge that provides
 the ability to run Forge add-ons in an embedded application. For more
@@ -1484,21 +1666,21 @@ information about Forge Furnace, see:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_tinkerpop">TinkerPop</h4>
+<h4 id="_tinkerpop">4.1.3. TinkerPop</h4>
 <div class="paragraph">
 <p>TinkerPop is an open source graph computing framework. For more
 information, see: <a href="http://www.tinkerpop.com/">TinkerPop</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_titan">Titan</h4>
+<h4 id="_titan">4.1.4. Titan</h4>
 <div class="paragraph">
 <p>Titan is a scalable graph database optimized for storing and querying graphs.
 For more information, see: <a href="http://thinkaurelius.github.io/titan/">Titan Distributed Graph Database</a> and <a href="https://github.com/thinkaurelius/titan/wiki/Beginner%27s-Guide">Titan Beginner&#8217;s Guide</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_frames">Frames</h4>
+<h4 id="_frames">4.1.5. Frames</h4>
 <div class="paragraph">
 <p>Frames represents graph data in the form of interrelated Java Objects or
 a collection of annotated Java Interfaces. For more information, see:
@@ -1506,7 +1688,7 @@ a collection of annotated Java Interfaces. For more information, see:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_gremlin">Gremlin</h4>
+<h4 id="_gremlin">4.1.6. Gremlin</h4>
 <div class="paragraph">
 <p>Gremlin is a graph traversal language that allows you to query, analyze,
 and manipulate property graphs that implement the Blueprints property
@@ -1515,7 +1697,7 @@ graph data model. For more information, see:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_blueprints">Blueprints</h4>
+<h4 id="_blueprints">4.1.7. Blueprints</h4>
 <div class="paragraph">
 <p>Blueprints is an industry standard API used to access graph databases.
 For more information about Blueprints, see:
@@ -1523,7 +1705,7 @@ For more information about Blueprints, see:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pipes">Pipes</h4>
+<h4 id="_pipes">4.1.8. Pipes</h4>
 <div class="paragraph">
 <p>Pipes is a dataflow framework used to process graph data. It for the
 transformation of data from input to output. For more information, see:
@@ -1531,14 +1713,14 @@ transformation of data from input to output. For more information, see:
 </div>
 </div>
 <div class="sect3">
-<h4 id="_rexster">Rexster</h4>
+<h4 id="_rexster">4.1.9. Rexster</h4>
 <div class="paragraph">
 <p>Rexster is a graph server that exposes any Blueprints graph through HTTP/REST and a binary protocol called RexPro. Rexster makes extensive use of Blueprints, Pipes, and Gremlin. For more information, see:
 <a href="https://github.com/tinkerpop/rexster/wiki">TinkerPop Rexster Wiki</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ocpsoft_rewrite">OCPsoft Rewrite</h4>
+<h4 id="_ocpsoft_rewrite">4.1.10. OCPsoft Rewrite</h4>
 <div class="paragraph">
 <p>OCPsoft Rewrite is an open source routing and URL rewriting solution for
 Servlets, Java Web Frameworks, and Java EE. For more information about
@@ -1547,7 +1729,7 @@ Ocpsoft Rewrite, see: <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a>.
 </div>
 </div>
 <div class="sect2">
-<h3 id="Dev-Project-Structure">Windup Core Project Structure</h3>
+<h3 id="Dev-Project-Structure">4.2. Windup Core Project Structure</h3>
 <div class="paragraph">
 <p>Windup source code consists of 3 projects:</p>
 </div>
@@ -1637,10 +1819,10 @@ related to the rules or the core code base.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_rules_and_rulesets">Rules and Rulesets</h2>
+<h2 id="_rules_and_rulesets">5. Rules and Rulesets</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Processing-Overview">Windup Processing Overview</h3>
+<h3 id="Processing-Overview">5.1. Windup Processing Overview</h3>
 <div class="paragraph">
 <p>Windup is a rule-based migration tool that allows you to write customized rules to analyze the APIs, technologies, and architectures used by the applications you plan to migrate. The Windup tool also executes its own core rules through all phases of the migration process.</p>
 </div>
@@ -1648,7 +1830,7 @@ related to the rules or the core code base.</p>
 <p>The following is a high level conceptual overview of what happens within Windup when you execute the tool against an application or archive.</p>
 </div>
 <div class="sect3">
-<h4 id="_windup_core_rules">Windup Core Rules</h4>
+<h4 id="_windup_core_rules">5.1.1. Windup Core Rules</h4>
 <div class="paragraph">
 <p>Wnen you run the <code>WINDUP_HOME/bin/windup</code> command against an application, Windup executes its own core rules to process the following types of application input artifacts:</p>
 </div>
@@ -1676,16 +1858,16 @@ related to the rules or the core code base.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_application_migration">Application Migration</h4>
+<h4 id="_application_migration">5.1.2. Application Migration</h4>
 <div class="paragraph">
 <p>The next step in the process is the execution of the migration rules. In this phase, the rules typically do not execute against the application input files. Instead, they execute against the graph database model. Windup rules are independent and decoupled and they communicate with each other using the graph database model. Rules query the graph database to obtain information needed to test the rule condition. They also update the data model with information based on the result of the rule execution. This allows rules to easily interact with other rules and enables the creation of very complex rules.</p>
 </div>
 <div class="paragraph">
-<p>The Windup distribution contains a large number of migration rules, but in some cases, you may need to create additional custom rules for your specific implementation. Windup is architected to allow you to create Java-based rule addons or XML rules and add easily add them to Windup. Custom rule creation is covered in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>The Windup distribution contains a large number of migration rules, but in some cases, you may need to create additional custom rules for your specific implementation. Windup is architected to allow you to create Java-based rule addons or XML rules and add easily add them to Windup. Custom rule creation is covered in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_generate_findings_based_on_the_rule_execution_results">Generate Findings Based on the Rule Execution Results</h4>
+<h4 id="_generate_findings_based_on_the_rule_execution_results">5.1.3. Generate Findings Based on the Rule Execution Results</h4>
 <div class="paragraph">
 <p>The final step in the process is to pull data from the graph database model to generate of reports and optionally generate scripts. Again, Windup uses rules to generate the final output.</p>
 </div>
@@ -1711,7 +1893,7 @@ related to the rules or the core code base.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-Rule-Execution-Lifecycle">Rule Execution Lifecycle</h3>
+<h3 id="Rules-Rule-Execution-Lifecycle">5.2. Rule Execution Lifecycle</h3>
 <div class="paragraph">
 <p>Rule phases provide a way for rule authors to control the rule lifecycle by specifying the phase in which the rule should execute. Windup executes rules sequentially within rule phases, however, you can also provide more fine-grained control over the order of rule execution within a phase. A rule may specify that one or more rules must be executed before it this rule is run. All named rules will be fired in the order specified before executing the the current rule. A rule may also specify that one or more rules must be executed after it is run. In this case, all named rules will be fired in the order specified after executing the the current rule.</p>
 </div>
@@ -1722,7 +1904,7 @@ related to the rules or the core code base.</p>
 <p>For a detailed description of Windup rule phases and the order of their execution, see: <a href="#Rule-Phases">Rule Phases</a></p>
 </div>
 <div class="sect3">
-<h4 id="_set_the_rule_execution_phase">Set the Rule Execution Phase</h4>
+<h4 id="_set_the_rule_execution_phase">5.2.1. Set the Rule Execution Phase</h4>
 <div class="paragraph">
 <p>You can set the phase in which the rule executes in one of the following ways.</p>
 </div>
@@ -1738,7 +1920,7 @@ related to the rules or the core code base.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_control_the_execution_order_within_the_rule_phase">Control the Execution Order Within the Rule Phase</h4>
+<h4 id="_control_the_execution_order_within_the_rule_phase">5.2.2. Control the Execution Order Within the Rule Phase</h4>
 <div class="paragraph">
 <p>You can also provide more fine-grained control over the order of rule execution within a phase. A rule may specify that one or more rules must be executed before it this rule is run. All named rules will be fired in the order specified before executing the the current rule. A rule may also specify that one or more rules must be executed after it is run. In this case, all named rules will be fired in the order specified after executing the the current rule.</p>
 </div>
@@ -1757,7 +1939,7 @@ related to the rules or the core code base.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_code_example_using_the_annotation_method">Code Example Using the Annotation Method</h4>
+<h4 id="_code_example_using_the_annotation_method">5.2.3. Code Example Using the Annotation Method</h4>
 <div class="paragraph">
 <p>The following is an example of a rule that overrides the rule phase and sets the ordering using the <code>@RuleMetaData</code> annotation.</p>
 </div>
@@ -1773,7 +1955,7 @@ public class MyCustomRuleProvider extends AbstractRuleProvider
 </div>
 </div>
 <div class="sect3">
-<h4 id="_code_example_using_the_constructor_method">Code Example Using the Constructor Method</h4>
+<h4 id="_code_example_using_the_constructor_method">5.2.4. Code Example Using the Constructor Method</h4>
 <div class="paragraph">
 <p>The following example provides the same results using constructor methods.</p>
 </div>
@@ -1790,7 +1972,7 @@ public class MyCustomRuleProvider extends AbstractRuleProvider
 </div>
 </div>
 <div class="sect3">
-<h4 id="_additional_information">Additional Information</h4>
+<h4 id="_additional_information">5.2.5. Additional Information</h4>
 <div class="paragraph">
 <p>For more information about what can be specified in the <code>@RuleMetadata</code> annotation, see the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/metadata/RuleMetadata.html">RuleMetadata</a> JavaDoc.</p>
 </div>
@@ -1804,7 +1986,7 @@ diagram</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rule-Phases">Rule Phases</h3>
+<h3 id="Rule-Phases">5.3. Rule Phases</h3>
 <div class="paragraph">
 <p>Rule phases provide a way for rule authors to control the rule lifecycle by specifying the phase in which the rule should execute. Windup executes rules sequentially within rule phases, however, the order of rule execution within a phase can be controlled by specifying other rules that should be run before or after the rule.</p>
 </div>
@@ -1893,9 +2075,9 @@ It extracts all method names from class files and extracts metadata, such as the
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-Available-Rules-Utilities">Available Rule Utilities</h3>
+<h3 id="Rules-Available-Rules-Utilities">5.4. Available Rule Utilities</h3>
 <div class="sect3">
-<h4 id="_programmatically_access_the_graph">Programmatically Access the Graph</h4>
+<h4 id="_programmatically_access_the_graph">5.4.1. Programmatically Access the Graph</h4>
 <div class="paragraph">
 <p><em>Note: Needs update. This is out of date!</em></p>
 </div>
@@ -1989,7 +2171,7 @@ Iteration.over("javaFiles").var("javaFile").perform(
 </div>
 </div>
 <div class="sect3">
-<h4 id="_modify_graph_data">Modify Graph Data</h4>
+<h4 id="_modify_graph_data">5.4.2. Modify Graph Data</h4>
 <div class="paragraph">
 <p>For more custom operations dealing with Graph data that are not covered by the <code>Query</code> mechanism, use the GraphService.</p>
 </div>
@@ -2019,9 +2201,9 @@ FooModel = fooService.create();
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-Rule-Story-Points">Rule Story Points</h3>
+<h3 id="Rules-Rule-Story-Points">5.5. Rule Story Points</h3>
 <div class="sect3">
-<h4 id="_what_are_story_points">What are Story Points?</h4>
+<h4 id="_what_are_story_points">5.5.1. What are Story Points?</h4>
 <div class="paragraph">
 <p><em>Story Points</em> are an abstract metric commonly used in Scrum Agile software development methodology to estimate the <em>level of effort</em> needed to implement a feature or change. They are based on a <a href="http://scrummethodology.com/scrum-effort-estimation-and-story-points/">modified Fibonacci sequence</a>.</p>
 </div>
@@ -2030,7 +2212,7 @@ FooModel = fooService.create();
 </div>
 </div>
 <div class="sect3">
-<h4 id="_how_story_points_are_estimated_in_rules">How Story Points are Estimated in Rules</h4>
+<h4 id="_how_story_points_are_estimated_in_rules">5.5.2. How Story Points are Estimated in Rules</h4>
 <div class="paragraph">
 <p>Estimating the <em>level of effort</em> for the <em>story points</em> for a rule can be tricky. The following are the general guidelines Windup uses when estimating the <em>level of effort</em> required for a rule.</p>
 </div>
@@ -2077,7 +2259,7 @@ FooModel = fooService.create();
 </table>
 </div>
 <div class="sect3">
-<h4 id="_task_severity">Task Severity</h4>
+<h4 id="_task_severity">5.5.3. Task Severity</h4>
 <div class="paragraph">
 <p>In addition to the <em>level of effort</em>, migration tasks can be assigned a <em>severity</em> that indicates whether the task must be completed or can be postponed.</p>
 </div>
@@ -2096,15 +2278,15 @@ FooModel = fooService.create();
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-Difference-Between-XML-based-and-Java-based-Rules">Difference Between XML-based and Java-based Rules</h3>
+<h3 id="Rules-Difference-Between-XML-based-and-Java-based-Rules">5.6. Difference Between XML-based and Java-based Rules</h3>
 <div class="sect3">
-<h4 id="_summary">Summary</h4>
+<h4 id="_summary">5.6.1. Summary</h4>
 <div class="paragraph">
 <p>As mentioned before, Windup provides a core and a default set of rules to analyze and report on migration of application code. Windup also allows you to write your own custom rules. These rules can be written using either XML or Java. Rules written using XML are referred to as <em>XML-based</em> rules. Rules written using the Java API are referred to as <em>Java-based</em> rule add-ons. Both <em>XML-based</em> and <em>Java-based</em> rule add-ons can be used to inspect (classify) and report on Java source, XML, properties, archives, and other types of files,</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_which_one_to_choose">Which one to choose?</h4>
+<h4 id="_which_one_to_choose">5.6.2. Which one to choose?</h4>
 <div class="paragraph">
 <p><em>XML-based</em> rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of <em>XML-based</em> rules is the recommended approach. Creation of custom <em>XML-based</em> rules is covered in this guide.</p>
 </div>
@@ -2113,7 +2295,7 @@ FooModel = fooService.create();
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pros_and_cons_of_xml_based_rules">Pros and Cons of XML-based Rules</h4>
+<h4 id="_pros_and_cons_of_xml_based_rules">5.6.3. Pros and Cons of XML-based Rules</h4>
 <div class="paragraph">
 <p>Pros:</p>
 </div>
@@ -2148,7 +2330,7 @@ FooModel = fooService.create();
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pros_and_cons_of_java_based_rules">Pros and Cons of Java-based Rules</h4>
+<h4 id="_pros_and_cons_of_java_based_rules">5.6.4. Pros and Cons of Java-based Rules</h4>
 <div class="paragraph">
 <p>Pros:</p>
 </div>
@@ -2189,7 +2371,7 @@ FooModel = fooService.create();
 </div>
 </div>
 <div class="sect3">
-<h4 id="_examples_of_xml_based_and_java_based_rules">Examples of XML-based and Java Based Rules</h4>
+<h4 id="_examples_of_xml_based_and_java_based_rules">5.6.5. Examples of XML-based and Java Based Rules</h4>
 <div class="paragraph">
 <p>The following is an example of a rule written in XML that classifies Java code:</p>
 </div>
@@ -2266,7 +2448,7 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 </div>
 </div>
 <div class="sect3">
-<h4 id="_quick_comparison_summary">Quick Comparison Summary</h4>
+<h4 id="_quick_comparison_summary">5.6.6. Quick Comparison Summary</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 60%;">
@@ -2323,15 +2505,15 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 </div>
 </div>
 <div class="sect1">
-<h2 id="_create_and_test_java_rule_add_ons">Create and Test Java Rule Add-ons</h2>
+<h2 id="_create_and_test_java_rule_add_ons">6. Create and Test Java Rule Add-ons</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide focuses on how to create Java-based rule add-ons. For instructions on how to create XML-based rules, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>This guide focuses on how to create Java-based rule add-ons. For instructions on how to create XML-based rules, see the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="Rules-Java-based-Rule-Structure">Java-based Rule Structure</h3>
+<h3 id="Rules-Java-based-Rule-Structure">6.1. Java-based Rule Structure</h3>
 <div class="sect3">
-<h4 id="_ruleprovider">RuleProvider</h4>
+<h4 id="_ruleprovider">6.1.1. RuleProvider</h4>
 <div class="paragraph">
 <p>Windup rules are based on <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a>, an open source routing and URL rewriting solution for Servlets, Java Web Frameworks, and Java EE. The <strong>rewrite</strong> framework allows you to create rule providers and rules in an easy to read format.</p>
 </div>
@@ -2383,7 +2565,7 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-rule-code-structure">Add Rule Code Structure</h4>
+<h4 id="add-rule-code-structure">6.1.2. Add Rule Code Structure</h4>
 <div class="paragraph">
 <p>As mentioned above, individual rules are added to a ruleset in the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/RuleProvider.html">getConfiguration(GraphContext context)</a> method using the <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a> ConfigurationBuilder class.</p>
 </div>
@@ -2564,7 +2746,7 @@ and not actually used, is <code>RuleMetadata.CATEGORY</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_available_utilities">Available utilities</h4>
+<h4 id="_available_utilities">6.1.3. Available utilities</h4>
 <div class="paragraph">
 <p>For a list of what key services and constructs can be used in the rule,
 see <a href="#Rules-Available-Rules-Utilities">Available Rules Utilities</a>.</p>
@@ -2605,9 +2787,9 @@ Example:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-Basic-Rule-Execution-Flow-Patterns">Basic Rule Execution Flow Patterns</h3>
+<h3 id="Rules-Basic-Rule-Execution-Flow-Patterns">6.2. Basic Rule Execution Flow Patterns</h3>
 <div class="sect3">
-<h4 id="_single_operation_operation">Single Operation - operation();</h4>
+<h4 id="_single_operation_operation">6.2.1. Single Operation - operation();</h4>
 <div class="paragraph">
 <p>No condition or iteration is needed. The following is an example of a single operation.</p>
 </div>
@@ -2631,7 +2813,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_single_conditional_operation_if_operation">Single Conditional Operation - if( &#8230;&#8203; ){ operation()}</h4>
+<h4 id="_single_conditional_operation_if_operation">6.2.2. Single Conditional Operation - if( &#8230;&#8203; ){ operation()}</h4>
 <div class="paragraph">
 <p>A single condition must be met. The following is an example of a single conditional operation.</p>
 </div>
@@ -2653,7 +2835,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_single_iteration_for_foomodel_class">Single Iteration - for( FooModel.class ){ &#8230;&#8203; }</h4>
+<h4 id="_single_iteration_for_foomodel_class">6.2.3. Single Iteration - for( FooModel.class ){ &#8230;&#8203; }</h4>
 <div class="paragraph">
 <p>For simple iterations, you can extend the <code>IteratingRuleProvider</code> class to simplify the <code>perform</code> code.</p>
 </div>
@@ -2687,7 +2869,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_conditional_iteration_if_for">Conditional Iteration - if( &#8230;&#8203; ){ for( &#8230;&#8203; ) }</h4>
+<h4 id="_conditional_iteration_if_for">6.2.4. Conditional Iteration - if( &#8230;&#8203; ){ for( &#8230;&#8203; ) }</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-java" data-lang="java">return ConfigurationBuilder.begin()
@@ -2705,7 +2887,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_iteration_with_a_condition_for_if">Iteration With a Condition - for( &#8230;&#8203; ){ if( &#8230;&#8203; ){ &#8230;&#8203; } }</h4>
+<h4 id="_iteration_with_a_condition_for_if">6.2.5. Iteration With a Condition - for( &#8230;&#8203; ){ if( &#8230;&#8203; ){ &#8230;&#8203; } }</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-java" data-lang="java">return ConfigurationBuilder.begin()
@@ -2735,7 +2917,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_nested_iterations_for_for">Nested Iterations - for( &#8230;&#8203; ){ for( &#8230;&#8203; ) { &#8230;&#8203; } }</h4>
+<h4 id="_nested_iterations_for_for">6.2.6. Nested Iterations - for( &#8230;&#8203; ){ for( &#8230;&#8203; ) { &#8230;&#8203; } }</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-java" data-lang="java">.addRule()
@@ -2756,12 +2938,12 @@ Example:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-Create-a-Basic-Java-based-Rule-Add-on">Create a Basic Java-based Rule Add-on</h3>
+<h3 id="Rules-Create-a-Basic-Java-based-Rule-Add-on">6.3. Create a Basic Java-based Rule Add-on</h3>
 <div class="paragraph">
 <p>You can create a Windup rule using Java or XML. This topic describes how to create a rule add-on using Java.</p>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites_2">Prerequisites</h4>
+<h4 id="_prerequisites_2">6.3.1. Prerequisites</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2790,7 +2972,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_the_maven_project_2">Create the Maven Project</h4>
+<h4 id="_create_the_maven_project_2">6.3.2. Create the Maven Project</h4>
 <div class="paragraph">
 <p>Create a new Maven Java Project. The instructions below refer to the project folder location with the <strong>replaceable</strong> variable <code>RULE_PROJECT_HOME</code>.</p>
 </div>
@@ -2800,7 +2982,7 @@ Example:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add the following properties. Be sure to replace <code>WINDUP_VERSION</code> with the current version of Windup, for example: 2.4.0-Final.</p>
+<p>Add the following properties. Be sure to replace <code>WINDUP_VERSION</code> with the current version of Windup, for example: 2.5.Final.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;properties&gt;
@@ -2959,7 +3141,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_the_java_ruleprovider_class">Create the Java RuleProvider Class</h4>
+<h4 id="_create_the_java_ruleprovider_class">6.3.3. Create the Java RuleProvider Class</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3113,7 +3295,7 @@ Windup building elements.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_install_the_java_based_rule_add_on_in_your_local_maven_repository">Install the Java-based Rule Add-on in Your Local Maven Repository</h4>
+<h4 id="_install_the_java_based_rule_add_on_in_your_local_maven_repository">6.3.4. Install the Java-based Rule Add-on in Your Local Maven Repository</h4>
 <div class="paragraph">
 <p>Before you can add the rule to Windup, you must compile it and install it in your local Maven repository.</p>
 </div>
@@ -3137,7 +3319,7 @@ Windup building elements.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-the-rule-to-windup">Add the Rule to Windup</h4>
+<h4 id="add-the-rule-to-windup">6.3.5. Add the Rule to Windup</h4>
 <div class="paragraph">
 <p>The command to install the rule in Windup uses the Maven GAV (groupId, artifactId, and version) to locate the rule in the Maven repository. The command uses the following syntax:</p>
 </div>
@@ -3195,7 +3377,7 @@ Windup building elements.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_test_the_java_based_rule_add_on">Test the Java-based Rule Add-on</h4>
+<h4 id="_test_the_java_based_rule_add_on">6.3.6. Test the Java-based Rule Add-on</h4>
 <div class="paragraph">
 <p>Test the Java-based rule add-on against your application file by running Windup in a terminal.</p>
 </div>
@@ -3216,11 +3398,11 @@ Windup building elements.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>For more detailed instructions on how to execute Windup, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html">Windup User Guide</a>.</p>
+<p>For more detailed instructions on how to execute Windup, see the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-user-guide">Windup User Guide</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_review_the_output_report">Review the Output Report</h4>
+<h4 id="_review_the_output_report">6.3.7. Review the Output Report</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3236,14 +3418,14 @@ Windup building elements.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_debugging_profiling_and_logging">Debugging, Profiling, and Logging</h4>
+<h4 id="_debugging_profiling_and_logging">6.3.8. Debugging, Profiling, and Logging</h4>
 
 </div>
 </div>
 <div class="sect2">
-<h3 id="Dev-Debugging-and-Profiling">Debugging and Profiling</h3>
+<h3 id="Dev-Debugging-and-Profiling">6.4. Debugging and Profiling</h3>
 <div class="sect3">
-<h4 id="_configure_logging">Configure Logging</h4>
+<h4 id="_configure_logging">6.4.1. Configure Logging</h4>
 <div class="paragraph">
 <p>Frequently the first step in debugging is to produce more verbose logs. Windup uses JDK logging, which can be configured by editing <code>$WINDUP_HOME/logging.properties</code>.</p>
 </div>
@@ -3255,7 +3437,7 @@ Windup building elements.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_debug_the_windup_distribution_runtime">Debug the Windup Distribution Runtime</h4>
+<h4 id="_debug_the_windup_distribution_runtime">6.4.2. Debug the Windup Distribution Runtime</h4>
 <div class="paragraph">
 <p>You can debug the Windup distribution using one of the following approaches.</p>
 </div>
@@ -3282,13 +3464,13 @@ For Windows:  C:\WINDUP_HOME\bin&gt; windup --debug</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_debug_a_test_using_netbeans">Debug a Test Using NetBeans</h4>
+<h4 id="_debug_a_test_using_netbeans">6.4.3. Debug a Test Using NetBeans</h4>
 <div class="paragraph">
 <p>Click the <code>Debug Test File</code> button, or choose <code>Menu</code> → <code>Debug</code> → <code>Debug Test File</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_profile_a_test_using_netbeans">Profile a Test Using NetBeans</h4>
+<h4 id="_profile_a_test_using_netbeans">6.4.4. Profile a Test Using NetBeans</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3330,7 +3512,7 @@ For Windows:  C:\WINDUP_HOME\bin&gt; windup --debug</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_profile_forge_runtime_using_yourkit">Profile Forge Runtime Using YourKit</h4>
+<h4 id="_profile_forge_runtime_using_yourkit">6.4.5. Profile Forge Runtime Using YourKit</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3361,12 +3543,12 @@ Forge</a>, but skip the first 2 points that direct you to copy the YourKit modul
 </div>
 </div>
 <div class="sect3">
-<h4 id="_developer_contributing_information">Developer Contributing Information</h4>
+<h4 id="_developer_contributing_information">6.4.6. Developer Contributing Information</h4>
 
 </div>
 </div>
 <div class="sect2">
-<h3 id="Dev-Development-Guidelines-and-Conventions">Development Guidelines and Conventions</h3>
+<h3 id="Dev-Development-Guidelines-and-Conventions">6.5. Development Guidelines and Conventions</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -3381,7 +3563,7 @@ Forge</a>, but skip the first 2 points that direct you to copy the YourKit modul
 </ul>
 </div>
 <div class="sect3">
-<h4 id="project-source-code-formatting">Project Source Code Formatting</h4>
+<h4 id="project-source-code-formatting">6.5.1. Project Source Code Formatting</h4>
 <div class="paragraph">
 <p>All project source code contributed to Windup should be formatted using the settings defined in the <code>Eclipse_Code_Format_Profile.xml</code> file located in the <code>ide-config</code> directory of the Windup project.</p>
 </div>
@@ -3424,7 +3606,7 @@ Forge</a>, but skip the first 2 points that direct you to copy the YourKit modul
 </div>
 </div>
 <div class="sect3">
-<h4 id="source-code-naming-conventions">Source Code Naming Conventions</h4>
+<h4 id="source-code-naming-conventions">6.5.2. Source Code Naming Conventions</h4>
 <div class="sect4">
 <h5 id="_class_interface_and_implementation_names">Class Interface and Implementation Names</h5>
 <div class="ulist">
@@ -3462,7 +3644,7 @@ Forge</a>, but skip the first 2 points that direct you to copy the YourKit modul
 </div>
 </div>
 <div class="sect3">
-<h4 id="maven-project-naming-conventions">Maven Project Naming Conventions</h4>
+<h4 id="maven-project-naming-conventions">6.5.3. Maven Project Naming Conventions</h4>
 <div class="sect4">
 <h5 id="_maven_module_names">Maven Module Names</h5>
 <div class="paragraph">
@@ -3482,7 +3664,7 @@ Forge</a>, but skip the first 2 points that direct you to copy the YourKit modul
 </div>
 </div>
 <div class="sect2">
-<h3 id="Dev-Submit-Code-Updates-to-the-Project">Submit Code Updates to the Windup Project</h3>
+<h3 id="Dev-Submit-Code-Updates-to-the-Project">6.6. Submit Code Updates to the Windup Project</h3>
 <div class="paragraph">
 <p>To get the Windup Source Code, see <a href="#Dev-Get-the-Source-Code">Get the Source Code</a> for instructions.</p>
 </div>
@@ -3587,28 +3769,28 @@ only the changes you expect.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_appendix">Appendix</h2>
+<h2 id="_appendix">7. Appendix</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="About-the-HOME-Variable">About the WINDUP_HOME Variable</h3>
+<h3 id="About-the-HOME-Variable">7.1. About the WINDUP_HOME Variable</h3>
 <div class="paragraph">
 <p>This documentation uses the <strong>WINDUP_HOME</strong> <em>replaceable</em> value to denote the path to the Windup distribution. When you encounter this value in the documentation, be sure to replace it with the actual path to your Windup installation.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the downloaded ZIP file.</p>
+<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.5.0-Final folder extracted from the downloaded ZIP file.</p>
 </li>
 <li>
-<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.4.0-Final.zip file.</p>
+<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.5.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.5.0-Final.zip file.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Dev-Project-Information">Windup Project Information</h3>
+<h3 id="Dev-Project-Information">7.2. Windup Project Information</h3>
 <div class="sect3">
-<h4 id="_github_repository">Github Repository</h4>
+<h4 id="_github_repository">7.2.1. Github Repository</h4>
 <div class="paragraph">
 <p>The Windup project github repository is located at <a href="https://github.com/windup/windup/" class="bare">https://github.com/windup/windup/</a>.</p>
 </div>
@@ -3617,7 +3799,7 @@ only the changes you expect.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_documentation">Documentation</h4>
+<h4 id="_documentation">7.2.2. Documentation</h4>
 <div class="paragraph">
 <p>The latest Windup documentation is currently located here in the Windup project <a href="https://github.com/windup/windup/wiki/">Wiki</a>.</p>
 </div>
@@ -3626,7 +3808,7 @@ only the changes you expect.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_website">Website</h4>
+<h4 id="_website">7.2.3. Website</h4>
 <div class="paragraph">
 <p>There is currently no website for Windup.</p>
 </div>
@@ -3635,14 +3817,14 @@ only the changes you expect.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_irc_chat">IRC chat</h4>
+<h4 id="_irc_chat">7.2.4. IRC chat</h4>
 <div class="paragraph">
 <p>Server: irc.freenode.net<br>
 Channel: #windup</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mailing_lists">Mailing lists</h4>
+<h4 id="_mailing_lists">7.2.5. Mailing lists</h4>
 <div class="paragraph">
 <p>Subscribe to the JBoss mailing lists at
 <a href="https://lists.jboss.org/mailman/listinfo/windup-dev" class="bare">https://lists.jboss.org/mailman/listinfo/windup-dev</a>.</p>
@@ -3659,7 +3841,7 @@ Channel: #windup</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_core_development_team_and_irc_nicks">Core development team (and IRC nicks)</h4>
+<h4 id="_core_development_team_and_irc_nicks">7.2.6. Core development team (and IRC nicks)</h4>
 <div class="paragraph">
 <p>Lead: Lincoln Baxter (lincolnthree)<br>
 Members: Jess Sightler (jsightler), Matej Briskar (mbriskar), Ondrej
@@ -3667,7 +3849,7 @@ Zizka (ozizka)</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_irc_meeting_bot_commands_hint_for_the_moderator">IRC meeting bot commands (hint for the moderator)</h4>
+<h4 id="_irc_meeting_bot_commands_hint_for_the_moderator">7.2.7. IRC meeting bot commands (hint for the moderator)</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="nowrap">#startmeeting
@@ -3687,7 +3869,7 @@ Useful Commands: #action #agreed #help #info #idea #link #topic.</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-10-13 21:49:50 EDT
+Last updated 2016-01-29 09:14:05 EST
 </div>
 </div>
 </body>

@@ -1,0 +1,11 @@
+:toc:
+:toclevels: 3
+:numbered:
+:imagesdir: topics/images
+
+include::templates/document-attributes.adoc[]
+
+= {ProductName} Rules Development Guide
+
+include::Windup-Rules-Development-Guide-Topics.adoc[tabsize=4]
+

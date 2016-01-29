@@ -1,4 +1,9 @@
 #!/bin/bash
+CURRENT_DIR="$( pwd -P)"
+
+PRODUCT_DOC_VERSION=version-2.4
+OLD_PRODUCT_VERSION=2.5.0-Final
+PRODUCT_VERSION=2.5.0-Final
 if [ "$1" == "?" ]  || [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ "$1" == "" ] || [ "$2" == "" ]; then 
 
     echo "Run this script from the root of the windup-documentation directory." 
@@ -14,9 +19,6 @@ fi
 echo "*******************************************"
 echo "* Fetching the latest pages from the Windup Wiki..."
 echo "*******************************************"
-PRODUCT_DOC_VERSION=version-2.4
-OLD_PRODUCT_VERSION=2.2.0-Final
-PRODUCT_VERSION=2.4.0-Final
 cd $1
 pwd
 
@@ -74,6 +76,7 @@ echo "Removal of variables is complete."
 cd ../../
 echo ""
 
+cp docs/document-attributes.adoc docs/topics/templates
 cp wiki-docs/Windup-User-Guide.adoc docs/topics/
 cp wiki-docs/Windup-User-Guide-NO-TOC.adoc docs/topics/
 cp wiki-docs/Windup-Rules-Development-Guide.adoc docs/topics/
@@ -81,79 +84,67 @@ cp wiki-docs/Windup-Rules-Development-Guide-NO-TOC.adoc docs/topics/
 cp wiki-docs/Windup-Core-Development-Guide.adoc docs/topics/
 cp wiki-docs/Windup-Core-Development-Guide-NO-TOC.adoc docs/topics/
 
-echo "*******************************************"
-echo "* Building the Windup User Guide..."
-echo "*******************************************"
-asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html docs/topics/Windup-User-Guide.adoc
-asciidoctor -t -dbook -o html/WindupUserGuide-NO-TOC.html docs/topics/Windup-User-Guide-NO-TOC.adoc
-wkhtmltopdf --page-size Letter html/WindupUserGuide-NO-TOC.html pdf/WindupUserGuide.pdf
-echo ""
+## Build the Windup Guides
+sh scripts/buildGuides.sh
+
+# Remove the html, build, and pdf directories and then recreate the the html and pdf directories
+if [ -d html ]; then
+   rm -r html/
+   mkdir -p html
+   cp -r docs/topics/images/ html/
+fi
+if [ -d pdf ]; then
+   rm -r pdf/
+   mkdir -p pdf
+fi
+
+# Copy the windup-user-guide files
+GUIDE_NAME="WindupUserGuide"
+cd docs/windup-user-guide
+echo "Copying the $GUIDE_NAME to the new location."
+if [ -d html ]; then
+  cp -r html/ ../../
+fi
+if [ -d pdf ]; then
+  cp -r pdf/ ../../
+fi
+echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
+echo "$GUIDE_NAME (PDF) is located at: " file://$CURRENT_DIR/pdf/$GUIDE_NAME.pdf
+
+# Return to where we started
+cd $CURRENT_DIR
+
+# Copy the windup-rules-development-guide files
+GUIDE_NAME="WindupRulesDevelopmentGuide"
+cd docs/windup-rules-development-guide
+echo "Copying the $GUIDE_NAME to the new location."
+if [ -d html ]; then
+  cp -r html/ ../../
+fi
+if [ -d pdf ]; then
+  cp -r pdf/ ../../
+fi
+echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
+echo "$GUIDE_NAME (PDF) is located at: " file://$CURRENT_DIR/pdf/$GUIDE_NAME.pdf
+
+# Return to where we started
+cd $CURRENT_DIR
+
+# Copy the windup-core-development-guide files
+GUIDE_NAME="WindupCoreDevelopmentGuide"
+cd docs/windup-core-development-guide
+echo "Copying the $GUIDE_NAME to the new location."
+if [ -d html ]; then
+  cp -r html/ ../../
+fi
+if [ -d pdf ]; then
+  cp -r pdf/ ../../
+fi
+echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
+echo "$GUIDE_NAME (PDF) is located at: " file://$CURRENT_DIR/pdf/$GUIDE_NAME.pdf
+
+# Return to where we started
+cd $CURRENT_DIR
 
 
-echo "*******************************************"
-echo "* Building the Windup Rules Development Guide..."
-echo "*******************************************"
-asciidoctor -t -dbook -a toc -o html/WindupRulesDevelopmentGuide.html docs/topics/Windup-Rules-Development-Guide.adoc
-asciidoctor -t -dbook -o html/WindupRulesDevelopmentGuide-NO-TOC.html docs/topics/Windup-Rules-Development-Guide.adoc
-wkhtmltopdf --page-size Letter html/WindupRulesDevelopmentGuide-NO-TOC.html pdf/WindupRulesDevelopmentGuide.pdf
-echo ""
-echo "*******************************************"
-echo "* Building the Windup Core Development Guide..."
-echo "*******************************************"
-asciidoctor -t -dbook -a toc -o html/WindupCoreDevelopmentGuide.html docs/topics/Windup-Core-Development-Guide.adoc
-asciidoctor -t -dbook -o html/WindupCoreDevelopmentGuide-NO-TOC.html docs/topics/Windup-Core-Development-Guide-NO-TOC.adoc
-wkhtmltopdf --page-size Letter html/WindupCoreDevelopmentGuide-NO-TOC.html pdf/WindupCoreDevelopmentGuide.pdf
-echo ""
-
-echo ""
-echo "*******************************************"
-echo "* Build for DocStage"
-echo "*******************************************"
-echo ""
-echo "*******************************************"
-echo "* Building the Windup User Guide          *o"
-echo "*******************************************"
-cd docs/windup-user-guide/
-ccutil compile --lang en_US --main-file master.adoc
-cp -r topics/images/ build/tmp/en-US/html-single/
-cp -r topics/images/ build/en-US/
-cd ../../
-
-echo ""
-echo "***********************************************"
-echo "* Building the Windup Rules Development Guide *"
-echo "***********************************************"
-cd docs/windup-rules-development-guide/
-ccutil compile --lang en_US --main-file master.adoc
-cp -r topics/images/ build/tmp/en-US/html-single/
-cp -r topics/images/ build/en-US/
-cd ../../
-
-echo ""
-echo "***********************************************"
-echo "* Building the Windup Core Development Guide  *"
-echo "***********************************************"
-cd docs/windup-core-development-guide/
-ccutil compile --lang en_US --main-file master.adoc
-cp -r topics/images/ build/tmp/en-US/html-single/
-cp -r topics/images/ build/en-US/
-cd ../../
-
-echo "User Guide is located at: " file://$2/html/WindupUserGuide.html
-echo "User Guide (PDF) is located at: " file://$2/pdf/WindupUserGuide.pdf
-echo "User Guide (ccutil) is located at: " file://$2/docs/windup-user-guide/build/tmp/en-US/html-single/index.html
-echo ""
-
-echo "Rules Guide is located at: " file://$2/html/WindupRulesDevelopmentGuide.html
-echo "Rules Guide (PDF) is located at: " file://$2/pdf/WindupRulesDevelopmentGuide.pdf
-echo "Rules Guide (ccutil) is located at: " file://$2/docs/windup-rules-development-guide/build/tmp/en-US/html-single/index.html
-echo ""
-
-echo "Core Guide is located at: " file://$2/html/WindupCoreDevelopmentGuide.html
-echo "Core Guide (PDF) is located at: " file://$2/pdf/WindupCoreDevelopmentGuide.pdf
-echo "Core Guide (ccutil) is located at: " file://$2/docs/windup-core-development-guide/build/tmp/en-US/html-single/index.html
-echo ""
-echo "*******************************************"
-echo "Manually verify the guides and use Maven to check in the new files"
-echo "*******************************************"
-
+echo "Windup documentation update process is complete!"

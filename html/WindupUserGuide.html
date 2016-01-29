@@ -524,7 +524,7 @@ Windup to migrate Java applications or other components.</p>
 <p>Windup is an extensible and customizable rule-based tool that helps simplify migration of Java applications.</p>
 </div>
 <div class="paragraph">
-<p>Running from a <a href="http://forge.jboss.org">Forge</a> environment, Windup examines application artifacts, including project source directories and applications archives, then produces an HTML report highlighting areas that need changes. Windup can be used to migrate Java applications from previous versions of <em>Red Hat JBoss Enterprise Application Platform</em> or from other containers, such as <em>Oracle WebLogic Server</em> or <em>IBM® WebSphere® Application Server</em>.</p>
+<p>Running from a <a href="http://forge.jboss.org">Forge</a> environment, Windup examines application artifacts, including project source directories and applications archives, then produces an HTML report highlighting areas that need changes. Windup can be used to migrate Java applications from previous versions of <em>Red Hat JBoss Enterprise Application Platform</em> or from other containers, such as <em>Oracle® WebLogic Server</em> or <em>IBM® WebSphere® Application Server</em>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -631,7 +631,7 @@ otherwise(action)</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Windup provides comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, Windup allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset. If you plan to write your own custom rules, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">
+<p>Windup provides comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, Windup allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset. If you plan to write your own custom rules, see the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide">
 Windup Rules Development Guide</a> for detailed instructions.</p>
 </div>
 </div>
@@ -675,10 +675,10 @@ Windup Rules Development Guide</a> for detailed instructions.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the downloaded ZIP file.</p>
+<p>If you download and install the latest distribution of Windup from the JBoss Nexus repository, WINDUP_HOME refers to the windup-distribution-2.5.0-Final folder extracted from the downloaded ZIP file.</p>
 </li>
 <li>
-<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.4.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.4.0-Final.zip file.</p>
+<p>If you build Windup from GitHub source, WINDUP_HOME refers to the windup-distribution-2.5.0-Final folder extracted from the windup-distribution/target/windup-distribution-2.5.0-Final.zip file.</p>
 </li>
 </ul>
 </div>
@@ -693,7 +693,7 @@ Windup Rules Development Guide</a> for detailed instructions.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download the latest <a href="https://repository.jboss.org/nexus/service/local/artifact/maven/redirect?r=releases&amp;g=org.jboss.windup&amp;a=windup-distribution&amp;v=LATEST&amp;e=zip&amp;c=offline">Windup ZIP distribution</a>.</p>
+<p>Download the latest <a href="http://windup.jboss.org/download.html">Windup ZIP distribution</a>.</p>
 </li>
 <li>
 <p>Extract the ZIP file in to a directory of your choice.</p>
@@ -727,8 +727,12 @@ Windup Rules Development Guide</a> for detailed instructions.</p>
 <p>The basic command to run Windup uses the following syntax.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">For Linux:     $ bin/windup --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
-For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+<pre class="nowrap">For Linux:
+$ bin/windup --input INPUT_ARCHIVE_OR_DIRECTORY ... --output OUTPUT_REPORT_DIRECTORY \
+   --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+For Windows:
+&gt; bin\windup.bat --input INPUT_ARCHIVE_OR_DIRECTORY ... --output OUTPUT_REPORT_DIRECTORY
+    --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 </li>
@@ -736,7 +740,8 @@ For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE_OR_FOLDER --output OUTP
 <p>To evaluate an application archive, use the following syntax:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">bin/windup --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N --target eap</pre>
+<pre class="nowrap">bin/windup --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY
+  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 </li>
@@ -744,7 +749,8 @@ For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE_OR_FOLDER --output OUTP
 <p>To run Windup against application source code, add the <code>--sourceMode</code> argument:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">bin/windup  --sourceMode --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+<pre class="nowrap">bin/windup  --sourceMode --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY
+  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 </li>
@@ -752,7 +758,8 @@ For Windows:   &gt; bin\windup.bat --input INPUT_ARCHIVE_OR_FOLDER --output OUTP
 <p>To override the default <em>Fernflower</em> decompiler, pass the <code>-Dwindup.decompiler</code> argument on the command line. For example, to use the <em>Procyon</em> compiler, use the following syntax:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
+<pre class="nowrap">bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY
+  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N</pre>
 </div>
 </div>
 </li>
@@ -822,17 +829,51 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">--input <strong>INPUT_ARCHIVE_OR_FOLDER</strong></dt>
+<dt class="hdlist1">--input <strong>INPUT_ARCHIVE_OR_DIRECTORY</strong> [&#8230;&#8203;]</dt>
 <dd>
-<p>This is the fully qualified path of the application archive or folder you plan to migrate. This argument is required.</p>
+<p>Each input argument is a fully qualified path to a file or directory containing one or more applications to be migrated. This argument is required. Multiple paths are separated by a space. The argument might appear multiple times in the command.</p>
+<div class="paragraph">
+<p>When used in combination with the following arguments, the file input type is evaluated as follows.</p>
+</div>
+<table id="input-file-argument-description-table" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Input File Argument Description Table</caption>
+<colgroup>
+<col style="width: 14%;">
+<col style="width: 28%;">
+<col style="width: 28%;">
+<col style="width: 28%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input File Type</th>
+<th class="tableblock halign-left valign-top">&#8201;&#8212;&#8201;explodedApp argument</th>
+<th class="tableblock halign-left valign-top">&#8201;&#8212;&#8201;sourceMode argument</th>
+<th class="tableblock halign-left valign-top">Neither argument specified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DIRECTORY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Directory evaluated as a single application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Directory evaluated as a single application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each directory entry is evaluated as a single application</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FILE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Argument is ignored and the file is evaluated as a single application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The file is evaluated as a compressed project.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The file is evaluated as a single application.</p></td>
+</tr>
+</tbody>
+</table>
 </dd>
 <dt class="hdlist1">--output <strong>OUTPUT_REPORT_DIRECTORY</strong> (optional)</dt>
 <dd>
-<p>This is the fully qualified path to the folder that will contain the the report information produced by Windup.</p>
+<p>This is the fully qualified path to the directory that will contain the the report information produced by Windup.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If omitted, the report will be generated in a  <strong>INPUT_ARCHIVE_OR_FOLDER.report</strong> folder.</p>
+<p>If omitted, the report will be generated in a  <strong>INPUT_ARCHIVE_OR_DIRECTORY.report</strong> directory.</p>
 </li>
 <li>
 <p>If the output directory exists, you will be prompted with the following (with a default of N).</p>
@@ -842,7 +883,7 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </div>
 </div>
 <div class="paragraph">
-<p>However, if you specify the <code>--overwrite</code> argument, Windup will proceed to delete and recreate the folder.</p>
+<p>However, if you specify the <code>--overwrite</code> argument, Windup will proceed to delete and recreate the directory.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -864,7 +905,11 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </dd>
 <dt class="hdlist1">--sourceMode (optional)</dt>
 <dd>
-<p>If specified, indicates the application to be evaluated contains source files rather than compiled binaries.</p>
+<p>If specified, indicates the application to be evaluated contains source files rather than compiled binaries. See the the <a href="#input-file-argument-description-table">Input File Argument Description Table</a> above for details.</p>
+</dd>
+<dt class="hdlist1">--explodedApp</dt>
+<dd>
+<p>If specified, indicates the directory contains source files for a single application or directory entries for multiple applications. See the the <a href="#input-file-argument-description-table">Input File Argument Description Table</a> above for details.</p>
 </dd>
 <dt class="hdlist1">--source SOURCE_1 SOURCE_2 (optional)</dt>
 <dd>
@@ -943,7 +988,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </dd>
 <dt class="hdlist1">--overwrite (optional)</dt>
 <dd>
-<p>Specify this argument only if you are certain you want to force Windup to delete the existing <strong>OUTPUT_REPORT_DIRECTORY</strong> folder. If you do not specify this argument and the <code>--output</code> folder exists, you are prompted to choose whether to overwrite the contents.</p>
+<p>Specify this argument only if you are certain you want to force Windup to delete the existing <strong>OUTPUT_REPORT_DIRECTORY</strong> directory. If you do not specify this argument and the <code>--output</code> directory exists, you are prompted to choose whether to overwrite the contents.</p>
 </dd>
 <dt class="hdlist1">--includeTags TAG_1 TAG_2 (optional)</dt>
 <dd>
@@ -982,7 +1027,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </dd>
 <dt class="hdlist1">--exportCSV (optional)</dt>
 <dd>
-<p>Export the report data to a CSV formatted file on your local file system. Windup creates the file in the folder specified by the <code>--output</code> argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see <a href="#Export-the-Report-for-Use-by-Spreadsheet-Programs">Export the Report for Use by Spreadsheet Programs</a>.</p>
+<p>Export the report data to a CSV formatted file on your local file system. Windup creates the file in the directory specified by the <code>--output</code> argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see <a href="#Export-the-Report-for-Use-by-Spreadsheet-Programs">Export the Report for Use by Spreadsheet Programs</a>.</p>
 </dd>
 <dt class="hdlist1">--additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2 (optional)</dt>
 <dd>
@@ -1039,7 +1084,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 <div class="sect4">
 <h5 id="_source_code_example">Source Code Example</h5>
 <div class="paragraph">
-<p>The following command runs against the <a href="https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2">seam-booking-5.2</a> application source code. It evaluates all <code>org.jboss.seam</code> packages and creates a folder named 'seam-booking-report' in the <code>/home/username/windup-reports/</code> directory to contain the reporting output.</p>
+<p>The following command runs against the <a href="https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2">seam-booking-5.2</a> application source code. It evaluates all <code>org.jboss.seam</code> packages and creates a directory named 'seam-booking-report' in the <code>/home/username/windup-reports/</code> directory to contain the reporting output.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1050,7 +1095,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 <div class="sect4">
 <h5 id="_archive_example">Archive Example</h5>
 <div class="paragraph">
-<p>The following command runs against the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> EAR archive. It evaluates all <code>com.acme</code> and <code>org.apache</code> packages and creates a folder named 'jee-example-app-1.0.0.ear-report' in the <code>/home/username/windup-reports/</code> directory to contain the reporting output.</p>
+<p>The following command runs against the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> EAR archive. It evaluates all <code>com.acme</code> and <code>org.apache</code> packages and creates a directory named 'jee-example-app-1.0.0.ear-report' in the <code>/home/username/windup-reports/</code> directory to contain the reporting output.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1208,7 +1253,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Level of effort required to migrate the file.</p>
 </div>
 <div class="paragraph">
-<p><em>Story Points</em> are covered in more detail in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html#Rules-Rule-Story-Points">Windup Rules Development Guide</a>.</p>
+<p><em>Story Points</em> are covered in more detail in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide#Rules-Rule-Story-Points">Windup Rules Development Guide</a>.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1577,7 +1622,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 <p>Create a test for the new rule.</p>
 </li>
 <li>
-<p>Details are provided in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>Details are provided in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </li>
 </ul>
 </div>
@@ -1807,7 +1852,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </dd>
 <dt class="hdlist1">Story Point</dt>
 <dd>
-<p>A term commonly used in Scrum Agile software development methodology to estimate the <em>level of effort</em> needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks. Story points are covered in more detail in the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">Windup Rules Development Guide</a>.</p>
+<p>A term commonly used in Scrum Agile software development methodology to estimate the <em>level of effort</em> needed to implement a feature or change. It does not necessarily translate to man-hours, but the value should be consistent across tasks. Story points are covered in more detail in the <a href="https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide">Windup Rules Development Guide</a>.</p>
 </dd>
 </dl>
 </div>
@@ -1883,7 +1928,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-10-13 21:49:50 EDT
+Last updated 2016-01-29 07:29:36 EST
 </div>
 </div>
 </body>

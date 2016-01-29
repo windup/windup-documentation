@@ -1,23 +1,12 @@
 :toc:
 :toclevels: 3
 :numbered:
-
 :imagesdir: topics/images
 
-:ProductName: Windup
-:ProductShortName: Windup
-:ProductVersion: 2..0-Final
-:ProductDistribution: windup-distribution-2.4.0-Final
-:ProductHomeVar: WINDUP_HOME 
-:ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME
-:ProductSrcHomeVar: WINDUP_SOURCE_HOME
-:ProductReleaseVar: WINDUP_RELEASE
+include::topics/templates/document-attributes.adoc[]
 
-:ProductDocVersion: version-2.4
 
-:ProductDocUserGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-user-guide
-:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.4/windup-rules-development-guide
-:ProductDocCoreGuideURL: http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html
+:windup-core-development-guide:
 
 = {ProductName} Core Development Guide
 

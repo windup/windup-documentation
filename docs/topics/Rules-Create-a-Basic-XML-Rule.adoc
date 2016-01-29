@@ -118,6 +118,9 @@ a|<or>
 |<javaclass>
 |Test for a match in a Java class.
 
+|<javaclass-ignore>
+|Exclude javaclass which you would like to ignore in processing discovery.
+
 |<xmlfile>
 |Test for a match in an XML file.
 
@@ -126,6 +129,12 @@ a|<or>
 
 |<filecontent>
 |Find strings or text within files, for example, properties files.
+
+|<file-mapping>
+|Define file names to internal stored File model.
+
+|<package-mapping>
+|Define package names to organization or libraries.
 
 |===
 

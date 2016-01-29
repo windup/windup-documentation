@@ -1,58 +1,94 @@
 # Build the guide
-CURRENT_DIRECTORY=$(pwd)
-CURRENT_GUIDE=windup-rules-development-guide
-GUIDE_DOCUMENT=Windup-Rules-Development-Guide
-GUIDE_NAME=WindupRulesDevelopmentGuide
 
-# If there's a parameter, give usage info
-if [ "$#" -ne "0" ]; then
-  echo ""
-  echo "Run this script from the root of this guide's directory as follows: "
-  echo "     cd $CURRENT_GUIDE "
-  echo "     ./buildGuide.sh"
-  echo ""
-  exit;
+# Find the directory name and full path
+GUIDE_NAME="WindupRulesDevelopmentGuide"
+CURRENT_GUIDE=${PWD##*/}
+CURRENT_DIRECTORY=$(pwd)
+RED='\033[0;31m'
+BLACK='\033[0;30m'
+# Do not produce pot/po by default
+L10N=0
+# A comma separated lists of default locales that books should be translated to.
+# This can be overriden in each book's individual buildGuide.sh
+LANG_CODE=ja-JP
+
+usage(){
+  cat <<EOM
+USAGE: $0 [OPTION]
+
+DESCRIPTION: Build the documentation in this directory and (optionally)
+the associated L10N pot/po files.
+
+OPTIONS:
+  -h       Print help.
+  -t       Produce the L10N pot/po files for this documentation
+
+EOM
+}
+
+while getopts "ht:" c
+ do
+     case "$c" in
+       t)         L10N=1
+                  LANG_CODE=$OPTARG;;
+       h)         usage
+                  exit 1;;
+       \?)        echo "Unknown option: -$OPTARG." >&2
+                  usage
+                  exit 1;;
+     esac
+done
+
+if [ $L10N -eq 1 ]; then
+   echo "Building pot/po for $CURRENT_GUIDE"
+   ccutil translate --langs $LANG_CODE
 fi
 
 # Remove the html and build directories and then recreate the html/images/ directory
-#if [ -d html ]; then
-#   rm -r html/
-#fi 
-#if [ -d build ]; then
-#   rm -r build/
-#fi 
-
-#
-cd ../../
-
-BASE_DIRECTORY=$(pwd)
-if [ ! -d html ]; then
-  echo "No html directory in " $pwd
-  mkdir -p html
+if [ -d html ]; then
+   rm -r html/
+fi
+if [ -d build ]; then
+   rm -r build/
+fi
+if [ -d pdf ]; then
+   rm -r pdf/
 fi
 
-# Copy the latest images
-cp -r docs/topics/images/ html/
+mkdir -p html
+cp -r ../../docs/topics/images/ html/
+
+mkdir -p pdf
 
 echo ""
 echo "********************************************"
-echo " Building $CURRENT_GUIDE                "
+echo " Building $GUIDE_NAME                       "
 echo "********************************************"
 echo ""
 echo "Building an asciidoctor version of the $GUIDE_NAME"
-asciidoctor -t -dbook -a toc -o html/$GUIDE_NAME.html docs/topics/$GUIDE_DOCUMENT.adoc
- 
-cd docs/$CURRENT_GUIDE
+asciidoctor -t -dbook -a toc -o html/$GUIDE_NAME.html master.adoc
 
-echo "Building the ccutil version of the $CURRENT_GUIDE"
+echo "Building the ccutil version of the $GUIDE_NAME"
 ccutil compile --lang en_US --main-file master.adoc
-
 cp -r topics/images/ build/tmp/en-US/html-single/
 cp -r topics/images/ build/en-US/
+
+echo "Building the pdf version of the $CURRENT_GUIDE"
+asciidoctor -t -dbook -o html/$GUIDE_NAME-NO-TOC.html topics/$GUIDE_NAME-NO-TOC.adoc
+wkhtmltopdf --page-size Letter html/$GUIDE_NAME-NO-TOC.html pdf/$GUIDE_NAME.pdf
+
 cd ..
 
+echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIRECTORY/html/$GUIDE_NAME.html
+echo "$GUIDE_NAME (PDF) is located at: " file://$CURRENT_DIRECTORY/pdf/$GUIDE_NAME.pdf
 
-echo "$CURRENT_GUIDE (AsciiDoctor) is located at: " file://$BASE_DIRECTORY/html/$GUIDE_NAME.html
-echo "$CURRENT_GUIDE (ccutil) is located at: " file://$CURRENT_DIRECTORY/build/tmp/en-US/html-single/index.html
+if [ -d  $CURRENT_DIRECTORY/build/tmp/en-US/html-single/ ]; then
+  echo "$GUIDE_NAME (ccutil) is located at: " file://$CURRENT_DIRECTORY/build/tmp/en-US/html-single/index.html
+  exit 0
+else
+  echo -e "${RED}Build of $GUIDE_NAME failed!"
+  echo -e "${BLACK}See the log above for details."
+  exit 1
+fi
 
 
