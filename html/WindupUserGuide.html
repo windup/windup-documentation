@@ -903,17 +903,21 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </ul>
 </div>
 </dd>
+<dt class="hdlist1">--overwrite (optional)</dt>
+<dd>
+<p>Specify this argument only if you are certain you want to force Windup to delete the existing <strong>OUTPUT_REPORT_DIRECTORY</strong> directory. If you do not specify this argument and the <code>--output</code> directory exists, you are prompted to choose whether to overwrite the contents.</p>
+</dd>
 <dt class="hdlist1">--sourceMode (optional)</dt>
 <dd>
-<p>If specified, indicates the application to be evaluated contains source files rather than compiled binaries. See the the <a href="#input-file-argument-description-table">Input File Argument Description Table</a> above for details.</p>
+<p>If used, indicates the application to be evaluated contains source files rather than compiled binaries. See the the <a href="#input-file-argument-description-table">Input File Argument Description Table</a> above for details.</p>
 </dd>
-<dt class="hdlist1">--explodedApp</dt>
+<dt class="hdlist1">--explodedApp (optional)</dt>
 <dd>
-<p>If specified, indicates the directory contains source files for a single application or directory entries for multiple applications. See the the <a href="#input-file-argument-description-table">Input File Argument Description Table</a> above for details.</p>
+<p>If used, indicates the directory contains source files for a single application or directory entries for multiple applications. See the the <a href="#input-file-argument-description-table">Input File Argument Description Table</a> above for details.</p>
 </dd>
 <dt class="hdlist1">--source SOURCE_1 SOURCE_2 (optional)</dt>
 <dd>
-<p>A space delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from.</p>
+<p>A space delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This determines which rulesets are used during migration. Example: --source eap</p>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -934,7 +938,7 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </table>
 </div>
 </dd>
-<dt class="hdlist1">--target TARGET_1 TARGET_2 (optional)</dt>
+<dt class="hdlist1">--target TARGET_1 TARGET_2 (optional unless --batchMode is set)</dt>
 <dd>
 <p>A space delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. If you do not specify this option, you are prompted to select a target. The default target technology is <code>eap</code>.</p>
 <div class="admonitionblock tip">
@@ -957,16 +961,13 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </table>
 </div>
 </dd>
-<dt class="hdlist1">--packages <strong>PACKAGE_1</strong> <strong>PACKAGE_2</strong> <strong>PACKAGE_N</strong> (optional)</dt>
+<dt class="hdlist1">--packages <strong>PACKAGE_1</strong> <strong>PACKAGE_2</strong> <strong>PACKAGE_N</strong> (recommended)</dt>
 <dd>
 <p>A space delimited list of the packages to be evaluated by Windup.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or 3rd party packages. For example, if the <em>MyCustomApp</em> application uses the package <code>com.mycustomapp</code>, you provide that package using the <code>--packages</code> argument on the command line.</p>
-</li>
-<li>
-<p>It is not necessary to provide the standard Java EE packages, like <code>java.util</code> or <code>javax.ejb</code>.</p>
+<p>In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or 3rd party packages. The <code>PACKAGE_N</code> argument is a package prefix; all subpackages will be scanned. For example, to scan the packages <code>com.mycustomapp</code> and <code>com.myotherapp</code>, use <code>--packages com.mycustomapp com.myotherapp</code> argument on the command line.</p>
 </li>
 <li>
 <p>While you can provide package names for standard Java EE 3rd party software like <code>org.apache</code>, it is usually best not to include them as they should not impact the migration effort.</p>
@@ -986,13 +987,17 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </ul>
 </div>
 </dd>
-<dt class="hdlist1">--overwrite (optional)</dt>
+<dt class="hdlist1">--excludePackages <strong>PACKAGE_1</strong> <strong>PACKAGE_2</strong> <strong>PACKAGE_N</strong> (optional)</dt>
 <dd>
-<p>Specify this argument only if you are certain you want to force Windup to delete the existing <strong>OUTPUT_REPORT_DIRECTORY</strong> directory. If you do not specify this argument and the <code>--output</code> directory exists, you are prompted to choose whether to overwrite the contents.</p>
+<p>This is a space-delimited list of the packages to be excluded by Windup.</p>
 </dd>
 <dt class="hdlist1">--includeTags TAG_1 TAG_2 (optional)</dt>
 <dd>
 <p>Limit processing to rules that contain the specified tags. If this option is not specified, all tags are processed. Multiple tags are delimited by spaces.</p>
+</dd>
+<dt class="hdlist1">--excludeTags TAG_1 TAG_2 (optional)</dt>
+<dd>
+<p>Do not process rules that contain the specified tags. If this option is not specified, all tags are processed.</p>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -1013,13 +1018,9 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </table>
 </div>
 </dd>
-<dt class="hdlist1">--excludeTags TAG_1 TAG_2 (optional)</dt>
-<dd>
-<p>Do not process rules that contain the specified tags. If this option is not specified, all tags are processed.</p>
-</dd>
 <dt class="hdlist1">--userRulesDirectory CUSTOM_RULES_DIRECTORY (optional)</dt>
 <dd>
-<p>By default, Windup looks for rules in the <code>${user.home}/.windup/rules/</code> directory. This option allows you to provide the fully qualified path to a user directory containing additional custom XML rules that should be loaded and executed by Windup. The XML ruleset files must use one of the following extensions:  <code>*.windup.groovy</code> or <code>*.windup.xml</code>.</p>
+<p>By default, Windup looks for rules in the <code>${user.home}/.windup/rules/</code> directory. This option allows you to provide the fully qualified path to a user directory containing additional custom XML rules that should be loaded and executed by Windup. The ruleset files must use one of the following extensions:  <code>*.windup.groovy</code> or <code>*.windup.xml</code>.</p>
 </dd>
 <dt class="hdlist1">--userIgnorePath CUSTOM_IGNORE_DIRECTORY (optional)</dt>
 <dd>
@@ -1031,20 +1032,16 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </dd>
 <dt class="hdlist1">--additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2 (optional)</dt>
 <dd>
-<p>Use this option to add additional JAR files or directories to the classpath. For example:</p>
+<p>Use this option to add additional JAR files or directories to the classpath so they are available for decompilation or other analysis. For example:</p>
 <div class="listingblock">
 <div class="content">
 <pre>--additionalClassPath MyClasses.jar com/mycompany/</pre>
 </div>
 </div>
 </dd>
-<dt class="hdlist1">--excludePackages <strong>PACKAGE_1</strong> <strong>PACKAGE_2</strong> <strong>PACKAGE_N</strong> (optional)</dt>
-<dd>
-<p>This is a space-delimited list of the packages to be excluded by Windup.</p>
-</dd>
 <dt class="hdlist1">--offline (optional)</dt>
 <dd>
-<p>If specified, do all processing offline and do not fetch information from the internet.</p>
+<p>If specified, do all processing offline and do not fetch updates or other data from the Internet.</p>
 </dd>
 <dt class="hdlist1">--updateRulesets (optional)</dt>
 <dd>
@@ -1928,7 +1925,7 @@ The estimated Story Points change as new rules are added to Windup. The values h
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-01-29 07:29:36 EST
+Last updated 2016-02-01 11:02:48 EST
 </div>
 </div>
 </body>

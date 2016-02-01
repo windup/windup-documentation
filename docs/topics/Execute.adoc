@@ -133,11 +133,13 @@ However, if you specify the `--overwrite` argument, {ProductShortName} will proc
 Be careful not to specify a report output directory that contains important information!
 ====
 
---sourceMode (optional):: If specified, indicates the application to be evaluated contains source files rather than compiled binaries. See the the xref:input-file-argument-description-table[Input File Argument Description Table] above for details.
+--overwrite (optional):: Specify this argument only if you are certain you want to force {ProductShortName} to delete the existing *OUTPUT_REPORT_DIRECTORY* directory. If you do not specify this argument and the `--output` directory exists, you are prompted to choose whether to overwrite the contents.
 
---explodedApp:: If specified, indicates the directory contains source files for a single application or directory entries for multiple applications. See the the xref:input-file-argument-description-table[Input File Argument Description Table] above for details.
+--sourceMode (optional):: If used, indicates the application to be evaluated contains source files rather than compiled binaries. See the the xref:input-file-argument-description-table[Input File Argument Description Table] above for details.
 
---source SOURCE_1 SOURCE_2 (optional):: A space delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. 
+--explodedApp (optional):: If used, indicates the directory contains source files for a single application or directory entries for multiple applications. See the the xref:input-file-argument-description-table[Input File Argument Description Table] above for details.
+
+--source SOURCE_1 SOURCE_2 (optional):: A space delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This determines which rulesets are used during migration. Example: +--source eap+
 +
 [TIP]
 ====
@@ -148,7 +150,7 @@ bin/windup --listSourceTechnologies
 ----
 ====
 
---target TARGET_1 TARGET_2 (optional):: A space delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. If you do not specify this option, you are prompted to select a target. The default target technology is `eap`.
+--target TARGET_1 TARGET_2 (optional unless --batchMode is set):: A space delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. If you do not specify this option, you are prompted to select a target. The default target technology is `eap`.
 +
 [TIP]
 ====
@@ -159,17 +161,20 @@ bin/windup --listTargetTechnologies
 ----
 ====
 
---packages *PACKAGE_1* *PACKAGE_2* *PACKAGE_N* (optional):: A space delimited list of the packages to be evaluated by {ProductShortName}.
+--packages *PACKAGE_1* *PACKAGE_2* *PACKAGE_N* (recommended):: A space delimited list of the packages to be evaluated by {ProductShortName}.
 +
-* In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or 3rd party packages. For example, if the _MyCustomApp_ application uses the package `com.mycustomapp`, you provide that package using the `--packages` argument on the command line. 
-* It is not necessary to provide the standard Java EE packages, like `java.util` or `javax.ejb`. 
+* In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or 3rd party packages. The `PACKAGE_N` argument is a package prefix; all subpackages will be scanned. For example, to scan the packages `com.mycustomapp` and `com.myotherapp`, use `--packages com.mycustomapp com.myotherapp` argument on the command line.
 * While you can provide package names for standard Java EE 3rd party software like `org.apache`, it is usually best not to include them as they should not impact the migration effort.
 +
 WARNING: If you omit the `--packages` argument, every package in the application is scanned, which can impact performance. It is best to provide this argument with one or more packages.
 
---overwrite (optional):: Specify this argument only if you are certain you want to force {ProductShortName} to delete the existing *OUTPUT_REPORT_DIRECTORY* directory. If you do not specify this argument and the `--output` directory exists, you are prompted to choose whether to overwrite the contents.
+--excludePackages *PACKAGE_1* *PACKAGE_2* *PACKAGE_N* (optional):: This is a space-delimited list of the packages to be excluded by {ProductShortName}.
+
+
 
 --includeTags TAG_1 TAG_2 (optional):: Limit processing to rules that contain the specified tags. If this option is not specified, all tags are processed. Multiple tags are delimited by spaces.
+
+--excludeTags TAG_1 TAG_2 (optional):: Do not process rules that contain the specified tags. If this option is not specified, all tags are processed.
 +
 [TIP]
 ====
@@ -180,23 +185,20 @@ bin/windup --listTag
 ----
 ====
 
---excludeTags TAG_1 TAG_2 (optional):: Do not process rules that contain the specified tags. If this option is not specified, all tags are processed.
 
---userRulesDirectory CUSTOM_RULES_DIRECTORY (optional):: By default, {ProductShortName} looks for rules in the `${user.home}/.windup/rules/` directory. This option allows you to provide the fully qualified path to a user directory containing additional custom XML rules that should be loaded and executed by {ProductShortName}. The XML ruleset files must use one of the following extensions:  [x-]`*.windup.groovy` or [x-]`*.windup.xml`.
+--userRulesDirectory CUSTOM_RULES_DIRECTORY (optional):: By default, {ProductShortName} looks for rules in the `${user.home}/.windup/rules/` directory. This option allows you to provide the fully qualified path to a user directory containing additional custom XML rules that should be loaded and executed by {ProductShortName}. The ruleset files must use one of the following extensions:  [x-]`*.windup.groovy` or [x-]`*.windup.xml`.
 
 --userIgnorePath CUSTOM_IGNORE_DIRECTORY (optional):: {ProductShortName} looks for file names matching the pattern `*windup-ignore.txt` to identify files that should be ignored. By default, it looks for these files in the `~/.windup/ignore/` and `WINDUP_HOME/ignore/` directories, but this option allows you to create files with this pattern name in a different directory. 
 
 --exportCSV (optional):: Export the report data to a CSV formatted file on your local file system. {ProductShortName} creates the file in the directory specified by the `--output` argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see xref:Export-the-Report-for-Use-by-Spreadsheet-Programs[Export the Report for Use by Spreadsheet Programs].
 
---additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2 (optional):: Use this option to add additional JAR files or directories to the classpath. For example:
+--additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2 (optional):: Use this option to add additional JAR files or directories to the classpath so they are available for decompilation or other analysis. For example:
 +
 ----
 --additionalClassPath MyClasses.jar com/mycompany/
 ----
 
---excludePackages *PACKAGE_1* *PACKAGE_2* *PACKAGE_N* (optional):: This is a space-delimited list of the packages to be excluded by {ProductShortName}.
-
---offline (optional):: If specified, do all processing offline and do not fetch information from the internet.
+--offline (optional):: If specified, do all processing offline and do not fetch updates or other data from the Internet.
 
 --updateRulesets (optional):: Update the core rulesets distributed with {ProductShortName}. It first checks for the existence of newer release, and if found, replaces the current rulesets directory with the new one.
 +

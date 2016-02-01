@@ -70,8 +70,6 @@ asciidoctor -t -dbook -a toc -o html/$GUIDE_NAME.html master.adoc
 
 echo "Building the ccutil version of the $GUIDE_NAME"
 ccutil compile --lang en_US --main-file master.adoc
-cp -r topics/images/ build/tmp/en-US/html-single/
-cp -r topics/images/ build/en-US/
 
 echo "Building the pdf version of the $CURRENT_GUIDE"
 asciidoctor -t -dbook -o html/$GUIDE_NAME-NO-TOC.html topics/$GUIDE_NAME-NO-TOC.adoc

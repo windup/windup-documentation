@@ -16,9 +16,9 @@ else
     echo  "Windup Documentation will be created here:  " $2
 fi
 
-echo "*******************************************"
-echo "* Fetching the latest pages from the Windup Wiki..."
-echo "*******************************************"
+echo ""
+echo "Fetching the latest pages from the Windup Wiki..."
+echo ""
 cd $1
 pwd
 
@@ -29,26 +29,21 @@ pwd
 echo "Fetch complete."
 echo ""
 
-echo "*******************************************"
-echo "* Copying the latest images and stylesheets..."
-echo "*******************************************"
+echo "Copying the latest images and stylesheets..."
 cp -r $1/images/*.* docs/topics/images/
 cp -r $1/images/*.*  html/images/
 echo "Copy complete."
 echo ""
 
-echo "*******************************************"
-echo "* Copying the doc pages from the Wiki to windup-documentation..."
-echo "*******************************************"
+echo "Copying the doc pages from the Wiki to windup-documentation..."
+echo ""
 
 sh scripts/windupDocCopyWiki.sh $1
 
 echo "Copy complete."
 echo ""
 
-echo "*******************************************"
-echo "* Replacing the links: to external pages with xrefs:"
-echo "*******************************************"
+echo " Replacing the links: to external pages with xrefs:"
 echo ""
 cd docs/topics
 find . -name '*.adoc' -print | xargs sed -i 's/link:/xref:/g'
@@ -56,9 +51,7 @@ cd ../../
 echo "Replacement of links with xrefs is complete."
 echo ""
 
-echo "*******************************************"
-echo "* Removing variables from individual pages... "
-echo "*******************************************"
+echo "Removing variables from individual pages... "
 echo ""
 cd docs/topics/
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductName: Windup//g'
@@ -77,12 +70,12 @@ cd ../../
 echo ""
 
 cp docs/document-attributes.adoc docs/topics/templates
-cp wiki-docs/Windup-User-Guide.adoc docs/topics/
-cp wiki-docs/Windup-User-Guide-NO-TOC.adoc docs/topics/
-cp wiki-docs/Windup-Rules-Development-Guide.adoc docs/topics/
-cp wiki-docs/Windup-Rules-Development-Guide-NO-TOC.adoc docs/topics/
-cp wiki-docs/Windup-Core-Development-Guide.adoc docs/topics/
-cp wiki-docs/Windup-Core-Development-Guide-NO-TOC.adoc docs/topics/
+cp wiki-docs/WindupUserGuide.adoc docs/topics/
+cp wiki-docs/WindupUserGuide-NO-TOC.adoc docs/topics/
+cp wiki-docs/WindupRulesDevelopmentGuide.adoc docs/topics/
+cp wiki-docs/WindupRulesDevelopmentGuide-NO-TOC.adoc docs/topics/
+cp wiki-docs/WindupCoreDevelopmentGuide.adoc docs/topics/
+cp wiki-docs/WindupCoreDevelopmentGuide-NO-TOC.adoc docs/topics/
 
 ## Build the Windup Guides
 sh scripts/buildGuides.sh

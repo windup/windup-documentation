@@ -4,14 +4,12 @@ if [ "$1" == "" ]; then
     echo "For example:  scripts/windupDocCopyWiki.sh ~/GitRepos/windup.wiki"
     exit
 fi
-echo "*******************************************"
 echo "Copy the original wiki files from: " $1
-echo "*******************************************"
+echo ""
 cp $1/*.asciidoc wiki-docs/
 
-echo "*******************************************"
 echo "Copying and convert files from: " $1
-echo "*******************************************"
+echo ""
 cp $1/About-Rules.asciidoc docs/topics/About-Rules.adoc
 cp $1/About-the-HOME-Variable.asciidoc docs/topics/About-the-HOME-Variable.adoc
 cp $1/About-this-Wiki.asciidoc docs/topics/About-this-Wiki.adoc
@@ -22,7 +20,7 @@ cp $1/Dev-Bootstrap-Process.asciidoc docs/topics/Dev-Bootstrap-Process.adoc
 cp $1/Dev-Build-from-Source.asciidoc docs/topics/Dev-Build-from-Source.adoc
 cp $1/Dev-Classloading-Notes.asciidoc docs/topics/Dev-Classloading-Notes.adoc
 cp $1/Dev-Concepts-and-Philosophy.asciidoc docs/topics/Dev-Concepts-and-Philosophy.adoc
-cp $1/Dev-Connect-to-the-Graph-via-Rexster.asciidoc docs/topics/Dev-Connect-to-the-Graph-via-Rexster.adoc
+cp $1/Dev-Connect-to-the-Graph-via-Rexster-or-Gremlin.asciidoc docs/topics/Dev-Connect-to-the-Graph-via-Rexster-or-Gremlin.adoc
 cp $1/Dev-Create-A-Test-for-A-Java-based-Rule-Add-on.asciidoc docs/topics/Dev-Create-A-Test-for-A-Java-based-Rule-Add-on.adoc 
 cp $1/Dev-Create-Your-First-Java-based-Rule-Add-on.asciidoc docs/topics/Dev-Create-Your-First-Java-based-Rule-Add-on.adoc
 cp $1/Dev-Create-the-JavaDoc.asciidoc docs/topics/Dev-Create-the-JavaDoc.adoc
