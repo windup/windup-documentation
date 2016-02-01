@@ -9,7 +9,47 @@ include::topics/templates/document-attributes.adoc[]
 
 = {ProductName} Rules Development Guide
 
-include::topics/Windup-Rules-Development-Guide-Topics.adoc[tabsize=4]
+== Introduction 
+
+This guide is for engineers, consultants, and others who plan to create custom XML-based rules for {ProductName}. 
+
+If you are new to {ProductName}, it is recommended that you start with the {ProductDocUserGuideURL}[{ProductName} User Guide]. It provides detailed information about system requirements and detailed instructions on how to install and execute {ProductShortName}. It also contains tips to {ProductDocUserGuideURL}#Optimize-Performance[optimize performance] and provides links to other sources of information about {ProductShortName}.
+
+If you would like to contribute to the {ProductName} source code base or provide Java-based rule add-ons, see the https://github.com/windup/windup/wiki[{ProductName} Wiki].
+
+== Get Started
+
+include::topics/Rules-Create-Your-First-Rule.adoc[leveloffset=+0]
+
+== Create and Test XML Rules
+
+include::topics/Rules-Difference-Between-XML-based-and-Java-based-Rules.adoc[leveloffset=+0]
+
+include::topics/Rules-XML-Rule-Construction.adoc[leveloffset=+0]
+
+include::topics/Rules-Create-a-Basic-XML-Rule.adoc[leveloffset=+0]
+
+include::topics/Rules-XML-Rule-When-Condition-Syntax.adoc[leveloffset=+0]
+
+include::topics/Rules-XML-Rule-Perform-Action-Syntax.adoc[leveloffset=+0]
+
+include::topics/Rules-Validate-Rulesets-Against-the-Schema.adoc[leveloffset=+0]
+
+include::topics/Rules-Test-a-Basic-XML-Rule.adoc[leveloffset=+0]
+
+== Additional Resources
+
+include::topics/Rules-Review-the-Existing-XML-Rules.adoc[leveloffset=+0]
+
+include::topics/Rules-Important-Links.adoc[leveloffset=+0]
+
+
+== Appendix
+
+include::topics/Rules-Rule-Story-Points.adoc[leveloffset=+0]
+
+include::topics/About-the-HOME-Variable.adoc[leveloffset=+0]
+
 
 
 

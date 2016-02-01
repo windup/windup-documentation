@@ -28,10 +28,9 @@ git reset --hard upstream/gh-pages
 cd docs/
 pwd
 echo Testing for existence of $WINDUP_VERSION
-if [ ! -d  $WINDUP_VERSION ] || [ ! -d  $WINDUP_VERSION/html ] || [ ! -d  $WINDUP_VERSION/pdf ] ; then
+if [ ! -d  $WINDUP_VERSION ] || [ ! -d  $WINDUP_VERSION/html ] ; then
   echo Creating directory: $WINDUP_VERSION
   mkdir -p $WINDUP_VERSION/html/images
-  mkdir $WINDUP_VERSION/pdf
 fi
 
 
@@ -44,15 +43,11 @@ cp html/WindupUserGuide.html $2/docs/$WINDUP_VERSION/html/
 
 cp docs/*.css $2/docs/$WINDUP_VERSION/html/
 cp docs/topics/images/* $2/docs/$WINDUP_VERSION/html/images/
-cp pdf/*.pdf $2/docs/$WINDUP_VERSION/pdf/
  
 echo "Guides can be previewed here: "
 echo "    User Guide (HTML): " file://$2/docs/$WINDUP_VERSION/html/WindupUserGuide.html
-echo "    User Guide (PDF):  " file://$2/docs/$WINDUP_VERSION/pdf/WindupUserGuide.pdf
 echo "    Rules Development Guide (HTML): " file://$2/docs/$WINDUP_VERSION/html/WindupRulesDevelopmentGuide.html
-echo "    Rules Development Guide (PDF): " file://$2/docs/$WINDUP_VERSION/pdf/WindupRulesDevelopmentGuide.pdf
 echo "    Core Development Guide (HTML): " file://$2/docs/$WINDUP_VERSION/html/WindupCoreDevelopmentGuide.html
-echo "    Core Development Guide (PDF): " file://$2/docs/$WINDUP_VERSION/pdf/WindupCoreDevelopmentGuide.pdf
 
 cd $2
 ##git add docs

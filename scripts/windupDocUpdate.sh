@@ -71,24 +71,17 @@ echo ""
 
 cp docs/document-attributes.adoc docs/topics/templates
 cp wiki-docs/WindupUserGuide.adoc docs/topics/
-cp wiki-docs/WindupUserGuide-NO-TOC.adoc docs/topics/
 cp wiki-docs/WindupRulesDevelopmentGuide.adoc docs/topics/
-cp wiki-docs/WindupRulesDevelopmentGuide-NO-TOC.adoc docs/topics/
 cp wiki-docs/WindupCoreDevelopmentGuide.adoc docs/topics/
-cp wiki-docs/WindupCoreDevelopmentGuide-NO-TOC.adoc docs/topics/
 
 ## Build the Windup Guides
 sh scripts/buildGuides.sh
 
-# Remove the html, build, and pdf directories and then recreate the the html and pdf directories
+# Remove the html and build directories and then recreate the the html directory
 if [ -d html ]; then
    rm -r html/
    mkdir -p html
    cp -r docs/topics/images/ html/
-fi
-if [ -d pdf ]; then
-   rm -r pdf/
-   mkdir -p pdf
 fi
 
 # Copy the windup-user-guide files
@@ -98,11 +91,7 @@ echo "Copying the $GUIDE_NAME to the new location."
 if [ -d html ]; then
   cp -r html/ ../../
 fi
-if [ -d pdf ]; then
-  cp -r pdf/ ../../
-fi
 echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
-echo "$GUIDE_NAME (PDF) is located at: " file://$CURRENT_DIR/pdf/$GUIDE_NAME.pdf
 
 # Return to where we started
 cd $CURRENT_DIR
@@ -114,11 +103,7 @@ echo "Copying the $GUIDE_NAME to the new location."
 if [ -d html ]; then
   cp -r html/ ../../
 fi
-if [ -d pdf ]; then
-  cp -r pdf/ ../../
-fi
 echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
-echo "$GUIDE_NAME (PDF) is located at: " file://$CURRENT_DIR/pdf/$GUIDE_NAME.pdf
 
 # Return to where we started
 cd $CURRENT_DIR
@@ -130,11 +115,7 @@ echo "Copying the $GUIDE_NAME to the new location."
 if [ -d html ]; then
   cp -r html/ ../../
 fi
-if [ -d pdf ]; then
-  cp -r pdf/ ../../
-fi
 echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
-echo "$GUIDE_NAME (PDF) is located at: " file://$CURRENT_DIR/pdf/$GUIDE_NAME.pdf
 
 # Return to where we started
 cd $CURRENT_DIR

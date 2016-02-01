@@ -51,14 +51,9 @@ fi
 if [ -d build ]; then
    rm -r build/
 fi
-if [ -d pdf ]; then
-   rm -r pdf/
-fi
 
 mkdir -p html
 cp -r ../../docs/topics/images/ html/
-
-mkdir -p pdf
 
 echo ""
 echo "********************************************"
@@ -71,14 +66,9 @@ asciidoctor -t -dbook -a toc -o html/$GUIDE_NAME.html master.adoc
 echo "Building the ccutil version of the $GUIDE_NAME"
 ccutil compile --lang en_US --main-file master.adoc
 
-echo "Building the pdf version of the $CURRENT_GUIDE"
-asciidoctor -t -dbook -o html/$GUIDE_NAME-NO-TOC.html topics/$GUIDE_NAME-NO-TOC.adoc
-wkhtmltopdf --page-size Letter html/$GUIDE_NAME-NO-TOC.html pdf/$GUIDE_NAME.pdf
-
 cd ..
 
 echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIRECTORY/html/$GUIDE_NAME.html
-echo "$GUIDE_NAME (PDF) is located at: " file://$CURRENT_DIRECTORY/pdf/$GUIDE_NAME.pdf
 
 if [ -d  $CURRENT_DIRECTORY/build/tmp/en-US/html-single/ ]; then
   echo "$GUIDE_NAME (ccutil) is located at: " file://$CURRENT_DIRECTORY/build/tmp/en-US/html-single/index.html
