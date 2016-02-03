@@ -1,7 +1,7 @@
 #!/bin/bash
 CURRENT_DIR="$( pwd -P)"
 
-PRODUCT_DOC_VERSION=version-2.4
+PRODUCT_DOC_VERSION=version-2.5
 OLD_PRODUCT_VERSION=2.5.0-Final
 PRODUCT_VERSION=2.5.0-Final
 if [ "$1" == "?" ]  || [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ "$1" == "" ] || [ "$2" == "" ]; then 
@@ -62,20 +62,27 @@ find . -name '*.adoc' -print | xargs sed -i 's/:ProductHomeVar: WINDUP_HOME//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductSrcHomeVar: WINDUP_SOURCE_HOME//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductReleaseVar: WINDUP_RELEASE//g'
-find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocUserGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupUserGuide.html//g'
-find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocRulesGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupRulesDevelopmentGuide.html//g'
-find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocCoreGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupCoreDevelopmentGuide.html//g'
+#find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocUserGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupUserGuide.html//g'
+#find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocRulesGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupRulesDevelopmentGuide.html//g'
+#find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocCoreGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupCoreDevelopmentGuide.html//g'
 echo "Removal of variables is complete."
+
+## Replace the images directory
+find . -name '*.adoc' -print | xargs sed -i 's/:imagesdir: images/:imagesdir: topics\/images/g'
 cd ../../
 echo ""
 
 cp docs/document-attributes.adoc docs/topics/templates
-cp wiki-docs/WindupUserGuide.adoc docs/topics/
-cp wiki-docs/WindupRulesDevelopmentGuide.adoc docs/topics/
-cp wiki-docs/WindupCoreDevelopmentGuide.adoc docs/topics/
 
 ## Build the Windup Guides
 sh scripts/buildGuides.sh
+
+## Replace the URL
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocUserGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupUserGuide.html/:ProductDocUserGuideURL: https:\/\/access.redhat.com\/documentation\/en\/red-hat-jboss-migration-toolkit\/'$PRODUCT_DOC_VERSION'\/windup-user-guide/g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocRulesGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupRulesDevelopmentGuide.html/:ProductDocRulesGuideURL: https:\/\/access.redhat.com\/documentation\/en\/red-hat-jboss-migration-toolkit\/'$PRODUCT_DOC_VERSION'\/windup-rules-development-guide/g'
+
+## Windup Core Development Guide has not been published to the portal
+## find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocCoreGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupCoreDevelopmentGuide.html/:ProductDocCoreGuideURL: https:\/\/access.redhat.com\/documentation\/en\/red-hat-jboss-migration-toolkit\/'$PRODUCT_DOC_VERSION'\/windup-core-development-guide/g'
 
 # Remove the html and build directories and then recreate the the html directory
 if [ -d html ]; then
@@ -92,6 +99,9 @@ if [ -d html ]; then
   cp -r html/ ../../
 fi
 echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
+
+# Rebuild the ccutil guide
+ccutil compile --lang en_US --main-file master.adoc
 
 # Return to where we started
 cd $CURRENT_DIR

@@ -52,8 +52,8 @@ if [ -d build ]; then
    rm -r build/
 fi
 
-mkdir -p html
-cp -r ../../docs/topics/images/ html/
+mkdir -p html/topics
+cp -r ../../docs/topics/images/ html/topics
 
 echo ""
 echo "********************************************"

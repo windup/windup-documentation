@@ -4,7 +4,7 @@
 [[Dev-Add-Images-to-the-Wiki]]
 === Add Images to the {ProductName} Wiki
 
-:imagesdir: images
+:imagesdir: topics/images
 
 * Fork https://github.com/windup/windup/wiki
 * Clone the {ProductShortName} Wiki into a `windup.wiki/` directory using the SSH clone URL: 
@@ -58,7 +58,7 @@ git commit -m "Add new image"
 git push origin HEAD:master
 ----
 
-* Test the new image in a page on your own Wiki. Don't forget to add the `:imagesdir: images` directive to the beginning of the page to point to the images directory. 
+* Test the new image in a page on your own Wiki. Don't forget to add the `:imagesdir: topics/images` directive to the beginning of the page to point to the images directory. 
 
         image:IMAGE_NAME.png[New Image]
 
@@ -66,7 +66,7 @@ git push origin HEAD:master
 For example:
 
 +
-:imagesdir: images
+:imagesdir: topics/images
 
 *My Image*
 

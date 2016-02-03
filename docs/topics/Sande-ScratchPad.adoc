@@ -14,3 +14,19 @@ This documentation uses the *{ProductHomeVar}* _replaceable_ value to denote the
 
 * If you download and install the latest distribution of {ProductShortName} from the JBoss Nexus repository, {ProductHomeVar} refers to the {ProductDistribution} folder extracted from the downloaded ZIP file.
 * If you build {ProductShortName} from GitHub source, {ProductHomeVar} refers to the {ProductDistribution} folder extracted from the windup-distribution/target/{ProductDistribution}.zip file.
+
+
+[NOTE]
+====
+You may see the following error when you run the command:
+[source,options="nowrap"]
+----
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-assembly-plugin:2.5.5:single (distribution-offline) on project windup-distribution: Failed to create assembly: Error creating assembly archive offline: Problem creating zip: Execution exception: Java heap space -> [Help 1]
+----
+
+If you see this error, run the following command to increase the HEAP.
+[source,bash,options="nowrap"]
+----
+Linux: export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
+Windows: set MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
+----

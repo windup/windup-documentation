@@ -158,6 +158,23 @@ mvn clean install
 ----
 * This creates a `windup-distribution-<VERSION>-offline.zip` file in the `windup-distribution/target/` directory.
 
++
+[NOTE]
+====
+You may see the following error when you run build the windup-distribution:
+[source,options="nowrap"]
+----
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-assembly-plugin:2.5.5:single (distribution-offline) on project windup-distribution: Failed to create assembly: Error creating assembly archive offline: Problem creating zip: Execution exception: Java heap space -> [Help 1]
+----
+
+If you see this error, run the following command to increase the Java heap space.
+[source,bash,options="nowrap"]
+----
+For Linux: export MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
+For Windows: set MAVEN_OPTS="-Xmx1024m -XX:MaxPermSize=128m"
+----
+
+====
 
 ==== Extract the Distribution Source File
 

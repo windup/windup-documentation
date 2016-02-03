@@ -3,7 +3,7 @@
 [[Rules-Models]]
 === {ProductName} Models
 
-:imagesdir: images
+:imagesdir: topics/images
 
 {ProductName} models are the classes extending WindupVertexFrame.
 They are used to model the data in the graph database to Java objects.
