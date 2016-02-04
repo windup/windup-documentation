@@ -28,9 +28,12 @@ git reset --hard upstream/gh-pages
 cd docs/
 pwd
 echo Testing for existence of $WINDUP_VERSION
+if [ -d  $WINDUP_VERSION ] ; then 
+  rm -r $WINDUP_VERSION
+fi
 if [ ! -d  $WINDUP_VERSION ] || [ ! -d  $WINDUP_VERSION/html ] ; then
   echo Creating directory: $WINDUP_VERSION
-  mkdir -p $WINDUP_VERSION/html/images
+  mkdir -p $WINDUP_VERSION/html/topics/images
 fi
 
 
@@ -42,7 +45,7 @@ cp html/WindupRulesDevelopmentGuide.html $2/docs/$WINDUP_VERSION/html/
 cp html/WindupUserGuide.html $2/docs/$WINDUP_VERSION/html/
 
 cp docs/*.css $2/docs/$WINDUP_VERSION/html/
-cp docs/topics/images/* $2/docs/$WINDUP_VERSION/html/images/
+cp docs/topics/images/* $2/docs/$WINDUP_VERSION/html/topics/images/
  
 echo "Guides can be previewed here: "
 echo "    User Guide (HTML): " file://$2/docs/$WINDUP_VERSION/html/WindupUserGuide.html

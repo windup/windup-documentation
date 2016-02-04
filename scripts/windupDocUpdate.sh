@@ -31,7 +31,6 @@ echo ""
 
 echo "Copying the latest images and stylesheets..."
 cp -r $1/images/*.* docs/topics/images/
-cp -r $1/images/*.*  html/images/
 echo "Copy complete."
 echo ""
 
@@ -84,8 +83,8 @@ cp docs/document-attributes-product.adoc docs/topics/templates/document-attribut
 # Remove the html and build directories and then recreate the the html directory
 if [ -d html ]; then
    rm -r html/
-   mkdir -p html
-   cp -r docs/topics/images/ html/
+   mkdir -p html/topics/
+   cp -r docs/topics/images/ html/topics
 fi
 
 # Copy the windup-user-guide files
