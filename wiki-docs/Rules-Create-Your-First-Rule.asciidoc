@@ -6,6 +6,7 @@
 [[Rules-Create-Your-First-Rule]]
 === Create Your First XML Rule
 
+[discrete]
 ==== Overview 
 
 This topic guides you through the process of creating and testing your first {ProductShortName} XML-based rule.
@@ -22,10 +23,12 @@ Additional details about creating XML rules, with example syntax, can be found h
 
 As you create your first rule, refer to the http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[Rules Schema] for valid XML syntax. 
 
+[discrete]
 ==== Rule Example Description
 
 In this example, you write a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and provide a link to the documentation that describes how to migrate the code. 
 
+[discrete]
 ==== Create the Directory Structure for the Rule
 
 . Create a directory structure to contain your first rule and the data file to use for testing. 
@@ -38,6 +41,7 @@ $ mkdir -p migration-rules/data
 
 . This directory structure will also be used to hold the generated {ProductShortName} reports.
 
+[discrete]
 ==== Create Data to Test the Rule
 
 . Use your favorite editor or IDE to create a `jboss-web.xml` file in the `~/migration-rules/data/` subdirectory. 
@@ -56,6 +60,7 @@ $ mkdir -p migration-rules/data
 </jboss-web>
 ----
 
+[discrete]
 ==== Create the Rule
 
 . Use your favorite editor or IDE to create an XML file in the `~/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
@@ -177,6 +182,7 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 </ruleset>
 ----
 
+[discrete]
 ==== Install the Rule
 
 A {ProductShortName} rule is installed simply by copying the rule to the appropriate folder. 
@@ -188,11 +194,13 @@ For Linux or Mac: ~/.windup/rules/
 For Windows: "\Documents and Settings\USER_NAME\.windup\rules\" or "\Users\USER_NAME\.windup\rules\"
 ----
 
+[discrete]
 ==== Validate the Rule Against the Schema
 
 To validate your XML rule using the {ProductShortName} rule schema, see link:Rules-Validate-Rulesets-Against-the-Schema[Validate Rulesets Against the Schema].
 
 
+[discrete]
 ==== Test the Rule
 
 . Open a terminal and navigate to the {ProductHomeVar} directory.
@@ -212,20 +220,29 @@ For Windows:  bin\windup.bat --sourceMode --input migration-rules\data --output 
               Access it at this URL: file:///home/your-username/migration-rules/reports/index.html
 
 ----
-. Access the report at ~/migration-rules/reports/index.html to be sure it provides the expected results. 
-* The _Overview_ page displays the *Name* of the input folder, "data", along with the  *Effort* of "1 Story Points".
+
+[discrete]
+==== Review the Reports
+
+Access the report at ~/migration-rules/reports/index.html to be sure it provides the expected results. 
+
+. The _Overview_ page displays the *Name* of the input folder, "data", along with the  *Effort* of "1 Story Points".
 +
+.Application List
 image:CreateYourFirstRule-ReportOverview.png[Overview, 500]
 
-* Drill down into the _Application Report_ detail by clicking on the "data" link under the `Name` column. This report displays a link for the name of the file, "jboss-web.xml", along with 3 warnings under *Issues* and 1 *Story Points*.
-** JBoss Web Application Descriptor
-** JBoss Web XML
-** JBoss Web XML class-loading element is no longer valid
+. Click on the "data" link under the `Name` column to see the _Report Index_ page and review the migration summary. 
 +
+.ReportIndex
 image:CreateYourFirstRule-ReportApplication.png[Overview, 500]
 
-* Drill down into _Source Report_ file detail by clicking on the "jboss-web.xml" file link. This report provides information about the file and summarizes the story points. It also highlights the `<class-loading>` line in the `jboss-web.xml` file, provides the message "The class-loading element is no longer valid in the jboss-web.xml file.", and provides a link to the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6[Create or Modify Files That Control Class Loading in JBoss EAP 6] topic in the JBoss EAP 6 Migration Guide. Click on the link to be sure the link is valid.
+. Click on the *Application Details* link to view the application report. This report displays a link for the name of the file, "jboss-web.xml", along with warnings and 1 *Story Points*.
++
+.Application Details Report
+image:CreateYourFirstRule-ReportApplicationDetails.png[Overview, 500]
+
+. Drill down into _Source Report_ file detail by clicking on the *jboss-web.xml* file link. This report provides information about the file and summarizes the story points. It also highlights the `<class-loading>` line in the `jboss-web.xml` file, provides the message "The class-loading element is no longer valid in the jboss-web.xml file.", and provides a link to the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6[Create or Modify Files That Control Class Loading in JBoss EAP 6] topic in the JBoss EAP 6 Migration Guide. Click on the link to be sure the link is valid.
 +
 image:CreateYourFirstRule-ReportSource.png[Overview, 500]
 
-* Return to the _Overview Page_ and click on the "All Rule" link to view the _Rule Provider Executions_ report. Find the 'JBoss5-web-class-loading' rule in the report and verify that the *Status* shows "Condition met" and the *Result* shows "success".
+. Return to the _Overview Page_ and click on the "All Rule" link to view the _Rule Provider Executions_ report. Find the 'JBoss5-web-class-loading' rule in the report and verify that the *Status* shows "Condition met" and the *Result* shows "success".

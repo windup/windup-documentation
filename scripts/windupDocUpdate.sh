@@ -62,9 +62,9 @@ find . -name '*.adoc' -print | xargs sed -i 's/:ProductHomeVar: WINDUP_HOME//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductSrcHomeVar: WINDUP_SOURCE_HOME//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductReleaseVar: WINDUP_RELEASE//g'
-#find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocUserGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupUserGuide.html//g'
-#find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocRulesGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupRulesDevelopmentGuide.html//g'
-#find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocCoreGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupCoreDevelopmentGuide.html//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocUserGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupUserGuide.html//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocRulesGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupRulesDevelopmentGuide.html//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocCoreGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupCoreDevelopmentGuide.html//g'
 echo "Removal of variables is complete."
 
 ## Replace the images directory
@@ -72,17 +72,14 @@ find . -name '*.adoc' -print | xargs sed -i 's/:imagesdir: images/:imagesdir: to
 cd ../../
 echo ""
 
-cp docs/document-attributes.adoc docs/topics/templates
+## First build the community version of the guides
+cp docs/document-attributes-community.adoc docs/topics/templates/document-attributes.adoc
 
 ## Build the Windup Guides
 sh scripts/buildGuides.sh
 
-## Replace the URL
-find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocUserGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupUserGuide.html/:ProductDocUserGuideURL: https:\/\/access.redhat.com\/documentation\/en\/red-hat-jboss-migration-toolkit\/'$PRODUCT_DOC_VERSION'\/windup-user-guide/g'
-find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocRulesGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupRulesDevelopmentGuide.html/:ProductDocRulesGuideURL: https:\/\/access.redhat.com\/documentation\/en\/red-hat-jboss-migration-toolkit\/'$PRODUCT_DOC_VERSION'\/windup-rules-development-guide/g'
-
-## Windup Core Development Guide has not been published to the portal
-## find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocCoreGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupCoreDevelopmentGuide.html/:ProductDocCoreGuideURL: https:\/\/access.redhat.com\/documentation\/en\/red-hat-jboss-migration-toolkit\/'$PRODUCT_DOC_VERSION'\/windup-core-development-guide/g'
+## Now build the product version of the guides
+cp docs/document-attributes-product.adoc docs/topics/templates/document-attributes.adoc
 
 # Remove the html and build directories and then recreate the the html directory
 if [ -d html ]; then
@@ -101,6 +98,7 @@ fi
 echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
 
 # Rebuild the ccutil guide
+echo "Rebuilding the ccutil version of the Windup User Guide"
 ccutil compile --lang en_US --main-file master.adoc
 
 # Return to where we started
@@ -115,6 +113,10 @@ if [ -d html ]; then
 fi
 echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
 
+# Rebuild the ccutil guide
+echo "Rebuilding the ccutil version of the Windup Rules Development Guide"
+ccutil compile --lang en_US --main-file master.adoc
+
 # Return to where we started
 cd $CURRENT_DIR
 
@@ -126,6 +128,10 @@ if [ -d html ]; then
   cp -r html/ ../../
 fi
 echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
+
+# Rebuild the ccutil guide
+echo "Rebuilding the ccutil version of the Windup Core Development Guide"
+ccutil compile --lang en_US --main-file master.adoc
 
 # Return to where we started
 cd $CURRENT_DIR
