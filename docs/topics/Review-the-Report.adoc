@@ -37,7 +37,7 @@ NOTE: The incidents and estimated _Story Points_ change as new rules are added t
 Use your favorite browser to open the `index.html` file located in the output report directory. You should see something like the following:
 
 .{ProductShortName} Report: Application List
-image:report-jee-example-index-page.png[Report Index Page, 600]
+image:report-jee-example-application-list-page.png[Report Index Page, 600]
 
 This page lists the applications that were processed along with the technologies that were encountered. It also provides links to the following additional reports.
 
@@ -102,7 +102,7 @@ This is followed by a list of reports that contain additional details about the 
 |===
 
 .{ProductShortName} Report - Report Index
-image:report-jee-example-application-overview.png[Report Overview and Application Messages, 600]
+image:report-jee-example-application-report-index-page.png[Report Overview and Application Messages, 600]
 
 Click on the *Application Details* link under *Additional Reports* to see the the _Application Details Report_. 
 
@@ -197,7 +197,7 @@ image:report-jee-example-ruleprovider.png[RuleProvider Report, 600]
 Access this report by clicking on the `Windup FreeMarker Methods` link on the initial index page. This report lists all the registered functions and directives that were used to build the report. It is useful if you plan to build your own custom report or for debugging purposes.
 
 .{ProductShortName} Report: FreeMarker Functions and Directives
-image:report-jee-example-freemarker.png[FreeMarker Functions and Directives, 600]
+image:report-jee-example-freemarker-and-directives.png[FreeMarker Functions and Directives, 600]
 
 
 [[review-the-report-send-feedback]]

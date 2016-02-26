@@ -540,7 +540,7 @@ spots” when migrating applications. The goal is to provide a high level view i
 <p>It enables 3rd-party plug-ins to interact with other plug-ins, rules and reports.</p>
 </li>
 <li>
-<p>The findings in data graph model can be searched and queried during rule execution and used for reporting purposes.</p>
+<p>The findings in the data graph model can be searched and queried during rule execution and used for reporting purposes.</p>
 </li>
 </ul>
 </div>
@@ -557,7 +557,7 @@ spots” when migrating applications. The goal is to provide a high level view i
 <p>It enables 3rd-parties to create simple POJO plug-ins that can interact with the data graph.</p>
 </li>
 <li>
-<p>Means we don’t have to invent everything. Users with domain knowledge can implement their own rules.</p>
+<p>This also means we do not have to invent everything. Users with domain knowledge can implement their own rules.</p>
 </li>
 </ul>
 </div>
@@ -574,8 +574,10 @@ spots” when migrating applications. The goal is to provide a high level view i
 <p>Java-based rule add-ons are based on  <a href="http://ocpsoft.org/rewrite/">OCPsoft Rewrite</a> and provide greater flexibility and power creating when rules.</p>
 </li>
 <li>
-<p>Rules can now be nested to handle more complex situations. This means you can nest simple statements rather than use complex XPATH or REGEX expressions.
-*Rules can be linked using and/or statements</p>
+<p>Rules can now be nested to handle more complex situations. This means you can nest simple statements rather than use complex XPATH or REGEX expressions.</p>
+</li>
+<li>
+<p>Rules can be linked using and/or statements.</p>
 </li>
 </ul>
 </div>
@@ -586,11 +588,11 @@ spots” when migrating applications. The goal is to provide a high level view i
 </dd>
 <dt class="hdlist1">Better Reporting</dt>
 <dd>
-<p>Windup  reports are now targeted for specific audiences.</p>
+<p>Windup reports are now targeted for specific audiences.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Project Management - Reports detail the type of work and estimation of effort to complete the tasks.</p>
+<p>Project Management: Reports detail the type of work and estimation of effort to complete the tasks.</p>
 </li>
 <li>
 <p>Developers: Reports provide hints and suggested code changes by class or file.</p>
@@ -620,7 +622,7 @@ otherwise(action)</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Windup provides comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, Windup allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset. If you plan to write your own custom rules, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">
+<p>Windup provides a comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, Windup allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset. If you plan to write your own custom rules, see the <a href="http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html">
 Windup Rules Development Guide</a> for detailed instructions.</p>
 </div>
 </div>
@@ -978,15 +980,25 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </dd>
 <dt class="hdlist1">--excludePackages <strong>PACKAGE_1</strong> <strong>PACKAGE_2</strong> <strong>PACKAGE_N</strong> (optional)</dt>
 <dd>
-<p>This is a space-delimited list of the packages to be excluded by Windup.</p>
+<p>This is a space-delimited list of the packages to be excluded by Windup. For example, entering "com.mycompany.commonutilities" would exclude all classes whose package name begins with "com.mycompany.commonutilities".</p>
+<div class="paragraph">
+<p>This parameter is very important when dealing with large applications as it can greatly reduce execution time.</p>
+</div>
 </dd>
 <dt class="hdlist1">--includeTags TAG_1 TAG_2 (optional)</dt>
 <dd>
-<p>Limit processing to rules that contain the specified tags. If this option is not specified, all tags are processed. Multiple tags are delimited by spaces.</p>
+<p>In Windup, each rule is associated with a set of tags. Tags are just simple strings that succinctly describe the function of the rule. Common tags include "ejb", "log4j", and "hibernate". To see the full list of tags, use the "--listTags" argument.</p>
 </dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>When one or more tags are specified here, then only rules with these tags will be processed. If this option is not specified, then all tags are processed.</p>
+</div>
+<div class="dlist">
+<dl>
 <dt class="hdlist1">--excludeTags TAG_1 TAG_2 (optional)</dt>
 <dd>
-<p>Do not process rules that contain the specified tags. If this option is not specified, all tags are processed.</p>
+<p>Do not process rules that contain the specified tags. This option can be used if it is found that a particular set of rules is highlighting too much unnecessary information in the report. If this option is not specified, all tags are processed.</p>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -1145,7 +1157,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 </div>
 <div class="paragraph">
 <div class="title">Windup Report: Application List</div>
-<p><span class="image"><img src="topics/images/report-jee-example-index-page.png" alt="Report Index Page" width="600"></span></p>
+<p><span class="image"><img src="topics/images/report-jee-example-application-list-page.png" alt="Report Index Page" width="600"></span></p>
 </div>
 <div class="paragraph">
 <p>This page lists the applications that were processed along with the technologies that were encountered. It also provides links to the following additional reports.</p>
@@ -1240,7 +1252,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 </table>
 <div class="paragraph">
 <div class="title">Windup Report - Report Index</div>
-<p><span class="image"><img src="topics/images/report-jee-example-application-overview.png" alt="Report Overview and Application Messages" width="600"></span></p>
+<p><span class="image"><img src="topics/images/report-jee-example-application-report-index-page.png" alt="Report Overview and Application Messages" width="600"></span></p>
 </div>
 <div class="paragraph">
 <p>Click on the <strong>Application Details</strong> link under <strong>Additional Reports</strong> to see the the <em>Application Details Report</em>.</p>
@@ -1382,7 +1394,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 </div>
 <div class="paragraph">
 <div class="title">Windup Report: FreeMarker Functions and Directives</div>
-<p><span class="image"><img src="topics/images/report-jee-example-freemarker.png" alt="FreeMarker Functions and Directives" width="600"></span></p>
+<p><span class="image"><img src="topics/images/report-jee-example-freemarker-and-directives.png" alt="FreeMarker Functions and Directives" width="600"></span></p>
 </div>
 </div>
 <div class="sect4">
@@ -1408,7 +1420,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The file is named with the `.csv' file extension.</p>
+<p>The file is named with the <code>.csv</code> file extension.</p>
 </li>
 <li>
 <p>The first row is a header listing the names of the fields.</p>
@@ -1437,7 +1449,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 </ol>
 </div>
 <div class="paragraph">
-<p>The CSV formatted file can be imported and manipulated by spreadsheet software such as Microsoft Excel and OpenOffice or LibreOffice Calc. Spreadsheet software provide the ability to sort, analyze, evaluate, and manage the result data from a Windup report.</p>
+<p>The CSV formatted file can be imported and manipulated by spreadsheet software such as Microsoft Excel and OpenOffice or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from a Windup report.</p>
 </div>
 <div class="sect3">
 <h4 id="_enable_the_export_functionality">2.4.1. Enable the Export Functionality</h4>
@@ -1453,7 +1465,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 <p>Start the spreadsheet software (LibreOffice Calc, OpenOffice Calc, Microsoft Excel, etc.).</p>
 </li>
 <li>
-<p>Choose <code>File</code> -&#8594; `Open'.</p>
+<p>Choose <code>File</code> &#8594; <code>Open</code>.</p>
 </li>
 <li>
 <p>Navigate to the CSV exported file and select it.</p>
@@ -1596,7 +1608,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 <div class="ulist">
 <ul>
 <li>
-<p>Send an email to <a href="mailto:windup-users@lists.jboss.org">windup-users@lists.jboss.org</a> and let us know what should Windup migration rules  cover.</p>
+<p>Send an email to <a href="mailto:windup-users@lists.jboss.org">windup-users@lists.jboss.org</a> and let us know what Windup migration rules should cover.</p>
 </li>
 <li>
 <p>Provide example applications to test migration rules.</p>
@@ -1618,7 +1630,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 <p><a href="#Execute">Try Windup</a> on your application. Be sure to <a href="#Report-Issues">report any issues</a> you encounter.</p>
 </li>
 <li>
-<p>You can contribute to the Windup rules repository.</p>
+<p>Contribute to the Windup rules repository.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1634,7 +1646,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 </div>
 </li>
 <li>
-<p>You can also contribute to the project source code.</p>
+<p>Contribute to the project source code.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1802,7 +1814,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 <dl>
 <dt class="hdlist1">Rule</dt>
 <dd>
-<p>A piece of code that performs a single unit of work during the migration process. The following is an example of am XML-based rule that finds and reports on instances of <code>weblogic-ejb-jar</code> XML files and provides a link to a article on the Red Hat Customer Portal that describes how to migrate the file.</p>
+<p>A piece of code that performs a single unit of work during the migration process. The following is an example of an XML-based rule that finds and reports on instances of <code>weblogic-ejb-jar</code> XML files and provides a link to an article on the Red Hat Customer Portal that describes how to migrate the file.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;rule id="weblogic-xml-descriptor-04000"&gt;
@@ -1891,10 +1903,10 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 <p>Specify the <code>--target</code> platform on the on the <code>WINDUP_HOME/bin/windup</code> command line to limit the execution of rules to only those that apply to this target platform.</p>
 </li>
 <li>
-<p>Be sure to specify a comma-delimited list of the packages to be evaluated by Windup using the <code>--packages</code> argument on the `WINDUP_HOME/bin/windup`command line. If you omit this argument, Windup will decompile everything, which has a big impact on performance.</p>
+<p>Be sure to specify a comma-delimited list of the packages to be evaluated by Windup using the <code>--packages</code> argument on the <code>WINDUP_HOME/bin/windup</code> command line. If you omit this argument, Windup will decompile everything, which has a big impact on performance.</p>
 </li>
 <li>
-<p>Specify the <code>--excludePackages</code> and <code>--excludeTags</code> where possible to exclude them from processing.</p>
+<p>Specify the <code>--excludePackages</code> and <code>--excludeTags</code> arguments where possible to exclude them from processing.</p>
 </li>
 <li>
 <p>Add additional proprietary packages that should not be processed to the <code>ignore/proprietary.package-ignore.txt</code> file in the Windup distribution directory. Windup can still find the references to the packages in the application source code, but avoids the need to decompile and analyze the proprietary classes.</p>
@@ -1913,7 +1925,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 <div class="ulist">
 <ul>
 <li>
-<p>If you have access to a server that has better resources than your laptop/desktop, than you may want to consider running Windup on that server.</p>
+<p>If you have access to a server that has better resources than your laptop/desktop, then you may want to consider running Windup on that server.</p>
 </li>
 <li>
 <p>Very large applications that require decompilation have large memory requirements. 8 GB RAM is recommended. This allows 3 - 4 GB RAM for use by the JVM.</p>

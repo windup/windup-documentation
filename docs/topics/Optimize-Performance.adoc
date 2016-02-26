@@ -20,9 +20,9 @@ Try these suggestions first before upgrading hardware.
 
 * Specify the `--target` platform on the on the `WINDUP_HOME/bin/windup` command line to limit the execution of rules to only those that apply to this target platform.
 
-* Be sure to specify a comma-delimited list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `WINDUP_HOME/bin/windup`command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
+* Be sure to specify a comma-delimited list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `WINDUP_HOME/bin/windup` command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
 
-* Specify the `--excludePackages` and `--excludeTags` where possible to exclude them from processing.
+* Specify the `--excludePackages` and `--excludeTags` arguments where possible to exclude them from processing.
 
 * Add additional proprietary packages that should not be processed to the `ignore/proprietary.package-ignore.txt` file in the {ProductShortName} distribution directory. {ProductShortName} can still find the references to the packages in the application source code, but avoids the need to decompile and analyze the proprietary classes.
 
@@ -32,7 +32,7 @@ Try these suggestions first before upgrading hardware.
 
 If the steps above do not improve performance, you may need to upgrade your hardware.
 
-* If you have access to a server that has better resources than your laptop/desktop, than you may want to consider running {ProductShortName} on that server.
+* If you have access to a server that has better resources than your laptop/desktop, then you may want to consider running {ProductShortName} on that server.
 
 * Very large applications that require decompilation have large memory requirements. 8 GB RAM is recommended. This allows 3 - 4 GB RAM for use by the JVM.
 

@@ -288,7 +288,7 @@ _Example:_
 
 ===== Summary 
 
-Use the `project` element to query the Maven POM file for the project charateristics. For a better understanding of the `project` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] class.
+Use the `project` element to query the Maven POM file for the project characteristics. For a better understanding of the `project` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] class.
 
 The following is an example of a rule that checks for a junit dependency version between 2.0.0.Final and 2.2.0.Final.
 [source,xml,options="nowrap"]
@@ -332,19 +332,19 @@ a|Subcondition used within `project` to query against project dependencies. The 
 
 |groupId
 |PROJECT_GROUP_ID
-|Match on the project `<groupId>` of the dependency
+|Match on the project `<groupId>` of the dependency.
 
 |artifactId
 |PROJECT_ARTIFACT_ID
-|Match on the project `<artifactId>` of the dependency
+|Match on the project `<artifactId>` of the dependency.
 
 |fromVersion
 |FROM_VERSION
-|Specify the lower version bound of the artifact. For example `2.0.0.Final`
+|Specify the lower version bound of the artifact. For example `2.0.0.Final`.
 
 |toVersion
 |TO_VERSION
-|Specify the upper version bound of the artifact. For example `2.2.0.Final`
+|Specify the upper version bound of the artifact. For example `2.2.0.Final`.
 |===
 
 [[filecontent-syntax]]
@@ -366,7 +366,7 @@ Use the `filecontent` element to find strings or text within files, for example,
 
 |pattern
 |String
-|Match the file contents against the provided parameterized string
+|Match the file contents against the provided parameterized string.
 
 |filename
 |String
@@ -402,7 +402,7 @@ from="MyEjbRule"
 
 ===== Summary
 
-Use the `file` element to find the existence of files with a specific name, for example, a ' ibm-webservices-ext.xmi' file. For a better understanding of the `file` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/File.html[File] class.
+Use the `file` element to find the existence of files with a specific name, for example, an `ibm-webservices-ext.xmi` file. For a better understanding of the `file` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/File.html[File] class.
 
 ===== Construct a file Element
 

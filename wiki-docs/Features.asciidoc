@@ -7,28 +7,28 @@
 
 //[horizontal]
 
-Shared Data Model:: {ProductName} creates a shared data model graph that provides the following benefits.
+Shared Data Model:: {ProductShortName} creates a shared data model graph that provides the following benefits.
 
 * It enables complex rule interaction, allowing rules to pass findings to other rules.
 * It enables 3rd-party plug-ins to interact with other plug-ins, rules and reports.
-* The findings in data graph model can be searched and queried during rule execution and used for reporting purposes.
+* The findings in the data graph model can be searched and queried during rule execution and used for reporting purposes.
 
 Extensibility::
 
 {ProductName} can be extended by developers, users, and 3rd-party software.
 
-* It provides a plug-in API to inject other applications into {ProductName}.
+* It provides a plug-in API to inject other applications into {ProductShortName}.
 * It enables 3rd-parties to create simple POJO plug-ins that can interact with the data graph.
-* Means we don’t have to invent everything. Users with domain knowledge can implement their own rules.
+* This also means we do not have to invent everything. Users with domain knowledge can implement their own rules.
 
 Better Rules::
 
-{ProductName} provides more powerful and complex rules. 
+{ProductShortName} provides more powerful and complex rules. 
 
 * XML-based rules are simple to write and and easy to implement.
 * Java-based rule add-ons are based on  http://ocpsoft.org/rewrite/[OCPsoft Rewrite] and provide greater flexibility and power creating when rules.
 * Rules can now be nested to handle more complex situations. This means you can nest simple statements rather than use complex XPATH or REGEX expressions.
-*Rules can be linked using and/or statements
+* Rules can be linked using and/or statements.
 
 Work Estimation:: 
 
@@ -36,8 +36,8 @@ Estimates for the _level of effort_ are based on the skills required and the cla
 
 Better Reporting::
 
-{ProductName}  reports are now targeted for specific audiences.
+{ProductShortName} reports are now targeted for specific audiences.
 
-* Project Management - Reports detail the type of work and estimation of effort to complete the tasks.
+* Project Management: Reports detail the type of work and estimation of effort to complete the tasks.
 * Developers: Reports provide hints and suggested code changes by class or file.
 

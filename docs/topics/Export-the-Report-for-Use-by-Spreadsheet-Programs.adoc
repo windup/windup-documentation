@@ -8,7 +8,7 @@
 
 {ProductShortName} follows the https://tools.ietf.org/html/rfc4180[Common Format and MIME Type for Comma-Separated Values (CSV) Files] standard for escaping special characters contained within each field in the file. The exported file has the following characteristics.
 
-. The file is named with the `.csv' file extension.
+. The file is named with the `.csv` file extension.
 . The first row is a header listing the names of the fields.
 +
 [options="nowrap"]
@@ -28,7 +28,7 @@
 "MyWindupRule","hint",""Replace the ""foo"" class","Replace the ""foo"" class instances with ""bar""",,"MyApp","MyApp.java","home/username/MyApp","200","8"
 ----
 
-The CSV formatted file can be imported and manipulated by spreadsheet software such as Microsoft Excel and OpenOffice or LibreOffice Calc. Spreadsheet software provide the ability to sort, analyze, evaluate, and manage the result data from a Windup report.  
+The CSV formatted file can be imported and manipulated by spreadsheet software such as Microsoft Excel and OpenOffice or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from a Windup report.  
 
 ==== Enable the Export Functionality
 
@@ -37,7 +37,7 @@ To enable export of the report into CSV file, run {ProductShortName} with `--exp
 ==== Import the CSV File into a Spreadsheet
 
 . Start the spreadsheet software (LibreOffice Calc, OpenOffice Calc, Microsoft Excel, etc.).
-. Choose `File` --> `Open'.
+. Choose `File` -> `Open`.
 . Navigate to the CSV exported file and select it.
 . The data is now ready to analyze in the spreadsheet software.
 

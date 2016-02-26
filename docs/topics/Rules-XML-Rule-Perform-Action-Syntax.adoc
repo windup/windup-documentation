@@ -235,7 +235,7 @@ _Example:_
 
 |title
 |STRING
-a|Title this hint using the specified string. Title is required attribute.
+a|Title this hint using the specified string. Title is a required attribute.
 
 _Example:_ 
 
@@ -287,7 +287,7 @@ effort="2"
 |Description
 
 |<message>
-a|A message describing the migration hint
+a|A message describing the migration hint.
 
 _Example:_
 
@@ -397,7 +397,7 @@ template="simpleXSLT.xsl"
 
 |effort
 |BYTE
-| The level of effort required for the tranformation. (Optional)
+| The level of effort required for the transformation. (Optional)
 
 |===
 

@@ -3,19 +3,18 @@
 [[Dev-Jenkins-Setup]]
 === Jenkins Setup
 
-The {ProductName} team has a Jenkins instance on OpenStack.
+The {ProductName} team has a Jenkins instance in a VM on Wonka.
 
-This is the description of how to set it up.
+This is the description of how it is configured.
 
 ==== Requirements
 
-* Instance size: c3.mxlarge or bigger
-* System: RHEL 7 GA Guest
+* System: RHEL 7 Server
 
 ==== Procedure To Set It Up
 
 . Get a RHN account. Your organization should give you one.
-. Add your keys to OpenStack
+. Add your keys to the instance
 . Login to the machine - user is `cloud-user`
 . `sudo su -`
 . `subscription-manager register --auto-attach`

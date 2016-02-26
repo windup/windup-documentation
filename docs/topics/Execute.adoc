@@ -168,13 +168,17 @@ bin/windup --listTargetTechnologies
 +
 WARNING: If you omit the `--packages` argument, every package in the application is scanned, which can impact performance. It is best to provide this argument with one or more packages.
 
---excludePackages *PACKAGE_1* *PACKAGE_2* *PACKAGE_N* (optional):: This is a space-delimited list of the packages to be excluded by {ProductShortName}.
+--excludePackages *PACKAGE_1* *PACKAGE_2* *PACKAGE_N* (optional):: This is a space-delimited list of the packages to be excluded by {ProductShortName}. For example, entering "com.mycompany.commonutilities" would exclude all classes whose package name begins with "com.mycompany.commonutilities".
++
+This parameter is very important when dealing with large applications as it can greatly reduce execution time.
 
 
 
---includeTags TAG_1 TAG_2 (optional):: Limit processing to rules that contain the specified tags. If this option is not specified, all tags are processed. Multiple tags are delimited by spaces.
+--includeTags TAG_1 TAG_2 (optional):: In {ProductShortName}, each rule is associated with a set of tags. Tags are just simple strings that succinctly describe the function of the rule. Common tags include "ejb", "log4j", and "hibernate". To see the full list of tags, use the "--listTags" argument.
 
---excludeTags TAG_1 TAG_2 (optional):: Do not process rules that contain the specified tags. If this option is not specified, all tags are processed.
+When one or more tags are specified here, then only rules with these tags will be processed. If this option is not specified, then all tags are processed.
+
+--excludeTags TAG_1 TAG_2 (optional):: Do not process rules that contain the specified tags. This option can be used if it is found that a particular set of rules is highlighting too much unnecessary information in the report. If this option is not specified, all tags are processed.
 +
 [TIP]
 ====
@@ -211,7 +215,7 @@ bin/windup --updateRulesets
 ----
 ====
 
---batchMode (optional):: Specifies that Windup should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in via the command line.
+--batchMode (optional):: Specifies that {ProductShortName} should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in via the command line.
 
 [[command-examples]]
 ==== {ProductShortName} Command Examples

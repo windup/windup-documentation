@@ -433,7 +433,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_quick_comparison_summary">3.1.6. Quick Comparison Summary</a></li>
 </ul>
 </li>
-<li><a href="#Rules-XML-Rule-Construction">3.2. XML-Rule-Construction</a>
+<li><a href="#Rules-XML-Rule-Construction">3.2. XML Rule Construction</a>
 <ul class="sectlevel3">
 <li><a href="#_rulesets">3.2.1. Rulesets</a></li>
 <li><a href="#_predefined_rules">3.2.2. Predefined Rules</a></li>
@@ -824,7 +824,7 @@ For Windows:  bin\windup.bat --sourceMode --input migration-rules\data --output 
 <p>The <em>Overview</em> page displays the <strong>Name</strong> of the input folder, "data", along with the  <strong>Effort</strong> of "1 Story Points".</p>
 <div class="paragraph">
 <div class="title">Application List</div>
-<p><span class="image"><img src="topics/images/CreateYourFirstRule-ReportOverview.png" alt="Overview" width="500"></span></p>
+<p><span class="image"><img src="topics/images/CreateYourFirstRule-ReportApplicationList.png" alt="Overview" width="500"></span></p>
 </div>
 </li>
 <li>
@@ -1084,7 +1084,7 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-XML-Rule-Construction">3.2. XML-Rule-Construction</h3>
+<h3 id="Rules-XML-Rule-Construction">3.2. XML Rule Construction</h3>
 <div class="paragraph">
 <p>This section describes the basic construction of XML rules. All XML rules are defined as elements within rulesets.</p>
 </div>
@@ -1096,7 +1096,7 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 <div class="ulist">
 <ul>
 <li>
-<p><strong>&lt;ruleset id="UNIQUE_RULESET_ID&gt;</strong>: This element defines this as a Windup ruleset and gives it a unique ruleset ID.</p>
+<p><strong>&lt;ruleset id="UNIQUE_RULESET_ID"&gt;</strong>: This element defines this as a Windup ruleset and gives it a unique ruleset ID.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1123,7 +1123,7 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 <div class="ulist">
 <ul>
 <li>
-<p><strong>&lt;rule id=UNIQUE_RULESET_ID_UNIQUE_RULE_ID&gt;</strong>: This element defines the rule and gives it a unique ID. One or more rules can be defined for a ruleset.</p>
+<p><strong>&lt;rule id="UNIQUE_RULESET_ID_UNIQUE_RULE_ID"&gt;</strong>: This element defines the rule and gives it a unique ID. One or more rules can be defined for a ruleset.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1859,7 +1859,7 @@ which may have useful side effects, like setting the matched value on the rule v
 <div class="sect4">
 <h5 id="_summary_4">Summary</h5>
 <div class="paragraph">
-<p>Use the <code>project</code> element to query the Maven POM file for the project charateristics. For a better understanding of the <code>project</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html">Project</a> class.</p>
+<p>Use the <code>project</code> element to query the Maven POM file for the project characteristics. For a better understanding of the <code>project</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html">Project</a> class.</p>
 </div>
 <div class="paragraph">
 <p>The following is an example of a rule that checks for a junit dependency version between 2.0.0.Final and 2.2.0.Final.</p>
@@ -1929,22 +1929,22 @@ which may have useful side effects, like setting the matched value on the rule v
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">groupId</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PROJECT_GROUP_ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Match on the project <code>&lt;groupId&gt;</code> of the dependency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match on the project <code>&lt;groupId&gt;</code> of the dependency.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">artifactId</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">PROJECT_ARTIFACT_ID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Match on the project <code>&lt;artifactId&gt;</code> of the dependency</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match on the project <code>&lt;artifactId&gt;</code> of the dependency.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fromVersion</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FROM_VERSION</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the lower version bound of the artifact. For example <code>2.0.0.Final</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the lower version bound of the artifact. For example <code>2.0.0.Final</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">toVersion</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">TO_VERSION</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the upper version bound of the artifact. For example <code>2.2.0.Final</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the upper version bound of the artifact. For example <code>2.2.0.Final</code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1980,7 +1980,7 @@ which may have useful side effects, like setting the matched value on the rule v
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">pattern</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Match the file contents against the provided parameterized string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match the file contents against the provided parameterized string.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">filename</p></td>
@@ -2027,7 +2027,7 @@ which may have useful side effects, like setting the matched value on the rule v
 <div class="sect4">
 <h5 id="_summary_6">Summary</h5>
 <div class="paragraph">
-<p>Use the <code>file</code> element to find the existence of files with a specific name, for example, a ' ibm-webservices-ext.xmi' file. For a better understanding of the <code>file</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/File.html">File</a> class.</p>
+<p>Use the <code>file</code> element to find the existence of files with a specific name, for example, an <code>ibm-webservices-ext.xmi</code> file. For a better understanding of the <code>file</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/File.html">File</a> class.</p>
 </div>
 </div>
 <div class="sect4">
@@ -2428,7 +2428,7 @@ which may have useful side effects, like setting the matched value on the rule v
 <td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Title this hint using the specified string. Title is required attribute.</p>
+<p>Title this hint using the specified string. Title is a required attribute.</p>
 </div>
 <div class="paragraph">
 <p><em>Example:</em></p>
@@ -2504,7 +2504,7 @@ which may have useful side effects, like setting the matched value on the rule v
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;message&gt;</p></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>A message describing the migration hint</p>
+<p>A message describing the migration hint.</p>
 </div>
 <div class="paragraph">
 <p><em>Example:</em></p>
@@ -2656,7 +2656,7 @@ API Specification" /&gt;</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">effort</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">BYTE</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The level of effort required for the tranformation. (Optional)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The level of effort required for the transformation. (Optional)</p></td>
 </tr>
 </tbody>
 </table>
@@ -2860,10 +2860,10 @@ API Specification" /&gt;</code></pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download this XML validator: <a href="https://github.com/amouat/xsd-validator" class="bare">https://github.com/amouat/xsd-validator</a> <a href="https://github.com/amouat/xsd-validator/releases/download/v1.0/xsdv-1.0.zip" class="bare">https://github.com/amouat/xsd-validator/releases/download/v1.0/xsdv-1.0.zip</a></p>
+<p>Download this XML validator: <a href="https://github.com/amouat/xsd-validator/releases/download/v1.0/xsdv-1.0.zip" class="bare">https://github.com/amouat/xsd-validator/releases/download/v1.0/xsdv-1.0.zip</a></p>
 </li>
 <li>
-<p>Extract the ZIP file in to a directory of your choice.</p>
+<p>Extract the ZIP file into a directory of your choice.</p>
 </li>
 <li>
 <p>The xsd-validator requires the schema file to be located on the local file system. Download the Windup rule schema from one of the following locations to a directory of your choice.</p>
@@ -3027,14 +3027,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 </div>
 </li>
 <li>
-<p>Windup forums: <a href="https://community.jboss.org/en/windup" class="bare">https://community.jboss.org/en/windup</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Windup 0.x legacy forums: <a href="https://developer.jboss.org/en/windup" class="bare">https://developer.jboss.org/en/windup</a></p>
-</li>
-</ul>
-</div>
+<p>Windup forums: <a href="https://developer.jboss.org/en/windup" class="bare">https://developer.jboss.org/en/windup</a></p>
 </li>
 <li>
 <p>Windup issue tracker: <a href="https://issues.jboss.org/browse/WINDUP" class="bare">https://issues.jboss.org/browse/WINDUP</a></p>
@@ -3056,10 +3049,10 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 <div class="ulist">
 <ul>
 <li>
-<p>Windup IRC Chat transcripts: <a href="http://bit.ly/windup-transcripts" class="bare">http://bit.ly/windup-transcripts</a></p>
+<p><a href="http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html">Windup IRC Chat transcripts</a></p>
 </li>
 <li>
-<p>Windup meeting IRC Chat transcripts: transcripts: <a href="http://bit.ly/windup-meetings" class="bare">http://bit.ly/windup-meetings</a></p>
+<p><a href="http://transcripts.jboss.org/meeting/irc.freenode.org/windup/index.html">Windup meeting IRC Chat transcripts</a></p>
 </li>
 </ul>
 </div>
@@ -3077,10 +3070,10 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 <div class="sect3">
 <h4 id="_what_are_story_points">5.1.1. What are Story Points?</h4>
 <div class="paragraph">
-<p><em>Story Points</em> are an abstract metric commonly used in Scrum Agile software development methodology to estimate the <em>level of effort</em> needed to implement a feature or change. They are based on a <a href="http://scrummethodology.com/scrum-effort-estimation-and-story-points/">modified Fibonacci sequence</a>.</p>
+<p><em>Story Points</em> are an abstract metric commonly used in Scrum Agile software development methodology to estimate the <em>level of effort</em> needed to implement a feature or change.</p>
 </div>
 <div class="paragraph">
-<p>In a similar manner, Windup uses <em>story points</em> to express the <em>level of effort</em> needed to migrate particular application constructs, and in a sum, the application as a whole. It does not necessarily translate to man-hours, but the value should be consistent across tasks.</p>
+<p>Windup uses <em>story points</em> to express the <em>level of effort</em> needed to migrate particular application constructs, and in a sum, the application as a whole. It does not necessarily translate to man-hours, but the value should be consistent across tasks.</p>
 </div>
 </div>
 <div class="sect3">
@@ -3102,6 +3095,11 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An informational warning with very low or no priority for migration.</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Trivial</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
@@ -3143,7 +3141,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 </dd>
 <dt class="hdlist1">Optional</dt>
 <dd>
-<p>If the migration task is not completed, the application will work, but the results may not be the optimal. If the change is not made at the time of migration, it is recommended to put it on the schedule soon after migration is completed. An example of this would be the upgrade of EJB 2.x code to EJB 3.</p>
+<p>If the migration task is not completed, the application should work, but the results may not be the optimal. If the change is not made at the time of migration, it is recommended to put it on the schedule soon after migration is completed. An example of this would be the upgrade of EJB 2.x code to EJB 3.</p>
 </dd>
 </dl>
 </div>
