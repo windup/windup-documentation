@@ -137,3 +137,18 @@ cd $CURRENT_DIR
 
 
 echo "Windup documentation update process is complete!"
+echo ""
+echo "IMPORTANT:"
+echo ""
+echo "1. Commit the changes to the upstream repository."
+echo "   * To see the updated files, type: git status"
+echo "   * To see the changes, type: git diff <filename>"
+echo "   * If they look correct, add them using: git add <filename>"
+echo "   * Commit the changes and push them to your repository"
+echo "   * Create a pull request to the upstream master and merge"
+echo ""
+echo "2. Create a Drupal ticket to stage the docs."
+echo "   * Project: CCS Applications"
+echo "   * Component: Doc builds"
+echo "     (see https://projects.engineering.redhat.com/browse/CCS-134)"
+
