@@ -14,3 +14,4 @@ mvn release:prepare release:perform -DreleaseVersion=X -Dtag=Y -DdevelopmentVers
 . Release http://github.com/windup/windup _primary reactor_
 . Release http://github.com/windup/windup-rulesets
 . Release http://github.com/windup/windup-distribution
+. Release http://github.com/windup/windup-maven-plugin

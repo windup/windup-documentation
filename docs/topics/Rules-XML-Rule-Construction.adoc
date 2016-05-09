@@ -8,28 +8,28 @@ This section describes the basic construction of XML rules. All XML rules are de
 
 ==== Rulesets
 
-A  ruleset is a group of one or more rules that targets a specific area of migration. This is the basic construct for the `<ruleset>` element.
+A  ruleset is a group of one or more rules that targets a specific area of migration. This is the basic structure of the `<ruleset>` element.
 
-* **<ruleset id="UNIQUE_RULESET_ID">**: This element defines this as a {ProductShortName} ruleset and gives it a unique ruleset ID.
-** **<metadata>**: Provide metadata about the ruleset.
-*** **<description>**: Description of the ruleset.
-*** **<dependencies/>**: Rule add-ons required by this ruleset.
-*** ** <sourceTechnology/>**: Source technology
-*** ** <targetTechnology/>**: Target technology
-** **<rules>**: This element contains the individual rules.
-*** **<rule id="UNIQUE_RULESET_ID_UNIQUE_RULE_ID">**: This element defines the rule and gives it a unique ID. One or more rules can be defined for a ruleset. 
-**** **<when>**: This element defines the condition or conditions to match on. For a detailed description of the elements allowed in a `<when>`, see xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax].
-**** **<perform>**: This element defines the action to be performed when the rule condition is matched. For a detailed description of the elements allowed in a `<perform>`, see xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
-**** **<otherwise>**: This element defines the action to be performed when the rule condition is not matched. This element takes the same child elements as the `<perform>` element.
-**** **<where>**: This element matches on a string pattern.
-
-*** **<file-mapping/>**: Map an extension to a graph type  
+* **<ruleset id="UNIQUE_RULESET_ID">**: Defines this as a {ProductShortName} ruleset and gives it a unique ruleset ID.
+** **<metadata>**: The metadata about the ruleset.
+*** **<description>**: The description of the ruleset.
+*** **<dependencies/>**: The rule add-ons required by this ruleset.
+*** ** <sourceTechnology/>**: The source technology.
+*** ** <targetTechnology/>**: The target technology.
+*** ** <overrideRules>true|false</overrideRules>**: Indicates that rules in this ruleset override rules with the same ID from the core ruleset distributed with Windup. Both the ruleset id and the rule id must match a rule within the core ruleset or the rule will be ignored. This is "false" by default.
+** **<rules>**: Contains the individual rules.
+*** **<rule id="UNIQUE_RULE_ID">**: Defines the rule and gives it a unique ID. It is recommended to include the ruleset ID as part of the rule ID, for example, `UNIQUE_RULESET_ID_UNIQUE_RULE_ID`. One or more rules can be defined for a ruleset.
+**** **<when>**: The condition or conditions to match on. For a detailed description of the elements allowed in a `<when>`, see xref:Rules-XML-Rule-When-Condition-Syntax[XML Rule - When Condition Syntax].
+**** **<perform>**: The action to be performed when the rule condition is matched. For a detailed description of the elements allowed in a `<perform>`, see xref:Rules-XML-Rule-Perform-Action-Syntax[XML Rule - Perform Action Syntax].
+**** **<otherwise>**: The action to be performed when the rule condition is not matched. This element takes the same child elements as the `<perform>` element.
+**** **<where>**: Matches on a string pattern.
+*** **<file-mapping/>**: Maps an extension to a graph type.
 *** **<package-mapping/>**: Maps from a package pattern (regular expression) to a organization name.
 
 
 ==== Predefined Rules
 
-{ProductShortName} provides some predefined rules for more common migration requirements, for example, mapping files from the source platform to target platform. The following is an example of the predefined "XmlFileMappings" rule.
+{ProductShortName} provides some predefined rules for common migration requirements, for example, mapping files extensions to a particular file type. The following is an example of the predefined "XmlFileMappings" rule.
 
 [source,xml,options="nowrap"]
 ----
