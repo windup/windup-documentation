@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.2">
+<meta name="generator" content="Asciidoctor 1.5.4">
 <title>Windup Rules Development Guide</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
-/* Remove the comments around the @import statement below when using this as a custom stylesheet */
-/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400";*/
+/* Remove comment around @import statement below when using as a custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
 audio,canvas,video{display:inline-block}
 audio:not([controls]){display:none;height:0}
@@ -57,7 +57,6 @@ a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
 img{-ms-interpolation-mode:bicubic}
-#map_canvas img,#map_canvas embed,#map_canvas object,.map_canvas img,.map_canvas embed,.map_canvas object{max-width:none!important}
 .left{float:left!important}
 .right{float:right!important}
 .text-left{text-align:left!important}
@@ -65,10 +64,12 @@ img{-ms-interpolation-mode:bicubic}
 .text-center{text-align:center!important}
 .text-justify{text-align:justify!important}
 .hide{display:none}
-.antialiased,body{-webkit-font-smoothing:antialiased}
-img{display:inline-block;vertical-align:middle}
+body{-webkit-font-smoothing:antialiased}
+img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.spread{width:100%}
 p.lead,.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{font-size:1.21875em;line-height:1.6}
 .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
 div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
@@ -111,12 +112,14 @@ blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
 h1{font-size:2.75em}
 h2{font-size:2.3125em}
 h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
-h4{font-size:1.4375em}}table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
 table thead,table tfoot{background:#f7f8f7;font-weight:bold}
 table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+body{tab-size:4}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
 .clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
@@ -124,7 +127,7 @@ h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title str
 *:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
 .keyseq{color:rgba(51,51,51,.8)}
-kbd{display:inline-block;color:rgba(0,0,0,.8);font-size:.75em;line-height:1.4;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:-.15em .15em 0 .15em;padding:.2em .6em .2em .5em;vertical-align:middle;white-space:nowrap}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
 .keyseq kbd:last-child{margin-right:0}
 .menuseq,.menu{color:rgba(0,0,0,.8)}
@@ -155,29 +158,33 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toc ul.sectlevel0>li>a{font-style:italic}
 #toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
 #toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
 #toc a{text-decoration:none}
 #toc a:active{text-decoration:underline}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media only screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
 #toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
-#toc.toc2 #toctitle{margin-top:0;font-size:1.2em}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
 #toc.toc2 ul ul{margin-left:0;padding-left:1em}
 #toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
 body.toc2.toc-right{padding-left:0;padding-right:15em}
-body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}
+@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
 #toc.toc2{width:20em}
 #toc.toc2 #toctitle{font-size:1.375em}
 #toc.toc2>ul{font-size:.95em}
 #toc.toc2 ul ul{padding-left:1.25em}
-body.toc2.toc-right{padding-left:0;padding-right:20em}}#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
 #content #toc>:first-child{margin-top:0}
 #content #toc>:last-child{margin-bottom:0}
 #footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
 #footer-text{color:rgba(255,255,255,.8);line-height:1.44}
 .sect1{padding-bottom:.625em}
-@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}.sect1+.sect1{border-top:1px solid #efefed}
+@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}
+.sect1+.sect1{border-top:1px solid #efefed}
 #content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
 #content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
 #content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
@@ -206,7 +213,9 @@ table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inh
 .sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
 .literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
 .literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
-@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
+@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
+.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
 .listingblock pre.highlightjs{padding:0}
 .listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
 .listingblock pre.prettyprint{border-width:0}
@@ -216,7 +225,7 @@ table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inh
 .listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
 .listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
 table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
-table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0}
+table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0;line-height:1.45}
 table.pyhltable td.code{padding-left:.75em;padding-right:0}
 pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
 pre.pygments .lineno{display:inline-block;margin-right:.25em}
@@ -237,13 +246,12 @@ table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
 .verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
 .quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
 .quoteblock .attribution br,.verseblock .attribution br{display:none}
-.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.05em;color:rgba(0,0,0,.6)}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
 .quoteblock.abstract{margin:0 0 1.25em 0;display:block}
 .quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{text-align:left;word-spacing:0}
 .quoteblock.abstract blockquote:before,.quoteblock.abstract blockquote p:first-of-type:before{display:none}
 table.tableblock{max-width:100%;border-collapse:separate}
 table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
-table.spread{width:100%}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
 table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
 table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
@@ -289,8 +297,8 @@ ol.upperroman{list-style-type:upper-roman}
 ol.lowergreek{list-style-type:lower-greek}
 .hdlist>table,.colist>table{border:0;background:none}
 .hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
-td.hdlist1{padding-right:.75em;font-weight:bold}
-td.hdlist1,td.hdlist2{vertical-align:top}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
 .colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
 .colist>table tr>td:last-of-type{padding:.25em 0}
@@ -303,13 +311,14 @@ td.hdlist1,td.hdlist2{vertical-align:top}
 .image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
 .image.left{margin-right:.625em}
 .image.right{margin-left:.625em}
-a.image{text-decoration:none}
-span.footnote,span.footnoteref{vertical-align:super;font-size:.875em}
-span.footnote a,span.footnoteref a{text-decoration:none}
-span.footnote a:active,span.footnoteref a:active{text-decoration:underline}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
-#footnotes .footnote{padding:0 .375em;line-height:1.3;font-size:.875em;margin-left:1.2em;text-indent:-1.2em;margin-bottom:.2em}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;text-indent:-1.05em;margin-bottom:.2em}
 #footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
@@ -367,11 +376,10 @@ span.icon>.fa{cursor:default}
 pre .conum[data-value]{position:relative;top:-.125em}
 b.conum *{color:inherit!important}
 .conum:not([data-value]):empty{display:none}
-h1,h2{letter-spacing:-.01em}
-dt,th.tableblock,td.content{text-rendering:optimizeLegibility}
-p,td.content{letter-spacing:-.01em}
-p strong,td.content strong{letter-spacing:-.005em}
-p,blockquote,dt,td.content{font-size:1.0625rem}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
 p{margin-bottom:1.25rem}
 .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
 .exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
@@ -382,9 +390,9 @@ a{color:inherit!important;text-decoration:underline!important}
 a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
 a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
 abbr[title]:after{content:" (" attr(title) ")"}
-pre,blockquote,tr,img{page-break-inside:avoid}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
 thead{display:table-header-group}
-img{max-width:100%!important}
+svg{max-width:100%}
 p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
 h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
 #toc,.sidebarblock,.exampleblock>.content{background:none!important}
@@ -423,56 +431,52 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_create_and_test_xml_rules">3. Create and Test XML Rules</a>
 <ul class="sectlevel2">
-<li><a href="#Rules-Difference-Between-XML-based-and-Java-based-Rules">3.1. Difference Between XML-based and Java-based Rules</a>
+<li><a href="#Rules-XML-Rule-Construction">3.1. XML Rule Construction</a>
 <ul class="sectlevel3">
-<li><a href="#_summary">3.1.1. Summary</a></li>
-<li><a href="#_which_one_to_choose">3.1.2. Which one to choose?</a></li>
-<li><a href="#_pros_and_cons_of_xml_based_rules">3.1.3. Pros and Cons of XML-based Rules</a></li>
-<li><a href="#_pros_and_cons_of_java_based_rules">3.1.4. Pros and Cons of Java-based Rules</a></li>
-<li><a href="#_examples_of_xml_based_and_java_based_rules">3.1.5. Examples of XML-based and Java Based Rules</a></li>
-<li><a href="#_quick_comparison_summary">3.1.6. Quick Comparison Summary</a></li>
+<li><a href="#_rulesets">3.1.1. Rulesets</a></li>
+<li><a href="#_predefined_rules">3.1.2. Predefined Rules</a></li>
 </ul>
 </li>
-<li><a href="#Rules-XML-Rule-Construction">3.2. XML Rule Construction</a>
+<li><a href="#Rules-Create-a-Basic-XML-Rule">3.2. Create a Basic XML Rule</a>
 <ul class="sectlevel3">
-<li><a href="#_rulesets">3.2.1. Rulesets</a></li>
-<li><a href="#_predefined_rules">3.2.2. Predefined Rules</a></li>
+<li><a href="#_prerequisites">3.2.1. Prerequisites</a></li>
+<li><a href="#_file_naming_convention_for_xml_rules">3.2.2. File Naming Convention for XML Rules</a></li>
+<li><a href="#_basic_xml_rule_template">3.2.3. Basic XML Rule Template</a></li>
+<li><a href="#_create_the_ruleset_metadata">3.2.4. Create the Ruleset Metadata</a></li>
+<li><a href="#_create_the_rule_2">3.2.5. Create the Rule</a></li>
 </ul>
 </li>
-<li><a href="#Rules-Create-a-Basic-XML-Rule">3.3. Create a Basic XML Rule</a>
+<li><a href="#Rules-XML-Rule-When-Condition-Syntax">3.3. XML Rule - When Condition Syntax</a>
 <ul class="sectlevel3">
-<li><a href="#_prerequisites">3.3.1. Prerequisites</a></li>
-<li><a href="#_file_naming_convention_for_xml_rules">3.3.2. File Naming Convention for XML Rules</a></li>
-<li><a href="#_basic_xml_rule_template">3.3.3. Basic XML Rule Template</a></li>
-<li><a href="#_create_the_ruleset_metadata">3.3.4. Create the Ruleset Metadata</a></li>
-<li><a href="#_create_the_rule_2">3.3.5. Create the Rule</a></li>
+<li><a href="#javaclass-syntax">3.3.1. &lt;javaclass&gt; Syntax</a></li>
+<li><a href="#xmlfile-syntax">3.3.2. &lt;xmlfile&gt; Syntax</a></li>
+<li><a href="#project-syntax">3.3.3. &lt;project&gt; Syntax</a></li>
+<li><a href="#filecontent-syntax">3.3.4. &lt;filecontent&gt; Syntax</a></li>
+<li><a href="#file-syntax">3.3.5. &lt;file&gt; Syntax</a></li>
 </ul>
 </li>
-<li><a href="#Rules-XML-Rule-When-Condition-Syntax">3.4. XML Rule - When Condition Syntax</a>
+<li><a href="#Rules-XML-Rule-Perform-Action-Syntax">3.4. XML Rule - Perform Action Syntax</a>
 <ul class="sectlevel3">
-<li><a href="#javaclass-syntax">3.4.1. javaclass Syntax</a></li>
-<li><a href="#xmlfile-syntax">3.4.2. xmlfile Syntax</a></li>
-<li><a href="#project-syntax">3.4.3. project Syntax</a></li>
-<li><a href="#filecontent-syntax">3.4.4. filecontent Syntax</a></li>
-<li><a href="#file-syntax">3.4.5. file Syntax</a></li>
+<li><a href="#classification-syntax">3.4.1. Classification Syntax</a></li>
+<li><a href="#link-syntax">3.4.2. Link Syntax</a></li>
+<li><a href="#hint-syntax">3.4.3. Hint Syntax</a></li>
+<li><a href="#xslt-syntax">3.4.4. XSLT Syntax</a></li>
+<li><a href="#lineitem-syntax">3.4.5. Lineitem Syntax</a></li>
+<li><a href="#iteration-syntax">3.4.6. Iteration Syntax</a></li>
 </ul>
 </li>
-<li><a href="#Rules-XML-Rule-Perform-Action-Syntax">3.5. XML Rule - Perform Action Syntax</a>
+<li><a href="#Rules-Validate-Rulesets-Against-the-Schema">3.5. Validate Rulesets Against the Schema</a></li>
+<li><a href="#Rules-Test-an-XML-Rule">3.6. Test an XML Rule in Windup</a>
 <ul class="sectlevel3">
-<li><a href="#classification-syntax">3.5.1. Classification Syntax</a></li>
-<li><a href="#link-syntax">3.5.2. Link Syntax</a></li>
-<li><a href="#hint-syntax">3.5.3. Hint Syntax</a></li>
-<li><a href="#xslt-syntax">3.5.4. XSLT Syntax</a></li>
-<li><a href="#lineitem-syntax">3.5.5. Lineitem Syntax</a></li>
-<li><a href="#iteration-syntax">3.5.6. Iteration Syntax</a></li>
+<li><a href="#_add_the_rule_to_windup">3.6.1. Add the Rule to Windup</a></li>
+<li><a href="#_test_the_xml_rule">3.6.2. Test the XML Rule</a></li>
+<li><a href="#_additional_resources">3.6.3. Additional Resources</a></li>
 </ul>
 </li>
-<li><a href="#Rules-Validate-Rulesets-Against-the-Schema">3.6. Validate Rulesets Against the Schema</a></li>
-<li><a href="#Rules-Test-an-XML-Rule">3.7. Test an XML Rule in Windup</a>
+<li><a href="#Rules-Overriding-Rules">3.7. Overriding Rules</a>
 <ul class="sectlevel3">
-<li><a href="#_add_the_rule_to_windup">3.7.1. Add the Rule to Windup</a></li>
-<li><a href="#_test_the_xml_rule">3.7.2. Test the XML Rule</a></li>
-<li><a href="#_additional_resources">3.7.3. Additional Resources</a></li>
+<li><a href="#_override_a_rule">3.7.1. Override a Rule</a></li>
+<li><a href="#_disable_a_rule">3.7.2. Disable a Rule</a></li>
 </ul>
 </li>
 </ul>
@@ -859,290 +863,68 @@ For Windows:  bin\windup.bat --sourceMode --input migration-rules\data --output 
 <h2 id="_create_and_test_xml_rules">3. Create and Test XML Rules</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Rules-Difference-Between-XML-based-and-Java-based-Rules">3.1. Difference Between XML-based and Java-based Rules</h3>
-<div class="sect3">
-<h4 id="_summary">3.1.1. Summary</h4>
-<div class="paragraph">
-<p>As mentioned before, Windup provides a core and a default set of rules to analyze and report on migration of application code. Windup also allows you to write your own custom rules. These rules can be written using either XML or Java. Rules written using XML are referred to as <em>XML-based</em> rules. Rules written using the Java API are referred to as <em>Java-based</em> rule add-ons. Both <em>XML-based</em> and <em>Java-based</em> rule add-ons can be used to inspect (classify) and report on Java source, XML, properties, archives, and other types of files,</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_which_one_to_choose">3.1.2. Which one to choose?</h4>
-<div class="paragraph">
-<p><em>XML-based</em> rules provide a quick, simple way to create rules to analyze Java, XML, and properties files. If you simply need to highlight a specific section of Java code or XML file content and provide migration hints for it, creation of <em>XML-based</em> rules is the recommended approach. Creation of custom <em>XML-based</em> rules is covered in this guide.</p>
-</div>
-<div class="paragraph">
-<p><em>Java-based</em> rule add-ons provide the ability to create very complex rules, manipulate the shared data model graph, and customize the resulting reports. If you need to test or perform complex conditions and operations or want to manipulate the shared data model graph, create custom reports, or extend the functionality in any other way beyond what the <em>XML-based</em> rules provide, you must create <em>Java-based</em> rules. Creation of custom <em>Java-based</em> rules is covered in the <a href="http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html">Windup Core Development Guide</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_pros_and_cons_of_xml_based_rules">3.1.3. Pros and Cons of XML-based Rules</h4>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>XML rules are fairly easy to write and require less code.</p>
-</li>
-<li>
-<p>XML rules are not compiled so you do not need to configure Maven to build from source.</p>
-</li>
-<li>
-<p>XML rules are simple to deploy. You simply drop the rule into the appropriate path and Windup automatically scans the new rule.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>XML rules only support a simple subset of conditions and operations.</p>
-</li>
-<li>
-<p>XML rules do not provide for direct custom graph data manipulation that can be used later by other rules or the generation of reports.</p>
-</li>
-<li>
-<p>XML rules do not support the ability to create custom reports.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_pros_and_cons_of_java_based_rules">3.1.4. Pros and Cons of Java-based Rules</h4>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Java rule add-ons allow you to write custom conditions and operations and provide a lot of flexibility.</p>
-</li>
-<li>
-<p>Java rule add-ons allow you to access and manipulate the shared data model graph and to customize reports.</p>
-</li>
-<li>
-<p>You can set breakpoints and test Java rule add-ons using a debugger.</p>
-</li>
-<li>
-<p>IDEs provide code completion for the Windup API.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>You must configure Maven to compile Java rule add-ons.</p>
-</li>
-<li>
-<p>Java rule add-ons that are not included in the Windup core code base must be a full Forge add-on.</p>
-</li>
-<li>
-<p>Java rule add-ons require that you write Java code.</p>
-</li>
-<li>
-<p>Writing Java rule add-ons can be complex and require knowledge of Windup internals.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_examples_of_xml_based_and_java_based_rules">3.1.5. Examples of XML-based and Java Based Rules</h4>
-<div class="paragraph">
-<p>The following is an example of a rule written in XML that classifies Java code:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
-&lt;ruleset id="EjbRules"
-    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
-    &lt;rules&gt;
-        &lt;rule id="EjbRules_1000"&gt;
-            &lt;when&gt;
-                &lt;javaclass references="javax.persistence.Entity" as="default"&gt;
-                    &lt;location&gt;TYPE&lt;/location&gt;
-                &lt;/javaclass&gt;
-            &lt;/when&gt;
-            &lt;perform&gt;
-                &lt;iteration&gt;
-                    &lt;classification title="JPA Entity" effort="0"/&gt;
-                &lt;/iteration&gt;
-            &lt;/perform&gt;
-        &lt;/rule&gt;
-    &lt;/rules&gt;
-&lt;/ruleset&gt;</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The following is an example of a rule written in Java that classifies Java code:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code class="language-java" data-lang="java">/**
- * Scans for classes with EJB related annotations, and adds EJB related metadata for these.
- */
-public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
-{
-    @Override
-    public Configuration getConfiguration(GraphContext context) {
-        return ConfigurationBuilder.begin()
-        .addRule()
-        .when(JavaClass.references("javax.ejb.{annotationType}").at(TypeReferenceLocation.ANNOTATION))
-        .perform(new AbstractIterationOperation&lt;JavaTypeReferenceModel&gt;()
-        {
-            public void perform(GraphRewrite event, EvaluationContext context, JavaTypeReferenceModel payload)
-            {
-                extractEJBMetadata(event, payload);
-            };
-        })
-        .where("annotationType").matches("Stateless|Stateful")
-        .withId(ruleIDPrefix + "_StatelessAndStatefulRule")
-        .addRule()
-        .when(JavaClass.references("javax.ejb.MessageDriven").at(TypeReferenceLocation.ANNOTATION))
-        .perform(new AbstractIterationOperation&lt;JavaTypeReferenceModel&gt;() {
-            @Override
-            public void perform(GraphRewrite event, EvaluationContext context, JavaTypeReferenceModel payload) {
-                extractMessageDrivenMetadata(event, payload);
-            }
-        })
-        .withId(ruleIDPrefix + "_MessageDrivenRule")
-        .addRule()
-        .when(JavaClass.references("javax.persistence.Entity").at(TypeReferenceLocation.ANNOTATION).as(ENTITY_ANNOTATIONS)
-                    .or(JavaClass.references("javax.persistence.Table").at(TypeReferenceLocation.ANNOTATION).as(TABLE_ANNOTATIONS_LIST)))
-        .perform(Iteration.over(ENTITY_ANNOTATIONS).perform(new AbstractIterationOperation&lt;JavaTypeReferenceModel&gt;() {
-            @Override public void perform(GraphRewrite event, EvaluationContext context, JavaTypeReferenceModel payload) {
-                extractEntityBeanMetadata(event, payload);
-            }
-        }).endIteration())
-        .withId(ruleIDPrefix + "_EntityBeanRule");
-    }
-    ...
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_quick_comparison_summary">3.1.6. Quick Comparison Summary</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Requirement</th>
-<th class="tableblock halign-left valign-top">XML Rule</th>
-<th class="tableblock halign-left valign-top">Java Rule Add-on</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Easy to write?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Depends on the complexity of the rule</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Requires that you configure Maven?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Requires that you compile the rule?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Simple deployment?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Supports custom reports?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ability to create complex conditions and operations?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ability to directly manipulate the graph data?</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Rules-XML-Rule-Construction">3.2. XML Rule Construction</h3>
+<h3 id="Rules-XML-Rule-Construction">3.1. XML Rule Construction</h3>
 <div class="paragraph">
 <p>This section describes the basic construction of XML rules. All XML rules are defined as elements within rulesets.</p>
 </div>
 <div class="sect3">
-<h4 id="_rulesets">3.2.1. Rulesets</h4>
+<h4 id="_rulesets">3.1.1. Rulesets</h4>
 <div class="paragraph">
-<p>A  ruleset is a group of one or more rules that targets a specific area of migration. This is the basic construct for the <code>&lt;ruleset&gt;</code> element.</p>
+<p>A  ruleset is a group of one or more rules that targets a specific area of migration. This is the basic structure of the <code>&lt;ruleset&gt;</code> element.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>&lt;ruleset id="UNIQUE_RULESET_ID"&gt;</strong>: This element defines this as a Windup ruleset and gives it a unique ruleset ID.</p>
+<p><strong>&lt;ruleset id="UNIQUE_RULESET_ID"&gt;</strong>: Defines this as a Windup ruleset and gives it a unique ruleset ID.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>&lt;metadata&gt;</strong>: Provide metadata about the ruleset.</p>
+<p><strong>&lt;metadata&gt;</strong>: The metadata about the ruleset.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>&lt;description&gt;</strong>: Description of the ruleset.</p>
+<p><strong>&lt;description&gt;</strong>: The description of the ruleset.</p>
 </li>
 <li>
-<p><strong>&lt;dependencies/&gt;</strong>: Rule add-ons required by this ruleset.</p>
+<p><strong>&lt;dependencies/&gt;</strong>: The rule add-ons required by this ruleset.</p>
 </li>
 <li>
-<p><strong> &lt;sourceTechnology/&gt;</strong>: Source technology</p>
+<p><strong> &lt;sourceTechnology/&gt;</strong>: The source technology.</p>
 </li>
 <li>
-<p><strong> &lt;targetTechnology/&gt;</strong>: Target technology</p>
+<p><strong> &lt;targetTechnology/&gt;</strong>: The target technology.</p>
+</li>
+<li>
+<p><strong> &lt;overrideRules&gt;true|false&lt;/overrideRules&gt;</strong>: Indicates that rules in this ruleset override rules with the same ID from the core ruleset distributed with Windup. Both the ruleset id and the rule id must match a rule within the core ruleset or the rule will be ignored. This is "false" by default.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>&lt;rules&gt;</strong>: This element contains the individual rules.</p>
+<p><strong>&lt;rules&gt;</strong>: Contains the individual rules.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>&lt;rule id="UNIQUE_RULESET_ID_UNIQUE_RULE_ID"&gt;</strong>: This element defines the rule and gives it a unique ID. One or more rules can be defined for a ruleset.</p>
+<p><strong>&lt;rule id="UNIQUE_RULE_ID"&gt;</strong>: Defines the rule and gives it a unique ID. It is recommended to include the ruleset ID as part of the rule ID, for example, <code>UNIQUE_RULESET_ID_UNIQUE_RULE_ID</code>. One or more rules can be defined for a ruleset.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>&lt;when&gt;</strong>: This element defines the condition or conditions to match on. For a detailed description of the elements allowed in a <code>&lt;when&gt;</code>, see <a href="#Rules-XML-Rule-When-Condition-Syntax">XML Rule - When Condition Syntax</a>.</p>
+<p><strong>&lt;when&gt;</strong>: The condition or conditions to match on. For a detailed description of the elements allowed in a <code>&lt;when&gt;</code>, see <a href="#Rules-XML-Rule-When-Condition-Syntax">XML Rule - When Condition Syntax</a>.</p>
 </li>
 <li>
-<p><strong>&lt;perform&gt;</strong>: This element defines the action to be performed when the rule condition is matched. For a detailed description of the elements allowed in a <code>&lt;perform&gt;</code>, see <a href="#Rules-XML-Rule-Perform-Action-Syntax">XML Rule - Perform Action Syntax</a>.</p>
+<p><strong>&lt;perform&gt;</strong>: The action to be performed when the rule condition is matched. For a detailed description of the elements allowed in a <code>&lt;perform&gt;</code>, see <a href="#Rules-XML-Rule-Perform-Action-Syntax">XML Rule - Perform Action Syntax</a>.</p>
 </li>
 <li>
-<p><strong>&lt;otherwise&gt;</strong>: This element defines the action to be performed when the rule condition is not matched. This element takes the same child elements as the <code>&lt;perform&gt;</code> element.</p>
+<p><strong>&lt;otherwise&gt;</strong>: The action to be performed when the rule condition is not matched. This element takes the same child elements as the <code>&lt;perform&gt;</code> element.</p>
 </li>
 <li>
-<p><strong>&lt;where&gt;</strong>: This element matches on a string pattern.</p>
+<p><strong>&lt;where&gt;</strong>: Matches on a string pattern.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>&lt;file-mapping/&gt;</strong>: Map an extension to a graph type</p>
+<p><strong>&lt;file-mapping/&gt;</strong>: Maps an extension to a graph type.</p>
 </li>
 <li>
 <p><strong>&lt;package-mapping/&gt;</strong>: Maps from a package pattern (regular expression) to a organization name.</p>
@@ -1157,9 +939,9 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 </div>
 </div>
 <div class="sect3">
-<h4 id="_predefined_rules">3.2.2. Predefined Rules</h4>
+<h4 id="_predefined_rules">3.1.2. Predefined Rules</h4>
 <div class="paragraph">
-<p>Windup provides some predefined rules for more common migration requirements, for example, mapping files from the source platform to target platform. The following is an example of the predefined "XmlFileMappings" rule.</p>
+<p>Windup provides some predefined rules for common migration requirements, for example, mapping files extensions to a particular file type. The following is an example of the predefined "XmlFileMappings" rule.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1205,12 +987,12 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-Create-a-Basic-XML-Rule">3.3. Create a Basic XML Rule</h3>
+<h3 id="Rules-Create-a-Basic-XML-Rule">3.2. Create a Basic XML Rule</h3>
 <div class="paragraph">
 <p>You can create a Windup rule using Java, XML, or Groovy. This topic describes how to create a rule using XML.</p>
 </div>
 <div class="sect3">
-<h4 id="_prerequisites">3.3.1. Prerequisites</h4>
+<h4 id="_prerequisites">3.2.1. Prerequisites</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1236,13 +1018,13 @@ public class DiscoverEjbAnnotationsRuleProvider extends AbstractRuleProvider
 </div>
 </div>
 <div class="sect3">
-<h4 id="_file_naming_convention_for_xml_rules">3.3.2. File Naming Convention for XML Rules</h4>
+<h4 id="_file_naming_convention_for_xml_rules">3.2.2. File Naming Convention for XML Rules</h4>
 <div class="paragraph">
 <p>You must name the file containing an XML rule with the <code>.windup.xml</code> extension. Windup identifies files with this extension as XML-base rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_basic_xml_rule_template">3.3.3. Basic XML Rule Template</h4>
+<h4 id="_basic_xml_rule_template">3.2.3. Basic XML Rule Template</h4>
 <div class="paragraph">
 <p>XML rules consist of <em>conditions</em> and <em>actions</em> and follow the familiar "if/then/else" construct:</p>
 </div>
@@ -1286,7 +1068,7 @@ otherwise(action)</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_the_ruleset_metadata">3.3.4. Create the Ruleset Metadata</h4>
+<h4 id="_create_the_ruleset_metadata">3.2.4. Create the Ruleset Metadata</h4>
 <div class="paragraph">
 <p>The XML ruleset <code>metadata</code> element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset. For more information about ruleset metadata, see <a href="#Rules-XML-Rule-Construction">XML Rule Construction</a>.</p>
 </div>
@@ -1323,7 +1105,7 @@ otherwise(action)</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_the_rule_2">3.3.5. Create the Rule</h4>
+<h4 id="_create_the_rule_2">3.2.5. Create the Rule</h4>
 <div class="paragraph">
 <p>Individual rules are contained within a <code>&lt;rules&gt;</code> element and consist of one or more conditions and actions.</p>
 </div>
@@ -1444,7 +1226,7 @@ otherwise(action)</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-XML-Rule-When-Condition-Syntax">3.4. XML Rule - When Condition Syntax</h3>
+<h3 id="Rules-XML-Rule-When-Condition-Syntax">3.3. XML Rule - When Condition Syntax</h3>
 <div class="paragraph">
 <p>Conditions allowed in the <code>when</code> portion of a rule must extend <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html">GraphOperation</a> and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.</p>
 </div>
@@ -1457,31 +1239,31 @@ otherwise(action)</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#javaclass-syntax">javaclass Syntax</a></p>
+<p><a href="#javaclass-syntax">&lt;javaclass&gt; condition syntax</a></p>
 </li>
 <li>
-<p><a href="#xmlfile-syntax">xmlfile Syntax</a></p>
+<p><a href="#xmlfile-syntax">&lt;xmlfile&gt; condition syntax</a></p>
 </li>
 <li>
-<p><a href="#project-syntax">project Syntax</a></p>
+<p><a href="#project-syntax">&lt;project&gt; condition syntax</a></p>
 </li>
 <li>
-<p><a href="#filecontent-syntax">filecontent Syntax</a></p>
+<p><a href="#filecontent-syntax">&lt;filecontent&gt; condition syntax</a></p>
 </li>
 <li>
-<p><a href="#file-syntax">file Syntax</a></p>
+<p><a href="#file-syntax">&lt;file&gt; condition syntax</a></p>
 </li>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="javaclass-syntax">3.4.1. javaclass Syntax</h4>
+<h4 id="javaclass-syntax">3.3.1. &lt;javaclass&gt; Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_2">Summary</h5>
+<h5 id="_summary">Summary</h5>
 <div class="paragraph">
-<p>Use the <code>javaclass</code> element to find imports, methods, variable declarations, annotations, class implementations, and other items related to Java classes. For a better understanding of the <code>javaclass</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/condition/JavaClass.html">JavaClass</a> class.</p>
+<p>Use the <code>&lt;javaclass&gt;</code> element to find imports, methods, variable declarations, annotations, class implementations, and other items related to Java classes. For a better understanding of the <code>&lt;javaclass&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/condition/JavaClass.html">JavaClass</a> class.</p>
 </div>
 <div class="paragraph">
-<p>The following is an example of a rule that tests for WebLogic-specific Apache XML <code>javaclass</code> packages.</p>
+<p>The following is an example of a rule that tests for WebLogic-specific Apache XML packages.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1502,9 +1284,9 @@ otherwise(action)</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_construct_a_javaclass_element">Construct a javaclass Element</h5>
+<h5 id="_construct_a_javaclass_element">Construct a &lt;javaclass&gt; Element</h5>
 <div class="sect5">
-<h6 id="_javaclass_element_attributes">javaclass Element Attributes</h6>
+<h6 id="__javaclass_element_attributes">&lt;javaclass&gt; Element Attributes</h6>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -1557,7 +1339,7 @@ For performance reasons, you should not start the reference with wildcard charac
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">sourceMatch="log4j.logger"</pre>
+<pre class="nowrap">matchesSource="log4j.logger"</pre>
 </div>
 </div></div></td>
 </tr>
@@ -1610,7 +1392,7 @@ For performance reasons, you should not start the reference with wildcard charac
 </table>
 </div>
 <div class="sect5">
-<h6 id="_javaclass_element_child_elements">JavaClass Element Child Elements</h6>
+<h6 id="__javaclass_child_elements">&lt;javaclass&gt; Child Elements</h6>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -1637,20 +1419,81 @@ For performance reasons, you should not start the reference with wildcard charac
 </div>
 </div></div></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;annotation-literal&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Match on literal values inside of annotations.</p>
+</div>
+<div class="paragraph">
+<p>The below example would match on <code>@MyAnnotation(myvalue="test")</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;javaclass references="org.package.MyAnnotation"&gt;
+    &lt;location&gt;ANNOTATION&lt;/location&gt;
+    &lt;annotation-literal name="myvalue" pattern="test"/&gt;
+&lt;/javaclass&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that in this case, the <code>&lt;javaclass&gt;</code> refers to an annotation (<code>MyAnnotation</code>), so the top-level annotation filter, <code>&lt;annotation-literal&gt;</code> must specify the <code>name</code> attribute. If the <code>&lt;javaclass&gt;</code> referred to a class that is annotated, then the top-level annotation filter used would be <code>&lt;annotation-type&gt;</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;annotation-type&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Match on a particular annotation type. You can supply subconditions to be matched against the annotation elements.</p>
+</div>
+<div class="paragraph">
+<p>The below example would match on a <code>Calendar</code> field declaration annotated with <code>@MyAnnotation(myvalue="test")</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;javaclass references="java.util.Calendar"&gt;
+    &lt;location&gt;FIELD_DECLARATION&lt;/location&gt;
+    &lt;annotation-type pattern="org.package.MyAnnotation"&gt;
+        &lt;annotation-literal name="myvalue" pattern="test"/&gt;
+    &lt;/annotation-type&gt;
+&lt;/javaclass&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;annotation-list&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Match on an item in an array within an annotation. If an array index is not specified, the condition will be matched if it applies to any item in the array. You can supply subconditions to be matched against this element.</p>
+</div>
+<div class="paragraph">
+<p>The below example would match on <code>@MyAnnotation(mylist={"one","two"})</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;javaclass references="org.package.MyAnnotation" &gt;
+    &lt;location&gt;ANNOTATION&lt;/location&gt;
+    &lt;annotation-list name="mylist"&gt;
+        &lt;annotation-literal pattern="two"/&gt;
+    &lt;/annotation-list&gt;
+&lt;/javaclass&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that in this case, the <code>&lt;javaclass&gt;</code> refers to an annotation (<code>MyAnnotation</code>), so the top-level annotation filter, <code>&lt;annotation-list&gt;</code> must specify the <code>name</code> attribute. If the <code>&lt;javaclass&gt;</code> referred to a class that is annotated, then the top-level annotation filter used would be <code>&lt;annotation-type&gt;</code>.</p>
+</div></div></td>
+</tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="xmlfile-syntax">3.4.2. xmlfile Syntax</h4>
+<h4 id="xmlfile-syntax">3.3.2. &lt;xmlfile&gt; Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_3">Summary</h5>
+<h5 id="_summary_2">Summary</h5>
 <div class="paragraph">
-<p>Use the <code>xmlfile</code> element to find information in XML files. For a better understanding of the <code>xmlfile</code> condition, see the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/condition/XmlFile.html">XmlFile</a> JavaDoc.</p>
+<p>Use the <code>&lt;xmlfile&gt;</code> element to find information in XML files. For a better understanding of the <code>&lt;xmlfile&gt;</code> condition, see the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/condition/XmlFile.html">XmlFile</a> JavaDoc.</p>
 </div>
 <div class="paragraph">
-<p>The following is an example of a rule that tests for an <code>xmlfile</code>.</p>
+<p>The following is an example of a rule that tests for an XML file.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1672,9 +1515,9 @@ For performance reasons, you should not start the reference with wildcard charac
 </div>
 </div>
 <div class="sect4">
-<h5 id="_construct_an_xmlfile_element">Construct an xmlfile Element</h5>
+<h5 id="_construct_an_xmlfile_element">Construct an &lt;xmlfile&gt; Element</h5>
 <div class="sect5">
-<h6 id="_xmlfile_element_attributes">xmlfile Element: Attributes</h6>
+<h6 id="__xmlfile_element_attributes">&lt;xmlfile&gt; Element Attributes</h6>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -1784,7 +1627,7 @@ For performance reasons, you should not start the reference with wildcard charac
 </table>
 </div>
 <div class="sect5">
-<h6 id="_xmlfile_element_code_matches_code_advanced_usage_custom_windup_xpath_functions">xmlfile Element: <code>matches</code> - Advanced usage: Custom Windup XPath functions</h6>
+<h6 id="__xmlfile_element_code_matches_code_advanced_usage_custom_windup_xpath_functions">&lt;xmlfile&gt; Element: <code>matches</code> - Advanced usage: Custom Windup XPath functions</h6>
 <div class="paragraph">
 <p>The <code>matches</code> attribute may use several built-in custom XPath functions,
 which may have useful side effects, like setting the matched value on the rule variables stack.</p>
@@ -1821,9 +1664,8 @@ which may have useful side effects, like setting the matched value on the rule v
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_xmlfile_element_child_elements">xmlfile Element: Child Elements</h5>
+<div class="sect5">
+<h6 id="__xmlfile_child_elements">&lt;xmlfile&gt; Child Elements</h6>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -1854,15 +1696,16 @@ which may have useful side effects, like setting the matched value on the rule v
 </table>
 </div>
 </div>
+</div>
 <div class="sect3">
-<h4 id="project-syntax">3.4.3. project Syntax</h4>
+<h4 id="project-syntax">3.3.3. &lt;project&gt; Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_4">Summary</h5>
+<h5 id="_summary_3">Summary</h5>
 <div class="paragraph">
-<p>Use the <code>project</code> element to query the Maven POM file for the project characteristics. For a better understanding of the <code>project</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html">Project</a> class.</p>
+<p>Use the <code>&lt;project&gt;</code> element to query the Maven POM file for the project characteristics. For a better understanding of the <code>&lt;project&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html">Project</a> class.</p>
 </div>
 <div class="paragraph">
-<p>The following is an example of a rule that checks for a junit dependency version between 2.0.0.Final and 2.2.0.Final.</p>
+<p>The following is an example of a rule that checks for a JUnit dependency version between 2.0.0.Final and 2.2.0.Final.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1880,15 +1723,15 @@ which may have useful side effects, like setting the matched value on the rule v
 </div>
 </div>
 <div class="sect4">
-<h5 id="_construct_a_project_element">Construct a project Element</h5>
+<h5 id="_construct_a_project_element">Construct a &lt;project&gt; Element</h5>
 <div class="sect5">
-<h6 id="_project_element_attributes">project Element Attributes</h6>
+<h6 id="__project_element_attributes">&lt;project&gt; Element Attributes</h6>
 <div class="paragraph">
-<p>The <code>project</code> element is used to match against the project&#8217;s Maven POM file. You can use this condition to query for dependencies of the project. It does not have any attributes itself.</p>
+<p>The <code>&lt;project&gt;</code> element is used to match against the project&#8217;s Maven POM file. You can use this condition to query for dependencies of the project. It does not have any attributes itself.</p>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_project_element_child_elements">project Element Child Elements</h6>
+<h6 id="__project_child_elements">&lt;project&gt; Child Elements</h6>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -1904,14 +1747,14 @@ which may have useful side effects, like setting the matched value on the rule v
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;artifact&gt;</p></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Subcondition used within <code>project</code> to query against project dependencies. The <code>artifact</code> element attributes are described below.</p>
+<p>Subcondition used within <code>&lt;project&gt;</code> to query against project dependencies. The <code>&lt;artifact&gt;</code> element attributes are described below.</p>
 </div></div></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect5">
-<h6 id="_artifact_element_attributes">artifact Element Attributes</h6>
+<h6 id="__artifact_element_attributes">&lt;artifact&gt; Element Attributes</h6>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -1952,17 +1795,17 @@ which may have useful side effects, like setting the matched value on the rule v
 </div>
 </div>
 <div class="sect3">
-<h4 id="filecontent-syntax">3.4.4. filecontent Syntax</h4>
+<h4 id="filecontent-syntax">3.3.4. &lt;filecontent&gt; Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_5">Summary</h5>
+<h5 id="_summary_4">Summary</h5>
 <div class="paragraph">
-<p>Use the <code>filecontent</code> element to find strings or text within files, for example, a line in a Properties file. For a better understanding of the <code>filecontent</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/FileContent.html">FileContent</a> class.</p>
+<p>Use the <code>&lt;filecontent&gt;</code> element to find strings or text within files, for example, a line in a Properties file. For a better understanding of the <code>&lt;filecontent&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/FileContent.html">FileContent</a> class.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_construct_a_filecontent_element">Construct a filecontent Element</h5>
+<h5 id="_construct_a_filecontent_element">Construct a &lt;filecontent&gt; Element</h5>
 <div class="sect5">
-<h6 id="_filecontent_element_attributes">filecontent Element Attributes</h6>
+<h6 id="__filecontent_element_attributes">&lt;filecontent&gt; Element Attributes</h6>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -2023,17 +1866,17 @@ which may have useful side effects, like setting the matched value on the rule v
 </div>
 </div>
 <div class="sect3">
-<h4 id="file-syntax">3.4.5. file Syntax</h4>
+<h4 id="file-syntax">3.3.5. &lt;file&gt; Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_6">Summary</h5>
+<h5 id="_summary_5">Summary</h5>
 <div class="paragraph">
-<p>Use the <code>file</code> element to find the existence of files with a specific name, for example, an <code>ibm-webservices-ext.xmi</code> file. For a better understanding of the <code>file</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/File.html">File</a> class.</p>
+<p>Use the <code>&lt;file&gt;</code> element to find the existence of files with a specific name, for example, an <code>ibm-webservices-ext.xmi</code> file. For a better understanding of the <code>&lt;file&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/File.html">File</a> class.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_construct_a_file_element">Construct a file Element</h5>
+<h5 id="_construct_a_file_element">Construct a &lt;file&gt; Element</h5>
 <div class="sect5">
-<h6 id="_file_element_attributes">file Element Attributes</h6>
+<h6 id="__file_element_attributes">&lt;file&gt; Element Attributes</h6>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -2090,7 +1933,7 @@ which may have useful side effects, like setting the matched value on the rule v
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-XML-Rule-Perform-Action-Syntax">3.5. XML Rule - Perform Action Syntax</h3>
+<h3 id="Rules-XML-Rule-Perform-Action-Syntax">3.4. XML Rule - Perform Action Syntax</h3>
 <div class="paragraph">
 <p>Operations available in the <code>perform</code> section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.</p>
 </div>
@@ -2123,9 +1966,9 @@ which may have useful side effects, like setting the matched value on the rule v
 </ul>
 </div>
 <div class="sect3">
-<h4 id="classification-syntax">3.5.1. Classification Syntax</h4>
+<h4 id="classification-syntax">3.4.1. Classification Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_7">Summary</h5>
+<h5 id="_summary_6">Summary</h5>
 <div class="paragraph">
 <p>The <code>classification</code> element is used to identify or classify application resources that match the rule. It provides a title that is displayed in the report, a level of effort, and it can also provide links to additional information about how to migrate this resource classification. For a better understanding of the <code>classification</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html">Classification</a> class.</p>
 </div>
@@ -2293,9 +2136,9 @@ which may have useful side effects, like setting the matched value on the rule v
 </div>
 </div>
 <div class="sect3">
-<h4 id="link-syntax">3.5.2. Link Syntax</h4>
+<h4 id="link-syntax">3.4.2. Link Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_8">Summary</h5>
+<h5 id="_summary_7">Summary</h5>
 <div class="paragraph">
 <p>The <code>link</code> element is used in classifications or hints to provide links to informational content. For a better understanding of the <code>link</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html">Link</a> class.</p>
 </div>
@@ -2376,9 +2219,9 @@ which may have useful side effects, like setting the matched value on the rule v
 </div>
 </div>
 <div class="sect3">
-<h4 id="hint-syntax">3.5.3. Hint Syntax</h4>
+<h4 id="hint-syntax">3.4.3. Hint Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_9">Summary</h5>
+<h5 id="_summary_8">Summary</h5>
 <div class="paragraph">
 <p>The <code>hint</code> element is used to provide a hint or inline information about how to migrate a section of code. For a better understanding of the <code>hint</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Hint.html">Hint</a> class.</p>
 </div>
@@ -2549,9 +2392,9 @@ API Specification" /&gt;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="xslt-syntax">3.5.4. XSLT Syntax</h4>
+<h4 id="xslt-syntax">3.4.4. XSLT Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_10">Summary</h5>
+<h5 id="_summary_9">Summary</h5>
 <div class="paragraph">
 <p>The <code>xslt</code> element specifies how to transform an XML file. For a better understanding of the <code>xslt</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/operation/xslt/XSLTTransformation.html">XSLTTransformation</a>  class.</p>
 </div>
@@ -2694,9 +2537,9 @@ API Specification" /&gt;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="lineitem-syntax">3.5.5. Lineitem Syntax</h4>
+<h4 id="lineitem-syntax">3.4.5. Lineitem Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_11">Summary</h5>
+<h5 id="_summary_10">Summary</h5>
 <div class="paragraph">
 <p>The <code>lineitem</code> element is used to provide  general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues. This information is displayed on the project or application overview page. For a better understanding of the <code>lineitem</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html">Lineitem</a> class.</p>
 </div>
@@ -2761,9 +2604,9 @@ API Specification" /&gt;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="iteration-syntax">3.5.6. Iteration Syntax</h4>
+<h4 id="iteration-syntax">3.4.6. Iteration Syntax</h4>
 <div class="sect4">
-<h5 id="_summary_12">Summary</h5>
+<h5 id="_summary_11">Summary</h5>
 <div class="paragraph">
 <p>The <code>iteration</code> element specifies to iterate over an implicit or explicit variable defined within the rule. For a better understanding of the <code>iteration</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/Iteration.html">Iteration</a> class.</p>
 </div>
@@ -2853,7 +2696,7 @@ API Specification" /&gt;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-Validate-Rulesets-Against-the-Schema">3.6. Validate Rulesets Against the Schema</h3>
+<h3 id="Rules-Validate-Rulesets-Against-the-Schema">3.5. Validate Rulesets Against the Schema</h3>
 <div class="paragraph">
 <p>To validate XML rules using the Windup rule schema, follow these steps.</p>
 </div>
@@ -2914,9 +2757,9 @@ API Specification" /&gt;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Rules-Test-an-XML-Rule">3.7. Test an XML Rule in Windup</h3>
+<h3 id="Rules-Test-an-XML-Rule">3.6. Test an XML Rule in Windup</h3>
 <div class="sect3">
-<h4 id="_add_the_rule_to_windup">3.7.1. Add the Rule to Windup</h4>
+<h4 id="_add_the_rule_to_windup">3.6.1. Add the Rule to Windup</h4>
 <div class="paragraph">
 <p>A Windup rule is installed simply by copying the rule to the appropriate Windup folder. Windup scans for rules, which are files that end with either <code>*.windup.groovy</code> or <code>.windup.xml</code>, in the following locations:</p>
 </div>
@@ -2941,7 +2784,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 </div>
 </div>
 <div class="sect3">
-<h4 id="_test_the_xml_rule">3.7.2. Test the XML Rule</h4>
+<h4 id="_test_the_xml_rule">3.6.2. Test the XML Rule</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2967,7 +2810,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 </div>
 </div>
 <div class="sect3">
-<h4 id="_additional_resources">3.7.3. Additional Resources</h4>
+<h4 id="_additional_resources">3.6.3. Additional Resources</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2977,6 +2820,105 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 <p>Working examples of XML-based rules can be found on GitHub in the <a href="https://github.com/windup/windup/">Windup source code</a> GitHub repository and the Windup quickstarts <a href="https://github.com/windup/windup-quickstarts/">GitHub repository</a> or <a href="https://github.com/windup/windup-quickstarts/releases">latest release ZIP download</a>.</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Rules-Overriding-Rules">3.7. Overriding Rules</h3>
+<div class="paragraph">
+<p>You can override core rules distributed with Windup or even custom-written rules. For example, you might want to change the matching conditions, effort, or hint text for a rule. This is done by making a custom copy of the original rule, marking it as a rule override, and making the necessary adjustments. You can also disable a rule in this same manner.</p>
+</div>
+<div class="sect3">
+<h4 id="_override_a_rule">3.7.1. Override a Rule</h4>
+<div class="paragraph">
+<p>You can override a rule using the following steps.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Copy the XML file that contains the rule you want to override to the custom rules directory.</p>
+<div class="paragraph">
+<p>Custom rules can be placed in either <code>WINDUP_HOME/rules</code>, <code>${user.home}/.windup/rules/</code>, or the directory specified by the <code>--userRulesDirectory</code> command-line argument.</p>
+</div>
+</li>
+<li>
+<p>Edit the XML file and only keep the <code>&lt;rule&gt;</code> elements for the rules that you want to override.</p>
+<div class="paragraph">
+<p>Note that the rules from the original ruleset that are not overridden in the new ruleset will be executed as normal.</p>
+</div>
+</li>
+<li>
+<p>Ensure that you keep the same rule and ruleset IDs. When you copy the original rule XML, this ensures that the IDs match.</p>
+</li>
+<li>
+<p>Add the <code>&lt;overrideRules&gt;true&lt;/overrideRules&gt;</code> entry to the ruleset metadata.</p>
+</li>
+<li>
+<p>Make the adjustments to the rule as necessary.</p>
+<div class="paragraph">
+<p>You can change anything in the rule definition. This rule will override the entire original rule.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The below is an example of an overridden rule. Notice the <code>&lt;overrideRules&gt;true&lt;/overrideRules&gt;</code> element in the ruleset metadata. The rule and ruleset IDs match the original. This rule override simply changed the effort needed from a <code>1</code> to a <code>3</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset id="weblogic"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+    &lt;metadata&gt;
+        ...
+        &lt;overrideRules&gt;true&lt;/overrideRules&gt;
+    &lt;/metadata&gt;
+    &lt;rules&gt;
+        &lt;rule id="weblogic-02000" xmlns="http://windup.jboss.org/schema/jboss-ruleset"&gt;
+            &lt;when&gt;
+                &lt;javaclass references="weblogic.utils.StringUtils.{*}"/&gt;
+            &lt;/when&gt;
+            &lt;perform&gt;
+                &lt;hint effort="3" severity="mandatory" title="WebLogic StringUtils Usage"&gt;
+                    &lt;message&gt;Replace with the StringUtils class from Apache Commons.&lt;/message&gt;
+                    &lt;link href="https://commons.apache.org/proper/commons-lang/" title="Apache Commons Lang"/&gt;
+                    &lt;tag&gt;weblogic&lt;/tag&gt;
+                &lt;/hint&gt;
+            &lt;/perform&gt;
+        &lt;/rule&gt;
+    &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When you run Windup, this rule will now be used in place of the original rule with the matching rule ID. You can verify that the new rule was used by viewing the contents of the Rule Provider Executions Report.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_disable_a_rule">3.7.2. Disable a Rule</h4>
+<div class="paragraph">
+<p>To disable a rule, follow the same steps as above to override a rule, except just provide an empty <code>&lt;rule&gt;</code> element.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset id="weblogic"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+    &lt;metadata&gt;
+        ...
+        &lt;overrideRules&gt;true&lt;/overrideRules&gt;
+    &lt;/metadata&gt;
+    &lt;rules&gt;
+        &lt;rule id="weblogic-02000" xmlns="http://windup.jboss.org/schema/jboss-ruleset"&gt;
+            &lt;!-- Empty so that the original rule is disabled --&gt;
+        &lt;/rule&gt;
+    &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -3168,7 +3110,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-02-04 13:17:02 EST
+Last updated 2016-05-09 15:55:34 EDT
 </div>
 </div>
 </body>

@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.2">
+<meta name="generator" content="Asciidoctor 1.5.4">
 <title>Windup User Guide</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
-/* Remove the comments around the @import statement below when using this as a custom stylesheet */
-/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400";*/
+/* Remove comment around @import statement below when using as a custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
 audio,canvas,video{display:inline-block}
 audio:not([controls]){display:none;height:0}
@@ -57,7 +57,6 @@ a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
 img{-ms-interpolation-mode:bicubic}
-#map_canvas img,#map_canvas embed,#map_canvas object,.map_canvas img,.map_canvas embed,.map_canvas object{max-width:none!important}
 .left{float:left!important}
 .right{float:right!important}
 .text-left{text-align:left!important}
@@ -65,10 +64,12 @@ img{-ms-interpolation-mode:bicubic}
 .text-center{text-align:center!important}
 .text-justify{text-align:justify!important}
 .hide{display:none}
-.antialiased,body{-webkit-font-smoothing:antialiased}
-img{display:inline-block;vertical-align:middle}
+body{-webkit-font-smoothing:antialiased}
+img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.spread{width:100%}
 p.lead,.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{font-size:1.21875em;line-height:1.6}
 .subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
 div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
@@ -111,12 +112,14 @@ blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
 h1{font-size:2.75em}
 h2{font-size:2.3125em}
 h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
-h4{font-size:1.4375em}}table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
 table thead,table tfoot{background:#f7f8f7;font-weight:bold}
 table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+body{tab-size:4}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
 .clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
@@ -124,7 +127,7 @@ h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title str
 *:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
 .keyseq{color:rgba(51,51,51,.8)}
-kbd{display:inline-block;color:rgba(0,0,0,.8);font-size:.75em;line-height:1.4;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:-.15em .15em 0 .15em;padding:.2em .6em .2em .5em;vertical-align:middle;white-space:nowrap}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
 .keyseq kbd:last-child{margin-right:0}
 .menuseq,.menu{color:rgba(0,0,0,.8)}
@@ -155,29 +158,33 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toc ul.sectlevel0>li>a{font-style:italic}
 #toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
 #toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
 #toc a{text-decoration:none}
 #toc a:active{text-decoration:underline}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media only screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
 #toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
-#toc.toc2 #toctitle{margin-top:0;font-size:1.2em}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
 #toc.toc2 ul ul{margin-left:0;padding-left:1em}
 #toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
 body.toc2.toc-right{padding-left:0;padding-right:15em}
-body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}
+@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
 #toc.toc2{width:20em}
 #toc.toc2 #toctitle{font-size:1.375em}
 #toc.toc2>ul{font-size:.95em}
 #toc.toc2 ul ul{padding-left:1.25em}
-body.toc2.toc-right{padding-left:0;padding-right:20em}}#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
 #content #toc>:first-child{margin-top:0}
 #content #toc>:last-child{margin-bottom:0}
 #footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
 #footer-text{color:rgba(255,255,255,.8);line-height:1.44}
 .sect1{padding-bottom:.625em}
-@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}.sect1+.sect1{border-top:1px solid #efefed}
+@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}
+.sect1+.sect1{border-top:1px solid #efefed}
 #content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
 #content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
 #content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
@@ -206,7 +213,9 @@ table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inh
 .sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
 .literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
 .literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
-@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
+@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
+.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
 .listingblock pre.highlightjs{padding:0}
 .listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
 .listingblock pre.prettyprint{border-width:0}
@@ -216,7 +225,7 @@ table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inh
 .listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
 .listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
 table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
-table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0}
+table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0;line-height:1.45}
 table.pyhltable td.code{padding-left:.75em;padding-right:0}
 pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
 pre.pygments .lineno{display:inline-block;margin-right:.25em}
@@ -237,13 +246,12 @@ table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
 .verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
 .quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
 .quoteblock .attribution br,.verseblock .attribution br{display:none}
-.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.05em;color:rgba(0,0,0,.6)}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
 .quoteblock.abstract{margin:0 0 1.25em 0;display:block}
 .quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{text-align:left;word-spacing:0}
 .quoteblock.abstract blockquote:before,.quoteblock.abstract blockquote p:first-of-type:before{display:none}
 table.tableblock{max-width:100%;border-collapse:separate}
 table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
-table.spread{width:100%}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
 table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
 table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
@@ -289,8 +297,8 @@ ol.upperroman{list-style-type:upper-roman}
 ol.lowergreek{list-style-type:lower-greek}
 .hdlist>table,.colist>table{border:0;background:none}
 .hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
-td.hdlist1{padding-right:.75em;font-weight:bold}
-td.hdlist1,td.hdlist2{vertical-align:top}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
 .colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
 .colist>table tr>td:last-of-type{padding:.25em 0}
@@ -303,13 +311,14 @@ td.hdlist1,td.hdlist2{vertical-align:top}
 .image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
 .image.left{margin-right:.625em}
 .image.right{margin-left:.625em}
-a.image{text-decoration:none}
-span.footnote,span.footnoteref{vertical-align:super;font-size:.875em}
-span.footnote a,span.footnoteref a{text-decoration:none}
-span.footnote a:active,span.footnoteref a:active{text-decoration:underline}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
-#footnotes .footnote{padding:0 .375em;line-height:1.3;font-size:.875em;margin-left:1.2em;text-indent:-1.2em;margin-bottom:.2em}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;text-indent:-1.05em;margin-bottom:.2em}
 #footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
@@ -367,11 +376,10 @@ span.icon>.fa{cursor:default}
 pre .conum[data-value]{position:relative;top:-.125em}
 b.conum *{color:inherit!important}
 .conum:not([data-value]):empty{display:none}
-h1,h2{letter-spacing:-.01em}
-dt,th.tableblock,td.content{text-rendering:optimizeLegibility}
-p,td.content{letter-spacing:-.01em}
-p strong,td.content strong{letter-spacing:-.005em}
-p,blockquote,dt,td.content{font-size:1.0625rem}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
 p{margin-bottom:1.25rem}
 .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
 .exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
@@ -382,9 +390,9 @@ a{color:inherit!important;text-decoration:underline!important}
 a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
 a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
 abbr[title]:after{content:" (" attr(title) ")"}
-pre,blockquote,tr,img{page-break-inside:avoid}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
 thead{display:table-header-group}
-img{max-width:100%!important}
+svg{max-width:100%}
 p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
 h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
 #toc,.sidebarblock,.exampleblock>.content{background:none!important}
@@ -419,7 +427,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#What-is-it">1.1. What is Windup?</a></li>
 <li><a href="#Features">1.2. Features of Windup</a></li>
-<li><a href="#_about_windup_rules">1.3. About Windup Rules</a></li>
+<li><a href="#About-Rules">1.3. About Windup Rules</a></li>
 <li><a href="#System-Requirements">1.4. System Requirements</a>
 <ul class="sectlevel3">
 <li><a href="#_software">1.4.1. Software</a></li>
@@ -604,7 +612,7 @@ spots” when migrating applications. The goal is to provide a high level view i
 </div>
 </div>
 <div class="sect2">
-<h3 id="_about_windup_rules">1.3. About Windup Rules</h3>
+<h3 id="About-Rules">1.3. About Windup Rules</h3>
 <div class="paragraph">
 <p>Windup is a rule-based migration tool that analyzes the APIs, technologies, and architectures used by the applications you plan to migrate. In fact, the Windup tool executes its own core set of rules through all phases of the migration process. It uses rules to extract files from archives, decompile files, scan and classify file types, analyze XML and other file content, analyze the application code, and build the reports.</p>
 </div>
@@ -764,8 +772,8 @@ For Windows:
 <p>You should see the following result upon completion of the command:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">**SUCCESS*** Windup report created: PATH_TO_REPORTS/index.html
-              Access it at this URL: file:///home/username/PATH_TO_REPORTS/index.html</pre>
+<pre class="nowrap">Windup report created: PATH_TO_REPORTS/index.html
+              Access it at this URL: file:///PATH_TO_REPORTS/index.html</pre>
 </div>
 </div>
 <div class="admonitionblock warning">
@@ -818,21 +826,38 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 <div class="paragraph">
 <p>The following is a detailed description of the available Windup command line arguments.</p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To run the Windup command without prompting, for example when executing from a script, use <code>--batchMode</code> to take the default values for unspecified parameters and <code>--overwrite</code> to force delete the output directory. Also be sure to specify the required <code>--input</code> and <code>--target</code> arguments.</p>
+</div>
+<div class="paragraph">
+<p>See the description for each argument for more details.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">--input <strong>INPUT_ARCHIVE_OR_DIRECTORY</strong> [&#8230;&#8203;]</dt>
+<dt class="hdlist1">--input INPUT_ARCHIVE_OR_DIRECTORY [&#8230;&#8203;]</dt>
 <dd>
-<p>Each input argument is a fully qualified path to a file or directory containing one or more applications to be migrated. This argument is required. Multiple paths are separated by a space. The argument might appear multiple times in the command.</p>
+<p>Each input argument is a fully qualified path to a file or directory containing one or more applications to be migrated. Multiple paths are separated by a space. This argument is required and can appear multiple times in the command.</p>
 <div class="paragraph">
 <p>When used in combination with the following arguments, the file input type is evaluated as follows.</p>
 </div>
 <table id="input-file-argument-description-table" class="tableblock frame-all grid-all spread">
 <caption class="title">Table 1. Input File Argument Description Table</caption>
 <colgroup>
-<col style="width: 14%;">
-<col style="width: 28%;">
-<col style="width: 28%;">
-<col style="width: 28%;">
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5714%;">
+<col style="width: 28.5715%;">
 </colgroup>
 <thead>
 <tr>
@@ -858,13 +883,13 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </tbody>
 </table>
 </dd>
-<dt class="hdlist1">--output <strong>OUTPUT_REPORT_DIRECTORY</strong> (optional)</dt>
+<dt class="hdlist1">--output OUTPUT_REPORT_DIRECTORY</dt>
 <dd>
 <p>This is the fully qualified path to the directory that will contain the the report information produced by Windup.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If omitted, the report will be generated in a  <strong>INPUT_ARCHIVE_OR_DIRECTORY.report</strong> directory.</p>
+<p>If omitted, the report will be generated in an INPUT_ARCHIVE_OR_DIRECTORY.report directory.</p>
 </li>
 <li>
 <p>If the output directory exists, you will be prompted with the following (with a default of N).</p>
@@ -874,8 +899,15 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </div>
 </div>
 <div class="paragraph">
-<p>However, if you specify the <code>--overwrite</code> argument, Windup will proceed to delete and recreate the directory.</p>
+<p>However, if you specify the <code>--overwrite</code> argument, Windup will proceed to delete and recreate the directory. See the description of this argument for more information.</p>
 </div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">--overwrite</dt>
+<dd>
+<p>Specify this argument only if you are certain you want to force Windup to delete the existing OUTPUT_REPORT_DIRECTORY directory. If you do not specify this argument and the <code>--output</code> directory exists, you are prompted to choose whether to overwrite the contents.</p>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -890,23 +922,16 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </tr>
 </table>
 </div>
-</li>
-</ul>
-</div>
 </dd>
-<dt class="hdlist1">--overwrite (optional)</dt>
-<dd>
-<p>Specify this argument only if you are certain you want to force Windup to delete the existing <strong>OUTPUT_REPORT_DIRECTORY</strong> directory. If you do not specify this argument and the <code>--output</code> directory exists, you are prompted to choose whether to overwrite the contents.</p>
-</dd>
-<dt class="hdlist1">--sourceMode (optional)</dt>
+<dt class="hdlist1">--sourceMode</dt>
 <dd>
 <p>If used, indicates the application to be evaluated contains source files rather than compiled binaries. See the the <a href="#input-file-argument-description-table">Input File Argument Description Table</a> above for details.</p>
 </dd>
-<dt class="hdlist1">--explodedApp (optional)</dt>
+<dt class="hdlist1">--explodedApp</dt>
 <dd>
 <p>If used, indicates the directory contains source files for a single application or directory entries for multiple applications. See the the <a href="#input-file-argument-description-table">Input File Argument Description Table</a> above for details.</p>
 </dd>
-<dt class="hdlist1">--source SOURCE_1 SOURCE_2 (optional)</dt>
+<dt class="hdlist1">--source SOURCE_1 SOURCE_2</dt>
 <dd>
 <p>A space delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This determines which rulesets are used during migration. Example: --source eap</p>
 <div class="admonitionblock tip">
@@ -929,7 +954,7 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </table>
 </div>
 </dd>
-<dt class="hdlist1">--target TARGET_1 TARGET_2 (optional unless --batchMode is set)</dt>
+<dt class="hdlist1">--target TARGET_1 TARGET_2</dt>
 <dd>
 <p>A space delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. If you do not specify this option, you are prompted to select a target. The default target technology is <code>eap</code>.</p>
 <div class="admonitionblock tip">
@@ -952,9 +977,9 @@ The following subdirectories in the <code>OUTPUT_REPORT_DIRECTORY</code> contain
 </table>
 </div>
 </dd>
-<dt class="hdlist1">--packages <strong>PACKAGE_1</strong> <strong>PACKAGE_2</strong> <strong>PACKAGE_N</strong> (recommended)</dt>
+<dt class="hdlist1">--packages PACKAGE_1 PACKAGE_2 PACKAGE_N</dt>
 <dd>
-<p>A space delimited list of the packages to be evaluated by Windup.</p>
+<p>A space delimited list of the packages to be evaluated by Windup. It is highly recommended to use this argument.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -978,25 +1003,21 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </ul>
 </div>
 </dd>
-<dt class="hdlist1">--excludePackages <strong>PACKAGE_1</strong> <strong>PACKAGE_2</strong> <strong>PACKAGE_N</strong> (optional)</dt>
+<dt class="hdlist1">--excludePackages PACKAGE_1 PACKAGE_2 PACKAGE_N</dt>
 <dd>
 <p>This is a space-delimited list of the packages to be excluded by Windup. For example, entering "com.mycompany.commonutilities" would exclude all classes whose package name begins with "com.mycompany.commonutilities".</p>
 <div class="paragraph">
 <p>This parameter is very important when dealing with large applications as it can greatly reduce execution time.</p>
 </div>
 </dd>
-<dt class="hdlist1">--includeTags TAG_1 TAG_2 (optional)</dt>
+<dt class="hdlist1">--includeTags TAG_1 TAG_2</dt>
 <dd>
 <p>In Windup, each rule is associated with a set of tags. Tags are just simple strings that succinctly describe the function of the rule. Common tags include "ejb", "log4j", and "hibernate". To see the full list of tags, use the "--listTags" argument.</p>
-</dd>
-</dl>
-</div>
 <div class="paragraph">
 <p>When one or more tags are specified here, then only rules with these tags will be processed. If this option is not specified, then all tags are processed.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">--excludeTags TAG_1 TAG_2 (optional)</dt>
+</dd>
+<dt class="hdlist1">--excludeTags TAG_1 TAG_2</dt>
 <dd>
 <p>Do not process rules that contain the specified tags. This option can be used if it is found that a particular set of rules is highlighting too much unnecessary information in the report. If this option is not specified, all tags are processed.</p>
 <div class="admonitionblock tip">
@@ -1011,7 +1032,7 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">bin/windup --listTag</pre>
+<pre class="nowrap">bin/windup --listTags</pre>
 </div>
 </div>
 </td>
@@ -1019,19 +1040,19 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </table>
 </div>
 </dd>
-<dt class="hdlist1">--userRulesDirectory CUSTOM_RULES_DIRECTORY (optional)</dt>
+<dt class="hdlist1">--userRulesDirectory CUSTOM_RULES_DIRECTORY</dt>
 <dd>
 <p>By default, Windup looks for rules in the <code>${user.home}/.windup/rules/</code> directory. This option allows you to provide the fully qualified path to a user directory containing additional custom XML rules that should be loaded and executed by Windup. The ruleset files must use one of the following extensions:  <code>*.windup.groovy</code> or <code>*.windup.xml</code>.</p>
 </dd>
-<dt class="hdlist1">--userIgnorePath CUSTOM_IGNORE_DIRECTORY (optional)</dt>
+<dt class="hdlist1">--userIgnorePath CUSTOM_IGNORE_DIRECTORY</dt>
 <dd>
 <p>Windup looks for file names matching the pattern <code>*windup-ignore.txt</code> to identify files that should be ignored. By default, it looks for these files in the <code>~/.windup/ignore/</code> and <code>WINDUP_HOME/ignore/</code> directories, but this option allows you to create files with this pattern name in a different directory.</p>
 </dd>
-<dt class="hdlist1">--exportCSV (optional)</dt>
+<dt class="hdlist1">--exportCSV</dt>
 <dd>
 <p>Export the report data to a CSV formatted file on your local file system. Windup creates the file in the directory specified by the <code>--output</code> argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see <a href="#Export-the-Report-for-Use-by-Spreadsheet-Programs">Export the Report for Use by Spreadsheet Programs</a>.</p>
 </dd>
-<dt class="hdlist1">--additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2 (optional)</dt>
+<dt class="hdlist1">--additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2</dt>
 <dd>
 <p>Use this option to add additional JAR files or directories to the classpath so they are available for decompilation or other analysis. For example:</p>
 <div class="listingblock">
@@ -1040,11 +1061,11 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </div>
 </div>
 </dd>
-<dt class="hdlist1">--offline (optional)</dt>
+<dt class="hdlist1">--offline</dt>
 <dd>
 <p>If specified, do all processing offline and do not fetch updates or other data from the Internet.</p>
 </dd>
-<dt class="hdlist1">--updateRulesets (optional)</dt>
+<dt class="hdlist1">--updateRulesets</dt>
 <dd>
 <p>Update the core rulesets distributed with Windup. It first checks for the existence of newer release, and if found, replaces the current rulesets directory with the new one.</p>
 <div class="admonitionblock tip">
@@ -1067,9 +1088,21 @@ If you omit the <code>--packages</code> argument, every package in the applicati
 </table>
 </div>
 </dd>
-<dt class="hdlist1">--batchMode (optional)</dt>
+<dt class="hdlist1">--batchMode</dt>
 <dd>
 <p>Specifies that Windup should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in via the command line.</p>
+</dd>
+<dt class="hdlist1">--enableClassNotFoundAnalysis</dt>
+<dd>
+<p>Enables analysis of Java files that are not available on the Classpath. This should be left off if some classes will be unavailable at analysis time.</p>
+</dd>
+<dt class="hdlist1">--enableTattletale</dt>
+<dd>
+<p>Enables Tattletale-embedded processing and Windup will generate a Tattletale report for each application.</p>
+</dd>
+<dt class="hdlist1">--enableCompatibleFilesReport</dt>
+<dd>
+<p>Enables generation of 'Compatible Files' report. Due to processing all files without found issues, this report may take a long time for large applications.</p>
 </dd>
 </dl>
 </div>
@@ -1698,7 +1731,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 <p>Windup on Twitter: <a href="https://twitter.com/jbosswindup">@JBossWindup</a></p>
 </li>
 <li>
-<p>Windup IRC channel: Server FreeNode (<code>irc.freenode.net</code>), channel <code>#windup</code>.</p>
+<p>Windup IRC channel: Server FreeNode (<code>irc.freenode.net</code>), channel <code>#windup</code> (<a href="http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html">transcripts</a>).</p>
 </li>
 </ul>
 </div>
@@ -1946,7 +1979,7 @@ The incidents and estimated <em>Story Points</em> change as new rules are added 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-02-04 13:17:02 EST
+Last updated 2016-04-19 10:28:48 EDT
 </div>
 </div>
 </body>

@@ -38,18 +38,21 @@ https://github.com/windup/windup-legacy[windup-legacy] GitHub repository.
 
 == Additional Resources
 
-* {ProductShortName} documentation (generated from the Wiki documentation at the link above): 
+* {ProductShortName} Documentation
 ** {ProductDocUserGuideURL}[{ProductName} User Guide]
 ** {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide]
 ** {ProductDocCoreGuideURL}[{ProductName} Core Development Guide]
-* {ProductShortName} Javadoc: http://windup.github.io/windup/docs/latest/javadoc[{ProductName} JavaDoc]
-*  https://access.redhat.com/taxonomy/tags/windup[{ProductShortName} Knowledgebase articles on the Customer Portal]
-* {ProductShortName} Knowledgebase migration articles:
+** http://windup.github.io/windup/docs/latest/javadoc[{ProductName} JavaDoc]
+* {ProductShortName} Knowledgebase articles on the Red Hat Customer Portal
+** https://access.redhat.com/taxonomy/tags/windup[All {ProductShortName} articles]
 ** https://access.redhat.com/search/#/?q=tag:%28%22websphere%22%29+tag:%28%22windup%22%29&p=1&srch=any&language=en&documentKind=[WebSphere migration articles]
-** https://access.redhat.com/search/#/?q=tag:%28%22websphere%22%29+tag:%28%22windup%22%29&p=1&srch=any&language=en&documentKind=[WebLogic migration articles]
+** https://access.redhat.com/search/#/?q=tag:%28%22weblogic%22%29+tag:%28%22windup%22%29&p=1&srch=any&language=en&documentKind=[WebLogic migration articles]
 * {ProductShortName} Forums: https://community.jboss.org/en/windup
-* {ProductShortName} Issue Tracker: https://issues.jboss.org/browse/WINDUP
-* {ProductShortName} Users Mailing List: windup-users@lists.jboss.org
-* {ProductShortName} Developers Mailing List: windup-dev@lists.jboss.org
-* {ProductShortName} Commits Mailing List: windup-commits@lists.jboss.org
+* {ProductShortName} Issue Trackers
+** Core {ProductShortName}: https://issues.jboss.org/browse/WINDUP
+** {ProductShortName} Rules: https://issues.jboss.org/browse/WINDUPRULE
+* {ProductShortName} Mailing Lists
+** {ProductShortName} Users: windup-users@lists.jboss.org
+** {ProductShortName} Developers: windup-dev@lists.jboss.org
+** {ProductShortName} Commits: windup-commits@lists.jboss.org
 * {ProductShortName} on Twitter: https://twitter.com/jbosswindup[@JBossWindup], https://twitter.com/search?q=%23windup%20OR%20%23jboss%20AND%20%23migration&src=typd[#windup OR #jboss AND #migration]

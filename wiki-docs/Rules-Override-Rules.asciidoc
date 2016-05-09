@@ -1,0 +1,82 @@
+:ProductName: Windup
+:ProductShortName: Windup
+
+[[Rules-Overriding-Rules]]
+=== Overriding Rules
+
+You can override core rules distributed with Windup or even custom-written rules. For example, you might want to change the matching conditions, effort, or hint text for a rule. This is done by making a custom copy of the original rule, marking it as a rule override, and making the necessary adjustments. You can also disable a rule in this same manner.
+
+==== Override a Rule
+
+You can override a rule using the following steps.
+
+. Copy the XML file that contains the rule you want to override to the custom rules directory.
++
+Custom rules can be placed in either `WINDUP_HOME/rules`, `${user.home}/.windup/rules/`, or the directory specified by the `--userRulesDirectory` command-line argument.
+
+. Edit the XML file and only keep the `<rule>` elements for the rules that you want to override.
++
+Note that the rules from the original ruleset that are not overridden in the new ruleset will be executed as normal.
+
+. Ensure that you keep the same rule and ruleset IDs. When you copy the original rule XML, this ensures that the IDs match.
+
+. Add the `<overrideRules>true</overrideRules>` entry to the ruleset metadata.
+
+. Make the adjustments to the rule as necessary.
++
+You can change anything in the rule definition. This rule will override the entire original rule.
+
+The below is an example of an overridden rule. Notice the `<overrideRules>true</overrideRules>` element in the ruleset metadata. The rule and ruleset IDs match the original. This rule override simply changed the effort needed from a `1` to a `3`.
+
+[source,xml,options="nowrap"]
+----
+<?xml version="1.0"?>
+<ruleset id="weblogic"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        ...
+        <overrideRules>true</overrideRules>
+    </metadata>
+    <rules>
+        <rule id="weblogic-02000" xmlns="http://windup.jboss.org/schema/jboss-ruleset">
+            <when>
+                <javaclass references="weblogic.utils.StringUtils.{*}"/>
+            </when>
+            <perform>
+                <hint effort="3" severity="mandatory" title="WebLogic StringUtils Usage">
+                    <message>Replace with the StringUtils class from Apache Commons.</message>
+                    <link href="https://commons.apache.org/proper/commons-lang/" title="Apache Commons Lang"/>
+                    <tag>weblogic</tag>
+                </hint>
+            </perform>
+        </rule>
+    </rules>
+</ruleset>
+----
+
+When you run Windup, this rule will now be used in place of the original rule with the matching rule ID. You can verify that the new rule was used by viewing the contents of the Rule Provider Executions Report.
+
+==== Disable a Rule
+
+To disable a rule, follow the same steps as above to override a rule, except just provide an empty `<rule>` element.
+
+[source,xml,options="nowrap"]
+----
+<?xml version="1.0"?>
+<ruleset id="weblogic"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        ...
+        <overrideRules>true</overrideRules>
+    </metadata>
+    <rules>
+        <rule id="weblogic-02000" xmlns="http://windup.jboss.org/schema/jboss-ruleset">
+            <!-- Empty so that the original rule is disabled -->
+        </rule>
+    </rules>
+</ruleset>
+----

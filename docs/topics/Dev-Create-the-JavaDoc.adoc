@@ -21,7 +21,32 @@ If you want to build an updated version, use the following procedure to create J
 ----
 mvn validate -PjavadocDist
 ----
-. The JavaDoc is created in the {ProductShortName} `target/apidocs` subdirectory.
+. The JavaDoc is created in the {ProductShortName} `target/apidocs/` subdirectory.
 . If you want to add the JavaDoc to the latest published release, copy this folder to a backup location and then see xref:Dev-Documentation-Process[Documentation Process] for instructions.
 
-NOTE: To cross-link with 3rd-party libraries, see https://issues.jboss.org/browse/WINDUP-422[WINDUP-422} and http://stackoverflow.com/questions/27392535/javadoc-how-to-make-it-link-the-dependencies-maven-project.
+NOTE: To cross-link with 3rd-party libraries, see https://issues.jboss.org/browse/WINDUP-422[WINDUP-422] and http://stackoverflow.com/questions/27392535/javadoc-how-to-make-it-link-the-dependencies-maven-project.
+
+=== The script
+
+------------------------
+VER=2.5.0.Final
+mvn clean
+git checkout $VER ## Current release tag
+mvn validate -PjavadocDist -Djavadoc.branding='Windup $VER Javadoc'
+mv target/apidocs/ ..
+mvn clean
+git checkout gh-pages
+git pull upstream gh-pages
+rm docs/latest  ## A soft link
+cd docs
+mkdir -p $VER/javadoc/
+ln -s $VER/ latest
+cd ..
+mv ../apidocs/* docs/latest/javadoc
+rm -rf ../apidocs/
+git add docs
+git commit -m "Add $VER javadoc"
+git push upstream gh-pages
+sleep 300  ## Takes a while before the new gh-pages gets propagated.
+firefox http://windup.github.io/windup/docs/latest/javadoc/
+------------------------

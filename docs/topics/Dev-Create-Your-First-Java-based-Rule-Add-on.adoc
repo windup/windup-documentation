@@ -20,7 +20,7 @@ Java-based rule construction is covered in more detail here: xref:Rules-Create-a
 In this example, you write a ruleset to discover instances where an application Java file uses the proprietary servlet annotations. The ruleset adds the following rules.
 
 * Find Java classes that reference the `@ProprietaryServlet` annotation and provide a hint to replace it with the standard Java EE @WebServlet annotation.
-* Find Java classes that reference the `@ProprietaryInitParam`annotation and provide a hint to replace it with the standard Java EE @WebServlet annotation.
+* Find Java classes that reference the `@ProprietaryInitParam` annotation and provide a hint to replace it with the standard Java EE @WebServlet annotation.
 
 You will also provide a data file to test the rule.
 
@@ -241,7 +241,7 @@ Click on `x` to the left of the newly added line of code and choose "Import 'Rul
 return ConfigurationBuilder.begin()
     .addRule()
     .when(
-        JavaClass.references("com.example.proprietary.ProprietaryServlet").at(TypeReferenceLocation.ANNOTATION)
+        JavaClass.references("com.proprietary.example.ProprietaryServlet").at(TypeReferenceLocation.ANNOTATION)
     )
     .perform(
         Classification.as("Proprietary @ProprietaryServlet")
@@ -250,7 +250,7 @@ return ConfigurationBuilder.begin()
             .and(Hint.withText("Replace the proprietary @ProprietaryServlet annotation with the Java EE 6 standard @WebServlet annotation.").withEffort(1)))
     .addRule()
     .when(
-        JavaClass.references("com.example.proprietary.ProprietaryInitParam").at(TypeReferenceLocation.ANNOTATION)
+        JavaClass.references("com.proprietary.example.ProprietaryInitParam").at(TypeReferenceLocation.ANNOTATION)
     )
     .perform(
         Classification.as("Proprietary @ProprietaryInitParam")
@@ -280,7 +280,7 @@ import org.ocpsoft.rewrite.config.ConfigurationBuilder;
 [options="nowrap"]
 ----
 Package: com.proprietary.example
-Name: MyProprietaryAnnotatonClass
+Name: MyProprietaryAnnotationClass
 Superclass: javax.servlet.http.HttpServlet
 ----
 +
