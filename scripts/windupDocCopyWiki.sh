@@ -115,6 +115,7 @@ cp $1/Rules-Rules-Overview.asciidoc docs/topics/Rules-Rules-Overview.adoc   ## t
 cp $1/Rules-Rule-Story-Points.asciidoc docs/topics/Rules-Rule-Story-Points.adoc
 cp $1/Rules-Test-a-Basic-XML-Rule.asciidoc docs/topics/Rules-Test-a-Basic-XML-Rule.adoc
 cp $1/Rules-Validate-Rulesets-Against-the-Schema.asciidoc docs/topics/Rules-Validate-Rulesets-Against-the-Schema.adoc
+cp $1/Rules-Override-Rules.asciidoc docs/topics/Rules-Override-Rules.adoc
 cp $1/Rules-XML-Rule-Construction.asciidoc docs/topics/Rules-XML-Rule-Construction.adoc  ## this topic is not used
 cp $1/Rules-XML-Rule-Perform-Action-Syntax.asciidoc docs/topics/Rules-XML-Rule-Perform-Action-Syntax.adoc
 cp $1/Rules-XML-Rule-When-Condition-Syntax.asciidoc docs/topics/Rules-XML-Rule-When-Condition-Syntax.adoc
