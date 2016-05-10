@@ -1,25 +1,18 @@
 :ProductName: Windup
 :ProductShortName: Windup
-:ProductDocUserGuideURL: http://windup.github.io/windup/docs/latest/html/WindupUserGuide.html
-:ProductDocRulesGuideURL: http://windup.github.io/windup/docs/latest/html/WindupRulesDevelopmentGuide.html
-:ProductDocCoreGuideURL: http://windup.github.io/windup/docs/latest/html/WindupCoreDevelopmentGuide.html
-
 
 [[Rules-Important-Links]]
 === Important Links
 
 * {ProductName} wiki: https://github.com/windup/windup/wiki
-* {ProductShortName} documentation (generated from the Wiki documentation at the link above): 
-** {ProductDocUserGuideURL}[{ProductShortName} User Guide]
-** {ProductDocRulesGuideURL}[{ProductShortName} Rules Development Guide]
-** {ProductDocCoreGuideURL}[{ProductShortName} Core Development Guide]
-** http://windup.github.io/windup/docs/latest/javadoc[{ProductShortName} Javadoc]
+* {ProductShortName} Javadoc: http://windup.github.io/windup/docs/latest/javadoc
 * {ProductShortName} forums: https://developer.jboss.org/en/windup
-* {ProductShortName} issue tracker: https://issues.jboss.org/browse/WINDUP
-* {ProductShortName} users mailing List: windup-users@lists.jboss.org
-* {ProductShortName} developers mailing list: windup-dev@lists.jboss.org
-* {ProductShortName} commits mailing list: windup-commits@lists.jboss.org
+* {ProductShortName} JIRA issue trackers
+** Core Windup: https://issues.jboss.org/browse/WINDUP
+** Windup Rules: https://issues.jboss.org/browse/WINDUPRULE
+* Windup Mailing Lists
+** Windup Users: windup-users@lists.jboss.org
+** Windup Developers: windup-dev@lists.jboss.org
+** Windup Commits: windup-commits@lists.jboss.org
 * {ProductShortName} on Twitter: https://twitter.com/jbosswindup[@JBossWindup]
-* {ProductShortName} IRC channel: Server FreeNode (`irc.freenode.net`), channel `#windup`.
-** http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html[{ProductShortName} IRC Chat transcripts]
-** http://transcripts.jboss.org/meeting/irc.freenode.org/windup/index.html[{ProductShortName} meeting IRC Chat transcripts]
+* {ProductShortName} IRC channel: Server FreeNode (`irc.freenode.net`), channel `#windup` (http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html[transcripts])
