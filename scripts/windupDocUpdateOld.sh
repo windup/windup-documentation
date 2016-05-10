@@ -6,7 +6,6 @@ OLD_PRODUCT_VERSION=2.5.0-Final
 PRODUCT_VERSION=2.5.0-Final
 if [ "$1" == "?" ]  || [ "$1" == "-h" ] || [ "$1" == "--help" ] || [ "$1" == "" ] || [ "$2" == "" ]; then 
 
-    echo "NOTE: Be sure to check out a topic branch from the upstream windup-documentation repository!" 
     echo "Run this script from the root of the windup-documentation directory." 
     echo "You must pass the path to the windup.wiki and windup-documentation GitHub directories on the command line." 
     echo "For example:"
@@ -22,24 +21,29 @@ echo "Fetching the latest pages from the Windup Wiki..."
 echo ""
 cd $1
 pwd
-git checkout master
+
 git fetch upstream
 git reset --hard upstream/master 
 cd $2
 pwd
-echo "Fetch of Wiki content is complete."
+echo "Fetch complete."
 echo ""
 
-echo "Copying the latest Wiki images and stylesheets..."
+echo "Copying the latest images and stylesheets..."
 cp -r $1/images/*.* docs/topics/images/
 echo "Copy complete."
 echo ""
 
 echo "Copying the doc pages from the Wiki to windup-documentation..."
+echo ""
+
 sh scripts/windupDocCopyWiki.sh $1
+
+echo "Copy complete."
 echo ""
 
 echo " Replacing the links: to external pages with xrefs:"
+echo ""
 cd docs/topics
 find . -name '*.adoc' -print | xargs sed -i 's/link:/xref:/g'
 cd ../../
@@ -47,6 +51,7 @@ echo "Replacement of links with xrefs is complete."
 echo ""
 
 echo "Removing variables from individual pages... "
+echo ""
 cd docs/topics/
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductName: Windup//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductShortName: Windup//g'
@@ -60,80 +65,78 @@ find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocUserGuideURL: http:\/\
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocRulesGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupRulesDevelopmentGuide.html//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocCoreGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupCoreDevelopmentGuide.html//g'
 echo "Removal of variables is complete."
-echo ""
 
-## Replace the images directory. 
-echo "Replacing the images directory location... "
+## Replace the images directory
 find . -name '*.adoc' -print | xargs sed -i 's/:imagesdir: images/:imagesdir: topics\/images/g'
 cd ../../
-echo "Image directory replacement is complete"
 echo ""
 
-echo "Copy the product version of the document attributes to the correct location and build"
+## First build the community version of the guides
+cp docs/document-attributes-community.adoc docs/topics/templates/document-attributes.adoc
+
+## Build the Windup Guides
+sh scripts/buildGuides.sh
+
+## Now build the product version of the guides
 cp docs/document-attributes-product.adoc docs/topics/templates/document-attributes.adoc
-echo "Copy of product document attributes is complete"
-echo ""
 
-echo "Build the windup-user-guide"
-cd docs/windup-user-guide
-CURRENT_DIRECTORY=$(pwd)
-CURRENT_GUIDE=${PWD##*/}
-echo "Building the ccutil version of the Windup User Guide"
-echo ""
-ccutil compile --lang en_US --main-file master.adoc
-if [ -d  build/tmp/en-US/html-single/ ]; then
-  USER_GUIDE_URL=file://$CURRENT_DIRECTORY/build/tmp/en-US/html-single/index.html
-  echo "$CURRENT_GUIDE (ccutil) is located at: " file://$CURRENT_DIRECTORY/build/tmp/en-US/html-single/index.html
-else
-  echo -e "${RED}Build of $CURRENT_GUIDE failed!"
-  echo -e "${BLACK}See the log above for details."
-  exit 1
+# Remove the html and build directories and then recreate the the html directory
+if [ -d html ]; then
+   rm -r html/
+   mkdir -p html/topics/
+   cp -r docs/topics/images/ html/topics
 fi
+
+# Copy the windup-user-guide files
+GUIDE_NAME="WindupUserGuide"
+cd docs/windup-user-guide
+echo "Copying the $GUIDE_NAME to the new location."
+if [ -d html ]; then
+  cp -r html/ ../../
+fi
+echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
+
+# Rebuild the ccutil guide
+echo "Rebuilding the ccutil version of the Windup User Guide"
+ccutil compile --lang en_US --main-file master.adoc
+
 # Return to where we started
 cd $CURRENT_DIR
-echo CURRENT_DIR = $CURRENT_DIR
 
 # Copy the windup-rules-development-guide files
-
-# Rebuild the ccutil guide
+GUIDE_NAME="WindupRulesDevelopmentGuide"
 cd docs/windup-rules-development-guide
-CURRENT_DIRECTORY=$(pwd)
-CURRENT_GUIDE=${PWD##*/}
-echo "Building the ccutil version of the Windup Rules Development Guide"
-ccutil compile --lang en_US --main-file master.adoc
-if [ -d  build/tmp/en-US/html-single/ ]; then
-  RULES_GUIDE_URL=file://$CURRENT_DIRECTORY/build/tmp/en-US/html-single/index.html
-  echo "$CURRENT_GUIDE (ccutil) is located at: " file://$CURRENT_DIRECTORY/build/tmp/en-US/html-single/index.html
-else
-  echo -e "${RED}Build of $CURRENT_GUIDE failed!"
-  echo -e "${BLACK}See the log above for details."
-  exit 1
+echo "Copying the $GUIDE_NAME to the new location."
+if [ -d html ]; then
+  cp -r html/ ../../
 fi
+echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
+
+# Rebuild the ccutil guide
+echo "Rebuilding the ccutil version of the Windup Rules Development Guide"
+ccutil compile --lang en_US --main-file master.adoc
+
 # Return to where we started
 cd $CURRENT_DIR
 
-# Rebuild the ccutil guide
+# Copy the windup-core-development-guide files
+GUIDE_NAME="WindupCoreDevelopmentGuide"
 cd docs/windup-core-development-guide
-CURRENT_DIRECTORY=$(pwd)
-CURRENT_GUIDE=${PWD##*/}
-echo "Building the ccutil version of the Windup Core Development Guide"
-ccutil compile --lang en_US --main-file master.adoc
-if [ -d  build/tmp/en-US/html-single/ ]; then
-  CORE_GUIDE_URL=file://$CURRENT_DIRECTORY/build/tmp/en-US/html-single/index.html
-  echo "$CURRENT_GUIDE (ccutil) is located at: " file://$CURRENT_DIRECTORY/build/tmp/en-US/html-single/index.html
-else
-  echo -e "${RED}Build of $CURRENT_GUIDE failed!"
-  echo -e "${BLACK}See the log above for details."
-  exit 1
+echo "Copying the $GUIDE_NAME to the new location."
+if [ -d html ]; then
+  cp -r html/ ../../
 fi
+echo "$GUIDE_NAME (AsciiDoctor) is located at: " file://$CURRENT_DIR/html/$GUIDE_NAME.html
+
+# Rebuild the ccutil guide
+echo "Rebuilding the ccutil version of the Windup Core Development Guide"
+ccutil compile --lang en_US --main-file master.adoc
+
 # Return to where we started
 cd $CURRENT_DIR
+
 
 echo "Windup documentation update process is complete!"
-echo
-echo "   windup-user-guide is located at: $USER_GUIDE_URL"
-echo "   windup-rules-development-guide is located at: $RULES_GUIDE_URL"
-echo "   windup-core-development-guide is located at: $CORE_GUIDE_URL"
 echo ""
 echo "IMPORTANT:"
 echo ""

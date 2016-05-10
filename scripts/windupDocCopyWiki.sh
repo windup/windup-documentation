@@ -4,11 +4,11 @@ if [ "$1" == "" ]; then
     echo "For example:  scripts/windupDocCopyWiki.sh ~/GitRepos/windup.wiki"
     exit
 fi
-echo "Copy the original wiki files from: " $1
-echo ""
+echo "Copy the original wiki files from $1 into the wiki-docs/ folder"
 cp $1/*.asciidoc wiki-docs/
+echo ""
 
-echo "Copying and convert files from: " $1
+echo "Copy and convert asciidoc files from $1 into into docs/topics adoc files"
 echo ""
 cp $1/About-Rules.asciidoc docs/topics/About-Rules.adoc
 cp $1/About-the-HOME-Variable.asciidoc docs/topics/About-the-HOME-Variable.adoc
@@ -126,4 +126,4 @@ cp $1/Start.asciidoc docs/topics/Start.adoc  ## this topic is not used
 cp $1/System-Requirements.asciidoc docs/topics/System-Requirements.adoc  ## this topic is not used
 cp $1/User-Guide.asciidoc docs/topics/User-Guide.adoc  ## this topic is not used
 cp $1/What-is-it.asciidoc docs/topics/What-is-it.adoc
-
+echo "Copy is complete!"
