@@ -57,8 +57,11 @@ find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocHomeVar: WINDUP_DOCUME
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductSrcHomeVar: WINDUP_SOURCE_HOME//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductReleaseVar: WINDUP_RELEASE//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocUserGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupUserGuide.html//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocUserGuideURL: https:\/\/github.com\/windup\/windup/wiki\/User-Guide//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocRulesGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupRulesDevelopmentGuide.html//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocRulesGuideURL: https:\/\/github.com\/windup\/windup\/wiki\/Rules-Development-Guide//g'
 find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocCoreGuideURL: http:\/\/windup.github.io\/windup\/docs\/latest\/html\/WindupCoreDevelopmentGuide.html//g'
+find . -name '*.adoc' -print | xargs sed -i 's/:ProductDocCoreGuideURL: https:\/\/github.com\/windup\/windup\/wiki\/Core-Development-Guide//g'
 echo "Removal of variables is complete."
 echo ""
 
