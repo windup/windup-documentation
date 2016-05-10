@@ -8,9 +8,8 @@ To validate XML rules using the {ProductShortName} rule schema, follow these ste
 
 . Download this XML validator: https://github.com/amouat/xsd-validator/releases/download/v1.0/xsdv-1.0.zip 
 . Extract the ZIP file into a directory of your choice.
-. The xsd-validator requires the schema file to be located on the local file system. Download the {ProductShortName} rule schema from one of the following locations to a directory of your choice.
-* http://windup.jboss.org/schema/windup-jboss-ruleset.xsd
-* https://github.com/windup/windup/blob/master/config-xml/windup-jboss-ruleset.xsd
+. The xsd-validator requires the schema file to be located on the local file system. Download the {ProductShortName} rule schema from the following location to a directory of your choice.
+** http://windup.jboss.org/schema/windup-jboss-ruleset.xsd
 . Run the following command, replacing the variables as follows.
 * RULESET_DIRECTORY: The path to the top level folder that contains the rules.
 * XSD_VALIDATOR: The path to the extracted xsd-validator.

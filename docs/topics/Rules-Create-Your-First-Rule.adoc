@@ -195,12 +195,6 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\" or "\Users\USER_
 ----
 
 [discrete]
-==== Validate the Rule Against the Schema
-
-To validate your XML rule using the {ProductShortName} rule schema, see xref:Rules-Validate-Rulesets-Against-the-Schema[Validate Rulesets Against the Schema].
-
-
-[discrete]
 ==== Test the Rule
 
 . Open a terminal and navigate to the {ProductHomeVar} directory.
