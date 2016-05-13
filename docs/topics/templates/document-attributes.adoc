@@ -9,7 +9,8 @@
 :ProductShortName: Windup
 :ProductRelease: 2
 :ProductVersion: 2.5.Final
-:ProductDistribution: windup-distribution-2.5.0-Final
+:ProductDistributionVersion: 2.5.0
+:ProductDistribution: windup-distribution-{ProductDistributionVersion}.Final
 :ProductHomeVar: WINDUP_HOME 
 :ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME
 :ProductSrcHomeVar: WINDUP_SOURCE_HOME
