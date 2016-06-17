@@ -40,7 +40,7 @@ cp $1/Dev-Logging.asciidoc docs/topics/Dev-Logging.adoc
 cp $1/Dev-Port-WindRide-Functionality.asciidoc docs/topics/Dev-Port-WindRide-Functionality.adoc ## this topic is not used
 cp $1/Dev-Project-Information.asciidoc docs/topics/Dev-Project-Information.adoc
 cp $1/Dev-Project-Structure.asciidoc docs/topics/Dev-Project-Structure.adoc
-cp $1/Dev-Release-Checklist.asciidoc docs/topics/Dev-Release-Checklist.adoc  ## this topic is not used
+cp $1/Dev-Release-Checklist.md docs/topics/Dev-Release-Checklist.md  ## this topic is not used
 cp $1/Dev-Release-Process.asciidoc docs/topics/Dev-Release-Process.adoc
 cp $1/Dev-Rule-Documentation-Tracker.asciidoc docs/topics/Dev-Rule-Documentation-Tracker.adoc  ## this topic is not used
 cp $1/Dev-Rule-Metadata-and-API-Discrepancies.asciidoc docs/topics/Dev-Rule-Metadata-and-API-Discrepancies.adoc  ## this topic is not used
@@ -63,6 +63,7 @@ cp $1/Install-and-Configure-Maven.asciidoc docs/topics/Install-and-Configure-Mav
 cp $1/Install.asciidoc docs/topics/Install.adoc
 cp $1/Known-Issues.asciidoc docs/topics/Known-Issues.adoc
 cp $1/Lab-Setup-Scripts.asciidoc docs/topics/Lab-Setup-Scripts.adoc  ## this topic is not used
+cp $1/Mavenize-Your-Application.asciidoc docs/topics/Mavenize-Your-Application.adoc
 cp $1/Migration-Planning-Guide.asciidoc docs/topics/Migration-Planning-Guide.adoc  ## this topic is not used
 cp $1/Migration-Planning-Process.asciidoc docs/topics/Migration-Planning-Process.adoc  ## this topic is not used
 cp $1/News.asciidoc docs/topics/News.adoc  ## this topic is not used
@@ -126,4 +127,5 @@ cp $1/Start.asciidoc docs/topics/Start.adoc  ## this topic is not used
 cp $1/System-Requirements.asciidoc docs/topics/System-Requirements.adoc  ## this topic is not used
 cp $1/User-Guide.asciidoc docs/topics/User-Guide.adoc  ## this topic is not used
 cp $1/What-is-it.asciidoc docs/topics/What-is-it.adoc
+
 echo "Copy is complete!"

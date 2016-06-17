@@ -8,18 +8,18 @@
 :ProductName: Windup
 :ProductShortName: Windup
 :ProductRelease: 2
-:ProductVersion: 2.5.Final
-:ProductDistributionVersion: 2.5.0
+:ProductVersion: 2.6.Final
+:ProductDistributionVersion: 2.6.0
 :ProductDistribution: windup-distribution-{ProductDistributionVersion}.Final
 :ProductHomeVar: WINDUP_HOME 
 :ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME
 :ProductSrcHomeVar: WINDUP_SOURCE_HOME
 :ProductReleaseVar: WINDUP_RELEASE
 
-:ProductDocVersion: version-2.5
+:ProductDocVersion: version-2.6
 
 :DocInfoProductName: Red Hat JBoss Migration Toolkit
-:DocInfoProductNumber: 2.5
+:DocInfoProductNumber: 2.6
 
 :ProductDocUserGuideURL: https://github.com/windup/windup/wiki/User-Guide
 :ProductDocRulesGuideURL: https://github.com/windup/windup/wiki/Rules-Development-Guide

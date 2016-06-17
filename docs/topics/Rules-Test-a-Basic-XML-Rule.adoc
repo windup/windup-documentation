@@ -1,7 +1,7 @@
 
 
  
-
+:ProductDocUserGuideURL: https://github.com/windup/windup/wiki/User-Guide
 
 [[Rules-Test-an-XML-Rule]]
 === Test an XML Rule in {ProductName}
@@ -24,20 +24,18 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\"  -or-  "\Users\U
 
 ==== Test the XML Rule
 
-. Test the XML rule against your application file by running {ProductShortName} in a terminal.
-+
-The command uses this syntax:
-+
+Test the XML rule against your application file by running {ProductShortName} in a terminal.
+
 [options="nowrap"]
 ----
 WINDUP_HOME/bin/windup [--sourceMode] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
 ----
-+
+
 You should see the following result:
-+
+
 [options="nowrap"]
 ----
-***SUCCESS*** Windup report created: OUTPUT_REPORT_DIRECTORY/index.html
+Windup report created: OUTPUT_REPORT_DIRECTORY/index.html
 ----
 
 ==== Additional Resources

@@ -8,20 +8,20 @@
 :ProductName: Windup
 :ProductShortName: Windup
 :ProductRelease: 2
-:ProductVersion: 2.5.Final
-:ProductDistributionVersion: 2.5.0
+:ProductVersion: 2.6.Final
+:ProductDistributionVersion: 2.6.0
 :ProductDistribution: windup-distribution-{ProductDistributionVersion}.Final
 :ProductHomeVar: WINDUP_HOME 
 :ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME
 :ProductSrcHomeVar: WINDUP_SOURCE_HOME
 :ProductReleaseVar: WINDUP_RELEASE
 
-:ProductDocVersion: version-2.5
+:ProductDocVersion: version-2.6
 
 :DocInfoProductName: Red Hat JBoss Migration Toolkit
-:DocInfoProductNumber: 2.5
+:DocInfoProductNumber: 2.6
 
-:ProductDocUserGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.5/windup-user-guide
-:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.5/windup-rules-development-guide
+:ProductDocUserGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.6/windup-user-guide
+:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/version-2.6/windup-rules-development-guide
 // There is no product version of the core guide. It is internal only so just point to it.
 :ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide

@@ -5,91 +5,84 @@
 [[Execute]]
 === Execute {ProductName}
 
-[[overview]]
-==== Overview 
-
-These instructions use the replaceable variable `{ProductHomeVar}` to refer to the fully qualified path to your {ProductShortName} installation. For more information, see xref:About-the-HOME-Variable[About the {ProductHomeVar} Variable].
+These instructions use the xref:About-the-HOME-Variable[{ProductHomeVar}] replaceable variable to refer to the fully qualified path to your {ProductShortName} installation.
 
 [[run-windup]]
-==== Run {ProductShortName}  
+==== Run {ProductShortName}
 
-. Open a terminal and navigate to the {ProductHomeVar} directory. 
-. Run {ProductShortName} against the application using the appropriate command.
-+
-See xref:command-line-arguments[{ProductShortName} Command Line Arguments] below for a detailed description of the available command line arguments. 
+Use the following steps to run Windup against your application.
 
-* The basic command to run {ProductShortName} uses the following syntax.
+. Open a terminal and navigate to the `WINDUP_HOME/bin` directory.
+. Execute the `windup` script, or `windup.bat` for Windows, and specify the appropriate arguments.
 +
-[options="nowrap"]
+[source,options="nowrap"]
 ----
-For Linux:
-$ bin/windup --input INPUT_ARCHIVE_OR_DIRECTORY ... --output OUTPUT_REPORT_DIRECTORY \
-   --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
-For Windows:
-> bin\windup.bat --input INPUT_ARCHIVE_OR_DIRECTORY ... --output OUTPUT_REPORT_DIRECTORY
-    --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+$ ./windup --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --target eap --packages com.acme org.apache
 ----
 +
-
-* To evaluate an application archive, use the following syntax:
+At a minimum, you must specify the input archive or directory (`--input`) and the target technology (`--target`). Use the `--sourceMode` argument to run Windup against application source code. See xref:command-line-arguments[{ProductShortName} Command-Line Arguments] for a detailed description of all available command-line arguments.
 +
-[options="nowrap"]
-----
-bin/windup --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY 
-  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
-----
-
-* To run {ProductShortName} against application source code, add the `--sourceMode` argument:
+WARNING: Depending on the size of the application and the hardware Windup is running on, this command can take a very long time. It is recommended to specify one or more packages to evaluate. For additional tips on how to improve performance, see xref:Optimize-Performance[Optimize {ProductShortName} Performance].
 +
-[options="nowrap"]
-----
-bin/windup  --sourceMode --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY
-  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
-----
-
-* To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` argument on the command line. For example, to use the _Procyon_ compiler, use the following syntax:
+You will see the following message in the terminal upon completion:
 +
-[options="nowrap"]
-----
-bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY 
-  --source SOURCE_TECHNOLOGY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N 
-----
-
-+
-See xref:command-examples[{ProductShortName} Command Examples] below for concrete examples of commands that use source code directories and archives located in the {ProductShortName} GitHub repository.
-
-. You should see the following result upon completion of the command:
-+
-[options="nowrap"]
 ----
 Windup report created: PATH_TO_REPORTS/index.html
               Access it at this URL: file:///PATH_TO_REPORTS/index.html
 ----
+
+. Review the report.
 +
-WARNING: Depending on the size of the application and the hardware {ProductShortName} is running on, this command can take a very long time. For tips on how to improve performance, see xref:Optimize-Performance[Optimize {ProductShortName} Performance].
+Navigate to the output directory and open the `index.html` file in a web browser. See the xref:Review-the-Report[Review the Report] section for more details on evaluating report data.
 
-.  Open the `OUTPUT_REPORT_DIRECTORY/index.html` file in a browser to access the report.
-The following subdirectories in the `OUTPUT_REPORT_DIRECTORY` contain the supporting information for the report:
+See xref:command-examples[{ProductShortName} Command Examples] below for concrete examples of commands that use source code directories and archives located in the Windup GitHub repository. 
 
-        OUTPUT_REPORT_DIRECTORY/
-        ├── archives/
-        ├── graph/
-        ├── reports/
-        ├── stats/
-        ├── index.html
-        ├── OPTIONAL_EXPORTED_CSV_FILE.csv
 
-. For details on how to evaluate the report data, see xref:Review-the-Report[Review the Report].
+[[command-examples]]
+==== {ProductShortName} Command Examples
+
+[discrete]
+===== Running {ProductShortName} on Source Code
+
+The following command runs against the {ProductShortName} https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] test application source code. It evaluates all `org.jboss.seam` packages and creates a directory named 'seam-booking-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
+
+[source,options="nowrap"]
+----
+WINDUP_HOME/bin/windup --sourceMode --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --target eap --packages org.jboss.seam
+----
+
+[discrete]
+===== Running {ProductShortName} on an Application Archive
+
+The following command runs against the {ProductShortName} https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] test EAR archive. It evaluates all `com.acme` and `org.apache` packages and creates a directory named 'jee-example-app-1.0.0.ear-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
+
+[source,options="nowrap"]
+----
+WINDUP_HOME/bin/windup  --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --target eap --packages com.acme org.apache
+----
+
+[discrete]
+===== Override {ProductShortName} Properties
+
+To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` argument on the command line. For example, to use the _Procyon_ decompiler, use the following syntax:
+
+[source,options="nowrap"]
+----
+WINDUP_HOME/bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2
+----
 
 
 ==== {ProductShortName} Help
 
 To see the complete list of available arguments for the `windup` command, open a terminal, navigate to the WINDUP_HOME directory, and execute the following command:
 
-    bin/windup --help
+[source, options="nowrap"]
+----
+WINDUP_HOME/bin/windup --help
+----
 
 [[command-line-arguments]]
-==== {ProductShortName} Command Line Arguments
+==== {ProductShortName} Command-Line Arguments
 
 The following is a detailed description of the available {ProductShortName} command line arguments.
 
@@ -100,6 +93,45 @@ To run the Windup command without prompting, for example when executing from a s
 See the description for each argument for more details.
 ====
 
+--additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2:: Use this option to add additional JAR files or directories to the classpath so they are available for decompilation or other analysis. For example, `--additionalClassPath MyClasses.jar com/mycompany/`.
+
+--addonDir DIRECTORY:: Add the specified directory as a custom add-on repository.
+
+--batchMode:: Specifies that {ProductShortName} should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in via the command line.
+
+--debug:: Run {ProductShortName} in debug mode.
+
+--discoverPackages:: Lists all available packages in the input application or source.
+
+--enableClassNotFoundAnalysis:: Enables analysis of Java files that are not available on the Classpath. This should be left off if some classes will be unavailable at analysis time.
+
+--enableCompatibleFilesReport:: Enables generation of 'Compatible Files' report. Due to processing all files without found issues, this report may take a long time for large applications.
+
+--enableTattletale:: Enables Tattletale-embedded processing and Windup will generate a Tattletale report for each application.
+
+--excludePackages PACKAGE_1 PACKAGE_2 PACKAGE_N:: This is a space-delimited list of the packages to be excluded by {ProductShortName}. For example, entering "com.mycompany.commonutilities" would exclude all classes whose package name begins with "com.mycompany.commonutilities".
++
+This parameter is very important when dealing with large applications as it can greatly reduce execution time.
+
+--excludeTags TAG_1 TAG_2:: Do not process rules that contain the specified tags. This option can be used if it is found that a particular set of rules is highlighting too much unnecessary information in the report. If this option is not specified, all tags are processed.
++
+[TIP]
+====
+For the list of the available tags, pass the `--listTags` argument to the `windup` command.
+====
+
+--explodedApp:: If used, indicates the directory contains source files for a single application or directory entries for multiple applications. See the xref:input-file-argument-description-table[Input File Argument Description Table] for details.
+
+--exportCSV:: Export the report data to a CSV formatted file on your local file system. {ProductShortName} creates the file in the directory specified by the `--output` argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see xref:Export-the-Report-for-Use-by-Spreadsheet-Programs[Export the Report for Use by Spreadsheet Programs].
+
+--help:: Display the {ProductShortName} help message.
+
+--immutableAddonDir DIRECTORY:: Add the specified directory as a custom read-only add-on repository.
+
+--includeTags TAG_1 TAG_2:: In {ProductShortName}, each rule is associated with a set of tags. Tags are just simple strings that succinctly describe the function of the rule. Common tags include "ejb", "log4j", and "hibernate". To see the full list of tags, use the `--listTags` argument.
++
+When one or more tags are specified here, then only rules with these tags will be processed. If this option is not specified, then all tags are processed.
+
 --input INPUT_ARCHIVE_OR_DIRECTORY [...]:: Each input argument is a fully qualified path to a file or directory containing one or more applications to be migrated. Multiple paths are separated by a space. This argument is required and can appear multiple times in the command.
 +
 When used in combination with the following arguments, the file input type is evaluated as follows.
@@ -109,22 +141,40 @@ When used in combination with the following arguments, the file input type is ev
 [cols="1,2,2,2",options="header"]
 |====
 | Input File Type
-| -- explodedApp argument
-| -- sourceMode argument
-| Neither argument specified
+| `--explodedApp` Argument
+| `--sourceMode` Argument
+| Neither Argument Specified
 
-| DIRECTORY
-| Directory evaluated as a single application
-| Directory evaluated as a single application
-| Each directory entry is evaluated as a single application
+| Directory
+| Directory evaluated as a single application.
+| Directory evaluated as a single application.
+| Each directory entry is evaluated as a single application.
 
-| FILE
+| File
 | Argument is ignored and the file is evaluated as a single application.
 | The file is evaluated as a compressed project.
 | The file is evaluated as a single application.
 |====
 
---output OUTPUT_REPORT_DIRECTORY:: This is the fully qualified path to the directory that will contain the the report information produced by {ProductShortName}. 
+--install GROUP_ID:ARTIFACT_ID[:VERSION]:: Install the specified add-ons. For example, `--install core-addon-x` or `--install org.example.addon:example,1.0.0`.
+
+--keepWorkDirs:: Instructs Windup to not delete temporary working files, such as the graph database and unzipped archives. This is useful for debugging purposes.
+
+--list:: List installed add-ons.
+
+--listSourceTechnologies:: List all available source technologies.
+
+--listTags:: List all available tags.
+
+--listTargetTechnologies:: List all available target technologies.
+
+--mavenize:: Create a Maven project directory structure based on the structure and content of the application. This creates `pom.xml` files using the appropriate Java EE API and the correct dependencies between project modules. See also the `--mavenizeGroupId` option.
+
+--mavenizeGroupId:: When used with the `--mavenize` option, all generated `pom.xml` files will use this value for their `<groupId>`. If this parameter is omitted, Windup will attempt to determine an appropriate `<groupId>` based on the application, or will default to `com.mycompany.mavenized`.
+
+--offline:: If specified, do all processing offline and do not fetch updates or other data from the Internet.
+
+--output OUTPUT_REPORT_DIRECTORY:: This is the fully qualified path to the directory that will contain the report information produced by {ProductShortName}. 
 +
 * If omitted, the report will be generated in an INPUT_ARCHIVE_OR_DIRECTORY.report directory. 
 * If the output directory exists, you will be prompted with the following (with a default of N). 
@@ -142,32 +192,6 @@ However, if you specify the `--overwrite` argument, {ProductShortName} will proc
 Be careful not to specify a report output directory that contains important information!
 ====
 
---sourceMode:: If used, indicates the application to be evaluated contains source files rather than compiled binaries. See the the xref:input-file-argument-description-table[Input File Argument Description Table] above for details.
-
---explodedApp:: If used, indicates the directory contains source files for a single application or directory entries for multiple applications. See the the xref:input-file-argument-description-table[Input File Argument Description Table] above for details.
-
---source SOURCE_1 SOURCE_2:: A space delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This determines which rulesets are used during migration. Example: +--source eap+
-+
-[TIP]
-====
-For the list of the available `--source` servers or frameworks, use the `--listSourceTechnologies` argument on the `windup` command line as in the following example.
-[options="nowrap"]
-----
-bin/windup --listSourceTechnologies
-----
-====
-
---target TARGET_1 TARGET_2:: A space delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. If you do not specify this option, you are prompted to select a target. The default target technology is `eap`.
-+
-[TIP]
-====
-For the list of the available `--target` servers or frameworks, use the `--listTargetTechnologies` argument on the `windup` command line as in the following example.
-[options="nowrap"]
-----
-bin/windup --listTargetTechnologies
-----
-====
-
 --packages PACKAGE_1 PACKAGE_2 PACKAGE_N:: A space delimited list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.
 +
 * In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or 3rd party packages. The `PACKAGE_N` argument is a package prefix; all subpackages will be scanned. For example, to scan the packages `com.mycustomapp` and `com.myotherapp`, use `--packages com.mycustomapp com.myotherapp` argument on the command line.
@@ -175,38 +199,23 @@ bin/windup --listTargetTechnologies
 +
 WARNING: If you omit the `--packages` argument, every package in the application is scanned, which can impact performance. It is best to provide this argument with one or more packages.
 
---excludePackages PACKAGE_1 PACKAGE_2 PACKAGE_N:: This is a space-delimited list of the packages to be excluded by {ProductShortName}. For example, entering "com.mycompany.commonutilities" would exclude all classes whose package name begins with "com.mycompany.commonutilities".
-+
-This parameter is very important when dealing with large applications as it can greatly reduce execution time.
+--remove GROUP_ID:ARTIFACT_ID[:VERSION]:: Remove the specified add-ons. For example, `--remove core-addon-x` or `--remove org.example.addon:example,1.0.0`.
 
---includeTags TAG_1 TAG_2:: In {ProductShortName}, each rule is associated with a set of tags. Tags are just simple strings that succinctly describe the function of the rule. Common tags include "ejb", "log4j", and "hibernate". To see the full list of tags, use the "--listTags" argument.
-+
-When one or more tags are specified here, then only rules with these tags will be processed. If this option is not specified, then all tags are processed.
-
---excludeTags TAG_1 TAG_2:: Do not process rules that contain the specified tags. This option can be used if it is found that a particular set of rules is highlighting too much unnecessary information in the report. If this option is not specified, all tags are processed.
+--source SOURCE_1 SOURCE_2:: A space delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This determines which rulesets are used during migration. Example: +--source eap+
 +
 [TIP]
 ====
-For the list of the available tags, use the `--listTags` argument on the `windup` command line as in the following example.
-[options="nowrap"]
-----
-bin/windup --listTags
-----
+For the list of the available `--source` servers or frameworks, pass the `--listSourceTechnologies` argument to the `windup` command.
 ====
 
---userRulesDirectory CUSTOM_RULES_DIRECTORY:: By default, {ProductShortName} looks for rules in the `${user.home}/.windup/rules/` directory. This option allows you to provide the fully qualified path to a user directory containing additional custom XML rules that should be loaded and executed by {ProductShortName}. The ruleset files must use one of the following extensions:  [x-]`*.windup.groovy` or [x-]`*.windup.xml`.
+--sourceMode:: If used, indicates the application to be evaluated contains source files rather than compiled binaries. See the xref:input-file-argument-description-table[Input File Argument Description Table] for details.
 
---userIgnorePath CUSTOM_IGNORE_DIRECTORY:: {ProductShortName} looks for file names matching the pattern `*windup-ignore.txt` to identify files that should be ignored. By default, it looks for these files in the `~/.windup/ignore/` and `WINDUP_HOME/ignore/` directories, but this option allows you to create files with this pattern name in a different directory. 
-
---exportCSV:: Export the report data to a CSV formatted file on your local file system. {ProductShortName} creates the file in the directory specified by the `--output` argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see xref:Export-the-Report-for-Use-by-Spreadsheet-Programs[Export the Report for Use by Spreadsheet Programs].
-
---additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2:: Use this option to add additional JAR files or directories to the classpath so they are available for decompilation or other analysis. For example:
+--target TARGET_1 TARGET_2:: A space delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. If you do not specify this option, you are prompted to select a target. The default target technology is `eap`.
 +
-----
---additionalClassPath MyClasses.jar com/mycompany/
-----
-
---offline:: If specified, do all processing offline and do not fetch updates or other data from the Internet.
+[TIP]
+====
+For the list of the available `--target` servers or frameworks, pass the `--listTargetTechnologies` argument to the `windup` command.
+====
 
 --updateRulesets:: Update the core rulesets distributed with {ProductShortName}. It first checks for the existence of newer release, and if found, replaces the current rulesets directory with the new one.
 +
@@ -215,38 +224,13 @@ bin/windup --listTags
 To update the rulesets without analyzing an application, pass only this argument on the `windup` command line as in the following example.
 [options="nowrap"]
 ----
-bin/windup --updateRulesets
+WINDUP_HOME/bin/windup --updateRulesets
 ----
 ====
 
---batchMode:: Specifies that {ProductShortName} should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in via the command line.
+--userIgnorePath CUSTOM_IGNORE_DIRECTORY:: {ProductShortName} looks for file names matching the pattern `*windup-ignore.txt` to identify files that should be ignored. By default, it looks for these files in the `~/.windup/ignore/` and `WINDUP_HOME/ignore/` directories, but this option allows you to create files with this pattern name in a different directory. 
 
---enableClassNotFoundAnalysis:: Enables analysis of Java files that are not available on the Classpath. This should be left off if some classes will be unavailable at analysis time.
+--userRulesDirectory CUSTOM_RULES_DIRECTORY:: By default, {ProductShortName} looks for rules in the `${user.home}/.windup/rules/` directory. This option allows you to provide the fully qualified path to a user directory containing additional custom XML rules that should be loaded and executed by {ProductShortName}. The ruleset files must use one of the following extensions:  [x-]`*.windup.groovy` or [x-]`*.windup.xml`.
 
---enableTattletale:: Enables Tattletale-embedded processing and Windup will generate a Tattletale report for each application.
-
---enableCompatibleFilesReport:: Enables generation of 'Compatible Files' report. Due to processing all files without found issues, this report may take a long time for large applications.
-
-[[command-examples]]
-==== {ProductShortName} Command Examples
-
-The following examples report against applications located in the {ProductShortName} source https://github.com/windup/windup/tree/master/test-files[test-files] directory.
-
-===== Source Code Example
-
-The following command runs against the https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] application source code. It evaluates all `org.jboss.seam` packages and creates a directory named 'seam-booking-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
-
-   bin/windup --sourceMode --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --target eap --packages org.jboss.seam
-
-===== Archive Example
-
-The following command runs against the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] EAR archive. It evaluates all `com.acme` and `org.apache` packages and creates a directory named 'jee-example-app-1.0.0.ear-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
-
-    bin/windup  --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --target eap --packages com.acme org.apache
-
-===== {ProductShortName} Quickstart Examples
-
-For more concrete examples, see the {ProductShortName} quickstarts located on GitHub here: https://github.com/windup/windup-quickstarts. If you prefer, you can download the https://github.com/windup/windup-quickstarts/releases/[latest release] ZIP or TAR  distribution of the quickstarts.
-
-The quickstarts provide examples of Java-based and XML-based rules you can run and test using {ProductShortName}. The README instructions provide a step-by-step guide to run the quickstart example. You can also look through the code examples and use them as a starting point for creating your own rules.
+--version:: Display the {ProductShortName} version.
 

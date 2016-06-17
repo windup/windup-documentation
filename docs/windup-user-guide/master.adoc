@@ -11,8 +11,7 @@ include::topics/templates/document-attributes.adoc[]
 
 == Introduction
 
-This guide is for engineers, consultants, and others who plan to use 
-{ProductName} to migrate Java applications or other components. 
+This guide is for engineers, consultants, and others who plan to use {ProductName} to migrate Java applications or other components. 
 
 include::topics/What-is-it.adoc[leveloffset=+0]
 
@@ -33,6 +32,8 @@ include::topics/Execute.adoc[leveloffset=+0]
 include::topics/Review-the-Report.adoc[leveloffset=+0]
 
 include::topics/Export-the-Report-for-Use-by-Spreadsheet-Programs.adoc[leveloffset=+0]
+
+include::topics/Mavenize-Your-Application.adoc[leveloffset=+0]
 
 == Additional Resources
 
