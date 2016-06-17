@@ -11,13 +11,12 @@ You can create a {ProductName} rule using Java, XML, or Groovy. This topic descr
 
 * You should have already installed {ProductShortName}. Installation instruction are provided in the {ProductDocUserGuideURL}[{ProductName} User Guide].
 * Before you begin, you may also want to be familiar with the following documentation:
-** {ProductShortName} rules are based on the ocpsoft *rewrite* project. You can find more information about ocpsoft *rewrite* here: http://ocpsoft.org/rewrite/
-** The JavaDoc for the {ProductShortName} API is located here: http://windup.github.io/windup/docs/latest/javadoc/
-** The XML rule schema is located here: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd
+** The {ProductShortName} Javadoc: http://windup.github.io/windup/docs/latest/javadoc/
+** The {ProductShortName} XML rule schema: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd
 
 ==== File Naming Convention for XML Rules
 
-You must name the file containing an XML rule with the `.windup.xml` extension. {ProductShortName} identifies files with this extension as XML-base rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
+The Windup XML rule file must use the `.windup.xml` extension, otherwise the rule will not be evaluated.
 
 ==== Basic XML Rule Template
 

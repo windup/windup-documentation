@@ -124,7 +124,7 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 ----
 . Complete the `perform` action for this rule. 
 * Add a classification and descriptive title.
-* Assign a level of effort of "1" to this task.
+* Assign a level of effort of `1` to this task.
 * Provide a hint with an informative message and a link to documentation that describes the migration details. 
 +
 [source,xml,options="nowrap"]
@@ -210,9 +210,8 @@ For Windows:  bin\windup.bat --sourceMode --input migration-rules\data --output 
 +
 [options="nowrap"]
 ----
-***SUCCESS*** Windup report created: /home/your-username/migration-rules/reports/index.html
+Windup report created: /home/your-username/migration-rules/reports/index.html
               Access it at this URL: file:///home/your-username/migration-rules/reports/index.html
-
 ----
 
 [discrete]
@@ -220,23 +219,23 @@ For Windows:  bin\windup.bat --sourceMode --input migration-rules\data --output 
 
 Access the report at ~/migration-rules/reports/index.html to be sure it provides the expected results. 
 
-. The _Overview_ page displays the *Name* of the input folder, "data", along with the  *Effort* of "1 Story Points".
+. The *Overview* page displays the name of the application or input folder, `data` in this case, along with the associated technology and story points.
 +
 .Application List
 image:CreateYourFirstRule-ReportApplicationList.png[Overview, 500]
 
-. Click on the "data" link under the `Name` column to see the _Report Index_ page and review the migration summary. 
+. Click on the link under the *Name* column to see the *Report Index* page and review the migration summary. 
 +
 .ReportIndex
 image:CreateYourFirstRule-ReportApplication.png[Overview, 500]
 
-. Click on the *Application Details* link to view the application report. This report displays a link for the name of the file, "jboss-web.xml", along with warnings and 1 *Story Points*.
+. Click on the *Application Details* link to view the application report. This report displays a link for the name of the file, `jboss-web.xml`, along with warnings and a story point of `1`.
 +
 .Application Details Report
 image:CreateYourFirstRule-ReportApplicationDetails.png[Overview, 500]
 
-. Drill down into _Source Report_ file detail by clicking on the *jboss-web.xml* file link. This report provides information about the file and summarizes the story points. It also highlights the `<class-loading>` line in the `jboss-web.xml` file, provides the message "The class-loading element is no longer valid in the jboss-web.xml file.", and provides a link to the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6[Create or Modify Files That Control Class Loading in JBoss EAP 6] topic in the JBoss EAP 6 Migration Guide. Click on the link to be sure the link is valid.
+. Drill down into *Source Report* file detail by clicking on the *jboss-web.xml* file link. This report provides information about the file and summarizes the story points. It also highlights the `<class-loading>` line in the `jboss-web.xml` file, provides the message "The class-loading element is no longer valid in the jboss-web.xml file.", and provides a link to the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6[Create or Modify Files That Control Class Loading in JBoss EAP 6] topic in the JBoss EAP 6 Migration Guide. Click on the link to be sure the link is valid.
 +
 image:CreateYourFirstRule-ReportSource.png[Overview, 500]
 
-. Return to the _Overview Page_ and click on the "All Rule" link to view the _Rule Provider Executions_ report. Find the 'JBoss5-web-class-loading' rule in the report and verify that the *Status* shows "Condition met" and the *Result* shows "success".
+. Return to the *Overview Page* and click on the *All Rule* link to view the *Rule Provider Executions* report. Find the 'JBoss5-web-class-loading' rule in the report and verify that the *Status* shows `Condition met` and the *Result* shows `success`.

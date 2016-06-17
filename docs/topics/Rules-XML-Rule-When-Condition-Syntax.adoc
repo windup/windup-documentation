@@ -135,7 +135,7 @@ The below example would match on `@MyAnnotation(myvalue="test")`.
 </javaclass>
 ----
 
-Note that in this case, the `<javaclass>` refers to an annotation (`MyAnnotation`), so the top-level annotation filter, `<annotation-literal>` must specify the `name` attribute. If the `<javaclass>` referred to a class that is annotated, then the top-level annotation filter used would be `<annotation-type>`.
+Note that in this case, the `<javaclass>` refers to an annotation (`@MyAnnotation`), so the top-level annotation filter, `<annotation-literal>` must specify the `name` attribute. If the `<javaclass>` referred to a class that is annotated, then the top-level annotation filter used would be `<annotation-type>`.
 
 |<annotation-type>
 a|Match on a particular annotation type. You can supply subconditions to be matched against the annotation elements.
@@ -167,7 +167,7 @@ The below example would match on `@MyAnnotation(mylist={"one","two"})`.
 </javaclass>
 ----
 
-Note that in this case, the `<javaclass>` refers to an annotation (`MyAnnotation`), so the top-level annotation filter, `<annotation-list>` must specify the `name` attribute. If the `<javaclass>` referred to a class that is annotated, then the top-level annotation filter used would be `<annotation-type>`.
+Note that in this case, the `<javaclass>` refers to an annotation (`@MyAnnotation`), so the top-level annotation filter, `<annotation-list>` must specify the `name` attribute. If the `<javaclass>` referred to a class that is annotated, then the top-level annotation filter used would be `<annotation-type>`.
 
 |===
 
