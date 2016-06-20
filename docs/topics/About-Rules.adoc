@@ -1,10 +1,5 @@
-
-
-
-
-
 [[About-Rules]]
-=== About {ProductShortName} Rules
+= About {ProductShortName} Rules
 
 {ProductShortName} is a rule-based migration tool that analyzes the APIs, technologies, and architectures used by the applications you plan to migrate. In fact, the {ProductShortName} tool executes its own core set of rules through all phases of the migration process. It uses rules to extract files from archives, decompile files, scan and classify file types, analyze XML and other file content, analyze the application code, and build the reports. 
 

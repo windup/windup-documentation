@@ -17,36 +17,38 @@ If you are new to {ProductName}, it is recommended that you start with the {Prod
 
 If you would like to contribute to the {ProductName} source code base or provide Java-based rule add-ons, see the https://github.com/windup/windup/wiki[{ProductName} Wiki].
 
-== Get Started
+== Getting Started
 
-include::topics/Rules-Create-Your-First-Rule.adoc[leveloffset=+0]
+include::topics/Rules-Create-Your-First-Rule.adoc[leveloffset=+2]
 
-== Create and Test XML Rules
+== Creating XML Rules
 
-include::topics/Rules-XML-Rule-Construction.adoc[leveloffset=+0]
+include::topics/Rules-XML-Rule-Construction.adoc[leveloffset=+2]
 
-include::topics/Rules-Create-a-Basic-XML-Rule.adoc[leveloffset=+0]
+include::topics/Rules-Create-a-Basic-XML-Rule.adoc[leveloffset=+2]
 
-include::topics/Rules-XML-Rule-When-Condition-Syntax.adoc[leveloffset=+0]
+=== XML Rule Syntax
 
-include::topics/Rules-XML-Rule-Perform-Action-Syntax.adoc[leveloffset=+0]
+include::topics/Rules-XML-Rule-When-Condition-Syntax.adoc[leveloffset=+3]
 
-include::topics/Rules-Test-a-Basic-XML-Rule.adoc[leveloffset=+0]
+include::topics/Rules-XML-Rule-Perform-Action-Syntax.adoc[leveloffset=+3]
 
-include::topics/Rules-Override-Rules.adoc[leveloffset=+0]
+include::topics/Rules-Test-a-Basic-XML-Rule.adoc[leveloffset=+1]
+
+include::topics/Rules-Override-Rules.adoc[leveloffset=+1]
 
 == Additional Resources
 
-include::topics/Rules-Review-the-Existing-XML-Rules.adoc[leveloffset=+0]
+include::topics/Rules-Review-the-Existing-XML-Rules.adoc[leveloffset=+2]
 
-include::topics/Rules-Important-Links.adoc[leveloffset=+0]
+include::topics/Rules-Important-Links.adoc[leveloffset=+2]
 
+[appendix]
+== Reference Material
 
-== Appendix
+include::topics/Rules-Rule-Story-Points.adoc[leveloffset=+2]
 
-include::topics/Rules-Rule-Story-Points.adoc[leveloffset=+0]
-
-include::topics/About-the-HOME-Variable.adoc[leveloffset=+0]
+include::topics/About-the-HOME-Variable.adoc[leveloffset=+2]
 
 
 

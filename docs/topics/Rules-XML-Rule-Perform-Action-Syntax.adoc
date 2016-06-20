@@ -1,5 +1,5 @@
 [[Rules-XML-Rule-Perform-Action-Syntax]]
-=== XML Rule - Perform Action Syntax
+= Perform Action Syntax
 
 Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
 
@@ -15,9 +15,9 @@ The following sections describe the more common XML rule perform actions.
 * xref:iteration-syntax[Iteration Syntax]
 
 [[classification-syntax]]
-==== Classification Syntax
+== Classification Syntax
 
-===== Summary 
+=== Summary 
 
 The `classification` element is used to identify or classify application resources that match the rule. It provides a title that is displayed in the report, a level of effort, and it can also provide links to additional information about how to migrate this resource classification. For a better understanding of the `classification` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html[Classification] class.
 
@@ -38,10 +38,10 @@ _Example:_
 </rule>
 ----
 
-===== `classification` Element: Attributes
+=== `classification` Element: Attributes
 
 [cols="1,1,3", options="header"] 
-|===
+|====
 |Attribute Name
 |Type
 |Description
@@ -89,13 +89,13 @@ _Example:_
 ----
 of="MySeamRule"
 ----
-|===
+|====
 
-===== `classification` Element: Child Elements
+=== `classification` Element: Child Elements
 
 
 [cols="1,4", options="header"] 
-|===
+|====
 |Child Element
 |Description
 
@@ -132,13 +132,13 @@ _Example:_
 <description>JBoss Seam components must be replaced</description>
 ----
 
-|===
+|====
 
 
 [[link-syntax]]
-==== Link Syntax
+== Link Syntax
 
-===== Summary 
+=== Summary 
 
 The `link` element is used in classifications or hints to provide links to informational content. For a better understanding of the `link` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html[Link] class.
 
@@ -164,10 +164,10 @@ _Example:_
 </rule>
 ----
 
-===== `link` Element: Attributes
+=== `link` Element: Attributes
 
 [cols="1,1,3", options="header"] 
-|===
+|====
 |Attribute Name
 |Type
 |Description
@@ -194,12 +194,12 @@ _Example:_
 title="Migrate WebLogic Proprietary Servlet Annotations"
 ----
 
-|===
+|====
 
 [[hint-syntax]]
-==== Hint Syntax
+== Hint Syntax
 
-===== Summary 
+=== Summary 
 
 The `hint` element is used to provide a hint or inline information about how to migrate a section of code. For a better understanding of the `hint` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Hint.html[Hint] class.
 
@@ -225,10 +225,10 @@ _Example:_
 </rule>
 ----
 
-===== `hint` Element:  Attributes
+=== `hint` Element:  Attributes
 
 [cols="1,1,3", options="header"] 
-|===
+|====
 |Attribute Name
 |Type
 |Description
@@ -277,12 +277,12 @@ _Example:_
 effort="2"
 ----
 
-|===
+|====
 
-===== `hint` Element: Child Elements
+=== `hint` Element: Child Elements
 
 [cols="1,4", options="header"] 
-|===
+|====
 |Child Element
 |Description
 
@@ -316,12 +316,12 @@ _Example:_
 ----
 <tag>Needs review</tag>
 ----
-|===
+|====
 
 [[xslt-syntax]]
-==== XSLT Syntax
+== XSLT Syntax
 
-===== Summary 
+=== Summary 
 
 The `xslt` element specifies how to transform an XML file. For a better understanding of the `xslt` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/operation/xslt/XSLTTransformation.html[XSLTTransformation]  class.
 
@@ -343,10 +343,10 @@ _Example:_
 </rule>
 ----
 
-===== `xslt` Element:  Attributes
+=== `xslt` Element:  Attributes
 
 [cols="1,1,3", options="header"] 
-|===
+|====
 |Attribute Name
 |Type
 |Description
@@ -399,13 +399,13 @@ template="simpleXSLT.xsl"
 |BYTE
 | The level of effort required for the transformation. (Optional)
 
-|===
+|====
 
-===== `xslt` Element: Child Elements
+=== `xslt` Element: Child Elements
 
 
 [cols="1,4", options="header"] 
-|===
+|====
 |Child Element
 |Description
 
@@ -418,12 +418,12 @@ _Example:_
 ----
 <xslt-parameter property="title" value="EJB Transformation"/>
 ----
-|===
+|====
 
 [[lineitem-syntax]]
 ==== Lineitem Syntax
 
-===== Summary 
+=== Summary 
 
 The `lineitem` element is used to provide  general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues. This information is displayed on the project or application overview page. For a better understanding of the `lineitem` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html[Lineitem] class.
 
@@ -447,10 +447,10 @@ _Example:_
     </perform>
 </rule>
 ----
-===== `lineitem` Element:  Attributes
+=== `lineitem` Element:  Attributes
 
 [cols="1,1,3", options="header"] 
-|===
+|====
 |Attribute Name
 |Type
 |Description
@@ -465,12 +465,12 @@ _Example:_
 message="Proprietary code found."
 ----
 
-|===
+|====
     
 [[iteration-syntax]]
-==== Iteration Syntax
+== Iteration Syntax
 
-===== Summary 
+=== Summary 
 
 The `iteration` element specifies to iterate over an implicit or explicit variable defined within the rule. For a better understanding of the `iteration` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/Iteration.html[Iteration] class.
 
@@ -498,10 +498,10 @@ _Example:_
 </rule>
 ----
 
-===== `iteration` Element:  Attributes
+=== `iteration` Element:  Attributes
 
 [cols="1,1,3", options="header"] 
-|===
+|====
 |Attribute Name
 |Type
 |Description
@@ -517,17 +517,17 @@ _Example:_
 over="jboss-app"
 ----
 
-|===
+|====
     
-===== `iteration` Element: Child Elements
+=== `iteration` Element: Child Elements
 
 
 [cols="1,4", options="header"] 
-|===
+|====
 |Child Element
 |Description
 
 |<iteration>
 |Child elements include a `when` condition, along with the actions `iteration`, `classification`, `hint`, `xslt`, `lineitem`, and `otherwise`.
-|===
+|====
 

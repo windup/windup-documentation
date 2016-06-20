@@ -13,43 +13,44 @@ include::topics/templates/document-attributes.adoc[]
 
 This guide is for engineers, consultants, and others who plan to use {ProductName} to migrate Java applications or other components. 
 
-include::topics/What-is-it.adoc[leveloffset=+0]
+include::topics/What-is-it.adoc[leveloffset=+2]
 
-include::topics/Features.adoc[leveloffset=+0]
+include::topics/Features.adoc[leveloffset=+2]
 
-include::topics/About-Rules.adoc[leveloffset=+0]
+include::topics/About-Rules.adoc[leveloffset=+2]
 
-include::topics/System-Requirements.adoc[leveloffset=+0]
+include::topics/System-Requirements.adoc[leveloffset=+2]
 
-include::topics/About-the-HOME-Variable.adoc[leveloffset=+0]
+include::topics/About-the-HOME-Variable.adoc[leveloffset=+2]
 
-== Get Started
+== Getting Started
 
-include::topics/Install.adoc[leveloffset=+0]
+include::topics/Install.adoc[leveloffset=+2]
 
-include::topics/Execute.adoc[leveloffset=+0]
+include::topics/Execute.adoc[leveloffset=+2]
 
-include::topics/Review-the-Report.adoc[leveloffset=+0]
+include::topics/Review-the-Report.adoc[leveloffset=+2]
 
-include::topics/Export-the-Report-for-Use-by-Spreadsheet-Programs.adoc[leveloffset=+0]
+include::topics/Export-the-Report-for-Use-by-Spreadsheet-Programs.adoc[leveloffset=+1]
 
-include::topics/Mavenize-Your-Application.adoc[leveloffset=+0]
+include::topics/Mavenize-Your-Application.adoc[leveloffset=+1]
+
+include::topics/Optimize-Performance.adoc[leveloffset=+1]
 
 == Additional Resources
 
-include::topics/Review-the-Quickstarts.adoc[leveloffset=+0]
+include::topics/Review-the-Quickstarts.adoc[leveloffset=+2]
 
-include::topics/Get-Involved.adoc[leveloffset=+0]
+include::topics/Get-Involved.adoc[leveloffset=+2]
 
-include::topics/Important-Links.adoc[leveloffset=+0]
+include::topics/Important-Links.adoc[leveloffset=+2]
 
-include::topics/Known-Issues.adoc[leveloffset=+0] 
+include::topics/Known-Issues.adoc[leveloffset=+2] 
 
-include::topics/Report-Issues.adoc[leveloffset=+0]
+include::topics/Report-Issues.adoc[leveloffset=+2]
 
-== Appendix
+[appendix]
+== Reference Material
 
-include::topics/Glossary.adoc[leveloffset=+0]
-
-include::topics/Optimize-Performance.adoc[leveloffset=+0]
+include::topics/Glossary.adoc[leveloffset=+2]
 

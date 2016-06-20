@@ -1,14 +1,7 @@
-
-
-
-
-
 [[Review-the-Report]]
-=== Review the Report
+= Review the Report
 
-:imagesdir: topics/images
-
-==== About the Report
+== About the Report
 
 When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` you specify for the `--output` argument in the command line. This output directory contains the following files and subdirectories:
 
@@ -32,7 +25,7 @@ WINDUP_HOME/bin/windup --input /home/username/windup-source/test-files/jee-examp
 NOTE: The incidents and estimated _Story Points_ change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
 
 
-==== Access the Reports
+== Access the Reports
 
 Use your favorite browser to open the `index.html` file located in the output report directory. You should see something like the following:
 
@@ -42,7 +35,7 @@ image:report-jee-example-application-list-page.png[Report Index Page, 600]
 This page lists the applications that were processed along with the technologies that were encountered. It also provides links to the following additional reports.
 
 [cols="1,3", options="header"] 
-|===
+|====
 | Report
 | How to Access the Report
 
@@ -57,22 +50,22 @@ This page lists the applications that were processed along with the technologies
 
 | xref:review-the-report-send-feedback[Send Feedback Form]
 | Click on the `Send Feedback` link at the bottom of the index page to open a form that allows you to provide feedback to the {ProductShortName} team. .
-|===
+|====
 
 Click on the *jee-example-app-1.0.0.ear* link under the *Name* column to view the application report.
 
 [[review-the-report-application-report]]
-===== Application Report
+=== Application Report
 
 [discrete]
-====== Report Index
+==== Report Index
 
 The first section of the application report page summarizes the entire application migration effort. It summarizes the mandatory, optional, and potential issues that were found. It also breaks the findings down by type and by whether the suggested updates are informational, trivial, complex, need redesign, or require architectural changes. It also summarizes the issues by package. 
 
 This is followed by a list of reports that contain additional details about the migration of this application. 
 
 [cols="30%,70%", options="header"] 
-|===
+|====
 | Report
 | Description
 
@@ -117,7 +110,7 @@ This is followed by a list of reports that contain additional details about the 
 
 | About
 | Describes the current version of Windup and provides helpful links for further assistance. 
-|===
+|====
 
 .{ProductShortName} Report - Report Index
 image:report-jee-example-application-report-index-page.png[Report Overview and Application Messages, 600]
@@ -125,7 +118,7 @@ image:report-jee-example-application-report-index-page.png[Report Overview and A
 Click on the *Application Details* link under *Additional Reports* to see the the _Application Details Report_. 
 
 [discrete]
-====== Application Details Report
+==== Application Details Report
 
 The report lists the estimated story points, the Java incidents by package, and a count of the occurrences of the technologies found in the application. Next is a display of application messages generated during the migration process. Finally, there is a breakdown of this information for each archive analyzed during the process.
 
@@ -135,7 +128,7 @@ image:report-jee-example-application-details.png[Application Details Report, 600
 Expand the `jee-example-app-1.0.0.ear/jee-example-services.jar` to review the estimated story points, Java incidents by package, and a count of the occurrences of the technologies found in this archive. This summary begins with a total of the story points assigned to its migration, followed by a table detailing the changes required for each file in the archive. The report contains the following columns.
 
 [cols="1,3", options="header"] 
-|===
+|====
 | Column Name
 | Description
 
@@ -152,7 +145,7 @@ Expand the `jee-example-app-1.0.0.ear/jee-example-services.jar` to review the es
 a| Level of effort required to migrate the file.
 
 _Story Points_ are covered in more detail in the {ProductDocRulesGuideURL}#Rules-Rule-Story-Points[{ProductName} Rules Development Guide].
-|===
+|====
 
 The following is an example of the archive analysis summary section of a {ProductShortName} Report. The following is an the analysis of the `WINDUP_SOURCE/test-files/jee-example-app-1.0.0.ear/jee-example-services.jar`.
 
@@ -160,7 +153,7 @@ The following is an example of the archive analysis summary section of a {Produc
 image:report-jee-example-services-jar.png[Report Archive Detail, 600]
 
 [discrete]
-====== File Analysis Pages
+==== File Analysis Pages
 
 The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 22 warnings and is assigned 16 story points. Click on the file link to see the detail. 
 
@@ -178,12 +171,12 @@ Later in the source code, warnings appear for the creation of the InitialContext
 image:report-jee-example-source-2.png[File Detail - Part 2, 600]
 
 [[review-the-report-rule-provider-executions-report]]
-===== Rule Provider Execution Report
+=== Rule Provider Execution Report
 
 As stated above,access this report by clicking on the `All Rules` link at the bottom of the index page. This report provides the list of rule providers that executed when running the {ProductShortName} migration command against the application. The report contains the following columns.
 
 [cols="1,3", options="header"] 
-|===
+|====
 | Column Name
 | Description
 
@@ -204,13 +197,13 @@ As stated above,access this report by clicking on the `All Rules` link at the bo
 
 | Failure Cause
 | The reason for an execution failure 
-|===
+|====
 
 .{ProductShortName} Report: Rule Provider Report
 image:report-jee-example-ruleprovider.png[RuleProvider Report, 600]
 
 [[review-the-report-freemarker-report]]
-===== Windup FreeMarker Functions and Directives Report
+=== Windup FreeMarker Functions and Directives Report
 
 Access this report by clicking on the `Windup FreeMarker Methods` link on the initial index page. This report lists all the registered functions and directives that were used to build the report. It is useful if you plan to build your own custom report or for debugging purposes.
 
@@ -219,7 +212,7 @@ image:report-jee-example-freemarker-and-directives.png[FreeMarker Functions and 
 
 
 [[review-the-report-send-feedback]]
-===== Send Feedback Form
+=== Send Feedback Form
 
 Access the feedback form by clicking on the `Send Feedback` link on the initial index page. The form allows you to rate the product, talk about what you like and what needs to be improved. You can also attach a file.
 
