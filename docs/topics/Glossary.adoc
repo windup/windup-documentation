@@ -1,15 +1,9 @@
-
-
-
-
-
 [[Glossary]]
-=== Glossary of Terms Used in {ProductShortName}
+= Glossary of Terms Used in {ProductShortName}
 
-==== Rules Terms
+== Rules Terms
 
 Rule:: A piece of code that performs a single unit of work during the migration process. The following is an example of an XML-based rule that finds and reports on instances of `weblogic-ejb-jar` XML files and provides a link to an article on the Red Hat Customer Portal that describes how to migrate the file.
-
 +
 [source,xml,options="nowrap"]
 ----
@@ -37,7 +31,7 @@ Rules Metadata:: Information about whether a particular ruleset applies to a giv
 
 Rules Pipeline:: A collection of rules that feed information into the knowledge graph.
 
-==== Reporting Terms
+== Reporting Terms
 
 Level of effort:: The effort required to complete the migration task. _Level of effort_ is represented as _story points_ in the {ProductShortName} reports.
 

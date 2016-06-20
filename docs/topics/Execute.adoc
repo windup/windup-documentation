@@ -1,14 +1,10 @@
-
-
- 
-
 [[Execute]]
-=== Execute {ProductName}
+= Execute {ProductName}
 
 These instructions use the xref:About-the-HOME-Variable[{ProductHomeVar}] replaceable variable to refer to the fully qualified path to your {ProductShortName} installation.
 
 [[run-windup]]
-==== Run {ProductShortName}
+== Run {ProductShortName}
 
 Use the following steps to run Windup against your application.
 
@@ -39,10 +35,10 @@ See xref:command-examples[{ProductShortName} Command Examples] below for concret
 
 
 [[command-examples]]
-==== {ProductShortName} Command Examples
+== {ProductShortName} Command Examples
 
 [discrete]
-===== Running {ProductShortName} on Source Code
+=== Running {ProductShortName} on Source Code
 
 The following command runs against the {ProductShortName} https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] test application source code. It evaluates all `org.jboss.seam` packages and creates a directory named 'seam-booking-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
 
@@ -52,7 +48,7 @@ WINDUP_HOME/bin/windup --sourceMode --input /home/username/windup-source/test-fi
 ----
 
 [discrete]
-===== Running {ProductShortName} on an Application Archive
+=== Running {ProductShortName} on an Application Archive
 
 The following command runs against the {ProductShortName} https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] test EAR archive. It evaluates all `com.acme` and `org.apache` packages and creates a directory named 'jee-example-app-1.0.0.ear-report' in the `/home/username/windup-reports/` directory to contain the reporting output.
 
@@ -62,7 +58,7 @@ WINDUP_HOME/bin/windup  --input /home/username/windup-source/test-files/jee-exam
 ----
 
 [discrete]
-===== Override {ProductShortName} Properties
+=== Override {ProductShortName} Properties
 
 To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` argument on the command line. For example, to use the _Procyon_ decompiler, use the following syntax:
 
@@ -72,7 +68,7 @@ WINDUP_HOME/bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_DIRE
 ----
 
 
-==== {ProductShortName} Help
+== {ProductShortName} Help
 
 To see the complete list of available arguments for the `windup` command, open a terminal, navigate to the WINDUP_HOME directory, and execute the following command:
 
@@ -82,7 +78,7 @@ WINDUP_HOME/bin/windup --help
 ----
 
 [[command-line-arguments]]
-==== {ProductShortName} Command-Line Arguments
+== {ProductShortName} Command-Line Arguments
 
 The following is a detailed description of the available {ProductShortName} command line arguments.
 

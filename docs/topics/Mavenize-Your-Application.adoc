@@ -1,11 +1,11 @@
 [[mavenize]]
-=== Mavenize Your Application
+= Mavenize Your Application
 
 {ProductShortName} 2.6 introduces the ability to generate an Apache Maven project structure based on the application provided. This will create a directory structure with the necessary Maven Project Object Model (POM) files that specify the appropriate dependencies.
 
 Note that this feature is not intended to create a final solution for your project. It is meant to give you a starting point and identify the necessary dependencies and APIs for your application. Your project may require further customization.
 
-==== Generate the Maven Project Structure
+== Generate the Maven Project Structure
 
 You can generate a Maven project structure for the provided application by passing in the `--mavenize` flag when executing {ProductShortName}.
 
@@ -22,7 +22,7 @@ NOTE: You can only use the `--mavenize` option when providing a compiled applica
 
 You can also use the `--mavenizeGroupId` option to specify the `<groupId>` to be used for the POM files. If unspecified, {ProductShortName} will attempt to identify an appropriate `<groupId>` for the application, or will simply default to `com.mycompany.mavenized`.
 
-==== Review the Maven Project Structure
+== Review the Maven Project Structure
 
 The `/path/to/output/mavenized/APPLICATION_NAME/` directory will contain the following items:
 
@@ -47,7 +47,7 @@ Review each of the generated files and customize as appropriate for your project
 
 [[root_pom_file]]
 [discrete]
-===== Root POM File
+=== Root POM File
 
 The root POM file for the `jee-example-app-1.0.0.ear` application can be found at `/path/to/output/mavenized/jee-example-app/pom.xml`. This file identifies the directories for all of the project modules.
 
@@ -72,7 +72,7 @@ The root POM is also configured to use the link:https://maven.repository.redhat.
 
 [[bom_file]]
 [discrete]
-===== BOM File
+=== BOM File
 
 The Bill of Materials (BOM) file is generated in the directory ending in `-bom`. For the example `jee-example-app-1.0.0.ear` application, the BOM file can be found at `/path/to/output/mavenized/jee-example-app/jee-example-app-bom/pom.xml`. The purpose of this BOM is to have the versions of third-party dependencies used by the project defined in one place. For more information on using a BOM, see the link:https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html[Introduction to the Dependency Mechanism] section of the Apache Maven documentation.
 
@@ -98,7 +98,7 @@ The following dependencies are listed in the BOM for the example `jee-example-ap
 
 [[app_pom_files]]
 [discrete]
-===== Application POM Files
+=== Application POM Files
 
 Each application module that can be mavenized has a separate directory containing its POM file. The directory name contains the name of the archive and ends in a `-jar`, `-war`, or `-ear` suffix, depending on the archive type.
 

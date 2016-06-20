@@ -1,21 +1,18 @@
-
-
-
 [[Rules-Rule-Story-Points]]
-=== Rule Story Points
+= Rule Story Points
 
-==== What are Story Points?
+== What are Story Points?
 
 _Story Points_ are an abstract metric commonly used in Scrum Agile software development methodology to estimate the _level of effort_ needed to implement a feature or change.
 
 {ProductName} uses _story points_ to express the _level of effort_ needed to migrate particular application constructs, and in a sum, the application as a whole. It does not necessarily translate to man-hours, but the value should be consistent across tasks.
 
-==== How Story Points are Estimated in Rules
+== How Story Points are Estimated in Rules
 
 Estimating the _level of effort_ for the _story points_ for a rule can be tricky. The following are the general guidelines {ProductShortName} uses when estimating the _level of effort_ required for a rule.
 
 [cols="25%,15%,60%", options="header"] 
-|===
+|====
 |Level of Effort
 |Story Points
 |Description
@@ -43,9 +40,9 @@ Estimating the _level of effort_ for the _story points_ for a rule can be tricky
 |Unknown
 |13
 |The migration solution is not known and may need a complete rewrite.
-|===
+|====
 
-==== Task Severity
+== Task Severity
 
 In addition to the _level of effort_, migration tasks can be assigned a _severity_ that indicates whether the task must be completed or can be postponed.
 

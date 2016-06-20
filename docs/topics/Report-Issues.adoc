@@ -1,29 +1,26 @@
-
-
-
 [[Report-Issues]]
-=== Report Issues with {ProductName}
+= Report Issues with {ProductName}
 
 {ProductName} uses JIRA as its issue tracking system. If you encounter an issue executing {ProductShortName}, please file a JIRA Issue.
 
-==== Create a JIRA Account
+== Create a JIRA Account
 
 If you do not yet have a JIRA account, create one using the following procedure.
 
-1. Open a browser to the following URL: https://issues.jboss.org/secure/Dashboard.jspa
-2. Click the _Sign Up_ link in the top right side of the page.
-3. Enter your email address and click the `Confirm address` button.
-4. Follow the instructions sent to your email address.
+. Open a browser to the following URL: https://issues.jboss.org/secure/Dashboard.jspa
+. Click the _Sign Up_ link in the top right side of the page.
+. Enter your email address and click the `Confirm address` button.
+. Follow the instructions sent to your email address.
 
-==== Create a JIRA Issue
+== Create a JIRA Issue
 
-1. Open a browser to the following URL: https://issues.jboss.org/secure/CreateIssue!default.jspa. 
+. Open a browser to the following URL: https://issues.jboss.org/secure/CreateIssue!default.jspa. 
 
 * If you have not yet logged in, click the _Log In_ link at the top right side of the page.
 * Enter your credentials and click the `LOGIN` button.
 * You are then redirected back to the *Create Issue* page.
 
-2. Choose the following options and click the `Next` button.
+. Choose the following options and click the `Next` button.
 
 * *Project* 
 +
@@ -33,11 +30,11 @@ For issues with Windup rules, choose: _Windup rules (WINDUPRULES)_.
 
 * *Issue Type*:  _Bug_
 
-3. On the next screen complete the following fields:
+. On the next screen complete the following fields:
 
 * *Summary*: Enter a brief description of the problem or issue.
 * *Environment*: Provide the details of your operating system, version of Java, and any other pertinent information.
 * *Description*: Provide a detailed description of the issue. Be sure to include logs and exceptions traces.
 
-4. Click the `Create` button to create the JIRA issue. 
-5. If the application or archive causing the issue does not contain sensitive information and you are comfortable sharing it with the {ProductShortName} development team, attach it to the issue by choosing `More -> Attach Files`. You are provided with an option to restrict visibility to JBoss employees.
+. Click the `Create` button to create the JIRA issue. 
+. If the application or archive causing the issue does not contain sensitive information and you are comfortable sharing it with the {ProductShortName} development team, attach it to the issue by choosing `More -> Attach Files`. You are provided with an option to restrict visibility to JBoss employees.

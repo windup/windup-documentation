@@ -1,13 +1,8 @@
-
- 
-
-:imagesdir: topics/images
-
 [[Rules-Create-Your-First-Rule]]
-=== Create Your First XML Rule
+= Create Your First XML Rule
 
 [discrete]
-==== Overview 
+== Overview 
 
 This topic guides you through the process of creating and testing your first {ProductShortName} XML-based rule.
 
@@ -24,12 +19,12 @@ Additional details about creating XML rules, with example syntax, can be found h
 As you create your first rule, refer to the http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[Rules Schema] for valid XML syntax. 
 
 [discrete]
-==== Rule Example Description
+== Rule Example Description
 
 In this example, you write a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and provide a link to the documentation that describes how to migrate the code. 
 
 [discrete]
-==== Create the Directory Structure for the Rule
+== Create the Directory Structure for the Rule
 
 . Create a directory structure to contain your first rule and the data file to use for testing. 
 +
@@ -42,7 +37,7 @@ $ mkdir -p migration-rules/data
 . This directory structure will also be used to hold the generated {ProductShortName} reports.
 
 [discrete]
-==== Create Data to Test the Rule
+== Create Data to Test the Rule
 
 . Use your favorite editor or IDE to create a `jboss-web.xml` file in the `~/migration-rules/data/` subdirectory. 
 . Copy in the following content.
@@ -61,7 +56,7 @@ $ mkdir -p migration-rules/data
 ----
 
 [discrete]
-==== Create the Rule
+== Create the Rule
 
 . Use your favorite editor or IDE to create an XML file in the `~/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
 +
@@ -183,7 +178,7 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 ----
 
 [discrete]
-==== Install the Rule
+== Install the Rule
 
 A {ProductShortName} rule is installed simply by copying the rule to the appropriate folder. 
 
@@ -195,7 +190,7 @@ For Windows: "\Documents and Settings\USER_NAME\.windup\rules\" or "\Users\USER_
 ----
 
 [discrete]
-==== Test the Rule
+== Test the Rule
 
 . Open a terminal and navigate to the {ProductHomeVar} directory.
 
@@ -215,7 +210,7 @@ Windup report created: /home/your-username/migration-rules/reports/index.html
 ----
 
 [discrete]
-==== Review the Reports
+== Review the Reports
 
 Access the report at ~/migration-rules/reports/index.html to be sure it provides the expected results. 
 
@@ -239,3 +234,4 @@ image:CreateYourFirstRule-ReportApplicationDetails.png[Overview, 500]
 image:CreateYourFirstRule-ReportSource.png[Overview, 500]
 
 . Return to the *Overview Page* and click on the *All Rule* link to view the *Rule Provider Executions* report. Find the 'JBoss5-web-class-loading' rule in the report and verify that the *Status* shows `Condition met` and the *Result* shows `success`.
+
