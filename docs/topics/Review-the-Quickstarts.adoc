@@ -20,24 +20,24 @@ If you don't have the GitHub client (`git`), download it from: <http://git-scm.c
 +
 [options="nowrap"]
 ----
-git clone https://github.com/YOUR_USER_NAME/windup-quickstarts.git
+$ git clone https://github.com/YOUR_USER_NAME/windup-quickstarts.git
 ----
 . This creates and populates a `windup-quickstarts` directory on your local file system. Navigate to the newly created directory, for example 
 +
 [options="nowrap"]
 ----
-cd windup-quickstarts/
+$ cd windup-quickstarts/
 ----
 . If you want to be able to retrieve the lates code updates, add the remote `upstream` repository so you can fetch any changes to the original forked repository.
 +
 [options="nowrap"]
 ----
-git remote add upstream https://github.com/windup/windup-quickstarts.git
+$ git remote add upstream https://github.com/windup/windup-quickstarts.git
 ----
 . To get the latest files from the `upstream` repository.
 +
 [options="nowrap"]
 ----
-git reset --hard upstream/master
+$ git reset --hard upstream/master
 ----
 
