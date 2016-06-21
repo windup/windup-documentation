@@ -22,7 +22,7 @@ The report examples shown are a result of analyzing `com.acme` and `org.apache` 
 WINDUP_HOME/bin/windup --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --target eap --packages com.acme org.apache
 ----
 
-NOTE: The incidents and estimated _Story Points_ change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
+NOTE: The incidents and estimated _story points_ change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
 
 
 == Access the Reports

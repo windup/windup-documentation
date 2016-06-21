@@ -44,7 +44,7 @@ The following command runs against the {ProductShortName} https://github.com/win
 
 [source,options="nowrap"]
 ----
-WINDUP_HOME/bin/windup --sourceMode --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --target eap --packages org.jboss.seam
+$ WINDUP_HOME/bin/windup --sourceMode --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --target eap --packages org.jboss.seam
 ----
 
 [discrete]
@@ -54,7 +54,7 @@ The following command runs against the {ProductShortName} https://github.com/win
 
 [source,options="nowrap"]
 ----
-WINDUP_HOME/bin/windup  --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --target eap --packages com.acme org.apache
+$ WINDUP_HOME/bin/windup  --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --target eap --packages com.acme org.apache
 ----
 
 [discrete]
@@ -64,9 +64,8 @@ To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` 
 
 [source,options="nowrap"]
 ----
-WINDUP_HOME/bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2
+$ WINDUP_HOME/bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2
 ----
-
 
 == {ProductShortName} Help
 
@@ -74,7 +73,7 @@ To see the complete list of available arguments for the `windup` command, open a
 
 [source, options="nowrap"]
 ----
-WINDUP_HOME/bin/windup --help
+$ WINDUP_HOME/bin/windup --help
 ----
 
 [[command-line-arguments]]
@@ -220,7 +219,7 @@ For the list of the available `--target` servers or frameworks, pass the `--list
 To update the rulesets without analyzing an application, pass only this argument on the `windup` command line as in the following example.
 [options="nowrap"]
 ----
-WINDUP_HOME/bin/windup --updateRulesets
+$ WINDUP_HOME/bin/windup --updateRulesets
 ----
 ====
 
