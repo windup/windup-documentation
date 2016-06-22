@@ -19,10 +19,9 @@ A  ruleset is a group of one or more rules that targets a specific area of migra
 **** **<when>**: The conditions to match on. For a detailed description of the elements allowed in a `<when>`, see xref:Rules-XML-Rule-When-Condition-Syntax[When Condition Syntax].
 **** **<perform>**: The action to be performed when the rule condition is matched. For a detailed description of the elements allowed in a `<perform>`, see xref:Rules-XML-Rule-Perform-Action-Syntax[Perform Action Syntax].
 **** **<otherwise>**: The action to be performed when the rule condition is not matched. This element takes the same child elements as the `<perform>` element.
-**** **<where>**: Matches on a string pattern.
+**** **<where>**: A string pattern defined as a parameter, which can be used elsewhere in the rule definition. For more information, see xref:where_syntax[Where Syntax]. 
 *** **<file-mapping/>**: Maps an extension to a graph type.
 *** **<package-mapping/>**: Maps from a package pattern (regular expression) to a organization name.
-
 
 == Predefined Rules
 
