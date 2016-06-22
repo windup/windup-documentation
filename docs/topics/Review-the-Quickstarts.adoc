@@ -7,13 +7,12 @@ You can download a ZIP file of the latest released version of the quickstarts. O
 
 == Download the Latest Quickstart ZIP
 
-To download the latest quickstart ZIP file, browse to: https://github.com/windup/windup-quickstarts/releases.
-
-Click on the most recent release to download the ZIP file to your local file system.
+. Open a browser and navigate to https://github.com/windup/windup-quickstarts/releases.
+. Click on the most recent release to download the ZIP file to your local file system.
 
 == Fork and Clone the Quickstart GitHub Project
 
-If you don't have the GitHub client (`git`), download it from: <http://git-scm.com/>
+If you do not have the GitHub client (`git`), download it from link:http://git-scm.com/[] and install it.
 
 . Click the `Fork` link on the https://github.com/windup/windup-quickstarts/[{ProductName} quickstart] GitHub page to create the project in your own Git. The forked GitHub repository URL created by the fork should look like this: https://github.com/YOUR_USER_NAME/windup-quickstarts.git
 . Clone your {ProductName} quickstart repository to your local file system:

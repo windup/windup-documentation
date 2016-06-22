@@ -9,13 +9,7 @@ include::topics/templates/document-attributes.adoc[]
 
 = {ProductName} Rules Development Guide
 
-== Introduction 
-
-This guide is for engineers, consultants, and others who plan to create custom XML-based rules for {ProductName}. 
-
-If you are new to {ProductName}, it is recommended that you start with the {ProductDocUserGuideURL}[{ProductName} User Guide]. It provides detailed information about system requirements and detailed instructions on how to install and execute {ProductShortName}. It also contains tips to {ProductDocUserGuideURL}#Optimize-Performance[optimize performance] and provides links to other sources of information about {ProductShortName}.
-
-If you would like to contribute to the {ProductName} source code base or provide Java-based rule add-ons, see the https://github.com/windup/windup/wiki[{ProductName} Wiki].
+include::topics/rules-guide-intro.adoc[leveloffset=+1]
 
 == Getting Started
 

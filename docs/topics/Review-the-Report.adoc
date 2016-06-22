@@ -3,19 +3,20 @@
 
 == About the Report
 
-When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` you specify for the `--output` argument in the command line. This output directory contains the following files and subdirectories:
+When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` that you specify using the `--output` argument in the command line. This output directory contains the following files and subdirectories:
 
 [options="nowrap"]
 ----
 OUTPUT_REPORT_DIRECTORY/
-├── index.html          (landing page for the report)
-├── EXPORT_FILE.csv     (optional export of data in CSV format)
-├── archives/           (archives extracted from the application, for information only)
-├── reports/            (generated HTML reports)
-├── stats/              (performance statistics)
+├── index.html          // Landing page for the {ProductShortName} report
+├── EXPORT_FILE.csv     // Optional export of data in CSV format (--exportCSV)
+├── archives/           // Archives extracted from the application
+├── mavenized/          // Optional Maven project structure (--mavenize)
+├── reports/            // Generated HTML reports
+├── stats/              // Performance statistics
 ----
 
-The report examples shown are a result of analyzing `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[test-files/jee-example-app-1.0.0.ear] application, which is located in the {ProductShortName} core source repository. The report was generated using the  using the following command.
+The report examples shown in the following sections are a result of analyzing the `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example application, which is located in the {ProductShortName} GitHub source repository. The report was generated using the following command.
 
 [options="nowrap"]
 ----
@@ -27,7 +28,7 @@ NOTE: The incidents and estimated _story points_ change as new rules are added t
 
 == Access the Reports
 
-Use your favorite browser to open the `index.html` file located in the output report directory. You should see something like the following:
+Use a browser to open the `index.html` file located in the output report directory. You should see something like the following:
 
 .{ProductShortName} Report: Application List
 image:report-jee-example-application-list-page.png[Report Index Page, 600]

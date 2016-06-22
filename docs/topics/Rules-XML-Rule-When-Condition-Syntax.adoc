@@ -298,7 +298,6 @@ matches="windup:matches(//foo/@class, '{javaclassname}'"
 ----
 This will match all `<foo/>` elements with a `class` attribute and store their value into `javaclassname` parameter for each iteration.
 
-
 |====
 
 ==== <xmlfile> Child Elements
