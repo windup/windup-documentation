@@ -1,45 +1,27 @@
 [[Rules-Create-Your-First-Rule]]
 = Create Your First XML Rule
 
-[discrete]
-== Overview 
+This section guides you through the process of creating and testing your first {ProductShortName} XML-based rule. This assumes that you have already installed {ProductShortName}. See the link:{ProductDocUserGuideURL}[_{ProductName} User Guide_] for installation instructions.
 
-This topic guides you through the process of creating and testing your first {ProductShortName} XML-based rule.
-
-{ProductShortName} XML-base rules use the following familiar rule pattern:
-
-    when(condition)
-        perform(action)
-    otherwise(action)
-
-Ruleset and Rule XML elements are covered in more detail here: xref:Rules-XML-Rule-Construction[XML Rule Construction].
-
-Additional details about creating XML rules, with example syntax, can be found here: xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule].
-
-As you create your first rule, refer to the http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[Rules Schema] for valid XML syntax. 
-
-[discrete]
-== Rule Example Description
-
-In this example, you write a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and provide a link to the documentation that describes how to migrate the code. 
+In this example, you will write a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and provide a link to the documentation that describes how to migrate the code. 
 
 [discrete]
 == Create the Directory Structure for the Rule
 
-. Create a directory structure to contain your first rule and the data file to use for testing. 
-+
+Create a directory structure to contain your first rule and the data file to use for testing. 
+
 [options="nowrap"]
 ----
-$ mkdir -p migration-rules/rules
-$ mkdir -p migration-rules/data
+$ mkdir -p /home/USER_NAME/migration-rules/rules
+$ mkdir -p /home/USER_NAME/migration-rules/data
 ----
 
-. This directory structure will also be used to hold the generated {ProductShortName} reports.
+This directory structure will also be used to hold the generated {ProductShortName} reports.
 
 [discrete]
 == Create Data to Test the Rule
 
-. Use your favorite editor or IDE to create a `jboss-web.xml` file in the `~/migration-rules/data/` subdirectory. 
+. Use your favorite editor or IDE to create a `jboss-web.xml` file in the `/home/USER_NAME/migration-rules/data/` subdirectory. 
 . Copy in the following content.
 +
 [source,xml,options="nowrap"]
@@ -58,7 +40,18 @@ $ mkdir -p migration-rules/data
 [discrete]
 == Create the Rule
 
-. Use your favorite editor or IDE to create an XML file in the `~/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
+{ProductShortName} XML-based rules use the following rule pattern:
+
+[source,options="nowrap"]
+----
+when(condition)
+  perform(action)
+otherwise(action)
+----
+
+Ruleset and rule XML elements are covered in more detail in the xref:Rules-XML-Rule-Construction[XML Rule Structure] section. Additional details about creating XML rules, with example syntax, can be found here: xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule].
+
+. Use your favorite editor or IDE to create an XML file in the `/home/USER_NAME/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
 +
 [source,xml,options="nowrap"]
 ----
@@ -74,8 +67,8 @@ $ mkdir -p migration-rules/data
         <dependencies>
             <!-- Ruleset Dependencies -->
         </dependencies>
-        <sourceTechnology id="SOURCE_ID" versionRange="VERSION_RANGE"/>
-        <targetTechnology id="TARGET_ID" versionRange="VERSION_RANGE"/>
+        <sourceTechnology id="SOURCE_ID" versionRange="SOURCE_VERSION_RANGE"/>
+        <targetTechnology id="TARGET_ID" versionRange="TARGET_VERSION_RANGE"/>
         <tag>Reviewed-2015-05-01</tag>
     </metadata>
     <rules>
@@ -93,23 +86,31 @@ $ mkdir -p migration-rules/data
 NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XML-based rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
 
 . Add the unique identifier for the ruleset and rule.
-* Replace the `UNIQUE_RULESET_ID` with the file name: "JBoss5-web-class-loading"
-* Replace the `UNIQUE_RULE_ID` with the ruleset ID appended with '_001': "JBoss5-web-class-loading_001"
+* Replace the `UNIQUE_RULESET_ID` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
+* Replace the `UNIQUE_RULE_ID` with an appropriate rule ID, for example, `JBoss5-web-class-loading_001`.
+
 . Add the following ruleset addon dependencies.
 +
 [source,xml,options="nowrap"]
 ----
-<addon id="org.jboss.windup.rules,windup-rules-javaee,2.6.0.Final"/>
-<addon id="org.jboss.windup.rules,windup-rules-java,2.6.0.Final"/>
+<dependencies>
+  <addon id="org.jboss.windup.rules,windup-rules-javaee,2.6.0.Final"/>
+  <addon id="org.jboss.windup.rules,windup-rules-java,2.6.0.Final"/>
+</dependencies>
 ----
+
 . Add the source and target technologies.
-* Replace the sourceTechnology `SOURCE_ID` with: "eap"
-* Replace the targetTechnology `TARGET_ID` with: "eap"
-* Replace the sourceTechnology `VERSION_RANGE` with: "(4,5)"
-* Replace the targetTechnology `VERSION_RANGE` with: "[6,)"
++
+* Replace `SOURCE_ID` with `eap`.
+* Replace `TARGET_ID` with `eap`.
+* Replace `SOURCE_VERSION_RANGE` with `(4,5)`.
+* Replace `TARGET_VERSION_RANGE` with `[6,)`.
+
 . Complete the `when` condition. 
-* Because this rule finds `jboss-web.xml` files containing the `class-loading` element, we use `xmlfile` to evaluate the files. 
-* To match on the `class-loading` element that is a child of `jboss-web`, use the xpath expression "jboss-web/class-loading".
++
+Because this rule tests for a match in an XML file, we use `xmlfile` to evaluate the files. 
++
+To match on the `class-loading` element that is a child of `jboss-web`, use the xpath expression "jboss-web/class-loading".
 +
 [source,xml,options="nowrap"]
 ----
@@ -118,8 +119,8 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 </when>
 ----
 . Complete the `perform` action for this rule. 
-* Add a classification and descriptive title.
-* Assign a level of effort of `1` to this task.
++
+* Add a classification with a descriptive title and a level of effort of `1`.
 * Provide a hint with an informative message and a link to documentation that describes the migration details. 
 +
 [source,xml,options="nowrap"]
@@ -136,8 +137,9 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
     </iteration>
 </perform>
 ----
-. The rule is now complete and should look like the following example.
-+
+
+The rule is now complete and should look like the following example.
+
 [source,xml,options="nowrap"]
 ----
 <?xml version="1.0"?>
@@ -180,39 +182,39 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 [discrete]
 == Install the Rule
 
-A {ProductShortName} rule is installed simply by copying the rule to the appropriate folder. 
+A {ProductShortName} rule is installed simply by placing the rule into the appropriate directory. See xref:add_the_rule_to_windup[Add the Rule to {ProductShortName}] for the possible locations to place a custom rule.
 
-Copy the `JBoss5-web-class-loading.windup.xml` file to your `${user.home}/.windup/rules/` directory.
-[options="nowrap"]
+Copy the `JBoss5-web-class-loading.windup.xml` file to the `WINDUP_HOME/rules` directory.
+
+[source,options="nowrap"]
 ----
-For Linux or Mac: ~/.windup/rules/
-For Windows: "\Documents and Settings\USER_NAME\.windup\rules\" or "\Users\USER_NAME\.windup\rules\"
+$ cp /home/USER_NAME/migration-rules/rules/JBoss5-web-class-loading.windup.xml WINDUP_HOME/rules/
 ----
 
 [discrete]
 == Test the Rule
 
-. Open a terminal and navigate to the {ProductHomeVar} directory.
+Open a terminal and execute the following command, passing the test file as an input argument and a directory for the output report.
 
-. Type the following command to test the rule in {ProductShortName}, passing the test file as an input argument and a directory for the output report.
-+
 [options="nowrap"]
 ----
-For Linux:    bin/windup --sourceMode --input ~/migration-rules/data --output ~/migration-rules/reports --source eap --target eap
-For Windows:  bin\windup.bat --sourceMode --input migration-rules\data --output migration-rules\reports --source eap --target eap
+$ WINDUP_HOME/bin/windup --sourceMode --input /home/USER_NAME/migration-rules/data --output /home/USER_NAME/migration-rules/reports --target eap
 ----
-. You should see this result.
-+
+
+You should see the following result.
+
 [options="nowrap"]
 ----
-Windup report created: /home/your-username/migration-rules/reports/index.html
-              Access it at this URL: file:///home/your-username/migration-rules/reports/index.html
+Windup report created: /home/USER_NAME/migration-rules/reports/index.html
+              Access it at this URL: file:///home/USER_NAME/migration-rules/reports/index.html
 ----
 
 [discrete]
 == Review the Reports
 
-Access the report at ~/migration-rules/reports/index.html to be sure it provides the expected results. 
+Access the report at `/home/USER_NAME/migration-rules/reports/index.html` to be sure it provides the expected results.
+
+For a more detailed walkthrough of reports, see the link:{ProductDocUserGuideURL}#Review-the-Report[Review the Report] section of the _{ProductShortName} User Guide_.
 
 . The *Overview* page displays the name of the application or input folder, `data` in this case, along with the associated technology and story points.
 +

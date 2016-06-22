@@ -1,26 +1,28 @@
 [[Rules-Create-a-Basic-XML-Rule]]
 = Create a Basic XML Rule
 
-You can create a {ProductName} rule using Java, XML, or Groovy. This topic describes how to create a rule using XML.
+This section describes how to create a {ProductShortName} XML rule.
 
+[discrete]
 == Prerequisites
 
-* You should have already installed {ProductShortName}. Installation instruction are provided in the {ProductDocUserGuideURL}[{ProductName} User Guide].
+* You should have already installed {ProductShortName}. Installation instruction are provided in the {ProductDocUserGuideURL}[_{ProductName} User Guide_].
 * Before you begin, you may also want to be familiar with the following documentation:
 ** link:http://windup.github.io/windup/docs/latest/javadoc/[{ProductShortName} Javadoc] 
 ** link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[{ProductShortName} XML rule schema]
 
-== File Naming Convention for XML Rules
-
-The Windup XML rule file must use the `.windup.xml` extension, otherwise the rule will not be evaluated.
+IMPORTANT: The {ProductShortName} XML rule file must use the `.windup.xml` extension, otherwise the rule will not be evaluated.
 
 == Basic XML Rule Template
 
-XML rules consist of _conditions_ and _actions_ and follow the familiar "if/then/else" construct:
+{ProductShortName} XML rules consist of _conditions_ and _actions_ and use the following rule pattern.
 
-    when(condition)
-        perform(action)
-    otherwise(action)
+[source,options="nowrap"]
+----
+when(condition)
+  perform(action)
+otherwise(action)
+----
 
 The following is the basic syntax for XML rules.
 
@@ -54,12 +56,12 @@ The following is the basic syntax for XML rules.
 
 == Create the Ruleset Metadata
 
-The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset. For more information about ruleset metadata, see xref:Rules-XML-Rule-Construction[XML Rule Construction].
+The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset. For more information about ruleset metadata, see xref:Rules-XML-Rule-Construction[XML Rule Structure].
 
-_Example:_
+.Example Rule <metadata>
 [source,xml,options="nowrap"]
 ----
-<ruleset id=”unique-ruleset-id”
+<ruleset id="unique-ruleset-id"
     xmlns="http://windup.jboss.org/schema/jboss-ruleset" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
@@ -81,13 +83,14 @@ _Example:_
         <executeBefore>BeforeRulesetId</executeBefore>
     </metadata>
     <rules>
+         ...
     </rules>
 </ruleset>
 ----
 
 == Create the Rule
 
-Individual rules are contained within a `<rules>` element and consist of one or more conditions and actions.
+Individual rules are contained within a `<rules>` element and consist of one or more conditions and actions. See the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[XML rule schema] for valid rule syntax.
 
 
 === Create the Rule When Condition

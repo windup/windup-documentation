@@ -7,19 +7,19 @@ The complete XML rule schema is located here: http://windup.jboss.org/schema/win
 
 The following sections describe the more common XML rule perform actions. 
 
-* xref:classification-syntax[Classification Syntax]
-* xref:link-syntax[Link Syntax]
-* xref:hint-syntax[Hint Syntax]
-* xref:xslt-syntax[XSLT Syntax]
-* xref:lineitem-syntax[Lineitem Syntax]
-* xref:iteration-syntax[Iteration Syntax]
+* xref:classification-syntax[<classification> Syntax]
+* xref:link-syntax[<link> Syntax]
+* xref:hint-syntax[<hint> Syntax]
+* xref:xslt-syntax[<xslt> Syntax]
+* xref:lineitem-syntax[<lineitem> Syntax]
+* xref:iteration-syntax[<teration> Syntax]
 
 [[classification-syntax]]
-== Classification Syntax
+== <classification> Syntax
 
 === Summary 
 
-The `classification` element is used to identify or classify application resources that match the rule. It provides a title that is displayed in the report, a level of effort, and it can also provide links to additional information about how to migrate this resource classification. For a better understanding of the `classification` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html[Classification] class.
+The `<classification>` element is used to identify or classify application resources that match the rule. It provides a title that is displayed in the report, a level of effort, and it can also provide links to additional information about how to migrate this resource classification. For a better understanding of the `<classification>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html[Classification] class.
 
 The following is an example of a rule that classifies a resource as a WebLogic EAR application deployment descriptor file.
 
@@ -38,7 +38,7 @@ _Example:_
 </rule>
 ----
 
-=== `classification` Element: Attributes
+=== <classification> Element Attributes
 
 [cols="1,1,3", options="header"] 
 |====
@@ -91,7 +91,7 @@ of="MySeamRule"
 ----
 |====
 
-=== `classification` Element: Child Elements
+=== <classification> Child Elements
 
 
 [cols="1,4", options="header"] 
@@ -136,11 +136,11 @@ _Example:_
 
 
 [[link-syntax]]
-== Link Syntax
+== <link> Syntax
 
 === Summary 
 
-The `link` element is used in classifications or hints to provide links to informational content. For a better understanding of the `link` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html[Link] class.
+The `<link>` element is used in classifications or hints to provide links to informational content. For a better understanding of the `<link>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html[Link] class.
 
 The following is an example of a rule that creates links to additional information.
 
@@ -164,7 +164,7 @@ _Example:_
 </rule>
 ----
 
-=== `link` Element: Attributes
+=== <link> Element Attributes
 
 [cols="1,1,3", options="header"] 
 |====
@@ -197,11 +197,11 @@ title="Migrate WebLogic Proprietary Servlet Annotations"
 |====
 
 [[hint-syntax]]
-== Hint Syntax
+== <hint> Syntax
 
 === Summary 
 
-The `hint` element is used to provide a hint or inline information about how to migrate a section of code. For a better understanding of the `hint` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Hint.html[Hint] class.
+The `<hint>` element is used to provide a hint or inline information about how to migrate a section of code. For a better understanding of the `<hint>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Hint.html[Hint] class.
 
 The following is an example of a rule that creates a hint.
 
@@ -225,7 +225,7 @@ _Example:_
 </rule>
 ----
 
-=== `hint` Element:  Attributes
+=== <hint> Element Attributes
 
 [cols="1,1,3", options="header"] 
 |====
@@ -279,7 +279,7 @@ effort="2"
 
 |====
 
-=== `hint` Element: Child Elements
+=== <hint> Child Elements
 
 [cols="1,4", options="header"] 
 |====
@@ -319,11 +319,11 @@ _Example:_
 |====
 
 [[xslt-syntax]]
-== XSLT Syntax
+== <xslt> Syntax
 
 === Summary 
 
-The `xslt` element specifies how to transform an XML file. For a better understanding of the `xslt` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/operation/xslt/XSLTTransformation.html[XSLTTransformation]  class.
+The `<xslt>` element specifies how to transform an XML file. For a better understanding of the `<xslt>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/operation/xslt/XSLTTransformation.html[XSLTTransformation]  class.
 
 The following is an example of rule that defines an XSLT action.
 
@@ -343,7 +343,7 @@ _Example:_
 </rule>
 ----
 
-=== `xslt` Element:  Attributes
+=== <xslt> Element Attributes
 
 [cols="1,1,3", options="header"] 
 |====
@@ -401,7 +401,7 @@ template="simpleXSLT.xsl"
 
 |====
 
-=== `xslt` Element: Child Elements
+=== <xslt> Child Elements
 
 
 [cols="1,4", options="header"] 
@@ -421,11 +421,11 @@ _Example:_
 |====
 
 [[lineitem-syntax]]
-==== Lineitem Syntax
+==== <lineitem> Syntax
 
 === Summary 
 
-The `lineitem` element is used to provide  general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues. This information is displayed on the project or application overview page. For a better understanding of the `lineitem` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html[Lineitem] class.
+The `<lineitem>` element is used to provide  general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues. This information is displayed on the project or application overview page. For a better understanding of the `<lineitem>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html[Lineitem] class.
 
 The following is an example of a rule that creates a lineitem message.
 
@@ -447,7 +447,7 @@ _Example:_
     </perform>
 </rule>
 ----
-=== `lineitem` Element:  Attributes
+=== <lineitem> Element Attributes
 
 [cols="1,1,3", options="header"] 
 |====
@@ -468,11 +468,11 @@ message="Proprietary code found."
 |====
     
 [[iteration-syntax]]
-== Iteration Syntax
+== <iteration> Syntax
 
 === Summary 
 
-The `iteration` element specifies to iterate over an implicit or explicit variable defined within the rule. For a better understanding of the `iteration` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/Iteration.html[Iteration] class.
+The `<iteration>` element specifies to iterate over an implicit or explicit variable defined within the rule. For a better understanding of the `<iteration>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/Iteration.html[Iteration] class.
 
 The following is an example of a rule that performs an iteration.
 
@@ -498,7 +498,7 @@ _Example:_
 </rule>
 ----
 
-=== `iteration` Element:  Attributes
+=== <iteration> Element Attributes
 
 [cols="1,1,3", options="header"] 
 |====
@@ -519,8 +519,7 @@ over="jboss-app"
 
 |====
     
-=== `iteration` Element: Child Elements
-
+=== <iteration> Child Elements
 
 [cols="1,4", options="header"] 
 |====

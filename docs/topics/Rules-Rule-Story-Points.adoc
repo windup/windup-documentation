@@ -5,11 +5,11 @@
 
 _Story Points_ are an abstract metric commonly used in Scrum Agile software development methodology to estimate the _level of effort_ needed to implement a feature or change.
 
-{ProductName} uses _story points_ to express the _level of effort_ needed to migrate particular application constructs, and in a sum, the application as a whole. It does not necessarily translate to man-hours, but the value should be consistent across tasks.
+{ProductName} uses story points to express the level of effort needed to migrate particular application constructs, and in a sum, the application as a whole. It does not necessarily translate to man-hours, but the value should be consistent across tasks.
 
 == How Story Points are Estimated in Rules
 
-Estimating the _level of effort_ for the _story points_ for a rule can be tricky. The following are the general guidelines {ProductShortName} uses when estimating the _level of effort_ required for a rule.
+Estimating the level of effort for the story points for a rule can be tricky. The following are the general guidelines {ProductShortName} uses when estimating the level of effort required for a rule.
 
 [cols="25%,15%,60%", options="header"] 
 |====
@@ -44,7 +44,7 @@ Estimating the _level of effort_ for the _story points_ for a rule can be tricky
 
 == Task Severity
 
-In addition to the _level of effort_, migration tasks can be assigned a _severity_ that indicates whether the task must be completed or can be postponed.
+In addition to the level of effort, migration tasks can be assigned a _severity_ that indicates whether the task must be completed or can be postponed.
 
 Mandatory:: The task must be completed for a successful migration. If the changes are not made, the resulting application will not build or run successfully. Examples include replacement of proprietary APIs that are not supported in the target platform. 
 Optional:: If the migration task is not completed, the application should work, but the results may not be the optimal. If the change is not made at the time of migration, it is recommended to put it on the schedule soon after migration is completed. An example of this would be the upgrade of EJB 2.x code to EJB 3.

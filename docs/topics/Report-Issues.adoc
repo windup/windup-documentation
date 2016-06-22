@@ -3,22 +3,13 @@
 
 {ProductName} uses JIRA as its issue tracking system. If you encounter an issue executing {ProductShortName}, please file a JIRA Issue.
 
-== Create a JIRA Account
-
-If you do not yet have a JIRA account, create one using the following procedure.
-
-. Open a browser to the following URL: https://issues.jboss.org/secure/Dashboard.jspa
-. Click the _Sign Up_ link in the top right side of the page.
-. Enter your email address and click the `Confirm address` button.
-. Follow the instructions sent to your email address.
+NOTE: If you do not have one already, you must sign up for a JIRA account in order to create a JIRA issue.
 
 == Create a JIRA Issue
 
-. Open a browser to the following URL: https://issues.jboss.org/secure/CreateIssue!default.jspa. 
-
-* If you have not yet logged in, click the _Log In_ link at the top right side of the page.
-* Enter your credentials and click the `LOGIN` button.
-* You are then redirected back to the *Create Issue* page.
+. Open a browser and navigate to https://issues.jboss.org/secure/CreateIssue!default.jspa. 
++
+If you have not yet logged in, click the *Log In* link at the top right side of the page and enter your credentials.
 
 . Choose the following options and click the `Next` button.
 
@@ -35,6 +26,6 @@ For issues with Windup rules, choose: _Windup rules (WINDUPRULES)_.
 * *Summary*: Enter a brief description of the problem or issue.
 * *Environment*: Provide the details of your operating system, version of Java, and any other pertinent information.
 * *Description*: Provide a detailed description of the issue. Be sure to include logs and exceptions traces.
+* *Attachment*: If the application or archive causing the issue does not contain sensitive information and you are comfortable sharing it with the {ProductShortName} development team, attach it to the issue using the `Select Files` button.
 
 . Click the `Create` button to create the JIRA issue. 
-. If the application or archive causing the issue does not contain sensitive information and you are comfortable sharing it with the {ProductShortName} development team, attach it to the issue by choosing `More -> Attach Files`. You are provided with an option to restrict visibility to JBoss employees.

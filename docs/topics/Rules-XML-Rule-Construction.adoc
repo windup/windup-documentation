@@ -1,7 +1,7 @@
 [[Rules-XML-Rule-Construction]]
-= XML Rule Construction
+= XML Rule Structure
 
-This section describes the basic construction of XML rules. All XML rules are defined as elements within rulesets. 
+This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets. 
 
 == Rulesets
 
@@ -13,7 +13,7 @@ A  ruleset is a group of one or more rules that targets a specific area of migra
 *** **<dependencies/>**: The rule add-ons required by this ruleset.
 *** ** <sourceTechnology/>**: The source technology.
 *** ** <targetTechnology/>**: The target technology.
-*** ** <overrideRules>true|false</overrideRules>**: Indicates that rules in this ruleset override rules with the same ID from the core ruleset distributed with Windup. Both the ruleset id and the rule id must match a rule within the core ruleset or the rule will be ignored. This is "false" by default.
+*** ** <overrideRules>true|false</overrideRules>**: Indicates that rules in this ruleset override rules with the same ID from the core ruleset distributed with Windup. Both the ruleset id and the rule id must match a rule within the core ruleset or the rule will be ignored. This is `false` by default.
 ** **<rules>**: Contains the individual rules.
 *** **<rule id="UNIQUE_RULE_ID">**: Defines the rule and gives it a unique ID. It is recommended to include the ruleset ID as part of the rule ID, for example, `UNIQUE_RULESET_ID_UNIQUE_RULE_ID`. One or more rules can be defined for a ruleset.
 **** **<when>**: The conditions to match on. For a detailed description of the elements allowed in a `<when>`, see xref:Rules-XML-Rule-When-Condition-Syntax[When Condition Syntax].
@@ -25,46 +25,44 @@ A  ruleset is a group of one or more rules that targets a specific area of migra
 
 == Predefined Rules
 
-{ProductShortName} provides some predefined rules for common migration requirements, for example, mapping files extensions to a particular file type. The following is an example of the predefined "XmlFileMappings" rule.
+{ProductShortName} provides predefined rules for common migration requirements. These core {ProductShortName} rules are located in the {ProductShortName} installation at `WINDUP_HOME/rules/migration-core/`.
+
+The following is an example of a core {ProductShortName} rule that matches on a proprietary utility class.
 
 [source,xml,options="nowrap"]
 ----
 <?xml version="1.0"?>
-    <ruleset id="XmlFileMappings"
-        xmlns="http://windup.jboss.org/schema/jboss-ruleset" 
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
-        <metadata>
-            <description>
-                This ruleset maps files to the Model.
-            </description>
-            <dependencies>
-                <addon id="org.jboss.windup.rules.files.FileMappingHandler"/>
-            </dependencies>
-            <sourceTechnology id="eap" versionRange="(4,5)"/>
-            <targetTechnology id="eap" versionRange="[6,)"/>
-            <tag>reviewed-2015-05-27</tag>
-        </metadata>
-        <rules>
-            <file-mapping from=".*\.tld$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bpel$" to="XmlFileModel"/>
-            <file-mapping from=".*\.wsdl$" to="XmlFileModel"/>
-            <file-mapping from=".*\.wsdd$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bpelex$" to="XmlFileModel"/>
-            <file-mapping from=".*\.mon$" to="XmlFileModel"/>
-            <file-mapping from=".*\.xmi$" to="XmlFileModel"/>
-            <file-mapping from=".*\.export$" to="XmlFileModel"/>
-            <file-mapping from=".*\.import$" to="XmlFileModel"/>
-            <file-mapping from=".*\.bcfg$" to="XmlFileModel"/>
-            <file-mapping from=".*\.map$" to="XmlFileModel"/>
-            <file-mapping from=".*\.brg$" to="XmlFileModel"/>
-            <file-mapping from=".*\.brgt$" to="XmlFileModel"/>
-            <file-mapping from=".*\.ruleset$" to="XmlFileModel"/>
-            <file-mapping from=".*\.module$" to="XmlFileModel"/>
-            <file-mapping from=".*\.modulex$" to="XmlFileModel"/>
-            <file-mapping from=".*\.composite$" to="XmlFileModel"/>
-            <file-mapping from=".*\.requirements$" to="XmlFileModel"/>
-          </rules>
-        </ruleset>
-----
+<ruleset xmlns="http://windup.jboss.org/schema/jboss-ruleset" id="weblogic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
 
+    <metadata>
+        <description>
+            This ruleset provides analysis of WebLogic proprietary classes and constructs that may require individual attention when migrating to JBoss EAP 6+.
+        </description>
+        <dependencies>
+            <addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final" />
+            <addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final" />
+        </dependencies>
+        <sourceTechnology id="weblogic" />
+        <targetTechnology id="eap" versionRange="[6,)" />
+        <tag>reviewed-2015-06-02</tag>
+        <tag>weblogic</tag>
+    </metadata>
+    <rules>
+        ...
+        <rule id="weblogic-02000">
+            <when>
+                <javaclass references="weblogic.utils.StringUtils.{*}" />
+            </when>
+            <perform>
+                <hint title="WebLogic StringUtils usage" effort="1" severity="mandatory">
+                    <message>Replace with the `StringUtils` class from Apache Commons.</message>
+                    <link href="https://commons.apache.org/proper/commons-lang/" title="Apache Commons Lang" />
+                    <tag>weblogic</tag>
+                </hint>
+            </perform>
+        </rule>
+        ...
+    </rules>
+</ruleset>
+----

@@ -5,11 +5,14 @@
 
 {ProductShortName} builds a data model based on the rule execution results and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.
 
-{ProductShortName} rules use the following familiar rule pattern:
+{ProductShortName} rules use the following rule pattern:
 
-    when(condition)
-        perform(action)
-    otherwise(action)
+[source,options="nowrap"]
+----
+when(condition)
+  perform(action)
+otherwise(action)
+----
 
 {ProductShortName} provides a comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, {ProductShortName} allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset. If you plan to write your own custom rules, see the {ProductDocRulesGuideURL}[
 {ProductName} Rules Development Guide] for detailed instructions.

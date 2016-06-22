@@ -1,8 +1,6 @@
 [[Execute]]
 = Execute {ProductName}
 
-These instructions use the xref:About-the-HOME-Variable[{ProductHomeVar}] replaceable variable to refer to the fully qualified path to your {ProductShortName} installation.
-
 [[run-windup]]
 == Run {ProductShortName}
 
@@ -117,7 +115,7 @@ For the list of the available tags, pass the `--listTags` argument to the `windu
 
 --explodedApp:: If used, indicates the directory contains source files for a single application or directory entries for multiple applications. See the xref:input-file-argument-description-table[Input File Argument Description Table] for details.
 
---exportCSV:: Export the report data to a CSV formatted file on your local file system. {ProductShortName} creates the file in the directory specified by the `--output` argument. The CSV file can be imported into your favorite spreadsheet program for data manipulation and analysis. For details, see xref:Export-the-Report-for-Use-by-Spreadsheet-Programs[Export the Report for Use by Spreadsheet Programs].
+--exportCSV:: Export the report data to a CSV file on your local file system. {ProductShortName} creates the file in the directory specified by the `--output` argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis. For details, see xref:Export-the-Report-for-Use-by-Spreadsheet-Programs[Export the Report in CSV Format].
 
 --help:: Display the {ProductShortName} help message.
 
