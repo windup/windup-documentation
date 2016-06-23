@@ -1,20 +1,5 @@
 [[Review-the-Report]]
-= Review the Report
-
-== About the Report
-
-When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` that you specify using the `--output` argument in the command line. This output directory contains the following files and subdirectories:
-
-[options="nowrap"]
-----
-OUTPUT_REPORT_DIRECTORY/
-├── index.html          // Landing page for the {ProductShortName} report
-├── EXPORT_FILE.csv     // Optional export of data in CSV format (--exportCSV)
-├── archives/           // Archives extracted from the application
-├── mavenized/          // Optional Maven project structure (--mavenize)
-├── reports/            // Generated HTML reports
-├── stats/              // Performance statistics
-----
+= Review the Reports
 
 The report examples shown in the following sections are a result of analyzing the `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example application, which is located in the {ProductShortName} GitHub source repository. The report was generated using the following command.
 
@@ -23,47 +8,60 @@ The report examples shown in the following sections are a result of analyzing th
 WINDUP_HOME/bin/windup --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --target eap --packages com.acme org.apache
 ----
 
-NOTE: The incidents and estimated _story points_ change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
+Use a browser to open the `index.html` file located in the output report directory. This opens a landing page that shows the list of applications that were processed.  Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.
 
+.Application List
+image::report-jee-example-application-list-page.png[Application List]
 
-== Access the Reports
+NOTE: The incidents and estimated story points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
 
-Use a browser to open the `index.html` file located in the output report directory. You should see something like the following:
+Click on the name of the application, *jee-example-app-1.0.0.ear*, to view the xref:review-the-report-application-report[application report]. The following table lists all of the reports that can be access from this main {ProductShortName} landing page.
 
-.{ProductShortName} Report: Application List
-image:report-jee-example-application-list-page.png[Report Index Page, 600]
-
-This page lists the applications that were processed along with the technologies that were encountered. It also provides links to the following additional reports.
-
-[cols="1,3", options="header"] 
+[cols="30%,70%", options="header"] 
 |====
 | Report
 | How to Access the Report
 
 | xref:review-the-report-application-report[Application]
-| Click on the link under the `Name` column to view this report.
+| Click on the name of the application.
+
+| xref:shared_archives[Archives shared by multiple applications]
+| Click on the *Archives shared by multiple applications* link. Note that this report is only shown when there are shared archives across multiple applications.
 
 | xref:review-the-report-rule-provider-executions-report[Rule Provider Executions]
-| Click on the `All Rules` link at the bottom of the index page. 
+| Click on the *Executed rules overview* link at the bottom of the page. 
 
 | xref:review-the-report-freemarker-report[Windup Freemarker Functions and Directives]
-| Click on the `Windup FreeMarker Methods` link at the bottom of the index page. 
+| Click on the *Windup FreeMarker methods* link at the bottom of the page. 
 
 | xref:review-the-report-send-feedback[Send Feedback Form]
-| Click on the `Send Feedback` link at the bottom of the index page to open a form that allows you to provide feedback to the {ProductShortName} team. .
+| Click on the *Send feedback* link at the bottom of the page to open a form that allows you to submit feedback to the {ProductShortName} team.
 |====
 
-Click on the *jee-example-app-1.0.0.ear* link under the *Name* column to view the application report.
+Note that if an application shares archives with other applications that were analyzed, you will see a breakdown of how many story points are from shared archives and which are unique to this application.
+
+.Shared Archives
+image::shared-archives-breakdown.png[Shared Archives]
+
+Information about the archives that are shared among applications can be found in the xref:shared_archives[Archives Shared by Multiple Applications] report.
 
 [[review-the-report-application-report]]
-=== Application Report
+== Application Report
 
-[discrete]
-==== Report Index
+=== Report Index
 
-The first section of the application report page summarizes the entire application migration effort. It summarizes the mandatory, optional, and potential issues that were found. It also breaks the findings down by type and by whether the suggested updates are informational, trivial, complex, need redesign, or require architectural changes. It also summarizes the issues by package. 
+Access this report from the report landing page by clicking on the application name in the *Application List*.
 
-This is followed by a list of reports that contain additional details about the migration of this application. 
+The application report page gives an overview of the entire application migration effort. It summarizes:
+
+* The incidents and story points by category (mandatory, optional, or potential issues)
+* The incidents and story points by level of effort of the suggested changes
+* The incidents by package
+
+.Report Index
+image::report-jee-example-application-report-index-page.png[Report Index]
+
+At the bottom of the page is a list of reports that contain additional details about the migration of this application. Note that only those reports that are applicable to the current application will be available.
 
 [cols="30%,70%", options="header"] 
 |====
@@ -113,20 +111,17 @@ This is followed by a list of reports that contain additional details about the 
 | Describes the current version of Windup and provides helpful links for further assistance. 
 |====
 
-.{ProductShortName} Report - Report Index
-image:report-jee-example-application-report-index-page.png[Report Overview and Application Messages, 600]
 
-Click on the *Application Details* link under *Additional Reports* to see the the _Application Details Report_. 
+=== Application Details Report
 
-[discrete]
-==== Application Details Report
+Access this report from the report index by clicking the *Application Details* link.
 
-The report lists the estimated story points, the Java incidents by package, and a count of the occurrences of the technologies found in the application. Next is a display of application messages generated during the migration process. Finally, there is a breakdown of this information for each archive analyzed during the process.
+The report lists the story points, the Java incidents by package, and a count of the occurrences of the technologies found in the application. Next is a display of application messages generated during the migration process. Finally, there is a breakdown of this information for each archive analyzed during the process.
 
-.{ProductShortName} Report - Application Details Report
-image:report-jee-example-application-details.png[Application Details Report, 600]
+.Application Details Report
+image::report-jee-example-application-details.png[Application Details Report]
 
-Expand the `jee-example-app-1.0.0.ear/jee-example-services.jar` to review the estimated story points, Java incidents by package, and a count of the occurrences of the technologies found in this archive. This summary begins with a total of the story points assigned to its migration, followed by a table detailing the changes required for each file in the archive. The report contains the following columns.
+Expand the `jee-example-app-1.0.0.ear/jee-example-services.jar` to review the story points, Java incidents by package, and a count of the occurrences of the technologies found in this archive. This summary begins with a total of the story points assigned to its migration, followed by a table detailing the changes required for each file in the archive. The report contains the following columns.
 
 [cols="1,3", options="header"] 
 |====
@@ -142,19 +137,21 @@ Expand the `jee-example-app-1.0.0.ear/jee-example-services.jar` to review the es
 | Issues
 | Warnings about areas of code that need review or changes.
 
-| Estimated Story Points
+| Story Points
 a| Level of effort required to migrate the file.
 
 _Story Points_ are covered in more detail in the {ProductDocRulesGuideURL}#Rules-Rule-Story-Points[{ProductName} Rules Development Guide].
 |====
 
-The following is an example of the archive analysis summary section of a {ProductShortName} Report. The following is an the analysis of the `WINDUP_SOURCE/test-files/jee-example-app-1.0.0.ear/jee-example-services.jar`.
+Note that if an archive is duplicated several times in an application, it will be listed just once in the report and will be tagged with `[Included Multiple Times]`.
 
-.{ProductShortName} Report: Archive Detail
-image:report-jee-example-services-jar.png[Report Archive Detail, 600]
+.Duplicate Archive in an Application
+image::duplicate-archive-app-report.png[Duplicate Archive]
 
-[discrete]
-==== File Analysis Pages
+
+The story points for archives that are duplicated within an application will be counted only once in the total story point count for that application.
+
+=== Source Report
 
 The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 22 warnings and is assigned 16 story points. Click on the file link to see the detail. 
 
@@ -163,61 +160,48 @@ The analysis of the `jee-example-services.jar` lists the files in the JAR and th
 
 In this example, warnings appear at various import statements, declarations, and method calls. Each warning describes the issue and the action that should be taken.
 
-.{ProductShortName} Report: Source Report - Part 1
-image:report-jee-example-source-1.png[File Detail - Part 1, 600]
+.Source Report
+image::report-jee-example-source-1.png[Source Report]
 
-Later in the source code, warnings appear for the creation of the InitialContext and for JNDI lookup names.
+// TODO: Consider eventually calling this "Cross-application Reports" and include Dependencies and Migration Issues, if appropriate
 
-.{ProductShortName} Report: Source Report - Part 2
-image:report-jee-example-source-2.png[File Detail - Part 2, 600]
+[[shared_archives]]
+== Archives Shared by Multiple Applications
+
+Access this report from the report landing page by clicking the *Archives shared by multiple applications* link. Note that this report will only be shown if there are applicable shared archives.
+
+.Archives Shared by Multiple Applications
+image::shared-archives-app-list.png[Archives Shared by Multiple Applications]
+
+This report allows you to view the detailed information for all archives that are shared across multiple applications.
 
 [[review-the-report-rule-provider-executions-report]]
-=== Rule Provider Execution Report
+== Rule Provider Execution Report
 
-As stated above,access this report by clicking on the `All Rules` link at the bottom of the index page. This report provides the list of rule providers that executed when running the {ProductShortName} migration command against the application. The report contains the following columns.
+Access this report from the report landing page by clicking the *All Rules* link.
 
-[cols="1,3", options="header"] 
-|====
-| Column Name
-| Description
+This report provides the list of rules that executed when running the {ProductShortName} migration command against the application. 
 
-| Rule-ID
-| The Rule ID
-
-| Rule
-| The Java code for the rule
-
-| Statistics
-| Statistics behind the graph
-
-| Status?
-| Whether the rule executed or not
-
-| Result?
-| Whether the execution was successful or not
-
-| Failure Cause
-| The reason for an execution failure 
-|====
-
-.{ProductShortName} Report: Rule Provider Report
-image:report-jee-example-ruleprovider.png[RuleProvider Report, 600]
+.Rule Provider Report
+image::report-jee-example-ruleprovider.png[Rule Provider Report]
 
 [[review-the-report-freemarker-report]]
-=== Windup FreeMarker Functions and Directives Report
+== Windup FreeMarker Functions and Directives Report
 
-Access this report by clicking on the `Windup FreeMarker Methods` link on the initial index page. This report lists all the registered functions and directives that were used to build the report. It is useful if you plan to build your own custom report or for debugging purposes.
+Access this report from the report landing page by clicking the *Windup FreeMarker methods* link.
 
-.{ProductShortName} Report: FreeMarker Functions and Directives
-image:report-jee-example-freemarker-and-directives.png[FreeMarker Functions and Directives, 600]
+This report lists all the registered functions and directives that were used to build the report. It is useful if you plan to build your own custom report or for debugging purposes.
 
+.FreeMarker Functions and Directives
+image::report-jee-example-freemarker-and-directives.png[FreeMarker Functions and Directives]
 
 [[review-the-report-send-feedback]]
-=== Send Feedback Form
+== Send Feedback Form
 
-Access the feedback form by clicking on the `Send Feedback` link on the initial index page. The form allows you to rate the product, talk about what you like and what needs to be improved. You can also attach a file.
+Access this feedback form from the report landing page by clicking the *Send feedback* link.
+
+This form allows you to rate the product, talk about what you like and suggestions for improvements.
 
 .Send Feedback Form
-image:report-jee-example-send-feedback.png[Form to send feedback, 600]
-
+image::report-jee-example-send-feedback.png[Feedback Form, 500]
 
