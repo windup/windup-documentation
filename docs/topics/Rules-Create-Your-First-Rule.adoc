@@ -110,7 +110,7 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 +
 Because this rule tests for a match in an XML file, we use `xmlfile` to evaluate the files. 
 +
-To match on the `class-loading` element that is a child of `jboss-web`, use the xpath expression "jboss-web/class-loading".
+To match on the `class-loading` element that is a child of `jboss-web`, use the xpath expression `jboss-web/class-loading`.
 +
 [source,xml,options="nowrap"]
 ----
@@ -159,7 +159,7 @@ The rule is now complete and should look like the following example.
         <targetTechnology id="eap" versionRange="[6,)"/>
     </metadata>
     <rules>
-        <rule id="JBoss5-web-class-loading_1000">
+        <rule id="JBoss5-web-class-loading_001">
             <when>
                 <xmlfile matches="jboss-web/class-loading" />
             </when>
@@ -212,28 +212,26 @@ Windup report created: /home/USER_NAME/migration-rules/reports/index.html
 [discrete]
 == Review the Reports
 
-Access the report at `/home/USER_NAME/migration-rules/reports/index.html` to be sure it provides the expected results.
+Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#Review-the-Report[Review the Reports] section of the _{ProductShortName} User Guide_.
 
-For a more detailed walkthrough of reports, see the link:{ProductDocUserGuideURL}#Review-the-Report[Review the Report] section of the _{ProductShortName} User Guide_.
-
-. The *Overview* page displays the name of the application or input folder, `data` in this case, along with the associated technology and story points.
+. Open `/home/USER_NAME/migration-rules/reports/index.html` in a web browser.
+. Verify that the rule executed.
+.. From the main landing page, click the `Executed rules overview` link to open the Rule Provider Executions report.
 +
-.Application List
-image:CreateYourFirstRule-ReportApplicationList.png[Overview, 500]
-
-. Click on the link under the *Name* column to see the *Report Index* page and review the migration summary. 
+.. Find the `JBoss5-web-class-loading_001` rule and verify that its *Status?* is `Condition met` and its *Result?* is `success`.
 +
-.ReportIndex
-image:CreateYourFirstRule-ReportApplication.png[Overview, 500]
-
-. Click on the *Application Details* link to view the application report. This report displays a link for the name of the file, `jboss-web.xml`, along with warnings and a story point of `1`.
+.Test Rule Execution
+image::executed-test-rule.png[Test Rule Execution]
+. Verify that the rule matched on the test data.
+.. From the main landing page, click on the name of the application or input folder, which is `data` in this example.
+.. Click on the *Application Details* report link.
+.. Click on the *jboss-web.xml* link to view the *Source Report*.
 +
-.Application Details Report
-image:CreateYourFirstRule-ReportApplicationDetails.png[Overview, 500]
-
-. Drill down into *Source Report* file detail by clicking on the *jboss-web.xml* file link. This report provides information about the file and summarizes the story points. It also highlights the `<class-loading>` line in the `jboss-web.xml` file, provides the message "The class-loading element is no longer valid in the jboss-web.xml file.", and provides a link to the https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6[Create or Modify Files That Control Class Loading in JBoss EAP 6] topic in the JBoss EAP 6 Migration Guide. Click on the link to be sure the link is valid.
+You can see that the `<class-loading>` line is highlighted, and the hint from the custom rule is shown inline.
 +
-image:CreateYourFirstRule-ReportSource.png[Overview, 500]
-
-. Return to the *Overview Page* and click on the *All Rule* link to view the *Rule Provider Executions* report. Find the 'JBoss5-web-class-loading' rule in the report and verify that the *Status* shows `Condition met` and the *Result* shows `success`.
+.Rule Match
+image::test-rule-details.png[Rule Match]
++
+// TODO: Consider updating with test data/rule combo that won't match on any of the other existing rules.
+The top of the file lists the classifications for matching rules. You can use the link icon to view the details for that rule. Notice that in this example, the `jboss-web.xml` file matched on another rule (`JBoss web application descriptor (jboss-web.xml)`) that produced `1` story point. This, combined with the `1` story point from our custom rule, brings the total story points for this file to `2`.
 
