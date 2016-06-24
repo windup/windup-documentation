@@ -12,7 +12,7 @@ The following sections describe the more common XML rule perform actions.
 * xref:hint-syntax[<hint> Syntax]
 * xref:xslt-syntax[<xslt> Syntax]
 * xref:lineitem-syntax[<lineitem> Syntax]
-* xref:iteration-syntax[<teration> Syntax]
+* xref:iteration-syntax[<iteration> Syntax]
 
 [[classification-syntax]]
 == <classification> Syntax
@@ -297,7 +297,7 @@ _Example:_
 ----
 
 |<link>
-a|Identify or classify links to informational content. See the section on xref:link-syntax[Link Syntax] for details.
+a|Identify or classify links to informational content. See the section on xref:link-syntax[<link> Syntax] for details.
 
 _Example:_
 
