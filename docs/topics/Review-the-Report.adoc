@@ -8,7 +8,7 @@ The report examples shown in the following sections are a result of analyzing th
 WINDUP_HOME/bin/windup --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --target eap --packages com.acme org.apache
 ----
 
-Use a browser to open the `index.html` file located in the output report directory. This opens a landing page that shows the list of applications that were processed.  Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.
+Use a browser to open the `index.html` file located in the report output directory. This opens a landing page that lists the applications that were processed.  Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.
 
 .Application List
 image::report-jee-example-application-list-page.png[Application List]
@@ -26,7 +26,7 @@ Click on the name of the application, *jee-example-app-1.0.0.ear*, to view the x
 | Click on the name of the application.
 
 | xref:shared_archives[Archives shared by multiple applications]
-| Click on the *Archives shared by multiple applications* link. Note that this report is only shown when there are shared archives across multiple applications.
+| Click on the *Archives shared by multiple applications* link. Note that this link is only available when there are shared archives across multiple applications.
 
 | xref:review-the-report-rule-provider-executions-report[Rule Provider Executions]
 | Click on the *Executed rules overview* link at the bottom of the page. 
@@ -38,12 +38,12 @@ Click on the name of the application, *jee-example-app-1.0.0.ear*, to view the x
 | Click on the *Send feedback* link at the bottom of the page to open a form that allows you to submit feedback to the {ProductShortName} team.
 |====
 
-Note that if an application shares archives with other applications that were analyzed, you will see a breakdown of how many story points are from shared archives and which are unique to this application.
+Note that if an application shares archives with other analyzed applications, you will see a breakdown of how many story points are from shared archives and how many are unique to this application.
 
 .Shared Archives
 image::shared-archives-breakdown.png[Shared Archives]
 
-Information about the archives that are shared among applications can be found in the xref:shared_archives[Archives Shared by Multiple Applications] report.
+Information about the archives that are shared among applications can be found in the xref:shared_archives[Archives Shared by Multiple Applications] reports.
 
 [[review-the-report-application-report]]
 == Application Report
@@ -168,12 +168,12 @@ image::report-jee-example-source-1.png[Source Report]
 [[shared_archives]]
 == Archives Shared by Multiple Applications
 
-Access this report from the report landing page by clicking the *Archives shared by multiple applications* link. Note that this report will only be shown if there are applicable shared archives.
+Access these reports from the report landing page by clicking the *Archives shared by multiple applications* link. Note that this link is only available if there are applicable shared archives.
 
 .Archives Shared by Multiple Applications
 image::shared-archives-app-list.png[Archives Shared by Multiple Applications]
 
-This report allows you to view the detailed information for all archives that are shared across multiple applications.
+This allows you to view the detailed reports for all archives that are shared across multiple applications.
 
 [[review-the-report-rule-provider-executions-report]]
 == Rule Provider Execution Report
