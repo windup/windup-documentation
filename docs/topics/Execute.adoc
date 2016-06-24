@@ -86,7 +86,7 @@ To run the Windup command without prompting, for example when executing from a s
 See the description for each argument for more details.
 ====
 
---additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2:: Use this option to add additional JAR files or directories to the classpath so they are available for decompilation or other analysis. For example, `--additionalClassPath MyClasses.jar com/mycompany/`.
+--additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2:: Use this option to add additional JAR files or directories to the class path so they are available for decompilation or other analysis. For example, `--additionalClassPath MyClasses.jar com/mycompany/`.
 
 --addonDir DIRECTORY:: Add the specified directory as a custom add-on repository.
 
@@ -96,7 +96,7 @@ See the description for each argument for more details.
 
 --discoverPackages:: Lists all available packages in the input application or source.
 
---enableClassNotFoundAnalysis:: Enables analysis of Java files that are not available on the Classpath. This should be left off if some classes will be unavailable at analysis time.
+--enableClassNotFoundAnalysis:: Enables analysis of Java files that are not available on the class path. This should be left off if some classes will be unavailable at analysis time.
 
 --enableCompatibleFilesReport:: Enables generation of 'Compatible Files' report. Due to processing all files without found issues, this report may take a long time for large applications.
 
