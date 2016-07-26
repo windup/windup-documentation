@@ -94,8 +94,8 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 [source,xml,options="nowrap"]
 ----
 <dependencies>
-  <addon id="org.jboss.windup.rules,windup-rules-javaee,2.6.0.Final"/>
-  <addon id="org.jboss.windup.rules,windup-rules-java,2.6.0.Final"/>
+  <addon id="org.jboss.windup.rules,windup-rules-javaee,2.7.0.Final"/>
+  <addon id="org.jboss.windup.rules,windup-rules-java,2.7.0.Final"/>
 </dependencies>
 ----
 
@@ -152,8 +152,8 @@ The rule is now complete and should look like the following example.
             This ruleset looks for the class-loading element in a jboss-web.xml file, which is no longer valid in JBoss EAP 6
         </description>
          <dependencies>
-            <addon id="org.jboss.windup.rules,windup-rules-javaee,2.6.0.Final"/>
-            <addon id="org.jboss.windup.rules,windup-rules-java,2.6.0.Final"/>
+            <addon id="org.jboss.windup.rules,windup-rules-javaee,2.7.0.Final"/>
+            <addon id="org.jboss.windup.rules,windup-rules-java,2.7.0.Final"/>
         </dependencies>
         <sourceTechnology id="eap" versionRange="(4,5)"/>
         <targetTechnology id="eap" versionRange="[6,)"/>
