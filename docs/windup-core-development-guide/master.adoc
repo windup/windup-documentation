@@ -12,13 +12,13 @@ include::topics/templates/document-attributes.adoc[]
 
 == Introduction
 
-This guide is for developers who plan to contribute to the {ProductName} source code base or provide Java-based rule add-ons. 
+This guide is for developers who plan to contribute to the {ProductName} source code base or provide Java-based rule add-ons.
 
 If you are new to {ProductShortName}, it is recommended that you start with the {ProductDocUserGuideURL}[{ProductName} User Guide]. It provides detailed information about system requirements and detailed instructions on how to install and execute {ProductShortName}. It also contains tips to optimize performance and provides links to other sources of information about {ProductShortName}.
 
 If you would like to create custom XML-based rules for {ProductShortName}, see the {ProductDocRulesGuideURL}[{ProductName} Rules Development Guide].
 
-== Get Started 
+== Get Started
 
 After you configure Maven, you are ready to create, install, and test your first {ProductShortName} Java-based rule add-on.
 
@@ -87,7 +87,7 @@ include::topics/Dev-Submit-Code-Updates-to-the-Project.adoc[leveloffset=+0]
 
 // include::topics/Important-Links.adoc[leveloffset=+0]
 
-// include::topics/Known-Issues.adoc[leveloffset=+0] 
+// include::topics/Known-Issues.adoc[leveloffset=+0]
 
 // include::topics/Report-Issues.adoc[leveloffset=+0]
 
@@ -95,10 +95,6 @@ include::topics/Dev-Submit-Code-Updates-to-the-Project.adoc[leveloffset=+0]
 
 // include::topics/Glossary.adoc[leveloffset=+0]
 
-include::topics/About-the-HOME-Variable.adoc[leveloffset=+0]
+include::topics/About-the-HOME-Variable.adoc[leveloffset=+2]
 
-include::topics/Dev-Project-Information.adoc[leveloffset=+0]
-
-
-
-
+include::topics/Dev-Project-Information.adoc[leveloffset=+2]

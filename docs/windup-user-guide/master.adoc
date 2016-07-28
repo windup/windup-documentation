@@ -11,7 +11,7 @@ include::topics/templates/document-attributes.adoc[]
 
 == Introduction
 
-This guide is for engineers, consultants, and others who plan to use {ProductName} to migrate Java applications or other components. 
+This guide is for engineers, consultants, and others who plan to use {ProductName} to migrate Java applications or other components.
 
 include::topics/What-is-it.adoc[leveloffset=+2]
 
@@ -47,7 +47,7 @@ include::topics/Get-Involved.adoc[leveloffset=+2]
 
 include::topics/Important-Links.adoc[leveloffset=+2]
 
-include::topics/Known-Issues.adoc[leveloffset=+2] 
+include::topics/Known-Issues.adoc[leveloffset=+2]
 
 include::topics/Report-Issues.adoc[leveloffset=+2]
 
@@ -56,3 +56,7 @@ include::topics/Report-Issues.adoc[leveloffset=+2]
 
 include::topics/Glossary.adoc[leveloffset=+2]
 
+// **********************************
+// * Appendix: Revision Information *
+// **********************************
+include::topics/templates/revision-info.adoc[]
