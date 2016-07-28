@@ -4,30 +4,30 @@
 
 
 [[Dev-Project-Information]]
-=== {ProductName} Project Information
+= {ProductName} Project Information
 
-==== Github Repository
+== Github Repository
 
 The {ProductName} project github repository is located at https://github.com/windup/windup/.
 
 For details on how to contribute to the {ProductName} project source code, see the {ProductDocCoreGuideURL}[{ProductName} Core Development Guide].
 
-==== Documentation
+== Documentation
 
 The latest {ProductName} documentation is currently located here in the {ProductShortName} project https://github.com/windup/windup/wiki/[Wiki].
 
 For additional information, refer to the {ProductName} http://windup.github.io/windup/docs/latest/javadoc/index.html[Javadoc].
 
-==== Website
+== Website
 
 The Windup website is at https://windup.jboss.org[windup.jboss.org].
 
-==== IRC chat
+== IRC chat
 
 Server: irc.freenode.net +
 Channel: #windup
 
-==== Mailing lists
+== Mailing lists
 
 Subscribe to the JBoss mailing lists at
 https://lists.jboss.org/mailman/listinfo/windup-dev.
@@ -35,11 +35,11 @@ https://lists.jboss.org/mailman/listinfo/windup-dev.
 * Core development discussion: windup-dev@redhat.com
 * Rules development discussion, usage: windup-users@redhat.com
 
-==== Core development team (and IRC nicks)
+== Core development team (and IRC nicks)
 
 Jess Sightler (jsightler), Ondrej Zizka (ozizka), Marek Novotny (marekn)
 
-==== IRC meeting bot commands (hint for the moderator)
+== IRC meeting bot commands (hint for the moderator)
 
 [options="nowrap"]
 ----
