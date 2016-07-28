@@ -1,163 +1,239 @@
 = Windup Documentation Contributing Guide
 
-== Wiki Asciidoc Syntax Guidelines
+Improvements to the Windup documentation are welcome.
 
-The following guidelines make the transition from the Windup Wiki pages to the Windup documentation GitHub smoother.
+In order to contribute, you will need a GitHub account and to have `git` installed on your machine. You can also log a link:https://issues.jboss.org/projects/WINDUP/issues[Windup JIRA] to track the changes.
 
-* Name wiki pages using only letters, numbers and dashes. Do not include spaces, colons, or other special characters in page names.
+Use the following steps to submit a change to the Windup documentation repository.
 
-* Be sure to add a level 3 page heading at the top of each page. When compiled in a book, the Guide name is the top level, chapters are level 2, and the page is level  3.
-
+. Fork the link:https://github.com/windup/windup-documentation[windup-documentation] GitHub repository.
 +
-----
-=== Build Windup from Source
-----
-
-* At the beginning of each new Wiki page, add an anchor with the exact page name, including the dashes. This generates the correct anchors that are needed when the pages are combined into a book.
+Click the *Fork* button in the top right corner of the page.
+. Clone the forked repository locally.
 +
+[source,options="nowrap"]
 ----
-[[Dev-Build-Windup-from-Source]]
-=== Build Windup from Source
+$ git clone git@github.com:YOUR_USERNAME/windup-documentation.git
 ----
-
-* Wiki generates anchors using dashes for spaces. AsciiDoctor generates a leading underscore and underscores for spaces. When referring to another section within the same page, do not use the `<<section-title-anchor>>` syntax. Instead, create an anchor and use the 'xref:' syntax to provide the link. The following is an example of how to create the anchor at the top of a section using double brackets to force the generation of dashes instead of underscores:
+. Add the upstream repository.
 +
+[source,options="nowrap"]
 ----
-[[windup-command-examples]]
-==== Windup Command Examples
+git remote add -f upstream git@github.com:windup/windup-documentation.git
 ----
-
-* Then use the `xref` to create the link.
+. Get the latest changes.
 +
+[source,options="nowrap"]
 ----
-See xref:windup-command-examples[Windup Command Examples] for more information.
+$ git fetch upstream
 ----
-
-== Build the Windup Guides
-
-* If you have not yet done so, install Ascidoctor
+. Check out a topic branch.
 +
+[source,options="nowrap"]
 ----
-gem install asciidoctor
+$ git checkout -b BRANCH_NAME upstream/master
 ----
-
-* Navigate to the root of the windup-documentation directory and check out a branch to work in.
+. Make the desired edits.
 +
-----
-git checkout -b <branch-name> upstream/master
-----
-      
-* A script is provided that updates the documentation with the latest Wiki updates, automatically replaces internal links, and builds the guides. To run it, navigate to the root of the windup-documentation directory and type:
+The documentation is written in link:http://asciidoc.org/[AsciiDoc]. Review the xref:asciidoc_guidelines[AsciiDoc Guidelines and Tips] section of this guide before making changes.
+. Build the guides to verify your changes.
+.. Navigate to the appropriate guide's directory and issue the following command.  Note that you must have link:http://asciidoctor.org/[Asciidoctor] installed.
 +
+[source,options="nowrap"]
 ----
-scripts/windupDocUpdate.sh
+$ cd docs/windup-user-guide/
+$ asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html master.adoc
 ----
+.. View the generated HTML file in a browser.
+. Add each new or updated file to git.
 +
-The script does the following:
-    
-** Copies the guides from the Wiki and leaves the `.asciidoc` extension. Compare this page to the Guide template in the windup-documentation to see if any pages were added to the guide.
+[source,options="nowrap"]
+----
+$ git add FILE_NAME.adoc
+----
+. Commit the changes locally.
 +
-----  
-[cols="2*"] 
-|===
-| **Wiki Guide Name** | **Windup Documentation Guide Name**
-
-| User-Guide.asciidoc | Windup-User-Guide.adoc 
-
-| Rules-Development-Guide.asciidoc | Windup-Rules-Development-Guide.adoc 
-
-| Core-Development-Guide.asciidoc | Windup-Core-Development-Guide.adoc 
-
-| Migration-Planning-Guide.asciidoc | Windup-Migration-Planning-Guide.adoc 
-|===
+[source,options="nowrap"]
 ----
-
-** Copies the pages from the Windup Wiki and replaces the `.asciidoc` extension with `.adoc`, for example:
+$ git commit -m "My commit message."
+----
+. Push the changes to your forked repository.
 +
+[source,options="nowrap"]
 ----
-cp ../windup.wiki/What-is-Windup.asciidoc docs/What-is-Windup.adoc
+$ git push origin HEAD
 ----
-            
-** Finds and displays internal links so the anchors can be verified.
+. Open a pull request to merge your changes to the master branch.
+.. Navigate to your forked repository in a browser:  https://github.com/YOUR_USERNAME/windup-documentation.
+.. Open a new pull request. Be sure to review the diff before submitting.
+.. A member of the Windup documentation team will merge or provide feedback on your request.
+
+== Building the Guides
+
+Navigate to the appropriate guide's directory and issue the following command.  Note that you must have link:http://asciidoctor.org/[Asciidoctor] installed.
+
+[source,options="nowrap"]
+----
+$ cd docs/windup-user-guide/
+$ asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html master.adoc
+----
+
+View the generated HTML file in a browser.
+
+NOTE: The Windup documentation team can use the `buildGuide.sh` script located in each guide's directory. Since this script relies on an internal build tool, other contributors should use the `asciidoctor` command to build the guides.
+
+== Publishing the Guides
+
+The Windup guides are published on the link:https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/[Red Hat Customer Portal].
+
+
+// TODO: Update with the link
+// Members of the Windup documentation team can review the process for publishing the Windup guides here: TODO.
+
+The Windup documentation team handles publishing the guides to the Customer Portal.
+
+[[asciidoc_guidelines]]
+== AsciiDoc Guidelines and Tips
+
+
+=== AsciiDoc Editors
+
+The following editors make editing and reviewing AsciiDoc files easy.
+
+* link:https://atom.io/[Atom] with the `asciidoc-preview` and `language-asciidoc` packages.
+* link:http://asciidocfx.com/[AsciidocFX]
+* Any basic editor, such as gedit, with the Chrome link:https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia?hl=en[Asciidoctor.js] plugin
+
+=== AsciiDoc Syntax Basics
+
+For a comprehensive reference of AsciiDoc syntax, see the link:http://asciidoc.org/userguide.html[AsciiDoc User Guide].
+
+* Headings
 +
+[source,options="nowrap"]
 ----
-grep 'xref:[a-z]' `find . -name '*.adoc'`
+= Heading Level 1
+== Heading Level 2
+=== Heading Level 3
 ----
-
-** Finds and lists pages containing `xref:` macros to other pages. These pages must be added to the book.
-      
-** Replaces the `xref:` macros with a `xref:` macros.
+* Bold text
 +
+[source,options="nowrap"]
 ----
-asciidoctor -dbook -a toc -o html/WindupUserGuide.html docs/Windup-User-Guide.adoc
+ *Bold text*
 ----
-
-== Push the Windup Guides to the Windup GitHub
-
-* The first time, you must fork and clone the windup GitHub repository. After that, just fetch the latest upstream.
-
+* Italic text
 +
+[source,options="nowrap"]
 ----
-git clone https://github.com/windup/windup.git
-git fetch upstream
+_Italic text_
 ----
-
-* The first time, you must fork and clone the windup-documentation GitHub repository. After that, just fetch the latest upstream.
-
+* Monospace text
 +
+[source,options="nowrap"]
 ----
-git clone https://github.com/windup/windup-documentation.git
-git fetch upstream
+`Monospace text`
 ----
-
-* Navigate to the local windup directory.
-
+* Bullets
 +
+[source,options="nowrap"]
 ----
-cd windup
+* Item one
+* Item two
 ----
-
-* Checkout the gh-pages from the windup repository
-
+* Numbered list
 +
+[source,options="nowrap"]
 ----
-git checkout -b gh-pages windup 
+. Step one
+. Step two
 ----
 
-* If the directory does not yet exist, create a docs/WINDUP-RELEASE/html/ directory.
-
+* Code block
 +
+[source,options="nowrap"]
+--------
+[source,java,options="nowrap"]
 ----
-mkdir -p docs/2.VERSION/html
+System.out.println("Hello");
 ----
+--------
 
-* Copy any new images, stylesheets, and html files from windup-documentation:
+=== Creating a New AsciiDoc File
 
-+
-----
-cp ../windup-documentation/*.html ../windup-documentation/*.css ../windup-documentation/images/* docs/2.VERSION/html/
-----
+* Name the file using only letters, numbers, and dashes, and with an extension of `.adoc`. For example, `my-topic.adoc`.
+* Add an anchor at the top of the file, using underscores. For example, `\[[my_anchor]]`.
+* Start each topic with a level one heading. For example, `= My Heading`.
+* Add this new topic to the `master.adoc` file using the `include::` syntax.
+** Pass in a `leveloffset=+N` to adjust the heading levels in the included file to be the correct level.
 
-* Add the updated files to GitHub.
+.Example master.adoc File
 
-+
+[source,options="nowrap"]
 ----
-git add docs
-----
+= My Guide Title
 
-* Commit the changes.
-
-+
-----
-git commit -m "HTML docs"
-----
-
-* Push the changes to GitHub.
-
-+
-----
-git push upstream gh-pages
+\include::topics/my-topic.adoc[leveloffset=+1]
 ----
 
-* View the documentation at <http://windup.github.io/windup/docs/2.VERSION/html/>
+.Example my-topic.adoc File
+[source,options="nowrap"]
+----
+[[my_anchor]]
+= My Heading
 
+Text here.
+
+== My Subsection
+
+Text here.
+----
+
+
+=== Linking to Other Files
+
+Use `xref` to link to a section within the same guide. You must define an explicit anchor in order to link.
+
+.Link to a Section in the Same Guide
+[source,options="nowrap"]
+----
+For more information, see xref:section_anchor[This Section].
+...
+
+[[section_anchor]]
+== This Section
+...
+----
+
+
+Use `link` to reference an external URL.
+
+.Link to an External Link
+[source,options="nowrap"]
+----
+Navigate to the link:https://github.com/windup/windup-documentation[Windup GitHub repository].
+----
+
+=== Using AsciiDoc Attributes
+
+The Windup documentation defines several AsciiDoc attributes in the `docs/templates/document-attributes.adoc` file. This allows you to define the value one place and then used it repeatedly throughout the guides. An example usage of this is defining the Windup version.
+
+==== Defining an Attribute
+
+Define an attribute in the `document-attributes.adoc` file using the following syntax.
+
+[source,options="nowrap"]
+----
+:ProductVersion: 2.7.Final
+----
+
+==== Using an Attribute
+
+An attribute can then be referenced in an AsciiDoc file using the following syntax.
+
+[source,options="nowrap"]
+----
+The Windup version is {ProductVersion}.
+----
+
+This will be resolved as "The Windup version is 2.7.Final".
