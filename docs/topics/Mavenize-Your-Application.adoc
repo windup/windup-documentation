@@ -65,7 +65,7 @@ The following modules are listed in the root POM for the example `jee-example-ap
 </modules>
 ----
 
-TIP: Be sure to reorder the list of modules if necessary so that they are listed in an appropriate build order for your project.
+NOTE: Be sure to reorder the list of modules if necessary so that they are listed in an appropriate build order for your project.
 
 The root POM is also configured to use the link:https://maven.repository.redhat.com/[Red Hat JBoss Enterprise Application Platform Maven repository] to download project dependencies.
 
