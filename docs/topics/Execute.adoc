@@ -29,7 +29,7 @@ Windup report created: PATH_TO_REPORTS/index.html
 +
 Navigate to the output directory and open the `index.html` file in a web browser. See the xref:Review-the-Report[Review the Reports] section for more details on evaluating report data.
 
-See xref:command-examples[{ProductShortName} Command Examples] below for concrete examples of commands that use source code directories and archives located in the Windup GitHub repository. 
+See xref:command-examples[{ProductShortName} Command Examples] below for concrete examples of commands that use source code directories and archives located in the Windup GitHub repository.
 
 
 [[command-examples]]
@@ -79,7 +79,7 @@ $ WINDUP_HOME/bin/windup --help
 
 The following is a detailed description of the available {ProductShortName} command line arguments.
 
-[TIP]
+[NOTE]
 ====
 To run the Windup command without prompting, for example when executing from a script, use `--batchMode` to take the default values for unspecified parameters and `--overwrite` to force delete the output directory. Also be sure to specify the required `--input` and `--target` arguments.
 
@@ -108,7 +108,7 @@ This parameter is very important when dealing with large applications as it can 
 
 --excludeTags TAG_1 TAG_2:: Do not process rules that contain the specified tags. This option can be used if it is found that a particular set of rules is highlighting too much unnecessary information in the report. If this option is not specified, all tags are processed.
 +
-[TIP]
+[NOTE]
 ====
 For the list of the available tags, pass the `--listTags` argument to the `windup` command.
 ====
@@ -167,10 +167,10 @@ When used in combination with the following arguments, the file input type is ev
 
 --offline:: If specified, do all processing offline and do not fetch updates or other data from the Internet.
 
---output OUTPUT_REPORT_DIRECTORY:: This is the fully qualified path to the directory that will contain the report information produced by {ProductShortName}. 
+--output OUTPUT_REPORT_DIRECTORY:: This is the fully qualified path to the directory that will contain the report information produced by {ProductShortName}.
 +
-* If omitted, the report will be generated in an INPUT_ARCHIVE_OR_DIRECTORY.report directory. 
-* If the output directory exists, you will be prompted with the following (with a default of N). 
+* If omitted, the report will be generated in an INPUT_ARCHIVE_OR_DIRECTORY.report directory.
+* If the output directory exists, you will be prompted with the following (with a default of N).
 +
 ----
 Overwrite all contents of "/home/username/OUTPUT_REPORT_DIRECTORY" (anything already in the directory will be deleted)? [y,N]
@@ -194,9 +194,9 @@ WARNING: If you omit the `--packages` argument, every package in the application
 
 --remove GROUP_ID:ARTIFACT_ID[:VERSION]:: Remove the specified add-ons. For example, `--remove core-addon-x` or `--remove org.example.addon:example,1.0.0`.
 
---source SOURCE_1 SOURCE_2:: A space delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This determines which rulesets are used during migration. Example: +--source eap+
+--source SOURCE_1 SOURCE_2:: A space delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This determines which rulesets are used during migration. Example: `--source eap`
 +
-[TIP]
+[NOTE]
 ====
 For the list of the available `--source` servers or frameworks, pass the `--listSourceTechnologies` argument to the `windup` command.
 ====
@@ -205,14 +205,14 @@ For the list of the available `--source` servers or frameworks, pass the `--list
 
 --target TARGET_1 TARGET_2:: A space delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. If you do not specify this option, you are prompted to select a target. The default target technology is `eap`.
 +
-[TIP]
+[NOTE]
 ====
 For the list of the available `--target` servers or frameworks, pass the `--listTargetTechnologies` argument to the `windup` command.
 ====
 
 --updateRulesets:: Update the core rulesets distributed with {ProductShortName}. It first checks for the existence of newer release, and if found, replaces the current rulesets directory with the new one.
 +
-[TIP]
+[NOTE]
 ====
 To update the rulesets without analyzing an application, pass only this argument on the `windup` command line as in the following example.
 [options="nowrap"]
@@ -221,9 +221,8 @@ $ WINDUP_HOME/bin/windup --updateRulesets
 ----
 ====
 
---userIgnorePath CUSTOM_IGNORE_DIRECTORY:: {ProductShortName} looks for file names matching the pattern `*windup-ignore.txt` to identify files that should be ignored. By default, it looks for these files in the `~/.windup/ignore/` and `WINDUP_HOME/ignore/` directories, but this option allows you to create files with this pattern name in a different directory. 
+--userIgnorePath CUSTOM_IGNORE_DIRECTORY:: {ProductShortName} looks for file names matching the pattern `*windup-ignore.txt` to identify files that should be ignored. By default, it looks for these files in the `~/.windup/ignore/` and `WINDUP_HOME/ignore/` directories, but this option allows you to create files with this pattern name in a different directory.
 
 --userRulesDirectory CUSTOM_RULES_DIRECTORY:: By default, {ProductShortName} looks for rules in the `${user.home}/.windup/rules/` directory. This option allows you to provide the fully qualified path to a user directory containing additional custom XML rules that should be loaded and executed by {ProductShortName}. The ruleset files must use one of the following extensions:  [x-]`*.windup.groovy` or [x-]`*.windup.xml`.
 
 --version:: Display the {ProductShortName} version.
-
