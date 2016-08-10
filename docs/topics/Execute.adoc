@@ -4,33 +4,37 @@
 [[run-windup]]
 == Run {ProductShortName}
 
-Use the following steps to run Windup against your application.
+Use the following steps to run {ProductShortName} against your application.
 
 . Open a terminal and navigate to the `WINDUP_HOME/bin` directory.
 . Execute the `windup` script, or `windup.bat` for Windows, and specify the appropriate arguments.
 +
 [source,options="nowrap"]
 ----
-$ ./windup --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --target eap --packages com.acme org.apache
+$ ./windup --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --source weblogic --target eap:6 --packages com.acme org.apache
 ----
 +
-At a minimum, you must specify the input archive or directory (`--input`) and the target technology (`--target`). Use the `--sourceMode` argument to run Windup against application source code. See xref:command-line-arguments[{ProductShortName} Command-Line Arguments] for a detailed description of all available command-line arguments.
+* `--input`: The application to be evaluated. See the xref:input_argument[`--input`] argument description.
+* `--output`: The output directory for the generated reports. See the xref:output_argument[`--output`] argument description.
+* `--source`: The source technology for the application migration. See the xref:source_argument[`--source`] argument description.
+* `--target`: The target technology for the application migration. See the xref:target_argument[`--target`] argument description.
+* `--packages`: The packages to be evaluated. This argument is highly recommended to improve performance. See the xref:packages_argument[`--packages`] argument description.
+
 +
-WARNING: Depending on the size of the application and the hardware Windup is running on, this command can take a very long time. It is recommended to specify one or more packages to evaluate. For additional tips on how to improve performance, see xref:Optimize-Performance[Optimize {ProductShortName} Performance].
+See xref:command-line-arguments[{ProductShortName} Command-Line Arguments] for a detailed description of all available command-line arguments.
+
+. Review the report.
 +
-You will see the following message in the terminal upon completion:
+Upon completion, you will see the following message in the terminal.
 +
 ----
 Windup report created: PATH_TO_REPORTS/index.html
               Access it at this URL: file:///PATH_TO_REPORTS/index.html
 ----
-
-. Review the report.
 +
 Navigate to the output directory and open the `index.html` file in a web browser. See the xref:Review-the-Report[Review the Reports] section for more details on evaluating report data.
 
 See xref:command-examples[{ProductShortName} Command Examples] below for concrete examples of commands that use source code directories and archives located in the Windup GitHub repository.
-
 
 [[command-examples]]
 == {ProductShortName} Command Examples
@@ -42,7 +46,7 @@ The following command runs against the {ProductShortName} https://github.com/win
 
 [source,options="nowrap"]
 ----
-$ WINDUP_HOME/bin/windup --sourceMode --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --target eap --packages org.jboss.seam
+$ WINDUP_HOME/bin/windup --sourceMode --input /home/username/windup-source/test-files/seam-booking-5.2/ --output /home/username/windup-reports/seam-booking-report --target eap:6 --packages org.jboss.seam
 ----
 
 [discrete]
@@ -52,7 +56,7 @@ The following command runs against the {ProductShortName} https://github.com/win
 
 [source,options="nowrap"]
 ----
-$ WINDUP_HOME/bin/windup  --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --target eap --packages com.acme org.apache
+$ WINDUP_HOME/bin/windup  --input /home/username/windup-source/test-files/jee-example-app-1.0.0.ear --output /home/username/windup-reports/jee-example-app-1.0.0.ear-report --target eap:6 --packages com.acme org.apache
 ----
 
 [discrete]
@@ -125,6 +129,7 @@ For the list of the available tags, pass the `--listTags` argument to the `windu
 +
 When one or more tags are specified here, then only rules with these tags will be processed. If this option is not specified, then all tags are processed.
 
+[[input_argument]]
 --input INPUT_ARCHIVE_OR_DIRECTORY [...]:: Each input argument is a fully qualified path to a file or directory containing one or more applications to be migrated. Multiple paths are separated by a space. This argument is required and can appear multiple times in the command.
 +
 When used in combination with the following arguments, the file input type is evaluated as follows.
@@ -167,6 +172,7 @@ When used in combination with the following arguments, the file input type is ev
 
 --offline:: If specified, do all processing offline and do not fetch updates or other data from the Internet.
 
+[[output_argument]]
 --output OUTPUT_REPORT_DIRECTORY:: This is the fully qualified path to the directory that will contain the report information produced by {ProductShortName}.
 +
 * If omitted, the report will be generated in an INPUT_ARCHIVE_OR_DIRECTORY.report directory.
@@ -185,29 +191,40 @@ However, if you specify the `--overwrite` argument, {ProductShortName} will proc
 Be careful not to specify a report output directory that contains important information!
 ====
 
+[[packages_argument]]
 --packages PACKAGE_1 PACKAGE_2 PACKAGE_N:: A space delimited list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.
 +
 * In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or 3rd party packages. The `PACKAGE_N` argument is a package prefix; all subpackages will be scanned. For example, to scan the packages `com.mycustomapp` and `com.myotherapp`, use `--packages com.mycustomapp com.myotherapp` argument on the command line.
 * While you can provide package names for standard Java EE 3rd party software like `org.apache`, it is usually best not to include them as they should not impact the migration effort.
 +
-WARNING: If you omit the `--packages` argument, every package in the application is scanned, which can impact performance. It is best to provide this argument with one or more packages.
+WARNING: If you omit the `--packages` argument, every package in the application is scanned, which can impact performance. It is best to provide this argument with one or more packages. For additional tips on how to improve performance, see xref:Optimize-Performance[Optimize {ProductShortName} Performance].
 
 --remove GROUP_ID:ARTIFACT_ID[:VERSION]:: Remove the specified add-ons. For example, `--remove core-addon-x` or `--remove org.example.addon:example,1.0.0`.
 
---source SOURCE_1 SOURCE_2:: A space delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This determines which rulesets are used during migration. Example: `--source eap`
+[[source_argument]]
+--source SOURCE_1 SOURCE_2:: A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources.
 +
-[NOTE]
+The `--source` argument now supports the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax], which allows you to run the rules appropriate for your specific technology version. For example, `--source eap:5`.
++
+[WARNING]
 ====
-For the list of the available `--source` servers or frameworks, pass the `--listSourceTechnologies` argument to the `windup` command.
+When migrating from an earlier JBoss EAP version to a newer one, be sure to specify the version for the source and target, for example, `eap:6`. Specifying only `eap` may run both JBoss EAP 6 and JBoss EAP 7 rulesets, which can cause duplicate hits.
+
+See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version is appropriate for your source platform.
 ====
 
 --sourceMode:: If used, indicates the application to be evaluated contains source files rather than compiled binaries. See the xref:input-file-argument-description-table[Input File Argument Description Table] for details.
 
---target TARGET_1 TARGET_2:: A space delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. If you do not specify this option, you are prompted to select a target. The default target technology is `eap`.
+[[target_argument]]
+--target TARGET_1 TARGET_2:: A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the `--source` argument, helps to determine which rulesets are used. If you do not specify this option, you are prompted to select a target. Use the `--listTargetTechnologies` argument to list all available targets.
 +
-[NOTE]
+The `--target` argument now supports the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax], which allows you to run the rules appropriate for your specific technology version. For example, `--target eap:7`.
++
+[WARNING]
 ====
-For the list of the available `--target` servers or frameworks, pass the `--listTargetTechnologies` argument to the `windup` command.
+When migrating to JBoss EAP, be sure to specify the version in the target, for example, `eap:6`. Specifying only `eap` may run both JBoss EAP 6 and JBoss EAP 7 rulesets, which can cause duplicate hits.
+
+See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version is appropriate for your source platform.
 ====
 
 --updateRulesets:: Update the core rulesets distributed with {ProductShortName}. It first checks for the existence of newer release, and if found, replaces the current rulesets directory with the new one.
