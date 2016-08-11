@@ -204,11 +204,11 @@ WARNING: If you omit the `--packages` argument, every package in the application
 [[source_argument]]
 --source SOURCE_1 SOURCE_2:: A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources.
 +
-The `--source` argument now supports the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax], which allows you to run the rules appropriate for your specific technology version. For example, `--source eap:5`.
+The `--source` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax]. This instructs Windup to only run the rulesets matching the specified versions. For example, `--source eap:5`.
 +
 [WARNING]
 ====
-When migrating from an earlier JBoss EAP version to a newer one, be sure to specify the version for the source and target, for example, `eap:6`. Specifying only `eap` may run both JBoss EAP 6 and JBoss EAP 7 rulesets, which can cause duplicate hits.
+When migrating from an earlier JBoss EAP version to a newer one, be sure to specify the version for the source and target, for example, `eap:6`. Specifying only `eap` will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.
 
 See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version is appropriate for your source platform.
 ====
@@ -218,11 +218,11 @@ See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version 
 [[target_argument]]
 --target TARGET_1 TARGET_2:: A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the `--source` argument, helps to determine which rulesets are used. If you do not specify this option, you are prompted to select a target. Use the `--listTargetTechnologies` argument to list all available targets.
 +
-The `--target` argument now supports the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax], which allows you to run the rules appropriate for your specific technology version. For example, `--target eap:7`.
+The `--target` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax]. This instructs Windup to only run the rulesets matching the specified versions. For example, `--target eap:7`.
 +
 [WARNING]
 ====
-When migrating to JBoss EAP, be sure to specify the version in the target, for example, `eap:6`. Specifying only `eap` may run both JBoss EAP 6 and JBoss EAP 7 rulesets, which can cause duplicate hits.
+When migrating to JBoss EAP, be sure to specify the version in the target, for example, `eap:6`. Specifying only `eap` will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.
 
 See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version is appropriate for your source platform.
 ====
