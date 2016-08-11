@@ -49,7 +49,7 @@ when(condition)
 otherwise(action)
 ----
 
-Ruleset and rule XML elements are covered in more detail in the xref:Rules-XML-Rule-Construction[XML Rule Structure] section. Additional details about creating XML rules, with example syntax, can be found here: xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule].
+Ruleset and rule XML elements are covered in more detail in the xref:Rules-XML-Rule-Construction[XML Rule Structure] section. See xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule] for additional details about creating XML rules with example syntax.
 
 . Use your favorite editor or IDE to create an XML file in the `/home/USER_NAME/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
 +

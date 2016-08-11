@@ -1,11 +1,11 @@
 [[Rules-XML-Rule-Perform-Action-Syntax]]
 = Perform Action Syntax
 
-Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave. 
+Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.
 
 The complete XML rule schema is located here: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd
 
-The following sections describe the more common XML rule perform actions. 
+The following sections describe the more common XML rule perform actions.
 
 * xref:classification-syntax[<classification> Syntax]
 * xref:link-syntax[<link> Syntax]
@@ -17,13 +17,12 @@ The following sections describe the more common XML rule perform actions.
 [[classification-syntax]]
 == <classification> Syntax
 
-=== Summary 
+=== Summary
 
 The `<classification>` element is used to identify or classify application resources that match the rule. It provides a title that is displayed in the report, a level of effort, and it can also provide links to additional information about how to migrate this resource classification. For a better understanding of the `<classification>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html[Classification] class.
 
 The following is an example of a rule that classifies a resource as a WebLogic EAR application deployment descriptor file.
 
-_Example:_
 [source,xml,options="nowrap"]
 ----
 <rule id="XmlWebLogicRules_10vvyf">
@@ -40,7 +39,7 @@ _Example:_
 
 === <classification> Element Attributes
 
-[cols="1,1,3", options="header"] 
+[cols="1,1,3", options="header"]
 |====
 |Attribute Name
 |Type
@@ -50,18 +49,14 @@ _Example:_
 |STRING
 a|Title this resource using the specified string.
 
-_Example:_ 
-
 [options="nowrap"]
 ----
-title="JBoss Seam Components"    
+title="JBoss Seam Components"
 ----
 
 |effort
 |BYTE
 a|The level of effort assigned to this resource. (Optional)
-
-_Example:_ 
 
 [options="nowrap"]
 ----
@@ -72,8 +67,6 @@ effort="2"
 |STRING
 a|Whether this classification is "mandatory" or "optional". (Optional)
 
-_Example:_ 
-
 [options="nowrap"]
 ----
 severity="mandatory"
@@ -82,8 +75,6 @@ severity="mandatory"
 |of
 |VARIABLE_NAME
 a|Create a new classification for the given reference. (Optional)
-
-_Example:_ 
 
 [options="nowrap"]
 ----
@@ -94,15 +85,13 @@ of="MySeamRule"
 === <classification> Child Elements
 
 
-[cols="1,4", options="header"] 
+[cols="1,4", options="header"]
 |====
 |Child Element
 |Description
 
 |<link>
 a|Provides a link URI and text title for additional information.
-
-_Example:_   
 
 [source,xml,options="nowrap"]
 ----
@@ -115,8 +104,6 @@ _Example:_
 |<tag>
 a|Provides additional custom information for the classification.
 
-_Example:_
-
 [source,xml,options="nowrap"]
 ----
 <tag>Seam3</tag>
@@ -124,8 +111,6 @@ _Example:_
 
 |<description>
 a|Description of this resource
-
-_Example:_ 
 
 [source,xml,options="nowrap"]
 ----
@@ -138,13 +123,12 @@ _Example:_
 [[link-syntax]]
 == <link> Syntax
 
-=== Summary 
+=== Summary
 
 The `<link>` element is used in classifications or hints to provide links to informational content. For a better understanding of the `<link>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html[Link] class.
 
 The following is an example of a rule that creates links to additional information.
 
-_Example:_
 [source,xml,options="nowrap"]
 ----
 <rule id="SeamToCDIRules_2fmb">
@@ -166,7 +150,7 @@ _Example:_
 
 === <link> Element Attributes
 
-[cols="1,1,3", options="header"] 
+[cols="1,1,3", options="header"]
 |====
 |Attribute Name
 |Type
@@ -176,8 +160,6 @@ _Example:_
 |URI
 a|The URI for the referenced link.
 
-_Example:_ 
-
 [options="nowrap"]
 ----
 href="https://access.redhat.com/articles/1249423"
@@ -185,9 +167,7 @@ href="https://access.redhat.com/articles/1249423"
 
 |title
 |STRING
-a|A title for the link. 
-
-_Example:_ 
+a|A title for the link.
 
 [options="nowrap"]
 ----
@@ -199,13 +179,12 @@ title="Migrate WebLogic Proprietary Servlet Annotations"
 [[hint-syntax]]
 == <hint> Syntax
 
-=== Summary 
+=== Summary
 
 The `<hint>` element is used to provide a hint or inline information about how to migrate a section of code. For a better understanding of the `<hint>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Hint.html[Hint] class.
 
 The following is an example of a rule that creates a hint.
 
-_Example:_
 [source,xml,options="nowrap"]
 ----
 <rule id="WebLogicWebServiceRules_8jyqn">
@@ -227,7 +206,7 @@ _Example:_
 
 === <hint> Element Attributes
 
-[cols="1,1,3", options="header"] 
+[cols="1,1,3", options="header"]
 |====
 |Attribute Name
 |Type
@@ -236,8 +215,6 @@ _Example:_
 |title
 |STRING
 a|Title this hint using the specified string. Title is a required attribute.
-
-_Example:_ 
 
 [options="nowrap"]
 ----
@@ -248,8 +225,6 @@ title="JBoss Seam Component Hint"
 |STRING
 a|Whether this hint is "mandatory" or "optional". (Optional)
 
-_Example:_ 
-
 [options="nowrap"]
 ----
 severity="mandatory"
@@ -258,8 +233,6 @@ severity="mandatory"
 |in
 |VARIABLE_NAME
 a|Create a new Hint in the FileLocationModel resolved by the given variable. (Optional)
-
-_Example:_ 
 
 [options="nowrap"]
 ----
@@ -270,8 +243,6 @@ in="Foo"
 |BYTE
 a|The level of effort assigned to this resource.  (Optional)
 
-_Example:_ 
-
 [options="nowrap"]
 ----
 effort="2"
@@ -281,15 +252,13 @@ effort="2"
 
 === <hint> Child Elements
 
-[cols="1,4", options="header"] 
+[cols="1,4", options="header"]
 |====
 |Child Element
 |Description
 
 |<message>
 a|A message describing the migration hint.
-
-_Example:_
 
 [source,xml,options="nowrap"]
 ----
@@ -298,8 +267,6 @@ _Example:_
 
 |<link>
 a|Identify or classify links to informational content. See the section on xref:link-syntax[<link> Syntax] for details.
-
-_Example:_
 
 [source,xml,options="nowrap"]
 ----
@@ -310,8 +277,6 @@ API Specification" />
 |<tag>
 a|Define a custom tag for this `hint`.
 
-_Example:_
-
 [source,xml,options="nowrap"]
 ----
 <tag>Needs review</tag>
@@ -321,13 +286,12 @@ _Example:_
 [[xslt-syntax]]
 == <xslt> Syntax
 
-=== Summary 
+=== Summary
 
 The `<xslt>` element specifies how to transform an XML file. For a better understanding of the `<xslt>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/operation/xslt/XSLTTransformation.html[XSLTTransformation]  class.
 
 The following is an example of rule that defines an XSLT action.
 
-_Example:_
 [source,xml,options="nowrap"]
 ----
 <rule id="XmlWebLogicRules_6bcvk">
@@ -345,7 +309,7 @@ _Example:_
 
 === <xslt> Element Attributes
 
-[cols="1,1,3", options="header"] 
+[cols="1,1,3", options="header"]
 |====
 |Attribute Name
 |Type
@@ -354,8 +318,6 @@ _Example:_
 |of
 |STRING
 a|Create a new transformation for the given reference. (Optional)
-
-_Example:_ 
 
 [options="nowrap"]
 ----
@@ -366,8 +328,6 @@ of="testVariable_instance"
 |STRING
 a|Sets the title for this XSLTTransformation in the report.
 
-_Example:_ 
-
 [options="nowrap"]
 ----
 title="XSLT Transformed Output"
@@ -377,8 +337,6 @@ title="XSLT Transformed Output"
 |STRING
 a|Sets the extension for this XSLTTransformation.
 
-_Example:_ 
-
 [options="nowrap"]
 ----
 extension="-result.html"
@@ -387,8 +345,6 @@ extension="-result.html"
 |template
 |STRING
 a|Sets the XSL template.
-
-_Example:_ 
 
 [options="nowrap"]
 ----
@@ -404,15 +360,13 @@ template="simpleXSLT.xsl"
 === <xslt> Child Elements
 
 
-[cols="1,4", options="header"] 
+[cols="1,4", options="header"]
 |====
 |Child Element
 |Description
 
 |<xslt-parameter>
-a|Specify XSLTTransformation parameters as property value pairs 
-
-_Example:_
+a|Specify XSLTTransformation parameters as property value pairs
 
 [source,xml,options="nowrap"]
 ----
@@ -423,13 +377,12 @@ _Example:_
 [[lineitem-syntax]]
 ==== <lineitem> Syntax
 
-=== Summary 
+=== Summary
 
 The `<lineitem>` element is used to provide  general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues. This information is displayed on the project or application overview page. For a better understanding of the `<lineitem>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html[Lineitem] class.
 
 The following is an example of a rule that creates a lineitem message.
 
-_Example:_
 [source,xml,options="nowrap"]
 ----
 <rule id="weblogic_servlet_annotation_1000">
@@ -449,7 +402,7 @@ _Example:_
 ----
 === <lineitem> Element Attributes
 
-[cols="1,1,3", options="header"] 
+[cols="1,1,3", options="header"]
 |====
 |Attribute Name
 |Type
@@ -459,24 +412,22 @@ _Example:_
 |STRING
 a|A lineitem message
 
-_Example:_ 
 [options="nowrap"]
 ----
 message="Proprietary code found."
 ----
 
 |====
-    
+
 [[iteration-syntax]]
 == <iteration> Syntax
 
-=== Summary 
+=== Summary
 
 The `<iteration>` element specifies to iterate over an implicit or explicit variable defined within the rule. For a better understanding of the `<iteration>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/Iteration.html[Iteration] class.
 
 The following is an example of a rule that performs an iteration.
 
-_Example:_
 [source,xml,options="nowrap"]
 ----
 <rule id="jboss-eap5-xml-19000">
@@ -500,7 +451,7 @@ _Example:_
 
 === <iteration> Element Attributes
 
-[cols="1,1,3", options="header"] 
+[cols="1,1,3", options="header"]
 |====
 |Attribute Name
 |Type
@@ -510,18 +461,16 @@ _Example:_
 |VARIABLE_NAME
 a|Iterate over the condition identified by this VARIABLE_NAME.
 
-_Example:_ 
-
 [options="nowrap"]
 ----
 over="jboss-app"
 ----
 
 |====
-    
+
 === <iteration> Child Elements
 
-[cols="1,4", options="header"] 
+[cols="1,4", options="header"]
 |====
 |Child Element
 |Description
@@ -529,4 +478,3 @@ over="jboss-app"
 |<iteration>
 |Child elements include a `when` condition, along with the actions `iteration`, `classification`, `hint`, `xslt`, `lineitem`, and `otherwise`.
 |====
-
