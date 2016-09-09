@@ -213,6 +213,8 @@ When migrating to JBoss EAP, be sure to specify the version, for example, `eap:6
 See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version is appropriate for your source platform.
 ====
 
+--skipReports:: If set, Windup will not generate reports. This is an advanced option and is not recommended to use by "standard" end user.
+
 --sourceMode:: If used, indicates the application to be evaluated contains source files rather than compiled binaries. See the xref:input-file-argument-description-table[Input File Argument Description Table] for details.
 
 [[target_argument]]
