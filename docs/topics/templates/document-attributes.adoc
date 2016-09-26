@@ -7,21 +7,21 @@
 // Names and versions
 :ProductName: Windup
 :ProductShortName: Windup
-:ProductRelease: 2
-:ProductVersion: 2.7.Final
-:ProductDistributionVersion: 2.7.0
+:ProductRelease: 3
+:ProductVersion: 3.0.Final
+:ProductDistributionVersion: 3.0.0
 :ProductDistribution: windup-distribution-{ProductDistributionVersion}.Final
 :ProductHomeVar: WINDUP_HOME
 :ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME
 :ProductSrcHomeVar: WINDUP_SOURCE_HOME
 :ProductReleaseVar: WINDUP_RELEASE
-:ProductDocVersion: version-2.7
+:ProductDocVersion: version-3.0
 :DocInfoProductName: Red Hat JBoss Migration Toolkit
-:DocInfoProductNumber: 2.7
+:DocInfoProductNumber: 3.0
 
 // URLs
-:ProductDocUserGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/2.7/single/windup-user-guide
-:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/2.7/single/windup-rules-development-guide
+:ProductDocUserGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/3.0/single/windup-user-guide
+:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/3.0/single/windup-rules-development-guide
 
 // Point to the GitHub wiki version since there is no product version of this guide.
 :ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
