@@ -171,6 +171,7 @@ When used in combination with the following arguments, the file input type is ev
 --mavenizeGroupId:: When used with the `--mavenize` option, all generated `pom.xml` files will use this value for their `<groupId>`. If this parameter is omitted, Windup will attempt to determine an appropriate `<groupId>` based on the application, or will default to `com.mycompany.mavenized`.
 
 --offline:: If specified, do all processing offline and do not fetch updates or other data from the Internet.
+Right now only XML validations rely on Internet access - so in offline mode XML files won't be validated. 
 
 [[output_argument]]
 --output OUTPUT_REPORT_DIRECTORY:: This is the fully qualified path to the directory that will contain the report information produced by {ProductShortName}.
