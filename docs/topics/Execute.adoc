@@ -98,7 +98,7 @@ See the description for each argument for more details.
 
 --debug:: Run {ProductShortName} in debug mode.
 
---discoverPackages:: Lists all available packages in the input application or source.
+--discoverPackages:: Lists all available packages in the input binary application.
 
 --enableClassNotFoundAnalysis:: Enables analysis of Java files that are not available on the class path. This should be left off if some classes will be unavailable at analysis time.
 
