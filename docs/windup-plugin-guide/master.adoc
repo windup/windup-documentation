@@ -1,0 +1,29 @@
+:toc:
+:toclevels: 4
+:numbered:
+
+include::topics/templates/document-attributes.adoc[]
+
+:imagesdir: topics/images
+:windup-plugin-user-guide:
+
+= {ProductName} Eclipse Plugin Guide
+
+//This guide is for engineers, consultants, and others who plan to use {ProductName} to migrate Java applications or other components.
+
+NOTE: This is an early access version of this guide.
+
+include::topics/plugin-install.adoc[leveloffset=+1]
+
+// TODO: Uncomment when uninstalling works
+// include::topics/plugin-uninstall.adoc[leveloffset=+1]
+
+// TODO: Uncomment when we have material pointing to the icon legend
+// [appendix]
+// == Reference Material
+// include::topics/plugin-icon-legend.adoc[leveloffset=+2]
+
+// **********************************
+// * Appendix: Revision Information *
+// **********************************
+include::topics/templates/revision-info.adoc[]
