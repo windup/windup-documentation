@@ -1,0 +1,28 @@
+[[install_windup_plugin]]
+= Install the Windup Eclipse Plugin
+
+.Supported Development Environments
+* Eclipse 4.6 (Neon) or later
+* Red Hat JBoss Developer Studio 10 or later
+
+NOTE: These instructions use Eclipse 4.6 (Neon). Your steps may vary if you are using JBoss Developer Studio or a different version of Eclipse.
+
+.Install the Plugin
+. If necessary, link:http://www.eclipse.org/downloads/[download Eclipse] and install it.
+. Launch Eclipse.
+. From the menu bar, select *Help* -> *Install New Software*.
+. Add the JBoss Tools update site.
+.. Next to the *Work with* field, click *Add*.
+.. In the *Name* field, enter `JBoss Tools`.
+.. In the *Location* field, enter `http://download.jboss.org/jbosstools/neon/snapshots/updates/` and press *OK*.
+.. Do not select any checkboxes.
+. Add the Windup update site.
+.. Next to the *Work with* field, click *Add*.
+.. In the *Name* field, enter `Windup`.
+// TODO: Update w/ link for alpha
+.. In the *Location* field, enter `http://download.jboss.org/jbosstools/neon/snapshots/builds/windup-eclipse-plugin-NIGHTLY/latest/all/repo/` and press *OK*.
+.. Select all of the checkboxes under *JBoss Tools Windup Nightly Build Update Site*.
+. Press *Next*.
+. Review the installation details and press *Next*.
+. Accept the terms of the license agreement and press *Finish* to install the plugin.
+. Restart Eclipse for the changes to take effect.

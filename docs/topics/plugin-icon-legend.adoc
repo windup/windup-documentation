@@ -1,0 +1,17 @@
+[[plugin_windup_issue_icons]]
+= Windup Issue Icon Legend
+
+In the Issue Explorer and file editors, Windup issues use an icon to indicate their severity level and status. The following table describes the meaning of the various icons.
+
+.Windup Issue Icons
+[cols="20%a,80%",options="header",]
+|====
+|Icon |Description
+|image::error.png[Error] |The issue is mandatory to fix for a successful migration.
+|image::quickfix_error.png[Error with quick fix] |The issue is mandatory to fix for a successful migration. A quick fix is available
+|image::warning.png[Warning] |The issue may potentially be an issue during migration.
+|image::quickfix_warning.png[Warning with quick fix] |The issue may potentially be an issue during migration. A quick fix is available.
+|image::fixedIssue.png[Resolved] |The issue has been resolved.
+|image::info.gif[Optional] |The issue is optional to fix for migration.
+|image::stale_issue.gif[Stale] |The issue is stale.
+|====
