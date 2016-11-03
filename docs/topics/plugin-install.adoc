@@ -1,5 +1,5 @@
 [[install_windup_plugin]]
-= Install the Windup Eclipse Plugin
+= Install the {ProductShortName} Eclipse Plugin
 
 .Supported Development Environments
 * Eclipse 4.6 (Neon) or later
@@ -14,13 +14,13 @@ NOTE: These instructions use Eclipse 4.6 (Neon). Your steps may vary if you are 
 . Add the JBoss Tools update site.
 .. Next to the *Work with* field, click *Add*.
 .. In the *Name* field, enter `JBoss Tools`.
-.. In the *Location* field, enter `http://download.jboss.org/jbosstools/neon/snapshots/updates/` and press *OK*.
+.. In the *Location* field, enter [x-]`http://download.jboss.org/jbosstools/neon/snapshots/updates/` and press *OK*.
 .. Do not select any checkboxes.
 . Add the Windup update site.
 .. Next to the *Work with* field, click *Add*.
 .. In the *Name* field, enter `Windup`.
 // TODO: Update w/ link for alpha
-.. In the *Location* field, enter `http://download.jboss.org/jbosstools/neon/snapshots/builds/windup-eclipse-plugin-NIGHTLY/latest/all/repo/` and press *OK*.
+.. In the *Location* field, enter [x-]`http://download.jboss.org/jbosstools/neon/snapshots/builds/windup-eclipse-plugin-NIGHTLY/latest/all/repo/` and press *OK*.
 .. Select all of the checkboxes under *JBoss Tools Windup Nightly Build Update Site*.
 . Press *Next*.
 . Review the installation details and press *Next*.

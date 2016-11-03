@@ -1,0 +1,11 @@
+[[access_windup_features]]
+= Access the {ProductShortName} Eclipse Tools
+
+Once the plugin is installed, the Windup Eclipse tools are available in the Windup perspective.
+
+To open the Windup perspective, navigate to *Window* -> *Perspective* -> *Open Perspective* -> *Other*. Select *Windup* and press *OK*.
+
+// TODO: eventually point to the relevant section in this doc instead of relying on the getting started page.
+Review the *Getting Started* page in the Windup perspective for how to analyze your project and resolve issues identified by Windup. If the *Getting Started* page is not visible, you can open it by selecting *Help* -> *Getting Started*.
+
+// TODO: Ever mention that you can run Windup from Package Explorer/Navigator in Java/other perspectives? Executes Windup w/ basic config on the project.
