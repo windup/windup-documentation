@@ -1,14 +1,14 @@
 [[migration_paths]]
 = Supported Migration Paths
 
-{ProductShortName} supports application migration from several platforms to Red Hat JBoss Enterprise Application Platform (JBoss EAP). See the below table for which JBoss EAP version is currently supported for direct migration from your source platform.
+{ProductShortName} supports application migration from several platforms to Red Hat JBoss Enterprise Application Platform (JBoss EAP). See the below table for which JBoss EAP version is currently supported by Windup for direct migration from your source platform.
 
 [cols="40%,30%,30%",options="header"]
 |====
 | Source Platform |Migration to JBoss&nbsp;EAP&nbsp;6 | Migration to JBoss&nbsp;EAP&nbsp;7
-| Oracle® WebLogic Server | {icon-check} | {icon-x}
-| IBM® WebSphere® Application Server | {icon-check} | {icon-x}
-| JBoss EAP 4 | {icon-check} | {icon-x}
+| Oracle® WebLogic Server | {icon-check} | {icon-x} footnoteref:[note1,Although Windup does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform.]
+| IBM® WebSphere® Application Server | {icon-check} | {icon-x} footnoteref:[note1]
+| JBoss EAP 4 | {icon-check} | {icon-x} footnoteref:[note1]
 | JBoss EAP 5 | {icon-check} | {icon-check}
 | JBoss EAP 6 | N/A | {icon-check}
 |====
