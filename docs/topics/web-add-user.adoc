@@ -1,7 +1,7 @@
 [[add_user]]
 = Add a New {ProductWebName} User
 
-When xref:enable_auth[authenticated is enabled] for {ProductWebName}, administrators will need to add users so that they can access {ProductWebName}.
+When xref:enable_auth[authentication is enabled] for {ProductWebName}, administrators will need to add users so that they can access {ProductWebName}.
 
 Follow these steps to add a new {ProductWebName} user.
 
@@ -10,8 +10,7 @@ Follow these steps to add a new {ProductWebName} user.
 . Select *Administration Console* to access the Keycloak administration console.
 . Log in with an administrative user's credentials. The default credentials are `admin` and `password`.
 . In the upper left corner, select the *Windup* realm from the drop down.
-. From the left-side navigation menu, select *Users*.
-. Click *Add user*.
+. From the left-side navigation menu, select *Users* and then click *Add user*.
 . Enter the *Username*, *First Name*, *Last Name*, and any other required fields and click *Save*.
 . Once the user has been added, select the *Credentials* tab.
 . Enter a temporary password in the *New Password* and *Password Confirmation* fields, and leave the *Temporary* field set to *ON*.

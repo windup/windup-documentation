@@ -10,10 +10,5 @@ Follow these steps to remove the default {ProductWebName} user.
 . Select *Administration Console* to access the Keycloak administration console.
 . Log in with an administrative user's credentials. The default credentials are `admin` and `password`.
 . In the upper left corner, select the *Windup* realm from the drop down.
-. From the left-side navigation menu, select *Users*.
-. Click *View all users*.
-. In the row with username *admin*, click *Edit*.
-. Select the *Credentials* tab.
-. Enter the new password in the *New Password* and *Password Confirmation* fields.
-. Change the *Temporary* field to *OFF* to not require the user to change the password upon next login.
-. Click *Reset Password* and then click *Change password* in the popup.
+. From the left-side navigation menu, select *Users* and then click *View all users*.
+. From the *guest* user's row, click *Delete* and confirm.

@@ -10,9 +10,8 @@ Follow these steps to change the default administrative user's password.
 . Select *Administration Console* to access the Keycloak administration console.
 . Log in with the default credentials of `admin` and `password`.
 . In the upper left corner, select the *Master* realm from the drop down.
-. In the left-side navigation menu, select *Users*.
-. Click *View all users*.
-. From the row with username *admin*, click *Edit*.
+. In the left-side navigation menu, select *Users* and then click *View all users*.
+. From the *admin* user's row, click *Edit*.
 . Select the *Credentials* tab.
 . Enter the new password in the *New Password* and *Password Confirmation* fields.
 . Change the *Temporary* field to *OFF* to not require the user to change the password upon next login.
