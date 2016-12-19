@@ -1,0 +1,11 @@
+[[starting_windup]]
+= Start {ProductWebName}
+
+. Run the script to start {ProductWebName}.
++
+[source,options="nowrap"]
+----
+$ WINDUP_HOME/run_windup.sh
+----
+
+You can now access {ProductWebName} from a browser at http://localhost:8080/windup-web.

@@ -1,0 +1,16 @@
+[[enable_auth]]
+= Enable Authentication for {ProductWebName}
+
+Run the following script to require users to log in before accessing {ProductWebName}. This script configures Keycloak login page to require users to authenticate before granting access to {ProductWebName}.
+
+[source,options="nowrap"]
+----
+$ WINDUP_HOME/switch_to_authentication_required.sh
+----
+
+Now, whenever you start {ProductWebName}, users will be required to authenticate to access it.
+
+[source,options="nowrap"]
+----
+$ WINDUP_HOME/run_windup.sh
+----
