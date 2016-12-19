@@ -516,7 +516,7 @@ This is an early access version of this guide.
 <div class="sect2">
 <h3 id="enable_auth">3.1. Enable Authentication for Windup Web</h3>
 <div class="paragraph">
-<p>Run the following script to require users to log in before accessing Windup Web. This script configures Keycloak login page to require users to authenticate before granting access to Windup Web.</p>
+<p>Run the following script to require users to log in before accessing Windup Web. This script configures the Keycloak login page to require users to authenticate before granting access to Windup Web.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -524,12 +524,7 @@ This is an early access version of this guide.
 </div>
 </div>
 <div class="paragraph">
-<p>Now, whenever you start Windup Web, users will be required to authenticate to access it.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight nowrap"><code>$ WINDUP_HOME/run_windup.sh</code></pre>
-</div>
+<p>Now, whenever you <a href="#starting_windup">start Windup Web</a>, users will be required to authenticate to access it.</p>
 </div>
 </div>
 <div class="sect2">
@@ -558,13 +553,10 @@ This is an early access version of this guide.
 <p>In the upper left corner, select the <strong>Master</strong> realm from the drop down.</p>
 </li>
 <li>
-<p>In the left-side navigation menu, select <strong>Users</strong>.</p>
+<p>In the left-side navigation menu, select <strong>Users</strong> and then click <strong>View all users</strong>.</p>
 </li>
 <li>
-<p>Click <strong>View all users</strong>.</p>
-</li>
-<li>
-<p>From the row with username <strong>admin</strong>, click <strong>Edit</strong>.</p>
+<p>From the <strong>admin</strong> user&#8217;s row, click <strong>Edit</strong>.</p>
 </li>
 <li>
 <p>Select the <strong>Credentials</strong> tab.</p>
@@ -610,25 +602,10 @@ This is an early access version of this guide.
 <p>In the upper left corner, select the <strong>Windup</strong> realm from the drop down.</p>
 </li>
 <li>
-<p>From the left-side navigation menu, select <strong>Users</strong>.</p>
+<p>From the left-side navigation menu, select <strong>Users</strong> and then click <strong>View all users</strong>.</p>
 </li>
 <li>
-<p>Click <strong>View all users</strong>.</p>
-</li>
-<li>
-<p>In the row with username <strong>admin</strong>, click <strong>Edit</strong>.</p>
-</li>
-<li>
-<p>Select the <strong>Credentials</strong> tab.</p>
-</li>
-<li>
-<p>Enter the new password in the <strong>New Password</strong> and <strong>Password Confirmation</strong> fields.</p>
-</li>
-<li>
-<p>Change the <strong>Temporary</strong> field to <strong>OFF</strong> to not require the user to change the password upon next login.</p>
-</li>
-<li>
-<p>Click <strong>Reset Password</strong> and then click <strong>Change password</strong> in the popup.</p>
+<p>From the <strong>guest</strong> user&#8217;s row, click <strong>Delete</strong> and confirm.</p>
 </li>
 </ol>
 </div>
@@ -636,7 +613,7 @@ This is an early access version of this guide.
 <div class="sect2">
 <h3 id="add_user">3.4. Add a New Windup Web User</h3>
 <div class="paragraph">
-<p>When <a href="#enable_auth">authenticated is enabled</a> for Windup Web, administrators will need to add users so that they can access Windup Web.</p>
+<p>When <a href="#enable_auth">authentication is enabled</a> for Windup Web, administrators will need to add users so that they can access Windup Web.</p>
 </div>
 <div class="paragraph">
 <p>Follow these steps to add a new Windup Web user.</p>
@@ -659,10 +636,7 @@ This is an early access version of this guide.
 <p>In the upper left corner, select the <strong>Windup</strong> realm from the drop down.</p>
 </li>
 <li>
-<p>From the left-side navigation menu, select <strong>Users</strong>.</p>
-</li>
-<li>
-<p>Click <strong>Add user</strong>.</p>
+<p>From the left-side navigation menu, select <strong>Users</strong> and then click <strong>Add user</strong>.</p>
 </li>
 <li>
 <p>Enter the <strong>Username</strong>, <strong>First Name</strong>, <strong>Last Name</strong>, and any other required fields and click <strong>Save</strong>.</p>
@@ -688,7 +662,7 @@ This is an early access version of this guide.
 <br></p>
 </div>
 <div class="paragraph">
-<p><em class="right">Revised on 2016-12-19 12:23:35 EST</em></p>
+<p><em class="right">Revised on 2016-12-19 15:46:28 EST</em></p>
 </div>
 </div>
 </div>
