@@ -1,0 +1,21 @@
+[[change_admin_user]]
+= Change the Administrative User's Credentials
+
+When you xref:enable_auth[enable authentication] for {ProductWebName}, a default administrative user is provided with the username `admin` and password `password`. You should change this password so that only those that are authorized can make further changes to {ProductWebName} users.
+
+Follow these steps to change the default administrative user's password.
+
+. Make sure that {ProductWebName} is xref:starting_windup[running].
+. Navigate to http://localhost:8080/auth/ in a browser.
+. Select *Administration Console* to access the Keycloak administration console.
+. Log in with the default credentials of `admin` and `password`.
+. In the upper left corner, select the *Master* realm from the drop down.
+. In the left-side navigation menu, select *Users*.
+. Click *View all users*.
+. From the row with username *admin*, click *Edit*.
+. Select the *Credentials* tab.
+. Enter the new password in the *New Password* and *Password Confirmation* fields.
+. Change the *Temporary* field to *OFF* to not require the user to change the password upon next login.
+. Click *Reset Password* and then click *Change password* in the popup.
+
+You can also remove this default administrative user completely and create your own administrative users. However, be sure to add the new users before removing the default user.

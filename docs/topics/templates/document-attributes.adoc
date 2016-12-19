@@ -1,31 +1,53 @@
-// Standard document attributes to be used in the documentation
+// ********************************
+// * Standard document attributes *
+// ********************************
 :toc:
 :toclevels: 3
 :numbered:
 :imagesdir: topics/images
 
-// Names and versions
+// ****************
+// * Doc metadata *
+// ****************
+:DocInfoProductName: Red Hat JBoss Migration Toolkit
+:DocInfoProductNumber: 3.0
+
+// *****************
+// * Product names *
+// *****************
 :ProductName: Windup
 :ProductShortName: Windup
+:ProductCLIName: Windup CLI
+:ProductWebName: Windup Web
+:ProductPluginName: Windup Eclipse Plugin
+:ProductDistribution: windup-distribution-{ProductDistributionVersion}.Final
+
+// ********************
+// * Product versions *
+// ********************
 :ProductRelease: 3
 :ProductVersion: 3.0.Final
 :ProductDistributionVersion: 3.0.0
-:ProductDistribution: windup-distribution-{ProductDistributionVersion}.Final
+
+// *************
+// * Variables *
+// *************
 :ProductHomeVar: WINDUP_HOME
 :ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME
 :ProductSrcHomeVar: WINDUP_SOURCE_HOME
 :ProductReleaseVar: WINDUP_RELEASE
-:ProductDocVersion: version-3.0
-:DocInfoProductName: Red Hat JBoss Migration Toolkit
-:DocInfoProductNumber: 3.0
 
-// URLs
+// ********
+// * URLs *
+// ********
 :ProductDocUserGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/3.0/single/windup-user-guide
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/3.0/single/windup-rules-development-guide
 
 // Point to the GitHub wiki version since there is no product version of this guide.
 :ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
 
-// Icons
+// *********
+// * Icons *
+// *********
 :icon-check: &#x2714;
 :icon-x: &#x2718;

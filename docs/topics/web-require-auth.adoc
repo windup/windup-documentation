@@ -1,0 +1,11 @@
+[[config_auth]]
+= Configure Authentication for {ProductWebName}
+
+You can configure {ProductWebName} to require authentication, which is handled by Keycloak. When enabled, users will be required to authenticate before being granted access to {ProductWebName}.
+
+It is recommended to complete the following tasks to configure authentication for {ProductWebName}.
+
+. xref:enable_auth[Enable authentication for {ProductWebName}]
+. xref:change_admin_user[Change the administrative user's credentials]
+. xref:remove_default_user[Remove the default {ProductWebName} user]
+. xref:add_user[Add {ProductWebName} users]
