@@ -231,6 +231,12 @@ See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version 
 
 --userIgnorePath CUSTOM_IGNORE_DIRECTORY:: {ProductShortName} looks for file names matching the pattern `*windup-ignore.txt` to identify files that should be ignored. By default, it looks for these files in the `~/.windup/ignore/` and `WINDUP_HOME/ignore/` directories, but this option allows you to create files with this pattern name in a different directory.
 
---userRulesDirectory CUSTOM_RULES_DIRECTORY:: By default, {ProductShortName} looks for rules in the `${user.home}/.windup/rules/` directory. This option allows you to provide the fully qualified path to a user directory containing additional custom XML rules that should be loaded and executed by {ProductShortName}. The ruleset files must use one of the following extensions:  [x-]`*.windup.groovy` or [x-]`*.windup.xml`.
+--userRulesDirectory CUSTOM_RULES_LOCATION:: By default, {ProductShortName} looks for rules in the `${user.home}/.windup/rules/` directory. This option allows you to pass in the location of additional custom XML rules that should be loaded and executed by {ProductShortName}. The value passed to this argument can be one of the following:
+
+* A fully-qualified path to a directory containing additional custom XML ruleset files
+* A single custom XML ruleset file
+
++
+The ruleset files must use one of the following extensions:  [x-]`*.windup.groovy` or [x-]`*.windup.xml`.
 
 --version:: Display the {ProductShortName} version.
