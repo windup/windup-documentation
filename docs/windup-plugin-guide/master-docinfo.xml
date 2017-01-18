@@ -1,4 +1,4 @@
-<title>{ProductPluginName} Guide</title>
+<title>{PluginBookName}</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
 <!--
@@ -10,7 +10,7 @@
 -->
 <subtitle>Simplify Migration of Java Applications</subtitle>
 <abstract>
-    <para>This guide describes how to use the Windup Eclipse Plugin to simplify migration of Java applications.</para>
+    <para>This guide describes how to use the {ProductPluginName} to simplify migration of Java applications.</para>
 </abstract>
 <authorgroup>
     <orgname>Windup Team</orgname>

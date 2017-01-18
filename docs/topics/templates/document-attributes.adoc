@@ -6,12 +6,6 @@
 :numbered:
 :imagesdir: topics/images
 
-// ****************
-// * Doc metadata *
-// ****************
-:DocInfoProductName: Red Hat JBoss Migration Toolkit
-:DocInfoProductNumber: 3.0
-
 // *****************
 // * Product names *
 // *****************
@@ -20,7 +14,16 @@
 :ProductCLIName: Windup CLI
 :ProductWebName: Windup Web
 :ProductPluginName: Windup Eclipse Plugin
-:ProductDistribution: windup-distribution-{ProductDistributionVersion}.Final
+
+// ****************
+// * Doc metadata *
+// ****************
+:DocInfoProductName: Red Hat JBoss Migration Toolkit
+:DocInfoProductNumber: 3.0
+
+:UserCLIBookName: {ProductShortName} User Guide
+:RulesDevBookName: {ProductShortName} Rules Development Guide
+:PluginBookName: {ProductPluginName} Guide
 
 // ********************
 // * Product versions *
@@ -28,6 +31,7 @@
 :ProductRelease: 3
 :ProductVersion: 3.0.Final
 :ProductDistributionVersion: 3.0.0
+:ProductDistribution: windup-distribution-{ProductDistributionVersion}.Final
 
 // *************
 // * Variables *
@@ -40,8 +44,9 @@
 // ********
 // * URLs *
 // ********
-:ProductDocUserGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/3.0/single/windup-user-guide
-:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/3.0/single/windup-rules-development-guide
+:ProductDocUserGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/{DocInfoProductNumber}/single/windup-user-guide
+:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/{DocInfoProductNumber}/single/windup-rules-development-guide
+:ProductDocPluginGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/{DocInfoProductNumber}/single/windup-eclipse-plugin-guide
 
 // Point to the GitHub wiki version since there is no product version of this guide.
 :ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide

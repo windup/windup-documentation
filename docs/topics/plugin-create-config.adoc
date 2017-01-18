@@ -1,0 +1,31 @@
+[[create_run_config]]
+= Create a {ProductShortName} Run Configuration
+
+Windup run configurations can be created using the Windup button (image:windup.png[Windup button]). A run configuration specifies the project to analyze, migration path, and additional options for the execution. You can create multiple run configurations, and each must have a unique name.
+
+[discrete]
+== Input
+
+Migration Path::
+Select a migration path, which determines which Windup rulesets are used. The migration path defaults to *EAP 6 to EAP 7*, but can be changed to any supported migration path.
+
+Projects::
+Select one or more projects to analyze. Hold the *Ctrl* key to select multiple projects in the list.
+
+Packages::
+Select one or more packages to scan. It is recommended to select only those packages that you need to analyze to reduce the overall Windup execution time. If no packages are selected, all packages in the project will be scanned. Hold the Ctrl key to select multiple packages in the list.
+
+[discrete]
+== Options
+
+Report::
+Check the *Generate Report* checkbox if you want to generate the Windup HTML report. The report will be shown in the *Windup Report* tab and can be found in the Issue Explorer when you group by *File*.
+
+Options::
+Set additional Windup options. See the link:{ProductDocUserGuideURL}#command-line-arguments[Windup Command-Line Arguments] section of the _{UserCLIBookName}_ for a description of each Windup argument.
+
+[discrete]
+== Rules
+
+Custom Rules Repositories::
+Add a custom rules directory if you have any custom Windup rules.

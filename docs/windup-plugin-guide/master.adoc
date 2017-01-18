@@ -9,21 +9,40 @@ include::topics/templates/document-attributes.adoc[]
 
 = {ProductPluginName} Guide
 
-//This guide is for engineers, consultants, and others who plan to use {ProductName} to migrate Java applications or other components.
+// Introduction
+include::topics/plugin-intro.adoc[leveloffset=+1]
 
-NOTE: This is an early access version of this guide.
-
+// Install the Windup Eclipse Plugin
 include::topics/plugin-install.adoc[leveloffset=+1]
 
+// Access the Windup Eclipse Tools
 include::topics/plugin-access-windup-tools.adoc[leveloffset=+1]
 
-// TODO: Uncomment when uninstalling works
+// Windup Eclipse Plugin Components
+include::topics/plugin-components.adoc[leveloffset=+2]
+
+// Identify and Resolve Migration Issues with Windup
+include::topics/plugin-identify-resolve-issues.adoc[leveloffset=+1]
+
+// Create a Windup Run Configuration
+include::topics/plugin-create-config.adoc[leveloffset=+2]
+
+// Execute Windup
+include::topics/plugin-run-windup.adoc[leveloffset=+2]
+
+// Review Windup Issues
+include::topics/plugin-review-issues.adoc[leveloffset=+2]
+
+// Resolve Windup Issues
+include::topics/plugin-resolve-issues.adoc[leveloffset=+2]
+
+// TODO: Uncomment when uninstalling works and this is ready
 // include::topics/plugin-uninstall.adoc[leveloffset=+1]
 
-// TODO: Uncomment when we have material pointing to the icon legend
-// [appendix]
-// == Reference Material
-// include::topics/plugin-icon-legend.adoc[leveloffset=+2]
+[appendix]
+== Reference Material
+
+include::topics/plugin-icon-legend.adoc[leveloffset=+2]
 
 // **********************************
 // * Appendix: Revision Information *

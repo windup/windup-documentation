@@ -1,0 +1,6 @@
+[[introduction]]
+= Introduction
+
+The {ProductPluginName} makes application migrations and upgrades faster and easier by bringing {ProductShortName}'s migration assistance to Eclipse and Red Hat JBoss Developer Studio. It analyzes your projects using Windup, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
+
+See the link:{ProductDocUserGuideURL}[_{UserCLIBookName}_] to learn more about Windup features, supported migration paths, reports, and rules.
