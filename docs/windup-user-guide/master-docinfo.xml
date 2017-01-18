@@ -1,4 +1,4 @@
-<title>Windup User Guide</title>
+<title>{UserCLIBookName}</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
 <!--
@@ -7,7 +7,7 @@
         <imagedata fileref="images/Logotype_RHJB_MigrationToolkit_CMYK_Black-small.png" format="PNG" />
      </imageobject>
 </mediaobject>
---> 
+-->
 <subtitle>Simplify Migration of Java Applications</subtitle>
 <abstract>
     <para>This guide describes how to use Windup to simplify migration of Java applications.</para>

@@ -1,0 +1,20 @@
+[[resolve_issues]]
+= Resolve {ProductShortName} Issues
+
+You can resolve Windup issues by updating the code manually or by applying a quick fix when available.
+
+== Resolve an Issue Manually
+
+Review the Windup issue details and additional resources and update the source code as necessary. Once a manual update has been made, the Windup issue will be marked stale until the next time that Windup is run on the project. You can also manually mark a Windup issue as fixed.
+
+== Resolve an Issue Using a Quick Fix
+
+Some Windup issues provide a quick fix, which assists in making the necessary edits to address the issue. See the xref:plugin_windup_issue_icons[icon legend] to see the icons that indicate the Windup issue has a quick fix available.
+
+Preview a Quick Fix::
+
+Right-click the issue and select *Preview Quick Fix*. This will bring up a window that allows you to preview the change. From here, you can apply the fix or close the window.
+
+Apply a Quick Fix::
+
+Right-click the issue and select *Apply Quick Fix*. This will update the source code as required and will mark the Windup issue as resolved.
