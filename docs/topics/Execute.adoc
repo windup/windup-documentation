@@ -170,8 +170,7 @@ When used in combination with the following arguments, the file input type is ev
 
 --mavenizeGroupId:: When used with the `--mavenize` option, all generated `pom.xml` files will use this value for their `<groupId>`. If this parameter is omitted, Windup will attempt to determine an appropriate `<groupId>` based on the application, or will default to `com.mycompany.mavenized`.
 
---offline:: If specified, do all processing offline and do not fetch updates or other data from the Internet.
-Right now only XML validations rely on Internet access - so in offline mode XML files won't be validated. 
+--online:: If specified, allows network access for features that require it. Currently only validating XML schemas against external resources relies on Internet access. Note that this comes with a performance penalty.
 
 [[output_argument]]
 --output OUTPUT_REPORT_DIRECTORY:: This is the fully qualified path to the directory that will contain the report information produced by {ProductShortName}.
@@ -195,12 +194,14 @@ Be careful not to specify a report output directory that contains important info
 [[packages_argument]]
 --packages PACKAGE_1 PACKAGE_2 PACKAGE_N:: A space delimited list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.
 +
-* In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or 3rd party packages. The `PACKAGE_N` argument is a package prefix; all subpackages will be scanned. For example, to scan the packages `com.mycustomapp` and `com.myotherapp`, use `--packages com.mycustomapp com.myotherapp` argument on the command line.
-* While you can provide package names for standard Java EE 3rd party software like `org.apache`, it is usually best not to include them as they should not impact the migration effort.
+* In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or third party packages. The `PACKAGE_N` argument is a package prefix; all subpackages will be scanned. For example, to scan the packages `com.mycustomapp` and `com.myotherapp`, use `--packages com.mycustomapp com.myotherapp` argument on the command line.
+* While you can provide package names for standard Java EE third party software like `org.apache`, it is usually best not to include them as they should not impact the migration effort.
 +
 WARNING: If you omit the `--packages` argument, every package in the application is scanned, which can impact performance. It is best to provide this argument with one or more packages. For additional tips on how to improve performance, see xref:Optimize-Performance[Optimize {ProductShortName} Performance].
 
 --remove GROUP_ID:ARTIFACT_ID[:VERSION]:: Remove the specified add-ons. For example, `--remove core-addon-x` or `--remove org.example.addon:example,1.0.0`.
+
+--skipReports:: If used, Windup will not generate HTML reports. A common use of this argument is when exporting report data to a CSV file using `--exportcsv`.
 
 [[source_argument]]
 --source SOURCE_1 SOURCE_2:: A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources.
@@ -214,8 +215,6 @@ When migrating to JBoss EAP, be sure to specify the version, for example, `eap:6
 See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version is appropriate for your source platform.
 ====
 
---skipReports:: If set, Windup will not generate reports. This is an advanced option and is not recommended to use by "standard" end user.
-
 --sourceMode:: If used, indicates the application to be evaluated contains source files rather than compiled binaries. See the xref:input-file-argument-description-table[Input File Argument Description Table] for details.
 
 [[target_argument]]
@@ -228,17 +227,6 @@ The `--target` argument now provides version support, which follows the link:htt
 When migrating to JBoss EAP, be sure to specify the version in the target, for example, `eap:6`. Specifying only `eap` will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.
 
 See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version is appropriate for your source platform.
-====
-
---updateRulesets:: Update the core rulesets distributed with {ProductShortName}. It first checks for the existence of newer release, and if found, replaces the current rulesets directory with the new one.
-+
-[NOTE]
-====
-To update the rulesets without analyzing an application, pass only this argument on the `windup` command line as in the following example.
-[options="nowrap"]
-----
-$ WINDUP_HOME/bin/windup --updateRulesets
-----
 ====
 
 --userIgnorePath CUSTOM_IGNORE_DIRECTORY:: {ProductShortName} looks for file names matching the pattern `*windup-ignore.txt` to identify files that should be ignored. By default, it looks for these files in the `~/.windup/ignore/` and `WINDUP_HOME/ignore/` directories, but this option allows you to create files with this pattern name in a different directory.
