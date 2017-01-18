@@ -3,8 +3,8 @@
 
 == Software
 
-* Java Platform, JRE version 7+
-* {ProductShortName} is tested on Linux, Mac OS X, and Windows. Other operating systems with Java 7+ support should work equally well.
+* Java Platform, JRE version 8+
+* {ProductShortName} is tested on Linux, Mac OS X, and Windows. Other operating systems with Java 8+ support should work equally well.
 
 == Hardware
 
@@ -12,4 +12,3 @@ The following memory and disk space requirements are the minimum needed to run {
 
 * A minimum of 4 GB RAM. For better performance, a 4-core processor with 8 GB RAM is recommended. This allows 3 - 4 GB RAM for use by the JVM.
 * A minimum of 4 GB of free disk space. A fast disk, especially a Solid State Drive (SSD), will improve performance.
-
