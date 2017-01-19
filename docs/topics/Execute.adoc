@@ -237,6 +237,6 @@ See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version 
 * A single custom XML ruleset file
 
 +
-The ruleset files must use one of the following extensions:  [x-]`*.windup.groovy` or [x-]`*.windup.xml`.
+The ruleset files must end in [x-]`.windup.xml`.
 
 --version:: Display the {ProductShortName} version.
