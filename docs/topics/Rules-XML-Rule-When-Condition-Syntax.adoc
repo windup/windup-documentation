@@ -304,7 +304,7 @@ The following is an example of a rule that checks for a JUnit dependency version
 <rule id="UNIQUE_RULE_ID">
     <when>
         <project>
-            <artifact groupId="junit" artifactId="junit" from="2.0.0.Final" to="2.2.0.Final"/>
+            <artifact groupId="junit" artifactId="junit" fromVersion="2.0.0.Final" toVersion="2.2.0.Final"/>
         </project>
     </when>
     <perform>
