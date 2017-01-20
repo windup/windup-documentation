@@ -47,7 +47,7 @@ The following is an example of a rule that classifies a resource as a WebLogic E
 
 |title
 |STRING
-a|Title this resource using the specified string.
+a|The title given to this resource. This attribute is required.
 
 [options="nowrap"]
 ----
@@ -56,25 +56,25 @@ title="JBoss Seam Components"
 
 |effort
 |BYTE
-a|The level of effort assigned to this resource. (Optional)
+a|The level of effort assigned to this resource.
 
 [options="nowrap"]
 ----
 effort="2"
 ----
 
-|severity
+|category-id
 |STRING
-a|Whether this classification is "mandatory" or "optional". (Optional)
+a|A reference to a category as defined in `WINDUP_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, and `potential`.
 
 [options="nowrap"]
 ----
-severity="mandatory"
+category-id="mandatory"
 ----
 
 |of
 |VARIABLE_NAME
-a|Create a new classification for the given reference. (Optional)
+a|Create a new classification for the given reference.
 
 [options="nowrap"]
 ----
@@ -195,7 +195,7 @@ The following is an example of a rule that creates a hint.
     </when>
     <perform>
         <iteration>
-            <hint title="Proprietary web-service" severity="mandatory" effort="3">
+            <hint title="Proprietary web-service" category-id="mandatory" effort="3">
                 <message>Replace proprietary web-service authentication with JAX-WS standards.</message>
                 <link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" title="JAX-WS Proxy Password Example"/>
             </hint>
@@ -214,25 +214,25 @@ The following is an example of a rule that creates a hint.
 
 |title
 |STRING
-a|Title this hint using the specified string. Title is a required attribute.
+a|Title this hint using the specified string. This attribute is required.
 
 [options="nowrap"]
 ----
 title="JBoss Seam Component Hint"
 ----
 
-|severity
+|category-id
 |STRING
-a|Whether this hint is "mandatory" or "optional". (Optional)
+a|A reference to a category as defined in `WINDUP_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, and `potential`.
 
 [options="nowrap"]
 ----
-severity="mandatory"
+category-id="mandatory"
 ----
 
 |in
 |VARIABLE_NAME
-a|Create a new Hint in the FileLocationModel resolved by the given variable. (Optional)
+a|Create a new Hint in the FileLocationModel resolved by the given variable.
 
 [options="nowrap"]
 ----
@@ -241,7 +241,7 @@ in="Foo"
 
 |effort
 |BYTE
-a|The level of effort assigned to this resource.  (Optional)
+a|The level of effort assigned to this resource.
 
 [options="nowrap"]
 ----
@@ -281,6 +281,19 @@ a|Define a custom tag for this `hint`.
 ----
 <tag>Needs review</tag>
 ----
+
+|<quickfix>
+a|Contains information to be used by the {ProductPluginName} to perform quick fixes when the rule condition is met.
+
+[source,xml,options="nowrap"]
+----
+<quickfix name="slink-qf" type="REPLACE">
+    <replacement>h:link</replacement>
+    <search>s:link</search>
+</quickfix>
+----
+
+
 |====
 
 [[xslt-syntax]]
@@ -315,27 +328,27 @@ The following is an example of rule that defines an XSLT action.
 |Type
 |Description
 
-|of
-|STRING
-a|Create a new transformation for the given reference. (Optional)
-
-[options="nowrap"]
-----
-of="testVariable_instance"
-----
-
 |title
 |STRING
-a|Sets the title for this XSLTTransformation in the report.
+a|Sets the title for this XSLTTransformation in the report. This attribute is required.
 
 [options="nowrap"]
 ----
 title="XSLT Transformed Output"
 ----
 
+|of
+|STRING
+a|Create a new transformation for the given reference.
+
+[options="nowrap"]
+----
+of="testVariable_instance"
+----
+
 |extension
 |STRING
-a|Sets the extension for this XSLTTransformation.
+a|Sets the extension for this XSLTTransformation. This attribute is required.
 
 [options="nowrap"]
 ----
@@ -344,7 +357,7 @@ extension="-result.html"
 
 |template
 |STRING
-a|Sets the XSL template.
+a|Sets the XSL template. This attribute is required.
 
 [options="nowrap"]
 ----
@@ -353,7 +366,7 @@ template="simpleXSLT.xsl"
 
 |effort
 |BYTE
-| The level of effort required for the transformation. (Optional)
+| The level of effort required for the transformation.
 
 |====
 

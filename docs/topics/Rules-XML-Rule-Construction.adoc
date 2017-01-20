@@ -1,7 +1,7 @@
 [[Rules-XML-Rule-Construction]]
 = XML Rule Structure
 
-This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets. 
+This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets.
 
 == Rulesets
 
@@ -19,7 +19,7 @@ A  ruleset is a group of one or more rules that targets a specific area of migra
 **** **<when>**: The conditions to match on. For a detailed description of the elements allowed in a `<when>`, see xref:Rules-XML-Rule-When-Condition-Syntax[When Condition Syntax].
 **** **<perform>**: The action to be performed when the rule condition is matched. For a detailed description of the elements allowed in a `<perform>`, see xref:Rules-XML-Rule-Perform-Action-Syntax[Perform Action Syntax].
 **** **<otherwise>**: The action to be performed when the rule condition is not matched. This element takes the same child elements as the `<perform>` element.
-**** **<where>**: A string pattern defined as a parameter, which can be used elsewhere in the rule definition. For more information, see xref:where_syntax[Where Syntax]. 
+**** **<where>**: A string pattern defined as a parameter, which can be used elsewhere in the rule definition. For more information, see xref:where_syntax[Where Syntax].
 *** **<file-mapping/>**: Maps an extension to a graph type.
 *** **<package-mapping/>**: Maps from a package pattern (regular expression) to a organization name.
 
@@ -55,7 +55,7 @@ The following is an example of a core {ProductShortName} rule that matches on a 
                 <javaclass references="weblogic.utils.StringUtils.{*}" />
             </when>
             <perform>
-                <hint title="WebLogic StringUtils usage" effort="1" severity="mandatory">
+                <hint title="WebLogic StringUtils usage" effort="1" category-id="mandatory">
                     <message>Replace with the `StringUtils` class from Apache Commons.</message>
                     <link href="https://commons.apache.org/proper/commons-lang/" title="Apache Commons Lang" />
                     <tag>weblogic</tag>

@@ -6,9 +6,9 @@
 [cols="40%,30%,30%",options="header"]
 |====
 | Source Platform |Migration to JBoss&nbsp;EAP&nbsp;6 | Migration to JBoss&nbsp;EAP&nbsp;7
-| Oracle® WebLogic Server | {icon-check} | {icon-x} footnoteref:[note1,Although Windup does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform.]
-| IBM® WebSphere® Application Server | {icon-check} | {icon-x} footnoteref:[note1]
-| JBoss EAP 4 | {icon-check} | {icon-x} footnoteref:[note1]
+| Oracle® WebLogic Server | {icon-check} | {icon-check}
+| IBM® WebSphere® Application Server | {icon-check} | {icon-check}
+| JBoss EAP 4 | {icon-check} | {icon-x} footnoteref:[note1,Although Windup does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform.]
 | JBoss EAP 5 | {icon-check} | {icon-check}
 | JBoss EAP 6 | N/A | {icon-check}
 |====
