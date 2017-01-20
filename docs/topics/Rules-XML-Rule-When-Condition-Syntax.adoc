@@ -28,7 +28,7 @@ The following is an example of a rule that tests for WebLogic-specific Apache XM
         <javaclass references="weblogic.apache.xml.{*}" />
     </when>
     <perform>
-        <hint title="WebLogic Specific Apache XML Package" effort="1" severity="mandatory">
+        <hint title="WebLogic Specific Apache XML Package" effort="1" category-id="mandatory">
             <message>
                 Code using this package should be replaced with code using the org.apache.xml package from [Apache
                 Xerces](http://xerces.apache.org/).
@@ -50,7 +50,7 @@ The following is an example of a rule that tests for WebLogic-specific Apache XM
 
 |references
 |CLASS_NAME
-a|The package or class name to match on. Wildcard characters can be used.
+a|The package or class name to match on. Wildcard characters can be used. This attribute is required.
 
 NOTE: For performance reasons, you should not start the reference with wildcard characters. For example, use [x-]`weblogic.apache.xml.{*}` instead of [x-]`{web}.apache.xml.{*}`.
 
@@ -60,7 +60,7 @@ references="weblogic.apache.xml.{*}"
 ----
 |matchesSource
 |STRING
-a|An exact regex to match. This is useful to distinguish hard-coded strings.
+a|An exact regex to match. This is useful to distinguish hard-coded strings. This attribute is required.
 
 [options="nowrap"]
 ----
@@ -69,7 +69,7 @@ matchesSource="log4j.logger"
 
 |as
 |VARIABLE_NAME
-a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below. (Optional)
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
 
 [options="nowrap"]
 ----
@@ -78,7 +78,7 @@ as="MyEjbRule"
 
 |from
 |VARIABLE_NAME
-a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. (Optional)
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME.
 
 [options="nowrap"]
 ----
@@ -87,7 +87,7 @@ from="MyEjbRule"
 
 |in
 |PATH_FILTER
-a|Filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used. (Optional)
+a|Filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
 
 [options="nowrap"]
 ----
@@ -198,7 +198,7 @@ The following is an example of a rule that tests for an XML file.
 
 |matches
 |XPATH
-a|Match on an XML file condition. (Optional)
+a|Match on an XML file condition.
 
 [options="nowrap"]
 ----
@@ -207,7 +207,7 @@ matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"
 
 |xpathResultMatch
 |XPATH_RESULT_STRING
-a|Return results that match the given regex. (Optional)
+a|Return results that match the given regex.
 
 [options="nowrap"]
 ----
@@ -217,7 +217,7 @@ a|Return results that match the given regex. (Optional)
 
 |as
 |VARIABLE_NAME
-a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below. (Optional)
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
 
 [options="nowrap"]
 ----
@@ -226,7 +226,7 @@ as="MyEjbRule"
 
 |in
 |PATH_FILTER
-a|Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used. (Optional)
+a|Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
 
 [options="nowrap"]
 ----
@@ -235,7 +235,7 @@ in="{*}File1"
 
 |from
 |VARIABLE_NAME
-a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. (Optional)
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME.
 
 [options="nowrap"]
 ----
@@ -244,7 +244,7 @@ from="MyEjbRule"
 
 |public-id
 |PUBLIC_ID
-a|The DTD public-id regex. (Optional)
+a|The DTD public-id regex.
 
 [options="nowrap"]
 ----
@@ -282,7 +282,7 @@ This will match all `<foo/>` elements with a `class` attribute and store their v
 |Description
 
 |<namespace>
-a|The namespace referenced in XML files. This element contains 2 optional attributes: The `prefix` and the `uri`.
+a|The namespace referenced in XML files. This element contains two optional attributes: The `prefix` and the `uri`.
 
 [source,xml,options="nowrap"]
 ----
@@ -374,7 +374,7 @@ Use the `<filecontent>` element to find strings or text within files, for exampl
 
 |pattern
 |String
-|Match the file contents against the provided parameterized string.
+|Match the file contents against the provided parameterized string. This attribute is required.
 
 |filename
 |String
@@ -391,7 +391,7 @@ as="MyEjbRule"
 
 |from
 |VARIABLE_NAME
-a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. (Optional)
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME.
 
 [options="nowrap"]
 ----
@@ -420,7 +420,7 @@ Use the `<file>` element to find the existence of files with a specific name, fo
 
 |filename
 |String
-|Match the file names against the provided parameterized string.
+|Match the file names against the provided parameterized string. This attribute is required.
 
 |as
 |VARIABLE_NAME
@@ -433,7 +433,7 @@ as="MyEjbRule"
 
 |from
 |VARIABLE_NAME
-a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME. (Optional)
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME.
 
 _Example:_
 

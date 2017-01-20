@@ -42,7 +42,7 @@ The below is an example of an overridden rule. Notice the `<overrideRules>true</
                 <javaclass references="weblogic.utils.StringUtils.{*}"/>
             </when>
             <perform>
-                <hint effort="3" severity="mandatory" title="WebLogic StringUtils Usage">
+                <hint effort="3" category-id="mandatory" title="WebLogic StringUtils Usage">
                     <message>Replace with the StringUtils class from Apache Commons.</message>
                     <link href="https://commons.apache.org/proper/commons-lang/" title="Apache Commons Lang"/>
                     <tag>weblogic</tag>
