@@ -7,11 +7,12 @@ In the Issue Explorer and file editors, Windup issues use an icon to indicate th
 [cols="20%a,80%",options="header",]
 |====
 |Icon |Description
-|image::error.png[Error] |The issue is mandatory to fix for a successful migration.
-|image::quickfix_error.png[Error with quick fix] |The issue is mandatory to fix for a successful migration. A quick fix is available
-|image::warning.png[Warning] |The issue may potentially be an issue during migration.
-|image::quickfix_warning.png[Warning with quick fix] |The issue may potentially be an issue during migration. A quick fix is available.
-|image::fixedIssue.gif[Resolved] |The issue has been resolved.
+|image::error.png[Mandatory] |The issue is mandatory to fix for a successful migration.
 |image::info.gif[Optional] |The issue is optional to fix for migration.
-|image::stale_issue.gif[Stale] |The issue is stale.
+|image::warning.png[Warning] |The issue may potentially be an issue during migration.
+|image::fixedIssue.gif[Resolved] |The issue has been resolved.
+|image::stale_issue.gif[Stale] |The issue is stale because the code marked as an issue has been modified since the last time that Windup was run on the project.
+|image::quickfix_error.png[Mandatory with quick fix] |A quick fix is available for this issue, which is mandatory to fix for a successful migration.
+|image::quickfix_info.png[Optional with quick fix] |A quick fix is available for this issue, which is optional to fix for migration.
+|image::quickfix_warning.png[Warning with quick fix] |A quick fix is available for this issue, which may potentially be an issue during migration.
 |====

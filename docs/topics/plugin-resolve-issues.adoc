@@ -5,7 +5,9 @@ You can resolve Windup issues by updating the code manually or by applying a qui
 
 == Resolve an Issue Manually
 
-Review the Windup issue details and additional resources and update the source code as necessary. Once a manual update has been made, the Windup issue will be marked stale until the next time that Windup is run on the project. You can also manually mark a Windup issue as fixed.
+Review the Windup issue details and additional resources and update the source code as necessary. When you update a line of code marked as a Windup issue, the Windup issue will be marked with the stale icon (image:stale_issue.gif[Stale issue icon]) until the next time that Windup is run on the project.
+
+You can also manually mark a Windup issue as fixed, which will mark the issue with the resolved icon (image:fixedIssue.gif[Resolved issue icon]) until the next time that Windup is run on the project. To mark an issue as fixed, right-click the Windup issue in the Issue Explorer and select *Mark as Fixed*.
 
 == Resolve an Issue Using a Quick Fix
 

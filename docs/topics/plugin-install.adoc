@@ -3,18 +3,20 @@
 
 .Supported Development Environments
 * Eclipse 4.6 (Neon)
-* Red Hat JBoss Developer Studio 10.1
+* Red Hat JBoss Developer Studio 10.2
 
 .Install the Plugin
-. If necessary, link:http://www.eclipse.org/downloads/[download Eclipse] and install it.
+. If you do not already have an existing installation, download link:http://www.eclipse.org/downloads/[Eclipse] or link:https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=jbossdeveloperstudio&downloadType=distributions[JBoss Developer Studio] and install it.
++
+NOTE: This guide uses _Eclipse_ to refer to an installation of Eclipse or JBoss Developer Studio.
+
 . Launch Eclipse.
 . From the menu bar, select *Help* -> *Install New Software*.
 . Add the Windup update site.
 .. Next to the *Work with* field, click *Add*.
 .. In the *Name* field, enter `Windup`.
 .. In the *Location* field, enter [x-]`http://download.jboss.org/jbosstools/neon/development/updates/windup/composite/` and press *OK*.
-.. Select all of the checkboxes under *JBoss Tools - Windup*.
-. Press *Next*.
+.. Select all of the checkboxes under *JBoss Tools - Windup* and press *Next*.
 . Review the installation details and press *Next*.
 . Accept the terms of the license agreement and press *Finish* to install the plugin.
 . Restart Eclipse for the changes to take effect.
