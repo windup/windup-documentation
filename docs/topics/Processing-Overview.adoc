@@ -1,11 +1,8 @@
 
-
-
-
 [[Processing-Overview]]
 === {ProductName} Processing Overview
 
-{ProductName} is a rule-based migration tool that allows you to write customized rules to analyze the APIs, technologies, and architectures used by the applications you plan to migrate. The {ProductShortName} tool also executes its own core rules through all phases of the migration process. 
+{ProductName} is a rule-based migration tool that allows you to write customized rules to analyze the APIs, technologies, and architectures used by the applications you plan to migrate. The {ProductShortName} tool also executes its own core rules through all phases of the migration process.
 
 The following is a high level conceptual overview of what happens within {ProductShortName} when you execute the tool against an application or archive.
 
@@ -33,8 +30,8 @@ The final step in the process is to pull data from the graph database model to g
 
 By default, {ProductShortName} generates the following reports at the end of the application migration process. The reports are located in the `reports/` subdirectory of the output report path specified when you execute {ProductShortName}:
 
-* Application Report: This report provides a summary of the total estimated effort, or xref:Rules-Rule-Story-Points[story points], that are required for the migration. It also provides a detailed list of issues and suggested changes, broken down by archive or folder. 
+* Application Report: This report provides a summary of the total estimated effort, or xref:rule_story_points[story points], that are required for the migration. It also provides a detailed list of issues and suggested changes, broken down by archive or folder.
 * RuleProvider report: This is a detailed listing of the rule providers that fired when running {ProductShortName} and whether any errors occurred.
-* Additional reports are generated that provide detailed line-by-line migration tips for individual files. 
+* Additional reports are generated that provide detailed line-by-line migration tips for individual files.
 
 {ProductShortName} can also generate scripts to automate migration processes based on the findings. For example, some configuration files are easily mapped and can be automatically generated as part of the migration process.

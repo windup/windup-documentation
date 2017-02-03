@@ -1,7 +1,7 @@
-[[Rules-Create-Your-First-Rule]]
+[[create_first_rule]]
 = Create Your First XML Rule
 
-This section guides you through the process of creating and testing your first {ProductShortName} XML-based rule. This assumes that you have already installed {ProductShortName}. See the link:{ProductDocUserGuideURL}[_{ProductName} User Guide_] for installation instructions.
+This section guides you through the process of creating and testing your first {ProductShortName} XML-based rule. This assumes that you have already installed {ProductShortName}. See the link:{ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
 
 In this example, you will write a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and provide a link to the documentation that describes how to migrate the code.
 
@@ -49,7 +49,7 @@ when(condition)
 otherwise(action)
 ----
 
-Ruleset and rule XML elements are covered in more detail in the xref:Rules-XML-Rule-Construction[XML Rule Structure] section. See xref:Rules-Create-a-Basic-XML-Rule[Create a Basic XML Rule] for additional details about creating XML rules with example syntax.
+Ruleset and rule XML elements are covered in more detail in the xref:xml_rule_structure[XML Rule Structure] section. See xref:create_basic_xml_rule[Create a Basic XML Rule] for additional details about creating XML rules with example syntax.
 
 . Use your favorite editor or IDE to create an XML file in the `/home/USER_NAME/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
 +
@@ -218,7 +218,7 @@ Windup report created: /home/USER_NAME/migration-rules/reports/index.html
 [discrete]
 == Review the Reports
 
-Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#Review-the-Report[Review the Reports] section of the _{ProductShortName} User Guide_.
+Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#review_reports[Review the Reports] section of the _{ProductShortName} User Guide_.
 
 . Open `/home/USER_NAME/migration-rules/reports/index.html` in a web browser.
 . Verify that the rule executed.

@@ -1,9 +1,9 @@
-[[Export-the-Report-for-Use-by-Spreadsheet-Programs]]
+[[export_csv]]
 = Export the Report in CSV Format
 
 {ProductShortName} provides the ability to export the report data, including the *Classifications* and *Hints*, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields delimited by a comma (`,`) separator.
 
-The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from a {ProductShortName} report.  
+The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from a {ProductShortName} report.
 
 == Export the Report
 
@@ -31,5 +31,4 @@ Application:: The name of the application for which this item was generated.
 File Name:: The name of the file for the given item.
 File Path:: The file path of the file for the given item.
 Line:: The line number of the file for the given item.
-Story points:: The number of story points, which represent the level of effort, assigned to the given item. 
-
+Story points:: The number of story points, which represent the level of effort, assigned to the given item.

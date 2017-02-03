@@ -1,9 +1,7 @@
 [[install_windup_plugin]]
 = Install the {ProductPluginName}
 
-.Supported Development Environments
-* Eclipse 4.6 (Neon)
-* Red Hat JBoss Developer Studio 10.2
+Review the xref:supported_configs[supported configurations] to make sure that you are using a development environment that is compatible with the {ProductPluginName}.
 
 .Install the Plugin
 . If you do not already have an existing installation, download link:http://www.eclipse.org/downloads/[Eclipse] or link:https://access.redhat.com/jbossnetwork/restricted/listSoftware.html?product=jbossdeveloperstudio&downloadType=distributions[JBoss Developer Studio] and install it.

@@ -7,46 +7,69 @@ include::topics/templates/document-attributes.adoc[]
 :imagesdir: topics/images
 :windup-rules-development-guide:
 
-= {ProductName} Rules Development Guide
+= {RulesDevBookName}
 
-include::topics/rules-guide-intro.adoc[leveloffset=+1]
+== Introduction
 
-== Getting Started
+// About the Windup Rules Development Guide
+include::topics/rules-guide-intro.adoc[leveloffset=+2]
 
+// Use of WINDUP_HOME in this Guide
+include::topics/About-the-HOME-Variable.adoc[leveloffset=+3]
+
+// Windup Rules
+include::topics/About-Rules.adoc[leveloffset=+2]
+
+// Getting Started
+include::topics/getting-started-rules.adoc[leveloffset=+1]
+
+// Create Your First XML Rule
 include::topics/Rules-Create-Your-First-Rule.adoc[leveloffset=+2]
+
+// Review the Windup Quickstarts
+include::topics/Review-the-Quickstarts.adoc[leveloffset=+2]
 
 == Creating XML Rules
 
+// XML Rule Structure
 include::topics/Rules-XML-Rule-Construction.adoc[leveloffset=+2]
 
+// Create a Basic XML Rule
 include::topics/Rules-Create-a-Basic-XML-Rule.adoc[leveloffset=+2]
 
 === XML Rule Syntax
 
+// When Condition Syntax
 include::topics/Rules-XML-Rule-When-Condition-Syntax.adoc[leveloffset=+3]
 
+// Perform Action Syntax
 include::topics/Rules-XML-Rule-Perform-Action-Syntax.adoc[leveloffset=+3]
 
+// Where Syntax
 include::topics/where-syntax.adoc[leveloffset=+3]
 
+// Testing XML Rules
 include::topics/Rules-Test-a-Basic-XML-Rule.adoc[leveloffset=+1]
 
+// Overriding Rules
 include::topics/Rules-Override-Rules.adoc[leveloffset=+1]
 
+// Using Custom Rule Categories
 include::topics/rules-categories.adoc[leveloffset=+1]
-
-== Additional Resources
-
-include::topics/Rules-Review-the-Existing-XML-Rules.adoc[leveloffset=+2]
-
-include::topics/Rules-Important-Links.adoc[leveloffset=+2]
 
 [appendix]
 == Reference Material
 
+// Rule Story Points
 include::topics/Rules-Rule-Story-Points.adoc[leveloffset=+2]
 
-include::topics/About-the-HOME-Variable.adoc[leveloffset=+2]
+=== Additional Resources
+
+// Review the Existing Windup XML Rules
+include::topics/Rules-Review-the-Existing-XML-Rules.adoc[leveloffset=+3]
+
+// Important Links
+include::topics/Rules-Important-Links.adoc[leveloffset=+3]
 
 // **********************************
 // * Appendix: Revision Information *

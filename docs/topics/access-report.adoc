@@ -1,7 +1,13 @@
 [[access_report]]
 = Access the Report
 
-When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` that you specify using the `--output` argument in the command line. This output directory contains the following files and subdirectories:
+When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` that you specify using the `--output` argument in the command line. Upon completion of execution, you will see the following message in the terminal with the location of the report.
+----
+Windup report created: OUTPUT_REPORT_DIRECTORY/index.html
+              Access it at this URL: file:///OUTPUT_REPORT_DIRECTORY/index.html
+----
+
+The output directory contains the following files and subdirectories:
 
 [options="nowrap"]
 ----
@@ -14,4 +20,4 @@ OUTPUT_REPORT_DIRECTORY/
 ├── stats/              // Performance statistics
 ----
 
-Use a browser to open the `index.html` file located in the report output directory. See the xref:Review-the-Report[Review the Reports] section for information on navigating the {ProductShortName} reports.
+Use a browser to open the `index.html` file located in the report output directory. See the xref:review_reports[Review the Reports] section for information on navigating the {ProductShortName} reports.

@@ -1,4 +1,4 @@
-[[Rules-XML-Rule-Perform-Action-Syntax]]
+[[perform_action_syntax]]
 = Perform Action Syntax
 
 Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.
@@ -392,7 +392,7 @@ a|Specify XSLTTransformation parameters as property value pairs
 
 === Summary
 
-The `<lineitem>` element is used to provide  general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues. This information is displayed on the project or application overview page. For a better understanding of the `<lineitem>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html[Lineitem] class.
+The `<lineitem>` element is used to provide  general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues. This information is displayed on the project or application overview page. For a better understanding of the `<lineitem>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html[LineItem] class.
 
 The following is an example of a rule that creates a lineitem message.
 

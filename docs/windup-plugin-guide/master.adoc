@@ -7,10 +7,18 @@ include::topics/templates/document-attributes.adoc[]
 :imagesdir: topics/images
 :windup-plugin-user-guide:
 
-= {ProductPluginName} Guide
+= {PluginBookName}
 
-// Introduction
-include::topics/plugin-intro.adoc[leveloffset=+1]
+== Introduction
+
+// About the Windup Eclipse Plugin Guide
+include::topics/plugin-intro.adoc[leveloffset=+2]
+
+// About the Windup Eclipse Plugin
+include::topics/about-plugin.adoc[leveloffset=+2]
+
+// Supported Configurations
+include::topics/plugin-supported-configs.adoc[leveloffset=+2]
 
 // Install the Windup Eclipse Plugin
 include::topics/plugin-install.adoc[leveloffset=+1]
