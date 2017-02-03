@@ -1,4 +1,4 @@
-[[Get-Involved]]
+[[get_involved]]
 = Get Involved
 
 To help us make {ProductName} cover most application constructs and server configurations, including yours, you can help with any of the following items.
@@ -8,15 +8,14 @@ To help us make {ProductName} cover most application constructs and server confi
 * Identify application components and problem areas that may be difficult to migrate.
 ** Write a short description of these problem migration areas.
 ** Write a brief overview describing how to solve the problem migration areas.
-* xref:Execute[Try {ProductName}] on your application. Be sure to xref:Report-Issues[report any issues] you encounter.
-* Contribute to the {ProductName} rules repository. 
+* xref:execute[Try {ProductName}] on your application. Be sure to xref:report_issues[report any issues] you encounter.
+* Contribute to the {ProductName} rules repository.
 ** Write a {ProductName} rule to identify or automate a migration process.
 ** Create a test for the new rule.
-** Details are provided in the link:{ProductDocRulesGuideURL}[_{ProductShortName} Rules Development Guide_].
-* Contribute to the project source code. 
+** Details are provided in the link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_].
+* Contribute to the project source code.
 ** Create a core rule.
 ** Improve {ProductShortName} performance or efficiency.
-** See the link:{ProductDocCoreGuideURL}[{ProductShortName} Core Development Guide] for information about how to configure your environment and set up the project.
+** See the link:{ProductDocCoreGuideURL}[_{CoreDevelopmentBookName}_] for information about how to configure your environment and set up the project.
 
 Any level of involvement is greatly appreciated!
-

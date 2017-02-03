@@ -1,18 +1,16 @@
-[[What-is-it]]
-= What is {ProductName}?
+[[about_windup]]
+= About Windup
 
-image:windup-logo-large.png[{ProductName} Logo] 
-
-[discrete]
-== Overview
-
-{ProductName} is an extensible and customizable rule-based tool that helps simplify migration of Java applications. 
-
-{ProductShortName} examines application artifacts, including project source directories and applications archives, then produces an HTML report that highlights areas needing changes. {ProductShortName} can be used to migrate Java applications from previous versions of _Red Hat JBoss Enterprise Application Platform_ or from other containers, such as _Oracle® WebLogic Server_ or _IBM® WebSphere® Application Server_.
+image:windup-logo-large.png[{ProductName} Logo]
 
 [discrete]
-== How Does {ProductName} Simplify Migration?
+== What is {ProductShortName}?
+
+{ProductName} is an extensible and customizable rule-based tool that helps simplify migration of Java applications.
+
+{ProductShortName} examines application artifacts, including project source directories and applications archives, then produces an HTML report that highlights areas needing changes. {ProductShortName} can be used to migrate Java applications from previous versions of _Red Hat JBoss Enterprise Application Platform_ or from other containers, such as _Oracle(R) WebLogic Server_ or _IBM(R) WebSphere(R) Application Server_.
+
+[discrete]
+== How Does {ProductShortName} Simplify Migration?
 
 {ProductShortName} looks for common resources and highlights technologies and known trouble spots when migrating applications. The goal is to provide a high-level view into the technologies used by the application and provide a detailed report organizations can use to estimate, document, and migrate enterprise applications to Java EE and JBoss EAP.
-
-

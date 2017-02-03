@@ -1,4 +1,4 @@
-[[Rules-Create-a-Basic-XML-Rule]]
+[[create_basic_xml_rule]]
 = Create a Basic XML Rule
 
 This section describes how to create a {ProductShortName} XML rule.
@@ -56,7 +56,7 @@ The following is the basic syntax for XML rules.
 
 == Create the Ruleset Metadata
 
-The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset. For more information about ruleset metadata, see xref:Rules-XML-Rule-Construction[XML Rule Structure].
+The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset. For more information about ruleset metadata, see xref:xml_rule_structure[XML Rule Structure].
 
 .Example Rule <metadata>
 [source,xml,options="nowrap"]
@@ -137,7 +137,7 @@ The XML rule `<when>` element tests for a condition. The following is a list of 
 
 |====
 
-The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content. This is described in more detail in xref:Rules-XML-Rule-When-Condition-Syntax[When Condition Syntax].
+The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content. This is described in more detail in xref:when_syntax[When Condition Syntax].
 
 === Create the Rule Perform Action
 
@@ -168,4 +168,4 @@ The XML rule `<perform>` element performs the action when the condition is met. 
 
 |====
 
-The syntax is described in more detail in xref:Rules-XML-Rule-Perform-Action-Syntax[Perform Action Syntax].
+The syntax is described in more detail in xref:perform_action_syntax[Perform Action Syntax].

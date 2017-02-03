@@ -7,56 +7,78 @@ include::topics/templates/document-attributes.adoc[]
 :imagesdir: topics/images
 :windup-user-guide:
 
-= {ProductName} User Guide
+= {UserCLIBookName}
 
 == Introduction
 
-This guide is for engineers, consultants, and others who plan to use {ProductName} to migrate Java applications or other components.
+// About the {UserCLIBookName}
+include::topics/about-user-guide.adoc[leveloffset=+2]
 
+// About the WINDUP_HOME Variable
+include::topics/About-the-HOME-Variable.adoc[leveloffset=+3]
+
+// About Windup
 include::topics/What-is-it.adoc[leveloffset=+2]
 
-include::topics/Features.adoc[leveloffset=+2]
+// Windup Features
+include::topics/Features.adoc[leveloffset=+3]
 
-include::topics/migration-paths.adoc[leveloffset=+2]
+// Windup Rules
+include::topics/About-Rules.adoc[leveloffset=+3]
 
-include::topics/About-Rules.adoc[leveloffset=+2]
+=== Supported Configurations
 
-include::topics/System-Requirements.adoc[leveloffset=+2]
+// System Requirements
+include::topics/System-Requirements.adoc[leveloffset=+3]
 
-include::topics/About-the-HOME-Variable.adoc[leveloffset=+2]
+// Supported Migration Paths
+include::topics/migration-paths.adoc[leveloffset=+3]
 
 == Getting Started
 
+// Install Windup
 include::topics/Install.adoc[leveloffset=+2]
 
+// Run Windup
 include::topics/Execute.adoc[leveloffset=+2]
 
+// Access the Report
 include::topics/access-report.adoc[leveloffset=+2]
 
+// Review the Reports
 include::topics/Review-the-Report.adoc[leveloffset=+1]
 
+// Export the Report in CSV Format
 include::topics/Export-the-Report-for-Use-by-Spreadsheet-Programs.adoc[leveloffset=+1]
 
+// Mavenize Your Application
 include::topics/Mavenize-Your-Application.adoc[leveloffset=+1]
 
+// Optimize Windup Performance
 include::topics/Optimize-Performance.adoc[leveloffset=+1]
-
-== Additional Resources
-
-include::topics/Review-the-Quickstarts.adoc[leveloffset=+2]
-
-include::topics/Get-Involved.adoc[leveloffset=+2]
-
-include::topics/Important-Links.adoc[leveloffset=+2]
-
-include::topics/Known-Issues.adoc[leveloffset=+2]
-
-include::topics/Report-Issues.adoc[leveloffset=+2]
 
 [appendix]
 == Reference Material
 
-include::topics/Glossary.adoc[leveloffset=+2]
+// Windup Command-line Arguments
+include::topics/cli-args.adoc[leveloffset=+2]
+
+// Rule Story Points
+include::topics/Rules-Rule-Story-Points.adoc[leveloffset=+2]
+
+=== Additional Resources
+
+// Get Involved
+include::topics/Get-Involved.adoc[leveloffset=+3]
+
+// Important Links
+include::topics/Important-Links.adoc[leveloffset=+3]
+
+// Known Windup Issues
+include::topics/Known-Issues.adoc[leveloffset=+3]
+
+// Report Issues with Windup
+include::topics/Report-Issues.adoc[leveloffset=+3]
 
 // **********************************
 // * Appendix: Revision Information *

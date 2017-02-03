@@ -1,4 +1,4 @@
-[[Rules-Rule-Story-Points]]
+[[rule_story_points]]
 = Rule Story Points
 
 == What are Story Points?
@@ -49,3 +49,11 @@ In addition to the level of effort, you can categorize migration tasks to indica
 Mandatory:: The task must be completed for a successful migration. If the changes are not made, the resulting application will not build or run successfully. Examples include replacement of proprietary APIs that are not supported in the target platform.
 
 Optional:: If the migration task is not completed, the application should work, but the results may not be the optimal. If the change is not made at the time of migration, it is recommended to put it on the schedule soon after migration is completed. An example of this would be the upgrade of EJB 2.x code to EJB 3.
+
+ifdef::windup-rules-development-guide[]
+For more information on categorizing tasks, see xref:rule_categories[Using Custom Rule Categories].
+endif::windup-rules-development-guide[]
+
+ifndef::windup-rules-development-guide[]
+For more information on categorizing tasks, see link:{ProductDocRulesGuideURL}#rule_categories[Using Custom Rule Categories] in the _{RulesDevBookName}_.
+endif::windup-rules-development-guide[]

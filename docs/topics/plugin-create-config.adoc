@@ -24,7 +24,7 @@ Check the *Generate Report* checkbox if you want to generate the Windup HTML rep
 Options::
 Set additional Windup options. Any option that is a boolean flag, such as `enableTattletale`, should enter `true` as the value.
 +
-See the link:{ProductDocUserGuideURL}#command-line-arguments[Windup Command-Line Arguments] section of the _{UserCLIBookName}_ for a description of each Windup argument.
+See the link:{ProductDocUserGuideURL}#command_line_arguments[Windup Command-line Arguments] section of the _{UserCLIBookName}_ for a description of each Windup argument.
 
 [discrete]
 == Rules

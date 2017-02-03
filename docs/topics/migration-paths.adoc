@@ -27,4 +27,4 @@ $ WINDUP_HOME/bin/windup --source weblogic --target eap:6 --input /path/to/appli
 $ WINDUP_HOME/bin/windup --source eap:6 --target eap:7 --input /path/to/application.war
 ----
 
-See xref:Execute[Execute {ProductName}] for more information on running {ProductShortName}.
+See xref:execute[Run {ProductName}] for more information on running {ProductShortName}.

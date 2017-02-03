@@ -1,12 +1,9 @@
-[[Execute]]
-= Execute {ProductName}
-
-[[run-windup]]
-== Run {ProductShortName}
+[[execute]]
+= Run {ProductShortName}
 
 Use the following steps to run {ProductShortName} against your application.
 
-. Open a terminal and navigate to the `WINDUP_HOME/bin` directory.
+. Open a terminal and navigate to the `WINDUP_HOME/bin/` directory.
 . Execute the `windup` script, or `windup.bat` for Windows, and specify the appropriate arguments.
 +
 [source,options="nowrap"]
@@ -21,21 +18,13 @@ $ ./windup --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output -
 * `--packages`: The packages to be evaluated. This argument is highly recommended to improve performance. See the xref:packages_argument[`--packages`] argument description.
 
 +
-See xref:command-line-arguments[{ProductShortName} Command-Line Arguments] for a detailed description of all available command-line arguments.
+See xref:command_line_arguments[{ProductShortName} Command-line Arguments] for a detailed description of all available command-line arguments.
 
-. Review the report.
-+
-Upon completion, you will see the following message in the terminal.
-+
-----
-Windup report created: PATH_TO_REPORTS/index.html
-              Access it at this URL: file:///PATH_TO_REPORTS/index.html
-----
-+
-Navigate to the output directory and open the `index.html` file in a web browser. See the xref:Review-the-Report[Review the Reports] section for more details on evaluating report data.
+. xref:access_report[Access the report].
 
 See xref:command-examples[{ProductShortName} Command Examples] below for concrete examples of commands that use source code directories and archives located in the Windup GitHub repository.
 
+[discrete]
 [[command-examples]]
 == {ProductShortName} Command Examples
 
@@ -69,6 +58,7 @@ To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` 
 $ WINDUP_HOME/bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_DIRECTORY --output OUTPUT_REPORT_DIRECTORY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2
 ----
 
+[discrete]
 == {ProductShortName} Help
 
 To see the complete list of available arguments for the `windup` command, open a terminal, navigate to the WINDUP_HOME directory, and execute the following command:
@@ -77,166 +67,3 @@ To see the complete list of available arguments for the `windup` command, open a
 ----
 $ WINDUP_HOME/bin/windup --help
 ----
-
-[[command-line-arguments]]
-== {ProductShortName} Command-Line Arguments
-
-The following is a detailed description of the available {ProductShortName} command line arguments.
-
-[NOTE]
-====
-To run the Windup command without prompting, for example when executing from a script, use `--batchMode` to take the default values for unspecified parameters and `--overwrite` to force delete the output directory. Also be sure to specify the required `--input` and `--target` arguments.
-
-See the description for each argument for more details.
-====
-
---additionalClassPath JAR_OR_DIRECTORY_1 JAR_OR_DIRECTORY_2:: Use this option to add additional JAR files or directories to the class path so they are available for decompilation or other analysis. For example, `--additionalClassPath MyClasses.jar com/mycompany/`.
-
---addonDir DIRECTORY:: Add the specified directory as a custom add-on repository.
-
---batchMode:: Specifies that {ProductShortName} should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in via the command line.
-
---debug:: Run {ProductShortName} in debug mode.
-
---discoverPackages:: Lists all available packages in the input binary application.
-
---enableClassNotFoundAnalysis:: Enables analysis of Java files that are not available on the class path. This should be left off if some classes will be unavailable at analysis time.
-
---enableCompatibleFilesReport:: Enables generation of 'Compatible Files' report. Due to processing all files without found issues, this report may take a long time for large applications.
-
---enableTattletale:: Enables Tattletale-embedded processing and Windup will generate a Tattletale report for each application.
-
---excludePackages PACKAGE_1 PACKAGE_2 PACKAGE_N:: This is a space-delimited list of the packages to be excluded by {ProductShortName}. For example, entering "com.mycompany.commonutilities" would exclude all classes whose package name begins with "com.mycompany.commonutilities".
-+
-This parameter is very important when dealing with large applications as it can greatly reduce execution time.
-
---excludeTags TAG_1 TAG_2:: Do not process rules that contain the specified tags. This option can be used if it is found that a particular set of rules is highlighting too much unnecessary information in the report. If this option is not specified, all tags are processed.
-+
-[NOTE]
-====
-For the list of the available tags, pass the `--listTags` argument to the `windup` command.
-====
-
---explodedApp:: If used, indicates the directory contains source files for a single application or directory entries for multiple applications. See the xref:input-file-argument-description-table[Input File Argument Description Table] for details.
-
---exportCSV:: Export the report data to a CSV file on your local file system. {ProductShortName} creates the file in the directory specified by the `--output` argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis. For details, see xref:Export-the-Report-for-Use-by-Spreadsheet-Programs[Export the Report in CSV Format].
-
---help:: Display the {ProductShortName} help message.
-
---immutableAddonDir DIRECTORY:: Add the specified directory as a custom read-only add-on repository.
-
---includeTags TAG_1 TAG_2:: In {ProductShortName}, each rule is associated with a set of tags. Tags are just simple strings that succinctly describe the function of the rule. Common tags include "ejb", "log4j", and "hibernate". To see the full list of tags, use the `--listTags` argument.
-+
-When one or more tags are specified here, then only rules with these tags will be processed. If this option is not specified, then all tags are processed.
-
-[[input_argument]]
---input INPUT_ARCHIVE_OR_DIRECTORY [...]:: Each input argument is a fully qualified path to a file or directory containing one or more applications to be migrated. Multiple paths are separated by a space. This argument is required and can appear multiple times in the command.
-+
-When used in combination with the following arguments, the file input type is evaluated as follows.
-+
-[[input-file-argument-description-table]]
-.Input File Argument Description Table
-[cols="1,2,2,2",options="header"]
-|====
-| Input File Type
-| `--explodedApp` Argument
-| `--sourceMode` Argument
-| Neither Argument Specified
-
-| Directory
-| Directory evaluated as a single application.
-| Directory evaluated as a single application.
-| Each directory entry is evaluated as a single application.
-
-| File
-| Argument is ignored and the file is evaluated as a single application.
-| The file is evaluated as a compressed project.
-| The file is evaluated as a single application.
-|====
-
---install GROUP_ID:ARTIFACT_ID[:VERSION]:: Install the specified add-ons. For example, `--install core-addon-x` or `--install org.example.addon:example,1.0.0`.
-
---keepWorkDirs:: Instructs Windup to not delete temporary working files, such as the graph database and unzipped archives. This is useful for debugging purposes.
-
---list:: List installed add-ons.
-
---listSourceTechnologies:: List all available source technologies.
-
---listTags:: List all available tags.
-
---listTargetTechnologies:: List all available target technologies.
-
---mavenize:: Create a Maven project directory structure based on the structure and content of the application. This creates `pom.xml` files using the appropriate Java EE API and the correct dependencies between project modules. See also the `--mavenizeGroupId` option.
-
---mavenizeGroupId:: When used with the `--mavenize` option, all generated `pom.xml` files will use this value for their `<groupId>`. If this parameter is omitted, Windup will attempt to determine an appropriate `<groupId>` based on the application, or will default to `com.mycompany.mavenized`.
-
---online:: If specified, allows network access for features that require it. Currently only validating XML schemas against external resources relies on Internet access. Note that this comes with a performance penalty.
-
-[[output_argument]]
---output OUTPUT_REPORT_DIRECTORY:: This is the fully qualified path to the directory that will contain the report information produced by {ProductShortName}.
-+
-* If omitted, the report will be generated in an INPUT_ARCHIVE_OR_DIRECTORY.report directory.
-* If the output directory exists, you will be prompted with the following (with a default of N).
-+
-----
-Overwrite all contents of "/home/username/OUTPUT_REPORT_DIRECTORY" (anything already in the directory will be deleted)? [y,N]
-----
-+
-However, if you specify the `--overwrite` argument, {ProductShortName} will proceed to delete and recreate the directory. See the description of this argument for more information.
-
---overwrite:: Specify this argument only if you are certain you want to force {ProductShortName} to delete the existing OUTPUT_REPORT_DIRECTORY directory. If you do not specify this argument and the `--output` directory exists, you are prompted to choose whether to overwrite the contents.
-+
-[WARNING]
-====
-Be careful not to specify a report output directory that contains important information!
-====
-
-[[packages_argument]]
---packages PACKAGE_1 PACKAGE_2 PACKAGE_N:: A space delimited list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.
-+
-* In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or third party packages. The `PACKAGE_N` argument is a package prefix; all subpackages will be scanned. For example, to scan the packages `com.mycustomapp` and `com.myotherapp`, use `--packages com.mycustomapp com.myotherapp` argument on the command line.
-* While you can provide package names for standard Java EE third party software like `org.apache`, it is usually best not to include them as they should not impact the migration effort.
-+
-WARNING: If you omit the `--packages` argument, every package in the application is scanned, which can impact performance. It is best to provide this argument with one or more packages. For additional tips on how to improve performance, see xref:Optimize-Performance[Optimize {ProductShortName} Performance].
-
---remove GROUP_ID:ARTIFACT_ID[:VERSION]:: Remove the specified add-ons. For example, `--remove core-addon-x` or `--remove org.example.addon:example,1.0.0`.
-
---skipReports:: If used, Windup will not generate HTML reports. A common use of this argument is when exporting report data to a CSV file using `--exportcsv`.
-
-[[source_argument]]
---source SOURCE_1 SOURCE_2:: A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources.
-+
-The `--source` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax]. This instructs Windup to only run the rulesets matching the specified versions. For example, `--source eap:5`.
-+
-[WARNING]
-====
-When migrating to JBoss EAP, be sure to specify the version, for example, `eap:6`. Specifying only `eap` will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.
-
-See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version is appropriate for your source platform.
-====
-
---sourceMode:: If used, indicates the application to be evaluated contains source files rather than compiled binaries. See the xref:input-file-argument-description-table[Input File Argument Description Table] for details.
-
-[[target_argument]]
---target TARGET_1 TARGET_2:: A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the `--source` argument, helps to determine which rulesets are used. If you do not specify this option, you are prompted to select a target. Use the `--listTargetTechnologies` argument to list all available targets.
-+
-The `--target` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax]. This instructs Windup to only run the rulesets matching the specified versions. For example, `--target eap:7`.
-+
-[WARNING]
-====
-When migrating to JBoss EAP, be sure to specify the version in the target, for example, `eap:6`. Specifying only `eap` will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.
-
-See xref:migration_paths[Supported Migration Paths] for which JBoss EAP version is appropriate for your source platform.
-====
-
---userIgnorePath CUSTOM_IGNORE_DIRECTORY:: {ProductShortName} looks for file names matching the pattern `*windup-ignore.txt` to identify files that should be ignored. By default, it looks for these files in the `~/.windup/ignore/` and `WINDUP_HOME/ignore/` directories, but this option allows you to create files with this pattern name in a different directory.
-
---userRulesDirectory CUSTOM_RULES_LOCATION:: By default, {ProductShortName} looks for rules in the `${user.home}/.windup/rules/` directory. This option allows you to pass in the location of additional custom XML rules that should be loaded and executed by {ProductShortName}. The value passed to this argument can be one of the following:
-
-* A fully-qualified path to a directory containing additional custom XML ruleset files
-* A single custom XML ruleset file
-
-+
-The ruleset files must end in [x-]`.windup.xml`.
-
---version:: Display the {ProductShortName} version.

@@ -1,37 +1,21 @@
-[[Features]]
-= Features of {ProductName}
+[[features]]
+= {ProductShortName} Features
 
-Shared Data Model:: {ProductShortName} creates a shared data model graph that provides the following benefits.
+Planning and work estimation::
+{ProductShortName} assists project managers by detailing the type of work and estimation of effort to complete the tasks. Level of effort is represented in {ProductShortName} reports as xref:rule_story_points[story points]. Actual level of effort will be based on the skills required and the classification of migration work needed.
 
-* It enables complex rule interaction, allowing rules to pass findings to other rules.
-* It enables third-party plugins to interact with other plugins, rules, and reports.
-* The findings in the data graph model can be searched and queried during rule execution and used for reporting purposes.
+Resources to complete migration tasks::
+{ProductShortName} provides suggested code changes and additional resources to help engineers resolve the migration issues identified.
 
-Enhanced Rule Capabilities::
+Detailed reporting::
+{ProductShortName} produces numerous xref:review_reports[reports] to give both high-level views of the migration effort and details of specific migrations tasks. At a glance, you can see a summary of all migration issues, reports of technologies used in the application, and dependencies on other applications and services. You can also examine source files to see the line of code where an issue occurs.
 
-{ProductShortName} provides the ability to create powerful and complex rules. 
+Built-in rules and migration paths::
+{ProductShortName} comes with a core set of rules to identify common migration issues, such as hard-coded IP addresses and JNDI lookups, and provide specific assistance for several xref:migration_paths[migration paths].
 
-* XML-based rules are simple to write and and easy to implement.
-* Java-based rule add-ons provide greater flexibility and power when creating rules.
-* Rules can be nested to handle more complex situations. This means you can nest simple statements rather than use complex XPATH or REGEX expressions.
-* Rules can be linked using and/or statements.
+Rule extensibility and customization::
+{ProductShortName} provides the ability to create powerful and complex rules. You can expand upon the core set of rules provided by {ProductShortName} and create rules to identify additional issues that are important for your migration project. You can also override core rules and create custom rule categories. See the link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_] for more information on customizing {ProductShortName} rules.
 
-Extensibility::
-
-{ProductName} can be extended by developers, users, and third-party software.
-
-* It provides a plug-in API to inject other applications into {ProductShortName}.
-* It enables third-parties to create simple plugins that can interact with the data graph.
-* It allows users with domain knowledge to implement their own rules.
-
-Targeted Reporting::
-
-{ProductShortName} reports are targeted for specific audiences.
-
-* Project Management: Reports detail the type of work and estimation of effort to complete the tasks.
-* Developers: Reports provide hints and suggested code changes by class or file.
-
-Work Estimation:: 
-
-Estimates for the _level of effort_ are based on the skills required and the classification of migration work needed. Level of effort is represented as _story points_ in the {ProductShortName} reports.
-
+// TODO: Worthwhile, or remove?
+Analyze source code or application archives::
+{ProductShortName} can evaluate application archives or source code, and can analyze multiple applications together. It can identify archives that are shared across multiple applications, which can help with accurate effort estimation.

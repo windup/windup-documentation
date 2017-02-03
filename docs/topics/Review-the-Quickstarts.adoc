@@ -1,15 +1,21 @@
-[[Review-the-Quickstarts]]
+[[review_quickstarts]]
 = Review the {ProductName} Quickstarts
 
-The {ProductName} quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules. 
+The {ProductName} quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.
 
-You can download a ZIP file of the latest released version of the quickstarts. Or, if you prefer to play around with the source code, you can fork and clone the windup-quickstarts project repository.
+You can xref:download_quickstart_zip[download a ZIP file] of the latest released version of the quickstarts. Or, if you prefer to play around with the source code, you can xref:use_quickstart_github_project[fork and clone the `windup-quickstarts` project repository].
 
+Each quickstart has a `README.adoc` file that contains instructions for that quickstart.
+
+[[download_quickstart_zip]]
+[discrete]
 == Download the Latest Quickstart ZIP
 
 . Open a browser and navigate to https://github.com/windup/windup-quickstarts/releases.
 . Click on the most recent release to download the ZIP file to your local file system.
 
+[[use_quickstart_github_project]]
+[discrete]
 == Fork and Clone the Quickstart GitHub Project
 
 If you do not have the GitHub client (`git`), download it from link:http://git-scm.com/[] and install it.
@@ -21,7 +27,7 @@ If you do not have the GitHub client (`git`), download it from link:http://git-s
 ----
 $ git clone https://github.com/YOUR_USER_NAME/windup-quickstarts.git
 ----
-. This creates and populates a `windup-quickstarts` directory on your local file system. Navigate to the newly created directory, for example 
+. This creates and populates a `windup-quickstarts` directory on your local file system. Navigate to the newly created directory, for example
 +
 [options="nowrap"]
 ----
@@ -33,10 +39,9 @@ $ cd windup-quickstarts/
 ----
 $ git remote add upstream https://github.com/windup/windup-quickstarts.git
 ----
-. To get the latest files from the `upstream` repository.
+. Get the latest files from the `upstream` repository.
 +
 [options="nowrap"]
 ----
-$ git reset --hard upstream/master
+$ git fetch upstream
 ----
-
