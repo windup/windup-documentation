@@ -7,7 +7,7 @@ NOTE: If you do not have one already, you must sign up for a JIRA account in ord
 
 == Create a JIRA Issue
 
-. Open a browser and navigate to https://issues.jboss.org/secure/CreateIssue!default.jspa.
+. Open a browser and navigate to the JIRA link:https://issues.jboss.org/secure/CreateIssue!default.jspa[Create Issue] page.
 +
 If you have not yet logged in, click the *Log In* link at the top right side of the page and enter your credentials.
 
@@ -17,15 +17,15 @@ If you have not yet logged in, click the *Log In* link at the top right side of 
 +
 For core Windup issues, choose _Windup: (WINDUP)_.
 +
-For issues with Windup rules, choose: _Windup rules (WINDUPRULES)_.
+For issues with Windup rules, choose: _Windup rules (WINDUPRULE)_.
 
 * *Issue Type*:  _Bug_
 
-. On the next screen complete the following fields:
+. On the next screen complete the following fields.
 
 * *Summary*: Enter a brief description of the problem or issue.
 * *Environment*: Provide the details of your operating system, version of Java, and any other pertinent information.
 * *Description*: Provide a detailed description of the issue. Be sure to include logs and exceptions traces.
-* *Attachment*: If the application or archive causing the issue does not contain sensitive information and you are comfortable sharing it with the {ProductShortName} development team, attach it to the issue using the *Select Files* button.
+* *Attachment*: If the application or archive causing the issue does not contain sensitive information and you are comfortable sharing it with the {ProductShortName} development team, attach it to the issue using the *browse* button.
 
 . Click the *Create* button to create the JIRA issue.

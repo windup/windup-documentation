@@ -3,7 +3,7 @@
 
 The {ProductName} quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.
 
-You can xref:download_quickstart_zip[download a ZIP file] of the latest released version of the quickstarts. Or, if you prefer to play around with the source code, you can xref:use_quickstart_github_project[fork and clone the `windup-quickstarts` project repository].
+You can xref:download_quickstart_zip[download a ZIP file] of the latest released version of the quickstarts. Or, if you prefer to work with the source code, you can xref:use_quickstart_github_project[fork and clone the `windup-quickstarts` project repository].
 
 Each quickstart has a `README.adoc` file that contains instructions for that quickstart.
 
@@ -18,9 +18,9 @@ Each quickstart has a `README.adoc` file that contains instructions for that qui
 [discrete]
 == Fork and Clone the Quickstart GitHub Project
 
-If you do not have the GitHub client (`git`), download it from link:http://git-scm.com/[] and install it.
+You must have the link:http://git-scm.com/[`git`] client installed on your machine.
 
-. Click the `Fork` link on the https://github.com/windup/windup-quickstarts/[{ProductName} quickstart] GitHub page to create the project in your own Git. The forked GitHub repository URL created by the fork should look like this: https://github.com/YOUR_USER_NAME/windup-quickstarts.git
+. Click the `Fork` link on the https://github.com/windup/windup-quickstarts/[{ProductName} quickstart] GitHub page to create the project in your own Git. The forked GitHub repository URL created by the fork should look like this: https://github.com/YOUR_USER_NAME/windup-quickstarts.git.
 . Clone your {ProductName} quickstart repository to your local file system:
 +
 [options="nowrap"]

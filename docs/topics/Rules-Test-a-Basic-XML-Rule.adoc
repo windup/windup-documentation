@@ -3,15 +3,15 @@
 
 == Add the Rule to {ProductName}
 
-A {ProductName} rule is installed simply by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files that end with `.windup.xml`, in the following locations:
+A {ProductName} rule is installed by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files that end with `.windup.xml`, in the following locations.
 
-* Copy the rule to a directory specified by the `--userRulesDirectory` argument on the {ProductShortName} command line.
+* The directory specified by the `--userRulesDirectory` argument on the {ProductShortName} command line.
 
-* Copy the rule to the `{ProductHomeVar}/rules/` directory. xref:about_home_var[{ProductHomeVar}] is the directory where you install and run the {ProductName} executable.
+* The `{ProductHomeVar}/rules/` directory. xref:about_home_var[{ProductHomeVar}] is the directory where you install and run the {ProductName} executable.
 
-* Copy the rule to the `${user.home}/.windup/rules/` directory. This directory is created by {ProductShortName} the first time it is executed and contains rules, add-ons, and the {ProductShortName} log.
+* The `${user.home}/.windup/rules/` directory. This directory is created by {ProductShortName} the first time it is executed and contains rules, add-ons, and the {ProductShortName} log.
 +
-NOTE: For Windows, this directory would be `\Documents and Settings\USER_NAME\.windup\rules\` or `\Users\USER_NAME\.windup\rules\`
+NOTE: For Windows, this directory would be `\Documents and Settings\USER_NAME\.windup\rules\` or `\Users\USER_NAME\.windup\rules\`.
 
 == Test the XML Rule
 

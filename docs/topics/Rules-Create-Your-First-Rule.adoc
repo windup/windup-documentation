@@ -188,9 +188,9 @@ The rule is now complete and should look like the following example.
 [discrete]
 == Install the Rule
 
-A {ProductShortName} rule is installed simply by placing the rule into the appropriate directory. See xref:add_the_rule_to_windup[Add the Rule to {ProductShortName}] for the possible locations to place a custom rule.
+A {ProductShortName} rule is installed by placing the rule into the appropriate directory. See xref:add_the_rule_to_windup[Add the Rule to {ProductShortName}] for the possible locations to place a custom rule.
 
-Copy the `JBoss5-web-class-loading.windup.xml` file to the `WINDUP_HOME/rules` directory.
+Copy the `JBoss5-web-class-loading.windup.xml` file to the `WINDUP_HOME/rules/` directory.
 
 [source,options="nowrap"]
 ----

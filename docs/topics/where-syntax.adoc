@@ -5,6 +5,8 @@ You can define parameters that specify a matching pattern to be used in other el
 
 Use the `<where>` element to define a parameter. Specify the parameter name using the `param` attribute and supply the pattern using the `<matches>` element. This parameter can then be referenced elsewhere in the rule definition using the syntax `{PARAM_NAME}`.
 
+The complete XML rule schema is located here: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd.
+
 The following example rule defines a parameter named `subpackage` that specifies a pattern of `(activeio|activemq)`.
 
 ----
@@ -17,10 +19,9 @@ The following example rule defines a parameter named `subpackage` that specifies
     ...
   </perform>
   <where param="subpackage">
-   <matches pattern="(activeio|activemq)" />
+    <matches pattern="(activeio|activemq)" />
   </where>
 </rule>
 ----
 
 The pattern defined by `subpackage` will then be substituted in the `<javaclass>` `references` attribute. This causes the rule to match on [x-]`org.apache.activeio.*` and `org.apache.activemq.*` packages.
-
