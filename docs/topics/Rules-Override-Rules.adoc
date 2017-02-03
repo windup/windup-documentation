@@ -23,7 +23,7 @@ Note that the rules from the original ruleset that are not overridden in the new
 +
 You can change anything in the rule definition. This rule will override the entire original rule.
 
-The below is an example of an overridden rule. Notice the `<overrideRules>true</overrideRules>` element in the ruleset metadata. The rule and ruleset IDs match the original. This rule override simply changed the effort needed from a `1` to a `3`.
+The below is an example of an overridden rule. Notice the `<overrideRules>true</overrideRules>` element in the ruleset metadata. The rule and ruleset IDs match the original. This rule override changed the effort needed from a `1` to a `3`.
 
 [source,xml,options="nowrap"]
 ----

@@ -20,7 +20,7 @@ This generates the Maven project structure in the `/path/to/output/mavenized` di
 
 NOTE: You can only use the `--mavenize` option when providing a compiled application for the `--input` argument. This feature is not available when running {ProductShortName} against source code.
 
-You can also use the `--mavenizeGroupId` option to specify the `<groupId>` to be used for the POM files. If unspecified, {ProductShortName} will attempt to identify an appropriate `<groupId>` for the application, or will simply default to `com.mycompany.mavenized`.
+You can also use the `--mavenizeGroupId` option to specify the `<groupId>` to be used for the POM files. If unspecified, {ProductShortName} will attempt to identify an appropriate `<groupId>` for the application, or will default to `com.mycompany.mavenized`.
 
 == Review the Maven Project Structure
 
