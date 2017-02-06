@@ -147,19 +147,19 @@ The XML rule `<perform>` element performs the action when the condition is met. 
 |This operation adds metadata that is intended to apply to the entire file. For example, if the Java Class is a JMS Message Listener, you might want to add a Classification with the title "JMS Message Listener". Information that would apply to the entire file would go here. Also, if an effort level is set, that information would apply to the entire file.
 
 |<hint>
-|This operation adds metadata to a line within the file. For example, if the rule were set to apply to all instances of "javax.jms.TextMessage.setText(java.lang.String)" this would highlight every instance of that method call. This is frequently used when there is detailed information to attach that applies at the line level. Each time this operation is fired, the effort level will be added. In our example, if the effort level is `3` and there were `4` instances of "javax.jms.TextMessage.setText(java.lang.String)", then this would add `9` total story points. Whether or not to apply effort at this level or in a classification depends upon the amount of effort required during the migration.
+|This operation adds metadata to a line within the file. This provides a hint or inline information about how to migrate a section of code.
 
 |<iteration>
-|Specify to iterate over an implicit or explicit variable defined within the rule.
+|This specifies to iterate over an implicit or explicit variable defined within the rule.
 
 |<lineitem>
-| This provides a high level message that will appear in the application overview page.
+|This provides a high-level message that will appear in the application overview page.
 
 |<link>
-|Provides an HTML link to additional information or documentation that provides more information about the migration task.
+|This provides an HTML link to additional information or documentation that provides more information about the migration task.
 
 |<xslt>
-|Specify how to transform an XML file.
+|This specifies how to transform an XML file.
 
 |====
 
