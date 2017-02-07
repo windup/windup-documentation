@@ -6,7 +6,7 @@ When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DI
 [options="nowrap"]
 ----
 OUTPUT_REPORT_DIRECTORY/
-├── index.html          // Landing page for the {ProductShortName} report
+├── index.html          // Landing page for the report
 ├── EXPORT_FILE.csv     // Optional export of data in CSV format
 ├── archives/           // Archives extracted from the application
 ├── mavenized/          // Optional Maven project structure
@@ -15,4 +15,3 @@ OUTPUT_REPORT_DIRECTORY/
 ----
 
 Use a browser to open the `index.html` file located in the report output directory. See the xref:Review-the-Report[Review the Reports] section for information on navigating the {ProductShortName} reports.
-
