@@ -57,7 +57,7 @@ When you run Windup, this rule will now be used in place of the original rule wi
 
 == Disable a Rule
 
-To disable a rule, follow the same steps as above to override a rule, except just provide an empty `<rule>` element.
+To disable a rule, follow the same steps as above to override a rule, except provide an empty `<rule>` element.
 
 [source,xml,options="nowrap"]
 ----

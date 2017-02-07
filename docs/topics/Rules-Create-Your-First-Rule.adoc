@@ -21,7 +21,7 @@ This directory structure will also be used to hold the generated {ProductShortNa
 [discrete]
 == Create Data to Test the Rule
 
-. Use your favorite editor or IDE to create a `jboss-web.xml` file in the `/home/USER_NAME/migration-rules/data/` subdirectory.
+. Create a `jboss-web.xml` file in the `/home/USER_NAME/migration-rules/data/` subdirectory.
 . Copy in the following content.
 +
 [source,xml,options="nowrap"]
@@ -51,7 +51,7 @@ otherwise(action)
 
 Ruleset and rule XML elements are covered in more detail in the xref:xml_rule_structure[XML Rule Structure] section. See xref:create_basic_xml_rule[Create a Basic XML Rule] for additional details about creating XML rules with example syntax.
 
-. Use your favorite editor or IDE to create an XML file in the `/home/USER_NAME/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
+. Create an XML file in the `/home/USER_NAME/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
 +
 [source,xml,options="nowrap"]
 ----
@@ -89,7 +89,7 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XM
 * Replace the `UNIQUE_RULESET_ID` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
 * Replace the `UNIQUE_RULE_ID` with an appropriate rule ID, for example, `JBoss5-web-class-loading_001`.
 
-. Add the following ruleset addon dependencies.
+. Add the following ruleset add-on dependencies.
 +
 [source,xml,options="nowrap"]
 ----

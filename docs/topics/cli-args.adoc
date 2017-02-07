@@ -14,7 +14,7 @@ See the description for each argument for more details.
 [cols="40%,60%a",options="header",]
 |====
 |Argument |Description
-|--additionalClassPath |A space-delimited list of additional JAR files or directories to add to the class path so that they are available for decompilation or other analysis. For example, `--additionalClassPath MyClasses.jar com/mycompany/`.
+|--additionalClassPath |A space-delimited list of additional JAR files or directories to add to the class path so that they are available for decompilation or other analysis.
 |--addonDir |Add the specified directory as a custom add-on repository.
 |--batchMode |Flag to specify that {ProductShortName} should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in to the command line.
 |--debug |Flag to run {ProductShortName} in debug mode.
@@ -48,7 +48,7 @@ Be careful not to specify a report output directory that contains important info
 ====
 |--packages| A space-delimited list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument. See xref:packages_argument[Select Packages] for more information.
 |--remove |Remove the specified add-ons. The syntax is `GROUP_ID:ARTIFACT_ID[:VERSION]`. For example, `--remove core-addon-x` or `--remove org.example.addon:example:1.0.0`.
-|--skipReports |Flag to indicate that HTML reports should not be generated. A common use of this argument is when exporting report data to a CSV file using `--exportcsv`.
+|--skipReports |Flag to indicate that HTML reports should not be generated. A common use of this argument is when exporting report data to a CSV file using `--exportCSV`.
 |--source |A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources. See xref:source_argument[Set the Source Technology] for more information.
 |--sourceMode |Flag to indicate that the application to be evaluated contains source files rather than compiled binaries. See the xref:input_file_type_arguments[Input File Argument Tables] for details.
 |--target |A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the `--source` argument, helps to determine which rulesets are used. Use the `--listTargetTechnologies` argument to list all available targets. See xref:target_argument[Set the Target Technology] for more information.
