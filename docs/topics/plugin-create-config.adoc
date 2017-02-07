@@ -13,7 +13,7 @@ Projects::
 Select one or more projects to analyze. Hold the *Ctrl* key to select multiple projects in the list.
 
 Packages::
-Select one or more packages to scan. It is recommended to select only those packages that you need to analyze to reduce the overall Windup execution time. If no packages are selected, all packages in the project will be scanned. Hold the Ctrl key to select multiple packages in the list.
+Select one or more packages to scan. It is recommended to select only those packages that you need to analyze to reduce the overall Windup execution time. If no packages are selected, all packages in the project will be scanned. Hold the *Ctrl* key to select multiple packages in the list.
 
 [discrete]
 == Options
@@ -22,7 +22,7 @@ Report::
 Check the *Generate Report* checkbox if you want to generate the Windup HTML report. The report will be shown in the *Windup Report* tab and can be found in the Issue Explorer when you group by *File*.
 
 Options::
-Set additional Windup options. Any option that is a boolean flag, such as `enableTattletale`, should enter `true` as the value.
+Set additional Windup options. Any option that is a boolean flag, such as `enableTattletale`, should use `true` as the value.
 +
 See the link:{ProductDocUserGuideURL}#command_line_arguments[Windup Command-line Arguments] section of the _{UserCLIBookName}_ for a description of each Windup argument.
 

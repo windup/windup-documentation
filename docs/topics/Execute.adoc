@@ -61,7 +61,7 @@ $ WINDUP_HOME/bin/windup -Dwindup.decompiler=procyon --input INPUT_ARCHIVE_OR_DI
 [discrete]
 == {ProductShortName} Help
 
-To see the complete list of available arguments for the `windup` command, open a terminal, navigate to the WINDUP_HOME directory, and execute the following command:
+To see the complete list of available arguments for the `windup` command, open a terminal, navigate to the `WINDUP_HOME` directory, and execute the following command:
 
 [source, options="nowrap"]
 ----
