@@ -1,11 +1,11 @@
 [[remove_default_user]]
-= Remove the Default {ProductWebName} User
+= Remove the Default {WebNameTitle} User
 
-A default {ProductWebName} user is provided with {ProductWebName} with the username `guest` and password `guest`. When you xref:enable_auth[enable authentication] for {ProductWebName}, you should remove this user so that {ProductWebName} can only be accessed by authorized users.
+A default {WebName} user is provided with the {WebName} with the username `guest` and password `guest`. When you xref:enable_auth[enable authentication] for the {WebName}, you should remove this user so that the {WebName} can only be accessed by authorized users.
 
-Follow these steps to remove the default {ProductWebName} user.
+Follow these steps to remove the default {WebName} user.
 
-. Make sure that {ProductWebName} is xref:starting_windup[running].
+. Make sure that the {WebName} is xref:starting_windup[running].
 . Navigate to http://localhost:8080/auth/ in a browser.
 . Select *Administration Console* to access the Keycloak administration console.
 . Log in with an administrative user's credentials. The default credentials are `admin` and `password`.

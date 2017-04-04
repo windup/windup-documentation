@@ -13,18 +13,24 @@
 | JBoss EAP 6 | N/A | {icon-check}
 |====
 
+////
+
+TODO: What to do w/ this info as it's not in the CLI guide anymore? Maybe keep the last statement and point to the CLI guide or something specifying the target and source there?  TOo specific to the CLI Guide?
+
 You will specify the source and target technologies by passing the xref:source_argument[`--source`] and xref:target_argument[`--target`] arguments to the {ProductShortName} command.
 
 .Example {ProductShortName} Command: WebLogic to JBoss EAP 6
 [source,options="nowrap"]
 ----
-$ WINDUP_HOME/bin/windup --source weblogic --target eap:6 --input /path/to/application.war
+$ RHAMT_HOME/bin/rhamt-cli --source weblogic --target eap:6 --input /path/to/application.war
 ----
 
 .Example {ProductShortName} Command: JBoss EAP 6 to JBoss EAP 7
 [source,options="nowrap"]
 ----
-$ WINDUP_HOME/bin/windup --source eap:6 --target eap:7 --input /path/to/application.war
+$ RHAMT_HOME/bin/rhamt-cli --source eap:6 --target eap:7 --input /path/to/application.war
 ----
 
 See xref:execute[Run {ProductName}] for more information on running {ProductShortName}.
+
+////

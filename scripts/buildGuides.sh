@@ -33,7 +33,8 @@ EXAMPLES:
   Build a specific guide(s) from $DOCS_SRC:
     $0 windup-user-guide
     $0 windup-rules-development-guide
-    $0 windup-user-guide windup-core-developement-guide
+    $0 windup-user-guide 
+    $0 windup-core-developement-guide
 EOM
 }
 

@@ -1,11 +1,11 @@
 [[enable_auth]]
-= Enable Authentication for {ProductWebName}
+= Enable Authentication for {WebNameTitle}
 
-Run the following script to require users to log in before accessing {ProductWebName}. This script configures the Keycloak login page to require users to authenticate before granting access to {ProductWebName}.
+Run the following script to require users to log in before accessing the {WebName}. This script configures the Keycloak login page to require users to authenticate before granting access to the {WebName}.
 
 [source,options="nowrap"]
 ----
-$ WINDUP_HOME/switch_to_authentication_required.sh
+$ RHAMT_HOME/switch_to_authentication_required.sh
 ----
 
-Now, whenever you xref:starting_windup[start {ProductWebName}], users will be required to authenticate to access it.
+Now, whenever you xref:starting_windup[start the {WebName}], users will be required to authenticate to access it.

@@ -1,11 +1,11 @@
 [[starting_windup]]
-= Start {ProductWebName}
+= Start the {WebNameTitle}
 
-. Run the script to start {ProductWebName}.
+. Run the script to start the {WebName}.
 +
 [source,options="nowrap"]
 ----
-$ WINDUP_HOME/run_windup.sh
+$ RHAMT_HOME/run_windup.sh
 ----
 
-You can now access {ProductWebName} from a browser at http://localhost:8080/windup-web.
+You can now access the {WebName} from a browser at http://localhost:8080/windup-web.

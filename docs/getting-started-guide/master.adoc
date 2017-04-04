@@ -1,0 +1,76 @@
+:toc:
+:toclevels: 4
+:numbered:
+
+include::topics/templates/document-attributes.adoc[]
+
+:imagesdir: topics/images
+:getting-started-guide:
+
+= {GettingStartedBookName}
+
+== Introduction
+
+// About the {GettingStartedBookName}
+include::topics/about-the-gs-guide.adoc[leveloffset=+2]
+
+// About the RHAMT_HOME Variable
+include::topics/about-home-var.adoc[leveloffset=+3]
+
+// About the Toolkit
+include::topics/what-is-the-toolkit.adoc[leveloffset=+1]
+
+// Windup Features
+include::topics/features.adoc[leveloffset=+2]
+
+// Windup Rules
+include::topics/about-rules.adoc[leveloffset=+2]
+
+== Supported Configurations
+
+// System Requirements
+include::topics/system-requirements.adoc[leveloffset=+2]
+
+// Supported Migration Paths
+include::topics/migration-paths.adoc[leveloffset=+2]
+
+== About the Tools
+
+// TODO: Mention which one is recommended for what purpose.
+
+=== {CLINameTitle}
+
+// TODO
+
+=== {WebNameTitle}
+
+// TODO
+
+=== {PluginNameTitle}
+
+// TODO
+
+[appendix]
+== Reference Material
+
+// Rule Story Points
+include::topics/about-story-points.adoc[leveloffset=+2]
+
+=== Additional Resources
+
+// Get Involved
+include::topics/get-involved.adoc[leveloffset=+3]
+
+// Important Links
+include::topics/important-links.adoc[leveloffset=+3]
+
+// Known Windup Issues
+include::topics/known-issues.adoc[leveloffset=+3]
+
+// Report Issues with Windup
+include::topics/report-issues.adoc[leveloffset=+3]
+
+// **********************************
+// * Appendix: Revision Information *
+// **********************************
+include::topics/templates/revision-info.adoc[]

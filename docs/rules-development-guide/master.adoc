@@ -1,0 +1,77 @@
+:toc:
+:toclevels: 3
+:numbered:
+
+include::topics/templates/document-attributes.adoc[]
+
+:imagesdir: topics/images
+:rules-development-guide:
+
+= {RulesDevBookName}
+
+== Introduction
+
+// About the Rules Development Guide
+include::topics/rules-guide-intro.adoc[leveloffset=+2]
+
+// Use of RHAMT_HOME in this Guide
+include::topics/about-home-var.adoc[leveloffset=+3]
+
+// RHAMT Rules
+include::topics/about-rules.adoc[leveloffset=+2]
+
+// Getting Started
+include::topics/getting-started-rules.adoc[leveloffset=+1]
+
+// Create Your First XML Rule
+include::topics/create-first-xml-rule.adoc[leveloffset=+2]
+
+// Review the Quickstarts
+include::topics/review-quickstarts.adoc[leveloffset=+2]
+
+== Creating XML Rules
+
+// XML Rule Structure
+include::topics/xml-rule-syntax.adoc[leveloffset=+2]
+
+// Create a Basic XML Rule
+include::topics/create-basic-xml-rule.adoc[leveloffset=+2]
+
+=== XML Rule Syntax
+
+// When Condition Syntax
+include::topics/xml-rule-when-syntax.adoc[leveloffset=+3]
+
+// Perform Action Syntax
+include::topics/xml-rule-perform-syntax.adoc[leveloffset=+3]
+
+// Where Syntax
+include::topics/where-syntax.adoc[leveloffset=+3]
+
+// Testing XML Rules
+include::topics/testing-rules.adoc[leveloffset=+1]
+
+// Overriding Rules
+include::topics/overriding-rules.adoc[leveloffset=+1]
+
+// Using Custom Rule Categories
+include::topics/rules-categories.adoc[leveloffset=+1]
+
+[appendix]
+== Reference Material
+
+// Rule Story Points
+include::topics/about-story-points.adoc[leveloffset=+2]
+
+=== Additional Resources
+
+// Review the Existing RHAMT XML Rules
+include::topics/review-existing-rules.adoc[leveloffset=+3]
+
+// Important Links
+include::topics/rules-important-links.adoc[leveloffset=+3]
+
+// **********************************
+// * Appendix: Revision Information *
+// **********************************
+include::topics/templates/revision-info.adoc[]

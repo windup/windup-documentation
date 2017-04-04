@@ -1,0 +1,493 @@
+[[perform_action_syntax]]
+= Perform Action Syntax
+
+Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.
+
+The complete XML rule schema is located here: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd.
+
+The following sections describe the more common XML rule perform actions.
+
+* xref:classification-syntax[<classification> Syntax]
+* xref:link-syntax[<link> Syntax]
+* xref:hint-syntax[<hint> Syntax]
+* xref:xslt-syntax[<xslt> Syntax]
+* xref:lineitem-syntax[<lineitem> Syntax]
+* xref:iteration-syntax[<iteration> Syntax]
+
+[[classification-syntax]]
+== <classification> Syntax
+
+=== Summary
+
+The `<classification>` element is used to identify or classify application resources that match the rule. It provides a title that is displayed in the report, a level of effort, and it can also provide links to additional information about how to migrate this resource classification. For a better understanding of the `<classification>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html[Classification] class.
+
+The following is an example of a rule that classifies a resource as a WebLogic EAR application deployment descriptor file.
+
+[source,xml,options="nowrap"]
+----
+<rule id="XmlWebLogicRules_10vvyf">
+    <when>
+        <xmlfile as="default" matches="/*[local-name()='weblogic-application']"></xmlfile>
+    </when>
+    <perform>
+        <iteration>
+            <classification title="Weblogic EAR Application Descriptor" effort="3"/>
+        </iteration>
+    </perform>
+</rule>
+----
+
+=== <classification> Element Attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute Name
+|Type
+|Description
+
+|title
+|STRING
+a|The title given to this resource. This attribute is required.
+
+[options="nowrap"]
+----
+title="JBoss Seam Components"
+----
+
+|effort
+|BYTE
+a|The level of effort assigned to this resource.
+
+[options="nowrap"]
+----
+effort="2"
+----
+
+|category-id
+|STRING
+a|A reference to a category as defined in `RHAMT_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, and `potential`.
+
+[options="nowrap"]
+----
+category-id="mandatory"
+----
+
+|of
+|VARIABLE_NAME
+a|Create a new classification for the given reference.
+
+[options="nowrap"]
+----
+of="MySeamRule"
+----
+|====
+
+=== <classification> Child Elements
+
+
+[cols="1,4", options="header"]
+|====
+|Child Element
+|Description
+
+|<link>
+a|Provides a link URI and text title for additional information.
+
+[source,xml,options="nowrap"]
+----
+<classification title="Websphere Startup Service" effort="4">
+   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Singleton.html" title="EJB3.1 Singleton Bean"/>
+   <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html" title="EJB3.1 Startup Bean"/>
+</classification>
+----
+
+|<tag>
+a|Provides additional custom information for the classification.
+
+[source,xml,options="nowrap"]
+----
+<tag>Seam3</tag>
+----
+
+|<description>
+a|Description of this resource
+
+[source,xml,options="nowrap"]
+----
+<description>JBoss Seam components must be replaced</description>
+----
+
+|====
+
+
+[[link-syntax]]
+== <link> Syntax
+
+=== Summary
+
+The `<link>` element is used in classifications or hints to provide links to informational content. For a better understanding of the `<link>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html[Link] class.
+
+The following is an example of a rule that creates links to additional information.
+
+[source,xml,options="nowrap"]
+----
+<rule id="SeamToCDIRules_2fmb">
+    <when>
+        <javaclass references="org.jboss.seam.{*}" as="default"/>
+    </when>
+    <perform>
+        <iteration>
+            <classification title="SEAM Component" effort="1">
+                <link href="http://www.seamframework.org/Seam3/Seam2ToSeam3MigrationNotes" title="Seam 2 to Seam 3 Migration Notes"/>
+                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/example.html" title="JSF Web Application Example"/>
+                <link href="http://docs.jboss.org/weld/reference/latest/en-US/html/contexts.html" title="JBoss Context Documentation"/>
+                <link href="http://www.andygibson.net/blog/tutorial/cdi-conversations-part-2/" title="CDI Conversations Blog Post"/>
+            </classification>
+        </iteration>
+    </perform>
+</rule>
+----
+
+=== <link> Element Attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute Name
+|Type
+|Description
+
+|href
+|URI
+a|The URI for the referenced link.
+
+[options="nowrap"]
+----
+href="https://access.redhat.com/articles/1249423"
+----
+
+|title
+|STRING
+a|A title for the link.
+
+[options="nowrap"]
+----
+title="Migrate WebLogic Proprietary Servlet Annotations"
+----
+
+|====
+
+[[hint-syntax]]
+== <hint> Syntax
+
+=== Summary
+
+The `<hint>` element is used to provide a hint or inline information about how to migrate a section of code. For a better understanding of the `<hint>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Hint.html[Hint] class.
+
+The following is an example of a rule that creates a hint.
+
+[source,xml,options="nowrap"]
+----
+<rule id="WebLogicWebServiceRules_8jyqn">
+    <when>
+        <javaclass references="weblogic.wsee.connection.transport.http.HttpTransportInfo.setUsername({*})" as="default">
+            <location>METHOD</location>
+        </javaclass>
+    </when>
+    <perform>
+        <iteration>
+            <hint title="Proprietary web-service" category-id="mandatory" effort="3">
+                <message>Replace proprietary web-service authentication with JAX-WS standards.</message>
+                <link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" title="JAX-WS Proxy Password Example"/>
+            </hint>
+        </iteration>
+    </perform>
+</rule>
+----
+
+=== <hint> Element Attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute Name
+|Type
+|Description
+
+|title
+|STRING
+a|Title this hint using the specified string. This attribute is required.
+
+[options="nowrap"]
+----
+title="JBoss Seam Component Hint"
+----
+
+|category-id
+|STRING
+a|A reference to a category as defined in `RHAMT_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, and `potential`.
+
+[options="nowrap"]
+----
+category-id="mandatory"
+----
+
+|in
+|VARIABLE_NAME
+a|Create a new Hint in the FileLocationModel resolved by the given variable.
+
+[options="nowrap"]
+----
+in="Foo"
+----
+
+|effort
+|BYTE
+a|The level of effort assigned to this resource.
+
+[options="nowrap"]
+----
+effort="2"
+----
+
+|====
+
+=== <hint> Child Elements
+
+[cols="1,4", options="header"]
+|====
+|Child Element
+|Description
+
+|<message>
+a|A message describing the migration hint.
+
+[source,xml,options="nowrap"]
+----
+<message>EJB 2.0 is deprecated</message>
+----
+
+|<link>
+a|Identify or classify links to informational content. See the section on xref:link-syntax[<link> Syntax] for details.
+
+[source,xml,options="nowrap"]
+----
+<link href="http://docs.oracle.com/javaee/6/api/" title="Java Platform, Enterprise Edition 6
+API Specification" />
+----
+
+|<tag>
+a|Define a custom tag for this `hint`.
+
+[source,xml,options="nowrap"]
+----
+<tag>Needs review</tag>
+----
+
+|<quickfix>
+a|Contains information to be used by the {PluginName} to perform quick fixes when the rule condition is met.
+
+[source,xml,options="nowrap"]
+----
+<quickfix name="slink-qf" type="REPLACE">
+    <replacement>h:link</replacement>
+    <search>s:link</search>
+</quickfix>
+----
+
+
+|====
+
+[[xslt-syntax]]
+== <xslt> Syntax
+
+=== Summary
+
+The `<xslt>` element specifies how to transform an XML file. For a better understanding of the `<xslt>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/operation/xslt/XSLTTransformation.html[XSLTTransformation]  class.
+
+The following is an example of rule that defines an XSLT action.
+
+[source,xml,options="nowrap"]
+----
+<rule id="XmlWebLogicRules_6bcvk">
+    <when>
+        <xmlfile as="default" matches="/weblogic-ejb-jar"/>
+    </when>
+    <perform>
+        <iteration>
+            <classification title="Weblogic EJB XML" effort="3"/>
+            <xslt title="JBoss EJB Descriptor (Windup-Generated)" template="transformations/xslt/weblogic-ejb-to-jboss.xsl" extension="-jboss.xml"/>
+        </iteration>
+    </perform>
+</rule>
+----
+
+=== <xslt> Element Attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute Name
+|Type
+|Description
+
+|title
+|STRING
+a|Sets the title for this XSLTTransformation in the report. This attribute is required.
+
+[options="nowrap"]
+----
+title="XSLT Transformed Output"
+----
+
+|of
+|STRING
+a|Create a new transformation for the given reference.
+
+[options="nowrap"]
+----
+of="testVariable_instance"
+----
+
+|extension
+|STRING
+a|Sets the extension for this XSLTTransformation. This attribute is required.
+
+[options="nowrap"]
+----
+extension="-result.html"
+----
+
+|template
+|STRING
+a|Sets the XSL template. This attribute is required.
+
+[options="nowrap"]
+----
+template="simpleXSLT.xsl"
+----
+
+|effort
+|BYTE
+| The level of effort required for the transformation.
+
+|====
+
+=== <xslt> Child Elements
+
+
+[cols="1,4", options="header"]
+|====
+|Child Element
+|Description
+
+|<xslt-parameter>
+a|Specify XSLTTransformation parameters as property value pairs
+
+[source,xml,options="nowrap"]
+----
+<xslt-parameter property="title" value="EJB Transformation"/>
+----
+|====
+
+[[lineitem-syntax]]
+==== <lineitem> Syntax
+
+=== Summary
+
+The `<lineitem>` element is used to provide  general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues. This information is displayed on the project or application overview page. For a better understanding of the `<lineitem>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html[LineItem] class.
+
+The following is an example of a rule that creates a lineitem message.
+
+[source,xml,options="nowrap"]
+----
+<rule id="weblogic_servlet_annotation_1000">
+    <when>
+        <javaclass references="weblogic.servlet.annotation.WLServlet" as="default">
+            <location>ANNOTATION</location>
+        </javaclass>
+    </when>
+    <perform>
+        <hint effort="1">
+            <message>Replace the proprietary WebLogic @WLServlet annotation with the Java EE 6 standard @WebServlet annotation.</message>
+            <link href="https://access.redhat.com/articles/1249423" title="Migrate WebLogic Proprietary Servlet Annotations" />
+            <lineitem message="Proprietary WebLogic @WLServlet annotation found in file."/>
+        </hint>
+    </perform>
+</rule>
+----
+=== <lineitem> Element Attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute Name
+|Type
+|Description
+
+|message
+|STRING
+a|A lineitem message.
+
+[options="nowrap"]
+----
+message="Proprietary code found."
+----
+
+|====
+
+[[iteration-syntax]]
+== <iteration> Syntax
+
+=== Summary
+
+The `<iteration>` element specifies to iterate over an implicit or explicit variable defined within the rule. For a better understanding of the `<iteration>` action, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/Iteration.html[Iteration] class.
+
+The following is an example of a rule that performs an iteration.
+
+[source,xml,options="nowrap"]
+----
+<rule id="jboss-eap5-xml-19000">
+    <when>
+        <xmlfile as="jboss-app" matches="/jboss-app"/>
+        <xmlfile as="jboss-app-no-DTD" matches="/jboss-app" public-id=""/>
+    </when>
+    <perform>
+        <iteration over="jboss-app">
+            <classification title="JBoss application Descriptor" effort="5"/>
+        </iteration>
+        <iteration over="jboss-app-no-DTD">
+            <classification title="JBoss application descriptor with missing DTD" effort="5"/>
+        </iteration>
+        <iteration over="jboss-app-no-DTD">
+            <xslt title="JBoss application descriptor - JBoss 5 (Windup-generated)" template="transformations/xslt/jboss-app-to-jboss5.xsl" extension="-jboss5.xml"/>
+        </iteration>
+    </perform>
+</rule>
+----
+
+=== <iteration> Element Attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute Name
+|Type
+|Description
+
+|over
+|VARIABLE_NAME
+a|Iterate over the condition identified by this VARIABLE_NAME.
+
+[options="nowrap"]
+----
+over="jboss-app"
+----
+
+|====
+
+=== <iteration> Child Elements
+
+[cols="1,4", options="header"]
+|====
+|Child Element
+|Description
+
+|<iteration>
+|Child elements include a `when` condition, along with the actions `iteration`, `classification`, `hint`, `xslt`, `lineitem`, and `otherwise`.
+|====
