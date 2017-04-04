@@ -1,7 +1,0 @@
-[[about_home_var]]
-= Use of {ProductHomeVar} in This Guide
-
-This guide uses the `{ProductHomeVar}` replaceable value to denote the path to the {ProductName} distribution. When you encounter this value in the guide, be sure to replace it with the actual path to your {ProductShortName} installation.
-
-* If you download and install the latest distribution of {ProductShortName}, `{ProductHomeVar}` refers to the `{ProductDistribution}` folder extracted from the downloaded ZIP file.
-* If you build {ProductShortName} from GitHub source, `{ProductHomeVar}` refers to the `{ProductDistribution}` folder extracted from the `windup-distribution/target/windup-distribution-{ProductDistributionVersion}-SNAPSHOT-offline.zip` file.

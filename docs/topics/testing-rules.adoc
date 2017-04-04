@@ -1,0 +1,34 @@
+[[test_xml_rule]]
+= Testing XML Rules
+
+[[add_the_rule_to_windup]]
+== Add the Rule to {ProductName}
+
+A {ProductName} rule is installed by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files that end with `.windup.xml`, in the following locations.
+
+* The directory specified by the `--userRulesDirectory` argument on the {ProductShortName} command line.
+
+* The `RHAMT_HOME/rules/` directory. xref:about_home_var[RHAMT_HOME] is the directory where you install and run the {ProductName} executable.
+
+* The `${user.home}/.windup/rules/` directory. This directory is created by {ProductShortName} the first time it is executed and contains rules, add-ons, and the {ProductShortName} log.
++
+NOTE: For Windows, this directory would be `\Documents and Settings\USER_NAME\.windup\rules\` or `\Users\USER_NAME\.windup\rules\`.
+
+== Test the XML Rule
+
+Test the XML rule against your application file by running {ProductShortName} in a terminal.
+
+[options="nowrap"]
+----
+$ RHAMT_HOME/bin/rhamt-cli [--sourceMode] --input INPUT_ARCHIVE_OR_FOLDER --output OUTPUT_REPORT_DIRECTORY --target TARGET_TECHNOLOGY --packages PACKAGE_1 PACKAGE_2 PACKAGE_N
+----
+
+You should see the following result:
+
+[options="nowrap"]
+----
+Windup report created: OUTPUT_REPORT_DIRECTORY/index.html
+              Access it at this URL: file:///OUTPUT_REPORT_DIRECTORY/index.html
+----
+
+More examples of how to run {ProductShortName} are located in the {ProductDocUserGuideURL}[_{ProductName} User Guide_].

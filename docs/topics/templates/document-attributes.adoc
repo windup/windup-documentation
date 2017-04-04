@@ -9,46 +9,55 @@
 // *****************
 // * Product names *
 // *****************
-:ProductName: Windup
-:ProductShortName: Windup
-:ProductCLIName: Windup CLI
-:ProductWebName: Windup Web
-:ProductPluginName: Windup Eclipse Plugin
+:ProductName: Red Hat Application Migration Toolkit
+:ProductShortName: RHAMT
+
+// *******************
+// * Component names *
+// *******************
+:CLIName: CLI
+:CLINameTitle: CLI
+
+:WebName: web console
+:WebNameTitle: Web Console
+
+:PluginName: Eclipse plugin
+:PluginNameTitle: Eclipse Plugin
 
 // ****************
 // * Doc metadata *
 // ****************
-:DocInfoProductName: Red Hat JBoss Migration Toolkit
-:DocInfoProductNumber: 3.0
+:DocInfoProductName: Red Hat Application Migration Toolkit
+:DocInfoProductNumber: 4.0
+:DocInfoProductNameURL: red_hat_application_migration_toolkit
 
-:UserCLIBookName: {ProductShortName} User Guide
-:RulesDevBookName: {ProductShortName} Rules Development Guide
-:PluginBookName: {ProductPluginName} Guide
+:UserCLIBookName: CLI Guide
+:RulesDevBookName: Rules Development Guide
+:PluginBookName: Eclipse Plugin Guide
+:GettingStartedBookName: Getting Started Guide
+:WebConsoleBookName: Web Console Guide
+
 // This book is on GitHub wiki only
 :CoreDevelopmentBookName: {ProductShortName} Core Development Guide
 
 // ********************
 // * Product versions *
 // ********************
-:ProductRelease: 3
-:ProductVersion: 3.0.Final
-:ProductDistributionVersion: 3.0.0
-:ProductDistribution: windup-distribution-{ProductDistributionVersion}.Final
-
-// *************
-// * Variables *
-// *************
-:ProductHomeVar: WINDUP_HOME
-:ProductDocHomeVar: WINDUP_DOCUMENTATION_HOME
-:ProductSrcHomeVar: WINDUP_SOURCE_HOME
-:ProductReleaseVar: WINDUP_RELEASE
+:ProductRelease: 4
+:ProductVersion: 4.0.Final
+:ProductDistributionVersion: 4.0.0
+//TODO: verify distro name
+:ProductDistribution: rhamt-cli-distribution-{ProductDistributionVersion}.Final
 
 // ********
 // * URLs *
 // ********
-:ProductDocUserGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/{DocInfoProductNumber}/single/windup-user-guide
-:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/{DocInfoProductNumber}/single/windup-rules-development-guide
-:ProductDocPluginGuideURL: https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/{DocInfoProductNumber}/single/windup-eclipse-plugin-guide
+
+:ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
+:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
+:ProductDocPluginGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_plugin_guide
+:ProductDocGettingStartedGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/getting_started_guide
+:ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/web_console_guide
 
 // Point to the GitHub wiki version since there is no product version of this guide.
 :ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide

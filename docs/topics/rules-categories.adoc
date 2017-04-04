@@ -1,18 +1,18 @@
 [[rule_categories]]
 = Using Custom Rule Categories
 
-As of Windup 3.0, a new category field has been added that replaces the concept of the severity field in Windup rules. The default categories are the same that were available in the severity field: `mandatory`, `optional`, and `potential`. However, you can now xref:add_custom_category[add your own custom rule categories] and xref:assign_custom_category[assign Windup rules to them].
+As of {ProductShortName} 3.0, a new category field has been added that replaces the concept of the severity field in {ProductShortName} rules. The default categories are the same that were available in the severity field: `mandatory`, `optional`, and `potential`. However, you can now xref:add_custom_category[add your own custom rule categories] and xref:assign_custom_category[assign {ProductShortName} rules to them].
 
-IMPORTANT: Although Windup can still process rules that use the legacy `severity` field, it is recommended to update your custom rules to use the new `category-id` field.
+IMPORTANT: Although {ProductShortName} can still process rules that use the legacy `severity` field, it is recommended to update your custom rules to use the new `category-id` field.
 
 [[add_custom_category]]
 [discrete]
 == Add a Custom Category
 
-. Edit the rule category file, which is located at `WINDUP_HOME/rules/migration-core/core.windup.categories.xml`.
+. Edit the rule category file, which is located at `RHAMT_HOME/rules/migration-core/core.windup.categories.xml`.
 . Add a new `<category>` element and fill in the following fields:
 +
-* `id`: The ID that Windup rules will use to reference the category.
+* `id`: The ID that {ProductShortName} rules will use to reference the category.
 * `priority`: The sorting priority compared to other categories. The category with the lowest value is displayed first.
 * `name`: The display name of the category.
 * `description`: The description of how the category is intended to be used.
@@ -30,13 +30,13 @@ IMPORTANT: Although Windup can still process rules that use the legacy `severity
 </categories>
 ----
 
-This category is now ready to be referenced by Windup rules.
+This category is now ready to be referenced by {ProductShortName} rules.
 
 [[assign_custom_category]]
 [discrete]
 == Assign a Rule to a Custom Category
 
-In your Windup rule, use the custom category's `id` value in the rule's `category-id` field.
+In your {ProductShortName} rule, use the custom category's `id` value in the rule's `category-id` field.
 
 .Example Rule Using a Custom Rule Category
 [source,xml,options="nowrap"]
@@ -53,7 +53,7 @@ In your Windup rule, use the custom category's `id` value in the rule's `categor
  </rule>
 ----
 
-Now when you run Windup and this rule's condition is met, incidents identified by this rule will use your custom category. The custom category can be seen in the Windup report in places such as the Report Index and Migration Issues report.
+Now when you run {ProductShortName} and this rule's condition is met, incidents identified by this rule will use your custom category. The custom category can be seen in the {ProductShortName} report in places such as the Report Index and Migration Issues report.
 
 .Custom Category on Report Index Page
 image::custom_rule_category.png[Custom rule category on Report Index]
