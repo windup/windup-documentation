@@ -1,16 +1,9 @@
 <title>{GettingStartedBookName}</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<!--
-<mediaobject>
-    <imageobject>
-        <imagedata fileref="images/Logotype_RHJB_MigrationToolkit_CMYK_Black-small.png" format="PNG" />
-     </imageobject>
-</mediaobject>
--->
 <subtitle>Simplify Migration of Java Applications</subtitle>
 <abstract>
-    <para>This guide provides information to help you get started with the {DocInfoProductName}.</para>
+    <para>This guide provides information to help you get started with the {ProductName}.</para>
 </abstract>
 <authorgroup>
     <orgname>Red Hat Customer Content Services</orgname>

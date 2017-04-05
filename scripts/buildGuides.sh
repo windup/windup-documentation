@@ -17,7 +17,7 @@ produce pot/po files for translation.
 
 Run this script from either the root of your cloned repository or from the 'scripts'
 directory.  Example:
-  cd eap-documentation/scripts
+  cd windup-documentation/scripts
   $0
 
 OPTIONS:
@@ -31,10 +31,11 @@ EXAMPLES:
    $0 -t
 
   Build a specific guide(s) from $DOCS_SRC:
-    $0 windup-user-guide
-    $0 windup-rules-development-guide
-    $0 windup-user-guide 
-    $0 windup-core-developement-guide
+    $0 cli-guide
+    $0 rules-development-guide
+    $0 web-console-guide
+    $0 getting-started-guide
+    $0 plugin-guide
 EOM
 }
 
@@ -96,4 +97,3 @@ else
   echo -e "${RED}Please fix all issues before continuing!${NO_COLOR}"
   exit 1
 fi
-

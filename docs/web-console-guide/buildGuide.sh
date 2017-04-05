@@ -1,7 +1,7 @@
 # Build the guide
 
 # Find the directory name and full path
-GUIDE_NAME="windup-web-guide-early-access"
+GUIDE_NAME="web-console-guide"
 CURRENT_GUIDE=${PWD##*/}
 CURRENT_DIRECTORY=$(pwd)
 RED='\033[0;31m'
@@ -78,5 +78,3 @@ else
   echo -e "${BLACK}See the log above for details."
   exit 1
 fi
-
-
