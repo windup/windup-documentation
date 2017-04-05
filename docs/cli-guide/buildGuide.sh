@@ -1,7 +1,7 @@
 # Build the guide
 
 # Find the directory name and full path
-GUIDE_NAME="CLIGuide"
+GUIDE_NAME="cli-guide"
 CURRENT_GUIDE=${PWD##*/}
 CURRENT_DIRECTORY=$(pwd)
 RED='\033[0;31m'
