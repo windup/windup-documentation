@@ -1,5 +1,5 @@
 [[config_auth]]
-= Configure Authentication for {WebNameTitle}
+= Configuring Authentication for the {WebNameTitle}
 
 You can configure the {WebName} to require authentication, which is handled by Keycloak. When enabled, users will be required to authenticate before being granted access to the {WebName}.
 

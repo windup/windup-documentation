@@ -1,11 +1,11 @@
-[[starting_windup]]
+[[starting_console]]
 = Start the {WebNameTitle}
 
-. Run the script to start the {WebName}.
-+
+Run the script to start the {WebName}.
+
 [source,options="nowrap"]
 ----
 $ RHAMT_HOME/run_windup.sh
 ----
 
-You can now access the {WebName} from a browser at http://localhost:8080/windup-web.
+You can now xref:access_web_console[access the {WebName}] from a browser.

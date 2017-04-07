@@ -5,7 +5,7 @@ When xref:enable_auth[authentication is enabled] for the {WebName}, administrato
 
 Follow these steps to add a new {WebName} user.
 
-. Make sure that the {WebName} is xref:starting_windup[running].
+. Make sure that the {WebName} is xref:starting_console[running].
 . Navigate to http://localhost:8080/auth/ in a browser.
 . Select *Administration Console* to access the Keycloak administration console.
 . Log in with an administrative user's credentials. The default credentials are `admin` and `password`.

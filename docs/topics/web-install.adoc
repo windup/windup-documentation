@@ -1,6 +1,8 @@
 [[install_windup]]
 = Install the {WebNameTitle}
 
-// TODO: Confirm download location
+// TODO andrea: Confirm download location - should be on RHD site now
 . Download the {WebName} from the link:http://windup.jboss.org/download.html[Windup Download page].
 . Extract the ZIP file to a directory of your choice.
++
+The path to the directory created by unzipping this file is referred to as `_RHAMT_HOME_` throughout this guide.

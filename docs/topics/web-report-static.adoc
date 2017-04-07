@@ -1,0 +1,10 @@
+[[report_static_reports]]
+= Static Reports
+
+The original static HTML reports that can be generated when using the {ProductShortName} {CLIName} are also available from the {WebName}. Clicking on the *Static Reports* link from the xref:examining_execution_details[Execution details] page opens a new window with these reports.
+
+NOTE: Your execution configuration must have selected the *Create static HTML reports* for these reports to be generated.
+
+These static reports are useful because there are several reports that are not yet integrated with the {WebName}, for example, hard-coded IP addresses, server resources, and dependencies.
+
+See the link:{ProductDocUserGuideURL}#review_reports[Review the Reports] section of the {ProductShortName} _{UserCLIBookName}_ for more information on the static reports available.
