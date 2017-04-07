@@ -1,0 +1,22 @@
+[[examining_execution_details]]
+= Examining Execution Details
+
+Once you have executed {ProductShortName} analysis on a project, an execution instance is created. Executions for a project are listed in a table that provide the execution ID, project, state, and date executed. You can also display executions across all of your projects by selecting the *All Executions* link.
+
+// TODO: Screenshot of execution table
+.Executions List
+image::error.png[Project Executions List]
+
+An execution can be viewed by clicking the execution ID link in the *Execution* column.
+
+// TODO: Screenshot of execution details w/ the tabs
+.Execution Details
+image::error.png[Execution Details]
+
+The *Execution details* page provides the following tabs with information about this execution.
+
+Available Reports:: This tab provides links to the reports that are available for this execution. This includes the *Dashboard*, *Application Details*, and *Issues*. If the legacy static reports were generated, a *Static Reports* link will also be available here. The reports are discussed in more detail in xref:reviewing_reports[Reviewing Reports].
+
+Execution Status:: This tab shows the start and completion date of the execution as well as the state. It also shows the configuration settings that were used for this execution.
+
+Logs:: This tabs shows the output from this {ProductShortName} analysis engine execution.

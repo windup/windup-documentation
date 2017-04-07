@@ -5,7 +5,7 @@ When you xref:enable_auth[enable authentication] for the {WebName}, a default ad
 
 Follow these steps to change the default administrative user's password.
 
-. Make sure that the {WebName} is xref:starting_windup[running].
+. Make sure that the {WebName} is xref:starting_console[running].
 . Navigate to http://localhost:8080/auth/ in a browser.
 . Select *Administration Console* to access the Keycloak administration console.
 . Log in with the default credentials of `admin` and `password`.

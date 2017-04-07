@@ -8,4 +8,4 @@ Run the following script to require users to log in before accessing the {WebNam
 $ RHAMT_HOME/switch_to_authentication_required.sh
 ----
 
-Now, whenever you xref:starting_windup[start the {WebName}], users will be required to authenticate to access it.
+Now, whenever you xref:starting_console[start the {WebName}], users will be required to authenticate to access it.

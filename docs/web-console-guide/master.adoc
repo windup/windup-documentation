@@ -14,22 +14,58 @@ include::topics/templates/document-attributes.adoc[]
 // About the {WebConsoleBookName}
 include::topics/about-console-guide.adoc[leveloffset=+2]
 
-// About the RHAMT_HOME Variable
-include::topics/about-home-var.adoc[leveloffset=+3]
-
 // About the {ProductName}
 include::topics/about-the-toolkit.adoc[leveloffset=+2]
 
 // About the {ProductWebName}
 include::topics/about-the-web-console.adoc[leveloffset=+2]
 
-// TODO: Need system requirements special to this, or is the existing one applicable across?
+// Getting Started
+include::topics/web-getting-started.adoc[leveloffset=+1]
 
-// Install {ProductWebName}
-include::topics/web-install.adoc[leveloffset=+1]
+// Install the {WebNameTitle}
+include::topics/web-install.adoc[leveloffset=+2]
 
-// Start {ProductWebName}
-include::topics/web-start.adoc[leveloffset=+1]
+// Start the {WebNameTitle}
+include::topics/web-start.adoc[leveloffset=+2]
+
+// Access the {WebNameTitle}
+include::topics/web-access-console.adoc[leveloffset=+2]
+
+// Using the {WebNameTitle} to Analyze Applications
+include::topics/web-analyze-apps.adoc[leveloffset=+1]
+
+// Add a Project
+include::topics/web-add-project.adoc[leveloffset=+2]
+
+// Add Applications to a Project
+include::topics/web-add-applications.adoc[leveloffset=+2]
+
+// Specify the Analysis Configuration
+include::topics/web-execution-config.adoc[leveloffset=+2]
+
+// Execute
+include::topics/web-execute.adoc[leveloffset=+2]
+
+// Examining Execution Details
+include::topics/web-execution-details.adoc[leveloffset=+1]
+
+// Reviewing Reports
+include::topics/web-review-reports.adoc[leveloffset=+1]
+
+// Dashboard
+include::topics/web-report-dashboard.adoc[leveloffset=+2]
+
+// Application Details
+include::topics/web-report-app-details.adoc[leveloffset=+2]
+
+// Issues
+include::topics/web-report-issues.adoc[leveloffset=+2]
+
+// Static Reports
+include::topics/web-report-static.adoc[leveloffset=+2]
+
+// TODO: Where to put misc. console items like All executions, general configuration (custom rules directories)
 
 // Require Authentication for {ProductWebName}
 include::topics/web-require-auth.adoc[leveloffset=+1]
