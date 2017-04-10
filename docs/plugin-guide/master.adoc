@@ -14,7 +14,10 @@ include::topics/templates/document-attributes.adoc[]
 // About the Eclipse Plugin Guide
 include::topics/plugin-intro.adoc[leveloffset=+2]
 
-// About the Eclipse Plugin
+// About {ProductName}
+include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+
+// About the {PluginNameTitle}
 include::topics/about-plugin.adoc[leveloffset=+2]
 
 // Supported Configurations

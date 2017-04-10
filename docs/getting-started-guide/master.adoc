@@ -14,9 +14,6 @@ include::topics/templates/document-attributes.adoc[]
 // About the {GettingStartedBookName}
 include::topics/about-the-gs-guide.adoc[leveloffset=+2]
 
-// About the RHAMT_HOME Variable
-include::topics/about-home-var.adoc[leveloffset=+3]
-
 // About the Toolkit
 include::topics/what-is-the-toolkit.adoc[leveloffset=+1]
 
@@ -34,27 +31,20 @@ include::topics/system-requirements.adoc[leveloffset=+2]
 // Supported Migration Paths
 include::topics/migration-paths.adoc[leveloffset=+2]
 
-== About the Tools
+// About the Tools
+include::topics/about-tools.adoc[leveloffset=+1]
 
-// TODO: Mention which one is recommended for what purpose.
+// About the {CLIName}
+include::topics/about-cli.adoc[leveloffset=+2]
 
-=== {CLINameTitle}
+// About the {WebNameTitle}
+include::topics/about-the-web-console.adoc[leveloffset=+2]
 
-// TODO
-
-=== {WebNameTitle}
-
-// TODO
-
-=== {PluginNameTitle}
-
-// TODO
+// About the {PluginNameTitle}
+include::topics/about-plugin.adoc[leveloffset=+2]
 
 [appendix]
 == Reference Material
-
-// Rule Story Points
-include::topics/about-story-points.adoc[leveloffset=+2]
 
 === Additional Resources
 

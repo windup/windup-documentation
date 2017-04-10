@@ -1,19 +1,16 @@
 [[features]]
-= {ProductName} Features
+= {ProductShortName} Features
 
 {ProductName} (RHAMT) provides a number of capabilities to assist with planning and executing migration projects.
 
 Planning and work estimation::
-{ProductShortName} assists project managers by detailing the type of work and estimation of effort to complete the tasks. Level of effort is represented in {ProductShortName} reports as xref:rule_story_points[story points]. Actual estimates will be based on the skills required and the classification of migration work needed.
+{ProductShortName} assists project managers by detailing the type of work and estimation of effort to complete the tasks. Level of effort is represented in {ProductShortName} reports as story points. Actual estimates will be based on the skills required and the classification of migration work needed.
 
 Identifying migration issues and providing solutions::
 {ProductShortName} identifies migration issues and highlights specific points in the code where an issue occurs. {ProductShortName} suggests code changes and provides additional resources to help engineers resolve the specific issue.
 
 Detailed reporting::
-{ProductShortName} produces numerous reports to give both high-level views of the migration effort and details of specific migration tasks. You can view migration issues across all applications, charts and summary information about issues in an application, a breakdown of issues by module in the application, reports of technologies used, and dependencies on other applications and services. You can also examine source files to see the line of code where an issue occurs.
-
-// WAS: {ProductShortName} produces numerous xref:review_reports[reports] to give both ...
-//TODO: For more information on the various RHAMT reports, see the Reports guide?
+{ProductShortName} produces numerous reports to give both high-level views of the migration effort and details of specific migration tasks. You can view migration issues across all applications, charts and summary information about issues in an application, a breakdown of issues by module in the application, reports of technologies used, and dependencies on other applications and services. You can also examine source files to see the line of code where an issue occurs. See the link:{ProductDocUserGuideURL}[_{UserCLIBookName}_] for more information on the available {ProductShortName} reports.
 
 Built-in rules and migration paths::
 {ProductShortName} comes with a core set of rules to provide migration assistance for several common xref:migration_paths[migration paths]. These rules identify the use of proprietary functionality from other application servers or deprecated subsystems from previous versions of JBoss EAP. {ProductShortName} also contains rules to identify common migration issues, such as hard-coded IP addresses and JNDI lookups.

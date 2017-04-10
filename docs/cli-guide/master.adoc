@@ -17,7 +17,11 @@ include::topics/about-cli-guide.adoc[leveloffset=+2]
 // About the RHAMT_HOME Variable
 include::topics/about-home-var.adoc[leveloffset=+3]
 
-// TODO: Add the quick overview of the toolkit, and an about the CLI
+// About {ProductName}
+include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+
+// About the {CLINameTitle}
+include::topics/about-cli.adoc[leveloffset=+2]
 
 == Getting Started
 
