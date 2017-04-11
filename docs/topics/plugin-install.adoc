@@ -10,9 +10,9 @@ NOTE: This guide uses _Eclipse_ to refer to an installation of Eclipse or JBoss 
 
 . Launch Eclipse.
 . From the menu bar, select *Help* -> *Install New Software*.
-. Add the Windup update site.
+. Add the {ProductShortName} update site.
 .. Next to the *Work with* field, click *Add*.
-.. In the *Name* field, enter `Windup`.
+.. In the *Name* field, enter `{ProductShortName}`.
 .. In the *Location* field, enter [x-]`http://download.jboss.org/jbosstools/neon/stable/updates/windup/composite/` and press *OK*.
 .. Select all of the checkboxes under *JBoss Tools - Windup* and press *Next*.
 . Review the installation details and press *Next*.
