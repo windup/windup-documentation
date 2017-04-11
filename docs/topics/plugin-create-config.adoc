@@ -19,7 +19,7 @@ Select one or more packages to scan. It is recommended to select only those pack
 == Options
 
 Report::
-Check the *Generate Report* checkbox if you want to generate the {ProductShortName} HTML report. The report will be shown in the *Windup Report* tab and can be found in the Issue Explorer when you group by *File*.
+Check the *Generate Report* checkbox if you want to generate the {ProductShortName} HTML report. The report will be shown in the *{ProductShortName} Report* tab and can be found in the Issue Explorer when you group by *File*.
 
 Options::
 Set additional {ProductShortName} options. Any option that is a boolean flag, such as `enableTattletale`, should use `true` as the value.

@@ -1,22 +1,22 @@
 [[plugin_components]]
 = {PluginNameTitle} Components
 
-The following components are available in the Windup perspective when using the {PluginName} to analyze projects.
+The following components are available in the {ProductShortName} perspective when using the {PluginName} to analyze projects.
 
-Issue Explorer:: This view allows you to explore the Windup issues for projects that have been analyzed.
+Issue Explorer:: This view allows you to explore the {ProductShortName} issues for projects that have been analyzed.
 +
-If this view is not visible in the Windup Perspective, you can open it by selecting *Window* -> *Show View* -> *Issue Explorer*.
+If this view is not visible in the {ProductShortName} Perspective, you can open it by selecting *Window* -> *Show View* -> *Issue Explorer*.
 
-Windup Server:: The Windup server is a separate process that executes the Windup analysis, flags the migration issues, and generates the reports.
+{ProductShortName} Server:: The {ProductShortName} server is a separate process that executes the {ProductShortName} analysis, flags the migration issues, and generates the reports.
 +
-You can start, stop, and view the status of the Windup server from the Issue Explorer.
+You can start, stop, and view the status of the {ProductShortName} server from the Issue Explorer.
 
-Issue Details:: This view shows detailed information about the selected Windup issue, including the hint, severity, and any additional resources.
+Issue Details:: This view shows detailed information about the selected {ProductShortName} issue, including the hint, severity, and any additional resources.
 +
-If this view is not visible in the Windup Perspective, you can open it by selecting *Window* -> *Show View* -> *Issue Details*.
+If this view is not visible in the {ProductShortName} Perspective, you can open it by selecting *Window* -> *Show View* -> *Issue Details*.
 
-Windup Report:: This view shows the HTML reports that are generated when Windup is executed. From the report landing page you can navigate to detailed reports, such as Migration Issues, Application Details, and Dependencies.
+{ProductShortName} Report:: This view shows the HTML reports that are generated when {ProductShortName} is executed. From the report landing page you can navigate to detailed reports, such as Migration Issues, Application Details, and Dependencies.
 +
-Note that the Windup run configuration used must have the *Generate Report* option selected in order for the Windup reports to be generated.
+Note that the {ProductShortName} run configuration used must have the *Generate Report* option selected in order for the {ProductShortName} reports to be generated.
 +
-If this view is not visible in the Windup Perspective, you can open it by selecting *Window* -> *Show View* -> *Windup Report*.
+If this view is not visible in the {ProductShortName} Perspective, you can open it by selecting *Window* -> *Show View* -> *{ProductShortName} Report*.

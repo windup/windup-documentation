@@ -4,12 +4,12 @@
 Follow these steps to use the {PluginName} to identify and resolve migration issues.
 
 . Import the project to analyze into Eclipse.
-. xref:create_run_config[Create a Windup run configuration]. From the Issue Explorer, press the Windup button (image:windup.png[Windup button]).
+. xref:create_run_config[Create a {ProductShortName} run configuration]. From the Issue Explorer, press the {ProductShortName} button (image:windup.png[{ProductShortName} button]).
 +
-image::windup_button_create_config.png[Select Windup button]
+image::windup_button_create_config.png[Select {ProductShortName} button]
 +
 At a minimum, select the project to analyze. Set additional options as needed.
 . Click *Run* to xref:execute_windup[execute {ProductShortName}].
-. xref:review_issues[Review Windup issues] listed in the Issue Explorer.
-. xref:resolve_issues[Resolve Windup issues] by manually updating code or by using quick fixes when available.
+. xref:review_issues[Review {ProductShortName} issues] listed in the Issue Explorer.
+. xref:resolve_issues[Resolve {ProductShortName} issues] by manually updating code or by using quick fixes when available.
 . Run {ProductShortName} again as necessary. Use the drop down next to the *Run* button (image:run_exc.png[Run button]) to run an existing configuration.
