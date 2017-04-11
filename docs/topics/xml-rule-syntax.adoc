@@ -1,7 +1,7 @@
 [[xml_rule_structure]]
 = XML Rule Structure
 
-This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets. For more details, see the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[Windup XML rule schema].
+This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets. For more details, see the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[{ProductShortName} XML rule schema].
 
 == Rulesets
 
@@ -13,7 +13,7 @@ A ruleset is a group of one or more rules that targets a specific area of migrat
 *** **<dependencies/>**: The rule add-ons required by this ruleset.
 *** ** <sourceTechnology/>**: The source technology.
 *** ** <targetTechnology/>**: The target technology.
-*** ** <overrideRules/>**: Setting to `true` indicates that rules in this ruleset override rules with the same ID from the core ruleset distributed with Windup. Both the ruleset id and the rule id must match a rule within the core ruleset or the rule will be ignored. This is `false` by default.
+*** ** <overrideRules/>**: Setting to `true` indicates that rules in this ruleset override rules with the same ID from the core ruleset distributed with {ProductShortName}. Both the ruleset id and the rule id must match a rule within the core ruleset or the rule will be ignored. This is `false` by default.
 ** **<rules>**: A set of individual rules.
 *** **<rule id="UNIQUE_RULE_ID">**: Defines the rule and gives it a unique ID. It is recommended to include the ruleset ID as part of the rule ID, for example, `UNIQUE_RULESET_ID_UNIQUE_RULE_ID`. One or more rules can be defined for a ruleset.
 **** **<when>**: The conditions to match on. For a detailed description of the elements allowed in a `<when>`, see xref:when_syntax[When Condition Syntax].

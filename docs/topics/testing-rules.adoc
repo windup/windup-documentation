@@ -10,9 +10,9 @@ A {ProductName} rule is installed by copying the rule to the appropriate {Produc
 
 * The `RHAMT_HOME/rules/` directory. xref:about_home_var[RHAMT_HOME] is the directory where you install and run the {ProductName} executable.
 
-* The `${user.home}/.windup/rules/` directory. This directory is created by {ProductShortName} the first time it is executed and contains rules, add-ons, and the {ProductShortName} log.
+* The `${user.home}/.rhamt/rules/` directory. This directory is created by {ProductShortName} the first time it is executed and contains rules, add-ons, and the {ProductShortName} log.
 +
-NOTE: For Windows, this directory would be `\Documents and Settings\USER_NAME\.windup\rules\` or `\Users\USER_NAME\.windup\rules\`.
+NOTE: For Windows, this directory would be `\Documents and Settings\USER_NAME\.rhamt\rules\` or `\Users\USER_NAME\.rhamt\rules\`.
 
 == Test the XML Rule
 
