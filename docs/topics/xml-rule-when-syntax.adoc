@@ -264,7 +264,7 @@ which may have useful side effects, like setting the matched value on the rule v
 |Description
 
 |`windup:matches()`
-a|Match a XPath expression against a string, possibly containing Windup parameterization placeholders.
+a|Match a XPath expression against a string, possibly containing {ProductShortName} parameterization placeholders.
 
 [options="nowrap"]
 ----

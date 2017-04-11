@@ -75,7 +75,7 @@ At the bottom of the page is a list of reports that contain additional details a
 | Provides a detailed overview of all resources found within the application that may need attention during the migration.
 
 | Unparsable
-| Shows all files that Windup could not parse in the expected format. For instance, a file with a `.xml` or `.wsdl` suffix is assumed to be an XML file. If the XML parser fails, the issue is reported here and also where the individual file is listed.
+| Shows all files that {ProductShortName} could not parse in the expected format. For instance, a file with a `.xml` or `.wsdl` suffix is assumed to be an XML file. If the XML parser fails, the issue is reported here and also where the individual file is listed.
 
 | Dependencies
 | Displays all Java-packaged dependencies found within the application.
@@ -105,10 +105,10 @@ At the bottom of the page is a list of reports that contain additional details a
 | Provides a list of all hard-coded IP addresses that were found in the application.
 
 | Ignored Files
-| Lists the files found in the application that, based on certain rules and Windup configuration, were not processed. See the `--userIgnorePath` option for more information.
+| Lists the files found in the application that, based on certain rules and {ProductShortName} configuration, were not processed. See the `--userIgnorePath` option for more information.
 
 | About
-| Describes the current version of Windup and provides helpful links for further assistance.
+| Describes the current version of {ProductShortName} and provides helpful links for further assistance.
 |====
 
 
