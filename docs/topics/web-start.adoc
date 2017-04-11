@@ -5,7 +5,7 @@ Run the script to start the {WebName}.
 
 [source,options="nowrap"]
 ----
-$ RHAMT_HOME/run_windup.sh
+$ RHAMT_HOME/run_rhamt.sh
 ----
 
 You can now xref:access_web_console[access the {WebName}] from a browser.

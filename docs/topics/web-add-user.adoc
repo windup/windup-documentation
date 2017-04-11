@@ -9,7 +9,7 @@ Follow these steps to add a new {WebName} user.
 . Navigate to http://localhost:8080/auth/ in a browser.
 . Select *Administration Console* to access the Keycloak administration console.
 . Log in with an administrative user's credentials. The default credentials are `admin` and `password`.
-. In the upper left corner, select the *Windup* realm from the drop down.
+. In the upper left corner, select the *Rhamt* realm from the drop down.
 . From the left-side navigation menu, select *Users* and then click *Add user*.
 . Enter the *Username*, *First Name*, *Last Name*, and any other required fields and click *Save*.
 . Once the user has been added, select the *Credentials* tab.
