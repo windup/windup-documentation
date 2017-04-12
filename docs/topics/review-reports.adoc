@@ -31,8 +31,8 @@ Click on the name of the application, *jee-example-app-1.0.0.ear*, to view the x
 | xref:review-the-report-rule-provider-executions-report[Rule Provider Executions]
 | Click on the *Executed rules overview* link at the bottom of the page.
 
-| xref:review-the-report-freemarker-report[Windup Freemarker Functions and Directives]
-| Click on the *Windup FreeMarker methods* link at the bottom of the page.
+| xref:review-the-report-freemarker-report[{ProductName} FreeMarker Functions and Directives]
+| Click on the *{ProductName} FreeMarker methods* link at the bottom of the page.
 
 | xref:review-the-report-send-feedback[Send Feedback Form]
 | Click on the *Send feedback* link at the bottom of the page to open a form that allows you to submit feedback to the {ProductShortName} team.
@@ -184,12 +184,13 @@ This report provides the list of rules that executed when running the {ProductSh
 image::report-jee-example-ruleprovider.png[Rule Provider Report]
 
 [[review-the-report-freemarker-report]]
-== Windup FreeMarker Functions and Directives Report
+== {ProductName} FreeMarker Functions and Directives
 
-Access this report from the report landing page by clicking the *Windup FreeMarker methods* link.
+Access this report from the report landing page by clicking the *{ProductName} FreeMarker methods* link.
 
 This report lists all the registered functions and directives that were used to build the report. It is useful if you plan to build your own custom report or for debugging purposes.
 
+// TODO andrea: update screenshot
 .FreeMarker Functions and Directives
 image::report-jee-example-freemarker-and-directives.png[FreeMarker Functions and Directives]
 
