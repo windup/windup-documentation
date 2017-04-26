@@ -9,7 +9,7 @@ Follow these steps to use the {PluginName} to identify and resolve migration iss
 image::windup_button_create_config.png[Select {ProductShortName} button]
 +
 At a minimum, select the project to analyze. Set additional options as needed.
-. Click *Run* to xref:execute_windup[execute {ProductShortName}].
+. Click *Run* to xref:execute_rhamt[execute {ProductShortName}].
 . xref:review_issues[Review {ProductShortName} issues] listed in the Issue Explorer.
 . xref:resolve_issues[Resolve {ProductShortName} issues] by manually updating code or by using quick fixes when available.
 . Run {ProductShortName} again as necessary. Use the drop down next to the *Run* button (image:run_exc.png[Run button]) to run an existing configuration.
