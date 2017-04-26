@@ -28,7 +28,7 @@
 // * Doc metadata *
 // ****************
 :DocInfoProductName: Red Hat Application Migration Toolkit
-:DocInfoProductNumber: 4.0
+:DocInfoProductNumber: 4.0.Beta1
 :DocInfoProductNameURL: red_hat_application_migration_toolkit
 
 :UserCLIBookName: CLI Guide
@@ -44,10 +44,9 @@
 // * Product versions *
 // ********************
 :ProductRelease: 4
-:ProductVersion: 4.0.Final
-:ProductDistributionVersion: 4.0.0
-//TODO: verify distro name
-:ProductDistribution: rhamt-cli-distribution-{ProductDistributionVersion}.Final
+:ProductVersion: 4.0.Beta1
+:ProductDistributionVersion: 4.0.0.Beta1
+:ProductDistribution: rhamt-cli-distribution-{ProductDistributionVersion}
 
 // ********
 // * URLs *

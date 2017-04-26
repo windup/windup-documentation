@@ -1,7 +1,6 @@
 [[about_home_var]]
 = Use of RHAMT_HOME in This Guide
 
-This guide uses the `RHAMT_HOME` replaceable value to denote the path to the {ProductName} distribution. When you encounter this value in the guide, be sure to replace it with the actual path to your {ProductShortName} installation.
+This guide uses the `RHAMT_HOME` replaceable variable to denote the path to your {ProductShortName} installation. The installation directory is the `{ProductDistribution}` directory where you extracted the {ProductShortName} ZIP distribution.
 
-* If you download and install the latest distribution of {ProductShortName}, `RHAMT_HOME` refers to the `{ProductDistribution}` folder extracted from the downloaded ZIP file.
-* If you build {ProductShortName} from GitHub source, `RHAMT_HOME` refers to the `{ProductDistribution}` folder extracted from the `rhamt-cli-distribution/target/rhamt-cli-distribution-{ProductDistributionVersion}-SNAPSHOT-offline.zip` file.
+When you encounter `RHAMT_HOME` in this guide, be sure to replace it with the actual path to your {ProductShortName} installation.
