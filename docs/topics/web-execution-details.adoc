@@ -1,22 +1,21 @@
-[[examining_execution_details]]
-= Examining Execution Details
+[[examining_analysis_details]]
+= Examine Analysis Details
 
-Once you have executed {ProductShortName} analysis on a project, an execution instance is created. Executions for a project are listed in a table that provide the execution ID, project, state, and date executed. You can also display executions across all of your projects by selecting the *All Executions* link.
+The details of an analysis can be viewed by clicking the analysis ID link in the *Analysis* column.
 
-// TODO: Screenshot of execution table
-.Executions List
-image::error.png[Project Executions List]
+.Analysis Details
+image::web-analysis-details.png[Analysis Details]
 
-An execution can be viewed by clicking the execution ID link in the *Execution* column.
+This page provides the following tabs with information about this analysis.
 
-// TODO: Screenshot of execution details w/ the tabs
-.Execution Details
-image::error.png[Execution Details]
+Details:: This tab shows the status, start date, and duration of the analysis. It also shows the configuration settings that were used for this analysis.
 
-The *Execution details* page provides the following tabs with information about this execution.
+//Available Reports:: This tab provides links to the reports that are available for this execution. This includes the *Dashboard*, *Application Details*, and *Issues*. If the legacy static reports were generated, a *Static Reports* link will also be available here. The reports are discussed in more detail in xref:reviewing_reports[Reviewing Reports].
 
-Available Reports:: This tab provides links to the reports that are available for this execution. This includes the *Dashboard*, *Application Details*, and *Issues*. If the legacy static reports were generated, a *Static Reports* link will also be available here. The reports are discussed in more detail in xref:reviewing_reports[Reviewing Reports].
+Applications:: This tab lists the applications that were included in this analysis.
 
-Execution Status:: This tab shows the start and completion date of the execution as well as the state. It also shows the configuration settings that were used for this execution.
+Rules:: This tab lists the rules that were evaluated during this analysis.
++
+NOTE: You can view all system and custom rules by selecting *Rules Configuration* from the user drop down.
 
 Logs:: This tabs shows the output from this {ProductShortName} analysis engine execution.

@@ -1,10 +1,16 @@
 [[reviewing_reports]]
-= Reviewing Reports
+= Review the Reports
 
-// TODO: Add more info
+From the analysis table, click the report link in the *Actions* column to view the reports for this analysis. This opens a new window with the generated {ProductShortName} reports.
+
+See the link:{ProductDocUserGuideURL}#review_reports[Review the Reports] section of the {ProductShortName} _{UserCLIBookName}_ for information on the {ProductShortName} reports and how to use them to assess your migration or modernization effort.
+
+// Web console-specific reports are not included in this release, commenting out for now.
+////
 The {WebName} provides the following reports and views to help you plan and execute your migration projects.
 
 * xref:report_project_dashboard[Dashboard]
 * xref:report_app_details[Application Details]
 * xref:report_migration_issues[Issues]
 * xref:report_static_reports[Static Reports]
+////

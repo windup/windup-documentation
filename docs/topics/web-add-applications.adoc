@@ -1,4 +1,19 @@
 [[add_applications]]
 = Add Applications to a Project
 
-// TODO: content
+Specify the applications to add to this project. You can either xref:add_apps_upload[upload applications] or xref:add_apps_register[register a server path] that contains applications.
+
+.Add Applications
+image::web-add-apps.png[Add Applications]
+
+[[add_apps_upload]]
+Upload Applications::
+
+Use the *Choose files* button to select applications or drag and drop applications into the area provided. This uploads the selected applications to the server.
+
+[[add_apps_register]]
+Register a Server Path::
+
+Select the *Server Path* tab and enter a path on the server that contains applications to be included in this project. If the specified directory contains multiple applications, be sure to check the *Directory Contains Multiple Apps* checkbox.
+
+Once you have specified one or more applications for this project, press *Next* to continue.

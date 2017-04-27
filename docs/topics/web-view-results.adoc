@@ -1,0 +1,9 @@
+[[view_results]]
+= View the Results of an Analysis
+
+Once you have executed {ProductShortName} analysis on a project, the analysis is listed in a table that provides the analysis ID, status, and date started. Each row includes actions available for that analysis, including viewing the reports for the analysis, as well as canceling or deleting the analysis.
+
+.Analysis List
+image::web-analysis-list.png[Analysis List]
+
+Click the link in the *Analysis* column to xref:examining_analysis_details[view the analysis details] or click the report link in the *Actions* column to xref:reviewing_reports[view the reports].
