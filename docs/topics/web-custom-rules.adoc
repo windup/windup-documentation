@@ -1,0 +1,11 @@
+[[using_custom_rules]]
+= Using Custom Rules
+
+You can register your own custom rules to use during analysis of your applications. For information on writing custom {ProductShortName} rules, see the {ProductShortName} link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_].
+
+Select *Rules Configuration* from the user drop down to view all existing system and custom rules. Click the *Add* button and specify the path to a file or folder that contains the custom rules. Click *Add* to register these rules.
+
+.Add Custom Rules
+image::web-rules-config.png[Add Project]
+
+To use these custom rules during a project analysis, select the ruleset in the *Use local custom rules* section of the xref:analysis_configuration[analysis configuration].

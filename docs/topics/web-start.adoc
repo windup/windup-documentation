@@ -3,9 +3,11 @@
 
 Run the script to start the {WebName}.
 
-[source,options="nowrap"]
+[source,options="nowrap",subs="+quotes"]
 ----
-$ RHAMT_HOME/run_rhamt.sh
+$ __RHAMT_HOME__/run_rhamt.sh
 ----
+
+NOTE: In a Windows environment, use the `run_rhamt.bat` script.
 
 You can now xref:access_web_console[access the {WebName}] from a browser.

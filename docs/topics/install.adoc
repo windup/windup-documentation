@@ -1,7 +1,7 @@
 [[install]]
 = Install the {CLINameTitle}
 
-. Download the latest http://windup.jboss.org/download.html[{ProductShortName} ZIP distribution].
+. Download the {CLIName} from the link:https://developers.redhat.com/products/rhamt/download[{ProductShortName} Download page].
 . Extract the ZIP file to a directory of your choice.
 
-The extracted directory is known as xref:about_home_var[`RHAMT_HOME`] in this guide.
+The extracted directory is known as xref:about_home_var[`_RHAMT_HOME_`] in this guide.

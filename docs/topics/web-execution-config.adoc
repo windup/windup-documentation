@@ -1,4 +1,36 @@
-[[execution_configuration]]
+[[analysis_configuration]]
 = Specify the Analysis Configuration
 
-// TODO: title + content
+Configure the settings for the analysis, such as the transformation path, packages, and other advanced options.
+
+.Configure Analysis
+image::web-configure-analysis.png[Configure Analysis]
+
+Transformation Path::
+
+Select the transformation path for your applications. The current options are:
+
+* Migration to Red Hat JBoss EAP 7
+* Migration to Red Hat JBoss EAP 6
+* None
+
++
+You can also check the *Cloud readiness analysis* checkbox to assess your applications for cloud and container environments.
+
+Include Packages::
+
+Select which packages to analyze. If none are selected, all packages will be decompiled and analyzed.
+
+Exclude Packages::
+
+Select which packages to exclude from analysis.
+
+Local Custom Rules::
+
+Select which custom rulesets to use during analysis. See xref:using_custom_rules[Using Custom Rules] for how to register custom rules.
+
+Advanced Options::
+
+Set additional {ProductShortName} options. See the link:{ProductDocUserGuideURL}#command_line_arguments[{ProductShortName} Command-line Arguments] section of the {ProductShortName} _{UserCLIBookName}_ for a description of each {ProductShortName} argument.
+
+Press *Save* to save the analysis configuration or press *Save & Run* to save and xref:execute[execute the analysis] using these settings.

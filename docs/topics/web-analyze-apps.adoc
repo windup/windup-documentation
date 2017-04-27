@@ -1,9 +1,12 @@
 [[using_web_console_analyze_apps]]
 = Using the {WebNameTitle} to Analyze Applications
 
-// TODO: content. Mention wizard, talk about relationships: project has apps, execution of analysis w/ results/reports
+In order to use the {WebName} to analyze applications, you must create a project, which is a way to group applications for analysis. Each project specifies the settings to use during the analysis of its applications. Reports that provide information about the changes necessary for a migration or modernization effort are generated during the analysis.
+
+Follow these steps to use the {WebName} to analyze your applications and review the results.
 
 . xref:add_project[Add a project]
 . xref:add_applications[Add applications to the project]
-. xref:execution_configuration[Specify the analysis configuration]
+. xref:analysis_configuration[Specify the analysis configuration]
 . xref:execute[Execute the analysis]
+. xref:view_results[View the results of the analysis]
