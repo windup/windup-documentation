@@ -9,11 +9,13 @@ image::web-add-apps.png[Add Applications]
 [[add_apps_upload]]
 Upload Applications::
 
-Use the *Choose files* button to select applications or drag and drop applications into the area provided. This uploads the selected applications to the server.
+You can can use the *Choose files* button to select applications, or you can drag and drop applications into the area provided. This uploads the selected applications to the server.
 
 [[add_apps_register]]
 Register a Server Path::
 
 Select the *Server Path* tab and enter a path on the server that contains applications to be included in this project. If the specified directory contains multiple applications, be sure to check the *Directory Contains Multiple Apps* checkbox.
+
+// TODO andrea: Give more info on what registering the path does
 
 Once you have specified one or more applications for this project, press *Next* to continue.
