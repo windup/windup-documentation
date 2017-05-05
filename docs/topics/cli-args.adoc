@@ -53,7 +53,7 @@ Be careful not to specify a report output directory that contains important info
 |--sourceMode |Flag to indicate that the application to be evaluated contains source files rather than compiled binaries. See the xref:input_file_type_arguments[Input File Argument Tables] for details.
 |--target |A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the `--source` argument, helps to determine which rulesets are used. Use the `--listTargetTechnologies` argument to list all available targets. See xref:target_argument[Set the Target Technology] for more information.
 |--userIgnorePath |Specify a location, in addition to `${user.home}/.rhamt/ignore/`, for {ProductShortName} to identify files that should be ignored.
-|--userRulesDirectory |Specify a location, in addition to `RHAMT_HOME/ignore/` and `${user.home}/.rhamt/rules/`, for {ProductShortName} to look for custom {ProductShortName} rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must end in [x-]`.windup.xml`.
+|--userRulesDirectory |Specify a location, in addition to `RHAMT_HOME/ignore/` and `${user.home}/.rhamt/rules/`, for {ProductShortName} to look for custom {ProductShortName} rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the [x-]`.windup.xml` suffix.
 |--version |Display the {ProductShortName} version.
 |====
 
