@@ -1,11 +1,21 @@
 [[using_custom_rules]]
 = Using Custom Rules
 
-You can register your own custom rules to use during analysis of your applications. For information on writing custom {ProductShortName} rules, see the {ProductShortName} link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_].
+You can add your own custom rules to use during analysis of your applications. For information on writing custom {ProductShortName} rules, see the {ProductShortName} link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_].
 
-Select *Rules Configuration* from the user drop down to view all existing system and custom rules. Click the *Add* button and specify the path to a file or folder that contains the custom rules. Click *Add* to register these rules.
+Select *Rules Configuration* from the user drop down to view all existing system and custom rules.
 
 .Add Custom Rules
 image::web-rules-config.png[Add Project]
+
+To add your own custom rules, click the *Add* button. You can either upload rules or register a server path that contains the rules.
+
+Upload Rules::
+
+You can use the *Choose Files* button to select ruleset files, or you can drag and drop the files into the area provided. This uploads the selected ruleset files to the {ProductShortName} server. Click *Add* to upload the rules.
+
+Register a Server Path::
+
+Select the *Server Path* tab and enter a path on the server that contains rules to be available to projects. This does not copy the files to the {ProductShortName} server, but instead uses the rules found in the specified location during analysis. This way, if the rules are updated in this location, the {ProductShortName} server will always use the latest versions of rules during analysis. Click *Add* to register the rules.
 
 To use these custom rules during a project analysis, select the ruleset in the *Use local custom rules* section of the xref:analysis_configuration[analysis configuration].
