@@ -9,13 +9,16 @@ image::web-add-apps.png[Add Applications]
 [[add_apps_upload]]
 Upload Applications::
 
-You can can use the *Choose files* button to select applications, or you can drag and drop applications into the area provided. This uploads the selected applications to the server.
+You can use the *Choose Files* button to select applications, or you can drag and drop applications into the area provided. This uploads the selected applications to the {ProductShortName} server.
 
 [[add_apps_register]]
 Register a Server Path::
 
-Select the *Server Path* tab and enter a path on the server that contains applications to be included in this project. If the specified directory contains multiple applications, be sure to check the *Directory Contains Multiple Apps* checkbox.
-
-// TODO andrea: Give more info on what registering the path does
+Select the *Server Path* tab and enter a path on the server that contains applications to be included in this project. This does not copy the files to the {ProductShortName} server, but instead evaluates the applications in the specified location.
++
+This is useful for the following cases:
++
+* You want to register an existing directory on the server that contains applications, for example, from a nightly automatic build process. This way, the {ProductShortName} server will analyze the latest versions of applications.
+* You want to register an application as an exploded Java archive. In this case, be sure to check the *Directory is an exploded Java application archive* checkbox.
 
 Once you have specified one or more applications for this project, press *Next* to continue.

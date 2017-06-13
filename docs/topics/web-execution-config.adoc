@@ -10,12 +10,18 @@ Transformation Path::
 
 Select the transformation path for your applications. The current options are:
 
-* Migration to Red Hat JBoss EAP 7
-* Migration to Red Hat JBoss EAP 6
-* None
+* Migration to JBoss EAP 7
++
+Execute rules to migrate your applications to Red Hat JBoss Enterprise Application Platform 7.
+* Migration to JBoss EAP 6
++
+Execute rules to migrate your applications to Red Hat JBoss Enterprise Application Platform 6.
+* Cloud readiness only
++
+Only execute rules to assess your applications for cloud and container environment.
 
 +
-You can also check the *Cloud readiness analysis* checkbox to assess your applications for cloud and container environments.
+If you select migration to JBoss EAP, you can also run cloud readiness rules by checking the *Cloud readiness analysis* checkbox.
 
 Include Packages::
 
