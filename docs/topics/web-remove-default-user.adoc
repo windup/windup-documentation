@@ -11,7 +11,7 @@ Follow these steps to remove the default {WebName} user.
 .. Navigate to `http://localhost:8080/auth/` in a browser.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 * For an OpenShift installation:
-.. Navigate to `__OPENSHIFT_CONSOLE_URL__/console/project/rhamt/overview` in a browser.
+.. Navigate to `__OPENSHIFT_URL__/console/project/rhamt/overview` in a browser.
 +
 NOTE: If you renamed the OpenShift project when xref:deploy_rhamt_app_openshift[deploying], replace `rhamt` with the name of your project.
 .. Click the link in the *SSO HTTPS* application and add "/auth" to the end of the URL.

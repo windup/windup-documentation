@@ -1,10 +1,11 @@
 [[access_console_openshift]]
 = Access the {WebNameTitle}
 
-Once the {WebName} has been xref:deploy_rhamt_app_openshift[deployed on OpenShift], you can access it from a browser. The URL to access the {WebName} is `__OPENSHIFT_CONSOLE_URL__/rhamt-web`.
+Once the {WebName} has been xref:deploy_rhamt_app_openshift[deployed on OpenShift], you can access it from a browser. From the OpenShift console at `__OPENSHIFT_URL__/console/project/rhamt/overview`, click the link in the *RHAMT WEB CONSOLE HTTP* application.
 
-//TODO: andrea, add a screenshot of login page (not the auto-login one)
+NOTE: If you renamed the OpenShift project when xref:deploy_rhamt_app_openshift[deploying], replace `rhamt` with the name of your project.
+
 .Welcome Page
-image::web-login.png[Welcome Page]
+image::web-login-openshift.png[Welcome Page]
 
 Authentication is required in order to access the {WebName}. The default user's credentials are `rhamt` and `password`. See xref:config_auth[Configuring Authentication for the {WebNameTitle}] for more information on configuring authentication for the {WebName}.
