@@ -20,17 +20,32 @@ include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 // About the {WebNameTitle}
 include::topics/about-the-web-console.adoc[leveloffset=+2]
 
-// Getting Started
-include::topics/web-getting-started.adoc[leveloffset=+1]
+// Installing the {WebNameTitle}
+include::topics/web-installing.adoc[leveloffset=+1]
+
+// ZIP Installation
+include::topics/web-install-zip.adoc[leveloffset=+2]
 
 // Install the {WebNameTitle}
-include::topics/web-install.adoc[leveloffset=+2]
+include::topics/web-install.adoc[leveloffset=+3]
 
 // Start the {WebNameTitle}
-include::topics/web-start.adoc[leveloffset=+2]
+include::topics/web-start.adoc[leveloffset=+3]
 
 // Access the {WebNameTitle}
-include::topics/web-access-console.adoc[leveloffset=+2]
+include::topics/web-access-console.adoc[leveloffset=+3]
+
+// OpenShift Installation
+include::topics/web-install-openshift.adoc[leveloffset=+2]
+
+// Set Up Your Environment
+include::topics/web-openshift-env.adoc[leveloffset=+3]
+
+// Deploy the {ProductShortName} Application
+include::topics/web-openshift-deploy.adoc[leveloffset=+3]
+
+// Access the {WebNameTitle}
+include::topics/web-openshift-access.adoc[leveloffset=+3]
 
 // Using the {WebNameTitle} to Analyze Applications
 include::topics/web-analyze-apps.adoc[leveloffset=+1]
@@ -71,6 +86,9 @@ include::topics/web-report-issues.adoc[leveloffset=+2]
 include::topics/web-report-static.adoc[leveloffset=+2]
 ////
 
+// Using Custom Rules
+include::topics/web-custom-rules.adoc[leveloffset=+1]
+
 // Require Authentication for {ProductWebName}
 include::topics/web-require-auth.adoc[leveloffset=+1]
 
@@ -87,9 +105,6 @@ include::topics/web-remove-default-user.adoc[leveloffset=+2]
 include::topics/web-add-user.adoc[leveloffset=+2]
 
 // TODO: eventually add steps for reverting back to no auth required
-
-// Using Custom Rules
-include::topics/web-custom-rules.adoc[leveloffset=+1]
 
 
 // **********************************

@@ -6,8 +6,16 @@ When you xref:enable_auth[enable authentication] for the {WebName}, a default ad
 Follow these steps to change the default administrative user's password.
 
 . Make sure that the {WebName} is xref:starting_console[running].
-. Navigate to http://localhost:8080/auth/ in a browser.
-. Select *Administration Console* to access the Keycloak administration console.
+. Open the Red Hat Single Sign-On administration console.
+* For a ZIP installation:
+.. Navigate to `http://localhost:8080/auth/` in a browser.
+.. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
+* For an OpenShift installation:
+.. Navigate to `__OPENSHIFT_CONSOLE_URL__/console/project/rhamt/overview` in a browser.
++
+NOTE: If you renamed the OpenShift project when xref:deploy_rhamt_app_openshift[deploying], replace `rhamt` with the name of your project.
+.. Click the link in the *SSO HTTPS* application and add "/auth" to the end of the URL.
+.. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 . Log in with the default credentials of `admin` and `password`.
 . In the upper left corner, select the *Master* realm from the drop down.
 . In the left-side navigation menu, select *Users* and then click *View all users*.

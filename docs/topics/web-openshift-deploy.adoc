@@ -1,0 +1,27 @@
+[[deploy_rhamt_app_openshift]]
+= Deploy the {ProductShortName} Application
+
+. Download the {WebName} from the link:https://developers.redhat.com/products/rhamt/download[{ProductShortName} Download page].
+. Extract the ZIP file to a directory of your choice.
++
+The path to the directory created by unzipping this file is referred to as `_RHAMT_HOME_` throughout this guide.
+
+. Use the `oc login` command to connect to your OpenShift instance.
++
+[options="nowrap",subs="+quotes"]
+----
+$ oc login
+----
++
+Provide any arguments that your instance requires, such as `--username` and `--password`, `--token`, or `--server`.
+. Execute the `deploy.sh` script to deploy the {WebName} to OpenShift.
++
+[options="nowrap",subs="+quotes"]
+----
+$ __RHAMT_HOME__/openshift/deploy.sh
+----
++
+NOTE: The default name of the application deployed to OpenShift is `rhamt`. You can change this to a different name by editing the `deploy.sh` script and setting the `OCP_PROJECT` variable to the desired name before running the script.
+. Wait for the `deploy.sh` script to complete. This may take several minutes.
+
+Once the script completes, you can xref:access_console_openshift[access the web console] from a browser.
