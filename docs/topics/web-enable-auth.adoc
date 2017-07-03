@@ -1,7 +1,9 @@
 [[enable_auth]]
 = Enable Authentication for {WebNameTitle}
 
-Run the following script to require users to log in before accessing the {WebName}. This script configures the Keycloak login page to require users to authenticate before granting access to the {WebName}.
+NOTE: If you have xref:openshift_install[installed {WebName} on OpenShift], authentication is already enabled.
+
+Run the following script to require users to log in before accessing the {WebName}. This script configures the Red Hat Single Sign-On login page to require users to authenticate before granting access to the {WebName}.
 
 [source,options="nowrap",subs="+quotes"]
 ----
