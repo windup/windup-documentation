@@ -26,6 +26,9 @@ include::topics/web-installing.adoc[leveloffset=+1]
 // ZIP Installation
 include::topics/web-install-zip.adoc[leveloffset=+2]
 
+// Prerequisites
+include::topics/web-zip-prerequisites.adoc[leveloffset=+3]
+
 // Install the {WebNameTitle}
 include::topics/web-install.adoc[leveloffset=+3]
 
@@ -38,7 +41,7 @@ include::topics/web-access-console.adoc[leveloffset=+3]
 // OpenShift Installation
 include::topics/web-install-openshift.adoc[leveloffset=+2]
 
-// Set Up Your Environment
+// Prerequisites
 include::topics/web-openshift-env.adoc[leveloffset=+3]
 
 // Deploy the {ProductShortName} Application

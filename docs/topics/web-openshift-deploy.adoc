@@ -10,7 +10,7 @@ The path to the directory created by unzipping this file is referred to as `_RHA
 +
 [options="nowrap",subs="+quotes"]
 ----
-$ oc login
+$ oc login --username __USERNAME__ --password __PASSWORD__
 ----
 +
 Provide any arguments that your instance requires, such as `--username` and `--password`, `--token`, or `--server`.
