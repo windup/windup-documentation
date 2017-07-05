@@ -25,11 +25,11 @@ include::topics/about-rules.adoc[leveloffset=+2]
 
 == Supported Configurations
 
-// System Requirements
-include::topics/system-requirements.adoc[leveloffset=+2]
-
 // Supported Migration Paths
 include::topics/migration-paths.adoc[leveloffset=+2]
+
+// System Requirements
+include::topics/system-requirements.adoc[leveloffset=+2]
 
 // About the Tools
 include::topics/about-tools.adoc[leveloffset=+1]
@@ -42,6 +42,29 @@ include::topics/about-the-web-console.adoc[leveloffset=+2]
 
 // About the {PluginNameTitle}
 include::topics/about-plugin.adoc[leveloffset=+2]
+
+== Planning Your Application Migration
+
+// Goals of Assessing a Migration
+include::topics/migration-goals.adoc[leveloffset=+2]
+
+// Red Hat's Application Migration Approach
+include::topics/migration-approach.adoc[leveloffset=+2]
+
+// Best Practices
+include::topics/migration-best-practices.adoc[leveloffset=+3]
+
+// Migration Methodology
+include::topics/migration-methodology.adoc[leveloffset=+3]
+
+// Discover Phase
+include::topics/method-discover.adoc[leveloffset=+4]
+
+// Design Phase
+include::topics/method-design.adoc[leveloffset=+4]
+
+// Deploy Phase
+include::topics/method-deploy.adoc[leveloffset=+4]
 
 [appendix]
 == Reference Material
