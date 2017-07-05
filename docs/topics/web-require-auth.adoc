@@ -7,7 +7,7 @@ It is recommended to complete the following steps to configure authentication fo
 
 . xref:enable_auth[Enable authentication for the {WebName}.]
 +
-NOTE: If you have xref:openshift_install[installed {WebName} on OpenShift], authentication is already enabled.
+NOTE: If you have xref:openshift_install[installed {WebName} on OpenShift], authentication is already enabled and cannot be disabled.
 . xref:change_admin_user[Change the administrative user's credentials.]
 . xref:remove_default_user[Remove the default {WebName} user.]
 . xref:add_user[Add {WebName} users.]

@@ -1,7 +1,7 @@
 [[enable_auth]]
 = Enable Authentication for {WebNameTitle}
 
-NOTE: If you have xref:openshift_install[installed {WebName} on OpenShift], authentication is already enabled.
+NOTE: If you have xref:openshift_install[installed {WebName} on OpenShift], authentication is already enabled and cannot be disabled.
 
 Run the following script to require users to log in before accessing the {WebName}. This script configures the Red Hat Single Sign-On login page to require users to authenticate before granting access to the {WebName}.
 
