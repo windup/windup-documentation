@@ -1,7 +1,7 @@
 [[using_web_console_analyze_apps]]
 = Using the {WebNameTitle} to Analyze Applications
 
-In order to use the {WebName} to analyze applications, you must create a project, which is a way to group applications for analysis. Each project specifies the settings to use during the analysis of its applications. Reports that provide information about the changes necessary for a migration or modernization effort are generated during the analysis.
+In order to use the {WebName} to analyze applications, you must create a project. Each project is a way to group applications for analysis and specifies the settings to use during the analysis of its applications. The analysis process generates reports that provide information about the changes necessary for a migration or modernization effort.
 
 Follow these steps to use the {WebName} to analyze your applications and review the results.
 
