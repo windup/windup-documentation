@@ -1,14 +1,14 @@
 [[examining_analysis_details]]
 = Examine Analysis Details
 
-The details of an analysis can be viewed by clicking the analysis ID link in the *Analysis* column.
+The details of an analysis can be viewed by clicking the information icon in the *Actions* column of the Analysis Results table.
 
 .Analysis Details
 image::web-analysis-details.png[Analysis Details]
 
 This page provides the following tabs with information about this analysis.
 
-Details:: This tab shows the status, start date, and duration of the analysis. It also shows the configuration settings that were used for this analysis.
+Details:: This tab shows the status, start date, and duration of the analysis as well as the configuration settings that were used for this analysis.
 
 //Available Reports:: This tab provides links to the reports that are available for this execution. This includes the *Dashboard*, *Application Details*, and *Issues*. If the legacy static reports were generated, a *Static Reports* link will also be available here. The reports are discussed in more detail in xref:reviewing_reports[Reviewing Reports].
 

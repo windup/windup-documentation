@@ -18,10 +18,10 @@ Solve and document the identified technical risks, for example, high risk items 
 
 Pilot::
 +
-Choose a small set of representative applications to transform. Finalize the target platform infrastructure as necessary. Update the documentation as the process is fine-tuned. This pilot consists of one or several iterations of the migration execution, which is scaled during the _Deploy_ phase.
+Choose a small set of representative applications to transform. Finalize the target platform infrastructure as necessary. Update the documentation as the process is fine-tuned. This pilot consists of one or several iterations of the migration execution, which is scaled during the xref:deploy_phase[Deploy phase].
 +
 Use the {ProductName} {PluginName} to accelerate the code migration. See the link:{ProductDocPluginGuideURL}[_{PluginBookName}_] for information on how to use the {PluginName}.
 
 Plan::
 +
-Based on the outcomes of the previous steps, sharpen the estimates and refine the project plan. Define the rollout strategy to be used in the _Deploy_ phase to complete the migration. Prepare and schedule the relevant link:https://www.redhat.com/en/services/training[technical enablement courses].
+Based on the outcomes of the previous steps, sharpen the estimates and refine the project plan. Define the rollout strategy to be used in the xref:deploy_phase[Deploy phase] to complete the migration. Prepare and schedule the relevant link:https://www.redhat.com/en/services/training[technical enablement courses].
