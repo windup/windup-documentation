@@ -1,9 +1,9 @@
-[[zip_install_prerequisites]]
+[[cli_prerequisites]]
 = Prerequisites
 
-Verify that you meet the following prerequisites.
+Before installing the {CLIName}, verify that you meet the following prerequisites.
 
 * Java Platform, JRE version 8+
-* A minimum of 8 GB RAM; 16 GB recommended
+* A minimum of 4 GB RAM; 8 GB recommended
 
 NOTE: If you are running on Mac OS X, it is recommended to set the maximum number of user processes, `maxproc`, to at least `2048`, and the maximum number of open files, `maxfiles`, to `100000`.

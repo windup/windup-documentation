@@ -25,6 +25,9 @@ include::topics/about-cli.adoc[leveloffset=+2]
 
 == Getting Started
 
+// Prerequisites
+include::topics/cli-prerequisites.adoc[leveloffset=+2]
+
 // Install the CLI
 include::topics/install.adoc[leveloffset=+2]
 
