@@ -20,12 +20,12 @@ Each quickstart has a `README.adoc` file that contains instructions for that qui
 
 You must have the link:http://git-scm.com/[`git`] client installed on your machine.
 
-. Click the `Fork` link on the https://github.com/windup/windup-quickstarts/[{ProductName} quickstart] GitHub page to create the project in your own Git. The forked GitHub repository URL created by the fork should look like this: https://github.com/YOUR_USER_NAME/windup-quickstarts.git.
+. Click the `Fork` link on the https://github.com/windup/windup-quickstarts/[{ProductName} quickstart] GitHub page to create the project in your own Git. The forked GitHub repository URL created by the fork should look like this: `\https://github.com/__YOUR_USER_NAME__/windup-quickstarts.git`.
 . Clone your {ProductName} quickstart repository to your local file system:
 +
-[options="nowrap"]
+[options="nowrap",subs="+quotes"]
 ----
-$ git clone https://github.com/YOUR_USER_NAME/windup-quickstarts.git
+$ git clone https://github.com/__YOUR_USER_NAME__/windup-quickstarts.git
 ----
 . This creates and populates a `windup-quickstarts` directory on your local file system. Navigate to the newly created directory, for example
 +

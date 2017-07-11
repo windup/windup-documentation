@@ -12,7 +12,7 @@ In general, {ProductShortName} spends about 40% of the time decompiling classes,
 Try these suggestions first before upgrading hardware.
 
 * If possible, execute {ProductShortName} against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.
-* Specify a comma-separated list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `RHAMT_HOME/bin/rhamt-cli` command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
+* Specify a comma-separated list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `__RHAMT_HOME__/bin/rhamt-cli` command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
 * Specify the `--excludePackages` and `--excludeTags` arguments where possible to exclude them from processing.
 * Add additional proprietary packages that should not be processed to the `ignore/proprietary.package-ignore.txt` file in the {ProductShortName} distribution directory. {ProductShortName} can still find the references to the packages in the application source code, but avoids the need to decompile and analyze the proprietary classes.
 * Increase your ulimit when analyzing large applications.
