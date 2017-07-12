@@ -15,6 +15,8 @@ Open __WEB_CONSOLE_URL__ to start using the RHAMT Web Console on OpenShift (user
 
 You can also access the {WebName} from the OpenShift console at `__OPENSHIFT_URL__/console/project/rhamt/overview` by clicking the link in the *RHAMT WEB CONSOLE HTTP* application. If you renamed the OpenShift project when xref:deploy_rhamt_app_openshift[deploying], be sure to replace `rhamt` in this URL with the name of your project.
 
+NOTE: If the {WebName} does not load immediately, check the status of the project in the OpenShift console to see if it is still processing or if there were errors.
+
 .Welcome Page
 image::web-login-openshift.png[Welcome Page]
 
