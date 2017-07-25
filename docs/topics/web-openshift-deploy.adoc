@@ -14,14 +14,18 @@ $ oc login --username __USERNAME__ --password __PASSWORD__
 ----
 +
 Provide any arguments that your instance requires, such as `--username` and `--password`, `--token`, or `--server`.
+
+. Review and adjust default values for the installation.
++
+The `__RHAMT_HOME__/openshift/deployment.properties` file defines default values, such as `rhamt` as the project name, 10GB as the persistent storage volume size, and 2GB as the requested memory. Review and change any default settings to your needs before running the `deploy.sh` script.
+
 . Execute the `deploy.sh` script to deploy the {WebName} to OpenShift.
 +
 [options="nowrap",subs="+quotes"]
 ----
 $ __RHAMT_HOME__/openshift/deploy.sh
 ----
-+
-NOTE: The default name of the application deployed to OpenShift is `rhamt`. You can change this to a different name by editing the `deploy.sh` script and setting the `OCP_PROJECT` variable to the desired name before running the script.
+
 . Wait for the `deploy.sh` script to complete. This may take several minutes.
 
 Once the script completes, you can xref:access_console_openshift[access the web console] from a browser.
