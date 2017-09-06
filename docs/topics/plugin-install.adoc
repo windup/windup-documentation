@@ -15,7 +15,7 @@ NOTE: This guide uses _Eclipse_ to refer to an installation of Eclipse or JBoss 
 . Add the {ProductShortName} update site.
 .. Next to the *Work with* field, click *Add*.
 .. In the *Name* field, enter `{ProductShortName}`.
-.. In the *Location* field, enter [x-]`http://download.jboss.org/jbosstools/neon/stable/updates/rhamt/composite/` and press *OK*.
+.. In the *Location* field, enter [x-]`http://download.jboss.org/jbosstools/oxygen/development/updates/rhamt/composite/` and press *OK*.
 .. Select all of the checkboxes under *JBoss Tools - RHAMT* and press *Next*.
 . Review the installation details and press *Next*.
 . Accept the terms of the license agreement and press *Finish* to install the plugin.
