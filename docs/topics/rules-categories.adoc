@@ -23,7 +23,7 @@ IMPORTANT: Although {ProductShortName} can still process rules that use the lega
 <?xml version="1.0"?>
 <categories>
     ...
-    <category id="custom-category" priority="4000">
+    <category id="custom-category" priority="20000">
         <name>Custom Category</name>
         <description>This is a custom category.</description>
     </category>
@@ -53,7 +53,7 @@ In your {ProductShortName} rule, use the custom category's `id` value in the rul
  </rule>
 ----
 
-Now when you run {ProductShortName} and this rule's condition is met, incidents identified by this rule will use your custom category. The custom category can be seen in the {ProductShortName} report in places such as the Report Index and Migration Issues report.
+Now when you run {ProductShortName} and this rule's condition is met, incidents identified by this rule will use your custom category. The custom category can be seen in the {ProductShortName} report in places such as the dashboard and Issues report.
 
-.Custom Category on Report Index Page
-image::custom_rule_category.png[Custom rule category on Report Index]
+.Custom Category on the Dashboard
+image::custom_rule_category.png[Custom rule category on the Dashboard]

@@ -15,12 +15,12 @@ image::report-jee-example-application-list-page.png[Application List]
 
 NOTE: The incidents and estimated story points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
 
-Click on the name of the application, *jee-example-app-1.0.0.ear*, to view the xref:review-the-report-application-report[application report]. The following table lists all of the reports that can be access from this main {ProductShortName} landing page.
+The following table lists all of the reports and pages that can be accessed from this main {ProductShortName} landing page. Click on the name of the application, *jee-example-app-1.0.0.ear*, to view the xref:review-the-report-application-report[application report].
 
 [cols="30%,70%", options="header"]
 |====
-| Report
-| How to Access the Report
+| Page
+| How to Access
 
 | xref:review-the-report-application-report[Application]
 | Click on the name of the application.
@@ -28,14 +28,15 @@ Click on the name of the application, *jee-example-app-1.0.0.ear*, to view the x
 | xref:shared_archives[Archives shared by multiple applications]
 | Click on the *Archives shared by multiple applications* link. Note that this link is only available when there are shared archives across multiple applications.
 
-| xref:review-the-report-rule-provider-executions-report[Rule Provider Executions]
-| Click on the *Executed rules overview* link at the bottom of the page.
+| xref:review-the-report-rule-provider-executions-report[
+Rule Providers Execution Overview]
+| Click on the *Rule providers execution overview* link at the bottom of the page.
 
-| xref:review-the-report-freemarker-report[{ProductName} FreeMarker Functions and Directives]
-| Click on the *{ProductName} FreeMarker methods* link at the bottom of the page.
+| xref:review-the-report-freemarker-report[Used FreeMarker Functions and Directives]
+| Click on the *FreeMarker methods* link at the bottom of the page.
 
-| xref:review-the-report-send-feedback[Send Feedback Form]
-| Click on the *Send feedback* link at the bottom of the page to open a form that allows you to submit feedback to the {ProductShortName} team.
+| xref:review-the-report-send-feedback[Send Feedback form]
+| Click on the *Send Feedback* link in the top navigation bar to open a form that allows you to submit feedback to the {ProductShortName} team.
 |====
 
 Note that if an application shares archives with other analyzed applications, you will see a breakdown of how many story points are from shared archives and how many are unique to this application.
@@ -48,27 +49,27 @@ Information about the archives that are shared among applications can be found i
 [[review-the-report-application-report]]
 == Application Report
 
-=== Report Index
+=== Dashboard
 
 Access this report from the report landing page by clicking on the application name in the *Application List*.
 
-The application report page gives an overview of the entire application migration effort. It summarizes:
+The dashboard gives an overview of the entire application migration effort. It summarizes:
 
-* The incidents and story points by category (Mandatory, Optional, or Potential Issues)
+* The incidents and story points by category
 * The incidents and story points by level of effort of the suggested changes
 * The incidents by package
 
-.Report Index
-image::report-jee-example-application-report-index-page.png[Report Index]
+.Dashboard
+image::report-jee-example-application-report-index-page.png[Dashboard]
 
-At the bottom of the page is a list of reports that contain additional details about the migration of this application. Note that only those reports that are applicable to the current application will be available.
+The top navigation bar lists the various reports that contain additional details about the migration of this application. Note that only those reports that are applicable to the current application will be available.
 
 [cols="30%,70%", options="header"]
 |====
 | Report
 | Description
 
-| Migration Issues
+| Issues
 | Provides a concise summary of all issues that require attention.
 
 | Application Details
@@ -111,10 +112,9 @@ At the bottom of the page is a list of reports that contain additional details a
 | Describes the current version of {ProductShortName} and provides helpful links for further assistance.
 |====
 
-
 === Application Details Report
 
-Access this report from the report index by clicking the *Application Details* link.
+Access this report from the dashboard by clicking the *Application Details* link.
 
 The report lists the story points, the Java incidents by package, and a count of the occurrences of the technologies found in the application. Next is a display of application messages generated during the migration process. Finally, there is a breakdown of this information for each archive analyzed during the process.
 
@@ -132,7 +132,7 @@ Expand the `jee-example-app-1.0.0.ear/jee-example-services.jar` to review the st
 | The name of the file being analyzed.
 
 | Technology
-| The type of file being analyzed, for example: Java Source, Decompiled Java File, Manifest, Properties, EJB XML, Spring XML, Web XML, Hibernate Cfg, Hibernate Mapping
+| The type of file being analyzed, for example, *Decompiled Java File* or *Properties*.
 
 | Issues
 | Warnings about areas of code that need review or changes.
@@ -146,22 +146,19 @@ Note that if an archive is duplicated several times in an application, it will b
 .Duplicate Archive in an Application
 image::duplicate-archive-app-report.png[Duplicate Archive]
 
-
 The story points for archives that are duplicated within an application will be counted only once in the total story point count for that application.
 
 === Source Report
 
 The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 22 warnings and is assigned 16 story points. Click on the file link to see the detail.
 
-* The *Information* section provides a summary of the story points and notes that the file was decompiled by {ProductShortName}.
-* This is followed by the file source code listing. Warnings appear in the file at the point where  migration is required.
+* The *Information* section provides a summary of the story points.
+* This is followed by the file source code. Warnings appear in the file at the point where  migration is required.
 
 In this example, warnings appear at various import statements, declarations, and method calls. Each warning describes the issue and the action that should be taken.
 
 .Source Report
 image::report-jee-example-source-1.png[Source Report]
-
-// TODO: Consider eventually calling this "Cross-application Reports" and include Dependencies and Migration Issues, if appropriate
 
 [[shared_archives]]
 == Archives Shared by Multiple Applications
@@ -174,21 +171,21 @@ image::shared-archives-app-list.png[Archives Shared by Multiple Applications]
 This allows you to view the detailed reports for all archives that are shared across multiple applications.
 
 [[review-the-report-rule-provider-executions-report]]
-== Rule Provider Execution Report
+== Rule Provider Execution Overview
 
-Access this report from the report landing page by clicking the *Executed rules overview* link.
+Access this report from the report landing page by clicking the *Rule providers execution overview* link.
 
 This report provides the list of rules that executed when running the {ProductShortName} migration command against the application.
 
-.Rule Provider Report
-image::report-jee-example-ruleprovider.png[Rule Provider Report]
+.Rule Provider Execution Overview
+image::report-jee-example-ruleprovider.png[Rule Provider Execution Overview]
 
 [[review-the-report-freemarker-report]]
-== {ProductName} FreeMarker Functions and Directives
+== Used FreeMarker Functions and Directives
 
 Access this report from the report landing page by clicking the *{ProductName} FreeMarker methods* link.
 
-This report lists all the registered functions and directives that were used to build the report. It is useful if you plan to build your own custom report or for debugging purposes.
+This report lists all the registered functions and directives that were used to build the report. It is useful for debugging purposes or if you plan to build your own custom report.
 
 .FreeMarker Functions and Directives
 image::report-jee-example-freemarker-and-directives.png[FreeMarker Functions and Directives]
@@ -198,7 +195,7 @@ image::report-jee-example-freemarker-and-directives.png[FreeMarker Functions and
 
 Access this feedback form from the report landing page by clicking the *Send feedback* link.
 
-This form allows you to rate the product, talk about what you like and suggestions for improvements.
+This form allows you to rate the product, talk about what you like, and make suggestions for improvements.
 
 .Send Feedback Form
-image::report-jee-example-send-feedback.png[Feedback Form, 500]
+image::report-jee-example-send-feedback.png[Feedback Form, 550]

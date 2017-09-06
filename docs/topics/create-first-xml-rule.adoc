@@ -218,11 +218,11 @@ Report created: /home/__USER_NAME__/migration-rules/reports/index.html
 [discrete]
 == Review the Reports
 
-Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#review_reports[Review the Reports] section of the _{ProductShortName} User Guide_.
+Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#review_reports[Review the Reports] section of the {ProductShortName} _{UserCLIBookName}_.
 
 . Open `/home/__USER_NAME__/migration-rules/reports/index.html` in a web browser.
 . Verify that the rule executed.
-.. From the main landing page, click the `Executed rules overview` link to open the Rule Provider Executions report.
+.. From the main landing page, click the *Rule providers execution overview* link to open the Rule Providers Execution Overview.
 +
 .. Find the `JBoss5-web-class-loading_001` rule and verify that its *Status?* is `Condition met` and its *Result?* is `success`.
 +
