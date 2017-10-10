@@ -5,9 +5,9 @@ You can resolve {ProductShortName} issues by updating the code manually or by ap
 
 == Resolve an Issue Manually
 
-Review the {ProductShortName} issue details and additional resources and update the source code as necessary. When you update a line of code marked as a {ProductShortName} issue, the {ProductShortName} issue will be marked with the stale icon (image:stale_issue.gif[Stale issue icon]) until the next time that {ProductShortName} is run on the project.
+Review the {ProductShortName} issue details and additional resources and update the source code as necessary. When you update a line of code marked as an {ProductShortName} issue, the {ProductShortName} issue will be marked with the stale icon (image:stale_issue.gif[Stale issue icon]) until the next time that {ProductShortName} is run on the project.
 
-You can also manually mark a {ProductShortName} issue as fixed, which will mark the issue with the resolved icon (image:fixedIssue.gif[Resolved issue icon]) until the next time that {ProductShortName} is run on the project. To mark an issue as fixed, right-click the {ProductShortName} issue in the Issue Explorer and select *Mark as Fixed*.
+You can also manually mark an {ProductShortName} issue as fixed, which will mark the issue with the resolved icon (image:fixedIssue.gif[Resolved issue icon]) until the next time that {ProductShortName} is run on the project. To mark an issue as fixed, right-click the {ProductShortName} issue in the Issue Explorer and select *Mark as Fixed*.
 
 == Resolve an Issue Using a Quick Fix
 

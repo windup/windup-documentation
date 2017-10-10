@@ -50,6 +50,18 @@ include::topics/plugin-resolve-issues.adoc[leveloffset=+2]
 // TODO: Uncomment when uninstalling works and this is ready
 // include::topics/plugin-uninstall.adoc[leveloffset=+1]
 
+// Add Custom Rules
+include::topics/plugin-use-custom-rules.adoc[leveloffset=+1]
+
+// Browse Rules
+include::topics/plugin-view-rules.adoc[leveloffset=+2]
+
+// Import a Custom Ruleset
+include::topics/plugin-import-custom-ruleset.adoc[leveloffset=+2]
+
+// Create a Custom Ruleset
+include::topics/plugin-create-custom-ruleset.adoc[leveloffset=+2]
+
 [appendix]
 == Reference Material
 

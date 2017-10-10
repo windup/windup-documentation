@@ -7,7 +7,7 @@ This section describes the basic structure of XML rules. All XML rules are defin
 
 A ruleset is a group of one or more rules that targets a specific area of migration. This is the basic structure of the `<ruleset>` element.
 
-* **<ruleset id="__UNIQUE_RULESET_ID__">**: Defines this as a {ProductShortName} ruleset and gives it a unique ruleset ID.
+* **<ruleset id="__UNIQUE_RULESET_ID__">**: Defines this as an {ProductShortName} ruleset and gives it a unique ruleset ID.
 ** **<metadata>**: The metadata about the ruleset.
 *** **<description>**: The description of the ruleset.
 *** **<dependencies/>**: The rule add-ons required by this ruleset.
