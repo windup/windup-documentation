@@ -83,7 +83,7 @@ Ruleset and rule XML elements are covered in more detail in the xref:xml_rule_st
      </rules>
 </ruleset>
 ----
-NOTE: {ProductShortName} identifies files with the `.windup.xml` extension as XML-based rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
+NOTE: {ProductShortName} identifies files with the `.windup.xml` or `.rhamt.xml` extension as XML-based rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
 
 . Add the unique identifier for the ruleset and rule.
 * Replace the `__UNIQUE_RULESET_ID__` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
