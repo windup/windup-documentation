@@ -1,10 +1,10 @@
-= Windup Documentation Contributing Guide
+= RHAMT Documentation Contributing Guide
 
-Improvements to the Windup documentation are welcome.
+Improvements to the RHAMT documentation are welcome.
 
-In order to contribute, you will need a GitHub account and to have `git` installed on your machine. You can also log a link:https://issues.jboss.org/projects/WINDUP/issues[Windup JIRA] to track the changes.
+In order to contribute, you will need a GitHub account and to have `git` installed on your machine. You can also log a link:https://issues.jboss.org/projects/WINDUP/issues[JIRA] to track the changes.
 
-Use the following steps to submit a change to the Windup documentation repository.
+Use the following steps to submit a change to the RHAMT documentation repository.
 
 . Fork the link:https://github.com/windup/windup-documentation[windup-documentation] GitHub repository.
 +
@@ -41,8 +41,8 @@ The documentation is written in link:http://asciidoc.org/[AsciiDoc]. Review the 
 +
 [source,options="nowrap"]
 ----
-$ cd docs/windup-user-guide/
-$ asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html master.adoc
+$ cd docs/cli-guide/
+$ asciidoctor -t -dbook -a toc -o html/cli-guide.html master.adoc
 ----
 .. View the generated HTML file in a browser.
 . Add each new or updated file to git.
@@ -66,7 +66,7 @@ $ git push origin HEAD
 . Open a pull request to merge your changes to the master branch.
 .. Navigate to your forked repository in a browser:  https://github.com/YOUR_USERNAME/windup-documentation.
 .. Open a new pull request. Be sure to review the diff before submitting.
-.. A member of the Windup documentation team will merge or provide feedback on your request.
+.. A member of the RHAMT documentation team will merge or provide feedback on your request.
 
 == Building the Guides
 
@@ -74,27 +74,25 @@ Navigate to the appropriate guide's directory and issue the following command.  
 
 [source,options="nowrap"]
 ----
-$ cd docs/windup-user-guide/
-$ asciidoctor -t -dbook -a toc -o html/WindupUserGuide.html master.adoc
+$ cd docs/cli-guide/
+$ asciidoctor -t -dbook -a toc -o html/cli-guide.html master.adoc
 ----
 
 View the generated HTML file in a browser.
 
-NOTE: The Windup documentation team can use the `buildGuide.sh` script located in each guide's directory. Since this script relies on an internal build tool, other contributors should use the `asciidoctor` command to build the guides.
+NOTE: The RHAMT documentation team can use the `buildGuide.sh` script located in each guide's directory. Since this script relies on an internal build tool, other contributors should use the `asciidoctor` command to build the guides.
 
 == Publishing the Guides
 
-The Windup guides are published on the link:https://access.redhat.com/documentation/en/red-hat-jboss-migration-toolkit/[Red Hat Customer Portal].
-
+The RHAMT guides are published on the link:https://access.redhat.com/documentation/en/red-hat-application-migration-toolkit/[Red Hat Customer Portal].
 
 // TODO: Update with the link
-// Members of the Windup documentation team can review the process for publishing the Windup guides here: TODO.
+// Members of the RHAMT documentation team can review the process for publishing the RHAMT guides here: TODO.
 
-The Windup documentation team handles publishing the guides to the Customer Portal.
+The RHAMT documentation team handles publishing the guides to the Customer Portal.
 
 [[asciidoc_guidelines]]
 == AsciiDoc Guidelines and Tips
-
 
 === AsciiDoc Editors
 
@@ -216,7 +214,7 @@ Navigate to the link:https://github.com/windup/windup-documentation[Windup GitHu
 
 === Using AsciiDoc Attributes
 
-The Windup documentation defines several AsciiDoc attributes in the `docs/templates/document-attributes.adoc` file. This allows you to define the value one place and then used it repeatedly throughout the guides. An example usage of this is defining the Windup version.
+The RHAMT documentation defines several AsciiDoc attributes in the `docs/templates/document-attributes.adoc` file. This allows you to define the value one place and then used it repeatedly throughout the guides. An example usage of this is defining the RHAMT version.
 
 ==== Defining an Attribute
 
@@ -224,7 +222,7 @@ Define an attribute in the `document-attributes.adoc` file using the following s
 
 [source,options="nowrap"]
 ----
-:ProductVersion: 2.7.Final
+:ProductVersion: 4.0.0.Final
 ----
 
 ==== Using an Attribute
@@ -233,7 +231,7 @@ An attribute can then be referenced in an AsciiDoc file using the following synt
 
 [source,options="nowrap"]
 ----
-The Windup version is {ProductVersion}.
+The RHAMT version is {ProductVersion}.
 ----
 
-This will be resolved as "The Windup version is 2.7.Final".
+This will be resolved as "The RHAMT version is 4.0.0.Final".
