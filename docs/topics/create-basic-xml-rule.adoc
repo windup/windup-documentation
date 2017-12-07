@@ -16,7 +16,7 @@ otherwise(action)
 
 Create a file with the following contents, which is the basic syntax for XML rules.
 
-IMPORTANT: The {ProductShortName} XML rule file must use the `.windup.xml` extension, otherwise the rule will not be evaluated.
+IMPORTANT: The {ProductShortName} XML rule file must use the `.windup.xml` or `.rhamt.xml` extension, otherwise the rule will not be evaluated.
 
 [source,xml,options="nowrap"]
 ----
