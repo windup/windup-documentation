@@ -9,6 +9,7 @@ The complete XML rule schema is located here: http://windup.jboss.org/schema/win
 
 The following example rule defines a parameter named `subpackage` that specifies a pattern of `(activeio|activemq)`.
 
+[source,xml,options="nowrap"]
 ----
 <rule id="generic-catchall-00600">
   <when>
