@@ -13,6 +13,8 @@ The following sections describe the more common XML `when` rule conditions.
 * xref:filecontent-syntax[<filecontent> condition syntax]
 * xref:file-syntax[<file> condition syntax]
 
+By default, if more than one `when` rule condition is provided, then all conditions must be met for the rule to match.
+
 [[javaclass-syntax]]
 == <javaclass> Syntax
 
