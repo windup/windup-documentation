@@ -69,6 +69,49 @@ $ __RHAMT_HOME__/bin/rhamt-cli -Dwindup.decompiler=procyon --input __INPUT_ARCHI
 ----
 
 [discrete]
+[[cli_bash_completion]]
+== {ProductShortName} {CLINameTitle} Bash Completion
+
+The {ProductShortName} {CLIName} provides an option to enable bash completion, allowing the xref:command_line_arguments[{ProductShortName} command-line arguments] to be auto completed by pressing Tab when entering the commands. For instance, when bash completion is xref:bash_completion_temporary[enabled], entering the following displays a list of available arguments.
+
+[source,options="nowrap",subs="+quotes"]
+----
+$ __RHAMT_HOME__/bin/rhamt-cli [TAB]
+----
+
+[discrete]
+[[bash_completion_temporary]]
+=== Enable Bash Completion
+
+To enable bash completion for the current shell, execute the following command. After the prompt returns, follow the steps in xref:execute[Run the {CLIName}].
+
+[source,options="nowrap",subs="+quotes"]
+----
+$ source __RHAMT_HOME__/bash-completion/rhamt-cli
+----
+
+[discrete]
+[[bash_completion_persistent]]
+=== Enable Persistent Bash Completion
+
+The following commands allow bash completion to persist across restarts; however, if bash completion is desired for the current shell then the steps in xref:bash_completion_temporary[Enable Bash Completion] must be followed.
+
+* To enable bash completion for a specific user across system restarts, include the following line in that user's `~/.bashrc` file.
++
+[source,options="nowrap",subs="+quotes"]
+----
+source __RHAMT_HOME__/bash-completion/rhamt-cli
+----
+
+* To enable bash completion for all users across system restarts, copy the {ProductName} {CLIName} bash completion file to the `/etc/bash_completion.d/` directory. By default, this directory is only writable by the root user.
++
+[source,options="nowrap",subs="+quotes"]
+----
+# cp __RHAMT_HOME__/bash-completion/rhamt-cli /etc/bash_completion.d/
+----
+
+
+[discrete]
 == {ProductShortName} Help
 
 To see the complete list of available arguments for the `rhamt-cli` command, open a terminal, navigate to the `__RHAMT_HOME__` directory, and execute the following command:
