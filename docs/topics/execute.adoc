@@ -72,7 +72,7 @@ $ __RHAMT_HOME__/bin/rhamt-cli -Dwindup.decompiler=procyon --input __INPUT_ARCHI
 [[cli_bash_completion]]
 == {ProductShortName} {CLINameTitle} Bash Completion
 
-The {ProductShortName} {CLIName} provides an option to enable bash completion, allowing the xref:command_line_arguments[{ProductShortName} command-line arguments] to be auto completed by pressing Tab when entering the commands. For instance, when bash completion is xref:bash_completion_temporary[enabled], entering the following displays a list of available arguments.
+The {ProductShortName} {CLIName} provides an option to enable bash completion for Linux systems, allowing the xref:command_line_arguments[{ProductShortName} command-line arguments] to be auto completed by pressing Tab when entering the commands. For instance, when bash completion is xref:bash_completion_temporary[enabled], entering the following displays a list of available arguments.
 
 [source,options="nowrap",subs="+quotes"]
 ----
