@@ -5,10 +5,11 @@ Review the xref:supported_configs[supported configurations] to make sure that yo
 
 NOTE: If you are running macOS, it is recommended to set the maximum number of user processes, `maxproc`, to at least `2048`, and the maximum number of open files, `maxfiles`, to `100000`.
 
-.Install the Plugin
-. If you do not already have an existing installation, download link:http://www.eclipse.org/downloads/[Eclipse] or link:https://developers.redhat.com/products/devstudio/download/[JBoss Developer Studio] and install it.
-+
+If you do not already have an existing installation, download link:http://www.eclipse.org/downloads/[Eclipse] or link:https://developers.redhat.com/products/devstudio/download/[JBoss Developer Studio] and install it.
+
 NOTE: This guide uses _Eclipse_ to refer to an installation of Eclipse or JBoss Developer Studio.
+
+.Install the Plugin
 
 . Launch Eclipse.
 . From the menu bar, select *Help* -> *Install New Software*.
@@ -16,6 +17,21 @@ NOTE: This guide uses _Eclipse_ to refer to an installation of Eclipse or JBoss 
 .. Next to the *Work with* field, click *Add*.
 .. In the *Name* field, enter `{ProductShortName}`.
 .. In the *Location* field, enter [x-]`http://download.jboss.org/jbosstools/oxygen/development/updates/rhamt/composite/` and press *OK*.
+.. Select all of the checkboxes under *JBoss Tools - RHAMT* and press *Next*.
+. Review the installation details and press *Next*.
+. Accept the terms of the license agreement and press *Finish* to install the plugin.
+. Restart Eclipse for the changes to take effect.
+
+.Install the Plugin for an Offline Environment
+
+. Download the link:{ProductDownloadURL}{EclipsePluginFilename}-{ProductVersion}.zip[Eclipse Plugin Repository].
+. Launch Eclipse.
+. From the menu bar, select *Help* -> *Install New Software*.
+. Add the {ProductShortName} update site.
+.. Next to the *Work with* field, click *Add*.
+.. In the *Name* field, enter `{ProductShortName} - Offline`.
+.. Next to the *Location* field, click *Archive*.
+.. Select the file downloaded in the first step and click *OK*.
 .. Select all of the checkboxes under *JBoss Tools - RHAMT* and press *Next*.
 . Review the installation details and press *Next*.
 . Accept the terms of the license agreement and press *Finish* to install the plugin.

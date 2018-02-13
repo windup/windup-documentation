@@ -24,6 +24,8 @@
 :PluginName: Eclipse plugin
 :PluginNameTitle: Eclipse Plugin
 
+:EclipsePluginFilename: migrationtoolkit-rhamt-eclipse-plugin-repository
+
 // ****************
 // * Doc metadata *
 // ****************
@@ -37,6 +39,8 @@
 :GettingStartedBookName: Getting Started Guide
 :WebConsoleBookName: Web Console Guide
 
+:ProductVersion: 4.0.1
+
 // This book is on GitHub wiki only
 :CoreDevelopmentBookName: Core Development Guide
 
@@ -46,7 +50,7 @@
 // Commenting out as these attributes are not currently used:
 // :ProductRelease: 4
 // :ProductVersion: 4.0
-:ProductDistributionVersion: 4.0.0.Final
+:ProductDistributionVersion: 4.0.1.Final
 :ProductDistribution: rhamt-cli-{ProductDistributionVersion}
 
 // ********
@@ -61,6 +65,9 @@
 
 // Point to the GitHub wiki version since there is no product version of this guide.
 :ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
+
+// URL for downloads on developers.redhat.com
+:ProductDownloadURL: https://developers.redhat.com/download-manager/file/{ProductVersion}/
 
 // *********
 // * Icons *
