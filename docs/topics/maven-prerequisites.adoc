@@ -1,0 +1,10 @@
+[[prerequisites]]
+= Prerequisites
+
+Before using the {MavenName}, verify that you meet the following prerequisites.
+
+* Java Platform, JRE version 8+
+* A minimum of 4 GB RAM; 8 GB recommended
+* Maven version 3.2.5 or later
+
+NOTE: If you are running macOS, it is recommended to set the maximum number of user processes, `maxproc`, to at least `2048`, and the maximum number of open files, `maxfiles`, to `100000`.

@@ -7,7 +7,21 @@ The CSV file can be imported and manipulated by spreadsheet software such as Mic
 
 == Export the Report
 
+ifdef::cli-guide[]
 To export the report into a CSV file, run {ProductShortName} with `--exportCSV` argument. The CSV file will be created in the directory specified by the `--output` argument.
+endif::cli-guide[]
+
+ifdef::maven-guide[]
+To export the report into a CSV file, run {ProductShortName} with `exportCSV` argument set to `true`. 
+
+[source,options="nowrap"]
+----
+<exportCSV>true</exportCSV>
+----
+
+The CSV file will be created in the directory specified by the `outputDirectory` argument.
+endif::maven-guide[]
+
 
 == Import the CSV File into a Spreadsheet Program
 

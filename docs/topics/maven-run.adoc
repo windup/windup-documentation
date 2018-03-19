@@ -1,0 +1,68 @@
+[[execute]]
+= Run the {MavenNameTitle}
+
+Use the following steps to run {ProductShortName} against your application.
+
+. Include the following plugin inside your application's `pom.xml`:
++
+[source,xml,options="nowrap",subs="+quotes"]
+----
+[...]
+<plugin>
+    <groupId>org.jboss.windup.plugin</groupId>
+    <artifactId>windup-maven-plugin</artifactId>
+    <version>__RHAMT_VERSION__</version>
+    <executions>
+        <execution>
+            <id>run-windup</id>
+            <phase>package</phase>
+            <goals>
+                <goal>windup</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <inputDirectory>__INPUT_DIRECTORY__</inputDirectory>
+        <outputDirectory>__OUTPUT_DIRECTORY__</outputDirectory>
+        <targetTechnologies>
+            <target>__TARGET_TECHNOLOGY__</target>
+        </targetTechnologies>
+        <packages>
+            <package>__PACKAGE_NAME__</package>
+        </packages>
+        <offlineMode>true</offlineMode>
+        <windupVersion>__RHAMT_VERSION__</windupVersion>
+    </configuration>
+</plugin>
+[...]
+----
++
+* `inputDirectory`: The application's input files. 
+* `outputDirectory`: The output directory for the generated reports.
+* `targetTechnologies`: The target technology for the application migration.
+* `packages`: The packages to be evaluated.
+* `offlineMode`: Indicates to run in offline mode, disabling network features to improve performance.
+* `windupVersion`: Version of {ProductShortName}.
++
+See xref:maven_arguments[{ProductShortName} Maven Arguments] for a detailed description of all available arguments.
+
+. Build the project.
++
+[source,options="nowrap"]
+----
+$ mvn clean install
+----
+
+. xref:access_report[Access the generated reports].
+
+////
+See xref:pom_examples[{ProductShortName} `pom.xml` Examples] below for examples of `pom.xml` files. 
+
+[discrete]
+[[pom_examples]]
+== {ProductShortName} `pom.xml` Examples
+
+
+
+TODO: Create example files to demonstrate overwriting files, offline/online mode, different packages, etc.
+////

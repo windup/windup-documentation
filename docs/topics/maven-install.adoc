@@ -1,0 +1,26 @@
+[[maven_install]]
+
+= Installing the {MavenNameTitle}
+
+The {MavenName} must be installed in the local maven repository before it may be used in applications.
+
+. Clone the {MavenName} git repository.
++
+[source,options="nowrap"]
+----
+$ git clone https://github.com/windup/windup-maven-plugin.git
+----
+
+. Navigate to the newly created directory.
++
+[source,options="nowrap"]
+----
+$ cd windup-maven-plugin
+----
+
+. Build the project. This step will install the `windup-maven-plugin` jar into the local Maven repository.
++
+[source,options="nowrap"]
+----
+$ mvn clean install
+----
