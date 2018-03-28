@@ -12,6 +12,8 @@ The following sections describe the more common XML `when` rule conditions.
 * xref:project-syntax[<project> condition syntax]
 * xref:filecontent-syntax[<filecontent> condition syntax]
 * xref:file-syntax[<file> condition syntax]
+* xref:has-hint-syntax[<has-hint> condition syntax]
+* xref:has-classification-syntax[<has-classification> condition syntax]
 
 By default, if more than one `when` rule condition is provided, then all conditions must be met for the rule to match.
 
@@ -444,4 +446,92 @@ _Example:_
 from="MyEjbRule"
 ----
 
+|====
+
+[[has-hint-syntax]]
+== <has-hint> Syntax
+
+=== Summary
+
+Use the `<has-hint>` element to test whether a file or line has a hint already associated with it. It is primarily used to prevent firing if a hint already exists, or to implement rules for default execution when no other conditions apply. For a better understanding of the `<has-hint>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/HasHint.html[HasHint] class.
+
+The following is an example of a rule that checks to see if a hint exists for an IBM JMS destination message, and if not includes it.
+
+[source,options="nowrap"]
+----
+<rule id="websphere-jms-eap7-03000">
+  <when>
+    <javaclass references="{package}.{prefix}{type}Message" />
+  </when>
+  <perform>
+    <iteration>
+      <when>
+        <not>
+          <has-hint />
+        </not>
+      </when>
+      <perform>
+        <hint title="IBM JMS destination message" effort="1" category-id="mandatory">
+          <message>
+            JMS `{package}.{prefix}{type}Message` messages represent the actual data passed through JMS destinations. This reference should be
+            replaced with the Java EE standard API `javax.jms.{type}Message`.
+          </message>
+          <link href="https://docs.oracle.com/javaee/7/tutorial/jms-concepts003.htm#sthref2271" title="Java EE 7 JMS Tutorial - Message API" />
+          <tag>jms</tag>
+          <tag>websphere</tag>
+        </hint>
+      </perform>
+    </iteration>
+  </perform>
+  <where param="type">
+    <matches pattern="(Text|Stream|Object|Map|Bytes)?" />
+  </where>
+  <where param="prefix">
+    <matches pattern="(JMS|MQe|MQ)" />
+  </where>
+  <where param="package">
+    <matches pattern="com.ibm(\..*)?\.jms" />
+  </where>
+</rule>
+----
+
+=== Construct a <has-hint>
+
+The `<has-hint>` element is used to determine if a hint exists for a file or line. It does not have any child elements.
+
+==== <has-hint> Element Attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute Name
+|Type
+|Description
+
+|message
+|String
+|An optional argument allowing you to match the hint against the provided message string.
+|====
+
+[[has-classification-syntax]]
+== <has-classification> Syntax
+
+=== Summary
+
+Use the `<has-classification>` element to test whether a file or line has a classification. It is primarily used to prevent firing if a classification already exists, or to implement rules for default execution when no other conditions apply. For a better understanding of the `<has-classification>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/HasClassification.html[HasClassification] class. 
+
+=== Construct a <has-classification>
+
+The `has-classification` element is used to determine if a specified classification exists. It does not have any child elements.
+
+==== <has-classification> Element Attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute Name
+|Type
+|Description
+
+|title
+|String
+|An optional title to match the classification against.
 |====
