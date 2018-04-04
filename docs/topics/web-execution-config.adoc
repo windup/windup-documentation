@@ -33,7 +33,11 @@ Select which packages to exclude from analysis.
 
 Custom Rules::
 
-Select which custom rulesets to use during analysis. See xref:using_custom_rules[Using Custom Rules] for how to register custom rules.
+Select which custom rulesets to use during analysis. See xref:using_custom_rules[Using Custom Rules] for instructions on registering and removing custom rules.
++
+Once a custom ruleset has been registered, it may be selected for execution by clicking on the displayed rule to highlight it. Clicking a highlighted rule will deselect it for the project. During execution, all highlighted rules will be included in the analysis.
++
+To select all of the custom rulesets click *Select All*, and to deselect all of the custom rulesets click *Clear All*.
 
 Advanced Options::
 

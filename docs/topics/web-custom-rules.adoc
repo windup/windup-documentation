@@ -18,4 +18,4 @@ Register a Server Path::
 
 Select the *Server Path* tab and enter a path on the server that contains rules to be available to projects. This does not copy the files to the {ProductShortName} server, but instead uses the rules found in the specified location during analysis. This way, if the rules are updated in this location, the {ProductShortName} server will always use the latest versions of rules during analysis. Click *Add* to register the rules.
 
-To use these custom rules during a project analysis, select the ruleset in the *Use local custom rules* section of the xref:analysis_configuration[analysis configuration].
+Custom rulesets may be selected individually during a project analysis. To enable these select the ruleset in the *Use local custom rules* section of the xref:analysis_configuration[analysis configuration].
