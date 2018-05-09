@@ -33,6 +33,8 @@
 :DocInfoProductNumber: 4.0
 :DocInfoProductNameURL: red_hat_application_migration_toolkit
 
+:OpenShiftProductNumber: 3.9
+
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rules Development Guide
 :PluginBookName: Eclipse Plugin Guide
@@ -62,6 +64,9 @@
 :ProductDocPluginGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_plugin_guide
 :ProductDocGettingStartedGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/getting_started_guide
 :ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/web_console_guide
+:OpenShiftAdminGuideURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}/admin_guide/
+:OpenShiftDevGuideURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}/dev_guide/
+:OpenShiftInstallConfigGuideURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}/install_config/
 
 // Point to the GitHub wiki version since there is no product version of this guide.
 :ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
