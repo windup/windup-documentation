@@ -1,0 +1,46 @@
+[[execute]]
+= Run the {MavenNameTitle}
+
+The {MavenName} is executed by including a reference to the plugin inside your application's `pom.xml`. When the application is built, the {MavenName} is executed and generates the reports for analysis. 
+
+To run the {MavenName} perform the following steps.
+
+. Include the following plugin inside your application's `pom.xml`:
++
+[source,xml,options="nowrap",subs="+quotes,+attributes"]
+----
+[...]
+<plugin>
+    <groupId>org.jboss.windup.plugin</groupId>
+    <artifactId>windup-maven-plugin</artifactId>
+    <version>{MavenProductVersion}</version>
+    <executions>
+        <execution>
+            <id>run-windup</id>
+            <phase>package</phase>
+            <goals>
+                <goal>windup</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <offlineMode>true</offlineMode>
+        <windupVersion>{MavenProductVersion}</windupVersion>
+    </configuration>
+</plugin>
+[...]
+----
++
+* `offlineMode`: Indicates to run in offline mode, disabling network features to improve performance.
+* `windupVersion`: Version of {ProductShortName}.
++
+The above example demonstrates the minimum required arguments. See xref:maven_arguments[{ProductShortName} Maven Arguments] for a detailed description of all available arguments.
+
+. Build the project.
++
+[source,options="nowrap"]
+----
+$ mvn clean install
+----
+
+. xref:access_report[Access the generated reports].
