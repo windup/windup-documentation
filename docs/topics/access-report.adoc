@@ -1,6 +1,7 @@
 [[access_report]]
 = Access the Report
 
+ifdef::cli-guide[]
 When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` that you specify using the `--output` argument in the command line. Upon completion of execution, you will see the following message in the terminal with the location of the report.
 
 [options="nowrap",subs="+quotes"]
@@ -8,9 +9,20 @@ When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DI
 Report created: __OUTPUT_REPORT_DIRECTORY__/index.html
               Access it at this URL: file:///__OUTPUT_REPORT_DIRECTORY__/index.html
 ----
+endif::cli-guide[]
+
+ifdef::maven-guide[]
+When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` that you specify using the `outputDirectory` argument in the `pom.xml`. Upon completion of the build, you will see the following message in the build log.
+
+[options="nowrap",subs="+quotes"]
+----
+Windup report created: __OUTPUT_REPORT_DIRECTORY__/index.html
+----
+endif::maven-guide[]
 
 The output directory contains the following files and subdirectories:
 
+ifdef::cli-guide[]
 [options="nowrap",subs="+quotes"]
 ----
 __OUTPUT_REPORT_DIRECTORY__/
@@ -21,5 +33,18 @@ __OUTPUT_REPORT_DIRECTORY__/
 ├── reports/            // Generated HTML reports
 ├── stats/              // Performance statistics
 ----
+endif::cli-guide[]
+
+ifdef::maven-guide[]
+[options="nowrap",subs="+quotes"]
+----
+__OUTPUT_REPORT_DIRECTORY__/
+├── index.html          // Landing page for the report
+├── __EXPORT_FILE__.csv     // Optional export of data in CSV format
+├── graph/              // Generated graphs used for indexing
+├── reports/            // Generated HTML reports
+├── stats/              // Performance statistics
+----
+endif::maven-guide[]
 
 Use a browser to open the `index.html` file located in the report output directory. See xref:review_reports[Review the Reports] for information on navigating the {ProductShortName} reports.

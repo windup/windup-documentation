@@ -1,12 +1,16 @@
 [[review_reports]]
 = Review the Reports
 
-The report examples shown in the following sections are a result of analyzing the `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example application, which is located in the {ProductShortName} GitHub source repository. The report was generated using the following command.
+The report examples shown in the following sections are a result of analyzing the `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example application, which is located in the {ProductShortName} GitHub source repository. 
+
+ifdef::cli-guide[]
+The report was generated using the following command.
 
 [options="nowrap",subs="+quotes"]
 ----
 $ __RHAMT_HOME__/bin/rhamt-cli --input /home/username/rhamt-cli-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/rhamt-cli-reports/jee-example-app-1.0.0.ear-report --target eap:6 --packages com.acme org.apache
 ----
+endif::cli-guide[]
 
 Use a browser to open the `index.html` file located in the report output directory. This opens a landing page that lists the applications that were processed.  Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.
 
@@ -106,7 +110,12 @@ The top navigation bar lists the various reports that contain additional details
 | Provides a list of all hard-coded IP addresses that were found in the application.
 
 | Ignored Files
+ifdef::cli-guide[]
 | Lists the files found in the application that, based on certain rules and {ProductShortName} configuration, were not processed. See the `--userIgnorePath` option for more information.
+endif::[]
+ifdef::maven-guide[]
+| Lists the files found in the application that, based on certain rules and {ProductShortName} configuration, were not processed. See the `userIgnorePath` option for more information.
+endif::[]
 
 | About
 | Describes the current version of {ProductShortName} and provides helpful links for further assistance.

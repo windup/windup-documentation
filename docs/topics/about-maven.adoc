@@ -1,0 +1,9 @@
+[[about_maven]]
+= About the {MavenNameTitle}
+
+The {MavenName} for {ProductName} integrates into the Maven build process, allowing developers to continuously evaluate migration and modernization efforts with each iteration of source code. It provides numerous reports that highlight the analysis results, and is designed for developers who want updates with each build.
+
+ifndef::maven-guide[]
+For more information on using the {MavenName}, see the {ProductShortName} link:{ProductDocUserGuideURL}[_{MavenBookName}_].
+endif::maven-guide[]
+
