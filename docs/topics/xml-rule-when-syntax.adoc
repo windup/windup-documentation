@@ -14,6 +14,7 @@ The following sections describe the more common XML `when` rule conditions.
 * xref:file-syntax[<file> condition syntax]
 * xref:has-hint-syntax[<has-hint> condition syntax]
 * xref:has-classification-syntax[<has-classification> condition syntax]
+* xref:graph-query-syntax[<graph-query> condition syntax]
 
 By default, if more than one `when` rule condition is provided, then all conditions must be met for the rule to match.
 
@@ -457,7 +458,7 @@ Use the `<has-hint>` element to test whether a file or line has a hint already a
 
 The following is an example of a rule that checks to see if a hint exists for an IBM JMS destination message, and if not includes it.
 
-[source,options="nowrap"]
+[source,xml,options="nowrap"]
 ----
 <rule id="websphere-jms-eap7-03000">
   <when>
@@ -535,3 +536,89 @@ The `has-classification` element is used to determine if a specified classificat
 |String
 |An optional title to match the classification against.
 |====
+
+[[graph-query-syntax]]
+== <graph-query> Syntax
+
+=== Summary
+
+Use the `<graph-query>` element to search the generated graph for any elements. This element is primarily used to search for specific archives. For a better understanding of the `<graph-query>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/parser/xml/when/QueryHandler.html[QueryHandler] class. 
+
+The following is an example of a rule that tests to determine if any `ehcache` packages are found.
+
+[source,xml,options="nowrap"]
+----
+<rule id="embedded-cache-libraries-01000">
+    <when>
+        <graph-query discriminator="JarArchiveModel">
+            <property name="fileName" searchType="regex">.*ehcache.*\.jar$</property>
+        </graph-query>
+    </when>
+    <perform>
+        <classification title="Caching - Ehcache embedded library" category-id="cloud-mandatory" effort="5">
+            <description>
+                The application embeds an Ehcache library.
+
+                Cloud readiness issue as potential state information that is not persisted to a backing service.
+            </description>
+        </classification>
+        <technology-tag level="INFORMATIONAL">Ehcache (embedded)</technology-tag>
+    </perform>
+</rule>
+----
+
+=== Construct a <graph-query>
+
+==== <graph-query> Element Attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute Name
+|Type
+|Description
+
+|discriminator
+|MODEL_TYPE
+|The type of model to use for searching. This can be any valid model; however, it is recommended to use the `JarArchiveModel` for examining archives. This attribute is required.
+
+|as
+|VARIABLE_NAME
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+[source,options="nowrap"]
+----
+as="MyEjbRule"
+----
+
+|from
+|VARIABLE_NAME
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME.
+
+[source,options="nowrap"]
+----
+from="MyEjbRule"
+----
+|====
+
+==== <graph-query> Properties
+
+[cols="1,1,3", options="header"]
+|====
+|Property Name
+|Type
+|Description
+
+|name
+|String
+|The name of the attribute to match against within the chosen model. When using any file-based models it is recommended to match on `fileName`. This attribute is required.
+
+|type
+|property-type
+|Defines the expected type of property, either `STRING` or `BOOLEAN`.
+
+|searchType
+|property-search-type
+|Defines how the condition is matched. If set to `equals`, then an exact match must be made. If using `regex`, then regular expressions can be used.
+
+|====
+
