@@ -2,7 +2,7 @@
 
 To use the {MavenName} in a project with multiple modules, place the configuration inside the parent's `pom.xml`. During execution the {MavenName} will generate a single report that contains the analysis for the parent and any child modules.
 
-NOTE: It is strongly recommended to set `inherited` to false in multi-module projects; otherwise, the {MavenName} will be executed when each child is compiled, resulting in drastically increased run times.
+NOTE: It is strongly recommended to set `inherited` to false in multi-module projects; otherwise, the {MavenName} will be executed when each child is compiled, resulting in multiple executions of the {MavenName} against the child modules. Setting `inherited` to false results in each project being analyzed a single time and drastically decreased run times.
 
 To run the {MavenName} in a project with multiple modules perform the following steps.
 
