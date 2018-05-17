@@ -31,11 +31,11 @@ include::topics/maven-prerequisites.adoc[leveloffset=+2]
 // Run the {MavenNameTitle}
 include::topics/maven-run.adoc[leveloffset=+2]
 
-// Access the Report
-include::topics/access-report.adoc[leveloffset=+2]
+// Run the {MavenNameTitle} with Multiple Modules
+include::topics/maven-multi-module.adoc[leveloffset=+2]
 
-// Review the Reports
-include::topics/review-reports.adoc[leveloffset=+1]
+// Access the Report
+include::topics/maven-access-reports.adoc[leveloffset=+2]
 
 // Export the Report in CSV Format
 include::topics/csv-export.adoc[leveloffset=+1]
@@ -52,7 +52,7 @@ include::topics/about-story-points.adoc[leveloffset=+2]
 === Additional Resources
 
 // Get Involved
-include::topics/get-involved.adoc[leveloffset=+3]
+include::topics/get-involved.adoc[leveloffset=+3] 
 
 // Important Links
 include::topics/important-links.adoc[leveloffset=+3]
