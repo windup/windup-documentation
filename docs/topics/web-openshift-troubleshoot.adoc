@@ -1,0 +1,165 @@
+[[troubleshoot_web_console_openshift_install]]
+= Troubleshoot the {WebNameTitle} OpenShift Install
+
+The following steps discuss common techniques for troubleshooting the {WebName} in an OpenShift environment. These instructions are focused on issues specific to the {WebName}, for OpenShift specific issues refer to the following troubleshooting sections.
+
+* link:https://docs.openshift.com/container-platform/3.9/admin_guide/sdn_troubleshooting.html[Troubleshooting OpenShift SDN]
+* link:https://docs.openshift.com/container-platform/3.9/dev_guide/builds/build_troubleshooting.html[Build Troubleshooting]
+
+== Ensure Latest Image Version
+
+The first step in troubleshooting in an OpenShift environment is to ensure that the latest image is in use. 
+
+NOTE: If you have deployed the {WebName} by pasting in a JSON template, then no image stream is created and the following steps are not applicable.
+
+From your OpenShift environment perform the following steps.
+
+. Access the OpenShift console by navigating to `__OPENSHIFT_URL__/console/project/rhamt/overview`. If you renamed the OpenShift project when xref:deploy_rhamt_app_openshift[deploying], be sure to replace `rhamt` in this URL with the name of your project.
+. Hover over `Builds` along the left side of the console.
+. Click `Images` from the options that appear.
+. Ensure that the column under `Tags` indicates that each image is on the `latest` stream.
+. If the latest image is not in use, follow the steps at xref:openshift_install[OpenShift Installation] to redeploy the latest image of the {WebName}.
+
+[[examine_logs]]
+== Examine and Collect the Web Console Logs
+
+Each pod is configured to provide detailed logging that assists with narrowing down the precise cause of an issue. The following steps discuss viewing and obtaining these logs.
+
+=== Using the OpenShift Console
+
+The following steps walk through the process to examine the logs for each pod.
+
+. Access the OpenShift console by navigating to `__OPENSHIFT_URL__/console/project/rhamt/overview`. If you renamed the OpenShift project when xref:deploy_rhamt_app_openshift[deploying], be sure to replace `rhamt` in this URL with the name of your project.
+. Hover over `Applications` along the left side of the console.
+. Click `Pods` from the options that appear.
+. Click the name of the pod that you wish to examine. To examine the current {WebName} pod, select the `rhamt-web-console-__POD_NAME__` that is in a `Running` state.
+. Click `Logs` from the options along the top.
+. To download the log file navigate to the top of the page and click `Download`.
+
+=== Using the OpenShift Client
+
+. Determine the pod name by executing `oc get pods` and search for the `web-console` entry with a `Running` status.
++
+[source,options="nowrap"]
+----
+$ oc get pod
+sNAME                        READY     STATUS      RESTARTS   AGE
+eap-builder-1-build         0/1       Completed   0          1d
+rhamt-postgresql-1-hfbdn    1/1       Running     0          1d
+rhamt-sso-1-build           0/1       Completed   0          1d
+rhamt-web-console-1-build   0/1       Completed   0          1d
+rhamt-web-console-1-vt7s5   1/1       Running     1          1d
+sso-1-wjl2n                 1/1       Running     1          1d
+----
++
+In the above example this is `rhamt-web-console-1-vt7s5`.
+
+. Use `oc logs` to examine the current pod's log.
++
+[source,options="nowrap",subs="+quotes"]
+----
+oc logs __POD_NAME__
+----
+
+. The output may be redirected to obtain a copy of the current log.
++
+[source,options="nowrap",subs="+quotes"]
+----
+oc logs __POD_NAME__ > ./rhamt-openshift-__POD_NAME__.log
+----
+
+== Common Issues with {WebNameTitle} OpenShift
+
+=== Executor Pod Throws `NoRouteToHostException`
+
+When accessing the executor pod's logs the following error is seen.
+
+[source,options="nowrap"]
+----
+13:44:03,501 SEVERE [org.jboss.windup.web.messaging.executor.ExecutorBootstrap] (main) Could not start messaging listener due to: Failed to connect to any server. Servers tried: [http-remoting://192.0.2.4:8080 (java.net.NoRouteToHostException: No route to host)]: javax.naming.CommunicationException: Failed to connect to any server. Servers tried: [http-remoting://192.0.2.4:8080 (java.net.NoRouteToHostException: No route to host)]
+[...]
+----
+
+*What it means:*
+
+A `NoRouteToHostException` indicates that this pod isn't able to connect to the {WebName} pod.
+
+*How to resolve it:*
+
+In a new deployment this is expected, as the executor starts before the {WebName}. Otherwise, examine the {WebName} pod and resolve any errors seen here. Once the {WebName} is running successfully this error should be resolved.
+
+=== Pod Reports Insufficient Resources
+
+After attempting to deploy {WebNameTitle} on OpenShift, the pod is unable to start, and the following error is seen in the `Events` tab.
+
+[source,options="nowrap"]
+----
+0/9 nodes are available: 4 Insufficient cpu, 4 MatchNodeSelector, 9 Insufficient memory.
+----
+
+*What it means:*
+
+The resource quota for the OpenShift project has been met, and the pod is unable to obtain the requested resources.
+
+*How to resolve it:*
+
+Perform either of the following:
+
+* Increase the quota for the OpenShift project. For additional information on OpenShift quotas, see link:{OpenShiftDevGuideURL}/compute_resources.html[Quotas and Limit Ranges] and link:{OpenShiftAdminGuideURL}/limits.html[Setting Limit Ranges].
+* Reduce the requested resources for the {WebName} OpenShift project. It is recommended to have at least 2 CPUs and 4 GB of memory for the project.
+
+Once the request is within the available quota, attempt the deployment once again.
+
+=== Pod Takes Longer than 600 seconds to become available 
+
+After attempting a deployment, the `-deploy` pods timeout and report the following error.
+
+[source,options="nowrap",subs="+quotes"]
+----
+error: update acceptor rejected rhamt-web-console-executor-1: pods for rc 'rhamt/__POD_NAME__' took longer than 600 seconds to become available
+----
+
+These errors appear after the pods timeout and are placed into an error state.
+
+*What it means:*
+
+The deployment pods are unable to successfully launch the pods.
+
+This error can be caused by a number of sources, with the following being the most common:
+
+* The OpenShift instance is currently out of resources to deploy the pod in a timely manner.
+* The images were unable to be successfully pulled from the registry.
+
+*How to resolve it:*
+
+Attempt the deployment again, and view the logs and events of the non deployment pods while they are being created. These messages will provide context to the underlying errors resulting in the deployment pod timeouts.
+
+* To address the first issue reported, where the OpenShift instance is out of resources, follow the instructions in link:{OpenShiftAdminGuideURL}/cluster_capacity.html[Analyzing Cluster Capacity] from the __Cluster Administration__ guide in the OpenShift documentation to determine the cluster capacity. Once the capacity has increased, or there are fewer jobs executing, attempt the deployment once again.
+
+* To address the second issue reported, where the images are unable to be pulled from the registry, link:{OpenShiftInstallConfigGuideURL}/registry/accessing_registry.html[access the registry] to ensure the images are present. This link also includes instructions on examining the logs for the Docker registry, and can be used to troubleshoot the issue further.
+
+== Report Issues with {WebNameTitle} OpenShift
+
+{ ProductName} uses JIRA as its issue tracking system. If you encounter any issues while using the {WebName}, please file a JIRA Issue by following the below instructions.
+
+NOTE: If you do not have one already, you must sign up for a JIRA account in order to create a JIRA issue.
+
+. Open a browser and navigate to the JIRA link:https://issues.jboss.org/secure/CreateIssue!default.jspa[Create Issue] page.
++
+If you have not yet logged in, click the *Log In* link at the top right side of the page and enter your credentials.
+
+. Choose the following options and click the *Next* button.
+
+* *Project*: Choose _Red Hat Application Migration Toolkit (WINDUP)_.
+* *Issue Type*: _Bug_
+
+. On the next screen complete the following fields.
+
+* *Summary*: Enter a brief description of the problem or issue.
+* *Environment*: Indicate that this is an OpenShift installation of the {WebName}, and include any environment variables in use with the image.
+* *Description*: Provide a detailed description of the issue. Be sure to include any errors encountered and exception traces.
+* *Attachment*: Include the logs obtained in xref:examine_logs[Examine and Collect the Web Console Logs]. At a minimum this should include the logs from each pod.
++
+If the application or archive causing the issue does not contain sensitive information and you are comfortable sharing it with the {ProductShortName} development team, attach it to the issue using the *browse* button.
+
+. Click the *Create* button to create the JIRA issue.

@@ -50,6 +50,9 @@ include::topics/web-openshift-deploy.adoc[leveloffset=+3]
 // Access the {WebNameTitle}
 include::topics/web-openshift-access.adoc[leveloffset=+3]
 
+// Troubleshoot the {WebNameTitle} OpenShift Install
+include::topics/web-openshift-troubleshoot.adoc[leveloffset=+3]
+
 // Using the {WebNameTitle} to Analyze Applications
 include::topics/web-analyze-apps.adoc[leveloffset=+1]
 
