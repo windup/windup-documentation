@@ -49,6 +49,9 @@ include::topics/mavenize.adoc[leveloffset=+1]
 // Optimize {ProductShortName} Performance
 include::topics/optimize-performance.adoc[leveloffset=+1]
 
+// Configure {ProductShortName} to Exclude Files and Packages
+include::topics/exclude-files-and-packages.adoc[leveloffset=+2]
+
 [appendix]
 == Reference Material
 

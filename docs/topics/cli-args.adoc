@@ -22,7 +22,7 @@ See the description for each argument for more details.
 |--enableClassNotFoundAnalysis |Flag to enable analysis of Java files that are not available on the class path. This should not be used if some classes will be unavailable at analysis time.
 |--enableCompatibleFilesReport |Flag to enable generation of the Compatible Files report. Due to processing all files without found issues, this report may take a long time for large applications.
 |--enableTattletale |Flag to enable generate a Tattletale report for each application.
-|--excludePackages |A space-delimited list of packages to exclude from evaluation. For example, entering "com.mycompany.commonutilities" would exclude all classes whose package name begins with "com.mycompany.commonutilities".
+|--excludePackages |A space-delimited list of packages to exclude from evaluation. For example, entering `com.mycompany.commonutilities` would exclude all classes whose package name begins with `com.mycompany.commonutilities`.
 |--excludeTags |A space-delimited list of tags to exclude. When specified, rules with these tags will not be processed. To see the full list of tags, use the `--listTags` argument.
 |--explodedApp |Flag to indicate that the provided input directory contains source files for a single application. See the xref:input_file_type_arguments[Input File Argument Tables] for details.
 |--exportCSV |Flag to export the report data to a CSV file on your local file system. {ProductShortName} creates the file in the directory specified by the `--output` argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis. For details, see xref:export_csv[Export the Report in CSV Format].
@@ -52,8 +52,8 @@ Be careful not to specify a report output directory that contains important info
 |--source |A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources. See xref:source_argument[Set the Source Technology] for more information.
 |--sourceMode |Flag to indicate that the application to be evaluated contains source files rather than compiled binaries. See the xref:input_file_type_arguments[Input File Argument Tables] for details.
 |--target |A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the `--source` argument, helps to determine which rulesets are used. Use the `--listTargetTechnologies` argument to list all available targets. See xref:target_argument[Set the Target Technology] for more information.
-|--userIgnorePath |Specify a location, in addition to `${user.home}/.rhamt/ignore/`, for {ProductShortName} to identify files that should be ignored.
-|--userRulesDirectory |Specify a location, in addition to `__RHAMT_HOME__/ignore/` and `${user.home}/.rhamt/rules/`, for {ProductShortName} to look for custom {ProductShortName} rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the [x-]`.windup.xml` or [x-]`.rhamt.xml` suffix.
+|--userIgnorePath |Specify a location, in addition to `${user.home}/.rhamt/ignore/`, for {ProductShortName} to identify files that should be ignored. For additional information on formatting these files, see xref:exclude_files_and_packages[Configure {ProductShortName} to Exclude Files and Packages].
+|--userRulesDirectory |Specify a location, in addition to `__RHAMT_HOME__/rules/` and `${user.home}/.rhamt/rules/`, for {ProductShortName} to look for custom {ProductShortName} rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the [x-]`.windup.xml` or [x-]`.rhamt.xml` suffix.
 |--version |Display the {ProductShortName} version.
 |====
 

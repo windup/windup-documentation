@@ -13,8 +13,8 @@ Try these suggestions first before upgrading hardware.
 
 * If possible, execute {ProductShortName} against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.
 * Specify a comma-separated list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `__RHAMT_HOME__/bin/rhamt-cli` command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
-* Specify the `--excludePackages` and `--excludeTags` arguments where possible to exclude them from processing.
-* Add additional proprietary packages that should not be processed to the `ignore/proprietary.package-ignore.txt` file in the {ProductShortName} distribution directory. {ProductShortName} can still find the references to the packages in the application source code, but avoids the need to decompile and analyze the proprietary classes.
+* Specify the `--excludeTags` argument where possible to exclude them from processing.
+* Avoid decompiling and analyzing any unnecessary packages and files, such as proprietary packages or included dependencies. For additional information, see xref:exclude_files_and_packages[Configure {ProductShortName} to Exclude Files and Packages].
 * Increase your ulimit when analyzing large applications. See link:https://access.redhat.com/solutions/60746[this Red Hat Knowledgebase article] for instructions on how to do this for Red Hat Enterprise Linux.
 * If you have access to a server that has better resources than your laptop or desktop machine, you may want to consider running {ProductShortName} on that server.
 

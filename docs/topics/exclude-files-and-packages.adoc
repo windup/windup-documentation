@@ -1,0 +1,39 @@
+[[exclude_files_and_packages]]
+= Configure {ProductShortName} to Exclude Files and Packages
+
+[[exclude_packages]]
+== Exclude Packages
+
+{ProductShortName} can exclude packages during decompilation and analysis to increase performance. References to these packages are still found in the application's source code, but avoids the decompilation and analysis of proprietary classes.
+
+Any packages that match the defined value will be excluded. For instance, to exclude `com.acme.example` and `com.acme.roadrunner`, you would only need to specify `com.acme`.
+
+Packages may be excluded by using either of the following methods.
+
+* Using the `--excludePackages` argument, as described in the xref:command_line_arguments[CLI Arguments].
+* Specify the packages in a file contained within one of the xref:ignored_locations[ignored locations]. Each package should be included on a separate line, and the file must end in `.package-ignore.txt`. For example, see `_RHAMT_HOME_/ignore/proprietary.package-ignore.txt`.
+
+[[exclude_files]]
+== Exclude Files
+
+{ProductShortName} can exclude specific files, such as included libraries or dependencies, during scanning and report generation. Files to be ignored are defined inside of a file ending in `.rhamt-ignore.txt` or `.windup-ignore.txt` within one of the xref:ignored_locations[ignored locations].
+
+These files contain a regex string detailing the name to exclude, with one file listed per line. For instance, to exclude the library `ant.jar` and any Java source files beginning with `Example`, the following file would be used:
+
+[source,options="nowrap"]
+----
+.*ant.jar
+.*Example.*\.java
+----
+
+[[ignored_locations]]
+== Locations to Search for Exclusion
+
+{ProductShortName} searches the following locations:
+
+* `~/.rhamt/ignore/`
+* `~/.windup/ignore/`
+* `_RHAMT_HOME_/ignore/`
+* Any files and folders specified by the `--userIgnorePath` argument.
+
+Each of these files should adhere to the rules specified in xref:exclude_packages[Exclude Packages] or xref:exclude_files[Exclude Files], depending on the type of content to be excluded.
