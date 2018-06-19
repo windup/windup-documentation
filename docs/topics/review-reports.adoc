@@ -29,6 +29,9 @@ The following table lists all of the reports and pages that can be accessed from
 | xref:review-the-report-application-report[Application]
 | Click on the name of the application.
 
+| xref:technology_report[Technology Report]
+| Click on the `Technologies` link at the top of the page.
+
 | xref:shared_archives[Archives shared by multiple applications]
 | Click on the *Archives shared by multiple applications* link. Note that this link is only available when there are shared archives across multiple applications.
 
@@ -78,6 +81,9 @@ The top navigation bar lists the various reports that contain additional details
 
 | Application Details
 | Provides a detailed overview of all resources found within the application that may need attention during the migration.
+
+| Technologies
+| Displays all embedded libraries grouped by functionality, allowing you to quickly view the technologies used in each application.
 
 | Unparsable
 | Shows all files that {ProductShortName} could not parse in the expected format. For instance, a file with a `.xml` or `.wsdl` suffix is assumed to be an XML file. If the XML parser fails, the issue is reported here and also where the individual file is listed.
@@ -157,6 +163,18 @@ image::duplicate-archive-app-report.png[Duplicate Archive]
 
 The story points for archives that are duplicated within an application will be counted only once in the total story point count for that application.
 
+[[technology_report_application]]
+=== Application Technology Report
+
+Access this report from the dashboard by clicking the *Technologies* link.
+
+The report lists the occurrences of technologies, grouped by function, in the analyzed application. It is an overview of the technologies found in the application, and is designed to assist users in quickly understanding each application's purpose.
+
+The below image shows the technologies used in the `jee-example-app`.
+
+.Technologies in an Application
+image::technology-report-single-application.png[Technology Report Application View]
+
 === Source Report
 
 The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 22 warnings and is assigned 16 story points. Click on the file link to see the detail.
@@ -168,6 +186,18 @@ In this example, warnings appear at various import statements, declarations, and
 
 .Source Report
 image::report-jee-example-source-1.png[Source Report]
+
+[[technology_report]]
+== Technology Report
+
+Access this report from the report landing page by clicking the *Technologies* link.
+
+This report provides an aggregate listing of the technologies used, grouped by function, for the analyzed applications. It shows how the technologies are distributed, and is typically reviewed after analyzing a large number of applications to group the applications and identify patterns. It also shows the size, number of libraries, and story point totals of each application.
+
+Clicking any of the headers, such as *Markup*, sorts the results in descending order. Selecting the same header again will resort the results in ascending order. The currently selected header is identified in bold, next to a directional arrow, indicating the direction of the sort. 
+
+.Technologies Used Across Multiple Applications
+image::technology-report-overview.png[Technologies Used Across Multiple Applications]
 
 [[shared_archives]]
 == Archives Shared by Multiple Applications
