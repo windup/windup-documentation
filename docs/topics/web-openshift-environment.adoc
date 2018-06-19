@@ -1,0 +1,22 @@
+[[understanding_web_console_openshift_image]]
+= Understanding the {WebNameTitle} OpenShift Image
+
+Red Hat offers a containerized image for {ProductShortName}'s {WebName} that is designed for use with OpenShift. Using this image, developers can quickly and easily manage migration projects and analyze applications.
+
+The OpenShift image includes three separate pods:
+
+* The executor, responsible for generating the analysis 
+* The {WebName} interface and SSO, which provide access to the web console itself
+* The PostgreSQL database, which stores the project's configuraton and analysis tracking information
+
+A separate persistent volume is used for the {WebName} interface and the PostgreSQL pods; however, the executor's storage is dependent on the template used.
+
+* The `web-template.json` is the default template used, and configures the executor pod to use a separate persistent volume.
++
+.`web-template.json`
+image::webconsole-architecture.png[web-template.json]
+
+* The `web-template-empty-dir-executor.json` configures the executor pod to use temporary storage on a single machine, and has no defined persistent volume.
++
+.`web-template-empty-dir-executor.json`
+image::webconsole-architecture-empty-dir.png[web-template-empty-dir-executor.json]

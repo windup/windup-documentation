@@ -44,6 +44,9 @@ include::topics/web-install-openshift.adoc[leveloffset=+2]
 // Prerequisites
 include::topics/web-openshift-env.adoc[leveloffset=+3]
 
+// Understanding the {WebNameTitle} OpenShift Image
+include::topics/web-openshift-environment.adoc[leveloffset=+3]
+
 // Deploy the {ProductShortName} Application
 include::topics/web-openshift-deploy.adoc[leveloffset=+3]
 
