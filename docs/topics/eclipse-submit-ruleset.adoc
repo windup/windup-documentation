@@ -1,0 +1,14 @@
+[[submit_ruleset]]
+= Submit a Custom Ruleset
+
+Once a custom ruleset has been created it can be submitted for inclusion within the official {ProductShortName} rule repository. This allows your custom rules to be reviewed and included in subsequent releases of {ProductShortName}, enhancing the applications and server configurations that {ProductShortName} analyzes.
+
+. From the {ProductShortName} perspective, open the *Rulesets* tab.
+. Click the dropdown icon (image:plugin-dropdown.png[Dropdown]).
+. Click *Submit Ruleset* from the options that appear. This will launch a new page in your browser.
+. On the page that appears complete the following fields.
+.. In the *Summary* field, enter in the purpose of the rule. This becomes the title of the submission.
+.. In the *Code Sample* text field, enter an example of source code that the rule should run against.
+.. Click *Choose Files* and navigate to the saved rule to attach it.
+.. In the *Description* text field, enter in a brief description of the rule.
+. Once all information has been entered, click *Submit* to complete the submission.
