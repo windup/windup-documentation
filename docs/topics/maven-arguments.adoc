@@ -7,6 +7,7 @@ The following is a detailed description of the available {ProductShortName} {Mav
 [cols="40%,60%a",options="header"]
 |====
 |Argument |Description
+|customLoggingPropertiesFile |An absolute path to a `logging.properties` file that contains a `java.util.logging.LogManager` logging configuration. If the specified path is invalid, or the option is not specified, then the logging reverts to using the xref:logging_properties[`logging.properties`] file included with the {MavenName}.
 |enableCompatibleFilesReport |Flag to enable generation of the Compatible Files report. Due to processing all files without found issues, this report may take a long time for large applications.
 |enableTattletale |Flag to enable generate a Tattletale report for each application.
 |excludePackages |A list of packages to exclude from evaluation. For example, entering "com.mycompany.commonutilities" would exclude all classes whose package name begins with "com.mycompany.commonutilities".

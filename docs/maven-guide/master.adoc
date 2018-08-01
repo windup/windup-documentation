@@ -46,6 +46,9 @@ include::topics/csv-export.adoc[leveloffset=+1]
 // {MavenNameTitle} Arguments
 include::topics/maven-arguments.adoc[leveloffset=+2]
 
+// Default `logging.properties` in {MavenShortName}
+include::topics/maven-logging-properties.adoc[leveloffset=+2]
+
 // Rule Story Points
 include::topics/about-story-points.adoc[leveloffset=+2]
 
