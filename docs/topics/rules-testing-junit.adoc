@@ -1,0 +1,46 @@
+[[test_rules_junit]]
+= Test the Rules Using JUnit
+
+Once a test rule has been created, it can be analyzed as part of a JUnit test to confirm that the rule meets all criteria for execution. The `WindupRulesMultipleTests` class in the {ProductShortName} rules repository is designed to test multiple rules simultaneously, and provides feedback on any missing requirements.
+
+.Prerequisites
+
+* xref:fork_ruleset_repo[Fork and Clone the {ProductShortName} XML Rules]. The location of this repository will be referred to as __RULESETS_REPO__.
+* Create a xref:test_xml_rule[test XML rule].
+
+.Create the JUnit Test Configuration
+
+The following instructions detail creating a JUnit test using the Red Hat JBoss Developer Studio. When using a different IDE it is recommended to consult your IDE's documentation for instructions on creating a JUnit test.
+
+. Import the {ProductShortName} rulesets repository into your IDE.
+. Copy the custom rules, along with the corresponding tests and data, into `__/path/to/RULESETS_REPO__/rules-reviewed/__RULE_NAME__/`. This should create the following directory structure.
++
+.Directory Structure
+[source,options="nowrap",subs="+quotes"]
+----
+├── *rules-reviewed/*  _(Root directory of the rules found within the project)_
+│   ├── *__RULE_NAME__/*  _(Directory to contain the newly developed rule and tests)_
+│   │   ├── *__RULE_NAME__.rhamt.xml*  _(Custom rule)_
+│   │   ├── *tests/*  _(Directory that contains any test rules and data)_
+│   │   │   ├── *__RULE_NAME__.rhamt.test.xml* _(Test rule)_
+│   │   │   └── *data/*  _(Optional directory to contain test rule data)_
+----
+
+. Select *Run* from the top menu bar.
+. Select *Run Configurations...* from the drop down that appears.
+. Right-click *JUnit* from the options on the left side and select *New*.
+. Enter the following
++
+** *Name*: A name for your JUnit test, such as `WindupRulesMultipleTests`.
+** *Project*: Ensure this is set to `windup-rulesets`.
+** *Test class*: Set this to `org.jboss.windup.rules.tests.WindupRulesMultipleTests`.
++
+image::junit-test.png[]
+
+. Select the *Arguments* tab, and add the `-DrunTestsMatching=__RULE_NAME__` VM argument. For instance, if your rule name was `community-rules`, then you would add `-DrunTestsMatching=community-rules` as seen in the following image.
++
+image::junit-test-arguments.png[]
+
+. Click *Run* in the bottom right corner to begin the test.
+
+Once the execution completes the results will be available for analysis. If all tests passed, then the test rule is correctly formatted; otherwise, it is recommended to address each of the issues raised in the test failures. For additional information on the errors that might occur, see xref:validation_report_errors[Reported Errors When Running the Validation Report].

@@ -48,8 +48,26 @@ include::topics/xml-rule-perform-syntax.adoc[leveloffset=+3]
 // Where Syntax
 include::topics/where-syntax.adoc[leveloffset=+3]
 
+// Add the Rule to {ProductName}
+include::topics/add-rule-to-rhamt.adoc[leveloffset=+2]
+
 // Testing XML Rules
 include::topics/testing-rules.adoc[leveloffset=+1]
+
+// Manually Test the XML Rule
+include::topics/manually-test-rules.adoc[leveloffset=+2]
+
+// Test the Rules Using JUnit
+include::topics/rules-testing-junit.adoc[leveloffset=+2]
+
+// Run the Validation Report
+include::topics/validation-report.adoc[leveloffset=+2]
+
+// Understanding the Validation Report
+include::topics/validation-report-understanding.adoc[leveloffset=+3]
+
+// Reported Errors when Running the Validation Report
+include::topics/validation-report-errors.adoc[leveloffset=+3]
 
 // Overriding Rules
 include::topics/overriding-rules.adoc[leveloffset=+1]
@@ -67,6 +85,9 @@ include::topics/about-story-points.adoc[leveloffset=+2]
 
 // Review the Existing RHAMT XML Rules
 include::topics/review-existing-rules.adoc[leveloffset=+3]
+
+// Fork and Clone the Ruleset GitHub Project
+include::topics/fork-ruleset-repo.adoc[leveloffset=+4]
 
 // Important Links
 include::topics/rules-important-links.adoc[leveloffset=+3]

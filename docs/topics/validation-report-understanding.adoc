@@ -1,0 +1,28 @@
+[[validation_report_understanding]]
+= Understanding the Validation Report
+
+The validation report is split into sections that organize any test failures into the packages and tests executed. This report contains the following sections:
+
+* xref:validation_report_summary[Summary]
+* xref:validation_report_package_list[Package List]
+* xref:validation_report_test_cases[Test Cases]
+
+[discrete]
+[[validation_report_summary]]
+== Summary
+
+The summary contains the overall number of tests executed and reports the number of errors and failures encountered. It also provides an overall success rate, and the time taken, in seconds, for the report to be generated.
+
+[discrete]
+[[validation_report_package_list]]
+== Package List
+
+The package list contains the number of tests executed per package, and reports the number of errors and failures encountered. It also provides a success rate, and the time taken, in seconds, for each package to be analyzed.
+
+It is expected to see a single package, `org.jboss.windup.rules.tests`, unless additional test cases have been defined.
+
+[discrete]
+[[validation_report_test_cases]]
+== Test Cases
+
+This section details each executed test. Each failure includes an optional *Details* section that can be expanded to show the stack trace for the assertion, including a line indicating the human readable source of the error. For additional information on the errors that might occur, see xref:validation_report_errors[Reported Errors When Running the Validation Report].

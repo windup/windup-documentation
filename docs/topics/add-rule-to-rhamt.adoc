@@ -1,0 +1,13 @@
+[[add_the_rule_to_windup]]
+= Add the Rule to {ProductName}
+
+A {ProductName} rule is installed by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files that end with `.windup.xml` or `.rhamt.xml`, in the following locations.
+
+* The directory specified by the `--userRulesDirectory` argument on the {ProductShortName} command line.
+
+* The `__RHAMT_HOME__/rules/` directory. xref:about_home_var[`__RHAMT_HOME__`] is the directory where you install and run the {ProductName} executable.
+
+* The `${user.home}/.rhamt/rules/` directory. This directory is created by {ProductShortName} the first time it is executed and contains rules, add-ons, and the {ProductShortName} log.
++
+NOTE: For Windows, this directory would be `\Documents and Settings&#x5c;__USER_NAME__\.rhamt\rules\` or `\Users&#x5c;__USER_NAME__\.rhamt\rules\`.
+
