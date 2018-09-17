@@ -18,10 +18,11 @@ See the description for each argument for more details.
 |--addonDir |Add the specified directory as a custom add-on repository.
 |--batchMode |Flag to specify that {ProductShortName} should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in to the command line.
 |--debug |Flag to run {ProductShortName} in debug mode.
+|--disableTattletale | Flag to disable generation of the Tattletale report. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
 |--discoverPackages |Flag to list all available packages in the input binary application.
 |--enableClassNotFoundAnalysis |Flag to enable analysis of Java files that are not available on the class path. This should not be used if some classes will be unavailable at analysis time.
 |--enableCompatibleFilesReport |Flag to enable generation of the Compatible Files report. Due to processing all files without found issues, this report may take a long time for large applications.
-|--enableTattletale |Flag to enable generate a Tattletale report for each application.
+|--enableTattletale |Flag to enable generation of a Tattletale report for each application. This option is enabled by default when `eap` is in the included target. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
 |--excludePackages |A space-delimited list of packages to exclude from evaluation. For example, entering `com.mycompany.commonutilities` would exclude all classes whose package name begins with `com.mycompany.commonutilities`.
 |--excludeTags |A space-delimited list of tags to exclude. When specified, rules with these tags will not be processed. To see the full list of tags, use the `--listTags` argument.
 |--explodedApp |Flag to indicate that the provided input directory contains source files for a single application. See the xref:input_file_type_arguments[Input File Argument Tables] for details.
