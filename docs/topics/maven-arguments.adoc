@@ -8,8 +8,9 @@ The following is a detailed description of the available {ProductShortName} {Mav
 |====
 |Argument |Description
 |customLoggingPropertiesFile |An absolute path to a `logging.properties` file that contains a `java.util.logging.LogManager` logging configuration. If the specified path is invalid, or the option is not specified, then the logging reverts to using the xref:logging_properties[`logging.properties`] file included with the {MavenName}.
+|disableTattletale | Flag to disable generation of the Tattletale report. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
 |enableCompatibleFilesReport |Flag to enable generation of the Compatible Files report. Due to processing all files without found issues, this report may take a long time for large applications.
-|enableTattletale |Flag to enable generate a Tattletale report for each application.
+|enableTattletale |Flag to enable generation of a Tattletale report for each application. This option is enabled by default when `eap` is in the included target. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
 |excludePackages |A list of packages to exclude from evaluation. For example, entering "com.mycompany.commonutilities" would exclude all classes whose package name begins with "com.mycompany.commonutilities".
 |excludeTags |A list of tags to exclude. When specified, rules with these tags will not be processed.
 |explodedApps |Flag to indicate that the provided input directory contains source files for a single application. See the xref:input_file_type_arguments[Input File Argument Tables] for details.
