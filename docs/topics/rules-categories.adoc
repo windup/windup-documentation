@@ -1,7 +1,7 @@
 [[rule_categories]]
 = Using Custom Rule Categories
 
-A new category field was added in {ProductShortName} 3.0 that replaces the concept of the severity field in {ProductShortName} rules. The default categories are the same that were available in the severity field: `mandatory`, `optional`, and `potential`. However, you can now xref:add_custom_category[add your own custom rule categories] and xref:assign_custom_category[assign {ProductShortName} rules to them].
+A new category field was added in {ProductShortName} 3.0 that replaces the concept of the severity field in {ProductShortName} rules. The default categories are the same that were available in the severity field: `mandatory`, `optional`, and `potential`. Additional categories, such as `information`, have also been included in subsequent {ProductShortName} releases. You can now xref:add_custom_category[add your own custom rule categories] and xref:assign_custom_category[assign {ProductShortName} rules to them].
 
 IMPORTANT: Although {ProductShortName} can still process rules that use the legacy `severity` field, it is recommended to update your custom rules to use the new `category-id` field.
 

@@ -65,7 +65,7 @@ effort="2"
 
 |category-id
 |STRING
-a|A reference to a category as defined in `RHAMT_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, and `potential`.
+a|A reference to a category as defined in `RHAMT_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, `potential`, and `information`.
 
 [options="nowrap"]
 ----
@@ -223,7 +223,7 @@ title="JBoss Seam Component Hint"
 
 |category-id
 |STRING
-a|A reference to a category as defined in `RHAMT_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, and `potential`.
+a|A reference to a category as defined in `RHAMT_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, `potential`, and `information`.
 
 [options="nowrap"]
 ----
