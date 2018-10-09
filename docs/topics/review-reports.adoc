@@ -133,6 +133,32 @@ endif::[]
 | Describes the current version of {ProductShortName} and provides helpful links for further assistance.
 |====
 
+=== Issues Report
+
+Access this report from the dashboard by clicking the *Issues* link.
+
+This report includes details about every issue that was raised by the selected migration paths. The following information is provided for each issue encountered.
+
+* A title to summarize the issue.
+* The total number of incidents, or times the issue was encountered. 
+* The xref:rule_story_points[rule story points] to resolve a single instance of the issue.
+* The estimated level of effort to resolve the issue.
+* The total story points to resolve every instance encountered. This is calculated by multiplying the number of incidents found by the story points per incident.
+
+.Issues Report
+image::report-jee-example-application-issues.png[Issues Report]
+
+Each reported issue may be expanded, by clicking on the title, to obtain additional details. The following information is provided.
+
+* A list of files where the incidents occurred, along with the number of incidents within each file. If the file is a Java source file, then clicking the filename will direct you to the corresponding xref:source_report[Source Report].
+* A detailed description of the issue. This description outlines the problem, provides any known solutions, and references supporting documentation regarding either the issue or resolution.
+* A direct link, entitled *Show Rule*, to the rule that generated the issue. 
+
+.Expanded Issue
+image::report-jee-example-application-issues-2.png[Expanded Rule in the Issues Report]
+
+Issues are sorted into four categories by default. Information on these categories is available at xref:task_category[Task Category].
+
 === Application Details Report
 
 Access this report from the dashboard by clicking the *Application Details* link.
