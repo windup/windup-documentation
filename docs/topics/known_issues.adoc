@@ -22,7 +22,6 @@ At the time of the release the following known issues have been identified as im
 |Eclipse Plugin 
 |"input" tab in windup run config shows up blank at first
 
-
 |link:https://issues.jboss.org/browse/WINDUP-1247[WINDUP-1247]
 |Web Console 
 |ApplicationGroupEngine getApplicationGroups endpoint returns inconsistent data
@@ -130,8 +129,4 @@ At the time of the release the following known issues have been identified as im
 |link:https://issues.jboss.org/browse/WINDUP-2162[WINDUP-2162]
 |OpenShift
 |Cannot access reports when RHAMT installed on OCP
-
-|link:https://issues.jboss.org/browse/WINDUP-2221[WINDUP-2221]
-|OpenShift
-|OpenShift templates always using 'latest' tag
 |====
