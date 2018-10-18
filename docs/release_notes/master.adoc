@@ -11,20 +11,20 @@ include::topics/templates/document-attributes.adoc[]
 
 == New Features
 
-// Dependencies Graph Report
-include::topics/dependency-graph-release.adoc[leveloffset=+2]
-
-// Validation Report
-include::topics/validation-report-release.adoc[leveloffset=+2]
-
 // OpenJDK Migration Path
 include::topics/openjdk-release.adoc[leveloffset=+2]
+
+// Dependencies Graph Report
+include::topics/dependency-graph-release.adoc[leveloffset=+2]
 
 // Informational Rules to Dedicated Category
 include::topics/information-rules-release.adoc[leveloffset=+2]
 
-// Enable Tattletale by Default
+// Tattletale Reports Enabled by Default
 include::topics/tattletale-release.adoc[leveloffset=+2]
+
+// Validation Report
+include::topics/validation-report-release.adoc[leveloffset=+2]
 
 // Cloud Mandatory and Potential Story Points
 include::topics/cloud-story-points-release.adoc[leveloffset=+2]
