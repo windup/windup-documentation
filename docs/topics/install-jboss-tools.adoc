@@ -1,0 +1,17 @@
+[[install_jboss_tools]]
+= Install JBoss Tools into Eclipse
+
+The {PluginNameTitle} depends on JBoss Tools, and therefore these dependencies must be installed for {ProductShortName} to function successfully. The following instructions detail installing JBoss Tools on an Eclipse installation.
+
+.Install JBoss Tools
+
+. From the menu bar, select *Help* -> *Eclipse Marketplace*. 
+. In the *Find* field, enter `JBoss Tools` and press *Enter* to search for the project.
+. Scroll down until you see *JBoss Tools* in the list and press *Install* next to this project.
+. Review the selected features and press *Confirm*. It is recommended to accept the defaults to install the required dependencies for {ProductShortName}.
+. Ensure that the first radio button, `Keep my installation the same and modify the items being installed to be compatible`, is selected.
+. Review the selected packages and click *Confirm*.
+. Accept the terms of the license agreement and click *Finish*.
+. Click *Install anyway* to accept the certificates.
+. Click *Select all* to trust all of the specified certificates, and then click *Accept selected*.
+. Restart Eclipse for the changes to take effect.
