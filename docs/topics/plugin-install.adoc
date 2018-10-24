@@ -5,9 +5,9 @@ Review the xref:supported_configs[supported configurations] to make sure that yo
 
 NOTE: If you are running macOS, it is recommended to set the maximum number of user processes, `maxproc`, to at least `2048`, and the maximum number of open files, `maxfiles`, to `100000`.
 
-If you do not already have an existing installation, download link:http://www.eclipse.org/downloads/[Eclipse] or link:https://developers.redhat.com/products/devstudio/download/[JBoss Developer Studio] and install it.
+If you do not already have an existing installation, download link:http://www.eclipse.org/downloads/[Eclipse] or link:https://developers.redhat.com/products/devstudio/download/[Red Hat Developer Studio] and install it.
 
-NOTE: This guide uses _Eclipse_ to refer to an installation of Eclipse or JBoss Developer Studio.
+NOTE: This guide uses _Eclipse_ to refer to an installation of Eclipse or Red Hat Developer Studio.
 
 .Install the Plugin
 
