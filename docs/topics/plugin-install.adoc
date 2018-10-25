@@ -9,6 +9,10 @@ If you do not already have an existing installation, download link:http://www.ec
 
 NOTE: This guide uses _Eclipse_ to refer to an installation of Eclipse or Red Hat Developer Studio.
 
+.Prerequisites
+
+* If you are using Eclipse, and not JBoss Developer Studio, then you must xref:install_jboss_tools[install JBoss Tools] before installing the {PluginNameTitle}.
+
 .Install the Plugin
 
 . Launch Eclipse.
