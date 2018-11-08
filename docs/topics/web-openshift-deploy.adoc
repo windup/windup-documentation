@@ -5,27 +5,22 @@
 . Extract the ZIP file to a directory of your choice.
 +
 The path to the directory created by unzipping this file is referred to as `_RHAMT_HOME_` throughout this guide.
-
-. Use the `oc login` command to connect to your OpenShift instance.
+. Access the OpenShift web console. It should appear similar to the following image.
 +
-[options="nowrap",subs="+quotes"]
-----
-$ oc login --username __USERNAME__ --password __PASSWORD__
-----
+image::openshift-console.png[]
+
+. Click the `Import YAML / JSON` button in the top-right corner of the web console.
+. Provide the following information in the window that appears, as seen below.
 +
-Provide any arguments that your instance requires, such as `--username` and `--password`, `--token`, or `--server`.
+image::openshift-import-template.png[]
+.. Define a `Project Name`, such as `rhamt`.
+.. Optionally, define a `Project Display Name` to help describe the project.
+.. Optionally, define a `Project Description` to help provide context on how the project will be used.
+.. Click the **Browse** button and import the desired {WebName} template. These are included in `__RHAMT_HOME__/openshift/templates`. Once imported, the JSON is visible in the bottom text area.
+. Click the **Create** button to proceed to the next screen.
+. If you would like to save the template as a resource for future projects, check the `Save template` box.
+. Click the **Continue** button to proceed to the next screen.
+. Review the default values provided, adjusting as necessary. For instance, the `web-template-empty-dir-executor.json` file defines 2 CPUs, 4GB of memory, and a 20GB persistent volume.
+. Click the **Create** button to import the template into your project.
 
-. Review and adjust default values for the installation.
-+
-The `__RHAMT_HOME__/openshift/deployment.properties` file defines default values, such as `rhamt` as the project name, 10GB as the persistent storage volume size, and 2GB as the requested memory. Review and change any default settings to your needs before running the `deploy.sh` script.
-
-. Execute the `deploy.sh` script to deploy the {WebName} to OpenShift.
-+
-[options="nowrap",subs="+quotes"]
-----
-$ __RHAMT_HOME__/openshift/deploy.sh
-----
-
-. Wait for the `deploy.sh` script to complete. This may take several minutes.
-
-Once the script completes, you can xref:access_console_openshift[access the web console] from a browser.
+Once completed, you can xref:access_console_openshift[access the web console] from a browser.
