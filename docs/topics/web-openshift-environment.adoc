@@ -1,22 +1,31 @@
 [[understanding_web_console_openshift_image]]
 = Understanding the {WebNameTitle} OpenShift Image
 
-Red Hat offers a containerized image for {ProductShortName}'s {WebName} that is designed for use with OpenShift. Using this image, developers can quickly and easily manage migration projects and analyze applications.
+Red Hat offers containerized images for {ProductShortName} that are designed for use with OpenShift. Using these images developers can quickly and easily manage migration projects and analyze applications.
 
-The OpenShift image includes three separate pods:
+The OpenShift images include three separate pods:
 
-* The executor, responsible for generating the analysis 
+* The executor, responsible for running the analysis and generating the reports
 * The {WebName} interface and SSO, which provide access to the web console itself
 * The PostgreSQL database, which stores the project's configuraton and analysis tracking information
 
 A separate persistent volume is used for the {WebName} interface and the PostgreSQL pods; however, the executor's storage is dependent on the template used.
 
-* The `web-template.json` is the default template used, and configures the executor pod to use a separate persistent volume.
-+
-.`web-template.json`
-image::webconsole-architecture.png[web-template.json]
-
-* The `web-template-empty-dir-executor.json` configures the executor pod to use temporary storage on a single machine, and has no defined persistent volume.
+* The `web-template-empty-dir-executor.json` is the recommended template. It configures the executor pod to use temporary storage on a single machine, and has no defined persistent volume. The analysis data is sent between the executor and web console pods using a RESTful web service.
 +
 .`web-template-empty-dir-executor.json`
 image::webconsole-architecture-empty-dir.png[web-template-empty-dir-executor.json]
+
+* The `web-template-empty-dir-executor-shared-storage.json` is an alternative template available for use. This template configures the executor pod and the web console pod to use a shared persistent volume. All instances of these pods read and write to the same persistent volume, mounted as `ReadWriteMany` in OpenShift.
++
+.`web-template-empty-dir-executor-shared-storage.json`
+image::webconsole-architecture-shared-storage.png[web-template-empty-dir-executor-shared-storage.json]
+
+[discrete]
+== OpenShift Template Environment Variables
+
+The OpenShift image environment variables are configured as a baseline for application analysis, and work well in a variety of environments. No additional configuration is required to perform an analysis.
+
+The most common environment variables modified are the CPU and memory resources allocated to each image. These contain a pattern of `__NODE_NAME__` followed by `REQUESTED___RESOURCE__`. For instance, `EXECUTOR_REQUESTED_CPU` indicates the number of CPU cores to request for the executor pod, while `EXECUTOR_REQUESTED_MEMORY` indicates the amount of memory to request for the executor pod.
+
+All of the environment variables are found within each template, along with a description of each.
