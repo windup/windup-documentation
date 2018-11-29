@@ -34,7 +34,7 @@ Be careful not to specify a report output directory that contains important info
 |userIgnorePath |Specify a location for {ProductShortName} to identify files that should be ignored.
 |userRulesDirectory |Specify a location for {ProductShortName} to look for custom {ProductShortName} rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the [x-]`.windup.xml` or [x-]`.rhamt.xml` suffix.
 |windupHome |An optional argument that points to the root of an extracted {ProductShortName} {CLIName}. By referencing a local installation of the {CLIName}, the {MavenName} has direct access to all of the indexes, resulting in a performance increase.
-|windupVersion |Specify the version of {ProductShortName}.
+|windupVersion |Specify the version of {ProductShortName} to run. By default, this is the {MavenName}'s build version.
 |====
 
 [[input_argument]]

@@ -28,7 +28,6 @@ To run the {MavenName} in a project with multiple modules perform the following 
         <input>${project.basedir}</input>
         <offlineMode>true</offlineMode>
         <windupHome>__/PATH/TO/{CLIName}/__</windupHome>
-        <windupVersion>{MavenProductVersion}</windupVersion>
     </configuration>
 </plugin>
 ----

@@ -25,14 +25,12 @@ To run the {MavenName} perform the following steps.
     </executions>
     <configuration>
         <offlineMode>true</offlineMode>
-        <windupVersion>{MavenProductVersion}</windupVersion>
     </configuration>
 </plugin>
 [...]
 ----
 +
 * `offlineMode`: Indicates to run in offline mode, disabling network features to improve performance.
-* `windupVersion`: Version of {ProductShortName}.
 +
 The above example demonstrates the minimum required arguments. See xref:maven_arguments[{ProductShortName} Maven Arguments] for a detailed description of all available arguments.
 
