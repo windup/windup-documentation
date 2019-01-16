@@ -5,23 +5,31 @@
 
 The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel, OpenOffice Calc, or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from an {ProductShortName} report.
 
+[[export_the_report]]
 == Export the Report
 
 ifdef::cli-guide[]
-To export the report into a CSV file, run {ProductShortName} with `--exportCSV` argument. The CSV file will be created in the directory specified by the `--output` argument.
+To export the report into a CSV file, run {ProductShortName} with `--exportCSV` argument. A CSV file will be created in the directory specified by the `--output` argument for each application analyzed. All discovered issues, spanning all the analyzed applications, will be included in `AllIssues.csv` found in the root directory of the report.
 endif::cli-guide[]
 
 ifdef::maven-guide[]
-To export the report into a CSV file, run {ProductShortName} with `exportCSV` argument set to `true`. 
+To export the report into a CSV file, run {ProductShortName} with `exportCSV` argument set to `true`. A CSV file will be created in the directory specified by the `--output` argument for each application analyzed. All discovered issues, spanning all the analyzed applications, will be included in `AllIssues.csv`.
 
 [source,options="nowrap"]
 ----
 <exportCSV>true</exportCSV>
 ----
 
-The CSV file will be created in the directory specified by the `outputDirectory` argument.
+The CSV files will be created in the directory specified by the `outputDirectory` argument.
 endif::maven-guide[]
 
+[discrete]
+=== Access the Report from the Application Report
+
+If the CSV report is exported, then all of the CSV issues are available for download in the xref:issues_report[Issues Report]. These issues may be downloaded by selecting the *Download All Issues CSV* button in the top-right section of the issues report, as seen in the following image.
+
+.Issues Report with CSV Download
+image::all-issues-csv.png[Issues Report with CSV Download]
 
 == Import the CSV File into a Spreadsheet Program
 
