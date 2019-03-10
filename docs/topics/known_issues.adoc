@@ -1,7 +1,14 @@
 [[known_issues]]
 = Known Issues
 
-At the time of the release the following known issues have been identified as important issues worth highlighting. For a full list of all known issues and issues that have been identified since the release, see link:https://issues.jboss.org/issues/?filter=12337087[this JIRA filter].
+At the time of the release the following known issues have been identified as important issues worth highlighting. For a full list of all known issues and issues that have been identified since the release, see link:https://issues.jboss.org/issues/?filter=12338778[this JIRA filter].
+
+// Component Types:
+// * Web Console
+// * Eclipse Plugin
+// * Maven Plugin
+// * OpenShift
+// * All
 
 .Known Issues
 [cols="20%,20%,60%",options="header"]
@@ -10,131 +17,45 @@ At the time of the release the following known issues have been identified as im
 |Component 
 |Summary
 
-|link:https://issues.jboss.org/browse/WINDUP-725[WINDUP-725] 
-|All 
-|JavaTypeReference line number information is incorrect when a method or class field has annotations
-
-|link:https://issues.jboss.org/browse/WINDUP-1155[WINDUP-1155] 
-|All 
-|Windup returning wrong column/length for a rule
-
-|link:https://issues.jboss.org/browse/WINDUP-1164[WINDUP-1164]
-|Eclipse Plugin 
-|"input" tab in windup run config shows up blank at first
-
-|link:https://issues.jboss.org/browse/WINDUP-1247[WINDUP-1247]
-|Web Console 
-|ApplicationGroupEngine getApplicationGroups endpoint returns inconsistent data
-
-|link:https://issues.jboss.org/browse/WINDUP-1275[WINDUP-1275]
-|Web Console 
-|Execution list never disappears when execution gets stuck in started state
-
-|link:https://issues.jboss.org/browse/WINDUP-1304[WINDUP-1304]
-|Web Console 
-|Update packages when application file is updated
-
-|link:https://issues.jboss.org/browse/WINDUP-1316[WINDUP-1316] 
-|Web Console 
-|Project list - description overlaps with project name and last modification
-
-|link:https://issues.jboss.org/browse/WINDUP-1323[WINDUP-1323]
-|Web Console 
-|Registered application is not shown on Registered Applications tab
-
-|link:https://issues.jboss.org/browse/WINDUP-1324[WINDUP-1324]
-|Web Console 
-|Windup xml rule definition interferring for more than one where named parameters
-
-|link:https://issues.jboss.org/browse/WINDUP-1353[WINDUP-1353] 
-|Eclipse Plugin 
-|Rework server UI control
-
-|link:https://issues.jboss.org/browse/WINDUP-1460[WINDUP-1460] 
-|Web Console 
-|Openshift: configure https listener
-
-|link:https://issues.jboss.org/browse/WINDUP-1465[WINDUP-1465] 
-|Web Console 
-|Clear startup completed message
-
-|link:https://issues.jboss.org/browse/WINDUP-1602[WINDUP-1602] 
-|Eclipse Plugin 
-|Improve Ruleset Editor tooltip size computation
-
-|link:https://issues.jboss.org/browse/WINDUP-1606[WINDUP-1606] 
-|Eclipse Plugin 
-|Ruleset Editor hierarchy tree needs filtering and grouping
-
-|link:https://issues.jboss.org/browse/WINDUP-1636[WINDUP-1636] 
-|Eclipse Plugin 
-|Support multiple custom ruleset paths (files or directories)
-
-|link:https://issues.jboss.org/browse/WINDUP-1637[WINDUP-1637] 
-|Eclipse Plugin 
-|Add ignore paths area to the run configuration for specifying files to ignore during analysis
-
-|link:https://issues.jboss.org/browse/WINDUP-1783[WINDUP-1783] 
-|Eclipse Plugin 
-|Offline usage - Ruleset Editor documentation tab unable to connect to internet
-
-|link:https://issues.jboss.org/browse/WINDUP-1788[WINDUP-1788]
-|Eclipse Plugin 
-|RHAMT getting started doesn't display after install and restart
-
-|link:https://issues.jboss.org/browse/WINDUP-1801[WINDUP-1801]
-|Eclipse Plugin 
-|Issue Explorer missing labels on some system rulesets
-
-|link:https://issues.jboss.org/browse/WINDUP-1802[WINDUP-1802] 
-|Eclipse Plugin 
-|Issue Explorer tree collapses once opening/showing the ruleset view
-
-|link:https://issues.jboss.org/browse/WINDUP-1806[WINDUP-1806] 
-|Eclipse Plugin 
-|Refresh issues after resource has been deleted from workspace externally
-
-|link:https://issues.jboss.org/browse/WINDUP-1819[WINDUP-1819] 
-|Eclipse Plugin 
-|Ruleset Editor - tooltips don't become visible when hovering on certain labels that should
-
-|link:https://issues.jboss.org/browse/WINDUP-1972[WINDUP-1972] 
-|Web Console 
-|Issue in application view: Embedded framework / library doesn't show file
-
-|link:https://issues.jboss.org/browse/WINDUP-2010[WINDUP-2010] 
-|Eclipse Plugin 
-|Issue Explorer not populating results after analysis
-
-|link:https://issues.jboss.org/browse/WINDUP-2025[WINDUP-2025] 
-|Web Console 
-|Wrong time is displayed on analysis result page when there's an offset between server and client time
-
-|link:https://issues.jboss.org/browse/WINDUP-2088[WINDUP-2088]
-|Web Console
-|Improved handling if the analysis list is really long
-
-|link:https://issues.jboss.org/browse/WINDUP-2089[WINDUP-2089]
+|link:https://issues.jboss.org/browse/WINDUP-2333[WINDUP-2333]
 |OpenShift
-|max-post-size as parameter in OCP deployment
+|Cannot access reports when RHAMT installed on OCP
 
-|link:https://issues.jboss.org/browse/WINDUP-2122[WINDUP-2122]
+|link:https://issues.jboss.org/browse/WINDUP-2325[WINDUP-2325]
+|Web Console
+|Unzip install fails due to existence of .failed files
+
+|link:https://issues.jboss.org/browse/WINDUP-2304[WINDUP-2304]
 |Eclipse Plugin
-|Better support for cleanly updating from one version of the plugin to another
+|Update run configuration to include JDK instead of JRE
+
+|link:https://issues.jboss.org/browse/WINDUP-2297[WINDUP-2297]
+|Maven Plugin
+|Dependency conflicts on org.apache.maven:maven-model:jar, causing unexpected code behaviors
+
+|link:https://issues.jboss.org/browse/WINDUP-2264[WINDUP-2264]
+|Eclipse Plugin
+|Sometimes the eclipse plugin can't connect to the rhamt server it just spawned
 
 |link:https://issues.jboss.org/browse/WINDUP-2147[WINDUP-2147]
 |OpenShift
 |liveness probe for executor pod is tied to web console
 
-|link:https://issues.jboss.org/browse/WINDUP-2162[WINDUP-2162]
-|OpenShift
-|Cannot access reports when RHAMT installed on OCP
+|link:https://issues.jboss.org/browse/WINDUP-2122[WINDUP-2122]
+|Eclipse Plugin
+|Better support for cleanly updating from one version of the plugin to another.
 
-|link:https://issues.jboss.org/browse/WINDUP-2246[WINDUP-2246]
+|link:https://issues.jboss.org/browse/WINDUP-2025[WINDUP-2025]
 |Web Console
-|advanced options not usable on IE9
+|Wrong time is displayed on analysis result page when there's an offset between server and client time
 
-|link:https://issues.jboss.org/browse/WINDUP-2247[WINDUP-2247]
+|link:https://issues.jboss.org/browse/WINDUP-2010[WINDUP-2010]
+|Eclipse Plugin
+|Issue Explorer not populating results after analysis
+
+|link:https://issues.jboss.org/browse/WINDUP-1972[WINDUP-1972]
 |Web Console
-|Rules configuration page on IE9
+|Issues in application view: Embedded Framework / library doesn't show file
+
 |====
+

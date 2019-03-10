@@ -1,7 +1,7 @@
 [[resolved_issues]]
 = Resolved Issues
 
-At the time of the release the following resolved issues have been identified as important issues worth highlighting. For a full list of all issues resolved in this release, see link:https://issues.jboss.org/issues/?filter=12337131[this JIRA filter].
+At the time of the release the following resolved issues have been identified as important issues worth highlighting. For a full list of all issues resolved in this release, see https://issues.jboss.org/issues/?filter=12338777[this JIRA filter].
 
 .Resolved Issues
 [cols="20%,80%",options="header"]
@@ -9,33 +9,19 @@ At the time of the release the following resolved issues have been identified as
 |ID
 |Summary
 
-|link:https://issues.jboss.org/browse/WINDUP-1987[WINDUP-1987]
-|use the project.name instead of "java"
+|link:https://issues.jboss.org/browse/WINDUP-2277[WINDUP-2277]
+|RHAMT on Openshift - Package Discovery service causes the WebUi Pod to run out of memory
 
-|link:https://issues.jboss.org/browse/WINDUP-1997[WINDUP-1997]
-|Technologies Report Bubblemap - Presentation Issues
+|link:https://issues.jboss.org/browse/WINDUP-2238[WINDUP-2238]
+|Warnings are shown when launching web console
 
-|link:https://issues.jboss.org/browse/WINDUP-2019[WINDUP-2019]
-|Count of found techs is sometimes off by one
+|link:https://issues.jboss.org/browse/WINDUP-2177[WINDUP-2177]
+|Enrich mouse over information on tech punch card
 
-|link:https://issues.jboss.org/browse/WINDUP-2020[WINDUP-2020]
-|Add number of potential issues and cloud-mandatory SPs to the bubble tech report
+|link:https://issues.jboss.org/browse/WINDUP-1986[WINDUP-1986]
+|Maven plugin should come with a default value for windupVersion
 
-|link:https://issues.jboss.org/browse/WINDUP-2023[WINDUP-2023]
-|CSV export doesn't have app name as file name
+|link:https://issues.jboss.org/browse/WINDUPRULE-178[WINDUPRULE-178]
+|Non-JPA applications that use Hibernate with JTA must set hibernate.transaction.coordinator_class
 
-|link:https://issues.jboss.org/browse/WINDUP-2024[WINDUP-2024]
-|package selection is not displayed from the previous analysis config
-
-|link:https://issues.jboss.org/browse/WINDUP-2056[WINDUP-2056]
-|Technology Report Bubble Chart - Size information is wrong for source input
-
-|link:https://issues.jboss.org/browse/WINDUP-2113[WINDUP-2113]
-|Upgrade wildfly-maven-plugin to 1.2.2.Final
-
-|link:https://issues.jboss.org/browse/WINDUP-2221[WINDUP-2221]
-|Openshift templates always using 'latest' tag
-
-|link:https://issues.jboss.org/browse/WINDUPRULE-360[WINDUPRULE-360]
-|Enhance rule with session externalization
 |====
