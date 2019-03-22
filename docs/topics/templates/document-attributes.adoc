@@ -38,7 +38,7 @@
 :DocInfoProductNameURL: red_hat_application_migration_toolkit
 
 :OpenShiftProductNumber: 3.9
-:ProductVersion: 4.2.0
+:ProductVersion: 4.2.1
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rules Development Guide
@@ -59,9 +59,9 @@
 // Commenting out as these attributes are not currently used:
 // :ProductRelease: 4
 // :ProductVersion: 4.0
-:ProductDistributionVersion: 4.2.0.Final
+:ProductDistributionVersion: 4.2.1.Final
 :ProductDistribution: rhamt-cli-{ProductDistributionVersion}
-:MavenProductVersion: 4.2.0.Final
+:MavenProductVersion: 4.2.1.Final
 
 // ********
 // * URLs *
