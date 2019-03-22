@@ -23,6 +23,7 @@ To export the report into a CSV file, run {ProductShortName} with `exportCSV` ar
 The CSV files will be created in the directory specified by the `outputDirectory` argument.
 endif::maven-guide[]
 
+ifdef::cli-guide[]
 [discrete]
 === Access the Report from the Application Report
 
@@ -30,6 +31,7 @@ If the CSV report is exported, then all of the CSV issues are available for down
 
 .Issues Report with CSV Download
 image::all-issues-csv.png[Issues Report with CSV Download]
+endif::cli-guide[]
 
 == Import the CSV File into a Spreadsheet Program
 
