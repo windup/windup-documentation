@@ -1,7 +1,7 @@
 [[about_the_plugin]]
 = About the {PluginNameTitle}
 
-The {PluginName} for {ProductName} provides assistance directly in Eclipse and Red Hat Developer Studio for developers making changes for a migration or modernization effort.  It analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
+The {PluginName} for {ProductName} provides assistance directly in Eclipse and Red Hat CodeReady Studio for developers making changes for a migration or modernization effort.  It analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
 
 ifndef::plugin-guide[]
 For more information on using the {PluginName}, see the {ProductShortName} link:{ProductDocPluginGuideURL}[_{PluginBookName}_].
