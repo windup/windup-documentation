@@ -1,0 +1,32 @@
+:toc:
+:toclevels: 4
+:numbered:
+
+include::topics/templates/document-attributes.adoc[]
+
+:imagesdir: topics/images
+:release-notes:
+
+= {ReleaseNotesName}
+
+include::topics/release-notes-introduction.adoc[leveloffset=+1]
+
+== New Features
+
+// Java 11 Support
+include::topics/jdk11-support.adoc[leveloffset=+2]
+
+// Red Hat JBoss Enterprise Application Platform 7.2 Migration Path
+include::topics/eap72-support.adoc[leveloffset=+2]
+
+// OpenShift Installation Update
+include::topics/openshift-installation-update.adoc[leveloffset=+2]
+
+// Inclusive CSV Report
+include::topics/all-csv-support.adoc[leveloffset=+2]
+
+// Known Issues
+include::topics/known_issues.adoc[leveloffset=+1]
+
+// Resolved Issues
+include::topics/resolved_issues.adoc[leveloffset=+1]
