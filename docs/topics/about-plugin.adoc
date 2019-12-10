@@ -5,7 +5,7 @@ The {PluginName} for {ProductName} provides assistance directly in Eclipse and R
 
 A {ProductName} extension is also available for Visual Studio Code and Eclipse Che.
 The 4.3.0 product release introduces a Minimum Viable Product version of a RHAMT extension that contains all of the core features required to perform a RHAMT analysis within an IDE.
-For more details, view the extension on the link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[Visual Studio Markteplace].
+For more details, view link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[the extension] on the Visual Studio Markteplace.
 
 ifndef::plugin-guide[]
 For more information on using the {PluginName}, see the {ProductShortName} link:{ProductDocPluginGuideURL}[_{PluginBookName}_].
