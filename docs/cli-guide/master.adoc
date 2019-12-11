@@ -58,6 +58,9 @@ include::topics/exclude-files-and-packages.adoc[leveloffset=+2]
 // {ProductShortName} Command-line Arguments
 include::topics/cli-args.adoc[leveloffset=+2]
 
+// Added in 4.3.0: list of supported Tech Tags
+include::topics/tech-tags.adoc[leveloffset=+2]
+
 // Rule Story Points
 include::topics/about-story-points.adoc[leveloffset=+2]
 
