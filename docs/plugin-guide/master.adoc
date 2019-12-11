@@ -11,7 +11,7 @@ include::topics/templates/document-attributes.adoc[]
 
 == Introduction
 
-// About the Eclipse Plugin Guide
+// About the IDE Plugin Guide
 include::topics/plugin-intro.adoc[leveloffset=+2]
 
 // About {ProductName}
@@ -23,13 +23,13 @@ include::topics/about-plugin.adoc[leveloffset=+2]
 // Supported Configurations
 include::topics/plugin-supported-configs.adoc[leveloffset=+2]
 
-// Install the Eclipse Plugin
+// Install the IDE Plugin
 include::topics/plugin-install.adoc[leveloffset=+1]
 
 // Access the {ProductShortName} Eclipse Tools
 include::topics/plugin-access-windup-tools.adoc[leveloffset=+1]
 
-// Windup Eclipse Plugin Components
+// Windup IDE Plugin Components
 include::topics/plugin-components.adoc[leveloffset=+2]
 
 // Identify and Resolve Migration Issues with Windup
