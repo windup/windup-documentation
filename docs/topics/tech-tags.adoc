@@ -1,0 +1,365 @@
+[[tech_tags]]
+= Supported Technology Tags
+
+The following Technology Tags are supported in {ProductShortName} {ProductVersion}:
+
+* 0MQ Client (embedded)
+* * 3scale (embedded)
+* Acegi Security (embedded)
+* AcrIS Security (embedded)
+* ActiveMQ (embedded)
+* Airframe (embedded)
+* Airlift Log Manager (embedded)
+* AKKA JTA (embedded)
+* Akka Testkit (embedded)
+* Amazon SQS Client (embedded)
+* AMQP Client (embedded)
+* Anakia (embedded)
+* AngularFaces (embedded)
+* ANTLR StringTemplate (embedded)
+* AOP Alliance (embedded)
+* Apache Accumulo Client
+* Apache Aries (embedded)
+* Apache Axis (embedded)
+* Apache Axis2 (embedded)
+* Apache Camel (embedded)
+* Apache Commons JCS (embedded)
+* Apache Commons Logging (embedded)
+* Apache Commons Validator (embedded)
+* Apache CXF (embedded)
+* Apache Flume (embedded)
+* Apache Geronimo (embedded)
+* Apache Hadoop (embedded)
+* Apache HBase Client
+* Apache Ignite (embedded)
+* Apache Karaf (embedded)
+* Apache Log4J (embedded)
+* Apache Mahout (embedded)
+* Apache Meecrowave JTA (embedded)
+* Apache Santuario (embedded)
+* Apache Shiro (embedded)
+* Apache Sirona JTA (embedded)
+* Apache Struts (embedded)
+* Apache Synapse (embedded)
+* Apache Tapestry (embedded)
+* Apache Wicket (embedded)
+* Apiman (embedded)
+* Arquillian (embedded)
+* AspectJ (embedded)
+* Atomikos JTA (embedded)
+* Avalon Logkit (embedded)
+* Axion Driver
+* BabbageFaces (embedded)
+* Bean Validation
+* BeanInject (embedded)
+* Blaze (embedded)
+* Blitz4j (embedded)
+* BootsFaces (embedded)
+* Bouncy Castle (embedded)
+* ButterFaces (embedded)
+* Cache API (embedded)
+* Cactus (embedded)
+* Camel Messaging Client (embedded)
+* Camunda (embedded)
+* Cassandra Client
+* CDI
+* CDI (embedded)
+* Cfg Engine (embedded)
+* Chunk Templates (embedded)
+* Cloudera (embedded)
+* Clustering EJB
+* Clustering Web Session
+* Coherence (embedded)
+* Common Annotations
+* Composite Logging JCL (embedded)
+* Concordion (embedded)
+* Cucumber (embedded)
+* Dagger (embedded)
+* DbUnit (embedded)
+* Debugging Support for Other Languages
+* Decompiled Java File
+* Demoiselle JTA (embedded)
+* Derby Driver
+* Drools (embedded)
+* DVSL (embedded)
+* Dynacache (embedded)
+* EAR
+* Easy Rules (embedded)
+* EasyMock (embedded)
+* EclipseLink (embedded)
+* EJB
+* EJB XML
+* Ehcache (embedded)
+* Elasticsearch (embedded)
+* Enterprise Web Services
+* Entity Bean
+* EtlUnit (embedded)
+* Everit JTA (embedded)
+* Evo JTA (embedded)
+* FreeMarker (embedded)
+* Geronimo JTA (embedded)
+* GFC Logging (embedded)
+* GIN (embedded)
+* GlassFish JTA (embedded)
+* Google Guice (embedded)
+* Grails (embedded)
+* Grapht DI (embedded)
+* Guava Testing (embedded)
+* GWT (embedded)
+* H2 Driver
+* Hamcrest (embedded)
+* Handlebars (embedded)
+* HavaRunner (embedded)
+* Hazelcast (embedded)
+* Hdiv (embedded)
+* Hibernate (embedded)
+* Hibernate Cfg
+* Hibernate Mapping
+* Hibernate OGM (embedded)
+* HighFaces (embedded)
+* HornetQ Client (embedded)
+* HSQLDB Driver
+* HTTP Client (embedded)
+* HttpUnit (embedded)
+* ICEfaces (embedded)
+* Ickenham (embedded)
+* Ignite JTA (embedded)
+* Ikasan (embedded)
+* iLog (embedded)
+* Infinispan (embedded)
+* Injekt for Kotlin (embedded)
+* Iroh (embedded)
+* Istio (embedded)
+* JACC
+* Jamon (embedded)
+* Jasypt (embedded)
+* Java EE
+* Java EE Batch
+* Java EE Batch API
+* Java EE JSON-P
+* Java EE Security
+* Java Source
+* Java Transaction API (embedded)
+* JavaMail
+* Javax Inject (embedded)
+* JAX-RPC
+* JAX-RS
+* JAX-WS
+* JAXB
+* JAXR
+* JayWire (embedded)
+* JBehave (embedded)
+* JBoss Cache (embedded)
+* JBoss EJB XML
+* JBoss logging (embedded)
+* JBoss Transactions (embedded)
+* JBoss Web XML
+* JBossMQ Client (embedded)
+* JBPM (embedded)
+* JCA
+* Jcabi Log (embedded)
+* JCache (embedded)
+* JCunit (embedded)
+* JDBC (embedded)
+* JDBC datasources
+* JDBC XA datasources
+* Jersey (embedded)
+* Jetbrick Template (embedded)
+* Jetty (embedded)
+* JFreeChart (embedded)
+* JFunk (embedded)
+* JMock (embedded)
+* JMockit (embedded)
+* JMS
+* JMS Connection Factory
+* JMS Queue
+* JMS Topic
+* JMustache (embedded)
+* JPA
+* JPA entities
+* JPA Matchers (embedded)
+* JPA named queries
+* JPA XML
+* JSecurity (embedded)
+* JSF (embedded)
+* JSF Page
+* JSilver (embedded)
+* JSON-B
+* JSP Page
+* JSTL (embedded)
+* JTA
+* Jukito (embedded)
+* JUnit (embedded)
+* Ka DI (embedded)
+* Keyczar (embedded)
+* Kibana (embedded)
+* KLogger (embedded)
+* Kodein (embedded)
+* Kotlin Logging (embedded)
+* KouInject (embedded)
+* KumuluzEE JTA (embedded)
+* LevelDB Client
+* Liferay (embedded)
+* LiferayFaces (embedded)
+* Lift JTA (embedded)
+* Log.io (embedded)
+* Log4s (embedded)
+* Logback (embedded)
+* Logging to file system
+* Logging to Socket Handler
+* Logging Utils (embedded)
+* Logstash (embedded)
+* Lumberjack (embedded)
+* Macros (embedded)
+* Manifest
+* MapR (embedded)
+* Maven XML
+* MckoiSQLDB Driver
+* MEJB
+* Memcached client (embedded)
+* Message (MDB)
+* Micro DI (embedded)
+* Microsoft SQL Driver
+* MinLog (embedded)
+* Mixer (embedded)
+* Mockito (embedded)
+* MongoDB Client
+* Monolog (embedded)
+* Morphia
+* MRules (embedded)
+* Mule (embedded)
+* Mule Functional Test Framework (embedded)
+* MultithreadedTC (embedded)
+* Mycontainer JTA (embedded)
+* MyFaces (embedded)
+* MySQL Driver
+* Narayana Arjuna (embedded)
+* Needle (embedded)
+* Neo4j (embedded)
+* NLOG4J (embedded)
+* Nuxeo JTA/JCA (embedded)
+* OACC (embedded)
+* OAUTH (embedded)
+* OCPsoft Logging Utils (embedded)
+* OmniFaces (embedded)
+* OpenFaces (embedded)
+* OpenPojo (embedded)
+* OpenSAML (embedded)
+* OpenWS (embedded)
+* OPS4J Pax Logging Service (embedded)
+* Oracle ADF (embedded)
+* Oracle DB Driver
+* Oracle Forms (embedded)
+* Orion EJB XML
+* Orion Web XML
+* Oscache (embedded)
+* OTR4J (embedded)
+* OW2 JTA (embedded)
+* OW2 Log Util (embedded)
+* OWASP CSRF Guard (embedded)
+* OWASP ESAPI (embedded)
+* Peaberry (embedded)
+* Pega (embedded)
+* Persistence units
+* Petals EIP (embedded)
+* PicketBox (embedded)
+* PicketLink (embedded)
+* PicoContainer (embedded)
+* Play (embedded)
+* Play Test (embedded)
+* Plexus Container (embedded)
+* Polyforms DI (embedded)
+* Portlet (embedded)
+* PostgreSQL Driver
+* PowerMock (embedded)
+* PrimeFaces (embedded)
+* Properties
+* Qpid Client (embedded)
+* RabbitMQ Client (embedded)
+* RandomizedTesting Runner (embedded)
+* Resource Adapter (embedded)
+* REST Assured (embedded)
+* Restito (embedded)
+* RichFaces (embedded)
+* RMI
+* RocketMQ Client (embedded)
+* Rythm Template Engine (embedded)
+* SAML (embedded)
+* Scalate (embedded)
+* Scaldi (embedded)
+* Scribe (embedded)
+* Seam (embedded)
+* ServiceMix (embedded)
+* Servlet
+* ShiftOne (embedded)
+* Silk DI (embedded)
+* SLF4J (embedded)
+* Snippetory Template Engine (embedded)
+* SNMP4J (embedded)
+* SOAP (SAAJ)
+* Spark (embedded)
+* Specsy (embedded)
+* Spock (embedded)
+* Spring (embedded)
+* Spring Batch (embedded)
+* Spring Boot (embedded)
+* Spring Data (embedded)
+* Spring Integration (embedded)
+* Spring Messaging Client (embedded)
+* Spring MVC (embedded)
+* Spring Security (embedded)
+* Spring Test (embedded)
+* Spring Transactions (embedded)
+* Spring XML
+* SQLite Driver
+* SSL (embedded)
+* Stateful (SFSB)
+* Stateless (SLSB)
+* Sticky Configured (embedded)
+* Stripes (embedded)
+* SubCut (embedded)
+* Swagger (embedded)
+* SwarmCache (embedded)
+* SwitchYard (embedded)
+* Syringe (embedded)
+* Talend ESB (embedded)
+* Teiid (embedded)
+* TensorFlow (embedded)
+* Test Interface (embedded)
+* TestNG (embedded)
+* Thymeleaf (embedded)
+* TieFaces (embedded)
+* tinylog (embedded)
+* Tomcat (embedded)
+* Tornado Inject (embedded)
+* Trimou (embedded)
+* Trunk JGuard (embedded)
+* Twirl (embedded)
+* Twitter Util Logging (embedded)
+* UberFire (embedded)
+* Unirest (embedded)
+* Unitils (embedded)
+* Vaadin (embedded)
+* Velocity (embedded)
+* Vlad (embedded)
+* Water Template Engine (embedded)
+* Web XML
+* WebLogic Web XML
+* Webmacro (embedded)
+* WebSphere EJB
+* WebSphere EJB Ext
+* WebSphere Web XML
+* WebSphere WS Binding
+* WebSphere WS Extension
+* Weka (embedded)
+* Weld (embedded)
+* WF Core JTA (embedded)
+* Winter (embedded)
+* WS Metadata
+* WSDL (embedded)
+* WSO2 (embedded)
+* WSS4J (embedded)
+* XACML (embedded)
+* XFire (embedded)
+* XMLUnit (embedded)
+* Zbus Client (embedded)
