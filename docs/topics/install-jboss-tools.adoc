@@ -3,9 +3,11 @@
 
 The {PluginNameTitle} depends on JBoss Tools, and therefore these dependencies must be installed for {ProductShortName} to function successfully. The following instructions detail installing JBoss Tools on an Eclipse installation.
 
+NOTE: If you are using Red Hat CodeReady Studio, and not Eclipse, you do not need to install JBoss Tools separately. 
+
 .Install JBoss Tools
 
-. From the menu bar, select *Help* -> *Eclipse Marketplace*. 
+. From the menu bar, select *Help* -> *Eclipse Marketplace*.
 . In the *Find* field, enter `JBoss Tools` and press *Enter* to search for the project.
 . Scroll down until you see *JBoss Tools* in the list and press *Install* next to this project.
 . Review the selected features and press *Confirm*. It is recommended to accept the defaults to install the required dependencies for {ProductShortName}.
