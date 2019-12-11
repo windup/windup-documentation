@@ -1,10 +1,10 @@
 [[uninstall_plugin]]
 = Uninstall the {PluginNameTitle}
 
-. From Eclipse, navigate to *Help* -> *Installation Details*.
+. From your IDE, navigate to *Help* -> *Installation Details*.
 . In the *Installed Software* tab, select *Windup Feature* and *Windup Feature Developer Resources*.
 +
 Hold the *Ctrl* key to select multiple rows.
 . Select *Uninstall*.
 . Review the details and click *Finish* to uninstall the plugin.
-. Restart Eclipse for the changes to take effect.
+. Restart your IDE for the changes to take effect.
