@@ -15,6 +15,7 @@ The following sections describe the more common XML `when` rule conditions.
 * xref:has-hint-syntax[<has-hint> condition syntax]
 * xref:has-classification-syntax[<has-classification> condition syntax]
 * xref:graph-query-syntax[<graph-query> condition syntax]
+* xref:dependency-syntax[<dependency> condition syntax]
 
 By default, if more than one `when` rule condition is provided, then all conditions must be met for the rule to match.
 
@@ -518,7 +519,7 @@ The `<has-hint>` element is used to determine if a hint exists for a file or lin
 
 === Summary
 
-Use the `<has-classification>` element to test whether a file or line has a classification. It is primarily used to prevent firing if a classification already exists, or to implement rules for default execution when no other conditions apply. For a better understanding of the `<has-classification>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/HasClassification.html[HasClassification] class. 
+Use the `<has-classification>` element to test whether a file or line has a classification. It is primarily used to prevent firing if a classification already exists, or to implement rules for default execution when no other conditions apply. For a better understanding of the `<has-classification>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/HasClassification.html[HasClassification] class.
 
 === Construct a <has-classification>
 
@@ -542,7 +543,7 @@ The `has-classification` element is used to determine if a specified classificat
 
 === Summary
 
-Use the `<graph-query>` element to search the generated graph for any elements. This element is primarily used to search for specific archives. For a better understanding of the `<graph-query>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/parser/xml/when/QueryHandler.html[QueryHandler] class. 
+Use the `<graph-query>` element to search the generated graph for any elements. This element is primarily used to search for specific archives. For a better understanding of the `<graph-query>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/parser/xml/when/QueryHandler.html[QueryHandler] class.
 
 The following is an example of a rule that tests to determine if any `ehcache` packages are found.
 
@@ -621,3 +622,31 @@ from="MyEjbRule"
 |Defines how the condition is matched. If set to `equals`, then an exact match must be made. If using `regex`, then regular expressions can be used.
 
 |====
+
+[[dependency-syntax]]
+== <dependency> Syntax
+
+=== Summary
+
+Use the `<dependency>` element to search dependencies defined within the application's POM file to determine whether they are supported by the target runtime.
+
+The following is an example of a rule that checks for all artifacts belonging to the `org.springframework.boot` group that have a version up to, and including, 1.6.0.
+
+[source,xml,options="nowrap"]
+----
+<rule id="springboot-00001">
+    <!-- rule condition, when it could be fired -->
+    <when>
+        <dependency groupId="org.springframework.boot" artifactId="{*}" toVersion="1.6.0" />
+    </when>
+    <!-- rule operation, what to do if it is fired -->
+    <perform>
+        <hint title="Unsupported version of Spring Boot" effort="3" category-id="mandatory">
+            <message>Spring Boot has to be updated to Spring Boot 2.0 before being able to be migrated to a version supported by Red Hat Runtimes</message>
+            <link href="https://access.redhat.com/articles/3349341" title="RHOAR Spring Boot Supported Configurations" />
+            <link href="https://access.redhat.com/articles/3348731" title="RHOAR Component Details Overview" />
+            <link href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide" title="Spring Boot 2.0 Migration Guide" />
+        </hint>
+    </perform>
+</rule>
+----
