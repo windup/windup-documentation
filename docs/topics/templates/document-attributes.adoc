@@ -24,7 +24,7 @@
 :PluginName: IDE Plugin
 :PluginNameTitle: IDE Plugin
 
-:EclipsePluginFilename: migrationtoolkit-rhamt-eclipse-plugin-repository
+:IDEPluginFilename: migrationtoolkit-rhamt-eclipse-plugin-repository
 
 :MavenName: Maven plugin
 :MavenNameTitle: Maven Plugin
@@ -37,8 +37,8 @@
 :DocInfoProductNumber: 4.3
 :DocInfoProductNameURL: red_hat_application_migration_toolkit
 
-:OpenShiftProductNumber: 3.11
-:ProductVersion: 4.3.0
+:OpenShiftProductNumber: 3.9
+:ProductVersion: 4.2.1
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rules Development Guide
@@ -61,7 +61,7 @@
 // :ProductVersion: 4.0
 :ProductDistributionVersion: 4.3.0.Final
 :ProductDistribution: rhamt-cli-{ProductDistributionVersion}
-:MavenProductVersion: 4.3.0.Final
+:MavenProductVersion: 4.2.1.Final
 
 // ********
 // * URLs *
