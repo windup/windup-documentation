@@ -8,20 +8,20 @@ image::web-configure-analysis.png[Configure Analysis]
 
 Transformation Path::
 
-Select the transformation path for your applications. The current options are:
+Select the transformation path for your applications.
+The targets displayed under the Transformation Path heading are the most commonly used options:
 
-* Migration to JBoss EAP 7
-+
-Execute rules to migrate your applications to Red Hat JBoss Enterprise Application Platform 7.
-* Migration to JBoss EAP 6
-+
-Execute rules to migrate your applications to Red Hat JBoss Enterprise Application Platform 6.
-* Cloud readiness only
-+
-Only execute rules to assess your applications for cloud and container environment.
+* JBoss EAP 7 (`eap:7`)
 
-+
-If you select migration to JBoss EAP, you can also run cloud readiness rules by checking the *Cloud readiness analysis* checkbox.
+* JBoss EAP 6 (`eap:6`)
+
+* Containerization (`cloud-readiness`)
+
+* Linux (`linux`)
+
+* Open JDK (`openjdk`)
+
+Other available targets can be selected using the _Advanced Options_ dialogue.
 
 Include Packages::
 
@@ -33,11 +33,37 @@ Select which packages to exclude from analysis.
 
 Custom Rules::
 
-Select which custom rulesets to use during analysis. See xref:using_custom_rules[Using Custom Rules] for instructions on registering and removing custom rules.
-+
-Once a custom ruleset has been registered, it may be selected for execution by clicking on the displayed rule to highlight it. Clicking a highlighted rule will deselect it for the project. During execution, all highlighted rules will be included in the analysis.
-+
-To select all of the custom rulesets click *Select All*, and to deselect all of the custom rulesets click *Clear All*.
+Select which custom rulesets to use during analysis.
+//See xref:using_custom_rules[Using Custom Rules] for instructions on registering and removing custom rules.
+
+Custom rules can be maintained for the current {ProductShortName} project (project scope) or for all {ProductShortName} projects (global scope).
+
+Project custom rules are maintained using the controls below.
+
+The *Add* button allows the user to select the rules files ([x-]`.windup.xml` or [x-]`.rhamt.xml`).
+Selected (checked) rules are shown in the right-hand panel and will be executed during the analysis.
+
+.Custom Rules
+image::web-custom-rules-project.png[The Custom Rules dialog]
+
+See xref:using_custom_rules_and_labels[Using Global Custom Rules and Labels] for maintaining global custom rules.
+
+Custom Labels::
+
+Select which custom labels to use during analysis.
+
+Custom labels can be maintained for the current {ProductShortName} project (project scope) or for all {ProductShortName} projects (global scope).
+
+Project custom rules are maintained using the controls below.
+
+The *Add* button allows the user to select the rules files ([x-]`.windup.label.xml` or [x-]`.rhamt.label.xml`).
+Selected (checked) rules are shown in the right-hand panel and will be executed during the analysis.
+
+.Custom Labels
+image::web-custom-labels-project.png[The Custom Labels dialog]
+
+See xref:using_custom_rules_and_labels[Using Global Custom Rules and Labels] for maintaining global custom labels.
+
 
 Advanced Options::
 
