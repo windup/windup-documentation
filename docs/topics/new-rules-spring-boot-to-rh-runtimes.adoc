@@ -1,0 +1,20 @@
+[[new_rules_for_migrating_spring_boot_to_red_hat_runtimes]]
+= New Rules for migrating Spring Boot to Red Hat Runtimes
+
+This release introduces a new set of rules for assessing the compatibility of applications against the versions of Spring Boot libraries supported by Red Hat Runtimes.
+These rules are executed when the `rhr` target is selected in the {ProductShortName} analysis configuration.
+
+////
+[IMPORTANT]
+====
+Technology Preview features are not supported with Red Hat production
+service level agreements (SLAs), might not be functionally complete, and
+Red Hat does not recommend to use them for production. These features
+provide early access to upcoming product features, enabling customers to
+test functionality and provide feedback during the development process.
+
+See link:{KBArticleTechnologyPreview}[Technology Preview Features Support
+Scope] on the Red Hat Customer Portal for information about the
+support scope for Technology Preview features.
+====
+////

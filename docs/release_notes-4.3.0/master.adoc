@@ -13,20 +13,28 @@ include::topics/release-notes-introduction.adoc[leveloffset=+1]
 
 == New Features
 
-// Java 11 Support
-include::topics/jdk11-support.adoc[leveloffset=+2]
+//Target Runtime Labels
+include::topics/target-runtime-labels.adoc[leveloffset=+2]
 
-// Red Hat JBoss Enterprise Application Platform 7.2 Migration Path
-include::topics/eap72-support.adoc[leveloffset=+2]
+//RHAMT extension for VSCode and Eclipse Che (MVP)
+include::topics/rhamt-extension-vscode-che-mvp.adoc[leveloffset=+2]
 
-// OpenShift Installation Update
-include::topics/openshift-installation-update.adoc[leveloffset=+2]
+//New Rules for migrating Spring Boot to Red Hat Runtimes
+include::topics/new-rules-spring-boot-to-rh-runtimes.adoc[leveloffset=+2]
 
-// Inclusive CSV Report
-include::topics/all-csv-support.adoc[leveloffset=+2]
+//New rule condition <dependency>
+include::topics/new-rule-condition-dependency.adoc[leveloffset=+2]
 
+//Updated Web UI and Reports
+include::topics/updated-web-ui-and-reports.adoc[leveloffset=+2]
+
+//Custom Rules with project and global scope
+include::topics/custom-rules-project-and-global-scope.adoc[leveloffset=+2]
+
+//TODO:
 // Known Issues
 include::topics/known_issues.adoc[leveloffset=+1]
 
+//TODO:
 // Resolved Issues
 include::topics/resolved_issues.adoc[leveloffset=+1]
