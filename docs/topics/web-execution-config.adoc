@@ -40,11 +40,30 @@ Custom rules can be maintained for the current {ProductShortName} project (proje
 
 Project custom rules are maintained using the controls below.
 
-The Add button allows the user to select the rules files ([x-]`.windup.xml` or [x-]`.rhamt.xml`).
+The *Add* button allows the user to select the rules files ([x-]`.windup.xml` or [x-]`.rhamt.xml`).
 Selected (checked) rules are shown in the right-hand panel and will be executed during the analysis.
 
 .Custom Rules
 image::web-custom-rules-project.png[The Custom Rules dialog]
+
+See xref:using_custom_rules_and_labels[Using Global Custom Rules and Labels] for maintaining global custom rules.
+
+Custom Labels::
+
+Select which custom labels to use during analysis.
+
+Custom labels can be maintained for the current {ProductShortName} project (project scope) or for all {ProductShortName} projects (global scope).
+
+Project custom rules are maintained using the controls below.
+
+The *Add* button allows the user to select the rules files ([x-]`.windup.label.xml` or [x-]`.rhamt.label.xml`).
+Selected (checked) rules are shown in the right-hand panel and will be executed during the analysis.
+
+.Custom Labels
+image::web-custom-labels-project.png[The Custom Labels dialog]
+
+See xref:using_custom_rules_and_labels[Using Global Custom Rules and Labels] for maintaining global custom labels.
+
 
 Advanced Options::
 
