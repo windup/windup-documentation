@@ -1,7 +1,7 @@
 [[resolved_issues]]
 = Resolved Issues
 
-At the time of the release the following resolved issues have been identified as important issues worth highlighting. For a full list of all issues resolved in this release, see https://issues.jboss.org/issues/?filter=12338777[this JIRA filter].
+At the time of the release the following resolved issues have been identified as important issues worth highlighting. For a full list of all issues resolved in this release, see https://issues.jboss.org/issues/?filter=12341415[the {ProductVersion} known issues JIRA filter].
 
 .Resolved Issues
 [cols="20%,80%",options="header"]
@@ -9,19 +9,32 @@ At the time of the release the following resolved issues have been identified as
 |ID
 |Summary
 
-|link:https://issues.jboss.org/browse/WINDUP-2277[WINDUP-2277]
-|RHAMT on Openshift - Package Discovery service causes the WebUi Pod to run out of memory
+|link:https://issues.jboss.org/browse/WINDUP-2292[WINDUP-2292]
+|{ProductShortName} on OpenShift: Change suggested {ProductShortName} Web UI URL
 
-|link:https://issues.jboss.org/browse/WINDUP-2238[WINDUP-2238]
-|Warnings are shown when launching web console
+|link:https://issues.jboss.org/browse/WINDUP-2332[WINDUP-2332]
+|{ProductShortName} on OpenShift: Application List Filtering/Labelling to support Target Runtime Selection
 
-|link:https://issues.jboss.org/browse/WINDUP-2177[WINDUP-2177]
-|Enrich mouse over information on tech punch card
+|link:https://issues.jboss.org/browse/WINDUP-2492[WINDUP-2492]
+|{ProductShortName} on OpenShift: Application List Report - Technology Tags
 
-|link:https://issues.jboss.org/browse/WINDUP-1986[WINDUP-1986]
-|Maven plugin should come with a default value for windupVersion
+|link:https://issues.jboss.org/browse/WINDUP-2487[WINDUP-2487]
+|{ProductShortName} on OpenShift: Wrong label in "Included Package" when empty
 
-|link:https://issues.jboss.org/browse/WINDUPRULE-178[WINDUPRULE-178]
-|Non-JPA applications that use Hibernate with JTA must set hibernate.transaction.coordinator_class
+|link:https://issues.jboss.org/browse/WINDUP-2239[WINDUP-2239]
+|Web console User Experience: app upload: Change upload failure errors
+
+|link:https://issues.jboss.org/browse/WINDUP-2027[WINDUP-2027]
+|Web console User Experience: Export all-in-one CSV file from Web console
+
+|link:https://issues.jboss.org/browse/WINDUP-2408[WINDUP-2408]
+|{ProductShortName} Web Console: Package Selection: Application Packages not checked for selection by default
+
+|link:https://issues.jboss.org/browse/WINDUP-2309[WINDUP-2309]
+|{ProductShortName} Web Console: Upgrade Angular
+
+|link:https://issues.jboss.org/browse/WINDUP-2490[WINDUP-2490]
+|{ProductShortName} Web Console: `--userLabelsPath` option appearing in Advanced options
+
 
 |====
