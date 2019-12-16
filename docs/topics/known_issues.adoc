@@ -1,7 +1,7 @@
 [[known_issues]]
 = Known Issues
 
-At the time of the release the following known issues have been identified as important issues worth highlighting. For a full list of all known issues and issues that have been identified since the release, see link:https://issues.jboss.org/issues/?filter=12338778[this JIRA filter].
+At the time of the release the following known issues have been identified as important issues worth highlighting. For a full list of all known issues and issues that have been identified since the release, see link:https://issues.redhat.com/browse/WINDUP-2372?filter=12341413[the {ProductVersion} known issues JIRA filter].
 
 // Component Types:
 // * Web Console
@@ -17,13 +17,25 @@ At the time of the release the following known issues have been identified as im
 |Component
 |Summary
 
+|link:https://issues.redhat.com/browse/WINDUP-2455[WINDUP-2455]
+|Web console
+|{ProductShortName} 4.2.1 web based throws forbidden issue
+
+|link:https://issues.jboss.org/browse/WINDUP-2420[WINDUP-2420]
+|IDE Plugin
+|After analysis, clicking on the _short reports_ link results in a _not found_ page
+
+|link:https://issues.jboss.org/browse/WINDUP-2388[WINDUP-2388]
+|Rule execution - XML-based
+|Pattern matching regular expressions does not work properly
+
+|link:https://issues.redhat.com/browse/WINDUP-2371[WINDUP-2371]
+|Maven Plugin
+|{ProductShortName} is showing HTTP Error `403` Forbidden error when accessing reports.
+
 |link:https://issues.jboss.org/browse/WINDUP-2333[WINDUP-2333]
 |OpenShift
-|Cannot access reports when RHAMT installed on OCP
-
-|link:https://issues.jboss.org/browse/WINDUP-2325[WINDUP-2325]
-|Web Console
-|Unzip install fails due to existence of .failed files
+|Cannot access reports when {ProductShortName} is installed on OCP
 
 |link:https://issues.jboss.org/browse/WINDUP-2304[WINDUP-2304]
 |IDE Plugin
@@ -31,23 +43,23 @@ At the time of the release the following known issues have been identified as im
 
 |link:https://issues.jboss.org/browse/WINDUP-2297[WINDUP-2297]
 |Maven Plugin
-|Dependency conflicts on org.apache.maven:maven-model:jar, causing unexpected code behaviors
+|Dependency conflicts on `org.apache.maven:maven-model:jar`, causing unexpected code behavior
 
 |link:https://issues.jboss.org/browse/WINDUP-2264[WINDUP-2264]
 |IDE Plugin
-|Sometimes the IDE Plugin can't connect to the rhamt server it just spawned
+|The IDE plugin sometimes cannot connect to the {ProductShortName} server it just spawned
 
 |link:https://issues.jboss.org/browse/WINDUP-2147[WINDUP-2147]
 |OpenShift
-|liveness probe for executor pod is tied to web console
+|The liveness probe for the message executor pod is tied to Web console
 
-|link:https://issues.jboss.org/browse/WINDUP-2122[WINDUP-2122]
+|link:https://issues.jboss.org/browse/WINDUP-2010[WINDUP-2122]
 |IDE Plugin
-|Better support for cleanly updating from one version of the plugin to another.
+|Better support for cleanly updating from one version of the plugin to another
 
 |link:https://issues.jboss.org/browse/WINDUP-2025[WINDUP-2025]
-|Web Console
-|Wrong time is displayed on analysis result page when there's an offset between server and client time
+|Web console
+|Incorrect time is displayed on analysis result page when there is an offset between server and client time.
 
 |link:https://issues.jboss.org/browse/WINDUP-2010[WINDUP-2010]
 |IDE Plugin
@@ -57,5 +69,15 @@ At the time of the release the following known issues have been identified as im
 |Web Console
 |Issues in application view: Embedded Framework / library doesn't show file
 
-|====
+|link:https://issues.redhat.com/browse/WINDUP-2494[WINDUP-2494]
+|Reporting
+|{ProductShortName} Reports - Hard Coded IP Address link to Source Report does not have the correct line in focus
 
+|link:https://issues.redhat.com/browse/WINDUP-2463[WINDUP-2463]
+|Web Console
+|{ProductShortName} Web UI - Configuration - Warning about losing changes is displayed when no changes were made to the configuration.
+
+|link:https://issues.redhat.com/browse/WINDUP-2372[WINDUP-2372]
+|Web Console
+|{ProductShortName} Web UI - Configuration - Warning about losing changes is displayed when no changes were made to the configuration.
+|====
