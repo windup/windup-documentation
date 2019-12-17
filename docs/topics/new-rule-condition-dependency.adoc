@@ -3,18 +3,3 @@
 
 A new rule feature that can check the Group, Artifact and Version on all dependencies of an application.
 This feature was used to develop the xref:new_rules_for_migrating_spring_boot_to_red_hat_runtimes[new Spring Boot ruleset].
-
-////
-[IMPORTANT]
-====
-Technology Preview features are not supported with Red Hat production
-service level agreements (SLAs), might not be functionally complete, and
-Red Hat does not recommend to use them for production. These features
-provide early access to upcoming product features, enabling customers to
-test functionality and provide feedback during the development process.
-
-See link:{KBArticleTechnologyPreview}[Technology Preview Features Support
-Scope] on the Red Hat Customer Portal for information about the
-support scope for Technology Preview features.
-====
-////

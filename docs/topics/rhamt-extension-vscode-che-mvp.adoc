@@ -4,18 +4,3 @@
 This release introduces a Minimum Viable Product version of a {ProductShortName} extension that contains all of the core features required to perform a {ProductShortName} analysis in your development environment.
 For more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[the extension], visit the Visual Studio Markteplace.
 Note, that this release of the {ProductShortName} extension for VSCode and Che is a Minimum Viable Product release, and is still in development.
-
-////
-[IMPORTANT]
-====
-Technology Preview features are not supported with Red Hat production
-service level agreements (SLAs), might not be functionally complete, and
-Red Hat does not recommend to use them for production. These features
-provide early access to upcoming product features, enabling customers to
-test functionality and provide feedback during the development process.
-
-See link:{KBArticleTechnologyPreview}[Technology Preview Features Support
-Scope] on the Red Hat Customer Portal for information about the
-support scope for Technology Preview features.
-====
-////
