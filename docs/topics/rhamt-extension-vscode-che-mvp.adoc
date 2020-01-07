@@ -1,6 +1,7 @@
 [[rhamt_extension_for_visual_studio_code_and_eclipse_che]]
 = {ProductShortName} extension for Visual Studio Code and Eclipse Che
 
-This release introduces a Minimum Viable Product version of a {ProductShortName} extension that contains all of the core features required to perform a {ProductShortName} analysis in your development environment.
-For more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[the extension], visit the Visual Studio Markteplace.
-Note, that this release of the {ProductShortName} extension for VSCode and Che is a Minimum Viable Product release, and is still in development.
+A {ProductShortName} extension for Visual Studio Code and Eclipse Che is available in this release.
+// Future commitments to releasing unfinished components should not be included in the documentation. The inclusion of the following statement has been explicitly requested by PM, and is therefore included anyway:
+The extension is available as a Minimum Viable Product and will be fully documented and supported in a future Release of {ProductShortName}.
+For more information, about link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[the extension] visit the Visual Studio Markteplace.
