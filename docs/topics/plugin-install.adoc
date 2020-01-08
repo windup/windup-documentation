@@ -11,10 +11,10 @@ If you do not already have an existing installation, download link:http://www.ec
 --
 This guide uses _IDE_ to refer to an installation of Eclipse or Red Hat Red Hat CodeReady Studio.
 
-{ProductShortName} extensions are also available for Visual Studio Code and Eclipse Che.
-A Minimum Viable Product release of these extensions is provided in this release of {RHAMT}, and the extesions are not supported for use in production environments.
-
-You can find more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[the extension] on the Visual Studio Marketplace.
+A Minimum Viable Product release of a {ProductShortName} extension for Visual Studio Code and Eclipse Che is available in this release.
+The extension contains all of the core features required to perform a {ProductShortName} analysis in your development environment.
+For more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[the extension], visit the Visual Studio Markteplace.
+Note, that this release of the {ProductShortName} extension for Visual Studio Code and Eclipse Che is a Minimum Viable Product release, and is still in development.
 --
 
 
