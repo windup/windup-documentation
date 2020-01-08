@@ -3,9 +3,10 @@
 
 The {PluginName} for {ProductName} provides assistance directly in Eclipse and Red Hat CodeReady Studio for developers making changes for a migration or modernization effort. It analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
 
-A {ProductShortName} extension is also available for Visual Studio Code and Eclipse Che.
-The 4.3.0 product release introduces a Minimum Viable Product version of a RHAMT extension that contains all of the core features required to perform a RHAMT analysis within an IDE.
-For more information, about link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[the extension] visit the Visual Studio Markteplace.
+A Minimum Viable Product release of a {ProductShortName} extension for Visual Studio Code and Eclipse Che is availbale in this release.
+The extension contains all of the core features required to perform a {ProductShortName} analysis in your development environment.
+For more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[the extension], visit the Visual Studio Markteplace.
+Note, that this release of the {ProductShortName} extension for Visual Studio Code and Eclipse Che is a Minimum Viable Product release, and is still in development.
 
 ifndef::plugin-guide[]
 For more information on using the {PluginName}, see the {ProductShortName} link:{ProductDocPluginGuideURL}[_{PluginBookName}_].
