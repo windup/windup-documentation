@@ -13,6 +13,9 @@ include::topics/release-notes-introduction.adoc[leveloffset=+1]
 
 == New Features
 
+//New Rules for migrating to JBoss EAP 7.3
+include::topics/new-rules-migrating-eap-7-3.adoc[leveloffset=+2]
+
 //Target Runtime Labels
 include::topics/target-runtime-labels.adoc[leveloffset=+2]
 
