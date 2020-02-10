@@ -6,6 +6,8 @@ include::topics/templates/document-attributes.adoc[]
 
 :imagesdir: topics/images
 :release-notes:
+// Enable this variable to build the document with the appropriate version if the global version attribute value changes
+//:ProductVersion: 4.3.0
 
 = {ReleaseNotesName}
 
