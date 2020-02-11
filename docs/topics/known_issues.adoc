@@ -17,6 +17,55 @@ At the time of the release the following known issues have been identified as im
 |Component
 |Summary
 
+|link:https://issues.redhat.com/browse/WINDUP-2551[WINDUP-2551]
+|Dependencies on Oracle Berkeley DB Code
+|Failure to run {ProductShortName} on Zulu
+
+|link:https://issues.redhat.com/browse/WINDUP-2548[WINDUP-2548]
+|IDE Plugin
+|Unable to select custom rules when analyzing a project
+
+|link:https://issues.redhat.com/browse/WINDUP-2517[WINDUP-2517]
+|Technology Bubble Map
+|Headings and bubbles in the UI are slightly misaligned
+
+|link:https://issues.redhat.com/browse/WINDUP-2502[WINDUP-2502]
+|{ProductShortName} WebUI
+|The Global Custom Rules can appear in the Project level select custom rules panel.
+
+|link:https://issues.redhat.com/browse/WINDUP-2591[WINDUP-2591]
+|{ProductShortName}
+|`exportCSV` does nor generate CSV file when the `skipReports` parameter is set
+
+|link:https://issues.redhat.com/browse/WINDUP-2546[WINDUP-2546]
+|Migration - Application
+|Analysis page does not show which app is being analyzed
+
+|link:https://issues.redhat.com/browse/WINDUP-2545[WINDUP-2545]
+|Migration - Application
+|Once an analysis configuration is created , editing the configuration and Saving it should show some notification
+
+|link:https://issues.redhat.com/browse/WINDUP-2519[WINDUP-2519]
+|link:https://issues.redhat.com/browse/WINDUP-2296[WINDUP-2296]
+|link:https://issues.redhat.com/browse/WINDUP-2251[WINDUP-2251]
+|link:https://issues.redhat.com/browse/WINDUP-2247[WINDUP-2247]
+|link:https://issues.redhat.com/browse/WINDUP-2246[WINDUP-2246]
+|link:https://issues.redhat.com/browse/WINDUP-2244[WINDUP-2244]
+|link:https://issues.redhat.com/browse/WINDUP-2197[WINDUP-2197]
+|link:https://issues.redhat.com/browse/WINDUP-2163[WINDUP-2163]
+|link:https://issues.redhat.com/browse/WINDUP-2121[WINDUP-2121]
+|link:https://issues.redhat.com/browse/WINDUP-2045[WINDUP-2045]
+|link:https://issues.redhat.com/browse/WINDUP-2044[WINDUP-2044]
+|link:https://issues.redhat.com/browse/WINDUP-1976[WINDUP-1976]
+|link:https://issues.redhat.com/browse/WINDUP-1907[WINDUP-1907]
+|link:https://issues.redhat.com/browse/WINDUP-2493[WINDUP-2493]
+|link:https://issues.redhat.com/browse/WINDUP-2313[WINDUP-2313]
+|link:https://issues.redhat.com/browse/WINDUP-2102[WINDUP-2102]
+
+
+
+
+
 |link:https://issues.redhat.com/browse/WINDUP-2455[WINDUP-2455]
 |Web console
 |{ProductShortName} 4.2.1 web based throws forbidden issue
