@@ -5,16 +5,24 @@ Review the xref:supported_configs[supported configurations] to make sure that yo
 
 NOTE: If you are running macOS, it is recommended to set the maximum number of user processes, `maxproc`, to at least `2048`, and the maximum number of open files, `maxfiles`, to `100000`.
 
+<<<<<<< HEAD
+If you do not already have an existing installation, download link:http://www.eclipse.org/downloads/[Eclipse] or link:https://developers.redhat.com/products/devstudio/download/[Red Hat CodeReady Studio] and install it.
+
+NOTE: This guide uses _Eclipse_ to refer to an installation of Eclipse or Red Hat CodeReady Studio.
+=======
 If you do not already have an existing installation, download link:http://www.eclipse.org/downloads/[Eclipse] or link:https://developers.redhat.com/products/codeready-studio/download/[Red Hat CodeReady Studio] and install it.
 
 [NOTE]
 --
 This guide uses _IDE_ to refer to an installation of Eclipse or Red Hat CodeReady Studio.
 
-There is a {ProductShortName} extension for Visual Studio Code and Eclipse Che.
-The extension is only available as a Minimum Viable Product and will be fully documented and supported in a future Release of {ProductShortName}.
-For more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[the extension], visit the Visual Studio Marketplace.
+{ProductShortName} extensions are also available for Visual Studio Code Eclipse Che.
+A Minimum Viable Product release of these extensions is provided in this release of {RHAMT}, and the extesions are not supported for use in production environments.
+
+You can find more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[the extension] on the Visual Studio Marketplace.
 --
+
+>>>>>>> Rename Devstudio to CodeReady Studio, rename Eclipse Plguin to IDE Plugin, update supported configs
 
 .Prerequisites
 
@@ -22,7 +30,7 @@ For more information about link:https://marketplace.visualstudio.com/items?itemN
 
 .Install the Plugin
 
-. Launch Eclipse.
+. Launch your IDE.
 . From the menu bar, select *Help* -> *Install New Software*.
 . Add the {ProductShortName} update site.
 .. Next to the *Work with* field, click *Add*.
@@ -35,8 +43,13 @@ For more information about link:https://marketplace.visualstudio.com/items?itemN
 
 .Install the Plugin for an Offline Environment
 
+<<<<<<< HEAD
+. Download the link:{ProductDownloadURL}{EclipsePluginFilename}-{ProductVersion}.zip[IDE Plugin Repository].
+. Launch Eclipse.
+=======
 . Download the link:{ProductDownloadURL}{IDEPluginFilename}-{ProductVersion}.zip[IDE Plugin Repository].
 . Launch your IDE.
+>>>>>>> Rename Devstudio to CodeReady Studio, rename Eclipse Plguin to IDE Plugin, update supported configs
 . From the menu bar, select *Help* -> *Install New Software*.
 . Add the {ProductShortName} update site.
 .. Next to the *Work with* field, click *Add*.
