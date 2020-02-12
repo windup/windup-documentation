@@ -1,7 +1,7 @@
 [[resolved_issues]]
 = Resolved Issues
 
-At the time of the release the following resolved issues have been identified as important issues worth highlighting. For a full list of all issues resolved in this release, see https://issues.jboss.org/issues/?filter=12341415[the {ProductVersion} known issues JIRA filter].
+At the time of the release the following resolved issues have been identified as important issues worth highlighting. For a full list of all issues resolved in this release, see https://issues.redhat.com/browse/WINDUP-2372?filter=12344480[the {ProductVersion} known issues JIRA filter].
 
 .Resolved Issues
 [cols="25%,75%",options="header"]
@@ -9,32 +9,19 @@ At the time of the release the following resolved issues have been identified as
 |ID
 |Summary
 
-|link:https://issues.jboss.org/browse/WINDUP-2292[WINDUP-2292]
-|{ProductShortName} on OpenShift: Change suggested {ProductShortName} Web UI URL
+|link:https://issues.jboss.org/browse/WINDUP-2372[WINDUP-2372]
+|Bubble report does not order by Stats columns
 
-|link:https://issues.jboss.org/browse/WINDUP-2332[WINDUP-2332]
-|{ProductShortName} on OpenShift: Application List Filtering/Labelling to support Target Runtime Selection
+|link:https://issues.jboss.org/browse/WINDUP-1966[WINDUP-1966]
+|Add multi-column sorting to the Technology reports screen
 
-|link:https://issues.jboss.org/browse/WINDUP-2492[WINDUP-2492]
-|{ProductShortName} on OpenShift: Application List Report - Technology Tags
+|link:https://issues.jboss.org/browse/WINDUP-2525[WINDUP-2525]
+|`<where>` parameter in `<artifact>` condition does not work
 
-|link:https://issues.jboss.org/browse/WINDUP-2487[WINDUP-2487]
-|{ProductShortName} on OpenShift: Wrong label in "Included Package" when empty
+|link:https://issues.jboss.org/browse/WINDUP-2518[WINDUP-2518]
+|Misaligned labels and support information text not shown in the Application List
 
-|link:https://issues.jboss.org/browse/WINDUP-2239[WINDUP-2239]
-|Web console User Experience: app upload: Change upload failure errors
-
-|link:https://issues.jboss.org/browse/WINDUP-2027[WINDUP-2027]
-|Web console User Experience: Export all-in-one CSV file from Web console
-
-|link:https://issues.jboss.org/browse/WINDUP-2408[WINDUP-2408]
-|{ProductShortName} Web Console: Package Selection: Application Packages not checked for selection by default
-
-|link:https://issues.jboss.org/browse/WINDUP-2309[WINDUP-2309]
-|{ProductShortName} Web Console: Upgrade Angular
-
-|link:https://issues.jboss.org/browse/WINDUP-2490[WINDUP-2490]
-|{ProductShortName} Web Console: `--userLabelsPath` option appearing in Advanced options
-
+|link:https://issues.jboss.org/browse/WINDUPRULE-459[WINDUPRULE-459]
+|Update docs link to the `move-to-microprofile-rest-client-1.3` rule section in the EAP 7.3 Migration Guide
 
 |====
