@@ -17,11 +17,9 @@ At the time of the release the following known issues have been identified as im
 |Component
 |Summary
 
-
-
 |link:https://issues.redhat.com/browse/WINDUP-2593[WINDUP-2593]
 |Migration - Application
-|rule java-glassfish-groovy-01000 throws exception while testing the maven plugin for weblogic-jms
+|Rule `java-glassfish-groovy-01000` throws exception while testing the maven plugin for `weblogic-jms`
 
 |link:https://issues.redhat.com/browse/WINDUP-2420[WINDUP-2420]
 |Web UI
