@@ -1,7 +1,7 @@
-[[review_reports]]
+[id='review_reports_{context}']
 = Review the Reports
 
-The report examples shown in the following sections are a result of analyzing the `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example application, which is located in the {ProductShortName} GitHub source repository. 
+The report examples shown in the following sections are a result of analyzing the `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example application, which is located in the {ProductShortName} GitHub source repository.
 
 ifdef::cli-guide[]
 The report was generated using the following command.
@@ -141,7 +141,7 @@ Access this report from the dashboard by clicking the *Issues* link.
 This report includes details about every issue that was raised by the selected migration paths. The following information is provided for each issue encountered.
 
 * A title to summarize the issue.
-* The total number of incidents, or times the issue was encountered. 
+* The total number of incidents, or times the issue was encountered.
 * The xref:rule_story_points[rule story points] to resolve a single instance of the issue.
 * The estimated level of effort to resolve the issue.
 * The total story points to resolve every instance encountered. This is calculated by multiplying the number of incidents found by the story points per incident.
@@ -153,7 +153,7 @@ Each reported issue may be expanded, by clicking on the title, to obtain additio
 
 * A list of files where the incidents occurred, along with the number of incidents within each file. If the file is a Java source file, then clicking the filename will direct you to the corresponding xref:source_report[Source Report].
 * A detailed description of the issue. This description outlines the problem, provides any known solutions, and references supporting documentation regarding either the issue or resolution.
-* A direct link, entitled *Show Rule*, to the rule that generated the issue. 
+* A direct link, entitled *Show Rule*, to the rule that generated the issue.
 
 .Expanded Issue
 image::report-jee-example-application-issues-2.png[Expanded Rule in the Issues Report]
@@ -249,7 +249,7 @@ Access this report from the report landing page by clicking the *Technologies* l
 
 This report provides an aggregate listing of the technologies used, grouped by function, for the analyzed applications. It shows how the technologies are distributed, and is typically reviewed after analyzing a large number of applications to group the applications and identify patterns. It also shows the size, number of libraries, and story point totals of each application.
 
-Clicking any of the headers, such as *Markup*, sorts the results in descending order. Selecting the same header again will resort the results in ascending order. The currently selected header is identified in bold, next to a directional arrow, indicating the direction of the sort. 
+Clicking any of the headers, such as *Markup*, sorts the results in descending order. Selecting the same header again will resort the results in ascending order. The currently selected header is identified in bold, next to a directional arrow, indicating the direction of the sort.
 
 .Technologies Used Across Multiple Applications
 image::technology-report-overview.png[Technologies Used Across Multiple Applications]
