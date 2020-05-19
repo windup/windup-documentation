@@ -1,0 +1,31 @@
+[[report_issues]]
+= Report Issues with {ProductShortName}
+
+{ProductName} uses JIRA as its issue tracking system. If you encounter an issue executing {ProductShortName}, please file a JIRA Issue.
+
+NOTE: If you do not have one already, you must sign up for a JIRA account in order to create a JIRA issue.
+
+== Create a JIRA Issue
+
+. Open a browser and navigate to the JIRA link:https://issues.jboss.org/secure/CreateIssue!default.jspa[Create Issue] page.
++
+If you have not yet logged in, click the *Log In* link at the top right side of the page and enter your credentials.
+
+. Choose the following options and click the *Next* button.
+
+* *Project*
++
+For core {ProductShortName} issues, choose _Red Hat Application Migration Toolkit (WINDUP)_.
++
+For issues with {ProductShortName} rules, choose: _Red Hat Application Migration Toolkit rules (WINDUPRULE)_.
+
+* *Issue Type*:  _Bug_
+
+. On the next screen complete the following fields.
+
+* *Summary*: Enter a brief description of the problem or issue.
+* *Environment*: Provide the details of your operating system, version of Java, and any other pertinent information.
+* *Description*: Provide a detailed description of the issue. Be sure to include logs and exceptions traces.
+* *Attachment*: If the application or archive causing the issue does not contain sensitive information and you are comfortable sharing it with the {ProductShortName} development team, attach it to the issue using the *browse* button.
+
+. Click the *Create* button to create the JIRA issue.

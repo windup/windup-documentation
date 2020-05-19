@@ -1,0 +1,6 @@
+[[about_home_var]]
+= Use of `MTA_HOME` in This Guide
+
+This guide uses the `__MTA_HOME__` replaceable variable to denote the path to your {ProductShortName} installation. The installation directory is the `{ProductDistribution}` directory where you extracted the {ProductShortName} ZIP distribution.
+
+When you encounter `__MTA_HOME__` in this guide, be sure to replace it with the actual path to your {ProductShortName} installation.

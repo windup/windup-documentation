@@ -1,0 +1,166 @@
+[[create_basic_xml_rule]]
+= Create a Basic XML Rule
+
+This section describes how to create an {ProductShortName} XML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
+
+== Create the Basic XML Rule Template
+
+{ProductShortName} XML rules consist of _conditions_ and _actions_ and use the following rule pattern.
+
+[source,options="nowrap"]
+----
+when(condition)
+  perform(action)
+otherwise(action)
+----
+
+Create a file with the following contents, which is the basic syntax for XML rules.
+
+IMPORTANT: The {ProductShortName} XML rule file must use the `.windup.xml` or `.mta.xml` extension, otherwise the rule will not be evaluated.
+
+[source,xml,options="nowrap"]
+----
+<?xml version="1.0"?>
+<ruleset id="unique-ruleset-id"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        <!-- Metadata about the rule including a description,
+             source technology, target technology, and any
+             add-on dependencies -->
+    </metadata>
+    <rules>
+        <rule id="unique-ruleset-id-01000">
+            <when>
+                <!-- Test a condition... -->
+            </when>
+            <perform>
+                <!-- Perform this action when condition is satisfied -->
+            </perform>
+            <otherwise>
+                <!-- Perform this action when condition is not satisfied -->
+            </otherwise>
+        </rule>
+    <rules>
+</ruleset>
+----
+
+== Create the Ruleset Metadata
+
+The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset. For more information about ruleset metadata, see xref:xml_rule_structure[XML Rule Structure].
+
+.Example Rule <metadata>
+[source,xml,options="nowrap"]
+----
+<ruleset id="unique-ruleset-id"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        <description>
+                This is the description.
+        </description>
+        <dependencies>
+                <addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final"/>
+                <addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final"/>
+        </dependencies>
+        <sourceTechnology id="weblogic" versionRange="(10,12]"/>
+        <sourceTechnology id="ejb" versionRange="(2,3]"/>
+        <targetTechnology id="eap" versionRange="(5,6]"/>
+        <targetTechnology id="ejb" versionRange="(2,3]"/>
+        <tag>require-stateless</tag>
+        <tag>require-nofilesystem-io</tag>
+        <executeAfter>AfterRulesetId</executeAfter>
+        <executeBefore>BeforeRulesetId</executeBefore>
+    </metadata>
+    <rules>
+         ...
+    </rules>
+</ruleset>
+----
+
+== Create the Rule
+
+Individual rules are contained within the `<rules>` element and consist of one or more xref:create_when_condition[when conditions] and xref:create_perform_action[perform actions].
+
+See the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[XML rule schema] for valid rule syntax.
+
+[[create_when_condition]]
+=== Create the Rule When Condition
+
+The XML rule `<when>` element tests for a condition. The following is a list of valid `<when>` conditions.
+
+[cols="1,4", options="header"]
+|====
+|Element
+|Description
+
+|<and>
+|The standard logical _and_ operator.
+
+|<filecontent>
+|Find strings or text within files, for example, properties files.
+
+|<file-mapping>
+|Define file names to internal stored File model.
+
+|<javaclass>
+|Test for a match in a Java class.
+
+|<javaclass-ignore>
+|Exclude javaclass which you would like to ignore in processing discovery.
+
+|<not>
+|The standard logical _not_ operator.
+
+|<or>
+|The standard logical _or_ operator.
+
+|<package-mapping>
+|Define package names to organization or libraries.
+
+|<project>
+|Test for project characteristics, such as dependencies.
+
+|<true>
+|Always match.
+
+|<xmlfile>
+|Test for a match in an XML file.
+
+|====
+
+The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content. This is described in more detail in xref:when_syntax[When Condition Syntax].
+
+[[create_perform_action]]
+=== Create the Rule Perform Action
+
+The XML rule `<perform>` element performs the action when the condition is met. Operations allowed in this section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. The following is a list of valid `<perform>` actions.
+
+[cols="1,4", options="header"]
+|====
+|Element
+|Description
+
+|<classification>
+|This operation adds metadata that is intended to apply to the entire file. For example, if the Java Class is a JMS Message Listener, you might want to add a Classification with the title "JMS Message Listener". Information that would apply to the entire file would go here. Also, if an effort level is set, that information would apply to the entire file.
+
+|<hint>
+|This operation adds metadata to a line within the file. This provides a hint or inline information about how to migrate a section of code.
+
+|<iteration>
+|This specifies to iterate over an implicit or explicit variable defined within the rule.
+
+|<lineitem>
+|This provides a high-level message that will appear in the application overview page.
+
+|<link>
+|This provides an HTML link to additional information or documentation that provides more information about the migration task.
+
+|<xslt>
+|This specifies how to transform an XML file.
+
+|====
+
+The syntax is described in more detail in xref:perform_action_syntax[Perform Action Syntax].

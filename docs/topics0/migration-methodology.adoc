@@ -1,0 +1,15 @@
+[[migration_methodology]]
+= Methodology
+
+Red Hat's recommended methodology is a proven, scalable approach that helps you to incrementally plan and conduct a migration or modernization.
+
+.Red Hat Migration Methodology
+image::MTA_AMM_Methodology_446947_0517_ECE.png[Red Hat Migration Methodology]
+
+The approach consists of the following phases:
+
+Discover:: Explore the technologies and identify concerns, organization requirements and challenges. Discuss options and potential approaches. See xref:discover_phase[Discover Phase] for more details.
+
+Design:: Identify and mitigate the biggest risks from an application, infrastructure, process, and knowledge perspective. Establish a strategy for the solution. Prove the technology and build the business case. See xref:design_phase[Design Phase] for more details.
+
+Deploy:: Scale the modernization or migration iteratively by executing the previously defined strategy according to a well-defined delivery model. See xref:deploy_phase[Deploy Phase] for more details.

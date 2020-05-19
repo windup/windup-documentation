@@ -1,0 +1,20 @@
+[[manually_test_xml_rule]]
+= Manually Test the XML Rule
+
+Instead of writing a test case, it is possible to simply run the XML rule against your application file by running {ProductShortName} in a terminal.
+
+[options="nowrap",subs="+quotes"]
+----
+$ __MTA_HOME__/bin/mta-cli [--sourceMode] --input __INPUT_ARCHIVE_OR_FOLDER__ --output __OUTPUT_REPORT_DIRECTORY__ --target __TARGET_TECHNOLOGY__ --packages __PACKAGE_1__ __PACKAGE_2__ __PACKAGE_N__
+----
+
+You should see the following result:
+
+[options="nowrap",subs="+quotes"]
+----
+Report created: __OUTPUT_REPORT_DIRECTORY__/index.html
+              Access it at this URL: file:///__OUTPUT_REPORT_DIRECTORY__/index.html
+----
+
+More examples of how to run {ProductShortName} are located in the {ProductName} {ProductDocUserGuideURL}[_{UserCLIBookName}_].
+

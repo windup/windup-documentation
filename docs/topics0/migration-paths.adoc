@@ -1,0 +1,58 @@
+[[migration_paths]]
+= Supported Migration Paths
+
+{ProductShortName} supports application migration from several platforms to Red Hat JBoss Enterprise Application Platform (JBoss EAP), and migration from traditional infrastructures to cloud environments. 
+See the below table for currently supported migration paths by {ProductShortName} from your source platform.
+
+.Supported Source Platform Migration Paths
+[cols="30%,25%,25%,20%",options="header"]
+|====
+| Source Platform                    
+| Migration to JBoss EAP 6 
+| Migration to JBoss EAP 7
+| Cloud Readiness footnoteref:[note1,This migration path may run concurrently with another supported migration path.] 
+
+| Oracle® WebLogic Server            
+| {icon-check}            
+| {icon-check}
+| {icon-check}
+
+| IBM® WebSphere® Application Server 
+| {icon-check}            
+| {icon-check}
+| {icon-check}
+
+| JBoss EAP 4                        
+| {icon-check} 
+| {icon-x} footnoteref:[note2,Although {ProductShortName} does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform.]
+| {icon-check}
+
+| JBoss EAP 5                        
+| {icon-check} 
+| {icon-check}
+| {icon-check}
+
+| JBoss EAP 6                        
+| N/A 
+| {icon-check}
+| {icon-check}
+
+| JBoss EAP 7
+| N/A
+| N/A
+| {icon-check}
+
+|====
+
+In addition, the {ProductShortName} can be used to migrate from third party JDKs to Red Hat's OpenJDK. The following table displays all supported JDK migration paths.
+
+.Supported JDK Migration Paths
+[cols="50%,50%",options="header"]
+|====
+| Source JDK
+| Migration to OpenJDK
+
+| Oracle JDK
+| {icon-check}
+
+|====

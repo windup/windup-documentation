@@ -1,0 +1,72 @@
+[[analysis_configuration]]
+= Specify the Analysis Configuration
+
+Configure the settings for the analysis, such as the transformation path, packages, and other advanced options.
+
+.Configure Analysis
+image::web-configure-analysis.png[Configure Analysis]
+
+Transformation Path::
+
+Select the transformation path for your applications.
+The targets displayed under the Transformation Path heading are the most commonly used options:
+
+* JBoss EAP 7 (`eap:7`)
+
+* JBoss EAP 6 (`eap:6`)
+
+* Containerization (`cloud-readiness`)
+
+* Linux (`linux`)
+
+* Open JDK (`openjdk`)
+
+Other available targets can be selected using the _Advanced Options_ dialogue.
+
+Include Packages::
+
+Select which packages to analyze. If none are selected, all packages will be decompiled and analyzed.
+
+Exclude Packages::
+
+Select which packages to exclude from analysis.
+
+Custom Rules::
+
+Select which custom rulesets to use during analysis.
+//See xref:using_custom_rules[Using Custom Rules] for instructions on registering and removing custom rules.
+
+Custom rules can be maintained for the current {ProductShortName} project (project scope) or for all {ProductShortName} projects (global scope).
+
+Project custom rules are maintained using the controls below.
+
+The *Add* button allows the user to select the rules files ([x-]`.windup.xml` or [x-]`.mta.xml`).
+Selected (checked) rules are shown in the right-hand panel and will be executed during the analysis.
+
+.Custom Rules
+image::web-custom-rules-project.png[The Custom Rules dialog]
+
+See xref:using_custom_rules_and_labels[Using Global Custom Rules and Labels] for maintaining global custom rules.
+
+Custom Labels::
+
+Select which custom labels to use during analysis.
+
+Custom labels can be maintained for the current {ProductShortName} project (project scope) or for all {ProductShortName} projects (global scope).
+
+Project custom rules are maintained using the controls below.
+
+The *Add* button allows the user to select the rules files ([x-]`.windup.label.xml` or [x-]`.mta.label.xml`).
+Selected (checked) rules are shown in the right-hand panel and will be executed during the analysis.
+
+.Custom Labels
+image::web-custom-labels-project.png[The Custom Labels dialog]
+
+See xref:using_custom_rules_and_labels[Using Global Custom Rules and Labels] for maintaining global custom labels.
+
+
+Advanced Options::
+
+Set additional {ProductShortName} options. See the link:{ProductDocUserGuideURL}#command_line_arguments[{ProductShortName} Command-line Arguments] section of the {ProductShortName} _{UserCLIBookName}_ for a description of each {ProductShortName} argument.
+
+Press *Save* to save the analysis configuration, or press *Save & Run* to save and xref:execute[execute the analysis] using these settings.

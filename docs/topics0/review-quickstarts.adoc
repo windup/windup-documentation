@@ -1,0 +1,47 @@
+[[review_quickstarts]]
+= Review the {ProductName} Quickstarts
+
+The {ProductName} quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.
+
+You can xref:download_quickstart_zip[download a ZIP file] of the latest released version of the quickstarts. Or, if you prefer to work with the source code, you can xref:use_quickstart_github_project[fork and clone the `windup-quickstarts` project repository].
+
+Each quickstart has a `README.adoc` file that contains instructions for that quickstart.
+
+[[download_quickstart_zip]]
+[discrete]
+== Download the Latest Quickstart ZIP
+
+. Open a browser and navigate to https://github.com/windup/windup-quickstarts/releases.
+. Click on the most recent release to download the ZIP file to your local file system.
+
+[[use_quickstart_github_project]]
+[discrete]
+== Fork and Clone the Quickstart GitHub Project
+
+You must have the link:http://git-scm.com/[`git`] client installed on your machine.
+
+. Click the `Fork` link on the https://github.com/windup/windup-quickstarts/[{ProductName} quickstart] GitHub page to create the project in your own Git. The forked GitHub repository URL created by the fork should look like this: `\https://github.com/__YOUR_USER_NAME__/windup-quickstarts.git`.
+. Clone your {ProductName} quickstart repository to your local file system:
++
+[options="nowrap",subs="+quotes"]
+----
+$ git clone https://github.com/__YOUR_USER_NAME__/windup-quickstarts.git
+----
+. This creates and populates a `windup-quickstarts` directory on your local file system. Navigate to the newly created directory, for example
++
+[options="nowrap"]
+----
+$ cd windup-quickstarts/
+----
+. If you want to be able to retrieve the latest code updates, add the remote `upstream` repository so you can fetch any changes to the original forked repository.
++
+[options="nowrap"]
+----
+$ git remote add upstream https://github.com/windup/windup-quickstarts.git
+----
+. Get the latest files from the `upstream` repository.
++
+[options="nowrap"]
+----
+$ git fetch upstream
+----

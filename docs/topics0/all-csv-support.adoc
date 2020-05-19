@@ -1,0 +1,8 @@
+[[all_csv_report]]
+= Inclusive CSV Report
+
+When specifying the `--exportCSV` argument, an `AllIssues.csv` file is now
+generated in the root directory of the report.
+
+This file includes all discovered issues, spanning all analyzed applications,
+in addition to the individual CSV files generated per application.
