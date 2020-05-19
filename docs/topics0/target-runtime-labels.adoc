@@ -1,0 +1,6 @@
+[[target_runtime_labels]]
+= Target Runtime Labels (including custom Target Runtime Labels)
+
+The Target Runtime feature assesses all of the Technology Tags identified for each application for compatibility with specific runtimes.
+JBoss EAP and JWS are the two Target Runtime definitions that are included in the {ProductShortName} distribution.
+Target Runtime definitions are extensible enabling you to use custom Target Runtimes in analysis executions.

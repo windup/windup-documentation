@@ -1,0 +1,30 @@
+[[resolved_issues]]
+= Resolved Issues
+
+At the time of the release the following resolved issues have been identified as important issues worth highlighting. For a full list of all issues resolved in this release, see link:https://issues.redhat.com/issues/?filter=12344480[the {ProductVersion} resolved issues JIRA filter].
+
+.Resolved Issues
+[cols="25%,75%",options="header"]
+|====
+|ID
+|Summary
+
+|link:https://issues.jboss.org/browse/WINDUP-2372[WINDUP-2372]
+|Bubble report does not order by Stats columns
+
+|link:https://issues.jboss.org/browse/WINDUP-1966[WINDUP-1966]
+|Add multi-column sorting to the Technology reports screen
+
+|link:https://issues.jboss.org/browse/WINDUP-2525[WINDUP-2525]
+|`<where>` parameter in `<artifact>` condition does not work
+
+|link:https://issues.jboss.org/browse/WINDUP-2518[WINDUP-2518]
+|Misaligned labels and support information text not shown in the Application List
+
+|link:https://issues.redhat.com/browse/WINDUP-2517[WINDUP-2517]
+|Headings and bubbles in the UI are slightly misaligned
+
+|link:https://issues.jboss.org/browse/WINDUPRULE-459[WINDUPRULE-459]
+|Update docs link to the `move-to-microprofile-rest-client-1.3` rule section in the EAP 7.3 Migration Guide
+
+|====

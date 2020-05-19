@@ -1,0 +1,6 @@
+[[use_custom_rules]]
+= Add Custom Rules
+
+By default, the {PluginName} comes with a core set of system rules for identifying migration and modernization issues. You can xref:view_rules[browse the existing rules] from the {PluginName}.
+
+You can also create your own rules for identifying issues specific to your applications. You can either xref:import_custom_ruleset[import an existing custom ruleset] or xref:create_custom_ruleset[create a custom ruleset] directly in the {PluginName}.

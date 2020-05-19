@@ -1,0 +1,95 @@
+// ********************************
+// * Standard document attributes *
+// ********************************
+:toc:
+:toclevels: 3
+:numbered:
+:imagesdir: topics0/images
+:topicsdir: topics0
+
+// *****************
+// * Product names *
+// *****************
+:ProductName: Migration Toolkit for Applications
+:ProductShortName: MTA
+
+// *******************
+// * Component names *
+// *******************
+:CLIName: CLI
+:CLINameTitle: CLI
+
+:WebName: web console
+:WebNameTitle: Web Console
+
+:PluginName: IDE Plugin
+:PluginNameTitle: IDE Plugin
+
+:IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
+
+:MavenName: Maven plugin
+:MavenNameTitle: Maven Plugin
+
+
+// ****************
+// * Doc metadata *
+// ****************
+:DocInfoProductName: Migration Toolkit for Applications
+:DocInfoProductNumber: 5.0
+:DocInfoProductNameURL: migration_toolkit_for_applications
+
+:OpenShiftProductNumber: 4.4
+:ProductVersion: 5.0
+
+:UserCLIBookName: CLI Guide
+:RulesDevBookName: Rules Development Guide
+:PluginBookName: IDE Plugin Guide
+:GettingStartedBookName: Getting Started Guide
+:WebConsoleBookName: Web Console Guide
+:MavenBookName: Maven Plugin Guide
+:ReleaseNotesName: {ProductName} {ProductVersion} Release Notes
+
+
+
+// This book is on GitHub wiki only
+:CoreDevelopmentBookName: Core Development Guide
+
+// ********************
+// * Product versions *
+// ********************
+// Commenting out as these attributes are not currently used:
+// :ProductRelease: 4
+// :ProductVersion: 4.0
+:ProductDistributionVersion: 5.0.Final
+:ProductDistribution: mta-cli-{ProductDistributionVersion}
+:MavenProductVersion: 5.0.Final
+
+// ********
+// * URLs *
+// ********
+
+:ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
+:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
+:ProductDocPluginGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/ide_plugin_guide
+:ProductDocGettingStartedGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/getting_started_guide
+:ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/web_console_guide
+:ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
+:OpenShiftAdminGuideURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}/admin_guide/
+:OpenShiftDevGuideURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}/dev_guide/
+:OpenShiftInstallConfigGuideURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}/install_config/
+:LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
+
+// Point to the GitHub wiki version since there is no product version of this guide.
+:ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
+
+// URL for downloads on developers.redhat.com
+:ProductDownloadURL: https://developers.redhat.com/download-manager/file/
+
+// KBase Article links:
+:KBArticleTechnologyPreview: https://access.redhat.com/support/offerings/techpreview
+
+// *********
+// * Icons *
+// *********
+:icon-check: &#x2714;
+:icon-x: &#x2718;

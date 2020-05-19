@@ -1,0 +1,13 @@
+[[starting_console]]
+= Start the {WebNameTitle}
+
+Run the script to start the {WebName}.
+
+[source,options="nowrap",subs="+quotes"]
+----
+$ __MTA_HOME__/run_mta.sh
+----
+
+NOTE: In a Windows environment, use the `run_mta.bat` script.
+
+You can now xref:access_web_console[access the {WebName}] from a browser.
