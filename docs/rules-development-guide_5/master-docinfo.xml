@@ -1,0 +1,11 @@
+<title>{RulesDevBookName}</title>
+<productname>{DocInfoProductName}</productname>
+<productnumber>{DocInfoProductNumber}</productnumber>
+<subtitle>Create custom rules to enhance migration coverage.</subtitle>
+<abstract>
+    <para>This guide describes how to create custom XML rules for the {ProductName}.</para>
+</abstract>
+<authorgroup>
+    <orgname>Red Hat Customer Content Services</orgname>
+</authorgroup>
+<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
