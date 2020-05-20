@@ -8,7 +8,7 @@ The following steps discuss common techniques for troubleshooting the {WebName} 
 
 == Ensure Latest Image Version
 
-The first step in troubleshooting in an OpenShift environment is to ensure that the latest image is in use. 
+The first step in troubleshooting in an OpenShift environment is to ensure that the latest image is in use.
 
 NOTE: If you have deployed the {WebName} by pasting in a JSON template, then no image stream is created and the following steps are not applicable.
 
@@ -110,7 +110,7 @@ Perform either of the following:
 
 Once the request is within the available quota, attempt the deployment once again.
 
-=== Pod Takes Longer than 600 seconds to become available 
+=== Pod Takes Longer than 600 seconds to become available
 
 After attempting a deployment, the `-deploy` pods timeout and report the following error.
 
@@ -140,7 +140,7 @@ Attempt the deployment again, and view the logs and events of the non deployment
 
 == Report Issues with {WebNameTitle} OpenShift
 
-{ ProductName} uses JIRA as its issue tracking system. If you encounter any issues while using the {WebName}, please file a JIRA Issue by following the below instructions.
+{ProductName} uses JIRA as its issue tracking system. If you encounter any issues while using the {WebName}, please file a JIRA Issue by following the below instructions.
 
 NOTE: If you do not have one already, you must sign up for a JIRA account in order to create a JIRA issue.
 
@@ -150,8 +150,8 @@ If you have not yet logged in, click the *Log In* link at the top right side of 
 
 . Choose the following options and click the *Next* button.
 
-* *Project*: Choose _Red Hat Application Migration Toolkit (WINDUP)_.
-* *Issue Type*: _Bug_
+* *Project*: Choose `{ProductName} (WINDUP)`
+* *Issue Type*: `Bug`
 
 . On the next screen complete the following fields.
 

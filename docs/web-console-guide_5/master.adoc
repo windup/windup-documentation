@@ -1,0 +1,122 @@
+:toc:
+:toclevels: 4
+:numbered:
+
+include::topics_5/templates/document-attributes.adoc[]
+
+:imagesdir: topics_5/images
+:web-console-guide:
+
+= {WebConsoleBookName}
+
+== Introduction
+
+// About the {WebConsoleBookName}
+include::topics_5/about-console-guide.adoc[leveloffset=+2]
+
+// About {ProductName}
+include::topics_5/what-is-the-toolkit.adoc[leveloffset=+2]
+
+// About the {WebNameTitle}
+include::topics_5/about-the-web-console.adoc[leveloffset=+2]
+
+// Installing the {WebNameTitle}
+include::topics_5/web-installing.adoc[leveloffset=+1]
+
+// ZIP Installation
+include::topics_5/web-install-zip.adoc[leveloffset=+2]
+
+// Prerequisites
+include::topics_5/web-zip-prerequisites.adoc[leveloffset=+3]
+
+// Install the {WebNameTitle}
+include::topics_5/web-install.adoc[leveloffset=+3]
+
+// Start the {WebNameTitle}
+include::topics_5/web-start.adoc[leveloffset=+3]
+
+// Access the {WebNameTitle}
+include::topics_5/web-access-console.adoc[leveloffset=+3]
+
+// OpenShift Installation
+include::topics_5/web-install-openshift.adoc[leveloffset=+2]
+
+// Prerequisites
+include::topics_5/web-openshift-env.adoc[leveloffset=+3]
+
+// Understanding the {WebNameTitle} OpenShift Image
+include::topics_5/web-openshift-environment.adoc[leveloffset=+3]
+
+// Deploy the {ProductShortName} Application
+include::topics_5/web-openshift-deploy.adoc[leveloffset=+3]
+
+// Access the {WebNameTitle}
+include::topics_5/web-openshift-access.adoc[leveloffset=+3]
+
+// Troubleshoot the {WebNameTitle} OpenShift Install
+include::topics_5/web-openshift-troubleshoot.adoc[leveloffset=+3]
+
+// Using the {WebNameTitle} to Analyze Applications
+include::topics_5/web-analyze-apps.adoc[leveloffset=+1]
+
+// Add a Project
+include::topics_5/web-add-project.adoc[leveloffset=+2]
+
+// Add Applications to a Project
+include::topics_5/web-add-applications.adoc[leveloffset=+2]
+
+// Specify the Analysis Configuration
+include::topics_5/web-execution-config.adoc[leveloffset=+2]
+
+// Execute
+include::topics_5/web-execute.adoc[leveloffset=+2]
+
+// Viewing the Results of an Analysis
+include::topics_5/web-view-results.adoc[leveloffset=+2]
+
+// Examine Analysis Details
+include::topics_5/web-execution-details.adoc[leveloffset=+3]
+
+// Review the Reports
+include::topics_5/web-review-reports.adoc[leveloffset=+3]
+
+// Web console-specific reports are not included in this release, commenting out for now.
+////
+// Dashboard
+include::topics_5/web-report-dashboard.adoc[leveloffset=+2]
+
+// Application Details
+include::topics_5/web-report-app-details.adoc[leveloffset=+2]
+
+// Issues
+include::topics_5/web-report-issues.adoc[leveloffset=+2]
+
+// Static Reports
+include::topics_5/web-report-static.adoc[leveloffset=+2]
+////
+
+// Using Custom Rules
+include::topics_5/web-custom-rules.adoc[leveloffset=+1]
+
+// Require Authentication for {ProductWebName}
+include::topics_5/web-require-auth.adoc[leveloffset=+1]
+
+// Enable {ProductWebName} to Require Authentication
+include::topics_5/web-enable-auth.adoc[leveloffset=+2]
+
+// Change the Administrative User's Credentials
+include::topics_5/web-change-admin-user.adoc[leveloffset=+2]
+
+// Remove the Default {ProductWebName} User
+include::topics_5/web-remove-default-user.adoc[leveloffset=+2]
+
+// Add a New {ProductWebName} User
+include::topics_5/web-add-user.adoc[leveloffset=+2]
+
+// TODO: eventually add steps for reverting back to no auth required
+
+
+// **********************************
+// * Appendix: Revision Information *
+// **********************************
+include::topics_5/templates/revision-info.adoc[]
