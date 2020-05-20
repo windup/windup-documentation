@@ -8,7 +8,7 @@ Follow these steps to add a new {WebName} user.
 . Make sure that the {WebName} is xref:starting_console[running].
 . Open the Red Hat Single Sign-On administration console.
 * For a ZIP installation:
-.. Navigate to `http://localhost:8080/auth/` in a browser.
+.. Navigate to `\http://localhost:8080/auth/` in a browser.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 * For an OpenShift installation:
 .. Navigate to `__OPENSHIFT_URL__/console/project/mta/overview` in a browser.
