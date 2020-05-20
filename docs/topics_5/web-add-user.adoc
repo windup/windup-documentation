@@ -17,7 +17,7 @@ NOTE: If you renamed the OpenShift project when xref:deploy_mta_app_openshift[de
 .. Click the link in the *SSO HTTPS* application and add "/auth" to the end of the URL.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 . Log in with an administrative user's credentials. The default credentials are `admin` and `password`.
-. In the upper left corner, select the *Rhamt* realm from the drop down.
+. In the upper left corner, select the *mta* realm from the drop down.
 . From the left-side navigation menu, select *Users* and then click *Add user*.
 . Enter the *Username*, *First Name*, *Last Name*, and any other required fields and click *Save*.
 . Once the user has been added, select the *Credentials* tab.
