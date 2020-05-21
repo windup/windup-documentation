@@ -1,0 +1,81 @@
+:toc:
+:toclevels: 4
+:numbered:
+
+include::topics_5/templates/document-attributes.adoc[]
+
+:imagesdir: topics_5/images
+:plugin-guide:
+
+= {PluginBookName}
+
+== Introduction
+
+// About the IDE Plugin Guide
+include::topics_5/plugin-intro.adoc[leveloffset=+2]
+
+// About {ProductName}
+include::topics_5/what-is-the-toolkit.adoc[leveloffset=+2]
+
+// About the {PluginNameTitle}
+include::topics_5/about-plugin.adoc[leveloffset=+2]
+
+// Supported Configurations
+include::topics_5/plugin-supported-configs.adoc[leveloffset=+2]
+
+// Install the IDE Plugin
+include::topics_5/plugin-install.adoc[leveloffset=+1]
+
+// Access the {ProductShortName} IDE Tools
+include::topics_5/plugin-access-windup-tools.adoc[leveloffset=+1]
+
+// Windup IDE Plugin Components
+include::topics_5/plugin-components.adoc[leveloffset=+2]
+
+// Identify and Resolve Migration Issues with Windup
+include::topics_5/plugin-identify-resolve-issues.adoc[leveloffset=+1]
+
+// Create a Windup Run Configuration
+include::topics_5/plugin-create-config.adoc[leveloffset=+2]
+
+// Execute Windup
+include::topics_5/plugin-run-windup.adoc[leveloffset=+2]
+
+// Review Windup Issues
+include::topics_5/plugin-review-issues.adoc[leveloffset=+2]
+
+// Resolve Windup Issues
+include::topics_5/plugin-resolve-issues.adoc[leveloffset=+2]
+
+// TODO: Uncomment when uninstalling works and this is ready
+// include::topics_5/plugin-uninstall.adoc[leveloffset=+1]
+
+// Add Custom Rules
+include::topics_5/plugin-use-custom-rules.adoc[leveloffset=+1]
+
+// Browse Rules
+include::topics_5/plugin-view-rules.adoc[leveloffset=+2]
+
+// Import a Custom Ruleset
+include::topics_5/plugin-import-custom-ruleset.adoc[leveloffset=+2]
+
+// Create a Custom Ruleset
+include::topics_5/plugin-create-custom-ruleset.adoc[leveloffset=+2]
+
+// Submit a Custom Ruleset
+include::topics_5/eclipse-submit-ruleset.adoc[leveloffset=+2]
+
+[appendix]
+== Reference Material
+
+include::topics_5/plugin-icon-legend.adoc[leveloffset=+2]
+
+include::topics_5/install-jboss-tools.adoc[leveloffset=+2]
+
+// **********************************
+// * Appendix: Revision Information *
+// **********************************
+include::topics_5/templates/revision-info.adoc[]
+
+// Workaround for PDF generation build failure
+{nbsp}
