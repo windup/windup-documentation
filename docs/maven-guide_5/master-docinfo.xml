@@ -1,9 +1,9 @@
-<title>{GettingStartedBookName}</title>
+<title>{UserMavenBookName}</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>Learn how to use the {ProductName} to migrate and modernize Java applications and components.</subtitle>
+<subtitle>Integrate the {ProductName} into the Maven build process.</subtitle>
 <abstract>
-    <para>This guide provides information to help you get started with the {ProductName}.</para>
+    <para>This guide describes how to use the {ProductName} {MavenName} to simplify migration of Java applications.</para>
 </abstract>
 <authorgroup>
     <orgname>Red Hat Customer Content Services</orgname>
