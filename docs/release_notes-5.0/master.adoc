@@ -1,0 +1,32 @@
+:toc:
+:toclevels: 4
+:numbered:
+
+include::topics_5/templates/document-attributes.adoc[]
+
+:imagesdir: topics_5/images
+:release-notes:
+
+= {ReleaseNotesName}
+
+include::topics_5/release-notes-introduction.adoc[leveloffset=+1]
+
+== New Features
+
+TBD
+
+//TODO:
+// Known Issues
+== Known {ProductShortName} Issues
+
+You can review known issues for {ProductShortName} here: link:https://issues.jboss.org/issues/?jql=project%20%3D%20WINDUP%20AND%20issuetype%20%3D%20Bug%20AND%20status%20in%20%28Open%2C%20%22Coding%20In%20Progress%22%2C%20Reopened%2C%20%22Pull%20Request%20Sent%22%29[Open {ProductShortName} issues].
+
+include::topics_5/known_issues.adoc[leveloffset=+2]
+
+== Resolved Issues
+
+At the time of the release the following resolved issues have been identified as important issues worth highlighting. For a full list of all issues resolved in this release, see the link:https://issues.redhat.com/issues/?filter=12344480[{ProductVersion} resolved issues JIRA filter].
+
+//TODO:
+// Resolved Issues
+include::topics_5/resolved_issues.adoc[leveloffset=+2]
