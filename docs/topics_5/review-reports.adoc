@@ -116,7 +116,7 @@ The top navigation bar lists the various reports that contain additional details
 | Displays all server resources (for example, JNDI resources) in the input application.
 
 | Spring Beans
-| Contains a list of Spring beans found during the analysis.
+| Contains a list of Spring Beans found during the analysis.
 
 | Hard-coded IP Addresses
 | Provides a list of all hard-coded IP addresses that were found in the application.
@@ -285,23 +285,23 @@ image::shared-archives-app-list.png[Archives Shared by Multiple Applications]
 This allows you to view the detailed reports for all archives that are shared across multiple applications.
 
 [[review-the-report-rule-provider-executions-report]]
-== Rule Provider Execution Overview
+== Rule Providers Execution Overview
 
 Access this report from the report landing page by clicking the *Rule providers execution overview* link.
 
 This report provides the list of rules that executed when running the {ProductShortName} migration command against the application.
 
-.Rule Provider Execution Overview
+.Rule Providers Execution Overview
 image::report-jee-example-ruleprovider.png[Rule Provider Execution Overview]
 
 [[review-the-report-freemarker-report]]
 == Used FreeMarker Functions and Directives
 
-Access this report from the report landing page by clicking the *{ProductName} FreeMarker methods* link.
+Access this report from the report landing page by clicking the *FreeMarker methods* link.
 
 This report lists all the registered functions and directives that were used to build the report. It is useful for debugging purposes or if you plan to build your own custom report.
 
-.FreeMarker Functions and Directives
+.Used FreeMarker Functions and Directives
 image::report-jee-example-freemarker-and-directives.png[FreeMarker Functions and Directives]
 
 [[review-the-report-send-feedback]]
