@@ -9,18 +9,15 @@ The path to the directory created by unzipping this file is referred to as `_MTA
 +
 image::openshift-console.png[]
 
-. Click the `Import YAML / JSON` button in the top-right corner of the web console.
-. Provide the following information in the window that appears, as seen below.
-+
-image::openshift-import-template.png[]
-.. Define a `Project Name`, such as `mta`.
-.. Optionally, define a `Project Display Name` to help describe the project.
-.. Optionally, define a `Project Description` to help provide context on how the project will be used.
-.. Click the **Browse** button and import the desired {WebName} template. These are included in `__MTA_HOME__/openshift/templates`. Once imported, the JSON is visible in the bottom text area.
-. Click the **Create** button to proceed to the next screen.
+. Click `Import YAML / JSON` in the top-right corner of the web console and in the window that opens:
+.. Specify the `Project Name` (for example, `mta`).
+.. Optional: Specify a `Project Display Name` to define how the project's name will appear onscreen.
+.. Optional: Specify a `Project Description`.
+.. Click **Browse** and navigate to `__MTA_HOME__/openshift/templates` to import the desired {WebName} template. Once imported, the JSON is visible in the lower text area.
+. Click **Create** to proceed to the next screen.
 . If you would like to save the template as a resource for future projects, check the `Save template` box.
-. Click the **Continue** button to proceed to the next screen.
+. Click **Continue** to proceed to the next screen.
 . Review the default values provided, adjusting as necessary. For instance, the `web-template-empty-dir-executor.json` file defines 2 CPUs, 4GB of memory, and a 20GB persistent volume.
-. Click the **Create** button to import the template into your project.
+. Click **Create** to import the template into your project.
 
 Once completed, you can xref:access_console_openshift[access the web console] from a browser.

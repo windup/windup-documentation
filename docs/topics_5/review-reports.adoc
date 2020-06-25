@@ -285,13 +285,13 @@ image::shared-archives-app-list.png[Archives Shared by Multiple Applications]
 This allows you to view the detailed reports for all archives that are shared across multiple applications.
 
 [[review-the-report-rule-provider-executions-report]]
-== Rule Provider Execution Overview
+== Rule Providers Execution Overview
 
 Access this report from the report landing page by clicking the *Rule providers execution overview* link.
 
 This report provides the list of rules that executed when running the {ProductShortName} migration command against the application.
 
-.Rule Provider Execution Overview
+.Rule Providers Execution Overview
 image::report-jee-example-ruleprovider.png[Rule Provider Execution Overview]
 
 [[review-the-report-freemarker-report]]
