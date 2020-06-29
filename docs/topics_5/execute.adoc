@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
-[[execute]]
+[id='execute_{context}']
 = Run the {CLINameTitle}
 
 Use the following steps to run {ProductShortName} against your application.
@@ -13,27 +13,22 @@ Use the following steps to run {ProductShortName} against your application.
 $ ./mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --source weblogic --target eap:6 --packages com.acme org.apache
 ----
 +
-* `--input`: The application to be evaluated. See the xref:input_argument[`--input`] argument description.
-* `--output`: The output directory for the generated reports. See the xref:output_argument[`--output`] argument description.
-* `--source`: The source technology for the application migration. See the xref:source_argument[`--source`] argument description.
-* `--target`: The target technology for the application migration. See the xref:target_argument[`--target`] argument description.
-* `--packages`: The packages to be evaluated. This argument is highly recommended to improve performance. See the xref:packages_argument[`--packages`] argument description.
+* `--input`: The application to be evaluated.
+* `--output`: The output directory for the generated reports.
+* `--source`: The source technology for the application migration.
+* `--target`: The target technology for the application migration.
+* `--packages`: The packages to be evaluated. This argument is highly recommended to improve performance.
 
-+
-See xref:command_line_arguments[{ProductShortName} Command-line Arguments] for a detailed description of all available command-line arguments.
-
-. xref:access_report[Access the report].
-
-See xref:command-examples[{ProductShortName} Command Examples] below for examples of commands that use source code directories and archives located in the {ProductShortName} GitHub repository.
+. Access the report.
 
 [discrete]
-[[command-examples]]
+[id='command-examples_{context}']
 == {ProductShortName} Command Examples
 
 [discrete]
 === Running {ProductShortName} on an Application Archive
 
-The following command analyzes the `com.acme` and `org.apache` packages of the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7.
+The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7.
 
 [source,options="nowrap",subs="+quotes"]
 ----
@@ -43,7 +38,7 @@ $ __MTA_HOME__/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /
 [discrete]
 === Running {ProductShortName} on Source Code
 
-The following command analyzes the `org.jboss.seam` packages of the https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] example source code for migrating to JBoss EAP 6.
+The following command analyzes the `org.jboss.seam` packages of the link:https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] example source code for migrating to JBoss EAP 6.
 
 [source,options="nowrap",subs="+quotes"]
 ----
@@ -53,7 +48,7 @@ $ __MTA_HOME__/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ --out
 [discrete]
 === Running Cloud-readiness Rules
 
-The following command analyzes the `com.acme` and `org.apache` packages of the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness.
+The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness.
 
 [source,options="nowrap",subs="+quotes"]
 ----
@@ -71,10 +66,10 @@ $ __MTA_HOME__/bin/mta-cli -Dwindup.decompiler=procyon --input __INPUT_ARCHIVE_O
 ----
 
 [discrete]
-[[cli_bash_completion]]
+[id='cli_bash_completion_{context}']
 == {ProductShortName} {CLINameTitle} Bash Completion
 
-The {ProductShortName} {CLIName} provides an option to enable bash completion for Linux systems, allowing the xref:command_line_arguments[{ProductShortName} command-line arguments] to be auto completed by pressing Tab when entering the commands. For instance, when bash completion is xref:bash_completion_temporary[enabled], entering the following displays a list of available arguments.
+The {ProductShortName} {CLIName} provides an option to enable bash completion for Linux systems, allowing the {ProductShortName} command-line arguments to be auto completed by pressing the Tab key when entering the commands. For instance, when bash completion is enabled, entering the following displays a list of available arguments.
 
 [source,options="nowrap",subs="+quotes"]
 ----
@@ -82,10 +77,10 @@ $ __MTA_HOME__/bin/mta-cli [TAB]
 ----
 
 [discrete]
-[[bash_completion_temporary]]
+[id='bash_completion_temporary_{context}']
 === Enable Bash Completion
 
-To enable bash completion for the current shell, execute the following command. After the prompt returns, follow the steps in xref:execute[Run the {CLIName}].
+To enable bash completion for the current shell, execute the following command. After the prompt returns, follow the steps for using the {CLIName}.
 
 [source,options="nowrap",subs="+quotes"]
 ----
@@ -93,10 +88,10 @@ $ source __MTA_HOME__/bash-completion/mta-cli
 ----
 
 [discrete]
-[[bash_completion_persistent]]
+[id='bash_completion_persistent_{context}']
 === Enable Persistent Bash Completion
 
-The following commands allow bash completion to persist across restarts; however, if bash completion is desired for the current shell then the steps in xref:bash_completion_temporary[Enable Bash Completion] must be followed.
+The following commands allow bash completion to persist across restarts:
 
 * To enable bash completion for a specific user across system restarts, include the following line in that user's `~/.bashrc` file.
 +

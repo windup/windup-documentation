@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
 // * docs/maven-guide_5/master.adoc
-[[get_involved]]
+[id='get_involved_{context}']
 = Get Involved
 
 To help make {ProductName} cover most application constructs and server configurations, including yours, you can help with any of the following items.
@@ -11,7 +11,7 @@ To help make {ProductName} cover most application constructs and server configur
 * Identify application components and problem areas that may be difficult to migrate.
 ** Write a short description of these problem migration areas.
 ** Write a brief overview describing how to solve the problem migration areas.
-* Try {ProductName} on your application. Be sure to xref:report_issues[report any issues] you encounter.
+* Try {ProductName} on your application. Be sure to report any issues you encounter.
 * Contribute to the {ProductName} rules repository.
 ** Write a {ProductName} rule to identify or automate a migration process.
 ** Create a test for the new rule.

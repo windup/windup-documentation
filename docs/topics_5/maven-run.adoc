@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/maven-guide_5/master.adoc
-[[execute]]
+[id='execute_{context}']
 = Run the {MavenNameTitle}
 
 The {MavenName} is executed by including a reference to the plugin inside your application's `pom.xml`. When the application is built, the {MavenName} is executed and generates the reports for analysis.
@@ -34,7 +34,7 @@ To run the {MavenName} perform the following steps.
 +
 * `offlineMode`: Indicates to run in offline mode, disabling network features to improve performance.
 +
-The above example demonstrates the minimum required arguments. See xref:maven_arguments[{ProductShortName} Maven Arguments] for a detailed description of all available arguments.
+The above example demonstrates the minimum required arguments.
 
 . If using Java 11, then `--add-modules=java.se` must be added to the `MAVEN_OPTS` environment variable. When using older versions of Java this is not necessary, and you can proceed to the next step.
 +
@@ -57,4 +57,4 @@ See link:{KBArticleTechnologyPreview}[Technology Preview Features Support Scope]
 $ mvn clean install
 ----
 
-. xref:access_report[Access the generated reports].
+. Access the generated reports.

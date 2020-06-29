@@ -1,4 +1,4 @@
-[[openjdk_migration]]
+[id='openjdk_migration_{context}']
 = OracleJDK to OpenJDK Migration Path
 
 {ProductShortName} now supports the OracleJDK to OpenJDK migration path when performing your migrations. This is accomplished by specifying `oraclejdk` as the source technology and `openjdk` as the target technology, resulting in a report that highlights issues when performing this migration.

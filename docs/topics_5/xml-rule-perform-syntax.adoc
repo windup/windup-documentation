@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
-[[perform_action_syntax]]
+[id='perform_action_syntax_{context}']
 = Perform Action Syntax
 
 Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.
@@ -9,14 +9,7 @@ The complete XML rule schema is located here: http://windup.jboss.org/schema/win
 
 The following sections describe the more common XML rule perform actions.
 
-* xref:classification-syntax[<classification> Syntax]
-* xref:link-syntax[<link> Syntax]
-* xref:hint-syntax[<hint> Syntax]
-* xref:xslt-syntax[<xslt> Syntax]
-* xref:lineitem-syntax[<lineitem> Syntax]
-* xref:iteration-syntax[<iteration> Syntax]
-
-[[classification-syntax]]
+[id='classification-syntax_{context}']
 == <classification> Syntax
 
 === Summary
@@ -122,7 +115,7 @@ a|Description of this resource
 |====
 
 
-[[link-syntax]]
+[id='link-syntax_{context}']
 == <link> Syntax
 
 === Summary
@@ -178,7 +171,7 @@ title="Migrate WebLogic Proprietary Servlet Annotations"
 
 |====
 
-[[hint-syntax]]
+[id='hint-syntax_{context}']
 == <hint> Syntax
 
 === Summary
@@ -268,7 +261,7 @@ a|A message describing the migration hint.
 ----
 
 |<link>
-a|Identify or classify links to informational content. See the section on xref:link-syntax[<link> Syntax] for details.
+a|Identify or classify links to informational content.
 
 [source,xml,options="nowrap"]
 ----
@@ -298,7 +291,7 @@ a|Contains information to be used by the {PluginName} to perform quick fixes whe
 
 |====
 
-[[xslt-syntax]]
+[id='xslt-syntax_{context}']
 == <xslt> Syntax
 
 === Summary
@@ -389,7 +382,7 @@ a|Specify XSLTTransformation parameters as property value pairs
 ----
 |====
 
-[[lineitem-syntax]]
+[id='lineitem-syntax_{context}']
 == <lineitem> Syntax
 
 === Summary
@@ -434,7 +427,7 @@ message="Proprietary code found."
 
 |====
 
-[[iteration-syntax]]
+[id='iteration-syntax_{context}']
 == <iteration> Syntax
 
 === Summary

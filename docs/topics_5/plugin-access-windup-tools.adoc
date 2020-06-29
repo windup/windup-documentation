@@ -1,8 +1,8 @@
 // Module included in the following assemblies:
 // * docs/plugin-guide_5/master.adoc
-[[access_windup_features]]
+[id='access_windup_features_{context}']
 = Access the {ProductShortName} IDE Tools
 
 Once the plugin is installed, the {ProductShortName} IDE tools are available in the {ProductShortName} perspective. To open the {ProductShortName} perspective, navigate to *Window* -> *Perspective* -> *Open Perspective* -> *Other*. Select *{ProductShortName}* and press *OK*.
 
-Review the xref:plugin_components[plugin components] and then get started xref:identify_resolve_migration_issues[identifying and resolving migration issues]. You can also view the embedded help for the plugin by selecting *Help* -> *Getting Started* in your IDE.
+Review the plugin components and then get started identifying and resolving migration issues. You can also view the embedded help for the plugin by selecting *Help* -> *Getting Started* in your IDE.

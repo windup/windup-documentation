@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
-[[overriding_rules]]
+[id='overriding_rules_{context}']
 = Overriding Rules
 
 You can override core rules distributed with {ProductShortName} or even custom-written rules. For example, you might want to change the matching conditions, effort, or hint text for a rule. This is done by making a custom copy of the original rule, marking it as a rule override, and making the necessary adjustments. You can also disable a rule in this same manner.

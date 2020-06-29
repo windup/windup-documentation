@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
-[[review_reports]]
+[id='review_reports_{context}']
 = Review the Reports
 
 The report examples shown in the following sections are a result of analyzing the `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example application, which is located in the {ProductShortName} GitHub source repository.
@@ -21,34 +21,33 @@ image::report-jee-example-application-list-page.png[Application List]
 
 NOTE: The incidents and estimated story points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
 
-The following table lists all of the reports and pages that can be accessed from this main {ProductShortName} landing page. Click on the name of the application, *jee-example-app-1.0.0.ear*, to view the xref:review-the-report-application-report[application report].
+The following table lists all of the reports and pages that can be accessed from this main {ProductShortName} landing page. Click the name of the application, *jee-example-app-1.0.0.ear*, to view the application report.
 
 [cols="30%,70%", options="header"]
 |====
 | Page
 | How to Access
 
-| xref:review-the-report-application-report[Application]
-| Click on the name of the application.
+|Application
+| Click the name of the application.
 
-| xref:technology_report[Technology Report]
-| Click on the `Technologies` link at the top of the page.
+| Technology Report
+| Click the `Technologies` link at the top of the page.
 
-| xref:dependencies_graph_report[Dependencies Graph Report]
-| Click on the `Dependencies Graph` link at the top of the page.
+| Dependencies Graph Report
+| Click the `Dependencies Graph` link at the top of the page.
 
-| xref:shared_archives[Archives shared by multiple applications]
-| Click on the *Archives shared by multiple applications* link. Note that this link is only available when there are shared archives across multiple applications.
+| Archives shared by multiple applications
+| Click the *Archives shared by multiple applications* link. Note that this link is only available when there are shared archives across multiple applications.
 
-| xref:review-the-report-rule-provider-executions-report[
-Rule Providers Execution Overview]
+| Rule Providers Execution Overview
 | Click on the *Rule providers execution overview* link at the bottom of the page.
 
-| xref:review-the-report-freemarker-report[Used FreeMarker Functions and Directives]
-| Click on the *FreeMarker methods* link at the bottom of the page.
+| Used FreeMarker Functions and Directives
+| Click the *FreeMarker methods* link at the bottom of the page.
 
-| xref:review-the-report-send-feedback[Send Feedback form]
-| Click on the *Send Feedback* link in the top navigation bar to open a form that allows you to submit feedback to the {ProductShortName} team.
+| Send Feedback form
+| Click the *Send Feedback* link in the top navigation bar to open a form that allows you to submit feedback to the {ProductShortName} team.
 |====
 
 Note that if an application shares archives with other analyzed applications, you will see a breakdown of how many story points are from shared archives and how many are unique to this application.
@@ -56,9 +55,9 @@ Note that if an application shares archives with other analyzed applications, yo
 .Shared Archives
 image::shared-archives-breakdown.png[Shared Archives]
 
-Information about the archives that are shared among applications can be found in the xref:shared_archives[Archives Shared by Multiple Applications] reports.
+Information about the archives that are shared among applications can be found in the Archives Shared by Multiple Applications reports.
 
-[[review-the-report-application-report]]
+[id='review-the-report-application-report_{context}']
 == Application Report
 
 === Dashboard
@@ -135,16 +134,16 @@ endif::[]
 | Describes the current version of {ProductShortName} and provides helpful links for further assistance.
 |====
 
-[[issues_report]]
+[id='issues_report_{context}']
 === Issues Report
 
 Access this report from the dashboard by clicking the *Issues* link.
 
-This report includes details about every issue that was raised by the selected migration paths. The following information is provided for each issue encountered.
+This report includes details about every issue that was raised by the selected migration paths. The following information is provided for each issue encountered:
 
 * A title to summarize the issue.
 * The total number of incidents, or times the issue was encountered.
-* The xref:rule_story_points[rule story points] to resolve a single instance of the issue.
+* The rule story points to resolve a single instance of the issue.
 * The estimated level of effort to resolve the issue.
 * The total story points to resolve every instance encountered. This is calculated by multiplying the number of incidents found by the story points per incident.
 
@@ -153,14 +152,14 @@ image::report-jee-example-application-issues.png[Issues Report]
 
 Each reported issue may be expanded, by clicking on the title, to obtain additional details. The following information is provided.
 
-* A list of files where the incidents occurred, along with the number of incidents within each file. If the file is a Java source file, then clicking the filename will direct you to the corresponding xref:source_report[Source Report].
+* A list of files where the incidents occurred, along with the number of incidents within each file. If the file is a Java source file, then clicking the filename will direct you to the corresponding Source Report.
 * A detailed description of the issue. This description outlines the problem, provides any known solutions, and references supporting documentation regarding either the issue or resolution.
 * A direct link, entitled *Show Rule*, to the rule that generated the issue.
 
 .Expanded Issue
 image::report-jee-example-application-issues-2.png[Expanded Rule in the Issues Report]
 
-Issues are sorted into four categories by default. Information on these categories is available at xref:task_category[Task Category].
+Issues are sorted into four categories by default. Information on these categories is available at ask Category.
 
 === Application Details Report
 
@@ -188,7 +187,7 @@ Expand the `jee-example-app-1.0.0.ear/jee-example-services.jar` to review the st
 | Warnings about areas of code that need review or changes.
 
 | Story Points
-a| Level of effort required to migrate the file. See xref:rule_story_points[Rule Story Points] for more details.
+a| Level of effort required to migrate the file.
 |====
 
 Note that if an archive is duplicated several times in an application, it will be listed just once in the report and will be tagged with `[Included Multiple Times]`.
@@ -198,7 +197,7 @@ image::duplicate-archive-app-report.png[Duplicate Archive]
 
 The story points for archives that are duplicated within an application will be counted only once in the total story point count for that application.
 
-[[technology_report_application]]
+[id='technology_report_application_{context}']
 === Application Technology Report
 
 Access this report from the dashboard by clicking the *Technologies* link.
@@ -210,7 +209,7 @@ The below image shows the technologies used in the `jee-example-app`.
 .Technologies in an Application
 image::technology-report-single-application.png[Technology Report Application View]
 
-[[application_dependencies_graph_report]]
+[id='application_dependencies_graph_report_{context}']
 === Application Dependencies Graph Report
 
 The analyzed applications' dependencies are shown in this report, accessible from the *Dependencies Graph* link from the dashboard.
@@ -244,7 +243,7 @@ In this example, warnings appear at various import statements, declarations, and
 .Source Report
 image::report-jee-example-source-1.png[Source Report]
 
-[[technology_report]]
+[id='technology_report_{context}']
 == Technology Report
 
 Access this report from the report landing page by clicking the *Technologies* link.
@@ -256,7 +255,7 @@ Clicking any of the headers, such as *Markup*, sorts the results in descending o
 .Technologies Used Across Multiple Applications
 image::technology-report-overview.png[Technologies Used Across Multiple Applications]
 
-[[dependencies_graph_report]]
+[id='dependencies_graph_report_{context}']
 == Dependencies Graph Report
 
 Access this report from the report landing page by clicking the *Dependencies Graph* link.
@@ -276,7 +275,7 @@ The dependency graph may be adjusted by using any of the following.
 * Double clicking anywhere will return the entire graph to the default state.
 * Clicking on any item in the legend will enable or disable all items of the selected type. For instance, selecting the embedded WARs icon will disable all embedded WARs if these are enabled, and will enable these dependencies if they are disabled.
 
-[[shared_archives]]
+[id='shared_archives_{context}']
 == Archives Shared by Multiple Applications
 
 Access these reports from the report landing page by clicking the *Archives shared by multiple applications* link. Note that this link is only available if there are applicable shared archives.
@@ -286,7 +285,7 @@ image::shared-archives-app-list.png[Archives Shared by Multiple Applications]
 
 This allows you to view the detailed reports for all archives that are shared across multiple applications.
 
-[[review-the-report-rule-provider-executions-report]]
+[id='review-the-report-rule-provider-executions-report_{context}']
 == Rule Providers Execution Overview
 
 Access this report from the report landing page by clicking the *Rule providers execution overview* link.
@@ -296,7 +295,7 @@ This report provides the list of rules that executed when running the {ProductSh
 .Rule Providers Execution Overview
 image::report-jee-example-ruleprovider.png[Rule Provider Execution Overview]
 
-[[review-the-report-freemarker-report]]
+[id='review-the-report-freemarker-report_{context}']
 == Used FreeMarker Functions and Directives
 
 Access this report from the report landing page by clicking the *FreeMarker methods* link.
@@ -306,7 +305,7 @@ This report lists all the registered functions and directives that were used to 
 .Used FreeMarker Functions and Directives
 image::report-jee-example-freemarker-and-directives.png[FreeMarker Functions and Directives]
 
-[[review-the-report-send-feedback]]
+[id='review-the-report-send-feedback_{context}']
 == Send Feedback Form
 
 Access this feedback form from the report landing page by clicking the *Send feedback* link.

@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/plugin-guide_5/master.adoc
-[[install_jboss_tools]]
+[id='install_jboss_tools_{context}']
 = Install JBoss Tools into Eclipse
 
 The {PluginNameTitle} depends on JBoss Tools, and therefore these dependencies must be installed for {ProductShortName} to function successfully. The following instructions detail installing JBoss Tools on an Eclipse installation.

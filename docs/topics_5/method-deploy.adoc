@@ -1,10 +1,10 @@
-[[deploy_phase]]
+[id='deploy_phase_{context}']
 = Deploy Phase
 
 .Red Hat Migration Methodology: Deploy Phase
 image::RHAMT_AMM_Methodology_446947_0617_ECE_Deploy.png[Red Hat Migration Methodology: Deploy]
 
-The _Deploy_ phase is when you execute the plan created in the xref:design_phase[Design phase]. In this phase, you scale the overall transformation process to complete the plan and bring all applications to their new production environment.
+The _Deploy_ phase is when you execute the plan created in the Design phase. In this phase, you scale the overall transformation process to complete the plan and bring all applications to their new production environment.
 
 The plan is executed in iterations to deliver value incrementally. With each iteration, you continuously validate against the plan and document findings to improve the next sprint.
 

@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
-[[optimize_performance]]
+[id='optimize_performance_{context}']
 = Optimize {ProductShortName} Performance
 
 {ProductShortName} performance depends on a number of factors, including hardware configuration, the number and types of files in the application, the size and number of applications to be evaluated, and whether the application contains source or compiled code. For example, a file that is larger than 10 MB may need a lot of time to process.
@@ -16,7 +16,7 @@ Try these suggestions first before upgrading hardware.
 * If possible, execute {ProductShortName} against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.
 * Specify a comma-separated list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `__MTA_HOME__/bin/mta-cli` command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
 * Specify the `--excludeTags` argument where possible to exclude them from processing.
-* Avoid decompiling and analyzing any unnecessary packages and files, such as proprietary packages or included dependencies. For additional information, see xref:exclude_files_and_packages[Configure {ProductShortName} to Exclude Files and Packages].
+* Avoid decompiling and analyzing any unnecessary packages and files, such as proprietary packages or included dependencies.
 * Increase your ulimit when analyzing large applications. See link:https://access.redhat.com/solutions/60746[this Red Hat Knowledgebase article] for instructions on how to do this for Red Hat Enterprise Linux.
 * If you have access to a server that has better resources than your laptop or desktop machine, you may want to consider running {ProductShortName} on that server.
 

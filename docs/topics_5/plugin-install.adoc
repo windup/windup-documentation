@@ -1,9 +1,9 @@
 // Module included in the following assemblies:
 // * docs/plugin-guide_5/master.adoc
-[[install_plugin]]
+[id='install_plugin_{context}']
 = Install the {PluginNameTitle}
 
-Review the xref:supported_configs[supported configurations] to make sure that you are using a development environment that is compatible with the {PluginName}.
+Review the supported configurations to make sure that you are using a development environment that is compatible with the {PluginName}.
 
 NOTE: If you are running macOS, it is recommended to set the maximum number of user processes, `maxproc`, to at least `2048`, and the maximum number of open files, `maxfiles`, to `100000`.
 
@@ -20,7 +20,7 @@ For more information about link:https://marketplace.visualstudio.com/items?itemN
 
 .Prerequisites
 
-* If you are using Eclipse, and not Red Hat CodeReady Studio, then you must xref:install_jboss_tools[install JBoss Tools] before installing the {PluginNameTitle}.
+* If you are using Eclipse, and not Red Hat CodeReady Studio, then you must install JBoss Tools before installing the {PluginNameTitle}.
 
 .Install the Plugin
 

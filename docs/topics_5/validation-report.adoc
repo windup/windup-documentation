@@ -1,30 +1,28 @@
-[[validation_report]]
+[id='validation_report_{context}']
 = Validation Report
 
 Introduced in {ProductShortName} 4.2, the validation report allows rule developers to confirm the test rules function as expected. It produces a report that provides details on each test rule, reporting any failures and where they occur.
 
 .Prerequisites
 
-* You must xref:fork_ruleset_repo[fork and clone the {ProductShortName} XML Rules].
-* You must have one or more xref:test_xml_rule[test XML rules] to be validated.
+* You must fork and clone the {ProductShortName} XML Rules.
+* You must have one or more test XML rules to be validated.
 
 .Create the Validation Report
 . Navigate to the local `windup-rulesets` repository.
-. Copy your custom rules and tests into the a subdirectory in the `rules-reviewed` directory. This should result in 
+. Copy your custom rules and tests into the a subdirectory in the `rules-reviewed` directory. This should result in
 . Run the following command from the root of the `windup-rulesets` repository:
 +
-[source,options="nowrap",subs="+quotes"]
 ----
 $ mvn -Dtest=WindupRulesMultipleTests -DrunTestsMatching=__CUSTOM_RULES__ clean surefire-report:report
----- 
+----
 +
 For instance, if your rules were stored at the `/path/to/windup-rulesets/rules-reviewed/myTests/` directory, then the following command would be used:
 +
-[source,options="nowrap",subs="+quotes"]
 ----
 $ mvn -Dtest=WindupRulesMultipleTests -DrunTestsMatching=myTests clean surefire-report:report
 ----
 +
-NOTE: Leaving off the `runTestsMatching` argument will result in all tests being included in the validation report, and will drastically increase the runtime.
+Omitting the `runTestsMatching` argument will result in all tests being included in the validation report and will greatly increase the runtime.
 
 . The validation report, `surefire-report.html`, will be generated in the `target/site/` subdirectory of the `windup-rulesets` repository.

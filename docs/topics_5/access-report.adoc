@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
-[[access_report]]
+[id='access_report_{context}']
 = Access the Report
 
 When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` that you specify using the `--output` argument in the command line. Upon completion of execution, you will see the following message in the terminal with the location of the report.
@@ -24,4 +24,4 @@ __OUTPUT_REPORT_DIRECTORY__/
 ├── stats/              // Performance statistics
 ----
 
-Use a browser to open the `index.html` file located in the report output directory. See xref:review_reports[Review the Reports] for information on navigating the {ProductShortName} reports.
+Use a browser to open the `index.html` file located in the report output directory.
