@@ -1,3 +1,5 @@
+// Module included in the following assemblies:
+// * docs/maven-guide_5/master.adoc
 [[access_report]]
 = Access the Report
 
@@ -21,4 +23,3 @@ __OUTPUT_REPORT_DIRECTORY__/
 ----
 
 See the link:{ProductDocUserGuideURL}#review_reports[Review the Reports] section of the {ProductShortName} _{UserCLIBookName}_ for information on the {ProductShortName} reports and how to use them to assess your migration or modernization effort.
-

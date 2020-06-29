@@ -1,3 +1,5 @@
+// Module included in the following assemblies:
+// * docs/maven-guide_5/master.adoc
 = Run the {MavenNameTitle} with Multiple Modules
 
 To use the {MavenName} in a project with multiple modules, place the configuration inside the parent's `pom.xml`. During execution the {MavenName} will generate a single report that contains the analysis for the parent and any child modules.

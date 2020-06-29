@@ -1,3 +1,5 @@
+// Module included in the following assemblies:
+// * docs/rules-development-guide_5/master.adoc
 [[manually_test_xml_rule]]
 = Manually Test the XML Rule
 
@@ -17,4 +19,3 @@ Report created: __OUTPUT_REPORT_DIRECTORY__/index.html
 ----
 
 More examples of how to run {ProductShortName} are located in the {ProductName} {ProductDocUserGuideURL}[_{UserCLIBookName}_].
-

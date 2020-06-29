@@ -1,5 +1,7 @@
+// Module included in the following assemblies:
+// * docs/maven-guide_5/master.adoc
 [[logging_properties]]
-= Default `logging.properties` in the {MavenNameTitle} 
+= Default `logging.properties` in the {MavenNameTitle}
 
 The default `logging.properties` file included with the {MavenName} is provided below. This configuration omits many extraneous messages while allowing you to view the progress of the {MavenName}.
 
@@ -35,5 +37,5 @@ org.jboss.windup.rules.files.FileMapping.level=SEVERE
 org.jboss.windup.exec.level=SEVERE
 org.jboss.windup.config.level=SEVERE
 com.thinkaurelius.level=SEVERE
-org.jboss.windup=INFO  
+org.jboss.windup=INFO
 ----

@@ -1,3 +1,5 @@
+// Module included in the following assemblies:
+// * docs/maven-guide_5/master.adoc
 [[about_maven]]
 = About the {MavenNameTitle}
 
@@ -6,4 +8,3 @@ The {MavenName} for {ProductName} integrates into the Maven build process, allow
 ifndef::maven-guide[]
 For more information on using the {MavenName}, see the {ProductShortName} link:{ProductDocMavenGuideURL}[_{MavenBookName}_].
 endif::maven-guide[]
-

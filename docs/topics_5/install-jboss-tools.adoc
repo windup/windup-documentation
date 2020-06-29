@@ -1,9 +1,11 @@
+// Module included in the following assemblies:
+// * docs/plugin-guide_5/master.adoc
 [[install_jboss_tools]]
 = Install JBoss Tools into Eclipse
 
 The {PluginNameTitle} depends on JBoss Tools, and therefore these dependencies must be installed for {ProductShortName} to function successfully. The following instructions detail installing JBoss Tools on an Eclipse installation.
 
-NOTE: If you are using Red Hat CodeReady Studio, and not Eclipse, you do not need to install JBoss Tools separately. 
+NOTE: If you are using Red Hat CodeReady Studio, and not Eclipse, you do not need to install JBoss Tools separately.
 
 .Install JBoss Tools
 
