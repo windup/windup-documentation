@@ -1,3 +1,5 @@
+// Module included in the following assemblies:
+// * docs/rules-development-guide_5/master.adoc
 [[add_the_rule_to_windup]]
 = Add the Rule to {ProductName}
 
@@ -10,4 +12,3 @@ A {ProductName} rule is installed by copying the rule to the appropriate {Produc
 * The `${user.home}/.mta/rules/` directory. This directory is created by {ProductShortName} the first time it is executed and contains rules, add-ons, and the {ProductShortName} log.
 +
 NOTE: For Windows, this directory would be `\Documents and Settings&#x5c;__USER_NAME__\.mta\rules\` or `\Users&#x5c;__USER_NAME__\.mta\rules\`.
-
