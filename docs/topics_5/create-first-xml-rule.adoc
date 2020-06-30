@@ -229,9 +229,9 @@ Review the report to be sure that it provides the expected results. For a more d
 .Test Rule Execution
 image::executed-test-rule.png[Test Rule Execution]
 . Verify that the rule matched on the test data.
-.. From the main landing page, click on the name of the application or input folder, which is `data` in this example.
-.. Click on the *Application Details* report link.
-.. Click on the *jboss-web.xml* link to view the *Source Report*.
+.. From the main landing page, click the name of the application or input folder, which is `data` in this example.
+.. Click the *Application Details* report link.
+.. Click the *jboss-web.xml* link to view the *Source Report*.
 +
 You can see that the `<class-loading>` line is highlighted, and the hint from the custom rule is shown inline.
 +

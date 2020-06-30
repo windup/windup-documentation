@@ -13,7 +13,7 @@ image::error.png[Application Details]
 
 This view lists all resources found in all applications that were analyzed and which resources need attention during migration. Each resource can be expanded to display details about the resource, the total story points found in this resource, and a breakdown of story points and technologies for each file in the archive.
 
-Click on the file name link to open the source for the file. Any issues that were found in this file are shown. Information about the issue and hints on how to resolve it are shown inline.
+Click the file name link to open the source for the file. Any issues that were found in this file are shown. Information about the issue and hints on how to resolve it are shown inline.
 
 // TODO: Screenshot of Source
 .Issue in Source Code
