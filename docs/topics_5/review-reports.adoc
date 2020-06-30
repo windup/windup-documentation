@@ -41,7 +41,7 @@ The following table lists all of the reports and pages that can be accessed from
 | Click the *Archives shared by multiple applications* link. Note that this link is only available when there are shared archives across multiple applications.
 
 | Rule Providers Execution Overview
-| Click on the *Rule providers execution overview* link at the bottom of the page.
+| Click the *Rule providers execution overview* link at the bottom of the page.
 
 | Used FreeMarker Functions and Directives
 | Click the *FreeMarker methods* link at the bottom of the page.
@@ -233,7 +233,7 @@ The dependency graph may be adjusted by using any of the following.
 
 === Source Report
 
-The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 22 warnings and is assigned 16 story points. Click on the file link to see the detail.
+The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 22 warnings and is assigned 16 story points. Click the file link to see the detail.
 
 * The *Information* section provides a summary of the story points.
 * This is followed by the file source code. Warnings appear in the file at the point where  migration is required.
