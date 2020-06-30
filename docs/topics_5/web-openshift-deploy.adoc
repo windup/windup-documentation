@@ -6,7 +6,7 @@
 . Download the {WebName} from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page].
 . Extract the ZIP file to a directory of your choice.
 +
-The path to the directory created by unzipping this file is referred to as `_MTA_HOME_` throughout this guide.
+The path to the directory containing the extracted {ProductShortName} files is referred to as `<MTA_HOME>` throughout this guide.
 . Access the OpenShift web console. It should appear similar to the following image.
 +
 image::openshift-console.png[]
