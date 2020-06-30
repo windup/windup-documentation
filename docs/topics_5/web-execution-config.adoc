@@ -1,11 +1,11 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='analysis_configuration_{context}']
-= Specify the Analysis Configuration
+= Configuring the Analysis
 
 Configure the settings for the analysis, such as the transformation path, packages, and other advanced options.
 
-.Configure Analysis
+.Configuring Analysis
 image::web-configure-analysis.png[Configure Analysis]
 
 Transformation Path::
@@ -61,7 +61,6 @@ Selected (checked) rules are shown in the right-hand panel and will be executed 
 .Custom Labels
 image::web-custom-labels-project.png[The Custom Labels dialog]
 
-
 Advanced Options::
 
-Press *Save* to save the analysis configuration, or press *Save & Run* to save and execute the analysis using these settings.
+Click *Save* to save the analysis configuration, or click *Save & Run* to save and execute the analysis using these settings.

@@ -1,3 +1,5 @@
+// Module included in the following assemblies:
+// * docs/rules-development-guide_5/master.adoc
 [id='validation_report_{context}']
 = Validation Report
 
@@ -8,7 +10,7 @@ Introduced in {ProductShortName} 4.2, the validation report allows rule develope
 * You must fork and clone the {ProductShortName} XML Rules.
 * You must have one or more test XML rules to be validated.
 
-.Create the Validation Report
+.Creating the Validation Report
 . Navigate to the local `windup-rulesets` repository.
 . Copy your custom rules and tests into the a subdirectory in the `rules-reviewed` directory. This should result in
 . Run the following command from the root of the `windup-rulesets` repository:

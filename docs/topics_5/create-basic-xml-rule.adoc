@@ -1,11 +1,11 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='create_basic_xml_rule_{context}']
-= Create a Basic XML Rule
+= Creating a Basic XML Rule
 
 This section describes how to create an {ProductShortName} XML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
 
-== Create the Basic XML Rule Template
+== Creating a Basic XML Rule Template
 
 {ProductShortName} XML rules consist of _conditions_ and _actions_ and use the following rule pattern.
 

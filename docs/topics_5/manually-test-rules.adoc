@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='manually_test_xml_rule_{context}']
-= Manually Test the XML Rule
+= Manually Testing the XML Rule
 
 Instead of writing a test case, it is possible to simply run the XML rule against your application file by running {ProductShortName} in a terminal.
 

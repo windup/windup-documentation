@@ -1,14 +1,14 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='create_first_rule_{context}']
-= Create Your First XML Rule
+= Creating Your First XML Rule
 
 This section guides you through the process of creating and testing your first {ProductShortName} XML-based rule. This assumes that you have already installed {ProductShortName}. See the link:{ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
 
 In this example, you will write a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and provide a link to the documentation that describes how to migrate the code.
 
 [discrete]
-== Create the Directory Structure for the Rule
+== Creating the Directory Structure for the Rule
 
 Create a directory structure to contain your first rule and the data file to use for testing.
 
@@ -21,7 +21,7 @@ $ mkdir -p /home/__USER_NAME__/migration-rules/data
 This directory structure will also be used to hold the generated {ProductShortName} reports.
 
 [discrete]
-== Create Data to Test the Rule
+== Creating Data to Test the Rule
 
 . Create a `jboss-web.xml` file in the `/home/__USER_NAME__/migration-rules/data/` subdirectory.
 . Copy in the following content.
@@ -40,7 +40,7 @@ This directory structure will also be used to hold the generated {ProductShortNa
 ----
 
 [discrete]
-== Create the Rule
+== Creating the Rule
 
 {ProductShortName} XML-based rules use the following rule pattern:
 
@@ -85,7 +85,8 @@ otherwise(action)
 ----
 NOTE: {ProductShortName} identifies files with the `.windup.xml` or `.mta.xml` extension as XML-based rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
 
-. Add the unique identifier for the ruleset and rule.
+. Add the unique identifier for the ruleset and rule:
+
 * Replace the `__UNIQUE_RULESET_ID__` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
 * Replace the `__UNIQUE_RULE_ID__` with an appropriate rule ID, for example, `JBoss5-web-class-loading_001`.
 
@@ -198,7 +199,7 @@ $ cp /home/__USER_NAME__/migration-rules/rules/JBoss5-web-class-loading.windup.x
 ----
 
 [discrete]
-== Test the Rule
+== Testing the Rule
 
 Open a terminal and execute the following command, passing the test file as an input argument and a directory for the output report.
 
@@ -228,7 +229,8 @@ Review the report to be sure that it provides the expected results. For a more d
 +
 .Test Rule Execution
 image::executed-test-rule.png[Test Rule Execution]
-. Verify that the rule matched on the test data.
+. Verify that the rule matches the test data:
+
 .. From the main landing page, click the name of the application or input folder, which is `data` in this example.
 .. Click the *Application Details* report link.
 .. Click the *jboss-web.xml* link to view the *Source Report*.

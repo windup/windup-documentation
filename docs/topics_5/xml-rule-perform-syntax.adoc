@@ -1,11 +1,11 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='perform_action_syntax_{context}']
-= Perform Action Syntax
+= `<perform>` Syntax
 
 Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.
 
-The complete XML rule schema is located here: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd.
+You can view the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[complete XML rule schema].
 
 The following sections describe the more common XML rule perform actions.
 

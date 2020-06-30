@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='change_admin_user_{context}']
-= Change the Administrative User's Credentials
+= Changing the Administrative User's Credentials
 
 When you enable authentication for the {WebName}, a default administrative user is provided with the username `admin` and password `password`. You should change this password so that only those that are authorized can make further changes to {WebName} users.
 

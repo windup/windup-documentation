@@ -9,7 +9,7 @@ IMPORTANT: Although {ProductShortName} can still process rules that use the lega
 
 [id='add_custom_category_{context}']
 [discrete]
-== Add a Custom Category
+== Adding a Custom Category
 
 . Edit the rule category file, which is located at `__MTA_HOME__/rules/migration-core/core.windup.categories.xml`.
 . Add a new `<category>` element and fill in the following fields:
@@ -36,7 +36,7 @@ This category is now ready to be referenced by {ProductShortName} rules.
 
 [id='assign_custom_category_{context}']
 [discrete]
-== Assign a Rule to a Custom Category
+== Assigning a Rule to a Custom Category
 
 In your {ProductShortName} rule, use the custom category's `id` value in the rule's `category-id` field.
 

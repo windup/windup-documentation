@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
 [id='access_report_{context}']
-= Access the Report
+= Accessing Reports
 
 When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` that you specify using the `--output` argument in the command line. Upon completion of execution, you will see the following message in the terminal with the location of the report.
 

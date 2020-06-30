@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='add_applications_{context}']
-= Add Applications to a Project
+= Adding Applications to a Project
 
 Specify the applications to add to this project. You can upload applications or register a server path that contains applications.
 
@@ -9,12 +9,12 @@ Specify the applications to add to this project. You can upload applications or 
 image::web-add-apps.png[Add Applications]
 
 [id='add_apps_upload_{context}']
-Upload Applications::
+Uploading Applications::
 
 You can use the *Choose Files* button to select applications, or you can drag and drop applications into the area provided. This uploads the selected applications to the {ProductShortName} server.
 
 [id='add_apps_register_{context}']
-Register a Server Path::
+Registering a Server Path::
 
 Select the *Server Path* tab and enter a path on the server that contains applications to be included in this project. This does not copy the files to the {ProductShortName} server, but instead evaluates the applications in the specified location.
 +
