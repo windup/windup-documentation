@@ -16,7 +16,7 @@ NOTE: If you have deployed the {WebName} by pasting in a JSON template, then no 
 
 From your OpenShift environment perform the following steps.
 
-. Access the OpenShift console by navigating to `__OPENSHIFT_URL__/console/project/mta/overview`. If you renamed the OpenShift project when deploying, replace `mta` in this URL with the name of your project.
+. Access the OpenShift console by navigating to `<OPENSHIFT_URL>/console/project/mta/overview`. If you renamed the OpenShift project when deploying, replace `mta` in this URL with the name of your project.
 . Hover over `Builds` along the left side of the console.
 . Click `Images` from the options that appear.
 . Ensure that the column under `Tags` indicates that each image is on the `latest` stream.
@@ -25,26 +25,25 @@ From your OpenShift environment perform the following steps.
 [id='examine_logs_{context}']
 == Examining and Collecting {WebName} Logs
 
-Each pod is configured to provide detailed logging that assists with narrowing down the precise cause of an issue. The following steps discuss viewing and obtaining these logs.
+Each Pod is configured to provide detailed logging that assists with narrowing down the precise cause of an issue. The following steps discuss viewing and obtaining these logs.
 
 === Using the OpenShift Console
 
-The following steps walk through the process to examine the logs for each pod.
+The following steps walk through the process to examine the logs for each Pod.
 
-. Access the OpenShift console by navigating to `__OPENSHIFT_URL__/console/project/mta/overview`. If you renamed the OpenShift project when deploying, be sure to replace `mta` in this URL with the name of your project.
+. Access the OpenShift console by navigating to `<OPENSHIFT_URL>/console/project/mta/overview`. If you renamed the OpenShift project when deploying, be sure to replace `mta` in this URL with the name of your project.
 . Hover over `Applications` along the left side of the console.
 . Click `Pods` from the options that appear.
-. Click the name of the pod that you wish to examine. To examine the current {WebName} pod, select the `mta-web-console-__POD_NAME__` that is in a `Running` state.
+. Click the name of the Pod that you wish to examine. To examine the current {WebName} Pod, select the `mta-web-console-<POD_NAME>` that is in a `Running` state.
 . Click `Logs` from the options along the top.
 . To download the log file navigate to the top of the page and click `Download`.
 
 === Using the OpenShift Client
 
-. Determine the pod name by executing `oc get pods` and search for the `web-console` entry with a `Running` status.
+. Determine the Pod name by executing `oc get pods` and search for the `web-console` entry with a `Running` status.
 +
-[source,options="nowrap"]
 ----
-$ oc get pod
+$ oc get pods
 sNAME                        READY     STATUS      RESTARTS   AGE
 eap-builder-1-build         0/1       Completed   0          1d
 mta-postgresql-1-hfbdn    1/1       Running     0          1d
@@ -56,27 +55,24 @@ sso-1-wjl2n                 1/1       Running     1          1d
 +
 In the above example this is `mta-web-console-1-vt7s5`.
 
-. Use `oc logs` to examine the current pod's log.
+. Use `oc logs` to examine the current Pod's log.
 +
-[source,options="nowrap",subs="+quotes"]
 ----
-oc logs __POD_NAME__
+$ oc logs <POD_NAME>
 ----
 
 . The output may be redirected to obtain a copy of the current log.
 +
-[source,options="nowrap",subs="+quotes"]
 ----
-oc logs __POD_NAME__ > ./mta-openshift-__POD_NAME__.log
+$ oc logs <POD_NAME> > ./mta-openshift-<POD_NAME>.log
 ----
 
 == Common Issues with {WebNameTitle} OpenShift
 
 === Executor Pod Throws `NoRouteToHostException`
 
-When accessing the executor pod's logs the following error is seen.
+When accessing the executor Pod's logs the following error is seen.
 
-[source,options="nowrap"]
 ----
 13:44:03,501 SEVERE [org.jboss.windup.web.messaging.executor.ExecutorBootstrap] (main) Could not start messaging listener due to: Failed to connect to any server. Servers tried: [http-remoting://192.0.2.4:8080 (java.net.NoRouteToHostException: No route to host)]: javax.naming.CommunicationException: Failed to connect to any server. Servers tried: [http-remoting://192.0.2.4:8080 (java.net.NoRouteToHostException: No route to host)]
 [...]
@@ -84,15 +80,15 @@ When accessing the executor pod's logs the following error is seen.
 
 *What it means:*
 
-A `NoRouteToHostException` indicates that this pod isn't able to connect to the {WebName} pod.
+A `NoRouteToHostException` indicates that this Pod isn't able to connect to the {WebName} Pod.
 
 *How to resolve it:*
 
-In a new deployment this is expected, as the executor starts before the {WebName}. Otherwise, examine the {WebName} pod and resolve any errors seen here. Once the {WebName} is running successfully this error should be resolved.
+In a new deployment this is expected, as the executor starts before the {WebName}. Otherwise, examine the {WebName} Pod and resolve any errors seen here. Once the {WebName} is running successfully this error should be resolved.
 
 === Pod Reports Insufficient Resources
 
-After attempting to deploy {WebNameTitle} on OpenShift, the pod is unable to start, and the following error is seen in the `Events` tab.
+After attempting to deploy {WebNameTitle} on OpenShift, the Pod is unable to start, and the following error is seen in the `Events` tab.
 
 [source,options="nowrap"]
 ----
@@ -101,7 +97,7 @@ After attempting to deploy {WebNameTitle} on OpenShift, the pod is unable to sta
 
 *What it means:*
 
-The resource quota for the OpenShift project has been met, and the pod is unable to obtain the requested resources.
+The resource quota for the OpenShift project has been met, and the Pod is unable to obtain the requested resources.
 
 *How to resolve it:*
 
@@ -114,29 +110,29 @@ Once the request is within the available quota, attempt the deployment once agai
 
 === Pod Takes Longer than 600 seconds to become available
 
-After attempting a deployment, the `-deploy` pods timeout and report the following error.
+After attempting a deployment, the `-deploy` Pods timeout and report the following error.
 
 [source,options="nowrap",subs="+quotes"]
 ----
-error: update acceptor rejected mta-web-console-executor-1: pods for rc 'mta/__POD_NAME__' took longer than 600 seconds to become available
+error: update acceptor rejected mta-web-console-executor-1: Pods for rc 'mta/<POD_NAME>' took longer than 600 seconds to become available
 ----
 
-These errors appear after the pods timeout and are placed into an error state.
+These errors appear after the Pods timeout and are placed into an error state.
 
 *What it means:*
 
-The deployment pods are unable to successfully launch the pods.
+The deployment Pods are unable to successfully launch the Pods.
 
 This error can be caused by a number of sources, with the following being the most common:
 
-* The OpenShift instance is currently out of resources to deploy the pod in a timely manner.
+* The OpenShift instance is currently out of resources to deploy the Pod in a timely manner.
 * The images were unable to be successfully pulled from the registry.
 
 *How to resolve it:*
 
-Attempt the deployment again, and view the logs and events of the non deployment pods while they are being created. These messages will provide context to the underlying errors resulting in the deployment pod timeouts.
+Attempt the deployment again, and view the logs and events of the non deployment Pods while they are being created. These messages will provide context to the underlying errors resulting in the deployment Pod timeouts.
 
-* To address the first issue reported, where the OpenShift instance is out of resources, follow the instructions in link:{OpenShiftAdminGuideURL}/cluster_capacity.html[Analyzing Cluster Capacity] from the __Cluster Administration__ guide in the OpenShift documentation to determine the cluster capacity. Once the capacity has increased, or there are fewer jobs executing, attempt the deployment once again.
+* To address the first issue reported, where the OpenShift instance is out of resources, follow the instructions in link:{OpenShiftAdminGuideURL}/cluster_capacity.html[Analyzing Cluster Capacity] from the _Cluster Administration_ guide in the OpenShift documentation to determine the cluster capacity. Once the capacity has increased, or there are fewer jobs executing, attempt the deployment once again.
 
 * To address the second issue reported, where the images are unable to be pulled from the registry, link:{OpenShiftInstallConfigGuideURL}/registry/accessing_registry.html[access the registry] to ensure the images are present. This link also includes instructions on examining the logs for the Docker registry, and can be used to troubleshoot the issue further.
 
@@ -160,7 +156,7 @@ If you have not yet logged in, click the *Log In* link at the top right side of 
 * *Summary*: Enter a brief description of the problem or issue.
 * *Environment*: Indicate that this is an OpenShift installation of the {WebName}, and include any environment variables in use with the image.
 * *Description*: Provide a detailed description of the issue. Be sure to include any errors encountered and exception traces.
-* *Attachment*: Include the logs. At a minimum this should include the logs from each pod.
+* *Attachment*: Include the logs. At a minimum this should include the logs from each Pod.
 +
 If the application or archive causing the issue does not contain sensitive information and you are comfortable sharing it with the {ProductShortName} development team, attach it to the issue using the *browse* button.
 

@@ -23,7 +23,7 @@ All test XML rules are defined as elements within `ruletests` which contain one 
 
 A ruletest is a group of one or more tests that targets a specific area of migration. This is the basic structure of the `<ruletest>` element.
 
-* `<ruletest id="__RULE_TOPIC__-test">`: Defines this as a unique {ProductShortName} ruletest and gives it a unique ruletest id.
+* `<ruletest id="<RULE_TOPIC>-test">`: Defines this as a unique {ProductShortName} ruletest and gives it a unique ruletest id.
 ** `<testDataPath>`: Defines the path to any data, such as classes or files, used for testing.
 ** `<sourceMode>`: Indicates if the passed in data only contains source files. If an archive, such as an EAR, WAR, or JAR, is in use, then this should be set to `false`. Defaults to `true`.
 ** `<rulePath>`: The path to the rule to be tested. This should end in the name of the rule to test.

@@ -11,7 +11,7 @@ IMPORTANT: Although {ProductShortName} can still process rules that use the lega
 [discrete]
 == Adding a Custom Category
 
-. Edit the rule category file, which is located at `__MTA_HOME__/rules/migration-core/core.windup.categories.xml`.
+. Edit the rule category file, which is located at `<MTA_HOME>/rules/migration-core/core.windup.categories.xml`.
 . Add a new `<category>` element and fill in the following fields:
 +
 * `id`: The ID that {ProductShortName} rules will use to reference the category.

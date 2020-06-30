@@ -13,7 +13,7 @@ Follow these steps to add a new {WebName} user.
 .. Navigate to `\http://localhost:8080/auth/` in a browser.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 * For an OpenShift installation:
-.. Navigate to `__OPENSHIFT_URL__/console/project/mta/overview` in a browser.
+.. Navigate to `<OPENSHIFT_URL>/console/project/mta/overview` in a browser.
 +
 NOTE: If you renamed the OpenShift project when deploying, replace `mta` with the name of your project.
 .. Click the link in the *SSO HTTPS* application and add "/auth" to the end of the URL.

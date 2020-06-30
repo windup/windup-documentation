@@ -11,7 +11,7 @@ You can override a rule using the following steps.
 
 . Copy the XML file that contains the rule you want to override to the custom rules directory.
 +
-Custom rules can be placed in either `__MTA_HOME__/rules`, `${user.home}/.mta/rules/`, or the directory specified by the `--userRulesDirectory` command-line argument.
+Custom rules can be placed in either `<MTA_HOME>/rules`, `${user.home}/.mta/rules/`, or the directory specified by the `--userRulesDirectory` command-line argument.
 
 . Edit the XML file and only keep the `<rule>` elements for the rules that you want to override.
 +
