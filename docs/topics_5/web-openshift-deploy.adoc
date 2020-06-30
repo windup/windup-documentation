@@ -1,28 +1,28 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
-[id='deploy_mta_app_openshift_{context}']
+[[deploy_mta_app_openshift]]
 = Deploying the {ProductShortName} Application
 
-. Download the {WebName} from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page].
+. Download the {WebName} from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} download page].
 . Extract the ZIP file to a directory of your choice.
 +
-The path to the directory created by unzipping this file is referred to as `_MTA_HOME_` throughout this guide.
+The path to this directory is referred to as `_MTA_HOME_` throughout this guide.
 . Access the OpenShift web console. It should appear similar to the following image.
 +
 image::openshift-console.png[]
 
-. Click the `Import YAML / JSON` button in the top-right corner of the web console.
-. Provide the following information in the window that appears, as seen below.
-+
-image::openshift-import-template.png[]
-.. Define a `Project Name`, such as `mta`.
-.. Optionally, define a `Project Display Name` to help describe the project.
-.. Optionally, define a `Project Description` to help provide context on how the project will be used.
-.. Click the **Browse** button and import the desired {WebName} template. These are included in `<MTA_HOME>/openshift/templates`. Once imported, the JSON is visible in the bottom text area.
-. Click the **Create** button to proceed to the next screen.
-. If you would like to save the template as a resource for future projects, check the `Save template` box.
-. Click the **Continue** button to proceed to the next screen.
-. Review the default values provided, adjusting as necessary. For instance, the `web-template-empty-dir-executor.json` file defines 2 CPUs, 4GB of memory, and a 20GB persistent volume.
-. Click the **Create** button to import the template into your project.
-+
+. Click the `Import YAML / JSON` button in the upper-right corner of the web console.
+. Fill in the following fields:
+
+* *Project Name*. Mandatory.
+* *Project Display Name*. Optional. This field determines how the project name is displayedin the web console.
+* *Project Description*. Optional.
+
+. Click **Browse** and import the desired {WebName} template from `__MTA_HOME__/openshift/templates`. Once imported, the JSON is visible in the bottom text area.
+. Click **Create**.
+. To save the template as a resource for future projects, select *Save template*.
+. Click *Continue*.
+. Review the values provided.
+. Click *Create* to import the template into your project.
+
 You can access the web console from a browser.
