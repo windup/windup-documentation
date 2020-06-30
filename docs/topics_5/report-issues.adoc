@@ -2,13 +2,13 @@
 // * docs/cli-guide_5/master.adoc
 // * docs/maven-guide_5/master.adoc
 [id='report_issues_{context}']
-= Report Issues with {ProductShortName}
+= Reporting Issues with {ProductShortName}
 
 {ProductName} uses JIRA as its issue tracking system. If you encounter an issue executing {ProductShortName}, please file a JIRA Issue.
 
 NOTE: If you do not have one already, you must sign up for a JIRA account in order to create a JIRA issue.
 
-== Create a JIRA Issue
+== Creating a JIRA Issue
 
 . Open a browser and navigate to the JIRA link:https://issues.jboss.org/secure/CreateIssue!default.jspa[Create Issue] page.
 +

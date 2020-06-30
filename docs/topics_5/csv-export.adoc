@@ -2,14 +2,14 @@
 // * docs/cli-guide_5/master.adoc
 // * docs/maven-guide_5/master.adoc
 [id='export_csv_{context}']
-= Export the Report in CSV Format
+= Exporting the Report in CSV Format
 
 {ProductShortName} provides the ability to export the report data, including the classifications and hints, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields separated by commas (`,`).
 
 The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel, OpenOffice Calc, or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from an {ProductShortName} report.
 
 [id='export_the_report_{context}']
-== Export the Report
+== Exporting the Report
 
 ifdef::cli-guide[]
 To export the report into a CSV file, run {ProductShortName} with `--exportCSV` argument. A CSV file will be created in the directory specified by the `--output` argument for each application analyzed. All discovered issues, spanning all the analyzed applications, will be included in `AllIssues.csv` found in the root directory of the report.
@@ -28,7 +28,7 @@ endif::maven-guide[]
 
 ifdef::cli-guide[]
 [discrete]
-=== Access the Report from the Application Report
+=== Accessing the Report from the Application Report
 
 If the CSV report is exported, all of the CSV issues are available for download in the Issues Report. These issues may be downloaded by clicking *Download All Issues CSV* in the issues report, as seen in the following image.
 
@@ -36,7 +36,7 @@ If the CSV report is exported, all of the CSV issues are available for download 
 image::all-issues-csv.png[Issues Report with CSV Download]
 endif::cli-guide[]
 
-== Import the CSV File into a Spreadsheet Program
+== Importing the CSV File into a Spreadsheet Program
 
 . Launch the spreadsheet software, for example, Microsoft Excel.
 . Choose *File* -> *Open*.
@@ -45,7 +45,7 @@ endif::cli-guide[]
 
 For more information or to resolve any issues, check the help for your spreadsheet software.
 
-== Overview of the CSV Data Structure
+== About the CSV Data Structure
 
 The CSV formatted output file contains the following data fields:
 

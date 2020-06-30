@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='remove_default_user_{context}']
-= Remove the Default {WebNameTitle} User
+= Removing the Default {WebNameTitle} User
 
 A default {WebName} user is provided with the {WebName} with the username `mta` and password `password`. When you enable authentication for the {WebName}, you should remove this user so that the {WebName} can only be accessed by authorized users.
 

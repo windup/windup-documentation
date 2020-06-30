@@ -3,9 +3,11 @@
 [id='test_xml_rule_{context}']
 = Testing XML Rules
 
-== Create a Test Rule
+After you have created an XML rule, you should create a test rule to ensure that it works.
 
-Once a rule has been created, it is recommended to create a test rule to ensure the functionality meets the desired expectation. Test rules are created using a process similar to the process for creating a test rule, with the following differences:
+== Creating a Test Rule
+
+Test rules are created using a process similar to the process for creating a test rule, with the following differences:
 
 * Test rules should be placed in a `tests/` directory beneath the rule to be tested.
 * Any data, such as test classes, should be placed in a `data/` directory beneath the `tests/` directory.

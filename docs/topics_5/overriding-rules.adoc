@@ -57,7 +57,7 @@ The below is an example of an overridden rule. Notice the `<overrideRules>true</
 
 When you run {ProductShortName}, this rule will now be used in place of the original rule with the matching rule ID. You can verify that the new rule was used by viewing the contents of the Rule Provider Executions Overview.
 
-== Disable a Rule
+== Disabling a Rule
 
 To disable a rule, follow the same steps as above to override a rule, except provide an empty `<rule>` element.
 

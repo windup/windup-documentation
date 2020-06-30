@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='review_quickstarts_{context}']
-= Review the {ProductName} Quickstarts
+= Reviewing the {ProductName} Quickstarts
 
 The {ProductName} quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.
 
@@ -11,14 +11,14 @@ Each quickstart has a `README.adoc` file that contains instructions for that qui
 
 [id='download_quickstart_zip_{context}']
 [discrete]
-== Download the Latest Quickstart ZIP
+== Downloading the Latest Quickstart
 
 . Open a browser and navigate to https://github.com/windup/windup-quickstarts/releases.
 . Click the most recent release to download the ZIP file to your local file system.
 
 [id='use_quickstart_github_project_{context}']
 [discrete]
-== Fork and Clone the Quickstart GitHub Project
+== Forking and Cloning the Quickstart GitHub Project
 
 You must have the link:http://git-scm.com/[`git`] client installed on your machine.
 

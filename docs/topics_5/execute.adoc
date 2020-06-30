@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
 [id='execute_{context}']
-= Run the {CLINameTitle}
+= Runing the {CLINameTitle}
 
 Use the following steps to run {ProductShortName} against your application.
 
@@ -56,7 +56,7 @@ $ __MTA_HOME__/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /
 ----
 
 [discrete]
-=== Override {ProductShortName} Properties
+=== Overriding {ProductShortName} Properties
 
 To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` argument on the command line. For example, to use the _Procyon_ decompiler, use the following syntax:
 
@@ -67,7 +67,7 @@ $ __MTA_HOME__/bin/mta-cli -Dwindup.decompiler=procyon --input __INPUT_ARCHIVE_O
 
 [discrete]
 [id='cli_bash_completion_{context}']
-== {ProductShortName} {CLINameTitle} Bash Completion
+== About {ProductShortName} {CLINameTitle} Bash Completion
 
 The {ProductShortName} {CLIName} provides an option to enable bash completion for Linux systems, allowing the {ProductShortName} command-line arguments to be auto completed by pressing the Tab key when entering the commands. For instance, when bash completion is enabled, entering the following displays a list of available arguments.
 
@@ -78,7 +78,7 @@ $ __MTA_HOME__/bin/mta-cli [TAB]
 
 [discrete]
 [id='bash_completion_temporary_{context}']
-=== Enable Bash Completion
+=== Enabling Bash Completion
 
 To enable bash completion for the current shell, execute the following command. After the prompt returns, follow the steps for using the {CLIName}.
 
@@ -89,7 +89,7 @@ $ source __MTA_HOME__/bash-completion/mta-cli
 
 [discrete]
 [id='bash_completion_persistent_{context}']
-=== Enable Persistent Bash Completion
+=== Enabling Persistent Bash Completion
 
 The following commands allow bash completion to persist across restarts:
 
@@ -107,9 +107,8 @@ source __MTA_HOME__/bash-completion/mta-cli
 # cp __MTA_HOME__/bash-completion/mta-cli /etc/bash_completion.d/
 ----
 
-
 [discrete]
-== {ProductShortName} Help
+== Accessing {ProductShortName} Help
 
 To see the complete list of available arguments for the `mta-cli` command, open a terminal, navigate to the `__MTA_HOME__` directory, and execute the following command:
 

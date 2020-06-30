@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/plugin-guide_5/master.adoc
 [id='create_run_config_{context}']
-= Create an {ProductShortName} Run Configuration
+= Creating an {ProductShortName} Run Configuration
 
 {ProductShortName} run configurations can be created using the {ProductShortName} button (image:windup.png[{ProductShortName} button]). A run configuration specifies the project to analyze, migration path, and additional options for the execution. You can create multiple run configurations, and each must have a unique name.
 

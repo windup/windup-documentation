@@ -1,13 +1,13 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
 [id='mavenize_{context}']
-= Mavenize Your Application
+= Mavenizing Your Application
 
 {ProductShortName} provides the ability to generate an Apache Maven project structure based on the application provided. This will create a directory structure with the necessary Maven Project Object Model (POM) files that specify the appropriate dependencies.
 
 Note that this feature is not intended to create a final solution for your project. It is meant to give you a starting point and identify the necessary dependencies and APIs for your application. Your project may require further customization.
 
-== Generate the Maven Project Structure
+== Generating the Maven Project Structure
 
 You can generate a Maven project structure for the provided application by passing in the `--mavenize` flag when executing {ProductShortName}.
 

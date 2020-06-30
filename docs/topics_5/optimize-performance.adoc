@@ -1,15 +1,13 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
 [id='optimize_performance_{context}']
-= Optimize {ProductShortName} Performance
+= Optimizing {ProductShortName} Performance
 
 {ProductShortName} performance depends on a number of factors, including hardware configuration, the number and types of files in the application, the size and number of applications to be evaluated, and whether the application contains source or compiled code. For example, a file that is larger than 10 MB may need a lot of time to process.
 
 In general, {ProductShortName} spends about 40% of the time decompiling classes, 40% of the time executing rules, and the remainder of the time processing other tasks and generating reports. This section describes what you can do to improve the performance of {ProductShortName}.
 
-== Tips to Optimize Performance
-
-=== Application and Command-line Suggestions
+== Deploying and Running the Application
 
 Try these suggestions first before upgrading hardware.
 
@@ -20,7 +18,7 @@ Try these suggestions first before upgrading hardware.
 * Increase your ulimit when analyzing large applications. See link:https://access.redhat.com/solutions/60746[this Red Hat Knowledgebase article] for instructions on how to do this for Red Hat Enterprise Linux.
 * If you have access to a server that has better resources than your laptop or desktop machine, you may want to consider running {ProductShortName} on that server.
 
-=== Hardware Upgrade Suggestions
+== Upgrading Hardware
 
 If the application and command-line suggestions above do not improve performance, you may need to upgrade your hardware.
 

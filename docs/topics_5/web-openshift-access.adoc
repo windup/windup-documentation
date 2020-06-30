@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='access_console_openshift_{context}']
-= Access the {WebNameTitle}
+= Accessing the {WebNameTitle}
 
 Once the {WebName} has been deployed on OpenShift Container Platform, you can access it from a browser. The `deploy.sh` script outputs the link, shown in the example below as `__WEB_CONSOLE_URL__`, to use to open the {WebName}.
 
