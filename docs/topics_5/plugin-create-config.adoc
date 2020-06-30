@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/plugin-guide_5/master.adoc
-[[create_run_config]]
+[id='create_run_config_{context}']
 = Create an {ProductShortName} Run Configuration
 
 {ProductShortName} run configurations can be created using the {ProductShortName} button (image:windup.png[{ProductShortName} button]). A run configuration specifies the project to analyze, migration path, and additional options for the execution. You can create multiple run configurations, and each must have a unique name.
@@ -30,4 +30,4 @@ Set additional {ProductShortName} options. Any option that is a boolean flag, su
 == Rules
 
 Custom Rules Repositories::
-Select custom rulesets to include during analysis if you have imported or created any custom {ProductShortName} rules in the {PluginName}. See xref:use_custom_rules[Add Custom Rules] for more information.
+Select custom rulesets to include during analysis if you have imported or created any custom {ProductShortName} rules in the {PluginName}.

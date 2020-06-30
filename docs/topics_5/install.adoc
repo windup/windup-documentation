@@ -1,9 +1,9 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
-[[install]]
+[id='install_{context}']
 = Install the {CLINameTitle}
 
 . Download the {CLIName} from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page].
 . Extract the ZIP file to a directory of your choice.
 
-The extracted directory is known as xref:about_home_var[`_MTA_HOME_`] in this guide.
+The extracted directory is known as `_MTA_HOME_` in this guide.

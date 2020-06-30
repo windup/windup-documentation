@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
 // * docs/rules-development-guide_5/master.adoc
-[[about_home_var]]
+[id='about_home_var_{context}']
 = Use of `MTA_HOME` in This Guide
 
 This guide uses the `__MTA_HOME__` replaceable variable to denote the path to your {ProductShortName} installation. The installation directory is the `{ProductDistribution}` directory where you extracted the {ProductShortName} ZIP distribution.

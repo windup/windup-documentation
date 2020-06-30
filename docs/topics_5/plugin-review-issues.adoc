@@ -1,9 +1,9 @@
 // Module included in the following assemblies:
 // * docs/plugin-guide_5/master.adoc
-[[review_issues]]
+[id='review_issues_{context}']
 = Review {ProductShortName} Issues
 
-Use the Issue Explorer to review migration issues identified by {ProductShortName}. Different xref:plugin_windup_issue_icons[icons] indicate the issue's severity and state.
+Use the Issue Explorer to review migration issues identified by {ProductShortName}. Different icons indicate the issue's severity and state.
 
 Change how issues are grouped by adjusting the *Group By* selections: Severity, Migration Rule, and File.
 

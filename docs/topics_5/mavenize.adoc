@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
-[[mavenize]]
+[id='mavenize_{context}']
 = Mavenize Your Application
 
 {ProductShortName} provides the ability to generate an Apache Maven project structure based on the application provided. This will create a directory structure with the necessary Maven Project Object Model (POM) files that specify the appropriate dependencies.
@@ -28,9 +28,9 @@ You can also use the `--mavenizeGroupId` option to specify the `<groupId>` to be
 
 The `/path/to/output/mavenized/__APPLICATION_NAME__/` directory will contain the following items:
 
-* A xref:root_pom_file[root POM file]. This is the `pom.xml` file at the top-level directory.
-* A xref:bom_file[BOM file]. This is the POM file in the directory ending with `-bom`.
-* One or more xref:app_pom_files[application POM files]. Each module has its POM file in a directory named after the archive.
+* A root `POM` file. This is the `pom.xml` file at the top-level directory.
+* A BOM file. This is the `POM` file in the directory ending with `-bom`.
+* One or more application `POM` files. Each module has its `POM` file in a directory named after the archive.
 
 The example `jee-example-app-1.0.0.ear` application is an EAR archive that contains a WAR and several JARs. There is a separate directory created for each of these artifacts. Below is the Maven project structure created for this application.
 
@@ -47,7 +47,7 @@ The example `jee-example-app-1.0.0.ear` application is an EAR archive that conta
 
 Review each of the generated files and customize as appropriate for your project. To learn more about Maven POM files, see the link:https://maven.apache.org/guides/introduction/introduction-to-the-pom.html[Introduction to the POM] section of the Apache Maven documentation.
 
-[[root_pom_file]]
+[id='root_pom_file_{context}']
 [discrete]
 === Root POM File
 
@@ -72,7 +72,7 @@ NOTE: Be sure to reorder the list of modules if necessary so that they are liste
 The root POM is also configured to use the link:https://maven.repository.redhat.com/[Red Hat JBoss Enterprise Application Platform Maven repository] to download project dependencies.
 
 
-[[bom_file]]
+[id='bom_file_{context}']
 [discrete]
 === BOM File
 
@@ -98,7 +98,7 @@ The following dependencies are listed in the BOM for the example `jee-example-ap
 </dependencyManagement>
 ----
 
-[[app_pom_files]]
+[id='app_pom_files_{context}']
 [discrete]
 === Application POM Files
 

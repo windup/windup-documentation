@@ -1,5 +1,5 @@
-[[new_rule_condition_dependency]]
+[id='new_rule_condition_dependency_{context}']
 = New rule condition: `<dependency>`
 
 A new rule feature that can check the Group, Artifact and Version on all dependencies of an application.
-This feature was used to develop the xref:new_rules_for_migrating_spring_boot_to_red_hat_runtimes[new Spring Boot ruleset].
+This feature was used to develop the new Spring Boot ruleset.

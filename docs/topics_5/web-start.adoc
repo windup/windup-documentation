@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
-[[starting_console]]
+[id='starting_console_{context}']
 = Start the {WebNameTitle}
 
 Run the script to start the {WebName}.
@@ -12,4 +12,4 @@ $ __MTA_HOME__/run_mta.sh
 
 NOTE: In a Windows environment, use the `run_mta.bat` script.
 
-You can now xref:access_web_console[access the {WebName}] from a browser.
+You can now access the {WebName} from a browser.

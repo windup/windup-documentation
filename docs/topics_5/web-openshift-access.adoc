@@ -1,9 +1,9 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
-[[access_console_openshift]]
+[id='access_console_openshift_{context}']
 = Access the {WebNameTitle}
 
-Once the {WebName} has been xref:deploy_mta_app_openshift[deployed on OpenShift], you can access it from a browser. The `deploy.sh` script outputs the link, shown in the example below as `__WEB_CONSOLE_URL__`, to use to open the {WebName}.
+Once the {WebName} has been deployed on OpenShift Container Platform, you can access it from a browser. The `deploy.sh` script outputs the link, shown in the example below as `__WEB_CONSOLE_URL__`, to use to open the {WebName}.
 
 .Example: `deploy.sh` Output
 [source,options="nowrap",subs="+quotes"]
@@ -15,11 +15,11 @@ Upload, build and deployment successful!
 Open __WEB_CONSOLE_URL__ to start using the MTA Web Console on OpenShift (user='mta',password='password')
 ----
 
-You can also access the {WebName} from the OpenShift console at `__OPENSHIFT_URL__/console/project/mta/overview` by clicking the link in the *MTA WEB CONSOLE HTTP* application. If you renamed the OpenShift project when xref:deploy_mta_app_openshift[deploying], be sure to replace `mta` in this URL with the name of your project.
+You can also access the {WebName} from the OpenShift console at `__OPENSHIFT_URL__/console/project/mta/overview` by clicking the link in the *MTA WEB CONSOLE HTTP* application. If you renamed the OpenShift project when deploying, replace `mta` in this URL with the name of your project.
 
 NOTE: If the {WebName} does not load immediately, check the status of the project in the OpenShift console to see if it is still processing or if there were errors.
 
 .Welcome Page
 image::web-login-openshift.png[Welcome Page]
 
-Authentication is required in order to access the {WebName}. The default user's credentials are `mta` and `password`. See xref:config_auth[Configuring Authentication for the {WebNameTitle}] for more information on configuring authentication for the {WebName}.
+Authentication is required in order to access the {WebName}. The default user's credentials are `mta` and `password`.

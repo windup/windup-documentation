@@ -2,7 +2,7 @@
 // * docs/cli-guide_5/master.adoc
 // * docs/maven-guide_5/master.adoc
 // * docs/rules-development-guide_5/master.adoc
-[[rule_story_points]]
+[id='rule_story_points_{context}']
 = Rule Story Points
 
 == What are Story Points?
@@ -58,10 +58,6 @@ Potential:: The task should be examined during the migration process, but there 
 
 Information:: The task is included to inform you of the existence of certain files. These may need to be examined or modified as part of the modernization effort, but changes are typically not required. An example of this would be the presence of a logging dependency or a Maven `pom.xml`.
 
-ifdef::rules-development-guide[]
-For more information on categorizing tasks, see xref:rule_categories[Using Custom Rule Categories].
-endif::rules-development-guide[]
-
 ifndef::rules-development-guide[]
-For more information on categorizing tasks, see link:{ProductDocRulesGuideURL}#rule_categories[Using Custom Rule Categories] in the _{RulesDevBookName}_.
+For more information on categorizing tasks, see link:{ProductDocRulesGuideURL}#rule_categories_rules-development-guide[Using Custom Rule Categories] in the _{RulesDevBookName}_.
 endif::rules-development-guide[]

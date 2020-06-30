@@ -1,20 +1,20 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
-[[test_xml_rule]]
+[id='test_xml_rule_{context}']
 = Testing XML Rules
 
 == Create a Test Rule
 
-Once a rule has been created, it is recommended to create a test rule to ensure the functionality meets the desired expectation. Test rules are created using a process similar to xref:creating_xml_rules[Creating XML Rules] with the following differences.
+Once a rule has been created, it is recommended to create a test rule to ensure the functionality meets the desired expectation. Test rules are created using a process similar to the process for creating a test rule, with the following differences:
 
 * Test rules should be placed in a `tests/` directory beneath the rule to be tested.
 * Any data, such as test classes, should be placed in a `data/` directory beneath the `tests/` directory.
 * Test rules should use the `.mta.test.xml` extension.
-* These rules use the structure defined in xref:test_xml_rule_structure[Test XML Rule Structure].
+* These rules use the structure defined in the Test XML Rule Structure.
 
 In addition, it is recommended to create a test rule that follows the name of the rule it tests. For instance, if a rule were created with a filename of `proprietary-rule.mta.xml`, the test rule should be called `proprietary-rule.mta.test.xml`.
 
-[[test_xml_rule_structure]]
+[id='test_xml_rule_structure_{context}']
 === Test XML Rule Structure
 
 All test XML rules are defined as elements within `ruletests` which contain one or more `rulesets`. For more details, see the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[{ProductShortName} XML rule schema].
@@ -25,22 +25,22 @@ A ruletest is a group of one or more tests that targets a specific area of migra
 ** `<testDataPath>`: Defines the path to any data, such as classes or files, used for testing.
 ** `<sourceMode>`: Indicates if the passed in data only contains source files. If an archive, such as an EAR, WAR, or JAR, is in use, then this should be set to `false`. Defaults to `true`.
 ** `<rulePath>`: The path to the rule to be tested. This should end in the name of the rule to test.
-** `<ruleset>`: Rulesets containing the logic of the test cases. These are identical to the ones defined in xref:rulesets[Rulesets].
+** `<ruleset>`: Rulesets containing the logic of the test cases. These are identical to the ones defined in Rulesets.
 
 === Test XML Rule Syntax
 
-In addition to the tags in xref:xml_rule_syntax[XML Rule Syntax], the following `when` conditions are commonly used for creating test rules.
+In addition to the tags in the standard XML rule syntax, the following `when` conditions are commonly used for creating test rules:
 
-* xref:not_syntax[`<not>`]
-* xref:iterable_filter_syntax[`<iterable-filter>`]
-* xref:classification_exists_syntax[`<classification-exists>`]
-* xref:hint_exists_syntax[`<hint-exists>`]
+* `<not>`
+* `<iterable-filter>`
+* `<classification-exists>`
+* `<hint-exists>`
 
-In addition to the tags in xref:perform_action_syntax[Perform Action Syntax], the following `perform` conditions are commonly used as actions in test rules.
+In addition to the tags in the standard `perform action` syntax, the following `perform` conditions are commonly used as actions in test rules:
 
-* xref:fail_syntax[`<fail>`]
+* `<fail>`
 
-[[not_syntax]]
+[id='not_syntax_{context}']
 ==== <not> Syntax
 
 [discrete]
@@ -88,7 +88,7 @@ The following is an example of a test rule that fails if only a specific message
 
 The `<not>` element has no unique attributes or child elements.
 
-[[iterable_filter_syntax]]
+[id='iterable_filter_syntax_{context}']
 ==== <iterable-filter> Syntax
 
 [discrete]
@@ -150,7 +150,7 @@ The `<iterable-filter>` element has no unique child elements.
 |The number of times to be verified.
 |====
 
-[[classification_exists_syntax]]
+[id='classification_exists_syntax_{context}']
 ==== <classification-exists> Syntax
 
 The `<classification-exists>` element determines if a specific classification title has been included in the analysis. For additional information, see the link:{LinkAPI}org/jboss/windup/reporting/config/ClassificationExists.html[ClassificationExists] class.
@@ -218,7 +218,7 @@ The `<classification-exists>` has no unique child elements.
 |====
 
 
-[[hint_exists_syntax]]
+[id='hint_exists_syntax_{context}']
 ==== <hint-exists> Syntax
 
 The `<hint-exists>` element determines if a specific hint has been included in the analysis. It searches for any instances of the defined message, and is typically used to search for the beginning or a specific class inside of a `<message>` element. For additional information, see the link:{LinkAPI}org/jboss/windup/reporting/config/HintExists.html[HintExists] class.
@@ -285,12 +285,10 @@ The `<hint-exists>` element has no unique child elements.
 |An optional argument that restricts matching to `InLineHintModels` that reference the given filename.
 |====
 
-[[fail_syntax]]
+[id='fail_syntax_{context}']
 ==== <fail> Syntax
 
 The `<fail>` element reports the execution as a failure and displays the associated message. It is commonly used in conjunction with the `<not>` condition to display a message only if the conditions are not met.
-
-An example is included in the xref:not_syntax[`<not>` Syntax] section.
 
 The `<fail>` element has no unique child elements.
 

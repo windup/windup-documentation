@@ -1,4 +1,4 @@
-[[validation_report_errors]]
+[id='validation_report_errors_{context}']
 = Reported Errors When Running the Validation Report
 
 The validation report will report any errors encountered while running the rules and tests. The following includes a list of these errors and how to resolve them.
@@ -11,11 +11,11 @@ The validation report will report any errors encountered while running the rules
 
 |No test file matching rule
 |This error occurs when a rule file exists without a corresponding test file.
-|Create a test file for the existing rule, as outlined in xref:test_xml_rule[Testing XML Rules].
+|Create a test file for the existing rule.
 
 |Test rule Ids __RULE_NAME__ not found!
 |This error is thrown when a rule exists without a corresponding ruletest.
-|Create a test for the existing rule, as outlined in xref:test_xml_rule_structure[Test XML Rule Structure].
+|Create a test for the existing rule.
 
 |XML parse fail on file __FILE_NAME__
 |The syntax in the XML file is invalid, and unable to be parsed successfully by the rule validator.

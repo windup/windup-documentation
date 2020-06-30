@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/plugin-guide_5/master.adoc
-[[submit_ruleset]]
+[id='submit_ruleset_{context}']
 = Submit a Custom Ruleset
 
 Once a custom ruleset has been created it can be submitted for inclusion within the official {ProductShortName} rule repository. This allows your custom rules to be reviewed and included in subsequent releases of {ProductShortName}, enhancing the applications and server configurations that {ProductShortName} analyzes.

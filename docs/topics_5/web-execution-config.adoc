@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
-[[analysis_configuration]]
+[id='analysis_configuration_{context}']
 = Specify the Analysis Configuration
 
 Configure the settings for the analysis, such as the transformation path, packages, and other advanced options.
@@ -36,7 +36,6 @@ Select which packages to exclude from analysis.
 Custom Rules::
 
 Select which custom rulesets to use during analysis.
-//See xref:using_custom_rules[Using Custom Rules] for instructions on registering and removing custom rules.
 
 Custom rules can be maintained for the current {ProductShortName} project (project scope) or for all {ProductShortName} projects (global scope).
 
@@ -47,8 +46,6 @@ Selected (checked) rules are shown in the right-hand panel and will be executed 
 
 .Custom Rules
 image::web-custom-rules-project.png[The Custom Rules dialog]
-
-See xref:using_custom_rules_and_labels[Using Global Custom Rules and Labels] for maintaining global custom rules.
 
 Custom Labels::
 
@@ -64,11 +61,7 @@ Selected (checked) rules are shown in the right-hand panel and will be executed 
 .Custom Labels
 image::web-custom-labels-project.png[The Custom Labels dialog]
 
-See xref:using_custom_rules_and_labels[Using Global Custom Rules and Labels] for maintaining global custom labels.
-
 
 Advanced Options::
 
-Set additional {ProductShortName} options. See the link:{ProductDocUserGuideURL}#command_line_arguments[{ProductShortName} Command-line Arguments] section of the {ProductShortName} _{UserCLIBookName}_ for a description of each {ProductShortName} argument.
-
-Press *Save* to save the analysis configuration, or press *Save & Run* to save and xref:execute[execute the analysis] using these settings.
+Press *Save* to save the analysis configuration, or press *Save & Run* to save and execute the analysis using these settings.

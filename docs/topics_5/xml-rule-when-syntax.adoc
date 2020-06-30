@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
-[[when_syntax]]
+[id='when_syntax_{context}']
 = When Condition Syntax
 
 Conditions allowed in the `when` portion of a rule must extend http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperation] and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.
@@ -9,27 +9,28 @@ The complete XML rule schema is located here: http://windup.jboss.org/schema/win
 
 The following sections describe the more common XML `when` rule conditions.
 
-* xref:javaclass-syntax[<javaclass> condition syntax]
-* xref:xmlfile-syntax[<xmlfile> condition syntax]
-* xref:project-syntax[<project> condition syntax]
-* xref:filecontent-syntax[<filecontent> condition syntax]
-* xref:file-syntax[<file> condition syntax]
-* xref:has-hint-syntax[<has-hint> condition syntax]
-* xref:has-classification-syntax[<has-classification> condition syntax]
-* xref:graph-query-syntax[<graph-query> condition syntax]
-* xref:dependency-syntax[<dependency> condition syntax]
+* <javaclass> condition syntax
+* <xmlfile> condition syntax
+* <project> condition syntax
+* <filecontent> condition syntax
+* <file> condition syntax
+* <has-hint> condition syntax
+* <has-classification> condition syntax
+* <graph-query> condition syntax
+* <dependency> condition syntax
 
 By default, if more than one `when` rule condition is provided, then all conditions must be met for the rule to match.
 
-[[javaclass-syntax]]
+[id='javaclass-syntax_{context}']
 == <javaclass> Syntax
 
 === Summary
 
 Use the `<javaclass>` element to find imports, methods, variable declarations, annotations, class implementations, and other items related to Java classes. For a better understanding of the `<javaclass>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/condition/JavaClass.html[JavaClass] class.
 
-The following is an example of a rule that tests for WebLogic-specific Apache XML packages.
-[source,xml,options="nowrap"]
+The following is an example of a rule that tests for WebLogic-specific Apache XML packages:
+
+[source,xml]
 ----
 <rule id="weblogic-03000">
     <when>
@@ -122,7 +123,7 @@ a|The location where the reference was found in a Java class. Location can refer
 |<annotation-literal>
 a|Match on literal values inside of annotations.
 
-The below example would match on `@MyAnnotation(myvalue="test")`.
+The following example matches on `@MyAnnotation(myvalue="test")`.
 
 [source,xml,options="nowrap"]
 ----
@@ -168,7 +169,7 @@ Note that in this case, the `<javaclass>` refers to an annotation (`@MyAnnotatio
 
 |====
 
-[[xmlfile-syntax]]
+[id='xmlfile-syntax_{context}']
 == <xmlfile> Syntax
 
 === Summary
@@ -299,7 +300,7 @@ a|The namespace referenced in XML files. This element contains two optional attr
 
 |====
 
-[[project-syntax]]
+[id='project-syntax_{context}']
 == <project> Syntax
 
 === Summary
@@ -363,7 +364,7 @@ a|Subcondition used within `<project>` to query against project dependencies. Th
 |Specify the upper version bound of the artifact. For example `2.2.0.Final`.
 |====
 
-[[filecontent-syntax]]
+[id='filecontent-syntax_{context}']
 == <filecontent> Syntax
 
 === Summary
@@ -409,7 +410,7 @@ from="MyEjbRule"
 |====
 
 
-[[file-syntax]]
+[id='file-syntax_{context}']
 == <file> Syntax
 
 === Summary
@@ -452,7 +453,7 @@ from="MyEjbRule"
 
 |====
 
-[[has-hint-syntax]]
+[id='has-hint-syntax_{context}']
 == <has-hint> Syntax
 
 === Summary
@@ -516,7 +517,7 @@ The `<has-hint>` element is used to determine if a hint exists for a file or lin
 |An optional argument allowing you to match the hint against the provided message string.
 |====
 
-[[has-classification-syntax]]
+[id='has-classification-syntax_{context}']
 == <has-classification> Syntax
 
 === Summary
@@ -540,7 +541,7 @@ The `has-classification` element is used to determine if a specified classificat
 |An optional title to match the classification against.
 |====
 
-[[graph-query-syntax]]
+[id='graph-query-syntax_{context}']
 == <graph-query> Syntax
 
 === Summary
@@ -625,7 +626,7 @@ from="MyEjbRule"
 
 |====
 
-[[dependency-syntax]]
+[id='dependency-syntax_{context}']
 == <dependency> Syntax
 
 === Summary

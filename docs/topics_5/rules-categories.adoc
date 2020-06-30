@@ -1,13 +1,13 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
-[[rule_categories]]
+[id='rule_categories_{context}']
 = Using Custom Rule Categories
 
-A new category field was added in {ProductShortName} 3.0 that replaces the concept of the severity field in {ProductShortName} rules. The default categories are the same that were available in the severity field: `mandatory`, `optional`, and `potential`. Additional categories, such as `information`, have also been included in subsequent {ProductShortName} releases. You can now xref:add_custom_category[add your own custom rule categories] and xref:assign_custom_category[assign {ProductShortName} rules to them].
+A new category field was added in {ProductShortName} 3.0 that replaces the concept of the severity field in {ProductShortName} rules. The default categories are the same that were available in the severity field: `mandatory`, `optional`, and `potential`. Additional categories, such as `information`, have also been included in subsequent {ProductShortName} releases. You can now add your own custom rule categories and assign {ProductShortName} rules to them.
 
 IMPORTANT: Although {ProductShortName} can still process rules that use the legacy `severity` field, it is recommended to update your custom rules to use the new `category-id` field.
 
-[[add_custom_category]]
+[id='add_custom_category_{context}']
 [discrete]
 == Add a Custom Category
 
@@ -34,7 +34,7 @@ IMPORTANT: Although {ProductShortName} can still process rules that use the lega
 
 This category is now ready to be referenced by {ProductShortName} rules.
 
-[[assign_custom_category]]
+[id='assign_custom_category_{context}']
 [discrete]
 == Assign a Rule to a Custom Category
 

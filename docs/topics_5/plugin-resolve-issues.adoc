@@ -1,6 +1,6 @@
 // Module included in the following assemblies:
 // * docs/plugin-guide_5/master.adoc
-[[resolve_issues]]
+[id='resolve_issues_{context}']
 = Resolve {ProductShortName} Issues
 
 You can resolve {ProductShortName} issues by updating the code manually or by applying a quick fix when available.
@@ -13,7 +13,7 @@ You can also manually mark an {ProductShortName} issue as fixed, which will mark
 
 == Resolve an Issue Using a Quick Fix
 
-Some {ProductShortName} issues provide a quick fix, which assists in making the necessary edits to address the issue. See the xref:plugin_windup_issue_icons[icon legend] to see the icons that indicate the {ProductShortName} issue has a quick fix available.
+Some {ProductShortName} issues provide a quick fix, which assists in making the necessary edits to address the issue. See the icon legend to see the icons that indicate the {ProductShortName} issue has a quick fix available.
 
 Preview a Quick Fix::
 

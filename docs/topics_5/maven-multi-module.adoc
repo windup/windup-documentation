@@ -34,13 +34,13 @@ To run the {MavenName} in a project with multiple modules perform the following 
 </plugin>
 ----
 +
-This `pom.xml` deviates from the one in xref:execute[Run the {MavenNameTitle}] by the following attributes:
+This `pom.xml` file differs from the default in the following attributes:
 +
 * `inherited`: Defined at the plugin level, this attribute indicates whether or not this configuration should be used in child modules. Set to `false` for performance improvements.
 * `input`: Specifies the path to the directory containing the projects to be analyzed. This attribute defaults to `{project.basedir}/src/main`, and should be defined if the parent project does not have source code to analyze.
 * `windupHome`: A path to an extracted copy of the {ProductShortName} {CLIName}. This attribute is optional, but is recommended as a performance improvement.
 +
-The above example demonstrates a set of recommended arguments. See xref:maven_arguments[{ProductShortName} Maven Arguments] for a detailed description of all available arguments.
+The above example demonstrates a set of recommended arguments.
 
 . Build the parent project. During the build process the {MavenName} will execute against all children in the project without further configuration.
 +
@@ -49,4 +49,4 @@ The above example demonstrates a set of recommended arguments. See xref:maven_ar
 $ mvn clean install
 ----
 
-. Once completed, xref:access_report[Access the generated reports] as normal. This report contains the analysis for the parent and all children.
+. Once completed, you can access the generated reports. This report contains the analysis for the parent and all children.

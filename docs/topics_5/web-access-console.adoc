@@ -1,11 +1,11 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
-[[access_web_console]]
+[id='access_web_console_{context}']
 = Access the {WebNameTitle}
 
-Once xref:starting_console[started], the {WebName} is accessible from a browser by default on the local host at http://localhost:8080/mta-web.
+Once started, the {WebName} is accessible from a browser by default on the local host at link:http://localhost:8080/mta-web[http://localhost:8080/mta-web].
 
 .Welcome Page
 image::web-login.png[Welcome Page]
 
-The {WebName} uses a default user to automatically authenticate. The default user's credentials are `mta` and `password`. See xref:config_auth[Configuring Authentication for the {WebNameTitle}] to require individual users to authenticate in order to access the {WebName}.
+The {WebName} uses a default user to automatically authenticate. The default user's credentials are `mta` and `password`. You can configure the {WebNameTitle} to require individual users to authenticate in order to access the {WebName}.
