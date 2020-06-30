@@ -6,17 +6,19 @@
 . Download the {WebName} from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} download page].
 . Extract the ZIP file to a directory of your choice.
 +
-The path to this directory is referred to as `_MTA_HOME_` throughout this guide.
+The path to this directory is referred to as `<MTA_HOME>` throughout this guide.
 . Access the OpenShift web console. It should appear similar to the following image.
 +
 image::openshift-console.png[]
 
-. Click the `Import YAML / JSON` button in the upper-right corner of the web console.
+. Click the *Import YAML / JSON* button in the upper-right corner of the web console.
 . Fill in the following fields:
-- *Project Name*. Mandatory.
-- *Project Display Name*. Optional. This field determines how the project name is displayedin the web console.
-- *Project Description*. Optional.
-. Click **Browse** and import the desired {WebName} template from `__MTA_HOME__/openshift/templates`. Once imported, the JSON is visible in the bottom text area.
+
+* *Project Name*. Mandatory.
+* *Project Display Name*. Optional. This field determines how the project name is displayedin the web console.
+* *Project Description*. Optional.
+
+. Click **Browse** and import the desired {WebName} template from `<MTA_HOME>/openshift/templates`. Once imported, the JSON is visible in the bottom text area.
 . Click **Create**.
 . To save the template as a resource for future projects, select *Save template*.
 . Click *Continue*.
