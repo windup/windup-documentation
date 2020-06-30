@@ -28,6 +28,6 @@ image::webconsole-architecture-shared-storage.png[web-template-empty-dir-executo
 
 The OpenShift image environment variables are configured as a baseline for application analysis, and work well in a variety of environments. No additional configuration is required to perform an analysis.
 
-The most common environment variables modified are the CPU and memory resources allocated to each image. These contain a pattern of `__NODE_NAME__` followed by `REQUESTED___RESOURCE__`. For instance, `EXECUTOR_REQUESTED_CPU` indicates the number of CPU cores to request for the executor pod, while `EXECUTOR_REQUESTED_MEMORY` indicates the amount of memory to request for the executor pod.
+The most common environment variables modified are the CPU and memory resources allocated to each image. These contain a pattern of `<NODE_NAME>` followed by `<REQUESTED_RESOURCE>`. For instance, `EXECUTOR_REQUESTED_CPU` indicates the number of CPU cores to request for the executor pod, while `EXECUTOR_REQUESTED_MEMORY` indicates the amount of memory to request for the executor pod.
 
 All of the environment variables are found within each template, along with a description of each.

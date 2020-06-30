@@ -3,21 +3,21 @@
 [id='access_report_{context}']
 = Accessing Reports
 
-When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` that you specify using the `--output` argument in the command line. Upon completion of execution, you will see the following message in the terminal with the location of the report.
+When you execute {ProductName}, the report is generated in the `<OUTPUT_REPORT_DIRECTORY>` that you specify using the `--output` argument in the command line. Upon completion of execution, you will see the following message in the terminal with the location of the report.
 
 [options="nowrap",subs="+quotes"]
 ----
-Report created: __OUTPUT_REPORT_DIRECTORY__/index.html
-              Access it at this URL: file:///__OUTPUT_REPORT_DIRECTORY__/index.html
+Report created: <OUTPUT_REPORT_DIRECTORY>/index.html
+              Access it at this URL: file:///<OUTPUT_REPORT_DIRECTORY>/index.html
 ----
 
 The output directory contains the following files and subdirectories:
 
 [options="nowrap",subs="+quotes"]
 ----
-__OUTPUT_REPORT_DIRECTORY__/
+<OUTPUT_REPORT_DIRECTORY>/
 ├── index.html          // Landing page for the report
-├── __EXPORT_FILE__.csv     // Optional export of data in CSV format
+├── <EXPORT_FILE>.csv   // Optional export of data in CSV format
 ├── archives/           // Archives extracted from the application
 ├── mavenized/          // Optional Maven project structure
 ├── reports/            // Generated HTML reports

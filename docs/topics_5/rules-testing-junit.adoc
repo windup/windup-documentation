@@ -7,7 +7,7 @@ Once a test rule has been created, it can be analyzed as part of a JUnit test to
 
 .Prerequisites
 
-* Fork and clone the {ProductShortName} XML rules. The location of this repository will be referred to as __RULESETS_REPO__.
+* Fork and clone the {ProductShortName} XML rules. The location of this repository will be referred to as <RULESETS_REPO>.
 * Create a test XML rule.
 
 .Creating the JUnit Test Configuration
@@ -15,23 +15,23 @@ Once a test rule has been created, it can be analyzed as part of a JUnit test to
 The following instructions detail creating a JUnit test using the Red Hat CodeReady Studio. When using a different IDE it is recommended to consult your IDE's documentation for instructions on creating a JUnit test.
 
 . Import the {ProductShortName} rulesets repository into your IDE.
-. Copy the custom rules, along with the corresponding tests and data, into `__/path/to/RULESETS_REPO__/rules-reviewed/__RULE_NAME__/`. This should create the following directory structure.
+. Copy the custom rules, along with the corresponding tests and data, into `</path/to/RULESETS_REPO>/rules-reviewed/<RULE_NAME>/`. This should create the following directory structure.
 +
 .Directory Structure
 [source,options="nowrap",subs="+quotes"]
 ----
 ├── *rules-reviewed/*  _(Root directory of the rules found within the project)_
-│   ├── *__RULE_NAME__/*  _(Directory to contain the newly developed rule and tests)_
-│   │   ├── *__RULE_NAME__.mta.xml*  _(Custom rule)_
+│   ├── *<RULE_NAME>/*  _(Directory to contain the newly developed rule and tests)_
+│   │   ├── *<RULE_NAME>.mta.xml*  _(Custom rule)_
 │   │   ├── *tests/*  _(Directory that contains any test rules and data)_
-│   │   │   ├── *__RULE_NAME__.mta.test.xml* _(Test rule)_
+│   │   │   ├── *<RULE_NAME>.mta.test.xml* _(Test rule)_
 │   │   │   └── *data/*  _(Optional directory to contain test rule data)_
 ----
 
 . Select *Run* from the top menu bar.
 . Select *Run Configurations...* from the drop down that appears.
 . Right-click *JUnit* from the options on the left side and select *New*.
-. Enter the following
+. Enter the following:
 +
 ** *Name*: A name for your JUnit test, such as `WindupRulesMultipleTests`.
 ** *Project*: Ensure this is set to `windup-rulesets`.
@@ -39,7 +39,7 @@ The following instructions detail creating a JUnit test using the Red Hat CodeRe
 +
 image::junit-test.png[]
 
-. Select the *Arguments* tab, and add the `-DrunTestsMatching=__RULE_NAME__` VM argument. For instance, if your rule name was `community-rules`, then you would add `-DrunTestsMatching=community-rules` as seen in the following image.
+. Select the *Arguments* tab, and add the `-DrunTestsMatching=<RULE_NAME>` VM argument. For instance, if your rule name was `community-rules`, then you would add `-DrunTestsMatching=community-rules` as seen in the following image.
 +
 image::junit-test-arguments.png[]
 

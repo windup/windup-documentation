@@ -18,7 +18,7 @@ image::openshift-import-template.png[]
 .. Define a `Project Name`, such as `mta`.
 .. Optionally, define a `Project Display Name` to help describe the project.
 .. Optionally, define a `Project Description` to help provide context on how the project will be used.
-.. Click the **Browse** button and import the desired {WebName} template. These are included in `__MTA_HOME__/openshift/templates`. Once imported, the JSON is visible in the bottom text area.
+.. Click the **Browse** button and import the desired {WebName} template. These are included in `<MTA_HOME>/openshift/templates`. Once imported, the JSON is visible in the bottom text area.
 . Click the **Create** button to proceed to the next screen.
 . If you would like to save the template as a resource for future projects, check the `Save template` box.
 . Click the **Continue** button to proceed to the next screen.

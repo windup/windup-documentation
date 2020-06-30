@@ -14,8 +14,8 @@ Create a directory structure to contain your first rule and the data file to use
 
 [options="nowrap",subs="+quotes"]
 ----
-$ mkdir -p /home/__USER_NAME__/migration-rules/rules
-$ mkdir -p /home/__USER_NAME__/migration-rules/data
+$ mkdir -p /home/<USER_NAME>/migration-rules/rules
+$ mkdir -p /home/<USER_NAME>/migration-rules/data
 ----
 
 This directory structure will also be used to hold the generated {ProductShortName} reports.
@@ -23,7 +23,7 @@ This directory structure will also be used to hold the generated {ProductShortNa
 [discrete]
 == Creating Data to Test the Rule
 
-. Create a `jboss-web.xml` file in the `/home/__USER_NAME__/migration-rules/data/` subdirectory.
+. Create a `jboss-web.xml` file in the `/home/<USER_NAME>/migration-rules/data/` subdirectory.
 . Copy in the following content.
 +
 [source,xml,options="nowrap"]
@@ -51,12 +51,12 @@ when(condition)
 otherwise(action)
 ----
 
-. Create an XML file in the `/home/__USER_NAME__/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
+. Create an XML file in the `/home/<USER_NAME>/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
 +
 [source,xml,options="nowrap",subs="+quotes"]
 ----
 <?xml version="1.0"?>
-<ruleset id="__UNIQUE_RULESET_ID__"
+<ruleset id="<UNIQUE_RULESET_ID>"
     xmlns="http://windup.jboss.org/schema/jboss-ruleset"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
@@ -67,12 +67,12 @@ otherwise(action)
         <dependencies>
             <!-- Ruleset Dependencies -->
         </dependencies>
-        <sourceTechnology id="__SOURCE_ID__" versionRange="__SOURCE_VERSION_RANGE__"/>
-        <targetTechnology id="__TARGET_ID__" versionRange="__TARGET_VERSION_RANGE__"/>
+        <sourceTechnology id="<SOURCE_ID>" versionRange="<SOURCE_VERSION_RANGE>"/>
+        <targetTechnology id="<TARGET_ID>" versionRange="<TARGET_VERSION_RANGE>"/>
         <tag>Reviewed-2015-05-01</tag>
     </metadata>
     <rules>
-        <rule id="__UNIQUE_RULE_ID__">
+        <rule id="<UNIQUE_RULE_ID>">
             <when>
                 <!-- Test for a condition here -->
             </when>
@@ -87,8 +87,8 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` or `.mta.xml` e
 
 . Add the unique identifier for the ruleset and rule:
 
-* Replace the `__UNIQUE_RULESET_ID__` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
-* Replace the `__UNIQUE_RULE_ID__` with an appropriate rule ID, for example, `JBoss5-web-class-loading_001`.
+* Replace the `<UNIQUE_RULESET_ID>` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
+* Replace the `<UNIQUE_RULE_ID>` with an appropriate rule ID, for example, `JBoss5-web-class-loading_001`.
 
 . Add the following ruleset add-on dependencies.
 +
@@ -102,13 +102,13 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` or `.mta.xml` e
 
 . Add the source and target technologies.
 +
-* Replace `__SOURCE_ID__` with `eap`.
-* Replace `__TARGET_ID__` with `eap`.
+* Replace `<SOURCE_ID>` with `eap`.
+* Replace `<TARGET_ID>` with `eap`.
 
 . Set the source and target technology versions.
 +
-* Replace `__SOURCE_VERSION_RANGE__` with `(4,5)`.
-* Replace `__TARGET_VERSION_RANGE__` with `[6,)`.
+* Replace `<SOURCE_VERSION_RANGE>` with `(4,5)`.
+* Replace `<TARGET_VERSION_RANGE>` with `[6,)`.
 
 +
 See the Apache Maven link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[version range specification] for help with this syntax.
@@ -191,11 +191,11 @@ The rule is now complete and should look like the following example.
 
 An {ProductShortName} rule is installed by placing the rule into the appropriate directory.
 
-Copy the `JBoss5-web-class-loading.windup.xml` file to the `__MTA_HOME__/rules/` directory.
+Copy the `JBoss5-web-class-loading.windup.xml` file to the `<MTA_HOME>/rules/` directory.
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ cp /home/__USER_NAME__/migration-rules/rules/JBoss5-web-class-loading.windup.xml __MTA_HOME__/rules/
+$ cp /home/<USER_NAME>/migration-rules/rules/JBoss5-web-class-loading.windup.xml <MTA_HOME>/rules/
 ----
 
 [discrete]
@@ -205,15 +205,15 @@ Open a terminal and execute the following command, passing the test file as an i
 
 [options="nowrap",subs="+quotes"]
 ----
-$ __MTA_HOME__/bin/mta-cli --sourceMode --input /home/__USER_NAME__/migration-rules/data --output /home/__USER_NAME__/migration-rules/reports --target eap:6
+$ <MTA_HOME>/bin/mta-cli --sourceMode --input /home/<USER_NAME>/migration-rules/data --output /home/<USER_NAME>/migration-rules/reports --target eap:6
 ----
 
 You should see the following result.
 
 [options="nowrap",subs="+quotes"]
 ----
-Report created: /home/__USER_NAME__/migration-rules/reports/index.html
-              Access it at this URL: file:///home/__USER_NAME__/migration-rules/reports/index.html
+Report created: /home/<USER_NAME>/migration-rules/reports/index.html
+              Access it at this URL: file:///home/<USER_NAME>/migration-rules/reports/index.html
 ----
 
 [discrete]
@@ -221,7 +221,7 @@ Report created: /home/__USER_NAME__/migration-rules/reports/index.html
 
 Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#review_reports[Review the Reports] section of the {ProductShortName} _{UserCLIBookName}_.
 
-. Open `/home/__USER_NAME__/migration-rules/reports/index.html` in a web browser.
+. Open `/home/<USER_NAME>/migration-rules/reports/index.html` in a web browser.
 . Verify that the rule executed.
 .. From the main landing page, click the *Rule providers execution overview* link to open the Rule Providers Execution Overview.
 +

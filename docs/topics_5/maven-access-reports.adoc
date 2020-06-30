@@ -7,16 +7,16 @@ When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DI
 
 [options="nowrap",subs="+quotes"]
 ----
-Windup report created: __OUTPUT_REPORT_DIRECTORY__/index.html
+Windup report created: <OUTPUT_REPORT_DIRECTORY>/index.html
 ----
 
 The output directory contains the following files and subdirectories:
 
 [options="nowrap",subs="+quotes"]
 ----
-__OUTPUT_REPORT_DIRECTORY__/
+<OUTPUT_REPORT_DIRECTORY>/
 ├── index.html          // Landing page for the report
-├── __EXPORT_FILE__.csv     // Optional export of data in CSV format
+├── <EXPORT_FILE>.csv     // Optional export of data in CSV format
 ├── graph/              // Generated graphs used for indexing
 ├── reports/            // Generated HTML reports
 ├── stats/              // Performance statistics

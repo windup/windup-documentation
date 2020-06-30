@@ -5,9 +5,9 @@
 
 You can define parameters that specify a matching pattern to be used in other elements of an XML rule. This can help simplify the patterns for complex matching expressions.
 
-Use the `<where>` element to define a parameter. Specify the parameter name using the `param` attribute and supply the pattern using the `<matches>` element. This parameter can then be referenced elsewhere in the rule definition using the syntax `{__PARAM_NAME__}`.
+Use the `<where>` element to define a parameter. Specify the parameter name using the `param` attribute and supply the pattern using the `<matches>` element. This parameter can then be referenced elsewhere in the rule definition using the syntax `{<PARAM_NAME>}`.
 
-The complete XML rule schema is located here: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd.
+You can view the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[complete XML rule schema].
 
 The following example rule defines a parameter named `subpackage` that specifies a pattern of `(activeio|activemq)`.
 

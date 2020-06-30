@@ -16,7 +16,7 @@ Introduced in {ProductShortName} 4.2, the validation report allows rule develope
 . Run the following command from the root of the `windup-rulesets` repository:
 +
 ----
-$ mvn -Dtest=WindupRulesMultipleTests -DrunTestsMatching=__CUSTOM_RULES__ clean surefire-report:report
+$ mvn -Dtest=WindupRulesMultipleTests -DrunTestsMatching=<CUSTOM_RULES> clean surefire-report:report
 ----
 +
 For instance, if your rules were stored at the `/path/to/windup-rulesets/rules-reviewed/myTests/` directory, then the following command would be used:

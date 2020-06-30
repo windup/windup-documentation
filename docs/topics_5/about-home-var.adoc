@@ -2,8 +2,8 @@
 // * docs/cli-guide_5/master.adoc
 // * docs/rules-development-guide_5/master.adoc
 [id='about_home_var_{context}']
-= Use of `MTA_HOME` in This Guide
+= Use of `<MTA_HOME>` in This Guide
 
-This guide uses the `__MTA_HOME__` replaceable variable to denote the path to your {ProductShortName} installation. The installation directory is the `{ProductDistribution}` directory where you extracted the {ProductShortName} ZIP distribution.
+This guide uses the `<MTA_HOME>` replaceable variable to denote the path to your {ProductShortName} installation. The installation directory is the `{ProductDistribution}` directory where you extracted the {ProductShortName} ZIP distribution.
 
-When you encounter `__MTA_HOME__` in this guide, be sure to replace it with the actual path to your {ProductShortName} installation.
+When you encounter `<MTA_HOME>` in this guide, be sure to replace it with the actual path to your {ProductShortName} installation.

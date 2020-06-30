@@ -176,10 +176,10 @@ Note that in this case, the `<javaclass>` refers to an annotation (`@MyAnnotatio
 
 Use the `<xmlfile>` element to find information in XML files. For a better understanding of the `<xmlfile>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/condition/XmlFile.html[XmlFile] class.
 
-The following is an example of a rule that tests for an XML file.
-[source,xml,options="nowrap",subs="+quotes"]
+The following is an example of a rule that tests for an XML file:
+
 ----
-<rule id="__UNIQUE_RULE_ID__">
+<rule id="<UNIQUE_RULE_ID>">
     <when>
         <xmlfile matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']">
             <namespace prefix="w" uri="http://java.sun.com/xml/ns/javaee"/>

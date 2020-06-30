@@ -5,7 +5,7 @@
 
 Use the following steps to run {ProductShortName} against your application.
 
-. Open a terminal and navigate to the `__MTA_HOME__/bin/` directory.
+. Open a terminal and navigate to the `<MTA_HOME>/bin/` directory.
 . Execute the `mta-cli` script, or `mta-cli.bat` for Windows, and specify the appropriate arguments.
 +
 [source,options="nowrap"]
@@ -32,7 +32,7 @@ The following command analyzes the `com.acme` and `org.apache` packages of the l
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ __MTA_HOME__/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/report-output/ --source eap:5 --target eap:7 --packages com.acme org.apache
+$ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/report-output/ --source eap:5 --target eap:7 --packages com.acme org.apache
 ----
 
 [discrete]
@@ -42,7 +42,7 @@ The following command analyzes the `org.jboss.seam` packages of the link:https:/
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ __MTA_HOME__/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam
+$ <MTA_HOME>/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam
 ----
 
 [discrete]
@@ -52,7 +52,7 @@ The following command analyzes the `com.acme` and `org.apache` packages of the l
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ __MTA_HOME__/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/report-output/ --target eap:7 --target cloud-readiness --packages com.acme org.apache
+$ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/report-output/ --target eap:7 --target cloud-readiness --packages com.acme org.apache
 ----
 
 [discrete]
@@ -62,7 +62,7 @@ To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` 
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ __MTA_HOME__/bin/mta-cli -Dwindup.decompiler=procyon --input __INPUT_ARCHIVE_OR_DIRECTORY__ --output __OUTPUT_REPORT_DIRECTORY__ --target __TARGET_TECHNOLOGY__ --packages __PACKAGE_1__ __PACKAGE_2__
+$ <MTA_HOME>/bin/mta-cli -Dwindup.decompiler=procyon --input <INPUT_ARCHIVE_OR_DIRECTORY> --output <OUTPUT_REPORT_DIRECTORY> --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2>
 ----
 
 [discrete]
@@ -73,7 +73,7 @@ The {ProductShortName} {CLIName} provides an option to enable bash completion fo
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ __MTA_HOME__/bin/mta-cli [TAB]
+$ <MTA_HOME>/bin/mta-cli [TAB]
 ----
 
 [discrete]
@@ -84,7 +84,7 @@ To enable bash completion for the current shell, execute the following command. 
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ source __MTA_HOME__/bash-completion/mta-cli
+$ source <MTA_HOME>/bash-completion/mta-cli
 ----
 
 [discrete]
@@ -97,22 +97,22 @@ The following commands allow bash completion to persist across restarts:
 +
 [source,options="nowrap",subs="+quotes"]
 ----
-source __MTA_HOME__/bash-completion/mta-cli
+source <MTA_HOME>/bash-completion/mta-cli
 ----
 
 * To enable bash completion for all users across system restarts, copy the {ProductName} {CLIName} bash completion file to the `/etc/bash_completion.d/` directory. By default, this directory is only writable by the root user.
 +
 [source,options="nowrap",subs="+quotes"]
 ----
-# cp __MTA_HOME__/bash-completion/mta-cli /etc/bash_completion.d/
+# cp <MTA_HOME>/bash-completion/mta-cli /etc/bash_completion.d/
 ----
 
 [discrete]
 == Accessing {ProductShortName} Help
 
-To see the complete list of available arguments for the `mta-cli` command, open a terminal, navigate to the `__MTA_HOME__` directory, and execute the following command:
+To see the complete list of available arguments for the `mta-cli` command, open a terminal, navigate to the `<MTA_HOME>` directory, and execute the following command:
 
 [source, options="nowrap",subs="+quotes"]
 ----
-$ __MTA_HOME__/bin/mta-cli --help
+$ <MTA_HOME>/bin/mta-cli --help
 ----
