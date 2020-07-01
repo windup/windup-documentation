@@ -6,23 +6,22 @@
 [id='exclude_packages_{context}']
 == Excluding Packages
 
-{ProductShortName} can exclude packages during decompilation and analysis to increase performance. References to these packages are still found in the application's source code, but avoids the decompilation and analysis of proprietary classes.
+You can exclude packages during decompilation and analysis to increase performance. References to these packages remain in the application's source code but excluding them avoids the decompilation and analysis of proprietary classes.
 
-Any packages that match the defined value will be excluded. For instance, to exclude `com.acme.example` and `com.acme.roadrunner`, you would only need to specify `com.acme`.
+Any packages that match the defined value are excluded. For example, you can use `com.acme` to exclude both `com.acme.example` and `com.acme.roadrunner`.
 
-Packages may be excluded by using either of the following methods.
+You can exclude packages by either of the following methods:
 
 * Using the `--excludePackages` argument.
-* Specify the packages in a file contained within one of the ignored locations. Each package should be included on a separate line, and the file must end in `.package-ignore.txt`. For example, see `_MTA_HOME_/ignore/proprietary.package-ignore.txt`.
+* Specifying the packages in a file contained within one of the ignored locations. Each package should be included on a separate line, and the file must end in `.package-ignore.txt`. For example, see `<MTA_HOME>/ignore/proprietary.package-ignore.txt`.
 
 [id='exclude_files_{context}']
 == Excluding Files
 
-{ProductShortName} can exclude specific files, such as included libraries or dependencies, during scanning and report generation. Files to be ignored are defined inside of a file ending in `.mta-ignore.txt` or `.windup-ignore.txt` within one of the ignored locations.
+{ProductShortName} can exclude specific files, such as included libraries or dependencies, during scanning and report generation. Excluded files are defined in a file with the `.mta-ignore.txt` or `.windup-ignore.txt` extension within one of the ignored locations.
 
-These files contain a regex string detailing the name to exclude, with one file listed per line. For instance, to exclude the library `ant.jar` and any Java source files beginning with `Example`, the following file would be used:
+These files contain a regex string detailing the name to exclude, with one file listed per line. For example, you can exclude the library `ant.jar` and any Java source files beginning with `Example` with a file containing the following:
 
-[source,options="nowrap"]
 ----
 .*ant.jar
 .*Example.*\.java
@@ -35,7 +34,7 @@ These files contain a regex string detailing the name to exclude, with one file 
 
 * `~/.mta/ignore/`
 * `~/.windup/ignore/`
-* `_MTA_HOME_/ignore/`
-* Any files and folders specified by the `--userIgnorePath` argument.
+* `<MTA_HOME>/ignore/`
+* Any files and folders specified by the `--userIgnorePath` argument
 
-Each of these files should adhere to the rules specified for excluding packages or files, depending on the type of content to be excluded.
+Each of these files must conform to the rules specified for excluding packages or files, depending on the type of content to be excluded.
