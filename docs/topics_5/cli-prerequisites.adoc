@@ -3,9 +3,12 @@
 [id='cli_prerequisites_{context}']
 = Prerequisites
 
-Before installing the {CLIName}, verify that you meet the following prerequisites.
+{CLIName} has the following prerequisites:
 
 * OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, Oracle JDK 11
-* A minimum of 4 GB RAM; 8 GB recommended
+* 8 GB RAM
 
-NOTE: If you are running macOS, it is recommended to set the maximum number of user processes, `maxproc`, to at least `2048`, and the maximum number of open files, `maxfiles`, to `100000`.
+{CLIName} on macOS has the following additional prerequisites:
+
+* `maxproc`: `2048` or greater
+* `maxfiles`: `100000`
