@@ -2,25 +2,27 @@
 
 = Installing the {MavenNameTitle}
 
-The {MavenName} must be installed in the local maven repository before it may be used in applications.
+You can install the {MavenName} in your local Maven repository.
 
-. Clone the {MavenName} git repository.
+.Procedure
+
+. Clone the {MavenName} Github repository:
 +
-[source,options="nowrap"]
 ----
 $ git clone https://github.com/windup/windup-maven-plugin.git
 ----
 
-. Navigate to the newly created directory.
+. Navigate to the `windup-maven-plugin` directory.
 +
 [source,options="nowrap"]
 ----
 $ cd windup-maven-plugin
 ----
 
-. Build the project. This step will install the `windup-maven-plugin` jar into the local Maven repository.
+. Build the project:
 +
-[source,options="nowrap"]
 ----
 $ mvn clean install
 ----
++
+The `windup-maven-plugin` jar is installed in your local Maven repository.

@@ -5,11 +5,9 @@
 
 The default `logging.properties` file included with the {MavenName} is provided below. This configuration omits many extraneous messages while allowing you to view the progress of the {MavenName}.
 
-[source,options="nowrap"]
+
+.Default `logging.properties` file
 ----
-#
-# Copyright 2013-2014 Red Hat, Inc. and/or its affiliates.
-#
 # Licensed under the Eclipse Public License version 1.0, available at
 # http://www.eclipse.org/legal/epl-v10.html
 #
