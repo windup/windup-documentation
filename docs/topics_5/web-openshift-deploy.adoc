@@ -6,7 +6,7 @@
 . Download the {WebName} from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page].
 . Extract the ZIP file to a directory of your choice.
 +
-The path to the directory created by unzipping this file is referred to as `_MTA_HOME_` throughout this guide.
+The path to the directory created by unzipping this file is referred to as `<MTA_HOME>` throughout this guide.
 . Access the OpenShift web console. It should appear similar to the following image.
 +
 image::openshift-console.png[]
@@ -24,5 +24,3 @@ image::openshift-import-template.png[]
 . Click the **Continue** button to proceed to the next screen.
 . Review the default values provided, adjusting as necessary. For instance, the `web-template-empty-dir-executor.json` file defines 2 CPUs, 4GB of memory, and a 20GB persistent volume.
 . Click the **Create** button to import the template into your project.
-
-Once completed, you can xref:access_console_openshift[access the web console] from a browser.

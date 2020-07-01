@@ -11,9 +11,8 @@ Note that this feature is not intended to create a final solution for your proje
 
 You can generate a Maven project structure for the provided application by passing in the `--mavenize` flag when executing {ProductShortName}.
 
-The following example runs {ProductShortName} using the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] test application.
+The following example runs {ProductShortName} using the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] test application:
 
-[source,options="nowrap",subs="+quotes"]
 ----
 $ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --target eap:6 --packages com.acme org.apache --mavenize
 ----
@@ -24,9 +23,9 @@ NOTE: You can only use the `--mavenize` option when providing a compiled applica
 
 You can also use the `--mavenizeGroupId` option to specify the `<groupId>` to be used for the POM files. If unspecified, {ProductShortName} will attempt to identify an appropriate `<groupId>` for the application, or will default to `com.mycompany.mavenized`.
 
-== Review the Maven Project Structure
+== Reviewing the Maven Project Structure
 
-The `/path/to/output/mavenized/<APPLICATION_NAME>/` directory will contain the following items:
+The `/path/to/output/mavenized/<APPLICATION_NAME>/` directory contains the following items:
 
 * A root `POM` file. This is the `pom.xml` file at the top-level directory.
 * A BOM file. This is the `POM` file in the directory ending with `-bom`.

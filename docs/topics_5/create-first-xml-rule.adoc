@@ -44,60 +44,60 @@ This directory structure will also be used to hold the generated {ProductShortNa
 
 {ProductShortName} XML-based rules use the following rule pattern:
 
-[source,options="nowrap"]
 ----
 when(condition)
   perform(action)
 otherwise(action)
 ----
 
-. Create an XML file in the `/home/<USER_NAME>/migration-rules/rules/` subdirectory named `JBoss5-web-class-loading.windup.xml`. Copy in the following content.
+.Procedure
+
+. In the `/home/<USER_NAME>/migration-rules/rules/` directory, create a file named `JBoss5-web-class-loading.windup.xml` that contains the following content:
 +
-[source,xml,options="nowrap",subs="+quotes"]
+[source,xml]
 ----
 <?xml version="1.0"?>
 <ruleset id="<UNIQUE_RULESET_ID>"
-    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
-    <metadata>
-        <description>
-            <!-- Ruleset Description -->
-        </description>
-        <dependencies>
-            <!-- Ruleset Dependencies -->
-        </dependencies>
-        <sourceTechnology id="<SOURCE_ID>" versionRange="<SOURCE_VERSION_RANGE>"/>
-        <targetTechnology id="<TARGET_ID>" versionRange="<TARGET_VERSION_RANGE>"/>
-        <tag>Reviewed-2015-05-01</tag>
-    </metadata>
-    <rules>
-        <rule id="<UNIQUE_RULE_ID>">
-            <when>
-                <!-- Test for a condition here -->
-            </when>
-            <perform>
-                <!-- Perform an action -->
-            </perform>
-        </rule>
-     </rules>
+  xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+  <metadata>
+      <description>
+          <!-- Ruleset Description -->
+      </description>
+      <dependencies>
+          <!-- Ruleset Dependencies -->
+      </dependencies>
+      <sourceTechnology id="<SOURCE_ID>" versionRange="<SOURCE_VERSION_RANGE>"/>
+      <targetTechnology id="<TARGET_ID>" versionRange="<TARGET_VERSION_RANGE>"/>
+      <tag>Reviewed-2015-05-01</tag>
+  </metadata>
+  <rules>
+      <rule id="<UNIQUE_RULE_ID>">
+        <when>
+            <!-- Test for a condition here -->
+        </when>
+        <perform>
+            <!-- Perform an action -->
+        </perform>
+      </rule>
+   </rules>
 </ruleset>
 ----
-NOTE: {ProductShortName} identifies files with the `.windup.xml` or `.mta.xml` extension as XML-based rules, so be sure to use this naming convention, otherwise the rule will not be evaluated!
-
-. Add the unique identifier for the ruleset and rule:
-
-<<<<<<< HEAD
-* Replace the `<UNIQUE_RULESET_ID>` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
-* Replace the `<UNIQUE_RULE_ID>` with an appropriate rule ID, for example, `JBoss5-web-class-loading_001`.
-=======
-* Replace the `__UNIQUE_RULESET_ID__` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
-* Replace the `__UNIQUE_RULE_ID__` with an appropriate rule ID, for example, `JBoss5-web-class-loading_001`.
->>>>>>> 61034b8... Fix procedure headings
-
-. Add the following ruleset add-on dependencies.
 +
-[source,xml,options="nowrap"]
+[NOTE]
+====
+The XML file name must include the `.windup.xml` or `.mta.xml` extension. Otherwise, {ProductShortName} does not evaluate the new rule.
+====
+
+. Add a unique identifier for the ruleset and rule:
+
+* Replace `<UNIQUE_RULESET_ID>` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
+* Replace `<UNIQUE_RULE_ID>` with an appropriate rule ID, for example, `JBoss5-web-class-loading_001`.
+
+. Add the following ruleset add-on dependencies:
++
+[source,xml]
 ----
 <dependencies>
   <addon id="org.jboss.windup.rules,windup-rules-javaee,3.0.0.Final"/>
@@ -105,22 +105,20 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` or `.mta.xml` e
 </dependencies>
 ----
 
-. Add the source and target technologies.
-+
+. Add the source and target technologies:
+
 * Replace `<SOURCE_ID>` with `eap`.
 * Replace `<TARGET_ID>` with `eap`.
 
 . Set the source and target technology versions.
 +
 * Replace `<SOURCE_VERSION_RANGE>` with `(4,5)`.
-* Replace `<TARGET_VERSION_RANGE>` with `[6,)`.
+* Replace `<TARGET_VERSION_RANGE>` with `(6,)`.
 
 +
-See the Apache Maven link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[version range specification] for help with this syntax.
+See the Apache Maven link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[version range specification] for more information.
 
-. Complete the `when` condition.
-+
-Because this rule tests for a match in an XML file, `xmlfile` is used to evaluate the files.
+. Complete the `when` condition. Because this rule tests for a match in an XML file, `xmlfile` is used to evaluate the files.
 +
 To match on the `class-loading` element that is a child of `jboss-web`, use the xpath expression `jboss-web/class-loading`.
 +

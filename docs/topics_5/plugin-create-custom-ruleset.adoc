@@ -5,6 +5,8 @@
 
 You can create a new custom ruleset in the {PluginName} to use during analysis of your projects.
 
+.Procedure
+
 . From the {ProductShortName} perspective, open the *Rulesets* tab.
 . Click the create ruleset icon (image:repository-new.gif[Create ruleset icon]).
 . Select the project and directory to save the new ruleset in.

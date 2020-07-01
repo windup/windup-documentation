@@ -1,11 +1,10 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='manually_test_xml_rule_{context}']
-= Manually Testing the XML Rule
+= Manually Testing an XML Rule
 
-Instead of writing a test case, it is possible to simply run the XML rule against your application file by running {ProductShortName} in a terminal.
+You can run an XML rule against your application file to test it:
 
-[options="nowrap",subs="+quotes"]
 ----
 $ <MTA_HOME>/bin/mta-cli [--sourceMode] --input <INPUT_ARCHIVE_OR_FOLDER> --output <OUTPUT_REPORT_DIRECTORY> --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2> <PACKAGE_N>
 ----
