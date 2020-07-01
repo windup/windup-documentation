@@ -87,8 +87,13 @@ NOTE: {ProductShortName} identifies files with the `.windup.xml` or `.mta.xml` e
 
 . Add the unique identifier for the ruleset and rule:
 
+<<<<<<< HEAD
 * Replace the `<UNIQUE_RULESET_ID>` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
 * Replace the `<UNIQUE_RULE_ID>` with an appropriate rule ID, for example, `JBoss5-web-class-loading_001`.
+=======
+* Replace the `__UNIQUE_RULESET_ID__` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
+* Replace the `__UNIQUE_RULE_ID__` with an appropriate rule ID, for example, `JBoss5-web-class-loading_001`.
+>>>>>>> 61034b8... Fix procedure headings
 
 . Add the following ruleset add-on dependencies.
 +
