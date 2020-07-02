@@ -1,0 +1,29 @@
+:toc:
+:toclevels: 4
+:numbered:
+
+include::topics_5/templates/document-attributes.adoc[]
+
+:imagesdir: topics_5/images
+:context: release-notes
+:release-notes:
+
+= {ReleaseNotesName}
+
+include::topics_5/release-notes-introduction.adoc[leveloffset=+1]
+
+== New Features
+
+// Not sure if we need to create separate modules. I would create one module or even put them into assembly
+
+== Known {ProductShortName} Issues
+
+You can review known issues for {ProductShortName} here: link:[Open {ProductShortName} issues].
+
+include::topics_5/known_issues.adoc[leveloffset=+2]
+
+== Resolved Issues
+
+At the time of the release the following resolved issues have been identified as important issues worth highlighting. For a full list of all issues resolved in this release, see the link:[{ProductVersion} resolved issues JIRA filter].
+
+include::topics_5/resolved_issues.adoc[leveloffset=+2]
