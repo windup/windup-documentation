@@ -1,17 +1,17 @@
+// Module included in the following assemblies:
+// * docs/release_notes-5.0.0/master.adoc
 [id='resolved_issues_{context}']
-[discrete]
-= Resolved Issues
 
-//replace examples below
+.Resolved Issues
 [cols="25%,75%",options="header"]
 |====
 |ID
 |Summary
 
-|link:https://issues.jboss.org/browse/WINDUP-2372[WINDUP-2372]
-|Bubble report does not order by Stats columns
+|link:https://issues.redhat.com/browse/WINDUP-2629[WINDUP-2629]
+|Java `ClassReference`: `packageName` and `className` errors have been fixed.
 
-|link:https://issues.jboss.org/browse/WINDUP-1966[WINDUP-1966]
-|Add multi-column sorting to the Technology reports screen
+|link:https://issues.redhat.com/browse/WINDUPRULE-479[WINDUPRULE-479]
+|`maven-javax-to-jakarta` ruleset links to the Red Hat JBoss EAP 7.3 _Migration Guide_ have been updated.
 
 |====
