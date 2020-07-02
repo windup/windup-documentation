@@ -10,11 +10,19 @@ include::topics_5/templates/document-attributes.adoc[]
 
 = {ReleaseNotesName}
 
-include::topics_5/release-notes-introduction.adoc[leveloffset=+1]
+== Introduction
+
+These release notes describe the new features and changes implemented for the {ProductName} ({ProductShortName}) {ProductVersion} release.
 
 == New Features
 
-// Not sure if we need to create separate modules. I would create one module or even put them into assembly
+=== Rebranding as Migration Toolkit for Applications
+
+In this release, the Red Hat Application Migration Toolkit has been rebranded as the Migration Toolkit for Applications.
+
+=== New migration path for migrating to Apache Camel 3
+
+This release contains a new migration path to support the migration from Apache Camel 2 to Apache Camel 3. The Camel 3 rulesets contain 147 new rules.
 
 == Known {ProductShortName} Issues
 
