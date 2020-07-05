@@ -1,7 +1,11 @@
 // Module included in the following assemblies:
-// * docs/release_notes-5.0.0/master.adoc
-[id='known_issues_{context}']
-.Known Issues
+// * docs/release_notes-5.0/master.adoc
+[id='rn-known-issues_{context}']
+= Known Issues
+
+At the time of release, the following known issues are identified as major issues. For a full list of all known issues and issues that have been identified, see link:https://issues.redhat.com/issues/?filter=12348397[open {ProductShortName} issues].
+
+.Major known issues
 [cols="25%,25%,50%",options="header"]
 |====
 |ID

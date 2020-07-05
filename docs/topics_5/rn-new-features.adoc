@@ -1,0 +1,12 @@
+// Module included in the following assemblies:
+// * docs/release_notes-5.0/master.adoc
+[id='rn-new-features_{context}']
+= New Features
+
+This section describes the new features of the {ProductName}.
+
+Rebranding::
+The Red Hat Application Migration Toolkit has been rebranded as the {ProductName}{nbsp}({ProductShortName}).
+
+New migration path for migrating to Apache{nbsp}Camel{nbsp}3::
+The current release contains a new migration path to support the migration from Apache{nbsp}Camel{nbsp}2 to Apache{nbsp}Camel{nbsp}3. The Camel{nbsp}3 rulesets contain 147 new rules.
