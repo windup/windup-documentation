@@ -1,19 +1,79 @@
+// Module included in the following assemblies:
+// * docs/release_notes-5.0.0/master.adoc
 [id='known_issues_{context}']
-[discrete]
-= Known Issues
-//examples below. Replace with real ones
+.Known Issues
 [cols="25%,25%,50%",options="header"]
 |====
 |ID
 |Component
 |Summary
 
+|link:https://issues.redhat.com/browse/WINDUPRULE-607[WINDUPRULE-607]
+|OpenShift
+|RHAMT 4.3.1 installation on OpenShift Container Platform fails. The Webconsole and Executor Pods are not running.
+
+|link:https://issues.redhat.com/browse/WINDUP-2620[WINDUP-2620]
+|Web UI & Windup-as-a-Service
+|`ulimit` setting in `run_windup.sh` is too low.
+
 |link:https://issues.redhat.com/browse/WINDUP-2593[WINDUP-2593]
 |Migration - Application
-|Rule `java-glassfish-groovy-01000` throws exception while testing the maven plugin for `weblogic-jms`
+|`java-glassfish-groovy-01000` rule causes an error in the Maven plugin for `weblogic-jms`.
+
+|link:https://issues.redhat.com/browse/WINDUP-2551[WINDUP-2551]
+|Technical Debt
+|{ProductShortName} does not run on Zulu.
+
+|link:https://issues.redhat.com/browse/WINDUP-2502[WINDUP-2502]
+|Web UI & Windup-as-a-Service
+|Global custom rules appeared in the Project level *Select Custom Rules* screen.
 
 |link:https://issues.redhat.com/browse/WINDUP-2420[WINDUP-2420]
 |Web UI
-|After analysis clicking on the "short reports" link results in a "not found" page
+|After running an analysis, clicking the *Short Reports* link results in a `Not found` error.
+
+|link:https://issues.redhat.com/browse/WINDUP-2388[WINDUP-2388]
+|Rule Execution - XML-based
+|Regex pattern-matching is not working properly.
+
+|link:https://issues.redhat.com/browse/WINDUP-2371[WINDUP-2371]
+|Web UI
+|After running an analysis, clicking the *Results* icon results in a `Forbidden` error.
+
+|link:https://issues.redhat.com/browse/WINDUP-2333[WINDUP-2333]
+|OpenShift Deployment
+|Cannot access reports when {ProductShortName} installed on OpenShift Container Platform
+
+|link:https://issues.redhat.com/browse/WINDUP-2304[WINDUP-2304]
+|Eclipse Plugin
+|Run configuration must be updated to include JDK instead of JRE.
+
+|link:https://issues.redhat.com/browse/WINDUP-2297[WINDUP-2297]
+|Windup Maven Plugin
+|Because of dependency issues, `org.apache.maven:maven-model:jar` causes unexpected code behavior.
+
+|link:https://issues.redhat.com/browse/WINDUP-2264[WINDUP-2264]
+|IDE Plugin
+|Sometimes the Eclipse plugin cannot connect to the RHAMT server it spawned.
+
+|link:https://issues.redhat.com/browse/WINDUP-2147[WINDUP-2147]
+|OpenShift Deployment
+|Liveness probe of the Message Executor Pod is tied to the web console.
+
+|link:https://issues.redhat.com/browse/WINDUP-2122[WINDUP-2122]
+|IDE Plugin
+|Plugin updates require better support.
+
+|link:https://issues.redhat.com/browse/WINDUP-2025[WINDUP-2025]
+|Web UI & Windup-as-a-Service
+|Incorrect time is displayed on the *Analysis Results* screen if there is a discrepancy between the server and client clocks.
+
+|link:https://issues.redhat.com/browse/WINDUP-2010[WINDUP-2010]
+|Eclipse Plugin
+|Issue Explorer does not display analysis results after running an analysis.
+
+|link:https://issues.redhat.com/browse/WINDUP-1972[WINDUP-1972]
+|Web UI & Windup-as-a-Service
+|In the *Issues* screen for applications, the *Embedded framework* and *Embedded library* fields do not show files.
 
 |====
