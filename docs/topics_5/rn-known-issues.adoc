@@ -14,7 +14,8 @@ At the time of release, the following known issues are identified as major issue
 
 |link:https://issues.redhat.com/browse/WINDUPRULE-607[WINDUPRULE-607]
 |OpenShift
-|{ProductShortName} installation on OpenShift Container Platform fails. The Webconsole and Executor Pods are not running.
+|RHAMT 4.3.1 installation on OpenShift Container Platform fails. The Webconsole and Executor Pods are not running.
+// Keep old name/acronym for known issues
 
 |link:https://issues.redhat.com/browse/WINDUP-2620[WINDUP-2620]
 |Web UI & Windup-as-a-Service
@@ -26,7 +27,7 @@ At the time of release, the following known issues are identified as major issue
 
 |link:https://issues.redhat.com/browse/WINDUP-2551[WINDUP-2551]
 |Technical Debt
-|{ProductShortName} does not run on Zulu.
+|RHAMT does not run on Zulu.
 
 |link:https://issues.redhat.com/browse/WINDUP-2502[WINDUP-2502]
 |Web UI & Windup-as-a-Service
@@ -46,7 +47,7 @@ At the time of release, the following known issues are identified as major issue
 
 |link:https://issues.redhat.com/browse/WINDUP-2333[WINDUP-2333]
 |OpenShift Deployment
-|Cannot access reports when {ProductShortName} installed on OpenShift Container Platform
+|Cannot access reports when RHAMT 4.1.0 is installed on OpenShift Container Platform
 
 |link:https://issues.redhat.com/browse/WINDUP-2304[WINDUP-2304]
 |Eclipse Plugin

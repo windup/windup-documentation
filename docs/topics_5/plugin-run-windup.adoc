@@ -10,6 +10,9 @@ Once a run configuration has been created, you can run {ProductShortName} using 
 
 If the {ProductShortName} server is not currently running, it will start once a run configuration is executed.
 
-NOTE: If you do not plan on running {ProductShortName} in the near future, it is recommended to stop the {ProductShortName} server to conserve memory on your machine.
+[NOTE]
+====
+If you do not plan to run {ProductShortName} in the near future, stop the {ProductShortName} server to conserve memory on your machine.
+====
 
 Once execution is complete, the Issue Explorer will be populated with {ProductShortName} issues.

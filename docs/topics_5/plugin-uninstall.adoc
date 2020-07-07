@@ -3,10 +3,11 @@
 [id='uninstall_plugin_{context}']
 = Uninstalling the {PluginNameTitle}
 
-. From your IDE, navigate to *Help* -> *Installation Details*.
+. In your IDE, navigate to *Help* -> *Installation Details*.
 . In the *Installed Software* tab, select *Windup Feature* and *Windup Feature Developer Resources*.
 +
-Hold the *Ctrl* key to select multiple rows.
+Press the Ctrl key to select multiple rows.
+
 . Select *Uninstall*.
 . Review the details and click *Finish* to uninstall the plugin.
 . Restart your IDE for the changes to take effect.
