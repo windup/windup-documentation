@@ -9,12 +9,12 @@
 You can add your own custom rules to use during analysis of your applications.
 For information on writing custom {ProductShortName} rules, see the {ProductShortName} link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_].
 
-Select *Rules Configuration* from the user drop down to view all existing system and custom rules.
+Select *Rules Configuration* from the *User* menu in the title bar to view all existing system and custom rules.
 
 .Adding Custom Rules
 image::web-rules-config.png[Add Project]
 
-To add your own custom rules, click the *Add* button. You can either upload rules or register a server path that contains the rules.
+To add your own custom rules, click *Add*. You can upload rules or register a server path that contains the rules.
 
 Uploading Rules::
 
@@ -34,7 +34,7 @@ Select *Labels Configuration* from the user drop down to view all existing syste
 .Add Custom Labels
 image::web-labels-config.png[Add Custom Labels]
 
-To add your own custom labels, click the *Add* button. You can either upload labels or register a server path that contains the labels files.
+To add your own custom labels, click *Add*. You can upload labels or register a server path that contains the labels files.
 
 Uploading Labels::
 

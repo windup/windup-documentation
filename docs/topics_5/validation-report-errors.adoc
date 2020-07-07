@@ -1,13 +1,16 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='validation_report_errors_{context}']
-= Validation Report Errors
+= Validation report error messages
 
-The validation report will report any errors encountered while running the rules and tests. The following includes a list of these errors and how to resolve them.
+Validation reports contain errors encountered while running the rules and tests.
 
+The following table contains error messages and how to resolve the errors.
+
+.Validation report error messages
 [cols="25%,35%,40%", options="header"]
 |====
-|Error Message
+|Error message
 |Description
 |Resolution
 
