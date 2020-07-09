@@ -3,7 +3,7 @@
 
 The {ProductName} quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.
 
-You can xref:download_quickstart_zip[download a ZIP file] of the latest released version of the quickstarts. Or, if you prefer to work with the source code, you can xref:use_quickstart_github_project[fork and clone the `windup-quickstarts` project repository].
+You can xref:download_quickstart_zip[download a `.zip` file] of the latest released version of the quickstarts. Or, if you prefer to work with the source code, you can xref:use_quickstart_github_project[fork and clone the `windup-quickstarts` project repository].
 
 Each quickstart has a `README.adoc` file that contains instructions for that quickstart.
 
@@ -12,7 +12,7 @@ Each quickstart has a `README.adoc` file that contains instructions for that qui
 == Download the Latest Quickstart ZIP
 
 . Open a browser and navigate to https://github.com/windup/windup-quickstarts/releases.
-. Click on the most recent release to download the ZIP file to your local file system.
+. Click on the most recent release to download the `.zip` file to your local file system.
 
 [[use_quickstart_github_project]]
 [discrete]

@@ -10,21 +10,21 @@
 ===== Download and Install Red Hat JBoss Developer Studio
 
 . Go to https://www.jboss.org/products/devstudio.html.
-. Click the `Download` button. You are prompted to save the ZIP file to a directory of your choice. 
-. Open a terminal and navigate to the directory containing the downloaded `.jar` file. 
-. Run the following command to launch the GUI installation program: 
+. Click the `Download` button. You are prompted to save the `.zip` file to a directory of your choice.
+. Open a terminal and navigate to the directory containing the downloaded `.jar` file.
+. Run the following command to launch the GUI installation program:
 
     java -jar jbdevstudio-build_version.jar
 
 . Click Next to start the installation process.
 . Select "I accept the terms of this license agreement" and click `Next`.
-. Adjust the installation path and click `Next`. 
-. Choose a JVM, or leave the default JVM selected, and click `Next`. 
+. Adjust the installation path and click `Next`.
+. Choose a JVM, or leave the default JVM selected, and click `Next`.
 . Choose whether you want to install an embedded Red Hat JBoss Enterprise Application Platform.
 . Review the installation details, and click `Next`.
 . Click `Next` when the installation process is complete.
 . Configure the desktop shortcuts for Red Hat JBoss Developer Studio, and click `Next`.
-. Click `Done`. 
+. Click `Done`.
 
 ===== Configure Red Hat JBoss Developer Studio Maven Settings
 
@@ -32,4 +32,4 @@
 
 ==== Use Forge to Install {ProductShortName} Add-ons
 
-==== Execute 
+==== Execute
