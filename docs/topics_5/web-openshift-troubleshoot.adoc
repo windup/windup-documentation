@@ -23,7 +23,7 @@ NOTE: If you have deployed the {WebName} by pasting in a JSON template, no image
 
 Each Pod is configured to provide detailed logging that assists with narrowing down the precise cause of an issue. The following steps discuss viewing and obtaining these logs.
 
-.OpenShift Console
+.OpenShift console
 
 You can download a Pod's log with the OpenShift Container Platform console.
 
@@ -70,9 +70,9 @@ $ oc logs <POD_NAME>
 $ oc logs <POD_NAME> > ./mta-openshift-<POD_NAME>.log
 ----
 
-== Common Issues
+== Common issues
 
-.Executor Pod Throws `NoRouteToHostException`
+.Executor Pod throws `NoRouteToHostException`
 
 When accessing the executor Pod's logs the following error is seen.
 
@@ -89,7 +89,7 @@ A `NoRouteToHostException` indicates that this Pod isn't able to connect to the 
 
 In a new deployment this is expected, as the executor starts before the {WebName}. Otherwise, examine the {WebName} Pod and resolve any errors seen here. Once the {WebName} is running successfully this error should be resolved.
 
-.Pod Reports Insufficient Resources
+.Pod reports insufficient resources
 
 After attempting to deploy {WebNameTitle} on OpenShift, the Pod is unable to start, and the following error is seen in the `Events` tab.
 
@@ -111,7 +111,7 @@ Perform either of the following:
 
 Once the request is within the available quota, attempt the deployment once again.
 
-.Pod Takes Longer than 600 seconds to become available
+.Pod takes longer than 600 seconds to become available
 
 After attempting a deployment, the `-deploy` Pods timeout and report the following error.
 
@@ -139,7 +139,7 @@ Attempt the deployment again, and view the logs and events of the non deployment
 
 * To address the second issue reported, where the images are unable to be pulled from the registry, link:{OpenShiftInstallConfigGuideURL}/registry/accessing_registry.html[access the registry] to ensure the images are present. This link also includes instructions on examining the logs for the Docker registry, and can be used to troubleshoot the issue further.
 
-== Reporting Issues
+== Reporting issues
 
 {ProductName} uses JIRA as its issue tracking system. If you encounter any issues while using the {WebName}, please file a JIRA Issue by following the below instructions.
 
