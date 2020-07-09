@@ -6,6 +6,11 @@
 .Procedure
 
 . Download the {CLIName} from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page].
-. Extract the ZIP file to a directory of your choice.
+. Extract the `.zip` file to a directory of your choice.
++
+[NOTE]
+====
+Windows operating systems: Extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error.
+====
 
 The extracted directory is known as `<MTA_HOME>` in this guide.
