@@ -9,9 +9,9 @@
 [discrete]
 == What is the {ProductName}?
 
-The {ProductName} ({ProductShortName}) is an extensible and customizable rule-based tool that helps simplify migration of Java applications.
+The {ProductName} ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration of Java applications.
 
-The {ProductShortName} examines application artifacts, including project source directories and application archives, then produces an HTML report that highlights areas needing changes. {ProductShortName} can be used to migrate Java applications from previous versions of _Red Hat JBoss Enterprise Application Platform_ or from other containers, such as _Oracle(R) WebLogic Server_ or _IBM(R) WebSphere(R) Application Server_.
+The {ProductShortName} examines application artifacts, including project source directories and application archives, then produces an HTML report that highlights areas needing changes. {ProductShortName} can migrate Java applications from earlier versions of Red Hat JBoss Enterprise Application Platform or from other application servers, such as Oracle WebLogic Server or IBM WebSphere Application Server.
 
 [discrete]
 == How does the {ProductName} simplify migration?

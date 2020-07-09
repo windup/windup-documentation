@@ -1,6 +1,43 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
-[id='openshift_install_{context}']
-= OpenShift installation
+[id='openshift_install_procedure_{context}']
+= Installing the {WebName}
 
-When installed on OpenShift, the {ProductShortName} {WebName} is deployed on Red Hat JBoss Enterprise Application Platform, uses Red Hat Single Sign-On for authentication, and is backed by a PostgreSQL database for storage.
+You can install the {ProductShortName} {WebName} on Red Hat OpenShift Container Platform and access the {WebName} in a browser.
+
+.Prerequisites
+
+* OpenShift Container Platform version 3.11 or later.
+* OpenShift Container Platform must have the middleware imagestreams installed.
+* You must have the OpenShift Container Platform CLI installed on your local machine.
+* You must be running Linux or macOS on your local machine. Windows is not currently supported.
+
+See the link:https://access.redhat.com/documentation/en/openshift-container-platform/[OpenShift Container Platform documentation] for assistance.
+
+.Procedure
+
+. Download the {WebName} archive file from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} download page].
+
+. Extract the archive file to a directory of your choice.
++
+The path to this directory is referred to as `<MTA_HOME>` throughout this guide.
+
+. Open the OpenShift web console.
++
+image::openshift-console.png[]
+
+. Click *Import YAML/JSON* in the upper-right corner of the web console.
+. Fill in the following fields:
+
+* *Project Name*. Mandatory.
+* *Project Display Name*. Optional. This field determines how the project name is displayed in the web console.
+* *Project Description*. Optional.
+
+. Click *Browse* and import the desired {WebName} template from `<MTA_HOME>/openshift/templates`.
+. Click *Create*.
+. Optional: To save the template as a resource for future projects, select *Save template*.
+. Click *Continue*.
+. Review the values provided.
+. Click *Create* to import the template into your project.
++
+The {WebName} template is imported into your project.

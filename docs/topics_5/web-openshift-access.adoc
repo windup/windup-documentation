@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='access_console_openshift_{context}']
-= Accessing the {WebNameTitle}
+= Accessing the {WebName}
 
 Once the {WebName} has been deployed on OpenShift Container Platform, you can access it from a browser. The `deploy.sh` script outputs the link, shown in the example below as `<WEB_CONSOLE_URL>`, to use to open the {WebName}.
 
@@ -22,4 +22,4 @@ NOTE: If the {WebName} does not load immediately, check the status of the projec
 .Welcome Page
 image::web-login-openshift.png[Welcome page]
 
-Authentication is required in order to access the {WebName}. The default user's credentials are `mta` and `<password>`.
+Authentication is required in order to access the {WebName}. The default  credentials are `mta` and `<password>`.
