@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='rule_categories_{context}']
-= Using Custom Rule Categories
+= Using Custom rule categories
 
 You can create custom rule categories and assign {ProductShortName} rules to them.
 
@@ -11,7 +11,8 @@ Although {ProductShortName} processes rules with the legacy `severity` field, yo
 ====
 
 [id='add_custom_category_{context}']
-== Adding a Custom Category
+[discrete]
+== Adding a custom category
 
 You can add a custom category to the rule category file.
 
@@ -42,7 +43,8 @@ You can add a custom category to the rule category file.
 This category is ready to be referenced by {ProductShortName} rules.
 
 [id='assign_custom_category_{context}']
-== Assigning a Rule to a Custom Category
+[discrete]
+== Assigning a rule to a custom category
 
 You can assign a rule to your new custom category.
 
@@ -66,5 +68,5 @@ In your {ProductShortName} rule, update the `category-id` field as in the follow
 
 If this rule condition is met, incidents identified by this rule use your custom category. The custom category is displayed on the dashboard and in the Issues report.
 
-.Custom Category on the Dashboard
+.Custom category on the dashboard
 image::custom_rule_category.png[Custom rule category on the Dashboard]

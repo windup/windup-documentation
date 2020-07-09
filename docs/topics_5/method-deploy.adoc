@@ -1,10 +1,10 @@
 // Module included in the following assemblies:
 // * docs/getting-started-guide_5/master.adoc
 [id='deploy_phase_{context}']
-= Deploy Phase
+= Deploy phase
 
-.Red Hat Migration Methodology: Deploy Phase
-image::RHAMT_AMM_Methodology_446947_0617_ECE_Deploy.png[Red Hat Migration Methodology: Deploy]
+.Red Hat migration methodology: Deploy phase
+image::RHAMT_AMM_Methodology_446947_0617_ECE_Deploy.png[Red Hat migration methodology: Deploy]
 
 The _Deploy_ phase is when you execute the plan created in the Design phase. In this phase, you scale the overall transformation process to complete the plan and bring all applications to their new production environment.
 

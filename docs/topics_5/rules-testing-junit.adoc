@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='test_rules_junit_{context}']
-= Testing the Rules Using JUnit
+= Testing the rules using JUnit
 
 Once a test rule has been created, it can be analyzed as part of a JUnit test to confirm that the rule meets all criteria for execution. The `WindupRulesMultipleTests` class in the {ProductShortName} rules repository is designed to test multiple rules simultaneously, and provides feedback on any missing requirements.
 
@@ -10,14 +10,14 @@ Once a test rule has been created, it can be analyzed as part of a JUnit test to
 * Fork and clone the {ProductShortName} XML rules. The location of this repository will be referred to as <RULESETS_REPO>.
 * Create a test XML rule.
 
-.Creating the JUnit Test Configuration
+.Creating the JUnit test configuration
 
 The following instructions detail creating a JUnit test using the Red Hat CodeReady Studio. When using a different IDE it is recommended to consult your IDE's documentation for instructions on creating a JUnit test.
 
 . Import the {ProductShortName} rulesets repository into your IDE.
 . Copy the custom rules, along with the corresponding tests and data, into `</path/to/RULESETS_REPO>/rules-reviewed/<RULE_NAME>/`. This should create the following directory structure.
 +
-.Directory Structure
+.Directory structure
 [source,options="nowrap",subs="+quotes"]
 ----
 ├── *rules-reviewed/*  _(Root directory of the rules found within the project)_

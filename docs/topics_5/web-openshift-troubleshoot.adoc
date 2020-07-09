@@ -1,11 +1,11 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='troubleshoot_web_console_openshift_install_{context}']
-= Troubleshooting the {WebNameTitle} OpenShift Installation
+= Troubleshooting the {WebNameTitle} OpenShift installation
 
-The following steps discuss common techniques for troubleshooting the {WebName} in an OpenShift environment. These instructions are focused on issues specific to the {WebName}. For OpenShift-specific issues, see link:{OpenShiftDevGuideURL}builds/troubleshooting-builds.html[Troubleshooting Builds].
+The following steps discuss common techniques for troubleshooting the {WebName} in an OpenShift environment. These instructions are focused on issues specific to the {WebName}. For OpenShift-specific issues, see link:{OpenShiftDevGuideURL}builds/troubleshooting-builds.html[Troubleshooting builds].
 
-== Obtaining the Latest Image
+== Obtaining the latest image
 
 The first step in troubleshooting in an OpenShift environment is to ensure that the latest image is in use.
 
@@ -20,11 +20,11 @@ From your OpenShift environment perform the following steps.
 . If the latest image is not in use, follow the steps for the OpenShift installation to redeploy the latest image of the {WebName}.
 
 [id='examine_logs_{context}']
-== Examining and Collecting {WebName} Logs
+== Examining and collecting {WebName} logs
 
 Each Pod is configured to provide detailed logging that assists with narrowing down the precise cause of an issue. The following steps discuss viewing and obtaining these logs.
 
-=== Using the OpenShift Console
+=== Using the OpenShift console
 
 The following steps walk through the process to examine the logs for each Pod.
 
@@ -35,7 +35,7 @@ The following steps walk through the process to examine the logs for each Pod.
 . Click `Logs` from the options along the top.
 . To download the log file navigate to the top of the page and click `Download`.
 
-=== Using the OpenShift Client
+=== Using the OpenShift client
 
 . Determine the Pod name by executing `oc get pods` and search for the `web-console` entry with a `Running` status.
 +
@@ -64,9 +64,9 @@ $ oc logs <POD_NAME>
 $ oc logs <POD_NAME> > ./mta-openshift-<POD_NAME>.log
 ----
 
-== Common Issues with {WebNameTitle} OpenShift
+== Common issues with {WebNameTitle} OpenShift
 
-=== Executor Pod Throws `NoRouteToHostException`
+=== Executor Pod throws `NoRouteToHostException`
 
 When accessing the executor Pod's logs the following error is seen.
 

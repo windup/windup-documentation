@@ -1,7 +1,7 @@
 [id='eap72_rules_{context}']
-= Red Hat JBoss Enterprise Application Platform 7.2 Migration Path
+= Red Hat JBoss Enterprise Application Platform 7.2 migration path
 
-Rules for Red Hat JBoss Enterprise Application Platform (JBoss EAP) 7.2 
-have been included in this release. When specifying `eap:7` as the target 
+Rules for Red Hat JBoss Enterprise Application Platform (JBoss EAP) 7.2
+have been included in this release. When specifying `eap:7` as the target
 release the generated reports will now highlight issues pertaining to JBoss
 EAP 7.2 migration paths.

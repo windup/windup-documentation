@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/cli-guide_5/master.adoc
 [id='review_reports_{context}']
-= Reviewing the Reports
+= Reviewing the reports
 
 The report examples shown in the following sections are a result of analyzing the `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example application, which is located in the {ProductShortName} GitHub source repository.
 
@@ -17,7 +17,7 @@ endif::cli-guide[]
 Use a browser to open the `index.html` file located in the report output directory. This opens a landing page that lists the applications that were processed.  Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.
 
 .Application List
-image::report-jee-example-application-list-page.png[Application List]
+image::report-jee-example-application-list-page.png[Application list]
 
 NOTE: The incidents and estimated story points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
 
@@ -31,7 +31,7 @@ The following table lists all of the reports and pages that can be accessed from
 |Application
 | Click the name of the application.
 
-| Technology Report
+| Technologies Report
 | Click the `Technologies` link at the top of the page.
 
 | Dependencies Graph Report
@@ -52,13 +52,13 @@ The following table lists all of the reports and pages that can be accessed from
 
 Note that if an application shares archives with other analyzed applications, you will see a breakdown of how many story points are from shared archives and how many are unique to this application.
 
-.Shared Archives
-image::shared-archives-breakdown.png[Shared Archives]
+.Shared archives
+image::shared-archives-breakdown.png[Shared archives]
 
 Information about the archives that are shared among applications can be found in the Archives Shared by Multiple Applications reports.
 
 [id='review-the-report-application-report_{context}']
-== Application Report
+== Application report
 
 === Dashboard
 
@@ -119,7 +119,7 @@ The top navigation bar lists the various reports that contain additional details
 | Spring Beans
 | Contains a list of Spring Beans found during the analysis.
 
-| Hard-coded IP Addresses
+| Hard-Coded IP Addresses
 | Provides a list of all hard-coded IP addresses that were found in the application.
 
 | Ignored Files
@@ -135,7 +135,7 @@ endif::[]
 |====
 
 [id='issues_report_{context}']
-=== Issues Report
+=== Issues report
 
 Access this report from the dashboard by clicking the *Issues* link.
 
@@ -147,8 +147,8 @@ This report includes details about every issue that was raised by the selected m
 * The estimated level of effort to resolve the issue.
 * The total story points to resolve every instance encountered. This is calculated by multiplying the number of incidents found by the story points per incident.
 
-.Issues Report
-image::report-jee-example-application-issues.png[Issues Report]
+.Issues report
+image::report-jee-example-application-issues.png[Issues report]
 
 Each reported issue may be expanded, by clicking on the title, to obtain additional details. The following information is provided.
 
@@ -157,18 +157,18 @@ Each reported issue may be expanded, by clicking on the title, to obtain additio
 * A direct link, entitled *Show Rule*, to the rule that generated the issue.
 
 .Expanded Issue
-image::report-jee-example-application-issues-2.png[Expanded Rule in the Issues Report]
+image::report-jee-example-application-issues-2.png[Expanded rule in the issues report]
 
 Issues are sorted into four categories by default. Information on these categories is available at ask Category.
 
-=== Application Details Report
+=== Application Details report
 
 Access this report from the dashboard by clicking the *Application Details* link.
 
 The report lists the story points, the Java incidents by package, and a count of the occurrences of the technologies found in the application. Next is a display of application messages generated during the migration process. Finally, there is a breakdown of this information for each archive analyzed during the process.
 
-.Application Details Report
-image::report-jee-example-application-details.png[Application Details Report]
+.Application Details report
+image::report-jee-example-application-details.png[Application Details report]
 
 Expand the `jee-example-app-1.0.0.ear/jee-example-services.jar` to review the story points, Java incidents by package, and a count of the occurrences of the technologies found in this archive. This summary begins with a total of the story points assigned to its migration, followed by a table detailing the changes required for each file in the archive. The report contains the following columns.
 
@@ -190,15 +190,15 @@ Expand the `jee-example-app-1.0.0.ear/jee-example-services.jar` to review the st
 a| Level of effort required to migrate the file.
 |====
 
-Note that if an archive is duplicated several times in an application, it will be listed just once in the report and will be tagged with `[Included Multiple Times]`.
+Note that if an archive is duplicated several times in an application, it will be listed just once in the report and will be tagged with `[Included multiple times]`.
 
-.Duplicate Archive in an Application
-image::duplicate-archive-app-report.png[Duplicate Archive]
+.Duplicate archive in an application
+image::duplicate-archive-app-report.png[Duplicate archive]
 
 The story points for archives that are duplicated within an application will be counted only once in the total story point count for that application.
 
 [id='technology_report_application_{context}']
-=== Application Technology Report
+=== Technologies report
 
 Access this report from the dashboard by clicking the *Technologies* link.
 
@@ -206,11 +206,11 @@ The report lists the occurrences of technologies, grouped by function, in the an
 
 The below image shows the technologies used in the `jee-example-app`.
 
-.Technologies in an Application
-image::technology-report-single-application.png[Technology Report Application View]
+.Technologies in an application
+image::technology-report-single-application.png[Technology report Application view]
 
 [id='application_dependencies_graph_report_{context}']
-=== Application Dependencies Graph Report
+=== Application Dependencies Graph report
 
 The analyzed applications' dependencies are shown in this report, accessible from the *Dependencies Graph* link from the dashboard.
 
@@ -218,12 +218,12 @@ It includes a list of all WARs and JARs, including third-party JARs, and graphs 
 
 The below image shows the dependencies used in the `jee-example-app`, with the selected application in the center of the graph.
 
-.Graph of Dependencies in an Application
-image::report-jee-example-application-dependencies.png[Dependencies Graph Application View]
+.Graph of dependencies in an application
+image::report-jee-example-application-dependencies.png[Dependencies Graph application view]
 
-.Interacting with the Dependency Graph
+.Interacting with the Dependencies Graph
 
-The dependency graph may be adjusted by using any of the following.
+The dependencies graph may be adjusted by using any of the following.
 
 * Clicking a dependency will display the name of the application in the upper-left corner. While selected the dependency will have a shaded circle identifying it, as seen on the center in the above image.
 * Clicking and dragging a circle will reposition it. Releasing the mouse will fix the dependency to the cursor's location.
@@ -244,19 +244,19 @@ In this example, warnings appear at various import statements, declarations, and
 image::report-jee-example-source-1.png[Source Report]
 
 [id='technology_report_{context}']
-== Technology Report
+== Technologies report
 
 Access this report from the report landing page by clicking the *Technologies* link.
 
 This report provides an aggregate listing of the technologies used, grouped by function, for the analyzed applications. It shows how the technologies are distributed, and is typically reviewed after analyzing a large number of applications to group the applications and identify patterns. It also shows the size, number of libraries, and story point totals of each application.
 
 Clicking any of the headers, such as *Markup*, sorts the results in descending order. Selecting the same header again will resort the results in ascending order. The currently selected header is identified in bold, next to a directional arrow, indicating the direction of the sort.
-
-.Technologies Used Across Multiple Applications
-image::technology-report-overview.png[Technologies Used Across Multiple Applications]
+y
+.Technologies used across multiple applications
+image::technology-report-overview.png[Technologies used across multiple applications]
 
 [id='dependencies_graph_report_{context}']
-== Dependencies Graph Report
+== Dependencies Graph report
 
 Access this report from the report landing page by clicking the *Dependencies Graph* link.
 
@@ -264,10 +264,10 @@ It includes a list of all WARs and JARs, and graphs the relations between each o
 
 In the below image we can see two distinct groups. On the left half we see a single WAR that defines several JARs as dependencies. On the right half we see the same dependencies used by multiple WARs, one of which is the seelcted `overlord-commons-auth-2.0.11.Final.jar`.
 
-.Dependency Graph Across Multiple Applications
-image::report-jee-example-application-dependency-graph-overview.png[Dependency Graph Across Multiple Applications]
+.Dependencies graph across multiple applications
+image::report-jee-example-application-dependency-graph-overview.png[Dependencies graph across multiple applications]
 
-The dependency graph may be adjusted by using any of the following.
+The dependencies graph may be adjusted by using any of the following.
 
 * Clicking a dependency will display the name of the application in the upper-left corner. While selected the dependency will have a shaded circle identifying it, as seen on the center in the above image.
 * Clicking and dragging a circle will reposition it. Releasing the mouse will fix the dependency to the cursor's location.
@@ -276,12 +276,12 @@ The dependency graph may be adjusted by using any of the following.
 * Clicking on any item in the legend will enable or disable all items of the selected type. For instance, selecting the embedded WARs icon will disable all embedded WARs if these are enabled, and will enable these dependencies if they are disabled.
 
 [id='shared_archives_{context}']
-== Archives Shared by Multiple Applications
+== Archives shared by multiple applications
 
 Access these reports from the report landing page by clicking the *Archives shared by multiple applications* link. Note that this link is only available if there are applicable shared archives.
 
-.Archives Shared by Multiple Applications
-image::shared-archives-app-list.png[Archives Shared by Multiple Applications]
+.Archives shared by multiple applications
+image::shared-archives-app-list.png[Archives shared by multiple applications]
 
 This allows you to view the detailed reports for all archives that are shared across multiple applications.
 
@@ -306,11 +306,11 @@ This report lists all the registered functions and directives that were used to 
 image::report-jee-example-freemarker-and-directives.png[FreeMarker Functions and Directives]
 
 [id='review-the-report-send-feedback_{context}']
-== Send Feedback Form
+== Send feedback form
 
 Access this feedback form from the report landing page by clicking the *Send feedback* link.
 
 This form allows you to rate the product, talk about what you like, and make suggestions for improvements.
 
-.Send Feedback Form
-image::report-jee-example-send-feedback.png[Feedback Form, 550]
+.Send feedback form
+image::report-jee-example-send-feedback.png[Feedback form, 550]

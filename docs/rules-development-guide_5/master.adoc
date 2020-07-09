@@ -30,7 +30,7 @@ include::topics_5/create-first-xml-rule.adoc[leveloffset=+2]
 // Review the Quickstarts
 include::topics_5/review-quickstarts.adoc[leveloffset=+2]
 
-== Creating XML Rules
+== Creating XML rules
 
 // XML Rule Structure
 include::topics_5/xml-rule-syntax.adoc[leveloffset=+2]
@@ -38,7 +38,7 @@ include::topics_5/xml-rule-syntax.adoc[leveloffset=+2]
 // Create a Basic XML Rule
 include::topics_5/create-basic-xml-rule.adoc[leveloffset=+2]
 
-=== XML Rule Syntax
+=== XML rule syntax
 
 // When Condition Syntax
 include::topics_5/xml-rule-when-syntax.adoc[leveloffset=+3]
@@ -77,14 +77,14 @@ include::topics_5/overriding-rules.adoc[leveloffset=+1]
 include::topics_5/rules-categories.adoc[leveloffset=+1]
 
 [appendix]
-== Reference Material
+== Reference material
 
 // Rule Story Points
 include::topics_5/about-story-points.adoc[leveloffset=+2]
 
 For more information on categorizing tasks, see xref:rule_categories_rules-development-guide[Using Custom Rule Categories].
 
-=== Additional Resources
+=== Additional resources
 
 // Review the Existing RHAMT XML Rules
 include::topics_5/review-existing-rules.adoc[leveloffset=+3]

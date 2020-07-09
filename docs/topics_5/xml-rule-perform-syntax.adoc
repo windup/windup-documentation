@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='perform_action_syntax_{context}']
-= `<perform>` Syntax
+= `<perform>` syntax
 
 Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.
 
@@ -10,7 +10,7 @@ You can view the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[co
 The following sections describe the more common XML rule perform actions.
 
 [id='classification-syntax_{context}']
-== <classification> Syntax
+== <classification> syntax
 
 === Summary
 
@@ -32,11 +32,11 @@ The following is an example of a rule that classifies a resource as a WebLogic E
 </rule>
 ----
 
-=== <classification> Element Attributes
+=== <classification> element attributes
 
 [cols="1,1,3", options="header"]
 |====
-|Attribute Name
+|Attribute name
 |Type
 |Description
 
@@ -77,12 +77,12 @@ of="MySeamRule"
 ----
 |====
 
-=== <classification> Child Elements
+=== <classification> child elements
 
 
 [cols="1,4", options="header"]
 |====
-|Child Element
+|Child element
 |Description
 
 |<link>
@@ -116,7 +116,7 @@ a|Description of this resource
 
 
 [id='link-syntax_{context}']
-== <link> Syntax
+== <link> syntax
 
 === Summary
 
@@ -143,7 +143,7 @@ The following is an example of a rule that creates links to additional informati
 </rule>
 ----
 
-=== <link> Element Attributes
+=== <link> element attributes
 
 [cols="1,1,3", options="header"]
 |====
@@ -172,7 +172,7 @@ title="Migrate WebLogic Proprietary Servlet Annotations"
 |====
 
 [id='hint-syntax_{context}']
-== <hint> Syntax
+== <hint> syntax
 
 === Summary
 
@@ -199,11 +199,11 @@ The following is an example of a rule that creates a hint.
 </rule>
 ----
 
-=== <hint> Element Attributes
+=== <hint> element attributes
 
 [cols="1,1,3", options="header"]
 |====
-|Attribute Name
+|Attribute name
 |Type
 |Description
 
@@ -245,11 +245,11 @@ effort="2"
 
 |====
 
-=== <hint> Child Elements
+=== <hint> child elements
 
 [cols="1,4", options="header"]
 |====
-|Child Element
+|Child element
 |Description
 
 |<message>
@@ -292,7 +292,7 @@ a|Contains information to be used by the {PluginName} to perform quick fixes whe
 |====
 
 [id='xslt-syntax_{context}']
-== <xslt> Syntax
+== <xslt> syntax
 
 === Summary
 
@@ -315,7 +315,7 @@ The following is an example of rule that defines an XSLT action.
 </rule>
 ----
 
-=== <xslt> Element Attributes
+=== <xslt> element attributes
 
 [cols="1,1,3", options="header"]
 |====
@@ -365,12 +365,12 @@ template="simpleXSLT.xsl"
 
 |====
 
-=== <xslt> Child Elements
+=== <xslt> child elements
 
 
 [cols="1,4", options="header"]
 |====
-|Child Element
+|Child element
 |Description
 
 |<xslt-parameter>
@@ -383,7 +383,7 @@ a|Specify XSLTTransformation parameters as property value pairs
 |====
 
 [id='lineitem-syntax_{context}']
-== <lineitem> Syntax
+== <lineitem> syntax
 
 === Summary
 
@@ -408,7 +408,7 @@ The following is an example of a rule that creates a lineitem message.
     </perform>
 </rule>
 ----
-=== <lineitem> Element Attributes
+=== <lineitem> element attributes
 
 [cols="1,1,3", options="header"]
 |====
@@ -428,7 +428,7 @@ message="Proprietary code found."
 |====
 
 [id='iteration-syntax_{context}']
-== <iteration> Syntax
+== <iteration> syntax
 
 === Summary
 
@@ -457,11 +457,11 @@ The following is an example of a rule that performs an iteration.
 </rule>
 ----
 
-=== <iteration> Element Attributes
+=== <iteration> element attributes
 
 [cols="1,1,3", options="header"]
 |====
-|Attribute Name
+|Attribute name
 |Type
 |Description
 
@@ -476,7 +476,7 @@ over="jboss-app"
 
 |====
 
-=== <iteration> Child Elements
+=== <iteration> child elements
 
 [cols="1,4", options="header"]
 |====

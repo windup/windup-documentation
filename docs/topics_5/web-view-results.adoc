@@ -1,11 +1,11 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='view_results_{context}']
-= Viewing Analysis Results
+= Viewing analysis results
 
 Once you have executed {ProductShortName} analysis on a project, the analysis is listed in a table that provides the analysis ID, status, and date started. Each row includes actions available for that analysis, including viewing the analysis details and generated reports, as well as canceling or deleting the analysis.
 
-.Analysis List
-image::web-analysis-list.png[Analysis List]
+.Analysis list
+image::web-analysis-list.png[Analysis list]
 
 Click the link in the *Analysis* column to view the reports or click the information icon in the *Actions* column to view the analysis details.

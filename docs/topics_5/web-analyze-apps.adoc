@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='using_web_console_analyze_apps_{context}']
-= Analyzing Applications with the {WebName}
+= Analyzing applications with the {WebName}
 
 In order to use the {WebName} to analyze applications, you must create a project. Each project is a way to group applications for analysis and specifies the settings to use during the analysis of its applications. The analysis process generates reports that provide information about the changes necessary for a migration or modernization effort.
 

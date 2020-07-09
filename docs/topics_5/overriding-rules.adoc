@@ -1,13 +1,13 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='overriding_rules_{context}']
-= Overriding Rules
+= Overriding rules
 
 You can override core rules distributed with {ProductShortName} or even custom rules. For example, you can change the matching conditions, effort, or hint text for a rule. This is done by making a copy of the original rule, marking it as a rule override, and making the necessary adjustments.
 
 You can disable a rule by creating a rule override with an empty `<rule` element.
 
-== Overriding a Rule
+== Overriding a rule
 
 You can override a core or custom rule.
 
@@ -69,7 +69,7 @@ The following rule override example changes the `effort` of the `weblogic-02000`
 
 When you run {ProductShortName}, this rule overrides the original rule with the same rule ID. You can verify that the new rule was used by viewing the contents of the Rule Provider Executions Overview.
 
-== Disabling a Rule
+== Disabling a rule
 
 To disable a rule, create a rule override definition with an empty `<rule>` element according to the following example:
 

@@ -44,7 +44,7 @@ export MAVEN_OPTS=--add-modules=java.se
 ====
 Using the {MavenName} on Java 11 is provided as Technology Preview only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs), might not be functionally complete, and Red Hat does not recommend to use them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
 
-See link:{KBArticleTechnologyPreview}[Technology Preview Features Support Scope] on the Red&nbsp;Hat Customer Portal for information about the support scope for Technology Preview features.
+See link:{KBArticleTechnologyPreview}[Technology Preview Features support scope] on the Red&nbsp;Hat Customer Portal for information about the support scope for Technology Preview features.
 ====
 
 . Build the project:

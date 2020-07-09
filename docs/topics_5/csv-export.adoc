@@ -2,14 +2,14 @@
 // * docs/cli-guide_5/master.adoc
 // * docs/maven-guide_5/master.adoc
 [id='export_csv_{context}']
-= Exporting the Report in CSV Format
+= Exporting the report in CSV format
 
 {ProductShortName} provides the ability to export the report data, including the classifications and hints, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields separated by commas (`,`).
 
 The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel, OpenOffice Calc, or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from an {ProductShortName} report.
 
 [id='export_the_report_{context}']
-== Exporting the Report
+== Exporting the report
 
 ifdef::cli-guide[]
 To export the report as a CSV file, run {ProductShortName} with the `--exportCSV` argument. A CSV file is created in the directory specified by the `--output` argument for each application analyzed.
@@ -27,22 +27,22 @@ endif::maven-guide[]
 
 ifdef::cli-guide[]
 [discrete]
-=== Accessing the Report from the Application Report
+=== Accessing the report from the application report
 
 If you have exported the CSV report, you can download all of the CSV issues in the Issues Report. To download these issues, click *Download All Issues CSV* in the Issues Report.
 
-.Issues Report with CSV Download
-image::all-issues-csv.png[Issues Report with CSV Download]
+.Issues report with CSV download
+image::all-issues-csv.png[Issues report with CSV download]
 endif::cli-guide[]
 
-== Importing the CSV File into a Spreadsheet Program
+== Importing the CSV file into a spreadsheet program
 
 . Launch the spreadsheet software, for example, Microsoft Excel.
 . Choose *File* -> *Open*.
 . Browse to the CSV exported file and select it.
 . The data is now ready to analyze in the spreadsheet software.
 
-== About the CSV Data Structure
+== About the CSV data structure
 
 The CSV formatted output file contains the following data fields:
 

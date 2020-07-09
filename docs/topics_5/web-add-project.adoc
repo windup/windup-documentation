@@ -1,16 +1,16 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='add_project_{context}']
-= Adding a Project
+= Adding a project
 
 When you first access the {WebName}, you will be prompted to set up a new project.
 
 .Home
-image::web-no-projects.png[Home: No Projects]
+image::web-no-projects.png[Home: no projects]
 
 Click the *New Project* button to launch the wizard to set up a new migration project.
 
-.Add Project
-image::web-add-project.png[Add Project]
+.Adding a project
+image::web-add-project.png[Adding a project]
 
 Specify a name and an optional description for this project and click *Next* to continue.
