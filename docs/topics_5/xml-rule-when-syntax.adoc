@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='when_syntax_{context}']
-= `<when>` Syntax
+= `<when>` syntax
 
 Conditions allowed in the `when` portion of a rule must extend http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperation] and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.
 
@@ -22,7 +22,7 @@ The following sections describe the more common XML `when` rule conditions.
 By default, if more than one `when` rule condition is provided, then all conditions must be met for the rule to match.
 
 [id='javaclass-syntax_{context}']
-== <javaclass> Syntax
+== <javaclass> syntax
 
 === Summary
 
@@ -47,13 +47,13 @@ The following is an example of a rule that tests for WebLogic-specific Apache XM
 </rule>
 ----
 
-=== Construct a <javaclass> Element
+=== Construct a <javaclass> element
 
-==== <javaclass> Element Attributes
+==== <javaclass> element attributes
 
 [cols="1,1,3", options="header"]
 |====
-|Attribute Name
+|Attribute name
 |Type
 |Description
 
@@ -105,7 +105,7 @@ in="{*}File1"
 
 |====
 
-==== <javaclass> Child Elements
+==== <javaclass> child elements
 
 [cols="1,4", options="header"]
 |====
@@ -170,7 +170,7 @@ Note that in this case, the `<javaclass>` refers to an annotation (`@MyAnnotatio
 |====
 
 [id='xmlfile-syntax_{context}']
-== <xmlfile> Syntax
+== <xmlfile> syntax
 
 === Summary
 
@@ -195,13 +195,13 @@ The following is an example of a rule that tests for an XML file:
 </rule>
 ----
 
-=== Construct an <xmlfile> Element
+=== Construct an <xmlfile> element
 
-==== <xmlfile> Element Attributes
+==== <xmlfile> element attributes
 
 [cols="1,1,3", options="header"]
 |====
-|Attribute Name
+|Attribute name
 |Type
 |Description
 
@@ -262,7 +262,7 @@ public-id="public"
 
 |====
 
-==== <xmlfile> `matches` Custom Functions
+==== <xmlfile> `matches` custom functions
 
 The `matches` attribute may use several built-in custom XPath functions,
 which may have useful side effects, like setting the matched value on the rule variables stack.
@@ -283,11 +283,11 @@ This will match all `<foo/>` elements with a `class` attribute and store their v
 
 |====
 
-==== <xmlfile> Child Elements
+==== <xmlfile> child elements
 
 [cols="1,4", options="header"]
 |====
-|Child Element
+|Child element
 |Description
 
 |<namespace>
@@ -301,7 +301,7 @@ a|The namespace referenced in XML files. This element contains two optional attr
 |====
 
 [id='project-syntax_{context}']
-== <project> Syntax
+== <project> syntax
 
 === Summary
 
@@ -322,28 +322,28 @@ The following is an example of a rule that checks for a JUnit dependency version
 </rule>
 ----
 
-=== Construct a <project> Element
+=== Construct a <project> element
 
-==== <project> Element Attributes
+==== <project> element attributes
 
 The `<project>` element is used to match against the project's Maven POM file. You can use this condition to query for dependencies of the project. It does not have any attributes itself.
 
-==== <project> Child Elements
+==== <project> child elements
 
 [cols="1,4", options="header"]
 |====
-|Child Element
+|Child element
 |Description
 
 |<artifact>
 a|Subcondition used within `<project>` to query against project dependencies. The `<artifact>` element attributes are described below.
 |====
 
-==== <artifact> Element Attributes
+==== <artifact> element attributes
 
 [cols="1,1,3", options="header"]
 |====
-|Attribute Name
+|Attribute name
 |Type
 |Description
 
@@ -365,19 +365,19 @@ a|Subcondition used within `<project>` to query against project dependencies. Th
 |====
 
 [id='filecontent-syntax_{context}']
-== <filecontent> Syntax
+== <filecontent> syntax
 
 === Summary
 
 Use the `<filecontent>` element to find strings or text within files, for example, a line in a Properties file. For a better understanding of the `<filecontent>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/FileContent.html[FileContent] class.
 
-=== Construct a <filecontent> Element
+=== Construct a <filecontent> element
 
-==== <filecontent> Element Attributes
+==== <filecontent> element attributes
 
 [cols="1,1,3", options="header"]
 |====
-|Attribute Name
+|Attribute name
 |Type
 |Description
 
@@ -411,19 +411,19 @@ from="MyEjbRule"
 
 
 [id='file-syntax_{context}']
-== <file> Syntax
+== <file> syntax
 
 === Summary
 
 Use the `<file>` element to find the existence of files with a specific name, for example, an `ibm-webservices-ext.xmi` file. For a better understanding of the `<file>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/File.html[File] class.
 
-=== Construct a <file> Element
+=== Construct a <file> element
 
-==== <file> Element Attributes
+==== <file> element attributes
 
 [cols="1,1,3", options="header"]
 |====
-|Attribute Name
+|Attribute name
 |Type
 |Description
 
@@ -454,7 +454,7 @@ from="MyEjbRule"
 |====
 
 [id='has-hint-syntax_{context}']
-== <has-hint> Syntax
+== <has-hint> syntax
 
 === Summary
 
@@ -504,11 +504,11 @@ The following is an example of a rule that checks to see if a hint exists for an
 
 The `<has-hint>` element is used to determine if a hint exists for a file or line. It does not have any child elements.
 
-==== <has-hint> Element Attributes
+==== <has-hint> element attributes
 
 [cols="1,1,3", options="header"]
 |====
-|Attribute Name
+|Attribute name
 |Type
 |Description
 
@@ -518,7 +518,7 @@ The `<has-hint>` element is used to determine if a hint exists for a file or lin
 |====
 
 [id='has-classification-syntax_{context}']
-== <has-classification> Syntax
+== <has-classification> syntax
 
 === Summary
 
@@ -528,11 +528,11 @@ Use the `<has-classification>` element to test whether a file or line has a clas
 
 The `has-classification` element is used to determine if a specified classification exists. It does not have any child elements.
 
-==== <has-classification> Element Attributes
+==== <has-classification> element attributes
 
 [cols="1,1,3", options="header"]
 |====
-|Attribute Name
+|Attribute name
 |Type
 |Description
 
@@ -542,7 +542,7 @@ The `has-classification` element is used to determine if a specified classificat
 |====
 
 [id='graph-query-syntax_{context}']
-== <graph-query> Syntax
+== <graph-query> syntax
 
 === Summary
 
@@ -573,7 +573,7 @@ The following is an example of a rule that tests to determine if any `ehcache` p
 
 === Construct a <graph-query>
 
-==== <graph-query> Element Attributes
+==== <graph-query> element attributes
 
 [cols="1,1,3", options="header"]
 |====
@@ -604,7 +604,7 @@ from="MyEjbRule"
 ----
 |====
 
-==== <graph-query> Properties
+==== <graph-query> properties
 
 [cols="1,1,3", options="header"]
 |====
@@ -627,7 +627,7 @@ from="MyEjbRule"
 |====
 
 [id='dependency-syntax_{context}']
-== <dependency> Syntax
+== <dependency> syntax
 
 === Summary
 

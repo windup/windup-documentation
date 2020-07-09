@@ -5,7 +5,7 @@
 
 Once the {WebName} has been deployed on OpenShift Container Platform, you can access it from a browser. The `deploy.sh` script outputs the link, shown in the example below as `<WEB_CONSOLE_URL>`, to use to open the {WebName}.
 
-.Example: `deploy.sh` Output
+.Example: `deploy.sh` output
 [source,options="nowrap",subs="+quotes"]
 ----
 ...
@@ -20,6 +20,6 @@ You can also access the {WebName} from the OpenShift console at `<OPENSHIFT_URL>
 NOTE: If the {WebName} does not load immediately, check the status of the project in the OpenShift console to see if it is still processing or if there were errors.
 
 .Welcome Page
-image::web-login-openshift.png[Welcome Page]
+image::web-login-openshift.png[Welcome page]
 
 Authentication is required in order to access the {WebName}. The default user's credentials are `mta` and `<password>`.

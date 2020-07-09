@@ -1,14 +1,14 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='create_first_rule_{context}']
-= Creating Your First XML Rule
+= Creating your first XML rule
 
 This section guides you through the process of creating and testing your first {ProductShortName} XML-based rule. This assumes that you have already installed {ProductShortName}. See the link:{ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
 
 In this example, you will write a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and provide a link to the documentation that describes how to migrate the code.
 
 [discrete]
-== Creating the Directory Structure for the Rule
+== Creating the directory structure for the rule
 
 Create a directory structure to contain your first rule and the data file to use for testing.
 
@@ -21,7 +21,7 @@ $ mkdir -p /home/<USER_NAME>/migration-rules/data
 This directory structure will also be used to hold the generated {ProductShortName} reports.
 
 [discrete]
-== Creating Data to Test the Rule
+== Creating data to test the rule
 
 . Create a `jboss-web.xml` file in the `/home/<USER_NAME>/migration-rules/data/` subdirectory.
 . Copy in the following content.
@@ -40,7 +40,7 @@ This directory structure will also be used to hold the generated {ProductShortNa
 ----
 
 [discrete]
-== Creating the Rule
+== Creating the rule
 
 {ProductShortName} XML-based rules use the following rule pattern:
 
@@ -180,7 +180,7 @@ The rule is now complete and should look like the following example.
                       <message>
                         The class-loading element is no longer valid in the jboss-web.xml file.
                       </message>
-                      <link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" title="Create or Modify Files That Control Class Loading in JBoss EAP 6"/>
+                      <link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" title="Create or modify files that control class loading in JBoss EAP 6"/>
                     </hint>
                 </iteration>
             </perform>
@@ -190,7 +190,7 @@ The rule is now complete and should look like the following example.
 ----
 
 [discrete]
-== Install the Rule
+== Installing the rule
 
 An {ProductShortName} rule is installed by placing the rule into the appropriate directory.
 
@@ -202,7 +202,7 @@ $ cp /home/<USER_NAME>/migration-rules/rules/JBoss5-web-class-loading.windup.xml
 ----
 
 [discrete]
-== Testing the Rule
+== Testing the rule
 
 Open a terminal and execute the following command, passing the test file as an input argument and a directory for the output report.
 
@@ -220,9 +220,9 @@ Report created: /home/<USER_NAME>/migration-rules/reports/index.html
 ----
 
 [discrete]
-== Review the Reports
+== Reviewing the reports
 
-Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#review_reports[Review the Reports] section of the {ProductShortName} _{UserCLIBookName}_.
+Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#review_reports[Review the reports] section of the {ProductShortName} _{UserCLIBookName}_.
 
 . Open `/home/<USER_NAME>/migration-rules/reports/index.html` in a web browser.
 . Verify that the rule executed.
@@ -230,8 +230,8 @@ Review the report to be sure that it provides the expected results. For a more d
 +
 .. Find the `JBoss5-web-class-loading_001` rule and verify that its *Status?* is `Condition met` and its *Result?* is `success`.
 +
-.Test Rule Execution
-image::executed-test-rule.png[Test Rule Execution]
+.Test rule execution
+image::executed-test-rule.png[Test rule execution]
 . Verify that the rule matches the test data:
 
 .. From the main landing page, click the name of the application or input folder, which is `data` in this example.
@@ -240,8 +240,8 @@ image::executed-test-rule.png[Test Rule Execution]
 +
 You can see that the `<class-loading>` line is highlighted, and the hint from the custom rule is shown inline.
 +
-.Rule Match
-image::test-rule-details.png[Rule Match]
+.Rule match
+image::test-rule-details.png[Rule match]
 +
 // TODO: Consider updating with test data/rule combo that won't match on any of the other existing rules.
 The top of the file lists the classifications for matching rules. You can use the link icon to view the details for that rule. Notice that in this example, the `jboss-web.xml` file matched on another rule (`JBoss web application descriptor (jboss-web.xml)`) that produced `1` story point. This, combined with the `1` story point from our custom rule, brings the total story points for this file to `2`.

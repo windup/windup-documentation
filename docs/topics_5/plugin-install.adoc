@@ -22,7 +22,7 @@ For more information about link:https://marketplace.visualstudio.com/items?itemN
 
 * If you are using Eclipse, and not Red Hat CodeReady Studio, you must install JBoss Tools before installing the {PluginNameTitle}.
 
-.Installing the Plugin
+.Installing the plugin
 
 . Launch Eclipse.
 . From the menu bar, select *Help* -> *Install New Software*.
@@ -37,7 +37,7 @@ For more information about link:https://marketplace.visualstudio.com/items?itemN
 . Accept the terms of the license agreement and click *Finish* to install the plugin.
 . Restart your IDE for the changes to take effect.
 
-.Installing the Plugin for an Offline Environment
+.Installing the plugin for an offline environment
 
 . Download the link:{ProductDownloadURL}{IDEPluginFilename}-{ProductVersion}.zip[IDE Plugin Repository].
 . Launch your IDE.

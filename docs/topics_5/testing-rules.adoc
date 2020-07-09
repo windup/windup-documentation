@@ -1,11 +1,11 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='test_xml_rule_{context}']
-= Testing XML Rules
+= Testing XML rules
 
 After you have created an XML rule, you should create a test rule to ensure that it works.
 
-== Creating a Test Rule
+== Creating a test rule
 
 Test rules are created using a process similar to the process for creating a test rule, with the following differences:
 
@@ -17,7 +17,7 @@ Test rules are created using a process similar to the process for creating a tes
 In addition, it is recommended to create a test rule that follows the name of the rule it tests. For instance, if a rule were created with a filename of `proprietary-rule.mta.xml`, the test rule should be called `proprietary-rule.mta.test.xml`.
 
 [id='test_xml_rule_structure_{context}']
-=== Test XML Rule Structure
+=== Test XML rule structure
 
 All test XML rules are defined as elements within `ruletests` which contain one or more `rulesets`. For more details, see the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[{ProductShortName} XML rule schema].
 
@@ -29,7 +29,7 @@ A ruletest is a group of one or more tests that targets a specific area of migra
 ** `<rulePath>`: The path to the rule to be tested. This should end in the name of the rule to test.
 ** `<ruleset>`: Rulesets containing the logic of the test cases. These are identical to the ones defined in Rulesets.
 
-=== Test XML Rule Syntax
+=== Test XML rule syntax
 
 In addition to the tags in the standard XML rule syntax, the following `when` conditions are commonly used for creating test rules:
 
@@ -43,7 +43,7 @@ In addition to the tags in the standard `perform action` syntax, the following `
 * `<fail>`
 
 [id='not_syntax_{context}']
-==== <not> Syntax
+==== <not> syntax
 
 [discrete]
 ===== Summary
@@ -91,7 +91,7 @@ The following is an example of a test rule that fails if only a specific message
 The `<not>` element has no unique attributes or child elements.
 
 [id='iterable_filter_syntax_{context}']
-==== <iterable-filter> Syntax
+==== <iterable-filter> syntax
 
 [discrete]
 ===== Summary
@@ -139,7 +139,7 @@ The following is an example that looks for four instances of the specified messa
 The `<iterable-filter>` element has no unique child elements.
 
 [discrete]
-===== <iterable-filter> Element Attributes
+===== <iterable-filter> element attributes
 
 [cols="1,1,3", options="header"]
 |====
@@ -153,7 +153,7 @@ The `<iterable-filter>` element has no unique child elements.
 |====
 
 [id='classification_exists_syntax_{context}']
-==== <classification-exists> Syntax
+==== <classification-exists> syntax
 
 The `<classification-exists>` element determines if a specific classification title has been included in the analysis. For additional information, see the link:{LinkAPI}org/jboss/windup/reporting/config/ClassificationExists.html[ClassificationExists] class.
 
@@ -202,7 +202,7 @@ The following is an example that searches for a specific classification title.
 The `<classification-exists>` has no unique child elements.
 
 [discrete]
-===== <classification-exists> Element Attributes
+===== <classification-exists> element attributes
 
 [cols="1,1,3", options="header"]
 |====
@@ -221,7 +221,7 @@ The `<classification-exists>` has no unique child elements.
 
 
 [id='hint_exists_syntax_{context}']
-==== <hint-exists> Syntax
+==== <hint-exists> syntax
 
 The `<hint-exists>` element determines if a specific hint has been included in the analysis. It searches for any instances of the defined message, and is typically used to search for the beginning or a specific class inside of a `<message>` element. For additional information, see the link:{LinkAPI}org/jboss/windup/reporting/config/HintExists.html[HintExists] class.
 
@@ -270,7 +270,7 @@ The following is an example that searches for a specific hint.
 The `<hint-exists>` element has no unique child elements.
 
 [discrete]
-===== <hint-exists> Element Attributes
+===== <hint-exists> element attributes
 
 [cols="1,1,3", options="header"]
 |====
@@ -288,14 +288,14 @@ The `<hint-exists>` element has no unique child elements.
 |====
 
 [id='fail_syntax_{context}']
-==== <fail> Syntax
+==== <fail> syntax
 
 The `<fail>` element reports the execution as a failure and displays the associated message. It is commonly used in conjunction with the `<not>` condition to display a message only if the conditions are not met.
 
 The `<fail>` element has no unique child elements.
 
 [discrete]
-===== <fail> Element Attributes
+===== <fail> element attributes
 
 [cols="1,1,3", options="header"]
 |====

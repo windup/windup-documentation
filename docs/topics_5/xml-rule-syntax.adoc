@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/rules-development-guide_5/master.adoc
 [id='xml_rule_structure_{context}']
-= XML Rule Structure
+= XML rule structure
 
 This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets. For more details, see the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[{ProductShortName} XML rule schema].
 
@@ -25,7 +25,7 @@ A ruleset is a group of one or more rules that targets a specific area of migrat
 *** **<file-mapping/>**: Maps an extension to a graph type.
 *** **<package-mapping/>**: Maps from a package pattern (regular expression) to a organization name.
 
-== Predefined Rules
+== Predefined rules
 
 {ProductShortName} provides predefined rules for common migration requirements. These core {ProductShortName} rules are located in the {ProductShortName} installation at `<MTA_HOME>/rules/migration-core/`.
 

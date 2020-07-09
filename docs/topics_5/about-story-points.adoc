@@ -3,15 +3,15 @@
 // * docs/maven-guide_5/master.adoc
 // * docs/rules-development-guide_5/master.adoc
 [id='rule_story_points_{context}']
-= About Rule Story Points
+= About rule story points
 
-== What are Story Points?
+== What are story points?
 
 _Story points_ are an abstract metric commonly used in Agile software development to estimate the _level of effort_ needed to implement a feature or change.
 
 {ProductName} uses story points to express the level of effort needed to migrate particular application constructs, and the application as a whole. It does not necessarily translate to man-hours, but the value should be consistent across tasks.
 
-== How Story Points are Estimated in Rules
+== How story points are estimated in rules
 
 Estimating the level of effort for the story points for a rule can be tricky. The following are the general guidelines {ProductShortName} uses when estimating the level of effort required for a rule.
 
@@ -46,7 +46,7 @@ Estimating the level of effort for the story points for a rule can be tricky. Th
 |The migration solution is not known and may need a complete rewrite.
 |====
 
-== Task Category
+== Task category
 
 In addition to the level of effort, you can categorize migration tasks to indicate the severity of the task. The following categories are used to group issues to help prioritize the migration effort.
 

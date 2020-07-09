@@ -24,10 +24,10 @@ $ ./mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output 
 
 [discrete]
 [id='command-examples_{context}']
-== {ProductShortName} Command Examples
+== {ProductShortName} Command examples
 
 [discrete]
-=== Running {ProductShortName} on an Application Archive
+=== Running {ProductShortName} on an application archive
 
 The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:
 
@@ -36,7 +36,7 @@ $ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /pa
 ----
 
 [discrete]
-=== Running {ProductShortName} on Source Code
+=== Running {ProductShortName} on source code
 
 The following command analyzes the `org.jboss.seam` packages of the link:https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] example source code for migrating to JBoss EAP 6.
 
@@ -46,7 +46,7 @@ $ <MTA_HOME>/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ --outpu
 ----
 
 [discrete]
-=== Running Cloud-readiness Rules
+=== Running cloud-readiness rules
 
 The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness:
 
@@ -56,7 +56,7 @@ $ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /pa
 ----
 
 [discrete]
-=== Overriding {ProductShortName} Properties
+=== Overriding {ProductShortName} properties
 
 To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` argument on the command line. For example, to use the _Procyon_ decompiler, use the following syntax:
 
@@ -67,7 +67,7 @@ $ <MTA_HOME>/bin/mta-cli -Dwindup.decompiler=procyon --input <INPUT_ARCHIVE_OR_D
 
 [discrete]
 [id='cli_bash_completion_{context}']
-== About {ProductShortName} {CLINameTitle} Bash Completion
+== About {ProductShortName} {CLINameTitle} bash completion
 
 The {ProductShortName} {CLIName} provides an option to enable bash completion for Linux systems, allowing the {ProductShortName} command-line arguments to be auto completed by pressing the Tab key when entering the commands. For instance, when bash completion is enabled, entering the following displays a list of available arguments.
 
@@ -78,7 +78,7 @@ $ <MTA_HOME>/bin/mta-cli [TAB]
 
 [discrete]
 [id='bash_completion_temporary_{context}']
-=== Enabling Bash Completion
+=== Enabling bash completion
 
 To enable bash completion for the current shell, execute the following command. After the prompt returns, follow the steps for using the {CLIName}.
 
@@ -89,7 +89,7 @@ $ source <MTA_HOME>/bash-completion/mta-cli
 
 [discrete]
 [id='bash_completion_persistent_{context}']
-=== Enabling Persistent Bash Completion
+=== Enabling persistent bash completion
 
 The following commands allow bash completion to persist across restarts:
 
@@ -108,7 +108,7 @@ source <MTA_HOME>/bash-completion/mta-cli
 ----
 
 [discrete]
-== Accessing {ProductShortName} Help
+== Accessing {ProductShortName} help
 
 To see the complete list of available arguments for the `mta-cli` command, open a terminal, navigate to the `<MTA_HOME>` directory, and execute the following command:
 

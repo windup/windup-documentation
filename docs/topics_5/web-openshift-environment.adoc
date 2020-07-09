@@ -1,7 +1,7 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='understanding_web_console_openshift_image_{context}']
-= Understanding the {WebNameTitle} OpenShift Image
+= Understanding the {WebNameTitle} OpenShift image
 
 Red Hat offers containerized images for {ProductShortName} that are designed for use with OpenShift. Using these images developers can quickly and easily manage migration projects and analyze applications.
 
@@ -24,7 +24,7 @@ image::webconsole-architecture-empty-dir.png[web-template-empty-dir-executor.jso
 image::webconsole-architecture-shared-storage.png[web-template-empty-dir-executor-shared-storage.json]
 
 [discrete]
-== OpenShift Template Environment Variables
+== OpenShift template environment variables
 
 The OpenShift image environment variables are configured as a baseline for application analysis, and work well in a variety of environments. No additional configuration is required to perform an analysis.
 

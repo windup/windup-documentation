@@ -1,14 +1,14 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='analysis_configuration_{context}']
-= Configuring the Analysis
+= Configuring an analysis
 
 Configure the settings for the analysis, such as the transformation path, packages, and other advanced options.
 
-.Configuring Analysis
-image::web-configure-analysis.png[Configure Analysis]
+.Configuring an analysis
+image::web-configure-analysis.png[Configure an analysis]
 
-Transformation Path::
+Transformation path::
 
 Select the transformation path for your applications.
 The targets displayed under the Transformation Path heading are the most commonly used options:
@@ -25,15 +25,15 @@ The targets displayed under the Transformation Path heading are the most commonl
 
 Other available targets can be selected using the _Advanced Options_ dialogue.
 
-Include Packages::
+Include packages::
 
 Select which packages to analyze. If none are selected, all packages will be decompiled and analyzed.
 
-Exclude Packages::
+Exclude packages::
 
 Select which packages to exclude from analysis.
 
-Custom Rules::
+Use custom rules::
 
 Select which custom rulesets to use during analysis.
 
@@ -44,10 +44,10 @@ Project custom rules are maintained using the controls below.
 The *Add* button allows the user to select the rules files ([x-]`.windup.xml` or [x-]`.mta.xml`).
 Selected (checked) rules are shown in the right-hand panel and will be executed during the analysis.
 
-.Custom Rules
-image::web-custom-rules-project.png[The Custom Rules dialog]
+.Custom rules
+image::web-custom-rules-project.png[Custom rules]
 
-Custom Labels::
+Use custom labels::
 
 Select which custom labels to use during analysis.
 
@@ -58,9 +58,9 @@ Project custom rules are maintained using the controls below.
 The *Add* button allows the user to select the rules files ([x-]`.windup.label.xml` or [x-]`.mta.label.xml`).
 Selected (checked) rules are shown in the right-hand panel and will be executed during the analysis.
 
-.Custom Labels
-image::web-custom-labels-project.png[The Custom Labels dialog]
+.Custom labels
+image::web-custom-labels-project.png[Custom labels]
 
-Advanced Options::
+Advanced options::
 
 Click *Save* to save the analysis configuration, or click *Save & Run* to save and execute the analysis using these settings.
