@@ -21,35 +21,23 @@ include::topics_5/what-is-the-toolkit.adoc[leveloffset=+2]
 // About the {WebNameTitle}
 include::topics_5/about-the-web-console.adoc[leveloffset=+2]
 
-// Installing the {WebNameTitle}
-include::topics_5/web-installing.adoc[leveloffset=+1]
+== Installing the {WebNameTitle}
 
-// ZIP Installation
+You can install the {WebName} in a JDK environment or on OpenShift Container Platform.
+
+// Installing on JDK
 include::topics_5/web-install-zip.adoc[leveloffset=+2]
 
-// Prerequisites
-include::topics_5/web-zip-prerequisites.adoc[leveloffset=+3]
+[id='openshift_install_{context}']
+=== Installing the {WebName} on OpenShift Container Platform
 
-// Install the {WebNameTitle}
-include::topics_5/web-install.adoc[leveloffset=+3]
+You can install the {ProductShortName} {WebName} on Red Hat OpenShift Container Platform and access the {WebName} in a browser.
 
-// Start the {WebNameTitle}
-include::topics_5/web-start.adoc[leveloffset=+3]
-
-// Access the {WebNameTitle}
-include::topics_5/web-access-console.adoc[leveloffset=+3]
-
-// OpenShift Installation
-include::topics_5/web-install-openshift.adoc[leveloffset=+2]
-
-// Prerequisites
-include::topics_5/web-openshift-env.adoc[leveloffset=+3]
-
-// Understanding the {WebNameTitle} OpenShift Image
+// About the {WebNameTitle} image
 include::topics_5/web-openshift-environment.adoc[leveloffset=+3]
 
-// Deploy the {ProductShortName} Application
-include::topics_5/web-openshift-deploy.adoc[leveloffset=+3]
+// Installing on OpenShift
+include::topics_5/web-install-openshift.adoc[leveloffset=+3]
 
 // Access the {WebNameTitle}
 include::topics_5/web-openshift-access.adoc[leveloffset=+3]

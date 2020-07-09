@@ -1,6 +1,44 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='zip_install_{context}']
-= ZIP installation
+= Installing the {WebName} on JDK
 
-When installed using the ZIP distribution, the {ProductShortName} {WebName} is deployed on Red Hat JBoss Enterprise Application Platform, uses Red Hat Single Sign-On for authentication, and is backed by an H2 database for storage.
+You can install the {ProductShortName} {WebName} on Red Hat JBoss Enterprise Application Platform and access the {WebName} in a browser.
+
+.Prerequisites
+
+* You must have OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, or Oracle JDK 11.
+* You must have at least 16 GB RAM.
+* macOS has the following additional prerequisites:
+
+** `maxproc`: `2048` or more
+** `maxfiles`: `100000`
+
+.Procedure
+
+. Download the {WebName} archive file from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page].
+
+. Extract the {WebName} archive file to a directory of your choice.
++
+This directory is referred to as `<MTA_HOME>` throughout this guide.
+
+. Start the {WebName}:
+
+* Linux operating system:
++
+----
+$ <MTA_HOME>/run_mta.sh
+----
+
+* Windows operating system:
++
+----
+C:\<MTA_HOME>\run_mta.bat
+----
+
+. Open a browser and navigate to `http://localhost:8080/mta-web`.
+
+.Welcome Page
+image::web-login.png[Welcome Page]
+
+The {WebName} uses a default user to automatically authenticate. The default user's credentials are `mta` and `password`. You can configure the {WebNameTitle} to require individual users to authenticate in order to access the {WebName}.

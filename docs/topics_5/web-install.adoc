@@ -1,9 +1,0 @@
-// Module included in the following assemblies:
-// * docs/web-console-guide_5/master.adoc
-[id='install_web_console_{context}']
-= Installing the {WebNameTitle}
-
-. Download the {WebName} from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page].
-. Extract the `.zip` file to a directory of your choice.
-+
-The path to the directory created by unzipping this file is referred to as `<MTA_HOME>` throughout this guide.
