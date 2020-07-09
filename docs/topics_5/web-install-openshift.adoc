@@ -7,12 +7,7 @@ You can install the {ProductShortName} {WebName} on Red Hat OpenShift Container 
 
 .Prerequisites
 
-* OpenShift Container Platform version 3.11 or later.
-* OpenShift Container Platform must have the middleware imagestreams installed.
-* You must have the OpenShift Container Platform CLI installed on your local machine.
-* You must be running Linux or macOS on your local machine. Windows is not currently supported.
-
-See the link:https://access.redhat.com/documentation/en/openshift-container-platform/[OpenShift Container Platform documentation] for assistance.
+* OpenShift Container Platform version 3.11 or 4.4
 
 .Procedure
 
