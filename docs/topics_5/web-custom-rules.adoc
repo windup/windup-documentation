@@ -49,8 +49,3 @@ This does not copy the files to the {ProductShortName} server, but instead uses 
 
 This way, if the labels are updated in this location, the {ProductShortName} server will always use the latest versions of labels during analysis.
 Click *Add* to register the labels.
-
-Clicking on the _Labels_ icon displays the contents of the `labels` file.
-
-.Viewing the `labels` file contents
-image::web-labels-file-view.png[Viewing the `labels` file contents]
