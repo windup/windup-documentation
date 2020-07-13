@@ -7,12 +7,14 @@ You can install the {ProductShortName} {WebName} on Red Hat JBoss Enterprise App
 
 .Prerequisites
 
-* You must have OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, or Oracle JDK 11.
-* You must have at least 16 GB RAM.
+* OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, or Oracle JDK 11 installed
+* 16 GB RAM
 * macOS has the following additional prerequisites:
 
 ** `maxproc`: `2048` or more
 ** `maxfiles`: `100000`
+
+* Windows operating system: Edge browser
 
 .Procedure
 
