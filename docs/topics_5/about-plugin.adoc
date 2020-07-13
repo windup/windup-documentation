@@ -3,7 +3,7 @@
 [id='about_the_plugin_{context}']
 = About the {PluginNameTitle}
 
-The {PluginName} for {ProductName} provides assistance directly in Eclipse and Red Hat CodeReady Studio for developers making changes for a migration or modernization effort. It analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
+The {PluginName} for the {ProductName} provides assistance directly in Eclipse and Red Hat CodeReady Studio for developers making changes for a migration or modernization effort. It analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
 
 There is an {ProductShortName} extension for Visual Studio Code and Eclipse Che.
 The extension is only available as a Minimum Viable Product and will be fully documented and supported in a future Release of {ProductShortName}.
