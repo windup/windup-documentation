@@ -1,26 +1,34 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
+
 [id='add_applications_{context}']
-= Adding applications to a project
+== Adding applications to a migration project
 
-Specify the applications to add to this project. You can upload applications or register a server path that contains applications.
+You can add applications to a migration project by using one of the following methods:
 
-.Adding applications
-image::web-add-apps.png[Adding applications]
+* Uploading applications
+* Registering the directory path of each application
+
+Uploading applications stores them directly in the {ProductShortName} server.
+
+Registering the directory path of an application tells the {ProductShortName} server its location. This method is useful if you expect to update the application because it ensures that the {ProductShortName} server always uses the latest version of the application.
++
+.Adding applications to a migration project
+image::web-add-apps_51.png[Adding applications to a migration project]
 
 [id='add_apps_upload_{context}']
-Uploading applications::
+=== Uploading applications
 
-You can use the *Choose Files* button to select applications, or you can drag and drop applications into the area provided. This uploads the selected applications to the {ProductShortName} server.
+.Procedure
+
+. In the *Upload* tab, click *Browse* to select one or more applications.
+. Click *OK*.
 
 [id='add_apps_register_{context}']
-Registering a server path::
+=== Registering the directory path
 
-Select the *Server Path* tab and enter a path on the server that contains applications to be included in this project. This does not copy the files to the {ProductShortName} server, but instead evaluates the applications in the specified location.
-+
-This is useful for the following cases:
-+
-* You want to register an existing directory on the server that contains applications, for example, from a nightly automatic build process. This way, the {ProductShortName} server will analyze the latest versions of applications.
-* You want to register an application as an exploded Java archive. In this case, be sure to check the *Directory is an exploded Java application archive* checkbox.
+.Procedure
 
-Once you have specified one or more applications for this project, click *Next* to continue.
+. In the *Folder path* tab, enter the directory containing the applications in the text box.
+. Select *Directory is an exploded Java application archive* if relevant.
+. Click *Next*.

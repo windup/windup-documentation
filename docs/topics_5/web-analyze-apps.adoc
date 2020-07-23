@@ -3,17 +3,17 @@
 [id='using_web_console_analyze_apps_{context}']
 = Analyzing applications with the {WebName}
 
-In order to use the {WebName} to analyze applications, you must create a project. Each project is a way to group applications for analysis and specifies the settings to use during the analysis of its applications. The analysis process generates reports that provide information about the changes necessary for a migration or modernization effort.
+You can use the {WebName} to analyze how easily you can migrate applications to your OpenShift environment. To do this, you must create or more projects. Each project is a way to group applications for analysis and specifies the settings to use during the analysis of its applications. The analysis process generates reports that provide information about the difficulty of a migration and any changes that you need to make to your clusters before you migrate them.
 
-Follow these steps to use the {WebName} to analyze your applications and review the results.
+Follow these steps to use the {WebName} to analyze your applications and review the results:
 
 . Add a project.
 . Add applications to the project.
-. Specify the analysis configuration.
+. Configure the analysis.
 . Execute the analysis.
 . View the results of the analysis.
 
 [NOTE]
 ====
-Click the *Projects* link at the top of the {WebName} to return to the project list at any time. Visit the help menu for an *About* page and a link to the {ProductShortName} documentation.
+Click *Projects* at the top of the {WebName} navigation bar to return to the project list at any time. Visit the help menu for an *About* page and a link to the {ProductShortName} documentation.
 ====

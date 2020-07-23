@@ -3,14 +3,17 @@
 [id='add_project_{context}']
 = Adding a project
 
-When you first access the {WebName}, you will be prompted to set up a new project.
+The first time you access the {WebName}, you are prompted to add a new migration project.
 
 .Home
 image::web-no-projects.png[Home: no projects]
 
-Click the *New Project* button to launch the wizard to set up a new migration project.
+.Procedure
 
-.Adding a project
-image::web-add-project.png[Adding a project]
-
-Specify a name and an optional description for this project and click *Next* to continue.
+. Click *New project* to launch the *Create project* wizard.
++
+.Creating a project
+image::web-add-project_51.png[Creating a project]
+. Enter a unique name for the project.
+. Optional: Enter a description.
+. Click *Next*.
