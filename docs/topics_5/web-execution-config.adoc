@@ -53,10 +53,10 @@ Select which custom labels to use during analysis.
 
 Custom labels can be maintained for the current {ProductShortName} project (project scope) or for all {ProductShortName} projects (global scope).
 
-Project custom rules are maintained using the controls below.
+Project custom labels are maintained using the controls below.
 
-The *Add* button allows the user to select the rules files ([x-]`.windup.label.xml` or [x-]`.mta.label.xml`).
-Selected (checked) rules are shown in the right-hand panel and will be executed during the analysis.
+The *Add* button allows the user to select the label files ([x-]`.windup.label.xml` or [x-]`.mta.label.xml`).
+Selected (checked) labels are shown in the right-hand panel and will be executed during the analysis.
 
 .Custom labels
 image::web-custom-labels-project.png[Custom labels]
