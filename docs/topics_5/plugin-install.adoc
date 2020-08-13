@@ -5,8 +5,6 @@
 
 Review the supported configurations to make sure that you are using a development environment that is compatible with the {PluginName}.
 
-NOTE: If you are running macOS, it is recommended to set the maximum number of user processes, `maxproc`, to at least `2048`, and the maximum number of open files, `maxfiles`, to `100000`.
-
 If you do not already have an existing installation, download link:http://www.eclipse.org/downloads/[Eclipse] or link:https://developers.redhat.com/products/codeready-studio/download/[Red Hat CodeReady Studio] and install it.
 
 [NOTE]
@@ -21,6 +19,11 @@ For more information about link:https://marketplace.visualstudio.com/items?itemN
 .Prerequisites
 
 * If you are using Eclipse, and not Red Hat CodeReady Studio, you must install JBoss Tools before installing the {PluginNameTitle}.
+
+* {PluginName} on macOS has the following prerequisites:
+
+** Set the `maxproc` value to `2048` or greater
+** Set the `maxfiles` value to `10000`
 
 .Installing the plugin
 

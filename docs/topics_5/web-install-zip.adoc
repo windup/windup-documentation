@@ -9,12 +9,18 @@ You can install the {ProductShortName} {WebName} on Red Hat JBoss Enterprise App
 
 * OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, or Oracle JDK 11 installed
 * 16 GB RAM
-* macOS has the following additional prerequisites:
+* Edge browser
 
-** `maxproc`: `2048` or more
-** `maxfiles`: `10000`
+macOS has the following additional prerequisites:
 
-* Windows operating system: Edge browser
+* Set the `maxproc` value to `2048` or greater.
+
+ifeval::["{ProductVersion}" == "5.0.0"]
+* Set the `maxfiles` value to `10000`.
+endif::[]
+ifeval::["{ProductVersion}" != "5.0.0"]
+* Set the `maxfiles` value to `100000`.
+endif::[]
 
 .Procedure
 
@@ -23,6 +29,14 @@ You can install the {ProductShortName} {WebName} on Red Hat JBoss Enterprise App
 . Extract the {WebName} archive file to a directory of your choice.
 +
 This directory is referred to as `<MTA_HOME>` throughout this guide.
+
+ifeval::["{ProductVersion}" == "5.0.0"]
+. If you are installing the {WebName} on macOS, update the following value in the `run_mta.sh` script:
++
+----
+WE_NEED=10000
+----
+endif::[]
 
 . Start the {WebName}:
 
