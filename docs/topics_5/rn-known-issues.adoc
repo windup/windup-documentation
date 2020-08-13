@@ -12,6 +12,14 @@ At the time of release, the following known issues are identified as major issue
 |Component
 |Summary
 
+|link:https://issues.redhat.com/browse/WINDUP-2704[WINDUP-2704]
+|Web UI & Windup-as-a-Service
+|On macOS, the `run_mta.sh` script sets the soft limit of open files to `100000`.
+
+|link:https://issues.redhat.com/browse/WINDUP-2705[WINDUP-2705]
+|Web UI & Windup-as-a-Service
+|On macOS, the `mta-cli` script sets the soft limit of open files to `100000`.
+
 |link:https://issues.redhat.com/browse/WINDUPRULE-607[WINDUPRULE-607]
 |OpenShift
 |RHAMT 4.3.1 installation on OpenShift Container Platform fails. The Webconsole and Executor Pods are not running.
