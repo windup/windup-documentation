@@ -9,12 +9,17 @@ You can install the {ProductShortName} {WebName} on Red Hat JBoss Enterprise App
 
 * OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, or Oracle JDK 11 installed
 * 16 GB RAM
-* macOS has the following additional prerequisites:
+* Edge browser
 
-** `maxproc`: `2048` or more
-** `maxfiles`: `10000`
+macOS has the following additional prerequisites:
 
-* Windows operating system: Edge browser
+* Set the `maxproc` value to `2048` or greater
+* Set the `maxfiles` value to `10000`
+* Update the value of the `WE_NEED` parameter in the `run_mta.sh` script:
++
+----
+WE_NEED=10000
+----
 
 .Procedure
 
