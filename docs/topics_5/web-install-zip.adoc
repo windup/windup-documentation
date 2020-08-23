@@ -1,13 +1,13 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='zip_install_{context}']
-= Installing the {WebName} on JDK
+= Installing the {WebName}
 
-You can install the {ProductShortName} {WebName} on Red Hat JBoss Enterprise Application Platform and access the {WebName} in a browser.
+You can install the {ProductShortName} {WebName} on a Linux, Windows, or macOS operating system and access the {WebName} in a browser.
 
 .Prerequisites
 
-* OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, or Oracle JDK 11 installed
+* OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, or Oracle JDK 11
 * 16 GB RAM
 * Edge browser
 
