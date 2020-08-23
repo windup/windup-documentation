@@ -7,7 +7,9 @@ You can install the {ProductShortName} {WebName} on Red Hat OpenShift Container 
 
 .Prerequisites
 
-* OpenShift Container Platform version 3.11 or {OpenShiftProductNumber}
+* OpenShift Container Platform version 3.11 or 4.x.
++
+The {WebName} installation has been tested on OpenShift Container Platform 3.11 and 4.4. Other versions of 4.x should be compatible.
 
 .Procedure
 
