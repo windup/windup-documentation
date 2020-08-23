@@ -23,7 +23,7 @@ include::topics_5/about-the-web-console.adoc[leveloffset=+2]
 
 == Installing the {WebNameTitle}
 
-You can install the {WebName} in a JDK environment or on OpenShift Container Platform.
+You can install the {WebName} on Linux, Windows, macOS, or OpenShift Container Platform.
 
 // Installing on JDK
 include::topics_5/web-install-zip.adoc[leveloffset=+2]
