@@ -10,12 +10,4 @@
 +
 If you are installing the {CLIName} on a Windows operating system, extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error.
 
-ifeval::["{ProductVersion}" == "5.0.0"]
-. If you are installing the {CLIName} on macOS, update the following value in the `mta-cli.sh` script:
-+
-----
-WE_NEED=10000
-----
-endif::[]
-
 The extracted directory is known as `<MTA_HOME>` in this guide.
