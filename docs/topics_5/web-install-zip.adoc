@@ -34,14 +34,6 @@ endif::[]
 +
 This directory is referred to as `<MTA_HOME>` throughout this guide.
 
-ifeval::["{ProductVersion}" == "5.0.0"]
-. If you are installing the {WebName} on macOS, update the following value in the `run_mta.sh` script:
-+
-----
-WE_NEED=10000
-----
-endif::[]
-
 . Start the {WebName}:
 
 * Linux operating system:
