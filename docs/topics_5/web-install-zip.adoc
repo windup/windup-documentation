@@ -5,6 +5,11 @@
 
 You can install the {ProductShortName} {WebName} on a Linux, Windows, or macOS operating system and access the {WebName} in a browser.
 
+[NOTE]
+====
+Windows Internet Explorer is not a supported browser. link:https://issues.redhat.com/browse/WINDUP-2683[WINDUP-2683]
+====
+
 .Prerequisites
 
 * OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, or Oracle JDK 11
