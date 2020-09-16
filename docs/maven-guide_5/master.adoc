@@ -23,11 +23,8 @@ include::topics_5/about-maven.adoc[leveloffset=+2]
 
 == Getting started
 
-// Prerequisites
-include::topics_5/maven-prerequisites.adoc[leveloffset=+2]
-
 // Installing the {MavenNameTitle}
-// include::topics_5/maven-install.adoc[leveloffset=+2]
+include::topics_5/installation.adoc[leveloffset=+2]
 
 // Run the {MavenNameTitle}
 include::topics_5/maven-run.adoc[leveloffset=+2]
@@ -68,3 +65,5 @@ include::topics_5/report-issues.adoc[leveloffset=+3]
 // * Appendix: Revision Information *
 // **********************************
 include::topics_5/templates/revision-info.adoc[]
+
+:!maven-guide:

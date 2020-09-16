@@ -5,8 +5,8 @@
 include::topics_5/templates/document-attributes.adoc[]
 
 :imagesdir: topics_5/images
-:context:
-:plugin-guide: plugin-guide
+:context: plugin-guide
+:plugin-guide:
 
 = {PluginBookName}
 
@@ -21,12 +21,16 @@ include::topics_5/what-is-the-toolkit.adoc[leveloffset=+2]
 // About the {PluginNameTitle}
 include::topics_5/about-plugin.adoc[leveloffset=+2]
 
-// Supported Configurations
-include::topics_5/plugin-supported-configs.adoc[leveloffset=+2]
-
 // Install the IDE Plugin
-include::topics_5/plugin-install.adoc[leveloffset=+1]
+include::topics_5/installation.adoc[leveloffset=+1]
+:!plugin-guide:
 
+:context: plugin-guide-offline
+:plugin-guide-offline:
+include::topics_5/installation.adoc[leveloffset=+1]
+:!plugin-guide-offline:
+
+:plugin-guide:
 // Access the {ProductShortName} IDE Tools
 include::topics_5/plugin-access-windup-tools.adoc[leveloffset=+1]
 
@@ -71,7 +75,6 @@ include::topics_5/eclipse-submit-ruleset.adoc[leveloffset=+2]
 
 include::topics_5/plugin-icon-legend.adoc[leveloffset=+2]
 
-include::topics_5/install-jboss-tools.adoc[leveloffset=+2]
 
 // **********************************
 // * Appendix: Revision Information *
@@ -80,3 +83,5 @@ include::topics_5/templates/revision-info.adoc[]
 
 // Workaround for PDF generation build failure
 {nbsp}
+
+:!plugin-guide:
