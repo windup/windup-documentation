@@ -12,16 +12,9 @@ The {WebName} has been tested with Chrome and Firefox.
 * OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, or Oracle JDK 11
 * 16 GB RAM
 
-macOS has the following additional prerequisites:
+macOS has the following additional prerequisite:
 
 * Set the `maxproc` value to `2048` or greater.
-
-ifeval::["{ProductVersion}" == "5.0.0"]
-* Set the `maxfiles` value to `10000`.
-endif::[]
-ifeval::["{ProductVersion}" != "5.0.0"]
-* Set the `maxfiles` value to `100000`.
-endif::[]
 
 .Procedure
 

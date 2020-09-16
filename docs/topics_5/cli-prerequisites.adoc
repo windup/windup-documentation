@@ -8,13 +8,6 @@
 * OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, Oracle JDK 11
 * 8 GB RAM
 
-{CLIName} on macOS has the following additional prerequisites:
+{CLIName} on macOS has the following additional prerequisite:
 
 * Set the `maxproc` value to `2048` or greater.
-
-ifeval::["{ProductVersion}" == "5.0.0"]
-* Set the `maxfiles` value to `10000`.
-endif::[]
-ifeval::["{ProductVersion}" != "5.0.0"]
-* Set the `maxfiles` value to `100000`.
-endif::[]
