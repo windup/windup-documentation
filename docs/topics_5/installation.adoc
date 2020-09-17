@@ -1,0 +1,141 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide_5/master.adoc
+// * docs/maven-guide_5/master.adoc
+// * docs/web-console-guide_5/master.adoc
+// * docs/plugin-guide_5/master.adoc
+ifdef::cli-guide[]
+= Installing the {CLINameTitle}
+
+You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems.
+endif::[]
+ifdef::maven-guide[]
+= Installing the {MavenNameTitle}
+
+You can install the {MavenName} in your local Maven repository.
+endif::[]
+ifdef::web-console-guide[]
+= Installing the {WebNameTitle} on Linux, Windows, or macOS
+
+You can install the {WebName} on Linux, Windows, or macOS operating systems and access the {WebName} in a browser.
+
+The {WebName} has been tested with Chrome and Firefox.
+endif::[]
+ifdef::plugin-guide[]
+= Installing the {PluginNameTitle} in a connected environment
+
+You can install the IDE Plugin for Eclipse or Red Hat CodeReady Studio in a connected environment.
+
+The {PluginName} has been tested with Eclipse 2020-06 and Red Hat CodeReady Studio 12.15.
+endif::[]
+ifdef::plugin-guide-offline[]
+= Installing the {PluginNameTitle} in an offline environment
+
+You can install the IDE Plugin for Eclipse or Red Hat CodeReady Studio in an offline environment.
+
+The {PluginName} has been tested with Eclipse 2020-06 and Red Hat CodeReady Studio 12.15.
+endif::[]
+
+.Prerequisites
+
+ifdef::cli-guide,maven-guide,web-console-guide[]
+* OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, _or_ Oracle JDK 11
+* 8 GB RAM
+endif::[]
+ifdef::maven-guide[]
+* Maven 3.2.5 or later
+endif::[]
+ifdef::cli-guide,maven-guide,web-console-guide,plugin-guide,plugin-guide-offline[]
+* Installation on macOS: The value of `maxproc` must be `2048` or greater.
+endif::[]
+ifdef::plugin-guide,plugin-guide-offline[]
+* link:https://developers.redhat.com/products/codeready-studio/download/[Red Hat CodeReady Studio]
+
+_or_
+
+* link:http://www.eclipse.org/downloads/[Eclipse]
+
+_and_
+
+* JBoss Tools installed from the Eclipse marketplace. For more information, navigate to link:https://www.eclipse.org/[Eclipse], click *More* -> *Documentation*, and then select *Eclipse Marketplace User Guide*.
+endif::[]
+
+.Procedure
+
+ifdef::cli-guide,web-console-guide[]
+. Download the appropriate archive file from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page].
+. Extract the `.zip` file to a directory of your choice.
++
+[NOTE]
+====
+If you are installing on a Windows operating system, extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error.
+====
++
+The directory is referred to as `<MTA_HOME>` in this guide.
+endif::[]
+ifdef::web-console-guide[]
+. Start the {WebName}:
+
+* Linux operating system:
++
+----
+$ <MTA_HOME>/run_mta.sh
+----
+
+* Windows operating system:
++
+----
+C:\<MTA_HOME>\run_mta.bat
+----
+
+. Open a browser and navigate to `http://localhost:8080/mta-web`.
+
+.Welcome Page
+image::web-login.png[Welcome Page]
+
+The {WebName} uses a default user to automatically authenticate. The default user's credentials are `mta` and `password`. You can configure the {WebNameTitle} to require individual users to authenticate in order to access the {WebName}.
+endif::[]
+ifdef::maven-guide[]
+. Clone the {MavenName} Github repository:
++
+----
+$ git clone https://github.com/windup/windup-maven-plugin.git
+----
+
+. Navigate to the `windup-maven-plugin` directory.
++
+[source,options="nowrap"]
+----
+$ cd windup-maven-plugin
+----
+
+. Build the project:
++
+----
+$ mvn clean install
+----
++
+The `windup-maven-plugin` jar is installed in your local Maven repository.
+endif::[]
+ifdef::plugin-guide-offline[]
+. Download the link:{ProductDownloadURL}{IDEPluginFilename}-{ProductVersion}.zip[IDE Plugin archive file].
+endif::[]
+ifdef::plugin-guide,plugin-guide-offline[]
+. Launch your IDE.
+. From the menu bar, select *Help* -> *Install New Software*.
+. Next to the *Work with* field, click *Add*.
+. In the *Name* field, enter `{ProductShortName}`.
+endif::[]
+ifdef::plugin-guide[]
+. In the *Location* field, enter `\http://download.jboss.org/jbosstools/photon/stable/updates/mta/` and click *OK*.
+endif::[]
+ifdef::plugin-guide-offline[]
+. Next to the *Location* field, click *Archive*.
+. Select the IDE Plugin archive file and click *OK*.
+endif::[]
+ifdef::plugin-guide,plugin-guide-offline[]
+. Select all the *JBoss Tools - MTA* check boxes and click *Next*.
+. Review the installation details and click *Next*.
+. Accept the terms of the license agreement and click *Finish* to install the plugin.
+. Restart your IDE for the changes to take effect.
+endif::[]

@@ -17,9 +17,6 @@ include::topics_5/templates/document-attributes.adoc[]
 // About the {UserCLIBookName}
 include::topics_5/about-cli-guide.adoc[leveloffset=+2]
 
-// About the RHAMT_HOME Variable
-include::topics_5/about-home-var.adoc[leveloffset=+3]
-
 // About {ProductName}
 include::topics_5/what-is-the-toolkit.adoc[leveloffset=+2]
 
@@ -28,11 +25,8 @@ include::topics_5/about-cli.adoc[leveloffset=+2]
 
 == Getting started
 
-// Prerequisites
-include::topics_5/cli-prerequisites.adoc[leveloffset=+2]
-
 // Install the CLI
-include::topics_5/install.adoc[leveloffset=+2]
+include::topics_5/installation.adoc[leveloffset=+2]
 
 // Run the CLI
 include::topics_5/execute.adoc[leveloffset=+2]

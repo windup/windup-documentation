@@ -25,8 +25,8 @@ include::topics_5/about-the-web-console.adoc[leveloffset=+2]
 
 You can install the {WebName} on Linux, Windows, macOS, or OpenShift Container Platform.
 
-// Installing on JDK
-include::topics_5/web-install-zip.adoc[leveloffset=+2]
+// Installing on Linux, Windows, macOS
+include::topics_5/installation.adoc[leveloffset=+2]
 
 [id='openshift_install_{context}']
 === Installing the {WebName} on OpenShift Container Platform
