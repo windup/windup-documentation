@@ -46,18 +46,14 @@ ifdef::maven-guide[]
 * Maven 3.2.5 or later
 endif::[]
 ifdef::cli-guide,maven-guide,web-console-guide,plugin-guide,plugin-guide-offline[]
-* Installation on macOS: The value of `maxproc` must be `2048` or greater.
+* macOS: The value of `maxproc` must be `2048` or greater.
 endif::[]
 ifdef::plugin-guide,plugin-guide-offline[]
 * link:https://developers.redhat.com/products/codeready-studio/download/[Red Hat CodeReady Studio]
-
++
 _or_
 
-* link:http://www.eclipse.org/downloads/[Eclipse]
-
-_and_
-
-* JBoss Tools installed from the Eclipse marketplace. For more information, navigate to link:https://www.eclipse.org/[Eclipse], click *More* -> *Documentation*, and then select *Eclipse Marketplace User Guide*.
+* link:http://www.eclipse.org/downloads/[Eclipse] with JBoss Tools. To install JBoss Tools on Eclipse, navigate to link:https://www.eclipse.org/[Eclipse.org], click *More* -> *Documentation*, and select *Eclipse Marketplace User Guide*.
 endif::[]
 
 .Procedure
