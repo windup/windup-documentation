@@ -21,13 +21,16 @@ include::topics_5/what-is-the-toolkit.adoc[leveloffset=+2]
 // About the {WebNameTitle}
 include::topics_5/about-the-web-console.adoc[leveloffset=+2]
 
-== Installing the {WebNameTitle}
+== Installing the {WebName}
 
 You can install the {WebName} on Linux, Windows, macOS, or OpenShift Container Platform.
 
 // Installing on Linux, Windows, macOS
 include::topics_5/installation.adoc[leveloffset=+2]
+:web-console-guide!:
 
+:context: web-console-openshift
+:web-console-openshift:
 [id='openshift_install_{context}']
 === Installing the {WebName} on OpenShift Container Platform
 
@@ -37,14 +40,16 @@ You can install the {ProductShortName} {WebName} on Red Hat OpenShift Container 
 include::topics_5/web-openshift-environment.adoc[leveloffset=+3]
 
 // Installing on OpenShift
-include::topics_5/web-install-openshift.adoc[leveloffset=+3]
+include::topics_5/installation.adoc[leveloffset=+3]
 
 // Access the {WebNameTitle}
 include::topics_5/web-openshift-access.adoc[leveloffset=+3]
 
 // Troubleshoot the {WebNameTitle} OpenShift Install
 include::topics_5/web-openshift-troubleshoot.adoc[leveloffset=+3]
+:web-console-openshift!:
 
+:web-console-guide:
 // Using the {WebNameTitle} to Analyze Applications
 include::topics_5/web-analyze-apps.adoc[leveloffset=+1]
 
@@ -109,3 +114,5 @@ include::topics_5/web-add-user.adoc[leveloffset=+2]
 // * Appendix: Revision Information *
 // **********************************
 include::topics_5/templates/revision-info.adoc[]
+
+:web-console-guide!:
