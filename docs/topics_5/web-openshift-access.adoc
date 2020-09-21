@@ -22,4 +22,4 @@ NOTE: If the {WebName} does not load immediately, check the status of the projec
 .Welcome Page
 image::web-login-openshift.png[Welcome page]
 
-Authentication is required in order to access the {WebName}. The default  credentials are `mta` and `<password>`.
+The {WebName} installation creates a default `mta` user with a default password, `password`. You can add additional users to the {WebName}.
