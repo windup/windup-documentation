@@ -74,11 +74,13 @@ endif::[]
 ifdef::cli-guide,web-console-guide,web-console-openshift[]
 . Download the installation archive file from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page].
 . Extract the `.zip` file to a directory of your choice.
+ifeval::["{context}" != "web-console-openshift"]
 +
 [NOTE]
 ====
 If you are installing on a Windows operating system, extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error.
 ====
+endif::[]
 +
 The directory is referred to as `<MTA_HOME>` in this guide.
 endif::[]
