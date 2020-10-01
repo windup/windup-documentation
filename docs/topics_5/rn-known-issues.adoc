@@ -14,7 +14,7 @@ At the time of release, the following known issues are identified as major issue
 
 |link:https://issues.redhat.com/browse/WINDUP-2755[WINDUP-2755]
 |Eclipse Plugin
-|You cannot run the IDE plugin 5.0.1 with Eclipse 2020-06 because a null pointer exception causes analyses to fail. However, you can run the IDE plugin 5.0.1 with Red Hat CodeReady Studio 12.15.
+|You cannot run the IDE plugin 5.0.1 with Eclipse 2020-06 because a null pointer exception causes analyses to fail. 
 
 |link:https://issues.redhat.com/browse/WINDUP-2710[WINDUP-2710]
 |Lifecycle (Runtime)
