@@ -3,64 +3,149 @@
 [id='analysis_configuration_{context}']
 = Configuring an analysis
 
-Configure the settings for the analysis, such as the transformation path, packages, and other advanced options.
+You can configure a migration analysis by:
+
+* Setting the migration's transformation paths
+* Including specific Java application packages in the analysis
+* Excluding specific Java application packages from the analysis
+* Using custom rules or labels
+* Setting advanced options
++
+The first item is required. The rest are optional.
 
 .Configuring an analysis
-image::web-configure-analysis.png[Configure an analysis]
+image::web-configure-analysis_51.png[Configure an analysis]
 
-Transformation path::
+Setting the transformation path::
 
-Select the transformation path for your applications.
-The targets displayed under the Transformation Path heading are the most commonly used options:
+{ProductShortName} supports the most commonly used transformation paths for migration processes as well as proving an option for setting other paths.
 
-* JBoss EAP 7 (`eap:7`)
+.Procedure
 
-* JBoss EAP 6 (`eap:6`)
+. Select one or more of the following transformation paths for your applications:
 
+* Application server migration to:
+** JBoss EAP 7 (`eap:7`)
+** JBoss EAP 6 (`eap:6`)
 * Containerization (`cloud-readiness`)
-
 * Linux (`linux`)
-
 * OpenJDK (`openjdk`)
+* Camel
+* Quarkus
+* Red Hat Runtimes
++
+// To choose a different transformation path, click *Add path*, enter data, and click *OK*.//
 
-Other available targets can be selected using the _Advanced Options_ dialogue.
+. Click *Next*.
+// Other available targets can be selected using the _Advanced Options_ dialogue.//
 
-Include packages::
+Selecting Java application packages::
 
-Select which packages to analyze. If none are selected, all packages will be decompiled and analyzed.
+By default, {ProductName} includes all application packages in its migration analysis and excludes all third-party packages. You can exclude application packages and include third-party packages in the *Select packages* page.
+// Third-party applications are indicated by the (TBD) icon. This sentence is commented out until the icon is available.
 
-Exclude packages::
 
-Select which packages to exclude from analysis.
+.Procedure
 
-Use custom rules::
+. Move a child package without its parents or a package that has no children by selecting it and then clicking *>* or *<*.
+. Move a parent and all its children by selecting the parent and then clicking *>>* or *<<*.
+. Click *Next*.
 
-Select which custom rulesets to use during analysis.
+Adding custom rules::
 
-Custom rules can be maintained for the current {ProductShortName} project (project scope) or for all {ProductShortName} projects (global scope).
+You can add custom rules to use in each project. When you add a rule, it is enabled for all future analyses of the product, unless you disable it. If you no longer need a rule, you can delete it.
 
-Project custom rules are maintained using the controls below.
+.Procedure
 
-The *Add* button allows the user to select the rules files ([x-]`.windup.xml` or [x-]`.mta.xml`).
+. In the *Use custom rules* screen, click *Add*. A window containing rules opens.
+. Select the rules you want to add and click *OK*.
++
 Selected (checked) rules are shown in the right-hand panel and will be executed during the analysis.
++
+You can view a rule’s details by right-clicking the kebab icon in its row and then clicking *View details*.
 
 .Custom rules
-image::web-custom-rules-project.png[Custom rules]
+image::web-custom-rules-project_51.png[Custom rules]
 
-Use custom labels::
+Disabling/re-enabling custom rules::
 
-Select which custom labels to use during analysis.
 
-Custom labels can be maintained for the current {ProductShortName} project (project scope) or for all {ProductShortName} projects (global scope).
+Toggle the custom rule’s *Enable* button to either disable or re-enable it.
 
-Project custom labels are maintained using the controls below.
+Deleting custom rules::
 
-The *Add* button allows the user to select the label files ([x-]`.windup.label.xml` or [x-]`.mta.label.xml`).
-Selected (checked) labels are shown in the right-hand panel and will be executed during the analysis.
+
+Right-click the kebab icon in the rule’s row and then click *Delete*.
+
+Adding custom labels::
+
+You can add custom labels to use in your migration analysis. Once you select a label, it is enabled for all future analyses of the project, unless you disable it. If you no longer need a label, you can delete it.
+
+.Procedure
+
+. In the *Use custom labels* screen, click *Add*. A window containing labels opens.
+. Select the labels you want to add and click *OK*.
++
+You can view a label’s details by right-clicking the kebab icon in its row and then clicking *View details*.
 
 .Custom labels
-image::web-custom-labels-project.png[Custom labels]
+image::web-custom-labels-project_51.png[Custom labels]
 
-Advanced options::
 
-Click *Save* to save the analysis configuration, or click *Save & Run* to save and execute the analysis using these settings.
+Disabling/re-enabling custom labels::
+
+By default, when you add a custom label, it is enabled for all projects.You can disable an enabled custom label or re-enable a disabled label.
+
+.Procedure
+
+Toggle the custom label’s *Enable* button to either disable or re-enable it. The new setting will be applied for all future analyses.
+
+Deleting custom labels::
+
+Right-click the kebab icon in the label’s row and then click *Delete*.
+
+Setting advanced options::
+
+You can customize your analysis by setting some or all of the options on the *Advanced options* page.
+
+.Procedure
+
+. On the left side of the *Advanced options* page, complete the following fields:
+
+* *Target*: Choose from the list. By default, this is the *Transformation path* you selected previously.
+* *Source*: Choose from the list.
+* *Included tags*: When specified, only rules from this list will be processed. Choose from the list. You can choose more than one.
+* *Excluded tags*: Rules with these tags will not be processed. Choose from the list. You can choose more than one.
+* *Additional classpath*: Enter a space-delimited list of additional JAR files or directories to add to the class path so that they are available for decompilation or other analysis.
+* *Mavenize group ID*: Enter the Mavenize group ID.
+* *Ignore path*: Enter a location, in addition to `${user.home}/.mta/ignore/`, for {ProductShortName} to identify files that should be ignored.
+
+. On the right side of the *Advanced options* page, set the following toggle switches. By default, all are set to disabled, except for *Export CSV*.
+
+* *Export CSV*: Exports the report data to a CSV file on your local file system. {ProductShortName} creates the file in the directory specified by the `--output` argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis.
+* *Tattletale*: Enables generation of a Tattletale report for each application.
+* *’Class not found’ analysis*: Enables analysis of Java files that are not available on the class path. This option should not be used if some classes will be unavailable at analysis time.
+* *’Compatible files report’*: Enables generation of the Compatible Files report. Due to processing all files without found issues, this report may take a long time for large applications.
+* *Exploded app*: Indicates that the provided input directory contains source files for a single application.
+* *Keep work dirs*: Instructs {ProductShortName} to not delete temporary working files, such as the graph database and extracted archive files. This option is useful for debugging purposes.
+* *Mavenize*: Creates a Maven project directory structure based on the structure and content of the application.
+* *Allow network access*: Allows network access for features that require it. Currently only validating XML schemas against external resources relies on Internet access. Note that using this option comes with a performance penalty.
+* *Skip reports*: If enabled, HTML reports are not generated. Enable this toggle if you enabled *Export CSV*.
+* *Source mode*: Indicates that the application to be evaluated contains source files rather than compiled binaries.
+
+. Click *Next*.
+
+Reviewing a migration analysis::
+
+In the *Review* screen, you can review your migration analysis and the decide to save it without running it now, save and run it now, or to modify before saving it.
+
+.Procedure
+
+. In the *Review* screen, examine the data that describes your migration analysis.
+. Click one of the following:
+
+* *Save* to save the analysis without running it now
+* *Save and run* to save the analysis and run it now
+* *Back* to return to previous screens to change their contents
++
+If you click *Save* or *Save and run*, the *Analysis results* page opens.
