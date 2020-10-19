@@ -7,7 +7,7 @@ Run the script to start the {WebName}.
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ <MTA_HOME>/run_mta.sh
+$ <MTA_HOME> ./run_mta.sh
 ----
 
 NOTE: In a Windows environment, use the `run_mta.bat` script.

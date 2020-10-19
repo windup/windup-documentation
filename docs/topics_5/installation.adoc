@@ -90,7 +90,7 @@ ifdef::web-console-guide[]
 * Linux operating system:
 +
 ----
-$ <MTA_HOME>/run_mta.sh
+$ <MTA_HOME> ./run_mta.sh
 ----
 
 * Windows operating system:
