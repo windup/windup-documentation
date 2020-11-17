@@ -78,7 +78,9 @@ ifeval::["{context}" != "web-console-openshift"]
 +
 [NOTE]
 ====
-If you are installing on a Windows operating system, extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error.
+If you are installing on a Windows operating system:
+. Extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error.
+. If a *Confirm file replace* window is displayed during extraction, click *Yes to all*. 
 ====
 endif::[]
 +
