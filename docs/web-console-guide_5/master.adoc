@@ -26,30 +26,30 @@ include::topics_5/about-the-web-console.adoc[leveloffset=+2]
 You can install the {WebName} on Linux, Windows, macOS, or OpenShift Container Platform.
 
 // Installing on Linux, Windows, macOS
-include::topics_5/installation.adoc[leveloffset=+2]
+include::topics_5/installing-web-console.adoc[leveloffset=+2]
+
+=== Installing the {WebName} on Red{nbsp}Hat{nbsp}OpenShift{nbsp}Container{nbsp}Platform
+
+You can install the {WebName} on Red{nbsp}Hat{nbsp}OpenShift{nbsp}Container{nbsp}Platform 4.5 and later versions with the {ProductName} Operator.
+
+You can install the {WebName} on Red{nbsp}Hat{nbsp}OpenShift{nbsp}Container{nbsp}Platform 4.2-4.4 and 3.11 by importing a template and instantiating it to create the {WebName} application.
+
 :web-console-guide!:
-
-:context: web-console-openshift
-:web-console-openshift:
-[id='openshift_install_{context}']
-=== Installing the {WebName} on OpenShift Container Platform
-
-You can install the {ProductShortName} {WebName} on Red Hat OpenShift Container Platform and access the {WebName} in a browser.
-
-// About the {WebNameTitle} image
-include::topics_5/web-openshift-environment.adoc[leveloffset=+3]
-
-// Installing on OpenShift
-include::topics_5/installation.adoc[leveloffset=+3]
-
-// Access the {WebNameTitle}
-include::topics_5/web-openshift-access.adoc[leveloffset=+3]
-
-// Troubleshoot the {WebNameTitle} OpenShift Install
-include::topics_5/web-openshift-troubleshoot.adoc[leveloffset=+3]
-:web-console-openshift!:
-
+:context: ocp-45
+:ocp-45:
+include::topics_5/installing-web-console-on-openshift.adoc[leveloffset=+3]
+:ocp-45!:
+:context: ocp-41
+:ocp-41:
+include::topics_5/installing-web-console-on-openshift.adoc[leveloffset=+3]
+:ocp-41!:
+:context: ocp-311
+:ocp-311:
+include::topics_5/installing-web-console-on-openshift.adoc[leveloffset=+3]
+:ocp-311!:
 :web-console-guide:
+include::topics_5/web-openshift-troubleshoot.adoc[leveloffset=+3]
+
 // Using the {WebNameTitle} to Analyze Applications
 include::topics_5/web-analyze-apps.adoc[leveloffset=+1]
 
