@@ -35,11 +35,11 @@
 // * Doc metadata *
 // ****************
 :DocInfoProductName: Migration Toolkit for Applications
-:DocInfoProductNumber: 5.0
+:DocInfoProductNumber: 5.1
 :DocInfoProductNameURL: migration_toolkit_for_applications
 
-:OpenShiftProductNumber: 4.5
-:ProductVersion: 5.0.1
+:OpenShiftProductNumber: 4.6
+:ProductVersion: 5.1.0
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rules Development Guide
@@ -59,9 +59,9 @@
 // Commenting out as these attributes are not currently used:
 // :ProductRelease: 4
 // :ProductVersion: 4.0
-:ProductDistributionVersion: 5.0.Final
+:ProductDistributionVersion: 5.1.Final
 :ProductDistribution: mta-cli-{ProductDistributionVersion}
-:MavenProductVersion: 5.0.Final
+:MavenProductVersion: 5.1.Final
 
 // ********
 // * URLs *
