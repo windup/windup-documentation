@@ -1,25 +1,22 @@
 // Module included in the following assemblies:
 // * docs/web-console-guide_5/master.adoc
 [id='access_console_openshift_{context}']
-= Accessing the {WebName}
+= Accessing the {WebName} on OpenShift Container Platform
 
-Once the {WebName} has been deployed on OpenShift Container Platform, you can access it from a browser. The `deploy.sh` script outputs the link, shown in the example below as `<WEB_CONSOLE_URL>`, to use to open the {WebName}.
+After you have installed the {DocInfoProductName} Operator in the OpenShift Web Console and created an instance of the {DocInfoProductName} application, you can access the {DocInfoProductName} web console in a browser.
 
-.Example: `deploy.sh` output
-[source,options="nowrap",subs="+quotes"]
-----
-...
--> Deploy MTA Web Console ...
-Upload, build and deployment successful!
+.Procedure
 
-Open <WEB_CONSOLE_URL> to start using the MTA Web Console on OpenShift (user='mta',password='<password>')
-----
-
-You can also access the {WebName} from the OpenShift console at `<OPENSHIFT_URL>/console/project/mta/overview` by clicking the link in the *MTA WEB CONSOLE HTTP* application. If you renamed the OpenShift project when deploying, replace `mta` in this URL with the name of your project.
-
-NOTE: If the {WebName} does not load immediately, check the status of the project in the OpenShift console to see if it is still processing or if there were errors.
-
+. In the OpenShift web console, click *Networking* -> *Routes*.
+. Click the route of the {DocInfoProductName} application in the *Location* column. This route is the URL for the {WebName}.
++
+The {WebName} welcome page is displayed in your browser.
++
 .Welcome Page
 image::web-login-openshift.png[Welcome page]
-
++
 The {WebName} installation creates a default `mta` user with a default password, `password`. You can add additional users to the {WebName}.
+
+. Click *Log in* to log into the {WebName}.
++
+You can now create a project and update the password.
