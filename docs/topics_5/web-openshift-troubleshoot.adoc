@@ -137,7 +137,7 @@ Attempt the deployment again, and view the logs and events of the non deployment
 
 * To address the first issue reported, where the OpenShift instance is out of resources, follow the instructions in link:{OpenShiftAdminGuideURL}/cluster_capacity.html[Analyzing Cluster Capacity] from the _Cluster Administration_ guide in the OpenShift documentation to determine the cluster capacity. Once the capacity has increased, or there are fewer jobs executing, attempt the deployment once again.
 
-* To address the second issue reported, where the images are unable to be pulled from the registry, link:{OpenShiftInstallConfigGuideURL}/registry/accessing_registry.html[access the registry] to ensure the images are present. This link also includes instructions on examining the logs for the Docker registry, and can be used to troubleshoot the issue further.
+* To address the second issue reported, where the images are unable to be pulled from the registry, link:{OpenShiftRegistryGuideURL}/accessing-the-registry.html[access the registry] to ensure the images are present. This link also includes instructions on examining the logs for the Docker registry, and can be used to troubleshoot the issue further.
 
 == Reporting issues
 
