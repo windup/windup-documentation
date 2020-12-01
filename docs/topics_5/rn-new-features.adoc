@@ -3,10 +3,15 @@
 [id='rn-new-features_{context}']
 = New features
 
-This section describes the new features of the {ProductName}.
+This section describes the new features of the {ProductName} {DocInfoProductNumber}.
 
-Rebranding::
-The Red Hat Application Migration Toolkit has been rebranded as the {ProductName}{nbsp}({ProductShortName}).
+Updated {WebName} interface::
+The {WebName} has been redesigned with PatternFly 4. In addition to its general improved appearance, the {WebName} adds elements for project creation and management and updated transformation target icons.
 
-New migration path for migrating to Apache{nbsp}Camel{nbsp}3::
-The current release contains a new migration path to support the migration from Apache{nbsp}Camel{nbsp}2 to Apache{nbsp}Camel{nbsp}3. The Camel{nbsp}3 rulesets contain 147 new rules.
+{ProductName} Operator for OpenShift Container Platform::
+The current release includes the {ProductName} Community Operator, which installs the {WebName} on OpenShift Container Platform 4.5 and later.
+
+Greater support for migrating from Spring Boot to Quarkus::
+The current release provides greater support for migrating from Spring Boot to Quarkus with the addition of 22 rules.
++
+The new rules focus on the Spring Boot APIs that are implemented in Quarkus Spring extensions, where Spring Boot dependencies can be replaced by equivalent Quarkus extensions. Spring artifacts that do not have Quarkus equivalents are also reported.
