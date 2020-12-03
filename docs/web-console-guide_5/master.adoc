@@ -53,26 +53,36 @@ include::topics_5/web-openshift-troubleshoot.adoc[leveloffset=+3]
 // Using the {WebNameTitle} to Analyze Applications
 include::topics_5/web-analyze-apps.adoc[leveloffset=+1]
 
-// Add a Project
-include::topics_5/web-add-project.adoc[leveloffset=+2]
+== Anayzng applications with the {WebName}
 
-// Add Applications to a Project
-include::topics_5/web-add-applications.adoc[leveloffset=+2]
+You can create a project in the web console to analyze your applications.
 
-// Specify the Analysis Configuration
-include::topics_5/web-execution-config.adoc[leveloffset=+2]
+Each project groups the applications for a specific analysis, which you can configure with custom rules and labels.
 
-// Execute
-include::topics_5/web-execute.adoc[leveloffset=+2]
+The analysis process generates reports that describe the readiness of your applications for migration or modernization.
+
+// Create a Project
+include::topics_5/web-create-project.adoc[leveloffset=+2]
+
+=== Running a saved analysis
+You can run the last saved version of a project from the *Analysis results* screen.
+
+.Procedure
+
+In the {WebName}, click *Analysis results*.
+Select a *Project*.
+Click *Run analysis*.
+
+The progress of your analysis is displayed in the *Active analysis* portion of the *Analysis results* screen.
 
 // Viewing the Results of an Analysis
 include::topics_5/web-view-results.adoc[leveloffset=+2]
 
-// Examine Analysis Details
-include::topics_5/web-execution-details.adoc[leveloffset=+3]
-
 // Review the Reports
-include::topics_5/web-review-reports.adoc[leveloffset=+3]
+include::topics_5/web-review-reports.adoc[leveloffset=+2]
+
+// Update the analysis
+include::topics_5/web-updating-an-analysis.adoc[leveloffset=+2]
 
 // Web console-specific reports are not included in this release, commenting out for now.
 ////
@@ -89,8 +99,11 @@ include::topics_5/web-report-issues.adoc[leveloffset=+2]
 include::topics_5/web-report-static.adoc[leveloffset=+2]
 ////
 
-// Using Custom Rules
-include::topics_5/web-custom-rules.adoc[leveloffset=+1]
+// Adding Custom Custom Rules
+include::topics_5/web-adding-global-custom-rules.adoc[leveloffset=+1]
+
+// Adding Custom Custom Labels
+include::topics_5/web-adding-global-custom-labels.adoc[leveloffset=+1]
 
 // Require Authentication for {ProductWebName}
 include::topics_5/web-require-auth.adoc[leveloffset=+1]
