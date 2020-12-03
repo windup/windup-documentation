@@ -4,6 +4,8 @@
 // * docs/maven-guide_5/master.adoc
 // * docs/web-console-guide_5/master.adoc
 // * docs/plugin-guide_5/master.adoc
+
+[id="installing-web-console_{context}"]
 ifdef::cli-guide[]
 = Installing the {CLINameTitle}
 
@@ -14,18 +16,12 @@ ifdef::maven-guide[]
 
 You can install the {MavenName} in your local Maven repository.
 endif::[]
-// Web console on OpenShift is web-install-openshift.adoc
 ifdef::web-console-guide[]
 = Installing the {WebName} on Linux, Windows, or macOS
 
 You can install the {WebName} on Linux, Windows, or macOS operating systems and access the {WebName} in a browser.
 
 The {WebName} has been tested with Chrome and Firefox.
-endif::[]
-ifdef::web-console-openshift[]
-= Importing a {WebName} template
-
-You can import a {WebName} template into Red Hat OpenShift Container Platform.
 endif::[]
 ifdef::plugin-guide[]
 = Installing the {PluginName} in a connected environment
@@ -49,11 +45,6 @@ ifdef::cli-guide,maven-guide,web-console-guide[]
 * OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, _or_ Oracle JDK 11
 * 8 GB RAM
 endif::[]
-ifdef::web-console-openshift[]
-* OpenShift Container Platform version 3.11 or 4.x.
-+
-The {WebName} installation has been tested on OpenShift Container Platform 3.11 and 4.4. Other versions of 4.x should be compatible.
-endif::[]
 ifdef::maven-guide[]
 * Maven 3.2.5 or later
 endif::[]
@@ -71,10 +62,9 @@ endif::[]
 
 .Procedure
 
-ifdef::cli-guide,web-console-guide,web-console-openshift[]
+ifdef::cli-guide,web-console-guide[]
 . Download the installation archive file from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page].
 . Extract the `.zip` file to a directory of your choice.
-ifeval::["{context}" != "web-console-openshift"]
 +
 [NOTE]
 ====
@@ -82,9 +72,8 @@ If you are installing on a Windows operating system:
 . Extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error.
 . If a *Confirm file replace* window is displayed during extraction, click *Yes to all*. 
 ====
-endif::[]
-+
-The directory is referred to as `<MTA_HOME>` in this guide.
+
+The installation directory is referred to as `<MTA_HOME>` in this guide.
 endif::[]
 ifdef::web-console-guide[]
 . Start the {WebName}:
@@ -101,33 +90,12 @@ $ <MTA_HOME>/run_mta.sh
 C:\<MTA_HOME>\run_mta.bat
 ----
 
-. Open a browser and navigate to `http://localhost:8080/mta-web`.
+. Open a browser and navigate to `http://localhost:8080/mta-web`. The {WebName} login page is displayed in your browser.
 +
-.Welcome Page
-image::web-login.png[Welcome Page]
+.Web console login page
+image::web-login-openshift.png[web console login page]
 +
-The {WebName} installation creates a default `mta` user with a default password, `password`. You can add additional users to the {WebName}.
-endif::[]
-ifdef::web-console-openshift[]
-. Launch the OpenShift web console.
-+
-image::openshift-console.png[]
-
-. Click *Import YAML/JSON* in the upper-right corner of the web console.
-. Fill in the following fields:
-
-* *Project Name*. Mandatory.
-* *Project Display Name*. Optional. This field determines how the project name is displayed in the web console.
-* *Project Description*. Optional.
-
-. Click *Browse* and import the desired {WebName} template from `<MTA_HOME>/openshift/templates`.
-. Click *Create*.
-. Optional: To save the template as a resource for future projects, select *Save template*.
-. Click *Continue*.
-. Review the values provided.
-. Click *Create* to import the template into your project.
-+
-The {WebName} template is imported into your project.
+The default user is `mta` and the default password is `password`.
 endif::[]
 ifdef::maven-guide[]
 . Clone the {MavenName} Github repository:
