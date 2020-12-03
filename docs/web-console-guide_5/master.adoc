@@ -76,9 +76,6 @@ The progress of your analysis is displayed in the Active analysis portion of the
 // Viewing the Results of an Analysis
 include::topics_5/web-view-results.adoc[leveloffset=+2]
 
-// Examine Analysis Details
-include::topics_5/web-execution-details.adoc[leveloffset=+3]
-
 // Review the Reports
 include::topics_5/web-review-reports.adoc[leveloffset=+3]
 
@@ -98,14 +95,10 @@ include::topics_5/web-report-static.adoc[leveloffset=+2]
 ////
 
 // Using Custom Rules
-<<<<<<< HEAD
 include::topics_5/web-adding-global-custom-rules.adoc[leveloffset=+1]
 
 // Using Custom Labels
 include::topics_5/web-adding-global-custom-labels.adoc[leveloffset=+1]
-=======
-include::topics_5/web-custom-rules.adoc[leveloffset=+1]
->>>>>>> 32aae42425964ee97b7ee18df9038df7a9a5135f
 
 // Require Authentication for {ProductWebName}
 include::topics_5/web-require-auth.adoc[leveloffset=+1]
