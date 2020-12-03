@@ -77,7 +77,10 @@ The progress of your analysis is displayed in the Active analysis portion of the
 include::topics_5/web-view-results.adoc[leveloffset=+2]
 
 // Review the Reports
-include::topics_5/web-review-reports.adoc[leveloffset=+3]
+include::topics_5/web-review-reports.adoc[leveloffset=+2]
+
+//Reconfigure Analysis
+include::topics_5/web-updating-an-analysis.adoc[leveloffset=+2]
 
 // Web console-specific reports are not included in this release, commenting out for now.
 ////
