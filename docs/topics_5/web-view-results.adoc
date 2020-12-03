@@ -3,9 +3,26 @@
 [id='view_results_{context}']
 = Viewing analysis results
 
-Once you have executed {ProductShortName} analysis on a project, the analysis is listed in a table that provides the analysis ID, status, and date started. Each row includes actions available for that analysis, including viewing the analysis details and generated reports, as well as canceling or deleting the analysis.
+The results of all analyses are grouped and listed by project on the *Analysis results* screen.
 
-.Analysis list
-image::web-analysis-list.png[Analysis list]
+.Procedure
 
-Click the link in the *Analysis* column to view the reports or click the information icon in the *Actions* column to view the analysis details.
+. In the {WebName}, click *Analysis results*.
+
++
+image::web-analysis-details.png[Analysis details screen]
+
+. Select a project from the list.
+. Click the number of the analysis you want to review.
++
+The results are displayed in the *Results* screen, which contains two tabs: *Details* and *Logs*.
+
+The *Details* tab displays important details of the analysis, such as status, start date, duration, and configuration settings.
+
+.Analysis details screen
+image::web-analysis-details.png[Analysis details screen]
+
+The *Logs* tab displays the logs generated during the analysis.
+
+.Analysis logs screen
+image::web-analysis-logs.png[Analysis logs screen]

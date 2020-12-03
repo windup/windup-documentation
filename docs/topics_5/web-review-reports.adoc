@@ -3,4 +3,12 @@
 [id='reviewing_reports_{context}']
 = Reviewing reports
 
-From the analysis table, click the report link in the *Actions* column to view the reports for this analysis. This opens a new window with the generated {ProductShortName} reports.
+The {ProductShortName} reports include a dashboard and detailed descriptions of the findings of each project analysis. You can use these findings to decide if you need to make any changes to the applications tested.
+
+The content of the reports is described in detail in link:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.0/html-single/cli_guide/index#review_reports_cli-guide/[{ProductShortName} reports].
+
+.Procedure
+. In the {Webname}, click *Analysis results*.
+. Click the *Reports* icon {reports} beside the analysis you want to investigate.
++
+The *All applications* screen of the reports is displayed.
