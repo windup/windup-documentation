@@ -43,7 +43,9 @@ endif::[]
 . Launch the OpenShift web console.
 ifdef::ocp-45[]
 . Click *Operators* -> *OperatorHub*.
-. Click the *Modernization & Migration* category and then click the *{DocInfoProductName}* Operator.
+// . Click the *Modernization & Migration* category and then click the *{DocInfoProductName}* Operator.
+. Enter `migration` in the *Filter by keyword field* to locate the *{DocInfoProductName}* Operator.
+. Click the Operator.
 . Click *Install*.
 . Select *mta* from the *Installed Namespace* list and click *Install*.
 . Switch to the *Developer* perspective and click *+Add*.
