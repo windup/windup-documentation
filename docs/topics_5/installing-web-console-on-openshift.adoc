@@ -44,7 +44,7 @@ endif::[]
 ifdef::ocp-45[]
 . Click *Operators* -> *OperatorHub*.
 // . Click the *Modernization & Migration* category and then click the *{DocInfoProductName}* Operator.
-. Enter `migration` in the *Filter by keyword field* to locate the *{DocInfoProductName}* Operator.
+. Enter `migration` in the *Filter by keyword* field to locate the *{DocInfoProductName}* Operator.
 . Click the Operator.
 . Click *Install*.
 . Select *mta* from the *Installed Namespace* list and click *Install*.
