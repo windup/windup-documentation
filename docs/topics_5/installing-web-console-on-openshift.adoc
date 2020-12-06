@@ -16,7 +16,7 @@ endif::[]
 ifdef::ocp-41[]
 = Installing the {WebName} on OpenShift{nbsp}Container{nbsp}Platform 4.2-4.4
 
-You can install the {WebName} on OpenShift{nbsp}Container{nbsp}Platform 4.2-4.4 by importing a template and instantiating it to create the {WebName} application..
+You can install the {WebName} on OpenShift{nbsp}Container{nbsp}Platform 4.2-4.4 by importing a template and instantiating it to create the {WebName} application.
 endif::[]
 ifdef::ocp-311[]
 = Installing the {WebName} on OpenShift{nbsp}Container{nbsp}Platform 3.11
