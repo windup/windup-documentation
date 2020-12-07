@@ -61,16 +61,8 @@ The analysis process generates reports that describe the readiness of your appli
 // Creating a project
 include::topics_5/web-create-project.adoc[leveloffset=+2]
 
-=== Running a saved analysis
-You can run the last saved version of a project from the *Analysis results* screen.
-
-.Procedure
-
-. In the web console, click *Analysis results*.
-. Select a *Project*.
-. Click *Run analysis*.
-
-The progress of your analysis is displayed in the Active analysis portion of the Analysis results screen
+// Running a saved analysis
+include::topics_5/web-running-saved-analysis.adoc[leveloffset=+2]
 
 // Viewing the Results of an Analysis
 include::topics_5/web-view-results.adoc[leveloffset=+2]
@@ -80,21 +72,6 @@ include::topics_5/web-review-reports.adoc[leveloffset=+2]
 
 //Reconfigure Analysis
 include::topics_5/web-updating-an-analysis.adoc[leveloffset=+2]
-
-// Web console-specific reports are not included in this release, commenting out for now.
-////
-// Dashboard
-include::topics_5/web-report-dashboard.adoc[leveloffset=+2]
-
-// Application Details
-include::topics_5/web-report-app-details.adoc[leveloffset=+2]
-
-// Issues
-include::topics_5/web-report-issues.adoc[leveloffset=+2]
-
-// Static Reports
-include::topics_5/web-report-static.adoc[leveloffset=+2]
-////
 
 // Using Custom Rules
 include::topics_5/web-adding-global-custom-rules.adoc[leveloffset=+2]
