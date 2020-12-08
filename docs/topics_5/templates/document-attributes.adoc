@@ -73,10 +73,9 @@
 :ProductDocGettingStartedGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/getting_started_guide
 :ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/web_console_guide
 :ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
-:OpenShiftAdminGuideURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}/admin_guide/
-:OpenShiftDevGuideURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}/dev_guide/
-:OpenShiftRegistryGuideURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}/registry/
+:OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
 :LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
+
 
 // Point to the GitHub wiki version since there is no product version of this guide.
 :ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide

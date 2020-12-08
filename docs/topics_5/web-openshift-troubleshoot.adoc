@@ -106,21 +106,21 @@ The resource quota for the OpenShift project has been met, and the Pod is unable
 
 Perform either of the following:
 
-* Increase the quota for the OpenShift project. For additional information on OpenShift quotas, see link:{OpenShiftDevGuideURL}/compute_resources.html[Quotas and Limit Ranges] and link:{OpenShiftAdminGuideURL}/limits.html[Setting Limit Ranges].
+* Increase the quota for the OpenShift project. For additional information on OpenShift quotas, see link:{OpenShiftDocsURL}/applications/quotas/quotas-setting-per-project.html[Quotas and Limit Ranges] and link:{OpenShiftDocsURL}/nodes/clusters/nodes-cluster-limit-ranges.html[Setting Limit Ranges].
 * Reduce the requested resources for the {WebName} OpenShift project. It is recommended to have at least 2 CPUs and 4 GB of memory for the project.
 
 Once the request is within the available quota, attempt the deployment once again.
 
 .Pod takes longer than 600 seconds to become available
 
-After attempting a deployment, the `-deploy` Pods timeout and report the following error.
+After attempting a deployment, the `-deploy` Pods time out and report the following error.
 
 [source,options="nowrap",subs="+quotes"]
 ----
 error: update acceptor rejected mta-web-console-executor-1: Pods for rc 'mta/<POD_NAME>' took longer than 600 seconds to become available
 ----
 
-These errors appear after the Pods timeout and are placed into an error state.
+These errors appear after the Pods time out and are placed into an error state.
 
 *What it means:*
 
@@ -135,9 +135,9 @@ This error can be caused by a number of sources, with the following being the mo
 
 Attempt the deployment again, and view the logs and events of the non deployment Pods while they are being created. These messages will provide context to the underlying errors resulting in the deployment Pod timeouts.
 
-* To address the first issue reported, where the OpenShift instance is out of resources, follow the instructions in link:{OpenShiftAdminGuideURL}/cluster_capacity.html[Analyzing Cluster Capacity] from the _Cluster Administration_ guide in the OpenShift documentation to determine the cluster capacity. Once the capacity has increased, or there are fewer jobs executing, attempt the deployment once again.
+* To address the first issue reported, where the OpenShift instance is out of resources, follow the instructions in link:{OpenShiftDocsURL}/nodes/clusters/nodes-cluster-resource-levels.html[Analyzing Cluster Capacity] to determine the cluster capacity. Once the capacity has increased, or there are fewer jobs executing, attempt the deployment once again.
 
-* To address the second issue reported, where the images are unable to be pulled from the registry, link:{OpenShiftRegistryGuideURL}/accessing-the-registry.html[access the registry] to ensure the images are present. This link also includes instructions on examining the logs for the Docker registry, and can be used to troubleshoot the issue further.
+* To address the second issue reported, where the images are unable to be pulled from the registry, link:{OpenShiftDocsURL}/registry/accessing-the-registry.html[access the registry] to ensure the images are present. This link also includes instructions on examining the logs for the Docker registry, and can be used to troubleshoot the issue further.
 
 == Reporting issues
 
