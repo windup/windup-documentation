@@ -10,7 +10,7 @@ Follow these steps to change the default administrative user's password.
 . Make sure that the {WebName} is running.
 . Open the Red Hat Single Sign-On administration console.
 * For a ZIP installation:
-.. Navigate to `http://localhost:8080/auth/` in a browser.
+.. Navigate to `\http://localhost:8080/auth/` in a browser.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 * For an OpenShift installation:
 .. Navigate to `<OPENSHIFT_URL>/console/project/mta/overview` in a browser.
