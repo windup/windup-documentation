@@ -26,13 +26,19 @@ endif::[]
 
 .Prerequisites
 
-ifdef::ocp-45[]
-* `cluster-admin` privileges to install the *{DocInfoProductName}* Operator.
-* `project-admin-user` privileges to install the {WebName} application in a project.
-endif::[]
-* Existing project, for example, `mta`, where you can install the {WebName}. The installation process does not create a new project. You can install the {WebName} in more than one project.
+* You must create a project, for example, `mta`, for the {WebName}. Do not install the {WebName} in a default OpenShift project.
 +
-Do not install the {WebName} in a default OpenShift project.
+You can install the {WebName} in more than one project.
+ifdef::ocp-45[]
+* You must have `cluster-admin` privileges to install the *{DocInfoProductName}* Operator from Operator Hub.
++
+[IMPORTANT]
+====
+In the current release, only an admin user can install the Operator in an existing project.
+
+After the Operator is installed in the project, a non-admin user can use the Operator to add the {WebName} application.
+====
+endif::[]
 
 .Procedure
 
