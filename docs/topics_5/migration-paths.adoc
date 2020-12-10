@@ -10,7 +10,7 @@ The {ProductName} ({ProductShortName}) supports migrations from third-party ente
 The following table describes the most common supported migration paths.
 
 .Supported migration paths: Source platform &#8658; target
-[cols="2,^1,^1,^1,^1,^1,^1",options="^,header"]
+[cols="2,^1,^1,^1,^1,^1,^1,^1",options="^,header"]
 |====
 
 |Source platform{nbsp}&#8658;
@@ -20,6 +20,7 @@ The following table describes the most common supported migration paths.
 |OpenJDK 8{nbsp}&{nbsp}11
 |Apache Camel{nbsp}3
 |Spring Boot on Red{nbsp}Hat Runtimes
+|Quarkus
 
 |Oracle WebLogic Server
 |{icon-check}
@@ -28,12 +29,15 @@ The following table describes the most common supported migration paths.
 |{icon-check}
 |-
 |-
+|-
+
 
 |IBM WebSphere Application Server
 |{icon-check}
 |{icon-check}
 |{icon-check}
 |{icon-check}
+|-
 |-
 |-
 
@@ -44,12 +48,14 @@ The following table describes the most common supported migration paths.
 |{icon-check}
 |-
 |-
+|-
 
 |JBoss EAP 5
 |{icon-check}
 |{icon-check}
 |{icon-check}
 |{icon-check}
+|-
 |-
 |-
 
@@ -60,12 +66,14 @@ The following table describes the most common supported migration paths.
 |{icon-check}
 |-
 |-
+|-
 
 |JBoss EAP 7
 |N/A
 |{icon-check}
 |{icon-check}
 |{icon-check}
+|-
 |-
 |-
 
@@ -76,6 +84,7 @@ The following table describes the most common supported migration paths.
 |{icon-check}
 |-
 |-
+|-
 
 |Apache Camel 2
 |-
@@ -84,20 +93,23 @@ The following table describes the most common supported migration paths.
 |{icon-check}
 |{icon-check}
 |-
+|-
 
 |Spring Boot
 |-
 |-
 |{icon-check}
 |{icon-check}
-|{icon-check}
 |-
+|{icon-check}
+|{icon-check}
 
 |Any Java application
 |-
 |-
 |{icon-check}
 |{icon-check}
+|-
 |-
 |-
 
