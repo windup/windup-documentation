@@ -83,7 +83,7 @@ When accessing the executor Pod's logs the following error is seen.
 
 *What it means:*
 
-A `NoRouteToHostException` indicates that this Pod isn't able to connect to the {WebName} Pod.
+A `NoRouteToHostException` indicates that this Pod is not able to connect to the {WebName} Pod.
 
 *How to resolve it:*
 
@@ -106,7 +106,7 @@ The resource quota for the OpenShift project has been met, and the Pod is unable
 
 Perform either of the following:
 
-* Increase the quota for the OpenShift project. For additional information on OpenShift quotas, see link:{OpenShiftDocsURL}/applications/quotas/quotas-setting-per-project.html[Quotas and Limit Ranges] and link:{OpenShiftDocsURL}/nodes/clusters/nodes-cluster-limit-ranges.html[Setting Limit Ranges].
+* Increase the quota for the OpenShift project. For additional information, see link:{OpenShiftDocsURL}/applications/quotas/quotas-setting-per-project.html[Quotas and Limit Ranges] and link:{OpenShiftDocsURL}/nodes/clusters/nodes-cluster-limit-ranges.html[Setting Limit Ranges] in the OpenShift documentation.
 * Reduce the requested resources for the {WebName} OpenShift project. It is recommended to have at least 2 CPUs and 4 GB of memory for the project.
 
 Once the request is within the available quota, attempt the deployment once again.
@@ -135,9 +135,9 @@ This error can be caused by a number of sources, with the following being the mo
 
 Attempt the deployment again, and view the logs and events of the non deployment Pods while they are being created. These messages will provide context to the underlying errors resulting in the deployment Pod timeouts.
 
-* To address the first issue reported, where the OpenShift instance is out of resources, follow the instructions in link:{OpenShiftDocsURL}/nodes/clusters/nodes-cluster-resource-levels.html[Analyzing Cluster Capacity] to determine the cluster capacity. Once the capacity has increased, or there are fewer jobs executing, attempt the deployment once again.
+* If the OpenShift instance runs out of resources, link:{OpenShiftDocsURL}/nodes/clusters/nodes-cluster-resource-levels.html[analyze your cluster's capacity]. Once the capacity has increased, or there are fewer jobs executing, attempt the deployment once again.
 
-* To address the second issue reported, where the images are unable to be pulled from the registry, link:{OpenShiftDocsURL}/registry/accessing-the-registry.html[access the registry] to ensure the images are present. This link also includes instructions on examining the logs for the Docker registry, and can be used to troubleshoot the issue further.
+* If the images cannot be pulled from the registry, link:{OpenShiftDocsURL}/registry/accessing-the-registry.html[access the registry] to verify that the images are present and link:{OpenShiftDocsURL}/registry/accessing-the-registry.html#registry-viewing-logs_accessing-the-registry[check the logs].
 
 == Reporting issues
 

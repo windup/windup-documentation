@@ -70,7 +70,7 @@ ifdef::cli-guide,web-console-guide[]
 ====
 If you are installing on a Windows operating system:
 . Extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error.
-. If a *Confirm file replace* window is displayed during extraction, click *Yes to all*. 
+. If a *Confirm file replace* window is displayed during extraction, click *Yes to all*.
 ====
 
 The installation directory is referred to as `<MTA_HOME>` in this guide.
@@ -90,7 +90,7 @@ $ <MTA_HOME>/run_mta.sh
 C:\<MTA_HOME>\run_mta.bat
 ----
 
-. Open a browser and navigate to `http://localhost:8080/mta-web`. The {WebName} login page is displayed in your browser.
+. Open a browser and navigate to `\http://localhost:8080/mta-web`. The {WebName} login page is displayed in your browser.
 +
 .Web console login page
 image::web-login-openshift.png[web console login page]
