@@ -14,10 +14,6 @@ At the time of release, the following known issues are identified as major issue
 |Component
 |Summary
 
-|link:https://issues.redhat.com/browse/WINDUP-2904[WINDUP-2904]
-|Web UI & Windup-as-a-Service
-|Analysis configuration settings are not updated in the wizard unless the *Next* button is clicked.
-
 |link:https://issues.redhat.com/browse/WINDUPRULE-607[WINDUPRULE-607]
 |OpenShift
 |RHAMT 4.3.1 installation on OpenShift Container Platform fails. The `WebConsole` and `Executor` pods are not running.
@@ -62,10 +58,6 @@ At the time of release, the following known issues are identified as major issue
 |link:https://issues.redhat.com/browse/WINDUP-2551[WINDUP-2551]
 |Technical Debt
 |RHAMT does not run on Zulu.
-
-|link:https://issues.redhat.com/browse/WINDUP-2549[WINDUP-2549]
-|Web UI & Windup-as-a-Service
-|When RHAMT 4.3.1 is deployed on OpenShift Container Platform, analysis results cannot be viewed.
 
 |link:https://issues.redhat.com/browse/WINDUP-2521[WINDUP-2521]
 |Web UI & Windup-as-a-Service

@@ -13,6 +13,18 @@ For a full list of all issues resolved in this release, see the list of link:htt
 |ID
 |Summary
 
+|link:https://issues.redhat.com/browse/WINDUP-2941[WINDUP-2941]
+|MTA reports are slow to load, do not include Target Runtime labels on Application list, and do not have working feedback controls.
+
+|link:https://issues.redhat.com/browse/WINDUP-2333[WINDUP-2333]
+|The MTA web console installed on OpenShift by means of a template cannot access the reports using HTTPS.
+
+|link:https://issues.redhat.com/browse/WINDUP-2801[WINDUP-2801]
+|The MTA web console installed on OpenShift by means of the MTA Operator cannot access the reports using HTTPS.
+
+|link:https://issues.redhat.com/browse/WINDUP-2910[WINDUP-2910]
+|Problems analyizing applications built with JDK 11.
+
 |link:https://issues.redhat.com/browse/WINDUP-2759[WINDUP-2759]
 |Lucene index builder mistakenly identifies Spring packages as application packages.
 
