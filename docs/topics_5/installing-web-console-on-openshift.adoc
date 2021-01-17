@@ -62,10 +62,21 @@ Two templates are provided, one for shared storage and one without shared storag
 . Click the *{ProductName}* template.
 . Click *Instantiate Template*.
 endif::[]
-ifdef::ocp-45,ocp-41[]
+ifdef::ocp-45[]
 . Review the application settings and click *Create*.
 . In the *Topology* view, wait for the pods to start.
 . Click the *Open URL* button of the `mta` Pod to open the {WebName} in a new browser window.
+endif::[]
+ifdef::ocp-41[]
+. Review the application settings and click *Create*.
+. In the *Topology* view, wait for the pods to start.
+. Click the *Open URL* button of the `mta` Pod to open the {WebName} in a new browser window.
++
+[NOTE]
+====
+The instructions above point your browser to an HTTP address.
+To point to an HTTPS address, use the following URL: `\https://secure-mta-web-console-$<OpenShift address>`.
+====
 endif::[]
 ifdef::ocp-311[]
 . Switch to the *Service Catalog* perspective and click *Import YAML/JSON* in the upper-right corner of the web console.
@@ -81,6 +92,12 @@ Two templates are provided, one for shared storage and one without shared storag
 . Switch to the *Cluster Console*.
 . Click *Workloads* -> *Pods* and verify that the {ProductShortName} pods are running.
 . Click *Networking* -> *Routes* and then click the URL beside the `mta-web-console` application to open the {WebName} in a new browser window.
++
+[NOTE]
+====
+The instructions above point your browser to an HTTP address.
+To point to an HTTPS address, use the following URL: `\https://secure-mta-web-console-$<OpenShift address>`.
+====
 endif::[]
 . Enter the user name `mta` and the password `password` and click *Log in*.
 
