@@ -8,6 +8,10 @@ ifdef::ocp-45[]
 
 You can install the {WebName} on OpenShift{nbsp}Container{nbsp}Platform 4.5 and later versions with the {ProductName} Operator.
 
+You must have `cluster-admin` privileges to install the *{DocInfoProductName}* Operator from Operator Hub.
+
+After the Operator is installed, a non-admin user can use the Operator to add the {WebName} application to multiple projects.
+
 [NOTE]
 ====
 The {ProductName} Operator is a Community Operator. Red Hat provides no support for Community Operators.
@@ -23,9 +27,11 @@ ifdef::ocp-311[]
 
 You can install the {WebName} on OpenShift{nbsp}Container{nbsp}Platform 3.11 by importing a template into the OpenShift Service Catalog.
 endif::[]
+You can install the {WebName} in more than one project.
 
 .Prerequisites
 
+* Project for the {WebName}. Do not install the {WebName} in a default OpenShift project.
 ifdef::ocp-45[]
 * 4 vCPUs, 8 GB RAM, and 40 GB storage.
 * `cluster-admin` privileges to install the *{DocInfoProductName}* Operator.
@@ -44,20 +50,21 @@ ifdef::ocp-41,ocp-311[]
 . Download the installation archive file from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} download page].
 . Extract the `.zip` file to a directory, for example, `MTA_HOME`.
 endif::[]
-. Launch the OpenShift web console.
 ifdef::ocp-45[]
+. Log in to the OpenShift web console as an admin user.
 . Click *Operators* -> *OperatorHub*.
-. Click the *Modernization & Migration* category and then click the *{DocInfoProductName}* Operator.
-. Click *Install*.
-. Select *mta* from the *Installed Namespace* list and click *Install*.
-. Switch to the *Developer* perspective and click *+Add*.
+. Use the *Search by keyword* field to locate the *{DocInfoProductName}* Operator.
+. Click the Operator and then click *Install*.
+. Select a namespace from the *Installed Namespace* list and click *Install*.
+. Log in to the OpenShift web console as a non-admin user
+. Switch to the *Developer* view and click *+Add*.
 . In the *Add* view, click *Operator Backed*.
-. Click the *{DocInfoProductName}* Operator.
-. Click *Create*.
+. Click the *{DocInfoProductName}* Operator and then click *Create*.
 endif::[]
 ifdef::ocp-41[]
+. Launch the OpenShift web console.
 . Click the *Import YAML* button in the upper-right corner of the web console.
-. Select *mta* from the *Project* list.
+. Select a project from the *Project* list.
 . Copy the contents of the appropriate template from the `MTA_HOME/openshift/templates/` directory into the *Import YAML* field.
 +
 Two templates are provided, one for shared storage and one without shared storage.
@@ -69,13 +76,13 @@ endif::[]
 ifdef::ocp-45,ocp-41[]
 . Review the application settings and click *Create*.
 . In the *Topology* view, wait for the pods to start.
-. Click the *Open URL* button of the `mta` Pod to open the {WebName} in a new browser window.
+. Click the *Open URL* button of the `mta` pod. The {WebName} is displayed in a new browser window.
 endif::[]
 ifdef::ocp-311[]
 . Switch to the *Service Catalog* perspective and click *Import YAML/JSON* in the upper-right corner of the web console.
 +
 image::openshift-console.png[OpenShift console]
-. Select *mta* from the *Add to Project* list.
+. Select a project from the *Add to Project* list.
 . Click *Browse* and select a template from the `MTA_HOME/openshift/templates/` directory.
 +
 Two templates are provided, one for shared storage and one without shared storage.
