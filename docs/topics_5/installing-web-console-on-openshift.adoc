@@ -27,8 +27,12 @@ endif::[]
 .Prerequisites
 
 ifdef::ocp-45[]
+* 4 vCPUs, 8 GB RAM, and 40 GB storage.
 * `cluster-admin` privileges to install the *{DocInfoProductName}* Operator.
 * `project-admin-user` privileges to install the {WebName} application in a project.
+endif::[]
+ifdef::ocp-41,ocp-311[]
+* 4 vCPUs, 8 GB RAM, and 40 GB storage.
 endif::[]
 * Existing project, for example, `mta`, where you can install the {WebName}. The installation process does not create a new project. You can install the {WebName} in more than one project.
 +
