@@ -75,7 +75,7 @@ ifdef::ocp-41[]
 [NOTE]
 ====
 The instructions above point your browser to an HTTP address.
-To point to an HTTPS address, use the following URL: `\https://secure-mta-web-console-$<OpenShift address>`.
+For an HTTPS address, point your browser to: `\https://secure-mta-web-console-$<OpenShift address>`.
 ====
 endif::[]
 ifdef::ocp-311[]
@@ -96,7 +96,7 @@ Two templates are provided, one for shared storage and one without shared storag
 [NOTE]
 ====
 The instructions above point your browser to an HTTP address.
-To point to an HTTPS address, use the following URL: `\https://secure-mta-web-console-$<OpenShift address>`.
+For an HTTPS address, point your browser to: `\https://secure-mta-web-console-$<OpenShift address>`.
 ====
 endif::[]
 . Enter the user name `mta` and the password `password` and click *Log in*.
