@@ -69,10 +69,11 @@ ifdef::cli-guide,web-console-guide[]
 [NOTE]
 ====
 If you are installing on a Windows operating system:
+
 . Extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error.
 . If a *Confirm file replace* window is displayed during extraction, click *Yes to all*.
 ====
-
++
 The installation directory is referred to as `<MTA_HOME>` in this guide.
 endif::[]
 ifdef::web-console-guide[]
