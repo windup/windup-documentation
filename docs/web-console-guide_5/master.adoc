@@ -18,21 +18,21 @@ include::topics_5/about-console-guide.adoc[leveloffset=+2]
 // About {ProductName}
 include::topics_5/what-is-the-toolkit.adoc[leveloffset=+2]
 
-// About the {WebNameTitle}
+// About the {WebName}
 include::topics_5/about-the-web-console.adoc[leveloffset=+2]
 
 == Installing the {WebName}
 
-You can install the {WebName} on Linux, Windows, macOS, or OpenShift Container Platform.
+You can install the {WebName} on Linux, Windows, macOS, or {ocp-full}.
 
 // Installing on Linux, Windows, macOS
 include::topics_5/installing-web-console.adoc[leveloffset=+2]
 
-=== Installing the {WebName} on Red{nbsp}Hat{nbsp}OpenShift{nbsp}Container{nbsp}Platform
+=== Installing the {WebName} on {ocp-short}
 
-You can install the {WebName} on Red{nbsp}Hat{nbsp}OpenShift{nbsp}Container{nbsp}Platform 4.5 and later versions with the {ProductName} Operator.
+You can install the {WebName} on {ocp-short} 4.5 and later versions with the {ProductName} Operator.
 
-You can install the {WebName} on Red{nbsp}Hat{nbsp}OpenShift{nbsp}Container{nbsp}Platform 4.2-4.4 and 3.11 by importing a template and instantiating it to create the {WebName} application.
+You can install the {WebName} on {ocp-short} 4.2-4.4 and 3.11 by importing a template and instantiating it to create the {WebName} application.
 
 :web-console-guide!:
 :context: ocp-45
