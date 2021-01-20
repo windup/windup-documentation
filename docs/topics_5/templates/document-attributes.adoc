@@ -66,7 +66,9 @@
 // ********
 // * URLs *
 // ********
-
+:ocp-full: Red{nbsp}Hat{nbsp}OpenShift{nbsp}Container{nbsp}Platform
+:ocp-short: OpenShift{nbsp}Container{nbsp}Platform
+:ocp-first: {ocp-short} (RHOCP)
 :ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
 :ProductDocPluginGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/ide_plugin_guide
