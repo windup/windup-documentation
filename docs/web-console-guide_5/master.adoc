@@ -48,7 +48,21 @@ include::topics_5/installing-web-console-on-openshift.adoc[leveloffset=+3]
 include::topics_5/installing-web-console-on-openshift.adoc[leveloffset=+3]
 :ocp-311!:
 :web-console-guide:
-include::topics_5/web-openshift-troubleshoot.adoc[leveloffset=+3]
+==== Troubleshooting a {WebName} installation on OpenShift
+
+This section describes how to troubleshoot a {WebName} installation on OpenShift Container Platform.
+
+//Downloading logs with OCP console
+include::topics_5/proc_web-downloading-logs-console.adoc[leveloffset=+4]
+
+//Downloading logs with the CLI
+include::topics_5/proc_web-downloading-logs-cli.adoc[leveloffset=+4]
+
+// Common issues
+include::topics_5/proc_web-troubleshooting-common-issues.adoc[leveloffset=+4]
+
+// Reporting issues
+include::topics_5/proc_reporting-issues.adoc[leveloffset=+4]
 
 == Using the {WebName} to analyze applications
 

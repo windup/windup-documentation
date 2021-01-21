@@ -1,0 +1,46 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide_5/master.adoc
+
+[id="proc_web-troubleshooting-common-issues_{context}"]
+= Common issues when troubleshooting a {WebName} installation on OpenShift Container Platform
+
+.`NoRouteToHostException` error
+
+The following error might appear in the `mta-web-console-executor` pod log:
+
+[source,terminal]
+----
+13:44:03,501 SEVERE [org.jboss.windup.web.messaging.executor.ExecutorBootstrap] (main) Could not start messaging listener due to: Failed to connect to any server. Servers tried: [http-remoting://192.0.2.4:8080 (java.net.NoRouteToHostException: No route to host)]: javax.naming.CommunicationException: Failed to connect to any server. Servers tried: [http-remoting://192.0.2.4:8080 (java.net.NoRouteToHostException: No route to host)]
+----
+
+This error message is displayed in a new deployment because the `mta-web-console-executor` pod starts before the `mta-web-console` pod. Wait for the `mta-web-console` pod to start.
+
+.Insufficient cluster resources
+
+The following conditions indicate insufficient cluster resources:
+
+ * The `mta-web-console` pod is not running and the following error is displayed on the *Events* tab of the *Pod Details* screen in the OpenShift console:
++
+[source,terminal]
+----
+0/9 nodes are available: 4 Insufficient cpu, 4 MatchNodeSelector, 9 Insufficient memory.
+----
+
+* The `mta-web-console-deploy`, `mta-web-console-executor-deploy`, and `mta-web-console-postgresql-deploy` pods time out and report the following error:
++
+[source,terminal]
+----
+error: update acceptor rejected mta-web-console-executor-1: Pods for rc 'mta/mta-web-console-executor-1' took longer than 600 seconds to become available
+----
+
+To resolve these problems:
+
+. Check the link:{OpenShiftDocsURL}/nodes/clusters/nodes-cluster-resource-levels.html[cluster capacity].
+. Do one of the following:
+
+** Increase the link:{OpenShiftDocsURL}/nodes/clusters/nodes-cluster-limit-ranges.html[limit ranges] and link:{OpenShiftDocsURL}/applications/quotas/quotas-setting-per-project.html[resource quotas].
+** Reduce the requested resources of the web console project to a minimum of 4 vCPUs and 8 GB.
+** Run fewer jobs.
+
+. Redeploy the {WebName}.
