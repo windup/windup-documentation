@@ -58,8 +58,8 @@ include::topics_5/proc_web-downloading-logs-console.adoc[leveloffset=+4]
 //Downloading logs with the CLI
 include::topics_5/proc_web-downloading-logs-cli.adoc[leveloffset=+4]
 
-// Common issues
-include::topics_5/proc_web-troubleshooting-common-issues.adoc[leveloffset=+4]
+include::topics_5/web-openshift-no-route-to-host-error.adoc[leveloffset=+4]
+include::topics_5/web-openshift-insufficient-resources.adoc[leveloffset=+4]
 
 // Reporting issues
 include::topics_5/proc_reporting-issues.adoc[leveloffset=+4]

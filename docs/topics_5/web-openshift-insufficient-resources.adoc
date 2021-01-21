@@ -1,0 +1,34 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide_5/master.adoc
+
+[id="web-openshift-insufficient-resources_{context}"]
+= Insufficient resources
+
+The following conditions indicate insufficient resources:
+
+ * The `mta-web-console` pod is not running and the following error is displayed on the *Events* tab of the *Pod Details* screen in the OpenShift console:
++
+[source,terminal]
+----
+0/9 nodes are available: 4 Insufficient cpu, 4 MatchNodeSelector, 9 Insufficient memory.
+----
+
+* The `mta-web-console-deploy`, `mta-web-console-executor-deploy`, and `mta-web-console-postgresql-deploy` pods time out and the following error is displayed in the logs:
++
+[source,terminal]
+----
+error: update acceptor rejected mta-web-console-executor-1: Pods for rc 'mta/mta-web-console-executor-1' took longer than 600 seconds to become available
+----
+
+To resolve these problems:
+
+. Install and run the link:{OpenShiftDocsURL}/nodes/clusters/nodes-cluster-resource-levels.html[cluster capacity tool] to determine how many pods you can schedule.
+
+. Change the load on the cluster resources by performing one of the following actions:
+
+* Increase the link:{OpenShiftDocsURL}/nodes/clusters/nodes-cluster-limit-ranges.html[limit ranges] or the link:{OpenShiftDocsURL}/applications/quotas/quotas-setting-per-project.html[resource quotas] of your project.
+* Reduce the requested resources of your project. The {WebName} requires a minimum of 4 vCPUs and 8 GB RAM.
+* Run fewer jobs.
+
+. Redeploy the {WebName}.
