@@ -3,9 +3,9 @@
 [id='rn-known-issues_{context}']
 = Known issues
 
-At the time of release, the following known issues are identified as major issues in {ProductName} {DocInfoProductNumber}.
+At the time of release, the following known issues have been identified as major issues worth highlighting.
 
-// For a full list of all known issues, see the link:https://issues.redhat.com/issues/?filter=12356604[open {ProductShortName} issues] in Jira.
+For a full list of all known issues, see the list of link:https://issues.redhat.com/browse/WINDUPRULE-607?filter=12357834[{ProductVersion} known issues] in Jira.
 
 .Major known issues
 [cols="25%,25%,50%",options="header"]
@@ -13,11 +13,6 @@ At the time of release, the following known issues are identified as major issue
 |ID
 |Component
 |Summary
-
-|link:https://issues.redhat.com/browse/WINDUPRULE-607[WINDUPRULE-607]
-|OpenShift
-|RHAMT 4.3.1 installation on OpenShift Container Platform fails. The `WebConsole` and `Executor` pods are not running.
-// Keep old name/acronym for known issues
 
 |link:https://issues.redhat.com/browse/WINDUPRULE-598[WINDUPRULE-598]
 |VS Code Extension
