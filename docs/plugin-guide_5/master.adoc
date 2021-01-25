@@ -10,6 +10,9 @@ include::topics_5/templates/document-attributes.adoc[]
 
 = {PluginBookName}
 
+//Inclusive language statement
+include::topics_5/making-open-source-more-inclusive.adoc[]
+
 == Introduction
 
 // About the IDE Plugin Guide
@@ -80,8 +83,5 @@ include::topics_5/plugin-icon-legend.adoc[leveloffset=+2]
 // * Appendix: Revision Information *
 // **********************************
 include::topics_5/templates/revision-info.adoc[]
-
-// Workaround for PDF generation build failure
-{nbsp}
 
 :!plugin-guide:
