@@ -25,12 +25,12 @@ include::topics_5/what-is-the-toolkit.adoc[leveloffset=+2]
 include::topics_5/about-plugin.adoc[leveloffset=+2]
 
 // Install the IDE Plugin
-include::topics_5/installation.adoc[leveloffset=+1]
+include::topics_5/installing-web-console.adoc[leveloffset=+1]
 :!plugin-guide:
 
 :context: plugin-guide-offline
 :plugin-guide-offline:
-include::topics_5/installation.adoc[leveloffset=+1]
+include::topics_5/installing-web-console.adoc[leveloffset=+1]
 :!plugin-guide-offline:
 
 :plugin-guide:
