@@ -33,9 +33,9 @@ include::topics_5/installing-web-console.adoc[leveloffset=+2]
 
 === Installing the {WebName} on {ocp-short}
 
-You can install the {WebName} on {ocp-short} 4.5 and later versions with the {ProductName} Operator.
+You can install the {WebName} on {ocp-short} 4.6 and later versions with the {ProductName} Operator.
 
-You can install the {WebName} on {ocp-short} 4.2-4.4 and 3.11 by importing a template and instantiating it to create the {WebName} application.
+You can install the {WebName} on {ocp-short} 4.2-4.5 and 3.11 by importing a template and instantiating it to create the {WebName} application.
 
 :web-console-guide!:
 :context: ocp-45

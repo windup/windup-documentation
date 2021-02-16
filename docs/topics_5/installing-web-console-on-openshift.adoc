@@ -4,9 +4,9 @@
 
 [id="installing-web-console-on-openshift_{context}"]
 ifdef::ocp-45[]
-= Installing the {WebName} on {ocp-short} 4.5 and later
+= Installing the {WebName} on {ocp-short} 4.6 and later
 
-You can install the {WebName} on {ocp-short} 4.5 and later versions with the {ProductName} Operator.
+You can install the {WebName} on {ocp-short} 4.6 and later versions with the {ProductName} Operator.
 
 [NOTE]
 ====
@@ -14,9 +14,9 @@ The {ProductName} Operator is a Community Operator. Red Hat provides no support 
 ====
 endif::[]
 ifdef::ocp-41[]
-= Installing the {WebName} on {ocp-short} 4.2-4.4
+= Installing the {WebName} on {ocp-short} 4.2-4.5
 
-You can install the {WebName} on {ocp-short} 4.2-4.4 by importing a template and instantiating it to create the {WebName} application.
+You can install the {WebName} on {ocp-short} 4.2-4.5 by importing a template and instantiating it to create the {WebName} application.
 endif::[]
 ifdef::ocp-311[]
 = Installing the {WebName} on {ocp-short} 3.11
