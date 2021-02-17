@@ -3,15 +3,58 @@
 [id='rn-new-features_{context}']
 = New features
 
-This section describes the new features of the {ProductName} {DocInfoProductNumber}.
+This section describes the new features of the {ProductName} ({ProductShortName}) {ProductVersion}
 
-Updated {WebName} interface::
-The {WebName} has been redesigned with PatternFly 4. In addition to its general improved appearance, the {WebName} adds elements for project creation and management and updated transformation target icons.
+[id='updated-web-console-interface_{context}']
+== Updated {WebName} interface
 
-{ProductName} Operator for OpenShift Container Platform::
-The current release includes the {ProductName} Community Operator, which installs the {WebName} on OpenShift Container Platform 4.5 and later.
+The {WebName} has been redesigned with PatternFly 4. The updated {WebName} has improved project management features and additional transformation targets.
 
-Greater support for migrating from Spring Boot to Quarkus::
-The current release provides greater support for migrating from Spring Boot to Quarkus with the addition of 22 rules.
-+
-The new rules focus on the Spring Boot APIs that are implemented in Quarkus Spring extensions, where Spring Boot dependencies can be replaced by equivalent Quarkus extensions. Spring artifacts that do not have Quarkus equivalents are also reported.
+[id='mta-operator-for-ocp_{context}']
+== {ProductName} Operator for OpenShift Container Platform
+
+The release includes the {ProductName} Community Operator, which installs the {WebName} on OpenShift Container Platform 4.6 and later.
+
+[id='mta-installation-in-multiple-namespaces-in-ocp_{context}']
+== Installation in multiple namespaces in OpenShift Container Platform
+
+You can now install the {ProductShortName} in multiple namespaces in OpenShift Container Platform.
+
+[id='greater-support-for-spring-boot-to-quarkus_{context}']
+== Greater support for migrating from Spring Boot to Quarkus
+
+The release includes more rules for migrating from Spring Boot to Quarkus 1.11.
+
+The new rules identify Spring Boot APIs that are implemented in Quarkus Spring extensions, where Spring Boot dependencies can be replaced by Quarkus extensions. These rules include rules for logging tools for which there are Quarkus extensions. Spring artifacts that do not have Quarkus equivalents are also reported.
+
+The rules identify the following technologies:
+
+* Agroal
+* Amazon DynamoDB
+* Amazon IAM
+* Amazon S3
+* Amazon Simple Email Service
+* Amazon Simple Notification Service
+* Amazon Simple Queue Service
+* AWS Config
+* AWS Key Management Service
+* AWS Lambda with HTTP APIs
+* AWS Lambda with AWS X-Ray
+* Apache Avro
+* Apache Kafka
+* Artemis
+* Hibernate
+* Java Database Connectivity rules for the following databases:
+** Apache Derby
+** DB2
+** MariaDB
+** MySQL
+** PostgreSQL
+* JSONB
+* JSONP
+* Keycloak
+* Kubernetes
+* Narayana
+* OpenShift Container Platform
+* RESTeasy
+* WildFly Elytron
