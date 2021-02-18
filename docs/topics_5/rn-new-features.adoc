@@ -15,11 +15,6 @@ The current release contains an updated {WebName} interface with improved projec
 
 The current release contains the {ProductName} Community Operator for installing the {WebName} on {ocp-short} 4.6 and later versions.
 
-[id='mta-installation-in-multiple-namespaces-in-ocp_{context}']
-.Installation in multiple namespaces on {ocp-short}
-
-The current release can be installed in multiple namespaces on {ocp-short}. Previously, the {WebName} could be installed in only one namespace.
-
 [id='greater-support-for-spring-boot-to-quarkus_{context}']
 .Additional rules for migrating from Spring Boot to Quarkus
 
