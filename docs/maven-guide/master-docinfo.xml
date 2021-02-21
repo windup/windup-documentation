@@ -1,7 +1,7 @@
 <title>{UserMavenBookName}</title>
 <productname>{DocInfoProductName}</productname>
 <productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>Integrate the Red Hat Application Migration Toolkit into the Maven build process.</subtitle>
+<subtitle>Integrate the {ProductName} into the Maven build process.</subtitle>
 <abstract>
     <para>This guide describes how to use the {ProductName} {MavenName} to simplify migration of Java applications.</para>
 </abstract>

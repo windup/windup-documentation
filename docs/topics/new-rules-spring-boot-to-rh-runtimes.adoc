@@ -1,5 +1,0 @@
-[[new_rules_for_migrating_spring_boot_to_red_hat_runtimes]]
-= New Rules for migrating Spring Boot to Red Hat Runtimes
-
-This release introduces a new set of rules for assessing the compatibility of applications against the versions of Spring Boot libraries supported by Red Hat Runtimes.
-These rules are executed when the `rhr` target is selected in the {ProductShortName} analysis configuration.

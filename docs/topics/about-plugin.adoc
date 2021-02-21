@@ -1,11 +1,13 @@
-[[about_the_plugin]]
+// Module included in the following assemblies:
+// * docs/plugin-guide_5/master.adoc
+[id='about_the_plugin_{context}']
 = About the {PluginNameTitle}
 
-The {PluginName} for {ProductName} provides assistance directly in Eclipse and Red Hat CodeReady Studio for developers making changes for a migration or modernization effort. It analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
+The {PluginName} for the {ProductName} provides assistance directly in Eclipse and Red Hat CodeReady Studio for developers making changes for a migration or modernization effort. It analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
 
-There is a {ProductShortName} extension for Visual Studio Code and Eclipse Che.
+There is an {ProductShortName} extension for Visual Studio Code and Eclipse Che.
 The extension is only available as a Minimum Viable Product and will be fully documented and supported in a future Release of {ProductShortName}.
-For more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.rhamt-vscode-extension[the extension], visit the Visual Studio Marketplace.
+For more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.mta-vscode-extension[the extension], visit the Visual Studio Marketplace.
 
 ifndef::plugin-guide[]
 For more information on using the {PluginName}, see the {ProductShortName} link:{ProductDocPluginGuideURL}[_{PluginBookName}_].

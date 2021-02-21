@@ -1,7 +1,9 @@
-[[supported_configs]]
-= Supported Configurations
+// Module included in the following assemblies:
+// * docs/plugin-guide_5/master.adoc
+[id='supported_configs_{context}']
+= Supported configurations
 
-The {PluginName} is tested in following development environments.
+The {PluginName} has been tested in the following development environments:
 
-* Eclipse 2019-09
-* Red Hat CodeReady Studio 12.13
+* Eclipse 2020-09
+* Red Hat CodeReady Studio 12.15

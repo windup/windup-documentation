@@ -1,17 +1,19 @@
-[[enable_auth]]
-= Enable Authentication for {WebNameTitle}
+// Module included in the following assemblies:
+// * docs/web-console-guide_5/master.adoc
+[id='enable_auth_{context}']
+= Enabling authentication for {WebName}
 
-NOTE: If you have xref:openshift_install[installed {WebName} on OpenShift], authentication is already enabled and cannot be disabled.
+NOTE: If you have installed {WebName} on OpenShift, authentication is already enabled and cannot be disabled.
 
 Run the following script to require users to log in before accessing the {WebName}. This script configures the Red Hat Single Sign-On login page to require users to authenticate before granting access to the {WebName}.
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ __RHAMT_HOME__/switch_to_authentication_required.sh
+$ <MTA_HOME>/switch_to_authentication_required.sh
 ----
 
 NOTE: In a Windows environment, use the `switch_to_authentication_required.bat` script.
 
-Now, whenever you xref:starting_console[start the {WebName}], users will be required to authenticate to access it.
+Now, whenever you start the {WebName}, users will be required to authenticate to access it.
 
 // TODO andrea, once it works, add in how to revert back to automatic authentication using the ./switch_to_automatic_authentication.sh script.  (and .bat)

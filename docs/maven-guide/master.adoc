@@ -2,72 +2,71 @@
 :toclevels: 4
 :numbered:
 
-include::topics/templates/document-attributes.adoc[]
+include::topics_5/templates/document-attributes.adoc[]
 
-:imagesdir: topics/images
+:imagesdir: topics_5/images
+:context: maven-guide
 :maven-guide:
 
 = {MavenBookName}
 
+//Inclusive language statement
+include::topics_5/making-open-source-more-inclusive.adoc[]
+
 == Introduction
 
 // About the {MavenBookName}
-include::topics/about-maven-guide.adoc[leveloffset=+2]
+include::topics_5/about-maven-guide.adoc[leveloffset=+2]
 
 // About {ProductName}
-include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics_5/what-is-the-toolkit.adoc[leveloffset=+2]
 
 // About {MavenNameTitle}
-include::topics/about-maven.adoc[leveloffset=+2]
+include::topics_5/about-maven.adoc[leveloffset=+2]
 
-== Getting Started
-
-// Prerequisites
-include::topics/maven-prerequisites.adoc[leveloffset=+2]
+== Getting started
 
 // Installing the {MavenNameTitle}
-// include::topics/maven-install.adoc[leveloffset=+2]
+include::topics_5/installing-web-console.adoc[leveloffset=+2]
 
 // Run the {MavenNameTitle}
-include::topics/maven-run.adoc[leveloffset=+2]
+include::topics_5/maven-run.adoc[leveloffset=+2]
 
 // Run the {MavenNameTitle} with Multiple Modules
-include::topics/maven-multi-module.adoc[leveloffset=+2]
+include::topics_5/maven-multi-module.adoc[leveloffset=+2]
 
 // Access the Report
-include::topics/maven-access-reports.adoc[leveloffset=+2]
+include::topics_5/maven-access-reports.adoc[leveloffset=+2]
 
 // Export the Report in CSV Format
-include::topics/csv-export.adoc[leveloffset=+1]
+include::topics_5/csv-export.adoc[leveloffset=+1]
 
 [appendix]
-== Reference Material
+== Reference material
 
 // {MavenNameTitle} Arguments
-include::topics/maven-arguments.adoc[leveloffset=+2]
+include::topics_5/maven-arguments.adoc[leveloffset=+2]
 
 // Default `logging.properties` in {MavenShortName}
-include::topics/maven-logging-properties.adoc[leveloffset=+2]
+include::topics_5/maven-logging-properties.adoc[leveloffset=+2]
 
 // Rule Story Points
-include::topics/about-story-points.adoc[leveloffset=+2]
+include::topics_5/about-story-points.adoc[leveloffset=+2]
 
-=== Additional Resources
+=== Additional resources
 
 // Get Involved
-include::topics/get-involved.adoc[leveloffset=+3] 
+include::topics_5/get-involved.adoc[leveloffset=+3]
 
 // Important Links
-include::topics/important-links.adoc[leveloffset=+3]
-
-// Known {ProductShortName} Issues
-include::topics/known-issues.adoc[leveloffset=+3]
+include::topics_5/important-links.adoc[leveloffset=+3]
 
 // Report Issues with {ProductShortName}
-include::topics/report-issues.adoc[leveloffset=+3]
+include::topics_5/report-issues.adoc[leveloffset=+3]
 
 // **********************************
 // * Appendix: Revision Information *
 // **********************************
-include::topics/templates/revision-info.adoc[]
+include::topics_5/templates/revision-info.adoc[]
 
+:!maven-guide:

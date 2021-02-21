@@ -1,23 +1,22 @@
-[[access_console_openshift]]
-= Access the {WebNameTitle}
+// Module included in the following assemblies:
+// * docs/web-console-guide_5/master.adoc
+[id='access_console_openshift_{context}']
+= Accessing the {WebName} on OpenShift Container Platform
 
-Once the {WebName} has been xref:deploy_rhamt_app_openshift[deployed on OpenShift], you can access it from a browser. The `deploy.sh` script outputs the link, shown in the example below as `__WEB_CONSOLE_URL__`, to use to open the {WebName}.
+After you have installed the {DocInfoProductName} Operator in the OpenShift Web Console and created an instance of the {DocInfoProductName} application, you can access the {DocInfoProductName} web console in a browser.
 
-.Example: `deploy.sh` Output
-[source,options="nowrap",subs="+quotes"]
-----
-...
--> Deploy RHAMT Web Console ...
-Upload, build and deployment successful!
+.Procedure
 
-Open __WEB_CONSOLE_URL__ to start using the RHAMT Web Console on OpenShift (user='rhamt',password='password')
-----
-
-You can also access the {WebName} from the OpenShift console at `__OPENSHIFT_URL__/console/project/rhamt/overview` by clicking the link in the *RHAMT WEB CONSOLE HTTP* application. If you renamed the OpenShift project when xref:deploy_rhamt_app_openshift[deploying], be sure to replace `rhamt` in this URL with the name of your project.
-
-NOTE: If the {WebName} does not load immediately, check the status of the project in the OpenShift console to see if it is still processing or if there were errors.
-
+. In the OpenShift web console, click *Networking* -> *Routes*.
+. Click the route of the {DocInfoProductName} application in the *Location* column. This route is the URL for the {WebName}.
++
+The {WebName} welcome page is displayed in your browser.
++
 .Welcome Page
-image::web-login-openshift.png[Welcome Page]
+image::web-login-openshift.png[Welcome page]
++
+The {WebName} installation creates a default `mta` user with a default password, `password`. You can add additional users to the {WebName}.
 
-Authentication is required in order to access the {WebName}. The default user's credentials are `rhamt` and `password`. See xref:config_auth[Configuring Authentication for the {WebNameTitle}] for more information on configuring authentication for the {WebName}.
+. Click *Log in* to log into the {WebName}.
++
+You can now create a project and update the password.

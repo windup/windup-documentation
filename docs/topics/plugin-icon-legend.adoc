@@ -1,9 +1,11 @@
-[[plugin_windup_issue_icons]]
-= {ProductShortName} Issue Icon Legend
+// Module included in the following assemblies:
+// * docs/plugin-guide_5/master.adoc
+[id='plugin_windup_issue_icons_{context}']
+= About {ProductShortName} issue icons
 
 In the Issue Explorer and file editors, {ProductShortName} issues use an icon to indicate their severity level and status. The following table describes the meaning of the various icons.
 
-.{ProductShortName} Issue Icons
+.{ProductShortName} issue icons
 [cols="20%a,80%",options="header",]
 |====
 |Icon |Description

@@ -1,4 +1,0 @@
-[[tattletale_enabled]]
-= Tattletale Reports Enabled by Default
-
-The Tattletale reports are now automatically generated when `eap` is in the list of included targets. These reports greatly reduce the time needed to resolve classloading issues by providing details about the classes and dependencies of the specified application.

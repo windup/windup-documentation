@@ -1,9 +1,0 @@
-[[access_web_console]]
-= Access the {WebNameTitle}
-
-Once xref:starting_console[started], the {WebName} is accessible from a browser by default on the local host at http://localhost:8080/rhamt-web.
-
-.Welcome Page
-image::web-login.png[Welcome Page]
-
-The {WebName} uses a default user to automatically authenticate. The default user's credentials are `rhamt` and `password`. See xref:config_auth[Configuring Authentication for the {WebNameTitle}] to require individual users to authenticate in order to access the {WebName}.

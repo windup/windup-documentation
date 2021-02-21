@@ -1,5 +1,6 @@
-[[system_requirements]]
-= System Requirements
+// Module included in the following assemblies:
+// * docs/getting-started-guide_5/master.adoc
+= System requirements
 
 == Software
 
@@ -10,7 +11,7 @@
 
 The following memory and disk space requirements are the minimum needed to run {ProductShortName}. If your application is very large or you need to evaluate multiple applications, you may want to increase these values to improve performance.
 
-For tips on how to optimize performance, see the link:{ProductDocUserGuideURL}#optimize_performance[Optimize {ProductShortName} Performance] section of the {ProductShortName} _{UserCLIBookName}_.
+For tips on how to optimize performance, see the link:{ProductDocUserGuideURL}#optimize_performance[Optimizing {ProductShortName} performance] section of the {ProductShortName} _{UserCLIBookName}_.
 
 * A minimum of 4 GB RAM. For better performance, a quad-core processor with 8 GB RAM is recommended. This allows 3 - 4 GB RAM for use by the JVM.
 * A minimum of 4 GB of free disk space. A fast disk, especially a solid-state drive (SSD), should improve performance.

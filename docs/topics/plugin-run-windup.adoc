@@ -1,13 +1,18 @@
-[[execute_rhamt]]
-= Execute {ProductShortName}
+// Module included in the following assemblies:
+// * docs/plugin-guide_5/master.adoc
+[id='execute_mta_{context}']
+= Running {ProductShortName}
 
-Once a run configuration has been created, you can execute {ProductShortName} using that configuration in one of the following ways:
+Once a run configuration has been created, you can run {ProductShortName} using that configuration in one of the following ways:
 
 * Select the run configuration from the *Run Configurations* dialog and click *Run*.
 * Select a recent run configuration from the drop down next to the *Run* button (image:run_exc.png[Run button]).
 
 If the {ProductShortName} server is not currently running, it will start once a run configuration is executed.
 
-NOTE: If you do not plan on running {ProductShortName} in the near future, it is recommended to stop the {ProductShortName} server to conserve memory on your machine.
+[NOTE]
+====
+If you do not plan to run {ProductShortName} in the near future, stop the {ProductShortName} server to conserve memory on your machine.
+====
 
 Once execution is complete, the Issue Explorer will be populated with {ProductShortName} issues.

@@ -1,22 +1,24 @@
-[[resolve_issues]]
-= Resolve {ProductShortName} Issues
+// Module included in the following assemblies:
+// * docs/plugin-guide_5/master.adoc
+[id='resolve_issues_{context}']
+= Resolving {ProductShortName} issues
 
 You can resolve {ProductShortName} issues by updating the code manually or by applying a quick fix when available.
 
-== Resolve an Issue Manually
+== Resolving an issue manually
 
 Review the {ProductShortName} issue details and additional resources and update the source code as necessary. When you update a line of code marked as an {ProductShortName} issue, the {ProductShortName} issue will be marked with the stale icon (image:stale_issue.gif[Stale issue icon]) until the next time that {ProductShortName} is run on the project.
 
 You can also manually mark an {ProductShortName} issue as fixed, which will mark the issue with the resolved icon (image:fixedIssue.gif[Resolved issue icon]) until the next time that {ProductShortName} is run on the project. To mark an issue as fixed, right-click the {ProductShortName} issue in the Issue Explorer and select *Mark as Fixed*.
 
-== Resolve an Issue Using a Quick Fix
+== Resolving an issue using a quick fix
 
-Some {ProductShortName} issues provide a quick fix, which assists in making the necessary edits to address the issue. See the xref:plugin_windup_issue_icons[icon legend] to see the icons that indicate the {ProductShortName} issue has a quick fix available.
+Some {ProductShortName} issues provide a quick fix, which assists in making the necessary edits to address the issue. See the icon legend to see the icons that indicate the {ProductShortName} issue has a quick fix available.
 
-Preview a Quick Fix::
+Previewing a quick fix::
 
 Right-click the issue and select *Preview Quick Fix*. This will bring up a window that allows you to preview the change. From here, you can apply the fix or close the window.
 
-Apply a Quick Fix::
+Applying a quick fix::
 
 Right-click the issue and select *Apply Quick Fix*. This will update the source code as required and will mark the {ProductShortName} issue as resolved.

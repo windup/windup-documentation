@@ -1,9 +1,0 @@
-[[zip_install_prerequisites]]
-= Prerequisites
-
-Verify that you meet the following prerequisites.
-
-* OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, Oracle JDK 11
-* A minimum of 8 GB RAM; 16 GB recommended
-
-NOTE: If you are running macOS, it is recommended to set the maximum number of user processes, `maxproc`, to at least `2048`, and the maximum number of open files, `maxfiles`, to `100000`.
