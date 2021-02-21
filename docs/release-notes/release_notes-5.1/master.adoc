@@ -1,18 +1,18 @@
-include::topics_5/templates/document-attributes.adoc[]
+include::topics/templates/document-attributes.adoc[]
 :toc:
 :toclevels: 3
 :numbered:
-:imagesdir: topics_5/images
+:imagesdir: topics/images
 :context: release-notes
 :release-notes:
 
 = {ReleaseNotesName}
 
 //Inclusive language statement
-include::topics_5/making-open-source-more-inclusive.adoc[]
+include::topics/making-open-source-more-inclusive.adoc[]
 
-include::topics_5/rn-new-features.adoc[leveloffset=+1]
-include::topics_5/rn-known-issues.adoc[leveloffset=+1]
-include::topics_5/rn-resolved-issues.adoc[leveloffset=+1]
+include::topics/rn-new-features.adoc[leveloffset=+1]
+include::topics/rn-known-issues.adoc[leveloffset=+1]
+include::topics/rn-resolved-issues.adoc[leveloffset=+1]
 
 :!release-notes:
