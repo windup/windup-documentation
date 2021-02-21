@@ -1,24 +1,18 @@
-[[add_applications]]
-= Add Applications to a Project
+// Module included in the following assemblies:
+// * docs/web-console-guide_5/master.adoc
+[id='add_applications_{context}']
+= Adding applications to a project
 
-Specify the applications to add to this project. You can either xref:add_apps_upload[upload applications] or xref:add_apps_register[register a server path] that contains applications.
+A project must contain one or more applications.
 
-.Add Applications
-image::web-add-apps.png[Add Applications]
+You can add applications to a project by:
 
-[[add_apps_upload]]
-Upload Applications::
+* Uploading applications
+* Registering the directory path of each application
 
-You can use the *Choose Files* button to select applications, or you can drag and drop applications into the area provided. This uploads the selected applications to the {ProductShortName} server.
+Uploading applications stores them directly on the {ProductShortName} server.
 
-[[add_apps_register]]
-Register a Server Path::
+Registering the directory path of an application tells the {ProductShortName} server the location of the application. This method is useful if you expect to update the application because it ensures that the {ProductShortName} server always uses the latest version of the application.
 
-Select the *Server Path* tab and enter a path on the server that contains applications to be included in this project. This does not copy the files to the {ProductShortName} server, but instead evaluates the applications in the specified location.
-+
-This is useful for the following cases:
-+
-* You want to register an existing directory on the server that contains applications, for example, from a nightly automatic build process. This way, the {ProductShortName} server will analyze the latest versions of applications.
-* You want to register an application as an exploded Java archive. In this case, be sure to check the *Directory is an exploded Java application archive* checkbox.
-
-Once you have specified one or more applications for this project, press *Next* to continue.
+.Adding applications
+image::web-add-apps_51.png[Adding applications]

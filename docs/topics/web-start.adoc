@@ -1,13 +1,15 @@
-[[starting_console]]
-= Start the {WebNameTitle}
+// Module included in the following assemblies:
+// * docs/web-console-guide_5/master.adoc
+[id='starting_console_{context}']
+= Starting the {WebNameTitle}
 
 Run the script to start the {WebName}.
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ __RHAMT_HOME__/run_rhamt.sh
+$ <MTA_HOME>/run_mta.sh
 ----
 
-NOTE: In a Windows environment, use the `run_rhamt.bat` script.
+NOTE: In a Windows environment, use the `run_mta.bat` script.
 
-You can now xref:access_web_console[access the {WebName}] from a browser.
+You can now access the {WebName} from a browser.

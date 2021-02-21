@@ -2,97 +2,103 @@
 :toclevels: 3
 :numbered:
 
-include::topics/templates/document-attributes.adoc[]
+include::topics_5/templates/document-attributes.adoc[]
 
-:imagesdir: topics/images
+:imagesdir: topics_5/images
+:context: rules-development-guide
 :rules-development-guide:
 
 = {RulesDevBookName}
 
+//Inclusive language statement
+include::topics_5/making-open-source-more-inclusive.adoc[]
+
 == Introduction
 
 // About the Rules Development Guide
-include::topics/rules-guide-intro.adoc[leveloffset=+2]
+include::topics_5/rules-guide-intro.adoc[leveloffset=+2]
 
 // Use of RHAMT_HOME in this Guide
-include::topics/about-home-var.adoc[leveloffset=+3]
+include::topics_5/about-home-var.adoc[leveloffset=+3]
 
 // RHAMT Rules
-include::topics/about-rules.adoc[leveloffset=+2]
+include::topics_5/about-rules.adoc[leveloffset=+2]
 
 // Getting Started
-include::topics/getting-started-rules.adoc[leveloffset=+1]
+include::topics_5/getting-started-rules.adoc[leveloffset=+1]
 
 // Create Your First XML Rule
-include::topics/create-first-xml-rule.adoc[leveloffset=+2]
+include::topics_5/create-first-xml-rule.adoc[leveloffset=+2]
 
 // Review the Quickstarts
-include::topics/review-quickstarts.adoc[leveloffset=+2]
+include::topics_5/review-quickstarts.adoc[leveloffset=+2]
 
-== Creating XML Rules
+== Creating XML rules
 
 // XML Rule Structure
-include::topics/xml-rule-syntax.adoc[leveloffset=+2]
+include::topics_5/xml-rule-syntax.adoc[leveloffset=+2]
 
 // Create a Basic XML Rule
-include::topics/create-basic-xml-rule.adoc[leveloffset=+2]
+include::topics_5/create-basic-xml-rule.adoc[leveloffset=+2]
 
-=== XML Rule Syntax
+=== XML rule syntax
 
 // When Condition Syntax
-include::topics/xml-rule-when-syntax.adoc[leveloffset=+3]
+include::topics_5/xml-rule-when-syntax.adoc[leveloffset=+3]
 
 // Perform Action Syntax
-include::topics/xml-rule-perform-syntax.adoc[leveloffset=+3]
+include::topics_5/xml-rule-perform-syntax.adoc[leveloffset=+3]
 
 // Where Syntax
-include::topics/where-syntax.adoc[leveloffset=+3]
+include::topics_5/where-syntax.adoc[leveloffset=+3]
 
 // Add the Rule to {ProductName}
-include::topics/add-rule-to-rhamt.adoc[leveloffset=+2]
+include::topics_5/add-rule-to-rhamt.adoc[leveloffset=+2]
 
 // Testing XML Rules
-include::topics/testing-rules.adoc[leveloffset=+1]
+include::topics_5/testing-rules.adoc[leveloffset=+1]
 
 // Manually Test the XML Rule
-include::topics/manually-test-rules.adoc[leveloffset=+2]
+include::topics_5/manually-test-rules.adoc[leveloffset=+2]
 
 // Test the Rules Using JUnit
-include::topics/rules-testing-junit.adoc[leveloffset=+2]
+include::topics_5/rules-testing-junit.adoc[leveloffset=+2]
 
-// Run the Validation Report
-include::topics/validation-report.adoc[leveloffset=+2]
+// About the validation report
+include::topics_5/validation-report.adoc[leveloffset=+2]
 
-// Understanding the Validation Report
-include::topics/validation-report-understanding.adoc[leveloffset=+3]
+// creating a Validation Report
+include::topics_5/validation-report-understanding.adoc[leveloffset=+3]
 
 // Reported Errors when Running the Validation Report
-include::topics/validation-report-errors.adoc[leveloffset=+3]
+include::topics_5/validation-report-errors.adoc[leveloffset=+3]
 
 // Overriding Rules
-include::topics/overriding-rules.adoc[leveloffset=+1]
+include::topics_5/overriding-rules.adoc[leveloffset=+1]
 
 // Using Custom Rule Categories
-include::topics/rules-categories.adoc[leveloffset=+1]
+include::topics_5/rules-categories.adoc[leveloffset=+1]
 
 [appendix]
-== Reference Material
+== Reference material
 
 // Rule Story Points
-include::topics/about-story-points.adoc[leveloffset=+2]
+include::topics_5/about-story-points.adoc[leveloffset=+2]
 
-=== Additional Resources
+For more information on categorizing tasks, see xref:rule_categories_rules-development-guide[Using Custom Rule Categories].
+
+=== Additional resources
 
 // Review the Existing RHAMT XML Rules
-include::topics/review-existing-rules.adoc[leveloffset=+3]
+include::topics_5/review-existing-rules.adoc[leveloffset=+3]
 
 // Fork and Clone the Ruleset GitHub Project
-include::topics/fork-ruleset-repo.adoc[leveloffset=+4]
+include::topics_5/fork-ruleset-repo.adoc[leveloffset=+4]
 
 // Important Links
-include::topics/rules-important-links.adoc[leveloffset=+3]
+include::topics_5/rules-important-links.adoc[leveloffset=+3]
 
 // **********************************
 // * Appendix: Revision Information *
 // **********************************
-include::topics/templates/revision-info.adoc[]
+include::topics_5/templates/revision-info.adoc[]

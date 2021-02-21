@@ -1,4 +1,6 @@
-[[about_cli]]
+// Module included in the following assemblies:
+// * docs/cli-guide_5/master.adoc
+[id='about_cli_{context}']
 = About the {CLINameTitle}
 
 The {CLIName} is a command-line tool in the {ProductName} that allows users to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without the overhead of the other tools. The {CLIName} includes a wide array of customization options, and allows you to finely tune the {ProductShortName} analysis options or integrate with external automation tools.

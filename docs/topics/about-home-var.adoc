@@ -1,6 +1,14 @@
-[[about_home_var]]
-= Use of RHAMT_HOME in This Guide
+// Module included in the following assemblies:
+// 
+// * docs/rules-development-guide_5/master.adoc
+[id='about_home_var_{context}']
+= Use of `<MTA_HOME>` in this guide
 
-This guide uses the `__RHAMT_HOME__` replaceable variable to denote the path to your {ProductShortName} installation. The installation directory is the `{ProductDistribution}` directory where you extracted the {ProductShortName} ZIP distribution.
+This guide uses the `<MTA_HOME>` replaceable variable to denote the path to your {ProductShortName} installation. The installation directory is the `{ProductDistribution}` directory where you extracted the {ProductShortName} `.zip` file.
 
-When you encounter `__RHAMT_HOME__` in this guide, be sure to replace it with the actual path to your {ProductShortName} installation.
+[NOTE]
+====
+For Windows operating systems, you must extract the {ProductShortName} `.zip` file to a folder named `mta` to avoid a `Path too long` error.
+====
+
+When you encounter `<MTA_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.

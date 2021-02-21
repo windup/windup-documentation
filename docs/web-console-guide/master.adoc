@@ -2,116 +2,114 @@
 :toclevels: 4
 :numbered:
 
-include::topics/templates/document-attributes.adoc[]
+include::topics_5/templates/document-attributes.adoc[]
 
-:imagesdir: topics/images
+:imagesdir: topics_5/images
+:context: web-console-guide
 :web-console-guide:
 
 = {WebConsoleBookName}
 
+//Inclusive language statement
+include::topics_5/making-open-source-more-inclusive.adoc[]
+
 == Introduction
 
 // About the {WebConsoleBookName}
-include::topics/about-console-guide.adoc[leveloffset=+2]
+include::topics_5/about-console-guide.adoc[leveloffset=+2]
 
 // About {ProductName}
-include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics_5/what-is-the-toolkit.adoc[leveloffset=+2]
 
-// About the {WebNameTitle}
-include::topics/about-the-web-console.adoc[leveloffset=+2]
+// About the {WebName}
+include::topics_5/about-the-web-console.adoc[leveloffset=+2]
 
-// Installing the {WebNameTitle}
-include::topics/web-installing.adoc[leveloffset=+1]
+== Installing the {WebName}
 
-// ZIP Installation
-include::topics/web-install-zip.adoc[leveloffset=+2]
+You can install the {WebName} on Linux, Windows, macOS, or {ocp-full}.
 
-// Prerequisites
-include::topics/web-zip-prerequisites.adoc[leveloffset=+3]
+// Installing on Linux, Windows, macOS
+include::topics_5/installing-web-console.adoc[leveloffset=+2]
 
-// Install the {WebNameTitle}
-include::topics/web-install.adoc[leveloffset=+3]
+=== Installing the {WebName} on {ocp-short}
 
-// Start the {WebNameTitle}
-include::topics/web-start.adoc[leveloffset=+3]
+You can install the {WebName} on {ocp-short} 4.6 and later versions with the {ProductName} Operator.
 
-// Access the {WebNameTitle}
-include::topics/web-access-console.adoc[leveloffset=+3]
+You can install the {WebName} on {ocp-short} 4.2-4.5 and 3.11 by importing a template and instantiating it to create the {WebName} application.
 
-// OpenShift Installation
-include::topics/web-install-openshift.adoc[leveloffset=+2]
+:web-console-guide!:
+:context: ocp-45
+:ocp-45:
+include::topics_5/installing-web-console-on-openshift.adoc[leveloffset=+3]
+:ocp-45!:
+:context: ocp-41
+:ocp-41:
+include::topics_5/installing-web-console-on-openshift.adoc[leveloffset=+3]
+:ocp-41!:
+:context: ocp-311
+:ocp-311:
+include::topics_5/installing-web-console-on-openshift.adoc[leveloffset=+3]
+:ocp-311!:
+:web-console-guide:
+==== Troubleshooting a {WebName} installation on OpenShift
 
-// Prerequisites
-include::topics/web-openshift-env.adoc[leveloffset=+3]
+This section describes how to troubleshoot a {WebName} installation on OpenShift Container Platform.
 
-// Understanding the {WebNameTitle} OpenShift Image
-include::topics/web-openshift-environment.adoc[leveloffset=+3]
+//Downloading logs with OCP console
+include::topics_5/proc_web-downloading-logs-console.adoc[leveloffset=+4]
 
-// Deploy the {ProductShortName} Application
-include::topics/web-openshift-deploy.adoc[leveloffset=+3]
+//Downloading logs with the CLI
+include::topics_5/proc_web-downloading-logs-cli.adoc[leveloffset=+4]
 
-// Access the {WebNameTitle}
-include::topics/web-openshift-access.adoc[leveloffset=+3]
+include::topics_5/web-openshift-no-route-to-host-error.adoc[leveloffset=+4]
+include::topics_5/web-openshift-insufficient-resources.adoc[leveloffset=+4]
 
-// Troubleshoot the {WebNameTitle} OpenShift Install
-include::topics/web-openshift-troubleshoot.adoc[leveloffset=+3]
+// Reporting issues
+include::topics_5/proc_reporting-issues.adoc[leveloffset=+4]
 
-// Using the {WebNameTitle} to Analyze Applications
-include::topics/web-analyze-apps.adoc[leveloffset=+1]
+== Using the {WebName} to analyze applications
 
-// Add a Project
-include::topics/web-add-project.adoc[leveloffset=+2]
+You can create a project in the web console to analyze your applications.
 
-// Add Applications to a Project
-include::topics/web-add-applications.adoc[leveloffset=+2]
+Each project groups the applications for a specific analysis, which you can configure with custom rules and labels.
 
-// Specify the Analysis Configuration
-include::topics/web-execution-config.adoc[leveloffset=+2]
+The analysis process generates reports that describe the readiness of your applications for migration or modernization.
 
-// Execute
-include::topics/web-execute.adoc[leveloffset=+2]
+// Creating a project
+include::topics_5/web-create-project.adoc[leveloffset=+2]
+
+// Running a saved analysis
+include::topics_5/web-running-saved-analysis.adoc[leveloffset=+2]
 
 // Viewing the Results of an Analysis
-include::topics/web-view-results.adoc[leveloffset=+2]
-
-// Examine Analysis Details
-include::topics/web-execution-details.adoc[leveloffset=+3]
+include::topics_5/web-view-results.adoc[leveloffset=+2]
 
 // Review the Reports
-include::topics/web-review-reports.adoc[leveloffset=+3]
+include::topics_5/web-review-reports.adoc[leveloffset=+2]
 
-// Web console-specific reports are not included in this release, commenting out for now.
-////
-// Dashboard
-include::topics/web-report-dashboard.adoc[leveloffset=+2]
-
-// Application Details
-include::topics/web-report-app-details.adoc[leveloffset=+2]
-
-// Issues
-include::topics/web-report-issues.adoc[leveloffset=+2]
-
-// Static Reports
-include::topics/web-report-static.adoc[leveloffset=+2]
-////
+//Reconfigure Analysis
+include::topics_5/web-updating-an-analysis.adoc[leveloffset=+2]
 
 // Using Custom Rules
-include::topics/web-custom-rules.adoc[leveloffset=+1]
+include::topics_5/web-adding-global-custom-rules.adoc[leveloffset=+2]
+
+// Using Custom Labels
+include::topics_5/web-adding-global-custom-labels.adoc[leveloffset=+2]
 
 // Require Authentication for {ProductWebName}
-include::topics/web-require-auth.adoc[leveloffset=+1]
+include::topics_5/web-require-auth.adoc[leveloffset=+1]
 
 // Enable {ProductWebName} to Require Authentication
-include::topics/web-enable-auth.adoc[leveloffset=+2]
+include::topics_5/web-enable-auth.adoc[leveloffset=+2]
 
 // Change the Administrative User's Credentials
-include::topics/web-change-admin-user.adoc[leveloffset=+2]
+include::topics_5/web-change-admin-user.adoc[leveloffset=+2]
 
 // Remove the Default {ProductWebName} User
-include::topics/web-remove-default-user.adoc[leveloffset=+2]
+include::topics_5/web-remove-default-user.adoc[leveloffset=+2]
 
 // Add a New {ProductWebName} User
-include::topics/web-add-user.adoc[leveloffset=+2]
+include::topics_5/web-add-user.adoc[leveloffset=+2]
 
 // TODO: eventually add steps for reverting back to no auth required
 
@@ -119,4 +117,6 @@ include::topics/web-add-user.adoc[leveloffset=+2]
 // **********************************
 // * Appendix: Revision Information *
 // **********************************
-include::topics/templates/revision-info.adoc[]
+include::topics_5/templates/revision-info.adoc[]
+
+:web-console-guide!:

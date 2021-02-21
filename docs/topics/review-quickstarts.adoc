@@ -1,47 +1,64 @@
-[[review_quickstarts]]
-= Review the {ProductName} Quickstarts
+// Module included in the following assemblies:
+// * docs/rules-development-guide_5/master.adoc
+[id='review_quickstarts_{context}']
+= Reviewing the {ProductName} quickstarts
 
 The {ProductName} quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.
 
-You can xref:download_quickstart_zip[download a `.zip` file] of the latest released version of the quickstarts. Or, if you prefer to work with the source code, you can xref:use_quickstart_github_project[fork and clone the `windup-quickstarts` project repository].
-
 Each quickstart has a `README.adoc` file that contains instructions for that quickstart.
 
-[[download_quickstart_zip]]
+You can download a Zip archive file of the latest version of the quickstarts. If you prefer to work with the source code, you can fork and clone the `windup-quickstarts` project repository.
+
+[id='download_quickstart_zip_{context}']
 [discrete]
-== Download the Latest Quickstart ZIP
+== Downloading the latest quickstart
 
-. Open a browser and navigate to https://github.com/windup/windup-quickstarts/releases.
-. Click on the most recent release to download the `.zip` file to your local file system.
+You can download the latest release of a quickstart.
 
-[[use_quickstart_github_project]]
+.Procedure
+
+. Launch a browser and navigate to link:https://github.com/windup/windup-quickstarts/releases[https://github.com/windup/windup-quickstarts/releases].
+. Click the latest release to download the Zip archive file to your local file system.
+. Extract the archive files to a local directory.
++
+You can review the quickstart `README.adoc` file.
+
+[id='use_quickstart_github_project_{context}']
 [discrete]
-== Fork and Clone the Quickstart GitHub Project
+== Forking and cloning the quickstart GitHub project
 
-You must have the link:http://git-scm.com/[`git`] client installed on your machine.
+You can fork and clone the Quickstart Github project on your local machine.
 
-. Click the `Fork` link on the https://github.com/windup/windup-quickstarts/[{ProductName} quickstart] GitHub page to create the project in your own Git. The forked GitHub repository URL created by the fork should look like this: `\https://github.com/__YOUR_USER_NAME__/windup-quickstarts.git`.
-. Clone your {ProductName} quickstart repository to your local file system:
+.Prerequisites
+
+* You must have link:http://git-scm.com/[`git`] client installed.
+
+.Procedure
+
+. Click *Fork* on the https://github.com/windup/windup-quickstarts/[{ProductName} quickstart] GitHub page to create the project in your own Git. The forked GitHub repository URL should look like this: `\https://github.com/<YOUR_USER_NAME>/windup-quickstarts.git`.
+
+. Clone the {ProductName} quickstart repository to your local file system:
 +
-[options="nowrap",subs="+quotes"]
 ----
-$ git clone https://github.com/__YOUR_USER_NAME__/windup-quickstarts.git
+$ git clone https://github.com/<YOUR_USER_NAME>/windup-quickstarts.git
 ----
-. This creates and populates a `windup-quickstarts` directory on your local file system. Navigate to the newly created directory, for example
 +
-[options="nowrap"]
+This creates a `windup-quickstarts` directory on your local file system.
+
+. Navigate to the newly created directory:
++
 ----
 $ cd windup-quickstarts/
 ----
-. If you want to be able to retrieve the latest code updates, add the remote `upstream` repository so you can fetch any changes to the original forked repository.
+
+. To retrieve the latest code updates, add the remote `upstream` repository so that you can fetch changes to the original forked repository:
 +
-[options="nowrap"]
 ----
 $ git remote add upstream https://github.com/windup/windup-quickstarts.git
 ----
-. Get the latest files from the `upstream` repository.
+
+. Download the latest files from the `upstream` repository:
 +
-[options="nowrap"]
 ----
 $ git fetch upstream
 ----
