@@ -1,19 +1,21 @@
-[[change_admin_user]]
-= Change the Administrative User's Credentials
+// Module included in the following assemblies:
+// * docs/web-console-guide_5/master.adoc
+[id='change_admin_user_{context}']
+= Changing the administrative user's credentials
 
-When you xref:enable_auth[enable authentication] for the {WebName}, a default administrative user is provided with the username `admin` and password `password`. You should change this password so that only those that are authorized can make further changes to {WebName} users.
+When you enable authentication for the {WebName}, a default administrative user is provided with the username `admin` and password `password`. You should change this password so that only those that are authorized can make further changes to {WebName} users.
 
 Follow these steps to change the default administrative user's password.
 
-. Make sure that the {WebName} is xref:starting_console[running].
+. Make sure that the {WebName} is running.
 . Open the Red Hat Single Sign-On administration console.
 * For a ZIP installation:
-.. Navigate to `http://localhost:8080/auth/` in a browser.
+.. Navigate to `\http://localhost:8080/auth/` in a browser.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 * For an OpenShift installation:
-.. Navigate to `__OPENSHIFT_URL__/console/project/rhamt/overview` in a browser.
+.. Navigate to `<OPENSHIFT_URL>/console/project/mta/overview` in a browser.
 +
-NOTE: If you renamed the OpenShift project when xref:deploy_rhamt_app_openshift[deploying], replace `rhamt` with the name of your project.
+NOTE: If you renamed the OpenShift project when deploying, replace `mta` with the name of your project.
 .. Click the link in the *SSO HTTPS* application and add "/auth" to the end of the URL.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 . Log in with the default credentials of `admin` and `password`.

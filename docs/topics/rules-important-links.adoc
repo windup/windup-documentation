@@ -1,5 +1,7 @@
-[[rules_important_links]]
-= Important Links
+// Module included in the following assemblies:
+// * docs/rules-development-guide_5/master.adoc
+[id='rules_important_links_{context}']
+= Resources
 
 * {ProductShortName} Javadoc: http://windup.github.io/windup/docs/latest/javadoc
 * {ProductShortName} forums: https://developer.jboss.org/en/windup
@@ -7,5 +9,4 @@
 ** Core {ProductShortName}: https://issues.jboss.org/browse/WINDUP
 ** {ProductShortName} Rules: https://issues.jboss.org/browse/WINDUPRULE
 * {ProductShortName} mailing list: jboss-migration-feedback@redhat.com
-* {ProductShortName} on Twitter: https://twitter.com/jbosswindup[@JBossWindup]
 * {ProductShortName} IRC channel: Server FreeNode (`irc.freenode.net`), channel `#windup` (http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html[transcripts])

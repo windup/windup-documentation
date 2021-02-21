@@ -1,13 +1,16 @@
-[[report_issues]]
-= Report Issues with {ProductShortName}
+// Module included in the following assemblies:
+// * docs/cli-guide_5/master.adoc
+// * docs/maven-guide_5/master.adoc
+[id='report_issues_{context}']
+= Reporting issues with {ProductShortName}
 
-{ProductName} uses JIRA as its issue tracking system. If you encounter an issue executing {ProductShortName}, please file a JIRA Issue.
+The {ProductName} uses JIRA as its issue tracking system. If you encounter an issue executing {ProductShortName}, please file a JIRA Issue.
 
-NOTE: If you do not have one already, you must sign up for a JIRA account in order to create a JIRA issue.
+NOTE: If you do not have a JIRA user account, you must create an account in order to create a JIRA issue.
 
-== Create a JIRA Issue
+== Creating a JIRA issue
 
-. Open a browser and navigate to the JIRA link:https://issues.jboss.org/secure/CreateIssue!default.jspa[Create Issue] page.
+. Open a browser and navigate to the JIRA link:https://issues.jboss.org/secure/CreateIssue!default.jspa[Create issue] page.
 +
 If you have not yet logged in, click the *Log In* link at the top right side of the page and enter your credentials.
 
@@ -15,9 +18,9 @@ If you have not yet logged in, click the *Log In* link at the top right side of 
 
 * *Project*
 +
-For core {ProductShortName} issues, choose _Red Hat Application Migration Toolkit (WINDUP)_.
+For core {ProductShortName} issues, choose _{ProductName} (WINDUP)_.
 +
-For issues with {ProductShortName} rules, choose: _Red Hat Application Migration Toolkit rules (WINDUPRULE)_.
+For issues with {ProductShortName} rules, choose: _{ProductName} rules (WINDUPRULE)_.
 
 * *Issue Type*:  _Bug_
 

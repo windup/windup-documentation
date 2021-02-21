@@ -1,20 +1,20 @@
-[[manually_test_xml_rule]]
-= Manually Test the XML Rule
+// Module included in the following assemblies:
+// * docs/rules-development-guide_5/master.adoc
+[id='manually_test_xml_rule_{context}']
+= Manually testing an XML rule
 
-Instead of writing a test case, it is possible to simply run the XML rule against your application file by running {ProductShortName} in a terminal.
+You can run an XML rule against your application file to test it:
 
-[options="nowrap",subs="+quotes"]
 ----
-$ __RHAMT_HOME__/bin/rhamt-cli [--sourceMode] --input __INPUT_ARCHIVE_OR_FOLDER__ --output __OUTPUT_REPORT_DIRECTORY__ --target __TARGET_TECHNOLOGY__ --packages __PACKAGE_1__ __PACKAGE_2__ __PACKAGE_N__
+$ <MTA_HOME>/bin/mta-cli [--sourceMode] --input <INPUT_ARCHIVE_OR_FOLDER> --output <OUTPUT_REPORT_DIRECTORY> --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2> <PACKAGE_N>
 ----
 
 You should see the following result:
 
 [options="nowrap",subs="+quotes"]
 ----
-Report created: __OUTPUT_REPORT_DIRECTORY__/index.html
-              Access it at this URL: file:///__OUTPUT_REPORT_DIRECTORY__/index.html
+Report created: <OUTPUT_REPORT_DIRECTORY>/index.html
+              Access it at this URL: file:///<OUTPUT_REPORT_DIRECTORY>/index.html
 ----
 
 More examples of how to run {ProductShortName} are located in the {ProductName} {ProductDocUserGuideURL}[_{UserCLIBookName}_].
-

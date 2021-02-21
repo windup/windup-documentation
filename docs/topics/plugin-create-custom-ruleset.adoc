@@ -1,14 +1,18 @@
-[[create_custom_ruleset]]
-= Create a Custom Ruleset
+// Module included in the following assemblies:
+// * docs/plugin-guide_5/master.adoc
+[id='create_custom_ruleset_{context}']
+= Creating a custom ruleset
 
 You can create a new custom ruleset in the {PluginName} to use during analysis of your projects.
+
+.Procedure
 
 . From the {ProductShortName} perspective, open the *Rulesets* tab.
 . Click the create ruleset icon (image:repository-new.gif[Create ruleset icon]).
 . Select the project and directory to save the new ruleset in.
 . Enter the file name for the ruleset file.
 +
-NOTE: The XML rule file must use the `.windup.xml` or `.rhamt.xml` extension in order to be recognized as an {ProductShortName} rule.
+NOTE: The XML rule file must use the `.windup.xml` or `.mta.xml` extension in order to be recognized as an {ProductShortName} rule.
 . Enter a ruleset ID, for example, `my-ruleset-id`.
 . Optionally, check the *Generate quickstart template* checkbox to add basic rule templates to the ruleset file.
 . Select *Finish*.

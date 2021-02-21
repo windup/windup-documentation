@@ -1,13 +1,15 @@
-[[config_auth]]
-= Configuring Authentication for the {WebNameTitle}
+// Module included in the following assemblies:
+// * docs/web-console-guide_5/master.adoc
+[id='config_auth_{context}']
+= Configuring authentication for the {WebName}
 
 You can configure the {WebName} to require authentication, which is handled by Red Hat Single Sign-On. When enabled, users will be required to authenticate before being granted access to the {WebName}.
 
 It is recommended to complete the following steps to configure authentication for the {WebName}.
 
-. xref:enable_auth[Enable authentication for the {WebName}.]
+. Enable authentication for the {WebName}.
 +
-NOTE: If you have xref:openshift_install[installed {WebName} on OpenShift], authentication is already enabled and cannot be disabled.
-. xref:change_admin_user[Change the administrative user's credentials.]
-. xref:remove_default_user[Remove the default {WebName} user.]
-. xref:add_user[Add {WebName} users.]
+NOTE: If you have installed {WebName} on OpenShift, authentication is already enabled and cannot be disabled.
+. Change the administrative user's credentials.
+. Remove the default {WebName} user.
+. Add {WebName} users.

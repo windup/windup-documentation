@@ -1,30 +1,20 @@
-[[validation_report]]
-= Validation Report
+// Module included in the following assemblies:
+// * docs/rules-development-guide_5/master.adoc
+[id='validation_report_{context}']
+= About validation reports
 
-Introduced in {ProductShortName} 4.2, the validation report allows rule developers to confirm the test rules function as expected. It produces a report that provides details on each test rule, reporting any failures and where they occur.
+Validation reports provide details about test rules and failures and contain the following sections:
 
-.Prerequisites
-
-* You must xref:fork_ruleset_repo[fork and clone the {ProductShortName} XML Rules].
-* You must have one or more xref:test_xml_rule[test XML rules] to be validated.
-
-.Create the Validation Report
-. Navigate to the local `windup-rulesets` repository.
-. Copy your custom rules and tests into the a subdirectory in the `rules-reviewed` directory. This should result in 
-. Run the following command from the root of the `windup-rulesets` repository:
+* *Summary*
 +
-[source,options="nowrap",subs="+quotes"]
-----
-$ mvn -Dtest=WindupRulesMultipleTests -DrunTestsMatching=__CUSTOM_RULES__ clean surefire-report:report
----- 
-+
-For instance, if your rules were stored at the `/path/to/windup-rulesets/rules-reviewed/myTests/` directory, then the following command would be used:
-+
-[source,options="nowrap",subs="+quotes"]
-----
-$ mvn -Dtest=WindupRulesMultipleTests -DrunTestsMatching=myTests clean surefire-report:report
-----
-+
-NOTE: Leaving off the `runTestsMatching` argument will result in all tests being included in the validation report, and will drastically increase the runtime.
+This section contains the total number of tests executed and reports the number of errors and failures. It displays the total success rate and the time taken, in seconds, for the report to be generated.
 
-. The validation report, `surefire-report.html`, will be generated in the `target/site/` subdirectory of the `windup-rulesets` repository.
+* *Package List*
++
+This section contains the number of tests executed for each package and reports the number of errors and failures. It displays the success rate and the time taken, in seconds, for each package to be analyzed.
++
+A single package named `org.jboss.windup.rules.tests` is displayed unless additional test cases have been defined.
+
+* *Test Cases*
++
+This section describes the test cases. Each failure includes a *Details* section that can be expanded to show the stack trace for the assertion, including a human-readable line indicating the source of the error.

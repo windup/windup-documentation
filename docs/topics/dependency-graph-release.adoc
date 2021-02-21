@@ -1,6 +1,0 @@
-[[dependencies_graph]]
-= Dependencies Graph Report
-
-This release introduces a new report that displays the embedded WARs and JARs used within the analyzed applications. Each dependency is linked with the applications that require it, allowing you to quickly identify common dependencies across your application portfolio. When a single application's dependencies are listed, then this report also includes all third-party JARs.
-
-Additional information on this report is found at link:{ProductDocUserGuideURL}#application_dependencies_graph_report[Application Dependencies Graph Report] and link:{ProductDocUserGuideURL}#dependencies_graph_report[Dependencies Graph Report] in the _{UserCLIBookName}_.

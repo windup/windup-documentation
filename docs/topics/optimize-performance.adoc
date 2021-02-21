@@ -1,24 +1,24 @@
-[[optimize_performance]]
-= Optimize {ProductShortName} Performance
+// Module included in the following assemblies:
+// * docs/cli-guide_5/master.adoc
+[id='optimize_performance_{context}']
+= Optimizing {ProductShortName} performance
 
 {ProductShortName} performance depends on a number of factors, including hardware configuration, the number and types of files in the application, the size and number of applications to be evaluated, and whether the application contains source or compiled code. For example, a file that is larger than 10 MB may need a lot of time to process.
 
 In general, {ProductShortName} spends about 40% of the time decompiling classes, 40% of the time executing rules, and the remainder of the time processing other tasks and generating reports. This section describes what you can do to improve the performance of {ProductShortName}.
 
-== Tips to Optimize Performance
-
-=== Application and Command-line Suggestions
+== Deploying and running the application
 
 Try these suggestions first before upgrading hardware.
 
 * If possible, execute {ProductShortName} against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.
-* Specify a comma-separated list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `__RHAMT_HOME__/bin/rhamt-cli` command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
+* Specify a comma-separated list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `<MTA_HOME>/bin/mta-cli` command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
 * Specify the `--excludeTags` argument where possible to exclude them from processing.
-* Avoid decompiling and analyzing any unnecessary packages and files, such as proprietary packages or included dependencies. For additional information, see xref:exclude_files_and_packages[Configure {ProductShortName} to Exclude Files and Packages].
+* Avoid decompiling and analyzing any unnecessary packages and files, such as proprietary packages or included dependencies.
 * Increase your ulimit when analyzing large applications. See link:https://access.redhat.com/solutions/60746[this Red Hat Knowledgebase article] for instructions on how to do this for Red Hat Enterprise Linux.
 * If you have access to a server that has better resources than your laptop or desktop machine, you may want to consider running {ProductShortName} on that server.
 
-=== Hardware Upgrade Suggestions
+== Upgrading hardware
 
 If the application and command-line suggestions above do not improve performance, you may need to upgrade your hardware.
 

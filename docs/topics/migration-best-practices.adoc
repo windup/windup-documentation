@@ -1,5 +1,7 @@
-[[migration_best_practices]]
-= Best Practices
+// Module included in the following assemblies:
+// * docs/getting-started-guide_5/master.adoc
+[id='migration-best-practices_{context}']
+= Best practices
 
 Red Hat recommends the following practices when planning and executing a migration or modernization:
 
@@ -18,7 +20,7 @@ Consider reusing existing components instead of creating new ones. Automate proc
 
 * Use a proven and repeatable methodology.
 +
-The recommendation is to follow a practical approach and make as few changes as possible to get a functionally identical application. See xref:migration_methodology[Migration Methodology] below for more details on using this methodology.
+The recommendation is to follow a practical approach and make as few changes as possible to get a functionally identical application.
 
 * Involve Red Hat technical expertise early for the chosen Red Hat Middleware components.
 +
