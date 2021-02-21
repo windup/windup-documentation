@@ -1,6 +1,7 @@
 // Module included in the following assemblies:
-// * docs/rules-development-guide_5/master.adoc
-[id='create_first_rule_{context}']
+// * docs/rules-development-guide/master.adoc
+
+[id='create_first_xml_rule_{context}']
 = Creating your first XML rule
 
 This section guides you through the process of creating and testing your first {ProductShortName} XML-based rule. This assumes that you have already installed {ProductShortName}. See the link:{ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.

@@ -1,6 +1,7 @@
 // Module included in the following assemblies:
-// * docs/rules-development-guide_5/master.adoc
-[id='add_the_rule_to_windup_{context}']
+// * docs/rules-development-guide/master.adoc
+
+[id='add_rule_to_rhamt_{context}']
 = Adding a rule to the {ProductName}
 
 A {ProductName} rule is installed by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files with the `.windup.xml` or `.mta.xml` extension in the following locations:
