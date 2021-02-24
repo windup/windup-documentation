@@ -53,7 +53,7 @@ ifdef::cli-guide,maven-guide,web-console-guide,plugin-guide,plugin-guide-offline
 * macOS: The value of `maxproc` must be `2048` or greater.
 endif::[]
 ifdef::plugin-guide,plugin-guide-offline[]
-* link:https://developers.redhat.com/products/codeready-studio/download/[Red Hat CodeReady Studio]
+* link:{CodeReadyStudioDownloadPageURL}[Red Hat CodeReady Studio]
 +
 _or_
 
@@ -62,8 +62,15 @@ endif::[]
 
 .Procedure
 
+ifdef::cli-guide[]
+. Navigate to the link:{MTADownloadPageURL}[{ProductShortName} Download page] and download the `Migration Toolkit CLI` file.
+endif::[]
+
+ifdef::web-console-guide[]
+. Navigate to the link:{MTADownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
+endif::[]
+
 ifdef::cli-guide,web-console-guide[]
-. Download the installation archive file from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page].
 . Extract the `.zip` file to a directory of your choice.
 +
 [NOTE]
@@ -120,7 +127,7 @@ $ mvn clean install
 The `windup-maven-plugin` jar is installed in your local Maven repository.
 endif::[]
 ifdef::plugin-guide-offline[]
-. Download the link:{ProductDownloadURL}{IDEPluginFilename}-{ProductVersion}.zip[IDE Plugin archive file].
+. Navigate to the link:{MTADownloadPageURL}[Migration Toolkit for Applications download site] and download the `IDE Plugin Repository` file.
 endif::[]
 ifdef::plugin-guide,plugin-guide-offline[]
 . Launch your IDE.

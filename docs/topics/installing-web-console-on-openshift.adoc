@@ -41,7 +41,7 @@ endif::[]
 ifdef::ocp-41,ocp-311[]
 .Procedure
 
-. Download the installation archive file from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} download page].
+. Navigate to the link:{MTADownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
 . Extract the `.zip` file to a directory, for example, `MTA_HOME`.
 endif::[]
 ifdef::ocp-45[]

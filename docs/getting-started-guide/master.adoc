@@ -8,15 +8,15 @@ include::topics/templates/document-attributes.adoc[]
 :context: getting-started-guide
 :getting-started-guide:
 
-= {GettingStartedBookName}
+= {IntroToMTABookName}
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
 == Introduction
 
-// About the {GettingStartedBookName}
-include::topics/about-the-gs-guide.adoc[leveloffset=+2]
+// About the {IntroToMTABookName}
+include::topics/about-the-intro-to-mta-guide.adoc[leveloffset=+2]
 
 // About the Toolkit
 include::topics/what-is-the-toolkit.adoc[leveloffset=+1]
