@@ -1,0 +1,64 @@
+// Module included in the following assemblies:
+// * docs/release_notes-5.0/master.adoc
+[id='rn-new-features_{context}']
+= New features
+
+This section describes the new features of the {ProductName} ({ProductShortName}) {ProductVersion}.
+
+.Updated {WebName} interface
+
+The current release contains an updated {WebName} interface with improved project management features and additional transformation targets.
+
+.{ProductName} Operator for {ocp-short}
+
+The current release contains the {ProductName} Community Operator for installing the {WebName} on {ocp-short} 4.6 and later versions.
+
+.Installation in multiple namespaces on {ocp-short}
+
+The current release can be installed in multiple namespaces on {ocp-short}. Previously, the {WebName} could be installed in only one namespace.
+
+.Additional rules for migrating from Spring Boot to Quarkus
+
+The current release contains additional rules for migrating from Spring Boot to Quarkus. The target of these rules is `quarkus`.
+
+The new rules identify Spring Boot APIs that are implemented in Quarkus Spring extensions, where Spring Boot dependencies can be replaced by equivalent Quarkus extensions. The rules also report Spring artifacts that do not have Quarkus equivalents.
+
+The rules identify application dependencies for which there are equivalent Quarkus extensions, including the following:
+
+* Agroal
+* Amazon DynamoDB
+* Amazon IAM
+* Amazon S3
+* Amazon Simple Email Service
+* Amazon Simple Notification Service
+* Amazon Simple Queue Service
+* AWS Config
+* AWS Key Management Service
+* AWS Lambda with HTTP APIs
+* AWS Lambda with AWS X-Ray
+* Apache Avro
+* Apache Kafka
+* Artemis
+* Hibernate
+* Java Database Connectivity rules for the following databases:
+** Apache Derby
+** DB2
+** MariaDB
+** MySQL
+** PostgreSQL
+* JSONB
+* JSONP
+* Keycloak
+* Kubernetes
+* Narayana
+* OpenShift Container Platform
+* RESTeasy
+* WildFly Elytron
+
+.Rules for migrating to the latest version of Quarkus
+
+The current release contains rules for migrating to the latest version of Quarkus. The target of these rules is `quarkus<version>`, for example, `quarkus1:12` for Quarkus 1.12.x.
+
+These rules ensure that the applications are migrated to a target that has the latest features, resolved issues, and patches.
+
+These rules will be updated for future Quarkus releases.
