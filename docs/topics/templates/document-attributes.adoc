@@ -44,7 +44,7 @@
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rules Development Guide
 :PluginBookName: IDE Plugin Guide
-:GettingStartedBookName: Introduction to the Migration Toolkit for Applications
+:IntroToMTABookName: Introduction to the Migration Toolkit for Applications
 :WebConsoleBookName: Web Console Guide
 :MavenBookName: Maven Plugin Guide
 :ReleaseNotesName: Release Notes
@@ -72,7 +72,8 @@
 :ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
 :ProductDocPluginGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/ide_plugin_guide
-:ProductDocGettingStartedGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_migration_toolkit_for_applications
+:ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_migration_toolkit_for_applications
+
 :ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/web_console_guide
 :ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
 :OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
@@ -82,8 +83,9 @@
 // Point to the GitHub wiki version since there is no product version of this guide.
 :ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
 
-// URL for downloads on developers.redhat.com
-:ProductDownloadURL: https://developers.redhat.com/products/
+// URLs for downloads on developers.redhat.com
+:MTADownloadPageURL: https://developers.redhat.com/products/mta/download
+:CodeReadyStudioDownloadPageURL: https://developers.redhat.com/products/codeready-studio/download/
 
 // KBase Article links:
 :KBArticleTechnologyPreview: https://access.redhat.com/support/offerings/techpreview
