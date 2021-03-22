@@ -1,14 +1,10 @@
-:toc:
-:toclevels: 4
-:numbered:
-
+= {IntroToMTABookName}
 include::topics/templates/document-attributes.adoc[]
-
-:imagesdir: topics/images
 :context: getting-started-guide
 :getting-started-guide:
 
-= {IntroToMTABookName}
+:toc:
+
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
