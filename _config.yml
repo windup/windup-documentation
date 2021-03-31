@@ -21,36 +21,26 @@ theme: jekyll-theme-cayman
 plugins: [jekyll-paginate, jekyll-asciidoc, jekyll-redirect-from, jekyll-feed, jekyll-sitemap, premonition, jekyll/tagging,  jekyll-seo-tag]
 
 # empty array for asciidoc
-# asciidoc: {}
+asciidoc: {}
 # upstream doc attributes
-# asciidoctor:
-#   attributes:
-#   - title=Installing and using Forklift
-#   - context=forklift
-#   - description=Migrating virtual machines to KubeVirt
-#   - abstract=Forklift enables you to migrate virtual machines to {virt} running on {ocp}.
-#   - keywords=migration, VMware, OpenShift Virtualization, KubeVirt
-#   - author=Red Hat Modernization and Migration Solutions documentation team
-#   - showtitle=@
-#   - build=upstream
-#   - imagesdir=../modules/images
-#   - project-short=Forklift
-#   - project-full=Forklift
-#   - project-first=Forklift
-#   - the-lc=
-#   - The=
-#   - project-version=2.0
-#   - virt=KubeVirt
-#   - ocp=OKD
-#   - ocp-version=4.7
-#   - ocp-short=OKD
-#   - operator=forklift-operator
-#   - namespace=konveyor-forklift
-  # safe: unsafe
+asciidoctor:
+  attributes:
+  - showtitle=@
+  - build=upstream
+  - imagesdir=../topics/images
+  - UserCLIBookName=CLI Guide
+  - RulesDevBookName=Rules Development Guide
+  - PluginBookName=IDE Plugin Guide
+  - IntroToMTABookName=Introduction to the Migration Toolkit for Applications
+  - WebConsoleBookName=Web Console Guide
+  - MavenBookName=Maven Plugin Guide
+  - ReleaseNotesName=Release Notes
+  safe: unsafe
 
 exclude:
   - README.md
   - .history
+  - CONTRIBUTING.adoc
 
 tag_page_layout: tag
 tag_page_dir: /tag/

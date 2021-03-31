@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/windup-documentation/assets/css/style.css?v=ed33081dbd0d127a996ec15fa7a7868b57cabf4f">
+    <link rel="stylesheet" href="/windup-documentation/assets/css/style.css?v=0ae7bb881e05de81ed19ec45631f3e5b071c7707">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
@@ -35,8 +35,9 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <div class="paragraph">
-<p>This section guides you through the process of creating and testing your first {ProductShortName} XML-based rule. This assumes that you have already installed {ProductShortName}. See the <a href="{ProductDocUserGuideURL}"><em>{UserCLIBookName}</em></a> for installation instructions.</p>
+      <h1 id="create_first_xml_rule_{context}">Creating your first XML rule</h1>
+<div class="paragraph">
+<p>This section guides you through the process of creating and testing your first {ProductShortName} XML-based rule. This assumes that you have already installed {ProductShortName}. See the <a href="{ProductDocUserGuideURL}"><em>CLI Guide</em></a> for installation instructions.</p>
 </div>
 <div class="paragraph">
 <p>In this example, you will write a rule to discover instances where an application defines a <code>jboss-web.xml</code> file containing a <code>&lt;class-loading&gt;</code> element and provide a link to the documentation that describes how to migrate the code.</p>
@@ -310,7 +311,7 @@ otherwise(action)</pre>
 </div>
 <h2 id="reviewing-the-reports" class="discrete">Reviewing the reports</h2>
 <div class="paragraph">
-<p>Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the <a href="{ProductDocUserGuideURL}#review_reports">Review the reports</a> section of the {ProductShortName} <em>{UserCLIBookName}</em>.</p>
+<p>Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the <a href="{ProductDocUserGuideURL}#review_reports">Review the reports</a> section of the {ProductShortName} <em>CLI Guide</em>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -328,7 +329,7 @@ otherwise(action)</pre>
 <p>Find the <code>JBoss5-web-class-loading_001</code> rule and verify that its <strong>Status?</strong> is <code>Condition met</code> and its <strong>Result?</strong> is <code>success</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="executed-test-rule.png" alt="Test rule execution">
+<img src="../topics/images/executed-test-rule.png" alt="Test rule execution">
 </div>
 <div class="title">Figure 1. Test rule execution</div>
 </div>
@@ -353,7 +354,7 @@ otherwise(action)</pre>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="test-rule-details.png" alt="Rule match">
+<img src="../topics/images/test-rule-details.png" alt="Rule match">
 </div>
 <div class="title">Figure 2. Rule match</div>
 </div>

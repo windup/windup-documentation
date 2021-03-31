@@ -1,16 +1,12 @@
+// revert topics directory after rebrand
+include::topics/templates/document-attributes.adoc[]
+= {UserCLIBookName}
 :toc:
 :toclevels: 4
 :numbered:
-
-
-// revert topics directory after rebrand
-include::topics/templates/document-attributes.adoc[]
-
 :imagesdir: topics/images
 :context: cli-guide
 :cli-guide:
-
-= {UserCLIBookName}
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]

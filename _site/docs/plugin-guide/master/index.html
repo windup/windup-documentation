@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/windup-documentation/assets/css/style.css?v=ed33081dbd0d127a996ec15fa7a7868b57cabf4f">
+    <link rel="stylesheet" href="/windup-documentation/assets/css/style.css?v=0ae7bb881e05de81ed19ec45631f3e5b071c7707">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
@@ -35,7 +35,8 @@
     </header>
 
     <main id="content" class="main-content" role="main">
-      <div id="toc" class="toc">
+      <h1>IDE Plugin Guide</h1>
+<div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#making-open-source-more-inclusive_plugin-guide">Making open source more inclusive</a></li>
@@ -331,10 +332,10 @@ For more information about <a href="https://marketplace.visualstudio.com/items?i
 <p>Import the project to analyze into your IDE.</p>
 </li>
 <li>
-<p>Create a run configuration. In the Issue Explorer, click the MTA icon (<span class="image"><img src="topics/images/windup.png" alt="MTA button"></span>).</p>
+<p>Create a run configuration. In the Issue Explorer, click the MTA icon (<span class="image"><img src="../topics/images/windup.png" alt="MTA button"></span>).</p>
 <div class="imageblock">
 <div class="content">
-<img src="topics/images/windup_button_create_config.png" alt="Select MTA button">
+<img src="../topics/images/windup_button_create_config.png" alt="Select MTA button">
 </div>
 </div>
 <div class="paragraph">
@@ -351,14 +352,14 @@ For more information about <a href="https://marketplace.visualstudio.com/items?i
 <p>Resolve MTA issues by manually updating code or by using quick fixes when available.</p>
 </li>
 <li>
-<p>Run MTA again as necessary. Use the drop down next to the <strong>Run</strong> button (<span class="image"><img src="topics/images/run_exc.png" alt="Run button"></span>) to run an existing configuration.</p>
+<p>Run MTA again as necessary. Use the drop down next to the <strong>Run</strong> button (<span class="image"><img src="../topics/images/run_exc.png" alt="Run button"></span>) to run an existing configuration.</p>
 </li>
 </ol>
 </div>
 <div class="sect2">
 <h3 id="create_run_config_plugin-guide-offline">5.1. Creating an MTA run configuration</h3>
 <div class="paragraph">
-<p>MTA run configurations can be created using the MTA button (<span class="image"><img src="topics/images/windup.png" alt="MTA button"></span>). A run configuration specifies the project to analyze, migration path, and additional options for the execution. You can create multiple run configurations, and each must have a unique name.</p>
+<p>MTA run configurations can be created using the MTA button (<span class="image"><img src="../topics/images/windup.png" alt="MTA button"></span>). A run configuration specifies the project to analyze, migration path, and additional options for the execution. You can create multiple run configurations, and each must have a unique name.</p>
 </div>
 <h4 id="input" class="discrete">Input</h4>
 <div class="dlist">
@@ -411,7 +412,7 @@ For more information about <a href="https://marketplace.visualstudio.com/items?i
 <p>Select the run configuration from the <strong>Run Configurations</strong> dialog and click <strong>Run</strong>.</p>
 </li>
 <li>
-<p>Select a recent run configuration from the drop down next to the <strong>Run</strong> button (<span class="image"><img src="topics/images/run_exc.png" alt="Run button"></span>).</p>
+<p>Select a recent run configuration from the drop down next to the <strong>Run</strong> button (<span class="image"><img src="../topics/images/run_exc.png" alt="Run button"></span>).</p>
 </li>
 </ul>
 </div>
@@ -446,7 +447,7 @@ For more information about <a href="https://marketplace.visualstudio.com/items?i
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="topics/images/windup_group_by.png" alt="Issue Explorer group by options">
+<img src="../topics/images/windup_group_by.png" alt="Issue Explorer group by options">
 </div>
 </div>
 <div class="paragraph">
@@ -461,10 +462,10 @@ For more information about <a href="https://marketplace.visualstudio.com/items?i
 <div class="sect3">
 <h4 id="resolving-an-issue-manually">5.4.1. Resolving an issue manually</h4>
 <div class="paragraph">
-<p>Review the MTA issue details and additional resources and update the source code as necessary. When you update a line of code marked as an MTA issue, the MTA issue will be marked with the stale icon (<span class="image"><img src="topics/images/stale_issue.gif" alt="Stale issue icon"></span>) until the next time that MTA is run on the project.</p>
+<p>Review the MTA issue details and additional resources and update the source code as necessary. When you update a line of code marked as an MTA issue, the MTA issue will be marked with the stale icon (<span class="image"><img src="../topics/images/stale_issue.gif" alt="Stale issue icon"></span>) until the next time that MTA is run on the project.</p>
 </div>
 <div class="paragraph">
-<p>You can also manually mark an MTA issue as fixed, which will mark the issue with the resolved icon (<span class="image"><img src="topics/images/fixedIssue.gif" alt="Resolved issue icon"></span>) until the next time that MTA is run on the project. To mark an issue as fixed, right-click the MTA issue in the Issue Explorer and select <strong>Mark as Fixed</strong>.</p>
+<p>You can also manually mark an MTA issue as fixed, which will mark the issue with the resolved icon (<span class="image"><img src="../topics/images/fixedIssue.gif" alt="Resolved issue icon"></span>) until the next time that MTA is run on the project. To mark an issue as fixed, right-click the MTA issue in the Issue Explorer and select <strong>Mark as Fixed</strong>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -542,7 +543,7 @@ In order to view system rules, the MTA server must be started.
 <p>From the MTA perspective, open the <strong>Rulesets</strong> tab.</p>
 </li>
 <li>
-<p>Click the import ruleset icon (<span class="image"><img src="topics/images/import-repository.png" alt="Import ruleset icon"></span>).</p>
+<p>Click the import ruleset icon (<span class="image"><img src="../topics/images/import-repository.png" alt="Import ruleset icon"></span>).</p>
 </li>
 <li>
 <p>Browse to and select the XML rule file to import.</p>
@@ -583,7 +584,7 @@ The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code>
 <p>From the MTA perspective, open the <strong>Rulesets</strong> tab.</p>
 </li>
 <li>
-<p>Click the create ruleset icon (<span class="image"><img src="topics/images/repository-new.gif" alt="Create ruleset icon"></span>).</p>
+<p>Click the create ruleset icon (<span class="image"><img src="../topics/images/repository-new.gif" alt="Create ruleset icon"></span>).</p>
 </li>
 <li>
 <p>Select the project and directory to save the new ruleset in.</p>
@@ -636,7 +637,7 @@ The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code>
 <p>From the MTA perspective, click the <strong>Rulesets</strong> tab.</p>
 </li>
 <li>
-<p>Click the dropdown icon (<span class="image"><img src="topics/images/plugin-dropdown.png" alt="Dropdown"></span>) and select <strong>Submit Ruleset</strong>.</p>
+<p>Click the dropdown icon (<span class="image"><img src="../topics/images/plugin-dropdown.png" alt="Dropdown"></span>) and select <strong>Submit Ruleset</strong>.</p>
 </li>
 <li>
 <p>Complete the following fields:</p>
@@ -689,7 +690,7 @@ The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="topics/images/error.png" alt="Mandatory">
+<img src="../topics/images/error.png" alt="Mandatory">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The issue is mandatory to fix for a successful migration.</p></td>
@@ -697,7 +698,7 @@ The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="topics/images/info.gif" alt="Optional">
+<img src="../topics/images/info.gif" alt="Optional">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The issue is optional to fix for migration.</p></td>
@@ -705,7 +706,7 @@ The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="topics/images/warning.png" alt="Warning">
+<img src="../topics/images/warning.png" alt="Warning">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The issue may potentially be an issue during migration.</p></td>
@@ -713,7 +714,7 @@ The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="topics/images/fixedIssue.gif" alt="Resolved">
+<img src="../topics/images/fixedIssue.gif" alt="Resolved">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The issue has been resolved.</p></td>
@@ -721,7 +722,7 @@ The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="topics/images/stale_issue.gif" alt="Stale">
+<img src="../topics/images/stale_issue.gif" alt="Stale">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The issue is stale because the code marked as an issue has been modified since the last time that MTA was run on the project.</p></td>
@@ -729,7 +730,7 @@ The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="topics/images/quickfix_error.png" alt="Mandatory with quick fix">
+<img src="../topics/images/quickfix_error.png" alt="Mandatory with quick fix">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A quick fix is available for this issue, which is mandatory to fix for a successful migration.</p></td>
@@ -737,7 +738,7 @@ The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="topics/images/quickfix_info.png" alt="Optional with quick fix">
+<img src="../topics/images/quickfix_info.png" alt="Optional with quick fix">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A quick fix is available for this issue, which is optional to fix for migration.</p></td>
@@ -745,7 +746,7 @@ The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="topics/images/quickfix_warning.png" alt="Warning with quick fix">
+<img src="../topics/images/quickfix_warning.png" alt="Warning with quick fix">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A quick fix is available for this issue, which may potentially be an issue during migration.</p></td>
@@ -759,7 +760,7 @@ The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code>
 <br></p>
 </div>
 <div class="paragraph">
-<p><em class="right">Revised on 2021-03-31 19:30:10 IDT</em></p>
+<p><em class="right">Revised on 2021-03-31 19:53:24 IDT</em></p>
 </div>
 </div>
 </div>
