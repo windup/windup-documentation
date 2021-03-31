@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>&lt;where&gt; syntax | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="&lt;where&gt; syntax" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="&lt;where&gt; syntax" />
+<script type="application/ld+json">
+{"description":"Windup Documentation","headline":"&lt;where&gt; syntax","@type":"WebPage","url":"/windup-documentation/docs/cli-guide/topics/where-syntax/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/windup-documentation/assets/css/style.css?v=ed33081dbd0d127a996ec15fa7a7868b57cabf4f">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        
+      
+        <a href="https://github.com/windup/windup-documentation" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <div class="paragraph">
+<p>You can define parameters that specify a matching pattern to be used in other elements of an XML rule. This can help simplify the patterns for complex matching expressions.</p>
+</div>
+<div class="paragraph">
+<p>Use the <code>&lt;where&gt;</code> element to define a parameter. Specify the parameter name using the <code>param</code> attribute and supply the pattern using the <code>&lt;matches&gt;</code> element. This parameter can then be referenced elsewhere in the rule definition using the syntax <code>{&lt;PARAM_NAME&gt;}</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can view the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">complete XML rule schema</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following example rule defines a parameter named <code>subpackage</code> that specifies a pattern of <code>(activeio|activemq)</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;rule id="generic-catchall-00600"&gt;
+  &lt;when&gt;
+    &lt;javaclass references="org.apache.{subpackage}.{*}"&gt;
+    &lt;/javaclass&gt;
+  &lt;/when&gt;
+  &lt;perform&gt;
+    ...
+  &lt;/perform&gt;
+  &lt;where param="subpackage"&gt;
+    &lt;matches pattern="(activeio|activemq)" /&gt;
+  &lt;/where&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The pattern defined by <code>subpackage</code> will then be substituted in the <code>&lt;javaclass&gt;</code> <code>references</code> attribute. This causes the rule to match on <code>org.apache.activeio.*</code> and <code>org.apache.activemq.*</code> packages.</p>
+</div>
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

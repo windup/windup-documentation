@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"description":"Windup Documentation","headline":"Windup Documentation","@type":"WebPage","url":"/windup-documentation/docs/plugin-guide/master/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/windup-documentation/assets/css/style.css?v=ed33081dbd0d127a996ec15fa7a7868b57cabf4f">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        
+      
+        <a href="https://github.com/windup/windup-documentation" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#making-open-source-more-inclusive_plugin-guide">Making open source more inclusive</a></li>
+<li><a href="#introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#about_plugin_guide_plugin-guide">1.1. About the IDE Plugin Guide</a></li>
+<li><a href="#about_mta_plugin-guide">1.2. About the Migration Toolkit for Applications</a></li>
+<li><a href="#about_the_plugin_plugin-guide">1.3. About the IDE Plugin</a></li>
+</ul>
+</li>
+<li><a href="#installing-web-console_plugin-guide">2. Installing the IDE plugin in a connected environment</a></li>
+<li><a href="#installing-web-console_plugin-guide-offline">3. Installing the IDE plugin in an offline environment</a></li>
+<li><a href="#access_windup_features_plugin-guide-offline">4. Accessing the MTA IDE tools</a>
+<ul class="sectlevel2">
+<li><a href="#plugin_components_plugin-guide-offline">4.1. About IDE Plugin components</a></li>
+</ul>
+</li>
+<li><a href="#identify_resolve_migration_issues_plugin-guide-offline">5. Troubleshooting migration issues</a>
+<ul class="sectlevel2">
+<li><a href="#create_run_config_plugin-guide-offline">5.1. Creating an MTA run configuration</a></li>
+<li><a href="#execute_mta_plugin-guide-offline">5.2. Running MTA</a></li>
+<li><a href="#review_issues_plugin-guide-offline">5.3. Reviewing MTA issues</a></li>
+<li><a href="#resolve_issues_plugin-guide-offline">5.4. Resolving MTA issues</a>
+<ul class="sectlevel3">
+<li><a href="#resolving-an-issue-manually">5.4.1. Resolving an issue manually</a></li>
+<li><a href="#resolving-an-issue-using-a-quick-fix">5.4.2. Resolving an issue using a quick fix</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#use_custom_rules_plugin-guide-offline">6. Adding custom rules</a>
+<ul class="sectlevel2">
+<li><a href="#view_rules_plugin-guide-offline">6.1. Browsing rules</a></li>
+<li><a href="#import_custom_ruleset_plugin-guide-offline">6.2. Importing a custom ruleset</a></li>
+<li><a href="#create_custom_ruleset_plugin-guide-offline">6.3. Creating a custom ruleset</a></li>
+<li><a href="#submit_ruleset_plugin-guide-offline">6.4. Submitting a custom ruleset</a></li>
+</ul>
+</li>
+<li><a href="#reference-material">Appendix A: Reference material</a>
+<ul class="sectlevel2">
+<li><a href="#plugin_windup_issue_icons_plugin-guide-offline">A.1. About MTA issue icons</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="making-open-source-more-inclusive_plugin-guide">Making open source more inclusive</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="about_plugin_guide_plugin-guide">1.1. About the IDE Plugin Guide</h3>
+<div class="paragraph">
+<p>This guide is for engineers, consultants, and others who want to use the IDE plugin for the Migration Toolkit for Applications (MTA) to assist with migrating applications.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+This guide uses <em>Eclipse</em> to refer to an installation of Eclipse or Red Hat CodeReady Studio.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about_mta_plugin-guide">1.2. About the Migration Toolkit for Applications</h3>
+<h4 id="what-is-the-migration-toolkit-for-applications" class="discrete">What is the Migration Toolkit for Applications?</h4>
+<div class="paragraph">
+<p>The Migration Toolkit for Applications (MTA) is an extensible and customizable rule-based tool that simplifies the migration of Java applications.</p>
+</div>
+<div class="paragraph">
+<p>The MTA examines application artifacts, including project source directories and application archives, then produces an HTML report that highlights areas needing changes. MTA can migrate Java applications from earlier versions of Red Hat JBoss Enterprise Application Platform or from other application servers, such as Oracle WebLogic Server or IBM WebSphere Application Server.</p>
+</div>
+<h4 id="how-does-the-migration-toolkit-for-applications-simplify-migration" class="discrete">How does the Migration Toolkit for Applications simplify migration?</h4>
+<div class="paragraph">
+<p>The Migration Toolkit for Applications looks for common resources and highlights technologies and known trouble spots when migrating applications. The goal is to provide a high-level view into the technologies used by the application and provide a detailed report organizations can use to estimate, document, and migrate enterprise applications to Java EE and Red Hat JBoss Enterprise Application Platform.</p>
+</div>
+<h4 id="how-do-i-learn-more" class="discrete">How do I learn more?</h4>
+<div class="paragraph">
+<p>See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.1/html-single/introduction_to_the_migration_toolkit_for_applications"><em>Introduction to the Migration Toolkit for Applications</em></a> to learn more about the features, supported configurations, system requirements, and available tools in the Migration Toolkit for Applications.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about_the_plugin_plugin-guide">1.3. About the IDE Plugin</h3>
+<div class="paragraph">
+<p>The IDE plugin for the Migration Toolkit for Applications provides assistance directly in Eclipse and Red Hat CodeReady Studio for developers making changes for a migration or modernization effort. It analyzes your projects using MTA, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.</p>
+</div>
+<div class="paragraph">
+<p>There is an MTA extension for Visual Studio Code and Eclipse Che.
+The extension is only available as a Minimum Viable Product and will be fully documented and supported in a future Release of MTA.
+For more information about <a href="https://marketplace.visualstudio.com/items?itemName=redhat.mta-vscode-extension">the extension</a>, visit the Visual Studio Marketplace.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-web-console_plugin-guide">2. Installing the IDE plugin in a connected environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can install the IDE plugin for Eclipse or Red Hat CodeReady Studio in a connected environment.</p>
+</div>
+<div class="paragraph">
+<p>The IDE plugin has been tested with Eclipse 2020-09 and Red Hat CodeReady Studio 12.15.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>macOS: The value of <code>maxproc</code> must be <code>2048</code> or greater.</p>
+</li>
+<li>
+<p><a href="https://developers.redhat.com/products/codeready-studio/download/">Red Hat CodeReady Studio</a></p>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+</li>
+<li>
+<p><a href="http://www.eclipse.org/downloads/">Eclipse</a> with JBoss Tools. To install JBoss Tools on Eclipse, navigate to <a href="https://www.eclipse.org/">Eclipse.org</a>, click <strong>More</strong> &#8594; <strong>Documentation</strong>, and select <strong>Eclipse Marketplace User Guide</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Launch your IDE.</p>
+</li>
+<li>
+<p>From the menu bar, select <strong>Help</strong> &#8594; <strong>Install New Software</strong>.</p>
+</li>
+<li>
+<p>Next to the <strong>Work with</strong> field, click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Name</strong> field, enter <code>MTA</code>.</p>
+</li>
+<li>
+<p>In the <strong>Location</strong> field, enter <code>http://download.jboss.org/jbosstools/photon/stable/updates/mta/</code> and click <strong>OK</strong>.</p>
+</li>
+<li>
+<p>Select all the <strong>JBoss Tools - MTA</strong> check boxes and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Review the installation details and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Accept the terms of the license agreement and click <strong>Finish</strong> to install the plugin.</p>
+</li>
+<li>
+<p>Restart your IDE for the changes to take effect.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-web-console_plugin-guide-offline">3. Installing the IDE plugin in an offline environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can install the IDE plugin for Eclipse or Red Hat CodeReady Studio in an offline environment.</p>
+</div>
+<div class="paragraph">
+<p>The IDE plugin has been tested with Eclipse 2020-09 and Red Hat CodeReady Studio 12.15.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>macOS: The value of <code>maxproc</code> must be <code>2048</code> or greater.</p>
+</li>
+<li>
+<p><a href="https://developers.redhat.com/products/codeready-studio/download/">Red Hat CodeReady Studio</a></p>
+<div class="paragraph">
+<p><em>or</em></p>
+</div>
+</li>
+<li>
+<p><a href="http://www.eclipse.org/downloads/">Eclipse</a> with JBoss Tools. To install JBoss Tools on Eclipse, navigate to <a href="https://www.eclipse.org/">Eclipse.org</a>, click <strong>More</strong> &#8594; <strong>Documentation</strong>, and select <strong>Eclipse Marketplace User Guide</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the <a href="https://developers.redhat.com/products/mta/download">Migration Toolkit for Applications download site</a> and download the <code>IDE Plugin Repository</code> file.</p>
+</li>
+<li>
+<p>Launch your IDE.</p>
+</li>
+<li>
+<p>From the menu bar, select <strong>Help</strong> &#8594; <strong>Install New Software</strong>.</p>
+</li>
+<li>
+<p>Next to the <strong>Work with</strong> field, click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Name</strong> field, enter <code>MTA</code>.</p>
+</li>
+<li>
+<p>Next to the <strong>Location</strong> field, click <strong>Archive</strong>.</p>
+</li>
+<li>
+<p>Select the IDE Plugin archive file and click <strong>OK</strong>.</p>
+</li>
+<li>
+<p>Select all the <strong>JBoss Tools - MTA</strong> check boxes and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Review the installation details and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Accept the terms of the license agreement and click <strong>Finish</strong> to install the plugin.</p>
+</li>
+<li>
+<p>Restart your IDE for the changes to take effect.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="access_windup_features_plugin-guide-offline">4. Accessing the MTA IDE tools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once the plugin is installed, the MTA IDE tools are available in the MTA perspective. To open the MTA perspective, navigate to <strong>Window</strong> &#8594; <strong>Perspective</strong> &#8594; <strong>Open Perspective</strong> &#8594; <strong>Other</strong>. Select <strong>MTA</strong> and click <strong>OK</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Review the plugin components and then get started identifying and resolving migration issues. You can also view the embedded help for the plugin by selecting <strong>Help</strong> &#8594; <strong>Getting Started</strong> in your IDE.</p>
+</div>
+<div class="sect2">
+<h3 id="plugin_components_plugin-guide-offline">4.1. About IDE Plugin components</h3>
+<div class="paragraph">
+<p>The following components are available in the MTA perspective when using the IDE plugin to analyze projects.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Issue Explorer</dt>
+<dd>
+<p>This view allows you to explore the MTA issues for projects that have been analyzed.</p>
+<div class="paragraph">
+<p>If this view is not visible in the MTA Perspective, you can open it by selecting <strong>Window</strong> &#8594; <strong>Show View</strong> &#8594; <strong>Issue Explorer</strong>.</p>
+</div>
+</dd>
+<dt class="hdlist1">MTA Server</dt>
+<dd>
+<p>The MTA server is a separate process that executes the MTA analysis, flags the migration issues, and generates the reports.</p>
+<div class="paragraph">
+<p>You can start, stop, and view the status of the MTA server from the Issue Explorer.</p>
+</div>
+</dd>
+<dt class="hdlist1">Issue Details</dt>
+<dd>
+<p>This view shows detailed information about the selected MTA issue, including the hint, severity, and any additional resources.</p>
+<div class="paragraph">
+<p>If this view is not visible in the MTA Perspective, you can open it by selecting <strong>Window</strong> &#8594; <strong>Show View</strong> &#8594; <strong>Issue Details</strong>.</p>
+</div>
+</dd>
+<dt class="hdlist1">MTA Report</dt>
+<dd>
+<p>This view shows the HTML reports that are generated when MTA is executed. From the report landing page you can navigate to detailed reports, such as Application Details, Issues, and Dependencies.</p>
+<div class="paragraph">
+<p>Note that the MTA run configuration used must have the <strong>Generate Report</strong> option selected in order for the MTA reports to be generated.</p>
+</div>
+<div class="paragraph">
+<p>If this view is not visible in the MTA Perspective, you can open it by selecting <strong>Window</strong> &#8594; <strong>Show View</strong> &#8594; <strong>MTA Report</strong>.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="identify_resolve_migration_issues_plugin-guide-offline">5. Troubleshooting migration issues</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Follow these steps to use the IDE plugin to identify and resolve migration issues.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Import the project to analyze into your IDE.</p>
+</li>
+<li>
+<p>Create a run configuration. In the Issue Explorer, click the MTA icon (<span class="image"><img src="topics/images/windup.png" alt="MTA button"></span>).</p>
+<div class="imageblock">
+<div class="content">
+<img src="topics/images/windup_button_create_config.png" alt="Select MTA button">
+</div>
+</div>
+<div class="paragraph">
+<p>At a minimum, select the project to analyze. Set additional options as needed.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Run</strong> to execute MTA.</p>
+</li>
+<li>
+<p>Review MTA issues listed in the Issue Explorer.</p>
+</li>
+<li>
+<p>Resolve MTA issues by manually updating code or by using quick fixes when available.</p>
+</li>
+<li>
+<p>Run MTA again as necessary. Use the drop down next to the <strong>Run</strong> button (<span class="image"><img src="topics/images/run_exc.png" alt="Run button"></span>) to run an existing configuration.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="create_run_config_plugin-guide-offline">5.1. Creating an MTA run configuration</h3>
+<div class="paragraph">
+<p>MTA run configurations can be created using the MTA button (<span class="image"><img src="topics/images/windup.png" alt="MTA button"></span>). A run configuration specifies the project to analyze, migration path, and additional options for the execution. You can create multiple run configurations, and each must have a unique name.</p>
+</div>
+<h4 id="input" class="discrete">Input</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Migration Path</dt>
+<dd>
+<p>Select a migration path, which determines which MTA rulesets are used. The migration path defaults to <strong>Anything to EAP 7</strong>, but can be changed to any supported migration path.</p>
+</dd>
+<dt class="hdlist1">Projects</dt>
+<dd>
+<p>Select one or more projects to analyze. Hold the <strong>Ctrl</strong> key to select multiple projects in the list.</p>
+</dd>
+<dt class="hdlist1">Packages</dt>
+<dd>
+<p>Select one or more packages to scan. It is recommended to select only those packages that you need to analyze to reduce the overall MTA execution time. If no packages are selected, all packages in the project will be scanned. Hold the <strong>Ctrl</strong> key to select multiple packages in the list.</p>
+</dd>
+</dl>
+</div>
+<h4 id="options" class="discrete">Options</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Report</dt>
+<dd>
+<p>Check the <strong>Generate Report</strong> checkbox if you want to generate the MTA HTML report. The report will be shown in the <strong>MTA Report</strong> tab and can be found in the Issue Explorer when you group by <strong>File</strong>.</p>
+</dd>
+<dt class="hdlist1">Options</dt>
+<dd>
+<p>Set additional MTA options. Any option that is a boolean flag, such as <code>enableTattletale</code>, should use <code>true</code> as the value. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.1/html-single/cli_guide#command_line_arguments">MTA Command-line Arguments</a> section of the <em>CLI Guide</em> for a description of each MTA argument.</p>
+</dd>
+</dl>
+</div>
+<h4 id="rules" class="discrete">Rules</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Custom Rules Repositories</dt>
+<dd>
+<p>Select custom rulesets to include during analysis if you have imported or created any custom MTA rules in the IDE plugin.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="execute_mta_plugin-guide-offline">5.2. Running MTA</h3>
+<div class="paragraph">
+<p>Once a run configuration has been created, you can run MTA using that configuration in one of the following ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select the run configuration from the <strong>Run Configurations</strong> dialog and click <strong>Run</strong>.</p>
+</li>
+<li>
+<p>Select a recent run configuration from the drop down next to the <strong>Run</strong> button (<span class="image"><img src="topics/images/run_exc.png" alt="Run button"></span>).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the MTA server is not currently running, it will start once a run configuration is executed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you do not plan to run MTA in the near future, stop the MTA server to conserve memory on your machine.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Once execution is complete, the Issue Explorer will be populated with MTA issues.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="review_issues_plugin-guide-offline">5.3. Reviewing MTA issues</h3>
+<div class="paragraph">
+<p>Use the Issue Explorer to review migration issues identified by MTA. Different icons indicate the issue&#8217;s severity and state.</p>
+</div>
+<div class="paragraph">
+<p>Change how issues are grouped by adjusting the <strong>Group By</strong> selections: Severity, Migration Rule, and File.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="topics/images/windup_group_by.png" alt="Issue Explorer group by options">
+</div>
+</div>
+<div class="paragraph">
+<p>Double-click the MTA issue in the Issue Explorer to open the associated line of code in an editor. Right-click and select <strong>Issue Details</strong> to view information about the MTA issue, including its severity and how to address it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="resolve_issues_plugin-guide-offline">5.4. Resolving MTA issues</h3>
+<div class="paragraph">
+<p>You can resolve MTA issues by updating the code manually or by applying a quick fix when available.</p>
+</div>
+<div class="sect3">
+<h4 id="resolving-an-issue-manually">5.4.1. Resolving an issue manually</h4>
+<div class="paragraph">
+<p>Review the MTA issue details and additional resources and update the source code as necessary. When you update a line of code marked as an MTA issue, the MTA issue will be marked with the stale icon (<span class="image"><img src="topics/images/stale_issue.gif" alt="Stale issue icon"></span>) until the next time that MTA is run on the project.</p>
+</div>
+<div class="paragraph">
+<p>You can also manually mark an MTA issue as fixed, which will mark the issue with the resolved icon (<span class="image"><img src="topics/images/fixedIssue.gif" alt="Resolved issue icon"></span>) until the next time that MTA is run on the project. To mark an issue as fixed, right-click the MTA issue in the Issue Explorer and select <strong>Mark as Fixed</strong>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="resolving-an-issue-using-a-quick-fix">5.4.2. Resolving an issue using a quick fix</h4>
+<div class="paragraph">
+<p>Some MTA issues provide a quick fix, which assists in making the necessary edits to address the issue. See the icon legend to see the icons that indicate the MTA issue has a quick fix available.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Previewing a quick fix</dt>
+<dd>
+<p>Right-click the issue and select <strong>Preview Quick Fix</strong>. This will bring up a window that allows you to preview the change. From here, you can apply the fix or close the window.</p>
+</dd>
+<dt class="hdlist1">Applying a quick fix</dt>
+<dd>
+<p>Right-click the issue and select <strong>Apply Quick Fix</strong>. This will update the source code as required and will mark the MTA issue as resolved.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use_custom_rules_plugin-guide-offline">6. Adding custom rules</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default, the IDE plugin comes with a core set of system rules for identifying migration and modernization issues. You can browse the existing rules from the IDE plugin.</p>
+</div>
+<div class="paragraph">
+<p>You can create your own rules for identifying issues specific to your applications. You can either import an existing custom ruleset or create a custom ruleset directly in the IDE plugin.</p>
+</div>
+<div class="sect2">
+<h3 id="view_rules_plugin-guide-offline">6.1. Browsing rules</h3>
+<div class="paragraph">
+<p>You can view both system and custom rules from the IDE plugin.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>From the MTA perspective, open the <strong>Rulesets</strong> tab.</p>
+</li>
+<li>
+<p>Expand the <strong>System</strong> item to view core system rules, or expand the <strong>Custom</strong> item to view custom rules.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+In order to view system rules, the MTA server must be started.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Expand the ruleset containing the rule you want to review.</p>
+</li>
+<li>
+<p>Double-click the rule to open the rule in a viewer. You can select the <strong>Source</strong> tab to view the XML source of the rule.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="import_custom_ruleset_plugin-guide-offline">6.2. Importing a custom ruleset</h3>
+<div class="paragraph">
+<p>You can import an existing custom ruleset into the IDE plugin to use during analysis of your projects.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>From the MTA perspective, open the <strong>Rulesets</strong> tab.</p>
+</li>
+<li>
+<p>Click the import ruleset icon (<span class="image"><img src="topics/images/import-repository.png" alt="Import ruleset icon"></span>).</p>
+</li>
+<li>
+<p>Browse to and select the XML rule file to import.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code> extension in order to be recognized as an MTA rule.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>The custom ruleset is now shown under the <strong>Custom</strong> item in the <strong>Rulesets</strong> tab.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This custom ruleset can now be selected in run configurations when analyzing projects.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.1/html-single/rules_development_guide"><em>Rules Development Guide</em></a> to learn more about creating custom XML rules.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create_custom_ruleset_plugin-guide-offline">6.3. Creating a custom ruleset</h3>
+<div class="paragraph">
+<p>You can create a new custom ruleset in the IDE plugin to use during analysis of your projects.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>From the MTA perspective, open the <strong>Rulesets</strong> tab.</p>
+</li>
+<li>
+<p>Click the create ruleset icon (<span class="image"><img src="topics/images/repository-new.gif" alt="Create ruleset icon"></span>).</p>
+</li>
+<li>
+<p>Select the project and directory to save the new ruleset in.</p>
+</li>
+<li>
+<p>Enter the file name for the ruleset file.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The XML rule file must use the <code>.windup.xml</code> or <code>.mta.xml</code> extension in order to be recognized as an MTA rule.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Enter a ruleset ID, for example, <code>my-ruleset-id</code>.</p>
+</li>
+<li>
+<p>Optionally, check the <strong>Generate quickstart template</strong> checkbox to add basic rule templates to the ruleset file.</p>
+</li>
+<li>
+<p>Select <strong>Finish</strong>.</p>
+</li>
+<li>
+<p>The new ruleset file opens in an editor and you can add and edit rules in the file. You can also select the <strong>Source</strong> tab to edit the XML source for the ruleset file.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This new ruleset can now be selected in run configurations when analyzing projects.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.1/html-single/rules_development_guide"><em>Rules Development Guide</em></a> to learn more about creating custom XML rules.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="submit_ruleset_plugin-guide-offline">6.4. Submitting a custom ruleset</h3>
+<div class="paragraph">
+<p>You can submit your custom ruleset for inclusion in the official MTA rule repository. This allows your custom rules to be reviewed and included in subsequent releases of MTA, enhancing the applications and server configurations that MTA analyzes.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>From the MTA perspective, click the <strong>Rulesets</strong> tab.</p>
+</li>
+<li>
+<p>Click the dropdown icon (<span class="image"><img src="topics/images/plugin-dropdown.png" alt="Dropdown"></span>) and select <strong>Submit Ruleset</strong>.</p>
+</li>
+<li>
+<p>Complete the following fields:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Summary</strong>: Describe the purpose of the rule. This becomes the title of the submission.</p>
+</li>
+<li>
+<p><strong>Code Sample</strong>: Enter an example of source code that the rule should run against.</p>
+</li>
+<li>
+<p>Click <strong>Choose Files</strong> and navigate to the saved rule to attach it.</p>
+</li>
+<li>
+<p><strong>Description</strong>: Enter a brief description of the rule.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Submit</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference-material">Appendix A: Reference material</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="plugin_windup_issue_icons_plugin-guide-offline">A.1. About MTA issue icons</h3>
+<div class="paragraph">
+<p>In the Issue Explorer and file editors, MTA issues use an icon to indicate their severity level and status. The following table describes the meaning of the various icons.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. MTA issue icons</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Icon</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="topics/images/error.png" alt="Mandatory">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue is mandatory to fix for a successful migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="topics/images/info.gif" alt="Optional">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue is optional to fix for migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="topics/images/warning.png" alt="Warning">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue may potentially be an issue during migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="topics/images/fixedIssue.gif" alt="Resolved">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue has been resolved.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="topics/images/stale_issue.gif" alt="Stale">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue is stale because the code marked as an issue has been modified since the last time that MTA was run on the project.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="topics/images/quickfix_error.png" alt="Mandatory with quick fix">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A quick fix is available for this issue, which is mandatory to fix for a successful migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="topics/images/quickfix_info.png" alt="Optional with quick fix">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A quick fix is available for this issue, which is optional to fix for migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="topics/images/quickfix_warning.png" alt="Warning with quick fix">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A quick fix is available for this issue, which may potentially be an issue during migration.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><br>
+<br>
+<br>
+<br></p>
+</div>
+<div class="paragraph">
+<p><em class="right">Revised on 2021-03-31 19:30:10 IDT</em></p>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

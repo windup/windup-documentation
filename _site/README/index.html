@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Migration Toolkit for Applications Product Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Migration Toolkit for Applications Product Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migration Toolkit for Applications Product Documentation" />
+<script type="application/ld+json">
+{"description":"Windup Documentation","headline":"Migration Toolkit for Applications Product Documentation","@type":"WebPage","url":"/windup-documentation/README/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/windup-documentation/assets/css/style.css?v=ed33081dbd0d127a996ec15fa7a7868b57cabf4f">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        
+      
+        <a href="https://github.com/windup/windup-documentation" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <div class="sect1">
+<h2 id="overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This repository holds the official documentation for Migration Toolkit for Applications (MTA), which is based on Windup. These guides are published on the <a href="https://access.redhat.com/documentation/en/migration_toolkit_for_applications/">Red Hat Customer Portal</a>.</p>
+</div>
+<div class="paragraph">
+<p>For developer-focused documentation, see the <a href="https://github.com/windup/windup/wiki">Windup wiki</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contribute">Contribute</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See the <a href="https://github.com/windup/windup-documentation/blob/master/CONTRIBUTING.adoc">MTA Documentation Contributors Guide</a> for information on how to contribute to this repository.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="report-a-documentation-bug">Report a Documentation Bug</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To log an issue against the MTA documentation, open a <a href="https://issues.jboss.org/projects/WINDUP/issues">Jira issue</a> with the <strong>Component</strong> field set to <strong>Documentation</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="repository-structure">Repository Structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This repository uses the following directory structure:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.
+├── CONTRIBUTING.adoc (Guide for how to contribute to this repository)
+├── README.adoc (This file)
+├── docs/ (Contains all the asciidoc topics and top level content spec)
+│   ├── GUIDE_NAME/
+│   │   ├── master.adoc (Base AsciiDoc file for this guide)
+│   │   ├── master-docinfo.xml (Metadata about this guide)
+│   │   ├── buildGuide.sh (Script to build this guide)
+│   │   ├── topics (Symbolic link to docs/topics/)
+│   ├── topics/
+│   │   │   ├── images/ (Contains all images)
+│   │   │   │   ├── *.png
+│   │   │   ├── templates/ (AsciiDoc templates to be used across guides)
+│   │   │   │   ├── document-attributes.adoc (Stores attributes used across guides)
+│   │   │   │   ├── revision-info.adoc (Revision timestamp to be added to all guides)
+│   │   │   ├── *.adoc (AsciiDoc files used across guides)
+├── legacy/ (Holds legacy scripts and files that are no longer used)
+└── scripts/ (Contains scripts to automate the processes used to create and build documentation)
+    └── buildGuides.sh (Builds all top-level guides that are in the docs/ folder)</pre>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

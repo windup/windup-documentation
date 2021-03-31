@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Validation report error messages | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Validation report error messages" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Validation report error messages" />
+<script type="application/ld+json">
+{"description":"Windup Documentation","headline":"Validation report error messages","@type":"WebPage","url":"/windup-documentation/docs/getting-started-guide/topics/validation-report-errors/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/windup-documentation/assets/css/style.css?v=ed33081dbd0d127a996ec15fa7a7868b57cabf4f">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        
+      
+        <a href="https://github.com/windup/windup-documentation" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <div class="paragraph">
+<p>Validation reports contain errors encountered while running the rules and tests.</p>
+</div>
+<div class="paragraph">
+<p>The following table contains error messages and how to resolve the errors.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Validation report error messages</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 35%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Error message</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No test file matching rule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This error occurs when a rule file exists without a corresponding test file.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a test file for the existing rule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test rule Ids &lt;RULE_NAME&gt; not found!</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This error is thrown when a rule exists without a corresponding ruletest.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a test for the existing rule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XML parse fail on file &lt;FILE_NAME&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The syntax in the XML file is invalid, and unable to be parsed successfully by the rule validator.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Correct the invalid syntax.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test file path from <code>&lt;testDataPath&gt;</code> tag has not been found. Expected path to test file is: &lt;RULE_DATA_PATH&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No files are found in the path defined in the <code>&lt;testDataPath&gt;</code> tag within the test rule.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create the path defined in the <code>&lt;testDataPath&gt;</code> tag, and ensure all necessary data files are located within this directory.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The rule with id="&lt;RULE_ID&gt;" has not been executed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The rule with the provided id has not been executed during this validation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ensure that a test data file exists that matches the conditions defined in the specified rule.</p></td>
+</tr>
+</tbody>
+</table>
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

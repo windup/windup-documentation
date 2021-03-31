@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"description":"Windup Documentation","headline":"Windup Documentation","@type":"WebPage","url":"/windup-documentation/docs/cli-guide/topics/exclude-files-and-packages/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/windup-documentation/assets/css/style.css?v=ed33081dbd0d127a996ec15fa7a7868b57cabf4f">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        
+      
+        <a href="https://github.com/windup/windup-documentation" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <div class="sect1">
+<h2 id="exclude_packages_{context}">Excluding packages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can exclude packages during decompilation and analysis to increase performance. References to these packages remain in the application&#8217;s source code but excluding them avoids the decompilation and analysis of proprietary classes.</p>
+</div>
+<div class="paragraph">
+<p>Any packages that match the defined value are excluded. For example, you can use <code>com.acme</code> to exclude both <code>com.acme.example</code> and <code>com.acme.roadrunner</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can exclude packages by either of the following methods:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Using the <code>--excludePackages</code> argument.</p>
+</li>
+<li>
+<p>Specifying the packages in a file contained within one of the ignored locations. Each package should be included on a separate line, and the file must end in <code>.package-ignore.txt</code>. For example, see <code>&lt;MTA_HOME&gt;/ignore/proprietary.package-ignore.txt</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="exclude_files_{context}">Excluding files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>{ProductShortName} can exclude specific files, such as included libraries or dependencies, during scanning and report generation. Excluded files are defined in a file with the <code>.mta-ignore.txt</code> or <code>.windup-ignore.txt</code> extension within one of the ignored locations.</p>
+</div>
+<div class="paragraph">
+<p>These files contain a regex string detailing the name to exclude, with one file listed per line. For example, you can exclude the library <code>ant.jar</code> and any Java source files beginning with <code>Example</code> with a file containing the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.*ant.jar
+.*Example.*\.java</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ignored_locations_{context}">Searching locations for exclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>{ProductShortName} searches the following locations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>~/.mta/ignore/</code></p>
+</li>
+<li>
+<p><code>~/.windup/ignore/</code></p>
+</li>
+<li>
+<p><code>&lt;MTA_HOME&gt;/ignore/</code></p>
+</li>
+<li>
+<p>Any files and folders specified by the <code>--userIgnorePath</code> argument</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each of these files must conform to the rules specified for excluding packages or files, depending on the type of content to be excluded.</p>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

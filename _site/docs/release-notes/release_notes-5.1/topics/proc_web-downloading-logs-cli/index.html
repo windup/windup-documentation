@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"description":"Windup Documentation","headline":"Windup Documentation","@type":"WebPage","url":"/windup-documentation/docs/release-notes/release_notes-5.1/topics/proc_web-downloading-logs-cli/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/windup-documentation/assets/css/style.css?v=ed33081dbd0d127a996ec15fa7a7868b57cabf4f">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        
+      
+        <a href="https://github.com/windup/windup-documentation" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <div class="paragraph">
+<p>You can download pod logs using the CLI.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Obtain the pod names:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc get pods -n &lt;project-name&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output resembles the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                       READY     STATUS      RESTARTS   AGE
+eap-builder-1-build        0/1       Completed   0          1d
+mta-postgresql-1-hfbdn     1/1       Running     0          1d
+mta-sso-1-build            0/1       Completed   0          1d
+mta-web-console-1-build    0/1       Completed   0          1d
+mta-web-console-1-vt7s5    1/1       Running     1          1d
+sso-1-wjl2n                1/1       Running     1          1d</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Use <code>oc logs</code> to examine the pod log:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc logs &lt;pod&gt;</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can redirect the output to obtain a copy of the current log:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc logs &lt;pod&gt; &gt; ./&lt;pod&gt;.log</pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

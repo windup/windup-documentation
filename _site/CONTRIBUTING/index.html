@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>MTA Documentation Contributors Guide | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="MTA Documentation Contributors Guide" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="MTA Documentation Contributors Guide" />
+<script type="application/ld+json">
+{"description":"Windup Documentation","headline":"MTA Documentation Contributors Guide","@type":"WebPage","url":"/windup-documentation/CONTRIBUTING/","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/windup-documentation/assets/css/style.css?v=ed33081dbd0d127a996ec15fa7a7868b57cabf4f">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        
+      
+        <a href="https://github.com/windup/windup-documentation" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Improvements to the MTA documentation are welcome.</p>
+</div>
+<div class="paragraph">
+<p>In order to contribute, you will need a GitHub account and to have <code>git</code> installed on your machine. You can also log a <a href="https://issues.jboss.org/projects/WINDUP/issues">Jira issue</a> to track the changes.</p>
+</div>
+<div class="paragraph">
+<p>Use the following steps to submit a change to the MTA documentation repository.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Fork the <a href="https://github.com/windup/windup-documentation">windup-documentation</a> GitHub repository.</p>
+<div class="paragraph">
+<p>Click the <strong>Fork</strong> button in the top right corner of the page.</p>
+</div>
+</li>
+<li>
+<p>Clone the forked repository locally.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ git clone git@github.com:YOUR_USERNAME/windup-documentation.git</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add the upstream repository.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>git remote add -f upstream git@github.com:windup/windup-documentation.git</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the latest changes.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ git fetch upstream</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Check out a topic branch.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ git checkout -b BRANCH_NAME upstream/master</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Make the desired edits.</p>
+<div class="paragraph">
+<p>The documentation is written in <a href="http://asciidoc.org/">AsciiDoc</a>. Review the <a href="#asciidoc_guidelines">AsciiDoc Guidelines and Tips</a> section of this guide before making changes.</p>
+</div>
+</li>
+<li>
+<p>Build the guides to verify your changes.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Navigate to the appropriate guide&#8217;s directory and issue the following command.  Note that you must have <a href="http://asciidoctor.org/">Asciidoctor</a> installed.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ cd docs/cli-guide/
+$ asciidoctor -t -dbook -a toc -o html/cli-guide.html master.adoc</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>View the generated HTML file in a browser.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Add each new or updated file to git.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ git add FILE_NAME.adoc</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Commit the changes locally.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ git commit -m "My commit message."</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Push the changes to your forked repository.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ git push origin HEAD</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Open a pull request to merge your changes to the master branch.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Navigate to your forked repository in a browser:  <a href="https://github.com/YOUR_USERNAME/windup-documentation" class="bare">https://github.com/YOUR_USERNAME/windup-documentation</a>.</p>
+</li>
+<li>
+<p>Open a new pull request. Be sure to review the diff before submitting.</p>
+</li>
+<li>
+<p>A member of the MTA documentation team will merge or provide feedback on your request.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="building-the-guides">Building the Guides</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Navigate to the appropriate guide&#8217;s directory and issue the following command.  Note that you must have <a href="http://asciidoctor.org/">Asciidoctor</a> installed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ cd docs/cli-guide/
+$ asciidoctor -t -dbook -a toc -o html/cli-guide.html master.adoc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>View the generated HTML file in a browser.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="publishing-the-guides">Publishing the Guides</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The MTA guides are published on the <a href="https://access.redhat.com/documentation/en/migration_toolkit_for_applications/">Red Hat Customer Portal</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="asciidoc_guidelines">AsciiDoc Guidelines and Tips</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="asciidoc-editors">AsciiDoc Editors</h3>
+<div class="paragraph">
+<p>The following editors make editing and reviewing AsciiDoc files easy.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://atom.io/">Atom</a> with the <code>asciidoc-preview</code> and <code>language-asciidoc</code> packages.</p>
+</li>
+<li>
+<p><a href="http://asciidocfx.com/">AsciidocFX</a></p>
+</li>
+<li>
+<p>Any basic editor, such as gedit, with the Chrome <a href="https://chrome.google.com/webstore/detail/asciidoctorjs-live-previe/iaalpfgpbocpdfblpnhhgllgbdbchmia?hl=en">Asciidoctor.js</a> plugin</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="asciidoc-syntax-basics">AsciiDoc Syntax Basics</h3>
+<div class="paragraph">
+<p>For a comprehensive reference of AsciiDoc syntax, see the <a href="http://asciidoc.org/userguide.html">AsciiDoc User Guide</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Headings</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>= Heading Level 1
+== Heading Level 2
+=== Heading Level 3</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Bold text</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code> *Bold text*</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Italic text</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>_Italic text_</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Monospace text</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>`Monospace text`</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Bullets</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>* Item one
+* Item two</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Numbered list</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>. Step one
+. Step two</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Code block</p>
+<div class="listingblock">
+<div class="content">
+<pre>----
+System.out.println("Hello");
+----</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating-a-new-asciidoc-file">Creating a New AsciiDoc File</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Name the file using only letters, numbers, and dashes, and with an extension of <code>.adoc</code>. For example, <code>my-topic.adoc</code>.</p>
+</li>
+<li>
+<p>Add an anchor at the top of the file, using underscores. For example, <code>[[my_anchor]]</code>.</p>
+</li>
+<li>
+<p>Start each topic with a level one heading. For example, <code>= My Heading</code>.</p>
+</li>
+<li>
+<p>Add this new topic to the <code>master.adoc</code> file using the <code>include::</code> syntax.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pass in a <code>leveloffset=+N</code> to adjust the heading levels in the included file to be the correct level.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example master.adoc File</div>
+<div class="content">
+<pre class="highlight nowrap"><code>= My Guide Title
+
+include::topics/my-topic.adoc[leveloffset=+1]</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example my-topic.adoc File</div>
+<div class="content">
+<pre class="highlight nowrap"><code>[[my_anchor]]
+= My Heading
+
+Text here.
+
+== My Subsection
+
+Text here.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="linking-to-other-files">Linking to Other Files</h3>
+<div class="paragraph">
+<p>Use <code>xref</code> to link to a section within the same guide. You must define an explicit anchor in order to link.</p>
+</div>
+<div class="listingblock">
+<div class="title">Link to a Section in the Same Guide</div>
+<div class="content">
+<pre class="highlight nowrap"><code>For more information, see xref:section_anchor[This Section].
+...
+
+[[section_anchor]]
+== This Section
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use <code>link</code> to reference an external URL.</p>
+</div>
+<div class="listingblock">
+<div class="title">Link to an External Link</div>
+<div class="content">
+<pre class="highlight nowrap"><code>Navigate to the link:https://github.com/windup/windup-documentation[Windup GitHub repository].</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-asciidoc-attributes">Using AsciiDoc Attributes</h3>
+<div class="paragraph">
+<p>The MTA documentation defines several AsciiDoc attributes in the <code>docs/templates/document-attributes.adoc</code> file. This allows you to define the value one place and then used it repeatedly throughout the guides. An example usage of this is defining the MTA version.</p>
+</div>
+<div class="sect3">
+<h4 id="defining-an-attribute">Defining an Attribute</h4>
+<div class="paragraph">
+<p>Define an attribute in the <code>document-attributes.adoc</code> file using the following syntax.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>:ProductVersion: 5.0.0.Final</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="using-an-attribute">Using an Attribute</h4>
+<div class="paragraph">
+<p>An attribute can then be referenced in an AsciiDoc file using the following syntax.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>The MTA version is {ProductVersion}.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will be resolved as "The MTA version is 5.0.0.Final".</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
