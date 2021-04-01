@@ -17,14 +17,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ 'assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
     <header class="page-header">
-          <a href="{{ site.baseurl }}">Windup documentation</a><br>
+          <p><a href="{{ site.baseurl }}">Windup documentation</a></p>
       {% if site.github.is_project_page %}
-        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
+        <p><a href="{{ site.github.repository_url }}">View on GitHub</a></p>
       {% endif %}
       {% if site.show_downloads %}
         <a href="{{ site.home_url }}" class="btn">Home</a>
