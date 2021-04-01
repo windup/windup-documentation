@@ -1,6 +1,6 @@
 # Site settings
 show_downloads: false
-title: "Windup Documentation"
+title: Windup Documentation
 permalink: pretty
 repository: windup/windup-documentation
 baseurl: /windup-documentation
@@ -38,9 +38,11 @@ asciidoctor:
   safe: unsafe
 
 exclude:
-  - README.md
+  - README.adoc
   - .history
   - CONTRIBUTING.adoc
+  - Gemfile
+  - Gemfile.lock
 
 tag_page_layout: tag
 tag_page_dir: /tag/
