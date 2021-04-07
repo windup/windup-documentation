@@ -57,7 +57,7 @@ The rules identify application dependencies for which there are equivalent Quark
 
 .Rules for migrating to the latest version of Quarkus
 
-The current release contains rules for migrating to the latest version of Quarkus. The target of these rules is `quarkus<version>`, for example, `quarkus1:12` for Quarkus 1.12.x.
+The current release contains rules for migrating to the latest version of Quarkus. The target of these rules is `quarkus<version>`, for example, `quarkus1:13` for Quarkus 1.13.x.
 
 These rules ensure that the applications are migrated to a target that has the latest features, resolved issues, and patches.
 
