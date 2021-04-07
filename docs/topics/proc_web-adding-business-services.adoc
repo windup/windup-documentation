@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+[id="proc_web-adding-business-services_{context}"]
+= Creating business services
+
+[role="_abstract"]
+You can create _business services_ in the *Controls* screen of the {ProductShortName}. Each business service is "owned" by a stakeholder.
+
+.Procedure
+
+. In the {WebName}, click *Controls*.
+. Click *Business services*.
+. Click *Create new*.
+. Enter the *Name* of the business service.
+. Optional: Enter a *Description* of business service
+. Optional: Select one stakeholder as *Owner*.
+. Click *Create*.

@@ -69,7 +69,7 @@ include::topics/proc_reporting-issues.adoc[leveloffset=+4]
 
 == Using the {WebName} to analyze applications
 
-You can create a project in the web console to analyze your applications.
+You can create a project in the {WebName} to analyze your applications.
 
 Each project groups the applications for a specific analysis, which you can configure with custom rules and labels.
 
@@ -95,6 +95,19 @@ include::topics/web-adding-global-custom-rules.adoc[leveloffset=+2]
 
 // Using Custom Labels
 include::topics/web-adding-global-custom-labels.adoc[leveloffset=+2]
+
+== Working with Controls
+
+You can create stakeholders, stakeholder groups, businesses services, and tags in the Controls tab of the {WebName}.
+
+//Creating Stakeholders
+include::topics/web-adding-stakeholders.adoc[leveloffset=+2]
+
+//Creating Stakeholder Groups
+include::topics/web-adding-stakeholder-groups.adoc[leveloffset=+2]
+
+//Creating Business Services
+include::topics/web-adding-business-services.adoc[leveloffset=+2]
 
 // Require Authentication for {ProductWebName}
 include::topics/web-require-auth.adoc[leveloffset=+1]

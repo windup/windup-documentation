@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+[id="proc_web-adding-stakeholder-groups_{context}"]
+= Creating stakeholder groups
+
+[role="_abstract"]
+You can create _stakeholder groups_ in the *Controls* screen of the {ProductShortName}. 
+
+.Procedure
+
+. In the {WebName}, click *Controls*.
+. Click *Stakeholder groups*.
+. Click *Create new*.
+. Enter the *Name* of the stakeholder group.
+. Optional: Enter a *Description* of the stakeholder group.
+. Optional: Select one or more *Members*.
+. Click *Create*.

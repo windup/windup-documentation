@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+[id="proc_web-adding-stakeholders_{context}"]
+= Creating stakeholders
+
+[role="_abstract"]
+You can create _stakeholders_ in the *Controls* screen of the {ProductShortName}. You assign one stakeholder as the owner of each business service. You can also create stakeholder groups made up of the stakeholders you create.
+
+.Procedure
+
+. In the {WebName}, click *Controls*.
+. Click *Stakeholders*.
+. Click *Create new*.
+. Enter the stakeholder's *Email* and *Display name*.
+. Optional: Select a *Job function* from the list or enter a new one.
+. Optional: Select one or more *Stakeholder groups*.
+. Click *Create*.
