@@ -5,7 +5,7 @@ This repository contains the files for Windup documentation.
 
 [Windup](https://github.com/windup/windup) is an automated application migration and assessment tool.
 
-For developer-focused documentation, see the [Windup wiki](https://github.com/windup/windup/windup/wiki).
+For developer-focused documentation, see the [Windup wiki](https://github.com/windup/windup/wiki).
 
 ## Contributing to Windup documentation
 
