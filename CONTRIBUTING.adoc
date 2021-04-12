@@ -1,10 +1,10 @@
-= MTA Documentation Contributors Guide
+= Contributors Guide
 
-Improvements to the MTA documentation are welcome.
+Improvements to Windup documentation are welcome.
 
 In order to contribute, you will need a GitHub account and to have `git` installed on your machine. You can also log a link:https://issues.jboss.org/projects/WINDUP/issues[Jira issue] to track the changes.
 
-Use the following steps to submit a change to the MTA documentation repository.
+Use the following steps to submit a change to the Windup documentation repository.
 
 . Fork the link:https://github.com/windup/windup-documentation[windup-documentation] GitHub repository.
 +
@@ -66,7 +66,7 @@ $ git push origin HEAD
 . Open a pull request to merge your changes to the master branch.
 .. Navigate to your forked repository in a browser:  https://github.com/YOUR_USERNAME/windup-documentation.
 .. Open a new pull request. Be sure to review the diff before submitting.
-.. A member of the MTA documentation team will merge or provide feedback on your request.
+.. A member of the Windup documentation team will merge or provide feedback on your request.
 
 == Building the Guides
 
@@ -82,7 +82,7 @@ View the generated HTML file in a browser.
 
 == Publishing the Guides
 
-The MTA guides are published on the link:https://access.redhat.com/documentation/en/migration_toolkit_for_applications/[Red Hat Customer Portal].
+The Windup guides are published downstream on the link:https://access.redhat.com/documentation/en/migration_toolkit_for_applications/[Red Hat Customer Portal].
 
 [[asciidoc_guidelines]]
 == AsciiDoc Guidelines and Tips
@@ -194,7 +194,6 @@ For more information, see xref:section_anchor[This Section].
 ...
 ----
 
-
 Use `link` to reference an external URL.
 
 .Link to an External Link
@@ -205,7 +204,7 @@ Navigate to the link:https://github.com/windup/windup-documentation[Windup GitHu
 
 === Using AsciiDoc Attributes
 
-The MTA documentation defines several AsciiDoc attributes in the `docs/templates/document-attributes.adoc` file. This allows you to define the value one place and then used it repeatedly throughout the guides. An example usage of this is defining the MTA version.
+The Windup documentation defines several AsciiDoc attributes in the `docs/templates/document-attributes.adoc` file. This allows you to define the value one place and then used it repeatedly throughout the guides. An example usage of this is defining the Windup version.
 
 ==== Defining an Attribute
 
@@ -222,7 +221,7 @@ An attribute can then be referenced in an AsciiDoc file using the following synt
 
 [source,options="nowrap"]
 ----
-The MTA version is {ProductVersion}.
+The Windup version is {ProductVersion}.
 ----
 
-This will be resolved as "The MTA version is 5.0.0.Final".
+This will be resolved as "The Windup version is 5.0.0.Final".
