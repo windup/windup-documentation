@@ -65,7 +65,10 @@ include::topics/web-openshift-no-route-to-host-error.adoc[leveloffset=+4]
 include::topics/web-openshift-insufficient-resources.adoc[leveloffset=+4]
 
 // Reporting issues
-include::topics/proc_reporting-issues.adoc[leveloffset=+4]
+
+===== Reporting issues
+
+{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
 
 == Using the {WebName} to analyze applications
 

@@ -62,7 +62,10 @@ include::topics/get-involved.adoc[leveloffset=+3]
 include::topics/important-links.adoc[leveloffset=+3]
 
 // Report Issues with {ProductShortName}
-include::topics/report-issues.adoc[leveloffset=+3]
+
+==== Reporting issues
+
+{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
 
 // **********************************
 // * Appendix: Revision Information *
