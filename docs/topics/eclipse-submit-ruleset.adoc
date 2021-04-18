@@ -1,7 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/plugin-guide/master.adoc
 
-[id='submit_ruleset_{context}']
+[id='eclipse-submit-ruleset_{context}']
 = Submitting a custom ruleset
 
 You can submit your custom ruleset for inclusion in the official {ProductShortName} rule repository. This allows your custom rules to be reviewed and included in subsequent releases of {ProductShortName}, enhancing the applications and server configurations that {ProductShortName} analyzes.

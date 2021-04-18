@@ -1,6 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/plugin-guide/master.adoc
-[id='review_issues_{context}']
+
+[id='plugin-review-issues_{context}']
 = Reviewing {ProductShortName} issues
 
 Use the Issue Explorer to review migration issues identified by {ProductShortName}. Different icons indicate the issue's severity and state.

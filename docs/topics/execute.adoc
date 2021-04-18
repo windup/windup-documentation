@@ -1,4 +1,5 @@
 // Module included in the following assemblies:
+//
 // * docs/cli-guide/master.adoc
 
 [id='execute_{context}']
@@ -67,7 +68,7 @@ $ <MTA_HOME>/bin/mta-cli -Dwindup.decompiler=procyon --input <INPUT_ARCHIVE_OR_D
 ----
 
 [discrete]
-[id='cli_bash_completion_{context}']
+[id='cli-bash-completion_{context}']
 == About {ProductShortName} {CLINameTitle} bash completion
 
 The {ProductShortName} {CLIName} provides an option to enable bash completion for Linux systems, allowing the {ProductShortName} command-line arguments to be auto completed by pressing the Tab key when entering the commands. For instance, when bash completion is enabled, entering the following displays a list of available arguments.
@@ -78,7 +79,7 @@ $ <MTA_HOME>/bin/mta-cli [TAB]
 ----
 
 [discrete]
-[id='bash_completion_temporary_{context}']
+[id='bash-completion-temporary_{context}']
 === Enabling bash completion
 
 To enable bash completion for the current shell, execute the following command. After the prompt returns, follow the steps for using the {CLIName}.
@@ -89,7 +90,7 @@ $ source <MTA_HOME>/bash-completion/mta-cli
 ----
 
 [discrete]
-[id='bash_completion_persistent_{context}']
+[id='bash-completion-persistent_{context}']
 === Enabling persistent bash completion
 
 The following commands allow bash completion to persist across restarts:
@@ -109,6 +110,7 @@ source <MTA_HOME>/bash-completion/mta-cli
 ----
 
 [discrete]
+[id='accessing-help_{context}']
 == Accessing {ProductShortName} help
 
 To see the complete list of available arguments for the `mta-cli` command, open a terminal, navigate to the `<MTA_HOME>` directory, and execute the following command:

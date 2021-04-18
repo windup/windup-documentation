@@ -4,12 +4,13 @@
 // * docs/web-console-guide/master.adoc
 
 ifdef::cli-guide[]
-[id="installing-cli_{context}"]
+[id="installing-web-console-or-cli-tool_{context}"]
 = Installing the {CLINameTitle}
 
 You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems.
 endif::[]
 ifdef::web-console-guide[]
+
 [id="installing-web-console-linux-win-mac_{context}"]
 = Installing the {WebName} on Linux, Windows, or macOS
 
