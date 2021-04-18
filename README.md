@@ -16,7 +16,7 @@ See the [Contributors Guide](CONTRIBUTING.adoc) for details.
 
 ## Reporting a documentation bug
 
-To report a Windup documentation issue, submit a [Jira issue](https://issues.redhat.com/projects/WINDUP) with the *Component* field set to *Documentation*.
+To report a Windup documentation issue, submit a Jira issue on the [Windup project page]]{JiraWindupURL} with the *Component* field set to *Documentation*.
 
 ## Repository Structure
 
