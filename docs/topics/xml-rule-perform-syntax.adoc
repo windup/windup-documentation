@@ -1,6 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/rules-development-guide/master.adoc
-[id='perform_action_syntax_{context}']
+
+[id='xml-rule-perform-syntax_{context}']
 = `<perform>` syntax
 
 Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.

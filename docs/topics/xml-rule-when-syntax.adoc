@@ -1,6 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/rules-development-guide/master.adoc
-[id='when_syntax_{context}']
+
+[id='xml-rule-when-syntax_{context}']
 = `<when>` syntax
 
 Conditions allowed in the `when` portion of a rule must extend http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperation] and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.

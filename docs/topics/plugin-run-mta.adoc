@@ -1,6 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/plugin-guide/master.adoc
-[id='execute_mta_{context}']
+
+[id='plugin-run-mta_{context}']
 = Running {ProductShortName}
 
 Once a run configuration has been created, you can run {ProductShortName} using that configuration in one of the following ways:

@@ -1,6 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/web-console-guide/master.adoc
-[id='add_user_{context}']
+
+[id='web-add-user_{context}']
 = Adding a {WebName} user
 
 When authentication is enabled for the {WebName}, administrators will need to add users so that they can access the {WebName}.
@@ -9,7 +11,7 @@ Follow these steps to add a new {WebName} user.
 
 . Make sure that the {WebName} is running.
 . Open the Red Hat Single Sign-On administration console.
-* For a ZIP installation:
+* For a `.zip` installation:
 .. Navigate to `\http://localhost:8080/auth/` in a browser.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 * For an OpenShift installation:

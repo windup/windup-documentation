@@ -1,6 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/cli-guide/master.adoc
-[id='optimize_performance_{context}']
+
+[id='optimize-performance_{context}']
 = Optimizing {ProductShortName} performance
 
 {ProductShortName} performance depends on a number of factors, including hardware configuration, the number and types of files in the application, the size and number of applications to be evaluated, and whether the application contains source or compiled code. For example, a file that is larger than 10 MB may need a lot of time to process.

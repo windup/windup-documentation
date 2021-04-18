@@ -18,10 +18,10 @@ include::topics/making-open-source-more-inclusive.adoc[]
 // About the Rules Development Guide
 include::topics/rules-guide-intro.adoc[leveloffset=+2]
 
-// Use of RHAMT_HOME in this Guide
+// Use of <MTA_HOME> in this Guide
 include::topics/about-home-var.adoc[leveloffset=+3]
 
-// RHAMT Rules
+// MTA Rules
 include::topics/about-rules.adoc[leveloffset=+2]
 
 // Getting Started
@@ -53,7 +53,7 @@ include::topics/xml-rule-perform-syntax.adoc[leveloffset=+3]
 include::topics/where-syntax.adoc[leveloffset=+3]
 
 // Add the Rule to {ProductName}
-include::topics/add-rule-to-rhamt.adoc[leveloffset=+2]
+include::topics/add-rule-to-mta.adoc[leveloffset=+2]
 
 // Testing XML Rules
 include::topics/testing-rules.adoc[leveloffset=+1]
@@ -77,7 +77,7 @@ include::topics/validation-report-errors.adoc[leveloffset=+3]
 include::topics/overriding-rules.adoc[leveloffset=+1]
 
 // Using Custom Rule Categories
-include::topics/rules-categories.adoc[leveloffset=+1]
+include::topics/rule-categories.adoc[leveloffset=+1]
 
 [appendix]
 == Reference material
@@ -89,7 +89,7 @@ For more information on categorizing tasks, see xref:rule_categories_rules-devel
 
 === Additional resources
 
-// Review the Existing RHAMT XML Rules
+// Review the Existing MTA XML Rules
 include::topics/review-existing-rules.adoc[leveloffset=+3]
 
 // Fork and Clone the Ruleset GitHub Project

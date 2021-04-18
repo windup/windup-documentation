@@ -36,7 +36,7 @@ include::topics/installing-plugin.adoc[leveloffset=+1]
 :context: plugin-guide
 :plugin-guide:
 // Access the {ProductShortName} IDE Tools
-include::topics/plugin-access-windup-tools.adoc[leveloffset=+1]
+include::topics/plugin-access-mta-tools.adoc[leveloffset=+1]
 
 // Windup IDE Plugin Components
 include::topics/plugin-components.adoc[leveloffset=+2]
@@ -48,7 +48,7 @@ include::topics/plugin-identify-resolve-issues.adoc[leveloffset=+1]
 include::topics/plugin-create-config.adoc[leveloffset=+2]
 
 // Execute Windup
-include::topics/plugin-run-windup.adoc[leveloffset=+2]
+include::topics/plugin-run-mta.adoc[leveloffset=+2]
 
 // Review Windup Issues
 include::topics/plugin-review-issues.adoc[leveloffset=+2]
