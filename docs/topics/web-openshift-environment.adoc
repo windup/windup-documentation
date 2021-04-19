@@ -1,6 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/web-console-guide/master.adoc
-[id='understanding_web_console_openshift_image_{context}']
+
+[id='web-openshift-environment_{context}']
 = Understanding the {WebName} image
 
 Red Hat offers containerized images for {ProductShortName} that are designed for use with OpenShift Container Platform. Using these images developers can quickly and easily manage migration projects and analyze applications.

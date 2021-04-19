@@ -1,7 +1,8 @@
-
 // Module included in the following assemblies:
+//
 // * docs/web-console-guide/master.adoc
-[id='web_adding_custom_rules_{context}']
+
+[id='web-adding-custom-rules_{context}']
 = Adding custom rules
 
 You can add custom rules to use in each project. When you add a rule, it is disabled by default. If you no longer need a rule, you can delete it.

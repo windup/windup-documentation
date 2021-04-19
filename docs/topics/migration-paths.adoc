@@ -1,6 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/getting-started-guide/master.adoc
-[id='migration_paths_{context}']
+
+[id='migration-paths_{context}']
 = Supported migration paths
 
 The {ProductName} ({ProductShortName}) supports migrations from third-party enterprise application servers, such as Oracle WebLogic Server, to JBoss Enterprise Application Platform (JBoss EAP) and upgrades to the latest release of JBoss EAP.

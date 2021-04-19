@@ -1,6 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/web-console-guide/master.adoc
-[id='updating_analysis_{context}']
+
+[id='web-updating-an-analysis_{context}']
 = Updating an analysis configuration
 
 You can update an analysis configuration, for example, with a different transformation target, advanced option, or a custom rule. Then you can run the updated analysis in your project.

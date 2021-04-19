@@ -1,6 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/rules-development-guide/master.adoc
-[id='validation_report_errors_{context}']
+
+[id='validation-report-errors_{context}']
 = Validation report error messages
 
 Validation reports contain errors encountered while running the rules and tests.

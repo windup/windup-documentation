@@ -1,6 +1,8 @@
 // Module included in the following assemblies:
+//
 // * docs/web-console-guide/master.adoc
-[id='change_admin_user_{context}']
+
+[id='web-change-admin-user_{context}']
 = Changing the administrative user's credentials
 
 When you enable authentication for the {WebName}, a default administrative user is provided with the username `admin` and password `password`. You should change this password so that only those that are authorized can make further changes to {WebName} users.
@@ -9,7 +11,7 @@ Follow these steps to change the default administrative user's password.
 
 . Make sure that the {WebName} is running.
 . Open the Red Hat Single Sign-On administration console.
-* For a ZIP installation:
+* For a `.zip` installation:
 .. Navigate to `\http://localhost:8080/auth/` in a browser.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 * For an OpenShift installation:

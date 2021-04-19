@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-[id='about_home_var_{context}']
+[id='about-home-var_{context}']
 = Use of `<MTA_HOME>` in this guide
 
 This guide uses the `<MTA_HOME>` replaceable variable to denote the path to your {ProductShortName} installation. The installation directory is the `{ProductDistribution}` directory where you extracted the {ProductShortName} `.zip` file.
