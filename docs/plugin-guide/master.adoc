@@ -33,6 +33,7 @@ include::topics/installing-plugin.adoc[leveloffset=+1]
 include::topics/installing-plugin.adoc[leveloffset=+1]
 :!disconnected:
 
+:context: plugin-guide
 :plugin-guide:
 // Access the {ProductShortName} IDE Tools
 include::topics/plugin-access-windup-tools.adoc[leveloffset=+1]
@@ -83,5 +84,4 @@ include::topics/plugin-icon-legend.adoc[leveloffset=+2]
 // * Appendix: Revision Information *
 // **********************************
 include::topics/templates/revision-info.adoc[]
-
 :!plugin-guide:
