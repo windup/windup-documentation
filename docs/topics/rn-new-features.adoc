@@ -64,3 +64,9 @@ The current release contains rules for migrating to the latest version of Quarku
 These rules ensure that the applications are migrated to a target that has the latest features, resolved issues, and patches.
 
 These rules will be updated for future Quarkus releases.
+
+.Rules for migrating from Thorntail to JBoss EAP XP 2
+
+The current release contains rules for migrating from Thorntail to JBoss EAP XP 2. The target of these rules is `eapxp:2`.
+
+For more information about this migration path, see the link:https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html/red_hat_jboss_eap_xp_2.0.0_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default[Red Hat JBoss EAP XP 2.0.0 Migration Guide].
