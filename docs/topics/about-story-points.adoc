@@ -59,7 +59,3 @@ Optional:: If the migration task is not completed, the application should work, 
 Potential:: The task should be examined during the migration process, but there is not enough detailed information to determine if the task is mandatory for the migration to succeed. An example of this would be migrating a third-party proprietary type where there is no directly compatible type.
 
 Information:: The task is included to inform you of the existence of certain files. These may need to be examined or modified as part of the modernization effort, but changes are typically not required. An example of this would be the presence of a logging dependency or a Maven `pom.xml`.
-
-ifndef::rules-development-guide[]
-For more information on categorizing tasks, see link:{ProductDocRulesGuideURL}#rule_categories_rules-development-guide[Using Custom Rule Categories] in the _{RulesDevBookName}_.
-endif::rules-development-guide[]
