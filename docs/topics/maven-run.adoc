@@ -7,6 +7,13 @@
 
 The {MavenName} is executed by including a reference to the plugin inside your application's `pom.xml` file. When the application is built, the {MavenName} is executed and generates the reports for analysis.
 
+.Prerequisites
+
+* OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, _or_ Oracle JDK 11
+* 8 GB RAM
+* Maven 3.2.5 or later
+* If you are installing on macOS, the value of `maxproc` must be `2048` or greater.
+
 .Procedure
 
 . Add the following `<plugin>` to your application's `pom.xml` file:

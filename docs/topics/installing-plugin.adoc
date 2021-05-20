@@ -1,14 +1,7 @@
 // Module included in the following assemblies:
 //
-// * docs/maven-guide/master.adoc
 // * docs/plugin-guide/master.adoc
 
-ifdef::maven-guide[]
-[id="installing-plugin_{context}"]
-= Installing the {MavenNameTitle}
-
-You can install the {MavenName} in your local Maven repository.
-endif::[]
 ifdef::plugin-guide[]
 [id="installing-ide-plugin-connected-environment_{context}"]
 = Installing the {PluginName} in a connected environment
@@ -29,11 +22,6 @@ endif::[]
 
 .Prerequisites
 
-ifdef::maven-guide[]
-* OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, _or_ Oracle JDK 11
-* 8 GB RAM
-* Maven 3.2.5 or later
-endif::[]
 ifdef::plugin-guide,disconnected[]
 * link:{CodeReadyStudioDownloadPageURL}[Red Hat CodeReady Studio] _or_ link:https://www.eclipse.org/downloads/packages/release/2020-09/r/eclipse-ide-enterprise-java-developers[Eclipse IDE for Java Enterprise Developers 2020-09 R]
 * JBoss Tools
@@ -44,27 +32,6 @@ endif::[]
 
 .Procedure
 
-ifdef::maven-guide[]
-. Clone the {MavenName} Github repository:
-+
-----
-$ git clone https://github.com/windup/windup-maven-plugin.git
-----
-
-. Navigate to the `windup-maven-plugin` directory.
-+
-----
-$ cd windup-maven-plugin
-----
-
-. Build the project:
-+
-----
-$ mvn clean install
-----
-+
-The `windup-maven-plugin` jar is installed in your local Maven repository.
-endif::[]
 ifdef::disconnected[]
 . Navigate to the link:{MTADownloadPageURL}[Migration Toolkit for Applications download site] and download the `IDE Plugin Repository` file.
 endif::[]
