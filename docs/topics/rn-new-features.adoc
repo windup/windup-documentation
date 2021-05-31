@@ -7,66 +7,21 @@
 
 This section describes the new features of the {ProductName} ({ProductShortName}) {ProductVersion}.
 
-.Updated {WebName} interface
+.MTA plugin for IntelliJ IDEA
 
-The current release contains an updated {WebName} interface with improved project management features and additional transformation targets.
+The current release supports the {ProductName} plugin for IntelliJ IDEA. The plugin provides assistance directly in IntelliJ IDEA for developers making changes for a migration or modernization effort.
 
-.{ProductName} Operator for {ocp-short}
+The plugin is available through the link:https://plugins.jetbrains.com[IntelliJ marketplace].
 
-The current release contains the {ProductName} Community Operator for installing the {WebName} on {ocp-short} 4.6 and later versions.
+.Rules for migrating from JBoss EAP 7.3 to 7.4
 
-.Installation in multiple namespaces on {ocp-short}
+The current release contains rules for migrating from JBoss EAP 7.3 to 7.4. The target of these rules is `eap:7`.
 
-The current release can be installed in multiple namespaces on {ocp-short}. Previously, the {WebName} could be installed in only one namespace.
+.Rules for migrating from JBoss EAP XP 2 to 3
 
-.Additional rules for migrating from Spring Boot to Quarkus
+The current release contains rules for migrating from JBoss EAP XP 2 to 3 The target of these rules is `eapxp:3`.
 
-The current release contains additional rules for migrating from Spring Boot to Quarkus. The target of these rules is `quarkus`.
-
-The new rules identify Spring Boot APIs that are implemented in Quarkus Spring extensions, where Spring Boot dependencies can be replaced by equivalent Quarkus extensions. The rules also report Spring artifacts that do not have Quarkus equivalents.
-
-The rules identify application dependencies for which there are equivalent Quarkus extensions, including the following:
-
-* Agroal
-* Amazon DynamoDB
-* Amazon IAM
-* Amazon S3
-* Amazon Simple Email Service
-* Amazon Simple Notification Service
-* Amazon Simple Queue Service
-* AWS Config
-* AWS Key Management Service
-* AWS Lambda with HTTP APIs
-* AWS Lambda with AWS X-Ray
-* Apache Avro
-* Apache Kafka
-* Artemis
-* Hibernate
-* Java Database Connectivity rules for the following databases:
-** Apache Derby
-** DB2
-** MariaDB
-** MySQL
-** PostgreSQL
-* JSONB
-* JSONP
-* Keycloak
-* Kubernetes
-* Narayana
-* OpenShift Container Platform
-* RESTeasy
-* WildFly Elytron
-
-.Rules for migrating to the latest version of Quarkus
-
-The current release contains rules for migrating to the latest version of Quarkus. The target of these rules is `quarkus<version>`, for example, `quarkus1:13` for Quarkus 1.13.x.
-
-These rules ensure that the applications are migrated to a target that has the latest features, resolved issues, and patches.
-
-These rules will be updated for future Quarkus releases.
-
-.Rules for migrating from Thorntail to JBoss EAP XP 2
-
-The current release contains rules for migrating from Thorntail to JBoss EAP XP 2. The target of these rules is `eapxp:2`.
-
-For more information about this migration path, see the link:https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html/red_hat_jboss_eap_xp_2.0.0_migration_guide/thorntail-application-maven-project-migration_default#migrating-a-thorntail-application-maven-project-into-eap-xp_default[Red Hat JBoss EAP XP 2.0.0 Migration Guide].
+[NOTE]
+====
+Rules for migrating from Thorntail to JBoss EAP XP 2 have been included since version 5.1.4. The target of these rules is `eapxp:2`.
+====
