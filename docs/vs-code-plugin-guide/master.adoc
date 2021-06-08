@@ -1,0 +1,81 @@
+:toc:
+:toclevels: 4
+:numbered:
+
+include::topics/templates/document-attributes.adoc[]
+
+:imagesdir: topics/images
+:context: vscode-plugin-guide
+:vscode-plugin-guide:
+
+= {VscodePluginBookName}
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+== Introduction
+
+// All these sections need to be updated
+// About the IDE Plugin Guide
+include::topics/plugin-intro.adoc[leveloffset=+2]
+
+// About {ProductName}
+include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+
+// About the VS Code plugin
+// include::topics/about-plugin.adoc[leveloffset=+2]
+
+// Install the Plugin
+// include::topics/installing-plugin.adoc[leveloffset=+1]
+
+// Access the {ProductShortName} IDE Tools
+// include::topics/plugin-access-mta-tools.adoc[leveloffset=+1]
+//
+// // Windup IDE Plugin Components
+// include::topics/plugin-components.adoc[leveloffset=+2]
+//
+// // Identify and Resolve Migration Issues with Windup
+// include::topics/plugin-identify-resolve-issues.adoc[leveloffset=+1]
+//
+// // Create a Windup Run Configuration
+// include::topics/plugin-create-config.adoc[leveloffset=+2]
+//
+// // Execute Windup
+// include::topics/plugin-run-mta.adoc[leveloffset=+2]
+//
+// // Review Windup Issues
+// include::topics/plugin-review-issues.adoc[leveloffset=+2]
+//
+// // Resolve Windup Issues
+// include::topics/plugin-resolve-issues.adoc[leveloffset=+2]
+
+// TODO: Uncomment when uninstalling works and this is ready
+// include::topics/plugin-uninstall.adoc[leveloffset=+1]
+
+// Add Custom Rules
+// include::topics/plugin-use-custom-rules.adoc[leveloffset=+1]
+//
+// // Browse Rules
+// include::topics/plugin-view-rules.adoc[leveloffset=+2]
+//
+// // Import a Custom Ruleset
+// include::topics/plugin-import-custom-ruleset.adoc[leveloffset=+2]
+//
+// // Create a Custom Ruleset
+// include::topics/plugin-create-custom-ruleset.adoc[leveloffset=+2]
+//
+// // Submit a Custom Ruleset
+// include::topics/eclipse-submit-ruleset.adoc[leveloffset=+2]
+
+// Commenting out because the icons can be moved to a different place.
+// [appendix]
+// == Reference material
+//
+// include::topics/plugin-icon-legend.adoc[leveloffset=+2]
+
+
+// **********************************
+// * Appendix: Revision Information *
+// **********************************
+include::topics/templates/revision-info.adoc[]
+:!plugin-guide:
