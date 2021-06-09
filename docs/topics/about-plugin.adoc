@@ -1,7 +1,9 @@
 // Module included in the following assemblies:
 //
 // * docs/plugin-guide/master.adoc
+// * docs/vscode-plugin-guide/master.adoc
 
+ifdef::plugin-guide[]
 [id='about-plugin_{context}']
 = About the {PluginNameTitle}
 
@@ -11,6 +13,16 @@ There is an {ProductShortName} extension for Visual Studio Code and Eclipse Che.
 The extension is only available as a Minimum Viable Product and will be fully documented and supported in a future Release of {ProductShortName}.
 For more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.mta-vscode-extension[the extension], visit the Visual Studio Marketplace.
 
-ifndef::plugin-guide[]
 For more information on using the {PluginName}, see the {ProductShortName} link:{ProductDocPluginGuideURL}[_{PluginBookName}_].
-endif::plugin-guide[]
+endif::[]
+
+ifdef::vscode-plugin-guide[]
+= About the {VscodePluginName} extension
+
+{VscodePluginName} ({VscodePluginShortName}) for the {ProductName}  is a lightweight, powerful source code editor that is available for Windows, macOS and Linux. It includes built-in support for JavaScript, TypeScript and Node.js and has extensions for other languages, such as C++, C#, Java, Python, PHP, and Go and for runtimes,  such as .NET and Unity.
+
+{VscodePluginShortName} analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
+
+
+For more information, see about link:https://code.visualstudio.com/docs[Visual Studio Code documentation].
+endif::[]

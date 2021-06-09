@@ -16,16 +16,16 @@ include::topics/making-open-source-more-inclusive.adoc[]
 == Introduction
 
 // All these sections need to be updated
-// About the IDE Plugin Guide
+// About the VS Code Extension Guide
 include::topics/plugin-intro.adoc[leveloffset=+2]
 
 // About {ProductName}
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 
 // About the VS Code plugin
-// include::topics/about-plugin.adoc[leveloffset=+2]
+include::topics/about-plugin.adoc[leveloffset=+2]
 
-// Install the Plugin
+// Install the Plugin [start here]
 // include::topics/installing-plugin.adoc[leveloffset=+1]
 
 // Access the {ProductShortName} IDE Tools
