@@ -5,12 +5,16 @@
 [id='about-plugin_{context}']
 = About the {PluginNameTitle}
 
-The {PluginName} for the {ProductName} provides assistance directly in Eclipse and Red Hat CodeReady Studio for developers making changes for a migration or modernization effort. It analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
+The {PluginName} for the {ProductName} provides assistance directly in Red Hat CodeReady Studio, Visual Studio Code, Eclipse Che, and IntelliJ IDEA extensions for developers making changes for a migration or modernization effort.
 
-There is an {ProductShortName} extension for Visual Studio Code and Eclipse Che.
-The extension is only available as a Minimum Viable Product and will be fully documented and supported in a future Release of {ProductShortName}.
-For more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.mta-vscode-extension[the extension], visit the Visual Studio Marketplace.
+Using any of these extensions, {PluginName} analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
 
-ifndef::plugin-guide[]
-For more information on using the {PluginName}, see the {ProductShortName} link:{ProductDocPluginGuideURL}[_{PluginBookName}_].
-endif::plugin-guide[]
+These extensions are only available as Minimum Viable Products and will be fully documented and supported in a future release of {ProductShortName}.
+
+For installation procedures and other information about the non-Red Hat extensions, see:
+
+* link:https://marketplace.visualstudio.com/items?itemName=redhat.mta-vscode-extension[Visual Studio]
+
+* link:https://open-vsx.org/extension/redhat/mta-vscode-extension[Eclipse Che]
+
+* link:https://www.jetbrains.com/help/idea/installation-guide.html[IntelliJ IDEA]
