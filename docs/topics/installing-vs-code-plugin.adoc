@@ -49,11 +49,13 @@ The value of `maxproc` must be `2048` or greater.
 
 == Installing the {ProductName} extension for {VscodePluginName}
 
-The {ProductShortName} Operator is available as an extension for {VscodePluginName} ({VscodePluginShortName}).
+You can install the {ProductName} extension from the *Extensions* tab of  {VscodePluginName}.
 
 .Procedure
 
-. Open {VscodePluginName}.
-. On the left side of the screen, click the *Extensions* icon.
-. In the *Extensions* panel, click the *{ProducttName}* icon.
+. Launch {VscodePluginName}.
+. In the left panel, click the *Extensions* icon.
+. Enter *{ProductName}* in the text box at the top of the screen.
 . Click *Install*.
++
+The *{ProductName}* icon appears in the left panel, below the *Extensions* icon. 
