@@ -1,0 +1,35 @@
+// Module included in the following assemblies:
+//
+// * docs/vs-code-extension-guide/master.adoc
+
+[id="vscode-extension-resolving-issues_{context}"]
+= Resolving issues
+
+You can resolve issues by doing one of the following:
+
+* Use a _Quick Fix_ automatic code replacement
+* Edit the code of the file with the hint
+
+You can keep track of resolved issues by using the *Delete* or *Mark as Complete* options. Files marked deleted or completed will be analyzed again the next time you analyze a project that contains them.
+
+[id="using-quick-fix_{context}"]
+== Using a Quick Fix
+
+You can use a Quick Fix to make a automatic code change to a file.
+
+.Procedure
+
+. In the left pane, right-click an issue that has the Quick Fix icon (image:vs_optional.png[Optional or Quick Fix]) and select *Preview Quick Fix*.
+. To accept the suggested fix, right-click the issue again and select *Apply Quick Fix.*
+. Optional: Right-click the issue and select *Mark as Complete* or *Delete*.
+
+[id="editing-code-of-file-with-hint_{context}"]
+== Editing the code of a file
+
+You can directly edit the code of a file while remaining in the {ProductShortName} extension.
+
+.Procedure
+
+. In the left pane, right-click an issue and select *Open Code*.
+. Make any changes needed to the code and save the file.
+. Optional: Right-click the issue and select *Mark as Complete* or *Delete*.

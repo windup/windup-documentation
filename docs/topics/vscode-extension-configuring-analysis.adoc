@@ -1,0 +1,25 @@
+// Module included in the following assemblies:
+//
+// * docs/vs-code-extension-guide/master.adoc
+
+[id="vscode-extension-configuring-analysis_{context}"]
+= Configuring a run configuration
+
+You can configure multiple run configurations to run against each project you import to VS Code.
+
+.Procedure
+
+. In *Extensions* view, click the *{ProductName}* icon (image:vs_mta_ex_icon.png[MTA code extension]) on the Activity bar.
+. Click the *+* (plus sign) next to *{ProductName}* to add a run configuration.
+. Complete the following configuration fields:
+
+* *Input*: Click *Add* and do one of the following:
+
+** Enter the input file or directory and press Enter.
+** Click *Open File Explorer* and select the directory.
+
+* *Target*: Select one or more target migration paths.
+
+. Right-click the run configuration and select *Run*.
++
+When the analysis is completed, you can click the *Open Report* button to open the MTA report, which describes any issues you need to address before you migrate or modernize your application. For more information, see link:{ProductDocUserGuideURL}/index#review_reports_cli-guide[{ProductShortName} report] in the _{UserCLIBookName}_.

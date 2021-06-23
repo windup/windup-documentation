@@ -13,57 +13,36 @@ include::topics/templates/document-attributes.adoc[]
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
+[id="introduction_{context}"]
 == Introduction
 
-// About the VS Code extension
 include::topics/about-vscode-extension.adoc[leveloffset=+2]
 
-// About {ProductName}
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 
-// Install the extension
+// Installing the extension
+
 include::topics/installing-vs-code-extension.adoc[leveloffset=+1]
 
-// // Windup IDE Plugin Components
-// include::topics/plugin-components.adoc[leveloffset=+2]
-//
-// // Identify and Resolve Migration Issues with Windup
-// include::topics/plugin-identify-resolve-issues.adoc[leveloffset=+1]
-//
-// // Create a Windup Run Configuration
-// include::topics/plugin-create-config.adoc[leveloffset=+2]
-//
-// // Execute Windup
-// include::topics/plugin-run-mta.adoc[leveloffset=+2]
-//
-// // Review Windup Issues
-// include::topics/plugin-review-issues.adoc[leveloffset=+2]
-//
-// // Resolve Windup Issues
-// include::topics/plugin-resolve-issues.adoc[leveloffset=+2]
+[id="analyzing-projects-with-the-mta-extension_{context}"]
+== Analyzing your projects with the {ProductShortName} extension
 
-// TODO: Uncomment when uninstalling works and this is ready
-// include::topics/plugin-uninstall.adoc[leveloffset=+1]
+You can analyze your projects with the {ProductShortName} extension by creating a run configuration and running an analysis.
 
-// Add Custom Rules
-// include::topics/plugin-use-custom-rules.adoc[leveloffset=+1]
-//
-// // Browse Rules
-// include::topics/plugin-view-rules.adoc[leveloffset=+2]
-//
-// // Import a Custom Ruleset
-// include::topics/plugin-import-custom-ruleset.adoc[leveloffset=+2]
-//
-// // Create a Custom Ruleset
-// include::topics/plugin-create-custom-ruleset.adoc[leveloffset=+2]
-//
-// // Submit a Custom Ruleset
-// include::topics/eclipse-submit-ruleset.adoc[leveloffset=+2]
+// The extension interface
+include::topics/vs-code-extension-interface.adoc[leveloffset=+2]
 
-// Commenting out because the icons can be moved to a different place.
-// [appendix]
-// == Reference material
-//
-// include::topics/plugin-icon-legend.adoc[leveloffset=+2]
+// Create a Run Configuration
+include::topics/vscode-extension-configuring-analysis.adoc[leveloffset=+2]
+
+[id="reviewing-and-resolving-issues_{context}"]
+== Reviewing and resolving migration issues
+
+You can review and resolve migration issues identified by the {ProductShortName} extension in the left pane.
+
+include::topics/vscode-extension-reviewing-projects.adoc[leveloffset=+2]
+
+// Resolve Issues
+include::topics/vscode-extension-resolving-issues.adoc[leveloffset=+2]
 
 :!vsc-extension-guide:
