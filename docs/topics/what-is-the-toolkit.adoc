@@ -15,7 +15,7 @@
 
 The {ProductName} ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.
 
-The {ProductShortName} examines application artifacts, including project source directories and application archives, then produces an HTML report that highlights areas needing changes. {ProductShortName} supports many migration paths such as different application servers to Red Hat JBoss Enterprise Application Platform, application containerization and cloud readiness, Spring Boot to Quarkus, updates to OpenJDK, and others. For more information about the available migration paths, link:https://developers.redhat.com/products/mta/use-cases[visit the use cases and migration paths page] of the official {ProductShortName} website.
+The {ProductShortName} examines application artifacts, including project source directories and application archives, then produces an HTML report that highlights areas needing changes. The {ProductShortName} supports many migration paths such as different application servers to Red Hat JBoss Enterprise Application Platform, application containerization and cloud readiness, Spring Boot to Quarkus, updates to OpenJDK, and others. For more information about the available migration paths, link:https://developers.redhat.com/products/mta/use-cases[visit the use cases and migration paths page] of the official {ProductName} website.
 
 [discrete]
 == How does the {ProductName} simplify migration?
