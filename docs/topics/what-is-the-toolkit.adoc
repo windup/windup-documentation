@@ -15,12 +15,19 @@
 
 The {ProductName} ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.
 
-The {ProductShortName} examines application artifacts, including project source directories and application archives, then produces an HTML report that highlights areas needing changes. The {ProductShortName} supports many migration paths such as different application servers to Red Hat JBoss Enterprise Application Platform, application containerization and cloud readiness, Spring Boot to Quarkus, updates to OpenJDK, and others. For more information about the available migration paths, link:https://developers.redhat.com/products/mta/use-cases[visit the use cases and migration paths page] of the official {ProductName} website.
+{ProductShortName} examines application artifacts, including project source directories and application archives, then produces an HTML report that highlights areas needing changes. {ProductShortName} supports many migration paths including:
+
+* Application servers to Red Hat JBoss Enterprise Application Platform
+* Application containerization and cloud readiness
+* Spring Boot to Quarkus
+* Updates to OpenJDK
+
+For more information see, link:https://developers.redhat.com/products/mta/use-cases[Migration Toolkit for Applications use cases and migration paths].
 
 [discrete]
 == How does the {ProductName} simplify migration?
 
-The {ProductName} looks for common resources and highlights technologies and known trouble spots when migrating applications. The goal is to provide a high-level view into the technologies used by the application and provide a detailed report organizations can use to estimate, document, and provide technical guidance for large-scale modernization and migration projects.
+The {ProductName} looks for common resources and highlights technologies and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application as well as a detailed report evaluating a proposed migration or modernization. Using this report, an organization can estimate the efforts required for large-scale modernization and migration projects and take specific steps to reduce the work involved.
 
 ifndef::getting-started-guide[]
 [discrete]
