@@ -18,15 +18,10 @@ ifdef::ocp-41[]
 
 You can install the {WebName} on {ocp-short} 4.2-4.5 by importing a template and instantiating it to create the {WebName} application.
 endif::[]
-ifdef::ocp-311[]
-= Installing the {WebName} on {ocp-short} 3.11
-
-You can install the {WebName} on {ocp-short} 3.11 by importing a template into the OpenShift Service Catalog.
-endif::[]
 
 .Prerequisites
 
-ifdef::ocp-45,ocp-41,ocp-311[]
+ifdef::ocp-45,ocp-41[]
 * 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
 * One or more projects in which you can install the {WebName}.
 endif::[]
@@ -38,7 +33,7 @@ ifdef::ocp-45[]
 * `project-admin-user` privileges to install the {WebName} application in a project.
 endif::[]
 
-ifdef::ocp-41,ocp-311[]
+ifdef::ocp-41[]
 .Procedure
 
 . Navigate to the link:{MTADownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
@@ -80,23 +75,6 @@ ifdef::ocp-45,ocp-41[]
 . Review the application settings and click *Create*.
 . In the *Topology* view, click the `mta-web-console` application and then click the *Resources* tab.
 . Click the `secure-mta-web-console` route to open the {WebName} in a new browser window.
-endif::[]
-ifdef::ocp-311[]
-. Launch the OpenShift web console.
-. Switch to the *Service Catalog* perspective and click *Import YAML/JSON* in the upper-right corner of the web console.
-+
-image::openshift-console.png[OpenShift console]
-. Select *mta* from the *Add to Project* list.
-. Click *Browse* and select a template from the `MTA_HOME/openshift/templates/` directory.
-+
-Two templates are provided, one for shared storage and one without shared storage.
-
-. Click *Create*.
-. Click *Continue*.
-. Review the application settings and click *Create*.
-. Switch to the *Cluster Console*.
-. Click *Workloads* -> *Pods* and verify that the {ProductShortName} pods are running.
-. Click *Networking* -> *Routes* and then click the `secure-mta-web-console` route to open the {WebName} in a new browser window.
 endif::[]
 . Enter the user name `mta` and the password `password` and click *Log in*.
 
