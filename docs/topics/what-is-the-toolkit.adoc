@@ -1,7 +1,9 @@
 // Module included in the following assemblies:
 //
+// * docs/getting-started-guide/master.adoc
 // * docs/cli-guide/master.adoc
 // * docs/maven-guide/master.adoc
+// * docs/plugin-guide/master.adoc
 // * docs/web-console-guide/master.adoc
 
 [[about_mta]]
@@ -11,14 +13,23 @@
 [discrete]
 == What is the {ProductName}?
 
-The {ProductName} ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration of Java applications.
+The {ProductName} ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.
 
-The {ProductShortName} examines application artifacts, including project source directories and application archives, then produces an HTML report that highlights areas needing changes. {ProductShortName} can migrate Java applications from earlier versions of Red Hat JBoss Enterprise Application Platform or from other application servers, such as Oracle WebLogic Server or IBM WebSphere Application Server.
+{ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. {ProductShortName} supports many migration paths including the following examples:
+
+* Migrating from enterprise application servers to Red Hat JBoss Enterprise Application Platform
+* Containerizing applications and making them cloud-ready
+* Migrating from Spring Boot to Quarkus
+* Updating OpenJDK versions
+
+For more information about use cases and migration paths, see the link:https://developers.redhat.com/products/mta/use-cases[MTA for developers] web page.
 
 [discrete]
 == How does the {ProductName} simplify migration?
 
-The {ProductName} looks for common resources and highlights technologies and known trouble spots when migrating applications. The goal is to provide a high-level view into the technologies used by the application and provide a detailed report organizations can use to estimate, document, and migrate enterprise applications to Java EE and Red Hat JBoss Enterprise Application Platform.
+The {ProductName} looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.
+
+{ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.
 
 ifndef::getting-started-guide[]
 [discrete]
