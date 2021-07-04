@@ -5,15 +5,19 @@
 [id='about-plugin_{context}']
 = About the {PluginNameTitle}
 
-The {PluginName} for the {ProductName} provides assistance directly in Red Hat CodeReady Studio, Visual Studio Code, Eclipse Che, and IntelliJ IDEA extensions for developers making changes for a migration or modernization effort.
+The {PluginName} for the {ProductName} provides assistance directly in Red Hat CodeReady Studio, Microsoft Visual Studio Code, Eclipse, Eclipse Che, and IntelliJ IDEA extensions for developers making changes for a migration or modernization effort.
 
 Using any of these extensions, {PluginName} analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
 
 These extensions are only available as Minimum Viable Products and will be fully documented and supported in a future release of {ProductShortName}.
 
-For installation procedures and other information about the non-Red Hat extensions, see:
+For installation procedures and other information about the extensions, see:
 
-* link:https://marketplace.visualstudio.com/items?itemName=redhat.mta-vscode-extension[Visual Studio]
+* link:https://developers.redhat.com/products/codeready-studio/download[Red Hat CodeReady Studio]
+
+* link:https://marketplace.visualstudio.com/items?itemName=redhat.mta-vscode-extension[Microsoft Visual Studio Code]
+
+* link:https://www.eclipse.org/downloads/packages/release/2020-09/r/eclipse-ide-enterprise-java-developers[Eclipse IDE for Java Enterprise Developers 2020-09 R]
 
 * link:https://open-vsx.org/extension/redhat/mta-vscode-extension[Eclipse Che]
 
