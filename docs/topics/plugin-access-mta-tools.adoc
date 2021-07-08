@@ -1,10 +1,17 @@
 // Module included in the following assemblies:
 //
-// * docs/plugin-guide/master.adoc
+// * docs/eclipse-code-ready-studio-guide/master.adoc
 
 [id='plugin-access-mta-tools_{context}']
-= Accessing the {ProductShortName} IDE tools
+= Accessing the {ProductShortName} tools
 
-Once the plugin is installed, the {ProductShortName} IDE tools are available in the {ProductShortName} perspective. To open the {ProductShortName} perspective, navigate to *Window* -> *Perspective* -> *Open Perspective* -> *Other*. Select *{ProductShortName}* and click *OK*.
+After the plugin is installed, you can view the {ProductShortName} tools in the {ProductShortName} perspective.
 
-Review the plugin components and then get started identifying and resolving migration issues. You can also view the embedded help for the plugin by selecting *Help* -> *Getting Started* in your IDE.
+.Procedure
+
+. Navigate to *Window* -> *Perspective* -> *Open Perspective* -> *Other*.
+. Select *{ProductShortName}* and click *OK*.
++
+Review the plugin components and then get started identifying and resolving migration issues.
+
+For more information, click *Help* -> *Getting Started*.

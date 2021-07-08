@@ -24,6 +24,7 @@
 
 :PluginName: IDE plugin
 :PluginNameTitle: IDE Plugin
+:EclipseGuideTitle: Eclipse and CodeReady Studio Plugin Guide
 
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 
@@ -43,12 +44,12 @@
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rules Development Guide
-:PluginBookName: IDE Plugin Guide
+:EclipseCrsGuideTitle: Eclipse and Red Hat CodeReady Studio Plugin Guide
 :IntroToMTABookName: Introduction to the Migration Toolkit for Applications
 :WebConsoleBookName: Web Console Guide
 :MavenBookName: Maven Plugin Guide
 :ReleaseNotesName: Release Notes
-:VscodePluginBookName: Visual Studio Code Plugin Guide
+:VscExtensionBookName: Visual Studio Code Extension Guide
 
 // This book is on GitHub wiki only
 :CoreDevelopmentBookName: Core Development Guide
@@ -66,16 +67,16 @@
 // ********
 // * URLs *
 // ********
-:ocp-full: Red{nbsp}Hat{nbsp}OpenShift{nbsp}Container{nbsp}Platform
-:ocp-short: OpenShift{nbsp}Container{nbsp}Platform
-:ocp-first: {ocp-short} (RHOCP)
+:ocp-full: Red Hat OpenShift Container Platform
+:ocp-short: OpenShift Container Platform
+:ocp-first: {ocp-full} (RHOCP)
 :ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
-:ProductDocPluginGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/ide_plugin_guide
+:EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_code_ready_studio_plugin_guide
 :ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_migration_toolkit_for_applications
-
 :ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/web_console_guide
 :ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
+:ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
 :OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
 :LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
 
