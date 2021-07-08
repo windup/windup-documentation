@@ -38,23 +38,19 @@ include::topics/installing-plugin.adoc[leveloffset=+1]
 // Access {ProductShortName} IDE Tools
 include::topics/plugin-access-mta-tools.adoc[leveloffset=+1]
 
-// Windup IDE Plugin Components
+// Plugin Components
 include::topics/plugin-components.adoc[leveloffset=+2]
 
-// Identify and Resolve Migration Issues with Windup
-include::topics/plugin-identify-resolve-issues.adoc[leveloffset=+1]
+// Using the plugin
 
-// Create a Windup Run Configuration
-include::topics/plugin-create-config.adoc[leveloffset=+2]
+== Using the {ProductShortName} {PluginName}
+include::topics/plugin-identify-resolve-issues.adoc[leveloffset=+2]
 
-// Execute Windup
-include::topics/plugin-run-mta.adoc[leveloffset=+2]
+// Review ProductShortName} Issues
+include::topics/plugin-review-issues.adoc[leveloffset=+3]
 
-// Review Windup Issues
-include::topics/plugin-review-issues.adoc[leveloffset=+2]
-
-// Resolve Windup Issues
-include::topics/plugin-resolve-issues.adoc[leveloffset=+2]
+// Resolve ProductShortName} Issues
+include::topics/plugin-resolve-issues.adoc[leveloffset=+3]
 
 // TODO: Uncomment when uninstalling works and this is ready
 // include::topics/plugin-uninstall.adoc[leveloffset=+1]
@@ -74,14 +70,15 @@ include::topics/plugin-create-custom-ruleset.adoc[leveloffset=+2]
 // Submit a Custom Ruleset
 include::topics/eclipse-submit-ruleset.adoc[leveloffset=+2]
 
-[appendix]
-== Reference material
-
-include::topics/plugin-icon-legend.adoc[leveloffset=+2]
+//[appendix]
+// == Reference material
+//
+//include::topics/plugin-icon-legend.adoc[leveloffset=+2]
 
 
 // **********************************
 // * Appendix: Revision Information *
 // **********************************
 include::topics/templates/revision-info.adoc[]
+
 :!plugin-guide:
