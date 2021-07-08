@@ -1,12 +1,12 @@
-// revert topics directory after rebrand
 include::topics/templates/document-attributes.adoc[]
+[id="cli-guide"]
 = {UserCLIBookName}
+
 :toc:
 :toclevels: 4
 :numbered:
 :imagesdir: topics/images
 :context: cli-guide
-:cli-guide:
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
