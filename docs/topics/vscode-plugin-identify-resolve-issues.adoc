@@ -7,7 +7,7 @@
 
 .Prerequisites
 
-* Install `mta-cli`. s
+* Install `mta-cli`. 
 
 .Procedure
 
@@ -38,8 +38,14 @@
 * `--enableCompatibleFiles Report`: Generating a Compatible Files report might take a long time for large applications.
 * `--includeTags`: If selected, opens a list of tags to select to include in the analysis. If cleared, all tags are included in the analysis.
 * `--online`: If selected, online access is allowed and XML can be validated against external resources. Selecting this option affects performance.
-* `--enableClassNotFoundAnalysis`: : Enables analysis of Java files that are not available on the class path. This option should not be used if some classes are unavailable for analysis.
+* `--enableClassNotFoundAnalysis`: Enables analysis of Java files that are not available on the class path. This option should not be used if some classes are unavailable for analysis.
 * `--enableTattletale`: Enables generation of a Tattletale report for each application.
 * `--explodedApp`: The input directory contains the unpackaged source files of an application.
 * `--keepWorkDirs`: Retains temporary files, for example, the graph database or extracted archive files, for debugging purposes.
-* `--mavenize`: Creates a Maven project directory structure based on the structure and content of the application. 
+* `--mavenize`: Creates a Maven project directory structure based on the structure and content of the application.
+
+. Run the analysis by clicking on the name of the configuration at the top of the screen and then selecting *Run*.
++
+The command window opens, displaying the configuration settings and showing the progress of the analysis.
++
+When the analysis is complete, the *Reports* icon becomes visible in the *Explorer* pane.
