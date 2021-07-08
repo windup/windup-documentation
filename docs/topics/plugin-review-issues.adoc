@@ -5,10 +5,29 @@
 [id='plugin-review-issues_{context}']
 = Reviewing {ProductShortName} issues
 
-Use the Issue Explorer to review migration issues identified by {ProductShortName}. Different icons indicate the issue's severity and state.
+Use *Issue Explorer* to review migration issues identified by {ProductShortName}. Different icons indicate an issue's severity and state.
 
 Change how issues are grouped by adjusting the *Group By* selections: Severity, Migration Rule, and File.
 
-image::windup_group_by.png[Issue Explorer group by options]
+image::mta_group_by.png[Issue Explorer group by options]
 
-Double-click the {ProductShortName} issue in the Issue Explorer to open the associated line of code in an editor. Right-click and select *Issue Details* to view information about the {ProductShortName} issue, including its severity and how to address it.
+.Procedure
+
+. Double-click an {ProductShortName} issue in *Issue Explorer* to open the associated line of code in an editor.
+. Right-click and select *Issue Details* to view information about the {ProductShortName} issue, including its severity and how to address it.
+
+
+
+.{ProductShortName} issue icons
+[cols="20%a,80%",options="header",]
+|====
+|Icon |Description
+|image::error.png[Mandatory] |The issue must be fixed for a successful migration.
+|image::info.gif[Optional] |The issue is optional to fix for migration.
+|image::warning.png[Warning] |The issue might be an issue during migration.
+|image::fixedIssue.gif[Resolved] |The issue was resolved.
+|image::stale_issue.gif[Stale] |The issue is stale. The code marked as an issue was modified since the last time that {ProductShortName} identified it as an issue.
+|image::quickfix_error.png[Mandatory with quick fix] |A quick fix is available for this issue, which is mandatory to fix for a successful migration.
+|image::quickfix_info.png[Optional with quick fix] |A quick fix is available for this issue, which is optional to fix for migration.
+|image::quickfix_warning.png[Warning with quick fix] |A quick fix is available for this issue, which may potentially be an issue during migration.
+|====
