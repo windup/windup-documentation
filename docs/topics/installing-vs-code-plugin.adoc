@@ -1,0 +1,99 @@
+// Module included in the following assemblies:
+//
+// * docs/plugin-guide/master.adoc
+// * docs/vs-code-plugin-guide/master.adoc
+
+ifdef::plugin-guide[]
+[id="installing-ide-plugin-connected-environment_{context}"]
+= Installing the {PluginName} in a connected environment
+
+You can install the {PluginName} for Eclipse or Red Hat CodeReady Studio in a connected environment.
+
+The {PluginName} has been tested with Eclipse 2020-09 and Red Hat CodeReady Studio 12.15.
+endif::[]
+ifdef::disconnected[]
+
+[id="installing-ide-plugin-disconnected-environment_{context}"]
+= Installing the {PluginName} in a disconnected environment
+
+You can install the {PluginName} for Eclipse or Red Hat CodeReady Studio in a disconnected environment.
+
+The {PluginName} has been tested with Eclipse 2020-09 and Red Hat CodeReady Studio 12.15.
+endif::[]
+
+ifdef::vscode-plugin-guide[]
+[id="installing-vs-code-plugin_{context}"]
+= Installing the {VscodePluginName} extension
+
+You can install the {VscodePluginName} ({VscodePluginShortName}) extension on Linux, Windows, or macOS.
+
+As of June 2021, VS Code has been tested on the following platforms:
+
+* Linux (Red Hat): Red Hat Enterprise Linux 7, CentOS 8, Fedora 24
+* Linux (Debian): Ubuntu Desktop 16.04, Debian 9
+* Windows 7 (with .NET Framework 4.5.2), 8.0, 8.1 and 10 (32-bit and 64-bit)
+* OS X El Capitan (10.11+)
+endif::[]
+
+.Prerequisites
+
+ifdef::plugin-guide,disconnected[]
+* link:{CodeReadyStudioDownloadPageURL}[Red Hat CodeReady Studio] _or_ link:https://www.eclipse.org/downloads/packages/release/2020-09/r/eclipse-ide-enterprise-java-developers[Eclipse IDE for Java Enterprise Developers 2020-09 R]
+* JBoss Tools
++
+You must install the Eclipse Marketplace Client, browse to JBoss Tools in the Client, and then install the JBoss Tools. For more information, navigate to link:https://www.eclipse.org/[Eclipse.org], click *More* -> *Documentation*, and select the *Eclipse Marketplace User Guide*.
+endif::[]
+
+ifndef::vscode-plugin-guide[]
+* If you are installing on macOS, the value of `maxproc` must be `2048` or greater.
+endif::[]
+
+ifdef::vscode-plugin-guide[]
+The following information is from Microsoft and is accurate as of June 2021. For the latest information, see link:https://code.visualstudio.com/docs/supporting/requirements[Requirements for Visual Studio Code].
+
+Hardware recommendations::
+
+* 1.6 GHz or faster processor
+* 1 GB of RAM
+
+Additional Windows requirements::
+Microsoft .NET Framework 4.5.2 is required for VS Code.
+
+Additional Linux requirements::
+GLIBCXX version 3.4.21 or later
+GLIBC version 2.15 or later
+endif::[]
+
+.Procedure
+
+ifdef::disconnected[]
+. Navigate to the link:{MTADownloadPageURL}[Migration Toolkit for Applications download site] and download the `IDE Plugin Repository` file.
+endif::[]
+ifdef::plugin-guide,disconnected[]
+. Launch your IDE.
+. From the menu bar, select *Help* -> *Install New Software*.
+. Next to the *Work with* field, click *Add*.
+. In the *Name* field, enter `{ProductShortName}`.
+endif::[]
+ifdef::plugin-guide[]
+. In the *Location* field, enter `\http://download.jboss.org/jbosstools/photon/stable/updates/mta/` and click *OK*.
+endif::[]
+ifdef::disconnected[]
+. Next to the *Location* field, click *Archive*.
+. Select the IDE Plugin archive file and click *OK*.
+endif::[]
+ifdef::plugin-guide,disconnected[]
+. Select all the *JBoss Tools - MTA* check boxes and click *Next*.
+. Review the installation details and click *Next*.
+. Accept the terms of the license agreement and click *Finish* to install the plugin.
+. Restart your IDE for the changes to take effect.
+endif::[]
+
+ifdef::vscode-plugin-guide[]
+. Navigate to link:https://code.visualstudio.com[Visual Code Studio], click *Download*, and click the button that is appropriate for your operating system.
+. Follow the installation instructions per operating system:
+
+** link:https://code.visualstudio.com/docs/setup/linux[Linux]
+** link:https://code.visualstudio.com/docs/setup/windows[Windows]
+** link:https://code.visualstudio.com/docs/setup/mac[macOS]
+endif::[]
