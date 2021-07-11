@@ -1,6 +1,5 @@
 // Module included in the following assemblies:
 //
-// * docs/eclipse-code-ready-studio-guide/master.adoc
 // * docs/getting-started-guide/master.adoc
 // * docs/vs-code-extension-guide/master.adoc
 
@@ -8,11 +7,3 @@
 = About the {PluginName}
 
 The {PluginName} for the {ProductName} provides assistance directly in Eclipse and Red Hat CodeReady Studio for developers making changes for a migration or modernization effort. It analyzes your projects using {ProductShortName}, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement when possible.
-
-There is an {ProductShortName} extension for Visual Studio Code and Eclipse Che.
-The extension is only available as a Minimum Viable Product and will be fully documented and supported in a future Release of {ProductShortName}.
-For more information about link:https://marketplace.visualstudio.com/items?itemName=redhat.mta-vscode-extension[the extension], visit the Visual Studio Marketplace.
-
-ifndef::eclipse-code-ready-studio-guide[]
-For more information on using the {PluginName}, see the {ProductShortName} link:{EclipseCrsGuideURL}[_{EclipseCrsGuideTitle}_].
-endif::[]
