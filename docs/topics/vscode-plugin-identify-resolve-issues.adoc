@@ -12,9 +12,13 @@
 .Procedure
 
 . Launch {VscodePluginName} and click the *{ProductName}* icon in the left panel.
-+ *{ProductName}* appears at the top of the *Explorer* pane of the screen, below the menu bar.
++
+*{ProductName}* appears at the top of the *Explorer* pane of the screen, below the menu bar.
+
 . To create a new configuration, click *+* next to *{ProductName}* .
-+ The configuration options open. *{ProductName}* gives the configuration a default name.
++
+The configuration options open. *{ProductName}* gives the configuration a default name.
+
 . Optional: Enter a new  *Name*.
 . To select the application to test, in the *Input* section of the interface, click *Add* and select the application to test.
 . Select one or more *target migration paths*.
