@@ -22,7 +22,7 @@ include::topics/making-open-source-more-inclusive.adoc[]
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 
 // About the VS Code plugin
-
+// include::topics/about-plugin.adoc[leveloffset=+2]
 
 // Install the Plugin
 // include::topics/installing-plugin.adoc[leveloffset=+1]
@@ -30,22 +30,22 @@ include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 // Access {ProductShortName} IDE Tools
 // include::topics/plugin-access-mta-tools.adoc[leveloffset=+1]
 //
-// Windup IDE Plugin Components
+// // Windup IDE Plugin Components
 // include::topics/plugin-components.adoc[leveloffset=+2]
 //
-// Analyze projects with VS Code
-// include::topics/vscode-plugin-identify-resolve-issues.adoc[leveloffset=+1]
+// // Identify and Resolve Migration Issues with Windup
+// include::topics/plugin-identify-resolve-issues.adoc[leveloffset=+1]
 //
-// Create a Windup Run Configuration
+// // Create a Windup Run Configuration
 // include::topics/plugin-create-config.adoc[leveloffset=+2]
 //
-// Execute Windup
+// // Execute Windup
 // include::topics/plugin-run-mta.adoc[leveloffset=+2]
 //
-// Review Windup Issues
+// // Review Windup Issues
 // include::topics/plugin-review-issues.adoc[leveloffset=+2]
 //
-// Resolve Windup Issues
+// // Resolve Windup Issues
 // include::topics/plugin-resolve-issues.adoc[leveloffset=+2]
 
 // TODO: Uncomment when uninstalling works and this is ready
