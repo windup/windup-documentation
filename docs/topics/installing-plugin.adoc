@@ -27,22 +27,6 @@ Install the link:https://www.eclipse.org/mpc/[Eclipse Marketplace Client]. Brows
 * If you are installing on macOS, the value of `maxproc` must be `2048` or greater.
 endif::[]
 
-ifdef::vscode-plugin-guide[]
-The following information is from Microsoft and is accurate as of June 2021. For the latest information, see link:https://code.visualstudio.com/docs/supporting/requirements[Requirements for Visual Studio Code].
-
-Hardware recommendations::
-
-* 1.6 GHz or faster processor
-* 1 GB of RAM
-
-Additional Windows requirements::
-Microsoft .NET Framework 4.5.2 is required for VS Code.
-
-Additional Linux requirements::
-GLIBCXX version 3.4.21 or later
-GLIBC version 2.15 or later
-endif::[]
-
 .Procedure
 
 ifdef::disconnected[]
