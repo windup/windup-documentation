@@ -2,23 +2,23 @@
 //
 // * docs/eclipse-code-ready-studio-guide/master.adoc
 
-[id='plugin-review-issues_{context}']
-= Reviewing migration issues
+[id='eclipse-reviewing-issues_{context}']
+= Reviewing issues
 
-Use the *Issue Explorer* to review migration issues identified by the . Different icons indicate an issue's severity and state.
-
-Change how issues are grouped by adjusting the *Group By* selections: Severity, Migration Rule, and File.
-
-image::mta_group_by.png[Issue Explorer group by options]
+You can review issues identified by the {PluginName}.
 
 .Procedure
 
-. Double-click an {ProductShortName} issue in *Issue Explorer* to open the associated line of code in an editor.
-. Right-click and select *Issue Details* to view information about the {ProductShortName} issue, including its severity and how to address it.
+. Click *Window* -> *Show View* -> *Issue Explorer*.
+. Optional: Filter the issues by clicking the Options menu {kebab}, selecting *Group By* and an option.
++
+image::mta_group_by.png[Issue Explorer "Group By" options]
 
-
-
-.{ProductShortName} issue icons
+. Right-click and select *Issue Details* to view information about the issue, including its severity and how to address it.
++
+The following icons indicate the severity and state of an issue:
++
+.Issue icons
 [cols="20%a,80%",options="header",]
 |====
 |Icon |Description
@@ -31,3 +31,5 @@ image::mta_group_by.png[Issue Explorer group by options]
 |image::quickfix_info.png[Optional with quick fix] |A quick fix is available for this issue, which is optional to fix for migration.
 |image::quickfix_warning.png[Warning with quick fix] |A quick fix is available for this issue, which may potentially be an issue during migration.
 |====
+
+. Double-click an issue to open the associated line of code in an editor.
