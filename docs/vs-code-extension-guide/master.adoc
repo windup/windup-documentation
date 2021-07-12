@@ -24,12 +24,15 @@ This guide is for engineers, consultants, and others who want to use the {Plugin
 // About the VS Code plugin
 // include::topics/about-plugin.adoc[leveloffset=+2]
 
-// Install the Plugin
-include::topics/installing-vs-code-plugin.adoc[leveloffset=+1]
+// Install the Extension
+include::topics/installing-vs-code-extension.adoc[leveloffset=+1]
 
-// Access {ProductShortName} IDE Tools
-// include::topics/plugin-access-mta-tools.adoc[leveloffset=+1]
-//
+// The VS Code Extension Interface
+include::topics/vs-code-extension-interface.adoc[leveloffset=+2]
+
+// Uninstall the Extension
+include::topics/uninstalling-vs-code-extension.adoc[leveloffset=+2]
+
 // // Windup IDE Plugin Components
 // include::topics/plugin-components.adoc[leveloffset=+2]
 //
