@@ -1,0 +1,11 @@
+<title>{EclipseCrsGuideTitle}</title>
+<productname>{DocInfoProductName}</productname>
+<productnumber>{DocInfoProductNumber}</productnumber>
+<subtitle>Identify and resolve migration issues by running  {ProductName} against your applications in your IDE.</subtitle>
+<abstract>
+    <para>This guide describes how to use the {PluginName} for Eclipse or Red Hat CodeReady Studio to simplify the migration of Java applications.</para>
+</abstract>
+<authorgroup>
+    <orgname>Red Hat Customer Content Services</orgname>
+</authorgroup>
+<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
