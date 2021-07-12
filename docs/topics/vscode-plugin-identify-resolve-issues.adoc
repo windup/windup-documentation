@@ -15,7 +15,7 @@
 +
 *{ProductName}* appears at the top of the *Explorer* pane of the screen, below the menu bar.
 
-. To create a new configuration, click *+* next to *{ProductName}* .
+. To create a new configuration, click *+* next to *{ProductName}*.
 +
 The configuration options open. *{ProductName}* gives the configuration a default name.
 
@@ -24,29 +24,74 @@ The configuration options open. *{ProductName}* gives the configuration a defaul
 . Select one or more *target migration paths*.
 . To add a target migration path, click *Add,* enter the desired path, and click *Enter.*
 
-. Review the following *Advanced options* and make any necessary changes:
+. Review the following *Advanced options* and make any necessary changes. If you have created your own custom rules, you can use the `--userRulesDirectory` option to add them to the configuration:
++
+.Advanced options
+[cols="33%,67%",options="header"]
+|====
+|Option
+|Description
 
-* `--userRulesDirectory`: Click *Add* to specify the location of the rules to be used to analyze your project.
-* `--source`
-* `--skipReports`: HTML reports are not generated. Must be enabled if you enable `--exportCSV`.
-* `--sourceMode`: Application files are raw source files, not compiled binaries.
-* `--userIgnorePath`: Enter a path for files to exclude from analysis.
-* `--overwrite`: Force overwrite of the output directory, without prompting.
-* `--excludePackages`: Click *Add* to specify Java package name prefixes to exclude.
-* `--mavenizeGroupId`:
-* `--exportCSV`: Exports the report data as a CSV file.
-* `--excludeTags`: Rules with these tags are not processed.
-* `--packages`: A list of Java package names to scan - examples: `com` or `myapp`.
-* `--additionalClasspath`: Enter a space-delimited list of additional `.jar` files or directories so that they are available for decompilation or other analysis.
-* `--`disableTattletale`: Disables generation of a Tattletale report for each application.
-* `--enableCompatibleFiles Report`: Generating a Compatible Files report might take a long time for large applications.
-* `--includeTags`: If selected, opens a list of tags to select to include in the analysis. If cleared, all tags are included in the analysis.
-* `--online`: If selected, online access is allowed and XML can be validated against external resources. Selecting this option affects performance.
-* `--enableClassNotFoundAnalysis`: Enables analysis of Java files that are not available on the class path. This option should not be used if some classes are unavailable for analysis.
-* `--enableTattletale`: Enables generation of a Tattletale report for each application.
-* `--explodedApp`: The input directory contains the unpackaged source files of an application.
-* `--keepWorkDirs`: Retains temporary files, for example, the graph database or extracted archive files, for debugging purposes.
-* `--mavenize`: Creates a Maven project directory structure based on the structure and content of the application.
+| `--userRulesDirectory`
+| Click *Add* to specify the location of the rules to be used to analyze your project.
+
+| `--source`
+|
+
+|`--skipReports`
+| HTML reports are not generated. Must be enabled if you enable `--exportCSV`.
+
+| `--sourceMode`
+| Application files are raw source files, not compiled binaries.
+
+| `--userIgnorePath`
+| Enter a path for files to exclude from analysis.
+
+| `--overwrite`
+| Force overwrite of the output directory, without prompting.
+
+| `--excludePackages`
+| Click *Add* to specify Java package name prefixes to exclude.
+
+|`--mavenizeGroupId`
+| Exports the report data as a CSV file.
+
+| `--excludeTags`
+| Rules with these tags are not processed.
+
+|`--packages`
+| A list of Java package names to scan - examples: `com` or `myapp`.
+
+|`--additionalClasspath`
+| Enter a space-delimited list of additional `.jar` files or directories so that they are available for decompilation or other analysis.
+
+| `--`disableTattletale`
+| Disables generation of a Tattletale report for each application.
+
+| `--enableCompatibleFilesReport`
+| Generating a Compatible Files report might take a long time for large applications.
+
+| `--includeTags`
+| If selected, opens a list of tags to select to include in the analysis. If cleared, all tags are included in the analysis.
+
+| `--online`
+| If selected, online access is allowed and XML can be validated against external resources. Selecting this option affects performance.
+
+| `--enableClassNotFoundAnalysis`
+| Enables analysis of Java files that are not available on the class path. This option should not be used if some classes are unavailable for analysis.
+
+| `--enableTattletale`
+| Enables generation of a Tattletale report for each application.
+
+| `--explodedApp`
+| The input directory contains the unpackaged source files of an application.
+
+| `--keepWorkDirs`
+| Retains temporary files, for example, the graph database or extracted archive files, for debugging purposes.
+
+| `--mavenize`
+| Creates a Maven project directory structure based on the structure and content of the application.
+|====
 
 . Run the analysis by clicking on the name of the configuration at the top of the screen and then selecting *Run*.
 +
