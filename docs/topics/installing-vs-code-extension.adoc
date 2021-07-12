@@ -1,0 +1,22 @@
+// Module included in the following assemblies:
+//
+// * docs/vsc-extension-guide/master.adoc
+
+
+[id="installing-vs-code-extension_{context}"]
+= Installing the {ProductName} extension on {VscodePluginName}
+
+You can install the {ProductName} extension on any version of {VscodePluginName}.
+
+.Prerequisites
+
+link:https://code.visualstudio.com[Visual Code Studio]
+
+.Procedure
+
+. Launch {VscodePluginName}.
+. In the left panel, click the *Extensions* icon.
+. Enter *{ProductName}* in the text box at the top of the screen.
+. Click *Install*.
++
+The *{ProductName}* icon appears in the left panel, below the *Extensions* icon.
