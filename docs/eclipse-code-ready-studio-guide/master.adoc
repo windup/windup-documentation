@@ -12,67 +12,47 @@ include::topics/making-open-source-more-inclusive.adoc[]
 [id="introduction_{context}"]
 == Introduction
 
-This guide uses _IDE plugin_ to refer to the {ProductName} ({ProductShortName}) plugin for the Eclipse IDE or Red Hat CodeReady Studio.
-
-[id="about_{context}"]
-=== About the {PluginName}
-
-The {PluginName} provides assistance directly in the Eclipse IDE or Red Hat CodeReady Studio for developers making changes for a migration or modernization effort. The plugin analyzes your projects, marks potential migration issues in the source code, provides guidance to fix the issues, and suggests automatic code replacement when possible.
-
-// About {ProductName}
+include::topics/eclipse-about-plugin.adoc[leveloffset=+2]
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 
-[id="installing_{context}"]
+[id="installing-plugin_{context}"]
 == Installing the {PluginName}
 
 You can install the {PluginName} in a connected or a restricted network environment.
 
-// Install the IDE Plugin
-include::topics/installing-plugin.adoc[leveloffset=+2]
+include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
 :!eclipse-code-ready-studio-guide:
 :context: disconnected
 :disconnected:
-include::topics/installing-plugin.adoc[leveloffset=+2]
+include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
 :!disconnected:
 :context: eclipse-code-ready-studio-guide
 :eclipse-code-ready-studio-guide:
-// Access {ProductShortName} IDE Tools
-include::topics/plugin-access-mta-tools.adoc[leveloffset=+1]
+include::topics/eclipse-accessing-tools.adoc[leveloffset=+2]
 
-// Windup IDE Plugin Components
-include::topics/plugin-components.adoc[leveloffset=+2]
+[id="analyzing-projects-with-plugin_{context}"]
+== Analyzing your projects with the {PluginName}
 
-// Identify and Resolve Migration Issues with Windup
-include::topics/plugin-identify-resolve-issues.adoc[leveloffset=+1]
+You can analyze your projects with the {PluginName} by creating a run configuration, running an analysis, and then reviewing and resolving migration issues detected by the {PluginName}.
 
-// Create a Windup Run Configuration
-include::topics/plugin-create-config.adoc[leveloffset=+2]
-
-// Execute Windup
-include::topics/plugin-run-mta.adoc[leveloffset=+2]
-
-// Review Windup Issues
-include::topics/plugin-review-issues.adoc[leveloffset=+2]
-
-// Resolve Windup Issues
-include::topics/plugin-resolve-issues.adoc[leveloffset=+2]
+include::topics/eclipse-configuring-run.adoc[leveloffset=+2]
+include::topics/eclipse-analyzing-projects.adoc[leveloffset=+2]
+include::topics/eclipse-reviewing-issues.adoc[leveloffset=+2]
+include::topics/eclipse-resolving-issues.adoc[leveloffset=+2]
 
 // TODO: Uncomment when uninstalling works and this is ready
 // include::topics/plugin-uninstall.adoc[leveloffset=+1]
 
-// Add Custom Rules
-include::topics/plugin-use-custom-rules.adoc[leveloffset=+1]
+[id="managing-rules_{context}"]
+== Managing rules
 
-// Browse Rules
-include::topics/plugin-view-rules.adoc[leveloffset=+2]
+The {PluginName} comes with a core set of *System* rules for analyzing projects and identifying migration and modernization issues.
 
-// Import a Custom Ruleset
-include::topics/plugin-import-custom-ruleset.adoc[leveloffset=+2]
+You can create and import custom rulesets.
 
-// Create a Custom Ruleset
-include::topics/plugin-create-custom-ruleset.adoc[leveloffset=+2]
-
-// Submit a Custom Ruleset
-include::topics/eclipse-submit-ruleset.adoc[leveloffset=+2]
+include::topics/eclipse-viewing-rules.adoc[leveloffset=+2]
+include::topics/eclipse-creating-custom-ruleset.adoc[leveloffset=+2]
+include::topics/eclipse-importing-custom-ruleset.adoc[leveloffset=+2]
+include::topics/eclipse-submitting-ruleset.adoc[leveloffset=+2]
 
 :!eclipse-code-ready-studio-guide:

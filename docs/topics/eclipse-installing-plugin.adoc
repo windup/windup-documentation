@@ -3,16 +3,16 @@
 // * docs/eclipse-code-ready-studio-guide/master.adoc
 
 ifdef::eclipse-code-ready-studio-guide[]
-[id="installing-plugin-connected-environment_{context}"]
+[id="eclipse-installing-plugin-connected-environment_{context}"]
 = Installing in a connected environment
 
 You can install the {PluginName} in a connected environment.
 endif::[]
 ifdef::disconnected[]
-[id="installing-plugin-disconnected-environment_{context}"]
+[id="eclipse-installing-plugin-disconnected-environment_{context}"]
 = Installing in a disconnected environment
 
-You can install the {PluginName} in a disconnected environment.
+You can install the {PluginName} in a disconnected network environment.
 endif::[]
 
 The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Developers 2020-09 R and Red Hat CodeReady Studio 12.15.
@@ -20,18 +20,15 @@ The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Develo
 .Prerequisites
 
 * link:{CodeReadyStudioDownloadPageURL}[Red Hat CodeReady Studio] _or_ link:https://www.eclipse.org/downloads/packages/release/2020-09/r/eclipse-ide-enterprise-java-developers[Eclipse IDE for Java Enterprise Developers 2020-09 R]
-* JBoss Tools
-+
-Install the link:https://www.eclipse.org/mpc/[Eclipse Marketplace Client]. Browse to JBoss Tools in the Client and then install the JBoss Tools. For more information, navigate to link:https://www.eclipse.org/[Eclipse.org], click *More* -> *Documentation*, and select the *Eclipse Marketplace User Guide*.
-
-* If you are installing on macOS, the value of `maxproc` must be `2048` or greater.
+* JBoss Tools, installed with the link:https://www.eclipse.org/mpc/[Eclipse Marketplace Client].
+* If you are installing the {PluginName} on macOS, the value of `maxproc` must be `2048` or greater.
 
 .Procedure
 
 ifdef::disconnected[]
-. Navigate to the {ProductName} link:{MTADownloadPageURL}[download site] and download the `{IDEPluginFilename}` file.
+. On a computer with network access, navigate to the {ProductName} link:{MTADownloadPageURL}[download site] and download the `{IDEPluginFilename}` file.
 endif::[]
-. Launch the IDE.
+. Launch Eclipse or CodeReady Studio.
 . From the menu bar, select *Help* -> *Install New Software*.
 . Next to the *Work with* field, click *Add*.
 . In the *Name* field, enter `{ProductShortName}`.
@@ -44,5 +41,5 @@ ifdef::disconnected[]
 endif::[]
 . Select all the *JBoss Tools - MTA* check boxes and click *Next*.
 . Review the installation details and click *Next*.
-. Accept the terms of the license agreement and click *Finish* to install the plugin.
-. Restart the IDE for the changes to take effect.
+. Accept the terms of the license agreement and click *Finish*.
+. Restart  Eclipse or CodeReady Studio.
