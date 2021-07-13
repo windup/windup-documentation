@@ -8,7 +8,7 @@
 
 The following components are displayed in the interface of the {ProductName} extension:
 
-* *Issue Explorer* displays the applications and files analyzed by MTA and any issues uncovered by the analysis. *Issue Explorer* also includes a folder icon named *Report*, which opens the *MTA Report* in your browser. Each issue is marked in the *Issue Explorer* with an icon indicating its severity and ability to be remedied by a "quick fix."
+* *Issue Explorer* displays the applications and files analyzed by MTA and any issues uncovered by the analysis. *Issue Explorer* also includes a folder icon named *Report*, which opens the *MTA Report* in your browser. Each issue is marked in *Issue Explorer* with an icon indicating its severity and ability to be remedied by a "quick fix."
 
 * The *MTA CLI* executes the MTA analysis, flags the migration issues, and generates the *MTA Report*.
 
