@@ -11,7 +11,7 @@ You can create multiple run configurations. Each run configuration must have a u
 
 .Prerequisite
 
-* The projects to be analyzed must be imported into the IDE.
+* You must import your projects into the Eclipse IDE or CodeReady Studio.
 
 .Procedure
 
@@ -23,7 +23,7 @@ You can create multiple run configurations. Each run configuration must have a u
 +
 [NOTE]
 ====
-Specifying the packages for analysis reduces the run time. If no packages are selected, all packages in the project are scanned.
+Specifying the packages for analysis reduces the run time. If you do not select any packages, all packages in the project are scanned.
 ====
 
 . On the *Options* tab, you can select *Generate Report* to generate an HTML report. The report is displayed in the *Report* tab and saved as a file.
