@@ -1,0 +1,18 @@
+// Module included in the following assemblies:
+//
+// * docs/vs-code-extension-guide/master.adoc
+
+
+[id='about-vscode-extension_{context}']
+= About the {ProductName} extension for Visual Studio Code
+
+The {ProductName} ({ProductShortName}) extension provides assistance directly in Visual Studio Code for developers migrating or modernizing projects that contain Java applications.
+
+The {ProductShortName} extension analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.
+
+[IMPORTANT]
+====
+The {ProductName} ({ProductShortName}) extension for Visual Studio Code is provided as a Technology Preview only. Technology Preview features provide early access to upcoming product innovations, enabling you to test functionality and provide feedback during the development process. However, these features are not fully supported under Red Hat Subscription Level Agreements, may not be functionally complete, and are not intended for production use.
+
+See link:{KBArticleTechnologyPreview}[Technology Preview Features Support Scope] on the Red&nbsp;Hat Customer Portal.
+====
