@@ -20,10 +20,11 @@ gem "jekyll-paginate"
 # gem "pygments.rb"
 # gem "rake"
 #
-#
 gem "github-pages", group: :jekyll_plugins
 
 # ensures that jekyll-asciidoc is loaded first
 group :jekyll_plugins do
   gem 'jekyll-asciidoc'
 end
+
+gemspec
