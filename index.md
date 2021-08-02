@@ -8,6 +8,6 @@ layout: default
 - [Eclipse and CodeReady Studio Plugin Guide](docs/eclipse-code-ready-studio-guide/master/index.html)
 - [Visual Code Studio Extension Guide](docs/vs-code-extension-guide/master/index.html)
 - [Maven plugin guide](docs/maven-guide/master/index.html)
-- [Release notes 5.1](docs/release-notes/release_notes-5.1/master/index.html)
+- [Release notes 5.2](docs/release-notes/release_notes-5.2/master/index.html)
 - [Rules development guide](docs/rules-development-guide/master/index.html)
 - [Introduction to the Migration Toolkit for Applications](docs/getting-started-guide/master/index.html)
