@@ -70,9 +70,9 @@ $ <MTA_HOME>/bin/mta-cli -Dwindup.decompiler=procyon --input <INPUT_ARCHIVE_OR_D
 
 [discrete]
 [id="cli-bash-completion_{context}"]
-== About {ProductShortName} {CLINameTitle} bash completion
+== About {ProductShortName} {CLINameTitle} Bash completion
 
-The {ProductShortName} {CLIName} provides an option to enable bash completion for Linux systems, allowing the {ProductShortName} command-line arguments to be auto completed by pressing the Tab key when entering the commands. For instance, when bash completion is enabled, entering the following displays a list of available arguments.
+The {ProductShortName} {CLIName} provides an option to enable Bash completion for Linux systems, allowing the {ProductShortName} command-line arguments to be auto completed by pressing the Tab key when entering the commands. For instance, when Bash completion is enabled, entering the following displays a list of available arguments.
 
 [source,options="nowrap",subs="+quotes"]
 ----
@@ -92,9 +92,9 @@ $ source <MTA_HOME>/bash-completion/mta-cli
 
 [discrete]
 [id="bash-completion-persistent_{context}"]
-=== Enabling persistent bash completion
+=== Enabling persistent Bash completion
 
-The following commands allow bash completion to persist across restarts:
+The following commands allow Bash completion to persist across restarts:
 
 * To enable Bash completion for a specific user across system restarts, include the following line in that user's `~/.bashrc` file.
 +
