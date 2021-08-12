@@ -17,11 +17,6 @@ As of June 2021, VS Code has been tested on the following platforms:
 
 .Prerequisites
 
-
-
-// * If you are installing on macOS, the value of `maxproc` must be `2048` or greater.
-
-
 The following information is from Microsoft and is accurate as of June 2021. For the latest information, see link:https://code.visualstudio.com/docs/supporting/requirements[Requirements for Visual Studio Code].
 
 Hardware recommendations::
@@ -29,16 +24,17 @@ Hardware recommendations::
 * 1.6 GHz or faster processor
 * 1 GB of RAM
 
-Additional Windows requirements::
+Additional Windows requirement::
 Microsoft .NET Framework 4.5.2 is required for VS Code.
 
 Additional Linux requirements::
 GLIBCXX version 3.4.21 or later
 GLIBC version 2.15 or later
 
+Additionally Red Hat adds the following macOS requirement::
+The value of `maxproc` must be `2048` or greater.
 
 .Procedure
-
 
 . Navigate to link:https://code.visualstudio.com[Visual Code Studio], click *Download*, and click the button that is appropriate for your operating system.
 . Follow the installation instructions per operating system:
@@ -46,3 +42,18 @@ GLIBC version 2.15 or later
 ** link:https://code.visualstudio.com/docs/setup/linux[Linux]
 ** link:https://code.visualstudio.com/docs/setup/windows[Windows]
 ** link:https://code.visualstudio.com/docs/setup/mac[macOS]
+
+
+
+
+
+== Installing the {ProductName} extension for {VscodePluginName}
+
+The {ProductShortName} Operator is available as an extension for {VscodePluginName} ({VscodePluginShortName}).
+
+.Procedure
+
+. Open {VscodePluginName}.
+. On the left side of the screen, click the *Extensions* icon.
+. In the *Extensions* panel, click the *{ProducttName}* icon.
+. Click *Install*.
