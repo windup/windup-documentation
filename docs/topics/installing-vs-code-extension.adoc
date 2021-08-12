@@ -4,19 +4,26 @@
 
 
 [id="installing-vs-code-extension_{context}"]
-= Installing the {ProductName} extension on {VscodePluginName}
+= Installing the {ProductShortName} extension on {VscodePluginName}
 
-You can install the {ProductName} extension on any version of {VscodePluginName}.
+You can install the {ProductShortName} extension on {VscodePluginName} on Linux, Windows or iOS..
 
 .Prerequisites
 
-link:https://code.visualstudio.com[Visual Code Studio]
+* link:https://code.visualstudio.com[VS Code installed]
+* 4 GB of RAM (8 GB recommended)
+* JDK 11+
+* `JAVA_HOME` set to `jdk11`
 
 .Procedure
 
-. Launch {VscodePluginName}.
-. In the left panel, click the *Extensions* icon.
-. Enter *{ProductName}* in the text box at the top of the screen.
-. Click *Install*.
+. In {VscodePluginShortName}, click the *Extensions* icon on the Activity bar to go to the *Extensions* view.
+. Enter `{ProductName}` in the Search field.
+. Select the *Migration Toolkit for Applications* extension and click *Install*.
 +
-The *{ProductName}* icon appears in the left panel, below the *Extensions* icon.
+The {ProductShortName} extension icon [image] is displayed on the Activity bar.
+
+[NOTE]
+====
+To uninstall the {ProductShortName} extension, click the *Extensions* icon on the Activity bar, click the Manage icon of the {ProductShortName} extension, and select *Uninstall*.
+====
