@@ -1,0 +1,17 @@
+// Module included in the following assemblies:
+//
+// * docs/vsc-extension-guide/master.adoc
+
+
+[id="uninstalling-vs-code-extension_{context}"]
+= Uninstalling the {ProductName} extension on {VscodePluginName}
+
+If needed, you can uninstall the {ProductName} extension on {VscodePluginName}.
+
+.Procedure
+
+. In {VscodePluginName}, click the *Extensions* icon.
+. Enter *{ProductName}* in the text box at the top of the screen.
+. Click *Uninstall*.
++
+The *{ProductName}* icon no longer appears in the left panel.
