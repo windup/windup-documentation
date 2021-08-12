@@ -8,21 +8,18 @@ include::topics/templates/document-attributes.adoc[]
 :context: vsc-extension-guide
 :vsc-extension-guide-guide:
 
-= {VscExtensionBookName}
-
-This guide is for engineers, consultants, and others who want to use the {PluginName} for the {ProductName} ({ProductShortName}) to assist with migrating applications.
+= Visual Studio Code Extension Guide
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
 == Introduction
 
-// All these sections need to be updated
+// About the VS Code plugin
+include::topics/about-vscode-extension.adoc[leveloffset=+2]
+
 // About {ProductName}
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
-
-// About the VS Code plugin
-
 
 // Install the Plugin
 // include::topics/installing-plugin.adoc[leveloffset=+1]
@@ -72,4 +69,4 @@ include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 //
 // include::topics/plugin-icon-legend.adoc[leveloffset=+2]
 
-:!plugin-guide:
+:!vsc-extension-guide:
