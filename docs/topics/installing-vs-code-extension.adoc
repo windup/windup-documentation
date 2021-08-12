@@ -4,20 +4,20 @@
 
 
 [id="installing-vs-code-extension_{context}"]
-= Installing the {ProductShortName} extension on {VscodePluginName}
+= Installing the {ProductShortName} extension on Visual Studio Code
 
-You can install the {ProductShortName} extension on {VscodePluginName} on Linux, Windows or iOS.
+You can install the {ProductShortName} extension on Visual Studio Code (VS Code) on Linux, Windows, or macOS.
 
 .Prerequisites
 
 * link:https://code.visualstudio.com[VS Code installed]
-* 4 GB of RAM (8 GB recommended)
-* JDK 11+
-* `JAVA_HOME` set to `jdk11`
+* 8 GB RAM
+* JDK 11 or later
+* Environmental variable `JAVA_HOME` set to `jdk11`
 
 .Procedure
 
-. In {VscodePluginShortName}, click the *Extensions* icon on the Activity bar.
+. In VS Code, click the *Extensions* icon on the Activity bar.
 . Enter `{ProductName}` in the Search field.
 . Select the *Migration Toolkit for Applications* extension and click *Install*.
 +
