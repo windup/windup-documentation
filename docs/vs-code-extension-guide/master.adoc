@@ -21,13 +21,8 @@ include::topics/about-vscode-extension.adoc[leveloffset=+2]
 // About {ProductName}
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 
-<<<<<<< Updated upstream
-// Install the Plugin
-// include::topics/installing-plugin.adoc[leveloffset=+1]
-=======
-// Install the Plugin [start here]
-include::topics/installing-plugin.adoc[leveloffset=+1]
->>>>>>> Stashed changes
+// Install the {VscodePluginName} Plugin
+include::topics/installing-vs-code-plugin.adoc[leveloffset=+1]
 
 // Access {ProductShortName} IDE Tools
 // include::topics/plugin-access-mta-tools.adoc[leveloffset=+1]
