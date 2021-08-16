@@ -8,14 +8,14 @@ include::topics/templates/document-attributes.adoc[]
 :context: vsc-extension-guide
 :vsc-extension-guide-guide:
 
-= Visual Studio Code Extension Guide
+= Visual studio code extension guide
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
 == Introduction
 
-// About the VS Code plugin
+// About the VS Code extension
 include::topics/about-vscode-extension.adoc[leveloffset=+2]
 
 // About {ProductName}

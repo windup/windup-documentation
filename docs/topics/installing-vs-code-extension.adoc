@@ -5,7 +5,7 @@
 [id="installing-vs-code-extension_{context}"]
 = Installing the {ProductShortName} extension for Visual Studio Code
 
-You can install the {ProductShortName} extension for Visual Studio Code (VS Code) on any platform that supports VS Code.
+You can install the {ProductShortName} extension for Visual Studio Code (VS Code).
 
 .Prerequisites
 
@@ -14,7 +14,7 @@ You can install the {ProductShortName} extension for Visual Studio Code (VS Code
 
 .Procedure
 
-. Set the environmental variable `JAVA_HOME` to `jdk11`:
+. Set the environmental variable `JAVA_HOME`:
 +
 [source, terminal]
 ----
@@ -26,11 +26,3 @@ $ export JAVA_HOME=jdk11
 . Select the *Migration Toolkit for Applications* extension and click *Install*.
 +
 The {ProductShortName} extension icon (image:vs_MTA_extension_icon.png[MTA code extension]) is displayed on the Activity bar.
-
-[NOTE]
-====
-To uninstall the {ProductShortName} extension:
-
-. In the *Extensions* view, select the *{ProductName}* extension.
-. Click the *Manage* icon and select *Uninstall*.
-====
