@@ -8,25 +8,22 @@ include::topics/templates/document-attributes.adoc[]
 :context: vsc-extension-guide
 :vsc-extension-guide-guide:
 
-= Visual Studio Code Extension Guide
+= Visual Studio Code extension guide
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
 == Introduction
 
-// About the VS Code plugin
+// About the VS Code extension
 include::topics/about-vscode-extension.adoc[leveloffset=+2]
 
 // About {ProductName}
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 
-// Install the Plugin
-// include::topics/installing-plugin.adoc[leveloffset=+1]
+// Install the extension
+include::topics/installing-vs-code-extension.adoc[leveloffset=+1]
 
-// Access {ProductShortName} IDE Tools
-// include::topics/plugin-access-mta-tools.adoc[leveloffset=+1]
-//
 // // Windup IDE Plugin Components
 // include::topics/plugin-components.adoc[leveloffset=+2]
 //
