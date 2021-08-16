@@ -11,15 +11,15 @@ include::topics/templates/document-attributes.adoc[]
 = Visual Studio Code Extension Guide
 
 //Inclusive language statement
-// include::topics/making-open-source-more-inclusive.adoc[]
+include::topics/making-open-source-more-inclusive.adoc[]
 
-// == Introduction
+== Introduction
 
 // About the VS Code plugin
 include::topics/about-vscode-extension.adoc[leveloffset=+2]
 
 // About {ProductName}
-// include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 
 // Install the {VscodePluginName} Plugin
 include::topics/installing-vs-code-plugin.adoc[leveloffset=+1]
