@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-[id='xml-rule-when-syntax_{context}']
+[id="xml-rule-when-syntax_{context}"]
 = `<when>` syntax
 
 Conditions allowed in the `when` portion of a rule must extend http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperation] and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.
@@ -23,7 +23,7 @@ The following sections describe the more common XML `when` rule conditions.
 
 By default, if more than one `when` rule condition is provided, then all conditions must be met for the rule to match.
 
-[id='javaclass-syntax_{context}']
+[id="javaclass-syntax_{context}"]
 == <javaclass> syntax
 
 === Summary
@@ -171,7 +171,7 @@ Note that in this case, the `<javaclass>` refers to an annotation (`@MyAnnotatio
 
 |====
 
-[id='xmlfile-syntax_{context}']
+[id="xmlfile-syntax_{context}"]
 == <xmlfile> syntax
 
 === Summary
@@ -302,7 +302,7 @@ a|The namespace referenced in XML files. This element contains two optional attr
 
 |====
 
-[id='project-syntax_{context}']
+[id="project-syntax_{context}"]
 == <project> syntax
 
 === Summary
@@ -366,7 +366,7 @@ a|Subcondition used within `<project>` to query against project dependencies. Th
 |Specify the upper version bound of the artifact. For example `2.2.0.Final`.
 |====
 
-[id='filecontent-syntax_{context}']
+[id="filecontent-syntax_{context}"]
 == <filecontent> syntax
 
 === Summary
@@ -412,7 +412,7 @@ from="MyEjbRule"
 |====
 
 
-[id='file-syntax_{context}']
+[id="file-syntax_{context}"]
 == <file> syntax
 
 === Summary
@@ -455,7 +455,7 @@ from="MyEjbRule"
 
 |====
 
-[id='has-hint-syntax_{context}']
+[id="has-hint-syntax_{context}"]
 == <has-hint> syntax
 
 === Summary
@@ -519,7 +519,7 @@ The `<has-hint>` element is used to determine if a hint exists for a file or lin
 |An optional argument allowing you to match the hint against the provided message string.
 |====
 
-[id='has-classification-syntax_{context}']
+[id="has-classification-syntax_{context}"]
 == <has-classification> syntax
 
 === Summary
@@ -543,7 +543,7 @@ The `has-classification` element is used to determine if a specified classificat
 |An optional title to match the classification against.
 |====
 
-[id='graph-query-syntax_{context}']
+[id="graph-query-syntax_{context}"]
 == <graph-query> syntax
 
 === Summary
@@ -628,7 +628,7 @@ from="MyEjbRule"
 
 |====
 
-[id='dependency-syntax_{context}']
+[id="dependency-syntax_{context}"]
 == <dependency> syntax
 
 === Summary

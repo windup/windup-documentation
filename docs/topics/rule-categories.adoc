@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-[id='rule-categories_{context}']
+[id="rule-categories_{context}"]
 = Using custom rule categories
 
 You can create custom rule categories and assign {ProductShortName} rules to them.
@@ -12,7 +12,7 @@ You can create custom rule categories and assign {ProductShortName} rules to the
 Although {ProductShortName} processes rules with the legacy `severity` field, you must update your custom rules to use the new `category-id` field.
 ====
 
-[id='add_custom_category_{context}']
+[id="add_custom_category_{context}"]
 [discrete]
 == Adding a custom category
 
@@ -44,7 +44,7 @@ You can add a custom category to the rule category file.
 +
 This category is ready to be referenced by {ProductShortName} rules.
 
-[id='assign_custom_category_{context}']
+[id="assign_custom_category_{context}"]
 [discrete]
 == Assigning a rule to a custom category
 

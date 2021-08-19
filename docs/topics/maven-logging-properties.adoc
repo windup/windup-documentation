@@ -2,7 +2,7 @@
 //
 // * docs/maven-guide/master.adoc
 
-[id='maven-logging-properties_{context}']
+[id="maven-logging-properties_{context}"]
 = Default `logging.properties` in the {MavenNameTitle}
 
 The default `logging.properties` file included with the {MavenName} is provided below. This configuration omits many extraneous messages while allowing you to view the progress of the {MavenName}.

@@ -26,7 +26,10 @@ ifdef::ocp-45,ocp-41[]
 * One or more projects in which you can install the {WebName}.
 endif::[]
 +
-IMPORTANT: Do not install the {WebName} in a default project.
+[IMPORTANT]
+====
+Do not install the {WebName} in a default project.
+====
 
 ifdef::ocp-45[]
 * `cluster-admin` privileges to install the {DocInfoProductName} Operator.

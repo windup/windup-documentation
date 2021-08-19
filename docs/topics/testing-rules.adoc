@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-[id='testing-rules_{context}']
+[id="testing-rules_{context}"]
 = Testing XML rules
 
 After you have created an XML rule, you should create a test rule to ensure that it works.
@@ -18,7 +18,7 @@ Test rules are created using a process similar to the process for creating a tes
 
 In addition, it is recommended to create a test rule that follows the name of the rule it tests. For instance, if a rule were created with a filename of `proprietary-rule.mta.xml`, the test rule should be called `proprietary-rule.mta.test.xml`.
 
-[id='test-xml-rule-structure_{context}']
+[id="test-xml-rule-structure_{context}"]
 === Test XML rule structure
 
 All test XML rules are defined as elements within `ruletests` which contain one or more `rulesets`. For more details, see the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[{ProductShortName} XML rule schema].
@@ -44,7 +44,7 @@ In addition to the tags in the standard `perform action` syntax, the following `
 
 * `<fail>`
 
-[id='not-syntax_{context}']
+[id="not-syntax_{context}"]
 ==== <not> syntax
 
 [discrete]
@@ -92,7 +92,7 @@ The following is an example of a test rule that fails if only a specific message
 
 The `<not>` element has no unique attributes or child elements.
 
-[id='iterable-filter-syntax_{context}']
+[id="iterable-filter-syntax_{context}"]
 ==== <iterable-filter> syntax
 
 [discrete]
@@ -154,7 +154,7 @@ The `<iterable-filter>` element has no unique child elements.
 |The number of times to be verified.
 |====
 
-[id='classification_exists_syntax_{context}']
+[id="classification_exists_syntax_{context}"]
 ==== <classification-exists> syntax
 
 The `<classification-exists>` element determines if a specific classification title has been included in the analysis. For additional information, see the link:{LinkAPI}org/jboss/windup/reporting/config/ClassificationExists.html[ClassificationExists] class.
@@ -222,7 +222,7 @@ The `<classification-exists>` has no unique child elements.
 |====
 
 
-[id='hint-exists-syntax_{context}']
+[id="hint-exists-syntax_{context}"]
 ==== <hint-exists> syntax
 
 The `<hint-exists>` element determines if a specific hint has been included in the analysis. It searches for any instances of the defined message, and is typically used to search for the beginning or a specific class inside of a `<message>` element. For additional information, see the link:{LinkAPI}org/jboss/windup/reporting/config/HintExists.html[HintExists] class.
@@ -289,7 +289,7 @@ The `<hint-exists>` element has no unique child elements.
 |An optional argument that restricts matching to `InLineHintModels` that reference the given filename.
 |====
 
-[id='fail-syntax_{context}']
+[id="fail-syntax_{context}"]
 ==== <fail> syntax
 
 The `<fail>` element reports the execution as a failure and displays the associated message. It is commonly used in conjunction with the `<not>` condition to display a message only if the conditions are not met.

@@ -2,7 +2,7 @@
 //
 // * docs/cli-guide/master.adoc
 
-[id='review-reports_{context}']
+[id="review-reports_{context}"]
 = Reviewing the reports
 
 The report examples shown in the following sections are a result of analyzing the `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example application, which is located in the {ProductShortName} GitHub source repository.
@@ -59,7 +59,7 @@ image::shared-archives-breakdown.png[Shared archives]
 
 Information about the archives that are shared among applications can be found in the Archives Shared by Multiple Applications reports.
 
-[id='review-the-report-application-report_{context}']
+[id="review-the-report-application-report_{context}"]
 == Application report
 
 === Dashboard
@@ -136,7 +136,7 @@ endif::[]
 | Describes the current version of {ProductShortName} and provides helpful links for further assistance.
 |====
 
-[id='issues-report_{context}']
+[id="issues-report_{context}"]
 === Issues report
 
 Access this report from the dashboard by clicking the *Issues* link.
@@ -199,7 +199,7 @@ image::duplicate-archive-app-report.png[Duplicate archive]
 
 The story points for archives that are duplicated within an application will be counted only once in the total story point count for that application.
 
-[id='technology-report-application_{context}']
+[id="technology-report-application_{context}"]
 === Technologies report
 
 Access this report from the dashboard by clicking the *Technologies* link.
@@ -211,7 +211,7 @@ The image below shows the technologies used in the `jee-example-app`.
 .Technologies in an application
 image::technology-report-single-application.png[Technology report Application view]
 
-[id='application-dependencies-graph-report_{context}']
+[id="application-dependencies-graph-report_{context}"]
 === Application Dependencies Graph report
 
 The analyzed applications' dependencies are shown in this report, accessible from the *Dependencies Graph* link from the dashboard.
@@ -245,7 +245,7 @@ In this example, warnings appear at various import statements, declarations, and
 .Source Report
 image::report-jee-example-source-1.png[Source Report]
 
-[id='technology-report_{context}']
+[id="technology-report_{context}"]
 == Technologies report
 
 Access this report from the report landing page by clicking the *Technologies* link.
@@ -257,7 +257,7 @@ Clicking any of the headers, such as *Markup*, sorts the results in descending o
 .Technologies used across multiple applications
 image::technology-report-overview.png[Technologies used across multiple applications]
 
-[id='dependencies-graph-report_{context}']
+[id="dependencies-graph-report_{context}"]
 == Dependencies Graph report
 
 Access this report from the report landing page by clicking the *Dependencies Graph* link.
@@ -277,7 +277,7 @@ The dependencies graph may be adjusted by using any of the following.
 * Double clicking anywhere will return the entire graph to the default state.
 * Clicking on any item in the legend will enable or disable all items of the selected type. For instance, selecting the embedded WARs icon will disable all embedded WARs if these are enabled, and will enable these dependencies if they are disabled.
 
-[id='shared-archives_{context}']
+[id="shared-archives_{context}"]
 == Archives shared by multiple applications
 
 Access these reports from the report landing page by clicking the *Archives shared by multiple applications* link. Note that this link is only available if there are applicable shared archives.
@@ -287,7 +287,7 @@ image::shared-archives-app-list.png[Archives shared by multiple applications]
 
 This allows you to view the detailed reports for all archives that are shared across multiple applications.
 
-[id='review-the-report-rule-provider-executions-report_{context}']
+[id="review-the-report-rule-provider-executions-report_{context}"]
 == Rule Providers Execution Overview
 
 Access this report from the report landing page by clicking the *Rule providers execution overview* link.
@@ -297,7 +297,7 @@ This report provides the list of rules that executed when running the {ProductSh
 .Rule Providers Execution Overview
 image::report-jee-example-ruleprovider.png[Rule Provider Execution Overview]
 
-[id='review-the-report-freemarker-report_{context}']
+[id="review-the-report-freemarker-report_{context}"]
 == Used FreeMarker Functions and Directives
 
 Access this report from the report landing page by clicking the *FreeMarker methods* link.
@@ -307,7 +307,7 @@ This report lists all the registered functions and directives that were used to 
 .Used FreeMarker Functions and Directives
 image::report-jee-example-freemarker-and-directives.png[FreeMarker Functions and Directives]
 
-[id='review-the-report-send-feedback_{context}']
+[id="review-the-report-send-feedback_{context}"]
 == Send feedback form
 
 Access this feedback form from the report landing page by clicking the *Send feedback* link.

@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-[id='review-quickstarts_{context}']
+[id="review-quickstarts_{context}"]
 = Reviewing the {ProductName} quickstarts
 
 The {ProductName} quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.
@@ -11,7 +11,7 @@ Each quickstart has a `README.adoc` file that contains instructions for that qui
 
 You can download a `.zip` file of the latest version of the quickstarts. If you prefer to work with the source code, you can fork and clone the `windup-quickstarts` project repository.
 
-[id='download_quickstart_zip_{context}']
+[id="download_quickstart_zip_{context}"]
 [discrete]
 == Downloading the latest quickstart
 
@@ -25,7 +25,7 @@ You can download the latest release of a quickstart.
 +
 You can review the quickstart `README.adoc` file.
 
-[id='use-quickstart-github-project_{context}']
+[id="use-quickstart-github-project_{context}"]
 [discrete]
 == Forking and cloning the quickstart GitHub project
 
