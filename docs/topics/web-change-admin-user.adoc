@@ -2,7 +2,7 @@
 //
 // * docs/web-console-guide/master.adoc
 
-[id='web-change-admin-user_{context}']
+[id="web-change-admin-user_{context}"]
 = Changing the administrative user's credentials
 
 When you enable authentication for the {WebName}, a default administrative user is provided with the username `admin` and password `password`. You should change this password so that only those that are authorized can make further changes to {WebName} users.

@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-[id='xml-rule-perform-syntax_{context}']
+[id="xml-rule-perform-syntax_{context}"]
 = `<perform>` syntax
 
 Operations available in the `perform` section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.
@@ -11,7 +11,7 @@ You can view the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[co
 
 The following sections describe the more common XML rule perform actions.
 
-[id='classification-syntax_{context}']
+[id="classification-syntax_{context}"]
 == <classification> syntax
 
 === Summary
@@ -117,7 +117,7 @@ a|Description of this resource
 |====
 
 
-[id='link-syntax_{context}']
+[id="link-syntax_{context}"]
 == <link> syntax
 
 === Summary
@@ -173,7 +173,7 @@ title="Migrate WebLogic Proprietary Servlet Annotations"
 
 |====
 
-[id='hint-syntax_{context}']
+[id="hint-syntax_{context}"]
 == <hint> syntax
 
 === Summary
@@ -293,7 +293,7 @@ a|Contains information to be used by the {PluginName} to perform quick fixes whe
 
 |====
 
-[id='xslt-syntax_{context}']
+[id="xslt-syntax_{context}"]
 == <xslt> syntax
 
 === Summary
@@ -384,7 +384,7 @@ a|Specify XSLTTransformation parameters as property value pairs
 ----
 |====
 
-[id='lineitem-syntax_{context}']
+[id="lineitem-syntax_{context}"]
 == <lineitem> syntax
 
 === Summary
@@ -429,7 +429,7 @@ message="Proprietary code found."
 
 |====
 
-[id='iteration-syntax_{context}']
+[id="iteration-syntax_{context}"]
 == <iteration> syntax
 
 === Summary

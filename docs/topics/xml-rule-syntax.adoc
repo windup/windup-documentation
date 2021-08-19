@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-[id='xml-rule-syntax_{context}']
+[id="xml-rule-syntax_{context}"]
 = XML rule structure
 
 This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets. For more details, see the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[{ProductShortName} XML rule schema].

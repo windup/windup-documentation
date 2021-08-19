@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-[id='create-basic-xml-rule_{context}']
+[id="create-basic-xml-rule_{context}"]
 = Creating a basic XML rule
 
 This section describes how to create an {ProductShortName} XML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
@@ -94,7 +94,7 @@ Individual rules are contained within the `<rules>` element. They comprise one o
 
 See the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[XML rule schema] for valid rule syntax.
 
-[id='create-when-condition_{context}']
+[id="create-when-condition_{context}"]
 === Creating a `<when>` condition
 
 The XML rule `<when>` element tests for a condition. The following is a list of valid `<when>` conditions.
@@ -141,7 +141,7 @@ The XML rule `<when>` element tests for a condition. The following is a list of 
 
 The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content.
 
-[id='create-perform-action_{context}']
+[id="create-perform-action_{context}"]
 === Creating a `<perform>` action
 
 The XML rule `<perform>` element performs the action when the condition is met. Operations allowed in this section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project line item reporting. The following is a list of valid `<perform>` actions.

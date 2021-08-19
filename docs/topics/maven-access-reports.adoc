@@ -2,7 +2,7 @@
 //
 // * docs/maven-guide/master.adoc
 
-[id='maven-access-reports_{context}']
+[id="maven-access-reports_{context}"]
 = Accessing the report
 
 When you execute {ProductName}, the report is generated in the `OUTPUT_REPORT_DIRECTORY` that you specify using the `outputDirectory` argument in the `pom.xml`. Upon completion of the build, you will see the following message in the build log.
