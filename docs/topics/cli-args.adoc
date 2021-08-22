@@ -186,5 +186,5 @@ A space-delimited list of the packages to be evaluated by {ProductShortName}. It
 
 [WARNING]
 ====
-If you omit the `--packages` argument, every package in the application is scanned, which can impact performance. It is best to provide this argument with one or more packages.
+If you omit the `--packages` argument, every package in the application is scanned, which can impact performance.
 ====
