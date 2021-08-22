@@ -83,7 +83,7 @@ $ <MTA_HOME>/bin/mta-cli [TAB]
 [id="bash-completion-temporary_{context}"]
 === Enabling Bash completion
 
-To enable Bash completion for the current shell, execute the following command. After the prompt returns, follow the steps for using the {CLIName}.
+To enable Bash completion for the current shell, execute the following command:
 
 [source,options="nowrap",subs="+quotes"]
 ----
@@ -103,7 +103,7 @@ The following commands allow Bash completion to persist across restarts:
 source <MTA_HOME>/bash-completion/mta-cli
 ----
 
-* To enable Bash completion for all users across system restarts, copy the {ProductName} {CLIName} Bash completion file to the `/etc/bash_completion.d/` directory. By default, this directory is only writable by the root user.
+* To enable Bash completion for all users across system restarts, copy the {ProductName} {CLIName} Bash completion file to the `/etc/bash_completion.d/` directory as the root user.
 +
 [source,options="nowrap",subs="+quotes"]
 ----
