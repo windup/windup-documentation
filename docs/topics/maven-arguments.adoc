@@ -56,6 +56,7 @@ A path to the file or directory containing one or more applications to be analyz
 ----
 
 [id="maven-input-file-type-arguments_{context}"]
+== Evaluating an input file
 
 Depending on whether the input file type provided to the `inputDirectory` argument is a file or directory, it will be evaluated as follows depending on the additional arguments provided.
 
