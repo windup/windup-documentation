@@ -5,14 +5,8 @@
 [id="system-requirements_{context}"]
 = System requirements
 
-* Software
+* OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, _or_ Oracle JDK 11
+* 8 GB RAM
+* If you are installing on macOS, the value of `maxproc` must be `2048` or greater.
 
-** OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, Oracle JDK 11
-** {ProductShortName} is tested on Linux, Windows, and macOS. Other operating systems with Java 8+ support should work equally well.
-
-* Hardware
-
-** A minimum of 4 GB RAM. For better performance, a quad-core processor with 8 GB RAM is recommended because it allows 3 - 4 GB RAM for use by the JVM.
-** A minimum of 4 GB of free disk space. A fast disk, especially a solid-state drive (SSD), is likely to improve performance.
-+
-For tips on how to optimize performance, see link:{ProductDocUserGuideURL}#optimize_performance[Optimizing {ProductShortName} performance] in {ProductShortName} _{UserCLIBookName}_.
+// For tips on how to optimize performance, see link:{ProductDocUserGuideURL}#optimize_performance[Optimizing {ProductShortName} performance] in {ProductShortName} _{UserCLIBookName}_.
