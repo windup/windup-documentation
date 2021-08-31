@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-[id='where-syntax_{context}']
+[id="where-syntax_{context}"]
 = `<where>` syntax
 
 You can define parameters that specify a matching pattern to be used in other elements of an XML rule. This can help simplify the patterns for complex matching expressions.

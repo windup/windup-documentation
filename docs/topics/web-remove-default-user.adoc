@@ -2,7 +2,7 @@
 //
 // * docs/web-console-guide/master.adoc
 
-[id='web-remove-default-user_{context}']
+[id="web-remove-default-user_{context}"]
 = Removing the default {WebName} user
 
 A default {WebName} user is provided with the {WebName} with the username `mta` and password `password`. When you enable authentication for the {WebName}, you should remove this user so that the {WebName} can only be accessed by authorized users.

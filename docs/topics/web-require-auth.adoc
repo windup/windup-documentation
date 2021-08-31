@@ -2,7 +2,7 @@
 //
 // * docs/web-console-guide/master.adoc
 
-[id='web-require-auth_{context}']
+[id="web-require-auth_{context}"]
 = Configuring authentication for the {WebName}
 
 You can configure the {WebName} to require authentication, which is handled by Red Hat Single Sign-On. When enabled, users will be required to authenticate before being granted access to the {WebName}.

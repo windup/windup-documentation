@@ -2,7 +2,7 @@
 //
 // * docs/web-console-guide/master.adoc
 
-[id='web-openshift-access_{context}']
+[id="web-openshift-access_{context}"]
 = Accessing the {WebName} on OpenShift Container Platform
 
 After you have installed the {DocInfoProductName} Operator in the OpenShift Web Console and created an instance of the {DocInfoProductName} application, you can access the {DocInfoProductName} web console in a browser.

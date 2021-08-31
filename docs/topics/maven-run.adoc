@@ -2,7 +2,7 @@
 //
 // * docs/maven-guide/master.adoc
 
-[id='maven-run_{context}']
+[id="maven-run_{context}"]
 = Running the {MavenNameTitle}
 
 The {MavenName} is executed by including a reference to the plugin inside your application's `pom.xml` file. When the application is built, the {MavenName} is executed and generates the reports for analysis.

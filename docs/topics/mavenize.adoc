@@ -2,7 +2,7 @@
 //
 // * docs/cli-guide/master.adoc
 
-[id='mavenize_{context}']
+[id="mavenize_{context}"]
 = Mavenizing your application
 
 {ProductShortName} provides the ability to generate an Apache Maven project structure based on the application provided. This will create a directory structure with the necessary Maven Project Object Model (POM) files that specify the appropriate dependencies.
@@ -15,6 +15,7 @@ You can generate a Maven project structure for the provided application by passi
 
 The following example runs {ProductShortName} using the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] test application:
 
+[source,options="nowrap",subs="+quotes"]
 ----
 $ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --target eap:6 --packages com.acme org.apache --mavenize
 ----
@@ -48,7 +49,7 @@ The example `jee-example-app-1.0.0.ear` application is an EAR archive that conta
 
 Review each of the generated files and customize as appropriate for your project. To learn more about Maven POM files, see the link:https://maven.apache.org/guides/introduction/introduction-to-the-pom.html[Introduction to the POM] section of the Apache Maven documentation.
 
-[id='root-pom-file_{context}']
+[id="root-pom-file_{context}"]
 [discrete]
 === Root POM file
 
@@ -73,7 +74,7 @@ NOTE: Be sure to reorder the list of modules if necessary so that they are liste
 The root POM is also configured to use the link:https://maven.repository.redhat.com/[Red Hat JBoss Enterprise Application Platform Maven repository] to download project dependencies.
 
 
-[id='bom-file_{context}']
+[id="bom-file_{context}"]
 [discrete]
 === BOM file
 
@@ -99,7 +100,7 @@ The following dependencies are listed in the BOM for the example `jee-example-ap
 </dependencyManagement>
 ----
 
-[id='app-pom-files_{context}']
+[id="app-pom-files_{context}"]
 [discrete]
 === Application POM files
 

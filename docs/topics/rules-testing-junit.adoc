@@ -2,8 +2,8 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-[id='rules-testng-junit_{context}']
-= Testing the rules using JUnit
+[id="rules-testng-junit_{context}"]
+= Testing the rules by using JUnit
 
 Once a test rule has been created, it can be analyzed as part of a JUnit test to confirm that the rule meets all criteria for execution. The `WindupRulesMultipleTests` class in the {ProductShortName} rules repository is designed to test multiple rules simultaneously, and provides feedback on any missing requirements.
 

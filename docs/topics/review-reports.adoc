@@ -2,7 +2,7 @@
 //
 // * docs/cli-guide/master.adoc
 
-[id='review-reports_{context}']
+[id="review-reports_{context}"]
 = Reviewing the reports
 
 The report examples shown in the following sections are a result of analyzing the `com.acme` and `org.apache` packages in the https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example application, which is located in the {ProductShortName} GitHub source repository.
@@ -18,7 +18,7 @@ endif::cli-guide[]
 
 Use a browser to open the `index.html` file located in the report output directory. This opens a landing page that lists the applications that were processed.  Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.
 
-.Application List
+.Application list
 image::report-jee-example-application-list-page.png[Application list]
 
 NOTE: The incidents and estimated story points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
@@ -33,22 +33,22 @@ The following table lists all of the reports and pages that can be accessed from
 |Application
 | Click the name of the application.
 
-| Technologies Report
-| Click the `Technologies` link at the top of the page.
+| Technologies report
+| Click the *Technologies* link at the top of the page.
 
-| Dependencies Graph Report
-| Click the `Dependencies Graph` link at the top of the page.
+| Dependencies graph report
+| Click the *Dependencies Graph* link at the top of the page.
 
 | Archives shared by multiple applications
 | Click the *Archives shared by multiple applications* link. Note that this link is only available when there are shared archives across multiple applications.
 
-| Rule Providers Execution Overview
+| Rule providers execution overview
 | Click the *Rule providers execution overview* link at the bottom of the page.
 
-| Used FreeMarker Functions and Directives
+| Used FreeMarker functions and directives
 | Click the *FreeMarker methods* link at the bottom of the page.
 
-| Send Feedback form
+| Send feedback form
 | Click the *Send Feedback* link in the top navigation bar to open a form that allows you to submit feedback to the {ProductShortName} team.
 |====
 
@@ -59,7 +59,7 @@ image::shared-archives-breakdown.png[Shared archives]
 
 Information about the archives that are shared among applications can be found in the Archives Shared by Multiple Applications reports.
 
-[id='review-the-report-application-report_{context}']
+[id="review-application-report_{context}"]
 == Application report
 
 === Dashboard
@@ -85,13 +85,13 @@ The top navigation bar lists the various reports that contain additional details
 | Issues
 | Provides a concise summary of all issues that require attention.
 
-| Application Details
+| Application details
 | Provides a detailed overview of all resources found within the application that may need attention during the migration.
 
 | Technologies
 | Displays all embedded libraries grouped by functionality, allowing you to quickly view the technologies used in each application.
 
-| Dependencies Graph
+| Dependencies graph
 | Displays a graph of all Java-packaged dependencies found within the analyzed applications. This graph also demonstrates the relations of each dependency, allowing you to view nested and multiple dependencies.
 
 | Dependencies
@@ -100,7 +100,7 @@ The top navigation bar lists the various reports that contain additional details
 | Unparsable
 | Shows all files that {ProductShortName} could not parse in the expected format. For instance, a file with a `.xml` or `.wsdl` suffix is assumed to be an XML file. If the XML parser fails, the issue is reported here and also where the individual file is listed.
 
-| Remote Services
+| Remote services
 | Displays all remote services references that were found within the application.
 
 | EJBs
@@ -115,16 +115,16 @@ The top navigation bar lists the various reports that contain additional details
 | Hibernate
 | Contains details on all Hibernate-related resources that were found in the application.
 
-| Server Resources
+| Server resources
 | Displays all server resources (for example, JNDI resources) in the input application.
 
 | Spring Beans
 | Contains a list of Spring Beans found during the analysis.
 
-| Hard-Coded IP Addresses
+| Hard-coded IP addresses
 | Provides a list of all hard-coded IP addresses that were found in the application.
 
-| Ignored Files
+| Ignored files
 ifdef::cli-guide[]
 | Lists the files found in the application that, based on certain rules and {ProductShortName} configuration, were not processed. See the `--userIgnorePath` option for more information.
 endif::[]
@@ -136,7 +136,7 @@ endif::[]
 | Describes the current version of {ProductShortName} and provides helpful links for further assistance.
 |====
 
-[id='issues-report_{context}']
+[id="issues-report_{context}"]
 === Issues report
 
 Access this report from the dashboard by clicking the *Issues* link.
@@ -154,16 +154,16 @@ image::report-jee-example-application-issues.png[Issues report]
 
 Each reported issue may be expanded, by clicking on the title, to obtain additional details. The following information is provided.
 
-* A list of files where the incidents occurred, along with the number of incidents within each file. If the file is a Java source file, then clicking the filename will direct you to the corresponding Source Report.
+* A list of files where the incidents occurred, along with the number of incidents within each file. If the file is a Java source file, then clicking the filename will direct you to the corresponding Source report.
 * A detailed description of the issue. This description outlines the problem, provides any known solutions, and references supporting documentation regarding either the issue or resolution.
 * A direct link, entitled *Show Rule*, to the rule that generated the issue.
 
-.Expanded Issue
+.Expanded issue
 image::report-jee-example-application-issues-2.png[Expanded rule in the issues report]
 
 Issues are sorted into four categories by default. Information on these categories is available at ask Category.
 
-=== Application Details report
+=== Application details report
 
 Access this report from the dashboard by clicking the *Application Details* link.
 
@@ -199,7 +199,7 @@ image::duplicate-archive-app-report.png[Duplicate archive]
 
 The story points for archives that are duplicated within an application will be counted only once in the total story point count for that application.
 
-[id='technology-report-application_{context}']
+[id="technology-report-application_{context}"]
 === Technologies report
 
 Access this report from the dashboard by clicking the *Technologies* link.
@@ -211,8 +211,8 @@ The image below shows the technologies used in the `jee-example-app`.
 .Technologies in an application
 image::technology-report-single-application.png[Technology report Application view]
 
-[id='application-dependencies-graph-report_{context}']
-=== Application Dependencies Graph report
+[id="application-dependencies-graph-report_{context}"]
+=== Application dependencies graph report
 
 The analyzed applications' dependencies are shown in this report, accessible from the *Dependencies Graph* link from the dashboard.
 
@@ -223,7 +223,7 @@ The below image shows the dependencies used in the `jee-example-app`, with the s
 .Graph of dependencies in an application
 image::report-jee-example-application-dependencies.png[Dependencies Graph application view]
 
-.Interacting with the Dependencies Graph
+.Interacting with the Dependencies graph
 
 The dependencies graph may be adjusted by using any of the following.
 
@@ -233,7 +233,7 @@ The dependencies graph may be adjusted by using any of the following.
 * Double clicking anywhere will return the entire graph to the default state.
 * Clicking on any item in the legend will enable or disable all items of the selected type. For instance, selecting the embedded WARs icon will disable all embedded WARs if these are enabled, and will enable these dependencies if they are disabled.
 
-=== Source Report
+=== Source report
 
 The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 22 warnings and is assigned 16 story points. Click the file link to see the detail.
 
@@ -242,10 +242,10 @@ The analysis of the `jee-example-services.jar` lists the files in the JAR and th
 
 In this example, warnings appear at various import statements, declarations, and method calls. Each warning describes the issue and the action that should be taken.
 
-.Source Report
+.Source report
 image::report-jee-example-source-1.png[Source Report]
 
-[id='technology-report_{context}']
+[id="technology-report_{context}"]
 == Technologies report
 
 Access this report from the report landing page by clicking the *Technologies* link.
@@ -257,14 +257,14 @@ Clicking any of the headers, such as *Markup*, sorts the results in descending o
 .Technologies used across multiple applications
 image::technology-report-overview.png[Technologies used across multiple applications]
 
-[id='dependencies-graph-report_{context}']
-== Dependencies Graph report
+[id="dependencies-graph-report_{context}"]
+== Dependencies graph report
 
 Access this report from the report landing page by clicking the *Dependencies Graph* link.
 
 It includes a list of all WARs and JARs, and graphs the relations between each of the included files. Each circle in the graph represents a unique dependency defined in the application. If a file is included as a dependency in multiple applications, these are linked in the graph.
 
-In the below image we can see two distinct groups. On the left half we see a single WAR that defines several JARs as dependencies. On the right half we see the same dependencies used by multiple WARs, one of which is the seelcted `overlord-commons-auth-2.0.11.Final.jar`.
+In the below image we can see two distinct groups. On the left half we see a single WAR that defines several JARs as dependencies. On the right half we see the same dependencies used by multiple WARs, one of which is the selected `overlord-commons-auth-2.0.11.Final.jar`.
 
 .Dependencies graph across multiple applications
 image::report-jee-example-application-dependency-graph-overview.png[Dependencies graph across multiple applications]
@@ -277,7 +277,7 @@ The dependencies graph may be adjusted by using any of the following.
 * Double clicking anywhere will return the entire graph to the default state.
 * Clicking on any item in the legend will enable or disable all items of the selected type. For instance, selecting the embedded WARs icon will disable all embedded WARs if these are enabled, and will enable these dependencies if they are disabled.
 
-[id='shared-archives_{context}']
+[id="shared-archives_{context}"]
 == Archives shared by multiple applications
 
 Access these reports from the report landing page by clicking the *Archives shared by multiple applications* link. Note that this link is only available if there are applicable shared archives.
@@ -287,27 +287,27 @@ image::shared-archives-app-list.png[Archives shared by multiple applications]
 
 This allows you to view the detailed reports for all archives that are shared across multiple applications.
 
-[id='review-the-report-rule-provider-executions-report_{context}']
-== Rule Providers Execution Overview
+[id="review-rule-providers-execution-overview_{context}"]
+== Rule providers execution overview
 
 Access this report from the report landing page by clicking the *Rule providers execution overview* link.
 
 This report provides the list of rules that executed when running the {ProductShortName} migration command against the application.
 
-.Rule Providers Execution Overview
+.Rule providers execution overview
 image::report-jee-example-ruleprovider.png[Rule Provider Execution Overview]
 
-[id='review-the-report-freemarker-report_{context}']
-== Used FreeMarker Functions and Directives
+[id="review-the-report-freemarker-report_{context}"]
+== Used FreeMarker functions and directives
 
 Access this report from the report landing page by clicking the *FreeMarker methods* link.
 
 This report lists all the registered functions and directives that were used to build the report. It is useful for debugging purposes or if you plan to build your own custom report.
 
-.Used FreeMarker Functions and Directives
+.Used FreeMarker functions and directives
 image::report-jee-example-freemarker-and-directives.png[FreeMarker Functions and Directives]
 
-[id='review-the-report-send-feedback_{context}']
+[id="review-the-report-send-feedback_{context}"]
 == Send feedback form
 
 Access this feedback form from the report landing page by clicking the *Send feedback* link.
