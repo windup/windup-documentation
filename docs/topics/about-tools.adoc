@@ -7,7 +7,8 @@
 
 The {ProductName} ({ProductShortName}) provides several tools to assist you in the various stages of your migration and modernization efforts. Review the details of each tool to determine which is right for your project.
 
-* link:{ProductDocUserGuideURL}[{CLINameTitle}]
-* link:{ProductDocWebConsoleGuideURL}[{WebNameTitle}]
-* link:{EclipseCrsGuideURL}[{EclipseCrsGuideTitle}]
-* link:{ProductDocMavenGuideURL}[{MavenNameTitle}]
+* CLI
+* Web console
+* {PluginName} for Eclipse and Red Hat CodeReady Studio
+* {ProductShortName} extension for Visual Studio Code
+* {MavenName}

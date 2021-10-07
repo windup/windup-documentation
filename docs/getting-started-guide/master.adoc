@@ -45,7 +45,10 @@ include::topics/about-cli.adoc[leveloffset=+2]
 include::topics/about-the-web-console.adoc[leveloffset=+2]
 
 // About the {PluginNameTitle}
-include::topics/about-plugin.adoc[leveloffset=+2]
+include::topics/eclipse-about-plugin.adoc[leveloffset=+2]
+
+// About the VS Code extension
+include::topics/about-vscode-extension.adoc[leveloffset=+2]
 
 // About the {MavenNameTitle}
 include::topics/about-maven.adoc[leveloffset=+2]
