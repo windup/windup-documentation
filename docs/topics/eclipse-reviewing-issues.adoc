@@ -24,7 +24,7 @@ The following icons indicate the severity and state of an issue:
 |Icon |Description
 |image::error.png[Mandatory] |The issue must be fixed for a successful migration.
 |image::info.gif[Optional] |The issue is optional to fix for migration.
-|image::warning.png[Warning] |The issue might be an issue during migration.
+|image::warning.png[Warning] |The issue might need to be addressed during migration.
 |image::fixedIssue.gif[Resolved] |The issue was resolved.
 |image::stale_issue.gif[Stale] |The issue is stale. The code marked as an issue was modified since the last time that {ProductShortName} identified it as an issue.
 |image::quickfix_error.png[Mandatory with quick fix] |A quick fix is available for this issue, which is mandatory to fix for a successful migration.
