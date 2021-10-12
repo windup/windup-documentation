@@ -9,7 +9,13 @@ The {MavenName} is executed by including a reference to the plugin inside your a
 
 .Prerequisites
 
-* OpenJDK 1.8, OpenJDK 11, Oracle JDK 1.8, _or_ Oracle JDK 11
+* One of the following Java Development Kits (JDKs):
+
+** OpenJDK 1.8
+** OpenJDK 11
+** Oracle JDK 1.8
+** Oracle JDK 11
+
 * 8 GB RAM
 * Maven 3.2.5 or later
 * If you are installing on macOS, the value of `maxproc` must be `2048` or greater.
