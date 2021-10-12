@@ -21,6 +21,13 @@ The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Develo
 
 * link:{CodeReadyStudioDownloadPageURL}[Red Hat CodeReady Studio] _or_ link:https://www.eclipse.org/downloads/packages/release/2021-03/r/eclipse-ide-java-developers[Eclipse IDE for Java Enterprise Developers 2021-03]. If you are installing Eclipse, be sure to download Eclipse IDE for Java Enterprise Developers 2021-03, not 2021-06.
 * JBoss Tools, installed with the link:https://www.eclipse.org/mpc/[Eclipse Marketplace Client].
+* One of the following Java Development Kits (JDKs):
+
+** OpenJDK 1.8
+** OpenJDK 11
+** Oracle JDK 1.8
+** Oracle JDK 11
+
 * If you are installing the {PluginName} on macOS, the value of `maxproc` must be `2048` or greater.
 
 .Procedure

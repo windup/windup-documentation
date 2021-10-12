@@ -17,10 +17,11 @@ The {ProductName} ({ProductShortName}) is an extensible and customizable rule-ba
 
 {ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. {ProductShortName} supports many migration paths including the following examples:
 
-* Migrating from enterprise application servers to Red Hat JBoss Enterprise Application Platform
+* Upgrading to the latest release of Red Hat JBoss Enterprise Application Platform
+* Migrating from Oracle WebLogic or IBM WebSphere Application Server to Red Hat JBoss Enterprise Application Platform
 * Containerizing applications and making them cloud-ready
-* Migrating from Spring Boot to Quarkus
-* Updating OpenJDK versions
+* Migrating from Java Spring Boot to Quarkus
+* Updating from Oracle JDK to OpenJDK
 
 For more information about use cases and migration paths, see the link:https://developers.redhat.com/products/mta/use-cases[MTA for developers] web page.
 

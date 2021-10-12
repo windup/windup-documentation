@@ -16,5 +16,5 @@ You can use the {ProductShortName} extension icons to prioritize issues based on
 . Prioritize issues based on the following icons, which are displayed next to each hint:
 
 ** image:vs_mandatory.png[Mandatory] : The issue must be fixed for a successful migration.
-** image:vs_potential.png[Warning] : The issue might be an issue during migration.
+** image:vs_potential.png[Warning] : The issue might need to be addressed during migration.
 ** image:vs_optional.png[Optional or Quick Fix] : The issue is optional to fix for migration. This icon is also used to indicate any Quick Fixes available for an issue.
