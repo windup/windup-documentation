@@ -32,8 +32,10 @@ include::topics/about-rules.adoc[leveloffset=+2]
 // Supported Migration Paths
 include::topics/migration-paths.adoc[leveloffset=+2]
 
-// System Requirements
-include::topics/system-requirements.adoc[leveloffset=+2]
+// Prerequisites
+include::topics/jdk-hardware-mac-prerequisites.adoc[leveloffset=+2]
+
+// At a later date, we may wish to add the following section, once it is revised: For tips on how to optimize performance, see link:{ProductDocUserGuideURL}#optimize_performance[Optimizing {ProductShortName} performance] in {ProductShortName} _{UserCLIBookName}_.
 
 // About the Tools
 include::topics/about-tools.adoc[leveloffset=+1]

@@ -19,17 +19,8 @@ You can install the {WebName} on Linux, Windows, or macOS operating systems and 
 The {WebName} has been tested with Chrome and Firefox.
 endif::[]
 
-.Prerequisites
-
-* One of the following Java Development Kits (JDKs):
-
-** OpenJDK 1.8
-** OpenJDK 11
-** Oracle JDK 1.8
-** Oracle JDK 11
-
-* 8 GB RAM
-* If you are installing on macOS, the value of `maxproc` must be `2048` or greater.
+[discrete]
+include::jdk-hardware-mac-prerequisites.adoc[leveloffset=+2]
 
 .Procedure
 
