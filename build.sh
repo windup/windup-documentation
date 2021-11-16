@@ -11,7 +11,7 @@ rm index.md > /dev/null 2>&1
 
 cat << EOF > index.md
 ---
-layout: home
+layout: default
 ---
 # Windup documentation
 
