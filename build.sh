@@ -18,5 +18,5 @@ layout: home
 EOF
 
 for f in $FILES; do
-  echo -e "- [$(dirname $f | sed 's/docs\///g; s/_/ /g; s/-/ /g; s/[a-z]*/\u&/g')]($BASE_URL/$(dirname $f)/master.html)" >> index.md
+  echo -e "- [$(dirname $f | sed 's/docs\///g; s/_/ /g; s/-/ /g; s/\b\(.\)/\u\1/g')]($BASE_URL/$(dirname $f)/master.html)" >> index.md
 done
