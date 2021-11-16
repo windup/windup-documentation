@@ -1,13 +1,16 @@
 ---
-layout: default
+layout: home
 ---
 # Windup documentation
 
-- [Web console guide](docs/web-console-guide/master/index.html)
-- [CLI guide](docs/cli-guide/master/index.html)
-- [Eclipse and CodeReady Studio plugin guide](docs/eclipse-code-ready-studio-guide/master/index.html)
-- [Visual Code Studio extension guide](docs/vs-code-extension-guide/master/index.html)
-- [Maven plugin guide](docs/maven-guide/master/index.html)
-- [Release notes 5.2](docs/release-notes/release_notes-5.2/master/index.html)
-- [Rules development guide](docs/rules-development-guide/master/index.html)
-- [Introduction to the Migration Toolkit for Applications](docs/getting-started-guide/master/index.html)
+- [Web Console Guide](docs/web-console-guide/master.html)
+- [Cli Guide](docs/cli-guide/master.html)
+- [Rules Development Guide](docs/rules-development-guide/master.html)
+- [Plugin Guide](docs/plugin-guide/master.html)
+- [Maven Guide](docs/maven-guide/master.html)
+- [Eclipse Code Ready Studio Guide](docs/eclipse-code-ready-studio-guide/master.html)
+- [Release Notes/Release Notes 5.1](docs/release-notes/release_notes-5.1/master.html)
+- [Release Notes/Release Notes 5.2](docs/release-notes/release_notes-5.2/master.html)
+- [Release Notes/Release Notes 5.0](docs/release-notes/release_notes-5.0/master.html)
+- [Vs Code Extension Guide](docs/vs-code-extension-guide/master.html)
+- [Getting Started Guide](docs/getting-started-guide/master.html)

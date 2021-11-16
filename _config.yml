@@ -33,10 +33,12 @@ asciidoctor:
   safe: unsafe
 
 exclude:
-  - README.adoc
+  - README.md
+  - CODE_OF_CONDUCT.md
   - .history
   - CONTRIBUTING.adoc
   - Gemfile.lock
+  - topics/
 
 tag_page_layout: tag
 tag_page_dir: /tag/
