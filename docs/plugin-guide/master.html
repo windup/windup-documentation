@@ -439,93 +439,40 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book">
 <div id="header">
-<h1>{PluginBookName}</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
+<ul class="sectlevel0">
+<li><a href="#_pluginbookname">{PluginBookName}</a>
 <ul class="sectlevel1">
-<li><a href="#making-open-source-more-inclusive_plugin-guide">Making open source more inclusive</a></li>
-<li><a href="#_introduction">1. Introduction</a>
-<ul class="sectlevel2">
-<li><a href="#plugin-intro_plugin-guide">1.1. About the {PluginBookName}</a></li>
-<li><a href="#what-is-the-toolkit_plugin-guide">1.2. About the Migration Toolkit for Applications</a></li>
-<li><a href="#plugin-components_plugin-guide">1.3. About MTA plugin components</a></li>
+<li><a href="#_introduction">1. Introduction</a></li>
+<li><a href="#_using_the_productshortname_pluginname">2. Using the {ProductShortName} {PluginName}</a></li>
 </ul>
 </li>
-<li><a href="#_using_the_mta_mta_plugin">2. Using the MTA MTA plugin</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="making-open-source-more-inclusive_plugin-guide">Making open source more inclusive</h2>
+<div id="preamble">
 <div class="sectionbody">
-<div class="paragraph _abstract">
-<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+<div class="paragraph">
+<p>Unresolved directive in master.adoc - include::topics/templates/document-attributes.adoc[]</p>
 </div>
+</div>
+</div>
+<h1 id="_pluginbookname" class="sect0">{PluginBookName}</h1>
+<div class="openblock partintro">
+<div class="content">
+Unresolved directive in master.adoc - include::topics/making-open-source-more-inclusive.adoc[]
 </div>
 </div>
 <div class="sect1">
 <h2 id="_introduction">1. Introduction</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="plugin-intro_plugin-guide">1.1. About the {PluginBookName}</h3>
 <div class="paragraph">
-<p>This guide is for engineers, consultants, and others who want to use the MTA plugin for the Migration Toolkit for Applications (MTA) to assist with migrating applications.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-This guide uses <em>Eclipse</em> to refer to an installation of Eclipse or Red Hat CodeReady Studio.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="what-is-the-toolkit_plugin-guide">1.2. About the Migration Toolkit for Applications</h3>
-<h4 id="_what_is_the_migration_toolkit_for_applications" class="discrete">What is the Migration Toolkit for Applications?</h4>
-<div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
+<p>Unresolved directive in master.adoc - include::topics/plugin-intro.adoc[leveloffset=+2]</p>
 </div>
 <div class="paragraph">
-<p>MTA examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. MTA supports many migration paths including the following examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Upgrading to the latest release of Red Hat JBoss Enterprise Application Platform</p>
-</li>
-<li>
-<p>Migrating from Oracle WebLogic or IBM WebSphere Application Server to Red Hat JBoss Enterprise Application Platform</p>
-</li>
-<li>
-<p>Containerizing applications and making them cloud-ready</p>
-</li>
-<li>
-<p>Migrating from Java Spring Boot to Quarkus</p>
-</li>
-<li>
-<p>Updating from Oracle JDK to OpenJDK</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">MTA for developers</a> web page.</p>
-</div>
-<h4 id="_how_does_the_migration_toolkit_for_applications_simplify_migration" class="discrete">How does the Migration Toolkit for Applications simplify migration?</h4>
-<div class="paragraph">
-<p>The Migration Toolkit for Applications looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
-</div>
-<div class="paragraph">
-<p>MTA generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
-</div>
-<h4 id="_how_do_i_learn_more" class="discrete">How do I learn more?</h4>
-<div class="paragraph">
-<p>See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/introduction_to_the_migration_toolkit_for_applications"><em>Introduction to the Migration Toolkit for Applications</em></a> to learn more about the features, supported configurations, system requirements, and available tools in the Migration Toolkit for Applications.</p>
+<p>Unresolved directive in master.adoc - include::topics/what-is-the-toolkit.adoc[leveloffset=+2]</p>
 </div>
 <div class="paragraph">
 <p>Unresolved directive in master.adoc - include::topics/about-plugin.adoc[leveloffset=+2]</p>
@@ -541,52 +488,13 @@ This guide uses <em>Eclipse</em> to refer to an installation of Eclipse or Red H
 <div class="paragraph">
 <p>Unresolved directive in master.adoc - include::topics/plugin-access-mta-tools.adoc[leveloffset=+1]</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="plugin-components_plugin-guide">1.3. About MTA plugin components</h3>
 <div class="paragraph">
-<p>The following components are available in the MTA perspective when using the MTA plugin to analyze projects.</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Issue Explorer</dt>
-<dd>
-<p>This view allows you to explore the MTA issues for projects that have been analyzed.</p>
-<div class="paragraph">
-<p>If this view is not visible in the MTA perspective, you can open it by selecting <strong>Window</strong> &#8594; <strong>Show View</strong> &#8594; <strong>Issue Explorer</strong>.</p>
-</div>
-</dd>
-<dt class="hdlist1">MTA Server</dt>
-<dd>
-<p>The MTA server is a separate process that executes the MTA analysis, flags the migration issues, and generates the reports.</p>
-<div class="paragraph">
-<p>You can start, stop, and view the status of the MTA server from <strong>Issue Explorer</strong>.</p>
-</div>
-</dd>
-<dt class="hdlist1">Issue Details</dt>
-<dd>
-<p>This view shows detailed information about the selected MTA issue, including the hint, severity, and any additional resources.</p>
-<div class="paragraph">
-<p>If this view is not visible in the MTA perspective, you can open it by selecting <strong>Window</strong> &#8594; <strong>Show View</strong> &#8594; <strong>Issue Details</strong>.</p>
-</div>
-</dd>
-<dt class="hdlist1">MTA Report</dt>
-<dd>
-<p>This view shows the HTML reports that are generated when MTA is executed. From the report landing page you can navigate to detailed reports, such as Application Details, Issues, and Dependencies.</p>
-<div class="paragraph">
-<p>Note that the MTA run configuration used must have the <strong>Generate Report</strong> option selected in order for MTA reports to be generated.</p>
-</div>
-<div class="paragraph">
-<p>If this view is not visible in the MTA perspective, you can open it by selecting <strong>Window</strong> &#8594; <strong>Show View</strong> &#8594; <strong>MTA Report</strong>.</p>
-</div>
-</dd>
-</dl>
-</div>
+<p>Unresolved directive in master.adoc - include::topics/plugin-components.adoc[leveloffset=+2]</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_using_the_mta_mta_plugin">2. Using the MTA MTA plugin</h2>
+<h2 id="_using_the_productshortname_pluginname">2. Using the {ProductShortName} {PluginName}</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Unresolved directive in master.adoc - include::topics/plugin-identify-resolve-issues.adoc[leveloffset=+2]</p>
@@ -613,13 +521,7 @@ This guide uses <em>Eclipse</em> to refer to an installation of Eclipse or Red H
 <p>Unresolved directive in master.adoc - include::topics/eclipse-submit-ruleset.adoc[leveloffset=+2]</p>
 </div>
 <div class="paragraph">
-<p><br/>
-<br/>
-<br/>
-<br/></p>
-</div>
-<div class="paragraph">
-<p><em class="right">Revised on 2021-11-16 15:35:17 +0200</em></p>
+<p>Unresolved directive in master.adoc - include::topics/templates/revision-info.adoc[]</p>
 </div>
 </div>
 </div>
