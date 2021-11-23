@@ -25,7 +25,7 @@ layout: default
 EOF
 
 for f in $FILES; do
-  echo -e "* link:$BASE_URL/$(dirname $f)/master.html[$(dirname $f | sed 's/docs\///g; s/_/ /g; s/-/ /g' )]" >> index.md
+  echo -e "- [$(dirname $f | sed 's/docs\///g; s/_/ /g; s/-/ /g' )]($BASE_URL/$(dirname $f)/master.html)" >> index.md
 done
 
 echo "index.md built"
