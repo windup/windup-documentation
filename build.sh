@@ -9,15 +9,15 @@ done
 
 echo "HTML files built"
 
-rm index.md > /dev/null 2>&1
+rm index.adoc > /dev/null 2>&1
 
-cat << EOF > index.md
-# Windup documentation
+cat << EOF > index.adoc
+= Windup documentation
 
 EOF
 
 for f in $FILES; do
-  echo -e "- [$(dirname $f | sed 's/docs\///g; s/_/ /g; s/-/ /g' )]($BASE_URL/$(dirname $f)/master.html)" >> index.md
+  echo -e "* link:$BASE_URL/$(dirname $f)/master.html[$(dirname $f | sed 's/docs\///g; s/_/ /g; s/-/ /g' )]" >> index.adoc
 done
 
-echo "index.md built"
+echo "index.adoc built"
