@@ -8,18 +8,17 @@
 This section describes the new features of the {ProductName} ({ProductShortName}) {ProductVersion}.
 
 .Rules for migrating from Java EE8 to Jakarta EE9
-
 {ProductShortName} rules replace Java EE8 artifact dependencies and package import statements and rename XML schema namespaces, prefixed properties, and bootstrapping files for Jakarta EE9.
 
-Most rules contain quick fixes to automate source code changes when using an {ProductShortName} IDE plugin or extension for Red Hat CodeReady Studio, Eclipse, Eclipse Che, IntelliJ IDEA, or Microsoft Visual Studio Code.
+Most rules contain quick fixes to automate source code changes when using an {ProductShortName} IDE plugin or extension for Eclipse, Eclipse Che, IntelliJ IDEA, Microsoft Visual Studio Code, or Red Hat CodeReady Studio.
 
 To execute the rules, use the target `jakarta-ee`.
 
-.OpenRewrite recipe support (Technology Preview)
+.OpenRewrite recipe support
 
-link:https://docs.openrewrite.org/[OpenRewrite] automates large-scale, distributed source code refactoring. OpenRewrite recipes can now be executed using the {ProductShortName} link:{ProductDocUserGuideURL}[_CLI Guide_].
+link:https://docs.openrewrite.org/[OpenRewrite] automates large-scale, distributed source code refactoring. You can execute OpenRewrite recipes by using the link:{ProductDocUserGuideURL}[{ProductShortName} CLI].
 
-The first OpenRewrite recipe, which is shipped with {ProductShortName} 5.2.1, contains an OpenRewrite recipe that renames imported `javax` packages to their `jakarta` equivalents. We plan to include additional OpenRewrite recipes in future {ProductShortName} releases.
+The first OpenRewrite recipe, which is shipped with {ProductShortName} 5.2.1, renames imported `javax` packages to their `jakarta` equivalents. 
 
 [IMPORTANT]
 ====
