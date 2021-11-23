@@ -37,8 +37,8 @@
 :DocInfoProductNumber: 5.2
 :DocInfoProductNameURL: migration_toolkit_for_applications
 
-:OpenShiftProductNumber: 4.8
-:ProductVersion: 5.2.0
+:OpenShiftProductNumber: 4.9
+:ProductVersion: 5.2.1
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rules Development Guide
@@ -58,9 +58,9 @@
 // Commenting out as these attributes are not currently used:
 // :ProductRelease: 4
 // :ProductVersion: 4.0
-:ProductDistributionVersion: 5.2.0.Final
+:ProductDistributionVersion: 5.2.1.Final
 :ProductDistribution: mta-cli-{ProductDistributionVersion}
-:MavenProductVersion: 5.2.0.Final
+:MavenProductVersion: 5.2.1.Final
 
 // ********
 // * URLs *
