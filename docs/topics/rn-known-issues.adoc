@@ -7,7 +7,7 @@
 
 At the time of release, the following known issues have been identified as major issues worth highlighting.
 
-For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12364382[{ProductVersion} known issues] in Jira.
+For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12385749[{ProductVersion} known issues] in Jira.
 
 .Major known issues
 [cols="25%,25%,50%",options="header"]
@@ -18,21 +18,17 @@ For a complete list of all known issues, see the list of link:https://issues.red
 
 |link:https://issues.redhat.com/browse/WINDUP-3138[WINDUP-3138]
 |CodeReady Workspace plugin
-|The plugin does not work with CodeReady Workspace 2.10.
+|The plugin works with CodeReady Workspace 2.09, but not version 2.10.
 
-|link:https://issues.redhat.com/browse/WINDUP-3019[WINDUP-3019]
-|CLI
-|Bash completion feature displays an `mta-cli not found` error.
+|link:https://issues.redhat.com/browse/WINDUP-3165[WINDUP-3165]
+|Web console on OpenShift Container Platform
+|Analysis fails when MTA custom labels are uploaded and advanced options are enabled.
 
-|link:https://issues.redhat.com/browse/WINDUP-3104[WINDUP-3104]
-|Web console on MacOS
-|After you run an analysis, if you click a report link, a "Not found" page is displayed.
+|link:https://issues.redhat.com/browse/WINDUP-3160[WINDUP-3160]
+|Web console on OpenShift Container Platform
+|If you run an analysis on multiple applications and subsequently delete an application and rerun the analysis, the analysis hangs.
 
-|link:https://issues.redhat.com/browse/WINDUPRULE-516[WINDUPRULE-516]
-|Visual Studio Code extension
-|An issue with multiple Quick Fixes displays only one Quick Fix.
-
-|link:https://issues.redhat.com/browse/WINDUPRULE-598[WINDUPRULE-598]
-|Visual Studio Code extension
-|The Apply Quick Fix option does not work for issues detected in XML files.
+|link:https://issues.redhat.com/browse/WINDUP-3005[WINDUP-3005]
+|Web console
+|The *Save* and *Save and run* buttons are not displayed on the *Custom rules* and *Custom labels* tabs on the *Analysis configuration* page.
 |====
