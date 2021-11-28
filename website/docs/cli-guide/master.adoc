@@ -1,0 +1,82 @@
+include::topics/templates/document-attributes.adoc[]
+[id="cli-guide"]
+= {UserCLIBookName}
+
+:toc:
+:toclevels: 4
+:numbered:
+:imagesdir: topics/images
+:context: cli-guide
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+== Introduction
+
+// About the {UserCLIBookName}
+include::topics/about-cli-guide.adoc[leveloffset=+2]
+
+// About {ProductName}
+include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+
+// About the {CLINameTitle}
+include::topics/about-cli.adoc[leveloffset=+2]
+
+== Getting started
+
+// Install the CLI
+include::topics/installing-web-console-or-cli-tool.adoc[leveloffset=+2]
+
+// Run the CLI
+include::topics/execute.adoc[leveloffset=+2]
+
+// Access the Report
+include::topics/access-report.adoc[leveloffset=+2]
+
+// Review the Reports
+include::topics/review-reports.adoc[leveloffset=+1]
+
+// Export the Report in CSV Format
+include::topics/csv-export.adoc[leveloffset=+1]
+
+// Mavenize Your Application
+include::topics/mavenize.adoc[leveloffset=+1]
+
+// Optimize {ProductShortName} Performance
+include::topics/optimize-performance.adoc[leveloffset=+1]
+
+// Configure {ProductShortName} to Exclude Files and Packages
+include::topics/exclude-files-and-packages.adoc[leveloffset=+2]
+
+[appendix]
+== Reference material
+
+// {ProductShortName} Command-line Arguments
+include::topics/cli-args.adoc[leveloffset=+2]
+
+// Added in 4.3.0: list of supported Tech Tags
+include::topics/tech-tags.adoc[leveloffset=+2]
+
+// Rule Story Points
+include::topics/about-story-points.adoc[leveloffset=+2]
+
+For more information on categorizing tasks, see link:{ProductDocRulesGuideURL}/rule_categories_rules-development-guide#rule_categories_rules-development-guide[Using custom rule categories].
+
+=== Additional Resources
+
+// Get Involved
+include::topics/get-involved.adoc[leveloffset=+3]
+
+// Important Links
+include::topics/important-links.adoc[leveloffset=+3]
+
+// Report Issues with {ProductShortName}
+
+==== Reporting issues
+
+{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
+
+// **********************************
+// * Appendix: Revision Information *
+// **********************************
+include::topics/templates/revision-info.adoc[]

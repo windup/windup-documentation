@@ -1,0 +1,17 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+[id="add-rule-to-mta_{context}"]
+= Adding a rule to the {ProductName}
+
+A {ProductName} rule is installed by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files with the `.windup.xml` or `.mta.xml` extension in the following locations:
+
+* Directory specified by the `--userRulesDirectory` argument on the {ProductShortName} command line.
+* `<MTA_HOME>/rules/` directory. `<MTA_HOME>` is the directory where you install and run the {ProductName} executable.
+* `${user.home}/.mta/rules/` directory. This directory is created by {ProductShortName} the first time it is run. it contains rules, add-ons, and the {ProductShortName} log.
++
+[NOTE]
+====
+In a Windows operating system, the rules are located in `\Documents and Settings&#x5c;<USER_NAME>\.mta\rules\` or `\Users&#x5c;<USER_NAME>\.mta\rules\`.
+====
