@@ -32,10 +32,6 @@ for h in $HTML; do
   echo -e "- [$TITLE]($BASE_URL/$(dirname $h | sed 's/website\///')/master.html)" >> index.md
 done
 
-
-
-# ($BASE_URL/$(dirname $f | sed 's/website\///g' )/master.html)
-
 echo "index.md built"
 #
-# cp website/index.md index.md
+cp index.md website/index.md
