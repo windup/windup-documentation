@@ -2,8 +2,6 @@
 layout: default
 ---
 
-Previews
-
 - [web console guide](https://windup.github.io/windup-documentation/docs/web-console-guide/master.html)
 - [cli guide](https://windup.github.io/windup-documentation/docs/cli-guide/master.html)
 - [rules development guide](https://windup.github.io/windup-documentation/docs/rules-development-guide/master.html)
