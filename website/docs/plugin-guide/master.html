@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="generator" content="Asciidoctor 2.0.16"/>
-<title>Release Notes</title>
+<title>{PluginBookName}</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"/>
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,187 +439,90 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book">
 <div id="header">
-<h1>Release Notes</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
+<ul class="sectlevel0">
+<li><a href="#_pluginbookname">{PluginBookName}</a>
 <ul class="sectlevel1">
-<li><a href="#making-open-source-more-inclusive_release-notes">Making open source more inclusive</a></li>
-<li><a href="#rn-new-features_release-notes">1. New features</a></li>
-<li><a href="#rn-known-issues_release-notes">2. Known issues</a></li>
-<li><a href="#rn-resolved-issues_release-notes">3. Resolved issues</a></li>
+<li><a href="#_introduction">1. Introduction</a></li>
+<li><a href="#_using_the_productshortname_pluginname">2. Using the {ProductShortName} {PluginName}</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="making-open-source-more-inclusive_release-notes">Making open source more inclusive</h2>
-<div class="sectionbody">
-<div class="paragraph _abstract">
-<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="rn-new-features_release-notes">1. New features</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section describes the new features of the Migration Toolkit for Applications (MTA) 5.2.1.</p>
+<p>Unresolved directive in master.adoc - include::topics/templates/document-attributes.adoc[]</p>
+</div>
+</div>
+</div>
+<h1 id="_pluginbookname" class="sect0">{PluginBookName}</h1>
+<div class="openblock partintro">
+<div class="content">
+Unresolved directive in master.adoc - include::topics/making-open-source-more-inclusive.adoc[]
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Unresolved directive in master.adoc - include::topics/plugin-intro.adoc[leveloffset=+2]</p>
 </div>
 <div class="paragraph">
-<div class="title">Rules for migrating from Java EE8 to Jakarta EE9</div>
-<p>MTA rules replace Java EE8 artifact dependencies and package import statements and rename XML schema namespaces, prefixed properties, and bootstrapping files for Jakarta EE9.</p>
+<p>Unresolved directive in master.adoc - include::topics/what-is-the-toolkit.adoc[leveloffset=+2]</p>
 </div>
 <div class="paragraph">
-<p>Most rules contain quick fixes to automate source code changes when using an MTA IDE plugin or extension for Eclipse, Eclipse Che, IntelliJ IDEA, Microsoft Visual Studio Code, or Red Hat CodeReady Studio.</p>
+<p>Unresolved directive in master.adoc - include::topics/about-plugin.adoc[leveloffset=+2]</p>
 </div>
 <div class="paragraph">
-<p>To execute the rules, use the target <code>jakarta-ee</code>.</p>
+<p>Unresolved directive in master.adoc - include::topics/installing-plugin.adoc[leveloffset=+1]
+:!plugin-guide:</p>
 </div>
 <div class="paragraph">
-<div class="title">OpenRewrite recipe support</div>
-<p><a href="https://docs.openrewrite.org/">OpenRewrite</a> automates large-scale, distributed source code refactoring. You can execute OpenRewrite recipes by using the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide">MTA CLI</a>.</p>
+<p>Unresolved directive in master.adoc - include::topics/installing-plugin.adoc[leveloffset=+1]
+:!disconnected:</p>
 </div>
 <div class="paragraph">
-<p>The first OpenRewrite recipe, which is shipped with MTA 5.2.1, renames imported <code>javax</code> packages to their <code>jakarta</code> equivalents.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Important</div>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>OpenRewrite recipe support is provided as Technology Preview only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs), might not be functionally complete, and Red Hat does not recommend to use them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+<p>Unresolved directive in master.adoc - include::topics/plugin-access-mta-tools.adoc[leveloffset=+1]</p>
 </div>
 <div class="paragraph">
-<p>See <a href="https://access.redhat.com/support/offerings/techpreview">Technology Preview features support scope</a> on the Red&nbsp;Hat Customer Portal for information about the support scope for Technology Preview features.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<div class="title">MTA extension for Visual Studio Code compatible with Codespaces</div>
-<p>The MTA extension for Microsoft Visual Studio Code is now compatible with Microsoft Visual Studio Codespaces.</p>
-</div>
-<div class="paragraph">
-<div class="title">Rules for the Springboot-to-Quarkus migration path</div>
-<p>Rulesets identify Quarkus-supported technologies by detecting a POM dependency, embedded JAR file, or a partial file path within an Apache Maven Shade uber JAR.</p>
-</div>
-<div class="paragraph">
-<p>The rules identify the following technologies:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Apicurio Studio</p>
-</li>
-<li>
-<p>Flyway</p>
-</li>
-<li>
-<p>Liquibase</p>
-</li>
-<li>
-<p>Liquibase for MongoDB</p>
-</li>
-<li>
-<p>OpenTelemetry</p>
-</li>
-<li>
-<p>Picocli</p>
-</li>
-</ul>
+<p>Unresolved directive in master.adoc - include::topics/plugin-components.adoc[leveloffset=+2]</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="rn-known-issues_release-notes">2. Known issues</h2>
+<h2 id="_using_the_productshortname_pluginname">2. Using the {ProductShortName} {PluginName}</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>At the time of release, the following known issues have been identified as major issues worth highlighting.</p>
+<p>Unresolved directive in master.adoc - include::topics/plugin-identify-resolve-issues.adoc[leveloffset=+2]</p>
 </div>
 <div class="paragraph">
-<p>For a complete list of all known issues, see the list of <a href="https://issues.redhat.com/issues/?filter=12385749">5.2.1 known issues</a> in Jira.</p>
+<p>Unresolved directive in master.adoc - include::topics/plugin-review-issues.adoc[leveloffset=+3]</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. Major known issues</caption>
-<colgroup>
-<col style="width: 25%;"/>
-<col style="width: 25%;"/>
-<col style="width: 50%;"/>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">ID</th>
-<th class="tableblock halign-left valign-top">Component</th>
-<th class="tableblock halign-left valign-top">Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3138">WINDUP-3138</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CodeReady Workspace plugin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The plugin works with CodeReady Workspace 2.09, but not version 2.10.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3165">WINDUP-3165</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Web console on OpenShift Container Platform</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Analysis fails when MTA custom labels are uploaded and advanced options are enabled.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3160">WINDUP-3160</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Web console on OpenShift Container Platform</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you run an analysis on multiple applications and subsequently delete an application and rerun the analysis, the analysis hangs.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3005">WINDUP-3005</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Web console</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>Save</strong> and <strong>Save and run</strong> buttons are not displayed on the <strong>Custom rules</strong> and <strong>Custom labels</strong> tabs on the <strong>Analysis configuration</strong> page.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="rn-resolved-issues_release-notes">3. Resolved issues</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>At the time of the release, the following resolved issues have been identified as major issues worth highlighting:</p>
+<p>Unresolved directive in master.adoc - include::topics/plugin-resolve-issues.adoc[leveloffset=+3]</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. Major resolved issues</caption>
-<colgroup>
-<col style="width: 25%;"/>
-<col style="width: 25%;"/>
-<col style="width: 50%;"/>
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">ID</th>
-<th class="tableblock halign-left valign-top">Component</th>
-<th class="tableblock halign-left valign-top">Summary</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3125">WINDUP-3125</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ItelliJ IDEA plugin and Visual Studio Code extension</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <strong>Apply QuickFix</strong> menu option is not disabled after a QuickFix is applied.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3134">WINDUP-3134</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ItelliJ IDEA plugin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">After you run an analysis, the <strong>Mark as Complete</strong> menu option is not displayed.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3136">WINDUP-3136</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Visual Studio Code extension</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If you run an analysis with an incorrect <em>JAVA_HOME</em> environmental variable, the analysis continues to run after you correct the variable and the <strong>Run</strong> option is disabled.</p></td>
-</tr>
-</tbody>
-</table>
+<div class="paragraph">
+<p>Unresolved directive in master.adoc - include::topics/plugin-use-custom-rules.adoc[leveloffset=+1]</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in master.adoc - include::topics/plugin-view-rules.adoc[leveloffset=+2]</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in master.adoc - include::topics/plugin-import-custom-ruleset.adoc[leveloffset=+2]</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in master.adoc - include::topics/plugin-create-custom-ruleset.adoc[leveloffset=+2]</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in master.adoc - include::topics/eclipse-submit-ruleset.adoc[leveloffset=+2]</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in master.adoc - include::topics/templates/revision-info.adoc[]</p>
+</div>
 </div>
 </div>
 </div>
