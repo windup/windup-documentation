@@ -4,7 +4,7 @@ title: Windup Documentation
 permalink: pretty
 repository: windup/windup-documentation
 baseurl: /
-url: https://windup.github.io/windup-documentation/website
+url: https://windup.github.io/windup-documentation
 repository_url: https://github.com/windup/windup-documentation
 
 type: website
@@ -14,7 +14,7 @@ future: false
 markdown: kramdown
 theme: jekyll-theme-minimal
 
-plugins: [jekyll-asciidoc, jekyll-paginate, jekyll-redirect-from, jekyll-feed, jekyll-sitemap, premonition, jekyll/tagging,  jekyll-seo-tag]
+plugins: [jekyll-asciidoc, jekyll-paginate, jekyll-redirect-from, jekyll-feed, jekyll-sitemap, premonition, jekyll/tagging, jekyll-seo-tag]
 
 # empty array for asciidoc
 asciidoc: {}
@@ -34,6 +34,7 @@ asciidoctor:
   safe: unsafe
 
 exclude:
+  - docs/
   - README.md
   - CODE_OF_CONDUCT.md
   - .history

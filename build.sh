@@ -1,33 +1,32 @@
 #!/bin/bash
+DEST=html_files
 
-rm -fr website
-mkdir website
-mkdir website/docs
-cp -r docs/* website/docs
+rm -fr $DEST && mkdir $DEST
+rm -fr website && mkdir website
 
-FILES=`find website/docs -name 'master.adoc'`
-BASE_URL=https://windup.github.io/windup-documentation
+FILES=`find docs -name 'master.adoc'`
+BASE_URL=https://windup.github.io/windup-documentation/html_files
 
 for f in $FILES; do
-  asciidoctor --failure-level WARN -b xhtml5 -d book $f
+  FILENAME=$(grep "^= .*" $f | sed -e 's/= //; s/ /_/g; s/\(.*\)/\L\1/' )
+  asciidoctor --failure-level WARN -b xhtml5 -d book -o $DEST/$FILENAME.html $f
 done
 
 echo "HTML files built"
 
-rm index.adoc > /dev/null 2>&1
-rm index.md > /dev/null 2>&1
+cp -r $DEST website/$DEST
 
-cat << EOF > website/index.md
+cat << EOF > index.md
 ---
 layout: default
 ---
 
 EOF
 
-for f in $FILES; do
-  echo -e "- [$(dirname $f | sed 's/website\/docs\///g; s/_/ /g; s/-/ /g' )]($BASE_URL/$(dirname $f | sed 's/website\///g' )/master.html)" >> website/index.md
+for d in website/$DEST/*; do
+  TITLE=$(grep "<title>" $d | sed -e 's/<title>//; s/<\/title>//' )
+  URL=$BASE_URL/$(basename $d)
+  echo "- [$TITLE]($URL)" >> index.md
 done
 
 echo "index.md built"
-
-cp website/index.md index.md

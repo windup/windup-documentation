@@ -2,12 +2,11 @@
 layout: default
 ---
 
-- [web console guide](https://windup.github.io/windup-documentation/docs/web-console-guide/master.html)
-- [cli guide](https://windup.github.io/windup-documentation/docs/cli-guide/master.html)
-- [rules development guide](https://windup.github.io/windup-documentation/docs/rules-development-guide/master.html)
-- [plugin guide](https://windup.github.io/windup-documentation/docs/plugin-guide/master.html)
-- [maven guide](https://windup.github.io/windup-documentation/docs/maven-guide/master.html)
-- [eclipse code ready studio guide](https://windup.github.io/windup-documentation/docs/eclipse-code-ready-studio-guide/master.html)
-- [release notes](https://windup.github.io/windup-documentation/docs/release-notes/master.html)
-- [vs code extension guide](https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/master.html)
-- [getting started guide](https://windup.github.io/windup-documentation/docs/getting-started-guide/master.html)
+- [CLI Guide](https://windup.github.io/windup-documentation/html_files/cli_guide.html)
+- [Eclipse and Red Hat CodeReady Studio Guide](https://windup.github.io/windup-documentation/html_files/eclipse_and_red_hat_codeready_studio_guide.html)
+- [Introduction to the Migration Toolkit for Applications](https://windup.github.io/windup-documentation/html_files/introduction_to_the_migration_toolkit_for_applications.html)
+- [Maven Plugin Guide](https://windup.github.io/windup-documentation/html_files/maven_plugin_guide.html)
+- [Release Notes](https://windup.github.io/windup-documentation/html_files/release_notes.html)
+- [Rules Development Guide](https://windup.github.io/windup-documentation/html_files/rules_development_guide.html)
+- [Visual Studio Code Extension Guide](https://windup.github.io/windup-documentation/html_files/visual_studio_code_extension_guide.html)
+- [Web Console Guide](https://windup.github.io/windup-documentation/html_files/web_console_guide.html)
