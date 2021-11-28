@@ -1,0 +1,21 @@
+// Module included in the following assemblies:
+//
+// * docs/getting-started-guide/master.adoc
+// * docs/eclipse-installing-plugin.adoc
+// * docs/maven-run.adoc
+// * docs/installing-vs-code-extension.adoc
+// * docs/installing-web-console-or-cli-tool.adoc
+
+[id="jdk-hardware-mac-prerequisites_{context}"]
+
+= Prerequisites
+
+* Java Development Kit (JDK) installed. {ProductShortName} supports the following JDKs:
+
+** OpenJDK 1.8
+** OpenJDK 11
+** Oracle JDK 1.8
+** Oracle JDK 11
+
+* 8 GB RAM
+* If you are installing on macOS, the value of `maxproc` must be `2048` or greater.

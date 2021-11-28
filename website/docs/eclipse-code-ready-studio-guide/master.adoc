@@ -1,0 +1,58 @@
+include::topics/templates/document-attributes.adoc[]
+[id="eclipse-code-ready-studio-guide"]
+= {EclipseGuideTitle}
+
+:toc:
+:context: eclipse-code-ready-studio-guide
+:eclipse-code-ready-studio-guide:
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+[id="introduction_{context}"]
+== Introduction
+
+include::topics/eclipse-about-plugin.adoc[leveloffset=+2]
+include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+
+[id="installing-plugin_{context}"]
+== Installing the {PluginName}
+
+You can install the {PluginName} in a connected or a restricted network environment.
+
+include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
+:!eclipse-code-ready-studio-guide:
+:context: disconnected
+:disconnected:
+include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
+:!disconnected:
+:context: eclipse-code-ready-studio-guide
+:eclipse-code-ready-studio-guide:
+include::topics/eclipse-accessing-tools.adoc[leveloffset=+2]
+
+[id="analyzing-projects-with-plugin_{context}"]
+== Analyzing your projects with the {PluginName}
+
+You can analyze your projects with the {PluginName} by creating a run configuration, running an analysis, and then reviewing and resolving migration issues detected by the {PluginName}.
+
+include::topics/eclipse-configuring-run.adoc[leveloffset=+2]
+include::topics/eclipse-analyzing-projects.adoc[leveloffset=+2]
+include::topics/eclipse-reviewing-issues.adoc[leveloffset=+2]
+include::topics/eclipse-resolving-issues.adoc[leveloffset=+2]
+
+// TODO: Uncomment when uninstalling works and this is ready
+// include::topics/plugin-uninstall.adoc[leveloffset=+1]
+
+[id="managing-rules_{context}"]
+== Managing rules
+
+The {PluginName} comes with a core set of *System* rules for analyzing projects and identifying migration and modernization issues.
+
+You can create and import custom rulesets.
+
+include::topics/eclipse-viewing-rules.adoc[leveloffset=+2]
+include::topics/eclipse-creating-custom-ruleset.adoc[leveloffset=+2]
+include::topics/eclipse-importing-custom-ruleset.adoc[leveloffset=+2]
+include::topics/eclipse-submitting-ruleset.adoc[leveloffset=+2]
+
+:!eclipse-code-ready-studio-guide:
