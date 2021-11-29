@@ -26,11 +26,10 @@ asciidoctor:
   - imagesdir=../topics/images
   - UserCLIBookName=CLI Guide
   - RulesDevBookName=Rules Development Guide
-  - PluginBookName=IDE Plugin Guide
+  - EclipseCrsGuideTitle=Eclipse and Red Hat CodeReady Studio Plugin Guide
   - IntroToMTABookName=Introduction to the Migration Toolkit for Applications
   - WebConsoleBookName=Web Console Guide
   - MavenBookName=Maven Plugin Guide
-  - ReleaseNotesName=Release Notes
   safe: unsafe
 
 exclude:
