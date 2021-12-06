@@ -2,7 +2,7 @@
 //
 // * docs/cli-guide/master.adoc
 
-[id="execute_{context}"]
+[id="cli-run_{context}"]
 = Running the {CLINameTitle}
 
 You can run {ProductShortName} against your application.
@@ -12,9 +12,11 @@ You can run {ProductShortName} against your application.
 . Open a terminal and navigate to the `<MTA_HOME>/bin/` directory.
 . Execute the `mta-cli` script, or `mta-cli.bat` for Windows, and specify the appropriate arguments:
 +
-[source,options="nowrap",subs="+quotes"]
+[source,terminal]
 ----
-$ ./mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --source weblogic --target eap:6 --packages com.acme org.apache
+$ ./mta-cli --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/output --source weblogic --target eap:6 \
+    --packages com.acme org.apache
 ----
 +
 * `--input`: The application to be evaluated.
@@ -25,17 +27,20 @@ $ ./mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output 
 
 . Access the report.
 
-[discrete]
 [id="command-examples_{context}"]
-== {ProductShortName} Command examples
+== {ProductShortName} command examples
 
 [discrete]
 === Running {ProductShortName} on an application archive
 
 The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:
 
+[source,terminal]
 ----
-$ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/report-output/ --source eap:5 --target eap:7 --packages com.acme org.apache
+$ <MTA_HOME>/bin/mta-cli \
+    --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/report-output/ --source eap:5 --target eap:7 \
+    --packages com.acme org.apache
 ----
 
 [discrete]
@@ -43,9 +48,10 @@ $ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /pa
 
 The following command analyzes the `org.jboss.seam` packages of the link:https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] example source code for migrating to JBoss EAP 6.
 
-[source,options="nowrap",subs="+quotes"]
+[source,terminal]
 ----
-$ <MTA_HOME>/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam
+$ <MTA_HOME>/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ \
+    --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam
 ----
 
 [discrete]
@@ -53,9 +59,11 @@ $ <MTA_HOME>/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ --outpu
 
 The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness:
 
-[source,options="nowrap",subs="+quotes"]
+[source,terminal]
 ----
-$ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/report-output/ --target eap:7 --target cloud-readiness --packages com.acme org.apache
+$ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/report-output/ \
+    --target eap:7 --target cloud-readiness --packages com.acme org.apache
 ----
 
 [discrete]
@@ -63,18 +71,19 @@ $ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /pa
 
 To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` argument on the command line. For example, to use the _Procyon_ decompiler, use the following syntax:
 
-[source,options="nowrap",subs="+quotes"]
+[source,terminal]
 ----
-$ <MTA_HOME>/bin/mta-cli -Dwindup.decompiler=procyon --input <INPUT_ARCHIVE_OR_DIRECTORY> --output <OUTPUT_REPORT_DIRECTORY> --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2>
+$ <MTA_HOME>/bin/mta-cli -Dwindup.decompiler=procyon \
+    --input <INPUT_ARCHIVE_OR_DIRECTORY> --output <OUTPUT_REPORT_DIRECTORY> \
+    --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2>
 ----
 
-[discrete]
 [id="cli-bash-completion_{context}"]
-== About {ProductShortName} {CLINameTitle} Bash completion
+== {ProductShortName} {CLINameTitle} Bash completion
 
 The {ProductShortName} {CLIName} provides an option to enable Bash completion for Linux systems, allowing the {ProductShortName} command-line arguments to be auto completed by pressing the Tab key when entering the commands. For instance, when Bash completion is enabled, entering the following displays a list of available arguments.
 
-[source,options="nowrap",subs="+quotes"]
+[source,terminal]
 ----
 $ <MTA_HOME>/bin/mta-cli [TAB]
 ----
@@ -85,7 +94,7 @@ $ <MTA_HOME>/bin/mta-cli [TAB]
 
 To enable Bash completion for the current shell, execute the following command:
 
-[source,options="nowrap",subs="+quotes"]
+[source,terminal]
 ----
 $ source <MTA_HOME>/bash-completion/mta-cli
 ----
@@ -98,25 +107,24 @@ The following commands allow Bash completion to persist across restarts:
 
 * To enable Bash completion for a specific user across system restarts, include the following line in that user's `~/.bashrc` file.
 +
-[source,options="nowrap",subs="+quotes"]
+[source,terminal]
 ----
 source <MTA_HOME>/bash-completion/mta-cli
 ----
 
 * To enable Bash completion for all users across system restarts, copy the {ProductName} {CLIName} Bash completion file to the `/etc/bash_completion.d/` directory as the root user.
 +
-[source,options="nowrap",subs="+quotes"]
+[source,terminal]
 ----
 # cp <MTA_HOME>/bash-completion/mta-cli /etc/bash_completion.d/
 ----
 
-[discrete]
 [id="accessing-help_{context}"]
 == Accessing {ProductShortName} help
 
 To see the complete list of available arguments for the `mta-cli` command, open a terminal, navigate to the `<MTA_HOME>` directory, and execute the following command:
 
-[source, options="nowrap",subs="+quotes"]
+[source,terminal]]
 ----
 $ <MTA_HOME>/bin/mta-cli --help
 ----

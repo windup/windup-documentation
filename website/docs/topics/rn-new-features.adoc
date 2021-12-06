@@ -16,9 +16,9 @@ To execute the rules, use the target `jakarta-ee`.
 
 .OpenRewrite recipe support
 
-link:https://docs.openrewrite.org/[OpenRewrite] automates large-scale, distributed source code refactoring. You can execute OpenRewrite recipes by using the link:{ProductDocUserGuideURL}[{ProductShortName} CLI].
+link:https://docs.openrewrite.org/[OpenRewrite] automates large-scale, distributed source code refactoring. You can execute OpenRewrite recipes by using the link:{ProductDocUserGuideURL}/getting_started#execute_cli-guide[{ProductShortName} CLI].
 
-The OpenRewrite recipe `org.jboss.windup.JavaxToJakarta`, which is shipped with {ProductShortName} 5.2.1, renames imported `javax` packages to their `jakarta` equivalents.
+The first OpenRewrite recipe, which is shipped with {ProductShortName} 5.2.1, renames imported `javax` packages to their `jakarta` equivalents.
 
 [IMPORTANT]
 ====

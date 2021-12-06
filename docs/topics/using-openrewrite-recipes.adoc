@@ -1,0 +1,43 @@
+// Module included in the following module:
+//
+// * docs/topics/cli-run
+
+[id=using-openrewrite-recipes_{context}]
+= Using OpenRewrite recipes
+
+[IMPORTANT]
+====
+OpenRewrite recipe support is provided as Technology Preview only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs), might not be functionally complete, and Red Hat does not recommend to use them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+See link:{KBArticleTechnologyPreview}[Technology Preview features support scope] on the Red&nbsp;Hat Customer Portal for information about the support scope for Technology Preview features.
+====
+
+You can refactor the source code of Java applications by using link:https://docs.openrewrite.org/[OpenRewrite] recipes with the {ProductShortName} CLI.
+
+The OpenRewrite recipe `org.jboss.windup.JavaxToJakarta` renames imported `javax` packages to their `jakarta` equivalents.
+
+.Procedure
+
+. Run`mta-cli`, specifying the recipe name and the application:
++
+[source,terminal]
+----
+$ ./mta-cli --openrewrite "-DactiveRecipes=<recipe_name>"  \
+    --input </path/to/source/project> --goal dryRun
+----
+
+* `"-DactiveRecipes=<recipe name>"`: Specify the OpenRewrite recipe, for example, `org.jboss.windup.JavaxToJakarta`.
+
+* `--input`: Specify the application to be refactored.
+
+* `--goal`: Optional: The OpenRewrite Maven goal to run.
+** `dryRun` : The script returns a list of proposed changes. Ignore the `"Run 'mvn rewrite:run' to apply the recipes"` message.
+** `run`: The script applies the changes.
+
+. Run `mta-cli` with `--goal run` to apply the recipe:
++
+[source,terminal]
+----
+$ ./mta-cli --openrewrite "-DactiveRecipes=<recipe name>"  \
+    --input </path/to/source/project> --goal run
+----
