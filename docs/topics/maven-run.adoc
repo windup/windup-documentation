@@ -5,7 +5,7 @@
 [id="maven-run_{context}"]
 = Running the {MavenNameTitle}
 
-The {MavenName} is executed by including a reference to the plugin inside your application's `pom.xml` file. When the application is built, the {MavenName} is executed and generates the reports for analysis.
+The {MavenName} is run by including a reference to the plugin inside your application's `pom.xml` file. When the application is built, the {MavenName} is run and generates the reports for analysis.
 
 [discrete]
 include::jdk-hardware-mac-prerequisites.adoc[leveloffset=+2]

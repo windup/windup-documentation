@@ -13,7 +13,7 @@ In general, {ProductShortName} spends about 40% of the time decompiling classes,
 
 Try these suggestions first before upgrading hardware.
 
-* If possible, execute {ProductShortName} against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.
+* If possible, run {ProductShortName} against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.
 * Specify a comma-separated list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `<MTA_HOME>/bin/mta-cli` command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
 * Specify the `--excludeTags` argument where possible to exclude them from processing.
 * Avoid decompiling and analyzing any unnecessary packages and files, such as proprietary packages or included dependencies.
