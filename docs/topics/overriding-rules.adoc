@@ -23,7 +23,7 @@ Custom rules can be placed in `<MTA_HOME>/rules`, `${user.home}/.mta/rules/`, or
 +
 [NOTE]
 ====
-Rules from the original ruleset that are not overridden by the new ruleset are executed as normal.
+Rules from the original ruleset that are not overridden by the new ruleset are run as normal.
 ====
 
 . Ensure that you keep the same rule and ruleset IDs. When you copy the original rule XML, this ensures that the IDs match.

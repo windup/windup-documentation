@@ -206,7 +206,7 @@ $ cp /home/<USER_NAME>/migration-rules/rules/JBoss5-web-class-loading.windup.xml
 [discrete]
 == Testing the rule
 
-Open a terminal and execute the following command, passing the test file as an input argument and a directory for the output report.
+Open a terminal and run the following command, passing the test file as an input argument and a directory for the output report.
 
 [options="nowrap",subs="+quotes"]
 ----
@@ -227,7 +227,7 @@ Report created: /home/<USER_NAME>/migration-rules/reports/index.html
 Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#review_reports[Review the reports] section of the {ProductShortName} _{UserCLIBookName}_.
 
 . Open `/home/<USER_NAME>/migration-rules/reports/index.html` in a web browser.
-. Verify that the rule executed.
+. Verify that the rule ran successfully.
 .. From the main landing page, click the *Rule providers execution overview* link to open the Rule Providers Execution Overview.
 +
 .. Find the `JBoss5-web-class-loading_001` rule and verify that its *Status?* is `Condition met` and its *Result?* is `success`.

@@ -10,7 +10,7 @@ You can run {ProductShortName} against your application.
 .Procedure
 
 . Open a terminal and navigate to the `<MTA_HOME>/bin/` directory.
-. Execute the `mta-cli` script, or `mta-cli.bat` for Windows, and specify the appropriate arguments:
+. Run the `mta-cli` script, or `mta-cli.bat` for Windows, and specify the appropriate arguments:
 +
 [source,terminal]
 ----
@@ -144,7 +144,7 @@ $ <MTA_HOME>/bin/mta-cli [TAB]
 [id="bash-completion-temporary_{context}"]
 === Enabling Bash completion
 
-To enable Bash completion for the current shell, execute the following command:
+To enable Bash completion for the current shell, run the following command:
 
 [source,terminal]
 ----
@@ -174,7 +174,7 @@ source <MTA_HOME>/bash-completion/mta-cli
 [id="accessing-help_{context}"]
 == Accessing {ProductShortName} help
 
-To see the complete list of available arguments for the `mta-cli` command, open a terminal, navigate to the `<MTA_HOME>` directory, and execute the following command:
+To see the complete list of available arguments for the `mta-cli` command, open a terminal, navigate to the `<MTA_HOME>` directory, and run the following command:
 
 [source,terminal]]
 ----

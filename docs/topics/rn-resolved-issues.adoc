@@ -16,6 +16,10 @@ At the time of the release, the following resolved issues have been identified a
 |Component
 |Summary
 
+|link:https://issues.redhat.com/browse/WINDUP-3201[WINDUP-3201]
+|Red Hat CodeReady Studio extension
+|The plugin cannot be used in Red Hat CodeReady Studio 12.21.0.GA.
+
 |link:https://issues.redhat.com/browse/WINDUP-3125[WINDUP-3125]
 |ItelliJ IDEA plugin and Visual Studio Code extension
 |The *Apply QuickFix* menu option is not disabled after a QuickFix is applied.

@@ -31,4 +31,8 @@ For a complete list of all known issues, see the list of link:https://issues.red
 |link:https://issues.redhat.com/browse/WINDUP-3005[WINDUP-3005]
 |Web console
 |The *Save* and *Save and run* buttons are not displayed on the *Custom rules* and *Custom labels* tabs on the *Analysis configuration* page.
+
+|link:https://issues.redhat.com/browse/WINDUP-3159[WINDUP-3159]
+|Web console
+|If you delete an application from a project after running an analysis, the number of applications is not updated when you rerun the analysis.
 |====

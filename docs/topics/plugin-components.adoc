@@ -11,7 +11,7 @@ Issue Explorer:: This view allows you to explore the {ProductShortName} issues f
 +
 If this view is not visible in the {ProductShortName} perspective, you can open it by selecting *Window* -> *Show View* -> *Issue Explorer*.
 
-{ProductShortName} Server:: The {ProductShortName} server is a separate process that executes the {ProductShortName} analysis, flags the migration issues, and generates the reports.
+{ProductShortName} Server:: The {ProductShortName} server is a separate process that runs the {ProductShortName} analysis, flags the migration issues, and generates the reports.
 +
 You can start, stop, and view the status of the {ProductShortName} server from *Issue Explorer*.
 
