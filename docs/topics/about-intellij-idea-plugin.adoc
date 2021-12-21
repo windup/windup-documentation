@@ -1,0 +1,10 @@
+// Module included in the following assemblies:
+//
+// * docs/intellij-idea-plugin-guide/master.adoc
+
+[id='about-intellij-idea-plugin_{context}']
+= About the {ProductShortName} plugin for IntelliJ IDEA
+
+The {ProductName} ({ProductShortName}) plugin for IntelliJ IDEA helps you migrate and modernize applications.
+
+The {ProductShortName} plugin analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers Quick Fixes, automatic code replacement, if possible.

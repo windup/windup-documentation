@@ -1,13 +1,16 @@
-
 :toc:
 :toclevels: 4
 :numbered:
 
-include::topics/templates/document-attributes.adoc[]
+
 
 :imagesdir: topics/images
-:context: idea-plugin
-:idea-plugin:
+:context: idea-plugin-guide
+:idea-plugin-guide:
+:AddonType: plugin
+:IDEName: IntelliJ IDEA
+
+include::topics/templates/document-attributes.adoc[]
 
 [id="intellij-idea-plugin-guide"]
 = IntelliJ IDEA Plugin Guide
@@ -18,8 +21,8 @@ include::topics/making-open-source-more-inclusive.adoc[]
 [id="introduction"]
 == Introduction
 
-// About the VS Code extension
-// include::topics/about-vscode-extension.adoc[leveloffset=+2]
+// About the IntelliJ IDEA plugin
+include::topics/about-ide-addons.adoc[leveloffset=+2]
 
 // About {ProductName}
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
@@ -45,4 +48,4 @@ You can analyze your projects with the {ProductShortName} extension by creating 
 
 // include::topics/vs-code-extension-resolving-issues.adoc[leveloffset=+2]
 
-:!idea-plugin:
+:!idea-plugin-guide:

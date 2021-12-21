@@ -1,0 +1,16 @@
+// Module included in the following assemblies:
+//
+// * docs/vs-code-extension-guide/master.adoc
+// * docs/intellij-idea-plugin-guide/master.adoc
+// * docs/eclipse-code-ready-guide/master.adoc
+
+[id="about-ide-addons_{context}"]
+= About the {ProductShortName} {AddonType} for {IDEName}
+
+Migrate and modernize applications by using the {ProductName} ({ProductShortName}) {AddonType} for {IDEName}.
+
+The {ProductShortName} {AddonType} analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.
+
+ifdef::intellij-idea-plugin-guide[]
+The {IDEName} {AddonType} comes in two versions: Community Edition and Ultimate.
+endif::[]
