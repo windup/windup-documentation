@@ -1,0 +1,48 @@
+
+:toc:
+:toclevels: 4
+:numbered:
+
+include::topics/templates/document-attributes.adoc[]
+
+:imagesdir: topics/images
+:context: idea-plugin
+:idea-plugin:
+
+[id="intellij-idea-plugin-guide"]
+= IntelliJ IDEA Plugin Guide
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+[id="introduction"]
+== Introduction
+
+// About the VS Code extension
+// include::topics/about-vscode-extension.adoc[leveloffset=+2]
+
+// About {ProductName}
+include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+
+// Install the extension
+// include::topics/installing-vs-code-extension.adoc[leveloffset=+1]
+
+[id="analyzing-projects-with-idea-plugin"]
+== Analyzing your projects with the {ProductShortName} plugin
+
+You can analyze your projects with the {ProductShortName} extension by creating a run configuration and running an analysis.
+
+// include::topics/vs-code-extension-interface.adoc[leveloffset=+2]
+
+// include::topics/vs-code-extension-run-configuration.adoc[leveloffset=+2]
+
+[id="reviewing-and-resolving-migration-issues"]
+== Reviewing and resolving migration issues
+
+// You can review and resolve migration issues identified by the {ProductShortName} plugin in the left pane.
+
+// include::topics/vs-code-extension-reviewing-issues.adoc[leveloffset=+2]
+
+// include::topics/vs-code-extension-resolving-issues.adoc[leveloffset=+2]
+
+:!idea-plugin:
