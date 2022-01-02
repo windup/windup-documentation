@@ -2,11 +2,13 @@
 :toclevels: 4
 :numbered:
 
-include::topics/templates/document-attributes.adoc[]
-
 :imagesdir: topics/images
 :context: vsc-extension-guide
-:vsc-extension-guide-guide:
+:vsc-extension-guide:
+:AddonType: extension
+:IDEName: Microsoft Visual Studio Code
+
+include::topics/templates/document-attributes.adoc[]
 
 = Visual Studio Code Extension Guide
 
@@ -16,7 +18,7 @@ include::topics/making-open-source-more-inclusive.adoc[]
 == Introduction
 
 // About the VS Code extension
-include::topics/about-vscode-extension.adoc[leveloffset=+2]
+include::topics/about-ide-addons.adoc[leveloffset=+2]
 
 // About {ProductName}
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
