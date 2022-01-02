@@ -19,8 +19,8 @@ You can install the {WebName} on Linux, Windows, or macOS operating systems and 
 The {WebName} has been tested with Chrome and Firefox.
 endif::[]
 
-[discrete]
-include::jdk-hardware-mac-prerequisites.adoc[leveloffset=+2]
+.Prerequisites
+include::snippet_jdk-hardware-mac-prerequisites.adoc[]
 
 .Procedure
 

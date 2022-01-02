@@ -33,7 +33,8 @@ include::topics/about-rules.adoc[leveloffset=+2]
 include::topics/migration-paths.adoc[leveloffset=+2]
 
 // Prerequisites
-include::topics/jdk-hardware-mac-prerequisites.adoc[leveloffset=+2]
+== Prerequisites
+include::topics/snippet_jdk-hardware-mac-prerequisites.adoc[]
 
 // At a later date, we may wish to add the following section, once it is revised: For tips on how to optimize performance, see link:{ProductDocUserGuideURL}#optimize_performance[Optimizing {ProductShortName} performance] in {ProductShortName} _{UserCLIBookName}_.
 
