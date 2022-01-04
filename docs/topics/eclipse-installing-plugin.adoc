@@ -9,6 +9,8 @@ ifdef::eclipse-code-ready-studio-guide[]
 You can install the {PluginName} in a connected environment.
 endif::[]
 ifdef::disconnected[]
+
+:_content-type: PROCEDURE
 [id="eclipse-installing-plugin-disconnected-environment_{context}"]
 = Installing in a disconnected environment
 
