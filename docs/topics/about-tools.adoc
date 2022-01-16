@@ -1,14 +1,23 @@
 // Module included in the following assemblies:
 //
 // * docs/cli-guide/master.adoc
+// * docs/getting-started-guide/master.adoc
 
 [id="about-tools_{context}"]
 = About the tools
 
-The {ProductName} ({ProductShortName}) provides several tools to assist you in the various stages of your migration and modernization efforts. Review the details of each tool to determine which is right for your project.
+You can use the following {ProductName} ({ProductShortName}) tools to help you migrate and modernize projects:
 
-* CLI
-* Web console
-* {PluginName} for Eclipse and Red Hat CodeReady Studio
-* {ProductShortName} extension for Visual Studio Code
-* {MavenName}
+* CLI: Fully automate migration and modernization efforts for applications by using the {CLIName} tool.  link:{ProductDocUserGuideURL}[_CLI Guide_]
+* Web console: Group applications into projects for analysis by using the {ProductShortName} web console. link:{ProductDocWebConsoleGuideURL}[_Web Console Guide_]
+* IDE add-ons:
+
+
+** {PluginName} for Eclipse and Red Hat CodeReady Studio link:{EclipseCrsGuideURL}[_Eclipse and Red Hat CodeReady Studio Guide_]
+** {PluginName} for IntelliJ IDEA link:{ProductDocIntelliJURL}[_IntelliJ IDEA Guide_]
+** {ProductShortName} extension for Visual Studio Code link:{ProductDocVscGuideURL}[_Microsoft Visual Studio Code Guide_]
++
+The add-ons mark issues in the source code, provide guidance to fix issues, and suggest automatic code replacement, if available.
+
+
+* {MavenName}: Evaluate migration and modernization efforts with each iteration of source code by using the {ProductShortName} Maven plugin, which integrates into the Maven build process. link:{ProductDocMavenGuideURL}[_Maven Plugin Guide_]
