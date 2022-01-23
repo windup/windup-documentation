@@ -1,10 +1,17 @@
-include::topics/templates/document-attributes.adoc[]
-[id="eclipse-code-ready-studio-guide"]
-= Eclipse and Red Hat CodeReady Studio Guide
-
 :toc:
+:toclevels: 4
+:numbered:
+
+:imagesdir: topics/images
 :context: eclipse-code-ready-studio-guide
 :eclipse-code-ready-studio-guide:
+:AddonType: plugin
+:IDEName: Eclipse and Red Hat CodeReady Studio
+
+include::topics/templates/document-attributes.adoc[]
+
+[id="eclipse-code-ready-studio-guide"]
+= Eclipse and Red Hat CodeReady Studio Guide
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
@@ -12,7 +19,7 @@ include::topics/making-open-source-more-inclusive.adoc[]
 [id="introduction_{context}"]
 == Introduction
 
-include::topics/eclipse-about-plugin.adoc[leveloffset=+2]
+include::topics/about-ide-addons.adoc[leveloffset=+2]
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 
 [id="installing-plugin_{context}"]

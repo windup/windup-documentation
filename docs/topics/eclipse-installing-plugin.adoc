@@ -17,8 +17,8 @@ endif::[]
 
 The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Developers 2021-09 and Red Hat CodeReady Studio 12.21.0.GA.
 
-[discrete]
-include::jdk-hardware-mac-prerequisites.adoc[leveloffset=+2]
+.Prerequisites
+include::snippet_jdk-hardware-mac-prerequisites.adoc[]
 
 * link:{CodeReadyStudioDownloadPageURL}[Red Hat CodeReady Studio] _or_ link:https://www.eclipse.org/downloads/packages/release/2021-09/r/eclipse-ide-java-developers[Eclipse IDE for Java Enterprise Developers 2021-09]
 * JBoss Tools, installed with the link:https://www.eclipse.org/mpc/[Eclipse Marketplace Client]
