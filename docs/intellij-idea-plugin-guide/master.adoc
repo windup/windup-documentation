@@ -31,11 +31,9 @@ include::topics/installing-intellij-idea-plugin.adoc[leveloffset=+1]
 [id="analyzing-projects-with-idea-plugin"]
 == Analyzing your projects with the {ProductShortName} plugin
 
-You can analyze your projects with the {ProductShortName} extension by creating a run configuration and running an analysis.
+You can analyze your projects with the {ProductShortName} plugin by creating a run configuration and running an analysis.
 
-// include::topics/vs-code-extension-interface.adoc[leveloffset=+2]
-
-// include::topics/vs-code-extension-run-configuration.adoc[leveloffset=+2]
+include::topics/intellij-idea-plugin-run-configuration.adoc[leveloffset=+2]
 
 [id="reviewing-and-resolving-migration-issues"]
 == Reviewing and resolving migration issues
