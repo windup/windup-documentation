@@ -3,7 +3,7 @@
 // * docs/web-console-guide/master.adoc
 
 [id="web-openshift-insufficient-resources_{context}"]
-= Insufficient resources
+= Resolving insufficient resources
 
 The following conditions indicate insufficient resources:
 
@@ -21,7 +21,7 @@ The following conditions indicate insufficient resources:
 error: update acceptor rejected mta-web-console-executor-1: Pods for rc 'mta/mta-web-console-executor-1' took longer than 600 seconds to become available
 ----
 
-To resolve these problems:
+.Procedure
 
 . Install and run the link:{OpenShiftDocsURL}/nodes/clusters/nodes-cluster-resource-levels.html[cluster capacity tool] to determine how many pods you can schedule.
 
