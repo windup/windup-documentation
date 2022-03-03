@@ -38,10 +38,10 @@ include::topics/intellij-idea-plugin-run-configuration.adoc[leveloffset=+2]
 [id="reviewing-and-resolving-migration-issues"]
 == Reviewing and resolving migration issues
 
-// You can review and resolve migration issues identified by the {ProductShortName} plugin in the left pane.
+You can review and resolve migration issues identified by the {ProductShortName} plugin in the left pane.
 
-// include::topics/vs-code-extension-reviewing-issues.adoc[leveloffset=+2]
+include::topics/intellij-idea-plugin-reviewing-issues.adoc[leveloffset=+2]
 
-// include::topics/vs-code-extension-resolving-issues.adoc[leveloffset=+2]
+include::topics/intellij-idea-plugin-resolving-issues.adoc[leveloffset=+2]
 
 :!idea-plugin:
