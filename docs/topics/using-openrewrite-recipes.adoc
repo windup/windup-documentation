@@ -14,44 +14,30 @@ See link:{KBArticleTechnologyPreview}[Technology Preview features support scope]
 
 You can refactor the source code of Java applications by using link:https://docs.openrewrite.org/[OpenRewrite] recipes with the {ProductShortName} CLI.
 
-For example, the OpenRewrite recipe `org.jboss.windup.JavaxToJakarta` renames imported `javax` packages to their `jakarta` equivalents.
+The OpenRewrite recipe `org.jboss.windup.JavaxToJakarta` renames imported `javax` packages to their `jakarta` equivalents.
 
 .Procedure
 
-. Run `mta-cli`, specifying the recipe name, the path to the configuration file, and the application:
+. Run`mta-cli`, specifying the recipe name and the application:
 +
-[source,shell]
+[source,terminal]
 ----
-$ ./mta-cli --openrewrite --input </path/to/source/project> \
-  "-DconfigLocation=<path/to/rewrite.yaml>  \
-  "-DactiveRecipes=<recipe_name>" --goal dryRun
+$ ./mta-cli --openrewrite "-DactiveRecipes=<recipe_name>"  \
+    --input </path/to/source/project> --goal dryRun
 ----
-
-* `--input`: Specify the application to be refactored.  The application must be the top of the source code project containing a Maven Project Object Model (POM) XML file, `pom.xml`.
-
-* `-DconfigLocation=<path/to/rewrite.yaml>` : The location of the `rewrite.yaml` configuration file to use.
- The shipped `rewrite.yaml` configuration files are located in your
-`<MTA_HOME>/rules/openrewrite` subfolder, for example,`"-DconfigLocation=<MTA_HOME>/rules/openrewrite/jakarta/javax/imports/rewrite.yaml"`.
 
 * `"-DactiveRecipes=<recipe name>"`: Specify the OpenRewrite recipe, for example, `org.jboss.windup.JavaxToJakarta`.
-+
-You can include more than one recipe by specifying each in the `activeRecipes` parameter. For example, to include the recipes `org.jboss.windup.JavaxInjectToJakartaInject` and `org.jboss.windup.JavaxEjbToJakartaEjb"`, enter the following for `"-DactiveRecipes=<recipe name>"`:
-+
-[source, shell]
-----
-  "DactiveRecipes=org.jboss.windup.JavaxInjectToJakartaInject,org.jboss.windup.JavaxEjbToJakartaEjb"
-----
+
+* `--input`: Specify the application to be refactored.
 
 * `--goal`: Optional: The OpenRewrite Maven goal to run.
-
 ** `dryRun` : The script returns a list of proposed changes. Ignore the `"Run 'mvn rewrite:run' to apply the recipes"` message.
 ** `run`: The script applies the changes.
 
 . Run `mta-cli` with `--goal run` to apply the recipe:
 +
-[source,shell]
+[source,terminal]
 ----
-$ ./mta-cli --openrewrite --input </path/to/source/project> \
-  "-DconfigLocation=<path/to/rewrite.yaml>  \
-  "-DactiveRecipes=<recipe_name>" --goal run
+$ ./mta-cli --openrewrite "-DactiveRecipes=<recipe name>"  \
+    --input </path/to/source/project> --goal run
 ----
