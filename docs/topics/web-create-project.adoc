@@ -65,7 +65,13 @@ Registering the server path ensures that the {ProductShortName} server always us
 * *Ignore path*: Enter a path for files to exclude from analysis.
 * *Export CSV*: Exports the report data as a CSV file.
 * *Disable Tattletale*: Disables generation of a Tattletale report for each application.
-* *Class Not Found analysis*: Enables analysis of Java files that are not available on the class path. This option should not be used if some classes are unavailable for analysis.
+* *Class Not Found analysis*: Enables analysis of Java files that are not available on the class path.
++
+[NOTE]
+====
+This option should not be used if some classes are unavailable for analysis.
+====
+
 * *Compatible Files report*: Generating a Compatible Files report might take a long time for large applications.
 * *Exploded app*: The input directory contains the unpackaged source files of an application.
 * *Keep work dirs*: Retains temporary files, for example, the graph database or extracted archive files, for debugging purposes.
@@ -73,6 +79,12 @@ Registering the server path ensures that the {ProductShortName} server always us
 * *Allow network access*: This option reduces performance.
 * *Mavenize*: Creates a Maven project directory structure based on the structure and content of the application.
 * *Source mode*: Application files are raw source files, not compiled binaries.
+* *Analyze known libraries*: Analyze known software artifacts embedded within your application.  By default {ProductShortName} only analyzes application code.
++
+[NOTE]
+====
+This option may result in a longer execution time and a large number of migration issues being reported.
+====
 
 . Click *Next*.
 +
