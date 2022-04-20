@@ -21,10 +21,6 @@ For a complete list of all issues resolved in this release, see the list of link
 |Web console on OpenShift Container Platform
 |Custom rules do not work on OpenShift Container Platform.
 
-|link:https://issues.redhat.com/browse/WINDUP-3165[WINDUP-3165]
-|Web console on OpenShift Container Platform
-|Analysis fails when MTA custom labels are uploaded and advanced options are enabled.
-
 |link:https://issues.redhat.com/browse/WINDUP-3234[WINDUP-3234]
 |Rules engine
 |When an analysis using source mode is run on an application source directory that has the target subdirectory, the contents of the target subdirectory are added to the analysis scope. This leads to duplication or possible errors in the results.
@@ -36,4 +32,8 @@ For a complete list of all issues resolved in this release, see the list of link
 |link:https://issues.redhat.com/browse/WINDUP-3233[WINDUP-3233]
 |Rules engine
 |POM files inside a binary are not consistently analyzed.
+
+|link:https://issues.redhat.com/browse/WINDUP-3336[WINDUP-3336]
+|Web UI & Windup as a Service (`windup-web`)
+|When the application runs in source mode, it does not discover the packages within the Java files that are within the subfolders.
 |====
