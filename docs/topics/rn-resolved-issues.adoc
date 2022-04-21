@@ -35,5 +35,5 @@ For a complete list of all issues resolved in this release, see the list of link
 
 |link:https://issues.redhat.com/browse/WINDUP-3336[WINDUP-3336]
 |Web UI & Windup as a Service (`windup-web`)
-|When the application runs in source mode, it does not discover the packages within the Java files that are within the subfolders.
+|Package discovery problem in the MTA web console when running in source mode
 |====
