@@ -46,6 +46,9 @@
 :WebConsoleBookName: Web Console Guide
 :MavenBookName: Maven Plugin Guide
 
+:ocp-full: Red Hat OpenShift Container Platform
+:ocp-short: OpenShift Container Platform
+:ocp-first: {ocp-full} (RHOCP)
 
 // This book is on GitHub wiki only
 :CoreDevelopmentBookName: Core Development Guide
@@ -63,9 +66,7 @@
 // ********
 // * URLs *
 // ********
-:ocp-full: Red Hat OpenShift Container Platform
-:ocp-short: OpenShift Container Platform
-:ocp-first: {ocp-full} (RHOCP)
+
 :ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
 :EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_codeready_studio_guide

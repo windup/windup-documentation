@@ -8,7 +8,7 @@
 
 At the time of release, the following known issues have been identified as major issues worth highlighting.
 
-For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12385749[{ProductVersion} known issues] in Jira.
+For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12393203[MTA {ProductVersion} known issues] in Jira.
 
 .Major known issues
 [cols="25%,25%,50%",options="header"]
@@ -17,19 +17,27 @@ For a complete list of all known issues, see the list of link:https://issues.red
 |Component
 |Summary
 
-|link:https://issues.redhat.com/browse/WINDUP-3138[WINDUP-3138]
-|CodeReady Workspace plugin
-|The plugin works with CodeReady Workspace 2.09, but not version 2.10.
+|link:https://issues.redhat.com/browse/WINDUP-3227[WINDUP-3227]
+|Migration - Application
+|The `IncludeTags` advanced option does not work.
 
-|link:https://issues.redhat.com/browse/WINDUP-3160[WINDUP-3160]
-|Web console on OpenShift Container Platform
-|If you run an analysis on multiple applications and subsequently delete an application and rerun the analysis, the analysis hangs.
+|link:https://issues.redhat.com/browse/WINDUP-3266[WINDUP-3266]
+|IntelliJ extension
+|When you run an analysis via the extension, an exception related to `getFile` occurs intermittently.
 
-|link:https://issues.redhat.com/browse/WINDUP-3005[WINDUP-3005]
+|link:https://issues.redhat.com/browse/WINDUP-3267[WINDUP-3267]
 |Web console
-|The *Save* and *Save and run* buttons are not displayed on the *Custom rules* and *Custom labels* tabs on the *Analysis configuration* page.
+|There is no option in the web console to navigate to or to download mavenized `pom.xml` files generated if you enable the `mavenized` option.
 
-|link:https://issues.redhat.com/browse/WINDUP-3159[WINDUP-3159]
+|link:https://issues.redhat.com/browse/WINDUP-3318[WINDUP-3318]
+|Web console on {ocp-short}
+|When you upload {ProductShortName} custom labels and enable advanced options, analysis fails.
+
+|link:https://issues.redhat.com/browse/WINDUP-3322[WINDUP-3322]
 |Web console
-|If you delete an application from a project after running an analysis, the number of applications is not updated when you rerun the analysis.
+|When you edit any project and make any changes to a custom rule or a custom label, the *Save* and *Save and Run* buttons remain disabled. Workaround: You can make these changes in the *Analysis configuration* screen.
+
+|link:https://issues.redhat.com/browse/WINDUPRULE-762[WINDUPRULE-762]
+|Web console
+|When an analysis that you run on {ocp-short} from {ProductShortName} fails, logs are not visible.
 |====
