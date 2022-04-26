@@ -24,6 +24,13 @@ To run the {ProductShortName} command without prompting, for example when execut
 |Argument |Description
 |--additionalClassPath |A space-delimited list of additional JAR files or directories to add to the class path so that they are available for decompilation or other analysis.
 |--addonDir |Add the specified directory as a custom add-on repository.
+|--analyzeKnownLibraries | Flag to analyze known software artifacts embedded within your application. By default, {ProductShortName} only analyzes application code.
+
+[NOTE]
+====
+This option may result in a longer execution time and a large number of migration issues being reported.
+====
+
 |--batchMode |Flag to specify that {ProductShortName} should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in to the command line.
 |--debug |Flag to run {ProductShortName} in debug mode.
 |--disableTattletale | Flag to disable generation of the Tattletale report. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.

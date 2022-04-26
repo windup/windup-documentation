@@ -12,6 +12,13 @@ The following is a detailed description of the available {ProductShortName} {Mav
 [cols="40%,60%a",options="header"]
 |====
 |Argument |Description
+|analyzeKnownLibraries | Flag to analyze known software artifacts embedded within your application. By default, {ProductShortName} only analyzes application code.
+
+[NOTE]
+====
+This option may result in a longer execution time and a large number of migration issues being reported.
+====
+
 |customLoggingPropertiesFile |An absolute path to a `logging.properties` file that contains a `java.util.logging.LogManager` logging configuration. If the specified path is invalid, or the option is not specified, then the logging reverts to using the `logging.properties` file included with the {MavenName}.
 |disableTattletale | Flag to disable generation of the Tattletale report. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
 |enableCompatibleFilesReport |Flag to enable generation of the Compatible Files report. Due to processing all files without found issues, this report may take a long time for large applications.
