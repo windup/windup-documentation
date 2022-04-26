@@ -32,26 +32,19 @@ include::snippet_jdk-hardware-mac-prerequisites.adoc[]
         </execution>
     </executions>
     <configuration>
-        <offlineMode>true</offlineMode> <1>
+        <target>eap:7</target> <1>
     </configuration>
 </plugin>
 [...]
 ----
-<1> `offlineMode` runs the {MavenName} in offline mode, disabling network features to improve performance.
+<1> Specify a migration target. At least one migration target must be supplied within the configuration.
 
-. If using Java 11, then `--add-modules=java.se` must be added to the `MAVEN_OPTS` environment variable. When using older versions of Java this is not necessary, and you can proceed to the next step.
+. Add `--add-modules=java.se` to the `MAVEN_OPTS` environment variable.
 +
 [source,options="nowrap"]
 ----
 export MAVEN_OPTS=--add-modules=java.se
 ----
-+
-[IMPORTANT]
-====
-Using the {MavenName} on Java 11 is provided as Technology Preview only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs), might not be functionally complete, and Red Hat does not recommend to use them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
-
-See link:{KBArticleTechnologyPreview}[Technology Preview Features support scope] on the Red&nbsp;Hat Customer Portal for information about the support scope for Technology Preview features.
-====
 
 . Build the project:
 +

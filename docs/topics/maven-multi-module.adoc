@@ -32,11 +32,12 @@ To run the {MavenName} in a project with multiple modules perform the following 
     </executions>
     <configuration>
         <input>${project.basedir}</input>
-        <offlineMode>true</offlineMode>
+        <target>eap:7</target> <1>
         <windupHome>>/PATH/TO/{CLIName}/<</windupHome>
     </configuration>
 </plugin>
 ----
+<1> Specify a migration target. At least one migration target must be supplied within the configuration.
 +
 This `pom.xml` file differs from the default in the following attributes:
 +
