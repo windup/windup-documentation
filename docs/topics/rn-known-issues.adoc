@@ -21,10 +21,6 @@ For a complete list of all known issues, see the list of link:https://issues.red
 |CodeReady Workspace plugin
 |The plugin works with CodeReady Workspace 2.09, but not version 2.10.
 
-|link:https://issues.redhat.com/browse/WINDUP-3165[WINDUP-3165]
-|Web console on OpenShift Container Platform
-|Analysis fails when MTA custom labels are uploaded and advanced options are enabled.
-
 |link:https://issues.redhat.com/browse/WINDUP-3160[WINDUP-3160]
 |Web console on OpenShift Container Platform
 |If you run an analysis on multiple applications and subsequently delete an application and rerun the analysis, the analysis hangs.
