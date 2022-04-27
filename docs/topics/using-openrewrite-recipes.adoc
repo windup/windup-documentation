@@ -41,7 +41,8 @@ You can include more than one recipe by specifying each in the `activeRecipes` p
 +
 [source, terminal]
 ----
-  "DactiveRecipes=org.jboss.windup.JavaxInjectToJakartaInject,org.jboss.windup.JavaxEjbToJakartaEjb"
+  "DactiveRecipes=org.jboss.windup.JavaxInjectToJakartaInject, \
+    org.jboss.windup.JavaxEjbToJakartaEjb"
 ----
 
 * `--goal`: Optional: The OpenRewrite Maven goal to run.
