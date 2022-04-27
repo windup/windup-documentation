@@ -38,11 +38,12 @@ endif::[]
 ====
 If you are installing on a Windows operating system:
 
-. Extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error.
+. Extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error. Alternatively, extract the file with link:https://www.7-zip.org/download.html[7-Zip] to a folder of any name you choose.
 . If a *Confirm file replace* window is displayed during extraction, click *Yes to all*.
 ====
 +
-The installation directory is referred to as `<MTA_HOME>` in this guide.
+When you encounter `<MTA_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
+
 
 ifdef::web-console-guide[]
 . Start the {WebName}:
