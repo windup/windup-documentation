@@ -23,7 +23,7 @@ For example, the OpenRewrite recipe `org.jboss.windup.JavaxToJakarta` renames im
 [source,terminal]
 ----
 $ ./mta-cli --openrewrite --input </path/to/source/project> \
-  "-DconfigLocation=<path/to/rewrite.yaml>  \
+  "-Drewrite.configLocation=<path/to/rewrite.yaml>  \
   "-DactiveRecipes=<recipe_name>" --goal dryRun
 ----
 
@@ -31,9 +31,9 @@ $ ./mta-cli --openrewrite --input </path/to/source/project> \
 
 * `--input`: Specify the application to be refactored.  The application must be the top of the source code project containing a Maven Project Object Model (POM) XML file, `pom.xml`.
 
-* `-DconfigLocation=<path/to/rewrite.yaml>` : The location of the `rewrite.yaml` configuration file to use.
+* `-Drewrite.configLocation=<path/to/rewrite.yaml>` : The location of the `rewrite.yaml` configuration file to use.
  The shipped `rewrite.yaml` configuration files are located in your
-`<MTA_HOME>/rules/openrewrite` subfolder, for example,`"-DconfigLocation=<MTA_HOME>/rules/openrewrite/jakarta/javax/imports/rewrite.yaml"`.
+`<MTA_HOME>/rules/openrewrite` subfolder, for example,`" -Drewrite.configLocation=<MTA_HOME>/rules/openrewrite/jakarta/javax/imports/rewrite.yaml"`.
 
 * `"-DactiveRecipes=<recipe name>"`: Specify the OpenRewrite recipe, for example, `org.jboss.windup.JavaxToJakarta`.
 +
@@ -53,6 +53,6 @@ You can include more than one recipe by specifying each in the `activeRecipes` p
 [source,terminal]
 ----
 $ ../mta-cli --openrewrite --input </path/to/source/project> \
-  "-DconfigLocation=<path/to/rewrite.yaml>  \
+  "-Drewrite.configLocation=<path/to/rewrite.yaml>  \
   "-DactiveRecipes=<recipe_name>" --goal run
 ----
