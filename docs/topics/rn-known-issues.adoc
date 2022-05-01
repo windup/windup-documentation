@@ -40,4 +40,8 @@ For a complete list of all known issues, see the list of link:https://issues.red
 |link:https://issues.redhat.com/browse/WINDUPRULE-762[WINDUPRULE-762]
 |Web console
 |When an analysis that you run on {ocp-short} from {ProductShortName} fails, logs are not visible.
+
+|link:https://issues.redhat.com/browse/WINDUP-3367[WINDUP-3367]
+|{ocp-short}
+|When you enable FIPS on OpenJDK 11 and then install {ProductShortName} 5.3.0.Final on {ocp-short}, some pods do not come up.  
 |====
