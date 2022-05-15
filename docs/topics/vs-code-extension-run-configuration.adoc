@@ -8,13 +8,19 @@
 
 You can configure multiple run configurations to run against each project you import to VS Code.
 
+.Prerequisites
+
+* `mta-cli` executable installed. You can download the `mta-cli` executable from link:https://developers.redhat.com/products/mta/download[MTA download].
+
 .Procedure
 
 . In *Extensions* view, click the Migration Toolkit for Applications icon (image:vs_MTA_extension_icon.png[MTA code extension]) on the Activity bar.
 . Click the *+* (plus sign) next to *Migration Toolkit for Applications* to add a run configuration.
 . Complete the following configuration fields:
 
-** *Input*: Click *Add* and do one of the following:
+** *Name*: Enter a meaningful name for the analysis configuration or accept the default.
+** *`mta-cli`*: Enter the path to the `mta-cli` executable. For example: `$HOME/mta-cli-5.3.0.Final/bin/mta-cli`.
+** *Input*: Set to the path of the project that you have open within your IDE by clicking *Add* and doing one of the following:
 
 *** Enter the input file or directory and press Enter.
 *** Click *Open File Explorer* and select the directory.
