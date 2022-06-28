@@ -76,14 +76,19 @@ This option should not be used if some classes are unavailable for analysis.
 * *Exploded app*: The input directory contains the unpackaged source files of an application.
 * *Keep work dirs*: Retains temporary files, for example, the graph database or extracted archive files, for debugging purposes.
 * *Skip reports*: HTML reports are not generated. Must be enabled if you enabled *Export CSV*.
-* *Allow network access*: This option reduces performance.
+* *Allow network access*: Validates any XML files within the analyzed applications against their schema.
++
+[NOTE]
+====
+This option might reduce performance.
+====
 * *Mavenize*: Creates a Maven project directory structure based on the structure and content of the application.
 * *Source mode*: Application files are raw source files, not compiled binaries.
 * *Analyze known libraries*: Analyze known software artifacts embedded within your application.  By default {ProductShortName} only analyzes application code.
 +
 [NOTE]
 ====
-This option may result in a longer execution time and a large number of migration issues being reported.
+This option might result in a longer execution time and a large number of migration issues being reported.
 ====
 
 . Click *Next*.
