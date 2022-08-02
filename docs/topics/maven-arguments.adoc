@@ -23,6 +23,14 @@ This option may result in a longer execution time and a large number of migratio
 |disableTattletale | Flag to disable generation of the Tattletale report. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
 |enableCompatibleFilesReport |Flag to enable generation of the Compatible Files report. Due to processing all files without found issues, this report may take a long time for large applications.
 |enableTattletale |Flag to enable generation of a Tattletale report for each application. This option is enabled by default when `eap` is in the included target. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
+|enableTransactionAnalysis |[Technology Preview] Flag to enable generation of a Transactions report that displays the call stack, which executes operations on relational database tables. The Enable Transaction Analysis feature supports Spring Data JPA and the traditional `preparedStatement()` method for SQL statement execution. It does not support ORM frameworks such as Hibernate.
+
+[NOTE]
+====
+enableTransactionAnalysis is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them
+in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+====
+
 |excludePackages |A list of packages to exclude from evaluation. For example, entering "com.mycompany.commonutilities" would exclude all classes whose package name begins with "com.mycompany.commonutilities".
 |excludeTags |A list of tags to exclude. When specified, rules with these tags will not be processed.
 |explodedApps |Flag to indicate that the provided input directory contains source files for a single application.
