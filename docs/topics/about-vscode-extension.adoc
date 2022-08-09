@@ -1,17 +1,18 @@
 // Module included in the following assemblies:
 //
+// * docs/getting-started-guide/master.adoc
 // * docs/vs-code-extension-guide/master.adoc
 
 :_content-type: CONCEPT
 [id='about-vscode-extension_{context}']
-= About the {ProductShortName} extension for Visual Studio Code
+= About the {ProductShortName} extension for Visual Studio Code and Eclipse Che
 
-The {ProductName} ({ProductShortName}) extension for Visual Studio Code helps you migrate and modernize applications.
+The {ProductName} ({ProductShortName}) extension for Visual Studio Code and Eclipse Che helps you migrate and modernize applications.
 
 The {ProductShortName} extension is also compatible with Visual Studio Codespaces, the Microsoft cloud-hosted development environment.
 
 The {ProductShortName} extension analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.
 
 ifdef::getting-started-guide[]
-For more information about using the {ProductShortName} extension, see the {ProductShortName} link:{ProductDocVscGuideURL}[_Visual Studio Code Extension Guide_].
+For more information about using the {ProductShortName} extension, see the {ProductShortName} link:{ProductDocVscGuideURL}[_Visual Studio Code and Eclipse Che Extension Guide_].
 endif::[]

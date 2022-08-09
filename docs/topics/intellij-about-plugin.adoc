@@ -1,0 +1,16 @@
+// Module included in the following assemblies:
+//
+// * docs/getting-started-guide/master.adoc
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="intellij-about-plugin_{context}"]
+= About the {PluginName} for IntelliJ
+
+The {ProductName} ({ProductShortName}) plugin for IntelliJ helps you migrate and modernize applications.
+
+The {PluginName} analyzes your projects using customizable rulesets, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, or Quick Fixes, if possible.
+
+ifdef::getting-started-guide[]
+For more information on using the {PluginName}, see the MTA link:{IntelliJGuideURL}[_{IntelliJBookName}_].
+endif::[]

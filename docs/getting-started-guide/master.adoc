@@ -48,11 +48,17 @@ include::topics/about-cli.adoc[leveloffset=+2]
 // About the {WebNameTitle}
 include::topics/about-the-web-console.adoc[leveloffset=+2]
 
+//About the {ProductShortName} Operator
+include::topics/about-the-mta-operator.adoc[leveloffset=+2]
+
 // About the {PluginNameTitle}
 include::topics/eclipse-about-plugin.adoc[leveloffset=+2]
 
 // About the VS Code extension
 include::topics/about-vscode-extension.adoc[leveloffset=+2]
+
+//About the IntelliJ plugin
+include::topics/intellij-about-plugin.adoc[leveloffset=+2]
 
 // About the {MavenNameTitle}
 include::topics/about-maven.adoc[leveloffset=+2]

@@ -1,0 +1,11 @@
+// Module included in the following assemblies:
+//
+// * docs/wgetting-started-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="about-the-mta-operator_{context}"]
+= About the {ProductShortName} Operator
+
+You can install the web console on OpenShift Container Platform 4.6 and later versions with the Migration Toolkit for Applications Operator.
+
+For installation instructions, see link:{ProductDocWebConsoleGuideURL}/index#installing-web-console-on-openshift_ocp-46[Installing the web console on OpenShift Container Platform 4.6 and later].
