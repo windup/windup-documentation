@@ -1,4 +1,4 @@
-// ********************************
+F// ********************************
 // * Standard document attributes *
 // ********************************
 :toc:
@@ -70,7 +70,7 @@ endif::[]
 // :ProductRelease: 4
 // :ProductVersion: 4.0
 :ProductDistributionVersion: 5.3.0.Final
-:ProductDistribution: mta-cli-{ProductDistributionVersion}
+:ProductDistribution: windup-cli-{ProductDistributionVersion}
 :MavenProductVersion: 5.3.0.Final
 
 // ********
@@ -98,6 +98,7 @@ endif::[]
 // URLs for downloads on developers.redhat.com
 :MTADownloadPageURL: https://developers.redhat.com/products/mta/download
 :CodeReadyStudioDownloadPageURL: https://developers.redhat.com/products/codeready-studio/download/
+:MTRDownloadPageURL: https://developers.redhat.com/products/mtr/download
 
 // KBase Article links:
 :KBArticleTechnologyPreview: https://access.redhat.com/support/offerings/techpreview

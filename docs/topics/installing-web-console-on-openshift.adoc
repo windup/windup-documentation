@@ -41,7 +41,7 @@ ifdef::ocp-42[]
 .Procedure
 
 . Navigate to the link:{MTADownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
-. Extract the `.zip` file to a directory, for example, `MTA_HOME`.
+. Extract the `.zip` file to a directory, for example, `MTR_HOME`.
 endif::[]
 ifdef::ocp-46[]
 .Installing the {DocInfoProductName} Operator
@@ -65,7 +65,7 @@ ifdef::ocp-42[]
 . Launch the OpenShift web console.
 . Click the *Import YAML* button in the upper-right corner of the web console.
 . Select *mta* from the *Project* list.
-. Copy the contents of the appropriate template from the `MTA_HOME/openshift/templates/` directory into the *Import YAML* field.
+. Copy the contents of the appropriate template from the `MTR_HOME/openshift/templates/` directory into the *Import YAML* field.
 +
 Two templates are provided, one for shared storage and one without shared storage.
 

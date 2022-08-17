@@ -21,7 +21,7 @@ You can add a custom category to the rule category file.
 
 .Procedure
 
-. Edit the rule category file, which is located at `<MTA_HOME>/rules/migration-core/core.windup.categories.xml`.
+. Edit the rule category file, which is located at `<MTR_HOME>/rules/migration-core/core.windup.categories.xml`.
 
 . Add a new `<category>` element and fill in the following parameters:
 +

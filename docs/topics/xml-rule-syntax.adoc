@@ -30,7 +30,7 @@ A ruleset is a group of one or more rules that targets a specific area of migrat
 
 == Predefined rules
 
-{ProductShortName} provides predefined rules for common migration requirements. These core {ProductShortName} rules are located in the {ProductShortName} installation at `<MTA_HOME>/rules/migration-core/`.
+{ProductShortName} provides predefined rules for common migration requirements. These core {ProductShortName} rules are located in the {ProductShortName} installation at `<MTR_HOME>/rules/migration-core/`.
 
 The following is an example of a core {ProductShortName} rule that matches on a proprietary utility class.
 

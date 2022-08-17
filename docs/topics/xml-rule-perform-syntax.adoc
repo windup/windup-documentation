@@ -63,7 +63,7 @@ effort="2"
 
 |category-id
 |STRING
-a|A reference to a category as defined in `MTA_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, `potential`, and `information`.
+a|A reference to a category as defined in `MTR_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, `potential`, and `information`.
 
 [options="nowrap"]
 ----
@@ -221,7 +221,7 @@ title="JBoss Seam Component Hint"
 
 |category-id
 |STRING
-a|A reference to a category as defined in `MTA_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, `potential`, and `information`.
+a|A reference to a category as defined in `MTR_HOME/rules/migration-core/core.windup.categories.xml`. The default categories are `mandatory`, `optional`, `potential`, and `information`.
 
 [options="nowrap"]
 ----

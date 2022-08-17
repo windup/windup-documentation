@@ -10,7 +10,7 @@ You can configure multiple run configurations to run against each project you im
 
 .Prerequisites
 
-* `mta-cli` executable installed. You can download the `mta-cli` executable from link:https://developers.redhat.com/products/mta/download[MTA download].
+* `windup-cli` executable installed. You can download the `windup-cli` executable from link:https://developers.redhat.com/products/mta/download[MTA download].
 
 .Procedure
 
@@ -19,7 +19,7 @@ You can configure multiple run configurations to run against each project you im
 . Complete the following configuration fields:
 
 ** *Name*: Enter a meaningful name for the analysis configuration or accept the default.
-** *`mta-cli`*: Enter the path to the `mta-cli` executable. For example: `$HOME/mta-cli-5.3.0.Final/bin/mta-cli`.
+** *`windup-cli`*: Enter the path to the `windup-cli` executable. For example: `$HOME/windup-cli-5.3.0.Final/bin/windup-cli`.
 ** *Input*: Set to the path of the project that you have open within your IDE by clicking *Add* and doing one of the following:
 
 *** Enter the input file or directory and press Enter.

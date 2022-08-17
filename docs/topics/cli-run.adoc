@@ -10,12 +10,12 @@ You can run {ProductShortName} against your application.
 
 .Procedure
 
-. Open a terminal and navigate to the `<MTA_HOME>/bin/` directory.
-. Execute the `mta-cli` script, or `mta-cli.bat` for Windows, and specify the appropriate arguments:
+. Open a terminal and navigate to the `<MTR_HOME>/bin/` directory.
+. Execute the `windup-cli` script, or `windup-cli.bat` for Windows, and specify the appropriate arguments:
 +
 [source,terminal]
 ----
-$ ./mta-cli --input /path/to/jee-example-app-1.0.0.ear \
+$ ./windup-cli --input /path/to/jee-example-app-1.0.0.ear \
     --output /path/to/output --source weblogic --target eap:6 \
     --packages com.acme org.apache
 ----
@@ -38,7 +38,7 @@ The following command analyzes the `com.acme` and `org.apache` packages of the l
 
 [source,terminal]
 ----
-$ <MTA_HOME>/bin/mta-cli \
+$ <MTR_HOME>/bin/windup-cli \
     --input /path/to/jee-example-app-1.0.0.ear \
     --output /path/to/report-output/ --source eap:5 --target eap:7 \
     --packages com.acme org.apache
@@ -51,7 +51,7 @@ The following command analyzes the `org.jboss.seam` packages of the link:https:/
 
 [source,terminal]
 ----
-$ <MTA_HOME>/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ \
+$ <MTR_HOME>/bin/windup-cli --sourceMode --input /path/to/seam-booking-5.2/ \
     --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam
 ----
 
@@ -62,7 +62,7 @@ The following command analyzes the `com.acme` and `org.apache` packages of the l
 
 [source,terminal]
 ----
-$ <MTA_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear \
+$ <MTR_HOME>/bin/windup-cli --input /path/to/jee-example-app-1.0.0.ear \
     --output /path/to/report-output/ \
     --target eap:7 --target cloud-readiness --packages com.acme org.apache
 ----
@@ -74,7 +74,7 @@ To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` 
 
 [source,terminal]
 ----
-$ <MTA_HOME>/bin/mta-cli -Dwindup.decompiler=procyon \
+$ <MTR_HOME>/bin/windup-cli -Dwindup.decompiler=procyon \
     --input <INPUT_ARCHIVE_OR_DIRECTORY> --output <OUTPUT_REPORT_DIRECTORY> \
     --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2>
 ----
@@ -86,7 +86,7 @@ The {ProductShortName} {CLIName} provides an option to enable Bash completion fo
 
 [source,terminal]
 ----
-$ <MTA_HOME>/bin/mta-cli [TAB]
+$ <MTR_HOME>/bin/windup-cli [TAB]
 ----
 
 [discrete]
@@ -97,7 +97,7 @@ To enable Bash completion for the current shell, execute the following command:
 
 [source,terminal]
 ----
-$ source <MTA_HOME>/bash-completion/mta-cli
+$ source <MTR_HOME>/bash-completion/windup-cli
 ----
 
 [discrete]
@@ -110,22 +110,22 @@ The following commands allow Bash completion to persist across restarts:
 +
 [source,terminal]
 ----
-source <MTA_HOME>/bash-completion/mta-cli
+source <MTR_HOME>/bash-completion/windup-cli
 ----
 
 * To enable Bash completion for all users across system restarts, copy the {ProductName} {CLIName} Bash completion file to the `/etc/bash_completion.d/` directory as the root user.
 +
 [source,terminal]
 ----
-# cp <MTA_HOME>/bash-completion/mta-cli /etc/bash_completion.d/
+# cp <MTR_HOME>/bash-completion/windup-cli /etc/bash_completion.d/
 ----
 
 [id="accessing-help_{context}"]
 == Accessing {ProductShortName} help
 
-To see the complete list of available arguments for the `mta-cli` command, open a terminal, navigate to the `<MTA_HOME>` directory, and execute the following command:
+To see the complete list of available arguments for the `windup-cli` command, open a terminal, navigate to the `<MTR_HOME>` directory, and execute the following command:
 
 [source,terminal]]
 ----
-$ <MTA_HOME>/bin/mta-cli --help
+$ <MTR_HOME>/bin/windup-cli --help
 ----
