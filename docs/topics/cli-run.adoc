@@ -86,7 +86,7 @@ The {ProductShortName} {CLIName} provides an option to enable Bash completion fo
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli [TAB]
+$ <{ProductShortName}_HOME>/bin/windup-cli [TAB]
 ----
 
 [discrete]
@@ -125,7 +125,7 @@ source <{ProductShortName}_HOME>/bash-completion/windup-cli
 
 To see the complete list of available arguments for the `windup-cli` command, open a terminal, navigate to the `<{ProductShortName}_HOME>` directory, and execute the following command:
 
-[source,terminal,subs="attributes+"]]
+[source,terminal,subs="attributes+"]
 ----
 $ <{ProductShortName}_HOME>/bin/windup-cli --help
 ----
