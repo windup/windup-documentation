@@ -10,8 +10,19 @@
 // *****************
 // * Product names *
 // *****************
+ifdef::mta[]
 :ProductName: Migration Toolkit for Applications
+:DocInfoProductName: Migration Toolkit for Applications
+:DocInfoProductNumber: 5.3
 :ProductShortName: MTA
+endif::[]
+ifdef::mtr[]
+:DocInfoProductName: Migration Toolkit for Runtimes
+:ProductName: Migration Toolkit for Runtimes
+:DocInfoProductNumber: 1.0
+:ProductShortName: MTR
+endif::[]
+
 
 // *******************
 // * Component names *
@@ -32,8 +43,7 @@
 // ****************
 // * Doc metadata *
 // ****************
-:DocInfoProductName: Migration Toolkit for Applications
-:DocInfoProductNumber: 5.3
+
 :DocInfoProductNameURL: migration_toolkit_for_applications
 
 :OpenShiftProductNumber: 4.10
