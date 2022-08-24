@@ -11,3 +11,7 @@ layout: default
 - [Release Notes](docs/release-notes/master/index.html)
 - [Visual Studio Code Extension Guide](docs/vs-code-extension-guide/master/index.html)
 - [Introduction to the Migration Toolkit for Applications](docs/getting-started-guide/master/index.html)
+
+Migration Toolkit for Runtimes (in progress)
+
+- [CLI Guide](docs/cli-guide-mtr/master/index.html)
