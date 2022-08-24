@@ -15,12 +15,15 @@ ifdef::mta[]
 :DocInfoProductName: Migration Toolkit for Applications
 :DocInfoProductNumber: 5.3
 :ProductShortName: MTA
+:DocInfoProductNameURL: migration_toolkit_for_applications
+
 endif::[]
 ifdef::mtr[]
-:DocInfoProductName: Migration Toolkit for Runtimes
 :ProductName: Migration Toolkit for Runtimes
+:DocInfoProductName: Migration Toolkit for Runtimes
 :DocInfoProductNumber: 1.0
 :ProductShortName: MTR
+:DocInfoProductNameURL: migration_toolkit_for_runtimes
 endif::[]
 
 
@@ -44,15 +47,12 @@ endif::[]
 // * Doc metadata *
 // ****************
 
-:DocInfoProductNameURL: migration_toolkit_for_applications
-
 :OpenShiftProductNumber: 4.10
 :ProductVersion: 5.3.0
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rules Development Guide
 :EclipseCrsGuideTitle: Eclipse and Red Hat CodeReady Studio Guide
-:IntroToMTABookName: Introduction to the Migration Toolkit for Applications
 :WebConsoleBookName: Web Console Guide
 :MavenBookName: Maven Plugin Guide
 
@@ -77,10 +77,11 @@ endif::[]
 // * URLs *
 // ********
 
+:IntroToMTABookName: Introduction to the {DocInfoProductName}
 :ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
 :EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_codeready_studio_guide
-:ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_migration_toolkit_for_applications
+:ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
 :ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/web_console_guide
 :ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
 :ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
