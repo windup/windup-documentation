@@ -110,7 +110,7 @@ The following commands allow Bash completion to persist across restarts:
 +
 [source,terminal]
 ----
-source <MTR_HOME>/bash-completion/windup-cli
+$ source <MTR_HOME>/bash-completion/windup-cli
 ----
 
 * To enable Bash completion for all users across system restarts, copy the {ProductName} {CLIName} Bash completion file to the `/etc/bash_completion.d/` directory as the root user.
