@@ -197,11 +197,11 @@ The rule is now complete and should look like the following example.
 
 An {ProductShortName} rule is installed by placing the rule into the appropriate directory.
 
-Copy the `JBoss5-web-class-loading.windup.xml` file to the `<MTR_HOME>/rules/` directory.
+Copy the `JBoss5-web-class-loading.windup.xml` file to the `<{ProductShortName}_HOME>/rules/` directory.
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ cp /home/<USER_NAME>/migration-rules/rules/JBoss5-web-class-loading.windup.xml <MTR_HOME>/rules/
+$ cp /home/<USER_NAME>/migration-rules/rules/JBoss5-web-class-loading.windup.xml <{ProductShortName}_HOME>/rules/
 ----
 
 [discrete]
@@ -211,7 +211,7 @@ Open a terminal and run the following command, passing the test file as an input
 
 [options="nowrap",subs="+quotes"]
 ----
-$ <MTR_HOME>/bin/windup-cli --sourceMode --input /home/<USER_NAME>/migration-rules/data --output /home/<USER_NAME>/migration-rules/reports --target eap:6
+$ <{ProductShortName}_HOME>/bin/windup-cli --sourceMode --input /home/<USER_NAME>/migration-rules/data --output /home/<USER_NAME>/migration-rules/reports --target eap:6
 ----
 
 You should see the following result.

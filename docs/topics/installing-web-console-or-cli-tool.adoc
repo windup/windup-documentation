@@ -42,7 +42,7 @@ If you are installing on a Windows operating system:
 . If a *Confirm file replace* window is displayed during extraction, click *Yes to all*.
 ====
 +
-When you encounter `<MTR_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
+When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
 
 
 ifdef::web-console-guide[]
@@ -51,13 +51,13 @@ ifdef::web-console-guide[]
 * Linux operating system:
 +
 ----
-$ <MTR_HOME>/run_mta.sh
+$ <{ProductShortName}_HOME>/run_mta.sh
 ----
 
 * Windows operating system:
 +
 ----
-C:\<MTR_HOME>\run_mta.bat
+C:\<{ProductShortName}_HOME>\run_mta.bat
 ----
 
 . Open a browser and navigate to `\http://localhost:8080/mta-web`. The {WebName} login page is displayed in your browser.

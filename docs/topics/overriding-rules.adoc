@@ -18,8 +18,8 @@ You can override a core or custom rule.
 
 . Copy the XML file that contains the rule you want to override to the custom rules directory.
 +
-Custom rules can be placed in `<MTR_HOME>/rules`, `${user.home}/.mta/rules/`, or a directory specified by the `--userRulesDirectory` command-line argument.
-
+Custom rules can be placed in `<{ProductShortName}_HOME>/rules`, `${user.home}/.mta/rules/`, or a directory specified by the `--userRulesDirectory` command-line argument.
+//Please check
 . Edit the XML file so that it contains only the `<rule>` elements for the rules that you want to override.
 +
 [NOTE]

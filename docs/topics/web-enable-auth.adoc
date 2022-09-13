@@ -12,7 +12,7 @@ Run the following script to require users to log in before accessing the {WebNam
 
 [source,options="nowrap",subs="+quotes"]
 ----
-$ <MTR_HOME>/switch_to_authentication_required.sh
+$ <{ProductShortName}_HOME>/switch_to_authentication_required.sh
 ----
 
 NOTE: In a Windows environment, use the `switch_to_authentication_required.bat` script.
