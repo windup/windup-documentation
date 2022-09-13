@@ -20,7 +20,7 @@ The run configuration panel is displayed on the right.
 
 . Complete the following configuration fields:
 
-** *mta-cli*: Click *Add*, select the filepath, and click *Save*.
+** *{LC_PSN}-cli*: Click *Add*, select the filepath, and click *Save*.
 ** *Input*: Click *Add* and enter the input file or directory.
 ** *Target*: Select one or more target migration paths.
 +
