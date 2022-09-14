@@ -1,0 +1,47 @@
+:toc:
+:toclevels: 4
+:numbered:
+:mta:
+:imagesdir: topics/images
+:context: idea-plugin-guide
+:idea-plugin-guide:
+:AddonType: plugin
+:IDEName: IntelliJ IDEA
+:mtr:
+include::topics/templates/document-attributes.adoc[]
+:_content-type: ASSEMBLY
+[id="intellij-idea-plugin-guide"]
+= IntelliJ IDEA Plugin Guide
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+[id="introduction"]
+== Introduction
+
+// About the IntelliJ IDEA plugin
+include::topics/about-ide-addons.adoc[leveloffset=+2]
+
+// About {ProductName}
+include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+
+// Install the plugin
+include::topics/installing-intellij-idea-plugin.adoc[leveloffset=+1]
+
+[id="analyzing-projects-with-idea-plugin"]
+== Analyzing your projects with the {ProductShortName} plugin
+
+You can analyze your projects with the {ProductShortName} plugin by creating a run configuration and running an analysis.
+
+include::topics/intellij-idea-plugin-run-configuration.adoc[leveloffset=+2]
+
+[id="reviewing-and-resolving-migration-issues"]
+== Reviewing and resolving migration issues
+
+You can review and resolve migration issues identified by the {ProductShortName} plugin in the left pane.
+
+include::topics/intellij-idea-plugin-reviewing-issues.adoc[leveloffset=+2]
+
+include::topics/intellij-idea-plugin-resolving-issues.adoc[leveloffset=+2]
+
+:!idea-plugin:

@@ -1,0 +1,11 @@
+<title>Maven Plugin Guide</title>
+<productname>{DocInfoProductName}</productname>
+<productnumber>{DocInfoProductNumber}</productnumber>
+<subtitle>Integrate the {ProductName} into the Maven build process.</subtitle>
+<abstract>
+    <para>This guide describes how to use the {ProductName} {MavenName} to simplify migration of Java applications.</para>
+</abstract>
+<authorgroup>
+    <orgname>Red Hat Customer Content Services</orgname>
+</authorgroup>
+<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />

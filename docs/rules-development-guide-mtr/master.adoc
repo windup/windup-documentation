@@ -1,0 +1,104 @@
+:toc:
+:toclevels: 3
+:numbered:
+:mtr:
+include::topics/templates/document-attributes.adoc[]
+
+:imagesdir: topics/images
+:context: rules-development-guide
+:rules-development-guide:
+:_content-type: ASSEMBLY
+= Rules Development Guide
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+== Introduction
+
+// About the Rules Development Guide
+include::topics/rules-guide-intro.adoc[leveloffset=+2]
+
+// Use of <MTA_HOME> in this Guide
+include::topics/about-home-var.adoc[leveloffset=+3]
+
+// MTA Rules
+include::topics/about-rules.adoc[leveloffset=+2]
+
+// Getting Started
+include::topics/getting-started-rules.adoc[leveloffset=+1]
+
+// Create Your First XML Rule
+include::topics/create-first-xml-rule.adoc[leveloffset=+2]
+
+// Review the Quickstarts
+include::topics/review-quickstarts.adoc[leveloffset=+2]
+
+== Creating XML rules
+
+// XML Rule Structure
+include::topics/xml-rule-syntax.adoc[leveloffset=+2]
+
+// Create a Basic XML Rule
+include::topics/create-basic-xml-rule.adoc[leveloffset=+2]
+
+=== XML rule syntax
+
+// When Condition Syntax
+include::topics/xml-rule-when-syntax.adoc[leveloffset=+3]
+
+// Perform Action Syntax
+include::topics/xml-rule-perform-syntax.adoc[leveloffset=+3]
+
+// Where Syntax
+include::topics/where-syntax.adoc[leveloffset=+3]
+
+// Add the Rule to {ProductName}
+include::topics/add-rule-to-mta.adoc[leveloffset=+2]
+
+// Testing XML Rules
+include::topics/testing-rules.adoc[leveloffset=+1]
+
+// Manually Test the XML Rule
+include::topics/manually-test-rules.adoc[leveloffset=+2]
+
+// Test the Rules Using JUnit
+include::topics/rules-testing-junit.adoc[leveloffset=+2]
+
+// About the validation report
+include::topics/validation-report.adoc[leveloffset=+2]
+
+// creating a Validation Report
+include::topics/validation-report-understanding.adoc[leveloffset=+3]
+
+// Reported Errors when Running the Validation Report
+include::topics/validation-report-errors.adoc[leveloffset=+3]
+
+// Overriding Rules
+include::topics/overriding-rules.adoc[leveloffset=+1]
+
+// Using Custom Rule Categories
+include::topics/rule-categories.adoc[leveloffset=+1]
+
+[appendix]
+== Reference material
+
+// Rule Story Points
+include::topics/about-story-points.adoc[leveloffset=+2]
+
+For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
+
+=== Additional resources
+
+// Review the Existing MTA XML Rules
+include::topics/review-existing-rules.adoc[leveloffset=+3]
+
+// Fork and Clone the Ruleset GitHub Project
+include::topics/fork-ruleset-repo.adoc[leveloffset=+4]
+
+// Important Links
+include::topics/rules-important-links.adoc[leveloffset=+3]
+
+// **********************************
+// * Appendix: Revision Information *
+// **********************************
+include::topics/templates/revision-info.adoc[]

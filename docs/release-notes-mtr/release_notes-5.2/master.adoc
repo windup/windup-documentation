@@ -1,0 +1,19 @@
+:mta:
+include::topics/templates/document-attributes.adoc[]
+:toc:
+:toclevels: 3
+:numbered:
+:imagesdir: topics/images
+:context: release-notes
+:release-notes:
+:_content-type: ASSEMBLY
+= {ReleaseNotesName}
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+include::topics/rn-new-features.adoc[leveloffset=+1]
+include::topics/rn-known-issues.adoc[leveloffset=+1]
+include::topics/rn-resolved-issues.adoc[leveloffset=+1]
+
+:!release-notes:
