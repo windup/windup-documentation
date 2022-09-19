@@ -15,6 +15,7 @@ ifdef::mta[]
 :DocInfoProductName: Migration Toolkit for Applications
 :DocInfoProductNumber: 5.3
 :ProductShortName: MTA
+:LC_PSN: mta
 :DocInfoProductNameURL: migration_toolkit_for_applications
 
 endif::[]
@@ -23,6 +24,7 @@ ifdef::mtr[]
 :DocInfoProductName: Migration Toolkit for Runtimes
 :DocInfoProductNumber: 1.0
 :ProductShortName: MTR
+:LC_PSN: mtr
 :DocInfoProductNameURL: migration_toolkit_for_runtimes
 endif::[]
 
