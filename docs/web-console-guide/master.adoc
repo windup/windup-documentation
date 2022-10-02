@@ -8,7 +8,7 @@ include::topics/templates/document-attributes.adoc[]
 :context: web-console-guide
 :web-console-guide:
 :_content-type: ASSEMBLY
-= Web Console Guide
+= User Interface Guide
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
@@ -24,14 +24,42 @@ include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 // About the {WebName}
 include::topics/about-the-web-console.adoc[leveloffset=+2]
 
-== Installing the {WebName}
+== User interface views
 
-You can install the {WebName} on Linux, Windows, macOS, or {ocp-full}.
+//We need an intro about the two views.
 
-// Installing on Linux, Windows, macOS
-include::topics/installing-web-console-or-cli-tool.adoc[leveloffset=+2]
+=== Administrator view
 
-=== Installing the {WebName} on {ocp-short}
+// Intro about the three sets of activities
+
+// include::topics/ about credentials [all topic names that do not end in .adoc are just made up names; the real module names will need to follow our documentation rules]
+// include::topics/ about repositories
+// include::topics/ about proxy
+
+=== Developer view
+
+// Intro about the three sets of activities (Application inventory, assessments, and analyses)
+
+// include::topics/ about Application inventory
+
+==== Application assessments and analyses
+
+// include::topics/ about assessments
+// include::topics/ about analyses
+
+==== Reports
+
+// include::topics/ about reports
+
+==== Controls
+
+// include::topics/ about controls
+
+== Installing the {WebName} on {ocp-short}
+
+// Heads up: This includes instructions for installing on OCP
+// 4.2+. Some of these sections may need deletion or editing. I
+// already tossed the irrelevant Mac/Windows/etc. parts
 
 You can install the {WebName} on {ocp-short} 4.6 and later versions with the {ProductName} Operator.
 
@@ -48,6 +76,8 @@ include::topics/installing-web-console-on-openshift.adoc[leveloffset=+3]
 :ocp-42!:
 :web-console-guide:
 ==== Troubleshooting a {WebName} installation on OpenShift
+
+// Not clear if ANY of this is relevant.
 
 This section describes how to troubleshoot a {WebName} installation on OpenShift Container Platform.
 
@@ -66,52 +96,129 @@ include::topics/web-openshift-insufficient-resources.adoc[leveloffset=+4]
 
 {ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
 
-== Using the {WebName} to analyze applications
+== Configuring the instance environment
+include::topics/tbd
+// Introduction
 
-You can create a project in the web console to analyze your applications.
+=== Configuring credentials
 
-Each project groups the applications for a specific analysis, which you can configure with custom rules and labels.
+//include::topics/
 
-The analysis process generates reports that describe the readiness of your applications for migration or modernization.
+==== Configuring source control
 
-// Creating a project
+include::topics/
+
+==== Configuring Maven credentials
+
+include::topics/
+
+==== Configuring proxy credentials
+
+include::topics/
+
+=== Configuring repositories
+
+include::topics/
+
+==== Configuring Git repositories
+
+include::topics/
+
+==== Configuring subversion repositories
+
+include::topics/
+
+==== Configuring Maven repositories
+
+include::topics/
+
+===== Configuring a Maven repository
+
+include::topics/
+
+===== Managing repository size
+
+include::topics/
+
+=== Configuring HTTP and HTTPS proxy settings
+
+include::topics/
+
+=== Seeding instances
+
+include::topics/
+
+==== Creating a new stakeholder group
+
+include::topics/
+
+==== Creating a new job function
+
+include::topics/
+
+==== Creating a new stakeholder
+
+include::topics/
+
+==== Creating a new business service
+
+include::topics/
+
+==== Creating a new tag type
+
+include::topics/
+
+===== Creating a new tag
+
+include::topics/tbd
+
+== Assessing and analyzing application
+
+// Introduction -- explain difference between them
+
+=== Assessing applications
+
+include::topics/
+
+==== Applying an assessment to similar applications
+
+include::topics/
+
+=== Running application analysis
+
+// You can use parts of the old one and modify OR work from scratch
 include::topics/web-create-project.adoc[leveloffset=+2]
 
+// Check if there is something useful in:
 // Running a saved analysis
 include::topics/web-running-saved-analysis.adoc[leveloffset=+2]
 
+// Check if there is something useful in:
 // Viewing the Results of an Analysis
 include::topics/web-view-results.adoc[leveloffset=+2]
 
-// Review the Reports
+// Check if there is something useful in:
+// Reviewing the analysis report
 include::topics/web-review-reports.adoc[leveloffset=+2]
 
-//Reconfigure Analysis
-include::topics/web-updating-an-analysis.adoc[leveloffset=+2]
+== Adding applications
 
-// Using Custom Rules
-include::topics/web-adding-global-custom-rules.adoc[leveloffset=+2]
+// intro
 
-// Using Custom Labels
-include::topics/web-adding-global-custom-labels.adoc[leveloffset=+2]
+=== Creating applications
+include::topics/
 
-// Require Authentication for {ProductWebName}
-include::topics/web-require-auth.adoc[leveloffset=+1]
+=== Assigning application credentials
+include::topics/
 
-// Enable {ProductWebName} to Require Authentication
-include::topics/web-enable-auth.adoc[leveloffset=+2]
+=== Importing application lists
+include::topics/
 
-// Change the Administrative User's Credentials
-include::topics/web-change-admin-user.adoc[leveloffset=+2]
+==== Downloading the application list CSV template
+include::topics/
 
-// Remove the Default {ProductWebName} User
-include::topics/web-remove-default-user.adoc[leveloffset=+2]
-
-// Add a New {ProductWebName} User
-include::topics/web-add-user.adoc[leveloffset=+2]
-
-// TODO: eventually add steps for reverting back to no auth required
-
+==== Importing an application list
+include::topics/
 
 // **********************************
 // * Appendix: Revision Information *
