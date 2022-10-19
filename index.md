@@ -4,7 +4,7 @@ layout: default
 
 Migration Toolkit for Applications
 
-- [Web Console Guide](docs/web-console-guide/master/index.html)
+- [User Interface Guide](docs/web-console-guide/master/index.html)
 - [CLI Guide](docs/cli-guide/master/index.html)
 - [Rules Development Guide](docs/rules-development-guide/master/index.html)
 - [Maven Plugin Guide](docs/maven-guide/master/index.html)
@@ -17,7 +17,7 @@ Migration Toolkit for Applications
 Migration Toolkit for Runtimes
 
 - [Web Console Guide](docs/web-console-guide-mtr/master/index.html)
-[CLI Guide](docs/cli-guide-mtr/master/index.html)
+- [CLI Guide](docs/cli-guide-mtr/master/index.html)
 - [Rules Development Guide](docs/rules-development-guide-mtr/master/index.html)
 - [Maven Plugin Guide](docs/maven-guide-mtr/master/index.html)
 - [Eclipse and Red Hat CodeReady Studio Guide](docs/eclipse-code-ready-studio-guide-mtr/master/index.html)
