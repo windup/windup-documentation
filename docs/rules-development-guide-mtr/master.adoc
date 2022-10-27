@@ -53,7 +53,7 @@ include::topics/xml-rule-perform-syntax.adoc[leveloffset=+3]
 include::topics/where-syntax.adoc[leveloffset=+3]
 
 // Add the Rule to {ProductName}
-include::topics/add-rule-to-mtr.adoc[leveloffset=+2]
+include::topics/add-rule-to-{LC_PSN}.adoc[leveloffset=+2]
 
 // Testing XML Rules
 include::topics/testing-rules.adoc[leveloffset=+1]

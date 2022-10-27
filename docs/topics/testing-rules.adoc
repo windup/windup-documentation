@@ -17,7 +17,7 @@ Test rules are created using a process similar to the process for creating a tes
 * Test rules should use the `.windup.test.xml` extension.
 * These rules use the structure defined in the Test XML Rule Structure.
 
-In addition, it is recommended to create a test rule that follows the name of the rule it tests. For instance, if a rule were created with a filename of `proprietary-rule.mtr.xml`, the test rule should be called `proprietary-rule.windup.test.xml`.
+In addition, it is recommended to create a test rule that follows the name of the rule it tests. For instance, if a rule were created with a filename of `proprietary-rule.{LC_PSN}.xml`, the test rule should be called `proprietary-rule.windup.test.xml`.
 
 [id="test-xml-rule-structure_{context}"]
 === Test XML rule structure
