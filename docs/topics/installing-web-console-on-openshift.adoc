@@ -4,7 +4,6 @@
 
 :_content-type: PROCEDURE
 [id="installing-web-console-on-openshift_{context}"]
-ifdef::ocp-46[]
 = Installing the {WebName} on {ocp-short} 4.6 and later
 
 You can install the {WebName} on {ocp-short} 4.6 and later versions with the {ProductName} Operator.
@@ -13,37 +12,20 @@ You can install the {WebName} on {ocp-short} 4.6 and later versions with the {Pr
 ====
 The {ProductName} Operator is a Community Operator. Red Hat provides no support for Community Operators.
 ====
-endif::[]
-ifdef::ocp-42[]
-= Installing the {WebName} on {ocp-short} 4.2-4.5
-
-You can install the {WebName} on {ocp-short} 4.2-4.5 by importing a template and instantiating it to create the {WebName} application.
-endif::[]
 
 .Prerequisites
 
-ifdef::ocp-46,ocp-42[]
 * 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
 * One or more projects in which you can install the {WebName}.
-endif::[]
 +
 [IMPORTANT]
 ====
 Do not install the {WebName} in a default project.
 ====
 
-ifdef::ocp-46[]
 * `cluster-admin` privileges to install the {DocInfoProductName} Operator.
 * `project-admin-user` privileges to install the {WebName} application in a project.
-endif::[]
 
-ifdef::ocp-42[]
-.Procedure
-
-. Navigate to the link:{MTRDownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
-. Extract the `.zip` file to a directory, for example, `{ProductShortName}_HOME`.
-endif::[]
-ifdef::ocp-46[]
 .Installing the {DocInfoProductName} Operator
 
 . Log in to the OpenShift web console as a user with `cluster-admin` privileges.
@@ -60,26 +42,9 @@ ifdef::ocp-46[]
 . In the *Add* view, click *Operator Backed*.
 . Click the *{DocInfoProductName}* Operator.
 . Click *Create*.
-endif::[]
-ifdef::ocp-42[]
-. Launch the OpenShift web console.
-. Click the *Import YAML* button in the upper-right corner of the web console.
-. Select *mta* from the *Project* list.
-. Copy the contents of the appropriate template from the `{ProductShortName}_HOME/openshift/templates/` directory into the *Import YAML* field.
-+
-Two templates are provided, one for shared storage and one without shared storage.
-
-. Click *Create*.
-. Switch to the *Developer* perspective and click *+Add*.
-. In the *Add* view, click *From Catalog*.
-. Click the *{ProductName}* template.
-. Click *Instantiate Template*.
-endif::[]
-ifdef::ocp-46,ocp-42[]
 . Review the application settings and click *Create*.
 . In the *Topology* view, click the `mta-web-console` application and then click the *Resources* tab.
 . Click the `secure-mta-web-console` route to open the {WebName} in a new browser window.
-endif::[]
 . Enter the user name `mta` and the password `password` and click *Log in*.
 
 .Web console login page
