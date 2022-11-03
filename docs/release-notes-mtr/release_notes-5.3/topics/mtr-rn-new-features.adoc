@@ -1,0 +1,38 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: CONCEPT
+[id="rn-new-features_{context}"]
+= New features
+
+This section describes the new features of the {ProductName} ({ProductShortName}) {ProductVersion}.
+
+.Analyze Known Libraries
+You can now use the `analyzeKnownLibraries` advanced option to analyze libraries embedded within your applications. This feature lets you go beyond the default behavior of {ProductShortName}, which is to only analyze application code.
+
+.Rules for migrating from OpenJDK 8 to OpenJDK 11
+{ProductShortName} now includes rules to help you migrate applications from OpenJDK 8 (Java 8) to 11.
+
+.Technology Reports
+The technology reports have been enriched. The reports include new technologies, technology tags, and technology classifications.
+
+.Apply all Quick Fixes
+In the {ProductShortName} IDE plugins and extensions, you can now apply all suggested quick fixes at once, rather than one by one.
+
+.Rules for migrating from Spring Boot to Quarkus
+Additional rules have been added to support migrating from Spring Boot to Quarkus.
+
+.Rules for migrating from IBM WebSphere to Open Liberty
+A comprehensive collection of rules has been added to support migrating traditional IBM WebSphere applications to Open Liberty.
+
+.New OpenRewrite capabilities including additional recipes
+* The integration of {ProductShortName} with OpenRewrite has been extended to support multiple migration paths.
+* An additional recipe for the `javax` to `jakarta` transformation path has been added, as well as the first Spring Boot to Quarkus recipe.
+
+[IMPORTANT]
+====
+OpenRewrite is provided as Technology Preview only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs), might not be functionally complete, and Red Hat does not recommend to use them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+
+See link:{KBArticleTechnologyPreview}[Technology Preview features support scope] on the Red&nbsp;Hat Customer Portal for information about the support scope for Technology Preview features.
+====

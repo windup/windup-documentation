@@ -1,0 +1,47 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: REFERENCE
+[id="mtr-rn-known-issues_{context}"]
+= Known issues
+
+At the time of release, the following known issues have been identified as major issues worth highlighting.
+
+For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12393203[MTA {ProductVersion} known issues] in Jira.
+
+.Major known issues
+[cols="25%,25%,50%",options="header"]
+|====
+|ID
+|Component
+|Summary
+
+|link:https://issues.redhat.com/browse/WINDUP-3227[WINDUP-3227]
+|Migration - Application
+|The `IncludeTags` advanced option does not work.
+
+|link:https://issues.redhat.com/browse/WINDUP-3266[WINDUP-3266]
+|IntelliJ extension
+|When you run an analysis via the extension, an exception related to `getFile` occurs intermittently.
+
+|link:https://issues.redhat.com/browse/WINDUP-3267[WINDUP-3267]
+|Web console
+|There is no option in the web console to navigate to or to download mavenized `pom.xml` files generated if you enable the `mavenized` option.
+
+|link:https://issues.redhat.com/browse/WINDUP-3318[WINDUP-3318]
+|Web console on {ocp-short}
+|When you upload {ProductShortName} custom labels and enable advanced options, analysis fails.
+
+|link:https://issues.redhat.com/browse/WINDUP-3322[WINDUP-3322]
+|Web console
+|When you edit any project and make any changes to a custom rule or a custom label, the *Save* and *Save and Run* buttons remain disabled. Workaround: You can make these changes in the *Analysis configuration* screen.
+
+|link:https://issues.redhat.com/browse/WINDUPRULE-762[WINDUPRULE-762]
+|Web console
+|When an analysis that you run on {ocp-short} from {ProductShortName} fails, logs are not visible.
+
+|link:https://issues.redhat.com/browse/WINDUP-3367[WINDUP-3367]
+|{ocp-short}
+|When you enable FIPS on OpenJDK 11 and then install {ProductShortName} 5.3.0.Final on {ocp-short}, some pods do not come up.
+|====
