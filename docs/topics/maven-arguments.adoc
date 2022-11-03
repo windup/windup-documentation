@@ -144,7 +144,7 @@ The `targetTechnologies` argument now provides version support, which follows th
 ====
 When migrating to JBoss EAP, be sure to specify the version in the target, for example, `eap:6`. Specifying only `eap` will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.
 
-See link:{ProductDocIntroToMTAGuideURL}/index#migration_paths_getting-started-guide[Supported migration paths] in _{IntroToMTABookName}_ for the appropriate JBoss EAP version.
+See link:{ProductDocIntroTo{ProductShortName}GuideURL}/index#migration_paths_getting-started-guide[Supported migration paths] in _{IntroTo{ProductShortName}BookName}_ for the appropriate JBoss EAP version.
 ====
 
 [id="maven-packages-argument_{context}"]

@@ -27,7 +27,7 @@ asciidoctor:
   - UserCLIBookName=CLI Guide
   - RulesDevBookName=Rules Development Guide
   - EclipseCrsGuideTitle=Eclipse and Red Hat CodeReady Studio Plugin Guide
-  - IntroToMTABookName=Introduction to the Migration Toolkit for Applications
+  - IntroTo{ProductShortName}BookName=Introduction to the Migration Toolkit for Applications
   - WebConsoleBookName=Web Console Guide
   - MavenBookName=Maven Plugin Guide
   safe: unsafe

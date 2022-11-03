@@ -10,11 +10,11 @@ You can configure multiple run configurations to run against each project you im
 
 .Prerequisites
 
-* `mta-cli` executable installed. You can download the `mta-cli` executable from link:https://developers.redhat.com/products/mta/download[MTA download].
+* `mta-cli` executable installed. You can download the `mta-cli` executable from link:https://developers.redhat.com/products/mta/download[{ProductShortName} download].
 
 .Procedure
 
-. In *Extensions* view, click the Migration Toolkit for Applications icon (image:vs_MTA_extension_icon.png[MTA code extension]) on the Activity bar.
+. In *Extensions* view, click the Migration Toolkit for Applications icon (image:vs_{ProductShortName}_extension_icon.png[{ProductShortName} code extension]) on the Activity bar.
 . Click the *+* (plus sign) next to *Migration Toolkit for Applications* to add a run configuration.
 . Complete the following configuration fields:
 
@@ -29,4 +29,4 @@ You can configure multiple run configurations to run against each project you im
 
 . Right-click the run configuration and select *Run*.
 +
-When the analysis is completed, you can click the *Open Report* button to open the MTA report, which describes any issues you need to address before you migrate or modernize your application. For more information, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[MTA report] in the _{UserCLIBookName}_.
+When the analysis is completed, you can click the *Open Report* button to open the {ProductShortName} report, which describes any issues you need to address before you migrate or modernize your application. For more information, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[{ProductShortName} report] in the _{UserCLIBookName}_.

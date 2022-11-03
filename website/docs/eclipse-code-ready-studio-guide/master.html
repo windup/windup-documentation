@@ -446,18 +446,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#making-open-source-more-inclusive_eclipse-code-ready-studio-guide">Making open source more inclusive</a></li>
 <li><a href="#introduction_eclipse-code-ready-studio-guide">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#eclipse-about-plugin_eclipse-code-ready-studio-guide">1.1. About the MTA plugin for Eclipse and Red Hat CodeReady Studio</a></li>
+<li><a href="#eclipse-about-plugin_eclipse-code-ready-studio-guide">1.1. About the {ProductShortName} plugin for Eclipse and Red Hat CodeReady Studio</a></li>
 <li><a href="#what-is-the-toolkit_eclipse-code-ready-studio-guide">1.2. About the Migration Toolkit for Applications</a></li>
 </ul>
 </li>
-<li><a href="#installing-plugin_eclipse-code-ready-studio-guide">2. Installing the MTA plugin</a>
+<li><a href="#installing-plugin_eclipse-code-ready-studio-guide">2. Installing the {ProductShortName} plugin</a>
 <ul class="sectlevel2">
 <li><a href="#eclipse-installing-plugin-connected-environment_eclipse-code-ready-studio-guide">2.1. Installing in a connected environment</a></li>
 <li><a href="#eclipse-installing-plugin-disconnected-environment_disconnected">2.2. Installing in a disconnected environment</a></li>
-<li><a href="#eclipse-accessing-tools_eclipse-code-ready-studio-guide">2.3. Accessing the MTA tools</a></li>
+<li><a href="#eclipse-accessing-tools_eclipse-code-ready-studio-guide">2.3. Accessing the {ProductShortName} tools</a></li>
 </ul>
 </li>
-<li><a href="#analyzing-projects-with-plugin_eclipse-code-ready-studio-guide">3. Analyzing your projects with the MTA plugin</a>
+<li><a href="#analyzing-projects-with-plugin_eclipse-code-ready-studio-guide">3. Analyzing your projects with the {ProductShortName} plugin</a>
 <ul class="sectlevel2">
 <li><a href="#eclipse-configuring-run_eclipse-code-ready-studio-guide">3.1. Creating a run configuration</a></li>
 <li><a href="#eclipse-analyzing-projects_eclipse-code-ready-studio-guide">3.2. Analyzing projects</a></li>
@@ -489,12 +489,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="introduction_eclipse-code-ready-studio-guide">1. Introduction</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="eclipse-about-plugin_eclipse-code-ready-studio-guide">1.1. About the MTA plugin for Eclipse and Red Hat CodeReady Studio</h3>
+<h3 id="eclipse-about-plugin_eclipse-code-ready-studio-guide">1.1. About the {ProductShortName} plugin for Eclipse and Red Hat CodeReady Studio</h3>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) plugin for Eclipse and Red Hat CodeReady Studio helps you migrate and modernize applications.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) plugin for Eclipse and Red Hat CodeReady Studio helps you migrate and modernize applications.</p>
 </div>
 <div class="paragraph">
-<p>The MTA plugin analyzes your projects using customizable rulesets, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, or Quick Fixes, if possible.</p>
+<p>The {ProductShortName} plugin analyzes your projects using customizable rulesets, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, or Quick Fixes, if possible.</p>
 </div>
 <div class="paragraph">
 <p>For information about a similar extension for Visual Studio Code, see the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/visual_studio_code_extension_guide"><em>Visual Studio Code Extension Guide</em></a>.</p>
@@ -504,10 +504,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h3 id="what-is-the-toolkit_eclipse-code-ready-studio-guide">1.2. About the Migration Toolkit for Applications</h3>
 <h4 id="_what_is_the_migration_toolkit_for_applications" class="discrete">What is the Migration Toolkit for Applications?</h4>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
 </div>
 <div class="paragraph">
-<p>MTA examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. MTA supports many migration paths including the following examples:</p>
+<p>{ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. {ProductShortName} supports many migration paths including the following examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -529,14 +529,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">MTA for developers</a> web page.</p>
+<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">{ProductShortName} for developers</a> web page.</p>
 </div>
 <h4 id="_how_does_the_migration_toolkit_for_applications_simplify_migration" class="discrete">How does the Migration Toolkit for Applications simplify migration?</h4>
 <div class="paragraph">
 <p>The Migration Toolkit for Applications looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
 </div>
 <div class="paragraph">
-<p>MTA generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
+<p>{ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
 </div>
 <h4 id="_how_do_i_learn_more" class="discrete">How do I learn more?</h4>
 <div class="paragraph">
@@ -546,24 +546,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="installing-plugin_eclipse-code-ready-studio-guide">2. Installing the MTA plugin</h2>
+<h2 id="installing-plugin_eclipse-code-ready-studio-guide">2. Installing the {ProductShortName} plugin</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can install the MTA plugin in a connected or a restricted network environment.</p>
+<p>You can install the {ProductShortName} plugin in a connected or a restricted network environment.</p>
 </div>
 <div class="sect2">
 <h3 id="eclipse-installing-plugin-connected-environment_eclipse-code-ready-studio-guide">2.1. Installing in a connected environment</h3>
 <div class="paragraph">
-<p>You can install the MTA plugin in a connected environment.</p>
+<p>You can install the {ProductShortName} plugin in a connected environment.</p>
 </div>
 <div class="paragraph">
-<p>The MTA plugin has been tested with the Eclipse IDE for Java Enterprise Developers 2021-03 and Red Hat CodeReady Studio 12.19.1.</p>
+<p>The {ProductShortName} plugin has been tested with the Eclipse IDE for Java Enterprise Developers 2021-03 and Red Hat CodeReady Studio 12.19.1.</p>
 </div>
 <h5 id="jdk-hardware-mac-prerequisites_eclipse-code-ready-studio-guide" class="discrete">Prerequisites</h5>
 <div class="ulist">
 <ul>
 <li>
-<p>Java Development Kit (JDK) installed. MTA supports the following JDKs:</p>
+<p>Java Development Kit (JDK) installed. {ProductShortName} supports the following JDKs:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -612,13 +612,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Next to the <strong>Work with</strong> field, click <strong>Add</strong>.</p>
 </li>
 <li>
-<p>In the <strong>Name</strong> field, enter <code>MTA</code>.</p>
+<p>In the <strong>Name</strong> field, enter <code>{ProductShortName}</code>.</p>
 </li>
 <li>
 <p>In the <strong>Location</strong> field, enter <code>http://download.jboss.org/jbosstools/photon/stable/updates/mta/</code> and click <strong>OK</strong>.</p>
 </li>
 <li>
-<p>Select all the <strong>JBoss Tools - MTA</strong> check boxes and click <strong>Next</strong>.</p>
+<p>Select all the <strong>JBoss Tools - {ProductShortName}</strong> check boxes and click <strong>Next</strong>.</p>
 </li>
 <li>
 <p>Review the installation details and click <strong>Next</strong>.</p>
@@ -635,16 +635,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="eclipse-installing-plugin-disconnected-environment_disconnected">2.2. Installing in a disconnected environment</h3>
 <div class="paragraph">
-<p>You can install the MTA plugin in a disconnected network environment.</p>
+<p>You can install the {ProductShortName} plugin in a disconnected network environment.</p>
 </div>
 <div class="paragraph">
-<p>The MTA plugin has been tested with the Eclipse IDE for Java Enterprise Developers 2021-03 and Red Hat CodeReady Studio 12.19.1.</p>
+<p>The {ProductShortName} plugin has been tested with the Eclipse IDE for Java Enterprise Developers 2021-03 and Red Hat CodeReady Studio 12.19.1.</p>
 </div>
 <h5 id="jdk-hardware-mac-prerequisites_disconnected" class="discrete">Prerequisites</h5>
 <div class="ulist">
 <ul>
 <li>
-<p>Java Development Kit (JDK) installed. MTA supports the following JDKs:</p>
+<p>Java Development Kit (JDK) installed. {ProductShortName} supports the following JDKs:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -696,7 +696,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Next to the <strong>Work with</strong> field, click <strong>Add</strong>.</p>
 </li>
 <li>
-<p>In the <strong>Name</strong> field, enter <code>MTA</code>.</p>
+<p>In the <strong>Name</strong> field, enter <code>{ProductShortName}</code>.</p>
 </li>
 <li>
 <p>Next to the <strong>Location</strong> field, click <strong>Archive</strong>.</p>
@@ -705,7 +705,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Select the <code>migrationtoolkit-mta-eclipse-plugin-repository</code> file and click <strong>OK</strong>.</p>
 </li>
 <li>
-<p>Select all the <strong>JBoss Tools - MTA</strong> check boxes and click <strong>Next</strong>.</p>
+<p>Select all the <strong>JBoss Tools - {ProductShortName}</strong> check boxes and click <strong>Next</strong>.</p>
 </li>
 <li>
 <p>Review the installation details and click <strong>Next</strong>.</p>
@@ -720,15 +720,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="eclipse-accessing-tools_eclipse-code-ready-studio-guide">2.3. Accessing the MTA tools</h3>
+<h3 id="eclipse-accessing-tools_eclipse-code-ready-studio-guide">2.3. Accessing the {ProductShortName} tools</h3>
 <div class="paragraph">
-<p>You can access the MTA plugin tools in the <strong>MTA</strong> perspective.</p>
+<p>You can access the {ProductShortName} plugin tools in the <strong>{ProductShortName}</strong> perspective.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You must restart the Eclipse IDE or Red Hat CodeReady Studio after installing the MTA plugin.</p>
+<p>You must restart the Eclipse IDE or Red Hat CodeReady Studio after installing the {ProductShortName} plugin.</p>
 </li>
 </ul>
 </div>
@@ -739,26 +739,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Click <strong>Window</strong> &#8594; <strong>Perspective</strong> &#8594; <strong>Open Perspective</strong> &#8594; <strong>Other</strong>.</p>
 </li>
 <li>
-<p>Select <strong>MTA</strong> and click <strong>OK</strong>.</p>
+<p>Select <strong>{ProductShortName}</strong> and click <strong>OK</strong>.</p>
 <div class="paragraph">
 <p>The following components are displayed:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Issue Explorer</strong> displays the migration issues identified by the MTA plugin.</p>
+<p><strong>Issue Explorer</strong> displays the migration issues identified by the {ProductShortName} plugin.</p>
 </li>
 <li>
-<p><strong>MTA Server</strong> is a separate process that analyzes projects, flags migration issues, and generates reports.</p>
+<p><strong>{ProductShortName} Server</strong> is a separate process that analyzes projects, flags migration issues, and generates reports.</p>
 <div class="paragraph">
-<p>You can start, stop, and view the status of the MTA server in the <strong>Issue Explorer</strong>.</p>
+<p>You can start, stop, and view the status of the {ProductShortName} server in the <strong>Issue Explorer</strong>.</p>
 </div>
 </li>
 <li>
 <p><strong>Issue Details</strong> displays detailed information about a selected issue, including the hint, severity, and any additional resources.</p>
 </li>
 <li>
-<p><strong>MTA Report</strong> is an HTML report generated by the MTA plugin. From the report landing page you can navigate to detailed reports, such as Application Details, Issues, and Dependencies.</p>
+<p><strong>{ProductShortName} Report</strong> is an HTML report generated by the {ProductShortName} plugin. From the report landing page you can navigate to detailed reports, such as Application Details, Issues, and Dependencies.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -783,10 +783,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="analyzing-projects-with-plugin_eclipse-code-ready-studio-guide">3. Analyzing your projects with the MTA plugin</h2>
+<h2 id="analyzing-projects-with-plugin_eclipse-code-ready-studio-guide">3. Analyzing your projects with the {ProductShortName} plugin</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can analyze your projects with the MTA plugin by creating a run configuration, running an analysis, and then reviewing and resolving migration issues detected by the MTA plugin.</p>
+<p>You can analyze your projects with the {ProductShortName} plugin by creating a run configuration, running an analysis, and then reviewing and resolving migration issues detected by the {ProductShortName} plugin.</p>
 </div>
 <div class="sect2">
 <h3 id="eclipse-configuring-run_eclipse-code-ready-studio-guide">3.1. Creating a run configuration</h3>
@@ -808,7 +808,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>In the <strong>Issue Explorer</strong>, click the MTA icon (<span class="image"><img src="topics/images/windup.png" alt="MTA button"/></span>) to create a run configuration.</p>
+<p>In the <strong>Issue Explorer</strong>, click the {ProductShortName} icon (<span class="image"><img src="topics/images/windup.png" alt="{ProductShortName} button"/></span>) to create a run configuration.</p>
 </li>
 <li>
 <p>On the <strong>Input</strong> tab, complete the following fields:</p>
@@ -843,11 +843,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>On the <strong>Options</strong> tab, you can select <strong>Generate Report</strong> to generate an HTML report. The report is displayed in the <strong>Report</strong> tab and saved as a file.</p>
 <div class="paragraph">
-<p>Other options are displayed. See <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide#command_line_arguments">MTA Command-line Arguments</a> in the <em>CLI Guide</em> for details.</p>
+<p>Other options are displayed. See <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide#command_line_arguments">{ProductShortName} Command-line Arguments</a> in the <em>CLI Guide</em> for details.</p>
 </div>
 </li>
 <li>
-<p>On the <strong>Rules</strong> tab, you can select custom rulesets that you have imported or created for the MTA plugin.</p>
+<p>On the <strong>Rules</strong> tab, you can select custom rulesets that you have imported or created for the {ProductShortName} plugin.</p>
 </li>
 <li>
 <p>Click <strong>Run</strong> to start the analysis.</p>
@@ -858,19 +858,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="eclipse-analyzing-projects_eclipse-code-ready-studio-guide">3.2. Analyzing projects</h3>
 <div class="paragraph">
-<p>You can analyze your projects by running the MTA plugin with a saved run configuration.</p>
+<p>You can analyze your projects by running the {ProductShortName} plugin with a saved run configuration.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>In the <strong>MTA</strong> perspective, click the <strong>Run</strong> button (<span class="image"><img src="topics/images/run_exc.png" alt="Run button"/></span>) and select a run configuration.</p>
+<p>In the <strong>{ProductShortName}</strong> perspective, click the <strong>Run</strong> button (<span class="image"><img src="topics/images/run_exc.png" alt="Run button"/></span>) and select a run configuration.</p>
 <div class="paragraph">
-<p>The MTA plugin analyzes your projects. The <strong>Issue Explorer</strong> displays migration issues that are detected with the ruleset.</p>
+<p>The {ProductShortName} plugin analyzes your projects. The <strong>Issue Explorer</strong> displays migration issues that are detected with the ruleset.</p>
 </div>
 </li>
 <li>
-<p>When you have finished analyzing your projects, stop the MTA server in the <strong>Issue Explorer</strong> to conserve memory.</p>
+<p>When you have finished analyzing your projects, stop the {ProductShortName} server in the <strong>Issue Explorer</strong> to conserve memory.</p>
 </li>
 </ol>
 </div>
@@ -878,7 +878,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="eclipse-reviewing-issues_eclipse-code-ready-studio-guide">3.3. Reviewing issues</h3>
 <div class="paragraph">
-<p>You can review issues identified by the MTA plugin.</p>
+<p>You can review issues identified by the {ProductShortName} plugin.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -950,7 +950,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <img src="topics/images/stale_issue.gif" alt="Stale"/>
 </div>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The issue is stale. The code marked as an issue was modified since the last time that MTA identified it as an issue.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue is stale. The code marked as an issue was modified since the last time that {ProductShortName} identified it as an issue.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
@@ -988,14 +988,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="eclipse-resolving-issues_eclipse-code-ready-studio-guide">3.4. Resolving issues</h3>
 <div class="paragraph">
-<p>You can resolve issues detected by the MTA plugin by performing one of the following actions:</p>
+<p>You can resolve issues detected by the {ProductShortName} plugin by performing one of the following actions:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
 <p>You can double-click the issue to open it in an editor and edit the source code.</p>
 <div class="paragraph">
-<p>The issue displays a Stale icon (<span class="image"><img src="topics/images/stale_issue.gif" alt="Stale"/></span>) until the next time you run the MTA plugin.</p>
+<p>The issue displays a Stale icon (<span class="image"><img src="topics/images/stale_issue.gif" alt="Stale"/></span>) until the next time you run the {ProductShortName} plugin.</p>
 </div>
 </li>
 <li>
@@ -1013,7 +1013,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="managing-rules_eclipse-code-ready-studio-guide">4. Managing rules</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The MTA plugin comes with a core set of <strong>System</strong> rules for analyzing projects and identifying migration and modernization issues.</p>
+<p>The {ProductShortName} plugin comes with a core set of <strong>System</strong> rules for analyzing projects and identifying migration and modernization issues.</p>
 </div>
 <div class="paragraph">
 <p>You can create and import custom rulesets.</p>
@@ -1021,13 +1021,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="plugin-viewing-rules_eclipse-code-ready-studio-guide">4.1. Viewing rules</h3>
 <div class="paragraph">
-<p>You can view system and custom rules, if any, for the MTA plugin.</p>
+<p>You can view system and custom rules, if any, for the {ProductShortName} plugin.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>To view system rules, the MTA server must be running.</p>
+<p>To view system rules, the {ProductShortName} server must be running.</p>
 </li>
 </ul>
 </div>
@@ -1055,7 +1055,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="eclipse-creating-custom-ruleset_eclipse-code-ready-studio-guide">4.2. Creating a custom ruleset</h3>
 <div class="paragraph">
-<p>You can create a custom ruleset in the <strong>MTA</strong> perspective.</p>
+<p>You can create a custom ruleset in the <strong>{ProductShortName}</strong> perspective.</p>
 </div>
 <div class="paragraph">
 <p>See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/rules_development_guide"><em>Rules Development Guide</em></a> to learn more about creating custom XML rules.</p>
@@ -1113,7 +1113,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="eclipse-importing-custom-ruleset_eclipse-code-ready-studio-guide">4.3. Importing a custom ruleset</h3>
 <div class="paragraph">
-<p>You can import a custom ruleset into the MTA plugin to analyze your projects.</p>
+<p>You can import a custom ruleset into the {ProductShortName} plugin to analyze your projects.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
@@ -1147,7 +1147,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="eclipse-submitting-ruleset_eclipse-code-ready-studio-guide">4.4. Submitting a custom ruleset</h3>
 <div class="paragraph">
-<p>You can submit your custom ruleset for inclusion in the official MTA rule repository. This allows your custom rules to be reviewed and included in subsequent releases of MTA.</p>
+<p>You can submit your custom ruleset for inclusion in the official {ProductShortName} rule repository. This allows your custom rules to be reviewed and included in subsequent releases of {ProductShortName}.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>

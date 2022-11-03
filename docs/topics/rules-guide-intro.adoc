@@ -8,6 +8,6 @@
 
 This guide is for engineers, consultants, and others who want to create custom XML-based rules for {ProductName} ({ProductShortName}) tools.
 
-For more information, see the link:{ProductDocIntroToMTAGuideURL}[_{IntroToMTABookName}_] for an overview and the link:{ProductDocUserGuideURL}[_{UserCLIBookName}_] for details.
+For more information, see the link:{ProductDocIntroTo{ProductShortName}GuideURL}[_{IntroTo{ProductShortName}BookName}_] for an overview and the link:{ProductDocUserGuideURL}[_{UserCLIBookName}_] for details.
 
 To contribute to the {ProductShortName} source code base or provide Java-based rule add-ons, see the link:{ProductDocCoreGuideURL}[_{CoreDevelopmentBookName}_].

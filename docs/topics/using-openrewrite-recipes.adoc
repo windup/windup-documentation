@@ -33,7 +33,7 @@ $ ./mta-cli --openrewrite --input </path/to/source/project> \
 
 * `-Drewrite.configLocation=<path/to/rewrite.yaml>` : The location of the `rewrite.yaml` configuration file to use.
  The shipped `rewrite.yaml` configuration files are located in your
-`<MTA_HOME>/rules/openrewrite` subfolder, for example,`" -Drewrite.configLocation=<MTA_HOME>/rules/openrewrite/jakarta/javax/imports/rewrite.yaml"`.
+`<{ProductShortName}_HOME>/rules/openrewrite` subfolder, for example,`" -Drewrite.configLocation=<{ProductShortName}_HOME>/rules/openrewrite/jakarta/javax/imports/rewrite.yaml"`.
 
 * `"-DactiveRecipes=<recipe name>"`: Specify the OpenRewrite recipe, for example, `org.jboss.windup.JavaxToJakarta`.
 +

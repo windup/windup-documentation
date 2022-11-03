@@ -32,7 +32,7 @@ endif::[]
 .Procedure
 
 ifdef::disconnected[]
-. On a computer with network access, navigate to the {ProductName} link:{MTADownloadPageURL}[download site] and download the `{IDEPluginFilename}` file.
+. On a computer with network access, navigate to the {ProductName} link:{{ProductShortName}DownloadPageURL}[download site] and download the `{IDEPluginFilename}` file.
 endif::[]
 . Launch Eclipse or CodeReady Studio.
 . From the menu bar, select *Help* -> *Install New Software*.
@@ -45,7 +45,7 @@ ifdef::disconnected[]
 . Next to the *Location* field, click *Archive*.
 . Select the `{IDEPluginFilename}` file and click *OK*.
 endif::[]
-. Select all the *JBoss Tools - MTA* check boxes and click *Next*.
+. Select all the *JBoss Tools - {ProductShortName}* check boxes and click *Next*.
 . Review the installation details and click *Next*.
 . Accept the terms of the license agreement and click *Finish*.
 . Restart Eclipse or CodeReady Studio.

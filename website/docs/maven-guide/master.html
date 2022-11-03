@@ -512,17 +512,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="about-maven-guide_maven-guide">1.1. About the Maven Plugin Guide</h3>
 <div class="paragraph">
-<p>This guide is for engineers, consultants, and others who want to use the Migration Toolkit for Applications (MTA) to migrate Java applications or other components. It describes how to install and run the Maven plugin, review the generated reports, and take advantage of additional features.</p>
+<p>This guide is for engineers, consultants, and others who want to use the Migration Toolkit for Applications ({ProductShortName}) to migrate Java applications or other components. It describes how to install and run the Maven plugin, review the generated reports, and take advantage of additional features.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="what-is-the-toolkit_maven-guide">1.2. About the Migration Toolkit for Applications</h3>
 <h4 id="_what_is_the_migration_toolkit_for_applications" class="discrete">What is the Migration Toolkit for Applications?</h4>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
 </div>
 <div class="paragraph">
-<p>MTA examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. MTA supports many migration paths including the following examples:</p>
+<p>{ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. {ProductShortName} supports many migration paths including the following examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -544,14 +544,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">MTA for developers</a> web page.</p>
+<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">{ProductShortName} for developers</a> web page.</p>
 </div>
 <h4 id="_how_does_the_migration_toolkit_for_applications_simplify_migration" class="discrete">How does the Migration Toolkit for Applications simplify migration?</h4>
 <div class="paragraph">
 <p>The Migration Toolkit for Applications looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
 </div>
 <div class="paragraph">
-<p>MTA generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
+<p>{ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
 </div>
 <h4 id="_how_do_i_learn_more" class="discrete">How do I learn more?</h4>
 <div class="paragraph">
@@ -578,7 +578,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>Java Development Kit (JDK) installed. MTA supports the following JDKs:</p>
+<p>Java Development Kit (JDK) installed. {ProductShortName} supports the following JDKs:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -746,7 +746,7 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 <p><code>input</code>: Specifies the path to the directory containing the projects to be analyzed. This attribute defaults to <code>{project.basedir}/src/main</code>, and should be defined if the parent project does not have source code to analyze.</p>
 </li>
 <li>
-<p><code>windupHome</code>: A path to an extracted copy of the MTA CLI. This attribute is optional, but is recommended as a performance improvement.</p>
+<p><code>windupHome</code>: A path to an extracted copy of the {ProductShortName} CLI. This attribute is optional, but is recommended as a performance improvement.</p>
 <div class="paragraph">
 <p>The above example demonstrates a set of recommended arguments.</p>
 </div>
@@ -792,7 +792,7 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 </div>
 </div>
 <div class="paragraph">
-<p>See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide#review_reports">Review the reports</a> section of the MTA <em>CLI Guide</em> for information on the MTA reports and how to use them to assess your migration or modernization effort.</p>
+<p>See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide#review_reports">Review the reports</a> section of the {ProductShortName} <em>CLI Guide</em> for information on the {ProductShortName} reports and how to use them to assess your migration or modernization effort.</p>
 </div>
 </div>
 </div>
@@ -801,15 +801,15 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 <h2 id="csv-export_maven-guide">3. Exporting the report in CSV format</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>MTA provides the ability to export the report data, including the classifications and hints, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields separated by commas (<code>,</code>).</p>
+<p>{ProductShortName} provides the ability to export the report data, including the classifications and hints, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields separated by commas (<code>,</code>).</p>
 </div>
 <div class="paragraph">
-<p>The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel, OpenOffice Calc, or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from an MTA report.</p>
+<p>The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel, OpenOffice Calc, or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from an {ProductShortName} report.</p>
 </div>
 <div class="sect2">
 <h3 id="export-the-report_maven-guide">3.1. Exporting the report</h3>
 <div class="paragraph">
-<p>To export the report as a CSV file, run MTA with the <code>exportCSV</code> argument set to <code>true</code>.</p>
+<p>To export the report as a CSV file, run {ProductShortName} with the <code>exportCSV</code> argument set to <code>true</code>.</p>
 </div>
 <div class="paragraph">
 <p>A CSV file is created in the directory specified by the <code>--output</code> argument for each application analyzed. All discovered issues, spanning all the analyzed applications, are included in <code>AllIssues.csv</code> file.</p>
@@ -895,10 +895,10 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 <div class="sect2">
 <h3 id="maven-arguments_maven-guide">A.1. About Maven Plugin arguments</h3>
 <div class="paragraph">
-<p>The following is a detailed description of the available MTA Maven plugin arguments.</p>
+<p>The following is a detailed description of the available {ProductShortName} Maven plugin arguments.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. MTA Maven plugin arguments</caption>
+<caption class="title">Table 1. {ProductShortName} Maven plugin arguments</caption>
 <colgroup>
 <col style="width: 40%;"/>
 <col style="width: 60%;"/>
@@ -955,7 +955,7 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">exportCSV</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Flag to export the report data to a CSV file on your local file system. MTA creates the file in the directory specified by the <code>outputDirectory</code> argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis.</p>
+<p>Flag to export the report data to a CSV file on your local file system. {ProductShortName} creates the file in the directory specified by the <code>outputDirectory</code> argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -973,13 +973,13 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keepWorkDirs</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Flag to instruct MTA to not delete temporary working files, such as the graph database and unzipped archives. This is useful for debugging purposes.</p>
+<p>Flag to instruct {ProductShortName} to not delete temporary working files, such as the graph database and unzipped archives. This is useful for debugging purposes.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">packages</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A list of the packages to be evaluated by MTA. This argument is required.</p>
+<p>A list of the packages to be evaluated by {ProductShortName}. This argument is required.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -991,7 +991,7 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">outputDirectory</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify the path to the directory to output the report information generated by MTA. This argument defaults to <code>{project.build.directory}/windup-report</code>.</p>
+<p>Specify the path to the directory to output the report information generated by {ProductShortName}. This argument defaults to <code>{project.build.directory}/windup-report</code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -1035,25 +1035,25 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">userIgnorePath</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify a location for MTA to identify files that should be ignored.</p>
+<p>Specify a location for {ProductShortName} to identify files that should be ignored.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">userRulesDirectory</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify a location for MTA to look for custom MTA rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the <code>.windup.xml</code> or <code>.mta.xml</code> suffix.</p>
+<p>Specify a location for {ProductShortName} to look for custom {ProductShortName} rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the <code>.windup.xml</code> or <code>.mta.xml</code> suffix.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">windupHome</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>An optional argument that points to the root of an extracted MTA CLI. By referencing a local installation of the CLI, the Maven plugin has direct access to all of the indexes, resulting in a performance increase.</p>
+<p>An optional argument that points to the root of an extracted {ProductShortName} CLI. By referencing a local installation of the CLI, the Maven plugin has direct access to all of the indexes, resulting in a performance increase.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">windupVersion</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify the version of MTA to run. By default, this is the Maven plugin&#8217;s build version.</p>
+<p>Specify the version of {ProductShortName} to run. By default, this is the Maven plugin&#8217;s build version.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1133,7 +1133,7 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 <div class="sect3">
 <h4 id="maven-output-argument_maven-guide">A.1.3. Specifying the output directory</h4>
 <div class="paragraph">
-<p>Specify the path to the directory to output the report information generated by MTA.</p>
+<p>Specify the path to the directory to output the report information generated by {ProductShortName}.</p>
 </div>
 <div class="listingblock">
 <div class="title">Usage</div>
@@ -1149,7 +1149,7 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 <p>If omitted, the report will be generated in the <code>{project.build.directory}/windup-report</code> directory.</p>
 </li>
 <li>
-<p>If the output directory exists, it will be overwritten based on the value of the <code>overwrite</code> argument. This argument defaults to <code>true</code>, and causes MTA to delete and recreate the directory.</p>
+<p>If the output directory exists, it will be overwritten based on the value of the <code>overwrite</code> argument. This argument defaults to <code>true</code>, and causes {ProductShortName} to delete and recreate the directory.</p>
 </li>
 </ul>
 </div>
@@ -1168,7 +1168,7 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>sourceTechnologies</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs MTA to only run the rulesets matching the specified versions. For example, <code>&lt;source&gt;eap:5&lt;/source&gt;</code>.</p>
+<p>The <code>sourceTechnologies</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, <code>&lt;source&gt;eap:5&lt;/source&gt;</code>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1185,7 +1185,7 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>targetTechnologies</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs MTA to only run the rulesets matching the specified versions. For example, <code>&lt;target&gt;eap:7&lt;/target&gt;</code>.</p>
+<p>The <code>targetTechnologies</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, <code>&lt;target&gt;eap:7&lt;/target&gt;</code>.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1208,7 +1208,7 @@ It is strongly recommended to set <code>inherited</code> to false in multi-modul
 <div class="sect3">
 <h4 id="maven-packages-argument_maven-guide">A.1.6. Selecting packages</h4>
 <div class="paragraph">
-<p>A list of the packages to be evaluated by MTA. It is highly recommended to use this argument.</p>
+<p>A list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.</p>
 </div>
 <div class="listingblock">
 <div class="title">Usage</div>
@@ -1296,7 +1296,7 @@ org.jboss.windup=INFO</pre>
 <div class="sect3">
 <h4 id="_how_story_points_are_estimated_in_rules">A.3.2. How story points are estimated in rules</h4>
 <div class="paragraph">
-<p>Estimating the level of effort for the story points for a rule can be tricky. The following are the general guidelines MTA uses when estimating the level of effort required for a rule.</p>
+<p>Estimating the level of effort for the story points for a rule can be tricky. The following are the general guidelines {ProductShortName} uses when estimating the level of effort required for a rule.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1385,7 +1385,7 @@ org.jboss.windup=INFO</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Send an email to <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a> and let us know what MTA migration rules should cover.</p>
+<p>Send an email to <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a> and let us know what {ProductShortName} migration rules should cover.</p>
 </li>
 <li>
 <p>Provide example applications to test migration rules.</p>
@@ -1430,7 +1430,7 @@ org.jboss.windup=INFO</pre>
 <p>Create a core rule.</p>
 </li>
 <li>
-<p>Improve MTA performance or efficiency.</p>
+<p>Improve {ProductShortName} performance or efficiency.</p>
 </li>
 <li>
 <p>See the <a href="https://github.com/windup/windup/wiki/Core-Development-Guide"><em>Core Development Guide</em></a> for information about how to configure your environment and set up the project.</p>
@@ -1449,26 +1449,26 @@ org.jboss.windup=INFO</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>MTA forums: <a href="https://developer.jboss.org/en/windup" class="bare">https://developer.jboss.org/en/windup</a></p>
+<p>{ProductShortName} forums: <a href="https://developer.jboss.org/en/windup" class="bare">https://developer.jboss.org/en/windup</a></p>
 </li>
 <li>
-<p>MTA Jira issue trackers</p>
+<p>{ProductShortName} Jira issue trackers</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Core MTA: <a href="https://issues.redhat.com/projects/WINDUP" class="bare">https://issues.redhat.com/projects/WINDUP</a></p>
+<p>Core {ProductShortName}: <a href="https://issues.redhat.com/projects/WINDUP" class="bare">https://issues.redhat.com/projects/WINDUP</a></p>
 </li>
 <li>
-<p>MTA Rules: <a href="https://issues.redhat.com/projects/WINDUPRULE" class="bare">https://issues.redhat.com/projects/WINDUPRULE</a></p>
+<p>{ProductShortName} Rules: <a href="https://issues.redhat.com/projects/WINDUPRULE" class="bare">https://issues.redhat.com/projects/WINDUPRULE</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>MTA mailing list: <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a></p>
+<p>{ProductShortName} mailing list: <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a></p>
 </li>
 <li>
-<p>MTA IRC channel: Server FreeNode (<code>irc.freenode.net</code>), channel <code>#windup</code> (<a href="http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html">transcripts</a>).</p>
+<p>{ProductShortName} IRC channel: Server FreeNode (<code>irc.freenode.net</code>), channel <code>#windup</code> (<a href="http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html">transcripts</a>).</p>
 </li>
 </ul>
 </div>
@@ -1476,7 +1476,7 @@ org.jboss.windup=INFO</pre>
 <div class="sect3">
 <h4 id="_reporting_issues">A.4.3. Reporting issues</h4>
 <div class="paragraph">
-<p>MTA uses Jira as its issue tracking system. If you encounter an issue executing MTA, submit a <a href="https://issues.redhat.com/projects/WINDUP">Jira issue</a>.</p>
+<p>{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a <a href="https://issues.redhat.com/projects/WINDUP">Jira issue</a>.</p>
 </div>
 <div class="paragraph">
 <p><br/>

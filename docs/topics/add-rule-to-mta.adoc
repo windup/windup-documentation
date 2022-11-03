@@ -9,7 +9,7 @@
 A {ProductName} rule is installed by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files with the `.windup.xml` or `.mta.xml` extension in the following locations:
 
 * Directory specified by the `--userRulesDirectory` argument on the {ProductShortName} command line.
-* `<MTA_HOME>/rules/` directory. `<MTA_HOME>` is the directory where you install and run the {ProductName} executable.
+* `<{ProductShortName}_HOME>/rules/` directory. `<{ProductShortName}_HOME>` is the directory where you install and run the {ProductName} executable.
 * `${user.home}/.mta/rules/` directory. This directory is created by {ProductShortName} the first time it is run. it contains rules, add-ons, and the {ProductShortName} log.
 +
 [NOTE]

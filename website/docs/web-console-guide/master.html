@@ -500,17 +500,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="about-console-guide_web-console-guide">1.1. About the Web Console Guide</h3>
 <div class="paragraph">
-<p>This guide is for engineers, consultants, and others who want to use the Migration Toolkit for Applications (MTA) to migrate or modernize Java applications or other components. It describes how to install and use the web console to manage migration or modernization projects and analyze applications.</p>
+<p>This guide is for engineers, consultants, and others who want to use the Migration Toolkit for Applications ({ProductShortName}) to migrate or modernize Java applications or other components. It describes how to install and use the web console to manage migration or modernization projects and analyze applications.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="what-is-the-toolkit_web-console-guide">1.2. About the Migration Toolkit for Applications</h3>
 <h4 id="_what_is_the_migration_toolkit_for_applications" class="discrete">What is the Migration Toolkit for Applications?</h4>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
 </div>
 <div class="paragraph">
-<p>MTA examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. MTA supports many migration paths including the following examples:</p>
+<p>{ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. {ProductShortName} supports many migration paths including the following examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -532,14 +532,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">MTA for developers</a> web page.</p>
+<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">{ProductShortName} for developers</a> web page.</p>
 </div>
 <h4 id="_how_does_the_migration_toolkit_for_applications_simplify_migration" class="discrete">How does the Migration Toolkit for Applications simplify migration?</h4>
 <div class="paragraph">
 <p>The Migration Toolkit for Applications looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
 </div>
 <div class="paragraph">
-<p>MTA generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
+<p>{ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
 </div>
 <h4 id="_how_do_i_learn_more" class="discrete">How do I learn more?</h4>
 <div class="paragraph">
@@ -572,7 +572,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>Java Development Kit (JDK) installed. MTA supports the following JDKs:</p>
+<p>Java Development Kit (JDK) installed. {ProductShortName} supports the following JDKs:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -602,7 +602,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Navigate to the <a href="https://developers.redhat.com/products/mta/download">MTA Download page</a> and download the web console <code>Local install &amp; OpenShift</code> file.</p>
+<p>Navigate to the <a href="https://developers.redhat.com/products/mta/download">{ProductShortName} Download page</a> and download the web console <code>Local install &amp; OpenShift</code> file.</p>
 </li>
 <li>
 <p>Extract the <code>.zip</code> file to a directory of your choice.</p>
@@ -631,7 +631,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="paragraph">
-<p>The installation directory is referred to as <code>&lt;MTA_HOME&gt;</code> in this guide.</p>
+<p>The installation directory is referred to as <code>&lt;{ProductShortName}_HOME&gt;</code> in this guide.</p>
 </div>
 </li>
 <li>
@@ -642,7 +642,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Linux operating system:</p>
 <div class="listingblock">
 <div class="content">
-<pre>$ &lt;MTA_HOME&gt;/run_mta.sh</pre>
+<pre>$ &lt;{ProductShortName}_HOME&gt;/run_mta.sh</pre>
 </div>
 </div>
 </li>
@@ -650,7 +650,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Windows operating system:</p>
 <div class="listingblock">
 <div class="content">
-<pre>C:\&lt;MTA_HOME&gt;\run_mta.bat</pre>
+<pre>C:\&lt;{ProductShortName}_HOME&gt;\run_mta.bat</pre>
 </div>
 </div>
 </li>
@@ -826,10 +826,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Navigate to the <a href="https://developers.redhat.com/products/mta/download">MTA Download page</a> and download the web console <code>Local install &amp; OpenShift</code> file.</p>
+<p>Navigate to the <a href="https://developers.redhat.com/products/mta/download">{ProductShortName} Download page</a> and download the web console <code>Local install &amp; OpenShift</code> file.</p>
 </li>
 <li>
-<p>Extract the <code>.zip</code> file to a directory, for example, <code>MTA_HOME</code>.</p>
+<p>Extract the <code>.zip</code> file to a directory, for example, <code>{ProductShortName}_HOME</code>.</p>
 </li>
 <li>
 <p>Launch the OpenShift web console.</p>
@@ -841,7 +841,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Select <strong>mta</strong> from the <strong>Project</strong> list.</p>
 </li>
 <li>
-<p>Copy the contents of the appropriate template from the <code>MTA_HOME/openshift/templates/</code> directory into the <strong>Import YAML</strong> field.</p>
+<p>Copy the contents of the appropriate template from the <code>{ProductShortName}_HOME/openshift/templates/</code> directory into the <strong>Import YAML</strong> field.</p>
 <div class="paragraph">
 <p>Two templates are provided, one for shared storage and one without shared storage.</p>
 </div>
@@ -1045,7 +1045,7 @@ sso-1-wjl2n                1/1       Running     1          1d</code></pre>
 <div class="sect4">
 <h5 id="_reporting_issues">Reporting issues</h5>
 <div class="paragraph">
-<p>MTA uses Jira as its issue tracking system. If you encounter an issue executing MTA, submit a <a href="https://issues.redhat.com/projects/WINDUP">Jira issue</a>.</p>
+<p>{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a <a href="https://issues.redhat.com/projects/WINDUP">Jira issue</a>.</p>
 </div>
 </div>
 </div>
@@ -1084,13 +1084,13 @@ sso-1-wjl2n                1/1       Running     1          1d</code></pre>
 <li>
 <p>To upload applications, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select the application files you want to upload, and click <strong>Close</strong>.</p>
 <div class="paragraph">
-<p>Uploading applications stores them directly on the MTA server.</p>
+<p>Uploading applications stores them directly on the {ProductShortName} server.</p>
 </div>
 </li>
 <li>
 <p>To register a server path, click the <strong>Server path</strong> tab and enter the <strong>Server-side path</strong> of the application in the field.</p>
 <div class="paragraph">
-<p>Registering the server path of an application ensures that MTA always uses the latest version.</p>
+<p>Registering the server path of an application ensures that {ProductShortName} always uses the latest version.</p>
 </div>
 </li>
 <li>
@@ -1123,13 +1123,13 @@ sso-1-wjl2n                1/1       Running     1          1d</code></pre>
 <li>
 <p>To upload a ruleset file, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select one or more files, and click <strong>Close</strong>.</p>
 <div class="paragraph">
-<p>A ruleset file must have an <code>.mta.xml</code> or <code>.windup.xml</code> extension. The uploaded file is stored on the MTA server.</p>
+<p>A ruleset file must have an <code>.mta.xml</code> or <code>.windup.xml</code> extension. The uploaded file is stored on the {ProductShortName} server.</p>
 </div>
 </li>
 <li>
 <p>To register the server path of a ruleset file, click the <strong>Server path</strong> tab, enter the <strong>Rules</strong> path, and click <strong>Save</strong>.</p>
 <div class="paragraph">
-<p>Registering the server path ensures that the MTA server always uses the latest version of the ruleset files.</p>
+<p>Registering the server path ensures that the {ProductShortName} server always uses the latest version of the ruleset files.</p>
 </div>
 </li>
 </ul>
@@ -1145,13 +1145,13 @@ sso-1-wjl2n                1/1       Running     1          1d</code></pre>
 <li>
 <p>To upload a labelset file, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select one or more files, and click <strong>Close</strong>.</p>
 <div class="paragraph">
-<p>A labelset file must have an <code>.mta.label.xml</code> or <code>.windup.label.xml</code> extension. The uploaded file is stored on the MTA server.</p>
+<p>A labelset file must have an <code>.mta.label.xml</code> or <code>.windup.label.xml</code> extension. The uploaded file is stored on the {ProductShortName} server.</p>
 </div>
 </li>
 <li>
 <p>To register a server path, click the <strong>Server path</strong> tab, enter the <strong>Labels path</strong> of the label files in the field, and click <strong>Save</strong>.</p>
 <div class="paragraph">
-<p>Registering the server path ensures that the MTA server always uses the latest version of the labelset files.</p>
+<p>Registering the server path ensures that the {ProductShortName} server always uses the latest version of the labelset files.</p>
 </div>
 </li>
 </ul>
@@ -1302,10 +1302,10 @@ sso-1-wjl2n                1/1       Running     1          1d</code></pre>
 <div class="sect2">
 <h3 id="web-review-reports_ocp-41">3.4. Reviewing reports</h3>
 <div class="paragraph">
-<p>The MTA web console provides a set of detailed reports that can help you decide if you need to make any changes to your applications. You access these reports from the <strong>Analysis results</strong> screen.</p>
+<p>The {ProductShortName} web console provides a set of detailed reports that can help you decide if you need to make any changes to your applications. You access these reports from the <strong>Analysis results</strong> screen.</p>
 </div>
 <div class="paragraph">
-<p>The reports are described in detail in <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide/index#review_reports_cli-guide">MTA reports</a> in the <em>CLI Guide</em>.</p>
+<p>The reports are described in detail in <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide/index#review_reports_cli-guide">{ProductShortName} reports</a> in the <em>CLI Guide</em>.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -1361,13 +1361,13 @@ sso-1-wjl2n                1/1       Running     1          1d</code></pre>
 <div class="sect2">
 <h3 id="web-adding-global-custom-rules_ocp-41">3.6. Adding global custom rules</h3>
 <div class="paragraph">
-<p>MTA includes a preconfigured set of global rules, which apply to all projects.</p>
+<p>{ProductShortName} includes a preconfigured set of global rules, which apply to all projects.</p>
 </div>
 <div class="paragraph">
 <p>You can define your own custom global rules.</p>
 </div>
 <div class="paragraph">
-<p>For information on writing custom MTA rules, see the MTA <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/rules_development_guide"><em>Rules Development Guide</em></a>.</p>
+<p>For information on writing custom {ProductShortName} rules, see the {ProductShortName} <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/rules_development_guide"><em>Rules Development Guide</em></a>.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -1381,13 +1381,13 @@ sso-1-wjl2n                1/1       Running     1          1d</code></pre>
 <li>
 <p>To upload a ruleset file, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select one or more files, and click <strong>Close</strong>.</p>
 <div class="paragraph">
-<p>A ruleset file must have an <code>.mta.xml</code> or <code>.windup.xml</code> extension. The uploaded file is stored on the MTA server.</p>
+<p>A ruleset file must have an <code>.mta.xml</code> or <code>.windup.xml</code> extension. The uploaded file is stored on the {ProductShortName} server.</p>
 </div>
 </li>
 <li>
 <p>To register the server path of a ruleset file, click the <strong>Server path</strong> tab, enter the <strong>Rules</strong> path, and click <strong>Save</strong>.</p>
 <div class="paragraph">
-<p>Registering the server path ensures that the MTA server always uses the latest version of the ruleset files.</p>
+<p>Registering the server path ensures that the {ProductShortName} server always uses the latest version of the ruleset files.</p>
 </div>
 <div class="paragraph">
 <p>The <strong>Custom rules</strong> list displays the rules.</p>
@@ -1399,7 +1399,7 @@ sso-1-wjl2n                1/1       Running     1          1d</code></pre>
 <div class="sect2">
 <h3 id="web-adding-global-custom-labels_ocp-41">3.7. Adding global custom labels</h3>
 <div class="paragraph">
-<p>MTA includes a preconfigured set of global labels, which apply to all projects.</p>
+<p>{ProductShortName} includes a preconfigured set of global labels, which apply to all projects.</p>
 </div>
 <div class="paragraph">
 <p>You can define your own custom global labels.</p>
@@ -1416,13 +1416,13 @@ sso-1-wjl2n                1/1       Running     1          1d</code></pre>
 <li>
 <p>To upload a labelset file, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select one or more files, and click <strong>Close</strong>.</p>
 <div class="paragraph">
-<p>A labelset file must have an <code>.mta.label.xml</code> or <code>.windup.label.xml</code> extension. The uploaded file is stored on the MTA server.</p>
+<p>A labelset file must have an <code>.mta.label.xml</code> or <code>.windup.label.xml</code> extension. The uploaded file is stored on the {ProductShortName} server.</p>
 </div>
 </li>
 <li>
 <p>To register the server path of a labelset file, click the <strong>Server path</strong> tab, enter the <strong>Labels</strong> path, and click <strong>Save</strong>.</p>
 <div class="paragraph">
-<p>Registering the server path ensures that the MTA server always uses the latest version of the labelset files.</p>
+<p>Registering the server path ensures that the {ProductShortName} server always uses the latest version of the labelset files.</p>
 </div>
 <div class="paragraph">
 <p>The <strong>Custom labels</strong> list displays the labels.</p>
@@ -1489,7 +1489,7 @@ If you have installed web console on OpenShift, authentication is already enable
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code>$ &lt;MTA_HOME&gt;/switch_to_authentication_required.sh</code></pre>
+<pre class="highlight nowrap"><code>$ &lt;{ProductShortName}_HOME&gt;/switch_to_authentication_required.sh</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">

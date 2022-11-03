@@ -1,7 +1,7 @@
 :toc:
 :toclevels: 3
 :numbered:
-:mtr:
+:{LC_PSN}:
 include::topics/templates/document-attributes.adoc[]
 
 :imagesdir: topics/images
@@ -18,10 +18,10 @@ include::topics/making-open-source-more-inclusive.adoc[]
 // About the Rules Development Guide
 include::topics/rules-guide-intro.adoc[leveloffset=+2]
 
-// Use of <MTA_HOME> in this Guide
+// Use of <{ProductShortName}_HOME> in this Guide
 include::topics/about-home-var.adoc[leveloffset=+3]
 
-// MTA Rules
+// {ProductShortName} Rules
 include::topics/about-rules.adoc[leveloffset=+2]
 
 // Getting Started
@@ -89,7 +89,7 @@ For more information on categorizing tasks, see xref:rule-categories_{context}[U
 
 === Additional resources
 
-// Review the Existing MTA XML Rules
+// Review the Existing {ProductShortName} XML Rules
 include::topics/review-existing-rules.adoc[leveloffset=+3]
 
 // Fork and Clone the Ruleset GitHub Project
