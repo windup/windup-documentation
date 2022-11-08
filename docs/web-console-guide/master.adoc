@@ -72,7 +72,7 @@ include::topics/mta-6-installing-web-console-on-openshift.adoc[leveloffset=+1]
 Use *Administrator* view to configure your instance of the {ProductName} ({ProductShortName}) {WebName}. Specifically, the view supports:
 
 * Configuring credentials for private respositories
-* Configuring Git, subversuion, and Maven repositories
+* Configuring Git, subversion, and Maven repositories
 * Configuring HTTP and HTTPS proxy settings
 
 [NOTE]
