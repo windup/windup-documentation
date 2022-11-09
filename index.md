@@ -12,9 +12,9 @@ Migration Toolkit for Applications
 - [ItelliJ IDEA Plugin Guide](docs/intellij-idea-plugin-guide/master/index.html)
 - [Release Notes](docs/release-notes/master/index.html)
 - [Visual Studio Code Extension Guide](docs/vs-code-extension-guide/master/index.html)
-- [Introduction to the Migration Toolkit for Applications](docs/getting-started-guide/master/index.html)
+- [Introduction to the {ProductName}](docs/getting-started-guide/master/index.html)
 
-Migration Toolkit for Runtimes
+{ProductName}
 
 - [Web Console Guide](docs/web-console-guide-{LC_PSN}/master/index.html)
 - [CLI Guide](docs/cli-guide-{LC_PSN}/master/index.html)
@@ -24,4 +24,4 @@ Migration Toolkit for Runtimes
 - [ItelliJ IDEA Plugin Guide](docs/intellij-idea-plugin-guide-{LC_PSN}/master/index.html)
 - [Release Notes](docs/release-notes-{LC_PSN}/master/index.html)
 - [Visual Studio Code Extension Guide](docs/vs-code-extension-guide-{LC_PSN}/master/index.html)
-- [Introduction to the Migration Toolkit for Runtimes](docs/getting-started-guide-{LC_PSN}/master/index.html)
+- [Introduction to the {ProductName}](docs/getting-started-guide-{LC_PSN}/master/index.html)

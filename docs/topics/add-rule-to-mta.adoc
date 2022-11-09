@@ -10,7 +10,7 @@ A {ProductName} rule is installed by copying the rule to the appropriate {Produc
 
 * Directory specified by the `--userRulesDirectory` argument on the {ProductShortName} command line.
 * `<{ProductShortName}_HOME>/rules/` directory. `<{ProductShortName}_HOME>` is the directory where you install and run the {ProductName} executable.
-* `${user.home}/.mta/rules/` directory. This directory is created by {ProductShortName} the first time it is run. it contains rules, add-ons, and the {ProductShortName} log.
+* `${user.home}/.{LC_PSN}/rules/` directory. This directory is created by {ProductShortName} the first time it is run. it contains rules, add-ons, and the {ProductShortName} log.
 +
 [NOTE]
 ====

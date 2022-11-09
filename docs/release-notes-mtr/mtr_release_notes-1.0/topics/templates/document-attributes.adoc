@@ -1,0 +1,113 @@
+// ********************************
+// * Standard document attributes *
+// ********************************
+:toc:
+:toclevels: 3
+:numbered:
+:imagesdir: topics/images
+:topicsdir: topics
+
+// *****************
+// * Product names *
+// *****************
+ifdef::mta[]
+:ProductName: Migration Toolkit for Applications
+:DocInfoProductName: Migration Toolkit for Applications
+:DocInfoProductNumber: 5.3
+:ProductShortName: {ProductShortName}
+:LC_PSN: mta
+:DocInfoProductNameURL: migration_toolkit_for_applications
+
+endif::[]
+ifdef::{LC_PSN}[]
+:ProductName: Migration Toolkit for Runtimes
+:DocInfoProductName: Migration Toolkit for Runtimes
+:DocInfoProductNumber: 1.0
+:ProductShortName: MTR
+:LC_PSN: {LC_PSN}
+:DocInfoProductNameURL: migration_toolkit_for_runtimes
+endif::[]
+
+
+// *******************
+// * Component names *
+// *******************
+:CLIName: CLI
+:CLINameTitle: CLI
+
+:WebName: web console
+:WebNameTitle: Web Console
+
+:PluginName: {ProductShortName} plugin
+
+:IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
+
+:MavenName: Maven plugin
+:MavenNameTitle: Maven Plugin
+
+// ****************
+// * Doc metadata *
+// ****************
+
+:OpenShiftProductNumber: 4.10
+:ProductVersion: 5.3.0
+
+:UserCLIBookName: CLI Guide
+:RulesDevBookName: Rules Development Guide
+:EclipseCrsGuideTitle: Eclipse and Red Hat CodeReady Studio Guide
+:WebConsoleBookName: Web Console Guide
+:MavenBookName: Maven Plugin Guide
+
+:ocp-full: Red Hat OpenShift Container Platform
+:ocp-short: OpenShift Container Platform
+:ocp-first: {ocp-full} (RHOCP)
+
+// This book is on GitHub wiki only
+:CoreDevelopmentBookName: Core Development Guide
+
+// ********************
+// * Product versions *
+// ********************
+// Commenting out as these attributes are not currently used:
+// :ProductRelease: 4
+// :ProductVersion: 4.0
+:ProductDistributionVersion: 5.3.0.Final
+:ProductDistribution: mta-cli-{ProductDistributionVersion}
+:MavenProductVersion: 5.3.0.Final
+
+// ********
+// * URLs *
+// ********
+
+:IntroTo{ProductShortName}BookName: Introduction to the {DocInfoProductName}
+:ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
+:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
+:EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_codeready_studio_guide
+:ProductDocIntroTo{ProductShortName}GuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
+:ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/web_console_guide
+:ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
+:ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
+:OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
+:LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
+
+//Links to Jira WINDUP and WINUPRULES project pages:
+:JiraWindupURL: https://issues.redhat.com/projects/WINDUP
+:JiraWindupRulesURL: https://issues.redhat.com/projects/WINDUPRULE
+
+// Point to the GitHub wiki version since there is no product version of this guide.
+:ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
+
+// URLs for downloads on developers.redhat.com
+:{ProductShortName}DownloadPageURL: https://developers.redhat.com/products/mta/download
+:CodeReadyStudioDownloadPageURL: https://developers.redhat.com/products/codeready-studio/download/
+
+// KBase Article links:
+:KBArticleTechnologyPreview: https://access.redhat.com/support/offerings/techpreview
+
+// *********
+// * Icons *
+// *********
+:icon-check: &#x2714;
+:icon-x: &#x2718;
+:kebab: image:kebab.png[title="Options menu"]
+:reports: image:reports.png[title="*Reports* icon"]

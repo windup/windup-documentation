@@ -14,8 +14,8 @@ You can configure multiple run configurations to run against each project you im
 
 .Procedure
 
-. In *Extensions* view, click the Migration Toolkit for Applications icon (image:vs_{ProductShortName}_extension_icon.png[{ProductShortName} code extension]) on the Activity bar.
-. Click the *+* (plus sign) next to *Migration Toolkit for Applications* to add a run configuration.
+. In *Extensions* view, click the {ProductName} icon (image:vs_{ProductShortName}_extension_icon.png[{ProductShortName} code extension]) on the Activity bar.
+. Click the *+* (plus sign) next to *{ProductName}* to add a run configuration.
 . Complete the following configuration fields:
 
 ** *Name*: Enter a meaningful name for the analysis configuration or accept the default.

@@ -73,7 +73,7 @@ To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` 
 
 [source,terminal]
 ----
-$ <{ProductShortName}_HOME>/bin/mta-cli -Dwindup.decompiler=procyon --input \
+$ <{ProductShortName}_HOME>/bin/windup-cli -Dwindup.decompiler=procyon --input \
 <INPUT_ARCHIVE_OR_DIRECTORY> --output <OUTPUT_REPORT_DIRECTORY> \
 --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2>
 ----
@@ -137,7 +137,7 @@ The {ProductShortName} {CLIName} provides an option to enable Bash completion fo
 
 [source,terminal]
 ----
-$ <{ProductShortName}_HOME>/bin/mta-cli [TAB]
+$ <{ProductShortName}_HOME>/bin/windup-cli [TAB]
 ----
 
 [discrete]
