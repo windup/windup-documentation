@@ -154,7 +154,7 @@ The `--source` argument now provides version support, which follows the link:htt
 ====
 When migrating to JBoss EAP, be sure to specify the version, for example, `eap:6`. Specifying only `eap` will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.
 
-See link:{ProductDocIntroTo{ProductShortName}GuideURL}/index#migration_paths_getting-started-guide[Supported migration paths] in _{IntroTo{ProductShortName}BookName}_ for the appropriate JBoss EAP version.
+See link:{ProductDocIntroTo{ProductShortName}GuideURL}/index#migration_paths_getting-started-guide[Supported migration paths] in _{IntroToMTABookName}_ for the appropriate JBoss EAP version.
 ====
 
 [id="cli-target-argument_{context}"]
@@ -175,7 +175,7 @@ The `--target` argument now provides version support, which follows the link:htt
 ====
 When migrating to JBoss EAP, be sure to specify the version in the target, for example, `eap:6`. Specifying only `eap` will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.
 
-See link:{ProductDocIntroTo{ProductShortName}GuideURL}/index#migration_paths_getting-started-guide[Supported migration paths] in _{IntroTo{ProductShortName}BookName}_ for the appropriate JBoss EAP version.
+See link:{ProductDocIntroTo{ProductShortName}GuideURL}/index#migration_paths_getting-started-guide[Supported migration paths] in _{IntroToMTABookName}_ for the appropriate JBoss EAP version.
 ====
 
 [id="cli-packages-argument_{context}"]
