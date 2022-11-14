@@ -3,13 +3,33 @@
 // * docs/release-notes-{LC_PSN}/{LC_PSN}_release_notes-1.0/master.adoc
 
 :_content-type: CONCEPT
-[id="{LC_PSN}-rn-new-features_{context}"]
+[id="mtr-rn-new-features_{context}"]
 = New features
 
-This section describes the new features of the {ProductName} ({ProductShortName}) {ProductVersion}.
+This section describes the new features of the {ProductName} ({ProductShortName}) {ProductVersion} as compared to Migration Toolkit for Applications (MTA) 5.3.
 
-.New feature 1
-Description.
+.Additional Migration paths
+New transformation targets are available in {ProductShortName} {ProductVersion}:
 
-.New feature 2
-Description.
+* OpenJDK 11 to OpenJDK 17
+* EAP and Spring Boot applications to Azure App Service
+* Java EE 8 to Jakarta EE 9
+* EAP 7 to EAP 8 (Beta)
+
+.Openrewrite recipes to automate the Java EE 8 to Jakarta EE 9 transformations
+The Openrewrite recipes automate the following:
+
+* Replacing dependencies declared in `pom.xml` files
+* Replacing package import statements
+* Updating XML deployment descriptors
+* Updating configuration properies
+* Renaming SPI files
+
+.Improved `pom.xml` analysis
+MTR can search for artifacts within the parent, dependencyManagement, dependencies, pluginManagement and plugin blocks.
+
+.YAML file source code report
+The Source Code Report is compatible with YAML files, so migration issues can be highlighted in the context of the YAML file in which they were discovered.
+
+.Transaction Report (Tech Preview)
+A new transaction report is now available in the application analysis reports. This new option analyzes the application data layer and provides detailed information about how transactions propagate across different layers. The report presents the information as a sequence of service entries, call graphs and SQL statements.
