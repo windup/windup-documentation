@@ -19,6 +19,7 @@ ifdef::mta[]
 :DocInfoProductNameURL: migration_toolkit_for_applications
 :WebName: user interface
 :WebNameTitle: User Interface
+:WebConsoleBookName: {WebNameTitle} Guide
 :ProductVersion: 6.0.0
 endif::[]
 
@@ -31,6 +32,7 @@ ifdef::mtr[]
 :DocInfoProductNameURL: migration_toolkit_for_runtimes
 :WebName: web console
 :WebNameTitle: Web Console
+:WebConsoleBookName: {WebNameTitle} Guide
 :ProductVersion: 1.0.0
 endif::[]
 
@@ -55,11 +57,9 @@ endif::[]
 
 :OpenShiftProductNumber: 4.11
 
-
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rules Development Guide
 :EclipseCrsGuideTitle: Eclipse and Red Hat CodeReady Studio Guide
-:WebConsoleBookName: Web Console Guide
 :MavenBookName: Maven Plugin Guide
 :IntelliJBookName: IntelliJ IDEA Plugin Guide
 
