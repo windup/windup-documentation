@@ -13,12 +13,15 @@
 ifdef::mta[]
 :ProductName: Migration Toolkit for Applications
 :DocInfoProductName: Migration Toolkit for Applications
-:DocInfoProductNumber: 5.3
+:DocInfoProductNumber: 6.0
 :ProductShortName: MTA
 :LC_PSN: mta
 :DocInfoProductNameURL: migration_toolkit_for_applications
-
+:WebName: user interface
+:WebNameTitle: User Interface
+:ProductVersion: 6.0.0
 endif::[]
+
 ifdef::mtr[]
 :ProductName: Migration Toolkit for Runtimes
 :DocInfoProductName: Migration Toolkit for Runtimes
@@ -26,6 +29,9 @@ ifdef::mtr[]
 :ProductShortName: MTR
 :LC_PSN: mtr
 :DocInfoProductNameURL: migration_toolkit_for_runtimes
+:WebName: web console
+:WebNameTitle: Web Console
+:ProductVersion: 1.0.0
 endif::[]
 
 
@@ -35,8 +41,6 @@ endif::[]
 :CLIName: CLI
 :CLINameTitle: CLI
 
-:WebName: web console
-:WebNameTitle: Web Console
 
 :PluginName: MTA plugin
 
@@ -49,14 +53,15 @@ endif::[]
 // * Doc metadata *
 // ****************
 
-:OpenShiftProductNumber: 4.10
-:ProductVersion: 5.3.0
+:OpenShiftProductNumber: 4.11
+
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rules Development Guide
 :EclipseCrsGuideTitle: Eclipse and Red Hat CodeReady Studio Guide
 :WebConsoleBookName: Web Console Guide
 :MavenBookName: Maven Plugin Guide
+:IntelliJBookName: IntelliJ IDEA Plugin Guide
 
 :ocp-full: Red Hat OpenShift Container Platform
 :ocp-short: OpenShift Container Platform
@@ -71,6 +76,7 @@ endif::[]
 // Commenting out as these attributes are not currently used:
 // :ProductRelease: 4
 // :ProductVersion: 4.0
+//Questions
 :ProductDistributionVersion: 5.3.0.Final
 :ProductDistribution: mta-cli-{ProductDistributionVersion}
 :MavenProductVersion: 5.3.0.Final
@@ -87,9 +93,11 @@ endif::[]
 :ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/web_console_guide
 :ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
 :ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
+:ProductDocIntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
 :OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
 :LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
 
+//What about these ones?
 //Links to Jira WINDUP and WINUPRULES project pages:
 :JiraWindupURL: https://issues.redhat.com/projects/WINDUP
 :JiraWindupRulesURL: https://issues.redhat.com/projects/WINDUPRULE
