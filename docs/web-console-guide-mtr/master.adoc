@@ -42,7 +42,6 @@ include::topics/proc_web-downloading-logs-console.adoc[leveloffset=+4]
 
 //Downloading logs with the CLI
 include::topics/proc_web-downloading-logs-cli.adoc[leveloffset=+4]
-
 include::topics/web-openshift-no-route-to-host-error.adoc[leveloffset=+4]
 include::topics/web-openshift-insufficient-resources.adoc[leveloffset=+4]
 
@@ -82,19 +81,7 @@ include::topics/web-adding-global-custom-rules.adoc[leveloffset=+2]
 include::topics/web-adding-global-custom-labels.adoc[leveloffset=+2]
 
 // Require Authentication for {ProductWebName}
-include::topics/web-require-auth.adoc[leveloffset=+1]
-
-// Enable {ProductWebName} to Require Authentication
-include::topics/web-enable-auth.adoc[leveloffset=+2]
-
-// Change the Administrative User's Credentials
-include::topics/web-change-admin-user.adoc[leveloffset=+2]
-
-// Remove the Default {ProductWebName} User
-include::topics/web-remove-default-user.adoc[leveloffset=+2]
-
-// Add a New {ProductWebName} User
-include::topics/web-add-user.adoc[leveloffset=+2]
+include::topics/configuring-web-console-authentication-for-linux-windows-macos.adoc[leveloffset=+1]
 
 // TODO: eventually add steps for reverting back to no auth required
 

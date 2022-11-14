@@ -25,10 +25,15 @@ Do not install the {WebName} in a default project.
 
 You must decide at installation time whether the {WebName} requires authentication. If it does, you must first install and configure Red Hat SSO and input some RH SSO settings when instantiating the MTR Operator.
 
+[NOTE]
+====
+Authentication can not be added or removed after installation.
+====
+
 . Open the Red Hat SSO administration console.
 . Add a realm named *windup*.
 . In the realm, create a client named *windup-web*.
-. Check that *Access Type* is set to `public`. Set *Valid Redirect URIs* and *Web Origins* to `*`. Press *Save*.
+. Check that *Access Type* is set to `public`. Set *Valid Redirect URIs* and *Web Origins* to `*`. Click *Save*.
 +
 Note that after the {ProductShortName} operator has been instantiated the *Valid Redirect URIs* and *Web Origins* fields have to be set to the secure-mtr-web-console route.
 . Create a role named *user*.
