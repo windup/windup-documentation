@@ -6,7 +6,7 @@
 :context: eclipse-code-ready-studio-guide
 :eclipse-code-ready-studio-guide:
 :AddonType: plugin
-:IDEName: Eclipse and Red Hat CodeReady Studio  
+:IDEName: Eclipse and Red Hat CodeReady Studio
 :mta:
 include::topics/templates/document-attributes.adoc[]
 :_content-type: ASSEMBLY
@@ -20,7 +20,7 @@ include::topics/making-open-source-more-inclusive.adoc[]
 == Introduction
 
 include::topics/about-ide-addons.adoc[leveloffset=+2]
-include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
 [id="installing-plugin_{context}"]
 == Installing the {PluginName}

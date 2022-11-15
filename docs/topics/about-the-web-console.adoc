@@ -6,8 +6,11 @@
 [id="about-the-web-console_{context}"]
 = About the {WebName}
 
-The {WebName} for the {ProductName} allows a team of users to assess and prioritize migration and modernization efforts for a large number of applications. It allows you to group applications into projects for analysis and provides numerous reports that highlight the results.
 
-ifndef::web-console-guide[]
-For more information on using the {WebName}, see the {ProductShortName} link:{ProductDocWebConsoleGuideURL}[_{WebConsoleBookName}_].
-endif::web-console-guide[]
+ifdef::mtr[]
+The {WebName} for the {ProductName} allows a team of users to assess and prioritize migration and modernization efforts for a large number of applications. It allows you to group applications into projects for analysis and provides numerous reports that highlight the results.
+endif::[]
+
+ifdef::mta[]
+The {WebName} for the {ProductName} lets you assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift or analyze the changes that must be made in the code of an application in order to containerize the application.
+endif::[]
