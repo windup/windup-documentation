@@ -173,32 +173,29 @@ include::topics/mta-web-proxy-config.adoc[leveloffset=2]
 
 // == Assessing and analyzing application
 
-// Introduction -- explain difference between them
+// include::topics/
 
-// === Assessing applications
+// ==== Creating a new tag type
 
 // include::topics/
 
-// ==== Applying an assessment to similar applications
+// ===== Creating a new tag
 
-// include::topics/
+// include::topics/tbd
 
-// === Running application analysis
+[id="assessing-and-analyzing-applications"]
+== Assessing and analyzing applications
 
-// You can use parts of the old one and modify OR work from scratch
-// include::topics/web-create-project.adoc[leveloffset=+2]
+You can use the {ProductName} ({ProductShortName}) {WebName} to both assess and to analyze applications.
 
-// Check if there is something useful in:
-// Running a saved analysis
-// include::topics/web-running-saved-analysis.adoc[leveloffset=+2]
+Assessing applications refers to estimating the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors. The results of an assessment can be used as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work, and which are not suitable for containerization.
 
-// Check if there is something useful in:
-// Viewing the Results of an Analysis
-// include::topics/web-view-results.adoc[leveloffset=+2]
+Analyzing applications refers to using rules to determine which specific lines in an application must be modified before the application can be migrated or modernized.
 
-// Check if there is something useful in:
-// Reviewing the analysis report
-// include::topics/web-review-reports.adoc[leveloffset=+2]
+include::topics/mta-web-assessing-apps.adoc[leveloffset=+2]
+include::topics/mta-web-applying-assessments-to-other-apps.adoc[leveloffset=+2]
+include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[leveloffset=+2]
+include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+2]
 
 // == Adding applications
 

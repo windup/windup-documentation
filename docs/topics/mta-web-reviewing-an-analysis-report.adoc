@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-reviewing-an-analysis-report_{context}"]
+= Reviewing an analysis report
+
+A {ProductShortName} analysis report contains a variety of sections including a listing of the technologies used by the application, the dependencies of the application, and the lines of code that must be changed in order to successfully migrate or modernize the application.
+
+For more information on the contents of a {ProductShortName} analysis report, see the link:{ProductDocUserGuideURL}[_{UserCLIBookName}_].
+
+.Procedure
+
+1. In *Development* view, click *Application inventory*.
+2. Expand the application with a completed analysis.
+3. Click *Report*.
+4. Click the dependencies or source links.
+5. Click the tabs to review the report.
