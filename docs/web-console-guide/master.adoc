@@ -199,22 +199,12 @@ include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+2]
 
 // == Adding applications
 
-// intro
-
-// === Creating applications
-// include::topics/
-
-// === Assigning application credentials
-// include::topics/
-
-// === Importing application lists
-// include::topics/
-
-// ==== Downloading the application list CSV template
-// include::topics/
-
-// ==== Importing an application list
-// include::topics/
+include::topics/mta-web-about-adding-applications.adoc[leveloffset=+2]
+include::topics/mta-web-creating-applications.adoc[leveloffset=+2]
+include::topics/mta-web-assigning-application-credentials.adoc[leveloffset=+2]
+include::topics/mta-web-importing-an-app-list.adoc[leveloffset=+2]
+include::topics/mta-web-downloading-app-list-template.adoc[leveloffset=+3]
+include::topics/mta-web-importing-an-app-list.adoc[leveloffset=+3]
 
 // **********************************
 // * Appendix: Revision Information *

@@ -1,0 +1,20 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="mta-web-about-adding-applications_{context}"]
+= About adding applications
+
+You can add applications to the {ProductName} ({ProductShortName}) {WebName} by manually creating them or by importing them.
+
+// Tackle2/AddingApps/NewAppBasic.png
+
+{ProductShortName} {WebName} applications have the following attributes:
+
+* Name (Free text)
+* Description (Optional; free text)
+* Business service (Optional; chosen from a list)
+* Tags (Optional; chosen from a list)
+* Source code (Path entered by user)
+* Binary (Path entered by user)
