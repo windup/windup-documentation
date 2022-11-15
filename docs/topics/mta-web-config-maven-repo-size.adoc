@@ -1,0 +1,20 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-config-maven-repo-size_{context}"]
+= Reducing the size of a Maven repository
+
+You can reduce the size of a Maven repository in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
+
+.Procedure
+
+. In *Administrator* view, click *Repositories* and then click *Maven*.
+// ![](/Tackle2/Views/MavenConfig.png)
+. Click the *Clear repository* link.
++
+[NOTE]
+====
+Depending on the size of the repository, the size change may not be evident despite the function working properly.
+====
