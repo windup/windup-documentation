@@ -15,7 +15,9 @@ ifdef::mta[]
 :DocInfoProductName: Migration Toolkit for Applications
 :DocInfoProductNumber: 6.0
 :ProductShortName: MTA
-:LC_PSN: mta
+:LC_PSN: mta:
+:WebName: user interface
+:WebNameTitle: user interface
 :DocInfoProductNameURL: migration_toolkit_for_applications
 :WebName: user interface
 :WebNameTitle: User Interface
@@ -29,6 +31,8 @@ ifdef::mtr[]
 :DocInfoProductNumber: 1.0
 :ProductShortName: MTR
 :LC_PSN: mtr
+:WebName: web console
+:WebNameTitle: Web Console
 :DocInfoProductNameURL: migration_toolkit_for_runtimes
 :WebName: web console
 :WebNameTitle: Web Console

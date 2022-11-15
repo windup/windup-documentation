@@ -61,58 +61,51 @@ include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
 include::topics/mta-6-installing-web-console-on-openshift.adoc[leveloffset=+1]
 
 // Reporting issues
-
-// ===== Reporting issues
+[id="reporting-issues"]
+===== Reporting issues
 
 // {ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
 
-// == Configuring the instance environment
-// include::topics/tbd
-// Introduction
+[id="working-with-administrator-view"]
+== Working with Administrator view
 
-// === Configuring credentials
+Use *Administrator* view to configure your instance of the {ProductName} ({ProductShortName}) {WebName}. Specifically, the view supports:
 
-// include::topics/
+* Configuring credentials for private respositories
+* Configuring Git, subversion, and Maven repositories
+* Configuring HTTP and HTTPS proxy settings
 
-// ==== Configuring source control
+[NOTE]
+====
+You must have Adminstrator credentials to work with *Administrator* view.
+====
 
-// include::topics/
+[id="configuring-credentials-in-ui"]
+=== Configuring credentials
 
-// ==== Configuring Maven credentials
+You can use the *Credentials* module to create and manage credentials for access to private repositories. You can also use the module to assign credentials to an application without knowing the contents of the application.
 
-// include::topics/
+include::topics/mta-web-config-source-control-credentials.adoc[leveloffset=+3]
+include::topics/mta-web-config-maven-credentials.adoc[leveloffset=+3]
+include::topics/mta-web-config-proxy-credentials.adoc[leveloffset=+3]
 
-// ==== Configuring proxy credentials
+[id="configuring-repositories-in-ui"]
+=== Configuring repositories
 
-// include::topics/
+You can use the *Repositories* module to cofigure Git, subversion, and Maven repositories.
 
-// === Configuring repositories
+include::topics/mta-web-config-git-repos.adoc[leveloffset=+3]
+include::topics/mta-web-config-subversion-repos.adoc[leveloffset=+3]
 
-// include::topics/
+[id="configuring-maven-repositories-in-ui"]
+==== Configuring a Maven repository or reducing its size
 
-// ==== Configuring Git repositories
+Follow the steps below to configure a Maven repository or clear the local artifact repository.
+You can use the *Repositories* view of {ProductName} ({ProductShortName}) {WebName} to configure a Maven repository or to reduce its size by clearing its local artifact repository.
 
-// include::topics/
-
-// ==== Configuring subversion repositories
-
-// include::topics/
-
-// ==== Configuring Maven repositories
-
-// include::topics/
-
-// ===== Configuring a Maven repository
-
-// include::topics/
-
-// ===== Managing repository size
-
-// include::topics/
-
-// === Configuring HTTP and HTTPS proxy settings
-
-// include::topics/
+include::topics/mta-web-config-maven-repo.adoc[leveloffset=+4]
+include::topics/mta-web-config-maven-repo-size.adoc[leveloffset=+4]
+include::topics/mta-web-config-http-https-proxy.adoc[leveloffset=+2]
 
 // === Seeding instances
 
