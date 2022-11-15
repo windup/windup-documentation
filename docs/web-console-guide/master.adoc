@@ -10,7 +10,7 @@ include::topics/templates/document-attributes.adoc[]
 :_content-type: ASSEMBLY
 = {WebConsoleBookName}
 
-//Inclusive language statement
+// Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
 // == Introduction
@@ -56,56 +56,91 @@ include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
 
 // include::topics/ about controls
 
-//== Installing the {WebName}
+// == Installing the {WebName} on {ocp-short}
 
-include::topics/mta-6-installing-web-console-on-openshift.adoc[leveloffset=+1]
+// Heads up: This includes instructions for installing on OCP
+// 4.2+. Some of these sections may need deletion or editing. I
+// already tossed the irrelevant Mac/Windows/etc. parts
+
+// You can install the {WebName} on {ocp-short} 4.6 and later versions with the {ProductName} Operator.
+
+// You can install the {WebName} on {ocp-short} 4.2-4.5 by importing a template and instantiating it to create the {WebName} application.
+
+// :web-console-guide!:
+// :context: ocp-46
+// :ocp-46:
+// include::topics/installing-web-console-on-openshift.adoc[leveloffset=+3]
+// :ocp-46!:
+// :context: ocp-42
+// :ocp-42:
+// include::topics/installing-web-console-on-openshift.adoc[leveloffset=+3]
+// :ocp-42!:
+// :web-console-guide:
+// ==== Troubleshooting a {WebName} installation on OpenShift
+
+// Not clear if ANY of this is relevant.
+
+// This section describes how to troubleshoot a {WebName} installation on OpenShift Container Platform.
+
+// Downloading logs with OCP console
+// include::topics/proc_web-downloading-logs-console.adoc[leveloffset=+4]
+
+// Downloading logs with the CLI
+// include::topics/proc_web-downloading-logs-cli.adoc[leveloffset=+4]
+
+// include::topics/web-openshift-no-route-to-host-error.adoc[leveloffset=+4]
+// include::topics/web-openshift-insufficient-resources.adoc[leveloffset=+4]
 
 // Reporting issues
-[id="reporting-issues"]
-===== Reporting issues
+
+// ===== Reporting issues
 
 // {ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
 
-[id="working-with-administrator-view"]
-== Working with Administrator view
+// == Configuring the instance environment
+// include::topics/tbd
+// Introduction
 
-Use *Administrator* view to configure your instance of the {ProductName} ({ProductShortName}) {WebName}. Specifically, the view supports:
+// === Configuring credentials
 
-* Configuring credentials for private respositories
-* Configuring Git, subversion, and Maven repositories
-* Configuring HTTP and HTTPS proxy settings
+// include::topics/
 
-[NOTE]
-====
-You must have Adminstrator credentials to work with *Administrator* view.
-====
+// ==== Configuring source control
 
-[id="configuring-credentials-in-ui"]
-=== Configuring credentials
+// include::topics/
 
-You can use the *Credentials* module to create and manage credentials for access to private repositories. You can also use the module to assign credentials to an application without knowing the contents of the application.
+// ==== Configuring Maven credentials
 
-include::topics/mta-web-config-source-control-credentials.adoc[leveloffset=+3]
-include::topics/mta-web-config-maven-credentials.adoc[leveloffset=+3]
-include::topics/mta-web-config-proxy-credentials.adoc[leveloffset=+3]
+// include::topics/
 
-[id="configuring-repositories-in-ui"]
-=== Configuring repositories
+// ==== Configuring proxy credentials
 
-You can use the *Repositories* module to cofigure Git, subversion, and Maven repositories.
+// include::topics/
 
-include::topics/mta-web-config-git-repos.adoc[leveloffset=+3]
-include::topics/mta-web-config-subversion-repos.adoc[leveloffset=+3]
+// === Configuring repositories
+include::topics/mta-web-config-git-rep.adoc[leveloffset=+2]
 
-[id="configuring-maven-repositories-in-ui"]
-==== Configuring a Maven repository or reducing its size
+// ==== Configuring Git repositories
 
-Follow the steps below to configure a Maven repository or clear the local artifact repository.
-You can use the *Repositories* view of {ProductName} ({ProductShortName}) {WebName} to configure a Maven repository or to reduce its size by clearing its local artifact repository.
+// ==== Configuring subversion repositories
 
-include::topics/mta-web-config-maven-repo.adoc[leveloffset=+4]
-include::topics/mta-web-config-maven-repo-size.adoc[leveloffset=+4]
-include::topics/mta-web-config-http-https-proxy.adoc[leveloffset=+2]
+// include::topics/
+
+// ==== Configuring Maven repositories
+
+// include::topics/
+
+// ===== Configuring a Maven repository
+
+// include::topics/
+
+// ===== Managing repository size
+
+// include::topics/
+
+// === Configuring HTTP and HTTPS proxy settings
+
+// include::topics/
 
 // === Seeding instances
 
