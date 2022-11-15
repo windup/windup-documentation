@@ -57,6 +57,6 @@ Note that after the {ProductShortName} operator has been instantiated the *Valid
 . Click the *{DocInfoProductName}* Operator.
 . Click *Create*.
 . Review the application settings. If the {WebName} requires authentication, input the RH SSO settings and click *Create*.
-. In the *Topology* view, click the `mta-web-console` application and then click the *Resources* tab.
+. In the *Topology* view, click the `mtr-web-console` application and then click the *Resources* tab.
 . If authentication is required, set the RH SSO *Valid Redirect URIs* and *Web Origins* fields to the secure-mtr-web-console route.
-. Click the `secure-mta-web-console` route to open the {WebName} in a new browser window.
+. Click the `secure-mtr-web-console` route to open the {WebName} in a new browser window.
