@@ -118,13 +118,16 @@ include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
 // include::topics/
 
 // === Configuring repositories
-include::topics/mta-web-config-git-rep.adoc[leveloffset=+2]
+
+// include::topics/
 
 // ==== Configuring Git repositories
 
+// include::topics/
+
 // ==== Configuring subversion repositories
 
-// include::topics/
+include::topics/mta-web-subv-rep.adoc[leveloffset=+3]
 
 // ==== Configuring Maven repositories
 
