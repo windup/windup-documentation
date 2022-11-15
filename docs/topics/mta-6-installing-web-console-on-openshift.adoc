@@ -1,0 +1,73 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-6-installing-web-console-on-openshift_{context}"]
+
+= Installing the {ProductName} {WebName}
+
+You install the {ProductName} ({ProductShortName}) {WebName} as part of the process of installing the {ProductShortName} Operator on the OpenShift Container Platform.
+
+The {ProductShortName} Operator is a structural layer that manages resources deployed on Kubernetes (database, front end, back end) to automatically create a {ProductShortName} instance instead of you doing it manually.
+
+== Persistent Volume Requirements
+
+The {ProductShortName} Operator requires a total of 5 persistent volumes (PVs) used by different components to successfully deploy, 3 RWO volumes and 2 RWX volumes that are requested via PVCs. These PVS are described in the table below:
+
+.Required persistent volumes
+[cols="25%,25%,25%,25%", options="header"]
+|====
+|Name
+|Default size
+|Access mode
+|Description
+
+|`hub database`
+|5 Gi
+|RWO
+|Hub database
+
+|`hub bucket`
+|100 Gi
+|RWX
+|Hub file storage
+
+|`keycloak postgresql`
+|1 Gi
+|RWO
+|Keycloak back end database
+
+|`pathfinder postgresql`
+|1 Gi
+|RWO
+|Pathfinder back end database
+
+|`maven`
+|100 Gi
+|RWX
+|Maven m2 repository
+|====
+
+== Installing the {ProductName} Operator and the {WebName}
+
+You can install the {ProductName} ({ProductShortName}) and the {WebName} on OpenShift Container Platform versions 4.9-4.11 when you install the {ProductName} Operator.
+
+.Prerequisites
+
+* 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
+* OpenShift Container Platform 4.9-4.11 installed.
+* You must be logged in as a user with `cluster-admin` permissions.
+
+.Procedure
+
+. In the OpenShift Container Platform web console, click *Operators → OperatorHub*.
+. Use the *Filter by keyword* field to search for *MTA*.
+. Click the *Migration Toolkit for Applications* Operator and then click *Install*.
+. On the *Install Operator* page, click *Install*.
+. Click *Operators → Installed Operators* to verify that the {ProductShortName} Operator appears in the `openshift-mta` project with the status `Succeeded`.
+. Click the *{ProductShortName}* Operator.
+. Under *Provided APIs*, locate *Tackle*, and click *Create Instance*.
+. Review options - the default selections should be OK, but be sure to validate the system requirements for storage, memory, and cores - and then click *Create*.
+. In *Administrator* view, click *Workloads -> Pods* to verify that the MTA pods are running.
+. Access the {WebName} from your browser by using the route exposed by the `mta-web-console` application within OpenShift.
