@@ -1,14 +1,15 @@
 :toc:
 :toclevels: 4
 :numbered:
+:mtr:
+include::topics/templates/document-attributes.adoc[]
 
 :imagesdir: topics/images
 :context: eclipse-code-ready-studio-guide
 :eclipse-code-ready-studio-guide:
 :AddonType: plugin
 :IDEName: Eclipse and Red Hat CodeReady Studio
-:mtr:
-include::topics/templates/document-attributes.adoc[]
+
 :_content-type: ASSEMBLY
 [id="eclipse-code-ready-studio-guide"]
 = Eclipse and Red Hat CodeReady Studio Guide
