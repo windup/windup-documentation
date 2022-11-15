@@ -451,8 +451,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#what-is-the-toolkit_getting-started-guide">2. About the Migration Toolkit for Applications</a>
 <ul class="sectlevel2">
-<li><a href="#features_getting-started-guide">2.1. MTA Features</a></li>
-<li><a href="#about-rules_getting-started-guide">2.2. About MTA rules</a></li>
+<li><a href="#features_getting-started-guide">2.1. {ProductShortName} Features</a></li>
+<li><a href="#about-rules_getting-started-guide">2.2. About {ProductShortName} rules</a></li>
 </ul>
 </li>
 <li><a href="#_supported_configurations">3. Supported configurations</a>
@@ -465,8 +465,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#about-cli_getting-started-guide">4.1. About the CLI</a></li>
 <li><a href="#about-the-web-console_getting-started-guide">4.2. About the web console</a></li>
-<li><a href="#eclipse-about-plugin_getting-started-guide">4.3. About the MTA plugin for Eclipse and Red Hat CodeReady Studio</a></li>
-<li><a href="#about-vscode-extension_getting-started-guide">4.4. About the MTA extension for Visual Studio Code</a></li>
+<li><a href="#eclipse-about-plugin_getting-started-guide">4.3. About the {ProductShortName} plugin for Eclipse and Red Hat CodeReady Studio</a></li>
+<li><a href="#about-vscode-extension_getting-started-guide">4.4. About the {ProductShortName} extension for Visual Studio Code</a></li>
 <li><a href="#about-maven_getting-started-guide">4.5. About the Maven Plugin</a></li>
 </ul>
 </li>
@@ -510,7 +510,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="about-the-intro-to-mta-guide_getting-started-guide">1.1. About the Introduction to the Migration Toolkit for Applications</h3>
 <div class="paragraph">
-<p>This guide is for engineers, consultants, and others who want to use the Migration Toolkit for Applications (MTA) to migrate Java applications or other components. It provides an overview of the Migration Toolkit for Applications and how to get started using the tools to plan and execute your migration.</p>
+<p>This guide is for engineers, consultants, and others who want to use the Migration Toolkit for Applications ({ProductShortName}) to migrate Java applications or other components. It provides an overview of the Migration Toolkit for Applications and how to get started using the tools to plan and execute your migration.</p>
 </div>
 </div>
 </div>
@@ -520,10 +520,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <h3 id="_what_is_the_migration_toolkit_for_applications" class="discrete">What is the Migration Toolkit for Applications?</h3>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
 </div>
 <div class="paragraph">
-<p>MTA examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. MTA supports many migration paths including the following examples:</p>
+<p>{ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. {ProductShortName} supports many migration paths including the following examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -545,59 +545,59 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">MTA for developers</a> web page.</p>
+<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">{ProductShortName} for developers</a> web page.</p>
 </div>
 <h3 id="_how_does_the_migration_toolkit_for_applications_simplify_migration" class="discrete">How does the Migration Toolkit for Applications simplify migration?</h3>
 <div class="paragraph">
 <p>The Migration Toolkit for Applications looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
 </div>
 <div class="paragraph">
-<p>MTA generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
+<p>{ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
 </div>
 <div class="sect2">
-<h3 id="features_getting-started-guide">2.1. MTA Features</h3>
+<h3 id="features_getting-started-guide">2.1. {ProductShortName} Features</h3>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) provides a number of capabilities to assist with planning and executing migration projects.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) provides a number of capabilities to assist with planning and executing migration projects.</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Planning and work estimation</dt>
 <dd>
-<p>MTA assists project managers by detailing the type of work and estimation of effort to complete the tasks. Level of effort is represented in MTA reports as story points. Actual estimates will be based on the skills required and the classification of migration work needed.</p>
+<p>{ProductShortName} assists project managers by detailing the type of work and estimation of effort to complete the tasks. Level of effort is represented in {ProductShortName} reports as story points. Actual estimates will be based on the skills required and the classification of migration work needed.</p>
 </dd>
 <dt class="hdlist1">Identifying migration issues and providing solutions</dt>
 <dd>
-<p>MTA identifies migration issues and highlights specific points in the code where an issue occurs. MTA suggests code changes and provides additional resources to help engineers resolve the specific issue.</p>
+<p>{ProductShortName} identifies migration issues and highlights specific points in the code where an issue occurs. {ProductShortName} suggests code changes and provides additional resources to help engineers resolve the specific issue.</p>
 </dd>
 <dt class="hdlist1">Detailed reporting</dt>
 <dd>
-<p>MTA produces numerous reports to give both high-level views of the migration effort and details of specific migration tasks. You can view migration issues across all applications, charts and summary information about issues in an application, a breakdown of issues by module in the application, reports of technologies used, and dependencies on other applications and services. You can also examine source files to see the line of code where an issue occurs. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide"><em>CLI Guide</em></a> for more information on the available MTA reports.</p>
+<p>{ProductShortName} produces numerous reports to give both high-level views of the migration effort and details of specific migration tasks. You can view migration issues across all applications, charts and summary information about issues in an application, a breakdown of issues by module in the application, reports of technologies used, and dependencies on other applications and services. You can also examine source files to see the line of code where an issue occurs. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide"><em>CLI Guide</em></a> for more information on the available {ProductShortName} reports.</p>
 </dd>
 <dt class="hdlist1">Built-in rules and migration paths</dt>
 <dd>
-<p>MTA comes with a core set of rules to provide migration assistance for several common migration paths. These rules identify the use of proprietary functionality from other application servers or deprecated subsystems from previous versions of JBoss EAP. MTA also contains rules to identify common migration issues, such as hard-coded IP addresses and JNDI lookups.</p>
+<p>{ProductShortName} comes with a core set of rules to provide migration assistance for several common migration paths. These rules identify the use of proprietary functionality from other application servers or deprecated subsystems from previous versions of JBoss EAP. {ProductShortName} also contains rules to identify common migration issues, such as hard-coded IP addresses and JNDI lookups.</p>
 </dd>
 <dt class="hdlist1">Rule extensibility and customization</dt>
 <dd>
-<p>MTA provides the ability to create powerful and complex rules. You can expand upon the core set of rules provided by MTA and create rules to identify additional issues that are important for your migration project. You can also override core rules and create custom rule categories. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/rules_development_guide"><em>Rules Development Guide</em></a> for more information on customizing MTA rules.</p>
+<p>{ProductShortName} provides the ability to create powerful and complex rules. You can expand upon the core set of rules provided by {ProductShortName} and create rules to identify additional issues that are important for your migration project. You can also override core rules and create custom rule categories. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/rules_development_guide"><em>Rules Development Guide</em></a> for more information on customizing {ProductShortName} rules.</p>
 </dd>
 <dt class="hdlist1">Ability to analyze source code or application archives</dt>
 <dd>
-<p>MTA can evaluate application archives or source code, and can evaluate multiple applications together. It can identify archives that are shared across multiple applications, which can help with more accurate effort estimation.</p>
+<p>{ProductShortName} can evaluate application archives or source code, and can evaluate multiple applications together. It can identify archives that are shared across multiple applications, which can help with more accurate effort estimation.</p>
 </dd>
 </dl>
 </div>
 </div>
 <div class="sect2">
-<h3 id="about-rules_getting-started-guide">2.2. About MTA rules</h3>
+<h3 id="about-rules_getting-started-guide">2.2. About {ProductShortName} rules</h3>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) contains rule-based migration tools that analyze the APIs, technologies, and architectures used by the applications you plan to migrate. In fact, the MTA analysis process is implemented using MTA rules. MTA uses rules internally to extract files from archives, decompile files, scan and classify file types, analyze XML and other file content, analyze the application code, and build the reports.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) contains rule-based migration tools that analyze the APIs, technologies, and architectures used by the applications you plan to migrate. In fact, the {ProductShortName} analysis process is implemented using {ProductShortName} rules. {ProductShortName} uses rules internally to extract files from archives, decompile files, scan and classify file types, analyze XML and other file content, analyze the application code, and build the reports.</p>
 </div>
 <div class="paragraph">
-<p>MTA builds a data model based on the rule execution results and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.</p>
+<p>{ProductShortName} builds a data model based on the rule execution results and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.</p>
 </div>
 <div class="paragraph">
-<p>MTA rules use the following rule pattern:</p>
+<p>{ProductShortName} rules use the following rule pattern:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -607,7 +607,7 @@ otherwise(action)</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>MTA provides a comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, MTA allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset.</p>
+<p>{ProductShortName} provides a comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, {ProductShortName} allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset.</p>
 </div>
 <div class="paragraph">
 <p>If you plan to write your own custom rules, see the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/rules_development_guide"><em>Rules Development Guide</em></a> for detailed instructions.</p>
@@ -621,10 +621,10 @@ otherwise(action)</pre>
 <div class="sect2">
 <h3 id="migration-paths_getting-started-guide">3.1. Supported migration paths</h3>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) supports migrations from third-party enterprise application servers, such as Oracle WebLogic Server, to JBoss Enterprise Application Platform (JBoss EAP) and upgrades to the latest release of JBoss EAP.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) supports migrations from third-party enterprise application servers, such as Oracle WebLogic Server, to JBoss Enterprise Application Platform (JBoss EAP) and upgrades to the latest release of JBoss EAP.</p>
 </div>
 <div class="paragraph">
-<p>MTA provides a comprehensive set of rules to assess the suitability of your applications for containerization and deployment on Red Hat OpenShift Container Platform (RHOCP). You can run an MTA analysis to assess your applications' suitability for migration to multiple target platforms.</p>
+<p>{ProductShortName} provides a comprehensive set of rules to assess the suitability of your applications for containerization and deployment on Red Hat OpenShift Container Platform (RHOCP). You can run an {ProductShortName} analysis to assess your applications' suitability for migration to multiple target platforms.</p>
 </div>
 <div class="paragraph">
 <p>The following table describes the most common supported migration paths.</p>
@@ -762,7 +762,7 @@ otherwise(action)</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Java Development Kit (JDK) installed. MTA supports the following JDKs:</p>
+<p>Java Development Kit (JDK) installed. {ProductShortName} supports the following JDKs:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -795,7 +795,7 @@ otherwise(action)</pre>
 <h2 id="about-tools_getting-started-guide">4. About the tools</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) provides several tools to assist you in the various stages of your migration and modernization efforts. Review the details of each tool to determine which is right for your project.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) provides several tools to assist you in the various stages of your migration and modernization efforts. Review the details of each tool to determine which is right for your project.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -806,10 +806,10 @@ otherwise(action)</pre>
 <p>Web console</p>
 </li>
 <li>
-<p>MTA plugin for Eclipse and Red Hat CodeReady Studio</p>
+<p>{ProductShortName} plugin for Eclipse and Red Hat CodeReady Studio</p>
 </li>
 <li>
-<p>MTA extension for Visual Studio Code</p>
+<p>{ProductShortName} extension for Visual Studio Code</p>
 </li>
 <li>
 <p>Maven plugin</p>
@@ -819,10 +819,10 @@ otherwise(action)</pre>
 <div class="sect2">
 <h3 id="about-cli_getting-started-guide">4.1. About the CLI</h3>
 <div class="paragraph">
-<p>The CLI is a command-line tool in the Migration Toolkit for Applications that allows users to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without the overhead of the other tools. The CLI includes a wide array of customization options, and allows you to finely tune MTA analysis options or integrate with external automation tools.</p>
+<p>The CLI is a command-line tool in the Migration Toolkit for Applications that allows users to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without the overhead of the other tools. The CLI includes a wide array of customization options, and allows you to finely tune {ProductShortName} analysis options or integrate with external automation tools.</p>
 </div>
 <div class="paragraph">
-<p>For more information on using the CLI, see the MTA <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide"><em>CLI Guide</em></a>.</p>
+<p>For more information on using the CLI, see the {ProductShortName} <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide"><em>CLI Guide</em></a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -831,34 +831,34 @@ otherwise(action)</pre>
 <p>The web console for the Migration Toolkit for Applications allows a team of users to assess and prioritize migration and modernization efforts for a large number of applications. It allows you to group applications into projects for analysis and provides numerous reports that highlight the results.</p>
 </div>
 <div class="paragraph">
-<p>For more information on using the web console, see the MTA <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/web_console_guide"><em>Web Console Guide</em></a>.</p>
+<p>For more information on using the web console, see the {ProductShortName} <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/web_console_guide"><em>Web Console Guide</em></a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="eclipse-about-plugin_getting-started-guide">4.3. About the MTA plugin for Eclipse and Red Hat CodeReady Studio</h3>
+<h3 id="eclipse-about-plugin_getting-started-guide">4.3. About the {ProductShortName} plugin for Eclipse and Red Hat CodeReady Studio</h3>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) plugin for Eclipse and Red Hat CodeReady Studio helps you migrate and modernize applications.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) plugin for Eclipse and Red Hat CodeReady Studio helps you migrate and modernize applications.</p>
 </div>
 <div class="paragraph">
-<p>The MTA plugin analyzes your projects using customizable rulesets, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, or Quick Fixes, if possible.</p>
+<p>The {ProductShortName} plugin analyzes your projects using customizable rulesets, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, or Quick Fixes, if possible.</p>
 </div>
 <div class="paragraph">
-<p>For more information on using the MTA plugin, see the MTA <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/eclipse_and_red_hat_code_ready_studio_plugin_guide"><em>Eclipse and Red Hat CodeReady Studio Plugin Guide</em></a>.</p>
+<p>For more information on using the {ProductShortName} plugin, see the {ProductShortName} <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/eclipse_and_red_hat_code_ready_studio_plugin_guide"><em>Eclipse and Red Hat CodeReady Studio Plugin Guide</em></a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="about-vscode-extension_getting-started-guide">4.4. About the MTA extension for Visual Studio Code</h3>
+<h3 id="about-vscode-extension_getting-started-guide">4.4. About the {ProductShortName} extension for Visual Studio Code</h3>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) extension for Visual Studio Code helps you migrate and modernize applications.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) extension for Visual Studio Code helps you migrate and modernize applications.</p>
 </div>
 <div class="paragraph">
-<p>The MTA extension is also compatible with Visual Studio Codespaces, the Microsoft cloud-hosted development environment.</p>
+<p>The {ProductShortName} extension is also compatible with Visual Studio Codespaces, the Microsoft cloud-hosted development environment.</p>
 </div>
 <div class="paragraph">
-<p>The MTA extension analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.</p>
+<p>The {ProductShortName} extension analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.</p>
 </div>
 <div class="paragraph">
-<p>For more information about using the MTA extension, see the MTA <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/visual_studio_code_extension_guide"><em>Visual Studio Code Extension Guide</em></a>.</p>
+<p>For more information about using the {ProductShortName} extension, see the {ProductShortName} <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/visual_studio_code_extension_guide"><em>Visual Studio Code Extension Guide</em></a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -867,7 +867,7 @@ otherwise(action)</pre>
 <p>The Maven plugin for the Migration Toolkit for Applications integrates into the Maven build process, allowing developers to continuously evaluate migration and modernization efforts with each iteration of source code. It provides numerous reports that highlight the analysis results, and is designed for developers who want updates with each build.</p>
 </div>
 <div class="paragraph">
-<p>For more information on using the Maven plugin, see the MTA <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/maven_plugin_guide"><em>Maven Plugin Guide</em></a>.</p>
+<p>For more information on using the Maven plugin, see the {ProductShortName} <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/maven_plugin_guide"><em>Maven Plugin Guide</em></a>.</p>
 </div>
 </div>
 </div>
@@ -1052,7 +1052,7 @@ otherwise(action)</pre>
 <p>Choose a small set of representative applications to transform. Finalize the target platform infrastructure as necessary. Update the documentation as the process is fine-tuned. This pilot consists of one or several iterations of the migration execution, which is scaled during the Deploy phase.</p>
 </div>
 <div class="paragraph">
-<p>Use the Migration Toolkit for Applications MTA plugin to accelerate the code migration. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/eclipse_and_red_hat_code_ready_studio_plugin_guide"><em>Eclipse and Red Hat CodeReady Studio Plugin Guide</em></a> for information on how to use the MTA plugin.</p>
+<p>Use the Migration Toolkit for Applications {ProductShortName} plugin to accelerate the code migration. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/eclipse_and_red_hat_code_ready_studio_plugin_guide"><em>Eclipse and Red Hat CodeReady Studio Plugin Guide</em></a> for information on how to use the {ProductShortName} plugin.</p>
 </div>
 </dd>
 <dt class="hdlist1">Plan</dt>
@@ -1079,7 +1079,7 @@ otherwise(action)</pre>
 <p>The plan is executed in iterations to deliver value incrementally. With each iteration, you continuously validate against the plan and document findings to improve the next sprint.</p>
 </div>
 <div class="paragraph">
-<p>The use of the Migration Toolkit for Applications MTA plugin increases speed in each iteration. It can be used with Eclipse or Red Hat CodeReady Studio, and marks migration issues directly in the source code, provides inline hints, and offers code change suggestions. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/eclipse_and_red_hat_code_ready_studio_plugin_guide"><em>Eclipse and Red Hat CodeReady Studio Plugin Guide</em></a> for information on how to use the MTA plugin.</p>
+<p>The use of the Migration Toolkit for Applications {ProductShortName} plugin increases speed in each iteration. It can be used with Eclipse or Red Hat CodeReady Studio, and marks migration issues directly in the source code, provides inline hints, and offers code change suggestions. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/eclipse_and_red_hat_code_ready_studio_plugin_guide"><em>Eclipse and Red Hat CodeReady Studio Plugin Guide</em></a> for information on how to use the {ProductShortName} plugin.</p>
 </div>
 </div>
 </div>
@@ -1099,7 +1099,7 @@ otherwise(action)</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Send an email to <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a> and let us know what MTA migration rules should cover.</p>
+<p>Send an email to <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a> and let us know what {ProductShortName} migration rules should cover.</p>
 </li>
 <li>
 <p>Provide example applications to test migration rules.</p>
@@ -1144,7 +1144,7 @@ otherwise(action)</pre>
 <p>Create a core rule.</p>
 </li>
 <li>
-<p>Improve MTA performance or efficiency.</p>
+<p>Improve {ProductShortName} performance or efficiency.</p>
 </li>
 <li>
 <p>See the <a href="https://github.com/windup/windup/wiki/Core-Development-Guide"><em>Core Development Guide</em></a> for information about how to configure your environment and set up the project.</p>
@@ -1163,26 +1163,26 @@ otherwise(action)</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>MTA forums: <a href="https://developer.jboss.org/en/windup" class="bare">https://developer.jboss.org/en/windup</a></p>
+<p>{ProductShortName} forums: <a href="https://developer.jboss.org/en/windup" class="bare">https://developer.jboss.org/en/windup</a></p>
 </li>
 <li>
-<p>MTA Jira issue trackers</p>
+<p>{ProductShortName} Jira issue trackers</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Core MTA: <a href="https://issues.redhat.com/projects/WINDUP" class="bare">https://issues.redhat.com/projects/WINDUP</a></p>
+<p>Core {ProductShortName}: <a href="https://issues.redhat.com/projects/WINDUP" class="bare">https://issues.redhat.com/projects/WINDUP</a></p>
 </li>
 <li>
-<p>MTA Rules: <a href="https://issues.redhat.com/projects/WINDUPRULE" class="bare">https://issues.redhat.com/projects/WINDUPRULE</a></p>
+<p>{ProductShortName} Rules: <a href="https://issues.redhat.com/projects/WINDUPRULE" class="bare">https://issues.redhat.com/projects/WINDUPRULE</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>MTA mailing list: <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a></p>
+<p>{ProductShortName} mailing list: <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a></p>
 </li>
 <li>
-<p>MTA IRC channel: Server FreeNode (<code>irc.freenode.net</code>), channel <code>#windup</code> (<a href="http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html">transcripts</a>).</p>
+<p>{ProductShortName} IRC channel: Server FreeNode (<code>irc.freenode.net</code>), channel <code>#windup</code> (<a href="http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html">transcripts</a>).</p>
 </li>
 </ul>
 </div>
@@ -1190,7 +1190,7 @@ otherwise(action)</pre>
 <div class="sect3">
 <h4 id="_reporting_issues">A.1.3. Reporting issues</h4>
 <div class="paragraph">
-<p>MTA uses Jira as its issue tracking system. If you encounter an issue executing MTA, submit a <a href="https://issues.redhat.com/projects/WINDUP">Jira issue</a>.</p>
+<p>{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a <a href="https://issues.redhat.com/projects/WINDUP">Jira issue</a>.</p>
 </div>
 <div class="paragraph">
 <p><br/>
@@ -1209,7 +1209,7 @@ otherwise(action)</pre>
 <div id="footnotes">
 <hr/>
 <div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. Although MTA does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform to JBoss EAP 7.
+<a href="#_footnoteref_1">1</a>. Although {ProductShortName} does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform to JBoss EAP 7.
 </div>
 </div>
 <div id="footer">

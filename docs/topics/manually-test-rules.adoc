@@ -9,7 +9,7 @@
 You can run an XML rule against your application file to test it:
 
 ----
-$ <MTA_HOME>/bin/mta-cli [--sourceMode] --input <INPUT_ARCHIVE_OR_FOLDER> --output <OUTPUT_REPORT_DIRECTORY> --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2> <PACKAGE_N>
+$ <MTR_HOME>/bin/mtr-cli [--sourceMode] --input <INPUT_ARCHIVE_OR_FOLDER> --output <OUTPUT_REPORT_DIRECTORY> --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2> <PACKAGE_N>
 ----
 
 You should see the following result:

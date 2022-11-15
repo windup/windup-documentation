@@ -448,10 +448,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#rules-guide-intro_rules-development-guide">1.1. About the Rules Development Guide</a>
 <ul class="sectlevel3">
-<li><a href="#about-home-var_rules-development-guide">1.1.1. Use of <code>&lt;MTA_HOME&gt;</code> in this guide</a></li>
+<li><a href="#about-home-var_rules-development-guide">1.1.1. Use of <code>&lt;{ProductShortName}_HOME&gt;</code> in this guide</a></li>
 </ul>
 </li>
-<li><a href="#about-rules_rules-development-guide">1.2. About MTA rules</a></li>
+<li><a href="#about-rules_rules-development-guide">1.2. About {ProductShortName} rules</a></li>
 </ul>
 </li>
 <li><a href="#getting-started-rules_rules-development-guide">2. Getting started with rules</a>
@@ -521,7 +521,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_additional_resources">A.2. Additional resources</a>
 <ul class="sectlevel3">
-<li><a href="#review-existing-rules_rules-development-guide">A.2.1. Reviewing existing MTA XML rules</a></li>
+<li><a href="#review-existing-rules_rules-development-guide">A.2.1. Reviewing existing {ProductShortName} XML rules</a></li>
 <li><a href="#rules-important-links_rules-development-guide">A.2.2. Resources</a></li>
 </ul>
 </li>
@@ -545,18 +545,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="rules-guide-intro_rules-development-guide">1.1. About the Rules Development Guide</h3>
 <div class="paragraph">
-<p>This guide is for engineers, consultants, and others who want to create custom XML-based rules for Migration Toolkit for Applications (MTA) tools.</p>
+<p>This guide is for engineers, consultants, and others who want to create custom XML-based rules for Migration Toolkit for Applications ({ProductShortName}) tools.</p>
 </div>
 <div class="paragraph">
 <p>For more information, see the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/introduction_to_the_migration_toolkit_for_applications"><em>Introduction to the Migration Toolkit for Applications</em></a> for an overview and the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide"><em>CLI Guide</em></a> for details.</p>
 </div>
 <div class="paragraph">
-<p>To contribute to the MTA source code base or provide Java-based rule add-ons, see the <a href="https://github.com/windup/windup/wiki/Core-Development-Guide"><em>Core Development Guide</em></a>.</p>
+<p>To contribute to the {ProductShortName} source code base or provide Java-based rule add-ons, see the <a href="https://github.com/windup/windup/wiki/Core-Development-Guide"><em>Core Development Guide</em></a>.</p>
 </div>
 <div class="sect3">
-<h4 id="about-home-var_rules-development-guide">1.1.1. Use of <code>&lt;MTA_HOME&gt;</code> in this guide</h4>
+<h4 id="about-home-var_rules-development-guide">1.1.1. Use of <code>&lt;{ProductShortName}_HOME&gt;</code> in this guide</h4>
 <div class="paragraph">
-<p>This guide uses the <code>&lt;MTA_HOME&gt;</code> replaceable variable to denote the path to your MTA installation. The installation directory is the <code>mta-cli-5.2.1.Final</code> directory where you extracted the MTA <code>.zip</code> file.</p>
+<p>This guide uses the <code>&lt;{ProductShortName}_HOME&gt;</code> replaceable variable to denote the path to your {ProductShortName} installation. The installation directory is the <code>mta-cli-5.2.1.Final</code> directory where you extracted the {ProductShortName} <code>.zip</code> file.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -566,27 +566,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For Windows operating systems, you must extract the MTA <code>.zip</code> file to a folder named <code>mta</code> to avoid a <code>Path too long</code> error.</p>
+<p>For Windows operating systems, you must extract the {ProductShortName} <code>.zip</code> file to a folder named <code>mta</code> to avoid a <code>Path too long</code> error.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>When you encounter <code>&lt;MTA_HOME&gt;</code> in this guide, replace it with the actual path to your MTA installation.</p>
+<p>When you encounter <code>&lt;{ProductShortName}_HOME&gt;</code> in this guide, replace it with the actual path to your {ProductShortName} installation.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="about-rules_rules-development-guide">1.2. About MTA rules</h3>
+<h3 id="about-rules_rules-development-guide">1.2. About {ProductShortName} rules</h3>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) contains rule-based migration tools that analyze the APIs, technologies, and architectures used by the applications you plan to migrate. In fact, the MTA analysis process is implemented using MTA rules. MTA uses rules internally to extract files from archives, decompile files, scan and classify file types, analyze XML and other file content, analyze the application code, and build the reports.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) contains rule-based migration tools that analyze the APIs, technologies, and architectures used by the applications you plan to migrate. In fact, the {ProductShortName} analysis process is implemented using {ProductShortName} rules. {ProductShortName} uses rules internally to extract files from archives, decompile files, scan and classify file types, analyze XML and other file content, analyze the application code, and build the reports.</p>
 </div>
 <div class="paragraph">
-<p>MTA builds a data model based on the rule execution results and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.</p>
+<p>{ProductShortName} builds a data model based on the rule execution results and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.</p>
 </div>
 <div class="paragraph">
-<p>MTA rules use the following rule pattern:</p>
+<p>{ProductShortName} rules use the following rule pattern:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -596,7 +596,7 @@ otherwise(action)</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>MTA provides a comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, MTA allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset.</p>
+<p>{ProductShortName} provides a comprehensive set of standard migration rules out-of-the-box. Because applications may contain custom libraries or components, {ProductShortName} allows you to write your own rules to identify use of components or software that may not be covered by the existing ruleset.</p>
 </div>
 </div>
 </div>
@@ -605,12 +605,12 @@ otherwise(action)</pre>
 <h2 id="getting-started-rules_rules-development-guide">2. Getting started with rules</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can get started creating custom MTA rules by creating a rule or by reviewing the quickstarts.</p>
+<p>You can get started creating custom {ProductShortName} rules by creating a rule or by reviewing the quickstarts.</p>
 </div>
 <div class="sect2">
 <h3 id="create-first-xml-rule_rules-development-guide">2.1. Creating your first XML rule</h3>
 <div class="paragraph">
-<p>This section guides you through the process of creating and testing your first MTA XML-based rule. This assumes that you have already installed MTA. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide"><em>CLI Guide</em></a> for installation instructions.</p>
+<p>This section guides you through the process of creating and testing your first {ProductShortName} XML-based rule. This assumes that you have already installed {ProductShortName}. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide"><em>CLI Guide</em></a> for installation instructions.</p>
 </div>
 <div class="paragraph">
 <p>In this example, you will write a rule to discover instances where an application defines a <code>jboss-web.xml</code> file containing a <code>&lt;class-loading&gt;</code> element and provide a link to the documentation that describes how to migrate the code.</p>
@@ -626,7 +626,7 @@ $ mkdir -p /home/&lt;USER_NAME&gt;/migration-rules/data</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This directory structure will also be used to hold the generated MTA reports.</p>
+<p>This directory structure will also be used to hold the generated {ProductShortName} reports.</p>
 </div>
 <h4 id="_creating_data_to_test_the_rule" class="discrete">Creating data to test the rule</h4>
 <div class="olist arabic">
@@ -654,7 +654,7 @@ $ mkdir -p /home/&lt;USER_NAME&gt;/migration-rules/data</pre>
 </div>
 <h4 id="_creating_the_rule" class="discrete">Creating the rule</h4>
 <div class="paragraph">
-<p>MTA XML-based rules use the following rule pattern:</p>
+<p>{ProductShortName} XML-based rules use the following rule pattern:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -707,7 +707,7 @@ otherwise(action)</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The XML file name must include the <code>.windup.xml</code> or <code>.mta.xml</code> extension. Otherwise, MTA does not evaluate the new rule.</p>
+<p>The XML file name must include the <code>.windup.xml</code> or <code>.mta.xml</code> extension. Otherwise, {ProductShortName} does not evaluate the new rule.</p>
 </div>
 </td>
 </tr>
@@ -854,14 +854,14 @@ otherwise(action)</pre>
 </div>
 <h4 id="_installing_the_rule" class="discrete">Installing the rule</h4>
 <div class="paragraph">
-<p>An MTA rule is installed by placing the rule into the appropriate directory.</p>
+<p>An {ProductShortName} rule is installed by placing the rule into the appropriate directory.</p>
 </div>
 <div class="paragraph">
-<p>Copy the <code>JBoss5-web-class-loading.windup.xml</code> file to the <code>&lt;MTA_HOME&gt;/rules/</code> directory.</p>
+<p>Copy the <code>JBoss5-web-class-loading.windup.xml</code> file to the <code>&lt;{ProductShortName}_HOME&gt;/rules/</code> directory.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code>$ cp /home/&lt;USER_NAME&gt;/migration-rules/rules/JBoss5-web-class-loading.windup.xml &lt;MTA_HOME&gt;/rules/</code></pre>
+<pre class="highlight nowrap"><code>$ cp /home/&lt;USER_NAME&gt;/migration-rules/rules/JBoss5-web-class-loading.windup.xml &lt;{ProductShortName}_HOME&gt;/rules/</code></pre>
 </div>
 </div>
 <h4 id="_testing_the_rule" class="discrete">Testing the rule</h4>
@@ -870,7 +870,7 @@ otherwise(action)</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">$ &lt;MTA_HOME&gt;/bin/mta-cli --sourceMode --input /home/&lt;USER_NAME&gt;/migration-rules/data --output /home/&lt;USER_NAME&gt;/migration-rules/reports --target eap:6</pre>
+<pre class="nowrap">$ &lt;{ProductShortName}_HOME&gt;/bin/mta-cli --sourceMode --input /home/&lt;USER_NAME&gt;/migration-rules/data --output /home/&lt;USER_NAME&gt;/migration-rules/reports --target eap:6</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -884,7 +884,7 @@ otherwise(action)</pre>
 </div>
 <h4 id="_reviewing_the_reports" class="discrete">Reviewing the reports</h4>
 <div class="paragraph">
-<p>Review the report to be sure that it provides the expected results. For a more detailed walkthrough of MTA reports, see the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide#review_reports">Review the reports</a> section of the MTA <em>CLI Guide</em>.</p>
+<p>Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide#review_reports">Review the reports</a> section of the {ProductShortName} <em>CLI Guide</em>.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1037,7 +1037,7 @@ otherwise(action)</pre>
 <div class="sect2">
 <h3 id="xml-rule-syntax_rules-development-guide">3.1. XML rule structure</h3>
 <div class="paragraph">
-<p>This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets. For more details, see the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">MTA XML rule schema</a>.</p>
+<p>This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets. For more details, see the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">{ProductShortName} XML rule schema</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="_rulesets">3.1.1. Rulesets</h4>
@@ -1047,7 +1047,7 @@ otherwise(action)</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>&lt;ruleset id="&lt;UNIQUE_RULESET_ID&gt;"&gt;</strong>: Defines this as an MTA ruleset and gives it a unique ruleset ID.</p>
+<p><strong>&lt;ruleset id="&lt;UNIQUE_RULESET_ID&gt;"&gt;</strong>: Defines this as an {ProductShortName} ruleset and gives it a unique ruleset ID.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1067,7 +1067,7 @@ otherwise(action)</pre>
 <p><strong> &lt;targetTechnology/&gt;</strong>: The target technology.</p>
 </li>
 <li>
-<p><strong> &lt;overrideRules/&gt;</strong>: Setting to <code>true</code> indicates that rules in this ruleset override rules with the same ID from the core ruleset distributed with MTA. Both the ruleset id and the rule id must match a rule within the core ruleset or the rule will be ignored. This is <code>false</code> by default.</p>
+<p><strong> &lt;overrideRules/&gt;</strong>: Setting to <code>true</code> indicates that rules in this ruleset override rules with the same ID from the core ruleset distributed with {ProductShortName}. Both the ruleset id and the rule id must match a rule within the core ruleset or the rule will be ignored. This is <code>false</code> by default.</p>
 </li>
 </ul>
 </div>
@@ -1113,10 +1113,10 @@ otherwise(action)</pre>
 <div class="sect3">
 <h4 id="_predefined_rules">3.1.2. Predefined rules</h4>
 <div class="paragraph">
-<p>MTA provides predefined rules for common migration requirements. These core MTA rules are located in the MTA installation at <code>&lt;MTA_HOME&gt;/rules/migration-core/</code>.</p>
+<p>{ProductShortName} provides predefined rules for common migration requirements. These core {ProductShortName} rules are located in the {ProductShortName} installation at <code>&lt;{ProductShortName}_HOME&gt;/rules/migration-core/</code>.</p>
 </div>
 <div class="paragraph">
-<p>The following is an example of a core MTA rule that matches on a proprietary utility class.</p>
+<p>The following is an example of a core {ProductShortName} rule that matches on a proprietary utility class.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1161,12 +1161,12 @@ otherwise(action)</pre>
 <div class="sect2">
 <h3 id="create-basic-xml-rule_rules-development-guide">3.2. Creating a basic XML rule</h3>
 <div class="paragraph">
-<p>This section describes how to create an MTA XML rule. This assumes that you already have MTA installed. See the MTA <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide"><em>CLI Guide</em></a> for installation instructions.</p>
+<p>This section describes how to create an {ProductShortName} XML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide"><em>CLI Guide</em></a> for installation instructions.</p>
 </div>
 <div class="sect3">
 <h4 id="_creating_a_basic_xml_rule_template">3.2.1. Creating a basic XML rule template</h4>
 <div class="paragraph">
-<p>MTA XML rules consist of <em>conditions</em> and <em>actions</em> and use the following rule pattern:</p>
+<p>{ProductShortName} XML rules consist of <em>conditions</em> and <em>actions</em> and use the following rule pattern:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1186,7 +1186,7 @@ otherwise(action)</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The XML file name must include the <code>.windup.xml</code> or <code>.mta.xml</code> extension. Otherwise, MTA does not evaluate the new rule.</p>
+<p>The XML file name must include the <code>.windup.xml</code> or <code>.mta.xml</code> extension. Otherwise, {ProductShortName} does not evaluate the new rule.</p>
 </div>
 </td>
 </tr>
@@ -1781,7 +1781,7 @@ which may have useful side effects, like setting the matched value on the rule v
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>windup:matches()</code></p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Match a XPath expression against a string, possibly containing MTA parameterization placeholders.</p>
+<p>Match a XPath expression against a string, possibly containing {ProductShortName} parameterization placeholders.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2399,7 +2399,7 @@ which may have useful side effects, like setting the matched value on the rule v
 <td class="tableblock halign-left valign-top"><p class="tableblock">category-id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A reference to a category as defined in <code>MTA_HOME/rules/migration-core/core.windup.categories.xml</code>. The default categories are <code>mandatory</code>, <code>optional</code>, <code>potential</code>, and <code>information</code>.</p>
+<p>A reference to a category as defined in <code>{ProductShortName}_HOME/rules/migration-core/core.windup.categories.xml</code>. The default categories are <code>mandatory</code>, <code>optional</code>, <code>potential</code>, and <code>information</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2612,7 +2612,7 @@ which may have useful side effects, like setting the matched value on the rule v
 <td class="tableblock halign-left valign-top"><p class="tableblock">category-id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A reference to a category as defined in <code>MTA_HOME/rules/migration-core/core.windup.categories.xml</code>. The default categories are <code>mandatory</code>, <code>optional</code>, <code>potential</code>, and <code>information</code>.</p>
+<p>A reference to a category as defined in <code>{ProductShortName}_HOME/rules/migration-core/core.windup.categories.xml</code>. The default categories are <code>mandatory</code>, <code>optional</code>, <code>potential</code>, and <code>information</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2698,7 +2698,7 @@ API Specification" /&gt;</code></pre>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">&lt;quickfix&gt;</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Contains information to be used by the MTA plugin to perform quick fixes when the rule condition is met.</p>
+<p>Contains information to be used by the {ProductShortName} plugin to perform quick fixes when the rule condition is met.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3025,18 +3025,18 @@ API Specification" /&gt;</code></pre>
 <div class="sect2">
 <h3 id="add-rule-to-mta_rules-development-guide">3.4. Adding a rule to the Migration Toolkit for Applications</h3>
 <div class="paragraph">
-<p>A Migration Toolkit for Applications rule is installed by copying the rule to the appropriate MTA folder. MTA scans for rules, which are files with the <code>.windup.xml</code> or <code>.mta.xml</code> extension in the following locations:</p>
+<p>A Migration Toolkit for Applications rule is installed by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files with the <code>.windup.xml</code> or <code>.mta.xml</code> extension in the following locations:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Directory specified by the <code>--userRulesDirectory</code> argument on the MTA command line.</p>
+<p>Directory specified by the <code>--userRulesDirectory</code> argument on the {ProductShortName} command line.</p>
 </li>
 <li>
-<p><code>&lt;MTA_HOME&gt;/rules/</code> directory. <code>&lt;MTA_HOME&gt;</code> is the directory where you install and run the Migration Toolkit for Applications executable.</p>
+<p><code>&lt;{ProductShortName}_HOME&gt;/rules/</code> directory. <code>&lt;{ProductShortName}_HOME&gt;</code> is the directory where you install and run the Migration Toolkit for Applications executable.</p>
 </li>
 <li>
-<p><code>${user.home}/.mta/rules/</code> directory. This directory is created by MTA the first time it is run. it contains rules, add-ons, and the MTA log.</p>
+<p><code>${user.home}/.mta/rules/</code> directory. This directory is created by {ProductShortName} the first time it is run. it contains rules, add-ons, and the {ProductShortName} log.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -3090,7 +3090,7 @@ API Specification" /&gt;</code></pre>
 <div class="sect3">
 <h4 id="test-xml-rule-structure_rules-development-guide">4.1.1. Test XML rule structure</h4>
 <div class="paragraph">
-<p>All test XML rules are defined as elements within <code>ruletests</code> which contain one or more <code>rulesets</code>. For more details, see the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">MTA XML rule schema</a>.</p>
+<p>All test XML rules are defined as elements within <code>ruletests</code> which contain one or more <code>rulesets</code>. For more details, see the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">{ProductShortName} XML rule schema</a>.</p>
 </div>
 <div class="paragraph">
 <p>A ruletest is a group of one or more tests that targets a specific area of migration. This is the basic structure of the <code>&lt;ruletest&gt;</code> element.</p>
@@ -3098,7 +3098,7 @@ API Specification" /&gt;</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p><code>&lt;ruletest id="&lt;RULE_TOPIC&gt;-test"&gt;</code>: Defines this as a unique MTA ruletest and gives it a unique ruletest id.</p>
+<p><code>&lt;ruletest id="&lt;RULE_TOPIC&gt;-test"&gt;</code>: Defines this as a unique {ProductShortName} ruletest and gives it a unique ruletest id.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -3486,7 +3486,7 @@ API Specification" /&gt;</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ &lt;MTA_HOME&gt;/bin/mta-cli [--sourceMode] --input &lt;INPUT_ARCHIVE_OR_FOLDER&gt; --output &lt;OUTPUT_REPORT_DIRECTORY&gt; --target &lt;TARGET_TECHNOLOGY&gt; --packages &lt;PACKAGE_1&gt; &lt;PACKAGE_2&gt; &lt;PACKAGE_N&gt;</pre>
+<pre>$ &lt;{ProductShortName}_HOME&gt;/bin/mta-cli [--sourceMode] --input &lt;INPUT_ARCHIVE_OR_FOLDER&gt; --output &lt;OUTPUT_REPORT_DIRECTORY&gt; --target &lt;TARGET_TECHNOLOGY&gt; --packages &lt;PACKAGE_1&gt; &lt;PACKAGE_2&gt; &lt;PACKAGE_N&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3499,19 +3499,19 @@ API Specification" /&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>More examples of how to run MTA are located in the Migration Toolkit for Applications <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide"><em>CLI Guide</em></a>.</p>
+<p>More examples of how to run {ProductShortName} are located in the Migration Toolkit for Applications <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide"><em>CLI Guide</em></a>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="rules-testng-junit_rules-development-guide">4.3. Testing the rules by using JUnit</h3>
 <div class="paragraph">
-<p>Once a test rule has been created, it can be analyzed as part of a JUnit test to confirm that the rule meets all criteria for execution. The <code>WindupRulesMultipleTests</code> class in the MTA rules repository is designed to test multiple rules simultaneously, and provides feedback on any missing requirements.</p>
+<p>Once a test rule has been created, it can be analyzed as part of a JUnit test to confirm that the rule meets all criteria for execution. The <code>WindupRulesMultipleTests</code> class in the {ProductShortName} rules repository is designed to test multiple rules simultaneously, and provides feedback on any missing requirements.</p>
 </div>
 <div class="ulist">
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>Fork and clone the MTA XML rules. The location of this repository will be referred to as &lt;RULESETS_REPO&gt;.</p>
+<p>Fork and clone the {ProductShortName} XML rules. The location of this repository will be referred to as &lt;RULESETS_REPO&gt;.</p>
 </li>
 <li>
 <p>Create a test XML rule.</p>
@@ -3525,7 +3525,7 @@ API Specification" /&gt;</code></pre>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Import the MTA rulesets repository into your IDE.</p>
+<p>Import the {ProductShortName} rulesets repository into your IDE.</p>
 </li>
 <li>
 <p>Copy the custom rules, along with the corresponding tests and data, into <code>&lt;/path/to/RULESETS_REPO&gt;/rules-reviewed/&lt;RULE_NAME&gt;/</code>. This should create the following directory structure.</p>
@@ -3627,7 +3627,7 @@ API Specification" /&gt;</code></pre>
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You must fork and clone the MTA XML rules.</p>
+<p>You must fork and clone the {ProductShortName} XML rules.</p>
 </li>
 <li>
 <p>You must have one or more test XML rules to validate.</p>
@@ -3728,7 +3728,7 @@ API Specification" /&gt;</code></pre>
 <h2 id="overriding-rules_rules-development-guide">5. Overriding rules</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can override core rules distributed with MTA or even custom rules. For example, you can change the matching conditions, effort, or hint text for a rule. This is done by making a copy of the original rule, marking it as a rule override, and making the necessary adjustments.</p>
+<p>You can override core rules distributed with {ProductShortName} or even custom rules. For example, you can change the matching conditions, effort, or hint text for a rule. This is done by making a copy of the original rule, marking it as a rule override, and making the necessary adjustments.</p>
 </div>
 <div class="paragraph">
 <p>You can disable a rule by creating a rule override with an empty <code>&lt;rule&gt;</code> element.</p>
@@ -3744,7 +3744,7 @@ API Specification" /&gt;</code></pre>
 <li>
 <p>Copy the XML file that contains the rule you want to override to the custom rules directory.</p>
 <div class="paragraph">
-<p>Custom rules can be placed in <code>&lt;MTA_HOME&gt;/rules</code>, <code>${user.home}/.mta/rules/</code>, or a directory specified by the <code>--userRulesDirectory</code> command-line argument.</p>
+<p>Custom rules can be placed in <code>&lt;{ProductShortName}_HOME&gt;/rules</code>, <code>${user.home}/.mta/rules/</code>, or a directory specified by the <code>--userRulesDirectory</code> command-line argument.</p>
 </div>
 </li>
 <li>
@@ -3827,7 +3827,7 @@ API Specification" /&gt;</code></pre>
 </ol>
 </div>
 <div class="paragraph">
-<p>When you run MTA, this rule overrides the original rule with the same rule ID. You can verify that the new rule was used by viewing the contents of the Rule Provider Executions Overview.</p>
+<p>When you run {ProductShortName}, this rule overrides the original rule with the same rule ID. You can verify that the new rule was used by viewing the contents of the Rule Provider Executions Overview.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3869,7 +3869,7 @@ API Specification" /&gt;</code></pre>
 <h2 id="rule-categories_rules-development-guide">6. Using custom rule categories</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can create custom rule categories and assign MTA rules to them.</p>
+<p>You can create custom rule categories and assign {ProductShortName} rules to them.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3879,7 +3879,7 @@ API Specification" /&gt;</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Although MTA processes rules with the legacy <code>severity</code> field, you must update your custom rules to use the new <code>category-id</code> field.</p>
+<p>Although {ProductShortName} processes rules with the legacy <code>severity</code> field, you must update your custom rules to use the new <code>category-id</code> field.</p>
 </div>
 </td>
 </tr>
@@ -3893,14 +3893,14 @@ API Specification" /&gt;</code></pre>
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Edit the rule category file, which is located at <code>&lt;MTA_HOME&gt;/rules/migration-core/core.windup.categories.xml</code>.</p>
+<p>Edit the rule category file, which is located at <code>&lt;{ProductShortName}_HOME&gt;/rules/migration-core/core.windup.categories.xml</code>.</p>
 </li>
 <li>
 <p>Add a new <code>&lt;category&gt;</code> element and fill in the following parameters:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>id</code>: The ID that MTA rules use to reference the category.</p>
+<p><code>id</code>: The ID that {ProductShortName} rules use to reference the category.</p>
 </li>
 <li>
 <p><code>priority</code>: The sorting priority relative to other categories. The category with the lowest value is displayed first.</p>
@@ -3924,7 +3924,7 @@ API Specification" /&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This category is ready to be referenced by MTA rules.</p>
+<p>This category is ready to be referenced by {ProductShortName} rules.</p>
 </div>
 </li>
 </ul>
@@ -3938,7 +3938,7 @@ API Specification" /&gt;</code></pre>
 </div>
 <div class="paragraph">
 <div class="title">Procedure</div>
-<p>In your MTA rule, update the <code>category-id</code> field as in the following example.</p>
+<p>In your {ProductShortName} rule, update the <code>category-id</code> field as in the following example.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3982,7 +3982,7 @@ API Specification" /&gt;</code></pre>
 <div class="sect3">
 <h4 id="_how_story_points_are_estimated_in_rules">A.1.2. How story points are estimated in rules</h4>
 <div class="paragraph">
-<p>Estimating the level of effort for the story points for a rule can be tricky. The following are the general guidelines MTA uses when estimating the level of effort required for a rule.</p>
+<p>Estimating the level of effort for the story points for a rule can be tricky. The following are the general guidelines {ProductShortName} uses when estimating the level of effort required for a rule.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -4064,12 +4064,12 @@ API Specification" /&gt;</code></pre>
 <div class="sect2">
 <h3 id="_additional_resources">A.2. Additional resources</h3>
 <div class="sect3">
-<h4 id="review-existing-rules_rules-development-guide">A.2.1. Reviewing existing MTA XML rules</h4>
+<h4 id="review-existing-rules_rules-development-guide">A.2.1. Reviewing existing {ProductShortName} XML rules</h4>
 <div class="paragraph">
-<p>MTA XML-based rules are located on GitHub at the following location: <a href="https://github.com/windup/windup-rulesets/tree/master/rules-reviewed">https://github.com/windup/windup-rulesets/tree/master/rules-reviewed</a>.</p>
+<p>{ProductShortName} XML-based rules are located on GitHub at the following location: <a href="https://github.com/windup/windup-rulesets/tree/master/rules-reviewed">https://github.com/windup/windup-rulesets/tree/master/rules-reviewed</a>.</p>
 </div>
 <div class="paragraph">
-<p>You can fork and clone the MTA XML rules on your local machine.</p>
+<p>You can fork and clone the {ProductShortName} XML rules on your local machine.</p>
 </div>
 <div class="paragraph">
 <p>Rules are grouped by target platform and function. When you create a new rule, it is helpful to find a rule that is similar to the one you need and use it as a starting template.</p>
@@ -4131,29 +4131,29 @@ API Specification" /&gt;</code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>MTA Javadoc: <a href="http://windup.github.io/windup/docs/latest/javadoc" class="bare">http://windup.github.io/windup/docs/latest/javadoc</a></p>
+<p>{ProductShortName} Javadoc: <a href="http://windup.github.io/windup/docs/latest/javadoc" class="bare">http://windup.github.io/windup/docs/latest/javadoc</a></p>
 </li>
 <li>
-<p>MTA forums: <a href="https://developer.jboss.org/en/windup" class="bare">https://developer.jboss.org/en/windup</a></p>
+<p>{ProductShortName} forums: <a href="https://developer.jboss.org/en/windup" class="bare">https://developer.jboss.org/en/windup</a></p>
 </li>
 <li>
-<p>MTA Jira issue trackers</p>
+<p>{ProductShortName} Jira issue trackers</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Core MTA: <a href="https://issues.redhat.com/projects/WINDUP" class="bare">https://issues.redhat.com/projects/WINDUP</a></p>
+<p>Core {ProductShortName}: <a href="https://issues.redhat.com/projects/WINDUP" class="bare">https://issues.redhat.com/projects/WINDUP</a></p>
 </li>
 <li>
-<p>MTA Rules: <a href="https://issues.redhat.com/projects/WINDUPRULE" class="bare">https://issues.redhat.com/projects/WINDUPRULE</a></p>
+<p>{ProductShortName} Rules: <a href="https://issues.redhat.com/projects/WINDUPRULE" class="bare">https://issues.redhat.com/projects/WINDUPRULE</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>MTA mailing list: <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a></p>
+<p>{ProductShortName} mailing list: <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a></p>
 </li>
 <li>
-<p>MTA IRC channel: Server FreeNode (<code>irc.freenode.net</code>), channel <code>#windup</code> (<a href="http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html">transcripts</a>)</p>
+<p>{ProductShortName} IRC channel: Server FreeNode (<code>irc.freenode.net</code>), channel <code>#windup</code> (<a href="http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html">transcripts</a>)</p>
 </li>
 </ul>
 </div>

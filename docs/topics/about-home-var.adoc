@@ -4,16 +4,16 @@
 
 :_content-type: CONCEPT
 [id="about-home-var_{context}"]
-= Use of `<MTA_HOME>` in this guide
+= Use of `<{ProductShortName}_HOME>` in this guide
 
-This guide uses the `<MTA_HOME>` replaceable variable to denote the path to your {ProductShortName} installation. The installation directory is the `{ProductDistribution}` directory where you extracted the {ProductShortName} `.zip` file.
+This guide uses the `<{ProductShortName}_HOME>` replaceable variable to denote the path to your {ProductShortName} installation. The installation directory is the `{ProductDistribution}` directory where you extracted the {ProductShortName} `.zip` file.
 
 [NOTE]
 ====
 If you are installing on a Windows operating system:
 
-. Extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error. Alternatively, extract the file with link:https://www.7-zip.org/download.html[7-Zip] to a folder of any name you choose.
+. Extract the `.zip` file to a folder named `{LC_PSN}` to avoid a `Path too long` error. Alternatively, extract the file with link:https://www.7-zip.org/download.html[7-Zip] to a folder of any name you choose.
 . If a *Confirm file replace* window is displayed during extraction, click *Yes to all*.
 ====
 
-When you encounter `<MTA_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
+When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.

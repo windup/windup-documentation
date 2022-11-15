@@ -22,6 +22,6 @@ $ export JAVA_HOME=jdk11
 
 . In VS Code, click the *Extensions* icon on the Activity bar to open the *Extensions* view.
 . Enter `{ProductName}` in the Search field.
-. Select the *Migration Toolkit for Applications* extension and click *Install*.
+. Select the *{ProductName}* extension and click *Install*.
 +
-The {ProductShortName} extension icon (image:vs_MTA_extension_icon.png[MTA code extension]) is displayed on the Activity bar.
+The {ProductShortName} extension icon (image:vs_mta_extension_icon.png[{ProductShortName} code extension]) is displayed on the Activity bar.

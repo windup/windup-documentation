@@ -456,10 +456,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#installing-web-console-or-cli-tool_cli-guide">2.1. Installing the CLI</a></li>
 <li><a href="#execute_cli-guide">2.2. Running the CLI</a>
 <ul class="sectlevel3">
-<li><a href="#command-examples_cli-guide">2.2.1. MTA command examples</a></li>
+<li><a href="#command-examples_cli-guide">2.2.1. {ProductShortName} command examples</a></li>
 <li><a href="#openrewrite_cli-guide">2.2.2. Refactoring source code using OpenRewrite</a></li>
-<li><a href="#cli-bash-completion_cli-guide">2.2.3. MTA CLI Bash completion</a></li>
-<li><a href="#accessing-help_cli-guide">2.2.4. Accessing MTA help</a></li>
+<li><a href="#cli-bash-completion_cli-guide">2.2.3. {ProductShortName} CLI Bash completion</a></li>
+<li><a href="#accessing-help_cli-guide">2.2.4. Accessing {ProductShortName} help</a></li>
 </ul>
 </li>
 <li><a href="#access-report_cli-guide">2.3. Accessing reports</a></li>
@@ -498,11 +498,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_reviewing_the_maven_project_structure">5.2. Reviewing the Maven project structure</a></li>
 </ul>
 </li>
-<li><a href="#optimize-performance_cli-guide">6. Optimizing MTA performance</a>
+<li><a href="#optimize-performance_cli-guide">6. Optimizing {ProductShortName} performance</a>
 <ul class="sectlevel2">
 <li><a href="#_deploying_and_running_the_application">6.1. Deploying and running the application</a></li>
 <li><a href="#_upgrading_hardware">6.2. Upgrading hardware</a></li>
-<li><a href="#exclude-files-and-packages_cli-guide">6.3. Configuring MTA to exclude packages and files</a>
+<li><a href="#exclude-files-and-packages_cli-guide">6.3. Configuring {ProductShortName} to exclude packages and files</a>
 <ul class="sectlevel3">
 <li><a href="#exclude-packages_cli-guide">6.3.1. Excluding packages</a></li>
 <li><a href="#exclude-files_cli-guide">6.3.2. Excluding files</a></li>
@@ -513,7 +513,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_reference_material">Appendix A: Reference material</a>
 <ul class="sectlevel2">
-<li><a href="#cli-args_cli-guide">A.1. About MTA command-line arguments</a>
+<li><a href="#cli-args_cli-guide">A.1. About {ProductShortName} command-line arguments</a>
 <ul class="sectlevel3">
 <li><a href="#cli-input-argument_cli-guide">A.1.1. Specifying the input</a></li>
 <li><a href="#cli-output-argument_cli-guide">A.1.2. Specifying the output directory</a></li>
@@ -557,17 +557,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="about-cli-guide_cli-guide">1.1. About the CLI Guide</h3>
 <div class="paragraph">
-<p>This guide is for engineers, consultants, and others who want to use the Migration Toolkit for Applications (MTA) to migrate Java applications or other components. It describes how to install and run the CLI, review the generated reports, and take advantage of additional features.</p>
+<p>This guide is for engineers, consultants, and others who want to use the Migration Toolkit for Applications ({ProductShortName}) to migrate Java applications or other components. It describes how to install and run the CLI, review the generated reports, and take advantage of additional features.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="what-is-the-toolkit_cli-guide">1.2. About the Migration Toolkit for Applications</h3>
 <h4 id="_what_is_the_migration_toolkit_for_applications" class="discrete">What is the Migration Toolkit for Applications?</h4>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
 </div>
 <div class="paragraph">
-<p>MTA examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. MTA supports many migration paths including the following examples:</p>
+<p>{ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. {ProductShortName} supports many migration paths including the following examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -589,14 +589,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">MTA for developers</a> web page.</p>
+<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">{ProductShortName} for developers</a> web page.</p>
 </div>
 <h4 id="_how_does_the_migration_toolkit_for_applications_simplify_migration" class="discrete">How does the Migration Toolkit for Applications simplify migration?</h4>
 <div class="paragraph">
 <p>The Migration Toolkit for Applications looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
 </div>
 <div class="paragraph">
-<p>MTA generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
+<p>{ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
 </div>
 <h4 id="_how_do_i_learn_more" class="discrete">How do I learn more?</h4>
 <div class="paragraph">
@@ -606,7 +606,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="about-cli_cli-guide">1.3. About the CLI</h3>
 <div class="paragraph">
-<p>The CLI is a command-line tool in the Migration Toolkit for Applications that allows users to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without the overhead of the other tools. The CLI includes a wide array of customization options, and allows you to finely tune MTA analysis options or integrate with external automation tools.</p>
+<p>The CLI is a command-line tool in the Migration Toolkit for Applications that allows users to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without the overhead of the other tools. The CLI includes a wide array of customization options, and allows you to finely tune {ProductShortName} analysis options or integrate with external automation tools.</p>
 </div>
 </div>
 </div>
@@ -623,7 +623,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>Java Development Kit (JDK) installed. MTA supports the following JDKs:</p>
+<p>Java Development Kit (JDK) installed. {ProductShortName} supports the following JDKs:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -653,7 +653,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Navigate to the <a href="https://developers.redhat.com/products/mta/download">MTA Download page</a> and download the <code>Migration Toolkit CLI</code> file.</p>
+<p>Navigate to the <a href="https://developers.redhat.com/products/mta/download">{ProductShortName} Download page</a> and download the <code>Migration Toolkit CLI</code> file.</p>
 </li>
 <li>
 <p>Extract the <code>.zip</code> file to a directory of your choice.</p>
@@ -682,7 +682,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="paragraph">
-<p>The installation directory is referred to as <code>&lt;MTA_HOME&gt;</code> in this guide.</p>
+<p>The installation directory is referred to as <code>&lt;{ProductShortName}_HOME&gt;</code> in this guide.</p>
 </div>
 </li>
 </ol>
@@ -691,13 +691,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="execute_cli-guide">2.2. Running the CLI</h3>
 <div class="paragraph">
-<p>You can run MTA against your application.</p>
+<p>You can run {ProductShortName} against your application.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Open a terminal and navigate to the <code>&lt;MTA_HOME&gt;/bin/</code> directory.</p>
+<p>Open a terminal and navigate to the <code>&lt;{ProductShortName}_HOME&gt;/bin/</code> directory.</p>
 </li>
 <li>
 <p>Execute the <code>mta-cli</code> script, or <code>mta-cli.bat</code> for Windows, and specify the appropriate arguments:</p>
@@ -734,26 +734,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ol>
 </div>
 <div class="sect3">
-<h4 id="command-examples_cli-guide">2.2.1. MTA command examples</h4>
-<h5 id="_running_mta_on_an_application_archive" class="discrete">Running MTA on an application archive</h5>
+<h4 id="command-examples_cli-guide">2.2.1. {ProductShortName} command examples</h4>
+<h5 id="_running_mta_on_an_application_archive" class="discrete">Running {ProductShortName} on an application archive</h5>
 <div class="paragraph">
 <p>The following command analyzes the <code>com.acme</code> and <code>org.apache</code> packages of the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;MTA_HOME&gt;/bin/mta-cli \
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;{ProductShortName}_HOME&gt;/bin/mta-cli \
 --input /path/to/jee-example-app-1.0.0.ear \
 --output /path/to/report-output/ --source eap:5 --target eap:7 \
 --packages com.acme org.apache</code></pre>
 </div>
 </div>
-<h5 id="_running_mta_on_source_code" class="discrete">Running MTA on source code</h5>
+<h5 id="_running_mta_on_source_code" class="discrete">Running {ProductShortName} on source code</h5>
 <div class="paragraph">
 <p>The following command analyzes the <code>org.jboss.seam</code> packages of the <a href="https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2">seam-booking-5.2</a> example source code for migrating to JBoss EAP 6.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;MTA_HOME&gt;/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ \
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;{ProductShortName}_HOME&gt;/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ \
 --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam</code></pre>
 </div>
 </div>
@@ -763,18 +763,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;MTA_HOME&gt;/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear \
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;{ProductShortName}_HOME&gt;/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear \
  --output /path/to/report-output/ \
  --target eap:7 --target cloud-readiness --packages com.acme org.apache</code></pre>
 </div>
 </div>
-<h5 id="_overriding_mta_properties" class="discrete">Overriding MTA properties</h5>
+<h5 id="_overriding_mta_properties" class="discrete">Overriding {ProductShortName} properties</h5>
 <div class="paragraph">
 <p>To override the default <em>Fernflower</em> decompiler, pass the <code>-Dwindup.decompiler</code> argument on the command line. For example, to use the <em>Procyon</em> decompiler, use the following syntax:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;MTA_HOME&gt;/bin/mta-cli -Dwindup.decompiler=procyon --input \
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;{ProductShortName}_HOME&gt;/bin/mta-cli -Dwindup.decompiler=procyon --input \
 &lt;INPUT_ARCHIVE_OR_DIRECTORY&gt; --output &lt;OUTPUT_REPORT_DIRECTORY&gt; \
 --target &lt;TARGET_TECHNOLOGY&gt; --packages &lt;PACKAGE_1&gt; &lt;PACKAGE_2&gt;</code></pre>
 </div>
@@ -783,13 +783,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect3">
 <h4 id="openrewrite_cli-guide">2.2.2. Refactoring source code using OpenRewrite</h4>
 <div class="paragraph">
-<p><a href="https://docs.openrewrite.org/">OpenRewrite</a> uses recipes to automate large-scale, distributed source code refactoring. It can be used with the MTA.</p>
+<p><a href="https://docs.openrewrite.org/">OpenRewrite</a> uses recipes to automate large-scale, distributed source code refactoring. It can be used with the {ProductShortName}.</p>
 </div>
 <div class="paragraph">
-<p>The first OpenRewrite recipe, which is shipped with MTA 5.2.1, renames imported <code>javax</code> packages to their <code>jakarta</code> equivalents.</p>
+<p>The first OpenRewrite recipe, which is shipped with {ProductShortName} 5.2.1, renames imported <code>javax</code> packages to their <code>jakarta</code> equivalents.</p>
 </div>
 <div class="paragraph">
-<p>You can use OpenRewrite in the MTA CLI to prepare Java applications for migration.</p>
+<p>You can use OpenRewrite in the {ProductShortName} CLI to prepare Java applications for migration.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>
@@ -806,10 +806,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><code>--openrewrite</code>: Flag specifying to run an OpenRewrite migration, instead of an MTA analysis.</p>
+<p><code>--openrewrite</code>: Flag specifying to run an OpenRewrite migration, instead of an {ProductShortName} analysis.</p>
 </li>
 <li>
-<p><code>"-DactiveRecipes=org.&lt;recipe name&gt;"</code> : The OpenRewrite recipe to apply to the input project. <code>JavaxtoJakarta</code> is the default shipped recipe but you can add your own to the shipped <code>rewrite.yml</code> and run that recipe instead. The <code>rewrite.yml file</code> is located in the <code>rules/openrewrite/`</code> folder in the uncompressed MTA distribution.</p>
+<p><code>"-DactiveRecipes=org.&lt;recipe name&gt;"</code> : The OpenRewrite recipe to apply to the input project. <code>JavaxtoJakarta</code> is the default shipped recipe but you can add your own to the shipped <code>rewrite.yml</code> and run that recipe instead. The <code>rewrite.yml file</code> is located in the <code>rules/openrewrite/`</code> folder in the uncompressed {ProductShortName} distribution.</p>
 </li>
 <li>
 <p><code>--input</code>: The application to be evaluated.</p>
@@ -869,13 +869,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="cli-bash-completion_cli-guide">2.2.3. MTA CLI Bash completion</h4>
+<h4 id="cli-bash-completion_cli-guide">2.2.3. {ProductShortName} CLI Bash completion</h4>
 <div class="paragraph">
-<p>The MTA CLI provides an option to enable Bash completion for Linux systems, allowing the MTA command-line arguments to be auto completed by pressing the Tab key when entering the commands. For instance, when Bash completion is enabled, entering the following displays a list of available arguments.</p>
+<p>The {ProductShortName} CLI provides an option to enable Bash completion for Linux systems, allowing the {ProductShortName} command-line arguments to be auto completed by pressing the Tab key when entering the commands. For instance, when Bash completion is enabled, entering the following displays a list of available arguments.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;MTA_HOME&gt;/bin/mta-cli [TAB]</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;{ProductShortName}_HOME&gt;/bin/mta-cli [TAB]</code></pre>
 </div>
 </div>
 <h5 id="bash-completion-temporary_cli-guide" class="discrete">Enabling Bash completion</h5>
@@ -884,7 +884,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ source &lt;MTA_HOME&gt;/bash-completion/mta-cli</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ source &lt;{ProductShortName}_HOME&gt;/bash-completion/mta-cli</code></pre>
 </div>
 </div>
 <h5 id="bash-completion-persistent_cli-guide" class="discrete">Enabling persistent Bash completion</h5>
@@ -897,7 +897,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>To enable Bash completion for a specific user across system restarts, include the following line in that user&#8217;s <code>~/.bashrc</code> file.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal">source &lt;MTA_HOME&gt;/bash-completion/mta-cli</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">source &lt;{ProductShortName}_HOME&gt;/bash-completion/mta-cli</code></pre>
 </div>
 </div>
 </li>
@@ -905,7 +905,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>To enable Bash completion for all users across system restarts, copy the Migration Toolkit for Applications CLI Bash completion file to the <code>/etc/bash_completion.d/</code> directory as the root user.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal" data-lang="terminal"># cp &lt;MTA_HOME&gt;/bash-completion/mta-cli /etc/bash_completion.d/</code></pre>
+<pre class="highlight"><code class="language-terminal" data-lang="terminal"># cp &lt;{ProductShortName}_HOME&gt;/bash-completion/mta-cli /etc/bash_completion.d/</code></pre>
 </div>
 </div>
 </li>
@@ -913,13 +913,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="accessing-help_cli-guide">2.2.4. Accessing MTA help</h4>
+<h4 id="accessing-help_cli-guide">2.2.4. Accessing {ProductShortName} help</h4>
 <div class="paragraph">
-<p>To see the complete list of available arguments for the <code>mta-cli</code> command, open a terminal, navigate to the <code>&lt;MTA_HOME&gt;</code> directory, and execute the following command:</p>
+<p>To see the complete list of available arguments for the <code>mta-cli</code> command, open a terminal, navigate to the <code>&lt;{ProductShortName}_HOME&gt;</code> directory, and execute the following command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-terminal]" data-lang="terminal]">$ &lt;MTA_HOME&gt;/bin/mta-cli --help</code></pre>
+<pre class="highlight"><code class="language-terminal]" data-lang="terminal]">$ &lt;{ProductShortName}_HOME&gt;/bin/mta-cli --help</code></pre>
 </div>
 </div>
 </div>
@@ -947,7 +947,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>Obtain the path of the <code>index.html</code> file of your report from the output that appears after you run MTA:</p>
+<p>Obtain the path of the <code>index.html</code> file of your report from the output that appears after you run {ProductShortName}:</p>
 <div class="listingblock">
 <div class="content">
 <pre>Report created: &lt;OUTPUT_REPORT_DIRECTORY&gt;/index.html
@@ -970,14 +970,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="review-reports_cli-guide">3. Reviewing the reports</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The report examples shown in the following sections are a result of analyzing the <code>com.acme</code> and <code>org.apache</code> packages in the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> example application, which is located in the MTA GitHub source repository.</p>
+<p>The report examples shown in the following sections are a result of analyzing the <code>com.acme</code> and <code>org.apache</code> packages in the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> example application, which is located in the {ProductShortName} GitHub source repository.</p>
 </div>
 <div class="paragraph">
 <p>The report was generated using the following command.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">$ &lt;MTA_HOME&gt;/bin/mta-cli --input /home/username/mta-cli-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/mta-cli-reports/jee-example-app-1.0.0.ear-report --target eap:6 --packages com.acme org.apache</pre>
+<pre class="nowrap">$ &lt;{ProductShortName}_HOME&gt;/bin/mta-cli --input /home/username/mta-cli-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/mta-cli-reports/jee-example-app-1.0.0.ear-report --target eap:6 --packages com.acme org.apache</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -996,13 +996,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Note</div>
 </td>
 <td class="content">
-The incidents and estimated story points change as new rules are added to MTA. The values here may not match what you see when you test this application.
+The incidents and estimated story points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The following table lists all of the reports and pages that can be accessed from this main MTA landing page. Click the name of the application, <strong>jee-example-app-1.0.0.ear</strong>, to view the application report.</p>
+<p>The following table lists all of the reports and pages that can be accessed from this main {ProductShortName} landing page. Click the name of the application, <strong>jee-example-app-1.0.0.ear</strong>, to view the application report.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1042,7 +1042,7 @@ The incidents and estimated story points change as new rules are added to MTA. T
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Send feedback form</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Click the <strong>Send Feedback</strong> link in the top navigation bar to open a form that allows you to submit feedback to the MTA team.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the <strong>Send Feedback</strong> link in the top navigation bar to open a form that allows you to submit feedback to the {ProductShortName} team.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1124,7 +1124,7 @@ The incidents and estimated story points change as new rules are added to MTA. T
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unparsable</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Shows all files that MTA could not parse in the expected format. For instance, a file with a <code>.xml</code> or <code>.wsdl</code> suffix is assumed to be an XML file. If the XML parser fails, the issue is reported here and also where the individual file is listed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows all files that {ProductShortName} could not parse in the expected format. For instance, a file with a <code>.xml</code> or <code>.wsdl</code> suffix is assumed to be an XML file. If the XML parser fails, the issue is reported here and also where the individual file is listed.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Remote services</p></td>
@@ -1160,11 +1160,11 @@ The incidents and estimated story points change as new rules are added to MTA. T
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Ignored files</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lists the files found in the application that, based on certain rules and MTA configuration, were not processed. See the <code>--userIgnorePath</code> option for more information.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lists the files found in the application that, based on certain rules and {ProductShortName} configuration, were not processed. See the <code>--userIgnorePath</code> option for more information.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">About</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Describes the current version of MTA and provides helpful links for further assistance.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describes the current version of {ProductShortName} and provides helpful links for further assistance.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1454,7 +1454,7 @@ The incidents and estimated story points change as new rules are added to MTA. T
 <p>Access this report from the report landing page by clicking the <strong>Rule providers execution overview</strong> link.</p>
 </div>
 <div class="paragraph">
-<p>This report provides the list of rules that executed when running the MTA migration command against the application.</p>
+<p>This report provides the list of rules that executed when running the {ProductShortName} migration command against the application.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1499,15 +1499,15 @@ The incidents and estimated story points change as new rules are added to MTA. T
 <h2 id="csv-export_cli-guide">4. Exporting the report in CSV format</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>MTA provides the ability to export the report data, including the classifications and hints, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields separated by commas (<code>,</code>).</p>
+<p>{ProductShortName} provides the ability to export the report data, including the classifications and hints, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields separated by commas (<code>,</code>).</p>
 </div>
 <div class="paragraph">
-<p>The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel, OpenOffice Calc, or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from an MTA report.</p>
+<p>The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel, OpenOffice Calc, or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from an {ProductShortName} report.</p>
 </div>
 <div class="sect2">
 <h3 id="export-the-report_cli-guide">4.1. Exporting the report</h3>
 <div class="paragraph">
-<p>To export the report as a CSV file, run MTA with the <code>--exportCSV</code> argument. A CSV file is created in the directory specified by the <code>--output</code> argument for each application analyzed.</p>
+<p>To export the report as a CSV file, run {ProductShortName} with the <code>--exportCSV</code> argument. A CSV file is created in the directory specified by the <code>--output</code> argument for each application analyzed.</p>
 </div>
 <div class="paragraph">
 <p>All discovered issues, spanning all the analyzed applications, are included in the <code>AllIssues.csv</code> file that is exported to the root directory of the report.</p>
@@ -1598,7 +1598,7 @@ The incidents and estimated story points change as new rules are added to MTA. T
 <h2 id="mavenize_cli-guide">5. Mavenizing your application</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>MTA provides the ability to generate an Apache Maven project structure based on the application provided. This will create a directory structure with the necessary Maven Project Object Model (POM) files that specify the appropriate dependencies.</p>
+<p>{ProductShortName} provides the ability to generate an Apache Maven project structure based on the application provided. This will create a directory structure with the necessary Maven Project Object Model (POM) files that specify the appropriate dependencies.</p>
 </div>
 <div class="paragraph">
 <p>Note that this feature is not intended to create a final solution for your project. It is meant to give you a starting point and identify the necessary dependencies and APIs for your application. Your project may require further customization.</p>
@@ -1606,14 +1606,14 @@ The incidents and estimated story points change as new rules are added to MTA. T
 <div class="sect2">
 <h3 id="_generating_the_maven_project_structure">5.1. Generating the Maven project structure</h3>
 <div class="paragraph">
-<p>You can generate a Maven project structure for the provided application by passing in the <code>--mavenize</code> flag when executing MTA.</p>
+<p>You can generate a Maven project structure for the provided application by passing in the <code>--mavenize</code> flag when executing {ProductShortName}.</p>
 </div>
 <div class="paragraph">
-<p>The following example runs MTA using the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> test application:</p>
+<p>The following example runs {ProductShortName} using the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> test application:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code>$ &lt;MTA_HOME&gt;/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --target eap:6 --packages com.acme org.apache --mavenize</code></pre>
+<pre class="highlight nowrap"><code>$ &lt;{ProductShortName}_HOME&gt;/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --target eap:6 --packages com.acme org.apache --mavenize</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1626,13 +1626,13 @@ The incidents and estimated story points change as new rules are added to MTA. T
 <div class="title">Note</div>
 </td>
 <td class="content">
-You can only use the <code>--mavenize</code> option when providing a compiled application for the <code>--input</code> argument. This feature is not available when running MTA against source code.
+You can only use the <code>--mavenize</code> option when providing a compiled application for the <code>--input</code> argument. This feature is not available when running {ProductShortName} against source code.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>You can also use the <code>--mavenizeGroupId</code> option to specify the <code>&lt;groupId&gt;</code> to be used for the POM files. If unspecified, MTA will attempt to identify an appropriate <code>&lt;groupId&gt;</code> for the application, or will default to <code>com.mycompany.mavenized</code>.</p>
+<p>You can also use the <code>--mavenizeGroupId</code> option to specify the <code>&lt;groupId&gt;</code> to be used for the POM files. If unspecified, {ProductShortName} will attempt to identify an appropriate <code>&lt;groupId&gt;</code> for the application, or will default to <code>com.mycompany.mavenized</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1782,13 +1782,13 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 </div>
 </div>
 <div class="sect1">
-<h2 id="optimize-performance_cli-guide">6. Optimizing MTA performance</h2>
+<h2 id="optimize-performance_cli-guide">6. Optimizing {ProductShortName} performance</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>MTA performance depends on a number of factors, including hardware configuration, the number and types of files in the application, the size and number of applications to be evaluated, and whether the application contains source or compiled code. For example, a file that is larger than 10 MB may need a lot of time to process.</p>
+<p>{ProductShortName} performance depends on a number of factors, including hardware configuration, the number and types of files in the application, the size and number of applications to be evaluated, and whether the application contains source or compiled code. For example, a file that is larger than 10 MB may need a lot of time to process.</p>
 </div>
 <div class="paragraph">
-<p>In general, MTA spends about 40% of the time decompiling classes, 40% of the time executing rules, and the remainder of the time processing other tasks and generating reports. This section describes what you can do to improve the performance of MTA.</p>
+<p>In general, {ProductShortName} spends about 40% of the time decompiling classes, 40% of the time executing rules, and the remainder of the time processing other tasks and generating reports. This section describes what you can do to improve the performance of {ProductShortName}.</p>
 </div>
 <div class="sect2">
 <h3 id="_deploying_and_running_the_application">6.1. Deploying and running the application</h3>
@@ -1798,10 +1798,10 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <div class="ulist">
 <ul>
 <li>
-<p>If possible, execute MTA against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.</p>
+<p>If possible, execute {ProductShortName} against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.</p>
 </li>
 <li>
-<p>Specify a comma-separated list of the packages to be evaluated by MTA using the <code>--packages</code> argument on the <code>&lt;MTA_HOME&gt;/bin/mta-cli</code> command line. If you omit this argument, MTA will decompile everything, which has a big impact on performance.</p>
+<p>Specify a comma-separated list of the packages to be evaluated by {ProductShortName} using the <code>--packages</code> argument on the <code>&lt;{ProductShortName}_HOME&gt;/bin/mta-cli</code> command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.</p>
 </li>
 <li>
 <p>Specify the <code>--excludeTags</code> argument where possible to exclude them from processing.</p>
@@ -1813,7 +1813,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <p>Increase your ulimit when analyzing large applications. See <a href="https://access.redhat.com/solutions/60746">this Red Hat Knowledgebase article</a> for instructions on how to do this for Red Hat Enterprise Linux.</p>
 </li>
 <li>
-<p>If you have access to a server that has better resources than your laptop or desktop machine, you may want to consider running MTA on that server.</p>
+<p>If you have access to a server that has better resources than your laptop or desktop machine, you may want to consider running {ProductShortName} on that server.</p>
 </li>
 </ul>
 </div>
@@ -1826,7 +1826,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <div class="ulist">
 <ul>
 <li>
-<p>If you have access to a server that has better resources than your laptop/desktop, then you may want to consider running MTA on that server.</p>
+<p>If you have access to a server that has better resources than your laptop/desktop, then you may want to consider running {ProductShortName} on that server.</p>
 </li>
 <li>
 <p>Very large applications that require decompilation have large memory requirements. 8 GB RAM is recommended. This allows 3 - 4 GB RAM for use by the JVM.</p>
@@ -1841,7 +1841,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 </div>
 </div>
 <div class="sect2">
-<h3 id="exclude-files-and-packages_cli-guide">6.3. Configuring MTA to exclude packages and files</h3>
+<h3 id="exclude-files-and-packages_cli-guide">6.3. Configuring {ProductShortName} to exclude packages and files</h3>
 <div class="sect3">
 <h4 id="exclude-packages_cli-guide">6.3.1. Excluding packages</h4>
 <div class="paragraph">
@@ -1859,7 +1859,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <p>Using the <code>--excludePackages</code> argument.</p>
 </li>
 <li>
-<p>Specifying the packages in a file contained within one of the ignored locations. Each package should be included on a separate line, and the file must end in <code>.package-ignore.txt</code>. For example, see <code>&lt;MTA_HOME&gt;/ignore/proprietary.package-ignore.txt</code>.</p>
+<p>Specifying the packages in a file contained within one of the ignored locations. Each package should be included on a separate line, and the file must end in <code>.package-ignore.txt</code>. For example, see <code>&lt;{ProductShortName}_HOME&gt;/ignore/proprietary.package-ignore.txt</code>.</p>
 </li>
 </ul>
 </div>
@@ -1867,7 +1867,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <div class="sect3">
 <h4 id="exclude-files_cli-guide">6.3.2. Excluding files</h4>
 <div class="paragraph">
-<p>MTA can exclude specific files, such as included libraries or dependencies, during scanning and report generation. Excluded files are defined in a file with the <code>.mta-ignore.txt</code> or <code>.windup-ignore.txt</code> extension within one of the ignored locations.</p>
+<p>{ProductShortName} can exclude specific files, such as included libraries or dependencies, during scanning and report generation. Excluded files are defined in a file with the <code>.mta-ignore.txt</code> or <code>.windup-ignore.txt</code> extension within one of the ignored locations.</p>
 </div>
 <div class="paragraph">
 <p>These files contain a regex string detailing the name to exclude, with one file listed per line. For example, you can exclude the library <code>ant.jar</code> and any Java source files beginning with <code>Example</code> with a file containing the following:</p>
@@ -1882,7 +1882,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <div class="sect3">
 <h4 id="ignored-locations_cli-guide">6.3.3. Searching locations for exclusion</h4>
 <div class="paragraph">
-<p>MTA searches the following locations:</p>
+<p>{ProductShortName} searches the following locations:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1893,7 +1893,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <p><code>~/.windup/ignore/</code></p>
 </li>
 <li>
-<p><code>&lt;MTA_HOME&gt;/ignore/</code></p>
+<p><code>&lt;{ProductShortName}_HOME&gt;/ignore/</code></p>
 </li>
 <li>
 <p>Any files and folders specified by the <code>--userIgnorePath</code> argument</p>
@@ -1911,9 +1911,9 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <h2 id="_reference_material">Appendix A: Reference material</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="cli-args_cli-guide">A.1. About MTA command-line arguments</h3>
+<h3 id="cli-args_cli-guide">A.1. About {ProductShortName} command-line arguments</h3>
 <div class="paragraph">
-<p>The following is a detailed description of the available MTA command line arguments.</p>
+<p>The following is a detailed description of the available {ProductShortName} command line arguments.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1923,7 +1923,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 </td>
 <td class="content">
 <div class="paragraph">
-<p>To run the MTA command without prompting, for example when executing from a script, you must use the following arguments:</p>
+<p>To run the {ProductShortName} command without prompting, for example when executing from a script, you must use the following arguments:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1946,7 +1946,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 </table>
 </div>
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. MTA CLI arguments</caption>
+<caption class="title">Table 1. {ProductShortName} CLI arguments</caption>
 <colgroup>
 <col style="width: 40%;"/>
 <col style="width: 60%;"/>
@@ -1973,13 +1973,13 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--batchMode</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Flag to specify that MTA should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in to the command line.</p>
+<p>Flag to specify that {ProductShortName} should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in to the command line.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--debug</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Flag to run MTA in debug mode.</p>
+<p>Flag to run {ProductShortName} in debug mode.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2033,13 +2033,13 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--exportCSV</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Flag to export the report data to a CSV file on your local file system. MTA creates the file in the directory specified by the <code>--output</code> argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis.</p>
+<p>Flag to export the report data to a CSV file on your local file system. {ProductShortName} creates the file in the directory specified by the <code>--output</code> argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Display the MTA help message.</p>
+<p>Display the {ProductShortName} help message.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2069,7 +2069,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--keepWorkDirs</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Flag to instruct MTA to not delete temporary working files, such as the graph database and extracted archive files. This is useful for debugging purposes.</p>
+<p>Flag to instruct {ProductShortName} to not delete temporary working files, such as the graph database and extracted archive files. This is useful for debugging purposes.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2105,7 +2105,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--mavenizeGroupId</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>When used with the <code>--mavenize</code> option, all generated <code>pom.xml</code> files will use the provided value for their <code>&lt;groupId&gt;</code>. If this argument is omitted, MTA will attempt to determine an appropriate <code>&lt;groupId&gt;</code> based on the application, or will default to <code>com.mycompany.mavenized</code>.</p>
+<p>When used with the <code>--mavenize</code> option, all generated <code>pom.xml</code> files will use the provided value for their <code>&lt;groupId&gt;</code>. If this argument is omitted, {ProductShortName} will attempt to determine an appropriate <code>&lt;groupId&gt;</code> based on the application, or will default to <code>com.mycompany.mavenized</code>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2117,7 +2117,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--output</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify the path to the directory to output the report information generated by MTA.</p>
+<p>Specify the path to the directory to output the report information generated by {ProductShortName}.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2143,7 +2143,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--packages</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A space-delimited list of the packages to be evaluated by MTA. It is highly recommended to use this argument.</p>
+<p>A space-delimited list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -2179,25 +2179,25 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--userIgnorePath</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify a location, in addition to <code>${user.home}/.mta/ignore/</code>, for MTA to identify files that should be ignored.</p>
+<p>Specify a location, in addition to <code>${user.home}/.mta/ignore/</code>, for {ProductShortName} to identify files that should be ignored.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--userLabelsDirectory</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify a location for MTA to look for custom Target Runtime Labels. The value can be a directory containing label files or a single label file. The Target Runtime Label files must use either the <code>.windup.label.xml</code> or <code>.mta.label.xml</code> suffix. The shipped Target Runtime Labels are defined within <code>$MTA_HOME/rules/migration-core/core.windup.label.xml</code>.</p>
+<p>Specify a location for {ProductShortName} to look for custom Target Runtime Labels. The value can be a directory containing label files or a single label file. The Target Runtime Label files must use either the <code>.windup.label.xml</code> or <code>.mta.label.xml</code> suffix. The shipped Target Runtime Labels are defined within <code>${ProductShortName}_HOME/rules/migration-core/core.windup.label.xml</code>.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--userRulesDirectory</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Specify a location, in addition to <code>&lt;MTA_HOME&gt;/rules/</code> and <code>${user.home}/.mta/rules/</code>, for MTA to look for custom MTA rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the <code>.windup.xml</code> or <code>.mta.xml</code> suffix.</p>
+<p>Specify a location, in addition to <code>&lt;{ProductShortName}_HOME&gt;/rules/</code> and <code>${user.home}/.mta/rules/</code>, for {ProductShortName} to look for custom {ProductShortName} rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the <code>.windup.xml</code> or <code>.mta.xml</code> suffix.</p>
 </div></div></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--version</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Display the MTA version.</p>
+<p>Display the {ProductShortName} version.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -2272,7 +2272,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <div class="sect3">
 <h4 id="cli-output-argument_cli-guide">A.1.2. Specifying the output directory</h4>
 <div class="paragraph">
-<p>Specify the path to the directory to output the report information generated by MTA.</p>
+<p>Specify the path to the directory to output the report information generated by {ProductShortName}.</p>
 </div>
 <div class="listingblock">
 <div class="title">Usage</div>
@@ -2296,7 +2296,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 </ul>
 </div>
 <div class="paragraph">
-<p>However, if you specify the <code>--overwrite</code> argument, MTA will proceed to delete and recreate the directory. See the description of this argument for more information.</p>
+<p>However, if you specify the <code>--overwrite</code> argument, {ProductShortName} will proceed to delete and recreate the directory. See the description of this argument for more information.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2311,7 +2311,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>--source</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs MTA to only run the rulesets matching the specified versions. For example, <code>--source eap:5</code>.</p>
+<p>The <code>--source</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, <code>--source eap:5</code>.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -2343,7 +2343,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>--target</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs MTA to only run the rulesets matching the specified versions. For example, <code>--target eap:7</code>.</p>
+<p>The <code>--target</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, <code>--target eap:7</code>.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -2366,7 +2366,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <div class="sect3">
 <h4 id="cli-packages-argument_cli-guide">A.1.5. Selecting packages</h4>
 <div class="paragraph">
-<p>A space-delimited list of the packages to be evaluated by MTA. It is highly recommended to use this argument.</p>
+<p>A space-delimited list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.</p>
 </div>
 <div class="listingblock">
 <div class="title">Usage</div>
@@ -2403,7 +2403,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <div class="sect2">
 <h3 id="tech-tags_cli-guide">A.2. Supported technology tags</h3>
 <div class="paragraph">
-<p>The following technology tags are supported in MTA 5.2.1:</p>
+<p>The following technology tags are supported in {ProductShortName} 5.2.1:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3504,7 +3504,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <div class="sect3">
 <h4 id="_how_story_points_are_estimated_in_rules">A.3.2. How story points are estimated in rules</h4>
 <div class="paragraph">
-<p>Estimating the level of effort for the story points for a rule can be tricky. The following are the general guidelines MTA uses when estimating the level of effort required for a rule.</p>
+<p>Estimating the level of effort for the story points for a rule can be tricky. The following are the general guidelines {ProductShortName} uses when estimating the level of effort required for a rule.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3593,7 +3593,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <div class="ulist">
 <ul>
 <li>
-<p>Send an email to <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a> and let us know what MTA migration rules should cover.</p>
+<p>Send an email to <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a> and let us know what {ProductShortName} migration rules should cover.</p>
 </li>
 <li>
 <p>Provide example applications to test migration rules.</p>
@@ -3638,7 +3638,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <p>Create a core rule.</p>
 </li>
 <li>
-<p>Improve MTA performance or efficiency.</p>
+<p>Improve {ProductShortName} performance or efficiency.</p>
 </li>
 <li>
 <p>See the <a href="https://github.com/windup/windup/wiki/Core-Development-Guide"><em>Core Development Guide</em></a> for information about how to configure your environment and set up the project.</p>
@@ -3657,26 +3657,26 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <div class="ulist">
 <ul>
 <li>
-<p>MTA forums: <a href="https://developer.jboss.org/en/windup" class="bare">https://developer.jboss.org/en/windup</a></p>
+<p>{ProductShortName} forums: <a href="https://developer.jboss.org/en/windup" class="bare">https://developer.jboss.org/en/windup</a></p>
 </li>
 <li>
-<p>MTA Jira issue trackers</p>
+<p>{ProductShortName} Jira issue trackers</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Core MTA: <a href="https://issues.redhat.com/projects/WINDUP" class="bare">https://issues.redhat.com/projects/WINDUP</a></p>
+<p>Core {ProductShortName}: <a href="https://issues.redhat.com/projects/WINDUP" class="bare">https://issues.redhat.com/projects/WINDUP</a></p>
 </li>
 <li>
-<p>MTA Rules: <a href="https://issues.redhat.com/projects/WINDUPRULE" class="bare">https://issues.redhat.com/projects/WINDUPRULE</a></p>
+<p>{ProductShortName} Rules: <a href="https://issues.redhat.com/projects/WINDUPRULE" class="bare">https://issues.redhat.com/projects/WINDUPRULE</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>MTA mailing list: <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a></p>
+<p>{ProductShortName} mailing list: <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a></p>
 </li>
 <li>
-<p>MTA IRC channel: Server FreeNode (<code>irc.freenode.net</code>), channel <code>#windup</code> (<a href="http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html">transcripts</a>).</p>
+<p>{ProductShortName} IRC channel: Server FreeNode (<code>irc.freenode.net</code>), channel <code>#windup</code> (<a href="http://transcripts.jboss.org/channel/irc.freenode.org/%23windup/index.html">transcripts</a>).</p>
 </li>
 </ul>
 </div>
@@ -3684,7 +3684,7 @@ Be sure to reorder the list of modules if necessary so that they are listed in a
 <div class="sect3">
 <h4 id="_reporting_issues">A.4.3. Reporting issues</h4>
 <div class="paragraph">
-<p>MTA uses Jira as its issue tracking system. If you encounter an issue executing MTA, submit a <a href="https://issues.redhat.com/projects/WINDUP">Jira issue</a>.</p>
+<p>{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a <a href="https://issues.redhat.com/projects/WINDUP">Jira issue</a>.</p>
 </div>
 <div class="paragraph">
 <p><br/>

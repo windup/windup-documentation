@@ -10,8 +10,8 @@ You can analyze your projects by running the {PluginName} with a saved run confi
 
 .Procedure
 
-. In the *MTA* perspective, click the *Run* button (image:run_exc.png[Run button]) and select a run configuration.
+. In the *{ProductShortName}* perspective, click the *Run* button (image:run_exc.png[Run button]) and select a run configuration.
 +
 The {PluginName} analyzes your projects. The *Issue Explorer* displays migration issues that are detected with the ruleset.
 
-. When you have finished analyzing your projects, stop the MTA server in the *Issue Explorer* to conserve memory.
+. When you have finished analyzing your projects, stop the {ProductShortName} server in the *Issue Explorer* to conserve memory.

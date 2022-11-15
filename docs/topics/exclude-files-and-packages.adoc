@@ -16,7 +16,7 @@ Any packages that match the defined value are excluded. For example, you can use
 You can exclude packages by either of the following methods:
 
 * Using the `--excludePackages` argument.
-* Specifying the packages in a file contained within one of the ignored locations. Each package should be included on a separate line, and the file must end in `.package-ignore.txt`. For example, see `<MTA_HOME>/ignore/proprietary.package-ignore.txt`.
+* Specifying the packages in a file contained within one of the ignored locations. Each package should be included on a separate line, and the file must end in `.package-ignore.txt`. For example, see `<{ProductShortName}_HOME>/ignore/proprietary.package-ignore.txt`.
 
 [id="exclude-files_{context}"]
 == Excluding files
@@ -37,7 +37,7 @@ These files contain a regex string detailing the name to exclude, with one file 
 
 * `~/.mta/ignore/`
 * `~/.windup/ignore/`
-* `<MTA_HOME>/ignore/`
+* `<{ProductShortName}_HOME>/ignore/`
 * Any files and folders specified by the `--userIgnorePath` argument
 
 Each of these files must conform to the rules specified for excluding packages or files, depending on the type of content to be excluded.

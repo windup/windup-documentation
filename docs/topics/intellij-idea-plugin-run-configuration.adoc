@@ -31,10 +31,10 @@ The location shown in the *Output* is set by the plugin.
 
 . In the list of configurations, right-click the new configuration and select *Run Analysis*.
 +
-The *Console (MTA)* terminal emulator opens, displaying information about the progress of the analysis.
+The *Console ({ProductShortName})* terminal emulator opens, displaying information about the progress of the analysis.
 +
 When the analysis is completed, you can click either *Report* or *Results* below the name of the configuration file you ran.
 
-** *Reports* opens the MTA report, which describes any issues you need to address before you migrate or modernize your application. For more information, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[MTA report] in the _{UserCLIBookName}_.
+** *Reports* opens the {ProductShortName} report, which describes any issues you need to address before you migrate or modernize your application. For more information, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports] in the _{UserCLIBookName}_.
 
 ** *Results* opens a directory displaying hints (issues) per application.

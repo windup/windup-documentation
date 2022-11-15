@@ -446,14 +446,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#making-open-source-more-inclusive_vsc-extension-guide">Making open source more inclusive</a></li>
 <li><a href="#_introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#about-vscode-extension_vsc-extension-guide">1.1. About the MTA extension for Visual Studio Code</a></li>
+<li><a href="#about-vscode-extension_vsc-extension-guide">1.1. About the {ProductShortName} extension for Visual Studio Code</a></li>
 <li><a href="#what-is-the-toolkit_vsc-extension-guide">1.2. About the Migration Toolkit for Applications</a></li>
 </ul>
 </li>
-<li><a href="#installing-vs-code-extension_vsc-extension-guide">2. Installing the MTA extension for Visual Studio Code</a></li>
-<li><a href="#analyzing-projects-with-vs-code-extension_vsc-extension-guide">3. Analyzing your projects with the MTA extension</a>
+<li><a href="#installing-vs-code-extension_vsc-extension-guide">2. Installing the {ProductShortName} extension for Visual Studio Code</a></li>
+<li><a href="#analyzing-projects-with-vs-code-extension_vsc-extension-guide">3. Analyzing your projects with the {ProductShortName} extension</a>
 <ul class="sectlevel2">
-<li><a href="#vs-code-extension-interface_vsc-extension-guide">3.1. MTA extension interface</a></li>
+<li><a href="#vs-code-extension-interface_vsc-extension-guide">3.1. {ProductShortName} extension interface</a></li>
 <li><a href="#vs-code-extension-run-configuration_vsc-extension-guide">3.2. Configuring a run configuration</a></li>
 </ul>
 </li>
@@ -484,25 +484,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_introduction">1. Introduction</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="about-vscode-extension_vsc-extension-guide">1.1. About the MTA extension for Visual Studio Code</h3>
+<h3 id="about-vscode-extension_vsc-extension-guide">1.1. About the {ProductShortName} extension for Visual Studio Code</h3>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) extension for Visual Studio Code helps you migrate and modernize applications.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) extension for Visual Studio Code helps you migrate and modernize applications.</p>
 </div>
 <div class="paragraph">
-<p>The MTA extension is also compatible with Visual Studio Codespaces, the Microsoft cloud-hosted development environment.</p>
+<p>The {ProductShortName} extension is also compatible with Visual Studio Codespaces, the Microsoft cloud-hosted development environment.</p>
 </div>
 <div class="paragraph">
-<p>The MTA extension analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.</p>
+<p>The {ProductShortName} extension analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="what-is-the-toolkit_vsc-extension-guide">1.2. About the Migration Toolkit for Applications</h3>
 <h4 id="_what_is_the_migration_toolkit_for_applications" class="discrete">What is the Migration Toolkit for Applications?</h4>
 <div class="paragraph">
-<p>The Migration Toolkit for Applications (MTA) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
+<p>The Migration Toolkit for Applications ({ProductShortName}) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
 </div>
 <div class="paragraph">
-<p>MTA examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. MTA supports many migration paths including the following examples:</p>
+<p>{ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. {ProductShortName} supports many migration paths including the following examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -524,14 +524,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 <div class="paragraph">
-<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">MTA for developers</a> web page.</p>
+<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">{ProductShortName} for developers</a> web page.</p>
 </div>
 <h4 id="_how_does_the_migration_toolkit_for_applications_simplify_migration" class="discrete">How does the Migration Toolkit for Applications simplify migration?</h4>
 <div class="paragraph">
 <p>The Migration Toolkit for Applications looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
 </div>
 <div class="paragraph">
-<p>MTA generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
+<p>{ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
 </div>
 <h4 id="_how_do_i_learn_more" class="discrete">How do I learn more?</h4>
 <div class="paragraph">
@@ -541,16 +541,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="installing-vs-code-extension_vsc-extension-guide">2. Installing the MTA extension for Visual Studio Code</h2>
+<h2 id="installing-vs-code-extension_vsc-extension-guide">2. Installing the {ProductShortName} extension for Visual Studio Code</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can install the MTA extension for Visual Studio Code (VS Code).</p>
+<p>You can install the {ProductShortName} extension for Visual Studio Code (VS Code).</p>
 </div>
 <h4 id="jdk-hardware-mac-prerequisites_vsc-extension-guide" class="discrete">Prerequisites</h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Java Development Kit (JDK) installed. MTA supports the following JDKs:</p>
+<p>Java Development Kit (JDK) installed. {ProductShortName} supports the following JDKs:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -596,7 +596,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>Select the <strong>Migration Toolkit for Applications</strong> extension and click <strong>Install</strong>.</p>
 <div class="paragraph">
-<p>The MTA extension icon (<span class="image"><img src="topics/images/vs_MTA_extension_icon.png" alt="MTA code extension"/></span>) is displayed on the Activity bar.</p>
+<p>The {ProductShortName} extension icon (<span class="image"><img src="topics/images/vs_{ProductShortName}_extension_icon.png" alt="{ProductShortName} code extension"/></span>) is displayed on the Activity bar.</p>
 </div>
 </li>
 </ol>
@@ -604,34 +604,34 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="analyzing-projects-with-vs-code-extension_vsc-extension-guide">3. Analyzing your projects with the MTA extension</h2>
+<h2 id="analyzing-projects-with-vs-code-extension_vsc-extension-guide">3. Analyzing your projects with the {ProductShortName} extension</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can analyze your projects with the MTA extension by creating a run configuration and running an analysis.</p>
+<p>You can analyze your projects with the {ProductShortName} extension by creating a run configuration and running an analysis.</p>
 </div>
 <div class="sect2">
-<h3 id="vs-code-extension-interface_vsc-extension-guide">3.1. MTA extension interface</h3>
+<h3 id="vs-code-extension-interface_vsc-extension-guide">3.1. {ProductShortName} extension interface</h3>
 <div class="paragraph">
-<p>The interface of the Migration Toolkit for Applications (MTA) extension is designed to make it easier for you to find information and perform actions:</p>
+<p>The interface of the Migration Toolkit for Applications ({ProductShortName}) extension is designed to make it easier for you to find information and perform actions:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>In the left pane, you can see a directory tree named <strong>Analysis Results</strong> with a report icon at its top. You can click the icon to open the MTA report in your browser. Beneath the report icon are the other elements of the tree: the applications analyzed by MTA, the rulesets used, and the issues discovered by the analysis.</p>
+<p>In the left pane, you can see a directory tree named <strong>Analysis Results</strong> with a report icon at its top. You can click the icon to open the {ProductShortName} report in your browser. Beneath the report icon are the other elements of the tree: the applications analyzed by {ProductShortName}, the rulesets used, and the issues discovered by the analysis.</p>
 </li>
 <li>
 <p>In the upper right pane, you can configure an analysis.</p>
 </li>
 <li>
-<p>In the lower right pane, you can see the settings of the configuration, including source, target, and advanced options. You can view the progress of an analysis in this pane. When the analysis is completed, you can click the <strong>Open Report</strong> button to open the MTA report, which describes any issues you need to address before you migrate or modernize your application. For more information, see <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide#review-reports_cli-guide">MTA report</a> in the <em>CLI Guide</em>.</p>
+<p>In the lower right pane, you can see the settings of the configuration, including source, target, and advanced options. You can view the progress of an analysis in this pane. When the analysis is completed, you can click the <strong>Open Report</strong> button to open the {ProductShortName} report, which describes any issues you need to address before you migrate or modernize your application. For more information, see <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide#review-reports_cli-guide">{ProductShortName} report</a> in the <em>CLI Guide</em>.</p>
 </li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="topics/images/vs_code_extension_interface.png" alt="MTA extension interface"/>
+<img src="topics/images/vs_code_extension_interface.png" alt="{ProductShortName} extension interface"/>
 </div>
-<div class="title">Figure 1. MTA extension interface</div>
+<div class="title">Figure 1. {ProductShortName} extension interface</div>
 </div>
 </div>
 <div class="sect2">
@@ -643,7 +643,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="title">Procedure</div>
 <ol class="arabic">
 <li>
-<p>In <strong>Extensions</strong> view, click the Migration Toolkit for Applications icon (<span class="image"><img src="topics/images/vs_MTA_extension_icon.png" alt="MTA code extension"/></span>) on the Activity bar.</p>
+<p>In <strong>Extensions</strong> view, click the Migration Toolkit for Applications icon (<span class="image"><img src="topics/images/vs_{ProductShortName}_extension_icon.png" alt="{ProductShortName} code extension"/></span>) on the Activity bar.</p>
 </li>
 <li>
 <p>Click the <strong>+</strong> (plus sign) next to <strong>Migration Toolkit for Applications</strong> to add a run configuration.</p>
@@ -674,7 +674,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>Right-click the run configuration and select <strong>Run</strong>.</p>
 <div class="paragraph">
-<p>When the analysis is completed, you can click the <strong>Open Report</strong> button to open the MTA report, which describes any issues you need to address before you migrate or modernize your application. For more information, see <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide#review-reports_cli-guide">MTA report</a> in the <em>CLI Guide</em>.</p>
+<p>When the analysis is completed, you can click the <strong>Open Report</strong> button to open the {ProductShortName} report, which describes any issues you need to address before you migrate or modernize your application. For more information, see <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/5.2/html-single/cli_guide#review-reports_cli-guide">{ProductShortName} report</a> in the <em>CLI Guide</em>.</p>
 </div>
 </li>
 </ol>
@@ -686,12 +686,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="reviewing-and-resolving-issues-with-vs-code-extension_vsc-extension-guide">4. Reviewing and resolving migration issues</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can review and resolve migration issues identified by the MTA extension in the left pane.</p>
+<p>You can review and resolve migration issues identified by the {ProductShortName} extension in the left pane.</p>
 </div>
 <div class="sect2">
 <h3 id="vs-code-extension-reviewing-issues_vsc-extension-guide">4.1. Reviewing issues</h3>
 <div class="paragraph">
-<p>You can use the MTA extension icons to prioritize issues based on their severity. You can also see which issues have a <em>Quick Fix</em> automatic code replacement.</p>
+<p>You can use the {ProductShortName} extension icons to prioritize issues based on their severity. You can also see which issues have a <em>Quick Fix</em> automatic code replacement.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Procedure</div>

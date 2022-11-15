@@ -26,10 +26,10 @@ include::snippet_jdk-hardware-mac-prerequisites.adoc[]
 .Procedure
 
 ifdef::cli-guide[]
-. Navigate to the link:{MTADownloadPageURL}[{ProductShortName} Download page] and download the `Migration Toolkit CLI` file.
+. Navigate to the link:{MTRDownloadPageURL}[{ProductShortName} Download page] and download the `Migration Toolkit CLI` file.
 endif::[]
 ifdef::web-console-guide[]
-. Navigate to the link:{MTADownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
+. Navigate to the link:{{ProductShortName}DownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
 endif::[]
 
 . Extract the `.zip` file to a directory of your choice.
@@ -42,7 +42,7 @@ If you are installing on a Windows operating system:
 . If a *Confirm file replace* window is displayed during extraction, click *Yes to all*.
 ====
 +
-When you encounter `<MTA_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
+When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
 
 
 ifdef::web-console-guide[]
@@ -51,13 +51,13 @@ ifdef::web-console-guide[]
 * Linux operating system:
 +
 ----
-$ <MTA_HOME>/run_mta.sh
+$ <{ProductShortName}_HOME>/run_{LC_PSN}.sh
 ----
 
 * Windows operating system:
 +
 ----
-C:\<MTA_HOME>\run_mta.bat
+C:\<{ProductShortName}_HOME>\run_{LC_PSN}.bat
 ----
 
 . Open a browser and navigate to `\http://localhost:8080/mta-web`. The {WebName} login page is displayed in your browser.
