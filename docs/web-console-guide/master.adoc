@@ -127,19 +127,10 @@ include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
 
 // ==== Configuring subversion repositories
 
-include::topics/mta-web-subv-rep.adoc[leveloffset=+3]
-
-// ==== Configuring Maven repositories
-
 // include::topics/
 
-// ===== Configuring a Maven repository
-
-// include::topics/
-
-// ===== Managing repository size
-
-// include::topics/
+// ===Configuring Maven repositories
+include::topics/mta-web-config-maven-rep.adoc[leveloffset=+3]
 
 // === Configuring HTTP and HTTPS proxy settings
 
