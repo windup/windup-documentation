@@ -1,0 +1,17 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="proc_web-downloading-logs-console_{context}"]
+= Downloading logs using the OpenShift console
+[role="_abstract"]
+
+You can download pod logs using the OpenShift console.
+
+.Procedure
+
+. Open the OpenShift console and navigate to *Applications* -> *Pods*.
+. Click the `mta-web-console` pod.
+. Click *Logs*.
+. Click *Download* to download and save a log.

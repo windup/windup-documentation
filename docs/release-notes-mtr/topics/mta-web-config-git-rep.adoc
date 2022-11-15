@@ -1,0 +1,20 @@
+// Module included in the following assemblies:
+//
+// * docs/getting-started-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="mta-web-config-git-rep_{context}"]
+= Configuring repositories
+
+You can configure repositories used by {ProductName} ({ProductShortName}) {WebName} with the following options:
+
+* Configuring Git repositories
+* Configuring Subversion repositories
+* Configuring Maven repositories
+
+== Configuring Git repositories
+
+.Procedure
+
+. In the *Administrator* view, click *Repositories* and then click *Git*.
+. Toggle *Consume insecure Git repositories* to enable configuration.

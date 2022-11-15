@@ -1,0 +1,16 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="plugin-uninstall_{context}"]
+= Uninstalling the {PluginName}
+
+. In Eclipse, navigate to *Help* -> *Installation Details*.
+. In the *Installed Software* tab, select *Windup Feature* and *Windup Feature Developer Resources*.
++
+Press the Ctrl key to select multiple rows.
+
+. Select *Uninstall*.
+. Review the details and click *Finish* to uninstall the plugin.
+. Restart Eclipse for the changes to take effect.

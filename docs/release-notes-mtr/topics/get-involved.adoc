@@ -1,0 +1,27 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+// * docs/maven-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="get-involved_{context}"]
+= Getting involved
+
+To help the {ProductName} cover most application constructs and server configurations, including yours, you can help with any of the following items.
+
+* Send an email to jboss-migration-feedback@redhat.com and let us know what {ProductShortName} migration rules should cover.
+* Provide example applications to test migration rules.
+* Identify application components and problem areas that may be difficult to migrate.
+** Write a short description of these problem migration areas.
+** Write a brief overview describing how to solve the problem migration areas.
+* Try {ProductName} on your application. Be sure to report any issues you encounter.
+* Contribute to the {ProductName} rules repository.
+** Write a {ProductName} rule to identify or automate a migration process.
+** Create a test for the new rule.
+** Details are provided in the link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_].
+* Contribute to the project source code.
+** Create a core rule.
+** Improve {ProductShortName} performance or efficiency.
+** See the link:{ProductDocCoreGuideURL}[_{CoreDevelopmentBookName}_] for information about how to configure your environment and set up the project.
+
+Any level of involvement is greatly appreciated!

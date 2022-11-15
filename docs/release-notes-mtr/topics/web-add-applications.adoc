@@ -1,0 +1,21 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="web-add-applications_{context}"]
+= Adding applications to a project
+
+A project must contain one or more applications.
+
+You can add applications to a project by:
+
+* Uploading applications
+* Registering the directory path of each application
+
+Uploading applications stores them directly on the {ProductShortName} server.
+
+Registering the directory path of an application tells the {ProductShortName} server the location of the application. This method is useful if you expect to update the application because it ensures that the {ProductShortName} server always uses the latest version of the application.
+
+.Adding applications
+image::web-add-apps.png[Adding applications]

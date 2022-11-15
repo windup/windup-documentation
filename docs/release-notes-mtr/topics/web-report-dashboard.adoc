@@ -1,0 +1,15 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="web-report-dashboard_{context}"]
+= Dashboard
+// = Project Dashboard
+
+The dashboard provides a high-level overview of the applications analyzed for this project execution and a summary of the findings from the analysis. You can access this view by clicking on the *Dashboard* link from the Execution details page or from the left-hand navigation menu once inside an execution.
+
+.Project dashboard
+image::error.png[Project Dashboard]
+
+The dashboard displays information such as the number of applications analyzed, the libraries that were recognized, and the dependencies identified. It also shows a breakdown of incidents and story points across all analyzed applications, listed by category and type.

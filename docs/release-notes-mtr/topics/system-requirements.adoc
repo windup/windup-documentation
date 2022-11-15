@@ -1,0 +1,17 @@
+// Module included in the following assemblies:
+//
+// * docs/getting-started-guide/master.adoc
+
+:_content-type: REFERENCE
+[id="system-requirements_{context}"]
+= System requirements
+
+* One of the following Java Development Kits (JDKs):
+
+** OpenJDK 11
+** Oracle JDK 11
+
+* 8 GB RAM
+* If you are installing on macOS, the value of `maxproc` must be `2048` or greater.
+
+// For tips on how to optimize performance, see link:{ProductDocUserGuideURL}#optimize_performance[Optimizing {ProductShortName} performance] in {ProductShortName} _{UserCLIBookName}_.

@@ -1,0 +1,25 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: REFERENCE
+[id="web-report-issues_{context}"]
+= Issues
+//= Migration Issues
+
+The *Issues* view provides a high-level overview of the applications analyzed for this project execution and a summary of the findings from the analysis. You can access this view by clicking on the *Issues* link from the Execution details page or from the left-hand navigation menu once inside an execution.
+
+// TODO: Screenshot of Issues
+.Issues
+image::error.png[Issues]
+
+This view lists all migration issues that were identified during analysis. Each issue can be expanded to display details about the issue and a list of the files with occurrences of this issue.
+
+Click the file name link to open the source for the file. Any issues that were found in this file are shown. Information about the issue and hints on how to resolve it are shown inline.
+
+// TODO: Screenshot of Source (Different than from app details, because of breadcrumb bar?)
+.Issue in source code
+image::error.png[Issue in source code]
+
+// TODO: Mention the link to show the rule, once it works?
+// TODO: What else to say?

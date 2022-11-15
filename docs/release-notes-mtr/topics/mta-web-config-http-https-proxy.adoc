@@ -1,0 +1,20 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-config-http-https-proxy_{context}"]
+= Configuring HTTP and HTTPS proxy settings
+
+You can configure HTTP and HTTPS proxy settings respositories in the *Administrator* view of the {ProductName} ({ProductShortName}) {WebName}.
+
+.Procedure
+
+. In *Administrator* view, click *Repositories* and then click *Proxy*.
+// ![](/Tackle2/Views/ProxyConfig.png)
+. Click either the *HTTP proxy* or the *HTTPS proxy* toggle switch to enable the proxy connection.
+. Enter the following information:
+    * Proxy host
+    * Proxy port
+. Optional: Click either the *HTTP proxy credentials* or the *HTTPS proxy credentials* toggle switch to enable authentication.
+. Select the credential from the list.

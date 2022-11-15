@@ -1,0 +1,39 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes-5.0/master.adoc
+
+:_content-type: REFERENCE
+[id="rn-resolved-issues_{context}"]
+= Resolved issues
+
+At the time of the release, the following resolved issues have been identified as major issues worth highlighting:
+
+For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/browse/WINDUP-3317?filter=12393204[{ProductShortName} {ProductVersion} resolved issues] in Jira.
+
+.Major resolved issues
+[cols="25%,25%,50%",options="header"]
+|====
+|ID
+|Component
+|Summary
+
+|link:https://issues.redhat.com/browse/WINDUP-2622[WINDUP-2622]
+|Web console on {ocp-short}
+|Custom rules do not work on {ocp-short}.
+
+|link:https://issues.redhat.com/browse/WINDUP-3234[WINDUP-3234]
+|Rules engine
+|When an analysis using source mode is run on an application source directory that has the target subdirectory, the contents of the target subdirectory are added to the analysis scope. This leads to duplication or possible errors in the results.
+
+|link:https://issues.redhat.com/browse/WINDUP-3263[WINDUP-3263]
+|Migration - Application
+|The `excludePackages` argument does not work.
+
+|link:https://issues.redhat.com/browse/WINDUP-3233[WINDUP-3233]
+|Rules engine
+|POM files inside a binary are not consistently analyzed.
+
+|link:https://issues.redhat.com/browse/WINDUP-3336[WINDUP-3336]
+|Web console
+|There is a package discovery problem in the {ProductShortName} {WebName} when running in source mode.
+|====

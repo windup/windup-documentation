@@ -1,0 +1,11 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="validation-report-release_{context}"]
+= Validation report
+
+The validation report allows independent rule developers to confirm any custom test rules function as expected. It produces a report that provides details on each test rule, reporting any failures and where they occur.
+
+Additional information on using this report is available at link:{ProductDocRulesGuideURL}#test_rules_junit[Test the rules using JUnit] and link:{ProductDocRulesGuideURL}#validation_report[Validation report] in the _{RulesDevBookName}_.

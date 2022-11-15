@@ -1,0 +1,22 @@
+// Module included in the following assemblies:
+//
+// * docs/getting-started-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="migration-goals_{context}"]
+= Goals of assessing a migration
+
+Many organizations are faced with the challenges of keeping their existing business operations running, while also trying to innovate. There are typically increased expectations to deliver new functionality faster and to reduce cost.
+
+When assessing a migration or modernization effort, it is important to address the challenges that are specific to your organization. Common challenges that organizations face are limited budgets, lack of in-house skills, perceived risks, no known predictable process, and accurate effort estimation in a timely manner.
+
+In general, the goals when assessing a large-scale middleware migration or modernization effort are the following:
+
+* Predicting the level of effort and cost
+* Scheduling application migrations and handling conflicts
+* Identifying all potential risks at a code, infrastructure, process, or knowledge level
+* Predicting the return on investment to make the business case
+* Identifying and mitigating risks to the business
+* Minimizing disruption to existing business operations
+
+Red Hat has developed a strategy to minimize risk and make application migration and modernizations more efficient.
