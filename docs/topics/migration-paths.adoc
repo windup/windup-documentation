@@ -13,23 +13,25 @@ The {ProductName} ({ProductShortName}) supports migrations from third-party ente
 The following table describes the most common supported migration paths.
 
 .Supported migration paths: Source platform &#8658; target
-[cols="2,^1,^1,^1,^1,^1,^1,^1",options="^,header"]
+[cols="2,^1,^1,^1,^1,^1,^1,^1,^1",options="^,header"]
 |====
 
 |Source platform{nbsp}&#8658;
 |JBoss EAP{nbsp}6
 |JBoss EAP{nbsp}7
 |RHOCP
-|OpenJDK 8{nbsp}&{nbsp}11
+|OpenJDK 8,{nbsp}11,{nbsp}&{nbsp}17
 |Apache Camel{nbsp}3
 |Spring Boot on Red{nbsp}Hat Runtimes
 |Quarkus
+|Azure
 
 |Oracle WebLogic Server
 |{icon-check}
 |{icon-check}
 |{icon-check}
 |{icon-check}
+|-
 |-
 |-
 |-
@@ -43,12 +45,14 @@ The following table describes the most common supported migration paths.
 |-
 |-
 |-
+|-
 
 |JBoss EAP 4
 |{icon-check}
 |{icon-x} footnoteref:[note2,Although {ProductShortName} does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform to JBoss EAP 7.]
 |{icon-check}
 |{icon-check}
+|-
 |-
 |-
 |-
@@ -61,12 +65,14 @@ The following table describes the most common supported migration paths.
 |-
 |-
 |-
+|-
 
 |JBoss EAP 6
 |N/A
 |{icon-check}
 |{icon-check}
 |{icon-check}
+|-
 |-
 |-
 |-
@@ -79,12 +85,14 @@ The following table describes the most common supported migration paths.
 |-
 |-
 |-
+|{icon-check}
 
 |Oracle JDK
 |-
 |-
 |{icon-check}
 |{icon-check}
+|-
 |-
 |-
 |-
@@ -97,6 +105,7 @@ The following table describes the most common supported migration paths.
 |{icon-check}
 |-
 |-
+|-
 
 |Spring Boot
 |-
@@ -104,6 +113,7 @@ The following table describes the most common supported migration paths.
 |{icon-check}
 |{icon-check}
 |-
+|{icon-check}
 |{icon-check}
 |{icon-check}
 
@@ -115,5 +125,5 @@ The following table describes the most common supported migration paths.
 |-
 |-
 |-
-
+|-
 |====

@@ -16,13 +16,13 @@ include::topics/making-open-source-more-inclusive.adoc[]
 // == Introduction
 
 // About the {WebConsoleBookName}
-// include::topics/about-console-guide.adoc[leveloffset=+2]
+include::topics/mta-about-console-guide.adoc[leveloffset=+2]
 
 // About {ProductName}
-// include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
 // About the {WebName}
-// include::topics/about-the-web-console.adoc[leveloffset=+2]
+include::topics/about-the-user-interface.adoc[leveloffset=+2]
 
 // == User interface views
 
@@ -195,4 +195,4 @@ include::topics/mta-6-installing-web-console-on-openshift.adoc[leveloffset=+1]
 // **********************************
 include::topics/templates/revision-info.adoc[]
 
-:web-console-guide!:
+:!web-console-guide:
