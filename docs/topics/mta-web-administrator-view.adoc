@@ -1,0 +1,66 @@
+// Module included in the following assemblies:
+//
+// * docs/getting-started-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="mta-web-administration-view_{context}"]
+= User Interface views
+
+The {ProductName} ({ProductShortName}) {WebName} and has two user interfaces with different functionalities:
+
+* Administrator view
+* Developer view
+
+== Administrator view
+If you are an administrator, you can use the *administrator* view of {ProductShortName} {WebName} to manage the configuration of an instance.
+//![](/Tackle2/Views/AdminMenu.png)
+
+=== Credentials
+You can use *Credentials* view to create and manage credentials to access private repositories.
+//![](/Tackle2/Views/CredMain.png)
+
+The credentials page displays the available credentials, *Edit* and *Delete* buttons and the following fields:
+
+* *Name*
+* *Description*
+* *Type*
+** *Source Control*
+** *Username/Password*
+** *Source Private Key/Passphrase*
+** *Maven Settings File*
+** *Proxy*
+* *Type specific information*
+* *Created by*
+
+[NOTE]
+====
+Credential information entered, such as keys and passphrases, is hidden or displayed as [Encrypted], except for Maven settings files.  When Maven setting files are created, the file is uploaded and its contents are displayed in the text box to enable the user to make changes if desired. [Encrypted] only appears on edit for Maven Settings files.
+====
+
+=== Repositories
+The repository management module configures how the repositories can be consumed by {ProductShortName} {WebName} and has the following options:
+
+//![](/Tackle2/Views/GitConfig.png)
+* *Git configuration*
+** *Consume insecure Git repositories*
+//![](/Tackle2/Views/SubvConfig.png)
+* *Subversion configuration*
+** *Consume insecure Subversion repositories*
+//![](/Tackle2/Views/MavenConfig.png)
+
+* *Maven configuration*
+** *Manage repository size*
+** *Consume insecure artifact repositories*
+
+=== Proxy
+You can configure HTTP and HTTPS proxy settings and credentials with the following steps.
+
+.Procedure
+
+In the *Proxy* view configure the proxies and enter the following information:
+//![](/Tackle2/Views/ProxyConfig.png)
+
+* Proxy host
+* Proxy port
+* Optional: Authentication
+** Proxy credentials
