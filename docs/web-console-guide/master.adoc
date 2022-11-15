@@ -73,7 +73,7 @@ Use *Administrator* view to configure your instance of the {ProductName} ({Produ
 
 * Configuring credentials for private respositories
 * Configuring Git, subversuion, and Maven repositories
-* Configuring HTTP and HTTPS proxy xsettings
+* Configuring HTTP and HTTPS proxy settings
 
 [NOTE]
 ====
@@ -105,7 +105,7 @@ You can use the *Repositories* view of {ProductName} ({ProductShortName}) {WebNa
 
 include::topics/mta-web-config-maven-repo.adoc[leveloffset=+4]
 include::topics/mta-web-config-maven-repo-size.adoc[leveloffset=+4]
-include::topics/mta-web-config-http-https-proxy.adoc[leveloffset=+3]
+include::topics/mta-web-config-http-https-proxy.adoc[leveloffset=+2]
 
 // === Seeding instances
 
