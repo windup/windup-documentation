@@ -31,6 +31,7 @@ include::topics/making-open-source-more-inclusive.adoc[]
 // === Administrator view
 
 // Intro about the three sets of activities
+include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
 
 // include::topics/ about credentials [all topic names that do not end in .adoc are just made up names; the real module names will need to follow our documentation rules]
 // include::topics/ about repositories
@@ -93,7 +94,7 @@ include::topics/mta-6-installing-web-console-on-openshift.adoc[leveloffset=+1]
 
 // include::topics/
 
-/ ==== Configuring subversion repositories
+// ==== Configuring subversion repositories
 
 // include::topics/
 
