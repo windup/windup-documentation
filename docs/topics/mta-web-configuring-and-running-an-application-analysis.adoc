@@ -1,0 +1,95 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-configuring-and-running-an-application-analysis_{context}"]
+= Configuring and running an application analysis
+
+You can analyze more than one application at a time against more than one transformation target in the same analysis.
+
+.Procedure
+
+. In *Development* view, click *Application inventory*.
+. Click the *Analysis* tab.
+. Select the applications you want to analyze.
++
+// ![](/Tackle2/AppAssessAnalyze/SelectManageCred.png)
+
+. Review the credentials assigned to the application.
+. Click *Analyze*.
++
+// ![](/Tackle2/AppAssessAnalyze/AnalysisMode.png)
+
+. Select the *Analysis mode* from the list. Valid options are:
+* Binary.
+* Source code.
+* Source code and dependencies.
+* Upload a local binary. This option only appears if you are analyzing a single application.
+
+. If you choose *Upload a local binary*, a window opens and you are prompted to *Upload a local binary*. Either drag and drop a file into the area provided or click *Upload* and then select the file to upload.
+
+. Click *Next*.
+. Select one or more target options for the analysis:
+
+* Application server migration to:
+** JBoss EAP 7
+** JBoss EAP 6
+* Containerization
+* Quarkus
+* OracleJDK to OpenJDK
+* OpenJDK - upgrades to one of the following JDK versions:
+** OpenJDK 11
+** OpenJDK 17
+* Linux - ensures there are no Microsoft Windows paths hard-coded into your applications
+* Jakarta EE 9 - for migrating from Java EE 8 to Jakarta EE 9
+* Spring Boot on Red Hat Runtimes
+* Open Liberty
+* Camel -- for migrating from Apache Camel 2 to Apache Camel 3
+* Azure
+** Azure App Service
+
+. Click *Next*.
+. Select one of the following *Scope* options to better focus the analysis:
+
+* Application and internal dependencies only.
+* Application and all dependencies, including known Open Source libraries.
+* Select the list of packages to be analyzed manually. If you choose this option, type the file name and click *Add*.
+* Exclude packages. If you choose this option, type the name of the package name and click *Add*.
+
+. Click *Next*.
+. In *Advanced*, set *Custom rules* by typing a name or by searching and clicking *Add Rules*.
+. Set any of the following options, if needed:
+
+* Target
+* Source(s)
+* Excluded rules tags: Rules with these tags are not processed. Add or delete as needed.
+* Enable transaction report: Select the checkbox to generate a DIVA report that displays the call stack, which executes operations on relational database tables.
++
+[NOTE]
+====
+The Transactions report is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+====
++
+[NOTE]
+====
+Analysis engines use standard rules for a comprehensive set of migration targets, but if the target is not included or is a customized framework, custom rules can be added. Custom rules files are validated.
+====
+
+. Click *Next*.
+. In *Review*, verify the analysis parameters.
+. Click *Run*.
++
+Analysis status is `Scheduled` as {ProductShortName} downloads the image for the container to execute. When the image is downloaded, the status changes to `In-progress.`
++
+[NOTE]
+====
+Analysis takes minutes to hours to run depending on the size of the application and the capacity and resources of the cluster.
+====
++
+[TIP]
+====
+{ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time.  With more cluster capacity, more analysis processes can be executed in parallel.
+====
+
+. When analysis is complete, you can click the *Report* link to see the results of the analysis.
