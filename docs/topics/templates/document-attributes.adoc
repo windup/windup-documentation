@@ -70,9 +70,6 @@ endif::[]
 :ocp-short: OpenShift Container Platform
 :ocp-first: {ocp-full} (RHOCP)
 
-// This book is on GitHub wiki only
-:CoreDevelopmentBookName: Core Development Guide
-
 // ********************
 // * Product versions *
 // ********************
@@ -80,12 +77,14 @@ endif::[]
 // :ProductRelease: 4
 // :ProductVersion: 4.0
 //Questions
-:ProductDistributionVersion: 5.3.0.Final
-:ProductDistribution: mta-cli-{ProductDistributionVersion}
+:ProductDistributionVersion: 6.0.0.GA-redhat-00002
+:ProductDistributionVersion: 1.0.0.GA-redhat-00001
+:ProductDistribution: mta-6.0.0.GA-offline.zip
+:ProductDistribution: mtr-1.0.0.GA-offline.zip
 :MavenProductVersion: 5.3.0.Final
 
 // ********
-// * URLs *
+// * MTA URLs *
 // ********
 
 :IntroToMTABookName: Introduction to the {DocInfoProductName}
@@ -94,6 +93,22 @@ endif::[]
 :EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_codeready_studio_guide
 :IntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
 :ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_migration_toolkit_for_applications
+:ProductDocUserInterfaceGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/user_interface_guide
+:ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
+:ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
+:ProductDocIntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
+:OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
+:LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
+
+// ********
+// * MTR URLs *
+// ********
+:IntroToMTRBookName: Introduction to the {DocInfoProductName}
+:ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
+:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
+:EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_codeready_studio_guide
+:IntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
+:ProductDocIntroToMTRGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_migration_toolkit_for_runtimes
 :ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/web_console_guide
 :ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
 :ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
@@ -102,16 +117,14 @@ endif::[]
 :LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
 
 //What about these ones?
-//Links to Jira WINDUP and WINUPRULES project pages:
-:JiraWindupURL: https://issues.redhat.com/projects/WINDUP
-:JiraWindupRulesURL: https://issues.redhat.com/projects/WINDUPRULE
-
-// Point to the GitHub wiki version since there is no product version of this guide.
-:ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
+//Links to MTA and MTR Jira project pages:
+:JiraMTRURL: https://issues.redhat.com/projects/WINDUP
+:JiraMTAURL: https://issues.redhat.com/projects/TACKLE
 
 // URLs for downloads on developers.redhat.com
 :MTADownloadPageURL: https://developers.redhat.com/products/mta/download
-:CodeReadyStudioDownloadPageURL: https://developers.redhat.com/products/codeready-studio/download/
+:MTRDownloadPageURL: https://developers.redhat.com/products/mtr/download
+:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
 
 // KBase Article links:
 :KBArticleTechnologyPreview: https://access.redhat.com/support/offerings/techpreview
