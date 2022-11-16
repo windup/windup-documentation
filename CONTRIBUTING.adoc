@@ -11,25 +11,25 @@ Use the following steps to submit a change to the Windup documentation repositor
 Click the *Fork* button in the top right corner of the page.
 . Clone the forked repository locally.
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 $ git clone git@github.com:YOUR_USERNAME/windup-documentation.git
 ----
 . Add the upstream repository.
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 git remote add -f upstream git@github.com:windup/windup-documentation.git
 ----
 . Get the latest changes.
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 $ git fetch upstream
 ----
 . Check out a topic branch.
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 $ git checkout -b BRANCH_NAME upstream/master
 ----
@@ -39,7 +39,7 @@ The documentation is written in link:http://asciidoc.org/[AsciiDoc]. Review the 
 . Build the guides to verify your changes.
 .. Navigate to the appropriate guide's directory and issue the following command.  Note that you must have link:http://asciidoctor.org/[Asciidoctor] installed.
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 $ cd docs/cli-guide/
 $ asciidoctor -t -dbook -a toc -o html/cli-guide.html master.adoc
@@ -47,19 +47,19 @@ $ asciidoctor -t -dbook -a toc -o html/cli-guide.html master.adoc
 .. View the generated HTML file in a browser.
 . Add each new or updated file to git.
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 $ git add FILE_NAME.adoc
 ----
 . Commit the changes locally.
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 $ git commit -m "My commit message."
 ----
 . Push the changes to your forked repository.
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 $ git push origin HEAD
 ----
@@ -72,7 +72,7 @@ $ git push origin HEAD
 
 Navigate to the appropriate guide's directory and issue the following command.  Note that you must have link:http://asciidoctor.org/[Asciidoctor] installed.
 
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 $ cd docs/cli-guide/
 $ asciidoctor -t -dbook -a toc -o html/cli-guide.html master.adoc
@@ -101,7 +101,7 @@ For a comprehensive reference of AsciiDoc syntax, see the link:http://asciidoc.o
 
 * Headings
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 = Heading Level 1
 == Heading Level 2
@@ -109,32 +109,32 @@ For a comprehensive reference of AsciiDoc syntax, see the link:http://asciidoc.o
 ----
 * Bold text
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
  *Bold text*
 ----
 * Italic text
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 _Italic text_
 ----
 * Monospace text
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 `Monospace text`
 ----
 * Bullets
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 * Item one
 * Item two
 ----
 * Numbered list
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 . Step one
 . Step two
@@ -158,7 +158,7 @@ System.out.println("Hello");
 
 .Example master.adoc File
 
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 = My Guide Title
 
@@ -166,7 +166,7 @@ System.out.println("Hello");
 ----
 
 .Example my-topic.adoc File
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 [[my_anchor]]
 = My Heading
@@ -184,7 +184,7 @@ Text here.
 Use `xref` to link to a section within the same guide. You must define an explicit anchor in order to link.
 
 .Link to a Section in the Same Guide
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 For more information, see xref:section_anchor[This Section].
 ...
@@ -197,7 +197,7 @@ For more information, see xref:section_anchor[This Section].
 Use `link` to reference an external URL.
 
 .Link to an External Link
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 Navigate to the link:https://github.com/windup/windup-documentation[Windup GitHub repository].
 ----
@@ -210,7 +210,7 @@ The Windup documentation defines several AsciiDoc attributes in the `docs/templa
 
 Define an attribute in the `document-attributes.adoc` file using the following syntax.
 
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 :ProductVersion: 5.0.0.Final
 ----
@@ -219,7 +219,7 @@ Define an attribute in the `document-attributes.adoc` file using the following s
 
 An attribute can then be referenced in an AsciiDoc file using the following syntax.
 
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 The Windup version is {ProductVersion}.
 ----

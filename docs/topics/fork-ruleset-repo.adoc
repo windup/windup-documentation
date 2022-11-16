@@ -13,7 +13,7 @@ You must have the link:http://git-scm.com/[`git`] client installed on your machi
 . Click the `Fork` link on the https://github.com/windup/windup-rulesets/[{ProductName} Rulesets] GitHub page to create the project in your own Git. The forked GitHub repository URL created by the fork should look like this: `\https://github.com/<YOUR_USER_NAME>/windup-rulesets.git`.
 . Clone your {ProductName} rulesets repository to your local file system:
 +
-[options="nowrap",subs="+quotes"]
+[options="nowrap",subs="attributes+"]
 ----
 $ git clone https://github.com/<YOUR_USER_NAME>/windup-rulesets.git
 ----

@@ -38,7 +38,7 @@ You can change anything in the rule definition. The new rule overrides the origi
 The following rule override example changes the `effort` of the `weblogic-02000` rule in the `weblogic` ruleset from `1` to `3`:
 
 .Rule override definition example
-[source,xml,options="nowrap"]
+[source,xml,subs="attributes+"]
 ----
 <?xml version="1.0"?>
 <ruleset id="weblogic"
@@ -77,7 +77,7 @@ When you run {ProductShortName}, this rule overrides the original rule with the 
 To disable a rule, create a rule override definition with an empty `<rule>` element according to the following example:
 
 .Rule override definition example to disable a rule
-[source,xml,options="nowrap"]
+[source,xml,subs="attributes+"]
 ----
 <?xml version="1.0"?>
 <ruleset id="weblogic"

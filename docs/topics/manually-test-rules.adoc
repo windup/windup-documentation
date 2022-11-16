@@ -8,13 +8,14 @@
 
 You can run an XML rule against your application file to test it:
 
+[source,terminal,subs="attributes+"]
 ----
-$ <MTR_HOME>/bin/mtr-cli [--sourceMode] --input <INPUT_ARCHIVE_OR_FOLDER> --output <OUTPUT_REPORT_DIRECTORY> --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2> <PACKAGE_N>
+$ <{ProductShortName}_HOME>/bin/windup-cli [--sourceMode] --input <INPUT_ARCHIVE_OR_FOLDER> --output <OUTPUT_REPORT_DIRECTORY> --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2> <PACKAGE_N>
 ----
 
 You should see the following result:
 
-[options="nowrap",subs="+quotes"]
+[options="nowrap",subs="attributes+"]
 ----
 Report created: <OUTPUT_REPORT_DIRECTORY>/index.html
               Access it at this URL: file:///<OUTPUT_REPORT_DIRECTORY>/index.html

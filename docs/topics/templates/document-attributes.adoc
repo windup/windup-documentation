@@ -15,10 +15,11 @@ ifdef::mta[]
 :DocInfoProductName: Migration Toolkit for Applications
 :DocInfoProductNumber: 6.0
 :ProductShortName: MTA
-:LC_PSN: mta:
-:WebName: user interface
-:WebNameTitle: user interface
+:LC_PSN: mta
+:WebName: User Interface
+:WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
+:LC_PSN: mta
 :DocInfoProductNameURL: migration_toolkit_for_applications
 :WebConsoleBookName: {WebNameTitle} Guide
 :ProductVersion: 6.0.0
@@ -44,6 +45,7 @@ ifdef::mtr[]
 :PluginName: MTR plugin
 :ProductDistributionVersion: 1.0.0.GA-redhat-00001
 :ProductDistribution: mtr-1.0.0.GA-offline.zip
+:ProductVersion: 1.0.0
 :MTRDownloadPageURL: https://developers.redhat.com/products/mtr/download
 endif::[]
 
@@ -85,9 +87,11 @@ endif::[]
 :ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
 :EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_codeready_studio_guide
+
 :IntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
 :ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
 :ProductDocUserInterfaceGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/{WebNameURL}
+
 :ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
 :ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
 :ProductDocIntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
@@ -101,6 +105,7 @@ endif::[]
 :JiraMTAURL: https://issues.redhat.com/projects/TACKLE
 
 // URLs for downloads on developers.redhat.com
+
 :CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
 
 // KBase Article links:

@@ -10,7 +10,7 @@ NOTE: If you have installed {WebName} on OpenShift, authentication is already en
 
 Run the following script to require users to log in before accessing the {WebName}. This script configures the Red Hat Single Sign-On login page to require users to authenticate before granting access to the {WebName}.
 
-[source,options="nowrap",subs="+quotes"]
+[source,options="nowrap",subs="attributes+"]
 ----
 $ <{ProductShortName}_HOME>/switch_to_authentication_required.sh
 ----
