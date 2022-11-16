@@ -52,14 +52,14 @@ ifdef::web-console-guide[]
 +
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/run_{LC_PSN}.sh
+$ <MTR_HOME>/run_mtr.sh
 ----
 
 * Windows operating system:
 +
 [source,terminal,subs="attributes+"]
 ----
-C:\<{ProductShortName}_HOME>\run_{LC_PSN}.bat
+C:\<MTR_HOME>\run_mtr}.bat
 ----
 
 . Open a browser and navigate to `\http://localhost:8080/mta-web`. The {WebName} login page is displayed in your browser.
