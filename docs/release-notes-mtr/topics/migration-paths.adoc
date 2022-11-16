@@ -1,0 +1,129 @@
+// Module included in the following assemblies:
+//
+// * docs/getting-started-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="migration-paths_{context}"]
+= Supported migration paths
+
+The {ProductName} ({ProductShortName}) supports migrations from third-party enterprise application servers, such as Oracle WebLogic Server, to JBoss Enterprise Application Platform (JBoss EAP) and upgrades to the latest release of JBoss EAP.
+
+{ProductShortName} provides a comprehensive set of rules to assess the suitability of your applications for containerization and deployment on Red Hat OpenShift Container Platform (RHOCP). You can run an {ProductShortName} analysis to assess your applications' suitability for migration to multiple target platforms.
+
+The following table describes the most common supported migration paths.
+
+.Supported migration paths: Source platform &#8658; target
+[cols="2,^1,^1,^1,^1,^1,^1,^1,^1",options="^,header"]
+|====
+
+|Source platform{nbsp}&#8658;
+|JBoss EAP{nbsp}6
+|JBoss EAP{nbsp}7
+|RHOCP
+|OpenJDK 8,{nbsp}11,{nbsp}&{nbsp}17
+|Apache Camel{nbsp}3
+|Spring Boot on Red{nbsp}Hat Runtimes
+|Quarkus
+|Azure
+
+|Oracle WebLogic Server
+|{icon-check}
+|{icon-check}
+|{icon-check}
+|{icon-check}
+|-
+|-
+|-
+|-
+
+
+|IBM WebSphere Application Server
+|{icon-check}
+|{icon-check}
+|{icon-check}
+|{icon-check}
+|-
+|-
+|-
+|-
+
+|JBoss EAP 4
+|{icon-check}
+|{icon-x} footnoteref:[note2,Although {ProductShortName} does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform to JBoss EAP 7.]
+|{icon-check}
+|{icon-check}
+|-
+|-
+|-
+|-
+
+|JBoss EAP 5
+|{icon-check}
+|{icon-check}
+|{icon-check}
+|{icon-check}
+|-
+|-
+|-
+|-
+
+|JBoss EAP 6
+|N/A
+|{icon-check}
+|{icon-check}
+|{icon-check}
+|-
+|-
+|-
+|-
+
+|JBoss EAP 7
+|N/A
+|{icon-check}
+|{icon-check}
+|{icon-check}
+|-
+|-
+|-
+|{icon-check}
+
+|Oracle JDK
+|-
+|-
+|{icon-check}
+|{icon-check}
+|-
+|-
+|-
+|-
+
+|Apache Camel 2
+|-
+|-
+|{icon-check}
+|{icon-check}
+|{icon-check}
+|-
+|-
+|-
+
+|Spring Boot
+|-
+|-
+|{icon-check}
+|{icon-check}
+|-
+|{icon-check}
+|{icon-check}
+|{icon-check}
+
+|Java application
+|-
+|-
+|{icon-check}
+|{icon-check}
+|-
+|-
+|-
+|-
+|====

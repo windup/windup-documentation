@@ -1,0 +1,42 @@
+// Module included in the following assemblies:
+//
+// * docs/getting-started-guide/master.adoc
+// * docs/cli-guide/master.adoc
+// * docs/maven-guide/master.adoc
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+// * docs/vs-code-extension-guide/master.adoc
+// * docs/web-console-guide/master.adoc
+
+[[about_mta]]
+:_content-type: CONCEPT
+[id="mta-what-is-the-toolkit_{context}"]
+= About the {ProductName}
+
+[discrete]
+== What is the {ProductName}?
+
+{ProductName} ({ProductShortName}) accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.
+
+{ProductShortName} uses an extensive questionaire as the the basis for assessing your applications, enabling you to estimate the difficulty, time, and other resources needed to prepare an application for containerization. You can use the results of an assessment as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work first, and which are not suitable for containerization.
+
+{ProductShortName} analyzes applications with by applying one or more rulesets to each application considered to determine which specific lines of that application must be modified before it can be modernized.
+
+{ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. {ProductShortName} supports many migration paths including the following:
+
+* Upgrading to the latest release of Red Hat JBoss Enterprise Application Platform
+* Migrating from Oracle WebLogic or IBM WebSphere Application Server to Red Hat JBoss Enterprise Application Platform
+* Containerizing applications and making them cloud-ready
+* Migrating from Java Spring Boot to Quarkus
+* Upgrading from OpenJDK 8 to OpenJDK 11
+* Upgrading from OpenJDK 11 to OpenJDK 17
+* Migrating EAP Java applicatons to Azure App Service
+* Migrating Spring Boot Java applications to Azure App Service
+
+For more information about use cases and migration paths, see the link:https://developers.redhat.com/products/mta/use-cases[MTA for developers] web page.
+
+[discrete]
+== How does the {ProductName} simplify migration?
+
+The {ProductName} looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.
+
+{ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.

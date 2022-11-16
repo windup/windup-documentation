@@ -1,0 +1,69 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+ifdef::cli-guide[]
+[id="installing-web-console-or-cli-tool_{context}"]
+= Installing the {CLINameTitle}
+
+You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems.
+endif::[]
+ifdef::web-console-guide[]
+
+[id="installing-web-console-linux-win-mac_{context}"]
+= Installing the {WebName} on Linux, Windows, or macOS
+
+You can install the {WebName} on Linux, Windows, or macOS operating systems and access the {WebName} in a browser.
+
+The {WebName} has been tested with Chrome and Firefox.
+endif::[]
+
+.Prerequisites
+include::snippet_jdk-hardware-mac-prerequisites.adoc[]
+
+.Procedure
+
+ifdef::cli-guide[]
+. Navigate to the link:{MTRDownloadPageURL}[{ProductShortName} Download page] and download the `Migration Toolkit CLI` file.
+endif::[]
+ifdef::web-console-guide[]
+. Navigate to the link:{{ProductShortName}DownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
+endif::[]
+
+. Extract the `.zip` file to a directory of your choice.
++
+[NOTE]
+====
+If you are installing on a Windows operating system:
+
+. Extract the `.zip` file to a folder named `mta` to avoid a `Path too long` error. Alternatively, extract the file with link:https://www.7-zip.org/download.html[7-Zip] to a folder of any name you choose.
+. If a *Confirm file replace* window is displayed during extraction, click *Yes to all*.
+====
++
+When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
+
+
+ifdef::web-console-guide[]
+. Start the {WebName}:
+
+* Linux operating system:
++
+----
+$ <{ProductShortName}_HOME>/run_{LC_PSN}.sh
+----
+
+* Windows operating system:
++
+----
+C:\<{ProductShortName}_HOME>\run_{LC_PSN}.bat
+----
+
+. Open a browser and navigate to `\http://localhost:8080/mta-web`. The {WebName} login page is displayed in your browser.
++
+.Web console login page
+image::web-login-openshift.png[web console login page]
++
+The default user is `mta` and the default password is `password`.
+endif::[]

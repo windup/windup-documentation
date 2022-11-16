@@ -1,0 +1,32 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-importing-an-app-list_{context}"]
+= Importing an application list
+
+You can import a .csv file containing a list of applications and their attributes to the {ProductName} ({ProductShortName}) {WebName}.
+
+[NOTE]
+====
+Importing a list of applications only adds applications, it does not overwrite any existing ones.
+====
+
+.Procedure
+
+. Review the import file to ensure it contains all the required information in the required format.
+. In *Developer* view, click *Application Inventory*.
+. Click the Options menu {kebab} to the right of *Review*.
+. Click *Import*.
++
+// ![](/Tackle2/AddingApps/Import.png)
+. Browse to the desired file and click *Open*.
+. Optional: Select *Enable automatic creation of missing entities*. By default, this option is selected.
+. Verify the import has completed and check the number of rows accepted or rejected.
+. Review the imported applications by clicking the arrow to the left of the checkbox.
++
+[IMPORTANT]
+====
+Rows accepted may not match the number of applications in the Application inventory list because some rows are dependencies.  To verify, check the *Record Type* column of the CSV file for applications defined as `1` and dependencies as `2`.
+====

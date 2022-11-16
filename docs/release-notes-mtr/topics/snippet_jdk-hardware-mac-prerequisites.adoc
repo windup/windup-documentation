@@ -1,0 +1,8 @@
+:_content-type: SNIPPET
+* Java Development Kit (JDK) installed. {ProductShortName} supports the following JDKs:
+
+** OpenJDK 11
+** Oracle JDK 11
+
+* 8 GB RAM
+* macOS installation: the value of `maxproc` must be `2048` or greater.

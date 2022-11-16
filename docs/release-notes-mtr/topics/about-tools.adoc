@@ -1,0 +1,25 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="about-tools_{context}"]
+= About the tools
+
+The {ProductName} ({ProductShortName}) provides several tools to assist you in the various stages of your migration and modernization efforts. Review the details of each tool to determine which is right for your project.
+
+ifdef::mta[]
+* User interface
+endif::[]
+
+ifdef::mtr[]
+* Web console
+endif::[]
+
+* {ProductName} Operator
+* CLI
+* IDE addons for:
+** Eclipse and Red Hat CodeReady Studio
+** Visual Studio Code, Visual Studio Codespaces, and Eclipse Che
+** IntelliJ IDEA
+* {MavenName}

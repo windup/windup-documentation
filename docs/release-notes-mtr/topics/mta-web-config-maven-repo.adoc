@@ -1,0 +1,15 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-config-maven-repo_{context}"]
+= Configuring a Maven repository
+
+You can configure a Maven repository in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
+
+.Procedure
+
+. In *Administrator* view, click *Repositories* and then click *Maven*.
+// ![](/Tackle2/Views/MavenConfig.png)
+. Toggle the *Consume insecure artifact repositories* switch to the right.

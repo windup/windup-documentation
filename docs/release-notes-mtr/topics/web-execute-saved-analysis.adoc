@@ -1,0 +1,17 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="web-execute-saved-analysis_{context}"]
+= Running a saved analysis
+
+You can run the last saved version of a project from the *Analysis results* screen.
+
+.Procedure
+
+. In the {WebName}, click *Analysis results*.
+. Select a *Project*.
+. Click *Run analysis*.
++
+The progress of your analysis is displayed in the *Active analysis* portion of the *Analysis results* screen.

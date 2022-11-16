@@ -1,0 +1,51 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+ifdef::eclipse-code-ready-studio-guide[]
+[id="eclipse-installing-plugin-connected-environment_{context}"]
+= Installing in a connected environment
+
+You can install the {PluginName} in a connected environment.
+endif::[]
+ifdef::disconnected[]
+[id="eclipse-installing-plugin-disconnected-environment_{context}"]
+= Installing in a disconnected environment
+
+You can install the {PluginName} in a disconnected network environment.
+endif::[]
+
+The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Developers 2022-03 and Red Hat CodeReady Studio 12.21.3.GA.
+
+.Prerequisites
+include::snippet_jdk-hardware-mac-prerequisites.adoc[]
+
+* link:{CodeReadyStudioDownloadPageURL}[Red Hat CodeReady Studio] _or_ link:https://www.eclipse.org/downloads/packages/release/2022-03/r/eclipse-ide-java-developers[Eclipse IDE for Java Enterprise Developers 2022-03]
+* JBoss Tools, installed with the link:https://www.eclipse.org/mpc/[Eclipse Marketplace Client]
+* link:http://download.eclipse.org/mylyn/releases/latest[Mylyn SDK and frameworks], installed with Eclipse
+
+ifdef::disconnected[]
+* Connected workstation for all downloads
+endif::[]
+
+.Procedure
+
+ifdef::disconnected[]
+. On a computer with network access, navigate to the {ProductName} link:{{ProductShortName}DownloadPageURL}[download site] and download the `{IDEPluginFilename}` file.
+endif::[]
+. Launch Eclipse or CodeReady Studio.
+. From the menu bar, select *Help* -> *Install New Software*.
+. Next to the *Work with* field, click *Add*.
+. In the *Name* field, enter `{ProductShortName}`.
+ifdef::eclipse-code-ready-studio-guide[]
+. In the *Location* field, enter `\http://download.jboss.org/jbosstools/photon/stable/updates/mta/` and click *OK*.
+endif::[]
+ifdef::disconnected[]
+. Next to the *Location* field, click *Archive*.
+. Select the `{IDEPluginFilename}` file and click *OK*.
+endif::[]
+. Select all the *JBoss Tools - {ProductShortName}* check boxes and click *Next*.
+. Review the installation details and click *Next*.
+. Accept the terms of the license agreement and click *Finish*.
+. Restart Eclipse or CodeReady Studio.
