@@ -104,6 +104,10 @@ endif::[]
 :JiraMTRURL: https://issues.redhat.com/projects/WINDUP
 :JiraMTAURL: https://issues.redhat.com/projects/TACKLE
 
+// Point to the GitHub wiki version since there is no product version of this guide.
+:ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
+
+
 // URLs for downloads on developers.redhat.com
 
 :CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
