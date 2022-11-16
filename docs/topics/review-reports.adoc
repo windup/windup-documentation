@@ -11,7 +11,7 @@ The report examples shown in the following sections are a result of analyzing th
 ifdef::cli-guide[]
 The report was generated using the following command.
 
-[options="nowrap",subs="+quotes"]
+[options="nowrap",subs="attributes+"]
 ----
 $ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli --input /home/username/{LC_PSN}-cli-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/{LC_PSN}-cli-reports/jee-example-app-1.0.0.ear-report --target eap:6 --packages com.acme org.apache
 ----

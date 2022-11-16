@@ -12,7 +12,7 @@ You can run {ProductShortName} against your application.
 . Open a terminal and navigate to the `<{ProductShortName}_HOME>/bin/` directory.
 . Run the `mta-cli` script, or `mta-cli.bat` for Windows, and specify the appropriate arguments:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 $ ./mta-cli --input /path/to/jee-example-app-1.0.0.ear \
 --output /path/to/output --source weblogic --target eap:6 \
@@ -35,7 +35,7 @@ $ ./mta-cli --input /path/to/jee-example-app-1.0.0.ear \
 
 The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:
 
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 $ <{ProductShortName}_HOME>/bin/mta-cli \
 --input /path/to/jee-example-app-1.0.0.ear \
@@ -48,7 +48,7 @@ $ <{ProductShortName}_HOME>/bin/mta-cli \
 
 The following command analyzes the `org.jboss.seam` packages of the link:https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] example source code for migrating to JBoss EAP 6.
 
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 $ <{ProductShortName}_HOME>/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ \
 --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam
@@ -59,7 +59,7 @@ $ <{ProductShortName}_HOME>/bin/mta-cli --sourceMode --input /path/to/seam-booki
 
 The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness:
 
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 $ <{ProductShortName}_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear \
  --output /path/to/report-output/ \
@@ -71,7 +71,7 @@ $ <{ProductShortName}_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.e
 
 To override the default _Fernflower_ decompiler, pass the `-Dwindup.decompiler` argument on the command line. For example, to use the _Procyon_ decompiler, use the following syntax:
 
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 $ <{ProductShortName}_HOME>/bin/windup-cli -Dwindup.decompiler=procyon --input \
 <INPUT_ARCHIVE_OR_DIRECTORY> --output <OUTPUT_REPORT_DIRECTORY> \
@@ -90,7 +90,7 @@ You can use OpenRewrite in the {ProductShortName} CLI to prepare Java applicatio
 
 . Add the `openrewrite` argument when you execute the 'mta-cli' script and specify the other arguments appropriately:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 ./mta-cli --openrewrite
 "-DactiveRecipes=<recipe name>" --input
@@ -106,7 +106,7 @@ You can use OpenRewrite in the {ProductShortName} CLI to prepare Java applicatio
 * `--goal`: Optional. The OpenRewrite maven goal to run. Parameters:
 ** `dryRun` : The script returns a list of proposed changes, creates a patch file which can be applied later, and returns the following message:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 Run 'mvn rewrite:run' to apply the recipes.
 ----
@@ -116,7 +116,7 @@ If you do not enter a parameter for `goal`, the script executes it as `dryRun`.
 
 . To apply the recipe, run the command using the `run` parameter for the 'goal' argument:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 ./mta-cli --openrewrite
 "-DactiveRecipes=<recipe name>" --input
@@ -135,7 +135,7 @@ See link:{KBArticleTechnologyPreview}[Technology Preview features support scope]
 
 The {ProductShortName} {CLIName} provides an option to enable Bash completion for Linux systems, allowing the {ProductShortName} command-line arguments to be auto completed by pressing the Tab key when entering the commands. For instance, when Bash completion is enabled, entering the following displays a list of available arguments.
 
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 $ <{ProductShortName}_HOME>/bin/windup-cli [TAB]
 ----
@@ -146,7 +146,7 @@ $ <{ProductShortName}_HOME>/bin/windup-cli [TAB]
 
 To enable Bash completion for the current shell, run the following command:
 
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 $ source <{ProductShortName}_HOME>/bash-completion/mta-cli
 ----
@@ -159,14 +159,14 @@ The following commands allow Bash completion to persist across restarts:
 
 * To enable Bash completion for a specific user across system restarts, include the following line in that user's `~/.bashrc` file.
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 source <{ProductShortName}_HOME>/bash-completion/mta-cli
 ----
 
 * To enable Bash completion for all users across system restarts, copy the {ProductName} {CLIName} Bash completion file to the `/etc/bash_completion.d/` directory as the root user.
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 # cp <{ProductShortName}_HOME>/bash-completion/mta-cli /etc/bash_completion.d/
 ----
@@ -176,7 +176,7 @@ source <{ProductShortName}_HOME>/bash-completion/mta-cli
 
 To see the complete list of available arguments for the `mta-cli` command, open a terminal, navigate to the `<{ProductShortName}_HOME>` directory, and run the following command:
 
-[source,terminal]]
+[source,terminal,subs="attributes+"]]
 ----
 $ <{ProductShortName}_HOME>/bin/mta-cli --help
 ----

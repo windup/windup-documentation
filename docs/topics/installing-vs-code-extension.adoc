@@ -15,7 +15,7 @@ include::snippet_jdk-hardware-mac-prerequisites.adoc[]
 
 . Set the environmental variable `JAVA_HOME`:
 +
-[source, terminal]
+[source, terminal,subs="attributes+"]
 ----
 $ export JAVA_HOME=jdk11
 ----
@@ -24,4 +24,4 @@ $ export JAVA_HOME=jdk11
 . Enter `{ProductName}` in the Search field.
 . Select the *{ProductName}* extension and click *Install*.
 +
-The {ProductShortName} extension icon (image:vs_mta_extension_icon.png[{ProductShortName} code extension]) is displayed on the Activity bar.
+The {ProductShortName} extension icon (image:Product_Icon-Migration_Toolkit-RGB.png[{ProductShortName} code extension]) is displayed on the Activity bar.

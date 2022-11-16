@@ -14,7 +14,7 @@ To run the {MavenName} in a project with multiple modules perform the following 
 
 . Include the following plugin inside the parent project's `pom.xml`. The following is a sample `pom.xml` for a parent module.
 +
-[source,xml,options="nowrap",subs="+quotes,+attributes"]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <plugin>
     <groupId>org.jboss.windup.plugin</groupId>
@@ -49,7 +49,7 @@ The above example demonstrates a set of recommended arguments.
 
 . Build the parent project. During the build process the {MavenName} runs against all children in the project without further configuration.
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 $ mvn clean install
 ----

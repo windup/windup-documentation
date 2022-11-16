@@ -55,7 +55,7 @@ The `<not>` element is the standard logical _not_ operator, and is commonly used
 
 The following is an example of a test rule that fails if only a specific message exists at the end of the analysis.
 
-[source,xml,options="nowrap",subs="+quotes"]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
           id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -103,7 +103,7 @@ The `<iterable-filter>` element counts the number of times a condition is verifi
 
 The following is an example that looks for four instances of the specified message.
 
-[source,xml,options="nowrap",subs="+quotes"]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
           id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -167,7 +167,7 @@ When testing for a message that contains special characters, such as `[` or `'`,
 
 The following is an example that searches for a specific classification title.
 
-[source,xml,options="nowrap",subs="+quotes"]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
           id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -235,7 +235,7 @@ When testing for a message that contains special characters, such as `[` or `'`,
 
 The following is an example that searches for a specific hint.
 
-[source,xml,options="nowrap",subs="+quotes"]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 <ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
           id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
