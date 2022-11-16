@@ -19,7 +19,7 @@ $ oc get pods -n <project-name>
 +
 The output resembles the following:
 +
-[source,terminal]
+[source,terminal,subs="attributes+"]
 ----
 NAME                       READY     STATUS      RESTARTS   AGE
 eap-builder-1-build        0/1       Completed   0          1d
