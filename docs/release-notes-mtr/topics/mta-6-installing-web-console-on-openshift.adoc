@@ -11,7 +11,7 @@ You install the {ProductName} ({ProductShortName}) {WebName} as part of the proc
 
 The {ProductShortName} Operator is a structural layer that manages resources deployed on Kubernetes (database, front end, back end) to automatically create a {ProductShortName} instance instead of you doing it manually.
 
-== Persistent Volume Requirements
+== Persistent volume requirements
 
 The {ProductShortName} Operator requires a total of 5 persistent volumes (PVs) used by different components to successfully deploy, 3 RWO volumes and 2 RWX volumes that are requested via PVCs. These PVS are described in the table below:
 
@@ -70,4 +70,4 @@ You can install the {ProductName} ({ProductShortName}) and the {WebName} on Open
 . Under *Provided APIs*, locate *Tackle*, and click *Create Instance*.
 . Review options - the default selections should be OK, but be sure to validate the system requirements for storage, memory, and cores - and then click *Create*.
 . In *Administrator* view, click *Workloads -> Pods* to verify that the MTA pods are running.
-. Access the {WebName} from your browser by using the route exposed by the `mta-web-console` application within OpenShift.
+. Access the {WebName} from your browser by using the route exposed by the `{LC_PSN}-web-console` application within OpenShift.

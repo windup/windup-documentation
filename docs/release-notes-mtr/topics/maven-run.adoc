@@ -15,7 +15,7 @@ include::snippet_jdk-hardware-mac-prerequisites.adoc[]
 
 . Add the following `<plugin>` to your application's `pom.xml` file:
 +
-[source,xml,options="nowrap",subs="+quotes,+attributes"]
+[source,xml,options="nowrap",subs="attributes+"]
 ----
 [...]
 <plugin>
@@ -41,14 +41,14 @@ include::snippet_jdk-hardware-mac-prerequisites.adoc[]
 
 . Add `--add-modules=java.se` to the `MAVEN_OPTS` environment variable.
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 export MAVEN_OPTS=--add-modules=java.se
 ----
 
 . Build the project:
 +
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 $ mvn clean install
 ----

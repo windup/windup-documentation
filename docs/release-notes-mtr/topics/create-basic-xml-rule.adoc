@@ -12,7 +12,7 @@ This section describes how to create an {ProductShortName} XML rule. This assume
 
 {ProductShortName} XML rules consist of _conditions_ and _actions_ and use the following rule pattern:
 
-[source,options="nowrap"]
+[source,terminal,subs="attributes+"]
 ----
 when(condition)
   perform(action)
@@ -23,10 +23,10 @@ Create a file with the following contents, which is the basic syntax for XML rul
 
 [IMPORTANT]
 ====
-The XML file name must include the `.windup.xml` or `.mta.xml` extension. Otherwise, {ProductShortName} does not evaluate the new rule.
+The XML file name must include the `.windup.xml` extension. Otherwise, {ProductShortName} does not evaluate the new rule.
 ====
 
-[source,xml]
+[source,xml,subs="attributes+"]
 ----
 <?xml version="1.0"?>
 <ruleset id="unique-ruleset-id"
@@ -60,7 +60,7 @@ The XML ruleset `metadata` element provides additional information about the rul
 
 .`<metadata>` example
 
-[source,xml]
+[source,xml,subs="attributes+"]
 ----
 <ruleset id="unique-ruleset-id"
   xmlns="http://windup.jboss.org/schema/jboss-ruleset"

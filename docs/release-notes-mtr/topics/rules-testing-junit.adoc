@@ -21,7 +21,7 @@ The following instructions detail creating a JUnit test using the Red Hat CodeRe
 . Copy the custom rules, along with the corresponding tests and data, into `</path/to/RULESETS_REPO>/rules-reviewed/<RULE_NAME>/`. This should create the following directory structure.
 +
 .Directory structure
-[source,options="nowrap",subs="+quotes"]
+[source,options="nowrap",subs="attributes+"]
 ----
 ├── *rules-reviewed/*  _(Root directory of the rules found within the project)_
 │   ├── *<RULE_NAME>/*  _(Directory to contain the newly developed rule and tests)_

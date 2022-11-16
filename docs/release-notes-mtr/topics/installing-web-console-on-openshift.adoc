@@ -4,47 +4,43 @@
 
 :_content-type: PROCEDURE
 [id="installing-web-console-on-openshift_{context}"]
-ifdef::ocp-46[]
 = Installing the {WebName} on {ocp-short} 4.6 and later
 
 You can install the {WebName} on {ocp-short} 4.6 and later versions with the {ProductName} Operator.
 
-[NOTE]
-====
-The {ProductName} Operator is a Community Operator. Red Hat provides no support for Community Operators.
-====
-endif::[]
-ifdef::ocp-42[]
-= Installing the {WebName} on {ocp-short} 4.2-4.5
-
-You can install the {WebName} on {ocp-short} 4.2-4.5 by importing a template and instantiating it to create the {WebName} application.
-endif::[]
-
 .Prerequisites
 
-ifdef::ocp-46,ocp-42[]
 * 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
 * One or more projects in which you can install the {WebName}.
-endif::[]
 +
 [IMPORTANT]
 ====
 Do not install the {WebName} in a default project.
 ====
 
-ifdef::ocp-46[]
 * `cluster-admin` privileges to install the {DocInfoProductName} Operator.
 * `project-admin-user` privileges to install the {WebName} application in a project.
-endif::[]
 
-ifdef::ocp-42[]
-.Procedure
+.Configuring Red Hat Single Sign-on (SSO)
 
-. Navigate to the link:{MTRDownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
-. Extract the `.zip` file to a directory, for example, `{ProductShortName}_HOME`.
-endif::[]
-ifdef::ocp-46[]
-.Installing the {DocInfoProductName} Operator
+You must decide at installation time whether the {WebName} requires authentication. If it does, you must first install and configure Red Hat SSO and input some RH SSO settings when instantiating the MTR Operator.
+
+[NOTE]
+====
+Authentication can not be added or removed after installation.
+====
+
+. Open the Red Hat SSO administration console.
+. Add a realm named *windup*.
+. In the realm, create a client named *windup-web*.
+. Check that *Access Type* is set to `public`. Set *Valid Redirect URIs* and *Web Origins* to `*`. Click *Save*.
++
+Note that after the {ProductShortName} operator has been instantiated the *Valid Redirect URIs* and *Web Origins* fields have to be set to the secure-mtr-web-console route.
+. Create a role named *user*.
+. Create a user with any name.
+. Set the credentials of the user, disable *Temporary*, and assign the role "user" to the user.
+
+.Installing the {ProductShortName} Operator
 
 . Log in to the OpenShift web console as a user with `cluster-admin` privileges.
 . Click *Operators* -> *OperatorHub*.
@@ -60,27 +56,7 @@ ifdef::ocp-46[]
 . In the *Add* view, click *Operator Backed*.
 . Click the *{DocInfoProductName}* Operator.
 . Click *Create*.
-endif::[]
-ifdef::ocp-42[]
-. Launch the OpenShift web console.
-. Click the *Import YAML* button in the upper-right corner of the web console.
-. Select *mta* from the *Project* list.
-. Copy the contents of the appropriate template from the `{ProductShortName}_HOME/openshift/templates/` directory into the *Import YAML* field.
-+
-Two templates are provided, one for shared storage and one without shared storage.
-
-. Click *Create*.
-. Switch to the *Developer* perspective and click *+Add*.
-. In the *Add* view, click *From Catalog*.
-. Click the *{ProductName}* template.
-. Click *Instantiate Template*.
-endif::[]
-ifdef::ocp-46,ocp-42[]
-. Review the application settings and click *Create*.
-. In the *Topology* view, click the `mta-web-console` application and then click the *Resources* tab.
-. Click the `secure-mta-web-console` route to open the {WebName} in a new browser window.
-endif::[]
-. Enter the user name `mta` and the password `password` and click *Log in*.
-
-.Web console login page
-image::web-login-openshift.png[web console login page]
+. Review the application settings. If the {WebName} requires authentication, input the RH SSO settings and click *Create*.
+. In the *Topology* view, click the `mtr-web-console` application and then click the *Resources* tab.
+. If authentication is required, set the RH SSO *Valid Redirect URIs* and *Web Origins* fields to the secure-mtr-web-console route.
+. Click the `secure-mtr-web-console` route to open the {WebName} in a new browser window.
