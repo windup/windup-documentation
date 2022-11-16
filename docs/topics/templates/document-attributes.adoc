@@ -18,11 +18,15 @@ ifdef::mta[]
 :LC_PSN: mta:
 :WebName: user interface
 :WebNameTitle: user interface
+:WebNameURL: user_interface_guide
 :DocInfoProductNameURL: migration_toolkit_for_applications
-:WebName: user interface
-:WebNameTitle: User Interface
 :WebConsoleBookName: {WebNameTitle} Guide
 :ProductVersion: 6.0.0
+:ProductDistributionVersion: 6.0.0.GA-redhat-00002
+:ProductDistribution: mta-6.0.0.GA-offline.zip
+:MTADownloadPageURL: https://developers.redhat.com/products/mta/download
+:PluginName: MTA plugin
+:IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 endif::[]
 
 ifdef::mtr[]
@@ -34,9 +38,13 @@ ifdef::mtr[]
 :DocInfoProductNameURL: migration_toolkit_for_runtimes
 :WebName: web console
 :WebNameTitle: Web Console
+:WebNameURL: web_console_guide
 :WebConsoleBookName: {WebNameTitle} Guide
 :ProductVersion: 1.0.0.GA-redhat-00001
 :PluginName: MTR plugin
+:ProductDistributionVersion: 1.0.0.GA-redhat-00001
+:ProductDistribution: mtr-1.0.0.GA-offline.zip
+:MTRDownloadPageURL: https://developers.redhat.com/products/mtr/download
 endif::[]
 
 
@@ -45,12 +53,6 @@ endif::[]
 // *******************
 :CLIName: CLI
 :CLINameTitle: CLI
-
-
-:PluginName: MTA plugin
-
-:IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
-
 :MavenName: Maven plugin
 :MavenNameTitle: Maven Plugin
 
@@ -76,45 +78,22 @@ endif::[]
 // Commenting out as these attributes are not currently used:
 // :ProductRelease: 4
 // :ProductVersion: 4.0
-//Questions
-:ProductDistributionVersion: 6.0.0.GA-redhat-00002
-:ProductDistributionVersion: 1.0.0.GA-redhat-00001
-:ProductDistribution: mta-6.0.0.GA-offline.zip
-:ProductDistribution: mtr-1.0.0.GA-offline.zip
-:MavenProductVersion: 5.3.0.Final
 
-// ********
-// * MTA URLs *
-// ********
+:MavenProductVersion: 5.3.0.Final
 
 :IntroToMTABookName: Introduction to the {DocInfoProductName}
 :ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
 :EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_codeready_studio_guide
 :IntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
-:ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_migration_toolkit_for_applications
-:ProductDocUserInterfaceGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/user_interface_guide
+:ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
+:ProductDocUserInterfaceGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/{WebNameURL}
 :ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
 :ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
 :ProductDocIntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
 :OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
 :LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
 
-// ********
-// * MTR URLs *
-// ********
-:IntroToMTRBookName: Introduction to the {DocInfoProductName}
-:ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
-:ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
-:EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_codeready_studio_guide
-:IntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
-:ProductDocIntroToMTRGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_migration_toolkit_for_runtimes
-:ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/web_console_guide
-:ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
-:ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
-:ProductDocIntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
-:OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
-:LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
 
 //What about these ones?
 //Links to MTA and MTR Jira project pages:
@@ -122,8 +101,6 @@ endif::[]
 :JiraMTAURL: https://issues.redhat.com/projects/TACKLE
 
 // URLs for downloads on developers.redhat.com
-:MTADownloadPageURL: https://developers.redhat.com/products/mta/download
-:MTRDownloadPageURL: https://developers.redhat.com/products/mtr/download
 :CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
 
 // KBase Article links:
