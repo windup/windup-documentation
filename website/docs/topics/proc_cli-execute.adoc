@@ -99,7 +99,7 @@ You can use OpenRewrite in the {ProductShortName} CLI to prepare Java applicatio
 
 * `--openrewrite`: Flag specifying to run an OpenRewrite migration, instead of an {ProductShortName} analysis.
 
-* `"-DactiveRecipes=org.<recipe name>"` : The OpenRewrite recipe to apply to the input project. `JavaxtoJakarta` is the default shipped recipe but you can add your own to the shipped `rewrite.yml` and run that recipe instead. The `rewrite.yml file` is located in the `rules/openrewrite/`` folder in the uncompressed {ProductShortName} distribution.
+* `"-DactiveRecipes=org.<recipe name>"` : The OpenRewrite recipe to apply to the input project. `JavaxtoJakarta` is the default shipped recipe but you can add your own to the shipped `rewrite.yml` and run that recipe instead. The `rewrite.yml file` is located in the `rules/openrewrite/` folder in the uncompressed {ProductShortName} distribution.
 
 * `--input`: The application to be evaluated.
 

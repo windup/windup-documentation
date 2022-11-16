@@ -13,7 +13,8 @@ include::topics/templates/document-attributes.adoc[]
 // Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
-// == Introduction
+[id="mta-6-ui-guide-introduction"]
+== Introduction
 
 // About the {WebConsoleBookName}
 include::topics/mta-about-console-guide.adoc[leveloffset=+2]
@@ -24,14 +25,25 @@ include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 // About the {WebName}
 include::topics/about-the-user-interface.adoc[leveloffset=+2]
 
-// == User interface views
+[id=mta-6-ui-interface-views]
+== User interface views
+
+The {ProductName} ({ProductShortName}) {WebName} has two user interfaces:
+
+* Administrator view
+* Developer view
+
+In *Administrator* view, you configfure the instance environment, working with credentials, repositories, and HTTP and HTTPS proxy definitions.
+
+In *Developer* view, you perform application assessments and analyses, review reports, and add applications for assessment and analysis.
 
 // We need an intro about the two views.
 
-// === Administrator view
+// == Administrator view
 
 // Intro about the three sets of activities
-include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
+
+// include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
 
 // include::topics/ Credentials
 // include::topics/ about repositories
@@ -41,6 +53,54 @@ include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
 // Intro about the three sets of activities (Application inventory, assessments, and analyses)
 
 // include::topics/ about Application inventory
+
+// Installation
+include::topics/mta-6-installing-web-console-on-openshift.adoc[leveloffset=+1]
+
+[id="configuring-the-instance-environment"]
+== Configuring the instance environment
+
+You can configure the following in *Administrator* view:
+
+* Credentials
+* Repositories
+* HTTP and HTTPS proxy settings
+
+[id="configuring-credentials"]
+=== Configuring credentials
+
+You can configure the following types of credentials in *Administrator* view:
+
+* Source control
+* Maven
+* Proxy
+
+include::topics/mta-web-config-source-control-credentials.adoc[leveloffset=+3]
+include::topics/mta-web-config-maven-credentials.adoc[leveloffset=+3]
+include::topics/mta-web-config-proxy-credentials.adoc[leveloffset=+3]
+
+[id="configuring-repositories"]
+=== Configuring repositories
+
+You can configure the following types of repositories in *Administrator* view:
+
+* Git
+* Subversion
+* Maven
+
+include::topics/mta-web-config-git-repos.adoc[leveloffset=+3]
+include::topics/mta-web-config-subversion-repos.adoc[leveloffset=+3]
+
+[id="configuring-maven-repositories"]
+==== Configuring a Maven repository and reducing its size
+
+You can use the (ProductShortName) {WebName} to both configure a Maven repository and to reduce its size.
+
+include::topics/mta-web-config-maven-repo.adoc[leveloffset=+4]
+include::topics/mta-web-config-maven-repo-size.adoc[leveloffset=+4]
+
+// === Configuring HTTP and HTTPS proxy settings
+include::topics/mta-web-proxy-config.adoc[leveloffset=2]
 
 // ==== Application assessments and analyses
 
@@ -140,8 +200,7 @@ include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
 
 // include::topics/
 
-// === Configuring HTTP and HTTPS proxy settings
-include::topics/mta-web-proxy-config.adoc[leveloffset=2]
+
 
 // === Seeding instances
 
@@ -197,14 +256,24 @@ include::topics/mta-web-applying-assessments-to-other-apps.adoc[leveloffset=+2]
 include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[leveloffset=+2]
 include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+2]
 
+[id=working-with-applications-in-the-ui]
+== Working with Applications
+
+You can use the {ProductName} ({ProductShortName}) {WebName} to do the following:
+
+* Add applications
+* Assign application credentials
+* Import a list of applications
+* Download a CSV template for importing application lists
+
 // == Adding applications
 
-include::topics/mta-web-about-adding-applications.adoc[leveloffset=+2]
-include::topics/mta-web-creating-applications.adoc[leveloffset=+2]
+include::topics/mta-web-application-attributes.adoc[leveloffset=+2]
+include::topics/mta-web-adding-applications.adoc[leveloffset=+2]
 include::topics/mta-web-assigning-application-credentials.adoc[leveloffset=+2]
 include::topics/mta-web-importing-an-app-list.adoc[leveloffset=+2]
-include::topics/mta-web-downloading-app-list-template.adoc[leveloffset=+3]
-include::topics/mta-web-importing-an-app-list.adoc[leveloffset=+3]
+include::topics/mta-web-downloading-app-list-template.adoc[leveloffset=+2]
+
 
 // **********************************
 // * Appendix: Revision Information *
