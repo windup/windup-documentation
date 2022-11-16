@@ -18,7 +18,7 @@ The following example runs {ProductShortName} using the link:https://github.com/
 
 [source,options="nowrap",subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --target eap:6 --packages com.acme org.apache --mavenize
+$ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --target eap:6 --packages com.acme org.apache --mavenize
 ----
 
 This generates the Maven project structure in the `/path/to/output/mavenized` directory.
