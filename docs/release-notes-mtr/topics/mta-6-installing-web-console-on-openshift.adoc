@@ -70,4 +70,4 @@ You can install the {ProductName} ({ProductShortName}) and the {WebName} on Open
 . Under *Provided APIs*, locate *Tackle*, and click *Create Instance*.
 . Review options - the default selections should be OK, but be sure to validate the system requirements for storage, memory, and cores - and then click *Create*.
 . In *Administrator* view, click *Workloads -> Pods* to verify that the MTA pods are running.
-. Access the {WebName} from your browser by using the route exposed by the `mta-web-console` application within OpenShift.
+. Access the {WebName} from your browser by using the route exposed by the `{LC_PSN}-web-console` application within OpenShift.

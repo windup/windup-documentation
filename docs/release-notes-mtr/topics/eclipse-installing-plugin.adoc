@@ -39,7 +39,7 @@ endif::[]
 . Next to the *Work with* field, click *Add*.
 . In the *Name* field, enter `{ProductShortName}`.
 ifdef::eclipse-code-ready-studio-guide[]
-. In the *Location* field, enter `\http://download.jboss.org/jbosstools/photon/stable/updates/mta/` and click *OK*.
+. In the *Location* field, enter `\http://download.jboss.org/jbosstools/photon/stable/updates/{LC_PSN}/` and click *OK*.
 endif::[]
 ifdef::disconnected[]
 . Next to the *Location* field, click *Archive*.
