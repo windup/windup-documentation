@@ -18,11 +18,11 @@ For example, the OpenRewrite recipe `org.jboss.windup.JavaxToJakarta` renames im
 
 .Procedure
 
-. Run `mta-cli`, specifying the recipe name, the path to the configuration file, and the application:
+. Run `{LC_PSN}-cli`, specifying the recipe name, the path to the configuration file, and the application:
 +
 [source,terminal,subs="attributes+"]
 ----
-$ ./mta-cli --openrewrite --input </path/to/source/project> \
+$ ./{LC_PSN}-cli --openrewrite --input </path/to/source/project> \
   "-Drewrite.configLocation=<path/to/rewrite.yaml>  \
   "-DactiveRecipes=<recipe_name>" --goal dryRun
 ----
@@ -49,11 +49,11 @@ You can include more than one recipe by specifying each in the `activeRecipes` p
 ** `dryRun` : The script returns a list of proposed changes. Ignore the `"Run 'mvn rewrite:run' to apply the recipes"` message.
 ** `run`: The script applies the changes.
 
-. Run `mta-cli` with `--goal run` to apply the recipe:
+. Run `{LC_PSN}-cli` with `--goal run` to apply the recipe:
 +
 [source,terminal,subs="attributes+"]
 ----
-$ ../mta-cli --openrewrite --input </path/to/source/project> \
+$ ../{LC_PSN}-cli --openrewrite --input </path/to/source/project> \
   "-Drewrite.configLocation=<path/to/rewrite.yaml>  \
   "-DactiveRecipes=<recipe_name>" --goal run
 ----
