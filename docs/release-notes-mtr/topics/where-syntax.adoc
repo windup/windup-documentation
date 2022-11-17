@@ -14,7 +14,7 @@ You can view the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[co
 
 The following example rule defines a parameter named `subpackage` that specifies a pattern of `(activeio|activemq)`.
 
-[source,xml,options="nowrap"]
+[source,xml,subs="attributes+"]
 ----
 <rule id="generic-catchall-00600">
   <when>

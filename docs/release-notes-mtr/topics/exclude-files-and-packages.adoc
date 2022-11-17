@@ -35,7 +35,7 @@ These files contain a regex string detailing the name to exclude, with one file 
 
 {ProductShortName} searches the following locations:
 
-* `~/.mta/ignore/`
+* `~/.{LC_PSN}/ignore/`
 * `~/.windup/ignore/`
 * `<{ProductShortName}_HOME>/ignore/`
 * Any files and folders specified by the `--userIgnorePath` argument
