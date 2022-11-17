@@ -86,7 +86,7 @@ The {ProductShortName} {CLIName} provides an option to enable Bash completion fo
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/mta-cli [TAB]
+$ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli [TAB]
 ----
 
 [discrete]
