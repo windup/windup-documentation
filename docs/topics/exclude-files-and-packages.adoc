@@ -21,7 +21,7 @@ You can exclude packages by either of the following methods:
 [id="exclude-files_{context}"]
 == Excluding files
 
-{ProductShortName} can exclude specific files, such as included libraries or dependencies, during scanning and report generation. Excluded files are defined in a file with the `.{LC_PSN}-ignore.txt` or `.windup-ignore.txt` extension within one of the ignored locations.
+{ProductShortName} can exclude specific files, such as included libraries or dependencies, during scanning and report generation. Excluded files are defined in a file with the `.mta-ignore.txt` or `.windup-ignore.txt` extension within one of the ignored locations.
 
 These files contain a regex string detailing the name to exclude, with one file listed per line. For example, you can exclude the library `ant.jar` and any Java source files beginning with `Example` with a file containing the following:
 
@@ -35,7 +35,7 @@ These files contain a regex string detailing the name to exclude, with one file 
 
 {ProductShortName} searches the following locations:
 
-* `~/.{LC_PSN}/ignore/`
+* `~/.mta/ignore/`
 * `~/.windup/ignore/`
 * `<{ProductShortName}_HOME>/ignore/`
 * Any files and folders specified by the `--userIgnorePath` argument

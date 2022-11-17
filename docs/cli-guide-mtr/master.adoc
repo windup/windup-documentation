@@ -1,14 +1,15 @@
+:{LC_PSN}:
+include::topics/templates/document-attributes.adoc[]
+:_content-type: ASSEMBLY
+[id="cli-guide"]
+= CLI Guide
+
 :toc:
 :toclevels: 4
 :numbered:
-:mtr:
-include::topics/templates/document-attributes.adoc[]
-
 :imagesdir: topics/images
 :context: cli-guide
 :cli-guide:
-:_content-type: ASSEMBLY
-= CLI Guide
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
@@ -79,7 +80,7 @@ include::topics/important-links.adoc[leveloffset=+3]
 
 ==== Reporting issues
 
-{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraMTRURL}[Jira issue].
+{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
 
 // **********************************
 // * Appendix: Revision Information *
