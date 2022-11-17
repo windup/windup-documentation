@@ -90,7 +90,7 @@ otherwise(action)
 +
 [NOTE]
 ====
-The XML file name must include the `.windup.xml` extension. Otherwise, {ProductShortName} does not evaluate the new rule.
+The XML file name must include the `.windup.xml` or `.mta.xml` extension. Otherwise, {ProductShortName} does not evaluate the new rule.
 ====
 
 . Add a unique identifier for the ruleset and rule:

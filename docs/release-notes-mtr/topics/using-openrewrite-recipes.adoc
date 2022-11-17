@@ -20,7 +20,7 @@ For example, the OpenRewrite recipe `org.jboss.windup.JavaxToJakarta` renames im
 
 . Run `mta-cli`, specifying the recipe name, the path to the configuration file, and the application:
 +
-[source,terminal,subs="attributes+"]
+[source,terminal]
 ----
 $ ./mta-cli --openrewrite --input </path/to/source/project> \
   "-Drewrite.configLocation=<path/to/rewrite.yaml>  \
@@ -39,7 +39,7 @@ $ ./mta-cli --openrewrite --input </path/to/source/project> \
 +
 You can include more than one recipe by specifying each in the `activeRecipes` parameter. For example, to include the recipes `org.jboss.windup.JavaxInjectToJakartaInject` and `org.jboss.windup.JavaxEjbToJakartaEjb"`, enter the following for `"-DactiveRecipes=<recipe name>"`:
 +
-[source, terminal,subs="attributes+"]
+[source, terminal]
 ----
   "DactiveRecipes=org.jboss.windup.JavaxInjectToJakartaInject, \
     org.jboss.windup.JavaxEjbToJakartaEjb"
@@ -51,7 +51,7 @@ You can include more than one recipe by specifying each in the `activeRecipes` p
 
 . Run `mta-cli` with `--goal run` to apply the recipe:
 +
-[source,terminal,subs="attributes+"]
+[source,terminal]
 ----
 $ ../mta-cli --openrewrite --input </path/to/source/project> \
   "-Drewrite.configLocation=<path/to/rewrite.yaml>  \

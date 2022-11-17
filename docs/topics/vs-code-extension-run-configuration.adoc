@@ -10,16 +10,16 @@ You can configure multiple run configurations to run against each project you im
 
 .Prerequisites
 
-* `{LC_PSN}-cli` executable installed. You can download the `{LC_PSN}-cli` executable from link:https://developers.redhat.com{LC_PSN}/ducts/{LC_PSN}/download[{ProductShortName} download].
+* `mta-cli` executable installed. You can download the `mta-cli` executable from link:https://developers.redhat.com/products/mta/download[{ProductShortName} download].
 
 .Procedure
 
-. In *Extensions* view, click the {ProductName} icon (image:vs_{ProductShortName}_extension_icon.png[{ProductShortName} code extension]) on the Activity bar.
+. In *Extensions* view, click the {ProductName} icon (image:vs_extension_icon.png[{ProductShortName} code extension]) on the Activity bar.
 . Click the *+* (plus sign) next to *{ProductName}* to add a run configuration.
 . Complete the following configuration fields:
 
 ** *Name*: Enter a meaningful name for the analysis configuration or accept the default.
-** *`{LC_PSN}-cli`*: Enter the path to the `{LC_PSN}-cli` executable. For example: `$HOME/mta-cli-5.3.0.Final/bin/mta-cli`.
+** *`mta-cli`*: Enter the path to the `mta-cli` executable. For example: `$HOME/mta-cli-5.3.0.Final/bin/mta-cli`.
 ** *Input*: Set to the path of the project that you have open within your IDE by clicking *Add* and doing one of the following:
 
 *** Enter the input file or directory and press Enter.

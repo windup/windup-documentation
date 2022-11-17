@@ -15,7 +15,7 @@ include::snippet_jdk-hardware-mac-prerequisites.adoc[]
 
 . Set the environmental variable `JAVA_HOME`:
 +
-[source, terminal,subs="attributes+"]
+[source, terminal]
 ----
 $ export JAVA_HOME=jdk11
 ----

@@ -10,7 +10,7 @@ You can import a custom ruleset into the {PluginName} to analyze your projects.
 
 .Prerequisites
 
-* Custom ruleset file with a `.windup.xml` extension.
+* Custom ruleset file with a `.windup.xml` or `.mta.xml` extension.
 +
 See the link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_] for information about creating rulesets.
 

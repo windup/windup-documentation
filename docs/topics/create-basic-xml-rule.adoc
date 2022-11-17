@@ -23,7 +23,7 @@ Create a file with the following contents, which is the basic syntax for XML rul
 
 [IMPORTANT]
 ====
-The XML file name must include the `.windup.xml` extension. Otherwise, {ProductShortName} does not evaluate the new rule.
+The XML file name must include the `.windup.xml` or `.mta.xml` extension. Otherwise, {ProductShortName} does not evaluate the new rule.
 ====
 
 [source,xml,subs="attributes+"]

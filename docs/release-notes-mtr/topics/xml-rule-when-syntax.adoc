@@ -33,7 +33,7 @@ Use the `<javaclass>` element to find imports, methods, variable declarations, a
 
 The following is an example of a rule that tests for WebLogic-specific Apache XML packages:
 
-[source,xml,subs="attributes+"]
+[source,xml]
 ----
 <rule id="weblogic-03000">
     <when>
@@ -118,7 +118,7 @@ in="{*}File1"
 |<location>
 a|The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/ast/java/data/TypeReferenceLocation.html[TypeReferenceLocation].
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <location>IMPORT</location>
 ----
@@ -128,7 +128,7 @@ a|Match on literal values inside of annotations.
 
 The following example matches on `@MyAnnotation(myvalue="test")`.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <javaclass references="org.package.MyAnnotation">
     <location>ANNOTATION</location>
@@ -143,7 +143,7 @@ a|Match on a particular annotation type. You can supply subconditions to be matc
 
 The below example would match on a `Calendar` field declaration annotated with `@MyAnnotation(myvalue="test")`.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <javaclass references="java.util.Calendar">
     <location>FIELD_DECLARATION</location>
@@ -158,7 +158,7 @@ a|Match on an item in an array within an annotation. If an array index is not sp
 
 The below example would match on `@MyAnnotation(mylist={"one","two"})`.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <javaclass references="org.package.MyAnnotation" >
     <location>ANNOTATION</location>
@@ -296,7 +296,7 @@ This will match all `<foo/>` elements with a `class` attribute and store their v
 |<namespace>
 a|The namespace referenced in XML files. This element contains two optional attributes: The `prefix` and the `uri`.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <namespace prefix="abc" uri="http://maven.apache.org/POM/4.0.0"/>
 ----
@@ -311,7 +311,7 @@ a|The namespace referenced in XML files. This element contains two optional attr
 Use the `<project>` element to query the Maven POM file for the project characteristics. For a better understanding of the `<project>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] class.
 
 The following is an example of a rule that checks for a JUnit dependency version between 2.0.0.Final and 2.2.0.Final.
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <rule id="UNIQUE_RULE_ID">
     <when>
@@ -465,7 +465,7 @@ Use the `<has-hint>` element to test whether a file or line has a hint already a
 
 The following is an example of a rule that checks to see if a hint exists for an IBM JMS destination message, and if not includes it.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <rule id="websphere-jms-eap7-03000">
   <when>
@@ -553,7 +553,7 @@ Use the `<graph-query>` element to search the generated graph for any elements. 
 
 The following is an example of a rule that tests to determine if any `ehcache` packages are found.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <rule id="embedded-cache-libraries-01000">
     <when>
@@ -592,7 +592,7 @@ The following is an example of a rule that tests to determine if any `ehcache` p
 |VARIABLE_NAME
 a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
 
-[source,terminal,subs="attributes+"]
+[source,options="nowrap"]
 ----
 as="MyEjbRule"
 ----
@@ -601,7 +601,7 @@ as="MyEjbRule"
 |VARIABLE_NAME
 a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME.
 
-[source,terminal,subs="attributes+"]
+[source,options="nowrap"]
 ----
 from="MyEjbRule"
 ----
@@ -638,7 +638,7 @@ Use the `<dependency>` element to search dependencies defined within the applica
 
 The following is an example of a rule that checks for all artifacts belonging to the `org.springframework.boot` group that have a version up to, and including, 1.6.0.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <rule id="springboot-00001">
     <!-- rule condition, when it could be fired -->

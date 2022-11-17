@@ -34,7 +34,7 @@ A ruleset is a group of one or more rules that targets a specific area of migrat
 
 The following is an example of a core {ProductShortName} rule that matches on a proprietary utility class.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <?xml version="1.0"?>
 <ruleset xmlns="http://windup.jboss.org/schema/jboss-ruleset" id="weblogic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
