@@ -15,7 +15,7 @@ You can run {ProductShortName} against your application.
 +
 [source,terminal,subs="attributes+"]
 ----
-$ ./mta-cli --input /path/to/jee-example-app-1.0.0.ear \
+$ ./{LC_PSN}-cli --input /path/to/jee-example-app-1.0.0.ear \
     --output /path/to/output --source weblogic --target eap:6 \
     --packages com.acme org.apache
 ----
@@ -86,7 +86,7 @@ The {ProductShortName} {CLIName} provides an option to enable Bash completion fo
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/mta-cli [TAB]
+$ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli [TAB]
 ----
 
 [discrete]
