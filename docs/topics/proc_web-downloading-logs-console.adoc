@@ -12,6 +12,6 @@ You can download pod logs using the OpenShift console.
 .Procedure
 
 . Open the OpenShift console and navigate to *Applications* -> *Pods*.
-. Click the `mta-web-console` pod.
+. Click the `{LC_PSN}-web-console` pod.
 . Click *Logs*.
 . Click *Download* to download and save a log.

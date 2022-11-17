@@ -10,7 +10,7 @@ You can run {ProductShortName} against your application.
 .Procedure
 
 . Open a terminal and navigate to the `<{ProductShortName}_HOME>/bin/` directory.
-. Run the `mta-cli` script, or `mta-cli.bat` for Windows, and specify the appropriate arguments:
+. Run the `{LC_PSN}-cli` script, or `{LC_PSN}-cli.bat` for Windows, and specify the appropriate arguments:
 +
 [source,terminal,subs="attributes+"]
 ----
@@ -174,7 +174,7 @@ source <{ProductShortName}_HOME>/bash-completion/mta-cli
 [id="accessing-help_{context}"]
 == Accessing {ProductShortName} help
 
-To see the complete list of available arguments for the `mta-cli` command, open a terminal, navigate to the `<{ProductShortName}_HOME>` directory, and run the following command:
+To see the complete list of available arguments for the `{LC_PSN}-cli` command, open a terminal, navigate to the `<{ProductShortName}_HOME>` directory, and run the following command:
 
 [source,terminal,subs="attributes+"]]
 ----
