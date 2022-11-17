@@ -18,11 +18,11 @@ Follow these steps to add a new {WebName} user.
 * For an OpenShift installation:
 .. Navigate to `<OPENSHIFT_URL>/console/project/{LC_PSN}/overview` in a browser.
 +
-NOTE: If you renamed the OpenShift project when deploying, replace `{LC_PSN}` with the name of your project.
+NOTE: If you renamed the OpenShift project when deploying, replace `mta` with the name of your project.
 .. Click the link in the *SSO HTTPS* application and add "/auth" to the end of the URL.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 . Log in with an administrative user's credentials. The default credentials are `admin` and `password`.
-. In the upper left corner, select the *{LC_PSN}* realm from the drop down.
+. In the upper left corner, select the *mta* realm from the drop down.
 . From the left-side navigation menu, select *Users* and then click *Add user*.
 . Enter the *Username*, *First Name*, *Last Name*, and any other required fields and click *Save*.
 . Once the user has been added, select the *Credentials* tab.
