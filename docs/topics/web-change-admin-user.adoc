@@ -18,7 +18,7 @@ Follow these steps to change the default administrative user's password.
 * For an OpenShift installation:
 .. Navigate to `<OPENSHIFT_URL>/console/project/{LC_PSN}/overview` in a browser.
 +
-NOTE: If you renamed the OpenShift project when deploying, replace `mta` with the name of your project.
+NOTE: If you renamed the OpenShift project when deploying, replace `mtr` with the name of your project.
 .. Click the link in the *SSO HTTPS* application and add "/auth" to the end of the URL.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 . Log in with the default credentials of `admin` and `password`.

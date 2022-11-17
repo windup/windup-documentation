@@ -11,21 +11,22 @@ The results of all analyses are grouped and listed by project on the *Analysis r
 .Procedure
 
 . In the {WebName}, click *Analysis results*.
+. Select a project from the list.
 
 +
-image::web-analysis-details.png[Analysis details screen]
-
-. Select a project from the list.
-. Click the number of the analysis you want to review.
+image::AnalysisResults1.png[Analysis results screen]
++
+The Analysis Reports can be accessed via the Reports bar chart icon or by the Reports action on the right-hand side of the screen.
+. Click on the number of the analysis you want to review to see details of the analysis configuration settings and the analysis execution statistics.
 +
 The results are displayed in the *Results* screen, which contains two tabs: *Details* and *Logs*.
 
 The *Details* tab displays important details of the analysis, such as status, start date, duration, and configuration settings.
 
 .Analysis details screen
-image::web-analysis-details.png[Analysis details screen]
+image::AnalysisResults2.png[Analysis details screen]
 
 The *Logs* tab displays the logs generated during the analysis.
 
 .Analysis logs screen
-image::web-analysis-logs.png[Analysis logs screen]
+image::AnalysisLogs.png[Analysis logs screen]
