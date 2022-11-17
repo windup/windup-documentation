@@ -19,7 +19,7 @@ See the link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_] to learn more about
 +
 [NOTE]
 ====
-The file must have the extension `.windup.xml`.
+The file must have the extension `.windup.xml` or `.mta.xml`.
 ====
 
 . Enter a ruleset ID, for example, `my-ruleset-id`.

@@ -11,7 +11,7 @@ You can add custom rules to use in each project. When you add a rule, it is disa
 .Procedure
 
 . Click *Add rule*.
-.. In the *Upload* tab, click *Browse* and select a rules file (`\*.windup.xml`).
+.. In the *Upload* tab, click *Browse* and select a rules file (`\*.mta.xml` or `*.windup.xml`).
 .. In the *Server path* tab, enter the *Rules path* of the server-side file or directory containing the rules file in the field, select *Scan recursively* if relevant, and click *Save*.
 . Click *Next*.
 +

@@ -61,7 +61,7 @@ The following is an example of a test rule that fails if only a specific message
           id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
   <testDataPath>data/</testDataPath>
-  <rulePath>../proprietary-servlet.{LC_PSN}.xml</rulePath>
+  <rulePath>../proprietary-servlet.mta.xml</rulePath>
   <ruleset>
     <rules>
       <rule id="proprietary-servlet-01000-test">
@@ -109,7 +109,7 @@ The following is an example that looks for four instances of the specified messa
           id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
   <testDataPath>data/</testDataPath>
-  <rulePath>../proprietary-servlet.{LC_PSN}.xml</rulePath>
+  <rulePath>../proprietary-servlet.mta.xml</rulePath>
   <ruleset>
     <rules>
       <rule id="proprietary-servlet-03000-test">
@@ -173,7 +173,7 @@ The following is an example that searches for a specific classification title.
           id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
   <testDataPath>data/</testDataPath>
-  <rulePath>../weblogic.{LC_PSN}.xml</rulePath>
+  <rulePath>../weblogic.mta.xml</rulePath>
   <ruleset>
     <rules>
       <rule id="weblogic-01000-test">

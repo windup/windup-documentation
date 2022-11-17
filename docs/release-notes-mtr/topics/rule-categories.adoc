@@ -31,7 +31,7 @@ You can add a custom category to the rule category file.
 * `description`: The description of the category.
 +
 .Custom rule category example
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <?xml version="1.0"?>
 <categories>
@@ -55,7 +55,7 @@ You can assign a rule to your new custom category.
 
 In your {ProductShortName} rule, update the `category-id` field as in the following example.
 
-[source,xml,subs="attributes+"]
+[source,xml]
 ----
 <rule id="rule-id">
     <when>

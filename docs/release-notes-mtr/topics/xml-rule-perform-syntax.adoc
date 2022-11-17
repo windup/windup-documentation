@@ -21,7 +21,7 @@ The `<classification>` element is used to identify or classify application resou
 
 The following is an example of a rule that classifies a resource as a WebLogic EAR application deployment descriptor file.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <rule id="XmlWebLogicRules_10vvyf">
     <when>
@@ -91,7 +91,7 @@ of="MySeamRule"
 |<link>
 a|Provides a link URI and text title for additional information.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <classification title="Websphere Startup Service" effort="4">
    <link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Singleton.html" title="EJB3.1 Singleton Bean"/>
@@ -102,7 +102,7 @@ a|Provides a link URI and text title for additional information.
 |<tag>
 a|Provides additional custom information for the classification.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <tag>Seam3</tag>
 ----
@@ -110,7 +110,7 @@ a|Provides additional custom information for the classification.
 |<description>
 a|Description of this resource
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <description>JBoss Seam components must be replaced</description>
 ----
@@ -127,7 +127,7 @@ The `<link>` element is used in classifications or hints to provide links to inf
 
 The following is an example of a rule that creates links to additional information.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <rule id="SeamToCDIRules_2fmb">
     <when>
@@ -183,7 +183,7 @@ The `<hint>` element is used to provide a hint or inline information about how t
 
 The following is an example of a rule that creates a hint.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <rule id="WebLogicWebServiceRules_8jyqn">
     <when>
@@ -258,7 +258,7 @@ effort="2"
 |<message>
 a|A message describing the migration hint.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <message>EJB 2.0 is deprecated</message>
 ----
@@ -266,7 +266,7 @@ a|A message describing the migration hint.
 |<link>
 a|Identify or classify links to informational content.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <link href="http://docs.oracle.com/javaee/6/api/" title="Java Platform, Enterprise Edition 6
 API Specification" />
@@ -275,7 +275,7 @@ API Specification" />
 |<tag>
 a|Define a custom tag for this `hint`.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <tag>Needs review</tag>
 ----
@@ -283,7 +283,7 @@ a|Define a custom tag for this `hint`.
 |<quickfix>
 a|Contains information to be used by the {PluginName} to perform quick fixes when the rule condition is met.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <quickfix name="slink-qf" type="REPLACE">
     <replacement>h:link</replacement>
@@ -303,7 +303,7 @@ The `<xslt>` element specifies how to transform an XML file. For a better unders
 
 The following is an example of rule that defines an XSLT action.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <rule id="XmlWebLogicRules_6bcvk">
     <when>
@@ -379,7 +379,7 @@ template="simpleXSLT.xsl"
 |<xslt-parameter>
 a|Specify XSLTTransformation parameters as property value pairs
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <xslt-parameter property="title" value="EJB Transformation"/>
 ----
@@ -394,7 +394,7 @@ The `<lineitem>` element is used to provide  general migration requirements for 
 
 The following is an example of a rule that creates a lineitem message.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <rule id="weblogic_servlet_annotation_1000">
     <when>
@@ -439,7 +439,7 @@ The `<iteration>` element specifies to iterate over an implicit or explicit vari
 
 The following is an example of a rule that performs an iteration.
 
-[source,xml,subs="attributes+"]
+[source,xml,options="nowrap"]
 ----
 <rule id="jboss-eap5-xml-19000">
     <when>

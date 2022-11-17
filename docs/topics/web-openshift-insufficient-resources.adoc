@@ -8,18 +8,18 @@
 
 The following conditions indicate insufficient resources:
 
- * The `{LC_PSN}-web-console` pod is not running and the following error is displayed on the *Events* tab of the *Pod Details* screen in the OpenShift console:
+ * The `mta-web-console` pod is not running and the following error is displayed on the *Events* tab of the *Pod Details* screen in the OpenShift console:
 +
 [source,terminal,subs="attributes+"]
 ----
 0/9 nodes are available: 4 Insufficient cpu, 4 MatchNodeSelector, 9 Insufficient memory.
 ----
 
-* The `{LC_PSN}-web-console-deploy`, `{LC_PSN}-web-console-executor-deploy`, and `{LC_PSN}-web-console-postgresql-deploy` pods time out and the following error is displayed in the logs:
+* The `mta-web-console-deploy`, `mta-web-console-executor-deploy`, and `mta-web-console-postgresql-deploy` pods time out and the following error is displayed in the logs:
 +
 [source,terminal,subs="attributes+"]
 ----
-error: update acceptor rejected {LC_PSN}-web-console-executor-1: Pods for rc '{LC_PSN}/{LC_PSN}-web-console-executor-1' took longer than 600 seconds to become available
+error: update acceptor rejected mta-web-console-executor-1: Pods for rc 'mta/mta-web-console-executor-1' took longer than 600 seconds to become available
 ----
 
 .Procedure
