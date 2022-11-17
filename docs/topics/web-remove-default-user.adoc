@@ -6,7 +6,7 @@
 [id="web-remove-default-user_{context}"]
 = Removing the default {WebName} user
 
-A default {WebName} user is provided with the {WebName} with the username `mta` and password `password`. When you enable authentication for the {WebName}, you should remove this user so that the {WebName} can only be accessed by authorized users.
+A default {WebName} user is provided with the {WebName} with the username `migration` and password `password`. When you enable authentication for the {WebName}, you should remove this user so that the {WebName} can only be accessed by authorized users.
 
 Follow these steps to remove the default {WebName} user.
 
@@ -18,10 +18,10 @@ Follow these steps to remove the default {WebName} user.
 * For an OpenShift installation:
 .. Navigate to `<OPENSHIFT_URL>/console/project/{LC_PSN}/overview` in a browser.
 +
-NOTE: If you renamed the OpenShift project when deploying, replace `mta` with the name of your project.
+NOTE: If you renamed the OpenShift project when deploying, replace `mtr` with the name of your project.
 .. Click the link in the *SSO HTTPS* application and add "/auth" to the end of the URL.
 .. Select *Administration Console* to access the Red Hat Single Sign-On administration console.
 . Log in with an administrative user's credentials. The default credentials are `admin` and `password`.
-. In the upper left corner, select the *mta* realm from the drop down.
+. In the upper left corner, select the *mtr* realm from the drop down.
 . From the left-side navigation menu, select *Users* and then click *View all users*.
-. From the *mta* user's row, click *Delete* and confirm.
+. From the *migration* user's row, click *Delete* and confirm.
