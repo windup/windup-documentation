@@ -15,4 +15,4 @@ The interface of the {ProductName} ({ProductShortName}) extension is designed to
 * In the lower right pane, you can see the settings of the configuration, including source, target, and advanced options. You can view the progress of an analysis in this pane. When the analysis is completed, you can click the *Open Report* button to open the {ProductShortName} report, which describes any issues you need to address before you migrate or modernize your application. For more information, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[{ProductShortName} report] in the _{UserCLIBookName}_.
 
 .{ProductShortName} extension interface
-image::vs_code_extension_interface.png[{ProductShortName} extension interface]
+image::mtr-extension-interface.png[{ProductShortName} extension interface]
