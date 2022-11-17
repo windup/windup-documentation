@@ -19,7 +19,7 @@ The following conditions indicate insufficient resources:
 +
 [source,terminal,subs="attributes+"]
 ----
-error: update acceptor rejected mta-web-console-executor-1: Pods for rc '{LC_PSN}/mta-web-console-executor-1' took longer than 600 seconds to become available
+error: update acceptor rejected {LC_PSN}-web-console-executor-1: Pods for rc '{LC_PSN}/{LC_PSN}-web-console-executor-1' took longer than 600 seconds to become available
 ----
 
 .Procedure
