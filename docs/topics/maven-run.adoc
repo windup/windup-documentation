@@ -20,7 +20,7 @@ include::snippet_jdk-hardware-mac-prerequisites.adoc[]
 [...]
 <plugin>
     <groupId>org.jboss.windup.plugin</groupId>
-    <artifactId>{LC_PSN}-maven-plugin</artifactId>
+    <artifactId>mtr-maven-plugin</artifactId>
     <version>1.0.0-redhat-00002</version>
     <executions>
         <execution>
