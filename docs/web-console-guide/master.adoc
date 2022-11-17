@@ -10,7 +10,7 @@ include::topics/templates/document-attributes.adoc[]
 :_content-type: ASSEMBLY
 = {WebConsoleBookName}
 
-// Inclusive language statement
+//Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
 == Introduction
@@ -30,28 +30,9 @@ You can install the {WebName} on Linux, Windows, macOS, or {ocp-full}.
 
 // Installing on Linux, Windows, macOS
 include::topics/installing-web-console-or-cli-tool.adoc[leveloffset=+2]
+// Installing on OCP
+include::topics/installing-web-console-on-openshift.adoc[leveloffset=+2]
 
-[role="_additional-resources"]
-.Additional resources
-
-* xref:web-require-auth_{context}[Configuring authentication for the web console]
-
-=== Installing the {WebName} on {ocp-short}
-
-You can install the {WebName} on {ocp-short} 4.6 and later versions with the {ProductName} Operator.
-
-You can install the {WebName} on {ocp-short} 4.2-4.5 by importing a template and instantiating it to create the {WebName} application.
-
-:web-console-guide!:
-:context: ocp-46
-:ocp-46:
-include::topics/installing-web-console-on-openshift.adoc[leveloffset=+3]
-:ocp-46!:
-:context: ocp-42
-:ocp-42:
-include::topics/installing-web-console-on-openshift.adoc[leveloffset=+3]
-:ocp-42!:
-:web-console-guide:
 ==== Troubleshooting a {WebName} installation on OpenShift
 
 This section describes how to troubleshoot a {WebName} installation on OpenShift Container Platform.
@@ -61,7 +42,6 @@ include::topics/proc_web-downloading-logs-console.adoc[leveloffset=+4]
 
 //Downloading logs with the CLI
 include::topics/proc_web-downloading-logs-cli.adoc[leveloffset=+4]
-
 include::topics/web-openshift-no-route-to-host-error.adoc[leveloffset=+4]
 include::topics/web-openshift-insufficient-resources.adoc[leveloffset=+4]
 
@@ -101,12 +81,9 @@ include::topics/web-adding-global-custom-rules.adoc[leveloffset=+2]
 include::topics/web-adding-global-custom-labels.adoc[leveloffset=+2]
 
 // Require Authentication for {ProductWebName}
-include::topics/web-require-auth.adoc[leveloffset=+1]
+include::topics/configuring-web-console-authentication-for-linux-windows-macos.adoc[leveloffset=+1]
 
-// Enable {ProductWebName} to Require Authentication
-include::topics/web-enable-auth.adoc[leveloffset=+2]
-
-// include::topics/
+// TODO: eventually add steps for reverting back to no auth required
 
 
 // **********************************
