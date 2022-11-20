@@ -25,9 +25,9 @@ The following instructions detail creating a JUnit test using the Red Hat CodeRe
 ----
 ├── *rules-reviewed/*  _(Root directory of the rules found within the project)_
 │   ├── *<RULE_NAME>/*  _(Directory to contain the newly developed rule and tests)_
-│   │   ├── *<RULE_NAME>.{LC_PSN}.xml*  _(Custom rule)_
+│   │   ├── *<RULE_NAME>.windup.xml*  _(Custom rule)_
 │   │   ├── *tests/*  _(Directory that contains any test rules and data)_
-│   │   │   ├── *<RULE_NAME>.{LC_PSN}.test.xml* _(Test rule)_
+│   │   │   ├── *<RULE_NAME>.windup.test.xml* _(Test rule)_
 │   │   │   └── *data/*  _(Optional directory to contain test rule data)_
 ----
 

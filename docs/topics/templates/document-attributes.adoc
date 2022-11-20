@@ -25,10 +25,10 @@ ifdef::mta[]
 :ProductVersion: 6.0.0
 :ProductDistributionVersion: 6.0.0.GA-redhat-00002
 :ProductDistribution: mta-6.0.0.GA-offline.zip
-:DevDownloadPageURL: https://developers.redhat.com/products/mta/download
+:MTADownloadPageURL: https://developers.redhat.com/products/mta/download
 :PluginName: MTA plugin
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
-:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
+:JiraWindupURL: https://issues.redhat.com/projects/TACKLE
 endif::[]
 
 ifdef::mtr[]
@@ -47,8 +47,8 @@ ifdef::mtr[]
 :ProductDistributionVersion: 1.0.0.GA-redhat-00001
 :ProductDistribution: mtr-1.0.0.GA-offline.zip
 :ProductVersion: 1.0.0
-:DevDownloadPageURL: https://developers.redhat.com/products/mtr/download
-:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mtr/
+:MTRDownloadPageURL: https://developers.redhat.com/products/mtr/download
+:JiraWindupURL: https://issues.redhat.com/projects/WINDUP
 endif::[]
 
 
@@ -100,7 +100,6 @@ endif::[]
 :OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
 :LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
 
-:ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
 
 //What about these ones?
 //Links to MTA and MTR Jira project pages:
@@ -113,6 +112,7 @@ endif::[]
 
 // URLs for downloads on developers.redhat.com
 
+:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
 
 // KBase Article links:
 :KBArticleTechnologyPreview: https://access.redhat.com/support/offerings/techpreview

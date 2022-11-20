@@ -14,10 +14,10 @@ Test rules are created using a process similar to the process for creating a tes
 
 * Test rules should be placed in a `tests/` directory beneath the rule to be tested.
 * Any data, such as test classes, should be placed in a `data/` directory beneath the `tests/` directory.
-* Test rules should use the `.mta.test.xml` extension.
+* Test rules should use the `.windup.test.xml` extension.
 * These rules use the structure defined in the Test XML Rule Structure.
 
-In addition, it is recommended to create a test rule that follows the name of the rule it tests. For instance, if a rule were created with a filename of `proprietary-rule.{LC_PSN}.xml`, the test rule should be called `proprietary-rule.mta.test.xml`.
+In addition, it is recommended to create a test rule that follows the name of the rule it tests. For instance, if a rule were created with a filename of `proprietary-rule.{LC_PSN}.xml`, the test rule should be called `proprietary-rule.windup.test.xml`.
 
 [id="test-xml-rule-structure_{context}"]
 === Test XML rule structure
@@ -61,7 +61,7 @@ The following is an example of a test rule that fails if only a specific message
           id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
   <testDataPath>data/</testDataPath>
-  <rulePath>../proprietary-servlet.{LC_PSN}.xml</rulePath>
+  <rulePath>../proprietary-servlet.windup.xml</rulePath>
   <ruleset>
     <rules>
       <rule id="proprietary-servlet-01000-test">
