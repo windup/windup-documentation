@@ -16,19 +16,19 @@ ifdef::mta[]
 :DocInfoProductNumber: 6.0
 :ProductShortName: MTA
 :LC_PSN: mta
+:WebName: User Interface
+:WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
 :LC_PSN: mta
 :DocInfoProductNameURL: migration_toolkit_for_applications
-:WebName: user interface
-:WebNameTitle: User Interface
 :WebConsoleBookName: {WebNameTitle} Guide
 :ProductVersion: 6.0.0
 :ProductDistributionVersion: 6.0.0.GA-redhat-00002
 :ProductDistribution: mta-6.0.0.GA-offline.zip
-:DevDownloadPageURL: https://developers.redhat.com/products/mta/download
+:MTADownloadPageURL: https://developers.redhat.com/products/mta/download
 :PluginName: MTA plugin
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
-:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
+:JiraWindupURL: https://issues.redhat.com/projects/TACKLE
 endif::[]
 
 ifdef::mtr[]
@@ -47,8 +47,8 @@ ifdef::mtr[]
 :ProductDistributionVersion: 1.0.0.GA-redhat-00001
 :ProductDistribution: mtr-1.0.0.GA-offline.zip
 :ProductVersion: 1.0.0
-:DevDownloadPageURL: https://developers.redhat.com/products/mtr/download
-:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mtr/
+:MTRDownloadPageURL: https://developers.redhat.com/products/mtr/download
+:JiraWindupURL: https://issues.redhat.com/projects/WINDUP
 endif::[]
 
 
@@ -75,9 +75,6 @@ endif::[]
 :ocp-full: Red Hat OpenShift Container Platform
 :ocp-short: OpenShift Container Platform
 :ocp-first: {ocp-full} (RHOCP)
-
-// This book is on GitHub wiki only
-:CoreDevelopmentBookName: Core Development Guide
 
 // ********************
 // * Product versions *
@@ -111,6 +108,7 @@ endif::[]
 
 // Point to the GitHub wiki version since there is no product version of this guide.
 :ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
+
 
 // URLs for downloads on developers.redhat.com
 
