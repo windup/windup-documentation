@@ -26,10 +26,10 @@ include::snippet_jdk-hardware-mac-prerequisites.adoc[]
 .Procedure
 
 ifdef::cli-guide[]
-. Navigate to the link:{MTRDownloadPageURL}[{ProductShortName} Download page] and download the `Migration Toolkit CLI` file.
+. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the `Migration Toolkit CLI` file.
 endif::[]
 ifdef::web-console-guide[]
-. Navigate to the link:{MTRDownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
+. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
 endif::[]
 
 . Extract the `.zip` file to a directory of your choice.
