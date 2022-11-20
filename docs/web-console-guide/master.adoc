@@ -28,12 +28,12 @@ include::topics/about-the-user-interface.adoc[leveloffset=+2]
 [id=mta-6-ui-interface-views]
 == User interface views
 
-The {ProductName} ({ProductShortName}) {WebName} has two user interfaces:
+The {ProductName} ({ProductShortName}) {WebName} has two views:
 
 * Administrator view
 * Developer view
 
-In *Administrator* view, you configfure the instance environment, working with credentials, repositories, and HTTP and HTTPS proxy definitions.
+In *Administrator* view, you configure the instance environment, working with credentials, repositories, and HTTP and HTTPS proxy definitions.
 
 In *Developer* view, you perform application assessments and analyses, review reports, and add applications for assessment and analysis.
 
