@@ -3,7 +3,7 @@
 // * docs/rules-development-guide/master.adoc
 
 :_content-type: PROCEDURE
-[id="add-rule-to-mta_{context}"]
+[id="add-rule-to-mtr_{context}"]
 = Adding a rule to the {ProductName}
 
 A {ProductName} rule is installed by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files with the `.windup.xml` extension in the following locations:
@@ -14,5 +14,5 @@ A {ProductName} rule is installed by copying the rule to the appropriate {Produc
 +
 [NOTE]
 ====
-In a Windows operating system, the rules are located in `\Documents and Settings\<USER_NAME>\.{LC_PSN}\rules\` or ``\Users\<USER_NAME>\.{LC_PSN}\rules\`.
+In a Windows operating system, the rules are located in `\Documents and Settings\<USER_NAME>\.{LC_PSN}\rules\` or ``\users\<USER_NAME>\.{LC_PSN}\rules\`.
 ====
