@@ -1,55 +1,120 @@
 :toc:
 :toclevels: 4
 :numbered:
-:mtr:
+:mta:
 include::topics/templates/document-attributes.adoc[]
 
 :imagesdir: topics/images
-:context: web-console-guide
-:web-console-guide:
 :_content-type: ASSEMBLY
 = {WebConsoleBookName}
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
+[id="mta-6-ui-guide-introduction"]
 == Introduction
 
 // About the {WebConsoleBookName}
-include::topics/about-console-guide.adoc[leveloffset=+2]
+include::topics/mta-about-console-guide.adoc[leveloffset=+2]
 
 // About {ProductName}
-include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
 // About the {WebName}
-include::topics/about-the-web-console.adoc[leveloffset=+2]
+include::topics/about-the-user-interface.adoc[leveloffset=+2]]
 
-== Installing the {WebName}
+[id=mta-6-ui-interface-views]
+== User interface views
 
-You can install the {WebName} on Linux, Windows, macOS, or {ocp-full}.
+The {ProductName} ({ProductShortName}) {WebName} has two uviews:
 
-// Installing on Linux, Windows, macOS
-include::topics/installing-web-console-or-cli-tool.adoc[leveloffset=+2]
-// Installing on OCP
-include::topics/installing-web-console-on-openshift.adoc[leveloffset=+2]
+* Administrator view
+* Developer view
 
-==== Troubleshooting a {WebName} installation on OpenShift
+In *Administrator* view, you configure the instance environment, working with credentials, repositories, and HTTP and HTTPS proxy definitions.
 
-This section describes how to troubleshoot a {WebName} installation on OpenShift Container Platform.
+In *Developer* view, you perform application assessments and analyses, review reports, and add applications for assessment and analysis.
 
-//Downloading logs with OCP console
-include::topics/proc_web-downloading-logs-console.adoc[leveloffset=+4]
+// == Administrator view
+// include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
 
-//Downloading logs with the CLI
-include::topics/proc_web-downloading-logs-cli.adoc[leveloffset=+4]
-include::topics/web-openshift-no-route-to-host-error.adoc[leveloffset=+4]
-include::topics/web-openshift-insufficient-resources.adoc[leveloffset=+4]
+// Installation
+include::topics/mta-6-installing-web-console-on-openshift.adoc[leveloffset=+1]
 
-// Reporting issues
+[id="configuring-the-instance-environment"]
+== Configuring the instance environment
 
-===== Reporting issues
+You can configure the following in *Administrator* view:
 
-{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
+* Credentials
+* Repositories
+* HTTP and HTTPS proxy settings
+
+[id="configuring-credentials"]
+=== Configuring credentials
+
+You can configure the following types of credentials in *Administrator* view:
+
+* Source control
+* Maven
+* Proxy
+
+include::topics/mta-web-config-source-control-credentials.adoc[leveloffset=+3]
+include::topics/mta-web-config-maven-credentials.adoc[leveloffset=+3]
+include::topics/mta-web-config-proxy-credentials.adoc[leveloffset=+3]
+
+[id="configuring-repositories"]
+=== Configuring repositories
+
+You can configure the following types of repositories in *Administrator* view:
+
+* Git
+* Subversion
+* Maven
+
+include::topics/mta-web-config-git-repos.adoc[leveloffset=+3]
+include::topics/mta-web-config-subversion-repos.adoc[leveloffset=+3]
+
+[id="configuring-maven-repositories"]
+==== Configuring a Maven repository and reducing its size
+
+You can use the (ProductShortName) {WebName} to both configure a Maven repository and to reduce its size.
+
+include::topics/mta-web-config-maven-repo.adoc[leveloffset=+4]
+include::topics/mta-web-config-maven-repo-size.adoc[leveloffset=+4]
+
+// === Configuring HTTP and HTTPS proxy settings
+include::topics/mta-web-proxy-config.adoc[leveloffset=2]
+
+[id="assessing-and-analyzing-applications"]
+== Assessing and analyzing applications
+You can use the {ProductName} ({ProductShortName}) {WebName} to both assess and to analyze applications.
+
+Assessing applications refers to estimating the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors. The results of an assessment can be used as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work, and which are not suitable for containerization.
+
+Analyzing applications refers to using rules to determine which specific lines in an application must be modified before the application can be migrated or modernized.
+
+include::topics/mta-web-assessing-apps.adoc[leveloffset=+2]
+include::topics/mta-web-applying-assessments-to-other-apps.adoc[leveloffset=+2]
+include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[leveloffset=+2]
+include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+2]
+
+[id=working-with-applications-in-the-ui]
+== Working with Applications
+
+You can use the {ProductName} ({ProductShortName}) {WebName} to do the following:
+
+* Add applications
+* Assign application credentials
+* Import a list of applications
+* Download a CSV template for importing application lists
+
+include::topics/mta-web-application-attributes.adoc[leveloffset=+2]
+include::topics/mta-web-adding-applications.adoc[leveloffset=+2]
+include::topics/mta-web-assigning-application-credentials.adoc[leveloffset=+2]
+include::topics/mta-web-importing-an-app-list.adoc[leveloffset=+2]
+include::topics/mta-web-downloading-app-list-template.adoc[leveloffset=+2]
+
 
 == Using the {WebName} to analyze applications
 

@@ -13,7 +13,7 @@ The {ProductShortName} Operator is a structural layer that manages resources dep
 
 == Persistent volume requirements
 
-The {ProductShortName} Operator requires a total of 5 persistent volumes (PVs) used by different components to successfully deploy, 3 RWO volumes and 2 RWX volumes that are requested via PVCs. These PVS are described in the table below:
+The {ProductShortName} Operator requires a total of 5 persistent volumes (PVs) used by different components to successfully deploy, 3 RWO volumes and 2 RWX volumes that are requested via PVCs. The 5 PVs are described in the table below:
 
 .Required persistent volumes
 [cols="25%,25%,25%,25%", options="header"]
@@ -71,3 +71,7 @@ You can install the {ProductName} ({ProductShortName}) and the {WebName} on Open
 . Review options - the default selections should be OK, but be sure to validate the system requirements for storage, memory, and cores - and then click *Create*.
 . In *Administrator* view, click *Workloads -> Pods* to verify that the MTA pods are running.
 . Access the {WebName} from your browser by using the route exposed by the `{LC_PSN}-web-console` application within OpenShift.
+. Use the following credentials to log in:
+** *User name*: admin
+** *Password*: Passw0rd!
+. When prompted, create a new password.
