@@ -40,7 +40,7 @@ endif::[]
 ifdef::ocp-42[]
 .Procedure
 
-. Navigate to the link:{MTRDownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
+. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
 . Extract the `.zip` file to a directory, for example, `{ProductShortName}_HOME`.
 endif::[]
 ifdef::ocp-46[]
