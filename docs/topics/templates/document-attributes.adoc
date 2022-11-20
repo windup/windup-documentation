@@ -16,11 +16,11 @@ ifdef::mta[]
 :DocInfoProductNumber: 6.0
 :ProductShortName: MTA
 :LC_PSN: mta
-:WebName: User Interface
-:WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
 :LC_PSN: mta
 :DocInfoProductNameURL: migration_toolkit_for_applications
+:WebName: user interface
+:WebNameTitle: User Interface
 :WebConsoleBookName: {WebNameTitle} Guide
 :ProductVersion: 6.0.0
 :ProductDistributionVersion: 6.0.0.GA-redhat-00002
@@ -76,6 +76,9 @@ endif::[]
 :ocp-short: OpenShift Container Platform
 :ocp-first: {ocp-full} (RHOCP)
 
+// This book is on GitHub wiki only
+:CoreDevelopmentBookName: Core Development Guide
+
 // ********************
 // * Product versions *
 // ********************
@@ -100,7 +103,6 @@ endif::[]
 :OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
 :LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
 
-:ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
 
 //What about these ones?
 //Links to MTA and MTR Jira project pages:
@@ -110,9 +112,9 @@ endif::[]
 // Point to the GitHub wiki version since there is no product version of this guide.
 :ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
 
-
 // URLs for downloads on developers.redhat.com
 
+:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
 
 // KBase Article links:
 :KBArticleTechnologyPreview: https://access.redhat.com/support/offerings/techpreview

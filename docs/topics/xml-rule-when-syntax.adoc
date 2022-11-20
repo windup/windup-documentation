@@ -367,6 +367,20 @@ a|Subcondition used within `<project>` to query against project dependencies. Th
 |Specify the upper version bound of the artifact. For example `2.2.0.Final`.
 |====
 
+It is possible to qualify the element within the POM file that contains the artifact that the rule is searching for.
+This is achieved using the optional `<location>` element.
+The example below shows a rule that is searching for an artifact within the `<plugins>` element of the POM file.
+
+image::search_for_artifact.png[rule searching for artifact]
+
+The valid list of locations is as follows:
+
+* DEPENDENCY_MANAGEMENT
+* DEPENDENCIES
+* PLUGIN_MANAGEMENT
+* PLUGINS
+* PARENT
+
 [id="filecontent-syntax_{context}"]
 == <filecontent> syntax
 
