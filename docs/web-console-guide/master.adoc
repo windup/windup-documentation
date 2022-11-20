@@ -1,7 +1,7 @@
 :toc:
 :toclevels: 4
 :numbered:
-:mta:
+:mtr:
 include::topics/templates/document-attributes.adoc[]
 
 :imagesdir: topics/images
@@ -10,269 +10,80 @@ include::topics/templates/document-attributes.adoc[]
 :_content-type: ASSEMBLY
 = {WebConsoleBookName}
 
-// Inclusive language statement
+//Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
-[id="mta-6-ui-guide-introduction"]
 == Introduction
 
 // About the {WebConsoleBookName}
-include::topics/mta-about-console-guide.adoc[leveloffset=+2]
+include::topics/about-console-guide.adoc[leveloffset=+2]
 
 // About {ProductName}
-include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 
 // About the {WebName}
-include::topics/about-the-user-interface.adoc[leveloffset=+2]
+include::topics/about-the-web-console.adoc[leveloffset=+2]
 
-[id=mta-6-ui-interface-views]
-== User interface views
+== Installing the {WebName}
 
-The {ProductName} ({ProductShortName}) {WebName} has two user interfaces:
+You can install the {WebName} on Linux, Windows, macOS, or {ocp-full}.
 
-* Administrator view
-* Developer view
+// Installing on Linux, Windows, macOS
+include::topics/installing-web-console-or-cli-tool.adoc[leveloffset=+2]
+// Installing on OCP
+include::topics/installing-web-console-on-openshift.adoc[leveloffset=+2]
 
-In *Administrator* view, you configfure the instance environment, working with credentials, repositories, and HTTP and HTTPS proxy definitions.
+==== Troubleshooting a {WebName} installation on OpenShift
 
-In *Developer* view, you perform application assessments and analyses, review reports, and add applications for assessment and analysis.
+This section describes how to troubleshoot a {WebName} installation on OpenShift Container Platform.
 
-// We need an intro about the two views.
+//Downloading logs with OCP console
+include::topics/proc_web-downloading-logs-console.adoc[leveloffset=+4]
 
-// == Administrator view
-
-// Intro about the three sets of activities
-
-// include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
-
-// include::topics/ Credentials
-// include::topics/ about repositories
-
-// === Developer view
-
-// Intro about the three sets of activities (Application inventory, assessments, and analyses)
-
-// include::topics/ about Application inventory
-
-// Installation
-include::topics/mta-6-installing-web-console-on-openshift.adoc[leveloffset=+1]
-
-[id="configuring-the-instance-environment"]
-== Configuring the instance environment
-
-You can configure the following in *Administrator* view:
-
-* Credentials
-* Repositories
-* HTTP and HTTPS proxy settings
-
-[id="configuring-credentials"]
-=== Configuring credentials
-
-You can configure the following types of credentials in *Administrator* view:
-
-* Source control
-* Maven
-* Proxy
-
-include::topics/mta-web-config-source-control-credentials.adoc[leveloffset=+3]
-include::topics/mta-web-config-maven-credentials.adoc[leveloffset=+3]
-include::topics/mta-web-config-proxy-credentials.adoc[leveloffset=+3]
-
-[id="configuring-repositories"]
-=== Configuring repositories
-
-You can configure the following types of repositories in *Administrator* view:
-
-* Git
-* Subversion
-* Maven
-
-include::topics/mta-web-config-git-repos.adoc[leveloffset=+3]
-include::topics/mta-web-config-subversion-repos.adoc[leveloffset=+3]
-
-[id="configuring-maven-repositories"]
-==== Configuring a Maven repository and reducing its size
-
-You can use the (ProductShortName) {WebName} to both configure a Maven repository and to reduce its size.
-
-include::topics/mta-web-config-maven-repo.adoc[leveloffset=+4]
-include::topics/mta-web-config-maven-repo-size.adoc[leveloffset=+4]
-
-// === Configuring HTTP and HTTPS proxy settings
-include::topics/mta-web-proxy-config.adoc[leveloffset=2]
-
-// ==== Application assessments and analyses
-
-// include::topics/ about assessments
-// include::topics/ about analyses
-
-// ==== Reports
-
-// include::topics/ about reports
-
-// ==== Controls
-
-// include::topics/ about controls
-
-// == Installing the {WebName} on {ocp-short}
-
-// Heads up: This includes instructions for installing on OCP
-// 4.2+. Some of these sections may need deletion or editing. I
-// already tossed the irrelevant Mac/Windows/etc. parts
-
-// You can install the {WebName} on {ocp-short} 4.6 and later versions with the {ProductName} Operator.
-
-// You can install the {WebName} on {ocp-short} 4.2-4.5 by importing a template and instantiating it to create the {WebName} application.
-
-// :web-console-guide!:
-// :context: ocp-46
-// :ocp-46:
-// include::topics/installing-web-console-on-openshift.adoc[leveloffset=+3]
-// :ocp-46!:
-// :context: ocp-42
-// :ocp-42:
-// include::topics/installing-web-console-on-openshift.adoc[leveloffset=+3]
-// :ocp-42!:
-// :web-console-guide:
-// ==== Troubleshooting a {WebName} installation on OpenShift
-
-// Not clear if ANY of this is relevant.
-
-// This section describes how to troubleshoot a {WebName} installation on OpenShift Container Platform.
-
-// Downloading logs with OCP console
-// include::topics/proc_web-downloading-logs-console.adoc[leveloffset=+4]
-
-// Downloading logs with the CLI
-// include::topics/proc_web-downloading-logs-cli.adoc[leveloffset=+4]
-
-// include::topics/web-openshift-no-route-to-host-error.adoc[leveloffset=+4]
-// include::topics/web-openshift-insufficient-resources.adoc[leveloffset=+4]
+//Downloading logs with the CLI
+include::topics/proc_web-downloading-logs-cli.adoc[leveloffset=+4]
+include::topics/web-openshift-no-route-to-host-error.adoc[leveloffset=+4]
+include::topics/web-openshift-insufficient-resources.adoc[leveloffset=+4]
 
 // Reporting issues
 
-// ===== Reporting issues
+===== Reporting issues
 
-// {ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
+{ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
 
-// == Configuring the instance environment
-// include::topics/tbd
-// Introduction
+== Using the {WebName} to analyze applications
 
-// === Configuring credentials
+You can create a project in the web console to analyze your applications.
 
-// include::topics/
+Each project groups the applications for a specific analysis, which you can configure with custom rules and labels.
 
-// ==== Configuring source control
+The analysis process generates reports that describe the readiness of your applications for migration or modernization.
 
-// include::topics/
+// Creating a project
+include::topics/web-create-project.adoc[leveloffset=+2]
 
-// ==== Configuring Maven credentials
+// Running a saved analysis
+include::topics/web-running-saved-analysis.adoc[leveloffset=+2]
 
-// include::topics/
+// Viewing the Results of an Analysis
+include::topics/web-view-results.adoc[leveloffset=+2]
 
-// ==== Configuring proxy credentials
+// Review the Reports
+include::topics/web-review-reports.adoc[leveloffset=+2]
 
-// include::topics/
+//Reconfigure Analysis
+include::topics/web-updating-an-analysis.adoc[leveloffset=+2]
 
-// === Configuring repositories
+// Using Custom Rules
+include::topics/web-adding-global-custom-rules.adoc[leveloffset=+2]
 
-// include::topics/
+// Using Custom Labels
+include::topics/web-adding-global-custom-labels.adoc[leveloffset=+2]
 
-// ==== Configuring Git repositories
+// Require Authentication for {ProductWebName}
+include::topics/configuring-web-console-authentication-for-linux-windows-macos.adoc[leveloffset=+1]
 
-// include::topics/
-
-// ==== Configuring subversion repositories
-
-// include::topics/
-
-// ==== Configuring Maven repositories
-
-// include::topics/
-
-// ===== Configuring a Maven repository
-
-// include::topics/
-
-// ===== Managing repository size
-
-// include::topics/
-
-
-
-// === Seeding instances
-
-// include::topics/
-
-// ==== Creating a new stakeholder group
-
-// include::topics/
-
-// ==== Creating a new job function
-
-// include::topics/
-
-// ==== Creating a new stakeholder
-
-// include::topics/
-
-// ==== Creating a new business service
-
-// include::topics/
-
-// ==== Creating a new tag type
-
-// include::topics/
-
-// ===== Creating a new tag
-
-// include::topics/tbd
-
-// == Assessing and analyzing application
-
-// include::topics/
-
-// ==== Creating a new tag type
-
-// include::topics/
-
-// ===== Creating a new tag
-
-// include::topics/tbd
-
-[id="assessing-and-analyzing-applications"]
-== Assessing and analyzing applications
-
-You can use the {ProductName} ({ProductShortName}) {WebName} to both assess and to analyze applications.
-
-Assessing applications refers to estimating the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors. The results of an assessment can be used as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work, and which are not suitable for containerization.
-
-Analyzing applications refers to using rules to determine which specific lines in an application must be modified before the application can be migrated or modernized.
-
-include::topics/mta-web-assessing-apps.adoc[leveloffset=+2]
-include::topics/mta-web-applying-assessments-to-other-apps.adoc[leveloffset=+2]
-include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[leveloffset=+2]
-include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+2]
-
-[id=working-with-applications-in-the-ui]
-== Working with Applications
-
-You can use the {ProductName} ({ProductShortName}) {WebName} to do the following:
-
-* Add applications
-* Assign application credentials
-* Import a list of applications
-* Download a CSV template for importing application lists
-
-// == Adding applications
-
-include::topics/mta-web-application-attributes.adoc[leveloffset=+2]
-include::topics/mta-web-adding-applications.adoc[leveloffset=+2]
-include::topics/mta-web-assigning-application-credentials.adoc[leveloffset=+2]
-include::topics/mta-web-importing-an-app-list.adoc[leveloffset=+2]
-include::topics/mta-web-downloading-app-list-template.adoc[leveloffset=+2]
+// TODO: eventually add steps for reverting back to no auth required
 
 
 // **********************************
@@ -280,4 +91,4 @@ include::topics/mta-web-downloading-app-list-template.adoc[leveloffset=+2]
 // **********************************
 include::topics/templates/revision-info.adoc[]
 
-:!web-console-guide:
+:web-console-guide!:
