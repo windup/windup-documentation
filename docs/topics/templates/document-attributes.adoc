@@ -87,13 +87,13 @@ endif::[]
 
 :IntroToMTABookName: Introduction to the {DocInfoProductName}
 :ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
+:ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html/{WebNameURL}/index
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
 :EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_codeready_studio_guide
 
 :IntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
-:ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
 :ProductDocUserInterfaceGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/{WebNameURL}
-
+:ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
 :ProductDocMavenGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/maven_plugin_guide
 :ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
 :ProductDocIntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
@@ -105,6 +105,10 @@ endif::[]
 //Links to MTA and MTR Jira project pages:
 :JiraMTRURL: https://issues.redhat.com/projects/WINDUP
 :JiraMTAURL: https://issues.redhat.com/projects/TACKLE
+
+// Point to the GitHub wiki version since there is no product version of this guide.
+:ProductDocCoreGuideURL: https://github.com/windup/windup/wiki/Core-Development-Guide
+
 
 // URLs for downloads on developers.redhat.com
 

@@ -19,7 +19,7 @@ You can configure multiple run configurations to run against each project you im
 . Complete the following configuration fields:
 
 ** *Name*: Enter a meaningful name for the analysis configuration or accept the default.
-** *`{LC_PSN}-cli`*: Enter the path to the `{LC_PSN}-cli` executable. For example: `$HOME/mta-cli-5.3.0.Final/bin/mta-cli`.
+** *`{LC_PSN}-cli`*: Enter the path to the `{LC_PSN}-cli` executable. For example: `$HOME/mtr-cli-1.0.0.GA-redhat-00001/bin/mtr-cli`.
 ** *Input*: Set to the path of the project that you have open within your IDE by clicking *Add* and doing one of the following:
 
 *** Enter the input file or directory and press Enter.
