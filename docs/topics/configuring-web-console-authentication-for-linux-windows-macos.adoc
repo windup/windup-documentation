@@ -34,7 +34,7 @@ $ ./standalone.sh -Djboss.socket.binding.port-offset=<offset_value>
 . In the realm, create a client named *windup-web*.
 . Check that *Access Type* is set to `public`.
 . Set *Valid Redirect URIs* to `http://localhost:8080/windup-ui/*`.
-. Set *Web Origins* to `*`. Click *Save*.
+. Set *Web Origins* to `+*+` and click *Save*.
 . Create a role named *user*.
 . Create a user with any name.
 . Set the credentials of the user, disable *Temporary*, and assign the role "user" to the user.
