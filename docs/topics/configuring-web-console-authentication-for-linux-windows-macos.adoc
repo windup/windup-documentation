@@ -27,13 +27,13 @@ $ ./standalone.sh -Djboss.socket.binding.port-offset=<offset_value>
 > ...\bin\standalone.bat -Djboss.socket.binding.port-offset=<offset_value>
 ----
 
-. Open the Red Hat SSO administration console from http://localhost:8180:
+. Open the Red Hat SSO administration console from `\http://localhost:8180`:
 * Username: `admin`
 * Password: `admin`
 . Add a realm named *windup*.
 . In the realm, create a client named *windup-web*.
 . Check that *Access Type* is set to `public`.
-. Set *Valid Redirect URIs* to `http://localhost:8080/windup-ui/*`.
+. Set *Valid Redirect URIs* to `\http://localhost:8080/windup-ui/*`.
 . Set *Web Origins* to `+*+` and click *Save*.
 . Create a role named *user*.
 . Create a user with any name.
@@ -84,7 +84,7 @@ $ <MTR_HOME>/run_windup.sh
 ----
 C:\<MTR_HOME>\run_windup.bat
 ----
-. Open the browser at http://localhost:8080/windup-ui
+. Open the browser at `\http://localhost:8080/windup-ui`.
 
 [discrete]
 [id="disabling-authentication_{context}"]
