@@ -25,10 +25,11 @@ ifdef::mta[]
 :ProductVersion: 6.0.0
 :ProductDistributionVersion: 6.0.0.GA-redhat-00002
 :ProductDistribution: mta-6.0.0.GA-offline.zip
-:MTADownloadPageURL: https://developers.redhat.com/products/mta/download
+:DevDownloadPageURL: https://developers.redhat.com/products/mta/download
 :PluginName: MTA plugin
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/TACKLE
+:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
 endif::[]
 
 ifdef::mtr[]
@@ -47,8 +48,9 @@ ifdef::mtr[]
 :ProductDistributionVersion: 1.0.0.GA-redhat-00001
 :ProductDistribution: mtr-1.0.0.GA-offline.zip
 :ProductVersion: 1.0.0
-:MTRDownloadPageURL: https://developers.redhat.com/products/mtr/download
+:DevDownloadPageURL: https://developers.redhat.com/products/mtr/download
 :JiraWindupURL: https://issues.redhat.com/projects/WINDUP
+:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mtr/
 :IDEPluginFilename: migrationtoolkit-mtr-eclipse-plugin-repository
 endif::[]
 
@@ -109,8 +111,6 @@ endif::[]
 :JiraMTAURL: https://issues.redhat.com/projects/TACKLE
 
 // URLs for downloads on developers.redhat.com
-
-:CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
 
 // KBase Article links:
 :KBArticleTechnologyPreview: https://access.redhat.com/support/offerings/techpreview
