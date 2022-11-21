@@ -1,5 +1,5 @@
 :toc:
-:toclevels: 3
+:toclevels: 4
 :numbered:
 :mta:
 include::topics/templates/document-attributes.adoc[]
@@ -21,7 +21,7 @@ include::topics/rules-guide-intro.adoc[leveloffset=+2]
 // Use of <{ProductShortName}_HOME> in this Guide
 include::topics/about-home-var.adoc[leveloffset=+3]
 
-// {ProductShortName} Rules
+// MTA Rules
 include::topics/about-rules.adoc[leveloffset=+2]
 
 // Getting Started
@@ -89,7 +89,7 @@ For more information on categorizing tasks, see xref:rule-categories_{context}[U
 
 === Additional resources
 
-// Review the Existing {ProductShortName} XML Rules
+// Review the Existing MTA XML Rules
 include::topics/review-existing-rules.adoc[leveloffset=+3]
 
 // Fork and Clone the Ruleset GitHub Project
