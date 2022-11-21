@@ -14,7 +14,7 @@ You can run {ProductShortName} against your application.
 +
 [source,terminal,subs="attributes+"]
 ----
-$ ./mta-cli --input /path/to/jee-example-app-1.0.0.ear \
+$ ./{LC_PSN}-cli --input /path/to/jee-example-app-1.0.0.ear \
 --output /path/to/output --source weblogic --target eap:6 \
 --packages com.acme org.apache
 ----
@@ -37,7 +37,7 @@ The following command analyzes the `com.acme` and `org.apache` packages of the l
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/mta-cli \
+$ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli \
 --input /path/to/jee-example-app-1.0.0.ear \
 --output /path/to/report-output/ --source eap:5 --target eap:7 \
 --packages com.acme org.apache
@@ -50,7 +50,7 @@ The following command analyzes the `org.jboss.seam` packages of the link:https:/
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/mta-cli --sourceMode --input /path/to/seam-booking-5.2/ \
+$ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli --sourceMode --input /path/to/seam-booking-5.2/ \
 --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam
 ----
 
@@ -61,7 +61,7 @@ The following command analyzes the `com.acme` and `org.apache` packages of the l
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/mta-cli --input /path/to/jee-example-app-1.0.0.ear \
+$ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli --input /path/to/jee-example-app-1.0.0.ear \
  --output /path/to/report-output/ \
  --target eap:7 --target cloud-readiness --packages com.acme org.apache
 ----
@@ -88,11 +88,11 @@ You can use OpenRewrite in the {ProductShortName} CLI to prepare Java applicatio
 
 .Procedure
 
-. Add the `openrewrite` argument when you execute the 'mta-cli' script and specify the other arguments appropriately:
+. Add the `openrewrite` argument when you execute the '{LC_PSN}-cli' script and specify the other arguments appropriately:
 +
 [source,terminal,subs="attributes+"]
 ----
-./mta-cli --openrewrite
+./{LC_PSN}-cli --openrewrite
 "-DactiveRecipes=<recipe name>" --input
 /path/to/source/project --goal dryRun
 ----
@@ -118,7 +118,7 @@ If you do not enter a parameter for `goal`, the script executes it as `dryRun`.
 +
 [source,terminal,subs="attributes+"]
 ----
-./mta-cli --openrewrite
+./{LC_PSN}-cli --openrewrite
 "-DactiveRecipes=<recipe name>" --input
 /path/to/source/project --goal run
 ----
@@ -148,7 +148,7 @@ To enable Bash completion for the current shell, run the following command:
 
 [source,terminal,subs="attributes+"]
 ----
-$ source <{ProductShortName}_HOME>/bash-completion/mta-cli
+$ source <{ProductShortName}_HOME>/bash-completion/{LC_PSN}-cli
 ----
 
 [discrete]
@@ -161,14 +161,14 @@ The following commands allow Bash completion to persist across restarts:
 +
 [source,terminal,subs="attributes+"]
 ----
-source <{ProductShortName}_HOME>/bash-completion/mta-cli
+source <{ProductShortName}_HOME>/bash-completion/{LC_PSN}-cli
 ----
 
 * To enable Bash completion for all users across system restarts, copy the {ProductName} {CLIName} Bash completion file to the `/etc/bash_completion.d/` directory as the root user.
 +
 [source,terminal,subs="attributes+"]
 ----
-# cp <{ProductShortName}_HOME>/bash-completion/mta-cli /etc/bash_completion.d/
+# cp <{ProductShortName}_HOME>/bash-completion/{LC_PSN}-cli /etc/bash_completion.d/
 ----
 
 [id="accessing-help_{context}"]
@@ -178,5 +178,5 @@ To see the complete list of available arguments for the `{LC_PSN}-cli` command, 
 
 [source,terminal,subs="attributes+"]]
 ----
-$ <{ProductShortName}_HOME>/bin/mta-cli --help
+$ <{ProductShortName}_HOME>/bin/{LC_PSN}-cli --help
 ----
