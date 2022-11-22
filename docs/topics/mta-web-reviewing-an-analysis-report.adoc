@@ -8,7 +8,7 @@
 
 An {ProductShortName} analysis report contains a variety of sections, including a listing of the technologies used by the application, the dependencies of the application, and the lines of code that must be changed to successfully migrate or modernize the application.
 
-For more information on the contents of a {ProductShortName} analysis report, see the link:{ProductDocUserGuideURL}#review_reports_cli-guide[Reviewing the reports]
+For more information on the contents of a {ProductShortName} analysis report, see the link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports]
 
 .Procedure
 
@@ -17,5 +17,3 @@ For more information on the contents of a {ProductShortName} analysis report, se
 3. Click *Report*.
 4. Click the dependencies or source links.
 5. Click the tabs to review the report.
-
-test
