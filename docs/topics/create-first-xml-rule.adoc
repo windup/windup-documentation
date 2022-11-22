@@ -225,7 +225,7 @@ Report created: /home/<USER_NAME>/migration-rules/reports/index.html
 [discrete]
 == Reviewing the reports
 
-Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#review_reports[Review the reports] section of the {ProductShortName} _{UserCLIBookName}_.
+Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#review_reports_cli-guide[Reviewing the reports] section of the {ProductShortName} _{UserCLIBookName}_.
 
 . Open `/home/<USER_NAME>/migration-rules/reports/index.html` in a web browser.
 . Verify that the rule ran successfully.
