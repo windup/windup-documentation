@@ -13,7 +13,7 @@ endif::[]
 ifdef::web-console-guide[]
 
 [id="installing-web-console-linux-win-mac_{context}"]
-= Installing the {WebName} on Linux, Windows, or macOS 
+= Installing the {WebName} on Linux, Windows, or macOS
 
 You can install the {WebName} on Linux, Windows, or macOS operating systems and access the {WebName} in a browser.
 
@@ -63,7 +63,7 @@ $ <{ProductShortName}_HOME>/run_windup.sh
 C:\<{ProductShortName}_HOME>\run_windup.bat
 ----
 +
-. Open a browser and navigate to `\http://localhost:8080/windup_ui`.
+. Open a browser and navigate to `\http://localhost:8080/windup-ui`.
 +
 If authentication is not configured, the Projects screen is displayed in your browser.
 +
