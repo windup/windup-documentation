@@ -88,6 +88,9 @@ include::topics/mta-web-config-maven-repo-size.adoc[leveloffset=+4]
 // === Configuring HTTP and HTTPS proxy settings
 include::topics/mta-web-proxy-config.adoc[leveloffset=2]
 
+// === Seeding instances
+include::topics/mta-web-seeding-instances.adoc[leveloffset=2]
+
 [id="assessing-and-analyzing-applications"]
 == Assessing and analyzing applications
 You can use the {ProductName} ({ProductShortName}) {WebName} to both assess and to analyze applications.

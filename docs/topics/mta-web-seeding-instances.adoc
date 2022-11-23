@@ -1,0 +1,128 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-seeding-instances_{context}"]
+= Seeding an instance
+
+If you are a project architect, you can configure the instance's key parameters in the Controls window, before migration. The parameters can be added and edited as needed.
+The following parameters define applications, individuals, teams, verticals or areas within an organization affected or participating in the migration:
+
+* Stakeholders
+* Stakeholder groups
+* Job functions
+* Business services
+* Tag types
+* Tags
+
+You can create and configure an instance in any order. However, the suggested order below is the most efficient for creating stakeholders and tags.
+
+Stakeholders:
+
+. Create stakeholder groups
+. Create job functions
+. Create stakeholders
+
+Tags:
+
+. Create tag types
+. Create tags
+
+Stakeholders and defined by:
+
+* Email
+* Name
+* Job function
+* Stakeholder groups
+
+== Creating a new stakeholder group
+
+There are no default stakeholder groups defined. You can create a new stakeholder group by following the procedure below.
+
+.Procedure
+
+. In *Developer* view, click *Controls*.
+. Click *Stakeholder groups*.
+. Click *Create new*.
+. Enter the following information:
+** Name
+** Description
+** Member(s)
+. Click *Create*.
+
+== Creating a new job function
+
+{ProductName} ({ProductShortName}) uses the job function attribute to classify stakeholders and provides a list of default values that can be expanded.
+
+You can create a new job function, which is not in the default list, by following the procedure below.
+
+.Procedure
+
+. In *Developer* view, click *Controls*.
+. Click *Job functions*.
+. Click *Create new*.
+. Enter a job function title in the *Name* text box.
+. Click *Create*.
+
+== Creating a new stakeholder
+
+You can create a new migration project stakeholder by following the procedure below.
+
+.Procedure
+
+. In *Developer* view, click *Controls*.
+. Click *Stakeholders*.
+. Click *Create new*.
+. Enter the following information:
+** Email
+** Name
+** Job function - custom functions can be created
+** Stakeholder group
+. Click *Create*.
+
+== Creating a new business service
+
+{ProductName} ({ProductShortName}) uses the business service attribute to specify the departments within the organization that use the application and that are affected by the migration.
+
+You can create a new business service by following the procedure below.
+
+.Procedure
+
+. In *Developer* view, click *Controls*.
+. Click *Business services*.
+. Click *Create new*.
+. Enter the following information:
+** Name
+** Description
+** Owner
+. Click *Create*.
+
+== Creating new tag types
+
+{ProductName} ({ProductShortName}) uses tags in multiple categories and provides a list of default values. You can create a new tag type by following the procedure below.
+
+.Procedure
+
+. In *Developer* view, click *Controls*.
+. Click *Tags*.
+. Click *Create tag type*.
+. Enter the following information:
+** Name
+** Rank - the order in which the tags appear on the applications
+** Color
+. Click *Create*.
+
+=== Creating new tags
+
+You can create a new tag, which is not in the default list, by following the procedure below.
+
+.Procedure
+
+. In *Developer* view, click *Controls*.
+. Click *Tags*.
+. Click *Create tag*.
+. Enter the following information:
+** Name
+** Tag type
+. Click *Create*.
