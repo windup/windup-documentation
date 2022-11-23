@@ -47,5 +47,5 @@ image::junit-test.png[]
 image::junit-test-arguments.png[]
 
 . Click *Run* in the bottom right corner to begin the test.
-
-Once the execution completes the results will be available for analysis. If all tests passed, then the test rule is correctly formatted; otherwise, it is recommended to address each of the issues raised in the test failures.
++
+When the execution completes, the results are available for analysis. If all tests passed, then the test rule is correctly formatted. If all tests did not pass, it is recommended to address each of the issues raised in the test failures.

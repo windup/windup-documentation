@@ -41,9 +41,9 @@ This directory structure will also be used to hold the generated {ProductShortNa
     </class-loading>
 </jboss-web>
 ----
-
+[]
 [discrete]
-== Creating the rule
+Creating the rule
 
 {ProductShortName} XML-based rules use the following rule pattern:
 
@@ -191,7 +191,7 @@ The rule is now complete and should look like the following example.
      </rules>
 </ruleset>
 ----
-
+[]
 [discrete]
 == Installing the rule
 
@@ -203,7 +203,7 @@ Copy the `JBoss5-web-class-loading.windup.xml` file to the `<{ProductShortName}_
 ----
 $ cp /home/<USER_NAME>/migration-rules/rules/JBoss5-web-class-loading.windup.xml <{ProductShortName}_HOME>/rules/
 ----
-
+[]
 [discrete]
 == Testing the rule
 
@@ -221,7 +221,7 @@ You should see the following result.
 Report created: /home/<USER_NAME>/migration-rules/reports/index.html
               Access it at this URL: file:///home/<USER_NAME>/migration-rules/reports/index.html
 ----
-
+[]
 [discrete]
 == Reviewing the reports
 
@@ -247,4 +247,4 @@ You can see that the `<class-loading>` line is highlighted, and the hint from th
 image::test-rule-details.png[Rule match]
 +
 // TODO: Consider updating with test data/rule combo that won't match on any of the other existing rules.
-The top of the file lists the classifications for matching rules. You can use the link icon to view the details for that rule. Notice that in this example, the `jboss-web.xml` file matched on another rule (`JBoss web application descriptor (jboss-web.xml)`) that produced `1` story point. This, combined with the `1` story point from our custom rule, brings the total story points for this file to `2`.
+The top of the file lists the classifications for matching rules. You can use the link icon to view the details for that rule. Notice that in this example, the `jboss-web.xml` file matched on another rule (`JBoss web application descriptor (jboss-web.xml)`) that produced `1` story point. This story point, combined with the `1` story point from our custom rule, brings the total story points for this file to `2`.
