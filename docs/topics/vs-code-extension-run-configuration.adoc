@@ -10,7 +10,7 @@ You can configure multiple run configurations to run against each project you im
 
 .Prerequisites
 
-* `windup-cli` executable installed. You can download the `windup-cli` executable from link:https://developers.redhat.com/products/mta/download[MTA download].
+* `windup-cli` executable installed. You can download the `windup-cli` executable from the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download pgae].
 
 .Procedure
 
@@ -19,7 +19,7 @@ You can configure multiple run configurations to run against each project you im
 . Complete the following configuration fields:
 
 ** *Name*: Enter a meaningful name for the analysis configuration or accept the default.
-** *`windup-cli`*: Enter the path to the `windup-cli` executable. For example: `$HOME/mtr-cli-1.0.0.GA-redhat-00001/bin/mtr-cli`.
+** *`windup-cli`*: Enter the path to the `windup-cli` executable. For example: `$HOME/{ProductDistribution}/bin/{LC_PSN}-cli`.
 ** *Input*: Set to the path of the project that you have open within your IDE by clicking *Add* and doing one of the following:
 
 *** Enter the input file or directory and press Enter.
@@ -29,4 +29,4 @@ You can configure multiple run configurations to run against each project you im
 
 . Right-click the run configuration and select *Run*.
 +
-When the analysis is completed, you can click the *Open Report* button to open the {ProductShortName} report, which describes any issues you need to address before you migrate or modernize your application. For more information, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[{ProductShortName} report] in the _{UserCLIBookName}_.
+When the analysis is completed, you can click the *Open Report* button to open the {ProductShortName} report, which describes any issues you need to address before you migrate or modernize your application. For more information, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports] in the _{UserCLIBookName}_.
