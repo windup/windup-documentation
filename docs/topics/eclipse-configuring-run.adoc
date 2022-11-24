@@ -29,7 +29,7 @@ Specifying the packages for analysis reduces the run time. If you do not select 
 
 . On the *Options* tab, you can select *Generate Report* to generate an HTML report. The report is displayed in the *Report* tab and saved as a file.
 +
-Other options are displayed. See link:{ProductDocUserGuideURL}#command_line_arguments[{ProductShortName} Command-line Arguments] in the _{UserCLIBookName}_ for details.
+Other options are displayed. See link:{ProductDocUserGuideURL}#cli-args_cli-guide[About {ProductShortName} command-line arguments] in the _{UserCLIBookName}_ for details.
 
 . On the *Rules* tab, you can select custom rulesets that you have imported or created for the {PluginName}.
 . Click *Run* to start the analysis.
