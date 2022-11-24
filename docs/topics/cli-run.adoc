@@ -56,7 +56,6 @@ $ <{ProductShortName}_HOME>/bin/windup-cli --sourceMode --input /path/to/seam-bo
     --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam
 ----
 []
-
 [discrete]
 === Running cloud-readiness rules
 
