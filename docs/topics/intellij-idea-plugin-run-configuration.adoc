@@ -20,7 +20,7 @@ The run configuration panel is displayed on the right.
 
 . Complete the following configuration fields:
 
-** *windup-cli*: Click *Add*, select the filepath, and click *Save*.
+** *cli*: Enter the path to the cli executable. For example: `$HOME/{LC_PSN}-cli-{ProductDistributionVersion}/bin/windup-cli`.
 ** *Input*: Click *Add* and enter the input file or directory.
 ** *Target*: Select one or more target migration paths.
 +
