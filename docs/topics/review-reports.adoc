@@ -234,6 +234,17 @@ The dependencies graph may be adjusted by using any of the following.
 * Double clicking anywhere will return the entire graph to the default state.
 * Clicking on any item in the legend will enable or disable all items of the selected type. For instance, selecting the embedded WARs icon will disable all embedded WARs if these are enabled, and will enable these dependencies if they are disabled.
 
+=== Transactions report
+
+A Transactions report displays the call stack, which executes operations on relational database tables. The Enable Transaction Analysis feature supports Spring Data JPA and the traditional `preparedStatement()` method for SQL statement execution. It does not support ORM frameworks, such as Hibernate.
+
+ifdef::mta[]
+The image below shows an example of a Transactions report.
+
+.Transactions report
+image::transaction-report.png[Transactions report]
+endif::[]
+
 === Source report
 
 The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 22 warnings and is assigned 16 story points. Click the file link to see the detail.
