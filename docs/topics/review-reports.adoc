@@ -245,6 +245,12 @@ The image below shows an example of a Transactions report.
 image::transaction-report.png[Transactions report]
 endif::[]
 
+ifdef::mtr[]
+The image below shows an example of a Transactions report.
+
+.Transactions report
+image::transactions-report-mtr.png[Transactions report]
+endif::[]
 === Source report
 
 The analysis of the `jee-example-services.jar` lists the files in the JAR and the warnings and story points assigned to each one. Notice the `com.acme.anvil.listener.AnvilWebLifecycleListener` file, at the time of this test, has 22 warnings and is assigned 16 story points. Click the file link to see the detail.
