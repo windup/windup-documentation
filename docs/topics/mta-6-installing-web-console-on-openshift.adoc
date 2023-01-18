@@ -75,3 +75,41 @@ You can install the {ProductName} ({ProductShortName}) and the {WebName} on Open
 ** *User name*: admin
 ** *Password*: Passw0rd!
 . When prompted, create a new password.
+
+== Memory requirements for running {ProductShortName} on Red Hat OpenShift Local
+
+When installed on https://developers.redhat.com/products/openshift-local/overview[Red Hat OpenShift Local], {ProductShortName} requires a minimum amount of memory to complete its analysis. Adding memory above the required minimum makes the analysis process run faster. The table below describes the {ProductShortName} performance with varying amounts of memory.
+
+.OpenShift Local {ProductShortName} memory requirements
+[cols="25%,75%", options="header"]
+|====
+|Memory (GB)
+|Description
+
+
+|`10`
+|{ProductShortName} cannot run the analysis due to insufficient memory
+
+|`11`
+|{ProductShortName} cannot run the analysis due to insufficient memory
+
+|`12`
+|*{ProductShortName} works and the analysis is completed in approximately 3 minutes*
+
+|`15`
+|{ProductShortName} works and the analysis is completed in less than 2 minutes
+
+|`20`
+|{ProductShortName} works quickly and the analysis is completed in less than 1 minute
+|====
+
+The test results indicate that the minimum amount of memory for running {ProductShortName} on OpenShift Local is *12 GB*.
+
+[NOTE]
+====
+** The tests were performed by running the {ProductShortName} binary analysis through the {WebName}.
+** All the analyses used the `tackle-testapp` binary.
+** All the tests were conducted on an OpenShift Local cluster without the monitoring tools installed.
+** Installing the cluster monitoring tools requires an additional 5 GB of memory.
+====
+
