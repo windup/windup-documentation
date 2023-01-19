@@ -1,6 +1,6 @@
 // Module included in the following module:
 //
-// * docs/topics/cli-run
+// * docs/cli-guide-mtr/master.adoc
 
 [id=using-openrewrite-recipes_{context}]
 = Using OpenRewrite recipes
@@ -23,7 +23,7 @@ For example, the OpenRewrite recipe `org.jboss.windup.JavaxToJakarta` renames im
 [source,terminal,subs="attributes+"]
 ----
 $ ./windup-cli --openrewrite --input </path/to/source/project> \
-  "-Drewrite.configLocation=<path/to/rewrite.yaml>  \
+  "-Drewrite.configLocation=<path/to/rewrite.yaml>"  \
   "-DactiveRecipes=<recipe_name>" --goal dryRun
 ----
 
@@ -41,7 +41,7 @@ You can include more than one recipe by specifying each in the `activeRecipes` p
 +
 [source, terminal,subs="attributes+"]
 ----
-  "DactiveRecipes=org.jboss.windup.JavaxInjectToJakartaInject, \
+  "-DactiveRecipes=org.jboss.windup.JavaxInjectToJakartaInject, \
     org.jboss.windup.JavaxEjbToJakartaEjb"
 ----
 
@@ -53,7 +53,7 @@ You can include more than one recipe by specifying each in the `activeRecipes` p
 +
 [source,terminal,subs="attributes+"]
 ----
-$ ../windup-cli --openrewrite --input </path/to/source/project> \
-  "-Drewrite.configLocation=<path/to/rewrite.yaml>  \
+$ ./windup-cli --openrewrite --input </path/to/source/project> \
+  "-Drewrite.configLocation=<path/to/rewrite.yaml>"  \
   "-DactiveRecipes=<recipe_name>" --goal run
 ----
