@@ -6,7 +6,7 @@
 [id="mtr-rn-new-features_{context}"]
 = New features
 
-This section describes the new features of the {ProductName} ({ProductShortName}) 1.0 as compared to Migration Toolkit for Applications (MTA) 5.3.
+This section describes the new features of the {ProductName} ({ProductShortName}) 1.0.0 as compared to the Migration Toolkit for Applications (MTA) 5.3.
 
 .Additional Migration paths
 New transformation targets are available in {ProductShortName} {ProductVersion}:
@@ -22,7 +22,7 @@ The Openrewrite recipes automate the following:
 * Replacing dependencies declared in `pom.xml` files
 * Replacing package import statements
 * Updating XML deployment descriptors
-* Updating configuration properies
+* Updating configuration properties
 * Renaming SPI files
 
 .Improved `pom.xml` analysis
