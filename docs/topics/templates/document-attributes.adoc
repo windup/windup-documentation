@@ -16,17 +16,16 @@ ifdef::mta[]
 :DocInfoProductNumber: 6.0
 :ProductShortName: MTA
 :LC_PSN: mta
+:DocInfoProductNameURL: migration_toolkit_for_applications
 :WebName: User Interface
 :WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
-:LC_PSN: mta
-:DocInfoProductNameURL: migration_toolkit_for_applications
 :WebConsoleBookName: {WebNameTitle} Guide
 :ProductVersion: 6.0.0
+:PluginName: MTA plugin
 :ProductDistributionVersion: 6.0.0.GA-redhat-00002
 :ProductDistribution: mta-6.0.0.GA-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
-:PluginName: MTA plugin
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/TACKLE
 :CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
@@ -43,17 +42,15 @@ ifdef::mtr[]
 :WebNameTitle: Web Console
 :WebNameURL: web_console_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 1.0.0.GA-redhat-00001
+:ProductVersion: 1.0.1
 :PluginName: MTR plugin
-:ProductDistributionVersion: 1.0.0.GA-redhat-00001
-:ProductDistribution: mtr-1.0.0.GA-offline.zip
-:ProductVersion: 1.0.0
+:ProductDistributionVersion: 1.0.1.GA-redhat-00003
+:ProductDistribution: mtr-1.0.1.GA-offline
 :DevDownloadPageURL: https://developers.redhat.com/products/mtr/download
+:IDEPluginFilename: migrationtoolkit-mtr-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/WINDUP
 :CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mtr/
-:IDEPluginFilename: migrationtoolkit-mtr-eclipse-plugin-repository
 endif::[]
-
 
 // *******************
 // * Component names *
