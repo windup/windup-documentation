@@ -24,27 +24,27 @@ The {ProductShortName} Operator requires a total of 5 persistent volumes (PVs) u
 |Description
 
 |`hub database`
-|5 Gi
+|5 GiB
 |RWO
 |Hub database
 
 |`hub bucket`
-|100 Gi
+|100 GiB
 |RWX
 |Hub file storage
 
 |`keycloak postgresql`
-|1 Gi
+|1 GiB
 |RWO
 |Keycloak back end database
 
 |`pathfinder postgresql`
-|1 Gi
+|1 GiB
 |RWO
 |Pathfinder back end database
 
 |`maven`
-|100 Gi
+|100 GiB
 |RWX
 |Maven m2 repository
 |====
@@ -68,7 +68,58 @@ You can install the {ProductName} ({ProductShortName}) and the {WebName} on Open
 . Click *Operators → Installed Operators* to verify that the {ProductShortName} Operator appears in the `openshift-mta` project with the status `Succeeded`.
 . Click the *{ProductShortName}* Operator.
 . Under *Provided APIs*, locate *Tackle*, and click *Create Instance*.
-. Review options - the default selections should be OK, but be sure to validate the system requirements for storage, memory, and cores - and then click *Create*.
++
+The *Create Tackle* window opens in *Form* view.
+. Review the CR settings. The default choices should be acceptable, but make sure to check the system requirements for storage, memory, and cores.
+. If you prefer to work directly with the YAML file, click *YAML* view and review the CR settings that are listed in the `spec` section of the YAML file.
++
+The most commonly used CR settings are listed in this table:
++
+.Tackle CR settings
+[cols="40%,15%,55%", options="header"]
+|====
+|Name
+|Default
+|Description
+
+|`feature_auth_required`
+|True
+|Flag to indicate whether keycloak authorization is required (single user/"`noauth`")
+
+|`feature_isolate_namespace`
+|True
+|Flag to indicate whether namespace isolation using network policies is enabled
+
+|`hub_database_volume_size`
+|5 GiB
+|Size requested for the Hub database volume
+
+|`hub_bucket_volume_size`
+|100 GiB
+|Size requested for the Hub bucket volume
+
+|`keycloak_database_data_volume_size`
+|1 GiB
+|Size requested for the Keycloak database volume
+
+|`pathfinder_database_data_volume_size`
+|1 GiB
+|Size requested for the Pathfinder database volume
+
+|`maven_data_volume_size`
+|100 GiB
+|Size requested for the Maven m2 repository volume
+
+|`rwx_storage_class`
+|NA
+|Storage class requested for the Tackle RWX volumes
+
+|`rwo_storage_class`
+|NA
+|Storage class requested for the Tackle RW0 volumes
+|====
+
+. Edit the CR settings if needed, and then click *Create*.
 . In *Administrator* view, click *Workloads -> Pods* to verify that the MTA pods are running.
 . Access the {WebName} from your browser by using the route exposed by the `{LC_PSN}-web-console` application within OpenShift.
 . Use the following credentials to log in:
