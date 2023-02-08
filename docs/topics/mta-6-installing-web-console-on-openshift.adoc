@@ -82,6 +82,14 @@ The most commonly used CR settings are listed in this table:
 |Default
 |Description
 
+|`cache_data_volume_size`
+|100 GiB
+|Size requested for the cache volume. When `rwx_supported=false`, this option is ignored.
+
+|`cache_storage_class`
+|Default storage class
+|Storage class used for the cache volume. When `rwx_supported=false`, this option is ignored.
+
 |`feature_auth_required`
 |True
 |Flag to indicate whether keycloak authorization is required (single user/"`noauth`")
@@ -94,9 +102,13 @@ The most commonly used CR settings are listed in this table:
 |5 GiB
 |Size requested for the Hub database volume
 
-|`hub_bucket_volume_size`
-|100 GiB
-|Size requested for the Hub bucket volume
+|`hub_database_volume_size`
+|5 GiB
+|Size requested for the Hub database volume
+
+|`hub_bucket_storage_class`
+|Default storage class
+|Storage class used for the bucket volume
 
 |`keycloak_database_data_volume_size`
 |1 GiB
@@ -108,11 +120,15 @@ The most commonly used CR settings are listed in this table:
 
 |`maven_data_volume_size`
 |100 GiB
-|Size requested for the Maven m2 repository volume
+|Size requested for the Maven m2 repository volume. This option is deprecated.
 
 |`rwx_storage_class`
 |NA
-|Storage class requested for the Tackle RWX volumes
+|Storage class requested for the Tackle RWX volumes. This option is deprecated.
+
+|`rwx_supported`
+|True
+|Flag to indicate whether the cluster storage supports RWX mode
 
 |`rwo_storage_class`
 |NA
