@@ -13,7 +13,7 @@ The {ProductShortName} Operator is a structural layer that manages resources dep
 
 == Persistent volume requirements
 
-The {ProductShortName} Operator requires a total of 5 persistent volumes (PVs) used by different components to successfully deploy, 3 RWO volumes and 2 RWX volumes that are requested via PVCs. The 5 PVs are described in the table below:
+To successfully deploy, the {ProductShortName} Operator requires 3 RWO persistent volumes (PVs) used by different components. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires an additional 2 RWX PVs that are used by Maven and the hub file storage. The PVs are described in the table below:
 
 .Required persistent volumes
 [cols="25%,25%,25%,25%", options="header"]
