@@ -43,7 +43,7 @@ To successfully deploy, the {ProductShortName} Operator requires 3 RWO persisten
 |RWO
 |Pathfinder back end database
 
-|`maven`
+|`cache`
 |100 GiB
 |RWX
 |Maven m2 repository
