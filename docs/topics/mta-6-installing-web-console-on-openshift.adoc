@@ -134,6 +134,20 @@ The most commonly used CR settings are listed in this table:
 |NA
 |Storage class requested for the Tackle RW0 volumes
 |====
++
+.Example YAML file
+[sample,YAML]
+----
+kind: Tackle
+apiVersion: tackle.konveyor.io/v1alpha1
+metadata:
+  name: mta
+  namespace: openshift-mta
+spec:
+  hub_bucket_volume_size: "25Gi"
+  maven_data_volume_size: "25Gi"
+  rwx_supported: "false"
+----
 
 . Edit the CR settings if needed, and then click *Create*.
 . In *Administrator* view, click *Workloads -> Pods* to verify that the MTA pods are running.
