@@ -102,9 +102,9 @@ The most commonly used CR settings are listed in this table:
 |5 GiB
 |Size requested for the Hub database volume
 
-|`hub_database_volume_size`
-|5 GiB
-|Size requested for the Hub database volume
+|`hub_bucket_volume_size`
+|100 GiB
+|Size requested for the Hub bucket volume
 
 |`hub_bucket_storage_class`
 |Default storage class
