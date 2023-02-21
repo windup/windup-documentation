@@ -194,3 +194,26 @@ The test results indicate that the minimum amount of memory for running {Product
 ** Installing the cluster monitoring tools requires an additional 5 GB of memory.
 ====
 
+== Red Hat Single Sign-On
+{ProductShortName} creates a basic
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
+Hat Single Sign-On] instance, using the Keycloak CR of Red Hat Single
+Sign-On Operator. Keycloak is a single sign-on solution for web apps and
+RESTful web services.
+
+The {ProductShortName} Keycloak realm is fully configured by the Hub.
+
+{ProductShortName} does not enable RHSSO external access by default. However, if you
+require RHSSO, you can configure this by using the Tackle CR attribute
+`rhsso_external_access`. Otherwise, use the {ProductShortName} realm admin console to
+adjust settings.
+
+For more information, see
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red
+Hat Single Sign-On features and concepts].
+
+=== Roles and Permissions
+
+The following table contains the roles and permissions (scopes) {ProductShortName}
+seeds RHSSO with:
+
