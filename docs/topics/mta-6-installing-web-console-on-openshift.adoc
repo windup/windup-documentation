@@ -43,7 +43,7 @@ The {ProductShortName} Operator requires a total of 5 persistent volumes (PVs) u
 |RWO
 |Pathfinder back end database
 
-|`maven`
+|`cache`
 |100 GiB
 |RWX
 |Maven m2 repository; required if the `rwx_supported` configuration option is set to `true`
