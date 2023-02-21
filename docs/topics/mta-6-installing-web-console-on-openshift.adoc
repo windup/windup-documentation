@@ -197,11 +197,10 @@ The test results indicate that the minimum amount of memory for running {Product
 == Red Hat Single Sign-On
 {ProductShortName} creates a basic
 https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
-Hat Single Sign-On] instance, using the Keycloak CR of Red Hat Single
-Sign-On Operator. Keycloak is a single sign-on solution for web apps and
-RESTful web services.
+Hat Single Sign-On] (RHSSO) instance, using the Keycloak CR of Red Hat Single
+Sign-On Operator.
 
-The {ProductShortName} Keycloak realm is fully configured by the Hub.
+The {ProductShortName} RHSSO realm is fully configured by the Hub.
 
 {ProductShortName} does not enable RHSSO external access by default. However, if you
 require RHSSO, you can configure it by using the Tackle CR attribute
@@ -215,7 +214,7 @@ Hat Single Sign-On features and concepts].
 === Roles and Permissions
 
 The following table contains the roles and permissions (scopes) that {ProductShortName}
-seeds the RHSSO with:
+seeds the RHSSO instance with:
 
 [width="100%",cols="34%,33%,33%",]
 |===
