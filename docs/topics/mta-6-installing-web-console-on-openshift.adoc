@@ -13,7 +13,7 @@ The {ProductShortName} Operator is a structural layer that manages resources dep
 
 == Persistent volume requirements
 
-The {ProductShortName} Operator requires a total of 5 persistent volumes (PVs) used by different components to successfully deploy, 3 RWO volumes and 2 RWX volumes that are requested via PVCs. The 5 PVs are described in the table below:
+To successfully deploy, the {ProductShortName} Operator requires 3 RWO persistent volumes (PVs) used by different components. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires an additional 2 RWX PVs that are used by Maven and the hub file storage. The PVs are described in the table below:
 
 .Required persistent volumes
 [cols="25%,25%,25%,25%", options="header"]
@@ -82,6 +82,14 @@ The most commonly used CR settings are listed in this table:
 |Default
 |Description
 
+|`cache_data_volume_size`
+|100 GiB
+|Size requested for the cache volume; ignored when `rwx_supported=false`
+
+|`cache_storage_class`
+|Default storage class
+|Storage class used for the cache volume; ignored when `rwx_supported=false`
+
 |`feature_auth_required`
 |True
 |Flag to indicate whether keycloak authorization is required (single user/"`noauth`")
@@ -98,6 +106,10 @@ The most commonly used CR settings are listed in this table:
 |100 GiB
 |Size requested for the Hub bucket volume
 
+|`hub_bucket_storage_class`
+|Default storage class
+|Storage class used for the bucket volume
+
 |`keycloak_database_data_volume_size`
 |1 GiB
 |Size requested for the Keycloak database volume
@@ -108,11 +120,15 @@ The most commonly used CR settings are listed in this table:
 
 |`maven_data_volume_size`
 |100 GiB
-|Size requested for the Maven m2 repository volume
+|Size requested for the Maven m2 repository volume; deprecated in {ProductShortName} {ProductVersion}
 
 |`rwx_storage_class`
 |NA
-|Storage class requested for the Tackle RWX volumes
+|Storage class requested for the Tackle RWX volumes; deprecated in {ProductShortName} {ProductVersion}
+
+|`rwx_supported`
+|True
+|Flag to indicate whether the cluster storage supports RWX mode
 
 |`rwo_storage_class`
 |NA
