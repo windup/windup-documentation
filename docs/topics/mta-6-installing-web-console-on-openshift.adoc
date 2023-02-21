@@ -204,9 +204,9 @@ RESTful web services.
 The {ProductShortName} Keycloak realm is fully configured by the Hub.
 
 {ProductShortName} does not enable RHSSO external access by default. However, if you
-require RHSSO, you can configure this by using the Tackle CR attribute
-`rhsso_external_access`. Otherwise, use the {ProductShortName} realm admin console to
-adjust settings.
+require RHSSO, you can configure it by using the Tackle CR attribute
+`rhsso_external_access`. Otherwise, use the {ProductShortName} realm administration console to
+adjust the settings.
 
 For more information, see
 https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red
@@ -214,6 +214,237 @@ Hat Single Sign-On features and concepts].
 
 === Roles and Permissions
 
-The following table contains the roles and permissions (scopes) {ProductShortName}
-seeds RHSSO with:
+The following table contains the roles and permissions (scopes) that {ProductShortName}
+seeds the RHSSO with:
 
+[width="100%",cols="34%,33%,33%",]
+|===
+|*tackle-admin* |*Resource Name* |*Verbs*
+| |addons |delete +
+get +
+post +
+put +
+| |adoptionplans |post +
+| |applications |delete +
+get +
+post +
+put +
+| |applications.facts |delete +
+get +
+post +
+put +
+| |applications.tags |delete +
+get +
+post +
+put +
+| |applications.bucket |delete +
+get +
+post +
+put +
+| |assessments |delete +
+get +
+patch +
+post +
+put +
+| |businessservices |delete +
+get +
+post +
+put +
+| |dependencies |delete +
+get +
+post +
+put +
+| |identities |delete +
+get +
+post +
+put +
+| |imports |delete +
+get +
+post +
+put +
+| |jobfunctions |delete +
+get +
+post +
+put +
+| |proxies |delete +
+get +
+post +
+put +
+| |reviews |delete +
+get +
+post +
+put +
+| |settings |delete +
+get +
+post +
+put +
+| |stakeholdergroups |delete +
+get +
+post +
+put +
+| |stakeholders |delete +
+get +
+post +
+put +
+| |tags |delete +
+get +
+post +
+put +
+| |tagtypes |delete +
+get +
+post +
+put +
+| |tasks |delete +
+get +
+post +
+put +
+| |tasks.bucket |delete +
+get +
+post +
+put +
+| |tickets |delete +
+get +
+post +
+put +
+| |trackers |delete +
+get +
+post +
+put +
+| |cache |delete +
+get +
+| |files |delete +
+get +
+post +
+put +
+| |rulebundles |delete +
+get +
+post +
+put +
+|*tackle-architect* | *Resource Name* |*Verbs*
+| |addons |delete +
+get +
+post +
+put +
+| |applications.bucket |delete +
+get +
+post +
+put +
+| |adoptionplans |post +
+| |applications |delete +
+get +
+post +
+put +
+| |applications.facts |delete +
+get +
+post +
+put +
+| |applications.tags |delete +
+get +
+post +
+put +
+| |assessments |delete +
+get +
+patch +
+post +
+put +
+| |businessservices |delete +
+get +
+post +
+put +
+| |dependencies |delete +
+get +
+post +
+put +
+| |identities |get +
+| |imports |delete +
+get +
+post +
+put +
+| |jobfunctions |delete +
+get +
+post +
+put +
+| |proxies |get +
+| |reviews |delete +
+get +
+post +
+put +
+| |settings |get +
+| |stakeholdergroups |delete +
+get +
+post +
+put +
+| |stakeholders |delete +
+get +
+post +
+put +
+| |tags |delete +
+get +
+post +
+put +
+| |tagtypes |delete +
+get +
+post +
+put +
+| |tasks |delete +
+get +
+post +
+put +
+| |tasks.bucket |delete +
+get +
+post +
+put +
+| |trackers |get +
+| |tickets |delete +
+get +
+post +
+put +
+| |cache |get +
+| |files |delete +
+get +
+post +
+put +
+| |rulebundles |delete +
+get +
+post +
+put +
+|*tackle-migrator* | *Resource Name* |*Verbs*
+| |addons |get +
+| |adoptionplans |post +
+| |applications |get +
+| |applications.facts |get +
+| |applications.tags |get +
+| |applications.bucket |get +
+| |assessments |get +
+post +
+| |businessservices |get +
+| |dependencies |delete +
+get +
+post +
+put +
+| |identities |get +
+| |imports |get +
+| |jobfunctions |get +
+| |proxies |get +
+| |reviews |get +
+post +
+put +
+| |settings |get +
+| |stakeholdergroups |get +
+| |stakeholders |get +
+| |tags |get +
+| |tagtypes |get +
+| |tasks |delete +
+get +
+post +
+put +
+| |tasks.bucket |delete +
+get +
+post +
+put +
+| |tackers |get +
+| |tickets |get +
+| |cache |get +
+| |files |get +
+| |rulebundles |get +
+|===
