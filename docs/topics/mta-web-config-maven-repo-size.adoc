@@ -8,6 +8,11 @@
 
 You can reduce the size of a Maven repository in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
 
+[NOTE]
+====
+This procedure is possible only if the `rwx_supported` configuration option of the Tackle CR is set to `true`. Otherwise, both the *Local artifact repository* field and the *Clear repository* button are disabled.
+====
+
 .Procedure
 
 . In *Administrator* view, click *Repositories* and then click *Maven*.
