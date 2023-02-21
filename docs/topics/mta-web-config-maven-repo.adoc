@@ -8,6 +8,11 @@
 
 You can configure a Maven repository in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
 
+[NOTE]
+====
+If the `rwx_supported` configuration option of the Tackle CR is set to `false`, the *Consume insecure artifact repositories* switch is disabled and this procedure is not possible.
+====
+
 .Procedure
 
 . In *Administrator* view, click *Repositories* and then click *Maven*.

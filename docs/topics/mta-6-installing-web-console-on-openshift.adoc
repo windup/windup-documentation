@@ -120,11 +120,11 @@ The most commonly used CR settings are listed in this table:
 
 |`maven_data_volume_size`
 |100 GiB
-|Size requested for the Maven m2 repository volume; deprecated in {ProductShortName} {ProductVersion}
+|Size requested for the Maven m2 repository volume; deprecated in {ProductShortName} 6.0.1
 
 |`rwx_storage_class`
 |NA
-|Storage class requested for the Tackle RWX volumes; deprecated in {ProductShortName} {ProductVersion}
+|Storage class requested for the Tackle RWX volumes; deprecated in {ProductShortName} 6.0.1
 
 |`rwx_supported`
 |True
