@@ -17,7 +17,7 @@
 
 {ProductName} ({ProductShortName}) accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.
 
-{ProductShortName} uses an extensive questionaire as the the basis for assessing your applications, enabling you to estimate the difficulty, time, and other resources needed to prepare an application for containerization. You can use the results of an assessment as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work first, and which are not suitable for containerization.
+{ProductShortName} uses an extensive questionnaire as the the basis for assessing your applications, enabling you to estimate the difficulty, time, and other resources needed to prepare an application for containerization. You can use the results of an assessment as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work first, and which are not suitable for containerization.
 
 {ProductShortName} analyzes applications by applying one or more rulesets to each application considered to determine which specific lines of that application must be modified before it can be modernized.
 
@@ -29,7 +29,7 @@
 * Migrating from Java Spring Boot to Quarkus
 * Upgrading from OpenJDK 8 to OpenJDK 11
 * Upgrading from OpenJDK 11 to OpenJDK 17
-* Migrating EAP Java applicatons to Azure App Service
+* Migrating EAP Java applications to Azure App Service
 * Migrating Spring Boot Java applications to Azure App Service
 
 For more information about use cases and migration paths, see the link:https://developers.redhat.com/products/mta/use-cases[{ProductShortName} for developers] web page.
