@@ -84,11 +84,11 @@ The most commonly used CR settings are listed in this table:
 
 |`cache_data_volume_size`
 |100 GiB
-|Size requested for the cache volume. When `rwx_supported=false`, this option is ignored.
+|Size requested for the cache volume; ignored when `rwx_supported=false`
 
 |`cache_storage_class`
 |Default storage class
-|Storage class used for the cache volume. When `rwx_supported=false`, this option is ignored.
+|Storage class used for the cache volume; ignored when `rwx_supported=false`
 
 |`feature_auth_required`
 |True
@@ -120,11 +120,11 @@ The most commonly used CR settings are listed in this table:
 
 |`maven_data_volume_size`
 |100 GiB
-|Size requested for the Maven m2 repository volume. This option is deprecated.
+|Size requested for the Maven m2 repository volume; deprecated in {ProductShortName} {ProductVersion}
 
 |`rwx_storage_class`
 |NA
-|Storage class requested for the Tackle RWX volumes. This option is deprecated.
+|Storage class requested for the Tackle RWX volumes; deprecated in {ProductShortName} {ProductVersion}
 
 |`rwx_supported`
 |True
