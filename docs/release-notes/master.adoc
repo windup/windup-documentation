@@ -24,7 +24,10 @@ These release notes cover all _z_-stream releases of {ProductShortName} 6.0 with
 
 include::topics/mta-rn-new-features-1.adoc[leveloffset=+2]
 
-You can set this parameter after you upgrade to {ProductVersion}.
+[NOTE]
+====
+If you upgrade from version 6.0.0 to version 6.0.1, you can set this parameter after the upgrade.
+====
 
 include::topics/mta-rn-upgrade-ui.adoc[leveloffset=+3]
 
