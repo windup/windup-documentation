@@ -4,13 +4,13 @@
 
 :_content-type: PROCEDURE
 [id="mta-rn-upgrade-cli_{context}"]
-= Setting the parameter in the {ocp-short} web console after upgrading to version {ProductVersion}
+= Setting the parameter in the {ocp-short} console after upgrading to version {ProductVersion}
 
-You can set the value of `rwx_supported` in the {ocp-short} web console after you upgrade to {ProductShortName} {ProductVersion}
+You can set the value of `rwx_supported` in the {ocp-short} console after you upgrade to {ProductShortName} {ProductVersion}.
 
 .Procedure
 
-. After you upgrade the {ProductShortName} Operator, log into your cluster in the {ocp-short} web console.
+. After you upgrade the {ProductShortName} Operator, log into your cluster in the {ocp-short} console.
 . Set `rwx_supported` to `false` by entering the following command:
 +
 [source,terminal]
