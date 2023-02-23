@@ -202,10 +202,7 @@ Sign-On Operator.
 
 The {ProductShortName} RHSSO realm is fully configured by the Hub.
 
-{ProductShortName} does not enable RHSSO external access by default. However, if you
-require RHSSO, you can configure it by using the Tackle CR attribute
-`rhsso_external_access`. Otherwise, use the {ProductShortName} realm administration console to
-adjust the settings.
+{ProductShortName} does not enable RHSSO external access by default. The RHSSO operator can create a route and expose single sign-on for you to configure using the OpenShift Container Platform web console.
 
 For more information, see
 https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red
