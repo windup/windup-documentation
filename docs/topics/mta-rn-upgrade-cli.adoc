@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-rn-upgrade-cli_{context}"]
+= Setting the parameter in the {ocp-short} console after upgrading to version {ProductVersion}
+
+You can set the value of `rwx_supported` in the {ocp-short} console after you upgrade to {ProductShortName} {ProductVersion}.
+
+.Procedure
+
+. After you upgrade the {ProductShortName} Operator, log into your cluster in the {ocp-short} console.
+. Set `rwx_supported` to `false` by entering the following command:
++
+[source,terminal]
+----
+$ oc patch tackle $(oc get tackle -n openshift-mta|grep -iv name|cut -d " " -f 1) -n openshift-mta --type merge --patch '{"spec":{"rwx_supported": "false"}}'
+----

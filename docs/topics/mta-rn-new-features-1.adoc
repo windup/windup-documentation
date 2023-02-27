@@ -1,0 +1,13 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: CONCEPT
+[id="mta-rn-new-features-1_{context}"]
+= New features and improvements
+
+This section describes the new features and improvements of the {ProductName} ({ProductShortName}) {ProductVersion}.
+
+.Support for non-administrators to run {ProductShortName}
+For security reasons, the RWX permission set of {ProductShortName} 6.0.0 was configured to allow only administrators to run {ProductShortName}. In Version {ProductVersion}  you can now allow non-administrators to use {ProductShortName} by setting the value of a new parameter, `rwx_supported`, to `false` in the the {ProductShortName} Operator or the {ocp-first}  console.
+
