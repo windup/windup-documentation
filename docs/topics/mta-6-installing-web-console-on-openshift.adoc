@@ -46,7 +46,7 @@ To successfully deploy, the {ProductShortName} Operator requires 3 RWO persisten
 |`cache`
 |100 GiB
 |RWX
-|Maven m2 repository; required if the `rwx_supported` configuration option is set to `true`
+|Maven m2 cache; required if the `rwx_supported` configuration option is set to `true`
 |====
 
 == Installing the {ProductName} Operator and the {WebName}
@@ -120,7 +120,7 @@ The most commonly used CR settings are listed in this table:
 
 |`maven_data_volume_size`
 |100 GiB
-|Size requested for the Maven m2 repository volume; deprecated in {ProductShortName} 6.0.1
+|Size requested for the Maven m2 cache volume; deprecated in {ProductShortName} 6.0.1
 
 |`rwx_storage_class`
 |NA
