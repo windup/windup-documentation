@@ -4,13 +4,13 @@
 
 :_content-type: PROCEDURE
 [id="mta-rn-upgrade-ui_{context}"]
-= Setting the parameter in the {ProductShortName} Operator after upgrading to version {ProductVersion}
+= Setting the parameter in the OpenShift web console after upgrading to version {ProductVersion}
 
-You can set the value of `rwx_supported` after you upgrade the {ProductShortName} {WebName}.
+You can set the value of `rwx_supported` in the OpenShift web console after you upgrade to {ProductShortName} {ProductVersion}.
 
 .Procedure
 
-. After you upgrade the {ProductShortName} Operator, log into the {ocp-short} web console, click *Operators -> Installed Operators -> Migration Toolkit for Applications Operator -> Tackle*, and then click the Tackle instance.
+. Log into the OpenShift web console, click *Operators -> Installed Operators -> Migration Toolkit for Applications Operator -> Tackle*, and then click the Tackle instance.
 . Click *YAML* view.
 . Add `rwx_supported` to the CR settings that are listed in the `spec` section, and set its value to `false`.
 . Click *Save*.

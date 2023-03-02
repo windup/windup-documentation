@@ -8,6 +8,11 @@
 
 This section describes the new features and improvements of the {ProductName} ({ProductShortName}) {ProductVersion}.
 
-.Support for non-administrators to run {ProductShortName}
-For security reasons, the RWX permission set of {ProductShortName} 6.0.0 was configured to allow only administrators to run {ProductShortName}. In Version {ProductVersion}  you can now allow non-administrators to use {ProductShortName} by setting the value of a new parameter, `rwx_supported`, to `false` in the the {ProductShortName} Operator or the {ocp-first}  console.
+.{ProductShortName} no longer requires support for RWX volumes
+Previously, {ProductShortName} required support for RWX volumes, and in version {ProductVersion} this is optional. The Tackle CR includes a new configuration option, `rwx_supported`, a Boolean parameter whose default is `true`.
+
+* When this option is set to `true`, the {ProductShortName} Operator creates a cache volume as RWX. This volume is used by Maven as a durable local m2 cache that is shared across tasks.
+* When it is set to `false`, the Maven m2 cache will be local with each task. You can always configure the Maven cache separately.
+
+
 
