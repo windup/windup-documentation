@@ -133,6 +133,10 @@ The most commonly used CR settings are listed in this table:
 |`rwo_storage_class`
 |NA
 |Storage class requested for the Tackle RW0 volumes
+
+|`rhsso_external_access`
+|False
+|Flag to indicate whether a dedicated route is created to access the {ProductShortName} managed RHSSO instance
 |====
 +
 .Example YAML file
@@ -151,7 +155,7 @@ spec:
 
 . Edit the CR settings if needed, and then click *Create*.
 . In *Administrator* view, click *Workloads -> Pods* to verify that the MTA pods are running.
-. Access the {WebName} from your browser by using the route exposed by the `{LC_PSN}-web-console` application within OpenShift.
+. Access the {WebName} from your browser by using the route exposed by the `{LC_PSN}-ui` application within OpenShift.
 . Use the following credentials to log in:
 ** *User name*: admin
 ** *Password*: Passw0rd!
@@ -194,3 +198,256 @@ The test results indicate that the minimum amount of memory for running {Product
 ** Installing the cluster monitoring tools requires an additional 5 GB of memory.
 ====
 
+== Red Hat Single Sign-On
+{ProductShortName} delegates authentication and authorization to a
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
+Hat Single Sign-On] (RHSSO) instance managed by the {ProductShortName} operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the {ProductShortName} operator also manages the configuration of a dedicated
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms[realm] that contains all the roles and permissions that {ProductShortName} requires.
+
+If an advanced configuration is required in the {ProductShortName} managed RHSSO instance, such as https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding
+a provider for User Federation or https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating
+identity providers], users can log into the RHSSO https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[Admin
+Console] through the `/auth/admin` subpath in the `{LC_PSN}-ui` route. The admin credentials to access the {ProductShortName} managed RHSSO instance can be retrieved from the `credential-mta-rhsso` secret available in the namespace in which the {WebName} was installed.
+
+A dedicated route for the {ProductShortName} managed RHSSO instance can be created by setting the `rhsso_external_access` parameter to `True` in the *Tackle CR* that manages the {ProductShortName} instance.
+
+For more information, see
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red
+Hat Single Sign-On features and concepts].
+
+=== Roles and Permissions
+
+The following table contains the roles and permissions (scopes) that {ProductShortName}
+seeds the managed RHSSO instance with:
+
+[width="100%",cols="34%,33%,33%",]
+|===
+|*tackle-admin* |*Resource Name* |*Verbs*
+| |addons |delete +
+get +
+post +
+put +
+| |adoptionplans |post +
+| |applications |delete +
+get +
+post +
+put +
+| |applications.facts |delete +
+get +
+post +
+put +
+| |applications.tags |delete +
+get +
+post +
+put +
+| |applications.bucket |delete +
+get +
+post +
+put +
+| |assessments |delete +
+get +
+patch +
+post +
+put +
+| |businessservices |delete +
+get +
+post +
+put +
+| |dependencies |delete +
+get +
+post +
+put +
+| |identities |delete +
+get +
+post +
+put +
+| |imports |delete +
+get +
+post +
+put +
+| |jobfunctions |delete +
+get +
+post +
+put +
+| |proxies |delete +
+get +
+post +
+put +
+| |reviews |delete +
+get +
+post +
+put +
+| |settings |delete +
+get +
+post +
+put +
+| |stakeholdergroups |delete +
+get +
+post +
+put +
+| |stakeholders |delete +
+get +
+post +
+put +
+| |tags |delete +
+get +
+post +
+put +
+| |tagtypes |delete +
+get +
+post +
+put +
+| |tasks |delete +
+get +
+post +
+put +
+| |tasks.bucket |delete +
+get +
+post +
+put +
+| |tickets |delete +
+get +
+post +
+put +
+| |trackers |delete +
+get +
+post +
+put +
+| |cache |delete +
+get +
+| |files |delete +
+get +
+post +
+put +
+| |rulebundles |delete +
+get +
+post +
+put +
+|*tackle-architect* | *Resource Name* |*Verbs*
+| |addons |delete +
+get +
+post +
+put +
+| |applications.bucket |delete +
+get +
+post +
+put +
+| |adoptionplans |post +
+| |applications |delete +
+get +
+post +
+put +
+| |applications.facts |delete +
+get +
+post +
+put +
+| |applications.tags |delete +
+get +
+post +
+put +
+| |assessments |delete +
+get +
+patch +
+post +
+put +
+| |businessservices |delete +
+get +
+post +
+put +
+| |dependencies |delete +
+get +
+post +
+put +
+| |identities |get +
+| |imports |delete +
+get +
+post +
+put +
+| |jobfunctions |delete +
+get +
+post +
+put +
+| |proxies |get +
+| |reviews |delete +
+get +
+post +
+put +
+| |settings |get +
+| |stakeholdergroups |delete +
+get +
+post +
+put +
+| |stakeholders |delete +
+get +
+post +
+put +
+| |tags |delete +
+get +
+post +
+put +
+| |tagtypes |delete +
+get +
+post +
+put +
+| |tasks |delete +
+get +
+post +
+put +
+| |tasks.bucket |delete +
+get +
+post +
+put +
+| |trackers |get +
+| |tickets |delete +
+get +
+post +
+put +
+| |cache |get +
+| |files |delete +
+get +
+post +
+put +
+| |rulebundles |delete +
+get +
+post +
+put +
+|*tackle-migrator* | *Resource Name* |*Verbs*
+| |addons |get +
+| |adoptionplans |post +
+| |applications |get +
+| |applications.facts |get +
+| |applications.tags |get +
+| |applications.bucket |get +
+| |assessments |get +
+post +
+| |businessservices |get +
+| |dependencies |delete +
+get +
+post +
+put +
+| |identities |get +
+| |imports |get +
+| |jobfunctions |get +
+| |proxies |get +
+| |reviews |get +
+post +
+put +
+| |settings |get +
+| |stakeholdergroups |get +
+| |stakeholders |get +
+| |tags |get +
+| |tagtypes |get +
+| |tasks |delete +
+get +
+post +
+put +
+| |tasks.bucket |delete +
+get +
+post +
+put +
+| |tackers |get +
+| |tickets |get +
+| |cache |get +
+| |files |get +
+| |rulebundles |get +
+|===
