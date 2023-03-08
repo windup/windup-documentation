@@ -21,7 +21,7 @@ include::snippet_jdk-hardware-mac-prerequisites.adoc[]
 <plugin>
     <groupId>org.jboss.windup.plugin</groupId>
     <artifactId>mtr-maven-plugin</artifactId>
-    <version>1.0.1.GA-redhat-00003</version>
+    <version>1.0.2.GA-redhat-00001</version>
     <executions>
         <execution>
             <id>run-windup</id>
