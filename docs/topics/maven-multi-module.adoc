@@ -19,7 +19,7 @@ To run the {MavenName} in a project with multiple modules perform the following 
 <plugin>
     <groupId>org.jboss.windup.plugin</groupId>
     <artifactId>mtr-maven-plugin</artifactId>
-    <version>1.0.2.GA-redhat-00002</version>
+    <version>1.0.2.GA-redhat-00001</version>
     <inherited>false</inherited>
     <executions>
         <execution>
