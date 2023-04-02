@@ -25,19 +25,15 @@ include::topics/about-ide-addons.adoc[leveloffset=+2]
 include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
 
 [id="installing-plugin_{context}"]
-== Installing the {PluginName}
+== Installing and configuring the {PluginName}
 
-You can install the {PluginName} in a connected or a restricted network environment.
+You can install the {PluginName} and configure it to use the {ProductShortName} CLI for analysis execution.
 
 include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
-:!eclipse-code-ready-studio-guide:
-:context: disconnected
-:disconnected:
-include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
-:!disconnected:
-:context: eclipse-code-ready-studio-guide
-:eclipse-code-ready-studio-guide:
-include::topics/eclipse-accessing-tools.adoc[leveloffset=+2]
+
+include::topics/eclipse-configuring-plugin-for-cli.adoc[leveloffset=+2]
+
+include::topics/eclipse-accessing-tools.adoc[leveloffset=+1]
 
 [id="analyzing-projects-with-plugin_{context}"]
 == Analyzing your projects with the {PluginName}
