@@ -8,6 +8,11 @@
 
 By default, the Assessment procedure is mandatory, and you cannot proceed to the next step, Reviewing, without completing Assessment first. However, you might want to skip Assessment and use your own questionnaire instead. In that case, use the option described below.
 
+[NOTE]
+====
+This option is available only for *Admin* and *Architect* users.
+====
+
 .Procedure
 . In *Administration* view, click *General*.
 . Toggle the *Allow reviewing applications without running an assessment first* switch.
