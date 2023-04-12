@@ -6,7 +6,7 @@
 [id="mta-web-tagging-an-application_{context}"]
 = Tagging an application
 
-You can analyze more than one application at a time against more than one transformation target in the same analysis.
+
 
 .Procedure
 
@@ -14,12 +14,12 @@ You can analyze more than one application at a time against more than one transf
 . Click the *Analysis* tab.
 . Select the applications you want to analyze.
 +
-// ![](/Tackle2/AppAssessAnalyze/SelectManageCred.png)
+
 
 . Review the credentials assigned to the application.
 . Click *Analyze*.
 +
-// ![](/Tackle2/AppAssessAnalyze/AnalysisMode.png)
+
 
 . Select the *Analysis mode* from the list. Valid options are:
 * Binary.
