@@ -3,8 +3,8 @@
 // * docs/web-console-guide/master.adoc
 
 :_content-type: PROCEDURE
-[id="mta-web-configuring-and-running-an-application-analysis_{context}"]
-= Configuring and running an application analysis
+[id="mta-web-tagging-an-application_{context}"]
+= Tagging an application
 
 You can analyze more than one application at a time against more than one transformation target in the same analysis.
 
@@ -65,7 +65,7 @@ You can analyze more than one application at a time against more than one transf
 * Source(s)
 * Excluded rules tags: Rules with these tags are not processed. Add or delete as needed.
 * Enable transaction report: Select the checkbox to generate a DIVA report that displays the call stack, which executes operations on relational database tables.
-* Enable automated tagging: Select the checkbox to automatically attach tags to the application. By default, this checkbox is selected.
+* Enable automated tagging: Select the checkbox to automatically attach tags to the application. By default, this checkbox is selected. 
 +
 [NOTE]
 ====
@@ -94,3 +94,13 @@ Analysis takes minutes to hours to run depending on the size of the application 
 ====
 
 . When analysis is complete, you can click the *Report* link to see the results of the analysis.
+
+Tagging
+
+You can filter the tags by source or category. The source can be either *Analysis* or *Manual*. The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.
+
+To attach tags manually, click the pen icon. In the Update application window, select the appropriate tags from the Select a tag(s) drop-down list.
+The selected tags appear on the application's page in the Tags tab.
+
+To attach tags automatically, select the Enable automated tagging checkbox. Note that this checkbox is selected by default.
+The attached tags appear on the application's page in the Tags tab after you run the analysis.
