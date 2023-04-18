@@ -10,7 +10,7 @@ You can analyze more than one application at a time against more than one transf
 
 .Procedure
 
-. In *Development* view, click *Application inventory*.
+. In *Migration* view, click *Application inventory*.
 . Click the *Analysis* tab.
 . Select the applications you want to analyze.
 +
@@ -70,6 +70,12 @@ You can analyze more than one application at a time against more than one transf
 [NOTE]
 ====
 The Transactions report is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+====
++
+[NOTE]
+====
+Note that the automatically attached tags are displayed only after the analysis has been run.
+Instead of enabling automated tagging or in addition to it, you might want to attach tags to the application manually.
 ====
 +
 [NOTE]
