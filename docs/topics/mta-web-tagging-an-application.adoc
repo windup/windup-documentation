@@ -6,39 +6,45 @@
 [id="mta-web-tagging-an-application_{context}"]
 = Tagging an application
 
-You can attach various tags to the application that you going to analyze. You can do this either automatically or manually.
+You can attach various tags to the application that you going to analyze. Tagging can be either automatic or manual.
 
-[id="automating-tagging-an-application_{context}"]
-== Automatic tagging
+[id="manual-tagging-of-an-application_{context}"]
+== Manual tagging
 
-Automatic tagging of application is enabled by default. You can disable it by unselecting the *Enable automated tagging* checkbox in the Advanced section of the Analysis configuration wizard. To tag an application automatically, make sure that the *Enable automated tagging* checkbox is selected _before_ you run the analysis of the application.
-
-[NOTE]
-====
-To tag an application automatically, make sure to enable automatic tagging _before_ you run the analysis of the application.
-====
+You can tag an application manually, both before or after you run an analysis.
 
 .Procedure
 
 . In *Migration* view, click *Application inventory*.
 . Click the *Analysis* tab.
-. Select the applications you want to analyze.
+. In the row of the required application, click the pen icon.
++
+The *Update application* window opens.
+. Select the desired tags from the *Select a tag(s)* drop-down list.
+. Click *Save*.
 
+[id="automating-tagging-of-an-application_{context}"]
+== Automatic tagging
+
+Automatic tagging of applications is enabled by default. You can disable it by unselecting the *Enable automated tagging* checkbox in the Advanced section of the *Analysis configuration* wizard.
+
+[NOTE]
+====
+To tag an application automatically, make sure that the *Enable automated tagging* checkbox is selected _before_ you run an analysis of the application.
+====
+
+[id="viewing-tags-of-an-application_{context}"]
+== Viewing the tags of an application
+
+You can view the tags attached to a particular application. Note that you can view the tags that were attached automatically only _after_ you have run an analysis of the application.
+
+.Procedure
 
 . In *Migration* view, click *Application inventory*.
 . Click the *Analysis* tab.
-. Select the applications you want to analyze.
+. Click the name of the required application.
+. On the application page, click the *Tags* tab.
 +
-
-
-
-
-Tagging
-
-You can filter the tags by source or category. The source can be either *Analysis* or *Manual*. The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.
-
-To attach tags manually, click the pen icon. In the Update application window, select the appropriate tags from the Select a tag(s) drop-down list.
-The selected tags appear on the application's page in the Tags tab.
-
-To attach tags automatically, select the Enable automated tagging checkbox. Note that this checkbox is selected by default.
-The attached tags appear on the application's page in the Tags tab after you run the analysis.
+You can see the tags attached to the application.
++
+The tags can be filtered by source and category. The source can be either *Analysis* or *Manual*. The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.
