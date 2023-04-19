@@ -6,7 +6,7 @@
 [id="mta-web-tagging-an-application_{context}"]
 = Tagging an application
 
-You can attach various tags to the application that you going to analyze. Tagging can be either automatic or manual.
+You can attach various tags to the application that you are going to analyze. Tagging can be either automatic or manual.
 
 [id="manual-tagging-of-an-application_{context}"]
 == Manual tagging
@@ -36,7 +36,12 @@ To tag an application automatically, make sure that the *Enable automated taggin
 [id="viewing-tags-of-an-application_{context}"]
 == Viewing the tags of an application
 
-You can view the tags attached to a particular application. Note that you can view the tags that were attached automatically only _after_ you have run an analysis of the application.
+You can view the tags attached to a particular application.
+
+[NOTE]
+====
+You can view the tags that were attached automatically only _after_ you have run an analysis of the application.
+====
 
 .Procedure
 
@@ -47,4 +52,4 @@ You can view the tags attached to a particular application. Note that you can vi
 +
 You can see the tags attached to the application.
 +
-The tags can be filtered by source and category. The source can be either *Analysis* or *Manual*. The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.
+The tags can be filtered by source and tag category. The sources are *Analysis* and *Manual*. The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.
