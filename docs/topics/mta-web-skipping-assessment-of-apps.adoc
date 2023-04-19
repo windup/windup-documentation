@@ -6,7 +6,7 @@
 [id="mta-web-skipping-assessment-of-apps_{context}"]
 = Skipping assessment of applications
 
-By default, the Assessment procedure is mandatory, and you cannot proceed to the next step, Reviewing, without completing Assessment first. However, you might want to skip Assessment and use your own questionnaire instead. In that case, use the option described below.
+By default, the Assessment procedure is required for proceeding to the next step, Reviewing. However, you might want to skip Assessment and use your own questionnaire instead. In that case, use the option described below.
 
 [NOTE]
 ====
@@ -18,5 +18,5 @@ This option is available only for *Admin* and *Architect* users.
 . Toggle the *Allow reviewing applications without running an assessment first* switch.
 . Go to *Migration* view and click *Application inventory*.
 +
-Now the *Review* step is enabled for all applications including those that have not be assessed.
+Now the *Review* step is enabled for all applications including those that have not been assessed.
 
