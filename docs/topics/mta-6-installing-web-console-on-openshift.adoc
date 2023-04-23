@@ -170,7 +170,7 @@ A node running applications requires enough reserve memomory. An application can
 
 The `--eviction-hard` flag directs the node to evict applications when available memory drops below an absolute value or percentage. Set `--eviction-hard` along with memory reserves for the node.
 
-The following example illistrates node memory allocation settings:
+The following example illustrates node memory allocation settings:
 * Node capacity: `32 Gi`
 * `--system-reserved` setting: `3 Gi`
 * `--eviction-hard` setting: `100 Mi`
