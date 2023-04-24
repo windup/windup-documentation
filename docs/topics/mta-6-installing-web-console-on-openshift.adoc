@@ -164,7 +164,7 @@ The test results indicate that the minimum amount of memory for running {Product
 ** Installing the cluster monitoring tools requires an additional 5 GB of memory.
 ====
 
-== Eviction Thresholdev
+== Eviction Threshold
 
 A node running applications requires enough reserve memomory. An application can trigger an out-of-memory event when it uses more than its reserved memory.
 
