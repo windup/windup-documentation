@@ -198,6 +198,26 @@ The test results indicate that the minimum amount of memory for running {Product
 ** Installing the cluster monitoring tools requires an additional 5 GB of memory.
 ====
 
+=== Eviction Threshold
+
+A node running applications requires enough reserve memory. An application can trigger an out-of-memory event when it uses more than its reserved memory.
+
+The `--eviction-hard` flag directs the node to evict applications when available memory drops below an absolute value or percentage.
+
+Set `--eviction-hard` along with memory reserves for the node.
+
+The following example illustrates node memory allocation settings:
+
+* Node capacity: `32 Gi`
+
+* `--system-reserved` setting: `3 Gi`
+
+* `--eviction-hard` setting: `100 Mi`
+
+This node has 28.9 Gi of effective memory available (32 Gi - 3 Gi - 0.1 Gi) before the `--eviction-hard` setting starts to evict applications that are using too much memory.
+
+
+
 == Red Hat Single Sign-On
 {ProductShortName} delegates authentication and authorization to a
 https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
