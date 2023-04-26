@@ -1,0 +1,43 @@
+:mta:
+include::topics/templates/document-attributes.adoc[]
+:toc:
+:toclevels: 3
+:numbered:
+
+:imagesdir: topics/images
+:context: release-notes
+:release-notes:
+:_content-type: ASSEMBLY
+= Release Notes
+
+//Inclusive language statement
+include::topics/making-open-source-more-inclusive.adoc[]
+
+[id="release-notes-introduction"]
+== Introduction
+{ProductName} {DocInfoProductNumber} accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.
+
+These release notes cover all z-stream releases of MTA 6.1 with the most recent release listed first.
+
+[id="mta-6-1-0"]
+== {ProductShortName} 6.1.0
+
+include::topics/mta-rn-new-features-6-1-0.adoc[leveloffset=+2]
+
+include::topics/mta-rn-known-issues-6-1-0.adoc[leveloffset=+2]
+
+include::topics/mta-rn-resolved-issues-6-1-0.adoc[leveloffset=+2]
+
+
+
+
+
+
+
+
+
+
+
+
+
+:!release-notes:
