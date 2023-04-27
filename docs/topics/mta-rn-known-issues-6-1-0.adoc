@@ -8,6 +8,6 @@
 
 At the time of the release, the following known issue has been identified.
 
-.Application analysis fails if there are spaces in the name of rules directory
+.Application analysis fails if the name of custom rules directory has spaces
 When using the CLI for fetching custom rules from a repository during the configuration of an application analysis, if the root path contains spaces, the CLI command is not properly composed and the analysis fails. The user must make sure that there are no spaces in the name of the directory from which custom rules are taken.
 
