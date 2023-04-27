@@ -30,15 +30,15 @@ include::topics/about-the-user-interface.adoc[leveloffset=+2]]
 
 The {ProductName} ({ProductShortName}) {WebName} has two views:
 
-* Administrator view
-* Developer view
+* Administration view
+* Migration view
 
-In *Administrator* view, you configure the instance environment, working with credentials, repositories, and HTTP and HTTPS proxy definitions.
+In *Administration* view, you configure the instance environment, working with credentials, repositories, and HTTP and HTTPS proxy definitions.
 
-In *Developer* view, you perform application assessments and analyses, review reports, and add applications for assessment and analysis.
+In *Migration* view, you perform application assessments and analyses, review reports, and add applications for assessment and analysis.
 
-// == Administrator view
-// include::topics/mta-web-administrator-view.adoc[leveloffset=+1]
+// == Administration view
+// include::topics/mta-web-administration-view.adoc[leveloffset=+1]
 
 // Installation
 include::topics/mta-6-installing-web-console-on-openshift.adoc[leveloffset=+1]
@@ -46,16 +46,27 @@ include::topics/mta-6-installing-web-console-on-openshift.adoc[leveloffset=+1]
 [id="configuring-the-instance-environment"]
 == Configuring the instance environment
 
-You can configure the following in *Administrator* view:
+You can configure the following in *Administration* view:
 
+* General
 * Credentials
 * Repositories
 * HTTP and HTTPS proxy settings
+* Custom migration targets
+
+[id="general-configuration"]
+=== General
+
+You can enable or disable the following options:
+
+* Reviewing applications without running an assessment first
+* Downloading HTML reports
+* Downloading CSV reports
 
 [id="configuring-credentials"]
 === Configuring credentials
 
-You can configure the following types of credentials in *Administrator* view:
+You can configure the following types of credentials in *Administration* view:
 
 * Source control
 * Maven
@@ -68,7 +79,7 @@ include::topics/mta-web-config-proxy-credentials.adoc[leveloffset=+3]
 [id="configuring-repositories"]
 === Configuring repositories
 
-You can configure the following types of repositories in *Administrator* view:
+You can configure the following types of repositories in *Administration* view:
 
 * Git
 * Subversion
