@@ -10,7 +10,7 @@ You can use the {ProductName} ({ProductShortName}) {WebName} to determine the ri
 
 [NOTE]
 ====
-The procedure described below uses a built-in questionnaire for assessing the risks involved in containerizing an application. By default, this procedure is mandatory, and you cannot proceed to the next step, Reviewing, without completing Assessment first. However, you might want to skip this step and use your own questionnaire instead. In that case, use the Skipping assessment option.
+The procedure described below uses a built-in questionnaire for assessing the risks involved in containerizing an application. By default, this procedure is required prior to reviewing the application. However, you might want to skip this step and use your own questionnaire instead. In that case, use the Skipping assessment option.
 ====
 
 .Procedure
