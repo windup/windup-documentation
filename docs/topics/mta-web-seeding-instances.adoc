@@ -13,7 +13,7 @@ The following parameters define applications, individuals, teams, verticals or a
 * Stakeholder groups
 * Job functions
 * Business services
-* Tag types
+* Tag categories
 * Tags
 
 You can create and configure an instance in any order. However, the suggested order below is the most efficient for creating stakeholders and tags.
@@ -26,7 +26,7 @@ Stakeholders:
 
 Tags:
 
-. Create tag types
+. Create tag categories
 . Create tags
 
 Stakeholders and defined by:
@@ -42,7 +42,7 @@ There are no default stakeholder groups defined. You can create a new stakeholde
 
 .Procedure
 
-. In *Developer* view, click *Controls*.
+. In *Migration* view, click *Controls*.
 . Click *Stakeholder groups*.
 . Click *Create new*.
 . Enter the following information:
@@ -59,7 +59,7 @@ You can create a new job function, which is not in the default list, by followin
 
 .Procedure
 
-. In *Developer* view, click *Controls*.
+. In *Migration* view, click *Controls*.
 . Click *Job functions*.
 . Click *Create new*.
 . Enter a job function title in the *Name* text box.
@@ -71,7 +71,7 @@ You can create a new migration project stakeholder by following the procedure be
 
 .Procedure
 
-. In *Developer* view, click *Controls*.
+. In *Migration* view, click *Controls*.
 . Click *Stakeholders*.
 . Click *Create new*.
 . Enter the following information:
@@ -89,7 +89,7 @@ You can create a new business service by following the procedure below.
 
 .Procedure
 
-. In *Developer* view, click *Controls*.
+. In *Migration* view, click *Controls*.
 . Click *Business services*.
 . Click *Create new*.
 . Enter the following information:
@@ -98,15 +98,15 @@ You can create a new business service by following the procedure below.
 ** Owner
 . Click *Create*.
 
-== Creating new tag types
+== Creating new tag categories
 
-{ProductName} ({ProductShortName}) uses tags in multiple categories and provides a list of default values. You can create a new tag type by following the procedure below.
+{ProductName} ({ProductShortName}) uses tags in multiple categories and provides a list of default values. You can create a new tag category by following the procedure below.
 
 .Procedure
 
-. In *Developer* view, click *Controls*.
+. In *Migration* view, click *Controls*.
 . Click *Tags*.
-. Click *Create tag type*.
+. Click *Create tag category*.
 . Enter the following information:
 ** Name
 ** Rank - the order in which the tags appear on the applications
@@ -119,10 +119,10 @@ You can create a new tag, which is not in the default list, by following the pro
 
 .Procedure
 
-. In *Developer* view, click *Controls*.
+. In *Migration* view, click *Controls*.
 . Click *Tags*.
 . Click *Create tag*.
 . Enter the following information:
 ** Name
-** Tag type
+** Tag category
 . Click *Create*.
