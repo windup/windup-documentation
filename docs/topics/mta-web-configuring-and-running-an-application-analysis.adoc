@@ -58,7 +58,14 @@ You can analyze more than one application at a time against more than one transf
 * Exclude packages. If you choose this option, type the name of the package name and click *Add*.
 
 . Click *Next*.
-. In *Advanced*, set *Custom rules* by typing a name or by searching and clicking *Add Rules*.
+. In *Advanced*, you can attach additional custom rules to the analysis. Select *Manual* or *Repository*.
++
+[NOTE]
+====
+Attaching custom rules is optional if you have already attached a migration target to the analysis. If you have not attached any migration target, you must attach rules.
+====
+** In *Manual* mode, click *Add Rules*. Then either drag and drop the relevant files or select them from their directory and click *Add*.
+** In *Repository* mode, you can add rule files from a Git or Subversion repository.
 . Set any of the following options, if needed:
 
 * Target
