@@ -55,7 +55,7 @@ You can install the {ProductName} ({ProductShortName}) and the {WebName} on Open
 
 .Prerequisites
 
-* 4 vCPUs, 8 GB RAM, and 40 GB persistent storage.
+* 4 vCPUs, 8 GiB RAM, and 40 GB persistent storage.
 * OpenShift Container Platform 4.9-4.11 installed.
 * You must be logged in as a user with `cluster-admin` permissions.
 
@@ -168,7 +168,7 @@ When installed on https://developers.redhat.com/products/openshift-local/overvie
 .OpenShift Local {ProductShortName} memory requirements
 [cols="25%,75%", options="header"]
 |====
-|Memory (GB)
+|Memory (GiB)
 |Description
 
 
@@ -188,14 +188,14 @@ When installed on https://developers.redhat.com/products/openshift-local/overvie
 |{ProductShortName} works quickly and the analysis is completed in less than 1 minute
 |====
 
-The test results indicate that the minimum amount of memory for running {ProductShortName} on OpenShift Local is *12 GB*.
+The test results indicate that the minimum amount of memory for running {ProductShortName} on OpenShift Local is *12 GiB*.
 
 [NOTE]
 ====
 ** The tests were performed by running the {ProductShortName} binary analysis through the {WebName}.
 ** All the analyses used the `tackle-testapp` binary.
 ** All the tests were conducted on an OpenShift Local cluster without the monitoring tools installed.
-** Installing the cluster monitoring tools requires an additional 5 GB of memory.
+** Installing the cluster monitoring tools requires an additional 5 GiB of memory.
 ====
 
 === Eviction Threshold
@@ -208,13 +208,13 @@ Set `--eviction-hard` along with memory reserves for the node.
 
 The following example illustrates node memory allocation settings:
 
-* Node capacity: `32 Gi`
+* Node capacity: `32 GiB`
 
-* `--system-reserved` setting: `3 Gi`
+* `--system-reserved` setting: `3 GiB`
 
 * `--eviction-hard` setting: `100 Mi`
 
-This node has 28.9 Gi of effective memory available (32 Gi - 3 Gi - 0.1 Gi) before the `--eviction-hard` setting starts to evict applications that are using too much memory.
+This node has 28.9 Gi of effective memory available (32 GiB - 3 GiB - 0.1 GiB) before the `--eviction-hard` setting starts to evict applications that are using too much memory.
 
 
 
