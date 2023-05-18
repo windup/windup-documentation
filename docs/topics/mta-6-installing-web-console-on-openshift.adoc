@@ -200,9 +200,9 @@ The test results indicate that the minimum amount of memory for running {Product
 
 === Eviction Threshold
 
-A node running applications requires enough reserve memory. An application can trigger an out-of-memory event when it uses more than its reserved memory.
+A node running applications requires enough reserve memory. Whenever an application uses more than its reserved memory, it can trigger an out-of-memory event.
 
-The `--eviction-hard` flag directs the node to evict applications when available memory drops below an absolute value or percentage.
+The `--eviction-hard` flag directs the node to evict applications when available memory drops below an absolute value or percentage value.
 
 Set `--eviction-hard` along with memory reserves for the node.
 
