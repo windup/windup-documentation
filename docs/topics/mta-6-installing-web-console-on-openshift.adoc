@@ -200,11 +200,11 @@ The test results indicate that the minimum amount of memory for running {Product
 
 === Eviction Threshold
 
-A node running applications requires enough reserve memory. Whenever an application uses more than its reserved memory, it can trigger an out-of-memory event.
+A node running applications requires sufficient reserve memory to operate successfully. Whenever an application uses more than its reserved memory allocation, it can trigger an out-of-memory event.
 
 The `--eviction-hard` flag directs the node to evict applications when available memory drops below an absolute value or percentage value.
 
-Set `--eviction-hard` along with memory reserves for the node.
+Set `--eviction-hard` flag along with memory reserves for the node.
 
 The following example illustrates node memory allocation settings:
 
@@ -214,8 +214,7 @@ The following example illustrates node memory allocation settings:
 
 * `--eviction-hard` setting: `100 Mi`
 
-This node has 28.9 Gi of effective memory available (32 GiB - 3 GiB - 0.1 GiB) before the `--eviction-hard` setting starts to evict applications that are using too much memory.
-
+This node has 28.9 GiB of [effective] memory available (32 GiB - 3 GiB - 0.1 GiB) before the `--eviction-hard` flag starts to evict applications that exceed the recommended memory requirements. 
 
 
 == Red Hat Single Sign-On
