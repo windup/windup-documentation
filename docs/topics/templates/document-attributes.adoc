@@ -21,11 +21,11 @@ ifdef::mta[]
 :WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 6.1.0
+:ProductVersion: 6.1.1
 :PluginName: MTA plugin
-:MavenProductVersion: 6.1.0.GA-redhat-00005
-:ProductDistributionVersion: 6.1.0.GA-redhat
-:ProductDistribution: mta-6.1.0.GA-offline.zip
+:MavenProductVersion: 6.1.1.CR1-redhat-00001
+:ProductDistributionVersion: 6.1.1.CR1-redhat
+:ProductDistribution: mta-6.1.1-cli-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/TACKLE
