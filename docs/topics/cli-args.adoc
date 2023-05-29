@@ -81,6 +81,7 @@ Do not overwrite a report output directory that contains important information.
 |--userLabelsDirectory |Specify a location for {ProductShortName} to look for custom Target Runtime Labels. The value can be a directory containing label files or a single label file. The Target Runtime Label files must use the [x-]`.windup.label.xml` suffix. The shipped Target Runtime Labels are defined within `${ProductShortName}_HOME/rules/migration-core/core.windup.label.xml`.
 |--userRulesDirectory |Specify a location, in addition to `<{ProductShortName}_HOME>/rules/` and `${user.home}/.{LC_PSN}/rules/`, for {ProductShortName} to look for custom {ProductShortName} rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the [x-]`.windup.xml` suffix.
 |--version |Display the {ProductShortName} version.
+|--skipSourceCodeReports |This option skips generating a _Source code report_ when generating the application analysis report. Use this advanced option when concerned about source code information appearing in the application analysis.
 |====
 
 [id="cli-input-argument_{context}"]
