@@ -1,0 +1,14 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master-6-1-0.adoc
+
+:_content-type: REFERENCE
+[id="mta-rn-resolved-issues-611_{context}"]
+= Resolved issues
+
+At the time of the release, the following resolved issue has been identified as the major issue worth highlighting:
+
+.RHSSO
+
+The release of {ProductShortName} 6.1.1 resolves the issue that users experienced after the the release of version 7.6.3 of Red Hat Single Sign-On (RH-SSO), which rendered many new installations of {ProductShortName} 6.x unusable. For more information on this issue, see  link:https://issues.redhat.com/browse/RHSSO-2514[RHSSO-2514].
+

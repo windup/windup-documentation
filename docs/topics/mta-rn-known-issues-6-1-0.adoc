@@ -1,0 +1,13 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master-6-1-0.adoc
+
+:_content-type: REFERENCE
+[id="rn-known-issues-610_{context}"]
+= Known issues
+
+At the time of the release, the following known issue has been identified.
+
+.Application analysis fails if the name of custom rules directory has spaces
+During the configuration of an application analysis, if the user fetches custom rules from a repository using the CLI and the root path contains spaces, the CLI command is not properly composed and the analysis fails. The user must make sure that there are no spaces in the name of the directory from which custom rules are taken.
+

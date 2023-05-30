@@ -13,18 +13,19 @@
 ifdef::mta[]
 :ProductName: Migration Toolkit for Applications
 :DocInfoProductName: Migration Toolkit for Applications
-:DocInfoProductNumber: 6.0
+:DocInfoProductNumber: 6.1
 :ProductShortName: MTA
 :LC_PSN: mta
 :DocInfoProductNameURL: migration_toolkit_for_applications
-:WebName: User Interface
+:WebName: user interface
 :WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 6.0.0
+:ProductVersion: 6.1.1
 :PluginName: MTA plugin
-:ProductDistributionVersion: 6.0.0.GA-redhat-00002
-:ProductDistribution: mta-6.0.0.GA-offline.zip
+:MavenProductVersion: 6.1.1.CR1-redhat-00001
+:ProductDistributionVersion: 6.1.1.CR1-redhat
+:ProductDistribution: mta-6.1.1-cli-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/TACKLE
@@ -42,10 +43,10 @@ ifdef::mtr[]
 :WebNameTitle: Web Console
 :WebNameURL: web_console_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 1.0.1
+:ProductVersion: 1.0.2
 :PluginName: MTR plugin
-:ProductDistributionVersion: 1.0.1.GA-redhat-00003
-:ProductDistribution: mtr-1.0.1.GA-offline
+:ProductDistributionVersion: 1.0.2.GA-redhat-00001
+:ProductDistribution: mtr-1.0.2.GA-offline
 :DevDownloadPageURL: https://developers.redhat.com/products/mtr/download
 :IDEPluginFilename: migrationtoolkit-mtr-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/WINDUP
@@ -90,7 +91,6 @@ endif::[]
 :ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html/{WebNameURL}/index
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
 :EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_codeready_studio_guide
-
 :IntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
 :ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
 :ProductDocUserInterfaceGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/{WebNameURL}
@@ -101,7 +101,6 @@ endif::[]
 :OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
 :LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
 
-//What about these ones?
 //Links to MTA and MTR Jira project pages:
 :JiraMTRURL: https://issues.redhat.com/projects/WINDUP
 :JiraMTAURL: https://issues.redhat.com/projects/TACKLE

@@ -1,0 +1,16 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-rn-upgrade-ui_{context}"]
+= Setting the parameter in the OpenShift web console after upgrading to version {ProductVersion}
+
+You can set the value of `rwx_supported` in the OpenShift web console after you upgrade to {ProductShortName} {ProductVersion}.
+
+.Procedure
+
+. Log into the OpenShift web console, click *Operators -> Installed Operators -> Migration Toolkit for Applications Operator -> Tackle*, and then click the Tackle instance.
+. Click *YAML* view.
+. Add `rwx_supported` to the CR settings that are listed in the `spec` section, and set its value to `false`.
+. Click *Save*.
