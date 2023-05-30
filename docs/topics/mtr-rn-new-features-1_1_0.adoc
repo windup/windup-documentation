@@ -17,7 +17,7 @@ This section describes the new features of the {ProductName} ({ProductShortName}
 
 * *exportSummary* generates a JSON file in the output folder of each analyzed application. This file contains the story points and incident count (by category), along with the application's collection of technology tags.
 
-* *exportZipReport* creates a `report.zip` file of all the analysis outputs - reports, .csv files and .json files, when requested.
+* *exportZipReport* creates a `report.zip` file of all the analysis outputs - reports, `.csv` files and `.json` files, when requested.
 
 * *legacyReports* generates reports in the original report format, instead of the newer PatternFly4 format (see above).
 
@@ -33,13 +33,13 @@ Hibernate users now have a new *hibernate6* target _shortcut_. The analysis uses
 Multiple targets can be mapped to a single target _shortcut_.
 
 .New technology tags
-This version of {ProductShortName} includes Java EE deployment descriptors based technology tags, such as *EJB 3.2*. It generates enterprise Java EE technology tags for Jakarta EE applications.
+This version of {ProductShortName} includes Java EE deployment descriptors-based technology tags, such as *EJB 3.2*. It generates enterprise Java EE technology tags for Jakarta EE applications.
 
 .Web UI package selection
 A new package selection step requires the user to activate package selection in order to include a list of packages for the analysis. This change aligns the Web UI with CLI behavior.
 
 .Java compatibility
-{ProductShortName} CLI, Web UI and Maven now supports the following versions of Java:
+{ProductShortName} CLI, Web UI, and Maven now support the following versions of Java:
 
 * OpenJDK 11
 * Oracle JDK 11
