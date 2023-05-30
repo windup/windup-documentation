@@ -13,9 +13,9 @@ This section describes the new features of the {ProductName} ({ProductShortName}
 
 .New advanced options
 
-* *exiCodes* ensures that {ProductShortName} returns a zero return code with a successful analysis, and a non-zero return code with a failed analysis.
+* *exitCodes* ensures that {ProductShortName} returns a zero return code with a successful analysis, and a non-zero return code with a failed analysis.
 
-* *exportSummary* generates a JSON file in the output folder of each analysed application. This file contains the story points and incident count (by category), along with the application's collection of technology tags.
+* *exportSummary* generates a JSON file in the output folder of each analyzed application. This file contains the story points and incident count (by category), along with the application's collection of technology tags.
 
 * *exportZipReport* creates a `report.zip` file of all the analysis outputs - reports, .csv files and .json files, when requested.
 
