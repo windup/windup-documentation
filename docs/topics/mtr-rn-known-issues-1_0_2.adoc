@@ -7,8 +7,4 @@
 
 = Known issues
 
-.link:https://issues.redhat.com/browse/WINDUP-3673[WindUp Web Console 5 and 6 cannot cross launch report in Windows]
-Accessing reports from the MTR Web Console is difficult when running on Windows.
-Workaround: Access the reports by navigating to them in the file system.
-
-For a complete list of all known issues, see the list of link:hhttps://issues.redhat.com/browse/WINDUP-3670?filter=12409779[MTR 1.0.2 known issues] in Jira.
+For a complete list of all known issues, see the list of link:https://issues.redhat.com/browse/WINDUP-3670?filter=12409779[MTR 1.0.2 known issues] in Jira.
