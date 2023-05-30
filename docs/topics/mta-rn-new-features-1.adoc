@@ -1,0 +1,18 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: CONCEPT
+[id="mta-rn-new-features-1_{context}"]
+= New features and improvements
+
+This section describes the new features and improvements of the {ProductName} ({ProductShortName}) {ProductVersion}.
+
+.{ProductShortName} no longer requires support for RWX volumes
+Previously, {ProductShortName} required support for RWX volumes, and in version {ProductVersion} this is optional. The Tackle CR includes a new configuration option, `rwx_supported`, a Boolean parameter whose default is `true`.
+
+* When this option is set to `true`, the {ProductShortName} Operator creates a cache volume as RWX. This volume is used by Maven as a durable local m2 cache that is shared across tasks.
+* When it is set to `false`, the Maven m2 cache will be local with each task. You can always configure the Maven cache separately.
+
+
+

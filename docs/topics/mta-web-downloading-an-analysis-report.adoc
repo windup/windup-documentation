@@ -1,0 +1,27 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-downloading-an-analysis-report_{context}"]
+= Downloading an analysis report
+
+For your convenience, you can download analysis reports. By default, this option is disabled, but you can enable it as described below.
+
+.Procedure
+
+. In *Administration* view, click *General*.
+. Toggle the *Enable downloads for HTML reports* and *Enable downloads for CSV reports* switches.
+. Go to *Migration* view and click *Application inventory*.
+. Open the page of the application for which you ran an analysis.
+. Click *Reports*.
+. Click the *Download report* link.
++
+The report is downloaded and saved in the *Downloads* directory as a `.tar.gz` file.
+
+[NOTE]
+====
+To download a report as an HTML file, you can enable the download option either before or after you run the analysis.
+
+To download a report as an CSV file, you must enable the download option _before_ you run the analysis.
+====

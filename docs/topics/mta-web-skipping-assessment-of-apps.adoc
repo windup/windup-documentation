@@ -1,0 +1,22 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-skipping-assessment-of-apps_{context}"]
+= Skipping assessment of applications
+
+By default, the assessment procedure is required prior to reviewing the application. However, you might want to skip assessment and use your own questionnaire instead. In that case, use the option described below.
+
+[NOTE]
+====
+This option is available only for *Admin* and *Architect* users.
+====
+
+.Procedure
+. In *Administration* view, click *General*.
+. Toggle the *Allow reviewing applications without running an assessment first* switch.
+. Go to *Migration* view and click *Application inventory*.
++
+Now the *Review* step is enabled for all applications including those that have not been assessed.
+

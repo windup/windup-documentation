@@ -6,10 +6,10 @@
 [id="mta-web-config-subversion-repos_{context}"]
 = Configuring subversion repositories
 
-You can configure subversion respositories in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
+You can configure subversion repositories in the *Repositories* view of the {ProductName} ({ProductShortName}) {WebName}.
 
 .Procedure
 
-. In *Administrator* view, click *Repositories* and then click *Subversion*.
+. In *Administration* view, click *Repositories* and then click *Subversion*.
 // ![](/Tackle2/Views/SubsConfig.png)
 . Toggle the *Consume insecure Subversion repositories* switch to the right.
