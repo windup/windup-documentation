@@ -12,7 +12,15 @@ You need a connected environment to install the {PluginName}.
 The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Developers 2022-03 and Red Hat CodeReady Studio 12.21.3.GA.
 
 .Prerequisites
-include::snippet_jdk-hardware-mac-prerequisites.adoc[]
+
+* Java Development Kit (JDK) installed. {ProductShortName} supports the following JDKs:
+
+** OpenJDK 11
+** Oracle JDK 11
+** Eclipse Temurin™ JDK 11
+
+* 8 GB RAM
+* macOS installation: the value of `maxproc` must be `2048` or greater.
 
 * link:{CodeReadyStudioDownloadPageURL}[Red Hat CodeReady Studio] _or_ link:https://www.eclipse.org/downloads/packages/release/2022-03/r/eclipse-ide-java-developers[Eclipse IDE for Java Enterprise Developers 2022-03]
 * JBoss Tools, installed with the link:https://www.eclipse.org/mpc/[Eclipse Marketplace Client]
