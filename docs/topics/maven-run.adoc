@@ -11,6 +11,13 @@ The {MavenName} is run by including a reference to the plugin inside your applic
 .Prerequisites
 include::snippet_jdk-hardware-mac-prerequisites.adoc[]
 
+* To run the {MavenName} on OpenJDK 17 or Oracle JDK17, you first need to set MAVEN_OPTS on the command line by running the following command:
++
+[source,terminal,subs="attributes+"]
+----
+export MAVEN_OPTS="--add-modules=java.se --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.util.stream=ALL-UNNAMED"
+----
+
 .Procedure
 
 . Add the following `<plugin>` to your application's `pom.xml` file:
