@@ -9,7 +9,7 @@
 This section describes the new features of the {ProductName} ({ProductShortName}) 1.1.0.
 
 .New reports
-{ProductShortName} generates rich reports using *PatternFly4*. The reports present the same content as in previous versions, but easier to navigate and presented better, in the consistent Web Console user interface. Users can still generate reports in the original format using the *legacyReports* advanced option.
+{ProductShortName} generates rich reports using *PatternFly4*. The reports present the same content as in previous versions, but are easier to navigate and presented better, in the consistent Web Console user interface. You can still generate reports in the original format using the *legacyReports* advanced option.
 
 .New advanced options
 
@@ -21,7 +21,7 @@ This section describes the new features of the {ProductName} ({ProductShortName}
 
 * *legacyReports* generates reports in the original report format, instead of the newer PatternFly4 format (see above).
 
-* *skipSourceCodeReports* The _Source Code_ report shows migration issues within the context of the application's source code. Showing the source code of all analyzed applications may raise a security concerns. This option generates all reports except the source code report.
+* *skipSourceCodeReports* The _Source Code_ report shows migration issues within the context of the application's source code. Showing the source code of all analyzed applications may raise security concerns. This option generates all reports except the source code report.
 
 .New rulesets and targets
 {ProductShortName} contains a complete set of rules that supports EAP 8.0 Beta and Hibernate 6.2.
@@ -36,7 +36,7 @@ Multiple targets can be mapped to a single target _shortcut_.
 This version of {ProductShortName} includes Java EE deployment descriptors-based technology tags, such as *EJB 3.2*. It generates enterprise Java EE technology tags for Jakarta EE applications.
 
 .Web UI package selection
-A new package selection step requires the user to activate package selection in order to include a list of packages for the analysis. This change aligns the Web UI with CLI behavior.
+A new package selection step requires you to activate package selection to include a list of packages for the analysis. This change aligns the Web UI with CLI behavior.
 
 .Java compatibility
 {ProductShortName} CLI, Web UI, and Maven now support the following versions of Java:
@@ -48,7 +48,7 @@ A new package selection step requires the user to activate package selection in 
 * Oracle JDK 17
 * Eclipse Temurin JDK 17
 
-Future releases are planned to include IDE plugins and extensions that support Java 17. They require Oracle JDK 11 or OpenJDK 11.
+Future releases are planned to include IDE plugins and extensions that support Java 17. These releases require Oracle JDK 11 or OpenJDK 11.
 
 .Updated Nexus index of known software artifacts
 Last update 21 March 2023.
