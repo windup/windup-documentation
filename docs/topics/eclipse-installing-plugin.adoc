@@ -13,17 +13,18 @@ The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Develo
 
 .Prerequisites
 
-* Java Development Kit (JDK) installed. {ProductShortName} supports the following JDKs:
+* Java Development Kit (JDK) 11 is installed and applied as the default. {ProductShortName} supports the following JDKs:
 
 ** OpenJDK 11
 ** Oracle JDK 11
 ** Eclipse Temurin™ JDK 11
 
+* The Java Compiler compliance level is set to 11.
 * 8 GB RAM
 * macOS installation: the value of `maxproc` must be `2048` or greater.
 
 * link:{CodeReadyStudioDownloadPageURL}[Red Hat CodeReady Studio] _or_ link:https://www.eclipse.org/downloads/packages/release/2022-03/r/eclipse-ide-java-developers[Eclipse IDE for Java Enterprise Developers 2022-03]
-* JBoss Tools, installed with the link:https://www.eclipse.org/mpc/[Eclipse Marketplace Client]
+* JBoss Tools, installed from the link:https://marketplace.eclipse.org/content/jboss-tools[Eclipse Marketplace]
 * link:http://download.eclipse.org/mylyn/releases/latest[Mylyn SDK and frameworks], installed with Eclipse
 
 .Procedure
@@ -32,7 +33,13 @@ The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Develo
 . From the menu bar, select *Help* -> *Install New Software*.
 . Next to the *Work with* field, click *Add*.
 . In the *Name* field, enter `{ProductShortName}`.
-. In the *Location* field, enter `\http://download.jboss.org/jbosstools/photon/stable/updates/{LC_PSN}/` and click *OK*.
+. In the *Location* field, enter
+ifdef::mtr[]
+`https://marketplace.eclipse.org/content/migration-toolkit-runtimes-mtr` and click *OK*.
+endif::[]
+ifdef::mta[]
+`https://marketplace.eclipse.org/content/migration-toolkit-applications-mta` and click *OK*.
+endif::[]
 . Select all the *JBoss Tools - {ProductShortName}* check boxes and click *Next*.
 . Review the installation details and click *Next*.
 . Accept the terms of the license agreement and click *Finish*.
