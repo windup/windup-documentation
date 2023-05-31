@@ -9,7 +9,17 @@
 The {MavenName} is run by including a reference to the plugin inside your application's `pom.xml` file. When the application is built, the {MavenName} is run and generates the reports for analysis.
 
 .Prerequisites
-include::snippet_jdk-hardware-mac-prerequisites.adoc[]
+* Java Development Kit (JDK) installed.
++
+{ProductShortName} supports the following JDKs:
+
+** OpenJDK 11
+** Oracle JDK 11
+
+* 8 GB RAM
+* macOS installation: the value of `maxproc` must be `2048` or greater.
+* The Maven `settings.xml` file https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html-single/development_guide/index#configure_the_jboss_eap_maven_repository_using_the_maven_settings[configured] to direct Maven to use the JBoss EAP Maven repository.
+
 
 .Procedure
 
