@@ -50,6 +50,7 @@ in production. These features provide early access to upcoming product features,
 |--excludeTags |A space-delimited list of tags to exclude. When specified, rules with these tags will not be processed. To see the full list of tags, use the `--listTags` argument.
 |--explodedApp |Flag to indicate that the provided input directory contains source files for a single application.
 |--exportCSV |Flag to export the report data to a CSV file on your local file system. {ProductShortName} creates the file in the directory specified by the `--output` argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis.
+|--exportSummary |Flag to instruct {ProductShortName} to generate an `analysisSummary.json` export file in the output directory. The file contains analysis summary information for each application analyzed, including the number of incidents and story points by category, and all of the technology tags associated with the analyzed applications.
 |--help |Display the {ProductShortName} help message.
 |--immutableAddonDir |Add the specified directory as a custom read-only add-on repository.
 |--includeTags| A space-delimited list of tags to use. When specified, only rules with these tags will be processed. To see the full list of tags, use the `--listTags` argument.

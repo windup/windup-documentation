@@ -64,6 +64,7 @@ Registering the server path ensures that the {ProductShortName} server always us
 * *Mavenize group ID*
 * *Ignore path*: Enter a path for files to exclude from analysis.
 * *Export CSV*: Exports the report data as a CSV file.
+* *Export Summary*: Generate an `analysisSummary.json` export file in the output directory. The file contains analysis summary information for each application analyzed, including the number of incidents and story points by category, and all of the technology tags associated with the analyzed applications.
 * *Disable Tattletale*: Disables generation of a Tattletale report for each application.
 * *Class Not Found analysis*: Enables analysis of Java files that are not available on the class path.
 +
