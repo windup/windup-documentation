@@ -10,7 +10,7 @@ The {ProductName} ({ProductShortName}) supports migrations from third-party ente
 
 {ProductShortName} provides a comprehensive set of rules to assess the suitability of your applications for containerization and deployment on Red Hat OpenShift Container Platform (RHOCP). You can run an {ProductShortName} analysis to assess your applications' suitability for migration to multiple target platforms.
 
-The following table describes the most common supported migration paths.
+The following table describes the migration paths most commonly supported.
 
 .Supported migration paths: Source platform &#8658; target
 [cols="2,^1,^1,^1,^1,^1,^1,^1,^1",options="^,header"]
