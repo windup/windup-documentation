@@ -6,7 +6,8 @@
 [id="mta-web-creating-custom-migration-targets_{context}"]
 = Creating custom migration targets
 
-Users with `admin` permissions can create and maintain custom rulesets (migration targets). Non-admin users then can use those migration targets for analyzing applications.
+The purpose of this feature is to enable architects or users with `admin` permissions to create and maintain custom rulesets (migration targets). Architects can upload custom rule files and assign them to various custom migration targets. The custom migration targets are then available for selecting in the analysis configuration wizard.
+Using ready-made custom migration targets makes the cumbersome task of configuring custom rules for each analysis run unnecessary. This simplifies analysis configuration and execution for non-admin users or third-party developers and makes using the {ProductShortName} tool easier and more straightforward.
 
 .Prerequisites
 
