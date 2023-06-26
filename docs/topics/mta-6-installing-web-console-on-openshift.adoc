@@ -51,7 +51,7 @@ To successfully deploy, the {ProductShortName} Operator requires 3 RWO persisten
 
 == Installing the {ProductName} Operator and the {WebName}
 
-You can install the {ProductName} ({ProductShortName}) and the {WebName} on OpenShift Container Platform versions 4.9-4.11 when you install the {ProductName} Operator.
+You can install the {ProductName} ({ProductShortName}) and the {WebName} on OpenShift Container Platform versions 4.9-4.12 when you install the {ProductName} Operator.
 
 .Prerequisites
 
@@ -160,6 +160,34 @@ spec:
 ** *User name*: admin
 ** *Password*: Passw0rd!
 . When prompted, create a new password.
+
+[id="installing-mta-operator-in-disconnected-environment_{context}"]
+== Installing the {ProductName} Operator in a disconnected {ocp-short} environment
+
+You can install the {ProductShortName} Operator in a disconnected environment by following the link:https://access.redhat.com/documentation/en-us/openshift_container_platform/4.12/html/installing/disconnected-installation-mirroring#installing-mirroring-disconnected[generic procedure].
+
+In step 1 of the generic procedure, configure the image set for mirroring as follows:
+
+[source,yaml]
+----
+kind: ImageSetConfiguration
+apiVersion: mirror.openshift.io/v1alpha2
+storageConfig:
+  registry:
+    imageURL: registry.to.mirror.to
+    skipTLS: false
+mirror:
+  operators:
+  - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.12
+    packages:
+    - name: mta-operator
+      channels:
+      - name: stable-v6.1
+    - name: rhsso-operator
+      channels:
+      - name: stable
+  helm: {}
+----
 
 == Memory requirements for running {ProductShortName} on Red Hat OpenShift Local
 
