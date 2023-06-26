@@ -166,7 +166,7 @@ spec:
 
 You can install the {ProductShortName} Operator in a disconnected environment by following the link:https://access.redhat.com/documentation/en-us/openshift_container_platform/4.12/html/installing/disconnected-installation-mirroring#installing-mirroring-disconnected[generic procedure].
 
-Configure the image set for mirroring as follows:
+In step 1 of the generic procedure, configure the image set for mirroring as follows:
 
 [source,yaml]
 ----
