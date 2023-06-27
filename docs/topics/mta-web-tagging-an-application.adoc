@@ -28,7 +28,7 @@ The *Update application* window opens.
 [id="automating-tagging-of-an-application_{context}"]
 == Automatic tagging
 
-{ProductShortName} translates the technology stack information that the analysis module collects into tags and automatically adds them to the application. Automatic tagging is especially useful when dealing with large portfolios of applications.
+{ProductShortName} translates the technology stack information that the analysis module collects into tags and automatically adds the tags to the application. Automatic tagging is especially useful when dealing with large portfolios of applications.
 
 Automatic tagging of applications is enabled by default. You can disable it by unselecting the *Enable automated tagging* checkbox in the *Advanced* section of the *Analysis configuration* wizard.
 
