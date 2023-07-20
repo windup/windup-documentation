@@ -1,0 +1,22 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: CONCEPT
+[id="rn-new-features-6-2-0_{context}"]
+= New features
+
+This section describes the new features of the {ProductName} ({ProductShortName}) {ProductVersion}.
+
+.Integration with JIRA
+A new _Jira_ entry has been added to the in the left sidebar, under the Control Menu. This feature enables the user (Administrator, Architect) to create new Jira instances and edit existing ones.
+
+.Report custom metrics on MTA usage back through OpenShift Telemetry
+MTA reports back through OpenShift Telemetry as to the applications that it processes:
+
+* Number of applications in Inventory
+* Number of Analysis Run (aggregated)
+* Number of Assessments Run
+
+.Migration Waves management
+The technical lead of the migration project can create and modify applications and information on the migration.
