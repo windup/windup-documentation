@@ -12,17 +12,14 @@ MTA version 6.2.0 has the following issues.
 * link:https://issues.redhat.com/browse/MTA-402[MTA-402] - Report custom metrics on MTA usage back via OpenShift Telemetry
 * link:https://issues.redhat.com/browse/MTA-402[MTA-402] - Downstream efforts for MTA 6.2.0
 * link:https://issues.redhat.com/browse/MTA-894[MTA-894] - Failed analysis counted twice
-
 * link:https://issues.redhat.com/browse/MTA-872[MTA-872] - After an error, fails to export same applications as tastks, returns error showing sub-tasks
 * link:https://issues.redhat.com/browse/MTA-973[MTA-973] - Success alert missing when creating a new Jira instance
 * link:https://issues.redhat.com/browse/MTA-810[MTA-810] - Fails to run analysis in provate GitHub repo
 * link:https://issues.redhat.com/browse/MTA-984[MTA-984] - Dependencies: error retreiving data with `Unable to Connect`
-
 * link:https://issues.redhat.com/browse/MTA-696[MTA-696] - Exporting a migration wave to Jira causes all applications to enter Error state before creating issues
 * link:https://issues.redhat.com/browse/MTA-906[MTA-906] - Exporting Migration Wave as an Epic does not export to Jira - unsing Jira Server/DataCenter
 * link:https://issues.redhat.com/browse/MTA-870[MTA-870] - A Migration Wave cannot be exported as a SubTask - using both Jira DataCenter and Cloud
 * link:https://issues.redhat.com/browse/MTA-465[MTA-465] - Tags and Reports tabs for application keeps loading while analysis in progress
-
 * link:https://issues.redhat.com/browse/MTA-1014[MTA-1014] - Cannot remove Jira connection afater it was added to Wave even after Wave was removed
 * link:https://issues.redhat.com/browse/MTA-1015[MTA-1015] - Credential filtering is missing _Created by_ filter
 * link:https://issues.redhat.com/browse/MTA-849[MTA-849] - Unable to connect to Jira instance behind a proxy
