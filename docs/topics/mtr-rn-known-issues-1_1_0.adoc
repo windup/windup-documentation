@@ -1,0 +1,10 @@
+// Module included in the following assemblies:
+//
+// * docs/release-notes-mtr/master.adoc
+
+:_content-type: REFERENCE
+[id="mtr-rn-known-issues-11_{context}"]
+
+= Known issues
+
+For a complete list of all known issues, see the list of link:https://issues.redhat.com/browse/WINDUP-3792?jql=project%20in%20(WINDUP%2C%20WINDUPRULE)%20AND%20type%20%3D%20Bug%20AND%20createdDate%20%3E%3D%202021-01-01%20AND%20createdDate%20%3C%3D%202023-06-01%20AND%20(resolutiondate%20%3E%202023-06-01%20OR%20resolutiondate%20is%20EMPTY)%20AND%20Priority%20in%20(Blocker%2C%20Critical%2C%20Major)%20ORDER%20BY%20priority%20DESC%2C%20key%20DESC[MTR 1.1.0 known issues] in Jira.

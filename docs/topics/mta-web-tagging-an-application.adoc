@@ -1,0 +1,61 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-tagging-an-application_{context}"]
+= Tagging an application
+
+You can attach various tags to the application that you are going to analyze. The tags allow classifying applications in multiple dimensions.
+
+Tagging can be either automatic or manual.
+
+[id="manual-tagging-of-an-application_{context}"]
+== Manual tagging
+
+You can tag an application manually, both before or after you run an analysis.
+
+.Procedure
+
+. In *Migration* view, click *Application inventory*.
+. Click the *Analysis* tab.
+. In the row of the required application, click the pen icon.
++
+The *Update application* window opens.
+. Select the desired tags from the *Select a tag(s)* drop-down list.
+. Click *Save*.
+
+[id="automating-tagging-of-an-application_{context}"]
+== Automatic tagging
+
+{ProductShortName} translates the technology stack information that the analysis module collects into tags and automatically adds the tags to the application. Automatic tagging is especially useful when dealing with large portfolios of applications.
+
+Automatic tagging of applications is enabled by default. You can disable it by unselecting the *Enable automated tagging* checkbox in the *Advanced* section of the *Analysis configuration* wizard.
+
+[NOTE]
+====
+To tag an application automatically, make sure that the *Enable automated tagging* checkbox is selected _before_ you run an analysis of the application.
+====
+
+[id="viewing-tags-of-an-application_{context}"]
+== Viewing the tags of an application
+
+You can view the tags attached to a particular application.
+
+[NOTE]
+====
+You can view the tags that were attached automatically only _after_ you have run an analysis of the application.
+====
+
+.Procedure
+
+. In *Migration* view, click *Application inventory*.
+. Click the *Analysis* tab.
+. Click the name of the required application.
++
+A side drawer opens.
+. In the side drawer, click the *Tags* tab.
++
+You can see the tags attached to the application.
++
+The tags can be filtered by source and tag category. The sources are *Analysis* and *Manual*. The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.

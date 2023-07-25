@@ -26,7 +26,7 @@ A ruleset is a group of one or more rules that targets a specific area of migrat
 **** **<otherwise>**: The action to be performed when the rule condition is not matched. This element takes the same child elements as the `<perform>` element.
 **** **<where>**: A string pattern defined as a parameter, which can be used elsewhere in the rule definition.
 *** **<file-mapping/>**: Maps an extension to a graph type.
-*** **<package-mapping/>**: Maps from a package pattern (regular expression) to a organization name.
+*** **<package-mapping/>**: Maps from a package pattern (regular expression) to an organization name.
 
 == Predefined rules
 

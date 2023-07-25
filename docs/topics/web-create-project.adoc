@@ -24,7 +24,7 @@ Registering the server path of an application ensures that {ProductShortName} al
 . Click *Next*.
 . Click one or more transformation targets.
 +
-image::web-configure-analysis.png[Transformation targets]
+image::web-console-transformation-targets1.png[Transformation targets]
 . Click *Next*.
 . Select packages and click *>* to include them in the analysis.
 . Click *Next*.
@@ -64,6 +64,8 @@ Registering the server path ensures that the {ProductShortName} server always us
 * *Mavenize group ID*
 * *Ignore path*: Enter a path for files to exclude from analysis.
 * *Export CSV*: Exports the report data as a CSV file.
+* *Export Summary*: Generates an `analysisSummary.json` export file in the output directory. The file contains analysis summary information for each application analyzed, including the number of incidents and story points by category, and all of the technology tags associated with the analyzed applications.
+* *Export reports zip*: Creates a `reports.zip` file in the output folder. The file contains the analysis output, typically, the reports. If requested, it can also contain the CSV export files.
 * *Disable Tattletale*: Disables generation of a Tattletale report for each application.
 * *Class Not Found analysis*: Enables analysis of Java files that are not available on the class path.
 +
@@ -97,6 +99,8 @@ This option might result in a longer execution time and a large number of migrat
 Transaction analysis is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them
 in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
 ====
+* *Skip source code reports:* Adding this option skips generating a _Source code report_ when generating the application analysis report. Use this advanced option when concerned about source code information appearing in the application analysis.
+
 . Click *Next*.
 +
 . Review your project and click *Save* or *Save and run*.

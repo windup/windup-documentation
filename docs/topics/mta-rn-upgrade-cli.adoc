@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-rn-upgrade-cli_{context}"]
+= Setting the parameter in the Tackle Custom Resource (CR) using the CLI after upgrading to version {ProductVersion}
+
+You can set the value of `rwx_supported` in the Tackle CR using the OpenShift CLI after you upgrade to {ProductShortName} {ProductVersion}.
+
+.Procedure
+
+. Log into your cluster using the OpenShift CLI.
+. Set `rwx_supported` to `false` by entering the following command:
++
+[source,terminal]
+----
+$ oc patch tackle $(oc get tackle -n openshift-mta|grep -iv name|cut -d " " -f 1) -n openshift-mta --type merge --patch '{"spec":{"rwx_supported": "false"}}'
+----

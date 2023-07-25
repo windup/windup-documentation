@@ -1,0 +1,9 @@
+// Module included in the following assemblies:
+//
+// * docs/release-notes-mtr/mtr_release_notes-1.0/master.adoc
+
+:_content-type: REFERENCE
+[id="mtr-rn-resolved-issues-11_{context}"]
+= Resolved issues
+
+For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/browse/WINDUPRULE-974?jql=project%20in%20(WINDUP%2C%20WINDUPRULE)%20AND%20status%20in%20(Verified%2C%20%22Release%20Pending%22%2C%20Closed)%20AND%20issuetype%20%3D%20Bug%20AND%20fixVersion%20in%20(MTR-1.1.0)%20ORDER%20BY%20component%20DESC[{ProductShortName} 1.1.0 resolved issues] in Jira.

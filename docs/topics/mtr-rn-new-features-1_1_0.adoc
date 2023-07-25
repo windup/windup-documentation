@@ -1,0 +1,54 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: CONCEPT
+[id="rn-new-features-11_{context}"]
+= New features
+
+This section describes the new features of the {ProductName} ({ProductShortName}) 1.1.0.
+
+.New reports
+{ProductShortName} generates rich reports using *PatternFly4*. The reports present the same content as in previous versions, but are easier to navigate and presented better, in the consistent Web Console user interface. You can still generate reports in the original format using the *legacyReports* advanced option.
+
+.New advanced options
+
+* *exitCodes* ensures that {ProductShortName} returns a zero return code with a successful analysis, and a non-zero return code with a failed analysis.
+
+* *exportSummary* generates a JSON file in the output folder of each analyzed application. This file contains the story points and incident count (by category), along with the application's collection of technology tags.
+
+* *exportZipReport* creates a `report.zip` file of all the analysis outputs - reports, `.csv` files and `.json` files, when requested.
+
+* *legacyReports* generates reports in the original report format, instead of the newer PatternFly4 format (see above).
+
+* *skipSourceCodeReports* The _Source Code_ report shows migration issues within the context of the application's source code. Showing the source code of all analyzed applications may raise security concerns. This option generates all reports except the source code report.
+
+.New rulesets and targets
+{ProductShortName} contains a complete set of rules that supports EAP 8.0 Beta and Hibernate 6.2.
+
+A new *discovery* target only executes the rules that identify technologies embedded within the application, informing the migration strategy for each application by efficiently showing its technology landscape.
+
+Hibernate users now have a new *hibernate6* target _shortcut_. The analysis uses all the rulesets with a `hibernate:6` or `jakarta-ee` target.
+
+Multiple targets can be mapped to a single target _shortcut_.
+
+.New technology tags
+This version of {ProductShortName} includes Java EE deployment descriptors-based technology tags, such as *EJB 3.2*. It generates enterprise Java EE technology tags for Jakarta EE applications.
+
+.Web UI package selection
+A new package selection step requires you to activate package selection to include a list of packages for the analysis. This change aligns the Web UI with CLI behavior.
+
+.Java compatibility
+{ProductShortName} CLI, Web UI, and Maven now support the following versions of Java:
+
+* OpenJDK 11
+* Oracle JDK 11
+* Eclipse Temurin JDK 11
+* OpenJDK 17
+* Oracle JDK 17
+* Eclipse Temurin JDK 17
+
+Future releases are planned to include IDE plugins and extensions that support Java 17. These releases require Oracle JDK 11 or OpenJDK 11.
+
+.Updated Nexus index of known software artifacts
+Last update 21 March 2023.

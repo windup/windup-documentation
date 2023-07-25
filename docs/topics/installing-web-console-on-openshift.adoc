@@ -4,9 +4,9 @@
 
 :_content-type: PROCEDURE
 [id="installing-web-console-on-openshift_{context}"]
-= Installing the {WebName} on {ocp-short} 4.6 and later
+= Installing the {WebName} on {ocp-short} 4.11 and later
 
-You can install the {WebName} on {ocp-short} 4.6 and later versions with the {ProductName} Operator.
+You can install the {WebName} on {ocp-short} 4.11 and later versions with the {ProductName} Operator.
 
 .Prerequisites
 
@@ -52,7 +52,7 @@ Note that after the {ProductShortName} operator has been instantiated the *Valid
 .Installing the {WebName} application
 
 . Log in to the OpenShift web console as a user with `project-admin-user` privileges.
-. Switch to the *Developer* perspective and click *+Add*.
+. Switch to the *Migration* perspective and click *+Add*.
 . In the *Add* view, click *Operator Backed*.
 . Click the *{DocInfoProductName}* Operator.
 . Click *Create*.

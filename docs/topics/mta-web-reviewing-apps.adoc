@@ -1,0 +1,26 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-reviewing-apps_{context}"]
+= Reviewing applications
+
+You can use the {ProductName} ({ProductShortName}) {WebName} to determine the migration strategy and work priority for each application.
+
+.Procedure
+
+. In *Migration* view, click *Application inventory*.
++
+// ![](/Tackle2/AppAssessAnalyze/AnalysisSelect.png)
+. Select the application you want to review.
++
+[NOTE]
+====
+Only one application can be reviewed at a time.
+====
+. Click  *Review*.
+. Select *Proposed action* and *Effort estimate* from the lists. Set *Business criticality* and *Work priority*.
+. Click *Submit review*.
++
+The fields from *Review* are now populated on the *Application details* page.
