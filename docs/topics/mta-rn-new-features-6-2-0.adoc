@@ -11,12 +11,8 @@ This section describes the new features of the Migration Toolkit for Application
 .Integration with JIRA
 A new _Jira_ entry has been added in the left sidebar, under the Control Menu. This feature enables the user (Administrator, Architect) to create new Jira instances and edit existing instances.
 
-.Report custom metrics on MTA usage back through OpenShift Telemetry
-MTA reports back through OpenShift Telemetry as to the applications that it processes:
-
-* Number of applications in Inventory
-* Number of Analysis Run (aggregated)
-* Number of Assessments Run
+.MTA supports OpenShift Monitoring
+MTA reports through OpenShift Monitoring.
 
 .Migration Waves management
 The technical lead of the migration project can create and modify applications and information on the migration.
