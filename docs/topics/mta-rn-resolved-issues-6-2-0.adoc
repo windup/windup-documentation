@@ -1,41 +1,19 @@
 // Module included in the following assemblies:
 //
-// * docs/release_notes-6.0/master.adoc
+// * docs/release_notes-6.2/master.adoc
 
 :_content-type: REFERENCE
 [id="mta-rn-resolved-issues-6-2-0_{context}"]
 = Resolved issues
 
-The following issues have been resolved in MTA version 6.2.0.
+The following highlighted issues have been resolved in MTA version 6.2.0: 
 
-* link:https://issues.redhat.com/browse/MTA-721[MTA-721] - Create infra automation for Jira integration
-* link:https://issues.redhat.com/browse/MTA-772[MTA-772] - "Bearer" type credentials not listed in Jira instance creation dialog
-* link:https://issues.redhat.com/browse/MTA-678[MTA-678] - Some _req var_ not set in collect database coordinates task
-* link:https://issues.redhat.com/browse/MTA-766[MTA-766] - Incorrect labels in Jira connections table
-* link:https://issues.redhat.com/browse/MTA-808[MTA-808] - Empty credentials field when editing existing Jira connections instance
-* link:https://issues.redhat.com/browse/MTA-682[MTA-682] - Assessment wizard's `konveyor_assessment_initiated_total` count works incorrectly
-* link:https://issues.redhat.com/browse/MTA-908[MTA-908] - Incorrect URL sorting for Jira instances
-* link:https://issues.redhat.com/browse/MTA-807[MTA-807] - Default value overrides set `METRICS_ENABLED` environment variable
-* link:https://issues.redhat.com/browse/MTA-845[MTA-845] - CSV reports cannot be downloaded
-* link:https://issues.redhat.com/browse/MTA-681[MTA-681] - Add tooltip for _Delete_ button disabled only when selectred application(s) are in a migration wave
+.Analysis wizard
+The release of MTA 6.2.0 resolves the issue that Analysis wizard was stuck on custom rules page on moving *Back* from the Repository tab.
+For more information on this issue, see link:https://issues.redhat.com/browse/MTA-464[MTA-464].
 
-* link:https://issues.redhat.com/browse/MTA-877[MTA-877] - When expoting a migration wave to Jira, moving ticket to _done_ changes atatus to _not started_
-* link:https://issues.redhat.com/browse/MTA-881[MTA-881] - Assertion is missing `No stakeholders available`
-* link:https://issues.redhat.com/browse/MTA-658[MTA-658] - Blurry helper messages
-* link:https://issues.redhat.com/browse/MTA-753[MTA-753] - Some success notifications include two spaces
-* link:https://issues.redhat.com/browse/MTA-826[MTA-826] - Color filter does not work correctly
-* link:https://issues.redhat.com/browse/MTA-695[MTA-695] - Error when running a second migration wave export with additional apps
-* link:https://issues.redhat.com/browse/MTA-809[MTA-809] - Exported issues moved from `Error` to `New` state are counted twice
-* link:https://issues.redhat.com/browse/MTA-643[MTA-643] - Success alerts are broken
-* link:https://issues.redhat.com/browse/MTA-909[MTA-909] - Tag Category is missing helper message `This field is required`
-* link:https://issues.redhat.com/browse/MTA-811[MTA-811] - Failed to delete an application associated with a ticket on the issues manager
-* link:https://issues.redhat.com/browse/MTA-750[MTA-750] - Cannot select applications in _Assessment_ tab of _Application Inventory_
-* link:https://issues.redhat.com/browse/MTA-590[MTA-590] - Identified risk table shows an error when there is no data
-* link:https://issues.redhat.com/browse/MTA-699[MTA-699] - Unable to connect to Red hat Jira account
-* link:https://issues.redhat.com/browse/MTA-580[MTA-580] - JavaScript whitespaces handled inproperly in HTML template (MTA 6.0)
-* link:https://issues.redhat.com/browse/MTA-581[MTA-581] - JavaScript whitespaces handled inproperly in HTML template (MTA 6.1.z)
-* link:https://issues.redhat.com/browse/MTA-464[MTA-464] - Moving _Back_ from _Repository_ tab causes Analysis wizard to be stuck on rules page
-* link:https://issues.redhat.com/browse/MTA-554[MTA-554] - Application _Tags_ and _Reports_ tabs keep loading while analysis is in progress
-* link:https://issues.redhat.com/browse/MTA-553[MTA-553] - Moving _Back_ from _Repository_ tab causes Analysis wizard to be stuck on rules page
+.Tags & Reports tabs
+The release of MTA 6.2.0 resolves the issue that an analysis was running for an application, and after clicking on that application to see the Tags and Reports, both the tabs keep loading until the analysis finished.
+For more information on this issue, see link:https://issues.redhat.com/browse/MTA-465[MTA-465].
 
-See an updated  filtered list of link:https://issues.redhat.com/issues/?filter=12418203[resolved issues in Jira].
+For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12418203[Resolved Issues in Jira].
