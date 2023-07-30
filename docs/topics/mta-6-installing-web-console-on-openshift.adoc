@@ -2,7 +2,7 @@
 //
 // * docs/web-console-guide/master.adoc
 
-:_content-type: PROCEDUREF
+:_content-type: PROCEDURE
 [id="mta-6-installing-web-console-on-openshift_{context}"]
 
 = Installing the {ProductName} {WebName}
@@ -245,7 +245,7 @@ The test results indicate that the minimum amount of memory for running {Product
 [id="eviction-threshold_{context}"]
 === Eviction threshold
 
-Each node has a certain amount of memory allocated to it. Some of that memory is reserved for system services. The rest of the memory is intended for running pods. If the pods use more than their allocated amount of memory, it triggers an out-of-memory event.
+Each node has a certain amount of memory allocated to it. Some of that memory is reserved for system services. The rest of the memory is intended for running pods. If the pods use more than their allocated amount of memory, it triggers an out-of-memory event (node terminated with a `OOMKilled` error).
 
 To prevent out-of-memory events and protect nodes, it is recommended to use the `--eviction-hard` setting. This setting specifies the threshold of memory availability below which the node evicts pods. The value of the setting can be absolute or a percentage.
 
