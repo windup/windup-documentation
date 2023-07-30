@@ -144,7 +144,7 @@ The most commonly used CR settings are listed in this table:
 
 |`windup_container_limits_memory`
 |`6Gi`
-|Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod gets `OOMKilled` errors.
+|Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors.
 
 |`windup_container_requests_cpu`
 |`1`
