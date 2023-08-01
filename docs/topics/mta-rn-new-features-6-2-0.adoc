@@ -9,10 +9,10 @@
 This section describes the new features of the Migration Toolkit for Applications (MTA) 6.2.0.
 
 .Integration with JIRA
-A new _Jira_ entry has been added in the left sidebar, under the Control Menu. This feature enables the user (Administrator, Architect) to create new Jira instances and edit existing instances.
+Integration with _Jira_ enables users to track migrations of individual applications by creating a Jira issue for each migration in {ProductShortname}.
 
-.MTA supports OpenShift Monitoring
-MTA reports through OpenShift Monitoring.
+.OpenShift Monitoring integration
+MTA integrates with OpenShift Monitoring.
 
 .Migration Waves management
-The technical lead of the migration project can create and modify applications and information on the migration.
+A _Migration Wave_ groups applications to be migrated on a specified schedule. The Migration Wave can also enable exporting a list of the wave's applications as a Jira issue. This enables automatic tracking of separate Jira issues for each application in the wave.
