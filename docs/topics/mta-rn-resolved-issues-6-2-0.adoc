@@ -6,13 +6,13 @@
 [id="mta-rn-resolved-issues-6-2-0_{context}"]
 = Resolved issues
 
-The following highlighted issues have been resolved in MTA version 6.2.0: 
+The following highlighted issues have been resolved in MTA version 6.2.0.
 
 .Analysis wizard
-The release of MTA 6.2.0 resolves the issue that Analysis wizard was stuck on custom rules page on moving *Back* from the Repository tab.
+The release of MTA 6.2.0 resolves the issue that Analysis wizard was stuck on the custom rules page on moving *Back* from the Repository tab.
 For more information on this issue, see link:https://issues.redhat.com/browse/MTA-464[MTA-464].
 
-.Tags & Reports tabs
+.Tags & Reports table
 The release of MTA 6.2.0 resolves the issue that an analysis was running for an application, and after clicking on that application to see the Tags and Reports, both the tabs keep loading until the analysis finished.
 For more information on this issue, see link:https://issues.redhat.com/browse/MTA-465[MTA-465].
 
