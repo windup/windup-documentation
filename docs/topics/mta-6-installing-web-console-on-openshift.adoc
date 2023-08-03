@@ -71,7 +71,7 @@ You can install the {ProductName} ({ProductShortName}) and the {WebName} on Open
 +
 The *Create Tackle* window opens in *Form* view.
 . Review the CR settings. The default choices should be acceptable, but make sure to check the system requirements for storage, memory, and cores.
-. If you prefer to work directly with the YAML file, click *YAML* view and review the CR settings that are listed in the `spec` section of the YAML file.
+. To work directly with the YAML file, click *YAML* view and review the CR settings that are listed in the `spec` section of the YAML file.
 +
 The most commonly used CR settings are listed in this table:
 +
@@ -83,7 +83,7 @@ The most commonly used CR settings are listed in this table:
 |Description
 
 |`cache_data_volume_size`
-|100 GiB
+|`100 GiB`
 |Size requested for the cache volume; ignored when `rwx_supported=false`
 
 |`cache_storage_class`
@@ -91,19 +91,19 @@ The most commonly used CR settings are listed in this table:
 |Storage class used for the cache volume; ignored when `rwx_supported=false`
 
 |`feature_auth_required`
-|True
+|`True`
 |Flag to indicate whether keycloak authorization is required (single user/"`noauth`")
 
 |`feature_isolate_namespace`
-|True
+|`True`
 |Flag to indicate whether namespace isolation using network policies is enabled
 
 |`hub_database_volume_size`
-|5 GiB
+|`5 GiB`
 |Size requested for the Hub database volume
 
 |`hub_bucket_volume_size`
-|100 GiB
+|`100 GiB`
 |Size requested for the Hub bucket volume
 
 |`hub_bucket_storage_class`
@@ -111,15 +111,15 @@ The most commonly used CR settings are listed in this table:
 |Storage class used for the bucket volume
 
 |`keycloak_database_data_volume_size`
-|1 GiB
+|`1 GiB`
 |Size requested for the Keycloak database volume
 
 |`pathfinder_database_data_volume_size`
-|1 GiB
+|`1 GiB`
 |Size requested for the Pathfinder database volume
 
 |`maven_data_volume_size`
-|100 GiB
+|`100 GiB`
 |Size requested for the Maven m2 cache volume; deprecated in {ProductShortName} 6.0.1
 
 |`rwx_storage_class`
@@ -127,7 +127,7 @@ The most commonly used CR settings are listed in this table:
 |Storage class requested for the Tackle RWX volumes; deprecated in {ProductShortName} 6.0.1
 
 |`rwx_supported`
-|True
+|`True`
 |Flag to indicate whether the cluster storage supports RWX mode
 
 |`rwo_storage_class`
@@ -135,8 +135,24 @@ The most commonly used CR settings are listed in this table:
 |Storage class requested for the Tackle RW0 volumes
 
 |`rhsso_external_access`
-|False
+|`False`
 |Flag to indicate whether a dedicated route is created to access the {ProductShortName} managed RHSSO instance
+
+|`windup_container_limits_cpu`
+|`1`
+|Maximum number of CPUs the pod is allowed to use
+
+|`windup_container_limits_memory`
+|`6Gi`
+|Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors.
+
+|`windup_container_requests_cpu`
+|`1`
+|Minimum number of CPUs the pod needs to run
+
+|`windup_container_requests_memory`
+|`4Gi`
+|Minimum amount of memory the pod needs to run
 |====
 +
 .Example YAML file
@@ -226,23 +242,20 @@ The test results indicate that the minimum amount of memory for running {Product
 ** Installing the cluster monitoring tools requires an additional 5 GiB of memory.
 ====
 
-=== Eviction Threshold
+[id="eviction-threshold_{context}"]
+=== Eviction threshold
 
-A node running applications requires sufficient reserve memory to operate successfully. Whenever an application uses more than its reserved memory allocation, it can trigger an out-of-memory event.
+Each node has a certain amount of memory allocated to it. Some of that memory is reserved for system services. The rest of the memory is intended for running pods. If the pods use more than their allocated amount of memory, an out-of-memory event is triggered and the node is terminated with a `OOMKilled` error.
 
-The `--eviction-hard` flag directs the node to evict applications when available memory drops below an absolute value or percentage value.
+To prevent out-of-memory events and protect nodes, use the `--eviction-hard` setting. This setting specifies the threshold of memory availability below which the node evicts pods. The value of the setting can be absolute or a percentage.
 
-Set `--eviction-hard` flag along with memory reserves for the node.
+.Example of node memory allocation settings
 
-The following example illustrates node memory allocation settings:
-
-* Node capacity: `32 GiB`
-
-* `--system-reserved` setting: `3 GiB`
-
+* Node capacity: `32 Gi`
+* `--system-reserved` setting: `3 Gi`
 * `--eviction-hard` setting: `100 Mi`
 
-This node has 28.9 GiB of [effective] memory available (32 GiB - 3 GiB - 0.1 GiB) before the `--eviction-hard` flag starts to evict applications that exceed the recommended memory requirements. 
+The amount of memory available for running pods on this node is 28.9 Gi. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
 
 
 == Red Hat Single Sign-On
