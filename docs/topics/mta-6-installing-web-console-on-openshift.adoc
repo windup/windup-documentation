@@ -71,7 +71,7 @@ You can install the {ProductName} ({ProductShortName}) and the {WebName} on Open
 +
 The *Create Tackle* window opens in *Form* view.
 . Review the CR settings. The default choices should be acceptable, but make sure to check the system requirements for storage, memory, and cores.
-. If you prefer to work directly with the YAML file, click *YAML* view and review the CR settings that are listed in the `spec` section of the YAML file.
+. To work directly with the YAML file, click *YAML* view and review the CR settings that are listed in the `spec` section of the YAML file.
 +
 The most commonly used CR settings are listed in this table:
 +
@@ -245,9 +245,9 @@ The test results indicate that the minimum amount of memory for running {Product
 [id="eviction-threshold_{context}"]
 === Eviction threshold
 
-Each node has a certain amount of memory allocated to it. Some of that memory is reserved for system services. The rest of the memory is intended for running pods. If the pods use more than their allocated amount of memory, it triggers an out-of-memory event (node terminated with a `OOMKilled` error).
+Each node has a certain amount of memory allocated to it. Some of that memory is reserved for system services. The rest of the memory is intended for running pods. If the pods use more than their allocated amount of memory, an out-of-memory event is triggered and the node is terminated with a `OOMKilled` error.
 
-To prevent out-of-memory events and protect nodes, it is recommended to use the `--eviction-hard` setting. This setting specifies the threshold of memory availability below which the node evicts pods. The value of the setting can be absolute or a percentage.
+To prevent out-of-memory events and protect nodes, use the `--eviction-hard` setting. This setting specifies the threshold of memory availability below which the node evicts pods. The value of the setting can be absolute or a percentage.
 
 .Example of node memory allocation settings
 
@@ -255,7 +255,7 @@ To prevent out-of-memory events and protect nodes, it is recommended to use the 
 * `--system-reserved` setting: `3 Gi`
 * `--eviction-hard` setting: `100 Mi`
 
-The amount of memory available for running pods on this node is 28.9 Gi. It is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
+The amount of memory available for running pods on this node is 28.9 Gi. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
 
 
 == Red Hat Single Sign-On
