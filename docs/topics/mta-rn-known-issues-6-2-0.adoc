@@ -1,0 +1,31 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: REFERENCE
+[id="rn-known-issues-6-2-0_{context}"]
+= Known issues
+
+MTA version 6.2.0 has the following issues.
+
+.MTA fails to run an analysis of private GitHub repos
+
+Analysis of private GitHub repositories fails. link:https://issues.redhat.com/browse/MTA-810[MTA-810]
+
+.Jira connection (instance) cannot be removed
+
+Jira connections cannot be removed after they are added to a _Migration Wave_, even after the Wave has been removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]
+
+.Update notifications are disabled for Application, Job functions, and Business services
+
+Update notifications are disabled for **Application**, **Job function** and **Business services**, as a result, no notifications are displayed. link:https://issues.redhat.com/browse/MTA-1042[MTA-1042]
+
+.Repository type field is not required
+
+The **Repository** field is not required when saving the configuring rules files from a repository in analysis. Ink:https://issues.redhat.com/browse/MTA-1047[MTA-1047]
+
+.Connection status is slow when moving from Not connected to Connected
+
+When creating a new Jira instance, the connection status is shown as **Not connected** for a few seconds before it moves to **Connected**, and this delay could cause the user to think that the provided credentials are incorrect. link:https://issues.redhat.com/browse/MTA-1019[MTA-1019]
+
+See an updated  filtered list of link:https://issues.redhat.com/browse/MTA-1014?filter=12418882[known issues in Jira].
