@@ -13,6 +13,6 @@ MTA version 6.2.0 has the following issues.
 Fail to run analysis in private github repo. link:https://issues.redhat.com/browse/MTA-810[MTA-810]
 
 .Jira connection (instance) cannot be removed 
-Jira connections cannot be removed after it was added to Wave even after Wave was removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]  
+Jira connections cannot be removed after they are added to a _Migration Wave_, even after the Wave has been removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]  
 
 See an updated  filtered list of link:https://issues.redhat.com/issues/?filter=12418204[known issues in Jira].
