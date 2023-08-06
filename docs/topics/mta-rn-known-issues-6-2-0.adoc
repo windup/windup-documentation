@@ -12,9 +12,9 @@ MTA version 6.2.0 has the following issues.
 
 Analysis of private GitHub repositories fails. link:https://issues.redhat.com/browse/MTA-810[MTA-810]
 
-.Jira connection (instance) cannot be removed
+.Analysis fails when fetching rules from a repository with a folder that contains spaces in its name
 
-Jira connections cannot be removed after they are added to a _Migration Wave_, even after the Wave has been removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]
+When fetching custom rules from a repository during an analysis, if the `Root path` field contains spaces,  the `mta-cli` command is not properly composed and the analysis fails.link:https://issues.redhat.com/browse/MTA-458[MTA-458]
 
 .Update notifications are disabled for Application, Job functions, and Business services
 
@@ -22,7 +22,7 @@ Update notifications are disabled for **Application**, **Job function** and **Bu
 
 .Repository type field is not required
 
-The **Repository** field is not required when saving the configuring rules files from a repository in analysis. Ink:https://issues.redhat.com/browse/MTA-1047[MTA-1047]
+The **Repository** field is not required when saving the configuring rules files from a repository in analysis. link:https://issues.redhat.com/browse/MTA-1047[MTA-1047]
 
 .Connection status is slow when moving from Not connected to Connected
 
