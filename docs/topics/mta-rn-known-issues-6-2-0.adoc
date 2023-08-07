@@ -10,7 +10,7 @@ MTA version 6.2.0 has the following issues.
 
 .Analysis fails when fetching rules from a repository with a folder that contains spaces in its name
 
-When fetching custom rules from a repository during an analysis, if the `Root path` field contains spaces,  the `mta-cli` command is not properly composed and the analysis fails. link:https://issues.redhat.com/browse/MTA-458[MTA-458]
+When fetching custom rules from a repository during an analysis, if the `Root path` field contains spaces, the `mta-cli` command is not properly composed and the analysis fails. link:https://issues.redhat.com/browse/MTA-458[MTA-458]
 
 .Update notifications are disabled for Application, Job functions, and Business services
 
@@ -18,10 +18,10 @@ Update notifications are disabled for **Application**, **Job function** and **Bu
 
 .Repository type field is not required
 
-The **Repository** field is not required when saving the configuring rules files from a repository in analysis. link:https://issues.redhat.com/browse/MTA-1047[MTA-1047]
+The **Repository type** field is not required when saving the configuring rules files from a repository in analysis. link:https://issues.redhat.com/browse/MTA-1047[MTA-1047]
 
-.Connection status is slow when moving from Not connected to Connected
+.False 'not connected' message for new Jira instance
 
-When creating a new Jira instance, the connection status is shown as **Not connected** for a few seconds before it moves to **Connected**, and this delay could cause the user to think that the provided credentials are incorrect. link:https://issues.redhat.com/browse/MTA-1019[MTA-1019]
+When creating a new Jira instance, the connection status is initially shown as **Not connected** before it moves to **Connected**, and this delay could cause the user to think that the provided credentials are incorrect. link:https://issues.redhat.com/browse/MTA-1019[MTA-1019]
 
 See an updated filtered list of link:https://issues.redhat.com/browse/MTA-1014?filter=12418882[known issues in Jira].
