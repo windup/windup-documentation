@@ -8,17 +8,13 @@
 
 MTA version 6.2.0 has the following issues.
 
-.MTA fails to run an analysis of private GitHub repos
-
-Analysis of private GitHub repositories fails. link:https://issues.redhat.com/browse/MTA-810[MTA-810]
-
 .Analysis fails when fetching rules from a repository with a folder that contains spaces in its name
 
 When fetching custom rules from a repository during an analysis, if the `Root path` field contains spaces,  the `mta-cli` command is not properly composed and the analysis fails. link:https://issues.redhat.com/browse/MTA-458[MTA-458]
 
 .Update notifications are disabled for Application, Job functions, and Business services
 
-Update notifications are disabled for **Application**, **Job function** and **Business services**, as a result, no notifications are displayed. link:https://issues.redhat.com/browse/MTA-1042[MTA-1042]
+Update notifications are disabled for **Application**, **Job function** and **Business services**, as a result, no notifications are displayed. link:https://issues.redhat.com/browse/MTA-1024[MTA-1024]
 
 .Repository type field is not required
 
