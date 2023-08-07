@@ -20,7 +20,7 @@ Update notifications are disabled for **Application**, **Job function** and **Bu
 
 The **Repository type** field is not required when saving the configuring rules files from a repository in analysis. link:https://issues.redhat.com/browse/MTA-1047[MTA-1047]
 
-.False 'not connected' message for new Jira instance
+.False 'not connected' status for new Jira instance
 
 When creating a new Jira instance, the connection status is initially shown as **Not connected** before it moves to **Connected**, and this delay could cause the user to think that the provided credentials are incorrect. link:https://issues.redhat.com/browse/MTA-1019[MTA-1019]
 
