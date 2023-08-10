@@ -8,6 +8,14 @@
 
 MTA version 6.2.0 has the following issues.
 
+.Re-enabling Keycloak breaks MTA
+
+Keycloak is enabled by default. After re-enabling Keycloak, you cannot perform any actions in the MTA web console after logging in again.
+
+This error is caused as the `credential-mta-rhsso` secret is updated when `auth/Keycloak` is disabled and re-enabled.
+
+The suggested workaround is to restore the old password in the `credential-mta-rhsso` secret, after re-enabling `auth`. link:https://issues.redhat.com/browse/MTA-1152[MTA-1152] 
+
 .Analysis fails when fetching rules from a repository with a folder that contains spaces in its name
 
 When fetching custom rules from a repository during an analysis, if the `Root path` field contains spaces, the `mta-cli` command is not properly composed and the analysis fails. link:https://issues.redhat.com/browse/MTA-458[MTA-458]
