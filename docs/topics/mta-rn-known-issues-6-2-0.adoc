@@ -10,7 +10,7 @@ MTA version 6.2.0 has the following issues.
 
 .Re-enabling Keycloak breaks MTA
 
-Keycloak is enabled by default. After re-enabling Keycloak, you cannot perform any actions in the MTA web console after logging in again.
+Keycloak is enabled by default. If you disable and then re-enable Keycloak, you cannot perform any actions in the MTA web console after logging in again.
 
 This error is caused as the `credential-mta-rhsso` secret is updated when `auth/Keycloak` is disabled and re-enabled.
 
