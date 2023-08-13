@@ -1,0 +1,35 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: REFERENCE
+[id="rn-known-issues-6-2-0_{context}"]
+= Known issues
+
+MTA version 6.2.0 has the following issues.
+
+.Re-enabling Keycloak breaks MTA
+
+Keycloak is enabled by default. If you disable and then re-enable Keycloak, you cannot perform any actions in the MTA web console after logging in again.
+
+This error is caused as the `credential-mta-rhsso` secret is updated when `auth/Keycloak` is disabled and re-enabled.
+
+The suggested workaround is to restore the old password in the `credential-mta-rhsso` secret, after re-enabling `auth`. link:https://issues.redhat.com/browse/MTA-1152[MTA-1152] 
+
+.Analysis fails when fetching rules from a repository with a folder that contains spaces in its name
+
+When fetching custom rules from a repository during an analysis, if the `Root path` field contains spaces, the `mta-cli` command is not properly composed and the analysis fails. link:https://issues.redhat.com/browse/MTA-458[MTA-458]
+
+.Update notifications are disabled for Application, Job functions, and Business services
+
+Update notifications are disabled for **Application**, **Job function** and **Business services**, as a result, no notifications are displayed. link:https://issues.redhat.com/browse/MTA-1024[MTA-1024]
+
+.Repository type field is not required
+
+The **Repository type** field is not required when saving the configuring rules files from a repository in analysis. link:https://issues.redhat.com/browse/MTA-1047[MTA-1047]
+
+.False 'not connected' status for new Jira instance
+
+When creating a new Jira instance, the connection status is initially shown as **Not connected** before it moves to **Connected**, and this delay could cause the user to think that the provided credentials are incorrect. link:https://issues.redhat.com/browse/MTA-1019[MTA-1019]
+
+See an updated filtered list of link:https://issues.redhat.com/browse/MTA-1014?filter=12418882[Known Issues in Jira].

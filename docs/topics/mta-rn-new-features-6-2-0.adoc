@@ -1,0 +1,28 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: CONCEPT
+[id="rn-new-features-6-2-0_{context}"]
+= New features
+
+
+This section describes the new features of the Migration Toolkit for Applications (MTA) 6.2.0.
+
+.Integration with JIRA
+
+The integration of {ProductName} with Jira allows you to track and manage the whole migration process. To introduce changes to the applications in the portfolio, you can create issues in Jira and assign them to developers.
+
+For more information, see xref:../../../docs/topics/mta-web-create-config-jira-connection.adoc#mta-web-create-config-jira-connection[Configuring Jira connections].
+
+.Migration Waves management
+
+A migration wave is a small collection of workloads that deliver business value. {ProductShortName}'s _Migration Wave_ groups applications to be migrated on a specified schedule.
+
+In addition, a migration wave enables you to export a list of the wave's applications to the Jira issue management system. This automatically creates a separate Jira issue for each application of the migration wave for tracking.
+
+For more information, see xref:../../../docs/topics/mta-web-creating-migration-waves.adoc#mta-web-creating-migration-waves[Creating migration waves].
+
+.OpenShift Monitoring integration
+
+{ProductShortName} integrates with OpenShift Monitoring, which allows Red Hat to collect data that will display usage of {ProductShortName} in the field by customers, beyond installation.
