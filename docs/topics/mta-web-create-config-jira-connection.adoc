@@ -1,0 +1,41 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-create-config-jira-connection_{context}"]
+= Creating and configuring a Jira connection
+
+To create a Jira instance in {ProductShortName} and establish a connection to that instance, follow the procedure below.
+
+.Procedure
+
+. In *Administration* view, under *Issue Management*, click *Jira*.
++
+The *Jira configuration* page opens.
+. Click *Create new*.
++
+The *New instance* window opens.
+. Enter the following information:
+* Name of the instance
+* URL of the web interface of your Jira account
+* Instance type - select either *Jira Cloud* or *Jira Server/Data center* from the list
+* Credentials - select from the list
++
+[NOTE]
+====
+If the selected instance type is *Jira Cloud*, only *Basic Auth* credentials are displayed in the list.
+
+If the selected instance type is *Jira Server/Data center*, both *Basic Auth* and *Token Bearer* credentials are displayed. Choose the type that is appropriate for the particular configuration of your Jira server or data center.
+====
++
+. By default, a connection cannot be established with a server with an invalid certificate. To override this restriction, toggle the *Enable insecure communication* switch.
+. Click *Create*.
++
+The new connection instance appears on the *Jira configuration* page.
++
+Once the connection has been established and authorized, the status in the *Connection* column becomes *Connected*.
++
+If the *Connection* status becomes `Not connected`, click the status to see the reason for the error.
+
+The *Jira configuration* table has filtering by *Name* and *URL* and sorting by *Instance name* and *URL*.

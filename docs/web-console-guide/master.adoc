@@ -33,7 +33,7 @@ The {ProductName} ({ProductShortName}) {WebName} has two views:
 * Administration view
 * Migration view
 
-In *Administration* view, you configure the instance environment, working with credentials, repositories, and HTTP and HTTPS proxy definitions.
+In *Administration* view, you configure the instance environment, working with credentials, repositories, HTTP and HTTPS proxy definitions, custom migration targets, and issue management.
 
 In *Migration* view, you perform application assessments and analyses, review reports, and add applications for assessment and analysis.
 
@@ -53,6 +53,7 @@ You can configure the following in *Administration* view:
 * Repositories
 * HTTP and HTTPS proxy settings
 * Custom migration targets
+* Issue management
 
 [id="general-configuration"]
 === General
@@ -101,6 +102,22 @@ include::topics/mta-web-proxy-config.adoc[leveloffset=2]
 
 // === Seeding instances
 include::topics/mta-web-seeding-instances.adoc[leveloffset=2]
+
+[id="creating-configuring jira-connection"]
+== Creating and configuring a Jira connection
+
+You can track application migrations by creating a Jira issue for each migration from within the {ProductShortName} {WebName}. To be able to create Jira issues, you first need to do the following:
+
+. Create an {ProductShortName} credential to authenticate to the API of the Jira instance that you create in the next step.
+. Create a Jira instance in {ProductShortName} and establish a connection to that instance.
+
+include::topics/mta-web-config-jira-credentials.adoc[leveloffset=+3]
+include::topics/mta-web-create-config-jira-connection.adoc[leveloffset=3]
+
+[NOTE]
+====
+A Jira connection that was used for xref:../../../docs/topics/mta-web-creating-jira-issues-for-migration-wave.adoc#mta-web-creating-jira-issues-for-migration-wave[creating issues for a migration wave] cannot be removed as long as the issues exist in Jira, even after the migration wave is deleted.
+====
 
 [id="assessing-and-analyzing-applications"]
 == Assessing and analyzing applications
