@@ -103,7 +103,7 @@ include::topics/mta-web-proxy-config.adoc[leveloffset=2]
 // === Seeding instances
 include::topics/mta-web-seeding-instances.adoc[leveloffset=2]
 
-[id="creating-configuring jira-connection"]
+[id="creating-configuring-jira-connection"]
 == Creating and configuring a Jira connection
 
 You can track application migrations by creating a Jira issue for each migration from within the {ProductShortName} {WebName}. To be able to create Jira issues, you first need to do the following:
@@ -111,8 +111,8 @@ You can track application migrations by creating a Jira issue for each migration
 . Create an {ProductShortName} credential to authenticate to the API of the Jira instance that you create in the next step.
 . Create a Jira instance in {ProductShortName} and establish a connection to that instance.
 
-include::topics/mta-web-config-jira-credentials.adoc[leveloffset=+3]
-include::topics/mta-web-create-config-jira-connection.adoc[leveloffset=3]
+include::topics/mta-web-config-jira-credentials.adoc[leveloffset=2]
+include::topics/mta-web-create-config-jira-connection.adoc[leveloffset=2]
 
 [NOTE]
 ====
