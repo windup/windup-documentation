@@ -116,7 +116,7 @@ include::topics/mta-web-create-config-jira-connection.adoc[leveloffset=2]
 
 [NOTE]
 ====
-A Jira connection that was used for xref:../../../docs/topics/mta-web-creating-jira-issues-for-migration-wave.adoc#mta-web-creating-jira-issues-for-migration-wave[creating issues for a migration wave] cannot be removed as long as the issues exist in Jira, even after the migration wave is deleted.
+A Jira connection that was used for xref:../../../docs/topics/mta-web-creating-jira-issues-for-migration-wave.adoc#mta-web-creating-jira-issues-for-migration-wave_{context}[creating issues for a migration wave] cannot be removed as long as the issues exist in Jira, even after the migration wave is deleted.
 ====
 
 [id="assessing-and-analyzing-applications"]
