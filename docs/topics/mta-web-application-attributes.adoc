@@ -12,9 +12,11 @@ You can add applications to the {ProductName} ({ProductShortName}) {WebName} man
 
 {ProductShortName} {WebName} applications have the following attributes:
 
-* Name (Free text)
-* Description (Optional; free text)
-* Business service (Optional; chosen from a list)
-* Tags (Optional; chosen from a list)
-* Source code (Path entered by user)
-* Binary (Path entered by user)
+* Name (free text)
+* Description (optional; free text)
+* Business service (optional; chosen from a list)
+* Tags (optional; chosen from a list)
+* Owner (optional; chosen from a list)
+* Contributors (optional; chosen from a list)
+* Source code (path entered by user)
+* Binary (path entered by user)

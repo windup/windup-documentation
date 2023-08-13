@@ -1,0 +1,39 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-creating-jira-issues-for-migration-wave_{context}"]
+= Creating Jira issues for a migration wave
+
+You can use a migration wave for creating Jira issues automatically for each application assigned to the migration wave.
+
+.Procedure
+
+. In *Migration* view, click *Migration waves*.
+. Click the Options menu ({kebab}) to the right of the migration wave for which you want to create Jira issues and select *Export to Issue Manager*.
++
+The *Export to Issue Manager* window opens.
+. Select the instance type (Jira Cloud or Jira Server/Datacenter).
+. Select the instance, project and issue type from the lists.
+. Click *Export*.
++
+The status of the migration wave on the *Migration waves* page changes to `Issues Created`. To see the status of each individual application of a migration wave, click the *Status* column.
++
+A separate Jira issue is created for each application associated with the migration wave. The following fields of each issue are filled in automatically:
+
+* Title: `Migrate <application name>`
+* Reporter: Username of the token owner
+* Description: `Created by Konveyor`
+
+[NOTE]
+====
+After you exported a migration wave to the Issue Manager and the Jira issues are created, you can no longer change them from within the {ProductShortName} {WebName}. Even if you delete the migration wave, the Jira issues remain.
+====
+
+[NOTE]
+====
+On the *Application inventory* page, you can see if any particular application is associated to a migration wave by opening the application's *Details* tab.
+
+You cannot delete an application if it is associated with a migration wave.
+====
