@@ -9,12 +9,12 @@
 
 This section describes the new features of the Migration Toolkit for Applications (MTA) 6.2.0.
 
-.Integration with JIRA
+.xref:../../../docs/web-console-guide/master.adoc#creating-configuring-jira-connection[Integration with JIRA]
 
 The integration of {ProductName} with Jira allows you to track and manage the whole migration process. To introduce changes to the applications in the portfolio, you can create issues in Jira and assign them to developers.
 
 
-.Migration Waves management
+.xref:../../../docs/web-console-guide/master.adoc#mta-web-creating-migration-waves_user-interface-guide[Migration Waves management]
 
 A migration wave is a small collection of workloads that deliver business value. {ProductShortName}'s _Migration Wave_ groups applications to be migrated on a specified schedule.
 
