@@ -13,12 +13,16 @@ This section describes the new features of the Migration Toolkit for Application
 
 The integration of {ProductName} with Jira allows you to track and manage the whole migration process. To introduce changes to the applications in the portfolio, you can create issues in Jira and assign them to developers.
 
+For more information, see xref:../../../docs/web-console-guide/master.adoc#creating-configuring-jira-connection[Creating and configuring a Jira connection].
+
 
 .Migration Waves management
 
 A migration wave is a small collection of workloads that deliver business value. {ProductShortName}'s _Migration Wave_ groups applications to be migrated on a specified schedule.
 
 In addition, a migration wave enables you to export a list of the wave's applications to the Jira issue management system. This automatically creates a separate Jira issue for each application of the migration wave for tracking.
+
+For more information, see xref:../../../docs/topics/mta-web-creating-migration-waves.adoc#mta-web-creating-migration-waves_{context}[Creating migration waves] and xref:../../../docs/topics/mta-web-creating-jira-issues-for-migration-wave.adoc#mta-web-creating-jira-issues-for-migration-wave_{context}[Creating Jira issues for a migration wave].
 
 
 .OpenShift Monitoring integration
