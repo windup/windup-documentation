@@ -14,7 +14,6 @@ Although {ProductShortName} processes rules with the legacy `severity` field, yo
 ====
 
 [id="add_custom_category_{context}"]
-[discrete]
 == Adding a custom category
 
 You can add a custom category to the rule category file.
@@ -46,7 +45,6 @@ You can add a custom category to the rule category file.
 This category is ready to be referenced by {ProductShortName} rules.
 
 [id="assign_custom_category_{context}"]
-[discrete]
 == Assigning a rule to a custom category
 
 You can assign a rule to your new custom category.
