@@ -6,5 +6,4 @@
 [id="analysis-process_{context}"]
 = {ProductShortName} analysis process
 
-The analysis process decompiles (if required) and analyses applications provided as input. The analysis process is underpinned by a Graph database, but the data within that database is transient and deleted when the analysis is completed. The analysis results are presented in a collection of static reports. One of the reports is the Source Code report that presents migration issues in the context of the source files they were discovered in. An optional runtime parameter, skipSourceCodeReports (refer to section A.1) can disable the generation of the Source Code report. So there is no exposure of the application logic in the collection of reports.
-
+The analysis process decompiles (if required) and analyses the input applications. A graph database underpins the analysis process, but the data within that database is transient and deleted when the analysis is completed. A collection of static reports presents the analysis results. One of the reports is the Source Code report, which presents migration issues in the context of the source files where they were discovered. An optional runtime parameter, `skipSourceCodeReports` (refer to link:cli-args.adoc[section A.1]) can disable generating the Source Code report. The application logic is not exposed in the collection of reports.
