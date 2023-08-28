@@ -27,6 +27,12 @@ The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Develo
 * JBoss Tools, installed from the link:https://marketplace.eclipse.org/content/jboss-tools[Eclipse Marketplace]
 * link:http://download.eclipse.org/mylyn/releases/latest[Mylyn SDK and frameworks], installed with Eclipse
 
+[NOTE]
+====
+Eclipse is pre-configured for Java 17. When creating a new Eclipse project, or importing an existing one, set the JRE version to Java 11. See step 6 below.
+
+====
+
 .Procedure
 
 . Launch Eclipse or CodeReady Studio.
@@ -40,6 +46,7 @@ endif::[]
 ifdef::mta[]
 `https://marketplace.eclipse.org/content/migration-toolkit-applications-mta` and click *OK*.
 endif::[]
+. In *JRE*, select *JavaSE 11*.
 . Select all the *JBoss Tools - {ProductShortName}* check boxes and click *Next*.
 . Review the installation details and click *Next*.
 . Accept the terms of the license agreement and click *Finish*.
