@@ -38,7 +38,10 @@ Eclipse is pre-configured for Java 17. When creating a new Eclipse project, or i
 . Launch Eclipse or CodeReady Studio.
 . From the menu bar, select *Help* -> *Install New Software*.
 . Next to the *Work with* field, click *Add*.
+
 image::mtr-eclipse-setup-java11a.png[Eclipse setup dialog]
+
+[start=4]
 . In the *Name* field, enter `{ProductShortName}`.
 . In the *Location* field, enter
 ifdef::mtr[]
