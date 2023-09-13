@@ -29,6 +29,8 @@ Rules from the original ruleset that are not overridden by the new ruleset are r
 
 . Ensure that you keep the same rule and ruleset IDs. When you copy the original rule XML, this ensures that the IDs match.
 
+. Ensure that the target technology in the override ruleset matches one of the targets that you specified for running the analysis.
+
 . Add the `<overrideRules>true</overrideRules>` element to the ruleset metadata.
 
 . Update the rule definition.
