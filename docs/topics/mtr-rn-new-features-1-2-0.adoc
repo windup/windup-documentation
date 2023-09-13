@@ -21,4 +21,4 @@ This section describes the new features of the {ProductName} ({ProductShortName}
 . Camel 4: Comprehensive rulesets supporting upgrade to all Y-stream releases of Camel 3 and Camel 4.
 . More migration rules to support Red Hat JBoss EAP 8 and Hibernate 6.
 // Edited the language. Please review if acceptable.
-. Java/Jakarta EE to Quarkus: New rulesets support migrating Java/Jakarta EE applications to Quarkus 3. These rulesets cover the _quarkification_ of the project, along with JAX-RS and CDI technologies. Additional rules that support this migration path are still under development and will be made available in future Z stream releases.
+. Java/Jakarta EE to Quarkus: New rulesets support migrating Java/Jakarta EE applications to Quarkus 3. These rulesets cover the _quarkification_ of the project, along with JAX-RS and CDI technologies. Additional rules that support this migration path are still under development and will be made available in future Z-stream releases.
