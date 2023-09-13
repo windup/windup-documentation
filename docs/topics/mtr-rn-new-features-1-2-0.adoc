@@ -1,0 +1,24 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: CONCEPT
+[id="rn-new-features-1-2-0_{context}"]
+= New features
+
+This section describes the new features of the {ProductName} ({ProductShortName}) 1.2.0.
+
+. Decompilation and analysis of applications based on Java 17
+. Rules Override enhancement: A new condition has been added for overriding an existing rule. In addition to matching `rulesetId` and `ruleId`, the target technology in the override ruleset must match one of the targets that the user specified for running the analysis.
+. Eclipse Plugin Java 17 compatibility
+. Upgrade of the Windup Operator: Adopted `Quarkus 2.13.7.Final` and the `Quarkus Operator SDK 4.0.8`
+
+[id="rn-new-rulesets-targets-1-2-0"]
+== New rulesets and targets
+
+. OpenJDK 21: Rules to support the upgrading to OpenJDK 21.
+. Red Hat JBoss Web Server 6: Rules to support the upgrade of JWS and Tomcat applications to JWS 6 and Tomcat 10. 
+. Camel 4: Comprehensive rulesets supporting upgrade to all Y-stream releases of Camel 3 and Camel 4.
+. More migration rules to support Red Hat JBoss EAP 8 and Hibernate 6.
+// Edited the language. Please review if acceptable.
+. Java/Jakarta EE to Quarkus: New rulesets support migrating Java/Jakarta EE applications to Quarkus 3. These rulesets cover the _quarkification_ of the project, along with JAX-RS and CDI technologies. Additional rules that support this migration path are still under development and will be made available in future Z-stream releases.
