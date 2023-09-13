@@ -38,10 +38,6 @@ You can also run the plugin with Java 11, which requires setting the JRE version
 . Launch Eclipse.
 . From the menu bar, select *Help* -> *Install New Software*.
 . Next to the *Work with* field, click *Add*.
-
-image::mtr-eclipse-setup-java11a.png[Eclipse setup dialog]
-
-[start=4]
 . In the *Name* field, enter `{ProductShortName}`.
 . In the *Location* field, enter
 ifdef::mtr[]
