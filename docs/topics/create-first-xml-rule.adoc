@@ -41,8 +41,8 @@ This directory structure will also be used to hold the generated {ProductShortNa
     </class-loading>
 </jboss-web>
 ----
-[]
-[discrete]
+
+[id="creating-the-rule_{context}"]
 == Creating the rule
 
 {ProductShortName} XML-based rules use the following rule pattern:
