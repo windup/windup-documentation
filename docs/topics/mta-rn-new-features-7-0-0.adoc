@@ -9,14 +9,33 @@
 
 This section describes the new features of the Migration Toolkit for Applications (MTA) 6.2.0.
 
-.Feature 1
+.Red Hat Single Sign On (RHSSO) Configuration
 
-Bla bla bla.
+Feature. 
 
-For more information, see link:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/6.2/html/user_interface_guide/creating-configuring-jira-connection#mta-web-create-config-jira-connection_user-interface-guide[linked page].
 
-.Feature 2
+.New Rules Syntax
 
-Bla bla bla.
+Feature.
 
-For more information, see link:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/6.2/html/user_interface_guide/working-with-applications-in-the-ui#mta-web-creating-migration-waves_user-interface-guide[linked page].
+
+.Filename of downloaded report file same as application name
+
+Feature
+
+
+.Tag Category drop down menu shows only categories relevant to the source
+
+Feature
+
+
+.Multi Language Analysis
+
+Feature
+
+
+.Dynamic Reports
+
+Feature
+
+{ProductShortName} integrates with OpenShift Monitoring, which allows Red Hat to collect data that will display usage of {ProductShortName} in the field by customers, beyond installation.
