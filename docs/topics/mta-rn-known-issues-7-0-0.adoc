@@ -8,24 +8,31 @@
 
 MTA version 7.0.0 has the following issues.
 
-.Issue 1
+.Lack of Unique IDs and Aria-Labels on Sections/categories Hindering Automation
 
-Issue. link:https://issues.redhat.com/browse/MTA-1152[MTA-1152]
+Lack of unique IDs applied to sections and catergories hinders migration automation. link:https://issues.redhat.com/browse/MTA-1203[MTA-1203]
 
-.Issue 2
+.Support downstream disconnected installs
 
-When fetching custom rules from a repository during an analysis, if the `Root path` field contains spaces, the `mta-cli` command is not properly composed and the analysis fails. link:https://issues.redhat.com/browse/MTA-458[MTA-458]
+MTA does not support downstream disconnected installs. link:https://issues.redhat.com/browse/MTA-17[MTA-17]
 
-.Update notifications are disabled for Application, Job functions, and Business services
+.Can't remove Jira connection to removed Wave after it was added to Wave 
 
-Update notifications are disabled for **Application**, **Job function** and **Business services**, as a result, no notifications are displayed. link:https://issues.redhat.com/browse/MTA-1024[MTA-1024]
+Can't remove Jira connection after it was added to Wave even after Wave was removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]
 
-.Repository type field is not required
+.Binary analysis takes 3h then fails
 
-The **Repository type** field is not required when saving the configuring rules files from a repository in analysis. link:https://issues.redhat.com/browse/MTA-1047[MTA-1047]
+Binary analysis takes 3h then fails. link:https://issues.redhat.com/browse/MTA-1183[MTA-1183]
 
-.False 'not connected' status for new Jira instance
+.Allow architects to review an application without an assessment
 
-When creating a new Jira instance, the connection status is initially shown as **Not connected** before it moves to **Connected**, and this delay could cause the user to think that the provided credentials are incorrect. link:https://issues.redhat.com/browse/MTA-1019[MTA-1019]
+Allow architects to review an application without an assessment. link:https://issues.redhat.com/browse/MTA-115[MTA-115]
+
+
+
 
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12420808[Known Issues in Jira].
+
+////
+project in (MTA, WINDUP) AND status not in (Verified, "Release Pending", Closed) AND priority in (Blocker, Critical, Major) AND component not in (documentation, QE-Task) AND fixVersion <= "MTA 7.0.0" ORDER BY priority DESC
+////
