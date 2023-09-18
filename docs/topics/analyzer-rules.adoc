@@ -6,68 +6,119 @@
 [id="analyzer-rules_{context}"]
 = Analyzer rules
 
-This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets. For more details, see the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[{ProductShortName} XML rule schema].
+== YAML rule structure
+
+A YAML rule consists of metadata, conditions and actions.
+
+=== Metadata
+
+General information
+
+Needs example
+
+==== Labels
+
+key=val pairs
+Subdomain-prefixed
+Empty values
+Reserved labels
+`--label-selector` option - filter in/filter out
+Dependency labels
+
+=== Actions
+
+`message` actions
+Message examples
+
+`tag` actions
+Tag examples
+
+=== `when` block
+
+One condition; may have nested conditions within
+
+==== Provider conditions
+
+Instructs to invoke a provider and to use its 'capabilities'
+
+===== Builtin provider
+Capabilities:
+
+`file` - enables the provider to find files in the source code that match a given pattern
+
+`filecontent` - enables the provider to search for content that matches a given pattern
+
+`xml` - enables the provider to query XPath expressions on a list of provided XML files; takes 2 input parameters
+
+`json` - enables the provider to query XPath expressions on a list of provided JSON files; takes xpath as input
+
+hasTags - enables the provider to query application tags
+
+===== Java provider
+
+Capabilities:
+
+`referenced` - enables the provider to find references in the source code; takes two input parameters, `pattern` and `location`
+
+list of supported locations
+
+`dependency`
+
+//Needs info
+
+===== Go provider
+
+Works with Golang source code
+
+Capabilities:
+
+`referenced` - enables the provider to find references in the source code
+
+`dependency` - enables the provider to find dependencies for an application
+
+=== Logical conditions
+
+==== And
+
+Logical 'and' operation
+Nested conditions
+
+Example
+
+==== Or
+
+Logical 'or' operation
 
 == Rulesets
 
-A ruleset is a group of one or more rules that targets a specific area of migration. This is the basic structure of the `<ruleset>` element.
+Each in its own directory; a `ruleset.yaml` file at the directory root
 
-* **<ruleset id="<UNIQUE_RULESET_ID>">**: Defines this as an {ProductShortName} ruleset and gives it a unique ruleset ID.
-** **<metadata>**: The metadata about the ruleset.
-*** **<description>**: The description of the ruleset.
-*** **<dependencies/>**: The rule add-ons required by this ruleset.
-*** ** <sourceTechnology/>**: The source technology.
-*** ** <targetTechnology/>**: The target technology.
-*** ** <overrideRules/>**: Setting to `true` indicates that rules in this ruleset override rules with the same ID from the core ruleset distributed with {ProductShortName}. Both the ruleset id and the rule id must match a rule within the core ruleset or the rule will be ignored. This is `false` by default.
-** **<rules>**: A set of individual rules.
-*** **<rule id="<UNIQUE_RULE_ID>">**: Defines the rule and gives it a unique ID. It is recommended to include the ruleset ID as part of the rule ID, for example, `<UNIQUE_RULESET_ID_UNIQUE_RULE_ID>`. One or more rules can be defined for a ruleset.
-**** **<when>**: The conditions to match on.
-**** **<perform>**: The action to be performed when the rule condition is matched.
-**** **<otherwise>**: The action to be performed when the rule condition is not matched. This element takes the same child elements as the `<perform>` element.
-**** **<where>**: A string pattern defined as a parameter, which can be used elsewhere in the rule definition.
-*** **<file-mapping/>**: Maps an extension to a graph type.
-*** **<package-mapping/>**: Maps from a package pattern (regular expression) to an organization name.
+Ruleset labels inherited by all its rules
+
+
+== Creating YAML rules
+
+=== Steps of creating a YAML rule
+
+//Needs info
+
+=== Directory structure for YAML rules
+
+//Same as for XML? Needs info
+
+=== Installing rules
+
+//Same as for XML - place into the appropriate directory? Needs info
 
 == Predefined rules
 
-{ProductShortName} provides predefined rules for common migration requirements. These core {ProductShortName} rules are located in the {ProductShortName} installation at `<{ProductShortName}_HOME>/rules/migration-core/`.
+//Will there be ready-made rules? Needs info
 
-The following is an example of a core {ProductShortName} rule that matches on a proprietary utility class.
+== Testing rules
 
-[source,xml,subs="attributes+"]
-----
-<?xml version="1.0"?>
-<ruleset xmlns="http://windup.jboss.org/schema/jboss-ruleset" id="weblogic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+//Needs info
 
-    <metadata>
-        <description>
-            This ruleset provides analysis of WebLogic proprietary classes and constructs that may require individual attention when migrating to JBoss EAP 6+.
-        </description>
-        <dependencies>
-            <addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final" />
-            <addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final" />
-        </dependencies>
-        <sourceTechnology id="weblogic" />
-        <targetTechnology id="eap" versionRange="[6,)" />
-        <tag>reviewed-2015-06-02</tag>
-        <tag>weblogic</tag>
-    </metadata>
-    <rules>
-        ...
-        <rule id="weblogic-02000">
-            <when>
-                <javaclass references="weblogic.utils.StringUtils.{*}" />
-            </when>
-            <perform>
-                <hint title="WebLogic StringUtils usage" effort="1" category-id="mandatory">
-                    <message>Replace with the `StringUtils` class from Apache Commons.</message>
-                    <link href="https://commons.apache.org/proper/commons-lang/" title="Apache Commons Lang" />
-                    <tag>weblogic</tag>
-                </hint>
-            </perform>
-        </rule>
-        ...
-    </rules>
-</ruleset>
-----
+== Viewing reports
+
+//Needs info
+
