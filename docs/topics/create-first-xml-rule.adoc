@@ -10,7 +10,7 @@ This section guides you through the process of creating and testing your first {
 
 In this example, you will write a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and provide a link to the documentation that describes how to migrate the code.
 
-[discrete]
+[id="creating-directory-structure-for-the-rule_{context}"]
 == Creating the directory structure for the rule
 
 Create a directory structure to contain your first rule and the data file to use for testing.
@@ -23,7 +23,7 @@ $ mkdir -p /home/<USER_NAME>/migration-rules/data
 
 This directory structure will also be used to hold the generated {ProductShortName} reports.
 
-[discrete]
+[id="mta-creating-data-to-test-the-rule_{context}"]
 == Creating data to test the rule
 
 . Create a `jboss-web.xml` file in the `/home/<USER_NAME>/migration-rules/data/` subdirectory.
@@ -41,9 +41,9 @@ This directory structure will also be used to hold the generated {ProductShortNa
     </class-loading>
 </jboss-web>
 ----
-[]
-[discrete]
-Creating the rule
+
+[id="creating-the-rule_{context}"]
+== Creating the rule
 
 {ProductShortName} XML-based rules use the following rule pattern:
 
@@ -192,7 +192,8 @@ The rule is now complete and should look like the following example.
 </ruleset>
 ----
 []
-[discrete]
+
+[id="mta-installing-rule-in-directory_{context}"]
 == Installing the rule
 
 An {ProductShortName} rule is installed by placing the rule into the appropriate directory.
@@ -204,7 +205,8 @@ Copy the `JBoss5-web-class-loading.windup.xml` file to the `<{ProductShortName}_
 $ cp /home/<USER_NAME>/migration-rules/rules/JBoss5-web-class-loading.windup.xml <{ProductShortName}_HOME>/rules/
 ----
 []
-[discrete]
+
+[id="mta-testing-the-rule_{context}"]
 == Testing the rule
 
 Open a terminal and run the following command, passing the test file as an input argument and a directory for the output report.
@@ -222,7 +224,7 @@ Report created: /home/<USER_NAME>/migration-rules/reports/index.html
               Access it at this URL: file:///home/<USER_NAME>/migration-rules/reports/index.html
 ----
 []
-[discrete]
+[id="mta-reviewing-the-report_{context}"]
 == Reviewing the reports
 
 Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports] section of the {ProductShortName} _{UserCLIBookName}_.

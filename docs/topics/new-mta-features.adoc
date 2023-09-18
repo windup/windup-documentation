@@ -16,6 +16,6 @@ Now designed for easier upgrades with more migration paths, {ProductShortName} i
 
 * *Improved analysis capabilities* with new analysis modes, including source and dependency modes that parse repositories to gather dependencies and add them to the overall scope of the analysis. There is also a simplified user experience to configure the analysis scope, including open source libraries.
 
-* *Enhanced Role-Based Access Control (RBAC)* powered by link:https://access.redhat.com/products/red-hat-single-sign-on[Red Hat Single Sign-On], defining three new differentiated personas with different permissions to suit the needs of each user—administrator, architect and migrator—including credentials management for multiple credential types.
+* *Enhanced Role-Based Access Control (RBAC)* powered by link:https://access.redhat.com/products/red-hat-single-sign-on[Red Hat Single Sign-On], defining three new differentiated personas with different permissions to suit the needs of each user (administrator, architect and migrator) including credentials management for multiple credential types.
 
 * *Administration perspective* to provide tool-wide configuration management for administrators.
