@@ -9,7 +9,7 @@
 
 You need a connected environment to install the {PluginName}.
 
-The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Developers 2022-03 and Red Hat CodeReady Studio 12.21.3.GA.
+The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Developers 2023-06.
 
 .Prerequisites
 
@@ -23,7 +23,7 @@ The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Develo
 * 8 GB RAM
 * macOS installation: the value of `maxproc` must be `2048` or greater.
 
-* link:{CodeReadyStudioDownloadPageURL}[Red Hat CodeReady Studio] _or_ link:https://www.eclipse.org/downloads/packages/release/2022-03/r/eclipse-ide-java-developers[Eclipse IDE for Java Enterprise Developers 2022-03]
+* link:{CodeReadyStudioDownloadPageURL}[Red Hat CodeReady Studio] _or_ link:https://www.eclipse.org/downloads/packages/release/2023-06/r/eclipse-ide-java-developers[Eclipse IDE for Java Enterprise Developers 2023-06]
 * JBoss Tools, installed from the link:https://marketplace.eclipse.org/content/jboss-tools[Eclipse Marketplace]
 * link:http://download.eclipse.org/mylyn/releases/latest[Mylyn SDK and frameworks], installed with Eclipse
 
