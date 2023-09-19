@@ -7,11 +7,11 @@
 = New features
 
 
-This section describes the new features of the Migration Toolkit for Applications (MTA) 6.2.0.
+This section describes the new features of the Migration Toolkit for Applications (MTA) 7.0.0.
 
 .Red Hat Single Sign On (RHSSO) Configuration
 
-MTA supports Red Hat Single Sign-On (RHSSO) configuration, so that users roles can be added using `keycloke`. See xref:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/6.0/html/user_interface_guide/mta-6-installing-web-console-on-openshift_user-interface-guide#red_hat_single_sign_on[Red Hat Single Sign-On]. 
+MTA supports Red Hat Single Sign-On (RHSSO) configuration, so that users' roles can be added using `keycloak`to control Konveyor and MTA authorization mechanisms. See xref:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/6.0/html/user_interface_guide/mta-6-installing-web-console-on-openshift_user-interface-guide#red_hat_single_sign_on[Red Hat Single Sign-On]. 
 
 
 .New Rules Syntax
@@ -26,7 +26,7 @@ Downloaded files are now named according to the migrated application.
 
 .Tag Category drop down menu shows only categories relevant to the source
 
-The *Tag Categories* drop-down lost now shows only tag categories that are relevant to the source.
+The *Tag Categories* drop-down list now shows only tag categories that are relevant to the source.
 
 
 .Multi Language Analysis

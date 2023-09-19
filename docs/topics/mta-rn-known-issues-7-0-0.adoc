@@ -8,9 +8,9 @@
 
 MTA version 7.0.0 has the following issues.
 
-.Lack of Unique IDs and Aria-Labels on Sections/categories Hindering Automation
+.Lack of Unique IDs and Aria-Labels on Sections/Categories Hindering Automation
 
-Lack of unique IDs applied to sections and catergories hinders migration automation. link:https://issues.redhat.com/browse/MTA-1203[MTA-1203]
+Lack of unique IDs applied to sections and categories hinders migration automation. link:https://issues.redhat.com/browse/MTA-1203[MTA-1203]
 
 .Support downstream disconnected installs
 
@@ -28,7 +28,29 @@ Binary analysis takes 3h then fails. link:https://issues.redhat.com/browse/MTA-1
 
 Allow architects to review an application without an assessment. link:https://issues.redhat.com/browse/MTA-115[MTA-115]
 
+.Dependencies tab shows `error` when retreiving data
 
+An error message appears on the MTA UI when retreiving data.link:https://issues.redhat.com/browse/MTA-1130[MTA-1130]
+
+.No update notification after editing fields
+
+`Update Notification` does not appear at top of window after editing the fields `Application`, `Job Function`, and `Business services`. link:https://issues.redhat.com/browse/MTA-1024[MTA-1024]
+
+.Disabled `rank` field when creating a new tag category
+
+After creating a new tag category, the `rank` field text box is diabled. link:https://issues.redhat.com/browse/MTA-1095[MTA-1095]
+
+.Cannot create a Jira instance behind a proxy
+
+Red Hat Jira instance (issues.stage.redhat.com) is accessible only through a proxy, but general proxy settings do not work with this configuration. link:https://issues.redhat.com/browse/MTA-849[MTA-849]
+
+.Rows in `Dependencies` show placeholder instead of actual value
+
+In the `Migration -> Dependencies` view, some rows show a placeholder under the `version` column instead of the actual value. link:https://issues.redhat.com/browse/MTA-1283[MTA-1283]
+
+.Source Analysis shows different Issues for `tackle-testapp`
+
+Running a *Source Analysis* using `tackle-testapp` with target as *Containerization* or *cloud-readiness* shows missing categories. *Issues* has only *Mandatory* category with 2 issues, and no *Information* category. link:https://issues.redhat.com/browse/MTA-1271[MTA-1271]
 
 
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12420808[Known Issues in Jira].
