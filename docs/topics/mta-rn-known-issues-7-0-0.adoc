@@ -16,11 +16,11 @@ Lack of unique IDs applied to sections and categories hinders migration automati
 
 MTA does not support downstream disconnected installs. link:https://issues.redhat.com/browse/MTA-17[MTA-17]
 
-.Can't remove Jira connection to removed Wave after it was added to Wave 
+.Jira connection to a removed Wave cannot be removed after it was added to Wave 
 
-Can't remove Jira connection after it was added to Wave even after Wave was removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]
+Cannot remove a Jira connection that was added to Wave after Wave was removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]
 
-.Binary analysis takes 3h then fails
+.Binary analysis takes 3 hours and then fails
 
 Binary analysis takes 3h then fails. link:https://issues.redhat.com/browse/MTA-1183[MTA-1183]
 
