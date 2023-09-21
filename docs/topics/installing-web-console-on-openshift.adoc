@@ -35,7 +35,7 @@ Authentication can not be added or removed after installation.
 . In the realm, create a client named *windup-web*.
 . Check that *Access Type* is set to `public`. Set *Valid Redirect URIs* and *Web Origins* to `\*`. Click *Save*.
 +
-Note that after the {ProductShortName} operator has been instantiated the *Valid Redirect URIs* and *Web Origins* fields have to be set to the secure-mtr-web-console route.
+Note that after the {ProductShortName} operator has been instantiated, the *Valid Redirect URIs* and *Web Origins* fields have to be set to the secure-mtr-web-console route.
 . Create a role named *user*.
 . Create a user with any name.
 . Set the credentials of the user, disable *Temporary*, and assign the role "user" to the user.
