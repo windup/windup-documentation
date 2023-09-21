@@ -477,7 +477,7 @@ from="MyEjbRule"
 
 Use the `<has-hint>` element to test whether a file or line has a hint already associated with it. It is primarily used to prevent firing if a hint already exists, or to implement rules for default execution when no other conditions apply. For a better understanding of the `<has-hint>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/HasHint.html[HasHint] class.
 
-The following is an example of a rule that checks to see if a hint exists for an IBM JMS destination message, and if not includes it.
+The following is an example of a rule that checks to see if a hint exists for an IBM JMS destination message, and if not, includes it.
 
 [source,xml,subs="attributes+"]
 ----
@@ -631,7 +631,7 @@ from="MyEjbRule"
 
 |name
 |String
-|The name of the attribute to match against within the chosen model. When using any file-based models it is recommended to match on `fileName`. This attribute is required.
+|The name of the attribute to match against within the chosen model. When using any file-based models, it is recommended to match on `fileName`. This attribute is required.
 
 |type
 |property-type

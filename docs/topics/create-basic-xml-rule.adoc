@@ -118,7 +118,7 @@ The XML rule `<when>` element tests for a condition. The following is a list of 
 |Test for a match in a Java class.
 
 |<javaclass-ignore>
-|Exclude javaclass which you would like to ignore in processing discovery.
+|Exclude javaclass that you would like to ignore in processing discovery.
 
 |<not>
 |The standard logical _not_ operator.

@@ -86,7 +86,7 @@ This option might reduce performance.
 ====
 * *Mavenize*: Creates a Maven project directory structure based on the structure and content of the application.
 * *Source mode*: Indicates that the application files are raw source files, not compiled binaries. The sourceMode argument has been deprecated. There is no longer the need to specify it. MTR can intuitively process any inputs that are presented to it.  In addition, project source folders can be analyzed with binary inputs within the same analysis execution.
-* *Analyze known libraries*: Analyze known software artifacts embedded within your application.  By default {ProductShortName} only analyzes application code.
+* *Analyze known libraries*: Analyze known software artifacts embedded within your application.  By default, {ProductShortName} only analyzes application code.
 +
 [NOTE]
 ====
