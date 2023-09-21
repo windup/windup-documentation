@@ -7,7 +7,7 @@
 [id="csv-export_{context}"]
 = Exporting the report in CSV format
 
-{ProductShortName} provides the ability to export the report data, including the classifications and hints, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields separated by commas (`,`).
+{ProductName} ({ProductShortName}) provides the ability to export the report data, including the classifications and hints, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields separated by commas (`,`).
 
 The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel, OpenOffice Calc, or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from an {ProductShortName} report.
 
