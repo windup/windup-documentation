@@ -11,7 +11,7 @@ This section describes the new features of the Migration Toolkit for Application
 
 .Red Hat Single Sign On (RHSSO) Configuration
 
-MTA supports Red Hat Single Sign-On (RHSSO) configuration, so that users' roles can be added using `keycloak`to control Konveyor and MTA authorization mechanisms. See xref:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/6.0/html/user_interface_guide/mta-6-installing-web-console-on-openshift_user-interface-guide#red_hat_single_sign_on[Red Hat Single Sign-On]. 
+MTA supports Red Hat Single Sign-On (RHSSO) configuration, so that users' roles can be added using `keycloak`to control Konveyor and MTA authorization mechanisms. See link:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/6.0/html/user_interface_guide/mta-6-installing-web-console-on-openshift_user-interface-guide#red_hat_single_sign_on[Red Hat Single Sign-On]. 
 
 
 .New Rules Syntax
@@ -19,7 +19,7 @@ MTA supports Red Hat Single Sign-On (RHSSO) configuration, so that users' roles 
 New rules syntax in YAML supports metadata, `message` and `tag` actions, rule conditions, provider conditions for `java` and `go` providers, and other file tagging and characteristics.
 
 
-.Filename of downloaded report file same as application name
+.Filename of downloaded report file matches application name
 
 Downloaded files are now named according to the migrated application.
 
@@ -36,4 +36,4 @@ MTA 7.0.0 now supports languages that are implemented in _Language Server Protoc
 
 .Dynamic Reports
 
-MTA 7.0.0 produces dynamic analysis reports that collect aggregated issues and dependencies across the application portfolio, identifies portfolio-wide trends, drills down to specific lines in source code, and fully integrates with Konveyor UI.
+MTA 7.0.0 produces dynamic analysis reports that collect aggregated issues and dependencies across the application portfolio, identifies portfolio-wide trends, drills down to specific lines in source code, and fully integrates with MTA UI.

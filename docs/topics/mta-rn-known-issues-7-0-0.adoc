@@ -8,33 +8,33 @@
 
 MTA version 7.0.0 has the following issues.
 
-.Lack of Unique IDs and Aria-Labels on Sections/Categories Hindering Automation
+.Lack of Unique IDs and Aria-Labels on Sections/Categories, Hindering Automation
 
-Lack of unique IDs applied to sections and categories hinders migration automation. link:https://issues.redhat.com/browse/MTA-1203[MTA-1203]
+There is a lack of unique IDs applied to sections and categories, which hinders migration automation. link:https://issues.redhat.com/browse/MTA-1203[MTA-1203]
 
-.Support downstream disconnected installs
+.Support disconnected installations
 
-MTA does not support downstream disconnected installs. link:https://issues.redhat.com/browse/MTA-17[MTA-17]
+MTA does not support disconnected installations. link:https://issues.redhat.com/browse/MTA-17[MTA-17]
 
-.Jira connection to a removed Wave cannot be removed after it was added to Wave 
+.Cannot remove the Jira connection to a Wave that is later removed 
 
-Cannot remove a Jira connection that was added to Wave after Wave was removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]
+It is not possible to remove a Jira connection to a Wave, after that Wave is later removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]
 
 .Binary analysis takes 3 hours and then fails
 
-Binary analysis takes 3h then fails. link:https://issues.redhat.com/browse/MTA-1183[MTA-1183]
+Binary analysis can take 3 hours, and then it fails. link:https://issues.redhat.com/browse/MTA-1183[MTA-1183]
 
 .Allow architects to review an application without an assessment
 
 Allow architects to review an application without an assessment. link:https://issues.redhat.com/browse/MTA-115[MTA-115]
 
-.Dependencies tab shows `error` when retreiving data
+.Dependencies tab shows `error` when retrieving data
 
-An error message appears on the MTA UI when retreiving data.link:https://issues.redhat.com/browse/MTA-1130[MTA-1130]
+An error message appears on the MTA UI when retrieving data.link:https://issues.redhat.com/browse/MTA-1130[MTA-1130]
 
 .No update notification after editing fields
 
-`Update Notification` does not appear at top of window after editing the fields `Application`, `Job Function`, and `Business services`. link:https://issues.redhat.com/browse/MTA-1024[MTA-1024]
+No `Update Notification` appears at top of window after the fields `Application`, `Job Function`, and `Business services` are updated. link:https://issues.redhat.com/browse/MTA-1024[MTA-1024]
 
 .Disabled `rank` field when creating a new tag category
 
@@ -50,7 +50,7 @@ In the `Migration -> Dependencies` view, some rows show a placeholder under the 
 
 .Source Analysis shows different Issues for `tackle-testapp`
 
-Running a *Source Analysis* using `tackle-testapp` with target as *Containerization* or *cloud-readiness* shows missing categories. *Issues* has only *Mandatory* category with 2 issues, and no *Information* category. link:https://issues.redhat.com/browse/MTA-1271[MTA-1271]
+Running a *Source Analysis* using `tackle-testapp` with target as *Containerization* or *cloud-readiness* shows missing categories. *Issues* has only *Mandatory* category with two issues, and no *Information* category. link:https://issues.redhat.com/browse/MTA-1271[MTA-1271]
 
 
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12420808[Known Issues in Jira].
