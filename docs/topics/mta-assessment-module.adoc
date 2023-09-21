@@ -1,0 +1,28 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-assessment-module_{context}"]
+
+= {ProductName} {WebName} Assessment Module
+
+The Assessment Module has made the assessment of application for migrations customizable, automated, and intelligent. The {ProductName} ({ProductShortName}) {WebName} includes a feature that enables the user to define the default assesment questionnaire, design custom assessment questionnaires, and tie application *archetypes* to specific assessment questionnaires. The Assessment Module replaces the _Pathfinder_ feature in {ProductShortName} up to version 6.2.
+
+The {ProductShortName} Assessment Module enables the {ProductShortName} user to define the default and multiple custom assessment questionaires, and applications can be tied *archetypes*. 
+
+The Assessment Module includes the following features:
+
+* The Assessment Module enables the user to define the default questionnaire to questions that are relevant to the assessed application.
+* Define, save, export, and import questionnaires as customized for specific applications with specific charateristics.
+* User can author questionnaires in the {ProductShortName} User Interface or in a file using YAML syntax.
+* Assessed applications can be grouped into *archetypes* with common characteristics. The archetypes tie the assessed applications to specific questionnaires, with questions relevant to the 
+* The Assessment Module integrates with the entire inventory of applications that are to be migrated. All applications are listed, defined according to archetypes, and tied to relevant questionnaires.
+* Import and export existing and custom questionnaires.
+* User can define which parameters in each questionnaire are relevant for each application and archetype considered for assessment.
+* User can define custom questionnaires using the {ProductShortName} UI or using YAML syntax.
+* Assessment questionnaires can include additional capabilities:
+** Conditional questions.
+** Application auto-tagging according to answers.
+** Automated answers from tags in the application or in the archetype.
+** Questionnaire can skip questions according to specific tags in the application.
