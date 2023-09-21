@@ -35,7 +35,7 @@ endif::[]
 ifdef::mtr[]
 :ProductName: Migration Toolkit for Runtimes
 :DocInfoProductName: Migration Toolkit for Runtimes
-:DocInfoProductNumber: 1.1
+:DocInfoProductNumber: 1.2
 :ProductShortName: MTR
 :LC_PSN: mtr
 :DocInfoProductNameURL: migration_toolkit_for_runtimes
@@ -43,10 +43,10 @@ ifdef::mtr[]
 :WebNameTitle: Web Console
 :WebNameURL: web_console_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 1.1.1
+:ProductVersion: 1.2.0
 :PluginName: MTR plugin
-:ProductDistributionVersion: 1.1.1.GA-redhat-00001
-:ProductDistribution: mtr-1.1.1.GA-offline
+:ProductDistributionVersion: 1.2.0.GA-redhat-00001
+:ProductDistribution: mtr-1.2.0.GA-offline
 :DevDownloadPageURL: https://developers.redhat.com/products/mtr/download
 :IDEPluginFilename: migrationtoolkit-mtr-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/WINDUP
@@ -69,7 +69,7 @@ endif::[]
 
 :UserCLIBookName: CLI Guide
 :RulesDevBookName: Rules Development Guide
-:EclipseCrsGuideTitle: Eclipse and Red Hat CodeReady Studio Guide
+:EclipseCrsGuideTitle: Eclipse Plugin Guide
 :MavenBookName: Maven Plugin Guide
 :IntelliJBookName: IntelliJ IDEA Plugin Guide
 
@@ -90,7 +90,7 @@ endif::[]
 :ProductDocUserGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/cli_guide
 :ProductDocWebConsoleGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html/{WebNameURL}/index
 :ProductDocRulesGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/rules_development_guide
-:EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_and_red_hat_codeready_studio_guide
+:EclipseCrsGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/eclipse_plugin_guide
 :IntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
 :ProductDocIntroToMTAGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/introduction_to_the_{DocInfoProductNameURL}
 :ProductDocUserInterfaceGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/{WebNameURL}
