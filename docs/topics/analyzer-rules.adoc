@@ -125,11 +125,12 @@ The analyzer engine (??) adds labels on dependencies. These labels provide addit
 
 Currenty, the analyzer adds the following labels on dependencies:
 
-`labels:`
-
-`- konveyor.io/dep-source=internal`
-
-`- konveyor.io/language=java`
+[source,terminal]
+----
+labels:
+- konveyor.io/dep-source=internal
+- konveyor.io/language=java
+----
 
 .Dependency label selector
 
@@ -146,13 +147,35 @@ The Java provider in the analyzer can also add an exclude label to a list of pac
 `konveyor-analyzer ... --dep-label-selector !konveyor.io/exclude`
 
 [id="yaml-rule-actions_{context}"]
-=== Actions
+=== Rule Actions
 
-`message` actions
-Message examples
+Rules include message and tag actions.
 
-`tag` actions
-Tag examples
+.Message actions
+
+The message action generates a message for every violation created when rule matches (??). The custom data exported by providers can also be used in the message.
+
+`message: "helpful message about the violation"`
+
+Optionally, a message can include hyperlinks to external URLs that provide relevant information about the issue or a quick fix.
+
+[source,terminal]
+----
+links:
+- url: "konveyor.io"
+title: "Short title for the link"
+----
+
+.Tag actions
+
+The tag action instructs the analyzer to generate tags for the application when a match is found. Each string in the `tag` field can be a comma-separated list of tags. Optionally, you can assign categories to tags.
+
+[source,terminal]
+----
+tag:
+- "tag1,tag2,tag3"
+- "Category=tag4,tag5"
+----
 
 === `when` block
 
