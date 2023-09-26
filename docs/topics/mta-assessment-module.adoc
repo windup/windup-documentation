@@ -1,28 +1,24 @@
 // Module included in the following assemblies:
 //
 // * docs/web-console-guide/master.adoc
+// * topics/mta-assessment-module.adoc
 
-:_content-type: PROCEDURE
+:_content-type: REFERENCE
 [id="mta-assessment-module_{context}"]
+= Assessment Module
 
-= {ProductName} {WebName} Assessment Module
+The assessment process for applications that are to be migrated in Red Hat Migration Toolbox for Applications (MTA) has been separated from other tool features and enhanced in version 7.0.0.
 
-The Assessment Module has made the assessment of application for migrations customizable, automated, and intelligent. The {ProductName} ({ProductShortName}) {WebName} includes a feature that enables the user to define the default assesment questionnaire, design custom assessment questionnaires, and tie application *archetypes* to specific assessment questionnaires. The Assessment Module replaces the _Pathfinder_ feature in {ProductShortName} up to version 6.2.
+* A separate new Assessment hub includes the Assessment module, replacing the older _Pathfinder_ feature.
+* Assessment supports multiple questionnaires, relevant to each assessed application.
+* Default quetionnaires can be cutomized and saved.
+* User can design and version custom questionnaires and questions using YAML syntax.
+* Assessed applications are grouped into *archetypes* with similar application characteristics.
+* Assessment module integrates tightly with the application inventory.
+* Assessment questionnaires can be imported and exported.
+* Enhanced questionnaire capabilities:
+** Conditional questions
+** Application auto-tagging according to answers
+** Automated answers from tags in application archetypes
 
-The {ProductShortName} Assessment Module enables the {ProductShortName} user to define the default and multiple custom assessment questionaires, and applications can be tied *archetypes*. 
-
-The Assessment Module includes the following features:
-
-* The Assessment Module enables the user to define the default questionnaire to questions that are relevant to the assessed application.
-* Define, save, export, and import questionnaires as customized for specific applications with specific charateristics.
-* User can author questionnaires in the {ProductShortName} User Interface or in a file using YAML syntax.
-* Assessed applications can be grouped into *archetypes* with common characteristics. The archetypes tie the assessed applications to specific questionnaires, with questions relevant to the 
-* The Assessment Module integrates with the entire inventory of applications that are to be migrated. All applications are listed, defined according to archetypes, and tied to relevant questionnaires.
-* Import and export existing and custom questionnaires.
-* User can define which parameters in each questionnaire are relevant for each application and archetype considered for assessment.
-* User can define custom questionnaires using the {ProductShortName} UI or using YAML syntax.
-* Assessment questionnaires can include additional capabilities:
-** Conditional questions.
-** Application auto-tagging according to answers.
-** Automated answers from tags in the application or in the archetype.
-** Questionnaire can skip questions according to specific tags in the application.
+In the MTA user interface, the Assessment Module appears in a separate menu item. Selecting the item shows the currently saved default and custom questionnaires.
