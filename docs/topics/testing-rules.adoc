@@ -10,7 +10,7 @@ After you have created an XML rule, you should create a test rule to ensure that
 
 == Creating a test rule
 
-Test rules are created using a process similar to the process for creating a test rule, with the following differences:
+Test rules are created using a process similar to the process for creating an XML rule, with the following differences:
 
 * Test rules should be placed in a `tests/` directory beneath the rule to be tested.
 * Any data, such as test classes, should be placed in a `data/` directory beneath the `tests/` directory.
