@@ -7,7 +7,7 @@
 [id="mta-assessment-module_{context}"]
 = Assessment Module
 
-The assessment process for applications that are to be migrated in Red Hat Migration Toolbox for Applications (MTA) has been separated from other tool features and enhanced in version 7.0.0.
+The assessment process for applications that are to be migrated in Red Hat Migration Toolkit for Applications (MTA) has been separated from other tool features and enhanced in version 7.0.0.
 
 * A separate new Assessment hub includes the Assessment module, replacing the older _Pathfinder_ feature.
 * Assessment supports multiple questionnaires, relevant to each assessed application.
@@ -22,3 +22,7 @@ The assessment process for applications that are to be migrated in Red Hat Migra
 ** Automated answers from tags in application archetypes
 
 In the MTA user interface, the Assessment Module appears in a separate menu item. Selecting the item shows the currently saved default and custom questionnaires.
+
+:_content-type: PROCEDURE
+[id="mta-assessment-customize-questionnaire_{context}"]
+= Assessment Module
