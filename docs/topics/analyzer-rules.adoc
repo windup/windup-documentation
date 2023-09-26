@@ -6,25 +6,146 @@
 [id="analyzer-rules_{context}"]
 = Analyzer rules
 
+Each analyzer rule is a set of instructions that are used to analyze source code and detect issues that are problematic for migration.
+
+The analyzer parses user-provided rules, applies them to applications' source code them, and generates violations (??) for matched rules. A collection of one or more rules form a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal. The analyzer CLI takes rulesets as input arguments.
+
+[id="yaml-rule-structure_{context}"]
 == YAML rule structure
 
-A YAML rule consists of metadata, conditions and actions.
+Rules are written in YAML. Each rule consists of metadata, conditions and actions. It instructs the analyzer to take specified actions when given conditions match.
 
+[id="yaml-rule-metadata_{context}"]
 === Metadata
 
-General information
+Rule metadata contains general information about the rule. The structure of metadata is as follows.
 
-Needs example
+[source,terminal]
+----
+ruleId: "unique_id" <1>
+# violations have pre-defined categories
+category: "potential|information|mandatory"
+labels: <2>
+  # key=value pair
+  - "label1=val1"
+  # valid label with value omitted
+  - "label2"
+  # valid label with empty value
+  - "label3="
+  # subdomain prefixed key
+  - "konveyor.io/label1=val1"
+effort: 1 <3>
+----
+<1> The id must be unique within the ruleset to which the rule belongs
 
+<2> See below for a description of the label format.
+
+<3> Effort is an integer value that indicates the level of effort needed to fix this issue.
+
+[id="yaml-rule-labels_{context}"]
 ==== Labels
 
-key=val pairs
-Subdomain-prefixed
-Empty values
-Reserved labels
-`--label-selector` option - filter in/filter out
-Dependency labels
+Labels are `key=val` pairs specified for rules or rulesets as well as dependencies. For dependencies, a provider adds the labels to the dependencies when retrieving them. Labels on a ruleset are automatically inherited by all the rules that belong to it.
 
+.Label format
+
+Labels are specified under the `labels` field as a list of strings in `key=val` format as follows:
+
+[source,terminal]
+----
+labels:
+- "key1=val1"
+- "key2=val2"
+----
+
+The key of a label can be subdomain-prefixed:
+
+[source,terminal]
+----
+labels:
+- "konveyor.io/key1=val1"
+----
+
+The value of a label can be empty:
+
+[source,terminal]
+----
+labels:
+- "konveyor.io/key="
+----
+
+The value of a label can be omitted. In that case, it is treated as an empty value:
+
+[source,terminal]
+----
+labels:
+- "konveyor.io/key"
+----
+
+.Reserved labels
+
+The analyzer defines some labels that have special meaning as follows:
+
+`konveyor.io/source`: Identifies the source technology to which a rule or a ruleset applies
+`konveyor.io/target`: Identifies the target technology to which a rule or a ruleset applies
+
+.Label selector
+
+The analyzer CLI takes the `--label-selector` field as an option. It is a string expression that supports logical AND, OR and NOT operations. You can use it to filter-in or filter-out rules based on labels.
+
+_Examples:_
+
+* To filter-in all rules that have a label with key `konveyor.io/source` and value `eap6`:
++
+`--label-selector="konveyor.io/source=eap6"`
+
+* To filter-in all rules that have a label with key `konveyor.io/source` and any value:
++
+`--label-selector="konveyor.io/source"`
+
+* To perform logical AND operations on matches of multiple rules using the `&&` operator:
++
+`--label-selector="key1=val1 && key2"`
+
+* To perform logical OR operations on matches of multiple rules using the `||` operator:
++
+`--label-selector="key1=val1 || key2"`
+
+* To perform a NOT operation to filter-out rules that have `key1=val1` label set using the `!` operator:
++
+`--label-selector="!key1=val1"`
+
+* To group sub-expressions and control precedence using AND:
++
+`--label-selector="(key1=val1 || key2=val2) && !val3"`
+
+.Dependency labels
+
+The analyzer engine (??) adds labels on dependencies. These labels provide additional information about a dependency such as whether the dependency is open-source or internal, its programming language, etc.
+
+Currenty, the analyzer adds the following labels on dependencies:
+
+`labels:`
+
+`- konveyor.io/dep-source=internal`
+
+`- konveyor.io/language=java`
+
+.Dependency label selector
+
+The analyzer CLI accepts the `--dep-label-selector` option, which allows filtering-in or filtering-out incidents generated from a dependency based on the labels.
+
+For example, the analyzer adds a `konveyor.io/dep-source` label on dependencies with a value that indicates whether the dependency is a known open source dependency.
+
+To exclude incidents for all such open-source dependencies, you can use `--dep-label-selector` as follows:
+
+`konveyor-analyzer ... --dep-label-selector !konveyor.io/dep-source=open-source`
+
+The Java provider in the analyzer can also add an exclude label to a list of packages. To exclude all such packages, you can use `--dep-label-selector` as follows:
+
+`konveyor-analyzer ... --dep-label-selector !konveyor.io/exclude`
+
+[id="yaml-rule-actions_{context}"]
 === Actions
 
 `message` actions
