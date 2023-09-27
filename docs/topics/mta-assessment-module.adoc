@@ -11,7 +11,7 @@ The assessment process for applications that are to be migrated in Red Hat Migra
 
 * A separate new Assessment hub includes the Assessment module, replacing the older _Pathfinder_ feature.
 * Assessment supports multiple questionnaires, relevant to each assessed application.
-* Default quetionnaires can be cutomized and saved.
+* Default questionnaires can be customized and saved.
 * User can design and version custom questionnaires and questions using YAML syntax.
 * Assessed applications are grouped into *archetypes* with similar application characteristics.
 * Assessment module integrates tightly with the application inventory.
