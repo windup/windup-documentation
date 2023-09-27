@@ -26,7 +26,7 @@ Binary analysis can take three hours, and then it fails. link:https://issues.red
 
 .Allow architects to review an application without an assessment
 
-Allow architects to review an application without an assessment. The MTA user can decide to skip the Assessment stage of the application migration. link:https://issues.redhat.com/browse/MTA-115[MTA-115]
+The MTA user can decide to skip the Assessment stage of the application migration. link:https://issues.redhat.com/browse/MTA-115[MTA-115]
 
 .Dependencies tab shows `error` when retrieving data
 
@@ -50,7 +50,7 @@ In the `Migration -> Dependencies` view, some rows show a placeholder under the 
 
 .Source analysis shows different issues for `tackle-testapp`
 
-Running a source analysis using `tackle-testapp` with target as `containerization` or cloud-readiness shows missing categories. *Issues* has only *Mandatory* category with two issues, and no *Information* category. link:https://issues.redhat.com/browse/MTA-1271[MTA-1271]
+Running a source analysis using `tackle-testapp` with target as `containerization` or `cloud-readiness` shows missing categories. `Issues` has only `Mandatory` category with two issues, and no `Information` category. link:https://issues.redhat.com/browse/MTA-1271[MTA-1271]
 
 
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12420808[Known Issues in Jira].
