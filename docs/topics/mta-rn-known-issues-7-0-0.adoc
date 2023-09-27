@@ -8,7 +8,7 @@
 
 MTA version 7.0.0 has the following issues.
 
-.Lack of Unique IDs and Aria-Labels on Sections/Categories, Hindering Automation
+.Lack of unique IDs and Aria-labels on sections and categories hinders automation
 
 There is a lack of unique IDs applied to sections and categories, which hinders migration automation. link:https://issues.redhat.com/browse/MTA-1203[MTA-1203]
 
@@ -16,17 +16,17 @@ There is a lack of unique IDs applied to sections and categories, which hinders 
 
 MTA does not support disconnected installations. link:https://issues.redhat.com/browse/MTA-17[MTA-17]
 
-.Cannot remove the Jira connection to a Wave that is later removed 
+.Cannot remove the Jira connection to a Migration Wave that is later removed 
 
-It is not possible to remove a Jira connection to a Wave, after that Wave is later removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]
+It is not possible to remove a Jira connection to a Migration Wave after that Wave is removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]
 
-.Binary analysis takes 3 hours and then fails
+.Binary analysis takes three hours and then fails
 
-Binary analysis can take 3 hours, and then it fails. link:https://issues.redhat.com/browse/MTA-1183[MTA-1183]
+Binary analysis can take three hours, and then it fails. link:https://issues.redhat.com/browse/MTA-1183[MTA-1183]
 
 .Allow architects to review an application without an assessment
 
-Allow architects to review an application without an assessment. link:https://issues.redhat.com/browse/MTA-115[MTA-115]
+Allow architects to review an application without an assessment. The MTA user can decide to skip the Assessment stage of the application migration. link:https://issues.redhat.com/browse/MTA-115[MTA-115]
 
 .Dependencies tab shows `error` when retrieving data
 
@@ -48,9 +48,9 @@ Red Hat Jira instance (issues.stage.redhat.com) is accessible only through a pro
 
 In the `Migration -> Dependencies` view, some rows show a placeholder under the `version` column instead of the actual value. link:https://issues.redhat.com/browse/MTA-1283[MTA-1283]
 
-.Source Analysis shows different Issues for `tackle-testapp`
+.Source analysis shows different issues for `tackle-testapp`
 
-Running a *Source Analysis* using `tackle-testapp` with target as *Containerization* or *cloud-readiness* shows missing categories. *Issues* has only *Mandatory* category with two issues, and no *Information* category. link:https://issues.redhat.com/browse/MTA-1271[MTA-1271]
+Running a source analysis using `tackle-testapp` with target as `containerization` or cloud-readiness shows missing categories. *Issues* has only *Mandatory* category with two issues, and no *Information* category. link:https://issues.redhat.com/browse/MTA-1271[MTA-1271]
 
 
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12420808[Known Issues in Jira].
