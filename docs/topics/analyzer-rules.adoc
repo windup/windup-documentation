@@ -358,23 +358,78 @@ when:
 
 === Logical conditions
 
-==== And
+The analyzer provides two basic logical conditions, `and` and `or`, that enable you to aggregate results of other conditions and create more complex queries.
 
-Logical 'and' operation
-Nested conditions
+==== `and` condition
 
-Example
+The `and` condition performs a logical 'and' operation on the results of an array of conditions.
 
-==== Or
+[source,terminal]
+----
+when:
+  and:
+    - <condition1>
+    - <condition2>
+----
 
-Logical 'or' operation
+_Example_
+
+[source,terminal]
+----
+when:
+  and:
+    - java.dependency:
+        name: junit.junit
+        upperbound: 4.12.2
+        lowerbound: 4.4.0
+    - java.dependency:
+        name: io.fabric8.kubernetes-client
+        lowerbound: 5.0.100
+----
+
+Conditions can also be nested within other conditions.
+
+_Example_
+
+[source,terminal]
+----
+when:
+  and:
+  - and:
+    - go.referenced: "*CustomResourceDefinition*"
+    - java.referenced:
+        pattern: "*CustomResourceDefinition*"
+  - go.referenced: "*CustomResourceDefinition*"
+----
+
+==== `or` condition
+
+The `or` condition performs a logical 'or' operation on the results of an array of conditions.
+
+[source,terminal]
+----
+when:
+  or:
+    - <condition1>
+    - <condition2>
+----
 
 == Rulesets
 
-Each in its own directory; a `ruleset.yaml` file at the directory root
+A set of rules forms a ruleset. Rulesets are a way of organizing multiple rules that achieve a common goal and passing the rules to the rules engine.
 
-Ruleset labels inherited by all its rules
+Each ruleset is stored in its own directory with a `ruleset.yaml` file at the directory root that stores the metadata of the ruleset.
 
+[source,terminal]
+----
+name: "Name of the ruleset" <1>
+description: "Description of the ruleset"
+labels: <2>
+  - awesome_rules1
+----
+<1> The name must be unique within the provided rulesets.
+
+<2> Ruleset labels are inherited by all rules that belong to the ruleset.
 
 == Creating YAML rules
 
