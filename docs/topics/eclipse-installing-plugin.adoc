@@ -21,7 +21,7 @@ include::snippet_jdk-hardware-mac-prerequisites.adoc[leveloffset=0]
 
 [NOTE]
 ====
-Eclipse is pre-configured for Java 17, and the plugin operates directly with Java 17.
+Eclipse is pre-configured for Java 17, and the plugin operates directly with Java 17. 
 
 You can also run the plugin with Java 11, which requires setting the JRE version to Java 11 when creating up a new Eclipse  project or importing an existing one. See step 6 below.
 ====
