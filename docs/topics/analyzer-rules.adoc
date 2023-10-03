@@ -8,7 +8,7 @@
 
 Each analyzer rule is a set of instructions that are used to analyze source code and detect issues that are problematic for migration.
 
-The analyzer parses user-provided rules, applies them to applications' source code them, and generates violations (??) for matched rules. A collection of one or more rules form a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal. The analyzer CLI takes rulesets as input arguments.
+The analyzer parses user-provided rules, applies them to applications' source code them, and generates violations for matched rules. A collection of one or more rules form a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal. The analyzer CLI takes rulesets as input arguments.
 
 [id="yaml-rule-structure_{context}"]
 == YAML rule structure
@@ -121,7 +121,7 @@ _Examples:_
 
 .Dependency labels
 
-The analyzer engine (??) adds labels on dependencies. These labels provide additional information about a dependency such as whether the dependency is open-source or internal, its programming language, etc.
+The analyzer engine adds labels on dependencies. These labels provide additional information about a dependency such as whether the dependency is open-source or internal, its programming language, etc.
 
 Currenty, the analyzer adds the following labels on dependencies:
 
@@ -153,7 +153,7 @@ Rules include message and tag actions.
 
 .Message actions
 
-The message action generates a message for every violation created when rule matches (??). The custom data exported by providers can also be used in the message.
+The message action generates a message for every violation created when rule matches. The custom data exported by providers can also be used in the message.
 
 `message: "helpful message about the violation"`
 
