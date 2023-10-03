@@ -14,3 +14,21 @@ Application *archetypes* are defined by criteria tags and the application taxono
 :_content-type: PROCEDURE
 [id="mta-define-archetype_{context}"]
 == To define an archetype
+
+image:images/mta-assessment-archetype-01.png
+
+. Open the {ProductShortName} web console.
+. In the left menu, click *Archetypes* <2> and then click *Create new archetype* <3>.
+. In the form that opens, enter the following information for the new archetype:
+
+image:images/
+
+* *Name* of the new archetye. <4> (mandatory)
+* *Description* of the new archetype. (optional)
+* *Criteria Tags* are the tags by which the assessed applications are associated with the archetype. (mandatory)
+* *Archetype Tags* are the tags that the archetype assesses in the application. <5> (mandatory)
+* *Stakeholder(s)* are specific stakeholders involved in the application development and migration. (optional)
+* *Takeholders Group(s)* are defined groups of stakeholders. (optional) 
+
+[START=4]
+. Click *Create*. The new archetype appears in the list.
