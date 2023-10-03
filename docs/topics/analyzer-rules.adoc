@@ -8,7 +8,7 @@
 
 Each analyzer rule is a set of instructions that are used to analyze source code and detect issues that are problematic for migration.
 
-The analyzer parses user-provided rules, applies them to applications' source code them, and generates violations for matched rules. A collection of one or more rules form a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal. The analyzer CLI takes rulesets as input arguments.
+The analyzer parses user-provided rules, applies them to applications' source code, and generates violations for matched rules. A collection of one or more rules forms a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal. The analyzer CLI takes rulesets as input arguments.
 
 [id="yaml-rule-structure_{context}"]
 == YAML rule structure
@@ -86,12 +86,13 @@ labels:
 
 The analyzer defines some labels that have special meaning as follows:
 
-`konveyor.io/source`: Identifies the source technology to which a rule or a ruleset applies
-`konveyor.io/target`: Identifies the target technology to which a rule or a ruleset applies
+* `konveyor.io/source`: Identifies the source technology to which a rule or a ruleset applies
+
+* `konveyor.io/target`: Identifies the target technology to which a rule or a ruleset applies
 
 .Label selector
 
-The analyzer CLI takes the `--label-selector` field as an option. It is a string expression that supports logical AND, OR and NOT operations. You can use it to filter-in or filter-out rules based on labels.
+The analyzer CLI takes the `--label-selector` field as an option. It is a string expression that supports logical AND, OR and NOT operations. You can use it to filter-in or filter-out rules by their labels.
 
 _Examples:_
 
@@ -121,7 +122,7 @@ _Examples:_
 
 .Dependency labels
 
-The analyzer engine adds labels on dependencies. These labels provide additional information about a dependency such as whether the dependency is open-source or internal, its programming language, etc.
+The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency such as whether the dependency is open-source or internal, its programming language, etc.
 
 Currenty, the analyzer adds the following labels on dependencies:
 
@@ -134,9 +135,9 @@ labels:
 
 .Dependency label selector
 
-The analyzer CLI accepts the `--dep-label-selector` option, which allows filtering-in or filtering-out incidents generated from a dependency based on the labels.
+The analyzer CLI accepts the `--dep-label-selector` option, which allows filtering-in or filtering-out incidents generated from a dependency by their labels.
 
-For example, the analyzer adds a `konveyor.io/dep-source` label on dependencies with a value that indicates whether the dependency is a known open source dependency.
+For example, the analyzer adds a `konveyor.io/dep-source` label to dependencies with a value that indicates whether the dependency is a known open-source dependency.
 
 To exclude incidents for all such open-source dependencies, you can use `--dep-label-selector` as follows:
 
@@ -189,8 +190,6 @@ when:
   <condition>
     <nested-condition>
 ----
-
-One condition; may have nested conditions within
 
 ==== Provider conditions
 
@@ -290,7 +289,7 @@ when:
 
 ===== `java` provider
 
-The `java` provider analyzes Java source code.  This provider has capabilities `referenced` and `dependency`.
+The `java` provider analyzes Java source code.  This provider's capabilities are `referenced` and `dependency`.
 
 .`referenced`
 
@@ -328,7 +327,7 @@ Needs info
 
 ===== `go` provider
 
-The `go` provider analyzes Golang source code.  This provider has capabilities `referenced` and `dependency`.
+The `go` provider analyzes Golang source code.  This provider's capabilities are `referenced` and `dependency`.
 
 .`referenced`
 
