@@ -1,0 +1,34 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+// * topics/mta-assessment-module.adoc
+
+:_content-type: REFERENCE
+[id="mta-archetypes_{context}"]
+= Archetypes
+
+{ProductName}({ProductShortName}) includes a feature that groups applications that are assessed for migration according to common characteristics. These application groups, or *archetypes*, enable {ProductShortName} to apply questionnaires with questions that apply to common application characteristics.
+
+Application *archetypes* are defined by criteria tags and the application taxonomy. Each archetype selects the how the _assessment module_ assesses the applications according to the charecteristics defined in that archetype.
+
+:_content-type: PROCEDURE
+[id="mta-define-archetype_{context}"]
+== To define an archetype
+
+image::images/mta-assessment-archetype-01.png[]
+
+. Open the {ProductShortName} web console.
+. In the left menu, click *Archetypes* <2> and then click *Create new archetype* <3>.
+. In the form that opens, enter the following information for the new archetype:
+
+image:images/mta-assessment-archetype-02.png[]
+
+* *Name* of the new archetype. <4> (mandatory)
+* *Description* of the new archetype. (optional)
+* *Criteria Tags* are the tags by which the assessed applications are associated with the archetype. (mandatory)
+* *Archetype Tags* are the tags that the archetype assesses in the application. <5> (mandatory)
+* *Stakeholder(s)* are specific stakeholders involved in the application development and migration. (optional)
+* *Takeholders Group(s)* are defined groups of stakeholders. (optional) 
+
+[START=4]
+. Click *Create*. The new archetype appears in the list.
