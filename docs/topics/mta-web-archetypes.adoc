@@ -9,7 +9,7 @@
 
 {ProductName}({ProductShortName}) includes a feature that groups applications that are assessed for migration according to common characteristics. These application groups, or *archetypes*, enable {ProductShortName} to apply questionnaires with questions that apply to common application characteristics.
 
-Application *archetypes* are defined by criteria tags and the application taxonomy. Each archetype selects the how the _assessment module_ assesses the applications according to the charecteristics defined in that archetype.
+Application *archetypes* are defined by criteria tags and the application taxonomy. Each archetype selects how the _assessment module_ assesses the applications according to the characteristics defined in that archetype.
 
 :_content-type: PROCEDURE
 [id="mta-define-archetype_{context}"]
