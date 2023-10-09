@@ -1,0 +1,27 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="create-first-yaml-rule_{context}"]
+= Creating your first YAML rule
+
+This section guides you through the process of creating and testing your first {ProductShortName} YAML-based rule. This assumes that you have already installed {ProductShortName}. See link:{ProductDocUserGuideURL}/index#installing_and_running_the_cli[Installing and running the CLI] in the _{UserCLIBookName}_ for installation instructions.
+
+
+[id="creating-directory-structure-for-the-rule_{context}"]
+== Creating the directory structure for the rule
+
+Create a directory structure to contain your first rule and the data file to use for testing.
+
+[options="nowrap",subs="attributes+"]
+----
+$ mkdir -p /home/<USER_NAME>/migration-rules/rules
+$ mkdir -p /home/<USER_NAME>/migration-rules/data
+----
+
+This directory structure will also be used to hold the generated {ProductShortName} reports.
+
+[id="mta-creating-data-to-test-the-rule_{context}"]
+== Creating data to test the rule
+
