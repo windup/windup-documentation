@@ -28,34 +28,25 @@ include::topics/about-rules.adoc[leveloffset=+2]
 include::topics/getting-started-rules.adoc[leveloffset=+1]
 
 // Create Your First XML Rule
-include::topics/create-first-xml-rule.adoc[leveloffset=+2]
+include::topics/create-first-yaml-rule.adoc[leveloffset=+2]
 
-// Review the Quickstarts
-include::topics/review-quickstarts.adoc[leveloffset=+2]
-
-== Creating XML rules
+== Creating YAML rules
 
 // XML Rule Structure
 include::topics/xml-rule-syntax.adoc[leveloffset=+2]
 
 // Create a Basic XML Rule
-include::topics/create-basic-xml-rule.adoc[leveloffset=+2]
+include::topics/create-basic-yaml-rule.adoc[leveloffset=+2]
 
 === XML rule syntax
 
 // When Condition Syntax
-include::topics/xml-rule-when-syntax.adoc[leveloffset=+3]
-
-// Perform Action Syntax
-include::topics/xml-rule-perform-syntax.adoc[leveloffset=+3]
-
-// Where Syntax
-include::topics/where-syntax.adoc[leveloffset=+3]
+include::topics/yaml-rule-syntax.adoc[leveloffset=+3]
 
 // Add the Rule to {ProductName}
 include::topics/add-rule-to-mta.adoc[leveloffset=+2]
 
-// Testing XML Rules
+// Testing YAML Rules - only manual
 include::topics/testing-rules.adoc[leveloffset=+1]
 
 // Manually Test the XML Rule
@@ -73,13 +64,8 @@ include::topics/validation-report-understanding.adoc[leveloffset=+3]
 // Reported Errors when Running the Validation Report
 include::topics/validation-report-errors.adoc[leveloffset=+3]
 
-// Overriding Rules
-include::topics/overriding-rules.adoc[leveloffset=+1]
-
 // Using Custom Rule Categories
 include::topics/rule-categories.adoc[leveloffset=+1]
-
-include::topics/analyzer-rules.adoc[leveloffset=+1]
 
 [appendix]
 == Reference material
