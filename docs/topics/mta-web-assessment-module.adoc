@@ -67,7 +67,7 @@ image::images/mta-assessment-new-app-01.png[MTA application inventory]
 image::images/mta-assessment-apps-01.png[MTA aplication inventory]
 
 . Open the {ProductName} user interface and click *Application Inventory* in the left menu bar. *Application assessment* appears in the main pane, listing all the available questionnaires. 
-. Review all the questionnaires and click *Take* to the right of the selected questionnaire. The main pane shows a list of defined assessments.
+. Review all the applications and click *Take* to the right of the selected questionnaire. The main pane shows a list of defined assessments.
 
 // Get updated image for MTA
 image::images/assessment-view-assessment-02.png[]
@@ -83,4 +83,6 @@ image::images/assessment-view-assessment-03.png[]
 . Click the down arrow to the left of one of the questions. A list of answer options appears below the list of questions.
 . Select one of the answers under *Answer choice*.
 
-
+:_content-type: PROCEDURE
+[id="mta-assessment-start-questionnaire_{context}"]
+=== Opening an assessment questionnaire
