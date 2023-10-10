@@ -4,7 +4,7 @@
 // * topics/mta-assessment-module.adoc
 
 :_content-type: REFERENCE
-[id="mta-assessment-module_{context}"]
+[id="mta-web-assessment-module_{context}"]
 = Assessment Module
 
 The assessment process for applications that are to be migrated in Red Hat Migration Toolkit for Applications (MTA) has been separated from other tool features and enhanced in version 7.0.0.
@@ -24,7 +24,7 @@ The assessment process for applications that are to be migrated in Red Hat Migra
 In the MTA user interface, the Assessment Module appears in a separate menu item. Selecting the item shows the currently saved default and custom questionnaires.
 
 :_content-type: PROCEDURE
-[id="mta-assessment-start-questionnaire_{context}"]
+[id="mta-web-start-questionnaire_{context}"]
 == Opening an assessment questionnaire
 
 The {ProductName} ({ProductShortName}) assesses applications that are to be migrated according to a set of questions relevant to the application, such as dependencies, *[more question types]*. {ProductShortName} comes with a default questionnaire/s that the user can edit, customize and save as new questionnaires.
@@ -32,13 +32,13 @@ The {ProductName} ({ProductShortName}) assesses applications that are to be migr
 .To import an application
 
 // Get updated image for MTA
-image::images/mta-assessment-apps-01.png[MTA application inventory]
+image::mta-assessment-apps-01.png[MTA application inventory]
 
 . Open the {ProductName} user interface and click *Application Inventory* in the left menu bar. *Application assessment* appears in the main pane, listing all the available questionnaires.
 . Click *Create new*. A *New application* dialog appears.
 
 // Get updated image for MTA
-image::images/mta-assessment-new-app-01.png[MTA application inventory]
+image::mta-assessment-new-app-01.png[MTA application inventory]
 
 [start=3]
 . In the form, enter the following information:
@@ -64,22 +64,23 @@ image::images/mta-assessment-new-app-01.png[MTA application inventory]
 .To open a saved application
 
 // Get updated image for MTA
-image::images/mta-assessment-apps-01.png[MTA aplication inventory]
+image::mta-assessment-apps-01.png[MTA aplication inventory]
 
 . Open the {ProductName} user interface and click *Application Inventory* in the left menu bar. *Application assessment* appears in the main pane, listing all the available questionnaires.
 . Review all the applications and click *Take* to the right of the selected questionnaire. The main pane shows a list of defined assessments.
 
 // Get updated image for MTA
-image::images/assessment-view-assessment-02.png[]
+image::assessment-view-assessment-02.png[]
 
 [start=3]
 . Right click one of the defined assessments and select *view assessment*. The main pane shows the list of questions in the assessment, separated into categories.
 
 // Get updated image for MTA
-image::images/assessment-view-assessment-03.png[]
+// image not found for this image::assessment-view-assessment-03.png[]
+image::assessment-view-assessment-view-03.png[]
 
 // Get updated image for MTA
-image::images/mta-assessment-app-questions-01.png[Application assessment questions]
+image::mta-assessment-app-questions-01.png[Application assessment questions]
 
 [start=4]
 . On the left of the main pane a list of question categories, and in the main pane are a list of questions for the category appears with a drop-down list of answers for each question.
