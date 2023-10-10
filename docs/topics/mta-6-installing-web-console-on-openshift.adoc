@@ -251,30 +251,30 @@ To prevent out-of-memory events and protect nodes, use the `--eviction-hard` set
 
 .Example of node memory allocation settings
 
-- Node capacity: `32 Gi`
+* Node capacity: `32 Gi`
 
-- `--system-reserved` setting: `3 Gi`
+* [source,bash]
+----
+m-reserved` setting: `3 Gi`
+----
 
-- `--eviction-hard` setting: `100 Mi`
+//- `--eviction-hard` setting: `100 Mi`
 
 The amount of memory available for running pods on this node is 28.9 Gi. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
 
 
 == Red Hat Single Sign-On
-{ProductShortName} delegates authentication and authorization to a
-https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
-Hat Single Sign-On] (RHSSO) instance managed by the {ProductShortName} operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the {ProductShortName} operator also manages the configuration of a dedicated
-https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms[realm] that contains all the roles and permissions that {ProductShortName} requires.
+{ProductShortName} delegates authentication and authorization to a link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
+Hat Single Sign-On] (RHSSO) instance managed by the {ProductShortName} operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the {ProductShortName} operator also manages the configuration of a dedicated link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms[realm] that contains all the roles and permissions that {ProductShortName} requires.
 
-If an advanced configuration is required in the {ProductShortName} managed RHSSO instance, such as https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding
-a provider for User Federation] or https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating
-identity providers], users can log into the RHSSO https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[Admin
+If an advanced configuration is required in the {ProductShortName} managed RHSSO instance, such as link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding
+a provider for User Federation] or link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating
+identity providers], users can log into the RHSSO link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[Admin
 Console] through the `/auth/admin` subpath in the `{LC_PSN}-ui` route. The admin credentials to access the {ProductShortName} managed RHSSO instance can be retrieved from the `credential-mta-rhsso` secret available in the namespace in which the {WebName} was installed.
 
 A dedicated route for the {ProductShortName} managed RHSSO instance can be created by setting the `rhsso_external_access` parameter to `True` in the *Tackle CR* that manages the {ProductShortName} instance.
 
-For more information, see
-https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red
+For more information, see link:https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red
 Hat Single Sign-On features and concepts].
 
 === Roles and Permissions

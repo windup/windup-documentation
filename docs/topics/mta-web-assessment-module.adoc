@@ -34,7 +34,7 @@ The {ProductName} ({ProductShortName}) assesses applications that are to be migr
 // Get updated image for MTA
 image::images/mta-assessment-apps-01.png[MTA application inventory]
 
-. Open the {ProductName} user interface and click *Application Inventory* in the left menu bar. *Application assessment* appears in the main pane, listing all the available questionnaires. 
+. Open the {ProductName} user interface and click *Application Inventory* in the left menu bar. *Application assessment* appears in the main pane, listing all the available questionnaires.
 . Click *Create new*. A *New application* dialog appears.
 
 // Get updated image for MTA
@@ -66,7 +66,7 @@ image::images/mta-assessment-new-app-01.png[MTA application inventory]
 // Get updated image for MTA
 image::images/mta-assessment-apps-01.png[MTA aplication inventory]
 
-. Open the {ProductName} user interface and click *Application Inventory* in the left menu bar. *Application assessment* appears in the main pane, listing all the available questionnaires. 
+. Open the {ProductName} user interface and click *Application Inventory* in the left menu bar. *Application assessment* appears in the main pane, listing all the available questionnaires.
 . Review all the applications and click *Take* to the right of the selected questionnaire. The main pane shows a list of defined assessments.
 
 // Get updated image for MTA
@@ -87,19 +87,19 @@ image::images/mta-assessment-app-questions-01.png[Application assessment questio
 .. Select one of the answers under *Answer choice*.
 . Click *Next* to continue to *Application details*.
 .. Click the down arrow
-.. Select 
+.. Select
 . Click *Next to continuw to *Application dependencies*.
 .. Click the down arrow
 .. Select
 . Click *Next* to continue to *Application architecture*.
 .. Click the down arrow
-.. Select 
+.. Select
 . Click *Next* to continuw to *Application observability*.
 .. Click the down arrow
-.. Select 
+.. Select
 . Click *Next* to continuw to *Application cross-cutting concerns*.
 .. Click the down arrow
-.. Select 
+.. Select
 . Click *Save as draft*.
 . Click *Save*.
 
@@ -107,3 +107,5 @@ image::images/mta-assessment-app-questions-01.png[Application assessment questio
 :_content-type: PROCEDURE
 [id="mta-assessment-start-questionnaire_{context}"]
 === Opening an existing assessment questionnaire
+
+// test
