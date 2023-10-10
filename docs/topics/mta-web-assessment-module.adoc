@@ -78,11 +78,32 @@ image::images/assessment-view-assessment-02.png[]
 // Get updated image for MTA
 image::images/assessment-view-assessment-03.png[]
 
+// Get updated image for MTA
+image::images/mta-assessment-app-questions-01.png[Application assessment questions]
+
 [start=4]
-. On the left of the main pane, click on a questions category. A list of questions for the category appears to the right of the categories list.
-. Click the down arrow to the left of one of the questions. A list of answer options appears below the list of questions.
-. Select one of the answers under *Answer choice*.
+. On the left of the main pane a list of question categories, and in the main pane are a list of questions for the category appears with a drop-down list of answers for each question.
+.. Click the down arrow to the right of one of the questions. A list of answer options appears below the list of questions.
+.. Select one of the answers under *Answer choice*.
+. Click *Next* to continue to *Application details*.
+.. Click the down arrow
+.. Select 
+. Click *Next to continuw to *Application dependencies*.
+.. Click the down arrow
+.. Select
+. Click *Next* to continue to *Application architecture*.
+.. Click the down arrow
+.. Select 
+. Click *Next* to continuw to *Application observability*.
+.. Click the down arrow
+.. Select 
+. Click *Next* to continuw to *Application cross-cutting concerns*.
+.. Click the down arrow
+.. Select 
+. Click *Save as draft*.
+. Click *Save*.
+
 
 :_content-type: PROCEDURE
 [id="mta-assessment-start-questionnaire_{context}"]
-=== Opening an assessment questionnaire
+=== Opening an existing assessment questionnaire
