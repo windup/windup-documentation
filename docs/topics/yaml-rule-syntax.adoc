@@ -3,7 +3,7 @@
 // * docs/rules-development-guide/master.adoc
 
 :_content-type: REFERENCE
-[id="analyzer-rules_{context}"]
+[id="yaml-rule-syntax_{context}"]
 = Analyzer rules
 
 Each analyzer rule is a set of instructions that are used to analyze source code and detect issues that are problematic for migration.
@@ -23,7 +23,7 @@ Rule metadata contains general information about the rule. The structure of meta
 [source,terminal]
 ----
 ruleId: "unique_id" <1>
-# violations have pre-defined categories
+# issues have pre-defined categories
 category: "potential|information|mandatory"
 labels: <2>
   # key=value pair
@@ -154,9 +154,9 @@ Rules include message and tag actions.
 
 .Message actions
 
-The message action generates a message for every violation created when rule matches. The custom data exported by providers can also be used in the message.
+The message action generates a message for every issue created when rule matches. The custom data exported by providers can also be used in the message.
 
-`message: "helpful message about the violation"`
+`message: "helpful message about the issue"`
 
 Optionally, a message can include hyperlinks to external URLs that provide relevant information about the issue or a quick fix.
 
