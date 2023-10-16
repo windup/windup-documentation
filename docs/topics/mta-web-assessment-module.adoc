@@ -23,24 +23,27 @@ The assessment process for applications that are to be migrated in Red Hat Migra
 
 In the MTA user interface, the Assessment Module appears in a separate menu item. Selecting the item shows the currently saved default and custom questionnaires.
 
+The {ProductName} ({ProductShortName}) assesses applications that are to be migrated according to a set of questions relevant to the application, such as dependencies, *[more question types]*. 
+// {ProductShortName} comes with a default questionnaire/s that the user can edit, customize and save as new questionnaires.
+
 :_content-type: PROCEDURE
-[id="mta-assessment-start-questionnaire_{context}"]
-== Opening an assessment questionnaire
+[id="mta-assessment-new-app_{context}"]
+== Creating a new application
 
-The {ProductName} ({ProductShortName}) assesses applications that are to be migrated according to a set of questions relevant to the application, such as dependencies, *[more question types]*. {ProductShortName} comes with a default questionnaire/s that the user can edit, customize and save as new questionnaires.
+This procedure described how to create a new application in {ProductShortName} taht is not based on the settings of an existing application.
 
-.To import an application
+.Prerequisites
+
+* Log into a server running {ProductShortName}
+
+.Procedure
 
 // Get updated image for MTA
-image::mta-assessment-apps-01.png[MTA application inventory]
+[MTA application inventory]image::mta-assessment-apps-01.png
 
-. Open the {ProductName} user interface and click *Application Inventory* in the left menu bar. *Application assessment* appears in the main pane, listing all the available questionnaires. 
+. In the {ProductShortName} user interface, select the *Migration* working mode *.
+. Click *Application Inventory* in the left menu bar.
 . Click *Create new*. A *New application* dialog appears.
-
-// Get updated image for MTA
-image::mta-assessment-new-app-01.png[MTA application inventory]
-
-[start=3]
 . In the form, enter the following information:
 .. *Name* of the new application (mandatory)
 .. *Description* of the application (optional)
@@ -59,51 +62,44 @@ image::mta-assessment-new-app-01.png[MTA application inventory]
 .. *Artifact* [get info] (optional/mandatory)
 .. *Version* software version of the application
 .. *Packaging* [get info] (optional/mandatory)
-. Click *Create*.
+. Click *Create*. The dialog closes and the new application appears in the list of defined applications.
 
-.To open a saved application
+:_content-type: PROCEDURE
+[id="mta-assessment-open-app_{context}"]
+== Opening an existing application
 
-// Get updated image for MTA
-image::mta-assessment-apps-01.png[MTA aplication inventory]
+This procedure describes how to open and edit an application that has already been defined in {ProductShortName}.
 
-. Open the {ProductName} user interface and click *Application Inventory* in the left menu bar. *Application assessment* appears in the main pane, listing all the available questionnaires. 
-. Review all the applications and click *Take* to the right of the selected questionnaire. The main pane shows a list of defined assessments.
+.Prerequisites
 
-// Get updated image for MTA
-image::assessment-view-assessment-02.png[]
+* Log into a server running {ProductShortName}
 
-[start=3]
-. Right click one of the defined assessments and select *view assessment*. The main pane shows the list of questions in the assessment, separated into categories.
+.Procedure
 
 // Get updated image for MTA
-// this image name is incorrect
-//image::assessment-view-assessment-03.png[]
-image::assessment-view-assessment-view-03.png
+[MTA application inventory]image::mta-assessment-apps-01.png
+
+. In the {ProductShortName} user interface, select the *Migration* working mode *.
+. Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane. 
+. Click image:mta-web-icon-edit.png[*Edit*] to open the application settings, and review the application settings. See procedure above for a list of application settings.
+
+:_content-type: PROCEDURE
+[id="mta-assessment-run_{context}"]
+== Running an assessment on an application
+
+.Prerequisites
+
+* Log into a server running {ProductShortName}
+
+.Procedure
 
 // Get updated image for MTA
-image::mta-assessment-app-questions-01.png[Application assessment questions]
+[MTA application inventory]image::mta-assessment-apps-01.png
 
-[start=4]
-. On the left of the main pane a list of question categories, and in the main pane are a list of questions for the category appears with a drop-down list of answers for each question.
-.. Click the down arrow to the right of one of the questions. A list of answer options appears below the list of questions.
-.. Select one of the answers under *Answer choice*.
-. Click *Next* to continue to *Application details*.
-.. Click the down arrow
-.. Select 
-. Click *Next to continuw to *Application dependencies*.
-.. Click the down arrow
-.. Select
-. Click *Next* to continue to *Application architecture*.
-.. Click the down arrow
-.. Select 
-. Click *Next* to continuw to *Application observability*.
-.. Click the down arrow
-.. Select 
-. Click *Next* to continuw to *Application cross-cutting concerns*.
-.. Click the down arrow
-.. Select 
-. Click *Save as draft*.
-. Click *Save*.
+. In the {ProductShortName} user interface, select the *Migration* working mode *.
+. Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane. 
+. Select an application from the list that appears in the main pane, click image:mta-web-icon-actions.png[actions] (three dots) at the right end of the row, and select *Assess* from the drop-down menu.
+. The assesment runs and the pane shows the results of the assessment.
 
 
 :_content-type: PROCEDURE
