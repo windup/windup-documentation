@@ -170,13 +170,23 @@ The Java provider in the analyzer can also add an exclude label to a list of pac
 [id="yaml-rule-actions_{context}"]
 === Rule Actions
 
-Rules include message and tag actions.
+Rules can include 2 types of actions: _message_ and _tag_. Each rule includes either one of them or both.
 
 .Message actions
 
-The message action generates a message for every issue created when rule matches. The custom data exported by providers can also be used in the message.
+The message action creates an issue with a message when the rule matches. The custom data exported by providers can also be used in the message.
 
 `message: "helpful message about the issue"`
+
+_Example:_
+
+[source,terminal]
+----
+- ruleID: test-rule
+  when:
+    <CONDITION>
+  message: Test rule matched. Please resolve this migration issue.
+----
 
 Optionally, a message can include hyperlinks to external URLs that provide relevant information about the issue or a quick fix.
 
@@ -187,9 +197,11 @@ links:
     title: "Short title for the link"
 ----
 
+Message can also be templated to include information about the match interpolated via custom variables on the rule.
+
 .Tag actions
 
-The tag action instructs the analyzer to generate tags for the application when a match is found. Each string in the `tag` field can be a comma-separated list of tags. Optionally, you can assign categories to tags.
+The tag action instructs the analyzer to generate one or more tags for the application when a match is found. Each string in the `tag` field can be a comma-separated list of tags. Optionally, you can assign categories to tags.
 
 [source,terminal]
 ----
@@ -197,6 +209,24 @@ tag:
   - "tag1,tag2,tag3"
   - "Category=tag4,tag5"
 ----
+
+_Example_
+
+[source,terminal]
+----
+- ruleID: test-rule
+  when:
+    <CONDITION>
+  tag:
+  - Language=Golang
+  - Env=production
+  - Source Code
+----
+
+A tag can be a string or a `key=val` pair, where the key is treated as a tag category in {ProductShortName}. Any rule that has a tag action is referred to as a “tagging rule” in this document.
+
+Note that issues are not created for rules that contain only tag actions.
+
 
 [id="yaml-rule-conditions_{context}"]
 === Rule conditions
@@ -322,14 +352,11 @@ The `referenced` capability enables the provider to find references in the sourc
 ----
 when:
   java.referenced:
-# regex pattern to match
     pattern: "<pattern>" <1>
-# location defines the exact location where
-# pattern should be matched
-    location: CONTRUCTOR_CALL <2>
+    location: "<location>" <2>
 ----
-<1> A regex pattern to match
-<2> Specifies the exact location where the pattern needs to be matched
+<1> A regex pattern to match, for example, `org.kubernetes.*`
+<2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`
 
 The supported locations are the following:
 
@@ -346,7 +373,19 @@ The supported locations are the following:
 
 .`dependency`
 
-Needs info
+The `dependency` capability  enables the provider to find dependencies for a given application. {ProductShortName} generates a list of the application's dependencies, and you can use this capability to query the list and check whether a certain dependency (within a version range) exists for the application.
+
+[source,terminal]
+----
+when:
+  java.dependency:
+    name: "<dependency_name>" <1>
+    upperbound: "<version_string>" <2>
+    lowerbound: "<version_string>" <3>
+----
+<1> Name of the dependency to search for
+<2> Upper bound on the version of the dependency
+<3> Lower bound on the version of the dependency
 
 ===== `go` provider
 
@@ -378,13 +417,36 @@ when:
 <2> Upper bound on the version of the dependency
 <3> Lower bound on the version of the dependency
 
+==== Custom variables
+
+Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule’s action (See Message action). They can be added to a rule in the customVariables field:
+
+[source,terminal]
+----
+- ruleID: lang-ref-004
+   customVariables:
+   - pattern: '([A-z]+)\.get\(\)' <1>
+      name: VariableName <2>
+    message: "Found generic call - {{ VariableName }}" <3>
+  when:
+      java.referenced:
+          location: METHOD_CALL
+          pattern: com.example.apps.GenericClass.get
+
+----
+<1> `pattern`: A RegEx pattern that is matched on the source code line when a match is found
+<2> `name`: The name of the variable that can be used in templates
+<3> `message`: A template for a message using a custom variable
+
+
 === Logical conditions
 
 The analyzer provides two basic logical conditions, `and` and `or`, that enable you to aggregate results of other conditions and create more complex queries.
 
 ==== `and` condition
 
-The `and` condition performs a logical 'and' operation on the results of an array of conditions.
+The `and` condition performs a logical 'and' operation on the results of an array of conditions. An `and` condition matches when _all_ of its child conditions match.
+
 
 [source,terminal]
 ----
@@ -404,9 +466,9 @@ when:
         name: junit.junit
         upperbound: 4.12.2
         lowerbound: 4.4.0
-    - java.dependency:
-        name: io.fabric8.kubernetes-client
-        lowerbound: 5.0.100
+    - java.referenced:
+        location: IMPORT
+        pattern: junit.junit
 ----
 
 Conditions can also be nested within other conditions.
@@ -426,7 +488,7 @@ when:
 
 ==== `or` condition
 
-The `or` condition performs a logical 'or' operation on the results of an array of conditions.
+The `or` condition performs a logical 'or' operation on the results of an array of conditions. An `or` condition matches when _any_ of its child conditions matches.
 
 [source,terminal]
 ----
@@ -436,18 +498,35 @@ when:
     - <condition2>
 ----
 
+_Example_
+
+[source,terminal]
+----
+when:
+  or:
+  - java.dependency:
+      name: junit.junit
+      upperbound: 4.12.2
+      lowerbound: 4.4.0
+  - java.referenced:
+      location: IMPORT
+      pattern: junit.junit
+----
+
 == Rulesets
 
 A set of rules forms a ruleset. Rulesets are a way of organizing multiple rules that achieve a common goal and passing the rules to the rules engine.
 
-Each ruleset is stored in its own directory with a `ruleset.yaml` file at the directory root that stores the metadata of the ruleset.
+You can create a ruleset by placing one or more YAML rules in a directory and creating a `ruleset.yaml` file at the directory root. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, all rules in this directory are treated as a part of the ruleset defined by `ruleset.yaml` file.
+
+The `ruleset.yaml` file stores the metadata of the ruleset.
 
 [source,terminal]
 ----
 name: "Name of the ruleset" <1>
 description: "Description of the ruleset"
 labels: <2>
-  - awesome_rules1
+  - key=val
 ----
 <1> The name must be unique within the provided rulesets.
 
