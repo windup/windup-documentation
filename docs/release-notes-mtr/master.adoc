@@ -15,7 +15,11 @@ include::topics/making-open-source-more-inclusive.adoc[]
 == Introduction
 {ProductName} ({ProductShortName}) provides an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications, such as migrating JBoss Enterprise Application Platform (EAP) 7 to 8 or migrating from any other application server towards EAP at scale. {ProductShortName} provides the same migration solution as provided in the Migration Toolkit for Applications 5 releases.
 
-These release notes cover all Z-stream releases of {ProductShortName} 1.2 with the most recent release listed first..
+These release notes cover all Z-stream releases of {ProductShortName} 1.2 with the most recent release listed first.
+
+== {ProductShortName} 1.2.1
+include::topics/mtr-rn-known-issues-1-2-1.adoc[leveloffset=+2]
+include::topics/mtr-rn-resolved-issues-1-2-1.adoc[leveloffset=+2]
 
 == {ProductShortName} 1.2.0
 include::topics/mtr-rn-new-features-1-2-0.adoc[leveloffset=+2]
