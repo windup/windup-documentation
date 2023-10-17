@@ -9,7 +9,7 @@
 
 The assessment process for applications that are to be migrated in Red Hat Migration Toolkit for Applications (MTA) has been separated from other tool features and enhanced in version 7.0.0.
 
-* A separate new Assessment hub includes the Assessment module, replacing the older _Pathfinder_ feature.
+* A separate assessment hub includes the assessment module.
 * Assessment supports multiple questionnaires, relevant to each assessed application.
 * Default questionnaires can be customized and saved.
 * User can design and version custom questionnaires and questions using YAML syntax.
@@ -21,9 +21,9 @@ The assessment process for applications that are to be migrated in Red Hat Migra
 ** Application auto-tagging according to answers
 ** Automated answers from tags in application archetypes
 
-In the MTA user interface, the Assessment Module appears in a separate menu item. Selecting the item shows the currently saved default and custom questionnaires.
+In the MTA user interface, the Assessment Module appears in a separate menu item. Selecting the item shows the currently saved applications.
 
-The {ProductName} ({ProductShortName}) assesses applications that are to be migrated according to a set of questions relevant to the application, such as dependencies, *[more question types]*. 
+The {ProductName} ({ProductShortName}) assesses applications that are to be migrated, according to a set of questions relevant to the application, such as dependencies, *[more question types]*. 
 // {ProductShortName} comes with a default questionnaire/s that the user can edit, customize and save as new questionnaires.
 
 :_content-type: PROCEDURE
@@ -39,7 +39,7 @@ This procedure described how to create a new application in {ProductShortName} t
 .Procedure
 
 // Get updated image for MTA
-[MTA application inventory]image::mta-assessment-apps-01.png
+[MTA application inventory]image::mta-assessment-create-app-01.png
 
 . In the {ProductShortName} user interface, select the *Migration* working mode *.
 . Click *Application Inventory* in the left menu bar.
@@ -94,7 +94,7 @@ This procedure describes how to open and edit an application that has already be
 .Procedure
 
 // Get updated image for MTA
-[MTA application inventory]image::mta-assessment-apps-01.png
+[MTA application inventory]image::mta-assessment-run-01.png
 
 . In the {ProductShortName} user interface, select the *Migration* working mode *.
 . Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane. 
