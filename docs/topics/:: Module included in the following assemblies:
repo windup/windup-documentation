@@ -15,13 +15,13 @@ Application *archetypes* are defined by criteria tags and the application taxono
 [id="mta-define-archetype_{context}"]
 == To define an archetype
 
-image::images/mta-assessment-archetype-01.png[]
+image::mta-assessment-archetype-01.png[]
 
 . Open the {ProductShortName} web console.
 . In the left menu, click *Archetypes* <2> and then click *Create new archetype* <3>.
 . In the form that opens, enter the following information for the new archetype:
 
-image:images/mta-assessment-archetype-02.png[]
+image:mta-assessment-archetype-02.png[]
 
 * *Name* of the new archetype. <4> (mandatory)
 * *Description* of the new archetype. (optional)
