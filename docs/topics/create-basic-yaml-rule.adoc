@@ -6,168 +6,107 @@
 [id="create-basic-yaml-rule_{context}"]
 = Creating a basic XML rule
 
-This section describes how to create an {ProductShortName} XML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
+This section describes how to create an {ProductShortName} YAML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
 
-== Creating a basic XML rule template
+[id="create-basic-yaml-rule-template_{context}"]
+== Creating a basic YAML rule template
 
-{ProductShortName} XML rules consist of _conditions_ and _actions_ and use the following rule pattern:
+{ProductShortName} YAML-based rules have the following basic structure:
 
-[source,terminal,subs="attributes+"]
+[source,terminal]
 ----
 when(condition)
-  perform(action)
-otherwise(action)
+ message(message)
+ tag(tags)
+----
+.Procedure
+
+Create a file containing the basic syntax for YAML rules as follows:
+
+[source,terminal]
+----
+- category: mandatory
+  description: |
+   <DESCRIPTION TITLE>
+   <DECRIPTION TEXT>
+  effort: <EFFORT>
+  labels:
+  - konveyor.io/source=<SOURCE_TECH>
+  - konveyor.io/target=<TARGET_TECH>
+  links:
+ - url: <HYPERLINK>
+   title: <HYPERLINK_TITLE>
+  message: <MESSAGE>
+  ruleID: <RULE_ID>
+  when:
 ----
 
-Create a file with the following contents, which is the basic syntax for XML rules.
+[id="create-basic-yaml-ruleset-template_{context}"]
+== Creating a basic YAML ruleset template
 
-[IMPORTANT]
-====
-The XML file name must include the `.windup.xml` extension. Otherwise, {ProductShortName} does not evaluate the new rule.
-====
+{ProductShortName} does not require every rule file to belong to a ruleset. However, if you want to group multiple similar rules, you can create a ruleset for them by placing their files in a directory and creating a `ruleset.yaml` file at the directory's root. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, {ProductShortName} treats all the files in the directory as belonging to the ruleset defined in the `ruleset.yaml` file.
 
-[source,xml,subs="attributes+"]
+.Procedure
+
+Create a template for ruleset.yaml files if you do wish to pass the entire directory via `--rules` option:
+
+[source,terminal]
 ----
-<?xml version="1.0"?>
-<ruleset id="unique-ruleset-id"
-  xmlns="http://windup.jboss.org/schema/jboss-ruleset"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
-  <metadata>
-    <!-- Metadata about the rule including a description,
-         source technology, target technology, and any
-         add-on dependencies -->
-  </metadata>
-<rules>
-    <rule id="unique-ruleset-id-01000">
-        <when>
-            <!-- Test a condition... -->
-        </when>
-        <perform>
-            <!-- Perform this action when condition is satisfied -->
-        </perform>
-        <otherwise>
-            <!-- Perform this action when condition is not satisfied -->
-        </otherwise>
-    </rule>
-  <rules>
-</ruleset>
+name: "Name of the ruleset" <1>
+description: "Description of the ruleset"
+labels: <2>
+  - key=val
 ----
+<1> The name must be unique within the provided rulesets.
 
-== Creating the ruleset metadata
+<2> Ruleset labels are inherited by all rules that belong to the ruleset.
 
-The XML ruleset `metadata` element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset.
+[id="create-yaml-rule_{context}"]
+== Creating a basic YAML rule
 
-.`<metadata>` example
+Each rule file contains one or more YAML rules. Every rule comprises metadata, conditions and actions.
 
-[source,xml,subs="attributes+"]
-----
-<ruleset id="unique-ruleset-id"
-  xmlns="http://windup.jboss.org/schema/jboss-ruleset"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
-  <metadata>
-    <description>
-            This is the description.
-    </description>
-    <dependencies>
-            <addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final"/>
-            <addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final"/>
-    </dependencies>
-    <sourceTechnology id="weblogic" versionRange="(10,12]"/>
-    <sourceTechnology id="ejb" versionRange="(2,3]"/>
-    <targetTechnology id="eap" versionRange="(5,6]"/>
-    <targetTechnology id="ejb" versionRange="(2,3]"/>
-    <tag>require-stateless</tag>
-    <tag>require-nofilesystem-io</tag>
-    <executeAfter>AfterRulesetId</executeAfter>
-    <executeBefore>BeforeRulesetId</executeBefore>
-  </metadata>
-  <rules>
-    ...
-  </rules>
-</ruleset>
-----
+=== Creating a `when` condition
 
-== Creating a rule
+The `when` condition of a YAML rule can be `provider`, `and` or `or`.
 
-Individual rules are contained within the `<rules>` element. They comprise one or more `when` conditions and perform actions.
+==== Creating a `provider` condition
+A provider condition is used to invoke a certain capability of a language provider (See provider condition for background information). In general, it has the format - <provider_name>.<capability>. The condition also has inner fields to specify details about a search. Depending on the provider used, and the capability invoked, the condition and its inner fields can be constructed differently.
 
-See the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[XML rule schema] for valid rule syntax.
+|===
+|Provider Name |Capabilities |Description
 
-[id="create-when-condition_{context}"]
-=== Creating a `<when>` condition
+.2+.^|`java`
+|`referenced`
+|Finds references of a pattern with an optional code location for detailed searches
 
-The XML rule `<when>` element tests for a condition. The following is a list of valid `<when>` conditions.
+|`dependency`
+|Checks whether the application has a given dependency
 
-[cols="1,4", options="header"]
-|====
-|Element
-|Description
+.5+.^|`builtin`
+|`xml`
+|Searches XML files using XPath queries
 
-|<and>
-|The standard logical _and_ operator.
+|`json`
+|Searches JSON files using jsonpath queries
+|`filecontent`
+|Searches content in regular files using RegEx patterns
+|`file`
+|Finds files with names matching a given pattern
+|`hasTags`
+|Checks whether a tag is created for the application through a tagging rule
 
-|<filecontent>
-|Find strings or text within files, for example, properties files.
+.2+.^|go
+|`referenced`
+|Finds references of a pattern
+|`dependency`
+|Checks whether app has a given dependenc
+|===
 
-|<file-mapping>
-|Define file names to internal stored File model.
 
-|<javaclass>
-|Test for a match in a Java class.
 
-|<javaclass-ignore>
-|Exclude javaclass that you would like to ignore in processing discovery.
 
-|<not>
-|The standard logical _not_ operator.
 
-|<or>
-|The standard logical _or_ operator.
 
-|<package-mapping>
-|Define package names to organization or libraries.
 
-|<project>
-|Test for project characteristics, such as dependencies.
 
-|<true>
-|Always match.
-
-|<xmlfile>
-|Test for a match in an XML file.
-
-|====
-
-The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content.
-
-[id="create-perform-action_{context}"]
-=== Creating a `<perform>` action
-
-The XML rule `<perform>` element performs the action when the condition is met. Operations allowed in this section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project line item reporting. The following is a list of valid `<perform>` actions.
-
-[cols="1,4", options="header"]
-|====
-|Element
-|Description
-
-|<classification>
-|This operation adds metadata that you want to apply to the entire file. For example, if the Java Class is a JMS Message Listener, you can add a Classification with the title "JMS Message Listener" that includes information that applies to the entire file. You can also set an effort level for the entire file.
-
-|<hint>
-|This operation adds metadata to a line within the file. This provides a hint or inline information about how to migrate a section of code.
-
-|<iteration>
-|This specifies to iterate over an implicit or explicit variable defined within the rule.
-
-|<lineitem>
-|This provides a high-level message that is displayed in the application overview page.
-
-|<link>
-|This provides an HTML link to additional information or documentation about the migration task.
-
-|<xslt>
-|This specifies how to transform an XML file.
-
-|====
