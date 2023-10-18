@@ -13,44 +13,38 @@ You can add an application to the *Application Inventory* for assessment and ana
 Before creating an application, it is helpful to set up business services, check tags and tag categories, and create additions as needed.
 ====
 
+.Prerequisites
+
+* Log into a server running {ProductShortName}
+
 .Procedure
 
 . In *Migration* view, click *Application Inventory*.
-. Click *Create new*.
-+
-// ![](/Tackle2/AddingApps/NewAppBasic.png)
-+
-. Enter the following information or choose from a list:
 
-* Name
-* Description (optional)
-* Business service (optional)
-* Tags (optional; one or more)
-* Owner (optional)
-* Contributors (optional; one or more)
-* Comments (optional)
+// Get updated image for MTA
+image::mta-assessment-create-app-01.png[MTA application inventory]
 
-. Click the arrow to the left of *Source Code*.
-+
-// ![](/Tackle2/AddingApps/NewAppSource.png)
-+
-. Enter the following information or choose from a list:
+. Click *Create new*. A *New application* dialog appears.
+. According to categoties, enter the following information or choose from a list:
 
-* Repository type
-* Source repository
-* Branch
-* Root path
-
-. Click the arrow to the left of *Binary*.
-+
-// ![](/Tackle2/AddingApps/NewAppBinary.png)
-+
-. Enter the following information:
-
-* Group
-* Artifact
-* Version
-* Packaging
+* *Basic information*
+** *Name*: uinque name for the new application (mandatory)
+** *Description*: short description of the application (optional)
+** *Business service*: purpose of the application (optional)
+** *Tags*: software tags that characterize the application (mandatory)
+** *Owner*: registered software owner from drop-down list (optional)
+** *Contributors*: contributors from drop-down list (optional)
+** *Comments*: relevant comments on the migrated application
+* *Source code*
+** *Repository type*: *Git* or *Subversion* (mandatory)
+** *Source Repository*: URL of the repository where the software code is saved (mandatory)
+** *Branch*: application code branch in the repository (mandatory)
+** *Root path*: [get info] (optional/mandatory)
+* *Binary*
+** *Group*: [get info] (optional/mandatory)
+** *Artifact*: [get info] (optional/mandatory)
+** *Version*: software version of the application
+** *Packaging*: [get info] (optional/mandatory)
 
 . Click *Create*.
 
