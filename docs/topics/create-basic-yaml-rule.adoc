@@ -71,10 +71,14 @@ Each rule file contains one or more YAML rules. Every rule comprises metadata, c
 The `when` condition of a YAML rule can be `provider`, `and` or `or`.
 
 ==== Creating a `provider` condition
-A provider condition is used to invoke a certain capability of a language provider (See provider condition for background information). In general, it has the format - <provider_name>.<capability>. The condition also has inner fields to specify details about a search. Depending on the provider used, and the capability invoked, the condition and its inner fields can be constructed differently.
+The provider condition is used to define a search query for a specific language provider and to invoke a certain capability of the provider.
 
+The condition's general format is `<provider_name>.<capability>`. The condition also has inner fields to specify details of the search. The way you create a `provider` condition and its inner fields depends on which provider you use and which capability you invoke.
+
+The following table lists the available providers and their capabilities.
+[cols="15%,25%,60%", options="header"]
 |===
-|Provider Name |Capabilities |Description
+|Provider |Capability |Description
 
 .2+.^|`java`
 |`referenced`
@@ -100,9 +104,98 @@ A provider condition is used to invoke a certain capability of a language provid
 |`referenced`
 |Finds references of a pattern
 |`dependency`
-|Checks whether app has a given dependenc
+|Checks whether app has a given dependency
 |===
 
+On the basis of the table above, select a provider and its capability that suit the purpose of the rule you want to create. This part of the condition does not contain any of the condition's fields yet. The example below shows a `java` provider condition that uses the `referenced` capability.
+
+_Example_
+
+[source,terminal]
+----
+when:
+  java.referenced:
+----
+[cols="10%,15%,20%,10%,45%", options="header"]
+|===
+|Provider |Capability |Field |Required? |Description
+
+.6+.^|`java`
+.2+.^|`referenced`
+|`pattern
+|Yes
+|RegEx pattern
+|`location`
+|No
+|Source code location
+
+.4+.^|`dependency`
+|`name`
+|Yes
+|Name of the dependency
+|`nameregex`
+|No
+|RegEx pattern to match the name
+|`upperbound`
+|No
+|Matches version numbers lower than or equal to
+|`lowerbound`
+|No
+|Matches version numbers greater than or equal to
+
+.9+.^|`builtin`
+.3+.^|`xml`
+|`xpath`
+|Yes
+|XPath query
+|`namespaces`
+|No
+|A map to scope down query to namespaces
+|`filepaths`
+|No
+|Optional list of files to scope down search
+
+.2+.^|`json`
+|`xpath`
+|yes
+|XPath query
+|`filepaths`
+|No
+|Optional list of files to scope down search
+.2+.^|`filecontent`
+|`pattern`
+|Yes
+|RegEx pattern to match in content
+|`filePattern`
+|No
+|Only searches in files with names matching this pattern
+|`file`
+|`pattern`
+|Yes
+|Finds files with names matching this pattern
+|`hasTags`
+3+>|This is an inline list of string tags. See Tag Action for details on tag format.
+
+.5+.^|go
+|`referenced`
+|`pattern`
+|Yes
+|RegEx pattern
+
+.4+.^|`dependency`
+|`name`
+|Yes
+|Name of the dependency
+|`nameregex`
+|No
+|RegEx pattern to match the name
+|`upperbound`
+|No
+|Matches version numbers lower than or equal to
+|`lowerbound`
+|No
+|Matches version numbers greater than or equal to
+|===
 
 
 

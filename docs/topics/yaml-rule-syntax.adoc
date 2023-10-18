@@ -355,7 +355,7 @@ when:
     pattern: "<pattern>" <1>
     location: "<location>" <2>
 ----
-<1> A regex pattern to match, for example, `org.kubernetes.*`
+<1> A RegEx pattern to match, for example, `org.kubernetes.*`
 <2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`
 
 The supported locations are the following:
