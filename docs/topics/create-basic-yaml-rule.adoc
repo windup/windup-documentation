@@ -4,7 +4,7 @@
 
 :_content-type: PROCEDURE
 [id="create-basic-yaml-rule_{context}"]
-= Creating a basic XML rule
+= Creating a basic YAML rule
 
 This section describes how to create an {ProductShortName} YAML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
 
@@ -21,8 +21,8 @@ when(condition)
 ----
 .Procedure
 
-Create a file containing the basic syntax for YAML rules as follows:
-
+. Create a file containing the basic syntax for YAML rules as follows:
++
 [source,terminal]
 ----
 - category: mandatory
@@ -48,8 +48,8 @@ Create a file containing the basic syntax for YAML rules as follows:
 
 .Procedure
 
-Create a template for ruleset.yaml files if you do wish to pass the entire directory via `--rules` option:
-
+. Create a template for ruleset.yaml files if you do wish to pass the entire directory via `--rules` option:
++
 [source,terminal]
 ----
 name: "Name of the ruleset" <1>
@@ -58,7 +58,7 @@ labels: <2>
   - key=val
 ----
 <1> The name must be unique within the provided rulesets.
-
++
 <2> Ruleset labels are inherited by all rules that belong to the ruleset.
 
 [id="create-yaml-rule_{context}"]
@@ -66,16 +66,20 @@ labels: <2>
 
 Each rule file contains one or more YAML rules. Every rule comprises metadata, conditions and actions.
 
-=== Creating a `when` condition
+.Procedure
 
+. Create a `when` condition.
++
 The `when` condition of a YAML rule can be `provider`, `and` or `or`.
 
-==== Creating a `provider` condition
+.. Create a `provider` condition
++
 The provider condition is used to define a search query for a specific language provider and to invoke a certain capability of the provider.
-
++
 The condition's general format is `<provider_name>.<capability>`. The condition also has inner fields to specify details of the search. The way you create a `provider` condition and its inner fields depends on which provider you use and which capability you invoke.
-
-The following table lists the available providers and their capabilities.
++
+The table below lists the available providers and their capabilities. Select a provider and its capability that suit the purpose of the rule you want to create. This part of the condition does not contain any of the condition's fields yet.
++
 [cols="15%,25%,60%", options="header"]
 |===
 |Provider |Capability |Description
@@ -106,16 +110,21 @@ The following table lists the available providers and their capabilities.
 |`dependency`
 |Checks whether app has a given dependency
 |===
-
-On the basis of the table above, select a provider and its capability that suit the purpose of the rule you want to create. This part of the condition does not contain any of the condition's fields yet. The example below shows a `java` provider condition that uses the `referenced` capability.
-
++
+The example below shows a `java` provider condition that uses the `referenced` capability.
++
 _Example_
-
++
 [source,terminal]
 ----
 when:
   java.referenced:
 ----
+
+. Add suitable fields to the `provider` condition.
++
+The table below lists all available providers, their capabilities, and their fields. Select the fields that belong to the provider and capability that you have chosen. Note that some fields are mandatory.
++
 [cols="10%,15%,20%,10%,45%", options="header"]
 |===
 |Provider |Capability |Field |Required? |Description
@@ -127,7 +136,7 @@ when:
 |RegEx pattern
 |`location`
 |No
-|Source code location
+|Source code location. See below for a list of all supported search locations.
 
 .4+.^|`dependency`
 |`name`
@@ -196,6 +205,33 @@ when:
 |No
 |Matches version numbers greater than or equal to
 |===
++
+The following search locations can be used to scope down `java` searches:
++
+* CONSTRUCTOR_CALL
+* TYPE
+* INHERITANCE
+* METHOD_CALL
+* ANNOTATION
+* IMPLEMENTS_TYPE
+* ENUM_CONSTANT
+* RETURN_TYPE
+* IMPORT
+* VARIABLE_DECLARATION
++
+The example below shows the `when` condition of a rule that searches for references of a package.
++
+_Example_
++
+[source,terminal]
+----
+when:
+  java.referenced:
+    location: PACKAGE
+    pattern: org.jboss.*
+----
+
+. Create an `AND` or `OR` condition
 
 
 
