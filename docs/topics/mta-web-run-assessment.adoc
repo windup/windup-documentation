@@ -1,0 +1,50 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-run-assessment{context}"]
+== Running an assessment on an application
+
+.Prerequisites
+
+* Log into a server running {ProductShortName}
+
+.Procedure
+
+// Get updated image for MTA
+image::mta-assessment-run-01.png[MTA application inventory]
+
+. In the {ProductShortName} user interface, select the *Migration* working mode.
+. Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane. 
+. Select an application from the list that appears in the main pane, click image:mta-web-icon-actions.png[] (three dots) at the right end of the row, and select *Assess* from the drop-down menu.
+
++
+// Get updated image for MTA
+image::mta-assessment-select-questionnaire-01.png[Assessment questionnaires]
++
+
+. *Assessment Action* appears in the main pane. Select one of the questionnaires and click *Take*.
+
++
+// Get updated image for MTA
+image::mta-assessment-questions-01.png[Assessment questionnaire]
++
+
+. The main pane shows the *Application assessment* questions.
+.. The left edge lists the questions.
+.. The main are of the pane shows the specific fields for the question.
+. Enter the question into the field or select from a list.
+. Click *Next* to continue to the next question, and repeat the step above.
+. In the last question, enter information and click *Save* to start the assessment, or *Save and review* to review the assessment.
+* If you selected *Save*, then the main pane returns to the list of questionnaires in step 4 above.
+* If you selected *Save and review*, then the questionnaire *Review* appears in the main pane. See
+.. Click *Proposed action* and select the action.
+.. Click *Effort estimate* and set the level of effort required to perform the assessment with the selected questionnaire.
+.. In the *Business criticality* field enter how critical the application is to the business.
+.. In the *Work priority* field enter the application's priority.
+.. If oyu have any comments for the questionnaire, then enter them in the *Comments* field.
+. Click *Submit review*.
+
+// [Verification]
+
