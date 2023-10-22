@@ -12,15 +12,22 @@ You can use the {ProductName} ({ProductShortName}) {WebName} to determine the mi
 
 . In *Migration* view, click *Application inventory*.
 +
-// ![](/Tackle2/AppAssessAnalyze/AnalysisSelect.png)
+image::mta-assessment-questionnaire-review-01.png[Application review] 
 . Select the application you want to review.
 +
 [NOTE]
 ====
 Only one application can be reviewed at a time.
 ====
-. Click  *Review*.
-. Select *Proposed action* and *Effort estimate* from the lists. Set *Business criticality* and *Work priority*.
+. Select an application from the list that appears in the main pane, click image:mta-web-icon-actions.png[] (three dots) at the right end of the row, and select *Review* from the drop-down menu. The application *Review* parameters appear in the main pane.
++
+// Get updated image for MTA
+image::mta-assessment-questionnaire-review-01.png[Assessment questionnaire]
+. Click *Proposed action* and select the action.
+. Click *Effort estimate* and set the level of effort required to perform the assessment with the selected questionnaire.
+. In the *Business criticality* field enter how critical the application is to the business.
+. In the *Work priority* field enter the application's priority.
+. If you have any comments for the questionnaire, then enter them in the *Comments* field.
 . Click *Submit review*.
 +
 The fields from *Review* are now populated on the *Application details* page.
