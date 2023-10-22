@@ -21,7 +21,7 @@ when(condition)
 ----
 .Procedure
 
-. Create a file containing the basic syntax for YAML rules as follows:
+. In `/home/<USER>/rules/`, create a file containing the basic syntax for YAML rules as follows:
 +
 [source,terminal]
 ----
@@ -232,8 +232,46 @@ when:
 ----
 
 . Create an `AND` or `OR` condition
++
+* An `and` condition matches when _all_ of its child conditions match. Create an `and` condition as follows:
++
+[source,terminal]
+----
+when:
+  and:
+  - java.dependency:
+      name: junit.junit
+      upperbound: 4.12.2
+      lowerbound: 4.4.0
+  - java.referenced:
+      location: IMPORT
+      pattern: junit.junit
+----
+* An `or` condition matches when _any_ of its child conditions match. Create an `or` condition as follows:
++
+[source,terminal]
+----
+when:
+  or:
+  - java.dependency:
+      name: junit.junit
+      upperbound: 4.12.2
+      lowerbound: 4.4.0
+  - java.referenced:
+      location: IMPORT
+      pattern: junit.junit
+----
 
-
+. Add the rule to {ProductShortName}.
++
+Use the `--rules` option in the CLI.
++
+[source,terminal]
+----
+mta-cli --input /home/<USER>/data/ --output /home/<USER>/output/ --rules /home/<USER>/rules/
+----
++
+Note that if you wish to use the `--target` or `--source` option in the CLI, the engine will only select rules that match the label for that target. Therefore, ensure that you have added target or source labels on your rules. See Reserved labels for more details.
 
 
 
