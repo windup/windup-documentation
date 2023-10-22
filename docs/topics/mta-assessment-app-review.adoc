@@ -1,0 +1,34 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-review-application{context}"]
+== Reviewing an application
+
+.Prerequisites
+
+* Log into a server running {ProductShortName}
+
+.Procedure
+
+// Get updated image for MTA
+image::mta-assessment-run-01.png[]
+
+. In the {ProductShortName} user interface, select the *Migration* working mode.
+. Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane. 
+. Select an application from the list that appears in the main pane, click image:mta-web-icon-actions.png[] (three dots) at the right end of the row, and select *Review* from the drop-down menu. The questionnaire *Review* appears in the main pane.
+
++
+// Get updated image for MTA
+image::mta-assessment-questionnaire-review-01.png[Assessment questionnaire]
++
+
+. Click *Proposed action* and select the action.
+. Click *Effort estimate* and set the level of effort required to perform the assessment with the selected questionnaire.
+. In the *Business criticality* field enter how critical the application is to the business.
+. In the *Work priority* field enter the application's priority.
+. If you have any comments for the questionnaire, then enter them in the *Comments* field.
+. Click *Submit review*.
+
+// [Verification]
