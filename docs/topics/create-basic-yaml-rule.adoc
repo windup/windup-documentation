@@ -8,62 +8,6 @@
 
 This section describes how to create an {ProductShortName} YAML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
 
-[id="create-basic-yaml-rule-template_{context}"]
-== Creating a basic YAML rule template
-
-{ProductShortName} YAML-based rules have the following basic structure:
-
-[source,terminal]
-----
-when(condition)
- message(message)
- tag(tags)
-----
-.Procedure
-
-. In `/home/<USER>/rules/`, create a file containing the basic syntax for YAML rules as follows:
-+
-[source,terminal]
-----
-- category: mandatory
-  description: |
-   <DESCRIPTION TITLE>
-   <DECRIPTION TEXT>
-  effort: <EFFORT>
-  labels:
-  - konveyor.io/source=<SOURCE_TECH>
-  - konveyor.io/target=<TARGET_TECH>
-  links:
- - url: <HYPERLINK>
-   title: <HYPERLINK_TITLE>
-  message: <MESSAGE>
-  ruleID: <RULE_ID>
-  when:
-----
-
-[id="create-basic-yaml-ruleset-template_{context}"]
-== Creating a basic YAML ruleset template
-
-{ProductShortName} does not require every rule file to belong to a ruleset. However, if you want to group multiple similar rules, you can create a ruleset for them by placing their files in a directory and creating a `ruleset.yaml` file at the directory's root. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, {ProductShortName} treats all the files in the directory as belonging to the ruleset defined in the `ruleset.yaml` file.
-
-.Procedure
-
-. Create a template for ruleset.yaml files if you do wish to pass the entire directory via `--rules` option:
-+
-[source,terminal]
-----
-name: "Name of the ruleset" <1>
-description: "Description of the ruleset"
-labels: <2>
-  - key=val
-----
-<1> The name must be unique within the provided rulesets.
-+
-<2> Ruleset labels are inherited by all rules that belong to the ruleset.
-
-[id="create-yaml-rule_{context}"]
-== Creating a basic YAML rule
-
 Each rule file contains one or more YAML rules. Every rule comprises metadata, conditions and actions.
 
 .Procedure

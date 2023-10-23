@@ -27,20 +27,16 @@ include::topics/about-rules.adoc[leveloffset=+2]
 // Getting Started
 include::topics/getting-started-rules.adoc[leveloffset=+1]
 
-// Create Your First XML Rule
+// Create Your First YAML Rule
 include::topics/create-first-yaml-rule.adoc[leveloffset=+2]
 
 == Creating YAML rules
 
 // YAML Rule Structure
-include::topics/xml-rule-syntax.adoc[leveloffset=+2]
+include::topics/yaml-rule-syntax.adoc[leveloffset=+2]
 
 // Create a Basic XML Rule
 include::topics/create-basic-yaml-rule.adoc[leveloffset=+2]
-
-=== YAML rule syntax
-
-include::topics/yaml-rule-syntax.adoc[leveloffset=+3]
 
 // Add the Rule to {ProductName}
 include::topics/add-rule-to-mta.adoc[leveloffset=+2]
