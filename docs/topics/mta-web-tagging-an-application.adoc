@@ -59,3 +59,43 @@ A side drawer opens.
 You can see the tags attached to the application.
 +
 The tags can be filtered by source and tag category. The sources are *Analysis* and *Manual*. The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.
+
+[id="creating-tags_{context}"]
+= Creating tags
+
+You can create custom tags for applications that {ProductShortName} migrates.
+
+.Procedure
+
+. In *Migration* view, click *Controls*.
+. Click the *Tags* tab.
+
++
+// Get updated image for MTA
+image::mta-web-assessment-tags-01.png[Tags]
++
+
+. Click *Create tag*, opening a dialog.
+. In the *Name* field enter a unique name for the tag.
+. Click the *Tag category* field and select a category tag to belong.
+. Click *Create*|.
+
+[id="editing-tags_{context}"]
+= Editing tags
+
+You can edit defined tags.
+
+.Procedure
+
+. In *Migration* view, click *Controls*.
+. Click the *Tags* tab.
+
++
+// Get updated image for MTA
+image::mta-web-assessment-tags-01.png[Tags]
++
+
+. Click *Create tag*, opening a dialog.
+. In the *Name* field enter a unique name for the tag.
+. Click the *Tag category* field and select a category tag to belong.
+. Click *Create*|.
