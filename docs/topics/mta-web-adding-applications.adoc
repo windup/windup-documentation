@@ -20,12 +20,12 @@ Before creating an application, it is helpful to set up business services, check
 +
 // ![](/Tackle2/AddingApps/NewAppBasic.png)
 +
-. Enter the following information or choose from a list:
+. Under *Basic information* enter the following information or choose from a list:
 
 * Name
 * Description (optional)
 * Business service (optional)
-* Tags (optional; one or more)
+* Manual tags (optional; one or more)
 * Owner (optional)
 * Contributors (optional; one or more)
 * Comments (optional)
@@ -36,7 +36,7 @@ Before creating an application, it is helpful to set up business services, check
 +
 . Enter the following information or choose from a list:
 
-* Repository type
+* Repository type - select *Git* or *Subversion*
 * Source repository
 * Branch
 * Root path
