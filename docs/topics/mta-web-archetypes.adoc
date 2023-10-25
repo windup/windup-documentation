@@ -3,11 +3,14 @@
 // * docs/web-console-guide/master.adoc
 // * topics/mta-assessment-module.adoc
 
-:_content-type: PROCEDURE
-[id="mta-web-tagging-an-application_{context}"]
+[id="mta-web-application-archetypes_{context}"]
 = Application archetypes
 
-{} enables assessing and analyzing an entire group of applications according to common charateristics, such as tags or credentials. These common charactersistics are defined as application *Archetypes*.
+{ProductName}({ProductShortName}) enables assessing and analyzing an entire group of applications or *archetypes*, according to common charateristics. 
+
+Application *archetypes* are dfined according to criteria tags and application taxonomy. Each archetype selects how the applications are assessed according to its characterstics.
+
+:_content-type: PROCEDURE
 
 [id="creating-archetype_{context}"]
 == Creating an application Archetype
