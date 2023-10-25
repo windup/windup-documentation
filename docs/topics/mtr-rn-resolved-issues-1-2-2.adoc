@@ -22,6 +22,6 @@ For more details, see link:https://access.redhat.com/security/cve/cve-2023-37460
 
 .EAP 7.3 and EAP 7.4 rules with target EAP 7.0 and above
 
-This {ProductShortName} release makes a correction to some rules to support migrating to EAP 7.3 and above, to ensure the rules are ignored if the target is EAP 7.2 or below. link:https://issues.redhat.com/browse/WINDUPRULE-1038[(WINDUPRULE-1038)] 
+This {ProductShortName} release makes a correction to some rules to support migrating to EAP 7.3 and above, to ensure the rules are ignored if the target is EAP 7.2 or below. link:https://issues.redhat.com/browse/WINDUPRULE-1038[(WINDUPRULE-1038)]
 
-For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12423184[MTR 1.2.2 resolved issues] in Jira.
+// For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12423184[MTR 1.2.2 resolved issues] in Jira.
