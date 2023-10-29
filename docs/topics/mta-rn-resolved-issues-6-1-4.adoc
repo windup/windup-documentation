@@ -3,10 +3,10 @@
 // * docs/release_notes/master-6-1-0.adoc
 
 :_content-type: REFERENCE
-[id="rn-known-issues-610_{context}"]
-= Known issues
+[id="rn-resolved-issues-614_{context}"]
+= Resolved issues
 
-In this release, the following known issues have been identified.
+{ProductShortName} version 6.1.4 has the following resolved issues.
 
 .CVE-2023-44487 HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack)
 
@@ -16,8 +16,6 @@ A client could repeatedly make a request for a new multiplex stream then immedia
 * link:https://issues.redhat.com/browse/MTA-1529[MTA-1529]
 * link:https://issues.redhat.com/browse/MTA-1427[MTA-1427]
 
-To resolve this issue, upgrade to {ProductShortName} 6.1.4.
-
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-44487[CVE-2023-44487]
 
 
@@ -25,7 +23,6 @@ For more details, see link:https://access.redhat.com/security/cve/cve-2023-44487
 
 The HTTP/2 protocol is susceptible to a denial of service attack because request cancellation can reset multiple streams quickly. The server has to set up and tear down the streams while not hitting any server-side limit for the maximum number of active streams per connection. This results in a denial of service due to server resource consumption.
 
-To resolve this issue, upgrade to {ProductShortName} 6.1.4.
 
 * link:https://issues.redhat.com/browse/MTA-1429[MTA-1429]
 * link:https://issues.redhat.com/browse/MTA-1447[MTA-1447]
@@ -33,7 +30,3 @@ To resolve this issue, upgrade to {ProductShortName} 6.1.4.
 
 
 For more information, see link:https://access.redhat.com/security/cve/cve-2023-39325[CVE-2023-39325 (Rapid Reset Attack)].
-
-.Application analysis fails if the name of custom rules directory has spaces
-During the configuration of an application analysis, if the user fetches custom rules from a repository using the CLI and the root path contains spaces, the CLI command is not properly composed and the analysis fails. The user must make sure that there are no spaces in the name of the directory from which custom rules are taken.
-

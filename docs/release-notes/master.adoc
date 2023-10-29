@@ -19,6 +19,21 @@ include::topics/making-open-source-more-inclusive.adoc[]
 
 These release notes cover all _z_-stream releases of {ProductShortName} 6.1 with the most recent release listed first.
 
+[id="mta-6-1-4"]
+== {ProductShortName} 6.1.4
+include::topics/mta-rn-resolved-issues-6-1-4.adoc[leveloffset=+2]
+
+////
+** Pushed to GitLab repo
+[id="mta-6-1-3"]
+== {ProductShortName} 6.1.3
+
+
+include::topics/mta-rn-cgo-release-6-1-3.adoc[]
+include::topics/mta-rn-known-issues-6-1-3.adoc[]
+////
+
+
 [id="mta-6-1-2"]
 == {ProductShortName} 6.1.2
 
