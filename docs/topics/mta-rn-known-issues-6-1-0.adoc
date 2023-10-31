@@ -13,6 +13,8 @@ In this release, the following known issues have been identified.
 A flaw was found in the handling of multiplexed streams in the HTTP/2 protocol, which is utilized by {ProductName} ({ProductShortName}).
 A client could repeatedly make a request for a new multiplex stream then immediately send an `RST_STREAM` frame to cancel those requests. This activity created additional workloads for the server in terms of setting up and dismantling streams, but avoided any server-side limitations on the maximum number of active streams per connection. As a result, a denial of service occurred due to server resource consumption.
 
+The following issues have been listed under this issue:
+
 * link:https://issues.redhat.com/browse/MTA-1529[MTA-1529]
 * link:https://issues.redhat.com/browse/MTA-1427[MTA-1427]
 
@@ -25,11 +27,13 @@ For more details, see link:https://access.redhat.com/security/cve/cve-2023-44487
 
 The HTTP/2 protocol is susceptible to a denial of service attack because request cancellation can reset multiple streams quickly. The server has to set up and tear down the streams while not hitting any server-side limit for the maximum number of active streams per connection. This results in a denial of service due to server resource consumption.
 
-To resolve this issue, upgrade to {ProductShortName} 6.1.4.
+The following issues have been listed under this issue:
 
 * link:https://issues.redhat.com/browse/MTA-1429[MTA-1429]
 * link:https://issues.redhat.com/browse/MTA-1447[MTA-1447]
 * link:https://issues.redhat.com/browse/MTA-1482[MTA-1482]
+
+To resolve this issue, upgrade to {ProductShortName} 6.1.4.
 
 For more information, see link:https://access.redhat.com/security/cve/cve-2023-39325[CVE-2023-39325 (Rapid Reset Attack in the Go language packages)].
 
