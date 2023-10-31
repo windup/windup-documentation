@@ -21,7 +21,7 @@ The following issues have been listed under this issue:
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-44487[CVE-2023-44487]
 
 
-.Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack)
+.CVE-2023-39325: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack in the Go language packages)
 
 The HTTP/2 protocol is susceptible to a denial of service attack because request cancellation can reset multiple streams quickly. The server has to set up and tear down the streams while not hitting any server-side limit for the maximum number of active streams per connection. This results in a denial of service due to server resource consumption.
 
