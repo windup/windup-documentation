@@ -13,6 +13,31 @@ You can use the {ProductName} ({ProductShortName}) {WebName} to determine the ri
 The procedure described below uses a built-in questionnaire for assessing the risks involved in containerizing an application. By default, this procedure is required prior to reviewing the application. However, you might want to skip this step and use your own questionnaire instead. In that case, use the Skipping assessment option.
 ====
 
+.Prerequisites
+
+* Log into a server running {ProductShortName}
+
+.Procedure
+
+// Get updated image for MTA
+image::mta-assessment-run-01.png[MTA application inventory]
+
+. In the {ProductShortName} user interface, select the *Migration* working mode *.
+. Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane. 
+. Select an application from the list that appears in the main pane, click the Options menu {kebab} at the right end of the row, and select *Assess* from the drop-down menu.
+
+// Get updated image for MTA
+image::mta-assessment-select-questionnaire-01.png[Assessment questionnaires]
+
+[start=4]
+. *Assessment Action* appears in the main pane. Select one of the questionnaires and click *Take*.
+
+// Get updated image for MTA
+image::mta-assessment-questions-01.png[Assessment questionnaires]
+
+[start=5]
+. *Application assessment*
+
 .Procedure
 
 . In *Migration* view, click *Application inventory*.
