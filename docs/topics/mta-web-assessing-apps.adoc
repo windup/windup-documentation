@@ -19,46 +19,33 @@ The procedure described below uses a built-in questionnaire for assessing the ri
 
 .Procedure
 
++
+[NOTE]
+====
+You can assess only one application at a time.
+====
+
 // Get updated image for MTA
-image::mta-assessment-run-01.png[MTA application inventory]
+image::images/mta-assessment-run-01.png[MTA application inventory]
 
 . In the {ProductShortName} user interface, select the *Migration* working mode *.
 . Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane. 
 . Select an application from the list that appears in the main pane, click the Options menu {kebab} at the right end of the row, and select *Assess* from the drop-down menu.
-
++
 // Get updated image for MTA
-image::mta-assessment-select-questionnaire-01.png[Assessment questionnaires]
+image::images/mta-assessment-select-questionnaire-01.png[Assessment questionnaires]
 
-[start=4]
 . *Assessment Action* appears in the main pane. Select one of the questionnaires and click *Take*.
-
++
 // Get updated image for MTA
-image::mta-assessment-questions-01.png[Assessment questionnaires]
+image::images/mta-assessment-questions-01.png[Assessment questionnaires]
 
-[start=5]
-. *Application assessment*
+. *Application assessment* appears in the main pane, showing a list of questions in the defined questionnaire.
+. Enter or select the desired answer to each question and click *Next*.
+. Click *Save* to start running an assessment on the application.
+. Click *Application Inventory* in the left menu to see the assessment status. 
++
+* An *In-progess* icon {in-progress} appears under the *Assessment* column for the application shows that {ProductShortName} is assessing the application.
+* A *Completed* icon {completed} appears under the *Assessment* column for the application shows that {ProductShortName} has completed assessing the application.
 
-.Procedure
-
-. In *Migration* view, click *Application inventory*.
-+
-// ![](/Tackle2/AppAssessAnalyze/AnalysisSelect.png)
-. Select the application you want to assess.
-+
-[NOTE]
-====
-Only one application can be assessed at a time.
-====
-. Click  *Assess*.
-+
-// ![](/Tackle2/AppAssessAnalyze/AssessDetails.png)
-
-. Select *Stakeholders* and *Stakeholder groups* from the lists to track who contributed to the assessment for future reference.
-+
-[NOTE]
-====
-You can add *Stakeholder Groups* or *Stakeholders* on the *Controls* screen of *Migration* view.
-====
-. Click *Next*.
-. Answer each question and then click *Next*.
-. Click *Save and Review* to view the assessment.
+. Click [what to click?] to review the assessment of the application.
