@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-review-tab_{context}"]
+= Application review tab
+
+You can review the settings of any application or archetype settings directly from the list.
+
+.Procedure
+
+. In *Migration* view, click *Application inventory*.
+. Select an application, opening a details view from the right edge of the browser window.
++
+// Get image from MTA UI
+image::mta-web-review-tab-02.png[Application review pane]
++
+. Click the *Review* tab in the view. The application information appears, showing the application's questions.
