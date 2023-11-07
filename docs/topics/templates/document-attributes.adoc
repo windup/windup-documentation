@@ -22,11 +22,11 @@ ifdef::mta[]
 :WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 6.2.0
+:ProductVersion: 6.2.1
 :PluginName: MTA plugin
-:MavenProductVersion: 6.2.0.GA-redhat-00002
-:ProductDistributionVersion: 6.2.0.GA-redhat
-:ProductDistribution: mta-6.2.0.GA-cli-offline.zip
+:MavenProductVersion: 6.2.1.GA-redhat-00002
+:ProductDistributionVersion: 6.2.1.GA-redhat
+:ProductDistribution: mta-6.2.1.GA-cli-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/TACKLE
@@ -45,10 +45,10 @@ ifdef::mtr[]
 :WebNameTitle: Web Console
 :WebNameURL: web_console_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 1.2.0
+:ProductVersion: 1.2.2
 :PluginName: MTR plugin
-:ProductDistributionVersion: 1.2.0.GA-redhat-00001
-:ProductDistribution: mtr-1.2.0.GA-offline
+:ProductDistributionVersion: 1.2.2.GA-redhat-00001
+:ProductDistribution: mtr-1.2.2.GA-offline
 :DevDownloadPageURL: https://developers.redhat.com/products/mtr/download
 :IDEPluginFilename: migrationtoolkit-mtr-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/WINDUP
