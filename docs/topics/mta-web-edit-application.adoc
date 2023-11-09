@@ -1,0 +1,30 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-edit-application_{context}"]
+= Opening and editing an application
+
+You open and edit an existing application to the *Application Inventory* for changes in the assessment and analysis.
+
+.Prerequisites
+
+* Log into a server running {ProductShortName}
+
+.Procedure
+
+. In *Migration* view, click *Application Inventory*.
++
+// Get updated image for MTA
+image::mta-assessment-apps-01.png[MTA Assessment view of applications]
+
+. Click the row of an application to open a summary of the application's current settings.
++
+// Get updated image from MTA UI
+image::mta-web-app-details-01.png
+
+. To change applicatio settings, click {mta-web-icon-edit.png} to open the application settings, and review the application settings. See procedure above for a list of application settings.
+. If you changed any application settings, then click *Save*, otherwise clock *Cancel*.
+
+// [Verification]
