@@ -16,7 +16,15 @@ Using ready-made custom migration targets makes unnecessary the cumbersome task 
 
 .Procedure
 
+image::mta-web-target-language.png
 . In *Administration* view, click *Custom migration targets*.
+. Click the language field below *Custom migration targets* and select *Java* or *Go* as the language of the application that is migrated.
++
+[NOTE]
+====
+{ProductName} currently supports migrating only Java and Go applications.
+====
+. If you selected *Java* laguage for the application, then click the *Application server migration* fieled and select *JBoss EAP7* or *JBoss EAP 8* for the Java application server.
 . Click *Create new*.
 . Fill in the name and description of the target.
 . In the *Image* section, upload an image file for the target's icon. The file can be in either PNG or JPEG format, up to 1 MB. If you do not upload any file, a default icon is used.
