@@ -51,12 +51,12 @@ To successfully deploy, the {ProductShortName} Operator requires 3 RWO persisten
 
 == Installing the {ProductName} Operator and the {WebName}
 
-You can install the {ProductName} ({ProductShortName}) and the {WebName} on OpenShift Container Platform versions 4.9-4.12 when you install the {ProductName} Operator.
+You can install the {ProductName} ({ProductShortName}) Operator and the {ProductShortName} {WebName} on OpenShift Container Platform versions 4.10-4.14. 
 
 .Prerequisites
 
 * 4 vCPUs, 8 GiB RAM, and 40 GB persistent storage.
-* OpenShift Container Platform 4.9-4.11 installed.
+* OpenShift Container Platform 4.10-4.14 installed.
 * You must be logged in as a user with `cluster-admin` permissions.
 
 .Procedure
