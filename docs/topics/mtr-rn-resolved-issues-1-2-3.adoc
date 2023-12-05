@@ -6,7 +6,7 @@
 [id="mtr-rn-resolved-issues-1-2-3_{context}"]
 = Resolved issues
 
-.CVE-2023-1436 org.keycloak-keycloak-parent: Jettison Uncontrolled Recursion in JSONArray
+.CVE-2023-1436 org.keycloak-keycloak-parent: Jettison: Uncontrolled Recursion in JSONArray
 
 A flaw in *Jettison*, which was utilized by MTR, triggers an infinite recursion when constructing a `JSONarray` from a Collection where one of the elements self-references. This flaw throws a `StackOverflowError` exception. link:https://issues.redhat.com/browse/WINDUP-3772[(WINDUP-3772)]
 
