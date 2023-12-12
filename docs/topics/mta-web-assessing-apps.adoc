@@ -37,7 +37,7 @@ image::mta-web-assessment-run-01.png[]
 . Click *Save* to start running an assessment on the application.
 . Click *Application Inventory* in the left menu to see the assessment status. 
 +
-* An *In-progess* icon {image::in-progress.png} appears under the *Assessment* column for the application shows that {ProductShortName} is assessing the application.
-* A *Completed* icon {image::completed.png} appears under the *Assessment* column for the application shows that {ProductShortName} has completed assessing the application.
+* An *In-progess* icon {in-progress} appears under the *Assessment* column for the application shows that {ProductShortName} is assessing the application.
+* A *Completed* icon {completed} appears under the *Assessment* column for the application shows that {ProductShortName} has completed assessing the application.
 
 . Click *Application inventory* again, and then the Options menu {kebab}, and *Review* to review the assessment of the application.
