@@ -25,19 +25,22 @@ You can assess only one application at a time.
 ====
 
 // Get updated image for MTA
-image::mta-assessment-run-01.png[MTA application inventory]
+.[MTA application inventory]
+image::mta-assessment-run-01.png[]
 
 . In the {ProductShortName} user interface, select the *Migration* working mode *.
 . Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane. 
 . Select an application from the list that appears in the main pane, click the Options menu {kebab} at the right end of the row, and select *Assess* from the drop-down menu.
 +
 // Get updated image for MTA
-image::mta-assessment-select-questionnaire-01.png[Assessment questionnaires]
+.[Assessment questionnaires]
+image::mta-assessment-select-questionnaire-01.png[]
 
 . *Assessment Action* appears in the main pane. Select one of the questionnaires and click *Take*.
 +
 // Get updated image for MTA
-image::mta-assessment-questions-01.png[Assessment questionnaires]
+.[Assessmet questionnaires]
+image::mta-assessment-questions-01.png[]
 
 . *Application assessment* appears in the main pane, showing a list of questions in the defined questionnaire.
 . Enter or select the desired answer to each question and click *Next*.
