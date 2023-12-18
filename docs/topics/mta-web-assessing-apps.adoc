@@ -22,18 +22,34 @@ The procedure described below uses a built-in questionnaire for assessing the ri
 +
 [NOTE]
 ====
-Only one application can be assessed at a time.
+You can assess only one application at a time.
 ====
-. Click  *Assess*.
+. In the {ProductShortName} user interface, select the *Migration* working mode.
+. Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane. 
+. Select an application from the list that appears in the main pane, click the Options menu {kebab} at the right end of the row, and select *Assess* from the drop-down menu.
 +
-// ![](/Tackle2/AppAssessAnalyze/AssessDetails.png)
+// Get updated image for MTA
+.MTA application assessment
+image::mta-web-assessment-app-01.png[]
 
+. From the list of available questionnaires, click *Take* for one of the questionnaires. 
 . Select *Stakeholders* and *Stakeholder groups* from the lists to track who contributed to the assessment for future reference.
 +
 [NOTE]
 ====
-You can add *Stakeholder Groups* or *Stakeholders* on the *Controls* screen of *Migration* view.
+You can add *Stakeholder Groups* or *Stakeholders* on the *Controls* screen of *Migration* view. See section link:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/7.0/html/user_interface_guide/configuring-the-instance-environment#mta-web-seeding-instances_user-interface-guide[Seeding an instance] for information how to add stakeholders and stakeholder groups.
 ====
 . Click *Next*.
 . Answer each question and then click *Next*.
 . Click *Save and Review* to view the assessment.
+.. In the *Review*, click *Proposed action* to select the action to perform on the application.
+.. Click *Effort estimate* to select the estimated effort to migrate the application.
+.. Enter values for *Business criticality* and *Work priority* in a scale of 1 to 10.
+.. Enter *Comments* of the assessment.
+.. Scroll down the screen to view the *Assessment summary*.
+.. Click *Submit review* to save the assessment review.
+. The applications list reappears, showing the changed status of the application.
++
+* An *In-progess* icon image:in-progress.png[in progress,24,24] appears under the *Assessment* column for the application shows that {ProductShortName} is assessing the application.
+* A *Completed* icon image:completed.png[completed,24,24] appears under the *Assessment* column for the application shows that {ProductShortName} has completed assessing the application.
+    
