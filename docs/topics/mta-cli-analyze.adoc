@@ -1,0 +1,71 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="mta-cli-analyze_{context}"]
+= Performing analysis using the command line
+
+`Analyze` allows running source code and binary analysis using `analyzer-lsp`.
+
+To run analysis on application source code, run:
+
+[source,terminal,subs="attributes+"]
+----
+windup-cli analyze --input=<path/to/source/code> --output=<path/to/output/dir>
+----
+
+All flags:
+
+[source,terminal,subs="attributes+"]
+----
+Analyze application source code
+
+Usage:
+  windup-cli analyze [flags]
+
+Flags:
+      --analyze-known-libraries   analyze known open-source libraries
+  -h, --help                      help for analyze
+  -i, --input string              path to application source code or a binary
+      --json-output               create analysis and dependency output as json
+      --list-sources              list rules for available migration sources
+      --list-targets              list rules for available migration targets
+  -m, --mode string               analysis mode. Must be one of 'full' or 'source-only' (default "full")
+  -o, --output string             path to the directory for analysis output
+      --rules stringArray         filename or directory containing rule files
+      --skip-static-report        do not generate static report
+  -s, --source stringArray        source technology to consider for analysis
+  -t, --target stringArray        target technology to consider for analysis
+
+Global Flags:
+      --log-level int   log level (default 5)
+----
+.Usage example
+
+. Get an example application to run analysis on
+. List available target technologies
+[source,terminal,subs="attributes+"]
+----
+windup-cli analyze --list-targets
+----
+. Run an analysis with a specified target technology
+[source,terminal,subs="attributes+"]
+----
+windup-cli analyze --input=<path-to/example-applications/example-1> --output=<path-to-output-dir> --target=cloud-readiness
+----
+. Several analysis reports are created in your specified output path:
+[source,terminal,subs="attributes+"]
+
+----
+$ ls ./output/ -1
+analysis.log
+dependencies.yaml
+dependency.log
+output.yaml
+static-report
+----
+
+`output.yaml` is the file that contains the issues report.
+`static-report` contains the static HTML report.
+`dependencies.yaml`contains a dependencies report.
