@@ -43,7 +43,8 @@ Flags:
   -t, --target stringArray        target technology to consider for analysis
 
 Global Flags:
-      --log-level int   log level (default 5)
+      --log-level uint32   log level (default 4)
+      --no-cleanup         do not cleanup temporary resources
 ----
 .Usage example
 

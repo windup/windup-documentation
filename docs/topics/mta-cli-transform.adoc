@@ -49,7 +49,8 @@ Flags:
   -t, --target string   target openrewrite recipe to use. Run --list-targets to get a list of packaged recipes.
 
 Global Flags:
-      --log-level int   log level (default 5)
+      --log-level uint32   log level (default 4)
+      --no-cleanup         do not cleanup temporary resources
 ----
 
 To run `transform openrewrite` on application source code, run:
