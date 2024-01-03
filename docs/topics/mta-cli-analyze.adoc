@@ -12,7 +12,7 @@ To run analysis on application source code, run:
 
 [source,terminal,subs="attributes+"]
 ----
-windup-cli analyze --input=<path/to/source/code> --output=<path/to/output/dir>
+{cli-cmd} analyze --input=<path/to/source/code> --output=<path/to/output/dir>
 ----
 
 All flags:
@@ -22,7 +22,7 @@ All flags:
 Analyze application source code
 
 Usage:
-  windup-cli analyze [flags]
+  {cli-cmd} analyze [flags]
 
 Flags:
       --analyze-known-libraries   analyze known open-source libraries
@@ -51,12 +51,12 @@ Global Flags:
 . List available target technologies
 [source,terminal,subs="attributes+"]
 ----
-windup-cli analyze --list-targets
+{cli-cmd} analyze --list-targets
 ----
 . Run an analysis with a specified target technology
 [source,terminal,subs="attributes+"]
 ----
-windup-cli analyze --input=<path-to/example-applications/example-1> --output=<path-to-output-dir> --target=cloud-readiness
+{cli-cmd} analyze --input=<path-to/example-applications/example-1> --output=<path-to-output-dir> --target=cloud-readiness
 ----
 . Several analysis reports are created in your specified output path:
 [source,terminal,subs="attributes+"]
