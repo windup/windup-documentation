@@ -31,6 +31,10 @@ Flags:
       --json-output               create analysis and dependency output as json
       --list-sources              list rules for available migration sources
       --list-targets              list rules for available migration targets
+  -l, --label-selector string     run rules based on specified label selector expression
+      --maven-settings string     path to a custom maven settings file to use
+      --overwrite                 overwrite output directory
+      --skip-static-report        do not generate static report
   -m, --mode string               analysis mode. Must be one of 'full' or 'source-only' (default "full")
   -o, --output string             path to the directory for analysis output
       --rules stringArray         filename or directory containing rule files
@@ -68,4 +72,4 @@ static-report
 
 `output.yaml` is the file that contains the issues report.
 `static-report` contains the static HTML report.
-`dependencies.yaml`contains a dependencies report.
+`dependencies.yaml` contains a dependencies report.
