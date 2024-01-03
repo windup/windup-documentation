@@ -24,7 +24,8 @@ Flags:
   -h, --help   help for transform
 
 Global Flags:
-      --log-level int   log level (default 5)
+      --log-level uint32   log level (default 4)
+      --no-cleanup         do not cleanup temporary resources
 
 Use "windup-cli transform [command] --help" for more information about a command.
 ----
