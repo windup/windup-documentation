@@ -20,9 +20,10 @@ MTA does not support disconnected installations. link:https://issues.redhat.com/
 
 It is not possible to remove a Jira connection to a migration wave after that wave is removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]
 
-.Binary analysis takes three hours and then fails
-
-Binary analysis can take three hours, and then it fails. link:https://issues.redhat.com/browse/MTA-1183[MTA-1183]
+// This is no longer reproducaeable. Should this be in the release notes?
+// .Binary analysis takes three hours and then fails
+// 
+// Binary analysis can take three hours, and then it fails. link:https://issues.redhat.com/browse/MTA-1183[MTA-1183]
 
 .Allow architects to review an application without an assessment
 
