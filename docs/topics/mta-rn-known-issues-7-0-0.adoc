@@ -1,0 +1,23 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: REFERENCE
+[id="rn-known-issues-7-0-0_{context}"]
+= Known issues
+
+MTA version 7.0.0 has the following issues.
+
+.Cannot create a Jira instance behind a proxy
+
+Cannot create a Red Hat Jira instance (issues.stage.redhat.com) through a proxy. link:https://issues.redhat.com/browse/MTA-849[MTA-849]
+
+.Delayed permission update and user deactivation in `RBACK`
+
+When deleting, deactivating or degrading the role of a user, such as changing the user from `Admin` to `Migrator`, the change takes several minutes to take effect. This delay in changing the user status can pose an operational or security risk. link:https://issues.redhat.com/browse/MTA-1809[MTA-1809]
+
+For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12420808[Known Issues in Jira].
+
+////
+project in (MTA, WINDUP) AND status not in (Verified, "Release Pending", Closed) AND priority in (Blocker, Critical, Major) AND component not in (documentation, QE-Task) AND fixVersion <= "MTA 7.0.0" ORDER BY priority DESC
+////
