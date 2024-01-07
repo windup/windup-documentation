@@ -7,7 +7,7 @@
 = New features
 
 
-This section describes the new features and improvements of the {ProductName} ({ProductShortName}) {ProductVersion}.
+This section describes the new features and improvements of the {ProductName} ({ProductShortName}) 7.0.0.
 
 .Red Hat Single Sign On (RHSSO) configuration
 
@@ -31,9 +31,9 @@ The *Tag category* drop-down list now shows only tag categories that are relevan
 
 .Multi-language analysis
 
-{ProductShortName} {ProductVersion} supports migrating applications written in languages implemented in Language Server Protocol (LSP).
+{ProductShortName} 7.0.0 supports migrating applications written in languages implemented in Language Server Protocol (LSP).
 
 
 .Dynamic reports
 
-{ProductShortName} {ProductVersion} produces dynamic analysis reports that collect aggregated issues and dependencies across the application portfolio. They identify portfolio-wide trends, drill down to specific lines in source code, and fully integrate with {ProductShortName} User Interface (UI).
+{ProductShortName} 7.0.0 produces dynamic analysis reports that collect aggregated issues and dependencies across the application portfolio. They identify portfolio-wide trends, drill down to specific lines in source code, and fully integrate with {ProductShortName} User Interface (UI).
