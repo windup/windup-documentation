@@ -8,49 +8,9 @@
 
 MTA version 7.0.0 has the following issues.
 
-.Lack of unique IDs and Aria-labels on sections and categories hinders automation
-
-There is a lack of unique IDs applied to sections and categories, which hinders migration automation. link:https://issues.redhat.com/browse/MTA-1203[MTA-1203]
-
-.Support disconnected installations
-
-MTA does not support disconnected installations. link:https://issues.redhat.com/browse/MTA-17[MTA-17]
-
-.Cannot remove the Jira connection to a migration wave that is later removed 
-
-It is not possible to remove a Jira connection to a migration wave after that wave is removed. link:https://issues.redhat.com/browse/MTA-1014[MTA-1014]
-
-.Binary analysis takes three hours and then fails
-
-Binary analysis can take three hours, and then it fails. link:https://issues.redhat.com/browse/MTA-1183[MTA-1183]
-
-.Allow architects to review an application without an assessment
-
-The MTA user can decide to skip the Assessment stage of the application migration. link:https://issues.redhat.com/browse/MTA-115[MTA-115]
-
-.Dependencies tab shows `error` when retrieving data
-
-An error message appears on the MTA UI when retrieving data.link:https://issues.redhat.com/browse/MTA-1130[MTA-1130]
-
-.No update notification after editing fields
-
-No `Update Notification` appears at top of window after the fields `Application`, `Job Function`, and `Business services` are updated. link:https://issues.redhat.com/browse/MTA-1024[MTA-1024]
-
-.Disabled `rank` field when creating a new tag category
-
-After creating a new tag category, the `rank` field text box is disabled. link:https://issues.redhat.com/browse/MTA-1095[MTA-1095]
-
 .Cannot create a Jira instance behind a proxy
 
-Red Hat Jira instance (issues.stage.redhat.com) is accessible only through a proxy, but general proxy settings do not work with this configuration. link:https://issues.redhat.com/browse/MTA-849[MTA-849]
-
-.Rows in `Dependencies` show placeholder instead of actual value
-
-In the `Migration -> Dependencies` view, some rows show a placeholder under the `version` column instead of the actual value. link:https://issues.redhat.com/browse/MTA-1283[MTA-1283]
-
-.Source analysis shows different issues for `tackle-testapp`
-
-Running a source analysis using `tackle-testapp` with target as `containerization` or `cloud-readiness` shows missing categories. `Issues` has only `Mandatory` category with two issues, and no `Information` category. link:https://issues.redhat.com/browse/MTA-1271[MTA-1271]
+Cannot create a Red Hat Jira instance (issues.stage.redhat.com) through a proxy. link:https://issues.redhat.com/browse/MTA-849[MTA-849]
 
 .Delayed permission update and user deactivation in `RBACK`
 
