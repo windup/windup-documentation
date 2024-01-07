@@ -7,16 +7,16 @@
 = New features
 
 
-This section describes the new features of the Migration Toolkit for Applications (MTA) 7.0.0.
+This section describes the new features and improvements of the {ProductName} ({ProductShortName}) {ProductVersion}.
 
 .Red Hat Single Sign On (RHSSO) configuration
 
-MTA supports Red Hat Single Sign-On (RHSSO) configuration, so that users' roles can be added using `keycloak`to control Konveyor and MTA authorization mechanisms. See link:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/6.0/html/user_interface_guide/mta-6-installing-web-console-on-openshift_user-interface-guide#red_hat_single_sign_on[Red Hat Single Sign-On]. 
+{ProductShortName} supports Red Hat Single Sign-On (RHSSO) configuration, to enable adding users' roles by using `keycloak`to control {ProductShortName} authorization mechanisms. See link:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/6.0/html/user_interface_guide/mta-6-installing-web-console-on-openshift_user-interface-guide#red_hat_single_sign_on[Red Hat Single Sign-On]. 
 
 
 .YAML syntax for new rules
 
-New rules using YAML syntax support metadata, `message` and `tag` actions, rule conditions, provider conditions for `java` and `go` providers, and other file tagging and characteristics.
+New rules that use YAML syntax to support metadata, `message` and `tag` actions, rule conditions, provider conditions for `java` and `go` providers, and other file tagging and characteristics.
 
 
 .Filename of downloaded report file matches application name
@@ -31,9 +31,9 @@ The *Tag category* drop-down list now shows only tag categories that are relevan
 
 .Multi-language analysis
 
-MTA 7.0.0 supports migrating applications written in languages implemented in _Language Server Protocol_ (LSP).
+{ProductShortName} {ProductVersion} supports migrating applications written in languages implemented in Language Server Protocol (LSP).
 
 
 .Dynamic reports
 
-MTA 7.0.0 produces dynamic analysis reports that collect aggregated issues and dependencies across the application portfolio, identify portfolio-wide trends, drill down to specific lines in source code, and fully integrate with MTA UI.
+{ProductShortName} {ProductVersion} produces dynamic analysis reports that collect aggregated issues and dependencies across the application portfolio. They identify portfolio-wide trends, drill down to specific lines in source code, and fully integrate with {ProductShortName} User Interface (UI).
