@@ -15,7 +15,7 @@ Once a test rule has been created, it can be analyzed as part of a JUnit test to
 
 .Creating the JUnit test configuration
 
-The following instructions detail creating a JUnit test using the Red Hat CodeReady Studio. When using a different IDE it is recommended to consult your IDE's documentation for instructions on creating a JUnit test.
+The following instructions detail creating a JUnit test using Eclipse. When using a different IDE, it is recommended to consult your IDE's documentation for instructions on creating a JUnit test.
 
 . Import the {ProductShortName} rulesets repository into your IDE.
 . Copy the custom rules, along with the corresponding tests and data, into `</path/to/RULESETS_REPO>/rules-reviewed/<RULE_NAME>/`. This should create the following directory structure.

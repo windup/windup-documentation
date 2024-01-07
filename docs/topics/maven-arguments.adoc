@@ -20,9 +20,9 @@ This option may result in a longer execution time and a large number of migratio
 ====
 
 |customLoggingPropertiesFile |An absolute path to a `logging.properties` file that contains a `java.util.logging.LogManager` logging configuration. If the specified path is invalid, or the option is not specified, then the logging reverts to using the `logging.properties` file included with the {MavenName}.
-|disableTattletale | Flag to disable generation of the Tattletale report. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
+|disableTattletale | Flag to disable generation of the Tattletale report. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored, and the Tattletale report will still be generated.
 |enableCompatibleFilesReport |Flag to enable generation of the Compatible Files report. Due to processing all files without found issues, this report may take a long time for large applications.
-|enableTattletale |Flag to enable generation of a Tattletale report for each application. This option is enabled by default when `eap` is in the included target. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
+|enableTattletale |Flag to enable generation of a Tattletale report for each application. This option is enabled by default when `eap` is in the included target. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored, and the Tattletale report will still be generated.
 |enableTransactionAnalysis |[Technology Preview] Flag to enable generation of a Transactions report that displays the call stack, which executes operations on relational database tables. The Enable Transaction Analysis feature supports Spring Data JPA and the traditional `preparedStatement()` method for SQL statement execution. It does not support ORM frameworks such as Hibernate.
 
 [NOTE]
@@ -147,13 +147,13 @@ A list of one or more target technologies, servers, platforms, or frameworks to 
 </targetTechnologies>
 ----
 
-The `targetTechnologies` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax]. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, `<target>eap:7</target>`.
+The `targetTechnologies` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven Version Range Specification]. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, `<target>eap:7</target>`.
 
 [WARNING]
 ====
 When migrating to JBoss EAP, be sure to specify the version in the target, for example, `eap:6`. Specifying only `eap` will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.
 
-See link:{ProductDocIntroToMTAGuideURL}/index#migration_paths_getting-started-guide[Supported migration paths] in _{IntroToMTABookName}_ for the appropriate JBoss EAP version.
+See link:{ProductDocIntroToMTAGuideURL}/index#supported_configurations[Supported migration paths] in _{IntroToMTABookName}_ for the appropriate JBoss EAP version.
 ====
 
 [id="maven-packages-argument_{context}"]
