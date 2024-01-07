@@ -11,7 +11,7 @@ This section describes the new features and improvements of the {ProductName} ({
 
 .Red Hat Single Sign On (RHSSO) configuration
 
-{ProductShortName} supports Red Hat Single Sign-On (RHSSO) configuration, to enable adding users' roles by using `keycloak`to control {ProductShortName} authorization mechanisms. See link:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/6.0/html/user_interface_guide/mta-6-installing-web-console-on-openshift_user-interface-guide#red_hat_single_sign_on[Red Hat Single Sign-On]. 
+{ProductShortName} supports Red Hat Single Sign-On (RHSSO) configuration, to enable adding users' roles by using `keycloak` to control {ProductShortName} authorization mechanisms. See link:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/6.0/html/user_interface_guide/mta-6-installing-web-console-on-openshift_user-interface-guide#red_hat_single_sign_on[Red Hat Single Sign-On]. 
 
 
 .YAML syntax for new rules
