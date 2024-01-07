@@ -28,8 +28,14 @@ A separate Jira issue is created for each application associated with the migrat
 
 [NOTE]
 ====
+To unlink an application from a JIRA ticket, click the `unlink from JIRA`  icon in the details view of the application or in the list of Migration waves.
+====
+////
+[NOTE]
+====
 After you exported a migration wave to the Issue Manager and the Jira issues are created, you can no longer change them from within the {ProductShortName} {WebName}. Even if you delete the migration wave, the Jira issues remain.
 ====
+////
 
 [NOTE]
 ====
