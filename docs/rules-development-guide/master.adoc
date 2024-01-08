@@ -32,16 +32,12 @@ include::topics/create-first-yaml-rule.adoc[leveloffset=+2]
 
 == Creating YAML rules
 
-// XML Rule Structure
-include::topics/xml-rule-syntax.adoc[leveloffset=+2]
+Each analyzer rule is a set of instructions that are used to analyze source code and detect issues that are problematic for migration.
 
-// Create a Basic XML Rule
-include::topics/create-basic-yaml-rule.adoc[leveloffset=+2]
-
-=== XML rule syntax
+The analyzer parses user-provided rules, applies them to applications' source code, and generates issues for matched rules. A collection of one or more rules forms a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal. The analyzer CLI takes rulesets as input arguments.
 
 // When Condition Syntax
-include::topics/yaml-rule-syntax.adoc[leveloffset=+3]
+include::topics/yaml-rule-structure-syntax.adoc[leveloffset=+3]
 
 // Add the Rule to {ProductName}
 include::topics/add-rule-to-mta.adoc[leveloffset=+2]
