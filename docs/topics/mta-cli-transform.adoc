@@ -10,7 +10,7 @@ Transform has two sub commands - `openrewrite` and `rules`.
 
 [source,terminal,subs="attributes+"]
 ----
-Transform application source code or windup XML rules
+Transform application source code or {LC_PSN} XML rules
 
 Usage:
   {mta-cli} transform [flags]
