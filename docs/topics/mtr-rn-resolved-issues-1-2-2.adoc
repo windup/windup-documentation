@@ -9,7 +9,7 @@
 
 .CVE-2023-44487 netty-codec-http2: HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack)
 
-A flaw was found in handling multiplexed streams in the HTTP/2 protocol, which was utilized by {ProductFullName} ({ProductShortName}). A client could repeatedly make a request for a new multiplex stream and immediately send an `RST_STREAM` frame to cancel it. This creates additional workload for the server in terms of setting up and dismantling streams, while avoiding any server-side limitations on the maximum number of active streams per connection, resulting in a denial of service due to server resource consumption. link:https://issues.redhat.com/browse/WINDUP-4072[(WINDUP-4072)]
+A flaw was found in handling multiplexed streams in the HTTP/2 protocol, which was utilized by {ProductFullName}. A client could repeatedly make a request for a new multiplex stream and immediately send an `RST_STREAM` frame to cancel it. This creates additional workload for the server in terms of setting up and dismantling streams, while avoiding any server-side limitations on the maximum number of active streams per connection, resulting in a denial of service due to server resource consumption. link:https://issues.redhat.com/browse/WINDUP-4072[(WINDUP-4072)]
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-44487[(CVE-2023-44487)]
 
