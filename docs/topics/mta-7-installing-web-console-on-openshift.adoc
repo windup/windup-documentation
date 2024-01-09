@@ -73,7 +73,7 @@ For more information, see link:https://access.redhat.com/support/policy/updates/
 . Under *Provided APIs*, locate *Tackle*, and click *Create Instance*.
 +
 The *Create Tackle* window opens in *Form* view.
-. Review the CR settings. The default choices should be acceptable, but make sure to check the system requirements for storage, memory, and cores.
+. Review the custom resource (CR) settings. The default choices should be acceptable, but make sure to check the system requirements for storage, memory, and cores.
 . To work directly with the YAML file, click *YAML* view and review the CR settings that are listed in the `spec` section of the YAML file.
 +
 The most commonly used CR settings are listed in this table:
