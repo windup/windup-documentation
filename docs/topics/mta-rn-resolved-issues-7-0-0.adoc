@@ -11,7 +11,6 @@ The following highlighted issues have been resolved in MTA version 7.0.0.
 .No update notification after editing fields
 
 No `Update Notification` appears at top of window after the fields `Application`, `Job Function`, and `Business services` are updated. link:https://issues.redhat.com/browse/MTA-1024[MTA-1024]
-// discovered in MTA 6.2.0, resolved in 7.0.0. Moved to resolved issues
 
 .Cannot create a Jira instance behind a proxy
 
