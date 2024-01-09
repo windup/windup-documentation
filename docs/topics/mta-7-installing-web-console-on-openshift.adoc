@@ -210,7 +210,7 @@ mirror:
 
 == Memory requirements for running {ProductShortName} on Red Hat OpenShift Local
 
-When installed on https://developers.redhat.com/products/openshift-local/overview[Red Hat OpenShift Local], {ProductShortName} requires a minimum amount of memory to complete its analysis. Adding memory above the required minimum makes the analysis process run faster. The table below describes the {ProductShortName} performance with varying amounts of memory.
+When installed on https://developers.redhat.com/products/openshift-local/overview[Red Hat OpenShift Local], {ProductShortName} requires a minimum amount of memory to complete its analysis. Adding memory makes the analysis process run faster. The table below describes the {ProductShortName} performance with varying amounts of memory.
 
 .OpenShift Local {ProductShortName} memory requirements
 [cols="25%,75%", options="header"]
