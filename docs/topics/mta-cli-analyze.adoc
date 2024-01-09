@@ -8,7 +8,7 @@
 
 `Analyze` allows running source code and binary analysis using `analyzer-lsp`.
 
-To run analysis on application source code, run:
+To run analysis on application source code, run the following command:
 
 [source,terminal,subs="attributes+"]
 ----
@@ -48,18 +48,21 @@ Global Flags:
 ----
 .Usage example
 
-. Get an example application to run analysis on
-. List available target technologies
+. Get an example application to run analysis on.
+. List available target technologies.
++
 [source,terminal,subs="attributes+"]
 ----
 {mta-cli} analyze --list-targets
 ----
-. Run an analysis with a specified target technology
+. Run an analysis with a specified target technology.
++
 [source,terminal,subs="attributes+"]
 ----
 {mta-cli} analyze --input=<path-to/example-applications/example-1> --output=<path-to-output-dir> --target=cloud-readiness
 ----
 . Several analysis reports are created in your specified output path:
++
 [source,terminal,subs="attributes+"]
 
 ----
@@ -72,5 +75,7 @@ static-report
 ----
 
 `output.yaml` is the file that contains the issues report.
+
 `static-report` contains the static HTML report.
+
 `dependencies.yaml` contains a dependencies report.
