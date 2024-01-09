@@ -10,7 +10,7 @@ MTA version 7.0.0 has the following issues.
 
 .Cannot create a Jira instance behind a proxy
 
-Cannot create a Red Hat Jira instance (issues.stage.redhat.com) through a proxy. link:https://issues.redhat.com/browse/MTA-849[MTA-849]
+Cannot create a Jira instance through a proxy. link:https://issues.redhat.com/browse/MTA-849[MTA-849]
 
 .Delayed permission update and user deactivation in `RBACK`
 
