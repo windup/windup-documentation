@@ -24,12 +24,6 @@ include::topics/about-home-var.adoc[leveloffset=+3]
 // MTA Rules
 include::topics/about-rules.adoc[leveloffset=+2]
 
-// Getting Started
-include::topics/getting-started-rules.adoc[leveloffset=+1]
-
-// Create Your First YAML Rule
-include::topics/create-first-yaml-rule.adoc[leveloffset=+2]
-
 == Creating YAML rules
 
 Each analyzer rule is a set of instructions that are used to analyze source code and detect issues that are problematic for migration.
@@ -37,6 +31,11 @@ Each analyzer rule is a set of instructions that are used to analyze source code
 The analyzer parses user-provided rules, applies them to applications' source code, and generates issues for matched rules. A collection of one or more rules forms a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal. The analyzer CLI takes rulesets as input arguments.
 
 include::topics/yaml-rule-structure-syntax.adoc[leveloffset=+3]
+
+include::topics/create-basic-yaml-rule.adoc[leveloffset=+3]
+
+// Create Your First YAML Rule
+include::topics/create-first-yaml-rule.adoc[leveloffset=+2]
 
 // Add the Rule to {ProductName}
 include::topics/add-rule-to-mta.adoc[leveloffset=+2]

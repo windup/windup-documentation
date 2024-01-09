@@ -68,9 +68,10 @@ when(condition)
   when:
     <CONDITION(S)> <3>
   message: <MESSAGE> <4>
-  effort: <EFFORT> <5>
+  labels: <LABELS> <5>
+  effort: <EFFORT> <6>
   links:
-  - <LINKS> <6>
+  - <LINKS> <7>
 ----
 
 <1> Unique ID for your rule. For instance, `jboss5-web-class-loading`.
@@ -91,8 +92,9 @@ when:
 ----
 message: The class-loading element is no longer valid in the jboss-web.xml file.
 ----
-<5> Number of expected story points to fix this issue.
-<6> One or more hyperlinks pointing to documentation around the migration issues that you find.
+<5> List of string labels for the rule
+<6> Number of expected story points to fix this issue.
+<7> One or more hyperlinks pointing to documentation around the migration issues that you find.
 +
 [options="nowrap",subs="attributes+"]
 ----
@@ -117,11 +119,23 @@ The rule is now complete and looks similar to the following:
     title: Create or Modify Files That Control Class Loading in JBoss EAP 6
 ----
 
+[id="mta-installing-the-rule_{context}"]
+== Installing the rule
+
+.Procedure
+. Copy the rule file into the rules directory.
+. Point the CLI to the rules directory:
++
+[options="nowrap",subs="attributes+"]
+----
+–rules /home/<USER>/rules/
+----
+
 [id="mta-testing-the-rule_{context}"]
 == Testing the rule
 
+.Procedure
 To test the rule, point the input to test data you created and pass the rule using the rules option in MTA CLI:
-
 +
 [options="nowrap",subs="attributes+"]
 ----
