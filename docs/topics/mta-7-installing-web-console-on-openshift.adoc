@@ -11,6 +11,7 @@ You install the {ProductName} ({ProductShortName}) {WebName} as part of the proc
 
 The {ProductShortName} Operator is a structural layer that manages resources deployed on Kubernetes (database, front end, back end) to automatically create an {ProductShortName} instance instead of you doing it manually.
 
+[id="openshift-persistent-volume-requirements_{context}"]
 == Persistent volume requirements
 
 To successfully deploy, the {ProductShortName} Operator requires 3 RWO persistent volumes (PVs) used by different components. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires an additional 2 RWX PVs that are used by Maven and the hub file storage. The PVs are described in the table below:
