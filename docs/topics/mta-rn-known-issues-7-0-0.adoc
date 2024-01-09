@@ -14,7 +14,7 @@ Cannot create a Jira instance through a proxy. link:https://issues.redhat.com/br
 
 .Delayed permission update and user deactivation in `RBACK`
 
-When deleting, deactivating or degrading the role of a user, such as changing the user from `Admin` to `Migrator`, the change takes several minutes to take effect. This delay in changing the user status can pose an operational or security risk. link:https://issues.redhat.com/browse/MTA-1809[MTA-1809]
+When deleting, deactivating or degrading the role of a user, such as changing the user from `Admin` to `Migrator`, the change can take several minutes to take effect. This delay in changing the user status can pose an operational or security risk. link:https://issues.redhat.com/browse/MTA-1809[MTA-1809]
 
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12420808[Known Issues in Jira].
 
