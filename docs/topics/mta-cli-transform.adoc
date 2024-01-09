@@ -30,7 +30,7 @@ Global Flags:
 Use "{mta-cli} transform [command] --help" for more information about a command.
 ----
 
-.OpenRewrite
+.`OpenRewrite`
 
 The `openrewrite` sub command allows running `OpenRewrite` recipes on source code.
 [source,terminal,subs="attributes+"]
@@ -57,7 +57,7 @@ To run `transform openrewrite` on application source code, run the following com
 {mta-cli} transform openrewrite --input=<path/to/source/code> --target=<exactly_one_target_from_the_list>
 ----
 
-.Rules
+.`Rules`
 
 The `rules` sub command allows converting {LC_PSN} XML rules to analyzer-lsp YAML rules using `windup-shim`.
 [source,terminal,subs="attributes+"]
@@ -96,4 +96,4 @@ To run `transform rules` on application source code, run:
 ----
 {mta-cli} transform openrewrite --input=<path-to/jakartaee-duke> --target=jakarta-imports
 ----
-- Inspect the `jakartaee-duke` application source code diff to see the transformation
+Inspect the `jakartaee-duke` application source code diff to see the transformation
