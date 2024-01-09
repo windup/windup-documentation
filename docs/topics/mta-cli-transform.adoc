@@ -33,7 +33,7 @@ Use "{mta-cli} transform [command] --help" for more information about a command.
 .OpenRewrite
 
 The `openrewrite` sub command allows running `OpenRewrite` recipes on source code.
-
++
 [source,terminal,subs="attributes+"]
 ----
 Transform application source code using OpenRewrite recipes
@@ -52,7 +52,6 @@ Global Flags:
       --log-level uint32   log level (default 4)
       --no-cleanup         do not cleanup temporary resources
 ----
-
 To run `transform openrewrite` on application source code, run the following command:
 +
 [source,terminal,subs="attributes+"]
