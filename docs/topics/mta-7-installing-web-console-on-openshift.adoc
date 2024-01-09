@@ -9,7 +9,7 @@
 
 You install the {ProductName} ({ProductShortName}) {WebName} as part of the process of installing the {ProductShortName} Operator on the OpenShift Container Platform.
 
-The {ProductShortName} Operator is a structural layer that manages resources deployed on Kubernetes (database, front end, back end) to automatically create an {ProductShortName} instance instead of you doing it manually.
+The {ProductShortName} Operator is a structural layer that manages resources deployed on Kubernetes (database, front end, back end) to automatically create an {ProductShortName} instance.
 
 [id="openshift-persistent-volume-requirements_{context}"]
 == Persistent volume requirements
