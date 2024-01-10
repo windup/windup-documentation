@@ -4,7 +4,7 @@
 
 :_content-type: PROCEDURE
 [id="create-basic-yaml-rule-template_{context}"]
-== Creating a basic YAML rule template
+= Creating a basic YAML rule template
 
 {ProductShortName} YAML-based rules have the following basic structure:
 
@@ -16,7 +16,7 @@ when(condition)
 ----
 .Procedure
 
-. In `/home/<USER>/rules/`, create a file containing the basic syntax for YAML rules as follows:
+. In the `/home/<USER>/rules/` directory, create a file containing the basic syntax for YAML rules as follows:
 +
 [source,terminal]
 ----
@@ -32,7 +32,11 @@ when(condition)
  - url: <HYPERLINK>
    title: <HYPERLINK_TITLE>
   message: <MESSAGE>
+  tag:
+  - <TAG1>
+  - <TAG2>
   ruleID: <RULE_ID>
   when:
+   <CONDITIONS>
 ----
 

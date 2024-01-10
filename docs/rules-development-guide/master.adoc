@@ -32,55 +32,18 @@ The analyzer parses user-provided rules, applies them to applications' source co
 
 include::topics/yaml-rule-structure-syntax.adoc[leveloffset=+3]
 
-include::topics/create-basic-yaml-rule.adoc[leveloffset=+3]
+=== Creating a basic YAML rule
+
+This section describes how to create a basic {ProductShortName} YAML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
+
+include::topics/create-basic-yaml-rule-template.adoc[leveloffset=+3]
+
+include::topics/create-basic-yaml-ruleset-template.adoc[leveloffset=+3]
+
+include::topics/create-yaml-rule.adoc[leveloffset=+3]
+
+include::topics/running-analysis-using-custom-yaml-rule.adoc[leveloffset=+3]
 
 // Create Your First YAML Rule
 include::topics/create-first-yaml-rule.adoc[leveloffset=+2]
 
-// Add the Rule to {ProductName}
-include::topics/add-rule-to-mta.adoc[leveloffset=+2]
-
-// Testing YAML Rules - only manual
-include::topics/testing-rules.adoc[leveloffset=+1]
-
-// Manually Test the XML Rule
-include::topics/manually-test-rules.adoc[leveloffset=+2]
-
-// Test the Rules Using JUnit
-include::topics/rules-testing-junit.adoc[leveloffset=+2]
-
-// About the validation report
-include::topics/validation-report.adoc[leveloffset=+2]
-
-// creating a Validation Report
-include::topics/validation-report-understanding.adoc[leveloffset=+3]
-
-// Reported Errors when Running the Validation Report
-include::topics/validation-report-errors.adoc[leveloffset=+3]
-
-// Using Custom Rule Categories
-include::topics/rule-categories.adoc[leveloffset=+1]
-
-[appendix]
-== Reference material
-
-// Rule Story Points
-include::topics/about-story-points.adoc[leveloffset=+2]
-
-For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
-
-=== Additional resources
-
-// Review the Existing MTA XML Rules
-include::topics/review-existing-rules.adoc[leveloffset=+3]
-
-// Fork and Clone the Ruleset GitHub Project
-include::topics/fork-ruleset-repo.adoc[leveloffset=+4]
-
-// Important Links
-include::topics/rules-important-links.adoc[leveloffset=+3]
-
-// **********************************
-// * Appendix: Revision Information *
-// **********************************
-include::topics/templates/revision-info.adoc[]

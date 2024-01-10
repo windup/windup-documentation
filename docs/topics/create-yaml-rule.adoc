@@ -3,10 +3,8 @@
 // * docs/rules-development-guide/master.adoc
 
 :_content-type: PROCEDURE
-[id="create-basic-yaml-rule_{context}"]
-= Creating a basic YAML rule
-
-This section describes how to create an {ProductShortName} YAML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
+[id="create-yaml-rule_{context}"]
+= Creating a YAML rule
 
 Each rule file contains one or more YAML rules. Every rule comprises metadata, conditions and actions.
 
@@ -52,7 +50,7 @@ The table below lists the available providers and their capabilities. Select a p
 |`referenced`
 |Finds references of a pattern
 |`dependency`
-|Checks whether app has a given dependency
+|Checks whether the application has a given dependency
 |===
 +
 The example below shows a `java` provider condition that uses the `referenced` capability.
@@ -127,7 +125,7 @@ The table below lists all available providers, their capabilities, and their fie
 |Yes
 |Finds files with names matching this pattern
 |`hasTags`
-3+>|This is an inline list of string tags. See Tag Action for details on tag format.
+3+>|This is an inline list of string tags. See _Tag Action_ for details on tag format.
 
 .5+.^|go
 |`referenced`
@@ -206,16 +204,6 @@ when:
       pattern: junit.junit
 ----
 
-. Add the rule to {ProductShortName}.
-+
-Use the `--rules` option in the CLI.
-+
-[source,terminal]
-----
-mta-cli --input /home/<USER>/data/ --output /home/<USER>/output/ --rules /home/<USER>/rules/
-----
-+
-Note that if you wish to use the `--target` or `--source` option in the CLI, the engine will only select rules that match the label for that target. Therefore, ensure that you have added target or source labels on your rules. See Reserved labels for more details.
 
 
 

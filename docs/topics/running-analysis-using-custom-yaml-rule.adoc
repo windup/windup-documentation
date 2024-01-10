@@ -1,0 +1,30 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="running-analysis-using-custom-yaml-rule_{context}"]
+= Running an analysis using a custom YAML rule
+
+To run an analysis, use the `--rules` option in the CLI.
+
+.Procedure
+
+. Run the following command:
++
+[source,terminal]
+----
+mta-cli --input /home/<USER>/data/ --output /home/<USER>/output/ --rules /home/<USER>/rules/
+----
++
+where:
++
+* `/home/<USER>/data/` - the directory of the source code or binary
+* `/home/<USER>/output/` - the directory for reports (HTML and YAML)
+
+Note that if you wish to use the `--target` or `--source` option in the CLI, the engine will only select rules that match the label for that target. Therefore, make sure that you have added target or source labels on your rules. See _Reserved labels_ for more details.
+
+
+
+
+

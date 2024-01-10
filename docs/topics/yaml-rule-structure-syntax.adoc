@@ -11,7 +11,7 @@ Rules are written in YAML. Each rule consists of metadata, conditions and action
 A YAML rules file in {ProductShortName} contains one or more YAML rules.
 
 [id="yaml-rule-metadata_{context}"]
-=== Rule metadata
+== Rule metadata
 
 Rule metadata contains general information about the rule. The structure of metadata is as follows:
 
@@ -36,16 +36,10 @@ category: mandatory <4>
 
 <3> `effort` is an integer value that indicates the level of effort needed to fix this issue.
 
-<4> `category` describes the severity of the issue for migration. The value can be either `mandatory`, `optional` or `potential` as follows:
-* `mandatory`
-** You must resolve the issue for a successful migration, otherwise, the resulting application is not expected to build or run successfully. An example of such an issue is proprietary APIs that are not supported on the target platform.
-* `optional`
-** If you do not resolve the issue, the application is expected to work, but the results might not be optimal. If you do not make the change at the time of migration, you need to put it on the schedule soon after your migration is completed. An example of such an issue is EJB 2.x code not upgraded to EJB 3.
-* `potential`
-** You need to examine the issue during the migration process, but there is not enough information to determine whether resolving the issue is mandatory for the migration to succeed. An example of such an issue is migrating a third-party proprietary type where there is no directly compatible type.
+<4> `category` describes the severity of the issue for migration. The value can be either `mandatory`, `optional` or `potential`. For a description of these categories, see xref:rule-categories_{context}[Rule categories].
 
 [id="yaml-rule-labels_{context}"]
-==== Rule labels
+=== Rule labels
 
 Labels are `key=val` pairs specified for rules or rulesets as well as dependencies. For dependencies, a provider adds the labels to the dependencies when retrieving them. Labels on a ruleset are automatically inherited by all the rules that belong to it.
 
@@ -124,7 +118,7 @@ _Examples:_
 
 .Dependency labels
 
-The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency such as whether the dependency is open-source or internal, its programming language, etc.
+The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency, such as whether the dependency is open-source or internal, its programming language.
 
 Currenty, the analyzer adds the following labels on dependencies:
 
@@ -163,7 +157,7 @@ The Java provider in the analyzer can also add an exclude label to a list of pac
 [id="yaml-rule-actions_{context}"]
 === Rule Actions
 
-Rules can include 2 types of actions: _message_ and _tag_. Each rule includes either one of them or both.
+Rules can include 2 types of actions: _message_ and _tag_. Each rule includes one of them or both.
 
 .Message actions
 
@@ -190,7 +184,7 @@ links:
     title: "Short title for the link"
 ----
 
-Message can also be templated to include information about the match interpolated via custom variables on the rule.
+Message can also be templated to include information about the match interpolated through custom variables on the rule.
 
 .Tag actions
 
@@ -304,7 +298,7 @@ when:
       - "/src/file1.xml"
       - "/src/file2.xml"
 ----
-<1> `xpath` must be a valid xpath expression.
+<1> `xpath` must be a valid XPath expression.
 <2> `filepaths` is a list of files to apply the XPath query to.
 
 .`json`
@@ -317,7 +311,7 @@ when:
   builtin.json:
     xpath: "<xpath_expressions>" <1>
 ----
-<1> `xpath` must be a valid xpath expression.
+<1> `xpath` must be a valid XPath expression.
 
 .`hasTags`
 
@@ -412,7 +406,7 @@ when:
 
 ==== Custom variables
 
-Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule’s action (See Message action). They can be added to a rule in the customVariables field:
+Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule’s action (See _Message action_). They can be added to a rule in the `customVariables` field:
 
 [source,terminal]
 ----
@@ -434,7 +428,7 @@ Provider conditions can have associated custom variables. You can use custom var
 
 === Logical conditions
 
-The analyzer provides two basic logical conditions, `and` and `or`, that enable you to aggregate results of other conditions and create more complex queries.
+The analyzer provides two basic logical conditions, `and` and `or`, which enable you to aggregate results of other conditions and create more complex queries.
 
 ==== `and` condition
 
@@ -508,7 +502,7 @@ when:
 
 == Rulesets
 
-A set of rules forms a ruleset. Rulesets are a way of organizing multiple rules that achieve a common goal and passing the rules to the rules engine.
+A set of rules forms a ruleset. {ProductShortName} does not require every rule file to belong to a ruleset, but you can use rulesets to group multiple rules that achieve a common goal and to pass the rules to the rules engine.
 
 You can create a ruleset by placing one or more YAML rules in a directory and creating a `ruleset.yaml` file at the directory root. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, all rules in this directory are treated as a part of the ruleset defined by `ruleset.yaml` file.
 

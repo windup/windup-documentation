@@ -8,10 +8,10 @@
 
 This section guides you through the process of creating and testing your first {ProductShortName} YAML-based rule. This assumes that you have already installed {ProductShortName}. See link:{ProductDocUserGuideURL}/index#installing_and_running_the_cli[Installing and running the CLI] in the _{UserCLIBookName}_ for installation instructions.
 
-In this example, you will write a rule to discover instances where an application defines a jboss-web.xml file containing a <class-loading> element and to provide a link to the documentation that describes how to migrate the code.
+In this example, you will write a rule to discover instances where an application defines a jboss-web.xml file containing a `<class-loading>` element and to provide a link to the documentation that describes how to migrate the code.
 
 [id="creating-directory-structure-for-the-rule_{context}"]
-== Creating the directory structure for the rule
+== Creating a directory structure for the rule
 
 Create a directory structure to contain your first rule and the data file to use for testing.
 
@@ -73,10 +73,10 @@ when(condition)
   links:
   - <LINKS> <7>
 ----
-
-<1> Unique ID for your rule. For instance, `jboss5-web-class-loading`.
-<2> Text description that describes the rule.
-<3> Complete the `when` block specifying one or more conditions.
++
+<1> Unique ID for your rule, for instance, `jboss5-web-class-loading`
+<2> Text description that describes the rule
+<3> Complete the `when` block specifying one or more conditions:
 .. Use the `builtin` provider’s XML capability because this rule checks for a match in an XML file.
 .. To match on the `class-loading` element that is a child of `jboss-web`, use the XPath expression `jboss-web/web-loading` as an XML query. In this case, you need just one condition:
 +
@@ -93,8 +93,8 @@ when:
 message: The class-loading element is no longer valid in the jboss-web.xml file.
 ----
 <5> List of string labels for the rule
-<6> Number of expected story points to fix this issue.
-<7> One or more hyperlinks pointing to documentation around the migration issues that you find.
+<6> Number of expected story points to fix this issue
+<7> One or more hyperlinks pointing to documentation around the migration issues that you find
 +
 [options="nowrap",subs="attributes+"]
 ----
