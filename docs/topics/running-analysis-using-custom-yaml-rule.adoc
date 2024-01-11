@@ -14,7 +14,7 @@ To run an analysis, use the `--rules` option in the CLI.
 +
 [source,terminal]
 ----
-mta-cli --input /home/<USER>/data/ --output /home/<USER>/output/ --rules /home/<USER>/rules/
+mta-cli analyze --input /home/<USER>/data/ --output /home/<USER>/output/ --rules /home/<USER>/rules/
 ----
 +
 where:
