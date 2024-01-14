@@ -25,7 +25,7 @@ To successfully deploy, the {ProductShortName} Operator requires 3 RWO persisten
 |Description
 
 |`hub database`
-|5 GiB
+|10 GiB
 |RWO
 |Hub database
 
@@ -102,7 +102,7 @@ The most commonly used CR settings are listed in this table:
 |Flag to indicate whether namespace isolation using network policies is enabled
 
 |`hub_database_volume_size`
-|`5 GiB`
+|`10 GiB`
 |Size requested for the Hub database volume
 
 |`hub_bucket_volume_size`
@@ -141,19 +141,19 @@ The most commonly used CR settings are listed in this table:
 |`False`
 |Flag to indicate whether a dedicated route is created to access the {ProductShortName} managed RHSSO instance
 
-|`windup_container_limits_cpu`
+|`analyzer_container_limits_cpu`
 |`1`
 |Maximum number of CPUs the pod is allowed to use
 
-|`windup_container_limits_memory`
-|`6Gi`
+|`analyzer_container_limits_memory`
+|`4Gi`
 |Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors.
 
-|`windup_container_requests_cpu`
+|`analyzer_container_requests_cpu`
 |`1`
 |Minimum number of CPUs the pod needs to run
 
-|`windup_container_requests_memory`
+|`analyzer_container_requests_memory`
 |`4Gi`
 |Minimum amount of memory the pod needs to run
 |====
@@ -201,7 +201,7 @@ mirror:
     packages:
     - name: mta-operator
       channels:
-      - name: stable-v6.1
+      - name: stable-v7.0
     - name: rhsso-operator
       channels:
       - name: stable
