@@ -1,0 +1,20 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="manage-columns_{context}"]
+= Managing displayed columns
+
+When viewing applications in the *Application Inventory* window, you can set which information columns appear in the list of applications
+
+.Procedure
+
+. In *Migration* view, click *Application inventory*.
+. Click *Manage Collumns* to open a dialog that lists all the available columns.
++
+.Manage columns
+image::https://mta-web-manage-colimns.png[Manage columns]
+
+. Check the box to the left of each columns that you want to appear in the application inventory.
+. Click *Save* to set your selection.
