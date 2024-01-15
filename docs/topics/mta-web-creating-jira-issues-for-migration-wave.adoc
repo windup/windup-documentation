@@ -38,6 +38,7 @@ After you exported a migration wave to the Issue Manager and the Jira issues are
 ====
 On the *Application inventory* page, you can see if any particular application is associated with a migration wave by opening the application's *Details* tab.
 
-You cannot delete an application if it is linked to a Jira ticket.
-To unlink an application from a JIRA ticket, click the `Unlink from JIRA` icon in the details view of the application or in the details view of a Migration wave.
+You cannot delete an application if it is linked to a Jira ticket or if it is associated with a Migration wave.
+
+To unlink an application from a Jira ticket, click the `Unlink from Jira` icon in the details view of the application or in the details view of a Migration wave.
 ====
