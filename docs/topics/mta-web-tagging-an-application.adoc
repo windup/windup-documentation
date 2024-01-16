@@ -69,11 +69,8 @@ You can create custom tags for applications that {ProductShortName} migrates.
 
 . In *Migration* view, click *Controls*.
 . Click the *Tags* tab.
-
 +
-// Get updated image for MTA
 image::mta-web-assessment-tags-01.png[Tags]
-+
 
 . Click *Create tag*, opening a dialog.
 . In the *Name* field enter a unique name for the tag.
@@ -90,13 +87,11 @@ You can edit defined tag categories.
 . In *Migration* view, click *Controls*.
 . Click the *Tags* tab. A list of tag categories appears in the main pane.
 . Click the arrow to the left of the category name, opening a list of tags in the category.
-
 +
-// Get updated image for MTA
-image::mta-web-assessment-tags-02.png[Tags]
-+
+image::mta-web-assessment-tags-03.png[Tags]
 
-. Select a defined tag and click the Options icon {kebab} to the right of the tag name.
+. Select a defined tag category and click the arrow to the left of the category name, opening a list of tags.
+
 . Select *Edit* from the drop-down menu, opening a dialog.
 . Edit the tag's name in the *Name* field.
 . Click the *Tag category* field and select which the tag category the tag belongs. 
@@ -112,11 +107,8 @@ You can edit defined tag categories.
 
 . In *Migration* view, click *Controls*.
 . Click the *Tags* tab.
-
 +
-// Get updated image for MTA
 image::mta-web-assessment-tags-01.png[Tags]
-+
 
 . Select a defined tag category and click *Edit* to the right of the tag.
 . In the *Name* field enter a unique name for the tag category, opening a dialog.
