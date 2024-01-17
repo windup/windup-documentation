@@ -12,7 +12,7 @@ The assessment process for applications that are to be migrated in Red Hat Migra
 * A separate assessment hub includes the assessment module.
 * Assessment supports multiple questionnaires, relevant to each assessed application.
 * Default questionnaires can be customized and saved.
-* User can design and version custom questionnaires and questions using YAML syntax.
+* Users can design and version custom questionnaires and questions using YAML syntax.
 * Assessed applications are grouped into *archetypes* with similar application characteristics.
 * Assessment module integrates tightly with the application inventory.
 * Assessment questionnaires can be imported and exported.
