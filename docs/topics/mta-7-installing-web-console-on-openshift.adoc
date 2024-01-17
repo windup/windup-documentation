@@ -146,7 +146,7 @@ The most commonly used CR settings are listed in this table:
 |Maximum number of CPUs the pod is allowed to use
 
 |`analyzer_container_limits_memory`
-|`4Gi`
+|`4GiB`
 |Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors.
 
 |`analyzer_container_requests_cpu`
