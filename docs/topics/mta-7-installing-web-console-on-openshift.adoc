@@ -260,7 +260,7 @@ To prevent out-of-memory events and protect nodes, use the `--eviction-hard` set
 
 - `--eviction-hard` setting: `100 MiB`
 
-The amount of memory available for running pods on this node is 28.9 Gi. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
+The amount of memory available for running pods on this node is 28.9 GiB. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
 
 
 == Red Hat Single Sign-On
