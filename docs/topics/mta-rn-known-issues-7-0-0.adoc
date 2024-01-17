@@ -18,6 +18,3 @@ When deleting, deactivating or degrading the role of a user, such as changing th
 
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12420808[Known Issues in Jira].
 
-////
-project in (MTA, WINDUP) AND status not in (Verified, "Release Pending", Closed) AND priority in (Blocker, Critical, Major) AND component not in (documentation, QE-Task) AND fixVersion <= "MTA 7.0.0" ORDER BY priority DESC
-////
