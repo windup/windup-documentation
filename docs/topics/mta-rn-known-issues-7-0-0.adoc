@@ -12,7 +12,7 @@ MTA version 7.0.0 has the following issues.
 
 Cannot create a Jira instance through a proxy. link:https://issues.redhat.com/browse/MTA-849[MTA-849]
 
-.Delayed permission update and user deactivation in `RBACK`
+.Delayed permission update and user deactivation in `RBAC`
 
 When deleting, deactivating or degrading the role of a user, such as changing the user from `Admin` to `Migrator`, the change can take several minutes to take effect. This delay in changing the user status can pose an operational or security risk. link:https://issues.redhat.com/browse/MTA-1809[MTA-1809]
 
