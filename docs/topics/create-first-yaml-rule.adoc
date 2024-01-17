@@ -136,7 +136,7 @@ The rule is now complete and looks similar to the following:
 
 .Procedure
 To test the rule, point the input to test data you created and pass the rule using the rules option in MTA CLI:
-+
+
 [options="nowrap",subs="attributes+"]
 ----
 mta-cli analyze --input /home/<USER>/data/ --output /home/<USER>/output/ --rules /home/<USER>/rules/
