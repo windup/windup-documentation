@@ -1,0 +1,17 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+
+:_content-type: PROCEDURE
+[id="mta-view-questionnaire_{context}"]
+= Viewing a questionnaire
+
+.Procedure
+
+To view a questionnaire:
+
+. In the *Administration* view, select *Assessment questionnaires*.
+. Click the Options menu {kebab}.
+. Select *View*.
+. The question contained in the questionnaire are displayed, with the answer choices and weigth displayed in the drop-down option.
