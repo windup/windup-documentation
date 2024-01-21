@@ -8,7 +8,7 @@
 
 Rules are written in YAML. Each rule consists of metadata, conditions and actions. It instructs the analyzer to take specified actions when given conditions match.
 
-A YAML rules file in {ProductShortName} contains one or more YAML rules.
+A YAML rule file in {ProductShortName} contains one or more YAML rules.
 
 [id="yaml-rule-metadata_{context}"]
 == Rule metadata

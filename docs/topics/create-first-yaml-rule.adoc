@@ -8,30 +8,32 @@
 
 This section guides you through the process of creating and testing your first {ProductShortName} YAML-based rule. This assumes that you have already installed {ProductShortName}. See link:{ProductDocUserGuideURL}/index#installing_and_running_the_cli[Installing and running the CLI] in the _{UserCLIBookName}_ for installation instructions.
 
-In this example, you will write a rule to discover instances where an application defines a jboss-web.xml file containing a `<class-loading>` element and to provide a link to the documentation that describes how to migrate the code.
+In this example, you will create a rule to discover instances where an application defines a jboss-web.xml file containing a `<class-loading>` element and to provide a link to the documentation that describes how to migrate the code.
 
-[id="creating-directory-structure-for-the-rule_{context}"]
-== Creating a directory structure for the rule
+[id="creating-yaml-file-for-the-rule_{context}"]
+== Creating a YAML file for the rule
 
-Create a directory structure to contain your first rule and the data file to use for testing.
+Create a YAML file for your first rule.
 
 [options="nowrap",subs="attributes+"]
 ----
-$ mkdir /home/<USER>/rules/
+$ mkdir /home/<USER>/rule.yaml
 $ mkdir /home/<USER>/data/
 ----
 
 [id="mta-creating-data-to-test-the-rule_{context}"]
 == Creating data to test the rule
 
-. Create data to test the rule:
+. Create `jboss-web.xml` and `pom.xml` files in a directory:
 +
 [options="nowrap",subs="attributes+"]
 ----
+mkdir /home/<USER>/data/
 touch /home/<USER>/data/jboss-web.xml
+touch /home/<USER>/data/pom.xml
 ----
 
-. Copy in the following content in the jboss-web.xml file we created:
+. In the `jboss-web.xml` file you created, copy in the following content:
 +
 [options="nowrap",subs="attributes+"]
 ----
@@ -44,6 +46,28 @@ touch /home/<USER>/data/jboss-web.xml
         </loader-repository>
     </class-loading>
 </jboss-web>
+----
+
+. In the `pom.xml` file you created, copy in the following content:
++
+[options="nowrap",subs="attributes+"]
+----
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+
+  <groupId>test</groupId>
+  <artifactId>test</artifactId>
+  <version>1.1.0-SNAPSHOT</version>
+
+  <properties>
+	<maven.compiler.source>1.7</maven.compiler.source>
+	<maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+  </dependencies>
+</project>
 ----
 
 [id="mta-creating-the-rule_{context}"]
@@ -59,7 +83,7 @@ when(condition)
 
 .Procedure
 
-. Create a YAML file in the directory you created with the following contents:
+. In the `rule.yaml` file you created, copy in the following contents:
 +
 [options="nowrap",subs="attributes+"]
 ----
@@ -123,12 +147,11 @@ The rule is now complete and looks similar to the following:
 == Installing the rule
 
 .Procedure
-. Copy the rule file into the rules directory.
-. Point the CLI to the rules directory:
+. Point the CLI  to the rule file you created :
 +
 [options="nowrap",subs="attributes+"]
 ----
-–rules /home/<USER>/rules/
+–rules /home/<USER>/rules.yaml
 ----
 
 [id="mta-testing-the-rule_{context}"]
@@ -149,8 +172,20 @@ Review the report to be sure that it provides the expected results.
 
 .Procedure
 
-. Open `/home/<USER_NAME>/output/static-report/index.html` in a web browser.
-. Verify that the rule is executed. See that the issue is generated for rule ID `jboss5-web-class-loading`.
+. Once the analysis is complete, the command outputs the path to the HTML report:
++
+[options="nowrap",subs="attributes+"]
+----
+INFO[0066] Static report created. Access it at this URL:  URL="file:/home/<USER>/output/static-report/index.html"
+----
++
+Open `/home/<USER_NAME>/output/static-report/index.html` in a web browser.
+. Navigate to the *Issues* tab in the left menu.
+. Verify that the rule is executed:
+.. In the *Issues* table, type `JBoss XML` in the search bar.
+.. Verify that the issue with the title `Find class loading element in JBoss XML file` is present in the table.
+. Click the *jboss-web.xml* link to open the affected file.
+
 
 
 
