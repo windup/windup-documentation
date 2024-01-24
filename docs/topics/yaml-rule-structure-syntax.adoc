@@ -36,7 +36,7 @@ category: mandatory <4>
 
 <3> `effort` is an integer value that indicates the level of effort needed to fix this issue.
 
-<4> `category` describes the severity of the issue for migration. The value can be either `mandatory`, `optional` or `potential`. For a description of these categories, see xref:rule-categories_{context}[Rule categories].
+<4> `category` describes the severity of the issue for migration. The value can be either `mandatory`, `optional` or `potential`. For a description of these categories, see xref:../../../docs/topics/yaml-rule-structure-syntax.adoc#rule-categories_{context}[Rule categories].
 
 [id="yaml-rule-labels_{context}"]
 === Rule labels
@@ -120,7 +120,7 @@ _Examples:_
 
 The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency, such as whether the dependency is open-source or internal, its programming language.
 
-Currenty, the analyzer adds the following labels on dependencies:
+Currently, the analyzer adds the following labels on dependencies:
 
 [source,terminal]
 ----
