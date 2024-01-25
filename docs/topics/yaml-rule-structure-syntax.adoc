@@ -6,7 +6,7 @@
 [id="yaml-rule-structure-syntax_{context}"]
 = YAML rule structure and syntax
 
-Rules are written in YAML. Each rule consists of metadata, conditions and actions. It instructs the analyzer to take specified actions when given conditions match.
+{ProductShortName} rules are written in YAML. Each rule consists of metadata, conditions and actions. It instructs the analyzer to take specified actions when given conditions match.
 
 A YAML rule file in {ProductShortName} contains one or more YAML rules.
 
@@ -92,11 +92,11 @@ The analyzer CLI takes the `--label-selector` field as an option. It is a string
 
 _Examples:_
 
-* To filter-in all rules that have a label with key `konveyor.io/source` and value `eap6`:
+* To filter-in all rules that have a label with the key `konveyor.io/source` and value `eap6`:
 +
 `--label-selector="konveyor.io/source=eap6"`
 
-* To filter-in all rules that have a label with key `konveyor.io/source` and any value:
+* To filter-in all rules that have a label with the key `konveyor.io/source` and any value:
 +
 `--label-selector="konveyor.io/source"`
 
@@ -118,9 +118,9 @@ _Examples:_
 
 .Dependency labels
 
-The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency, such as whether the dependency is open-source or internal, its programming language.
+The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency, such as its programming language and whether the dependency is open-source or internal.
 
-Currently, the analyzer adds the following labels on dependencies:
+Currently, the analyzer adds the following labels to dependencies:
 
 [source,terminal]
 ----
@@ -151,7 +151,7 @@ The Java provider in the analyzer can also add an exclude label to a list of pac
 * `optional`
 ** If you do not resolve the issue, the application is expected to work, but the results might not be optimal. If you do not make the change at the time of migration, you need to put it on the schedule soon after your migration is completed. An example of such an issue is EJB 2.x code not upgraded to EJB 3.
 * `potential`
-** You need to examine the issue during the migration process, but there is not enough information to determine whether resolving the issue is mandatory for the migration to succeed. An example of such an issue is migrating a third-party proprietary type where there is no directly compatible type.
+** You need to examine the issue during the migration process, but there is not enough information to determine whether resolving the issue is mandatory for the migration to succeed. An example of such an issue is migrating a third-party proprietary type when there is no directly compatible type on the target platform.
 
 
 [id="yaml-rule-actions_{context}"]
@@ -432,7 +432,7 @@ The analyzer provides two basic logical conditions, `and` and `or`, which enable
 
 ==== `and` condition
 
-The `and` condition performs a logical 'and' operation on the results of an array of conditions. An `and` condition matches when _all_ of its child conditions match.
+The `and` condition performs a logical AND operation on the results of an array of conditions. An `and` condition matches when _all_ of its child conditions match.
 
 
 [source,terminal]
@@ -475,7 +475,7 @@ when:
 
 ==== `or` condition
 
-The `or` condition performs a logical 'or' operation on the results of an array of conditions. An `or` condition matches when _any_ of its child conditions matches.
+The `or` condition performs a logical OR operation on the results of an array of conditions. An `or` condition matches when _any_ of its child conditions matches.
 
 [source,terminal]
 ----

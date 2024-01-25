@@ -38,7 +38,7 @@ The table below lists the available providers and their capabilities. Select a p
 |Searches XML files using XPath queries
 
 |`json`
-|Searches JSON files using jsonpath queries
+|Searches JSON files using JSONPath queries
 |`filecontent`
 |Searches content in regular files using RegEx patterns
 |`file`
@@ -108,7 +108,7 @@ The table below lists all available providers, their capabilities, and their fie
 
 .2+.^|`json`
 |`xpath`
-|yes
+|Yes
 |XPath query
 |`filepaths`
 |No
