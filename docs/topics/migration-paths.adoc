@@ -13,72 +13,68 @@ The {ProductName} ({ProductShortName}) supports migrations from third-party ente
 The following table describes the migration paths most commonly supported.
 
 .Supported migration paths: Source platform &#8658; target
-[cols="2,^1,^1,^1,^1,^1,^1,^1,^1",options="^,header"]
-|====
+[width="99%",cols="19%,10%,10%,10%,10%,10%,10%,10%,10%",options="^,header"]
+|===
 
 |Source platform{nbsp}&#8658;
-|JBoss EAP{nbsp}6
-|JBoss EAP{nbsp}7
-|RHOCP
-|OpenJDK 8,{nbsp}11,{nbsp}&{nbsp}17
-|Apache Camel{nbsp}3
-|Spring Boot on Red{nbsp}Hat Runtimes
-|Quarkus
-|Azure
+|Migration to JBoss EAP 7 & 8
+|OpenShift (cloud readiness)
+|OpenJDK 11, 17, and 21
+|Jakarta EE 9
+|Camel 3 & 4
+|Spring Boot in Red Hat Runtimes
+|Quarkus |Open Liberty
 
 |Oracle WebLogic Server
 |{icon-check}
 |{icon-check}
 |{icon-check}
-|{icon-check}
 |-
 |-
 |-
 |-
-
+|-
 
 |IBM WebSphere Application Server
 |{icon-check}
 |{icon-check}
 |{icon-check}
+|-
+|-
+|-
+|-
 |{icon-check}
-|-
-|-
-|-
-|-
 
 |JBoss EAP 4
-|{icon-check}
 |{icon-x} footnoteref:[note2,Although {ProductShortName} does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform to JBoss EAP 7.]
+|{icon-check} |{icon-check}
+|-
+|-
+|-
 |{icon-check}
-|{icon-check}
-|-
-|-
-|-
 |-
 
 |JBoss EAP 5
 |{icon-check}
 |{icon-check}
 |{icon-check}
+|-
+|-
+|-
 |{icon-check}
-|-
-|-
-|-
 |-
 
 |JBoss EAP 6
-|N/A
 |{icon-check}
 |{icon-check}
 |{icon-check}
 |-
 |-
 |-
+|{icon-check}
 |-
 
 |JBoss EAP 7
-|N/A
 |{icon-check}
 |{icon-check}
 |{icon-check}
@@ -86,22 +82,33 @@ The following table describes the migration paths most commonly supported.
 |-
 |-
 |{icon-check}
+|-
+
+|Thorntail
+|{icon-check} footnoteref:[note3,Requires JBoss Enterprise Application Platform expansion pack 2 (EAP XP 2)]
+|-
+|-
+|-
+|-
+|-
+|-
+|-
 
 |Oracle JDK
 |-
+|{icon-check}
+|{icon-check}
 |-
-|{icon-check}
-|{icon-check}
 |-
 |-
 |-
 |-
 
-|Apache Camel 2
-|-
+|Camel 2
 |-
 |{icon-check}
 |{icon-check}
+|-
 |{icon-check}
 |-
 |-
@@ -109,16 +116,15 @@ The following table describes the migration paths most commonly supported.
 
 |Spring Boot
 |-
+|{icon-check}
+|{icon-check}
+|{icon-check}
 |-
 |{icon-check}
 |{icon-check}
 |-
-|{icon-check}
-|{icon-check}
-|{icon-check}
 
-|Java application
-|-
+|Any Java application
 |-
 |{icon-check}
 |{icon-check}
@@ -126,4 +132,15 @@ The following table describes the migration paths most commonly supported.
 |-
 |-
 |-
-|====
+|-
+
+|Any Java EE application
+|-
+|-
+|-
+|{icon-check}
+|-
+|-
+|-
+|-
+|===
