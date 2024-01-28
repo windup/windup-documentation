@@ -6,7 +6,7 @@
 [id="yaml-rule-structure-syntax_{context}"]
 = YAML rule structure and syntax
 
-{ProductShortName} rules are written in YAML. Each rule consists of metadata, conditions and actions. It instructs the analyzer to take specified actions when given conditions match.
+{ProductShortName} rules are written in YAML. Each rule consists of metadata, conditions and actions, which instruct the analyzer to take specified actions when given conditions match.
 
 A YAML rule file in {ProductShortName} contains one or more YAML rules.
 
@@ -139,7 +139,7 @@ To exclude incidents for all such open-source dependencies, you can use `--dep-l
 
 `konveyor-analyzer ... --dep-label-selector !konveyor.io/dep-source=open-source`
 
-The Java provider in the analyzer can also add an exclude label to a list of packages. To exclude all such packages, you can use `--dep-label-selector` as follows:
+The Java provider in the analyzer can also add an exclude label to a list of packages. To exclude all such packages, you can use `--dep-label-selector` and the `!` operator as follows:
 
 `konveyor-analyzer ... --dep-label-selector !konveyor.io/exclude`
 
@@ -161,7 +161,7 @@ Rules can include 2 types of actions: _message_ and _tag_. Each rule includes on
 
 .Message actions
 
-The message action creates an issue with a message when the rule matches. The custom data exported by providers can also be used in the message.
+A message action creates an issue with a message when the rule matches. The custom data exported by providers can also be used in the message.
 
 `message: "helpful message about the issue"`
 
@@ -184,11 +184,11 @@ links:
     title: "Short title for the link"
 ----
 
-Message can also be templated to include information about the match interpolated through custom variables on the rule.
+A message can also be a template to include information about the match interpolated through custom variables on the rule.
 
 .Tag actions
 
-The tag action instructs the analyzer to generate one or more tags for the application when a match is found. Each string in the `tag` field can be a comma-separated list of tags. Optionally, you can assign categories to tags.
+A tag action instructs the analyzer to generate one or more tags for the application when a match is found. Each string in the `tag` field can be a comma-separated list of tags. Optionally, you can assign categories to tags.
 
 [source,terminal]
 ----
@@ -229,11 +229,11 @@ when:
     <nested-condition>
 ----
 
-{ProductShortName} supports three types of conditions: `provider`, `and` and `or`.
+{ProductShortName} supports three types of conditions: `provider`, `and`, and `or`.
 
 ==== Provider conditions
 
-{ProductShortName} supports multi-language source code analysis. Source code search for a specific language is enabled using the `provider` condition. This condition defines a search query for a specific language provider.  The `provider` condition also specifies which of the provider's "capabilities" to use for analyzing the code.
+{ProductShortName} supports multi-language source code analysis. Searching for a specific language in the source code is enabled using the `provider` condition. This condition defines a search query for a specific language provider.  The `provider` condition also specifies which of the provider's "capabilities" to use for analyzing the code.
 
 The `provider` condition has the form `<provider_name>.<capability>`:
 
@@ -287,7 +287,7 @@ when:
 
 .`xml`
 
-The `xml` capability enables the provider to query XPath expressions on a list of provided XML files. This capability takes 2 input parameters.
+The `xml` capability enables the provider to query XPath expressions on a list of provided XML files. This capability takes 2 input parameters, `xpath` and `filepaths`.
 
 [source,terminal]
 ----
@@ -329,7 +329,12 @@ when:
 
 ===== `java` provider
 
-The `java` provider analyzes Java source code.  This provider's capabilities are `referenced` and `dependency`.
+The `java` provider analyzes Java source code.
+
+This provider has the following capabilities:
+
+* `referenced`
+* `dependency`.
 
 .`referenced`
 
@@ -360,7 +365,7 @@ The supported locations are the following:
 
 .`dependency`
 
-The `dependency` capability  enables the provider to find dependencies for a given application. {ProductShortName} generates a list of the application's dependencies, and you can use this capability to query the list and check whether a certain dependency (within a version range) exists for the application.
+The `dependency` capability  enables the provider to find dependencies for a given application. {ProductShortName} generates a list of the application's dependencies, and you can use this capability to query the list and check whether a certain dependency exists for the application within a given range of the dependency's versions.
 
 [source,terminal]
 ----
@@ -376,7 +381,7 @@ when:
 
 ===== `go` provider
 
-The `go` provider analyzes Golang source code.  This provider's capabilities are `referenced` and `dependency`.
+The `go` provider analyzes Go source code.  This provider's capabilities are `referenced` and `dependency`.
 
 .`referenced`
 
@@ -406,7 +411,7 @@ when:
 
 ==== Custom variables
 
-Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule’s action (See _Message action_). They can be added to a rule in the `customVariables` field:
+Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule’s action (see xref:yaml-rule-actions_{context}[Message actions]). They can be added to a rule in the `customVariables` field:
 
 [source,terminal]
 ----

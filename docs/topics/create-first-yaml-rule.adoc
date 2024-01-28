@@ -97,8 +97,8 @@ when(condition)
   - <LINKS> <7>
 ----
 +
-<1> Unique ID for your rule, for instance, `jboss5-web-class-loading`
-<2> Text description of the rule
+<1> Unique ID for your rule, for instance, `jboss5-web-class-loading`.
+<2> Text description of the rule.
 <3> Complete the `when` block specifying one or more conditions:
 .. Use the `builtin` provider’s XML capability because this rule checks for a match in an XML file.
 .. To match on the `class-loading` element that is a child of `jboss-web`, use the XPath expression `jboss-web/web-loading` as an XML query. In this case, you need just one condition:
@@ -115,9 +115,9 @@ when:
 ----
 message: The class-loading element is no longer valid in the jboss-web.xml file.
 ----
-<5> List of string labels for the rule
-<6> Number of expected story points to fix this issue
-<7> One or more hyperlinks pointing to documentation around the migration issues that you find
+<5> List of string labels for the rule.
+<6> Number of expected story points to fix this issue.
+<7> One or more hyperlinks pointing to documentation around the migration issues that you find.
 +
 [options="nowrap",subs="attributes+"]
 ----
