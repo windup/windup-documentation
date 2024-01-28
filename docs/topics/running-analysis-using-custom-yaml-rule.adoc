@@ -24,7 +24,7 @@ where:
 
 * To use multiple rule files, you need to place them in a directory and to add a `ruleset.yaml` file. Then the directory is treated as a _ruleset_, and you can pass it as input to the `--rules` option.
 
-Note that if you wish to use the `--target` or `--source` option in the CLI, the engine will only select rules that match the label for that target. Therefore, make sure that you have added target or source labels on your rules. See xref:../yaml-rule-structure-syntax.adoc#yaml-rule-labels_{context}[Reserved labels] for more details.
+Note that if you wish to use the `--target` or `--source` option in the CLI, the engine will only select rules that match the label for that target. Therefore, make sure that you have added target or source labels on your rules. See xref:yaml-rule-structure-syntax.adoc#yaml-rule-labels[Reserved labels] for more details.
 
 
 
