@@ -7,29 +7,81 @@
 [id="mta-archetypes_{context}"]
 = Archetypes
 
-{ProductName}({ProductShortName}) includes a feature that groups applications that are assessed for migration according to common characteristics. These application groups, or *archetypes*, enable {ProductShortName} to apply questionnaires with questions that apply to common application characteristics.
+{ProductName}({ProductShortName}) includes a feature that groups applications that you are assessing for migration according to common characteristics. These application groups, or *archetypes*, enable {ProductShortName} to apply questionnaires with questions that apply to common application characteristics.
 
-Application *archetypes* are defined by criteria tags and the application taxonomy. Each archetype selects the how the _assessment module_ assesses the applications according to the charecteristics defined in that archetype.
+Criteria tags and the application taxonomy define application *archetypes*. Each archetype selects the how the _assessment module_ assesses the applications according to the characteristics defined in that archetype. Applications automatically associate with archetypes that have the same tags. Each archetype shows the applications associated to it. You can also duplicate an archetype and then edit its name, tags, stakeholders, and metadata.
 
 :_content-type: PROCEDURE
 [id="mta-define-archetype_{context}"]
 == To define an archetype
 
-image::images/mta-assessment-archetype-01.png[MTA archetypes]
+image::mta-assessment-archetype-01.png[MTA archetypes]
 
 . Open the {ProductShortName} web console.
 . In the left menu, click *Archetypes* <2>.
 . Click *Create new archetype* <3>.
 . In the form that opens, enter the following information for the new archetype:
-
-image:images/mta-assessment-archetype-02.png[Define a new archetype]
-
++
+image::mta-assessment-archetype-02.png[Define a new archetype]
++
 * *Name* of the new archetype <4>. (mandatory)
 * *Description* of the new archetype. (optional)
-* *Criteria Tags* are the tags by which the assessed applications are associated with the archetype. (mandatory)
+* *Criteria Tags* are the tags that define the assessed applications that belong to the archetype. (mandatory)
 * *Archetype Tags* are the tags that the archetype assesses in the application. <5> (mandatory)
 * *Stakeholder(s)* are specific stakeholders involved in the application development and migration. (optional)
-* *Takeholders Group(s)* are defined groups of stakeholders. (optional) 
+* *Stakeholders Group(s)* define groups of stakeholders. (optional)
+* *Comments* field enter free text, which can include metadata on the application (optional) 
 
 [START=4]
 . Click *Create*. The new archetype appears in the list.
+
+:_content-type: PROCEDURE
+[id="mta-edit-archetype_{context}"]
+== To edit an archetype
+
+. Open the {ProductShortName} web console.
+. In the left menu, click *Archetypes*, showing a list of defined archetypes.
+. For the archetype that you want to edit, click the `options` icon {kebab} at the right end of the archetype row.
+. Select *Edit* from the drop-down list, opening the form that defined the archetype.
+. Enter changes to the archetype and click *Save*.
+
+:_content-type: PROCEDURE
+[id="mta-duplicate-archetype_{context}"]
+== To duplicate an archetype
+
+. Open the {ProductShortName} web console.
+. In the left menu, click *Archetypes*, showing a list of defined archetypes.
+. For the archetype that you want to duplicate, click the `options` icon {kebab} at the right end of the archetype row.
+. Select *Duplicate* from the drop-down list, opening a new form that defines the archetype to duplicate. The archetype name is the same with `(duplicate)` added at the end.
+. Rename the archetype, make changes, and click *Save*.
+
+:_content-type: PROCEDURE
+[id="mta-delete-archetype_{context}"]
+== To delete an archetype
+
+. Open the {ProductShortName} web console.
+. In the left menu, click *Archetypes*, showing a list of defined archetypes.
+. For the archetype that you want to delete, click the `options` icon {kebab} at the right end of the archetype row.
+. Select *Delete* from the drop-down list, opening a confirmation dialog if you want to delete the selected archetype.
+. Click *Delete* to delete the selected archetype.
+
+:_content-type: PROCEDURE
+[id="mta-review-archetype_{context}"]
+== To review the migration plan for an archetype
+
+You can define the review process for all the applications associated with an archetype. You can only review a single application at a time, but with archetypes you can review all the applications associated with the archetype together. This procedure is the same to xref:mta-web-reviewing-apps[Reviewing applications], but applies to all the applications associated with the archetype. 
+
+.Procedure
+
+. In *Migration* view, click *Archetypes*.
+. Select the archetype whose applications you want to review.
+. For the archetype that you want to review, click the `options` icon {kebab} at the right end of the archetype row.
+. Select *Review* from the drop-down list, opening the *Review* dialog for the archetype.
+. Click *Proposed action* and select an action to perform on the applications in the archetype.
+. Click *Effort estimate* and select how much effort you expect to invest to prepare the applications for migration.
+. Set a value of `1` to `10` for *Business criticality* for the applications, where 1 is low criticality and 10 is high.
+. Set a value of `1` to `10` for *Work priority* for the applications, where 1 is low priority and 10 is high.
+. Enter free text into the *Comments* field. (optional)
+. Click *Submit review*.
++
+The fields from *Review* are now populated on the *Archetype* page.
