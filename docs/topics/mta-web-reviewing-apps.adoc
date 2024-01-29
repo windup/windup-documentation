@@ -6,7 +6,7 @@
 [id="mta-web-reviewing-apps_{context}"]
 = Reviewing applications
 
-You can use the {ProductName} ({ProductShortName}) {WebName} to determine the migration strategy and work priority for each application.
+You can use the {ProductName} ({ProductShortName}) {WebName} to decide the migration strategy and work priority for each application.
 
 .Procedure
 
@@ -19,11 +19,11 @@ image::mta-web-app-review.png[Application review]
 +
 [NOTE]
 ====
-Only one application can be reviewed at a time.
+You can review only one application at a time.
 ====
 . Click  *Review*, opening the application *Review* dialog.
 . Click *Proposed action* and select an action to perform on the application.
-. Click *Effort estimate* and select how much effort you expect is required to prepare the application for migration.
+. Click *Effort estimate* and select how much effort you expect invest to prepare the application for migration.
 . Set a value of `1` to `10` for *Business criticality* for the application, where 1 is low criticality and 10 is high.
 . Set a value of `1` to `10` for *Work priority* for the application, where 1 is low priority and 10 is high.
 . Enter free text into the *Comments* field. (optional)
