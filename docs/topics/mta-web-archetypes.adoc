@@ -7,7 +7,7 @@
 [id="mta-archetypes_{context}"]
 = Archetypes
 
-{ProductName}({ProductShortName}) includes a feature that groups applications that you are assessing for migration according to common characteristics. These application groups, or *archetypes*, enable {ProductShortName} to apply questionnaires with questions that apply to common application characteristics.
+{ProductFullName}({ProductShortName}) includes a feature that groups applications that you are assessing for migration according to common characteristics. These application groups, or *archetypes*, enable {ProductShortName} to apply questionnaires with questions that apply to common application characteristics.
 
 Criteria tags and the application taxonomy define application *archetypes*. Each archetype selects the how the _assessment module_ assesses the applications according to the characteristics defined in that archetype. Applications automatically associate with archetypes that have the same tags. Each archetype shows the applications associated to it. You can also duplicate an archetype and then edit its name, tags, stakeholders, and metadata.
 
@@ -15,7 +15,7 @@ Criteria tags and the application taxonomy define application *archetypes*. Each
 [id="mta-define-archetype_{context}"]
 == To define an archetype
 
-image::mta-assessment-archetype-01.png[MTA archetypes]
+image::mta-assessment-archetype-01.png[MTA application archetypes]
 
 . Open the {ProductShortName} web console.
 . In the left menu, click *Archetypes* <2>.
