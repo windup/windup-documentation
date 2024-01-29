@@ -15,7 +15,6 @@ Criteria tags and the application taxonomy define application *archetypes*. Each
 [id="mta-define-archetype_{context}"]
 == To define an archetype
 
-.Archetypes
 image::mta-assessment-archetype-01.png[MTA application archetypes]
 
 . Open the {ProductShortName} web console.
@@ -23,18 +22,16 @@ image::mta-assessment-archetype-01.png[MTA application archetypes]
 . Click *Create new archetype* <3>.
 . In the form that opens, enter the following information for the new archetype:
 +
-.Defining an archetype
 image::mta-assessment-archetype-02.png[Define a new archetype]
 +
 * *Name* of the new archetype <4>. (mandatory)
 * *Description* of the new archetype. (optional)
-* *Criteria Tags* are the tags that define the assessed applications that belong to the archetype. (mandatory)
-* *Archetype Tags* are the tags that the archetype assesses in the application. <5> (mandatory)
+* *Criteria Tags* are the tags that define the assessed applications that belong to the archetype. <5> (mandatory)
+* *Archetype Tags* are the tags that the archetype assesses in the application. <6> (mandatory)
 * *Stakeholder(s)* are specific stakeholders involved in the application development and migration. (optional)
 * *Stakeholders Group(s)* define groups of stakeholders. (optional)
-* *Comments* field enter free text, which can include metadata on the application (optional) 
-
-[START=4]
+* *Comments* field enter free text, which can include metadata on the application. (optional) 
++
 . Click *Create*. The new archetype appears in the list.
 
 :_content-type: PROCEDURE
@@ -71,7 +68,7 @@ image::mta-assessment-archetype-02.png[Define a new archetype]
 [id="mta-review-archetype_{context}"]
 == To review the migration plan for an archetype
 
-You can define the review process for all the applications associated with an archetype. You can only review a single application at a time, but with archetypes you can review all the applications associated with the archetype together. This procedure is the same to xref:mta-web-reviewing-apps[Reviewing applications], but applies to all the applications associated with the archetype. 
+You can define the review process for all the applications associated with an archetype. You can only review a single application at a time, but with archetypes you can review all the applications associated with the archetype together. This procedure is the same to xref:mta-web-reviewing-apps#master/#mta-web-reviewing-apps_user-interface-guide[Reviewing applications], but applies to all the applications associated with the archetype. 
 
 .Procedure
 
