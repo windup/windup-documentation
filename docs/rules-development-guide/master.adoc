@@ -8,11 +8,13 @@ include::topics/templates/document-attributes.adoc[]
 :context: rules-development-guide
 :rules-development-guide:
 :_content-type: ASSEMBLY
-= {RulesDevBookName}
+[id="rules-development-guide"]
+= Rules Development Guide
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
+[id="introduction_{context}"]
 == Introduction
 
 // About the Rules Development Guide
@@ -24,6 +26,7 @@ include::topics/mta-about-home-var.adoc[leveloffset=+3]
 // MTA Rules
 include::topics/about-rules.adoc[leveloffset=+2]
 
+[id="creating-yaml-rules_{context}"]
 == Creating YAML rules
 
 Each analyzer rule is a set of instructions that are used to analyze source code and detect issues that are problematic for migration.
@@ -32,6 +35,7 @@ The analyzer parses user-provided rules, applies them to applications' source co
 
 include::topics/yaml-rule-structure-syntax.adoc[leveloffset=+2]
 
+[id="creating-basic-yaml-rules_{context}"]
 === Creating a basic YAML rule
 
 This section describes how to create a basic {ProductShortName} YAML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
