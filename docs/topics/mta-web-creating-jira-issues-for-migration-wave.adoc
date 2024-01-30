@@ -26,14 +26,19 @@ A separate Jira issue is created for each application associated with the migrat
 * Reporter: Username of the token owner
 * Description: `Created by Konveyor`
 
+====
+////
 [NOTE]
 ====
 After you exported a migration wave to the Issue Manager and the Jira issues are created, you can no longer change them from within the {ProductShortName} {WebName}. Even if you delete the migration wave, the Jira issues remain.
 ====
+////
 
 [NOTE]
 ====
-On the *Application inventory* page, you can see if any particular application is associated to a migration wave by opening the application's *Details* tab.
+On the *Application inventory* page, you can see if any particular application is associated with a migration wave by opening the application's *Details* tab.
 
-You cannot delete an application if it is associated with a migration wave.
+You cannot delete an application if it is linked to a Jira ticket or if it is associated with a Migration wave.
+
+To unlink an application from a Jira ticket, click the `Unlink from Jira` icon in the details view of the application or in the details view of a Migration wave.
 ====
