@@ -51,7 +51,7 @@ If you are installing on a Windows operating system:
 +
 When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
 
-\\\\
+////
 [id="installing-cli-zip_{context}"]
 == Installing the {CLINameTitle} using Podman
 
@@ -72,4 +72,5 @@ This command will copy the binary `PATH` for system-wide use.
 ====
 Although installation using Podman is possible, downloading installing the `.zip` file is the preferred installation.
 ====
-\\\\
+
+////
