@@ -1,0 +1,76 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: PROCEDURE
+
+[id="installing-cli-tool_{context}"]
+= Installing the {CLINameTitle}
+
+You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems.
+
+
+.Prerequisites
+
+* Podman must be installed
+
++
+[NOTE]
+.Podman
+====
+Podman is a daemonless, open source, Linux native tool designed to make it easy to find, run, build, share and deploy applications using Open Containers Initiative (OCI) Containers and Container Images.
+Podman provides a command line interface (CLI) familiar to anyone who has used the Docker Container Engine.
+For more information on installing and using Podman, see link:https://podman.io/docs/installation[Podman installation instructions].
+====
+
+[id="installing-downloadable-cli-zip_{context}"]
+== Installing the {CLINameTitle} `.zip` file
+
+.Procedure
+
+To install using the downloadable `.zip` file:
+
+. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the OS specific CLI file or the `src` file:
++
+* mta-7.0.0-cli-linux.zip
+* mta-7.0.0-cli-macos.zip
+* mta-7.0.0-cli-windows.zip
+* mta-7.0.0-cli-src.zip
+
+. Extract the `.zip` file to a directory of your choice. The `.zip` file extracts a single binary, called *mta-cli*.
+
++
+[NOTE]
+====
+If you are installing on a Windows operating system:
+
+. Extract the `.zip` file to a folder named `LC_PSN` to avoid a `Path too long` error. Alternatively, extract the file with link:https://www.7-zip.org/download.html[7-Zip] to a folder of any name you choose.
+. If a *Confirm file replace* window is displayed during extraction, click *Yes to all*.
+====
+
++
+When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
+
+////
+[id="installing-using-podman_{context}"]
+== Installing the {CLINameTitle} using Podman
+
+.Procedure
+
+To install using `podman pull`:
+
+. Issue:
++
+[source,terminal]
+----
+podman cp $(podman create registry.redhat.com/mta-toolkit/mta-mta-cli-rhel9:{ProductVersion}):/usr/local/bin/mta-cli ./
+----
++
+This command will copy the binary `PATH` for system-wide use.
++
+[WARNING]
+====
+Although installation using Podman is possible, downloading installing the `.zip` file is the preferred installation.
+====
+
+////
