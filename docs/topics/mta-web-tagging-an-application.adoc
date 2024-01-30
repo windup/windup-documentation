@@ -59,3 +59,7 @@ A side drawer opens.
 You can see the tags attached to the application.
 +
 The tags can be filtered by source and tag category. The sources are *Analysis* and *Manual*. The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.
++
+If you have not applied the *Source* filter, all possible tag categories are enabled in the *Tag category* drop-down list.
++
+If you have applied the *Source* filter, only those tag categories that are relevant to the selected source are enabled in the *Tag category* drop-down list. For example, if the source is *Manual*, only the *Application Type* and *Data Center* tag categories are enabled.
