@@ -1,10 +1,12 @@
 // Module included in the following assemblies:
 //
-// * docs/getting-started-guide/master.adoc
-// * docs/cli-guide/master.adoc
-// * docs/maven-guide/master.adoc
-// * docs/eclipse-code-ready-studio-guide/master.adoc
-// * docs/web-console-guide/master.adoc
+// * docs/getting-started-guide-mtr/master.adoc
+// * docs/cli-guide-mtr/master.adoc
+// * docs/intellij-idea-plugin-guide-mtr/master.adoc
+// * docs/maven-guide-mtr/master.adoc
+// * docs/eclipse-code-ready-studio-guide-mtr/master.adoc
+// * docs/web-console-guide-mtr/master.adoc
+// * docs/plugin-guide-mtr/master.adoc
 
 [[about_mta]]
 :_content-type: CONCEPT
@@ -24,7 +26,8 @@ The {ProductName} ({ProductShortName}) is an extensible and customizable rule-ba
 * Migrating from Java Spring Boot to Quarkus
 * Updating from Oracle JDK to OpenJDK
 * Upgrading from OpenJDK 8 to OpenJDK 11
-* Upgrading from OpenJDK11 to OpenJDK 17
+* Upgrading from OpenJDK 11 to OpenJDK 17
+* Upgrading from OpenJDK 17 to OpenJDK 21
 * Migrating EAP Java applications to Azure
 * Migrating Spring Boot Java applications to Azure
 
