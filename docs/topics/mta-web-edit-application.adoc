@@ -1,0 +1,25 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-edit-application_{context}"]
+= Editing an application
+
+You can edit an existing application in the Application Inventory and the re-run an assessment or an analysis.
+
+.Prerequisites
+
+* Be logged on to an {ProductShortName} server.
+
+.Procedure
+
+. In *Migration* view, click *Application Inventory*.
+
+// image::mta-assessment-apps-01.png[MTA Application inventory]
+
+. In the {ProductShortName} user interface, select the *Migration* working mode.
+. Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane.
+. Click *Edit* {edit} to open the application settings, and review the application settings. See procedure above for a list of application settings.
+. If you changed any application settings, then click *Save*.
+

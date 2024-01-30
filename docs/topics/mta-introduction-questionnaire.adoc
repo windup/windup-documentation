@@ -1,0 +1,31 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+
+:_content-type: REFERENCE
+[id="mta-introduction-questionnaire_{context}"]
+= MTA questionnaire
+
+Migration Toolkit for Applications (MTA) uses questionnaires for assessing the risks involved in containerizing an application. By default, this procedure is required prior to reviewing the application.
+
+Through interaction with the questionnaire, and assessment process, the system is enriched with application knowledge which is exposed in a collection of reports. The reports provide information about applications, risks associated with migration, and generate an adoption plan informed by the prioritization, business criticality and dependencies of the applications submitted for assessment.
+
+There is the option to use the xref:mta-default-questionnaire_user-interface-guide[Default questionnaire].
+
+There is also the option to use the xref:mta-custom-questionnaire_user-interface-guide[Custom questionnaire].
+
+
+[id="mta-assessment-questionnaires_{context}"]
+== Assessment questionnaires
+
+To view the available questionnaires, select the *Administration* profile.
+
+Select the *Assessment questionnaires* menu option.
+
+The Assessment questionnaires page provides the option to:
+
+* Import a questionnaire, for more details, see xref:mta-import-questionnaire_user-interface-guide[Importing questionnaires].
+
+* Export a questionnaire, for more details, see xref:mta-export-questionnaire_user-interface-guide[Exporting questionnaires].
+

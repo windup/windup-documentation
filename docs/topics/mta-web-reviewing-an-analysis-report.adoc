@@ -8,12 +8,11 @@
 
 An {ProductShortName} analysis report contains a variety of sections, including a listing of the technologies used by the application, the dependencies of the application, and the lines of code that must be changed to successfully migrate or modernize the application.
 
-For more information on the contents of an {ProductShortName} analysis report, see the link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports]
+For more information on the contents of an {ProductShortName} analysis report, see the link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports].
 
 .Procedure
 
-1. In *Migration* view, click *Application inventory*.
-2. Expand the application with a completed analysis.
-3. Click *Reports*.
-4. Click the dependencies or source links.
-5. Click the tabs to review the report.
+. In *Migration* view, click *Reports*.
+. In the *Current landscape* pane, select *All questionnaires* or a single questionnaire from the drop-down list to see an overview of the risk distribution (High, Medium, Low, Unassessed/Unknown).
+. In the *Identified risks* pane, filter the report results by selecting a component from the drop-down list (Questionnaire, Section, Question, Answer,  Risk), and select an item from the resulting filter drop down list.
+. You can also sort the results by clicking a column heading (Questionnaire, Section, Question, Answer, Risk).

@@ -33,6 +33,12 @@ include::topics/installing-web-console-or-cli-tool.adoc[leveloffset=+2]
 // Run the CLI
 include::topics/cli-run.adoc[leveloffset=+2]
 
+// Analyze application source code
+include::topics/mta-cli-analyze.adoc[leveloffset=+3]
+
+// Transform XML rules to YAML
+include::topics/mta-cli-transform.adoc[leveloffset=+3]
+
 // Use OpenRewrite recipes
 include::topics/using-openrewrite-recipes.adoc[leveloffset=+3]
 
