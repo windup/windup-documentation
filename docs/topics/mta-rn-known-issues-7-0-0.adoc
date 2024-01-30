@@ -10,7 +10,7 @@
 
 .Pathfinder assessment migration fails on upgrade from {ProductShortName} 6.2.1 to {ProductShortName} 7.0.0
 
-If {ProductShortName} 6.2.1 is installed, when attempting to switch the channel to `stable-7.0`, the operator upgrade succeeds, but a task in the operator pod fails. This failure results in existing pathfinder assessments not being migrated to {ProductShortName} 7.0.0. This bug will be resolved in 7.0.1. No assessment data will be lost, it is will simply not be visible in the UI until the release of {ProductShortName} 7.0.1. link:https://issues.redhat.com/browse/MTA-2139[MTA-2139]
+If {ProductShortName} 6.2.1 is installed, when attempting to switch the channel to `stable-7.0`, the operator upgrade succeeds, but a task in the operator pod fails. This failure results in existing pathfinder assessments not being migrated to {ProductShortName} 7.0.0. This bug will be resolved in {ProductShortName} 7.0.1. No assessment data will be lost, it is will simply not be visible in the UI until the release of {ProductShortName} 7.0.1. link:https://issues.redhat.com/browse/MTA-2139[MTA-2139]
 
 .Delayed permission update and user deactivation in `RBAC`
 
