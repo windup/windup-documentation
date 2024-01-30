@@ -34,7 +34,7 @@ You can analyze more than one application at a time against more than one transf
 
 * Application server migration to:
 ** JBoss EAP 7
-** JBoss EAP 6
+** JBoss EAP 8
 * Containerization
 * Quarkus
 * OracleJDK to OpenJDK
@@ -50,6 +50,8 @@ You can analyze more than one application at a time against more than one transf
 * Azure
 ** Azure App Service
 ** Azure Kubernetes Service
+
+
 
 . Click *Next*.
 . Select one of the following *Scope* options to better focus the analysis:
@@ -83,14 +85,14 @@ The Transactions report is a Technology Preview feature only. Technology Preview
 +
 [NOTE]
 ====
-Note that the automatically attached tags are displayed only _after_ you run the analysis.
+Automatically attached tags are displayed only _after_ you run the analysis.
 
 You can attach tags to the application manually, instead of enabling automated tagging or in addition to it.
 ====
 +
 [NOTE]
 ====
-Analysis engines use standard rules for a comprehensive set of migration targets, but if the target is not included or is a customized framework, custom rules can be added. Custom rules files are validated.
+Analysis engines use standard rules for a comprehensive set of migration targets, but if the target is not included or is a customized framework, custom rules can be added. Custom rule files are validated.
 ====
 
 . Click *Next*.

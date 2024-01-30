@@ -60,6 +60,7 @@ endif::[]
 // *******************
 :CLIName: CLI
 :CLINameTitle: CLI
+:mta-cli: mta-cli
 :MavenName: Maven plugin
 :MavenNameTitle: Maven Plugin
 
@@ -70,7 +71,7 @@ endif::[]
 :OpenShiftProductNumber: 4.11
 
 :UserCLIBookName: CLI Guide
-:RulesDevBookName: Rules Development Guide
+:RulesDevBookName: Rule Development Guide
 :EclipseCrsGuideTitle: Eclipse Plugin Guide
 :MavenBookName: Maven Plugin Guide
 :IntelliJBookName: IntelliJ IDEA Plugin Guide
@@ -119,3 +120,4 @@ endif::[]
 :icon-x: &#x2718;
 :kebab: image:kebab.png[title="Options menu"]
 :reports: image:reports.png[title="*Reports* icon"]
+:edit: image:icon-edit.png[title="*Edit* icon"]

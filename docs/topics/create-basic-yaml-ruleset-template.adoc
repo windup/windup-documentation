@@ -1,0 +1,24 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="create-basic-yaml-ruleset-template_{context}"]
+= Creating a basic YAML ruleset template
+
+If you want to group multiple similar rules, you can create a ruleset for them by placing their files in a directory and creating a `ruleset.yaml` file at the directory's root. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, {ProductShortName} treats all the files in the directory as belonging to the ruleset defined in the `ruleset.yaml` file.
+
+.Procedure
+
+. Create a template for `ruleset.yaml` files if you want to pass the entire directory using the `--rules` option:
++
+[source,terminal]
+----
+name: <RULESET_NAME> <1>
+description: <RULESET_DESCRIPTION>
+labels: <2>
+  - key=val
+----
+<1> The name must be unique within the provided rulesets.
++
+<2> Ruleset labels are inherited by all rules that belong to the ruleset.
