@@ -25,7 +25,7 @@ asciidoctor:
   - build=upstream
   - imagesdir=../topics/images
   - UserCLIBookName=CLI Guide
-  - RulesDevBookName=Rule Development Guide
+  - RulesDevBookName=Rules Development Guide
   - EclipseCrsGuideTitle=Eclipse and Red Hat CodeReady Studio Plugin Guide
   - IntroToMTABookName=Introduction to the Migration Toolkit for Applications
   - WebConsoleBookName=Web Console Guide
