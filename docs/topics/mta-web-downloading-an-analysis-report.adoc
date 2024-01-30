@@ -11,17 +11,12 @@ For your convenience, you can download analysis reports. By default, this option
 .Procedure
 
 . In *Administration* view, click *General*.
-. Toggle the *Enable downloads for HTML reports* and *Enable downloads for CSV reports* switches.
+. Toggle the *Allow reports to be downloaded after running an analysis.*  switch.
 . Go to *Migration* view and click *Application inventory*.
 . Open the page of the application for which you ran an analysis.
 . Click *Reports*.
-. Click the *Download report* link.
+. Click the *HTML* or *YAML* link.
 +
-The report is downloaded and saved in the *Downloads* directory as  `report.tar.gz`.
-
-[NOTE]
-====
-To download a report as an HTML file, you can enable the download option either before or after you run the analysis.
-
-To download a report as an CSV file, you must enable the download option _before_ you run the analysis.
-====
+Clicking the *HTML* link downloads a compressed file named `analysis-report-app-<application_name>.tar`. Extracting the file creates a folder with the same name as the application.
++
+Clicking the *YAML* link downloads an uncompressed file named `analysis-report-app-<application_name>.yaml`.
