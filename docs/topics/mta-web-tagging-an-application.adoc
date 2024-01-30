@@ -55,7 +55,9 @@ You can view the tags that were attached automatically only _after_ you have run
 
 You can see the tags attached to the application.
 
-The tags can be filtered by source and tag category. The sources are *Analysis* and *Manual*. The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.
+The tags can be filtered by source and tag category. The sources are *Analysis* and *Manual*. 
+
+The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.
 
 [id="creating-tags_{context}"]
 == Creating tags

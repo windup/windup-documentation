@@ -1,0 +1,211 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="create-yaml-rule_{context}"]
+= Creating a YAML rule
+
+Each rule file contains one or more YAML rules. Every rule comprises metadata, conditions and actions.
+
+.Procedure
+
+. Create a `when` condition.
++
+The `when` condition of a YAML rule can be `provider`, `and` or `or`.
+
+.. Create a `provider` condition
++
+The provider condition is used to define a search query for a specific language provider and to invoke a certain capability of the provider.
++
+The condition's general format is `<provider_name>.<capability>`. The condition also has inner fields to specify details of the search. The way you create a `provider` condition and its inner fields depends on which provider you use and which capability you invoke.
++
+The table below lists the available providers and their capabilities. Select a provider and its capability that suit the purpose of the rule you want to create. This part of the condition does not contain any of the condition's fields yet.
++
+[cols="15%,25%,60%", options="header"]
+|===
+|Provider |Capability |Description
+
+.2+.^|`java`
+|`referenced`
+|Finds references of a pattern with an optional code location for detailed searches
+
+|`dependency`
+|Checks whether the application has a given dependency
+
+.5+.^|`builtin`
+|`xml`
+|Searches XML files using XPath queries
+
+|`json`
+|Searches JSON files using JSONPath queries
+|`filecontent`
+|Searches content in regular files using RegEx patterns
+|`file`
+|Finds files with names matching a given pattern
+|`hasTags`
+|Checks whether a tag is created for the application through a tagging rule
+
+.2+.^|go
+|`referenced`
+|Finds references of a pattern
+|`dependency`
+|Checks whether the application has a given dependency
+|===
++
+The example below shows a `java` provider condition that uses the `referenced` capability.
++
+_Example_
++
+[source,terminal]
+----
+when:
+  java.referenced:
+----
+
+. Add suitable fields to the `provider` condition.
++
+The table below lists all available providers, their capabilities, and their fields. Select the fields that belong to the provider and capability that you have chosen. Note that some fields are mandatory.
++
+[cols="15%,15%,20%,15%,35%", options="header"]
+|===
+|Provider |Capability |Field |Required? |Description
+
+.6+.^|`java`
+.2+.^|`referenced`
+|`pattern`
+|Yes
+|RegEx pattern
+|`location`
+|No
+|Source code location; see below for a list of all supported search locations
+
+.4+.^|`dependency`
+|`name`
+|Yes
+|Name of the dependency
+|`nameregex`
+|No
+|RegEx pattern to match the name
+|`upperbound`
+|No
+|Matches version numbers lower than or equal to
+|`lowerbound`
+|No
+|Matches version numbers greater than or equal to
+
+.9+.^|`builtin`
+.3+.^|`xml`
+|`xpath`
+|Yes
+|XPath query
+|`namespaces`
+|No
+|A map to scope down query to namespaces
+|`filepaths`
+|No
+|Optional list of files to scope down search
+
+.2+.^|`json`
+|`xpath`
+|Yes
+|XPath query
+|`filepaths`
+|No
+|Optional list of files to scope down search
+.2+.^|`filecontent`
+|`pattern`
+|Yes
+|RegEx pattern to match in content
+|`filePattern`
+|No
+|Only searches in files with names matching this pattern
+|`file`
+|`pattern`
+|Yes
+|Finds files with names matching this pattern
+|`hasTags`
+3+>|This is an inline list of string tags. See _Tag Action_ for details on tag format.
+
+.5+.^|`go`
+|`referenced`
+|`pattern`
+|Yes
+|RegEx pattern
+
+.4+.^|`dependency`
+|`name`
+|Yes
+|Name of the dependency
+|`nameregex`
+|No
+|RegEx pattern to match the name
+|`upperbound`
+|No
+|Matches version numbers lower than or equal to
+|`lowerbound`
+|No
+|Matches version numbers greater than or equal to
+|===
++
+The following search locations can be used to scope down `java` searches:
++
+* CONSTRUCTOR_CALL
+* TYPE
+* INHERITANCE
+* METHOD_CALL
+* ANNOTATION
+* IMPLEMENTS_TYPE
+* ENUM_CONSTANT
+* RETURN_TYPE
+* IMPORT
+* VARIABLE_DECLARATION
++
+The example below shows the `when` condition of a rule that searches for references of a package.
++
+_Example_
++
+[source,terminal]
+----
+when:
+  java.referenced:
+    location: PACKAGE
+    pattern: org.jboss.*
+----
+
+. Create an `AND` or `OR` condition
++
+* An `and` condition matches when _all_ of its child conditions match. Create an `and` condition as follows:
++
+[source,terminal]
+----
+when:
+  and:
+  - java.dependency:
+      name: junit.junit
+      upperbound: 4.12.2
+      lowerbound: 4.4.0
+  - java.referenced:
+      location: IMPORT
+      pattern: junit.junit
+----
+* An `or` condition matches when _any_ of its child conditions match. Create an `or` condition as follows:
++
+[source,terminal]
+----
+when:
+  or:
+  - java.dependency:
+      name: junit.junit
+      upperbound: 4.12.2
+      lowerbound: 4.4.0
+  - java.referenced:
+      location: IMPORT
+      pattern: junit.junit
+----
+
+
+
+
+
+
