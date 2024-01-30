@@ -20,8 +20,7 @@ You can tag an application manually, both before or after you run an analysis.
 . In *Migration* view, click *Application inventory*.
 . Click the *Analysis* tab.
 . In the row of the required application, click the pen icon.
-+
-The *Update application* window opens.
+. The *Update application* window opens.
 . Select the desired tags from the *Select a tag(s)* drop-down list.
 . Click *Save*.
 
@@ -52,10 +51,55 @@ You can view the tags that were attached automatically only _after_ you have run
 . In *Migration* view, click *Application inventory*.
 . Click the *Analysis* tab.
 . Click the name of the required application.
-+
-A side drawer opens.
-. In the side drawer, click the *Tags* tab.
-+
+. A side drawer opens. In the side drawer, click the *Tags* tab.
+
 You can see the tags attached to the application.
-+
-The tags can be filtered by source and tag category. The sources are *Analysis* and *Manual*. The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.
+
+The tags can be filtered by source and tag category. The sources are *Analysis* and *Manual*. 
+
+The categories are displayed in a drop-down list, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, *Data Center*.
+
+[id="creating-tags_{context}"]
+== Creating tags
+
+You can create custom tags for applications that {ProductShortName} assesses or analyzes.
+
+.Procedure
+
+. In *Migration* view, click *Controls*.
+. Click the *Tags* tab.
+. Click *Create tag*, which opens a dialog.
+. In the *Name* field enter a unique name for the tag.
+. Click the *Tag category* field and select the category tag to associate with the tag.
+. Click *Create*.
+
+[id="editing-tags_{context}"]
+== Editing tags
+
+You can edit defined tags.
+
+.Procedure
+
+. In *Migration* view, click *Controls*.
+. Click the *Tags* tab. A list of tag categories appears in the main pane.
+. Click the arrow to the left of the category name, opening a list of tags in the category.
+. Select *Edit* from the drop-down menu, opening a dialog.
+. Edit the tag's name in the *Name* field.
+. Click the *Tag category* field and and select the category tag to associate with the tag.
+. Click *Save*.
+
+[id="editing-tag-categories_{context}"]
+== Editing tag categories
+
+You can edit defined tag categories.
+
+.Procedure
+
+. In *Migration* view, click *Controls*.
+. Click the *Tags* tab.
+. Select a defined tag category and click *Edit* to the right of the tag category.
+. Edit the tag category's name in the *Name* field.
+. Edit the category's *Rank* value.
+. Click the *Color* field and select a color for the tag category.
+. Click *Save*.
+

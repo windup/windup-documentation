@@ -1,0 +1,30 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-run-assessment_{context}"]
+= Running an assessment on an application
+
+.Prerequisites
+
+* Be logged on to an {ProductShortName} server.
+
+.Procedure
+
+
+. In the {ProductShortName} user interface, select the *Migration* working mode.
+. Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane.
+. Select an application from the list that appears in the main pane, click the Options menu {kebab} at the end of the row, and select *Assess* from the drop-down menu.
+. *Assessment Action* appears in the main pane. Select one of the questionnaires and click *Take*.
+. The main pane shows the *Application assessment* questions.
+.. The left edge lists the questions.
+.. The main area of the pane shows the specific fields for the question.
+. Enter the question into the field or select from a list.
+. Click *Next* to continue to the next question, and repeat the step above.
+. In the last question, enter information and click *Save* to start the assessment, or *Save and review* to review the assessment.
+* If you selected *Save*, then the main pane returns to the list of questionnaires in step 4 above.
+* If you selected *Save and review*, then the questionnaire *Review* appears in the main pane. See link:mta-web-review-application.adoc[Reviewing and application].
+
+// [Verification]
+

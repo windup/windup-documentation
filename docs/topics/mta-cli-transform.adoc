@@ -1,0 +1,105 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="mta-cli-transform_{context}"]
+= Performing transformation using the command line
+
+Transform has two sub commands - `openrewrite` and `rules`.
+
+[source,terminal,subs="attributes+"]
+----
+Transform application source code or {LC_PSN} XML rules
+
+Usage:
+  {mta-cli} transform [flags]
+  {mta-cli} transform [command]
+
+Available Commands:
+  openrewrite Transform application source code using OpenRewrite recipes
+  rules       Convert XML rules to YAML
+
+Flags:
+  -h, --help   help for transform
+
+Global Flags:
+      --log-level uint32   log level (default 4)
+      --no-cleanup         do not cleanup temporary resources
+
+Use "{mta-cli} transform [command] --help" for more information about a command.
+----
+
+== `OpenRewrite`
+
+The `openrewrite` sub command allows running `OpenRewrite` recipes on source code.
+[source,terminal,subs="attributes+"]
+----
+Transform application source code using OpenRewrite recipes
+
+Usage:
+  {mta-cli} transform openrewrite [flags]
+
+Flags:
+  -g, --goal string     target goal (default "dryRun")
+  -h, --help            help for openrewrite
+  -i, --input string    path to application source code directory
+  -l, --list-targets    list all available OpenRewrite recipes
+  -s, --maven-settings string   path to a custom maven settings file to use
+  -t, --target string   target openrewrite recipe to use. Run --list-targets to get a list of packaged recipes.
+
+Global Flags:
+      --log-level uint32   log level (default 4)
+      --no-cleanup         do not cleanup temporary resources
+----
+
+.To run `transform openrewrite` on application source code, run the following command:
+[source,terminal,subs="attributes+"]
+----
+{mta-cli} transform openrewrite --input=<path/to/source/code> --target=<exactly_one_target_from_the_list>
+----
+[NOTE]
+====
+You can only use a single target to run the `transform overwrite` command.
+====
+
+== `Rules`
+
+The `rules` sub command allows converting {LC_PSN} XML rules to analyzer-lsp YAML rules using `windup-shim`.
+[source,terminal,subs="attributes+"]
+----
+Convert XML rules to YAML
+
+Usage:
+  {mta-cli} transform rules [flags]
+
+Flags:
+  -h, --help                help for rules
+  -i, --input stringArray   path to XML rule file(s) or directory
+  -o, --output string       path to output directory
+
+Global Flags:
+      --log-level int   log level (default 5)
+----
+
+.To run `transform rules` on application source code, run the following:
+[source,terminal,subs="attributes+"]
+----
+{mta-cli} transform rules --input=<path/to/xmlrules> --output=<path/to/output/dir>
+----
+
+.Usage example
+. Get an example application to transform source code.
+. View the available OpenRewrite recipes.
++
+[source,terminal,subs="attributes+"]
+----
+{mta-cli} transform openrewrite --list-targets
+----
+. Run a recipe on the example application.
++
+[source,terminal,subs="attributes+"]
+----
+{mta-cli} transform openrewrite --input=<path-to/jakartaee-duke> --target=jakarta-imports
+----
+Inspect the `jakartaee-duke` application source code diff to see the transformation

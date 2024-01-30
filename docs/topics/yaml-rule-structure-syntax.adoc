@@ -1,0 +1,525 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: REFERENCE
+[id="yaml-rule-structure-syntax_{context}"]
+= YAML rule structure and syntax
+
+{ProductShortName} rules are written in YAML. Each rule consists of metadata, conditions and actions, which instruct the analyzer to take specified actions when given conditions match.
+
+A YAML rule file in {ProductShortName} contains one or more YAML rules.
+
+[id="yaml-rule-metadata_{context}"]
+== Rule metadata
+
+Rule metadata contains general information about the rule. The structure of metadata is as follows:
+
+[source,terminal]
+----
+ruleId: "unique_id" <1>
+labels: <2>
+  # key=value pair
+  - "label1=val1"
+  # valid label with value omitted
+  - "label2"
+  # valid label with empty value
+  - "label3="
+  # subdomain prefixed key
+  - "konveyor.io/label1=val1"
+effort: 1 <3>
+category: mandatory <4>
+----
+<1> The ID must be unique within the ruleset to which the rule belongs.
+
+<2> See below for a description of the label format.
+
+<3> `effort` is an integer value that indicates the level of effort needed to fix this issue.
+
+<4> `category` describes the severity of the issue for migration. The value can be either `mandatory`, `optional` or `potential`. For a description of these categories, see xref:yaml-rule-categories_{context}[Rule categories].
+
+[id="yaml-rule-labels_{context}"]
+=== Rule labels
+
+Labels are `key=val` pairs specified for rules or rulesets as well as dependencies. For dependencies, a provider adds the labels to the dependencies when retrieving them. Labels on a ruleset are automatically inherited by all the rules that belong to it.
+
+.Label format
+
+Labels are specified under the `labels` field as a list of strings in `key=val` format as follows:
+
+[source,terminal]
+----
+labels:
+- "key1=val1"
+- "key2=val2"
+----
+
+The key of a label can be subdomain-prefixed:
+
+[source,terminal]
+----
+labels:
+- "konveyor.io/key1=val1"
+----
+
+The value of a label can be empty:
+
+[source,terminal]
+----
+labels:
+- "konveyor.io/key="
+----
+
+The value of a label can be omitted. In that case, it is treated as an empty value:
+
+[source,terminal]
+----
+labels:
+- "konveyor.io/key"
+----
+
+.Reserved labels
+
+The analyzer defines some labels that have special meaning as follows:
+
+* `konveyor.io/source`: Identifies the source technology to which a rule or a ruleset applies
+
+* `konveyor.io/target`: Identifies the target technology to which a rule or a ruleset applies
+
+.Label selector
+
+The analyzer CLI takes the `--label-selector` field as an option. It is a string expression that supports logical AND, OR and NOT operations. You can use it to filter-in or filter-out rules by their labels.
+
+_Examples:_
+
+* To filter-in all rules that have a label with the key `konveyor.io/source` and value `eap6`:
++
+`--label-selector="konveyor.io/source=eap6"`
+
+* To filter-in all rules that have a label with the key `konveyor.io/source` and any value:
++
+`--label-selector="konveyor.io/source"`
+
+* To perform logical AND operations on matches of multiple rules using the `&&` operator:
++
+`--label-selector="key1=val1 && key2"`
+
+* To perform logical OR operations on matches of multiple rules using the `||` operator:
++
+`--label-selector="key1=val1 || key2"`
+
+* To perform a NOT operation to filter-out rules that have `key1=val1` label set using the `!` operator:
++
+`--label-selector="!key1=val1"`
+
+* To group sub-expressions and control precedence using AND:
++
+`--label-selector="(key1=val1 || key2=val2) && !val3"`
+
+.Dependency labels
+
+The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency, such as its programming language and whether the dependency is open-source or internal.
+
+Currently, the analyzer adds the following labels to dependencies:
+
+[source,terminal]
+----
+labels:
+- konveyor.io/dep-source=internal
+- konveyor.io/language=java
+----
+
+.Dependency label selector
+
+The analyzer CLI accepts the `--dep-label-selector` option, which allows filtering-in or filtering-out incidents generated from a dependency by their labels.
+
+For example, the analyzer adds a `konveyor.io/dep-source` label to dependencies with a value that indicates whether the dependency is a known open-source dependency.
+
+To exclude incidents for all such open-source dependencies, you can use `--dep-label-selector` as follows:
+
+`konveyor-analyzer ... --dep-label-selector !konveyor.io/dep-source=open-source`
+
+The Java provider in the analyzer can also add an exclude label to a list of packages. To exclude all such packages, you can use `--dep-label-selector` and the `!` operator as follows:
+
+`konveyor-analyzer ... --dep-label-selector !konveyor.io/exclude`
+
+[id="yaml-rule-categories_{context}"]
+=== Rule categories
+
+* `mandatory`
+** You must resolve the issue for a successful migration, otherwise, the resulting application is not expected to build or run successfully. An example of such an issue is proprietary APIs that are not supported on the target platform.
+* `optional`
+** If you do not resolve the issue, the application is expected to work, but the results might not be optimal. If you do not make the change at the time of migration, you need to put it on the schedule soon after your migration is completed. An example of such an issue is EJB 2.x code not upgraded to EJB 3.
+* `potential`
+** You need to examine the issue during the migration process, but there is not enough information to determine whether resolving the issue is mandatory for the migration to succeed. An example of such an issue is migrating a third-party proprietary type when there is no directly compatible type on the target platform.
+
+
+[id="yaml-rule-actions_{context}"]
+=== Rule Actions
+
+Rules can include 2 types of actions: _message_ and _tag_. Each rule includes one of them or both.
+
+.Message actions
+
+A message action creates an issue with a message when the rule matches. The custom data exported by providers can also be used in the message.
+
+`message: "helpful message about the issue"`
+
+_Example:_
+
+[source,terminal]
+----
+- ruleID: test-rule
+  when:
+    <CONDITION>
+  message: Test rule matched. Please resolve this migration issue.
+----
+
+Optionally, a message can include hyperlinks to external URLs that provide relevant information about the issue or a quick fix.
+
+[source,terminal]
+----
+links:
+  - url: "konveyor.io"
+    title: "Short title for the link"
+----
+
+A message can also be a template to include information about the match interpolated through custom variables on the rule.
+
+.Tag actions
+
+A tag action instructs the analyzer to generate one or more tags for the application when a match is found. Each string in the `tag` field can be a comma-separated list of tags. Optionally, you can assign categories to tags.
+
+[source,terminal]
+----
+tag:
+  - "tag1,tag2,tag3"
+  - "Category=tag4,tag5"
+----
+
+_Example_
+
+[source,terminal]
+----
+- ruleID: test-rule
+  when:
+    <CONDITION>
+  tag:
+  - Language=Golang
+  - Env=production
+  - Source Code
+----
+
+A tag can be a string or a `key=val` pair, where the key is treated as a tag category in {ProductShortName}. Any rule that has a tag action is referred to as a “tagging rule” in this document.
+
+Note that issues are not created for rules that contain only tag actions.
+
+
+[id="yaml-rule-conditions_{context}"]
+=== Rule conditions
+
+Each rule has a `when` block, which specifies a condition that needs to be met for {ProductShortName} to perform a certain action.
+
+The `when` block contains one condition, but that condition can have multiple conditions nested under it.
+
+[source,terminal]
+----
+when:
+  <condition>
+    <nested-condition>
+----
+
+{ProductShortName} supports three types of conditions: `provider`, `and`, and `or`.
+
+==== Provider conditions
+
+{ProductShortName} supports multi-language source code analysis. Searching for a specific language in the source code is enabled using the `provider` condition. This condition defines a search query for a specific language provider.  The `provider` condition also specifies which of the provider's "capabilities" to use for analyzing the code.
+
+The `provider` condition has the form `<provider_name>.<capability>`:
+
+[source,terminal]
+----
+when:
+  <provider_name>.<capability>
+    <input_fields>
+----
+
+The analyzer currently supports the following `provider` conditions:
+
+* `builtin`
+* `java`
+* `go`
+
+===== `builtin` provider
+
+`builtin` is an internal provider that can analyze various files and internal metadata generated by the engine.
+
+This provider has the following capabilities:
+
+* `file`
+* `filecontent`
+* `xml`
+* `json`
+* `hasTags`
+
+.`file`
+
+The `file` capability enables the provider to search for files in the source code that match a given pattern.
+
+[source,terminal]
+----
+when:
+  builtin.file:
+    pattern: "<regex_to_match_filenames>"
+----
+
+.`filecontent`
+
+The `filecontent` capability enables the provider to search for content that matches a given pattern.
+
+[source,terminal]
+----
+when:
+  builtin.filecontent:
+    filePattern: "<regex_to_match_filenames_to_scope_search>"
+    pattern: "<regex_to_match_content_in_the_matching_files>"
+----
+
+.`xml`
+
+The `xml` capability enables the provider to query XPath expressions on a list of provided XML files. This capability takes 2 input parameters, `xpath` and `filepaths`.
+
+[source,terminal]
+----
+when:
+  builtin.xml:
+    xpath: "<xpath_expressions>" <1>
+    filepaths: <2>
+      - "/src/file1.xml"
+      - "/src/file2.xml"
+----
+<1> `xpath` must be a valid XPath expression.
+<2> `filepaths` is a list of files to apply the XPath query to.
+
+.`json`
+
+The `json` capability enables the provider to query XPath expressions on a list of provided JSON files. Currently, `json` only takes XPath as input and performs the search on all JSON files in the codebase.
+
+[source,terminal]
+----
+when:
+  builtin.json:
+    xpath: "<xpath_expressions>" <1>
+----
+<1> `xpath` must be a valid XPath expression.
+
+.`hasTags`
+
+The `hasTags` capability enables the provider to query application tags. It queries the internal data structure to check whether the application has the given tags.
+
+[source,terminal]
+----
+when:
+  # when more than one tags are given, a logical AND is implied
+  hasTags: <1>
+    - "tag1"
+    - "tag2"
+----
+<1> When more than one tags is given, a logical AND is implied.
+
+===== `java` provider
+
+The `java` provider analyzes Java source code.
+
+This provider has the following capabilities:
+
+* `referenced`
+* `dependency`.
+
+.`referenced`
+
+The `referenced` capability enables the provider to find references in the source code. This capability takes two input parameters, `pattern` and `location`.
+
+[source,terminal]
+----
+when:
+  java.referenced:
+    pattern: "<pattern>" <1>
+    location: "<location>" <2>
+----
+<1> A RegEx pattern to match, for example, `org.kubernetes.*`
+<2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`
+
+The supported locations are the following:
+
+* `CONSTRUCTOR_CALL`
+* `TYPE`
+* `INHERITANCE`
+* `METHOD_CALL`
+* `ANNOTATION`
+* `IMPLEMENTS_TYPE`
+* `ENUM_CONSTANT`
+* `RETURN_TYPE`
+* `IMPORT`
+* `VARIABLE_DECLARATION`
+
+.`dependency`
+
+The `dependency` capability  enables the provider to find dependencies for a given application. {ProductShortName} generates a list of the application's dependencies, and you can use this capability to query the list and check whether a certain dependency exists for the application within a given range of the dependency's versions.
+
+[source,terminal]
+----
+when:
+  java.dependency:
+    name: "<dependency_name>" <1>
+    upperbound: "<version_string>" <2>
+    lowerbound: "<version_string>" <3>
+----
+<1> Name of the dependency to search for
+<2> Upper bound on the version of the dependency
+<3> Lower bound on the version of the dependency
+
+===== `go` provider
+
+The `go` provider analyzes Go source code.  This provider's capabilities are `referenced` and `dependency`.
+
+.`referenced`
+
+The `referenced` capability enables the provider to find references in the source code.
+
+[source,terminal]
+----
+when:
+  go.referenced: "<regex_to_find_reference>"
+----
+
+.`dependency`
+
+The `dependency` capability  enables the provider to find dependencies for an application.
+
+[source,terminal]
+----
+when:
+  go.dependency:
+    name: "<dependency_name>" <1>
+    upperbound: "<version_string>" <2>
+    lowerbound: "<version_string>" <3>
+----
+<1> Name of the dependency to search for
+<2> Upper bound on the version of the dependency
+<3> Lower bound on the version of the dependency
+
+==== Custom variables
+
+Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule’s action (see xref:yaml-rule-actions_{context}[Message actions]). They can be added to a rule in the `customVariables` field:
+
+[source,terminal]
+----
+- ruleID: lang-ref-004
+   customVariables:
+   - pattern: '([A-z]+)\.get\(\)' <1>
+      name: VariableName <2>
+    message: "Found generic call - {{ VariableName }}" <3>
+  when:
+      java.referenced:
+          location: METHOD_CALL
+          pattern: com.example.apps.GenericClass.get
+
+----
+<1> `pattern`: A RegEx pattern that is matched on the source code line when a match is found
+<2> `name`: The name of the variable that can be used in templates
+<3> `message`: A template for a message using a custom variable
+
+
+=== Logical conditions
+
+The analyzer provides two basic logical conditions, `and` and `or`, which enable you to aggregate results of other conditions and create more complex queries.
+
+==== `and` condition
+
+The `and` condition performs a logical AND operation on the results of an array of conditions. An `and` condition matches when _all_ of its child conditions match.
+
+
+[source,terminal]
+----
+when:
+  and:
+    - <condition1>
+    - <condition2>
+----
+
+_Example_
+
+[source,terminal]
+----
+when:
+  and:
+    - java.dependency:
+        name: junit.junit
+        upperbound: 4.12.2
+        lowerbound: 4.4.0
+    - java.referenced:
+        location: IMPORT
+        pattern: junit.junit
+----
+
+Conditions can also be nested within other conditions.
+
+_Example_
+
+[source,terminal]
+----
+when:
+  and:
+  - and:
+    - go.referenced: "*CustomResourceDefinition*"
+    - java.referenced:
+        pattern: "*CustomResourceDefinition*"
+  - go.referenced: "*CustomResourceDefinition*"
+----
+
+==== `or` condition
+
+The `or` condition performs a logical OR operation on the results of an array of conditions. An `or` condition matches when _any_ of its child conditions matches.
+
+[source,terminal]
+----
+when:
+  or:
+    - <condition1>
+    - <condition2>
+----
+
+_Example_
+
+[source,terminal]
+----
+when:
+  or:
+  - java.dependency:
+      name: junit.junit
+      upperbound: 4.12.2
+      lowerbound: 4.4.0
+  - java.referenced:
+      location: IMPORT
+      pattern: junit.junit
+----
+
+== Rulesets
+
+A set of rules forms a ruleset. {ProductShortName} does not require every rule file to belong to a ruleset, but you can use rulesets to group multiple rules that achieve a common goal and to pass the rules to the rules engine.
+
+You can create a ruleset by placing one or more YAML rules in a directory and creating a `ruleset.yaml` file at the directory root. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, all rules in this directory are treated as a part of the ruleset defined by `ruleset.yaml` file.
+
+The `ruleset.yaml` file stores the metadata of the ruleset.
+
+[source,terminal]
+----
+name: "Name of the ruleset" <1>
+description: "Description of the ruleset"
+labels: <2>
+  - key=val
+----
+<1> The name must be unique within the provided rulesets.
+
+<2> Ruleset labels are inherited by all rules that belong to the ruleset.
