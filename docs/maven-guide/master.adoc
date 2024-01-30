@@ -10,6 +10,9 @@ include::topics/templates/document-attributes.adoc[]
 :_content-type: ASSEMBLY
 = Maven Plugin Guide
 
+The Maven plugin was deprecated in {ProductFullName} 7.0.0.
+////
+
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
@@ -72,3 +75,5 @@ include::topics/important-links.adoc[leveloffset=+3]
 include::topics/templates/revision-info.adoc[]
 
 :!maven-guide:
+
+////
