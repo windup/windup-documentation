@@ -88,7 +88,7 @@ The analyzer defines some labels that have special meaning as follows:
 
 .Label selector
 
-The analyzer CLI takes the `--label-selector` field as an option. It is a string expression that supports logical AND, OR and NOT operations. You can use it to filter-in or filter-out rules by their labels.
+The analyzer CLI takes the `--label-selector` field as an option. It is a string expression that supports logical AND, OR, and NOT operations. You can use it to filter-in or filter-out rules by their labels.
 
 _Examples:_
 
@@ -233,7 +233,7 @@ when:
 
 ==== Provider conditions
 
-{ProductShortName} supports multi-language source code analysis. Searching for a specific language in the source code is enabled using the `provider` condition. This condition defines a search query for a specific language provider.  The `provider` condition also specifies which of the provider's "capabilities" to use for analyzing the code.
+{ProductShortName} supports multi-language source code analysis. You can search for a specific language in the source code using the `provider` condition. This condition defines a search query for a specific language provider.  The `provider` condition also specifies which of the provider's "capabilities" to use for analyzing the code.
 
 The `provider` condition has the form `<provider_name>.<capability>`:
 
@@ -509,7 +509,7 @@ when:
 
 A set of rules forms a ruleset. {ProductShortName} does not require every rule file to belong to a ruleset, but you can use rulesets to group multiple rules that achieve a common goal and to pass the rules to the rules engine.
 
-You can create a ruleset by placing one or more YAML rules in a directory and creating a `ruleset.yaml` file at the directory root. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, all rules in this directory are treated as a part of the ruleset defined by `ruleset.yaml` file.
+You can create a ruleset by placing one or more YAML rules in a directory and creating a `ruleset.yaml` file at the directory root. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, all rules in this directory are treated as a part of the ruleset defined by the `ruleset.yaml` file.
 
 The `ruleset.yaml` file stores the metadata of the ruleset.
 

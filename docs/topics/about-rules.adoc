@@ -7,7 +7,7 @@
 [id="about-rules_{context}"]
 = About {ProductShortName} rules
 
-The {ProductName} ({ProductShortName}) contains rule-based migration tools (analyzers) that analyze the APIs, technologies, and architectures used by the applications you plan to migrate. {ProductShortName} uses analyzer rules internally to extract files from archives, decompile files, scan and classify file types, analyze XML and other file content, analyze the application code, and build the reports.
+The {ProductName} ({ProductShortName}) contains rule-based migration tools (analyzers) that analyze the APIs, technologies, and architectures used by the applications you plan to migrate. {ProductShortName} uses analyzer rules internally to extract files from archives, decompile files, scan and classify file types, analyze XML and other file content, analyze the application code, and build reports.
 
 {ProductShortName} builds a data model based on the rule execution results and stores component data and relationships in a graph database, which can then be queried and updated as needed by the migration rules and for reporting purposes.
 
