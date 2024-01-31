@@ -148,7 +148,7 @@ The table below lists all available providers, their capabilities, and their fie
 |Matches version numbers greater than or equal to
 |===
 +
-The following search locations can be used to scope down `java` searches:
+You can use the following search locations to scope down `java` searches:
 +
 * CONSTRUCTOR_CALL
 * TYPE

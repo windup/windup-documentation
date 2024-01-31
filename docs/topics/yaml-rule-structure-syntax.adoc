@@ -325,7 +325,7 @@ when:
     - "tag1"
     - "tag2"
 ----
-<1> When more than one tags is given, a logical AND is implied.
+<1> When more than one tags are given, a logical AND is implied.
 
 ===== `java` provider
 
@@ -334,7 +334,7 @@ The `java` provider analyzes Java source code.
 This provider has the following capabilities:
 
 * `referenced`
-* `dependency`.
+* `dependency`
 
 .`referenced`
 
@@ -350,7 +350,7 @@ when:
 <1> A RegEx pattern to match, for example, `org.kubernetes.*`
 <2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`
 
-The supported locations are the following:
+The following locations are supported:
 
 * `CONSTRUCTOR_CALL`
 * `TYPE`
