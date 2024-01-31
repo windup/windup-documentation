@@ -125,7 +125,7 @@ The table below lists all available providers, their capabilities, and their fie
 |Yes
 |Finds files with names matching this pattern
 |`hasTags`
-3+>|This is an inline list of string tags. See xref:yaml-rule-actions_rule-development-guide[Tag actions] for details on tag format.
+3+>|This is an inline list of string tags. See xref:yaml-rule-actions_rules-development-guide[Tag actions] for details on tag format.
 
 .5+.^|`go`
 |`referenced`
