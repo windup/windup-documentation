@@ -10,11 +10,11 @@ The following highlighted issues have been resolved in {ProductFullName} version
 
 .No update notification after editing fields
 
-In previous versions of {ProductShortName}, no `Update Notification` appeared at top of window after the fields `Application`, `Job Function`, and `Business services` were updated. This issue has been resolved in {ProductShortName}.  link:https://issues.redhat.com/browse/MTA-1024[MTA-1024]
+In previous versions of {ProductShortName}, no `Update Notification` appeared at top of window after the fields `Application`, `Job Function`, and `Business services` were updated. link:https://issues.redhat.com/browse/MTA-1024[MTA-1024]
 
 .Not possible to create a Jira instance behind a proxy
 
-In previous versions of {ProductShortName}, it was not possible to create a Jira instance (issues.stage.redhat.com) behind a proxy. This issue has been resolved in {ProductShortName}. link:https://issues.redhat.com/browse/MTA-849[MTA-849]
+In previous versions of {ProductShortName}, it was not possible to create a Jira instance (issues.stage.redhat.com) behind a proxy. link:https://issues.redhat.com/browse/MTA-849[MTA-849]
 
 // think we are safe to move this
 .CVE-2023-6291: A flaw was found in the `redirect_uri validation` logic

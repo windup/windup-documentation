@@ -35,7 +35,7 @@ XML transformation capabilities offered by the `xslt` element are discontinued.
 
 .Explicit `iteration` element is discontinued
 
-The explicit `iteration` element is discontinued in {ProductShortName} version 7.0.0.. If a condition returns a list of items via the `as` construct, iteration is implied.
+The explicit `iteration` element is discontinued in {ProductShortName} version 7.0.0. If a condition returns a list of items via the `as` construct, iteration is implied.
 
 .Test rules not supported in the current version
 
@@ -55,7 +55,7 @@ In {ProductShortName} version 7.0.0, any previous rules of information and optio
 
 .Java analysis capabilities
 
-In {ProductShortName} version 7.0.0, the following Java analysis capabilities have been deprecated: 
+In {ProductShortName} version 7.0.0, the following Java analysis capabilities have been deprecated:
 
 * Ability to match on specific arguments of a Java method constructor is not supported in the current version
 
