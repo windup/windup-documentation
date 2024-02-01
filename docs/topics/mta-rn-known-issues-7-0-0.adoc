@@ -6,7 +6,7 @@
 [id="rn-known-issues-7-0-0_{context}"]
 = Known issues
 
-[ProductFullName] version 7.0.0 has the following issues.
+{ProductFullName} version 7.0.0 has the following issues.
 
 .Pathfinder assessment migration fails on upgrade from {ProductShortName} 6.2.1 to {ProductShortName} 7.0.0
 
@@ -17,11 +17,11 @@ If {ProductShortName} 6.2.1 is installed, when attempting to switch the channel 
 When deleting, deactivating or degrading the role of a user, such as changing the user from `Admin` to `Migrator`, the change can take several minutes to take effect. This delay in changing the user status can pose an operational or security risk. link:https://issues.redhat.com/browse/MTA-1809[MTA-1809]
 
 .Re-enabling Keycloak breaks {ProductShortName}
-  
+
 Keycloak is enabled by default. If you disable and then re-enable Keycloak, you cannot perform any actions in the {ProductShortName} web console after logging in again.
 
 This error is caused as the `credential-mta-rhsso` secret is updated when `auth/Keycloak` is disabled and re-enabled.
-  
+
 The suggested workaround is to restore the old password in the `credential-mta-rhsso` secret, after re-enabling `auth`. link:https://issues.redhat.com/browse/MTA-1152[MTA-1152]
 
 
