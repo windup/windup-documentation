@@ -51,7 +51,7 @@ If you are installing on a Windows operating system:
 +
 When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
 
-////
+
 [id="installing-using-podman_{context}"]
 == Installing the {CLINameTitle} using Podman
 
@@ -59,11 +59,22 @@ When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with th
 
 To install using `podman pull`:
 
+. Login to registry.redhat.io:
++
+[source,terminal]
+----
+podman login registry.redhat.io
+----
++
+* Enter username
+* Enter password
++
+
 . Issue:
 +
 [source,terminal]
 ----
-podman cp $(podman create registry.redhat.com/mta-toolkit/mta-mta-cli-rhel9:{ProductVersion}):/usr/local/bin/mta-cli ./
+podman cp $(podman create registry.redhat.io/mta/mta-cli-rhel9:7.0.0):/usr/local/bin/mta-cli ./
 ----
 +
 This command will copy the binary `PATH` for system-wide use.
@@ -73,4 +84,3 @@ This command will copy the binary `PATH` for system-wide use.
 Although installation using Podman is possible, downloading installing the `.zip` file is the preferred installation.
 ====
 
-////
