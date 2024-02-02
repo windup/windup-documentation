@@ -40,6 +40,6 @@ The system repeatedly shows a warning message about overriding an inherited asse
 
 This warning, appropriate for the first assessment, incorrectly reappears on subsequent reassessments, suggesting that the application is still inheriting its assessment, even after it has been overridden. link:https://issues.redhat.com/browse/MTA-1825[MTA-1825]
 
-For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/browse/MTA-2060?filter=12428334[Known Issues in Jira].
+For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12429307[Known Issues in Jira].
 
 // project in (MTA) AND type = Bug AND createdDate >= 2021-01-01 AND createdDate <= 2024-02-06 AND (resolutiondate > 2024-02-06 OR resolutiondate is EMPTY) AND Priority in (Blocker, Critical, Major) ORDER BY priority DESC, key DESC
