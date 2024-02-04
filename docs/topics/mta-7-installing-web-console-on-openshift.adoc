@@ -39,11 +39,6 @@ To successfully deploy, the {ProductShortName} Operator requires 3 RWO persisten
 |RWO
 |Keycloak back end database
 
-|`pathfinder postgresql`
-|1 GiB
-|RWO
-|Pathfinder back end database
-
 |`cache`
 |100 GiB
 |RWX
