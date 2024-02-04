@@ -17,6 +17,7 @@ ifdef::mta[]
 :ProductShortName: MTA
 :ProductFullName: Migration Toolkit for Applications (MTA)
 :LC_PSN: mta
+:mta-cli: mta-cli
 :DocInfoProductNameURL: migration_toolkit_for_applications
 :WebName: user interface
 :WebNameTitle: User Interface
@@ -40,6 +41,7 @@ ifdef::mtr[]
 :ProductShortName: MTR
 :ProductFullName: Migration Toolkit for Runtimes (MTR)
 :LC_PSN: mtr
+:mta-cli: windup-cli
 :DocInfoProductNameURL: migration_toolkit_for_runtimes
 :WebName: web console
 :WebNameTitle: Web Console
