@@ -6,14 +6,12 @@
 [id="vs-code-extension-resolving-issues_{context}"]
 = Resolving issues
 
-You can resolve issues by doing one of the following:
-
-* Using a _Quick Fix_ automatic code replacement
-* Editing the code of a file with a hint
+You can resolve issues by editing the code of a file with a hint
 
 You can keep track of resolved issues by using the *Delete* or *Mark as Complete* options. Files marked deleted or completed will be analyzed again the next time you analyze a project that contains them.
 
-== Using a Quick Fix
+////
+ == Using a Quick Fix
 
 You can use a Quick Fix automatic code replacement to save time and ensure consistency in resolving repetitive issues.
 
@@ -22,6 +20,7 @@ You can use a Quick Fix automatic code replacement to save time and ensure consi
 . In the left pane, right-click an issue that has the Quick Fix icon (image:vs_optional.png[Optional or Quick Fix]) and select *Preview Quick Fix*.
 . To accept the suggested fix, right-click the issue again and select *Apply Quick Fix.*
 . Optional: Right-click the issue and select *Mark as Complete* or *Delete*.
+////
 
 == Editing the code of a file
 
