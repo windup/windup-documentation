@@ -13,7 +13,6 @@ Versions of the `follow-redirects` package before 1.15.4 are vulnerable to Impr
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-26159[(CVE-2023-26159)].
 
 .CVE-2022-25883: Regular Expression Denial of Service (ReDoS) vulnerability was discovered in the `node-semver` package
-// CVE-2022-25883 shows 'nodejs-semver'
 
 Versions of the `semver` npm package before 7.5.2 are vulnerable to Regular Expression Denial of Service (ReDoS). This ReDoS vulnerability comes from the `new Range` function, when untrusted user data is provided as a range.
 
