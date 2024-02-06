@@ -10,12 +10,4 @@ This guide uses the `<{ProductShortName}_HOME>` replaceable variable to denote t
 
 The {ProductShortNameLower}-{ProductVersion}-cli<OS>.zip* extracts a single binary called `mta-cli`.
 
-[NOTE]
-====
-If you are installing on a Windows operating system:
-
-. Extract the `.zip` file to a folder named `{LC_PSN}` to avoid a `Path too long` error. Alternatively, extract the file with link:https://www.7-zip.org/download.html[7-Zip] to a folder of any name you choose.
-. If a *Confirm file replace* window is displayed during extraction, click *Yes to all*.
-====
-
 When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
