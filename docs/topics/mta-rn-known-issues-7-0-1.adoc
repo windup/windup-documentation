@@ -8,7 +8,7 @@
 
 {ProductFullName} version 7.0.1 has the following issues.
 
-.MTA CLI does not function on machines using ARM based architecture
+.{ProductShortName} CLI does not function on machines using ARM based architecture
 
 {ProductShortName} CLI does not function on machines using ARM based architecture. The workaround is to use the upstream images, which will function as expected as they are built using multi-arch. To do this, issue:
 
