@@ -8,11 +8,13 @@ include::topics/templates/document-attributes.adoc[]
 :context: rules-development-guide-mtr
 :rules-development-guide-mtr:
 :_content-type: ASSEMBLY
-= {RulesDevBookName}
+[id="rules-development-guide"]
+= Rules Development Guide
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
+[id="introduction_{context}"]
 == Introduction
 
 // About the Rules Development Guide
@@ -33,6 +35,7 @@ include::topics/create-first-xml-rule.adoc[leveloffset=+2]
 // Review the Quickstarts
 include::topics/review-quickstarts.adoc[leveloffset=+2]
 
+[id="creating-xml-rules_{context}"]
 == Creating XML rules
 
 // XML Rule Structure
@@ -41,6 +44,7 @@ include::topics/xml-rule-syntax.adoc[leveloffset=+2]
 // Create a Basic XML Rule
 include::topics/create-basic-xml-rule.adoc[leveloffset=+2]
 
+[id="xml-rule-syntax_{context}"]
 === XML rule syntax
 
 // When Condition Syntax
