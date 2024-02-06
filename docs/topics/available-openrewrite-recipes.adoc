@@ -1,6 +1,7 @@
 // Module included in the following module:
 //
 // * docs/cli-guide-mtr/master.adoc
+// * docs/cli-guide/master.adoc
 
 [id=available-openrewrite-recipes_{context}]
 = Available OpenRewrite recipes
@@ -18,21 +19,21 @@
 
 Replace `javax` artifacts, declared within `pom.xml` files, with the `jakarta` equivalents
 
-|`<MTR_HOME>/rules/openrewrite/jakarta \ /javax/imports/rewrite.yml`
+|`<{ProductShortName}_HOME>/rules/openrewrite/jakarta \ /javax/imports/rewrite.yml`
 |`org.jboss.windup.JavaxToJakarta`
 
 |Java EE to Jakarta EE
 |Rename bootstrapping files
-|`<MTR_HOME>/rules/openrewrite/jakarta \ /javax/bootstrapping/rewrite.yml`
+|`<{ProductShortName}_HOME>/rules/openrewrite/jakarta \ /javax/bootstrapping/rewrite.yml`
 |`org.jboss.windup.jakarta.javax. \ BootstrappingFiles`
 
 |Java EE to Jakarta EE
 |Transform `persistence.xml` configuration
-|`<MTR_HOME>/rules/openrewrite/jakarta \ /javax/xml/rewrite.yml`
+|`<{ProductShortName}_HOME>/rules/openrewrite/jakarta \ /javax/xml/rewrite.yml`
 |`org.jboss.windup.javax-jakarta. \ PersistenceXML`
 
 |Spring Boot to Quarkus
 |Replace `spring.jpa.hibernate.ddl-auto` property within files matching `application*.properties`
-|`<MTR_HOME>/rules/openrewrite/quarkus \ /springboot/properties/rewrite.yml`
+|`<{ProductShortName}_HOME>/rules/openrewrite/quarkus \ /springboot/properties/rewrite.yml`
 |`org.jboss.windup.sb-quarkus.Properties`
 |====

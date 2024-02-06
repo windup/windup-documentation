@@ -22,7 +22,7 @@ For example, the OpenRewrite recipe `org.jboss.windup.JavaxToJakarta` renames im
 +
 [source,terminal,subs="attributes+"]
 ----
-$ ./{mta-cli} --openrewrite --input </path/to/source/project> \
+$ ./{mta-cli} transform openrewrite --input </path/to/source/project> \
   "-Drewrite.configLocation=<path/to/rewrite.yaml>"  \
   "-DactiveRecipes=<recipe_name>" --goal dryRun
 ----
@@ -53,7 +53,7 @@ You can include more than one recipe by specifying each in the `activeRecipes` p
 +
 [source,terminal,subs="attributes+"]
 ----
-$ ./{mta-cli} --openrewrite --input </path/to/source/project> \
+$ ./{mta-cli} transform openrewrite --input </path/to/source/project> \
   "-Drewrite.configLocation=<path/to/rewrite.yaml>"  \
   "-DactiveRecipes=<recipe_name>" --goal run
 ----
