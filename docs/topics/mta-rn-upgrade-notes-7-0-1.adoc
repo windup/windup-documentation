@@ -22,7 +22,6 @@ If your storage class does not support volume expansion, then an upgrade from 6.
 
 To avoid this issue, you can directly set the volume size by setting:
 
-// the example said 5Gi but should it be 10Gi
 [source,yaml]
 ----
 ...
