@@ -31,6 +31,8 @@ hub_database_volume_size: 5Gi
 
 By doing this, you will avoid the operator trying to resize the volume.
 
+If this value was set when the previous version was deployed, there is no need to take any action, as it will work as expected.
+
 
 .Existing data
 
