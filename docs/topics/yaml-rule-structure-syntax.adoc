@@ -41,7 +41,7 @@ category: mandatory <4>
 [id="yaml-rule-labels_{context}"]
 === Rule labels
 
-Labels are `key=val` pairs specified for rules or rulesets as well as dependencies. For dependencies, a provider adds the labels to the dependencies when retrieving them. Labels on a ruleset are automatically inherited by all the rules that belong to it.
+Labels are `key=val` pairs specified for rules or rulesets, as well as dependencies. For dependencies, a provider adds the labels to the dependencies when retrieving them. Labels on a ruleset are automatically inherited by all the rules that belong to it.
 
 .Label format
 
@@ -88,7 +88,7 @@ The analyzer defines some labels that have special meaning as follows:
 
 .Label selector
 
-The analyzer CLI takes the `--label-selector` field as an option. It is a string expression that supports logical AND, OR and NOT operations. You can use it to filter-in or filter-out rules by their labels.
+The analyzer CLI takes the `--label-selector` field as an option. It is a string expression that supports logical AND, OR, and NOT operations. You can use it to filter-in or filter-out rules by their labels.
 
 _Examples:_
 
@@ -233,7 +233,7 @@ when:
 
 ==== Provider conditions
 
-{ProductShortName} supports multi-language source code analysis. Searching for a specific language in the source code is enabled using the `provider` condition. This condition defines a search query for a specific language provider.  The `provider` condition also specifies which of the provider's "capabilities" to use for analyzing the code.
+{ProductShortName} supports multi-language source code analysis. You can search for a specific language in the source code using the `provider` condition. This condition defines a search query for a specific language provider.  The `provider` condition also specifies which of the provider's "capabilities" to use for analyzing the code.
 
 The `provider` condition has the form `<provider_name>.<capability>`:
 
@@ -325,7 +325,7 @@ when:
     - "tag1"
     - "tag2"
 ----
-<1> When more than one tags is given, a logical AND is implied.
+<1> When more than one tag is given, a logical AND is implied.
 
 ===== `java` provider
 
@@ -334,7 +334,7 @@ The `java` provider analyzes Java source code.
 This provider has the following capabilities:
 
 * `referenced`
-* `dependency`.
+* `dependency`
 
 .`referenced`
 
@@ -350,7 +350,7 @@ when:
 <1> A RegEx pattern to match, for example, `org.kubernetes.*`
 <2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`
 
-The supported locations are the following:
+The following locations are supported:
 
 * `CONSTRUCTOR_CALL`
 * `TYPE`
@@ -411,7 +411,7 @@ when:
 
 ==== Custom variables
 
-Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule’s action (see xref:yaml-rule-actions_{context}[Message actions]). They can be added to a rule in the `customVariables` field:
+Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed template messages in a rule’s action (see xref:yaml-rule-actions_{context}[Message actions]). They can be added to a rule in the `customVariables` field:
 
 [source,terminal]
 ----
@@ -509,7 +509,7 @@ when:
 
 A set of rules forms a ruleset. {ProductShortName} does not require every rule file to belong to a ruleset, but you can use rulesets to group multiple rules that achieve a common goal and to pass the rules to the rules engine.
 
-You can create a ruleset by placing one or more YAML rules in a directory and creating a `ruleset.yaml` file at the directory root. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, all rules in this directory are treated as a part of the ruleset defined by `ruleset.yaml` file.
+You can create a ruleset by placing one or more YAML rules in a directory and creating a `ruleset.yaml` file at the directory root. When you pass this directory as input to the {ProductShortName} {CLIName} using the `--rules` option, all rules in this directory are treated as a part of the ruleset defined by the `ruleset.yaml` file.
 
 The `ruleset.yaml` file stores the metadata of the ruleset.
 
