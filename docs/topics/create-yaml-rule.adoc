@@ -12,7 +12,7 @@ Each rule file contains one or more YAML rules. Every rule comprises metadata, c
 
 . Create a `when` condition.
 +
-The `when` condition of a YAML rule can be `provider`, `and` or `or`.
+The `when` condition of a YAML rule can be `provider`, `and`, or `or`.
 
 .. Create a `provider` condition
 +
@@ -125,7 +125,7 @@ The table below lists all available providers, their capabilities, and their fie
 |Yes
 |Finds files with names matching this pattern
 |`hasTags`
-3+>|This is an inline list of string tags. See _Tag Action_ for details on tag format.
+3+>|This is an inline list of string tags. See xref:yaml-rule-actions_rules-development-guide[Tag actions] for details on tag format.
 
 .5+.^|`go`
 |`referenced`

@@ -147,7 +147,7 @@ The Java provider in the analyzer can also add an exclude label to a list of pac
 === Rule categories
 
 * `mandatory`
-** You must resolve the issue for a successful migration, otherwise, the resulting application is not expected to build or run successfully. An example of such an issue is proprietary APIs that are not supported on the target platform.
+** You must resolve the issue for a successful migration. Otherwise, the resulting application is not expected to build or run successfully. An example of such an issue is proprietary APIs that are not supported on the target platform.
 * `optional`
 ** If you do not resolve the issue, the application is expected to work, but the results might not be optimal. If you do not make the change at the time of migration, you need to put it on the schedule soon after your migration is completed. An example of such an issue is EJB 2.x code not upgraded to EJB 3.
 * `potential`
