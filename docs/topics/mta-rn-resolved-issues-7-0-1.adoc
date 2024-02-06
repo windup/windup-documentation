@@ -1,0 +1,16 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes-7.0/master.adoc
+
+:_content-type: REFERENCE
+[id="mta-rn-resolved-issues-7-0-1_{context}"]
+= Resolved issues
+
+The following highlighted issues have been resolved in {ProductFullName} version 7.0.1.
+
+.Pathfinder assessment migration fails on upgrade from {ProductShortName} 6.2.1 to {ProductShortName} 7.0.0
+
+In previous version of {ProductShortName} 7.0.0, when {ProductShortName} 6.2.1 is installed, and you attempt to switch the channel to `stable-7.0`, the operator upgrade succeeds, but a task in the operator pod fails. This failure resulted in existing pathfinder assessments not being migrated to {ProductShortName} 7.0.0. This bug is resolved in {ProductShortName} 7.0.1. link:https://issues.redhat.com/browse/MTA-2139[MTA-2139]
+
+
+For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12429435[Resolved Issues in Jira].

@@ -12,19 +12,20 @@ The following are upgrade notes for {ProductFullName}
 
 In version 7.0.0 of {ProductShortName}, the default size of the hub database volume has been increased to 10GiB.
 
-If your storage class does not support volume expansion, then an upgrade from 6.2.1 to 7.0.0 will result in a failure due to the operator trying to change the volume size from 5GiB to 10G.
+If your storage class does not support volume expansion, then an upgrade from 6.2.1 to 7.0.0 will result in a failure due to the operator trying to change the volume size from 5GiB to 10GiB.
 
 To avoid this issue, you can directly set the volume size by setting:
 
-// the example said 5Gi but should it be 10Gi
 [source,yaml]
 ----
 ...
-hub_database_volume_size: 10Gi
+hub_database_volume_size: 5Gi
 ...
 ----
 
 By doing this, you will avoid the operator trying to resize the volume.
+
+If this value was set when the previous version was deployed, there is no need to take any action, as it will work as expected.
 
 
 .Existing data

@@ -1,0 +1,45 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: REFERENCE
+[id="rn-known-issues-7-0-1_{context}"]
+= Known issues
+
+{ProductFullName} version 7.0.1 has the following issues.
+
+.{ProductShortName} CLI does not function on machines using ARM based architecture
+
+{ProductShortName} CLI does not function on machines using ARM based architecture. The workaround is to use the upstream images, which will function as expected as they are built using multi-arch. To do this, issue:
+
+[source,ruby]
+----
+RUNNER_IMG=quay.io/konveyor/kantra:latest CMD_NAME=kantra ./mta-cli analyze ...
+----
+
+.Delayed permission update and user deactivation in `RBAC`
+
+When deleting, deactivating or degrading the role of a user, such as changing the user from `Admin` to `Migrator`, the change can take several minutes to take effect. This delay in changing the user status can pose an operational or security risk. link:https://issues.redhat.com/browse/MTA-1809[MTA-1809]
+
+.Re-enabling Keycloak breaks {ProductShortName}
+
+Keycloak is enabled by default. If you disable and then re-enable Keycloak, you cannot perform any actions in the {ProductShortName} web console after logging in again.
+
+This error is caused as the `credential-mta-rhsso` secret is updated when `auth/Keycloak` is disabled and re-enabled.
+
+The suggested workaround is to restore the old password in the `credential-mta-rhsso` secret, after re-enabling `auth`. link:https://issues.redhat.com/browse/MTA-1152[MTA-1152]
+
+
+.org.apache.derby.derby dependency not analyzed
+
+The `org.apache.derby.derby` dependency is not analyzed. link:https://issues.redhat.com/browse/MTA-1817[MTA-1817]
+
+.Redundant warning on reassessment of applications with inherited assessments
+
+The system repeatedly shows a warning message about overriding an inherited assessment when reassessing an application.
+
+This warning, appropriate for the first assessment, incorrectly reappears on subsequent reassessments, suggesting that the application is still inheriting its assessment, even after it has been overridden. link:https://issues.redhat.com/browse/MTA-1825[MTA-1825]
+
+For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12429307[Known Issues in Jira].
+
+// project in (MTA) AND type = Bug AND createdDate >= 2021-01-01 AND createdDate <= 2024-02-06 AND (resolutiondate > 2024-02-06 OR resolutiondate is EMPTY) AND Priority in (Blocker, Critical, Major) ORDER BY priority DESC, key DESC
