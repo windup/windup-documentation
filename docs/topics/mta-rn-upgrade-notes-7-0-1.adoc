@@ -25,7 +25,7 @@ To avoid this issue, you can directly set the volume size by setting:
 [source,yaml]
 ----
 ...
-hub_database_volume_size: 10Gi
+hub_database_volume_size: 5Gi
 ...
 ----
 
