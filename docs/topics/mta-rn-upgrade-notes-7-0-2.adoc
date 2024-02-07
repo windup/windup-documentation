@@ -1,0 +1,33 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes-7.0/master.adoc
+
+:_content-type: REFERENCE
+[id="mta-rn-upgrade-notes-7-0-2_{context}"]
+= Upgrade notes
+
+The following are upgrade notes for {ProductFullName}
+
+.Upgrade from {ProductShortName} 6.2.1 to {ProductShortName} 7.0.2
+
+
+.Hub database volume size
+
+In version 7.0.2 of {ProductShortName}, the default size of the hub database volume has been increased to 10GiB.
+
+If your storage class does not support volume expansion, then an upgrade from 6.2.1 to 7.0.2 will result in a failure due to the operator trying to change the volume size from 5GiB to 10GiB.
+
+To avoid this issue, you can directly set the volume size by setting:
+
+[source,yaml]
+----
+...
+hub_database_volume_size: 5Gi
+...
+----
+
+By doing this, you will avoid the operator trying to resize the volume.
+
+If this value was set when the previous version was deployed, there is no need to take any action, as it will work as expected.
+
+
