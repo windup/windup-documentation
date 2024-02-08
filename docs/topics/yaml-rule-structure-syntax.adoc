@@ -233,7 +233,7 @@ when:
 
 ==== Provider conditions
 
-{ProductShortName} supports multi-language source code analysis. You can search for a specific language in the source code using the `provider` condition. This condition defines a search query for a specific language provider.  The `provider` condition also specifies which of the provider's "capabilities" to use for analyzing the code.
+{ProductShortName} supports multi-language source code analysis. You can search for a specific language in the source code using the `provider` condition. This condition defines a search query for a specific language provider.  The `provider` condition also specifies which of the provider's capabilities to use for analyzing the code.
 
 The `provider` condition has the form `<provider_name>.<capability>`:
 
