@@ -31,7 +31,6 @@ To run the {ProductShortName} command without prompting, for example when execut
 This option may result in a longer execution time and a large number of migration issues being reported.
 ====
 
-|--batchMode |Flag to specify that {ProductShortName} should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in to the command line.
 |--debug |Flag to run {ProductShortName} in debug mode.
 |--disableTattletale | Flag to disable generation of the Tattletale report. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
 |--discoverPackages |Flag to list all available packages in the input binary application.
