@@ -1,0 +1,252 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="create-first-xml-rule_{context}"]
+= Creating your first XML rule
+
+This section guides you through the process of creating and testing your first {ProductShortName} XML-based rule. This assumes that you have already installed {ProductShortName}. See link:{ProductDocUserGuideURL}/index#installing_and_running_the_cli[Installing and running the CLI] in the _{UserCLIBookName}_ for installation instructions.
+
+In this example, you will write a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and provide a link to the documentation that describes how to migrate the code.
+
+[id="creating-directory-structure-for-the-rule_{context}"]
+== Creating the directory structure for the rule
+
+Create a directory structure to contain your first rule and the data file to use for testing.
+
+[options="nowrap",subs="attributes+"]
+----
+$ mkdir -p /home/<USER_NAME>/migration-rules/rules
+$ mkdir -p /home/<USER_NAME>/migration-rules/data
+----
+
+This directory structure will also be used to hold the generated {ProductShortName} reports.
+
+[id="mta-creating-data-to-test-the-rule_{context}"]
+== Creating data to test the rule
+
+. Create a `jboss-web.xml` file in the `/home/<USER_NAME>/migration-rules/data/` subdirectory.
+. Copy in the following content.
++
+[source,xml,subs="attributes+"]
+----
+<!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Application 4.2//EN" "http://www.jboss.org/j2ee/dtd/jboss-web_4_2.dtd">
+<jboss-web>
+    <class-loading java2ClassLoadingCompliance="false">
+        <loader-repository>
+            seam.jboss.org:loader=@projectName@
+            <loader-repository-config>java2ParentDelegation=false</loader-repository-config>
+        </loader-repository>
+    </class-loading>
+</jboss-web>
+----
+
+[id="creating-the-rule_{context}"]
+== Creating the rule
+
+{ProductShortName} XML-based rules use the following rule pattern:
+
+----
+when(condition)
+  perform(action)
+otherwise(action)
+----
+
+.Procedure
+
+. In the `/home/<USER_NAME>/migration-rules/rules/` directory, create a file named `JBoss5-web-class-loading.windup.xml` that contains the following content:
++
+[source,xml,subs="attributes+"]
+----
+<?xml version="1.0"?>
+<ruleset id="<UNIQUE_RULESET_ID>"
+  xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+  <metadata>
+      <description>
+          <!-- Ruleset Description -->
+      </description>
+      <dependencies>
+          <!-- Ruleset Dependencies -->
+      </dependencies>
+      <sourceTechnology id="<SOURCE_ID>" versionRange="<SOURCE_VERSION_RANGE>"/>
+      <targetTechnology id="<TARGET_ID>" versionRange="<TARGET_VERSION_RANGE>"/>
+      <tag>Reviewed-2015-05-01</tag>
+  </metadata>
+  <rules>
+      <rule id="<UNIQUE_RULE_ID>">
+        <when>
+            <!-- Test for a condition here -->
+        </when>
+        <perform>
+            <!-- Perform an action -->
+        </perform>
+      </rule>
+   </rules>
+</ruleset>
+----
++
+[NOTE]
+====
+The XML file name must include the `.windup.xml` extension. Otherwise, {ProductShortName} does not evaluate the new rule.
+====
+
+. Add a unique identifier for the ruleset and rule:
+
+* Replace `<UNIQUE_RULESET_ID>` with an appropriate ruleset ID, for example, `JBoss5-web-class-loading`.
+* Replace `<UNIQUE_RULE_ID>` with an appropriate rule ID, for example, `JBoss5-web-class-loading_001`.
+
+. Add the following ruleset add-on dependencies:
++
+[source,xml,subs="attributes+"]
+----
+<dependencies>
+  <addon id="org.jboss.windup.rules,windup-rules-javaee,3.0.0.Final"/>
+  <addon id="org.jboss.windup.rules,windup-rules-java,3.0.0.Final"/>
+</dependencies>
+----
+
+. Add the source and target technologies:
+
+* Replace `<SOURCE_ID>` with `eap`.
+* Replace `<TARGET_ID>` with `eap`.
+
+. Set the source and target technology versions.
++
+* Replace `<SOURCE_VERSION_RANGE>` with `(4,5)`.
+* Replace `<TARGET_VERSION_RANGE>` with `(6,)`.
+
++
+See the Apache Maven link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[version range specification] for more information.
+
+. Complete the `when` condition. Because this rule tests for a match in an XML file, `xmlfile` is used to evaluate the files.
++
+To match on the `class-loading` element that is a child of `jboss-web`, use the xpath expression `jboss-web/class-loading`.
++
+[source,xml,subs="attributes+"]
+----
+<when>
+    <xmlfile matches="jboss-web/class-loading" />
+</when>
+----
+. Complete the `perform` action for this rule.
++
+* Add a classification with a descriptive title and a level of effort of `1`.
+* Provide a hint with an informative message and a link to documentation that describes the migration details.
++
+[source,xml,subs="attributes+"]
+----
+<perform>
+    <iteration>
+        <classification title="JBoss Web Application Descriptor" effort="1"/>
+        <hint title="JBoss Web XML class-loading element is no longer valid">
+          <message>
+            The class-loading element is no longer valid in the jboss-web.xml file.
+          </message>
+          <link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" title="Create or Modify Files That Control Class Loading in JBoss EAP 6"/>
+        </hint>
+    </iteration>
+</perform>
+----
+
+The rule is now complete and should look like the following example.
+
+[source,xml,subs="attributes+"]
+----
+<?xml version="1.0"?>
+<ruleset id="JBoss5-web-class-loading"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        <description>
+            This ruleset looks for the class-loading element in a jboss-web.xml file, which is no longer valid in JBoss EAP 6
+        </description>
+         <dependencies>
+            <addon id="org.jboss.windup.rules,windup-rules-javaee,3.0.0.Final"/>
+            <addon id="org.jboss.windup.rules,windup-rules-java,3.0.0.Final"/>
+        </dependencies>
+        <sourceTechnology id="eap" versionRange="(4,5)"/>
+        <targetTechnology id="eap" versionRange="[6,)"/>
+    </metadata>
+    <rules>
+        <rule id="JBoss5-web-class-loading_001">
+            <when>
+                <xmlfile matches="jboss-web/class-loading" />
+            </when>
+            <perform>
+                <iteration>
+                    <classification title="JBoss Web Application Descriptor" effort="1"/>
+                    <hint title="JBoss Web XML class-loading element is no longer valid">
+                      <message>
+                        The class-loading element is no longer valid in the jboss-web.xml file.
+                      </message>
+                      <link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" title="Create or modify files that control class loading in JBoss EAP 6"/>
+                    </hint>
+                </iteration>
+            </perform>
+        </rule>
+     </rules>
+</ruleset>
+----
+[]
+
+[id="mta-installing-rule-in-directory_{context}"]
+== Installing the rule
+
+An {ProductShortName} rule is installed by placing the rule into the appropriate directory.
+
+Copy the `JBoss5-web-class-loading.windup.xml` file to the `<{ProductShortName}_HOME>/rules/` directory.
+
+[source,options="nowrap",subs="attributes+"]
+----
+$ cp /home/<USER_NAME>/migration-rules/rules/JBoss5-web-class-loading.windup.xml <{ProductShortName}_HOME>/rules/
+----
+[]
+
+[id="mta-testing-the-rule_{context}"]
+== Testing the rule
+
+Open a terminal and run the following command, passing the test file as an input argument and a directory for the output report.
+
+[options="nowrap",subs="attributes+"]
+----
+$ <{ProductShortName}_HOME>/bin/mta-cli --sourceMode --input /home/<USER_NAME>/migration-rules/data --output /home/<USER_NAME>/migration-rules/reports --target eap:6
+----
+
+You should see the following result.
+
+[options="nowrap",subs="attributes+"]
+----
+Report created: /home/<USER_NAME>/migration-rules/reports/index.html
+              Access it at this URL: file:///home/<USER_NAME>/migration-rules/reports/index.html
+----
+[]
+[id="mta-reviewing-the-report_{context}"]
+== Reviewing the reports
+
+Review the report to be sure that it provides the expected results. For a more detailed walkthrough of {ProductShortName} reports, see the link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports] section of the {ProductShortName} _{UserCLIBookName}_.
+
+. Open `/home/<USER_NAME>/migration-rules/reports/index.html` in a web browser.
+. Verify that the rule ran successfully.
+.. From the main landing page, click the *Rule providers execution overview* link to open the Rule Providers Execution Overview.
++
+.. Find the `JBoss5-web-class-loading_001` rule and verify that its *Status?* is `Condition met` and its *Result?* is `success`.
++
+.Test rule execution
+image::executed-test-rule.png[Test rule execution]
+. Verify that the rule matches the test data:
+
+.. From the main landing page, click the name of the application or input folder, which is `data` in this example.
+.. Click the *Application Details* report link.
+.. Click the *jboss-web.xml* link to view the *Source Report*.
++
+You can see that the `<class-loading>` line is highlighted, and the hint from the custom rule is shown inline.
++
+.Rule match
+image::test-rule-details.png[Rule match]
++
+// TODO: Consider updating with test data/rule combo that won't match on any of the other existing rules.
+The top of the file lists the classifications for matching rules. You can use the link icon to view the details for that rule. Notice that in this example, the `jboss-web.xml` file matched on another rule (`JBoss web application descriptor (jboss-web.xml)`) that produced `1` story point. This story point, combined with the `1` story point from our custom rule, brings the total story points for this file to `2`.
