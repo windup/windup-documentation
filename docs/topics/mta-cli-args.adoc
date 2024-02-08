@@ -91,30 +91,82 @@ A space-delimited list of the path to the file or directory containing one or mo
 ----
 
 [id="cli-input-file-type-arguments_{context}"]
+== Analyze application source code
 
-Depending on whether the input file type provided to the `--input` argument is a file or directory, it will be evaluated as follows depending on the additional arguments provided.
+Usage: `{mta-cli} analyze [flags]`
 
-Directory::
-+
-[cols="1,1",options="header"]
+The following flags are available:
+
+.{ProductShortName} Analyze application
+[cols="40%,60%a",options="header",]
 |====
-| --sourceMode
-| No Argument
+|Flag |Description
 
-| The directory is evaluated as a single application.
-| Each subdirectory is evaluated as an application.
+| --analyze-known-libraries
+|  analyze known open-source libraries
+
+| -h, --help
+| help for analyze
+
+| -i, --input string
+|  path to application source code or a binary
+
+| --json-output
+| create analysis and dependency output as json
+
+| --list-sources
+| list rules for available migration sources
+
+| --list-targets
+| list rules for available migration targets
+
+| -l, --label-selector string
+| run rules based on specified label selector expression
+
+| --maven-settings string
+| path to a custom maven settings file to use
+
+| --overwrite
+| overwrite output directory
+
+| --skip-static-report
+|  do not generate static report
+
+| -m, --mode string
+| analysis mode" `full` (default) or `source-only`
+
+| -o, --output string | path to the directory for analysis output
+
+| --rules stringArray | filename or directory containing rule files
+
+| --skip-static-report
+| do not generate static report
+
+| -s, --source string
+| source technology to consider for analysis. To specify multiple sources, repeat the parameter: --source <source_1> --source <source_2> etc.
+
+| -t, --target string
+| target technology to consider for analysis. To specify multiple targets, repeat the parameter: --target <target_1> --target <target_2> etc.
 |====
 
-File::
-+
-[cols="1,1",options="header"]
-|====
-| --sourceMode
-| No Argument
+[id="cli-input-file-type-arguments-global-flags_{context}"]
+=== Global flags
 
-| The file is evaluated as a compressed project.
-| The file is evaluated as a single application.
+.{ProductShortName} Analyze application
+[cols="40%,60%a",options="header",]
 |====
+
+|Flag
+|Description
+
+| --log-level uint32
+| log level (default 4)
+
+| --no-cleanup
+| do not cleanup temporary resources
+|====
+
+
 
 [id="cli-output-argument_{context}"]
 == Specifying the output directory
