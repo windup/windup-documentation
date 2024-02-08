@@ -53,10 +53,10 @@ include::topics/available-openrewrite-recipes.adoc[leveloffset=+4]
 include::topics/access-report.adoc[leveloffset=+2]
 
 // Review the Reports
-include::topics/review-reports.adoc[leveloffset=+1]
+include::topics/mta-review-reports.adoc[leveloffset=+1]
 
 // Export the Report in CSV Format
-include::topics/csv-export.adoc[leveloffset=+1]
+// include::topics/csv-export.adoc[leveloffset=+1]
 
 // Mavenize Your Application
 // include::topics/mavenize.adoc[leveloffset=+1]

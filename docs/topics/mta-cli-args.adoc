@@ -12,11 +12,11 @@ The following is a detailed description of the available {ProductShortName} comm
 ====
 To run the {ProductShortName} command without prompting, for example when executing from a script, you must use the following arguments:
 
-* `--batchMode`
 * `--overwrite`
 * `--input`
 * `--target`
 ====
+
 
 .{ProductShortName} CLI arguments
 [cols="40%,60%a",options="header",]
@@ -104,26 +104,22 @@ Depending on whether the input file type provided to the `--input` argument is a
 
 Directory::
 +
-[cols="1,1,1",options="header"]
+[cols="1,1",options="header"]
 |====
-| --explodedApp
 | --sourceMode
-| Neither Argument
+| No Argument
 
-| The directory is evaluated as a single application.
 | The directory is evaluated as a single application.
 | Each subdirectory is evaluated as an application.
 |====
 
 File::
 +
-[cols="1,1,1",options="header"]
+[cols="1,1",options="header"]
 |====
-| --explodedApp
 | --sourceMode
-| Neither Argument
+| No Argument
 
-| Argument is ignored; the file is evaluated as a single application.
 | The file is evaluated as a compressed project.
 | The file is evaluated as a single application.
 |====
@@ -152,7 +148,7 @@ However, if you specify the `--overwrite` argument, {ProductShortName} will proc
 [id="cli-source-argument_{context}"]
 == Setting the source technology
 
-A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources.
+A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--list-sources` argument to list all available sources.
 
 .Usage
 [source,options="nowrap",subs="attributes+"]
@@ -190,6 +186,7 @@ When migrating to JBoss EAP, be sure to specify the version in the target, for e
 See link:{ProductDocIntroToMTAGuideURL}/index#migration_paths_getting-started-guide[Supported migration paths] in _{IntroToMTABookName}_ for the appropriate JBoss EAP version.
 ====
 
+////
 [id="cli-packages-argument_{context}"]
 == Selecting packages
 
@@ -208,3 +205,4 @@ A space-delimited list of the packages to be evaluated by {ProductShortName}. It
 ====
 If you omit the `--packages` argument, every package in the application is scanned, which can impact performance.
 ====
+////
