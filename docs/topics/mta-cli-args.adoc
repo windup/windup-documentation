@@ -52,7 +52,6 @@ This option may result in a longer execution time and a large number of migratio
 |--keepWorkDirs| Flag to instruct {ProductShortName} to not delete temporary working files, such as the graph database and extracted archive files. This is useful for debugging purposes.
 |--legacyReports| Flag to instruct {ProductShortName} to generate the old format reports instead of the new format reports.
 |--list| Flag to list installed add-ons.
-|--listSourceTechnologies| Flag to list all available source technologies.
 |--listTags| Flag to list all available tags.
 |--list-targets| Flag to list all available target technologies.
 |--mavenize| Flag to create a Maven project directory structure based on the structure and content of the application. This creates `pom.xml` files using the appropriate Java EE API and the correct dependencies between project modules. See also the `--mavenizeGroupId` option.
