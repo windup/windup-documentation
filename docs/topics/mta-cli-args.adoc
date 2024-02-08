@@ -226,7 +226,6 @@ A space-delimited list of the packages to be evaluated by {ProductShortName}. It
 .Usage
 [source,options="nowrap",subs="attributes+"]
 ----
---packages <PACKAGE_1> <PACKAGE_2> <PACKAGE_N>
 ----
 
 * In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or third party packages. The `<PACKAGE_N>` argument is a package prefix; all subpackages will be scanned. For example, to scan the packages `com.mycustomapp` and `com.myotherapp`, use `--packages com.mycustomapp com.myotherapp` argument on the command line.
