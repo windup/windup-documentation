@@ -160,7 +160,7 @@ See link:{ProductDocIntroToMTAGuideURL}/index#migration_paths_getting-started-gu
 [id="cli-target-argument_{context}"]
 == Setting the target technology
 
-A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the `--source` argument, helps to determine which rulesets are used. If you do not specify this option, you are prompted to select a target. Use the `--listTargetTechnologies` argument to list all available targets.
+A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the `--source` argument, helps to determine which rulesets are used. If you do not specify this option, you are prompted to select a target. Use the `--list-targets` argument to list all available targets.
 
 .Usage
 [source,options="nowrap",subs="attributes+"]
