@@ -41,7 +41,7 @@ In *Migration* view, you perform application assessments and analyses, review re
 // include::topics/mta-web-administration-view.adoc[leveloffset=+1]
 
 // Installation
-include::topics/mta-6-installing-web-console-on-openshift.adoc[leveloffset=+1]
+include::topics/mta-7-installing-web-console-on-openshift.adoc[leveloffset=+1]
 
 [id="configuring-the-instance-environment"]
 == Configuring the instance environment
@@ -119,6 +119,7 @@ include::topics/mta-web-create-config-jira-connection.adoc[leveloffset=2]
 A Jira connection that was used for xref:../../../docs/topics/mta-web-creating-jira-issues-for-migration-wave.adoc#mta-web-creating-jira-issues-for-migration-wave_{context}[creating issues for a migration wave] cannot be removed as long as the issues exist in Jira, even after the migration wave is deleted.
 ====
 
+//6
 [id="assessing-and-analyzing-applications"]
 == Assessing and analyzing applications
 You can use the {ProductName} ({ProductShortName}) {WebName} to both assess and to analyze applications.
@@ -127,20 +128,50 @@ Assessing applications refers to estimating the risks and costs involved in prep
 
 Analyzing applications refers to using rules to determine which specific lines in an application must be modified before the application can be migrated or modernized.
 
+include::topics/mta-assessment-changes-700.adoc[leveloffset=+2]
+
 include::topics/mta-web-assessing-apps.adoc[leveloffset=+2]
-include::topics/mta-web-applying-assessments-to-other-apps.adoc[leveloffset=+3]
-include::topics/mta-web-skipping-assessment-of-apps.adoc[leveloffset=+3]
-include::topics/mta-web-reviewing-apps.adoc[leveloffset=+2]
-include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[leveloffset=+2]
-include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
+
+include::topics/mta-introduction-questionnaire.adoc[leveloffset=+3]
+include::topics/mta-custom-questionnaire.adoc[leveloffset=+4]
+include::topics/mta-default-questionnaire.adoc[leveloffset=+4]
+include::topics/mta-export-questionnaire.adoc[leveloffset=+4]
+include::topics/mta-import-questionnaire.adoc[leveloffset=+4]
+include::topics/mta-view-questionnaire.adoc[leveloffset=+4]
+include::topics/mta-delete-questionnaire.adoc[leveloffset=+4]
+
+include::topics/mta-web-assessment-module.adoc[leveloffset=+3]
+
+include::topics/mta-web-run-assessment.adoc[leveloffset=+4]
+
+// include::topics/mta-web-skipping-assessment-of-apps.adoc[leveloffset=+3]
+
+
 include::topics/mta-web-tagging-an-application.adoc[leveloffset=+2]
+
 include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+2]
+
+include::topics/mta-web-reviewing-apps.adoc[leveloffset=+2]
+
+include::topics/mta-web-review-tab.adoc[leveloffset=+2]
+
+include::topics/mta-web-archetypes.adoc[leveloffset=+2]
+// include::topics/mta-web-applying-assessments-to-other-apps.adoc[leveloffset=+3]
+
+
+include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[leveloffset=+2]
+
 include::topics/mta-web-downloading-an-analysis-report.adoc[leveloffset=+3]
 
+include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
+
+
+
+//7
 [id=working-with-applications-in-the-ui]
 == Working with Applications
 
-You can use the {ProductName} ({ProductShortName}) {WebName} to do the following:
+You can use the {ProductFullName} {WebName} to do the following:
 
 * Add applications
 * Assign application credentials
@@ -149,6 +180,9 @@ You can use the {ProductName} ({ProductShortName}) {WebName} to do the following
 
 include::topics/mta-web-application-attributes.adoc[leveloffset=+2]
 include::topics/mta-web-adding-applications.adoc[leveloffset=+2]
+include::topics/mta-web-edit-application.adoc[leveloffset=+2]
+
+// include::topics/mta-web-review-application.adoc[leveloffset=+2]
 include::topics/mta-web-assigning-application-credentials.adoc[leveloffset=+2]
 include::topics/mta-web-importing-an-app-list.adoc[leveloffset=+2]
 include::topics/mta-web-downloading-app-list-template.adoc[leveloffset=+2]

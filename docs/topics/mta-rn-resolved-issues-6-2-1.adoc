@@ -1,0 +1,37 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes-6.2/master.adoc
+
+:_content-type: REFERENCE
+[id="mta-rn-resolved-issues-6-2-1_{context}"]
+= Resolved issues
+
+The following highlighted issues have been resolved in MTA version 6.2.1.
+
+.CVE-2023-44487 HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack)
+
+A flaw was found in handling multiplexed streams in the HTTP/2 protocol. In previous releases of MTA, the HTTP/2 protocol allowed a denial of service (server resource consumption) because request cancellation could reset multiple streams quickly. The server had to set up and tear down the streams while not hitting any server-side limit for the maximum number of active streams per connection, which resulted in a denial of service due to server resource consumption.
+
+The following issues have been listed under this issue:
+
+* link:https://issues.redhat.com/browse/MTA-1428[(MTA-1428)]
+* link:https://issues.redhat.com/browse/MTA-1430[(MTA-1430)]
+* link:https://issues.redhat.com/browse/MTA-1448[(MTA-1448)]
+
+To resolve this issue, upgrade to {ProductShortName} 6.2.1 or later.
+
+For more information, see link:https://access.redhat.com/security/cve/cve-2023-44487[CVE-2023-44487 (Rapid Reset Attack)].
+
+.CVE-2023-39325: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack in the Go language packages)
+
+The HTTP/2 protocol is susceptible to a denial of service attack because request cancellation can reset multiple streams quickly. The server has to set up and tear down the streams while not hitting any server-side limit for the maximum number of active streams per connection. This results in a denial of service due to server resource consumption.
+
+The following issues have been listed under this issue:
+
+* link:https://issues.redhat.com/browse/MTA-1429[MTA-1429]	
+* link:https://issues.redhat.com/browse/MTA-1482[MTA-1482]	
+* link:https://issues.redhat.com/browse/MTA-1447[MTA-1447]
+
+To resolve this issue, upgrade to {ProductShortName} 6.2.1 or later.
+
+For more information, see link:https://access.redhat.com/security/cve/cve-2023-39325[CVE-2023-39325 (Rapid Reset Attack in the Go language packages)].

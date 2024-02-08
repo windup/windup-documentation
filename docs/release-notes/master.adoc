@@ -17,16 +17,28 @@ include::topics/making-open-source-more-inclusive.adoc[]
 == Introduction
 {ProductName} {DocInfoProductNumber} accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.
 
-These release notes cover all _z_-stream releases of {ProductShortName} 6.2 with the most recent release listed first.
+[id="mta-7-0-1"]
+== {ProductShortName} 7-0-1
 
-[id="mta-6-2-0"]
-== {ProductShortName} 6.2.0
+include::topics/mta-rn-known-issues-7-0-1.adoc[leveloffset=+2]
 
-include::topics/mta-rn-new-features-6-2-0.adoc[leveloffset=+2]
+include::topics/mta-rn-resolved-issues-7-0-1.adoc[leveloffset=+2]
 
-include::topics/mta-rn-known-issues-6-2-0.adoc[leveloffset=+2]
+include::topics/mta-rn-upgrade-notes-7-0-1.adoc[leveloffset=+2]
 
-include::topics/mta-rn-resolved-issues-6-2-0.adoc[leveloffset=+2]
 
+
+[id="mta-7-0-0"]
+== {ProductShortName} 7-0-0
+
+include::topics/mta-rn-new-features-7-0-0.adoc[leveloffset=+2]
+
+include::topics/mta-rn-known-issues-7-0-0.adoc[leveloffset=+2]
+
+include::topics/mta-rn-resolved-issues-7-0-0.adoc[leveloffset=+2]
+
+include::topics/mta-rn-upgrade-notes-7-0-0.adoc[leveloffset=+2]
+
+include::topics/mta-rn-technical-changes-7-0-0.adoc[leveloffset=+2]
 
 :!release-notes:

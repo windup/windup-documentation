@@ -1,0 +1,53 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: CONCEPT
+[id="rn-new-features-7-0-0_{context}"]
+= New features
+
+
+This section describes the new features and improvements of the {ProductFullName} 7.0.0.
+
+
+.Enhanced assessment module with custom questionnaire
+
+In {ProductShortName} 7.0.0, the assessment module has been enhanced. The assessment module in this release allows you to import questionnaires using a custom YAML syntax for questionnaire definition.
+
+// add xref
+
+.Grouping applications for assessment into archetypes
+
+In {ProductShortName} 7.0.0, you can assess and analyze entire groups of applications or *archetypes*, according to common characteristics.
+
+Application *archetypes* are defined according to criteria tags and application taxonomy. Each archetype selects how the applications are assessed according to its characteristics.
+
+// For more details, see xref:mta-web-archetypes.adoc[Application archetypes].
+
+
+.Unlink applications from JIRA
+
+In {ProductShortName} 7.0.0, you now have the ability to unlink an application from a Jira ticket, so that you can manage the links between applications and tickets more effectively. To unlink an application from a Jira ticket, click the `Unlink from Jira` icon in the details view of the application or in the details view of a Migration wave.
+
+// For more details, see xref:mta-web-creating-jira-issues-for-migration-wave.adoc#[Unlink applications from JIRA option].
+
+.YAML syntax for new rules
+
+New rules that use YAML syntax to support metadata, `message` and `tag` actions, rule conditions, provider conditions for *Java* and *Go* providers, and other file tagging and characteristics.
+
+
+.Dynamic reports
+
+{ProductShortName} 7.0.0 produces dynamic analysis reports that collect aggregated issues and dependencies across the application portfolio. They identify portfolio-wide trends, drill down to specific lines in source code, and fully integrate with {ProductShortName} User Interface (UI).
+
+.Multi-language analysis
+
+{ProductShortName} 7.0.0 supports migrating applications written in Java and Golang implemented in Language Server Protocol (LSP).
+
+:FeatureName: Multi-language analysis for Golang
+include::technology-preview.adoc[]
+
+
+
+
+

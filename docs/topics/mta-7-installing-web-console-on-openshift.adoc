@@ -1,0 +1,517 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-7-installing-web-console-on-openshift_{context}"]
+
+= Installing the {ProductName} {WebName}
+
+You can install the {ProductName} ({ProductShortName}) {WebName} as part of the process of installing the {ProductShortName} Operator on the OpenShift Container Platform.
+
+The {ProductShortName} Operator is a structural layer that manages resources deployed on Kubernetes (database, front end, back end) to automatically create an {ProductShortName} instance.
+
+[id="openshift-persistent-volume-requirements_{context}"]
+== Persistent volume requirements
+
+To successfully deploy, the {ProductShortName} Operator requires 3 RWO persistent volumes (PVs) used by different components. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires an additional 2 RWX PVs that are used by Maven and the hub file storage. The PVs are described in the table below:
+
+.Required persistent volumes
+[cols="25%,25%,25%,25%", options="header"]
+|====
+|Name
+|Default size
+|Access mode
+|Description
+
+|`hub database`
+|10 GiB
+|RWO
+|Hub database
+
+|`hub bucket`
+|100 GiB
+|RWX
+|Hub file storage; required if the `rwx_supported` configuration option is set to `true`
+
+|`keycloak postgresql`
+|1 GiB
+|RWO
+|Keycloak back end database
+
+|`pathfinder postgresql`
+|1 GiB
+|RWO
+|Pathfinder back end database
+
+|`cache`
+|100 GiB
+|RWX
+|Maven m2 cache; required if the `rwx_supported` configuration option is set to `true`
+|====
+
+== Installing the {ProductName} Operator and the {WebName}
+
+You can install the {ProductName} ({ProductShortName}) and the {WebName} on OpenShift Container Platform versions 4.13-4.15 when you install the {ProductName} Operator.
+
+.Prerequisites
+
+* 4 vCPUs, 8 GiB RAM, and 40 GiB persistent storage.
+* OpenShift Container Platform 4.13-4.15 installed.
+* You must be logged in as a user with `cluster-admin` permissions.
+
+For more information, see link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles].
+
+.Procedure
+
+. In the OpenShift Container Platform web console, click *Operators → OperatorHub*.
+. Use the *Filter by keyword* field to search for *MTA*.
+. Click the *Migration Toolkit for Applications* Operator and then click *Install*.
+. On the *Install Operator* page, click *Install*.
+. Click *Operators → Installed Operators* to verify that the {ProductShortName} Operator appears in the `openshift-mta` project with the status `Succeeded`.
+. Click the *{ProductShortName}* Operator.
+. Under *Provided APIs*, locate *Tackle*, and click *Create Instance*.
++
+The *Create Tackle* window opens in *Form* view.
+. Review the custom resource (CR) settings. The default choices should be acceptable, but make sure to check the system requirements for storage, memory, and cores.
+. To work directly with the YAML file, click *YAML* view and review the CR settings that are listed in the `spec` section of the YAML file.
++
+The most commonly used CR settings are listed in this table:
++
+.Tackle CR settings
+[cols="40%,15%,55%", options="header"]
+|====
+|Name
+|Default
+|Description
+
+|`cache_data_volume_size`
+|`100 GiB`
+|Size requested for the cache volume; ignored when `rwx_supported=false`
+
+|`cache_storage_class`
+|Default storage class
+|Storage class used for the cache volume; ignored when `rwx_supported=false`
+
+|`feature_auth_required`
+|`True`
+|Flag to indicate whether keycloak authorization is required (single user/"`noauth`")
+
+|`feature_isolate_namespace`
+|`True`
+|Flag to indicate whether namespace isolation using network policies is enabled
+
+|`hub_database_volume_size`
+|`10 GiB`
+|Size requested for the Hub database volume
+
+|`hub_bucket_volume_size`
+|`100 GiB`
+|Size requested for the Hub bucket volume
+
+|`hub_bucket_storage_class`
+|Default storage class
+|Storage class used for the bucket volume
+
+|`keycloak_database_data_volume_size`
+|`1 GiB`
+|Size requested for the Keycloak database volume
+
+|`pathfinder_database_data_volume_size`
+|`1 GiB`
+|Size requested for the Pathfinder database volume
+
+|`maven_data_volume_size`
+|`100 GiB`
+|Size requested for the Maven m2 cache volume; deprecated in {ProductShortName} 6.0.1
+
+|`rwx_storage_class`
+|NA
+|Storage class requested for the Tackle RWX volumes; deprecated in {ProductShortName} 6.0.1
+
+|`rwx_supported`
+|`True`
+|Flag to indicate whether the cluster storage supports RWX mode
+
+|`rwo_storage_class`
+|NA
+|Storage class requested for the Tackle RW0 volumes
+
+|`rhsso_external_access`
+|`False`
+|Flag to indicate whether a dedicated route is created to access the {ProductShortName} managed RHSSO instance
+
+|`analyzer_container_limits_cpu`
+|`1`
+|Maximum number of CPUs the pod is allowed to use
+
+|`analyzer_container_limits_memory`
+|`4GiB`
+|Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays `OOMKilled` errors.
+
+|`analyzer_container_requests_cpu`
+|`1`
+|Minimum number of CPUs the pod needs to run
+
+|`analyzer_container_requests_memory`
+|`4GiB`
+|Minimum amount of memory the pod needs to run
+|====
++
+.Example YAML file
+[sample,YAML]
+----
+kind: Tackle
+apiVersion: tackle.konveyor.io/v1alpha1
+metadata:
+  name: mta
+  namespace: openshift-mta
+spec:
+  hub_bucket_volume_size: "25Gi"
+  maven_data_volume_size: "25Gi"
+  rwx_supported: "false"
+----
+
+. Edit the CR settings if needed, and then click *Create*.
+. In *Administration* view, click *Workloads -> Pods* to verify that the MTA pods are running.
+. Access the {WebName} from your browser by using the route exposed by the `{LC_PSN}-ui` application within OpenShift.
+. Use the following credentials to log in:
+** *User name*: admin
+** *Password*: Passw0rd!
+. When prompted, create a new password.
+
+[id="installing-mta-operator-in-disconnected-environment_{context}"]
+== Installing the {ProductName} Operator in a disconnected {ocp-short} environment
+
+You can install the {ProductShortName} Operator in a disconnected environment by following the instructions in link:https://access.redhat.com/documentation/en-us/openshift_container_platform/4.15/html/installing/disconnected-installation-mirroring#installing-mirroring-disconnected[generic procedure].
+
+In step 1 of the generic procedure, configure the image set for mirroring as follows:
+
+[source,yaml]
+----
+kind: ImageSetConfiguration
+apiVersion: mirror.openshift.io/v1alpha2
+storageConfig:
+  registry:
+    imageURL: registry.to.mirror.to
+    skipTLS: false
+mirror:
+  operators:
+  - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.15
+    packages:
+    - name: mta-operator
+      channels:
+      - name: stable-v7.0
+    - name: rhsso-operator
+      channels:
+      - name: stable
+  helm: {}
+----
+
+== Memory requirements for running {ProductShortName} on Red Hat OpenShift Local
+
+When installed on https://developers.redhat.com/products/openshift-local/overview[Red Hat OpenShift Local], {ProductShortName} requires a minimum amount of memory to complete its analysis. Adding memory makes the analysis process run faster. The table below describes the {ProductShortName} performance with varying amounts of memory.
+
+.OpenShift Local {ProductShortName} memory requirements
+[cols="25%,75%", options="header"]
+|====
+|Memory (GiB)
+|Description
+
+
+|`10`
+|{ProductShortName} cannot run the analysis due to insufficient memory
+
+|`11`
+|{ProductShortName} cannot run the analysis due to insufficient memory
+
+|`12`
+|*{ProductShortName} works and the analysis is completed in approximately 3 minutes*
+
+|`15`
+|{ProductShortName} works and the analysis is completed in less than 2 minutes
+
+|`20`
+|{ProductShortName} works quickly, and the analysis is completed in less than 1 minute
+|====
+
+The test results indicate that the minimum amount of memory for running {ProductShortName} on OpenShift Local is *12 GiB*.
+
+[NOTE]
+====
+** The tests were performed by running the {ProductShortName} binary analysis through the {WebName}.
+** All the analyses used the `tackle-testapp` binary.
+** All the tests were conducted on an OpenShift Local cluster without the monitoring tools installed.
+** Installing the cluster monitoring tools requires an additional 5 GiB of memory.
+====
+
+[id="eviction-threshold_{context}"]
+=== Eviction threshold
+
+Each node has a certain amount of memory allocated to it. Some of that memory is reserved for system services. The rest of the memory is intended for running pods. If the pods use more than their allocated amount of memory, an out-of-memory event is triggered and the node is terminated with a `OOMKilled` error.
+
+To prevent out-of-memory events and protect nodes, use the `--eviction-hard` setting. This setting specifies the threshold of memory availability below which the node evicts pods. The value of the setting can be absolute or a percentage.
+
+.Example of node memory allocation settings
+
+- Node capacity: `32 GiB`
+
+- `--system-reserved` setting: `3 GiB`
+
+- `--eviction-hard` setting: `100 MiB`
+
+The amount of memory available for running pods on this node is 28.9 GiB. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
+
+
+== Red Hat Single Sign-On
+{ProductShortName} delegates authentication and authorization to a
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
+Hat Single Sign-On] (RHSSO) instance managed by the {ProductShortName} operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the {ProductShortName} operator also manages the configuration of a dedicated
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms[realm] that contains all the roles and permissions that {ProductShortName} requires.
+
+If an advanced configuration is required in the {ProductShortName} managed RHSSO instance, such as https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding
+a provider for User Federation] or https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating
+identity providers], users can log into the RHSSO https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[Admin
+Console] through the `/auth/admin` subpath in the `{LC_PSN}-ui` route. The admin credentials to access the {ProductShortName} managed RHSSO instance can be retrieved from the `credential-mta-rhsso` secret available in the namespace in which the {WebName} was installed.
+
+A dedicated route for the {ProductShortName} managed RHSSO instance can be created by setting the `rhsso_external_access` parameter to `True` in the *Tackle CR* that manages the {ProductShortName} instance.
+
+For more information, see
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red
+Hat Single Sign-On features and concepts].
+
+=== Roles and Permissions
+
+The following table contains the roles and permissions (scopes) that {ProductShortName} seeds the managed RHSSO instance with:
+
+[width="100%",cols="34%,33%,33%",]
+|===
+|*tackle-admin* |*Resource Name* |*Verbs*
+| |addons |delete +
+get +
+post +
+put +
+| |adoptionplans |post +
+| |applications |delete +
+get +
+post +
+put +
+| |applications.facts |delete +
+get +
+post +
+put +
+| |applications.tags |delete +
+get +
+post +
+put +
+| |applications.bucket |delete +
+get +
+post +
+put +
+| |assessments |delete +
+get +
+patch +
+post +
+put +
+| |businessservices |delete +
+get +
+post +
+put +
+| |dependencies |delete +
+get +
+post +
+put +
+| |identities |delete +
+get +
+post +
+put +
+| |imports |delete +
+get +
+post +
+put +
+| |jobfunctions |delete +
+get +
+post +
+put +
+| |proxies |delete +
+get +
+post +
+put +
+| |reviews |delete +
+get +
+post +
+put +
+| |settings |delete +
+get +
+post +
+put +
+| |stakeholdergroups |delete +
+get +
+post +
+put +
+| |stakeholders |delete +
+get +
+post +
+put +
+| |tags |delete +
+get +
+post +
+put +
+| |tagtypes |delete +
+get +
+post +
+put +
+| |tasks |delete +
+get +
+post +
+put +
+| |tasks.bucket |delete +
+get +
+post +
+put +
+| |tickets |delete +
+get +
+post +
+put +
+| |trackers |delete +
+get +
+post +
+put +
+| |cache |delete +
+get +
+| |files |delete +
+get +
+post +
+put +
+| |rulebundles |delete +
+get +
+post +
+put +
+|*tackle-architect* | *Resource Name* |*Verbs*
+| |addons |delete +
+get +
+post +
+put +
+| |applications.bucket |delete +
+get +
+post +
+put +
+| |adoptionplans |post +
+| |applications |delete +
+get +
+post +
+put +
+| |applications.facts |delete +
+get +
+post +
+put +
+| |applications.tags |delete +
+get +
+post +
+put +
+| |assessments |delete +
+get +
+patch +
+post +
+put +
+| |businessservices |delete +
+get +
+post +
+put +
+| |dependencies |delete +
+get +
+post +
+put +
+| |identities |get +
+| |imports |delete +
+get +
+post +
+put +
+| |jobfunctions |delete +
+get +
+post +
+put +
+| |proxies |get +
+| |reviews |delete +
+get +
+post +
+put +
+| |settings |get +
+| |stakeholdergroups |delete +
+get +
+post +
+put +
+| |stakeholders |delete +
+get +
+post +
+put +
+| |tags |delete +
+get +
+post +
+put +
+| |tagtypes |delete +
+get +
+post +
+put +
+| |tasks |delete +
+get +
+post +
+put +
+| |tasks.bucket |delete +
+get +
+post +
+put +
+| |trackers |get +
+| |tickets |delete +
+get +
+post +
+put +
+| |cache |get +
+| |files |delete +
+get +
+post +
+put +
+| |rulebundles |delete +
+get +
+post +
+put +
+|*tackle-migrator* | *Resource Name* |*Verbs*
+| |addons |get +
+| |adoptionplans |post +
+| |applications |get +
+| |applications.facts |get +
+| |applications.tags |get +
+| |applications.bucket |get +
+| |assessments |get +
+post +
+| |businessservices |get +
+| |dependencies |delete +
+get +
+post +
+put +
+| |identities |get +
+| |imports |get +
+| |jobfunctions |get +
+| |proxies |get +
+| |reviews |get +
+post +
+put +
+| |settings |get +
+| |stakeholdergroups |get +
+| |stakeholders |get +
+| |tags |get +
+| |tagtypes |get +
+| |tasks |delete +
+get +
+post +
+put +
+| |tasks.bucket |delete +
+get +
+post +
+put +
+| |tackers |get +
+| |tickets |get +
+| |cache |get +
+| |files |get +
+| |rulebundles |get +
+|===

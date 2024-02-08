@@ -1,0 +1,76 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes-7.0/master.adoc
+
+:_content-type: REFERENCE
+[id="mta-rn-technical-changes-7-0-0_{context}"]
+= Technical changes
+
+The following technical changes have been made in {ProductFullName} 7.0.0:
+
+* The Maven Plugin has been deprecated.
+
+* Language Server Protocol (LSP) Analyzer change.
+
+[id="mta-rn-technical-changes-rules-7-0-0_{context}"]
+== Rules
+
+.Rules can only be written in YAML
+
+Rules written in Groovy and Java are discontinued in {ProductShortName} version 7.0.0. Some of the previous Groovy Java rules have been converted to YAML rules wherever possible.
+
+An important modification to the rule's engine is that it is no longer possible to query anything apart from the tags stored within the engine's internal data structures. This means that all the features that were enabled by using the `graph-query` element in the rule are no longer available.
+
+.Java Class child elements not supported in {ProductShortName}
+
+The Java Class child elements `annotation-list`, `annotation-type` and `annotation-literal` are not supported in {ProductShortName} version 7.0.0.
+
+.Elements <project> and <dependency> are merged into one dependency condition
+
+The capabilities of <project> and <dependency> elements in the old syntax are merged into one dependency condition in the new rules syntax.
+
+.Transformation capabilities of `xslt` element are discontinued
+
+XML transformation capabilities offered by the `xslt` element are discontinued.
+
+.Explicit `iteration` element is discontinued
+
+The explicit `iteration` element is discontinued in {ProductShortName} version 7.0.0. If a condition returns a list of items via the `as` construct, iteration is implied.
+
+.Test rules not supported in the current version
+
+Test rules are not supported in {ProductShortName} version 7.0.0.
+
+.Overriding a rule discontinued
+
+Overriding a rule is discontinued in {ProductShortName} version 7.0.0.
+
+.Creating custom rule categories discontinued
+
+Creating custom rule categories is discontinued in {ProductShortName} version 7.0.0.
+
+.Information and optional categories of rules are discontinued.
+
+In {ProductShortName} version 7.0.0, any previous rules of information and optional categories will only create technology tags.
+
+.Java analysis capabilities
+
+In {ProductShortName} version 7.0.0, the following Java analysis capabilities have been deprecated:
+
+* Ability to match on specific arguments of a Java method constructor is not supported in the current version
+
+* Matching Java references from JavaServer Pages (JSP) files are not supported in the current version
+
+* `Mavenizing` a Java project, meaning write a POM and possibly move code around so that it builds in Maven, is discontinued.
+
+.Analysis report changes
+
+The following functionality in Analysis reports has been deprecated:
+
+* Story points are shown as integers. The “level of effort” view and their mappings are deprecated in {ProductShortName} version 7.0.0.
+
+* Transactions reports are deprecated in {ProductShortName} version 7.0.0.
+
+* The view for “Archives shared by multiple applications” is deprecated in {ProductShortName} version 7.0.0.
+
+* The view for “Review rule providers execution overview” deprecated in {ProductShortName} version 7.0.0.

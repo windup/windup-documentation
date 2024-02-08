@@ -30,8 +30,8 @@ $ ./standalone.sh -Djboss.socket.binding.port-offset=<offset_value>
 . Open the Red Hat SSO administration console from `\http://localhost:8180`:
 * Username: `admin`
 * Password: `admin`
-. Add a realm named *windup*.
-. In the realm, create a client named *windup-web*.
+. Add a realm named *{LC_PSN}*.
+. In the realm, create a client named *{LC_PSN}-web*.
 . Check that *Access Type* is set to `public`.
 . Set *Valid Redirect URIs* to `\http://localhost:8080/windup-ui/*`.
 . Set *Web Origins* to `+*+` and click *Save*.

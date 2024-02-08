@@ -13,8 +13,9 @@
 ifdef::mta[]
 :ProductName: Migration Toolkit for Applications
 :DocInfoProductName: Migration Toolkit for Applications
-:DocInfoProductNumber: 6.2
+:DocInfoProductNumber: 7.0
 :ProductShortName: MTA
+:ProductShortNameLower: mta
 :ProductFullName: Migration Toolkit for Applications (MTA)
 :LC_PSN: mta
 :mta-cli: mta-cli
@@ -23,14 +24,14 @@ ifdef::mta[]
 :WebNameTitle: User Interface
 :WebNameURL: user_interface_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 6.2.0
+:ProductVersion: 7.0.1
 :PluginName: MTA plugin
-:MavenProductVersion: 6.2.0.GA-redhat-00002
-:ProductDistributionVersion: 6.2.0.GA-redhat
-:ProductDistribution: mta-6.2.0.GA-cli-offline.zip
+// :MavenProductVersion: 7.0.0.GA-redhat-00001
+:ProductDistributionVersion: 7.0.1.GA-redhat
+:ProductDistribution: mta-7.0.1.GA-cli-offline.zip
 :DevDownloadPageURL: https://developers.redhat.com/products/mta/download
 :IDEPluginFilename: migrationtoolkit-mta-eclipse-plugin-repository
-:JiraWindupURL: https://issues.redhat.com/projects/TACKLE
+:JiraWindupURL: https://issues.redhat.com/projects/MTA/issues
 :CodeReadyStudioDownloadPageURL: http://download.jboss.org/jbosstools/photon/stable/updates/mta/
 endif::[]
 
@@ -47,10 +48,10 @@ ifdef::mtr[]
 :WebNameTitle: Web Console
 :WebNameURL: web_console_guide
 :WebConsoleBookName: {WebNameTitle} Guide
-:ProductVersion: 1.2.0
+:ProductVersion: 1.2.4
 :PluginName: MTR plugin
-:ProductDistributionVersion: 1.2.0.GA-redhat-00001
-:ProductDistribution: mtr-1.2.0.GA-offline
+:ProductDistributionVersion: 1.2.4.GA-redhat-00001
+:ProductDistribution: mtr-1.2.4.GA-offline
 :DevDownloadPageURL: https://developers.redhat.com/products/mtr/download
 :IDEPluginFilename: migrationtoolkit-mtr-eclipse-plugin-repository
 :JiraWindupURL: https://issues.redhat.com/projects/WINDUP
@@ -62,6 +63,7 @@ endif::[]
 // *******************
 :CLIName: CLI
 :CLINameTitle: CLI
+:mta-cli: mta-cli
 :MavenName: Maven plugin
 :MavenNameTitle: Maven Plugin
 
@@ -72,7 +74,7 @@ endif::[]
 :OpenShiftProductNumber: 4.11
 
 :UserCLIBookName: CLI Guide
-:RulesDevBookName: Rules Development Guide
+:RulesDevBookName: Rule Development Guide
 :EclipseCrsGuideTitle: Eclipse Plugin Guide
 :MavenBookName: Maven Plugin Guide
 :IntelliJBookName: IntelliJ IDEA Plugin Guide
@@ -107,7 +109,7 @@ endif::[]
 
 //Links to MTA and MTR Jira project pages:
 :JiraMTRURL: https://issues.redhat.com/projects/WINDUP
-:JiraMTAURL: https://issues.redhat.com/projects/TACKLE
+:JiraMTAURL: https://issues.redhat.com/projects/MTA
 
 // URLs for downloads on developers.redhat.com
 
@@ -121,3 +123,4 @@ endif::[]
 :icon-x: &#x2718;
 :kebab: image:kebab.png[title="Options menu"]
 :reports: image:reports.png[title="*Reports* icon"]
+:edit: image:icon-edit.png[title="*Edit* icon"]

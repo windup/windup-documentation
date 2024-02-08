@@ -8,52 +8,48 @@ include::topics/templates/document-attributes.adoc[]
 :context: rules-development-guide
 :rules-development-guide:
 :_content-type: ASSEMBLY
-= {RulesDevBookName}
+[id="rules-development-guide"]
+= Rules Development Guide
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
+[id="introduction_{context}"]
 == Introduction
 
 // About the Rules Development Guide
 include::topics/rules-guide-intro.adoc[leveloffset=+2]
 
 // Use of <{ProductShortName}_HOME> in this Guide
-include::topics/about-home-var.adoc[leveloffset=+3]
+include::topics/mta-about-home-var.adoc[leveloffset=+3]
 
 // MTA Rules
 include::topics/about-rules.adoc[leveloffset=+2]
 
-// Getting Started
-include::topics/getting-started-rules.adoc[leveloffset=+1]
+[id="creating-yaml-rules_{context}"]
+== Creating YAML rules
 
-// Create Your First XML Rule
-include::topics/create-first-xml-rule.adoc[leveloffset=+2]
+Each analyzer rule is a set of instructions that are used to analyze source code and detect issues that are problematic for migration.
 
-// Review the Quickstarts
-include::topics/review-quickstarts.adoc[leveloffset=+2]
+The analyzer parses user-provided rules, applies them to applications' source code, and generates issues for matched rules. A collection of one or more rules forms a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal. The analyzer CLI takes rulesets as input arguments.
 
-== Creating XML rules
+include::topics/yaml-rule-structure-syntax.adoc[leveloffset=+2]
 
-// XML Rule Structure
-include::topics/xml-rule-syntax.adoc[leveloffset=+2]
+[id="creating-basic-yaml-rules_{context}"]
+=== Creating a basic YAML rule
 
-// Create a Basic XML Rule
-include::topics/create-basic-xml-rule.adoc[leveloffset=+2]
+This section describes how to create a basic {ProductShortName} YAML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[_{UserCLIBookName}_] for installation instructions.
 
-=== XML rule syntax
+include::topics/create-basic-yaml-rule-template.adoc[leveloffset=+3]
 
-// When Condition Syntax
-include::topics/xml-rule-when-syntax.adoc[leveloffset=+3]
+include::topics/create-basic-yaml-ruleset-template.adoc[leveloffset=+3]
 
-// Perform Action Syntax
-include::topics/xml-rule-perform-syntax.adoc[leveloffset=+3]
+include::topics/create-yaml-rule.adoc[leveloffset=+3]
 
-// Where Syntax
-include::topics/where-syntax.adoc[leveloffset=+3]
+include::topics/running-analysis-using-custom-yaml-rule.adoc[leveloffset=+3]
 
-// Add the Rule to {ProductName}
-include::topics/add-rule-to-mta.adoc[leveloffset=+2]
+// Create Your First YAML Rule
+include::topics/create-first-yaml-rule.adoc[leveloffset=+2]
 
 // Testing XML Rules
 include::topics/testing-rules.adoc[leveloffset=+1]
@@ -102,3 +98,4 @@ include::topics/rules-important-links.adoc[leveloffset=+3]
 // * Appendix: Revision Information *
 // **********************************
 include::topics/templates/revision-info.adoc[]
+=======

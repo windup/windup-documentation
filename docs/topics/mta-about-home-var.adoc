@@ -1,0 +1,13 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="mta-about-home-var_{context}"]
+= Use of `<{ProductShortName}_HOME>` in this guide
+
+This guide uses the `<{ProductShortName}_HOME>` replaceable variable to denote the path to your {ProductShortName} installation.
+
+The {ProductShortNameLower}-{ProductVersion}-cli<OS>.zip* extracts a single binary called `mta-cli`.
+
+When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.

@@ -1,0 +1,42 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="create-basic-yaml-rule-template_{context}"]
+= Creating a basic YAML rule template
+
+{ProductShortName} YAML-based rules have the following basic structure:
+
+[source,terminal]
+----
+when(condition)
+ message(message)
+ tag(tags)
+----
+.Procedure
+
+. In the `/home/<USER>/` directory, create a file containing the basic syntax for YAML rules as follows:
++
+[source,terminal]
+----
+- category: mandatory
+  description: |
+   <DESCRIPTION TITLE>
+   <DESCRIPTION TEXT>
+  effort: <EFFORT>
+  labels:
+  - konveyor.io/source=<SOURCE_TECH>
+  - konveyor.io/target=<TARGET_TECH>
+  links:
+ - url: <HYPERLINK>
+   title: <HYPERLINK_TITLE>
+  message: <MESSAGE>
+  tag:
+  - <TAG1>
+  - <TAG2>
+  ruleID: <RULE_ID>
+  when:
+   <CONDITIONS>
+----
+

@@ -1,0 +1,27 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes-7.0/master.adoc
+
+:_content-type: REFERENCE
+[id="mta-rn-resolved-issues-7-0-0_{context}"]
+= Resolved issues
+
+The following highlighted issues have been resolved in {ProductFullName} version 7.0.0.
+
+.No update notification after editing fields
+
+In previous versions of {ProductShortName}, no `Update Notification` appeared at top of window after the fields `Application`, `Job Function`, and `Business services` were updated. link:https://issues.redhat.com/browse/MTA-1024[MTA-1024]
+
+.Not possible to create a Jira instance behind a proxy
+
+In previous versions of {ProductShortName}, it was not possible to create a Jira instance (issues.stage.redhat.com) behind a proxy. link:https://issues.redhat.com/browse/MTA-849[MTA-849]
+
+// think we are safe to move this
+.CVE-2023-6291: A flaw was found in the `redirect_uri validation` logic
+
+A flaw was found in the `redirect_uri validation` logic that allows for a bypass of otherwise explicitly allowed hosts. The problem arises in the `verifyRedirectUri` method, which attempts to enforce rules on `user-controllable` input, but can cause a desynchronization in how Keycloak and browsers interpret URLs.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-6291[(CVE-2023-6291)].
+
+For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12420807[Resolved Issues in Jira].
+

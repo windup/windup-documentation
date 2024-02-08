@@ -1,0 +1,196 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="create-first-yaml-rule_{context}"]
+= Creating your first YAML rule
+
+This section guides you through the process of creating and testing your first {ProductShortName} YAML-based rule. This assumes that you have already installed {ProductShortName}. See link:{ProductDocUserGuideURL}/index#installing_and_running_the_cli[Installing and running the CLI] in the _{UserCLIBookName}_ for installation instructions.
+
+In this example, you will create a rule to discover instances where an application defines a `jboss-web.xml` file containing a `<class-loading>` element and to provide a link to the documentation that describes how to migrate the code.
+
+[id="creating-yaml-file-for-the-rule_{context}"]
+== Creating a YAML file for the rule
+
+Create a YAML file for your first rule.
+
+[options="nowrap",subs="attributes+"]
+----
+$ mkdir /home/<USER>/rule.yaml
+----
+
+[id="mta-creating-data-to-test-the-rule_{context}"]
+== Creating data to test the rule
+
+. Create `jboss-web.xml` and `pom.xml` files in a directory:
++
+[options="nowrap",subs="attributes+"]
+----
+mkdir /home/<USER>/data/
+touch /home/<USER>/data/jboss-web.xml
+touch /home/<USER>/data/pom.xml
+----
+
+. In the `jboss-web.xml` file you created, paste the following content:
++
+[options="nowrap",subs="attributes+"]
+----
+<!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Application 4.2//EN" "http://www.jboss.org/j2ee/dtd/jboss-web_4_2.dtd">
+<jboss-web>
+    <class-loading java2ClassLoadingCompliance="false">
+        <loader-repository>
+            seam.jboss.org:loader=@projectName@
+            <loader-repository-config>java2ParentDelegation=false</loader-repository-config>
+        </loader-repository>
+    </class-loading>
+</jboss-web>
+----
+
+. In the `pom.xml` file you created, paste the following content:
++
+[options="nowrap",subs="attributes+"]
+----
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+
+  <groupId>test</groupId>
+  <artifactId>test</artifactId>
+  <version>1.1.0-SNAPSHOT</version>
+
+  <properties>
+	<maven.compiler.source>1.7</maven.compiler.source>
+	<maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+  </dependencies>
+</project>
+----
+
+[id="mta-creating-the-rule_{context}"]
+== Creating the rule
+
+MTA YAML-based rules use the following rule pattern:
+
+[options="nowrap",subs="attributes+"]
+----
+when(condition)
+  perform(action)
+----
+
+.Procedure
+
+. In the `rule.yaml` file you created, paste the following contents:
++
+[options="nowrap",subs="attributes+"]
+----
+- ruleID: <UNIQUE_RULE_ID> <1>
+  description: <DESCRIPTION> <2>
+  when:
+    <CONDITION(S)> <3>
+  message: <MESSAGE> <4>
+  labels: <LABELS> <5>
+  effort: <EFFORT> <6>
+  links:
+  - <LINKS> <7>
+----
++
+<1> Unique ID for your rule, for instance, `jboss5-web-class-loading`.
+<2> Text description of the rule.
+<3> Complete the `when` block specifying one or more conditions:
+.. Use the `builtin` provider’s XML capability because this rule checks for a match in an XML file.
+.. To match on the `class-loading` element that is a child of `jboss-web`, use the XPath expression `jboss-web/web-loading` as an XML query. In this case, you need just one condition:
++
+[options="nowrap",subs="attributes+"]
+----
+when:
+  builtin.xml:
+    xpath: jboss-web/class-loading
+----
+<4> Helpful message explaining the migration issue. The message is generated in the report when the rule matches. For example:
++
+[options="nowrap",subs="attributes+"]
+----
+message: The class-loading element is no longer valid in the jboss-web.xml file.
+----
+<5> List of string labels for the rule.
+<6> Number of expected story points to fix this issue.
+<7> One or more hyperlinks pointing to documentation around the migration issues that you find.
++
+[options="nowrap",subs="attributes+"]
+----
+links:
+- url: https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6
+  title: Create or Modify Files That Control Class Loading in JBoss EAP 6
+----
++
+The rule is now complete and looks similar to the following:
++
+[options="nowrap",subs="attributes+"]
+----
+- ruleID: jboss5-web-class-loading
+  description: Find class loading element in JBoss XML file.
+  when:
+    builtin.xml:
+      xpath: jboss-web/class-loading
+  message: The class-loading element is no longer valid in the jboss-web.xml file.
+  effort: 3
+  links:
+  - url: https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6
+    title: Create or Modify Files That Control Class Loading in JBoss EAP 6
+----
+
+[id="mta-installing-the-rule_{context}"]
+== Installing the rule
+
+.Procedure
+. Point the CLI  to the rule file you created :
++
+[options="nowrap",subs="attributes+"]
+----
+–rules /home/<USER>/rules.yaml
+----
+
+[id="mta-testing-the-rule_{context}"]
+== Testing the rule
+
+.Procedure
+To test the rule, point the input to the test data you created and pass the rule using the rules option in MTA CLI:
+
+[options="nowrap",subs="attributes+"]
+----
+mta-cli analyze --input /home/<USER>/data/ --output /home/<USER>/output/ --rules /home/<USER>/rules.yaml
+----
+
+[id="mta-reviewing-the-report_{context}"]
+== Reviewing the report
+
+Review the report to be sure that it provides the expected results.
+
+.Procedure
+
+. Once the analysis is complete, the command outputs the path to the HTML report:
++
+[options="nowrap",subs="attributes+"]
+----
+INFO[0066] Static report created. Access it at this URL:  URL="file:/home/<USER>/output/static-report/index.html"
+----
++
+Open `/home/<USER_NAME>/output/static-report/index.html` in a web browser.
+. Navigate to the *Issues* tab in the left menu.
+. Verify that the rule is executed:
+.. In the *Issues* table, type `JBoss XML` in the search bar.
+.. Verify that the issue with the title `Find class loading element in JBoss XML file` is present in the table.
+. Click the *jboss-web.xml* link to open the affected file.
+
+
+
+
+
+
+
+
+
+

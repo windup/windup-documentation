@@ -1,0 +1,27 @@
+// Module included in the following assemblies:
+//
+// * docs/release-notes-mtr/mtr_release_notes-1.0/master.adoc
+
+:_content-type: REFERENCE
+[id="mtr-rn-resolved-issues-1-2-2_{context}"]
+= Resolved issues
+
+
+.CVE-2023-44487 netty-codec-http2: HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack)
+
+A flaw was found in handling multiplexed streams in the HTTP/2 protocol, which was utilized by {ProductFullName}. A client could repeatedly make a request for a new multiplex stream and immediately send an `RST_STREAM` frame to cancel it. This creates additional workload for the server in terms of setting up and dismantling streams, while avoiding any server-side limitations on the maximum number of active streams per connection, resulting in a denial of service due to server resource consumption. link:https://issues.redhat.com/browse/WINDUP-4072[(WINDUP-4072)]
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-44487[(CVE-2023-44487)]
+
+
+.CVE-2023-37460 plexus-archiver: Arbitrary File Creation in AbstractUnArchiver
+
+A flaw was found in the Plexus Archiver, which was utilized by {ProductShortName}. While using `AbstractUnArchiver` for extracting, an archive could lead to arbitrary file creation and possible remote code execution (RCE). This flaw will bypass directory destination verification if an archive with an entry in the destination directory as a symbolic link whose target does not exist. The plexus-archiver is a test scoped artifact so not included in any of the {ProductShortName} distributions. link:https://issues.redhat.com/browse/WINDUP-4053[(WINDUP-4053)]
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-37460[(CVE-2023-37460)]
+
+.EAP 7.3 and EAP 7.4 rules with target EAP 7.0 and above
+
+This {ProductShortName} release makes a correction to some rules to support migrating to EAP 7.3 and above, to ensure the rules are ignored if the target is EAP 7.2 or below. link:https://issues.redhat.com/browse/WINDUPRULE-1038[(WINDUPRULE-1038)]
+
+// For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12423184[MTR 1.2.2 resolved issues] in Jira.

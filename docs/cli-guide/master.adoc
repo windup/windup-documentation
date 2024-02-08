@@ -22,16 +22,26 @@ include::topics/about-cli-guide.adoc[leveloffset=+2]
 // About {ProductName}
 include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
+include::topics/migration-paths.adoc[leveloffset=+3]
+
+For more information about use cases and migration paths, see the link:https://developers.redhat.com/products/mta/use-cases[{ProductShortName} for developers] web page.
+
 // About the {CLINameTitle}
 include::topics/about-cli.adoc[leveloffset=+2]
 
 == Installing and Running the CLI
 
 // Install the CLI
-include::topics/installing-web-console-or-cli-tool.adoc[leveloffset=+2]
+include::topics/installing-cli-tool.adoc[leveloffset=+2]
 
 // Run the CLI
 include::topics/cli-run.adoc[leveloffset=+2]
+
+// Analyze application source code
+include::topics/mta-cli-analyze.adoc[leveloffset=+3]
+
+// Transform XML rules to YAML
+include::topics/mta-cli-transform.adoc[leveloffset=+3]
 
 // Use OpenRewrite recipes
 include::topics/using-openrewrite-recipes.adoc[leveloffset=+3]

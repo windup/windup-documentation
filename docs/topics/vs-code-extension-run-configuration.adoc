@@ -19,7 +19,7 @@ You can configure multiple run configurations to run against each project you im
 . Complete the following configuration fields:
 
 ** *Name*: Enter a meaningful name for the analysis configuration or accept the default.
-** *cli*: Enter the path to the cli executable. For example: `$HOME/{LC_PSN}-cli-{ProductDistributionVersion}/bin/{mta-cli}`.
+** *cli*: Enter the path to the cli executable. For example: `$HOME/{mta-cli}-{ProductDistributionVersion}/bin/{mta-cli}`.
 ** *Input*: Set to the path of the project that you have open within your IDE by clicking *Add* and doing one of the following:
 
 *** Enter the input file or directory and press Enter.
