@@ -1,0 +1,54 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: REFERENCE
+[id="rn-known-issues-6-2-2_{context}"]
+= Known issues
+
+{ProductFullName} version 6.2.2 has the following issues.
+
+.CVE-2024-25710: Denial of service caused by an infinite loop
+
+Loop with Unreachable Exit Condition, `Infinite Loop`, vulnerability in Apache Commons Compress. This vulnerability affects Apache Commons Compress, versions 1.3 to 1.25.0, and can lead to a Denial of Service (DoS).
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2024-25710[(CVE-2024-25710)].
+
+.CVE-2023-6291: Keycloak redirect_uri validation bypass
+
+An issue was found in the `redirect_uri` validation logic in Keycloak that allows for a bypass of otherwise explicitly allowed hosts. This issue may allow a bypass of otherwise explicitly allowed hosts. A successful attack may lead to an access token being stolen, making it possible for the attacker to impersonate other users.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-6291[(CVE-2023-6291)].
+
+.CVE-2024-1300: Eclipse Vert.x memory leak when a TCP server is configured with TLS and SNI support
+
+A vulnerability in the Eclipse Vert.x toolkit causes a memory leak in TCP servers configured with Transport Layer Security (TLS) and Server Name Indication (SNI) support. When processing an unknown SNI server name assigned the default certificate instead of a mapped certificate, the Secure Sockets Layer (SSL) context is mistakenly cached in the server name map, leading to memory exhaustion. This issue could allow attackers to send TLS client `hello` messages with fake server names, triggering a Java virtual machine (JVM) Out-of-Memory (OOM) error.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2024-1300[(CVE-2024-1300)].
+
+.CVE-2023-45286
+
+A race condition in `go-resty` can result in HTTP request body disclosure across requests. This condition can be triggered by calling `sync.Pool.Put` with the same `\*bytes.Buffer` more than once, when request retries are enabled and a retry occurs. The call to `sync.Pool.Get` will then return a `bytes.Buffer` that has not had `bytes.Buffer.Reset` called on it. This dirty buffer will contain the HTTP request body from an unrelated request, and `go-resty` will append the current HTTP request body to it, sending two bodies in one request. The `sync.Pool` in question is defined at package level scope, so a completely unrelated server could receive the request body.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-45286[(CVE-2023-45286)].
+
+.CVE-2023-48631: Adobe's css-tools versions 4.3.1 and earlier are affected by an Improper Input Validation vulnerability
+
+A Regular Expression Denial of Service (ReDoS) vulnerability was found in Adobe's css-tools when parsing CSS. This issue occurs due to improper input validation and may allow an attacker to use a carefully crafted input string to cause a denial of service, especially when attempting to parse CSS.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-48631[(CVE-2023-48631)].
+
+.CVE-2024-25710:
+
+.CVE-2023-36479: Improper addition of quotation marks to user inputs in CgiServlet
+
+Eclipse Jetty Canonical Repository is the canonical repository for the Jetty project. Users of the `CgiServlet` with a specific command structure may have the wrong command executed. If a user sends a request to an `org.eclipse.jetty.servlets.CGI Servlet` for a binary with a space in its name, the servlet will escape the command by wrapping it in quotation marks. This wrapped command, plus an optional command prefix, will then be executed through a call to `Runtime.exec`. If the original binary name provided by the user contains a quotation mark followed by a space, the resulting command line will contain multiple tokens instead of one. This issue was patched in version 9.4.52, 10.0.16, 11.0.16 and 12.0.0-beta2.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-36479[(CVE-2023-36479)].
+
+For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12429521[Known Issues in Jira].
+
+
+// add rest of CVEs
+
+// filter == project = MTA AND issuetype = Bug AND status in (New, ASSIGNED, POST, MODIFIED, ON_QA) AND affectedVersion <= "MTA 6.2.2" AND affectedVersion >= "MTA 6.2.0" AND affectedVersion < "MTA 7.0.0" OR fixVersion > "MTA 6.2.2" AND component not in( documentation, QE-Task, qe-tests) ORDER BY fixVersion ASC
