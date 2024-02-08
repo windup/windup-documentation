@@ -84,7 +84,6 @@ $ <{ProductShortName}_HOME>/bin/{mta-cli} -Dwindup.decompiler=procyon \
     --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2>
 ----
 ////
->>>>>>> aec3e824 (insert mta-cli attribute instead of plain text windup-cli)
 [id="cli-bash-completion_{context}"]
 == {ProductShortName} {CLINameTitle} Bash completion
 
