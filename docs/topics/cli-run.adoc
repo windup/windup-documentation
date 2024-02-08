@@ -40,7 +40,7 @@ The following command analyzes the `com.acme` and `org.apache` packages of the l
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/{mta-cli} analyze \
+$ <{ProductShortName}_HOME>/{mta-cli} analyze \
     --input /path/to/jee-example-app-1.0.0.ear \
     --output /path/to/report-output/ --source eap:5 --target eap:7 \
     --packages com.acme org.apache
