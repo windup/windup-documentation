@@ -19,7 +19,7 @@ You can run {ProductShortName} against your application.
 ----
 $ ./{mta-cli} analyze --input /path/to/jee-example-app-1.0.0.ear \
     --output /path/to/output --source weblogic --target eap:6 \
-    --packages com.acme org.apache
+
 ----
 +
 * `--input`: The application to be evaluated.
