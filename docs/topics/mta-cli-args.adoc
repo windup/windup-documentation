@@ -22,8 +22,6 @@ To run the {ProductShortName} command without prompting, for example when execut
 [cols="40%,60%a",options="header",]
 |====
 |Argument |Description
-|--additionalClassPath |A space-delimited list of additional JAR files or directories to add to the class path so that they are available for decompilation or other analysis.
-|--addonDir |Add the specified directory as a custom add-on repository.
 |--analyze-known-libraries | Flag to analyze known software artifacts embedded within your application. By default, {ProductShortName} only analyzes application code.
 
 [NOTE]
