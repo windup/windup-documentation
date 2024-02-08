@@ -38,7 +38,7 @@ The following command analyzes the `com.acme` and `org.apache` packages of the l
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/{mta-cli} \
+$ <{ProductShortName}_HOME>/{mta-cli} \
     --input /path/to/jee-example-app-1.0.0.ear \
     --output /path/to/report-output/ --source eap:5 --target eap:7 \
     --packages com.acme org.apache
@@ -52,7 +52,7 @@ The following command analyzes the `org.jboss.seam` packages of the link:https:/
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/{mta-cli} --sourceMode --input /path/to/seam-booking-5.2/ \
+$ <{ProductShortName}_HOME>/{mta-cli} --sourceMode --input /path/to/seam-booking-5.2/ \
     --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam
 ----
 []
@@ -63,7 +63,7 @@ The following command analyzes the `com.acme` and `org.apache` packages of the l
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/{mta-cli} --input /path/to/jee-example-app-1.0.0.ear \
+$ <{ProductShortName}_HOME>/{mta-cli} --input /path/to/jee-example-app-1.0.0.ear \
     --output /path/to/report-output/ \
     --target eap:7 --target cloud-readiness --packages com.acme org.apache
 ----
@@ -77,7 +77,7 @@ The {ProductShortName} {CLIName} provides an option to enable Bash completion fo
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/{mta-cli} [TAB]
+$ <{ProductShortName}_HOME>/{mta-cli} [TAB]
 ----
 
 [discrete]
@@ -118,5 +118,5 @@ To see the complete list of available arguments for the `{mta-cli}` command, ope
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/{mta-cli} --help
+$ <{ProductShortName}_HOME>/{mta-cli} --help
 ----

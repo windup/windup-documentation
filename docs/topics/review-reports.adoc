@@ -13,7 +13,7 @@ The report was generated using the following command.
 
 [options="nowrap",subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/bin/{mta-cli} --input /home/username/{mta-cli}-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/{mta-cli}-reports/jee-example-app-1.0.0.ear-report --target eap:6 --packages com.acme org.apache
+$ <{ProductShortName}_HOME>/{mta-cli} --input /home/username/{mta-cli}-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/{mta-cli}-reports/jee-example-app-1.0.0.ear-report --target eap:6 --packages com.acme org.apache
 ----
 endif::cli-guide[]
 
