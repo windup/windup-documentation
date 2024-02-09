@@ -12,6 +12,7 @@ You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems
 
 .Prerequisites
 
+* Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from  registry.redhat.io, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
 * Podman must be installed
 
 +
@@ -41,14 +42,27 @@ To install using the downloadable `.zip` file:
 +
 When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
 
-////
+
 [id="installing-using-podman_{context}"]
 == Installing the {CLINameTitle} using Podman
+
+.Prerequisites
+
+* Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from  registry.redhat.io, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
+
 
 .Procedure
 
 To install using `podman pull`:
 
+. To use Podman to authenticate to registry.redhat.io:
++
+[source,terminal]
+----
+podman login registry.redhat.io
+Username: myrhusername
+Password: ***********
+----
 . Issue:
 +
 [source,terminal]
@@ -63,4 +77,4 @@ This command will copy the binary `PATH` for system-wide use.
 Although installation using Podman is possible, downloading installing the `.zip` file is the preferred installation.
 ====
 
-////
+
