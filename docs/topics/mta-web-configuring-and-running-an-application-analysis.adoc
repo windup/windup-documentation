@@ -75,13 +75,8 @@ Attaching custom rules is optional if you have already attached a migration targ
 * Target
 * Source(s)
 * Excluded rules tags: Rules with these tags are not processed. Add or delete as needed.
-* Enable transaction report: Select the checkbox to generate a DIVA report that displays the call stack, which executes operations on relational database tables.
 * Enable automated tagging: Select the checkbox to automatically attach tags to the application. This checkbox is selected by default.
-+
-[NOTE]
-====
-The Transactions report is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
-====
+
 +
 [NOTE]
 ====
