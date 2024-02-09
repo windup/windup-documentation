@@ -31,6 +31,8 @@ This option may result in a longer execution time and a large number of migratio
 
 |--help |Display the {ProductShortName} help message.
 |--input |A space-delimited list of the path to the file or directory containing one or more applications to be analyzed. This argument is required.
+| --list-sources
+| list rules for available migration sources
 |--list-targets| Flag to list all available target technologies.
 |--mavenize| Flag to create a Maven project directory structure based on the structure and content of the application. This creates `pom.xml` files using the appropriate Java EE API and the correct dependencies between project modules. See also the `--mavenizeGroupId` option.
 | -m, --mode string | Flag for analysis mode" `full` (default) or `source-only`
@@ -40,8 +42,8 @@ This option may result in a longer execution time and a large number of migratio
 ====
 Do not overwrite a report output directory that contains important information.
 ====
-|  --rules stringArray | Filename or directory containing rule files
-|--source |A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources.
+| --rules stringArray | Filename or directory containing rule files
+| --source |A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources.
 |--target |A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the `--source` argument, helps to determine which rulesets are used. Use the `--listTargetTechnologies` argument to list all available targets.
 |--userIgnorePath |Specify a location, in addition to `${user.home}/.{LC_PSN}/ignore/`, for {ProductShortName} to identify files that should be ignored.
 |====
