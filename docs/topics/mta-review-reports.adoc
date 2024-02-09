@@ -200,23 +200,6 @@ The image below shows the technologies used in the `jee-example-app`.
 .Technologies in an application
 image::3-8-technologies-in-application.png[Technology report Application view]
 
-=== Transactions report
-
-A Transactions report displays the call stack, which executes operations on relational database tables. The Enable Transaction Analysis feature supports Spring Data JPA and the traditional `preparedStatement()` method for SQL statement execution. It does not support ORM frameworks, such as Hibernate.
-
-ifdef::mta[]
-The image below shows an example of a Transactions report.
-
-.Transactions report
-image::transaction-report.png[Transactions report]
-endif::[]
-
-ifdef::mtr[]
-The image below shows an example of a Transactions report.
-
-.Transactions report
-image::3-9-transaction-report-mtr.png[Transactions report]
-endif::[]
 === Source report
 
 The Source report displays the migration issues in the context of the source file in which they were discovered.
