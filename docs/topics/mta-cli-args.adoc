@@ -31,7 +31,6 @@ This option may result in a longer execution time and a large number of migratio
 
 |--help |Display the {ProductShortName} help message.
 |--input |A space-delimited list of the path to the file or directory containing one or more applications to be analyzed. This argument is required.
-|--listTags| Flag to list all available tags.
 |--list-targets| Flag to list all available target technologies.
 |--mavenize| Flag to create a Maven project directory structure based on the structure and content of the application. This creates `pom.xml` files using the appropriate Java EE API and the correct dependencies between project modules. See also the `--mavenizeGroupId` option.
 | -m, --mode string | Flag for analysis mode" `full` (default) or `source-only`
