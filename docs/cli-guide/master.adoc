@@ -44,7 +44,7 @@ include::topics/mta-cli-analyze.adoc[leveloffset=+3]
 include::topics/mta-cli-transform.adoc[leveloffset=+3]
 
 // Use OpenRewrite recipes
-include::topics/using-openrewrite-recipes.adoc[leveloffset=+3]
+include::topics/mta-using-openrewrite-recipes.adoc[leveloffset=+3]
 
 // Available OpenRewrite recipes
 include::topics/available-openrewrite-recipes.adoc[leveloffset=+4]
