@@ -60,8 +60,8 @@ To install using `podman pull`:
 [source,terminal]
 ----
 podman login registry.redhat.io
-Username: myrhusername
-Password: ***********
+Username: <username>
+Password: <***********>
 ----
 . Issue:
 +
