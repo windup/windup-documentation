@@ -35,7 +35,7 @@ include::topics/about-cli.adoc[leveloffset=+2]
 include::topics/installing-cli-tool.adoc[leveloffset=+2]
 
 // Run the CLI
-include::topics/cli-run.adoc[leveloffset=+2]
+include::topics/mta-cli-run.adoc[leveloffset=+2]
 
 // Analyze application source code
 include::topics/mta-cli-analyze.adoc[leveloffset=+3]
