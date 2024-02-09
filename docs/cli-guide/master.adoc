@@ -53,25 +53,25 @@ include::topics/available-openrewrite-recipes.adoc[leveloffset=+4]
 include::topics/access-report.adoc[leveloffset=+2]
 
 // Review the Reports
-include::topics/review-reports.adoc[leveloffset=+1]
+include::topics/mta-review-reports.adoc[leveloffset=+1]
 
 // Export the Report in CSV Format
-include::topics/csv-export.adoc[leveloffset=+1]
+// include::topics/csv-export.adoc[leveloffset=+1]
 
 // Mavenize Your Application
-include::topics/mavenize.adoc[leveloffset=+1]
+// include::topics/mavenize.adoc[leveloffset=+1]
 
 // Optimize {ProductShortName} Performance
-include::topics/optimize-performance.adoc[leveloffset=+1]
+include::topics/mta-optimize-performance.adoc[leveloffset=+1]
 
 // Configure {ProductShortName} to Exclude Files and Packages
-include::topics/exclude-files-and-packages.adoc[leveloffset=+2]
+// include::topics/mta-exclude-files-and-packages.adoc[leveloffset=+2]
 
 [appendix]
 == Reference material
 
 // {ProductShortName} Command-line Arguments
-include::topics/cli-args.adoc[leveloffset=+2]
+include::topics/mta-cli-args.adoc[leveloffset=+2]
 
 // Added in 4.3.0: list of supported Tech Tags
 include::topics/tech-tags.adoc[leveloffset=+2]

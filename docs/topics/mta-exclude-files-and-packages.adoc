@@ -1,0 +1,18 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="exclude-files-and-packages_{context}"]
+= Configuring {ProductShortName} to exclude packages and files
+
+
+[id="ignored-locations_{context}"]
+== Searching locations for exclusion
+
+{ProductShortName} searches the following locations:
+
+* `~/.{LC_PSN}/ignore/`
+* `~/.windup/ignore/`
+* `<{ProductShortName}_HOME>/ignore/`
+
