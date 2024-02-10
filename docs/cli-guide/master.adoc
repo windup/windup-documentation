@@ -46,6 +46,13 @@ include::topics/mta-cli-transform.adoc[leveloffset=+3]
 // Use OpenRewrite recipes
 include::topics/using-openrewrite-recipes.adoc[leveloffset=+3]
 
+// OUR TEST
+[id="test-link_{context}"]
+== Test links
+
+// OUR TEST
+
+
 // Available OpenRewrite recipes
 include::topics/available-openrewrite-recipes.adoc[leveloffset=+4]
 
@@ -100,5 +107,4 @@ include::topics/important-links.adoc[leveloffset=+3]
 // **********************************
 include::topics/templates/revision-info.adoc[]
 
-[id="test-link_{context}"]
-== Test links
+
