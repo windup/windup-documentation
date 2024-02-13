@@ -33,7 +33,7 @@ $ ./{mta-cli} analyze --input /path/to/jee-example-app-1.0.0.ear \
 [discrete]
 === Running {ProductShortName} on an application archive
 
-The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:
+The following command analyzes the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:
 
 [source,terminal,subs="attributes+"]
 ----
