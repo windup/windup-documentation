@@ -46,12 +46,12 @@ $ <{ProductShortName}_HOME>/{mta-cli} analyze \
 [discrete]
 === Running {ProductShortName} on source code
 
-The following command analyzes the `org.jboss.seam` packages of the link:https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] example source code for migrating to JBoss EAP 6.
+The following command analyzes the link:https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] example source code for migrating to JBoss EAP 6.
 
 [source,terminal,subs="attributes+"]
 ----
 
-$ <{ProductShortName}_HOME>/bin/{mta-cli} analyze --mode source-only --input /path/to/seam-booking-5.2/ \
+$ <{ProductShortName}_HOME>/{mta-cli} analyze --mode source-only --input /path/to/seam-booking-5.2/ \
     --output /path/to/report-output/ --target eap6 --packages org.jboss.seam
 ----
 []
