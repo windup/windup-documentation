@@ -1,0 +1,30 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="mta-web-viewing-an-assessment-report_{context}"]
+= Viewing an assessment report
+
+An {ProductShortName} assessment report displays an aggregated assessement of the data obtained from multiple questionnaires for multiple applications.
+
+.Procedure
+
+. To view an assessment report, in *Migration* view, in the menu on the left, click *Reports*.
++
+The aggregated assessment report for all aplications is displayed.
++
+image::mta-assessment-report.png[Assessment report]
++
+* To display a report on the data from a particular questionnaire, select the required questionnaire from a drop-down list of all questionnaires in the *Current landscape* pane of the report. By default, all questionnaires are selected.
+* In the *Identified risks* pane of the report, you can sort the displayed list by application name, level of risk, questionnaire, questionnaire section, question, and answer.
+* To display a report for a specific application:
+.. Click the link in the *Applications* column in the *Identified risks* pane of the report.
++
+The *Application inventory* page opens. The applications included in the link are displayed as a list .
+.. Click the required application.
++
+The *Assessment* side drawer opens.
++
+** To see the assessed risk level for the application, open the *Details* tab.
+** To see the details of the assessment, open the *Reviews* tab.
