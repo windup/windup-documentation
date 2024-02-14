@@ -58,7 +58,7 @@ $ <{ProductShortName}_HOME>/{mta-cli} analyze --mode source-only --input /path/t
 [discrete]
 === Running cloud-readiness rules
 
-The following command analyzes the `com.acme` and `org.apache` packages of the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness:
+The following command analyzes the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness:
 
 [source,terminal,subs="attributes+"]
 ----
