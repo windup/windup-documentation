@@ -24,7 +24,7 @@ include::topics/rules-guide-intro.adoc[leveloffset=+2]
 include::topics/mta-about-home-var.adoc[leveloffset=+3]
 
 // MTA Rules
-include::topics/about-rules.adoc[leveloffset=+2]
+include::topics/mta-about-rules.adoc[leveloffset=+2]
 
 [id="creating-yaml-rules_{context}"]
 == Creating YAML rules
@@ -81,21 +81,21 @@ include::topics/rule-categories.adoc[leveloffset=+1]
 // Rule Story Points
 include::topics/about-story-points.adoc[leveloffset=+2]
 
-For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
+// For more information on categorizing tasks, see xref:rule-categories_{context}[Using custom rule categories].
 
-=== Additional resources
+// === Additional resources
 
 // Review the Existing MTA XML Rules
-include::topics/review-existing-rules.adoc[leveloffset=+3]
+// include::topics/review-existing-rules.adoc[leveloffset=+3]
 
 // Fork and Clone the Ruleset GitHub Project
-include::topics/fork-ruleset-repo.adoc[leveloffset=+4]
+//include::topics/fork-ruleset-repo.adoc[leveloffset=+4]
 
 // Important Links
-include::topics/rules-important-links.adoc[leveloffset=+3]
+// include::topics/rules-important-links.adoc[leveloffset=+3]
 
 // **********************************
 // * Appendix: Revision Information *
 // **********************************
-include::topics/templates/revision-info.adoc[]
-=======
+//include::topics/templates/revision-info.adoc[]
+//=======
