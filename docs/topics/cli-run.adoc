@@ -52,7 +52,7 @@ The following command analyzes the `org.jboss.seam` packages of the link:https:/
 
 [source,terminal,subs="attributes+"]
 ----
-$ <{ProductShortName}_HOME>/{mta-cli} --sourceMode --input /path/to/seam-booking-5.2/ \
+$ <{ProductShortName}_HOME>/{mta-cli} --mode source-only --input /path/to/seam-booking-5.2/ \
     --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam
 ----
 []
