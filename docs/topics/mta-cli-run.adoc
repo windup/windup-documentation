@@ -1,0 +1,70 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="cli-run_{context}"]
+= Running the {CLINameTitle}
+
+You can run {ProductShortName} against your application.
+
+.Procedure
+
+. Open a terminal and navigate to the `<{ProductShortName}_HOME>/` directory.
+
+. Execute the `{mta-cli}` script, or `{mta-cli}.exe` for Windows, and specify the appropriate arguments:
+
++
+[source,terminal,subs="attributes+"]
+----
+$ ./{mta-cli} analyze --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/output --source weblogic --target eap6 \
+----
++
+* `--input`: The application to be evaluated.
+* `--output`: The output directory for the generated reports.
+* `--source`: The source technology for the application migration.
+
+. Access the report.
+
+[id="command-examples_{context}"]
+== {ProductShortName} command examples
+
+[discrete]
+=== Running {ProductShortName} on an application archive
+
+The following command analyzes the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:
+
+[source,terminal,subs="attributes+"]
+----
+$ <{ProductShortName}_HOME>/{mta-cli} analyze \
+    --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/report-output/ --source eap5 --target eap7 \
+----
+[]
+
+[discrete]
+=== Running {ProductShortName} on source code
+
+The following command analyzes the link:https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2[seam-booking-5.2] example source code for migrating to JBoss EAP 6.
+
+[source,terminal,subs="attributes+"]
+----
+
+$ <{ProductShortName}_HOME>/{mta-cli} analyze --mode source-only --input /path/to/seam-booking-5.2/ \
+    --output /path/to/report-output/ --target eap6 --packages org.jboss.seam
+----
+[]
+[discrete]
+=== Running cloud-readiness rules
+
+The following command analyzes the link:https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear[jee-example-app-1.0.0.ear] example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness:
+
+[source,terminal,subs="attributes+"]
+----
+$ <{ProductShortName}_HOME>/{mta-cli} analyze --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/report-output/ \
+    --target eap7
+----
+[]
+
