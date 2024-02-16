@@ -1,0 +1,37 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="fork-ruleset-repo_{context}"]
+= Forking and cloning the {ProductName} XML rules
+
+The {ProductName} `windup-rulesets` repository provides working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.
+
+You must have the link:http://git-scm.com/[`git`] client installed on your machine.
+
+. Click the `Fork` link on the https://github.com/windup/windup-rulesets/[{ProductName} Rulesets] GitHub page to create the project in your own Git. The forked GitHub repository URL created by the fork should look like this: `\https://github.com/<YOUR_USER_NAME>/windup-rulesets.git`.
+. Clone your {ProductName} rulesets repository to your local file system:
++
+[options="nowrap",subs="attributes+"]
+----
+$ git clone https://github.com/<YOUR_USER_NAME>/windup-rulesets.git
+----
+. This creates and populates a `windup-rulesets` directory on your local file system. Navigate to the newly created directory, for example
++
+[options="nowrap"]
+----
+$ cd windup-rulesets/
+----
+. If you want to be able to retrieve the latest code updates, add the remote `upstream` repository so you can fetch any changes to the original forked repository.
++
+[options="nowrap"]
+----
+$ git remote add upstream https://github.com/windup/windup-rulesets.git
+----
+. Get the latest files from the `upstream` repository.
++
+[options="nowrap"]
+----
+$ git fetch upstream
+----

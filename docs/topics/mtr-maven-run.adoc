@@ -1,0 +1,73 @@
+// Module included in the following assemblies:
+//
+// * docs/maven-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="maven-run_{context}"]
+= Running the {MavenNameTitle}
+
+The {MavenName} is run by including a reference to the plugin inside your application's `pom.xml` file. When the application is built, the {MavenName} is run and generates the reports for analysis.
+
+.Prerequisites
+* Java Development Kit (JDK) installed.
++
+{ProductShortName} supports the following JDKs:
+
+** OpenJDK 11
+** Oracle JDK 11
+
+* 8 GB RAM
+* macOS installation: the value of `maxproc` must be `2048` or greater.
+* The Maven `settings.xml` file https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html-single/development_guide/index#configure_the_jboss_eap_maven_repository_using_the_maven_settings[configured] to direct Maven to use the JBoss EAP Maven repository.
+
+
+* To run the {MavenName} on OpenJDK 17 or Oracle JDK17, you first need to set MAVEN_OPTS on the command line by running the following command:
++
+[source,terminal,subs="attributes+"]
+----
+export MAVEN_OPTS="--add-modules=java.se --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.util.stream=ALL-UNNAMED"
+----
+
+.Procedure
+
+. Add the following `<plugin>` to your application's `pom.xml` file:
++
+[source,xml,options="nowrap",subs="attributes+"]
+----
+[...]
+<plugin>
+    <groupId>org.jboss.windup.plugin</groupId>
+    <artifactId>{LC_PSN}-maven-plugin</artifactId>
+    <version>{ProductDistributionVersion}</version>
+    <executions>
+        <execution>
+            <id>run-windup</id>
+            <phase>package</phase>
+            <goals>
+                <goal>windup</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <target>eap:7</target> <1>
+    </configuration>
+</plugin>
+[...]
+----
+<1> Specify a migration target. At least one migration target must be supplied within the configuration.
+
+. Add `--add-modules=java.se` to the `MAVEN_OPTS` environment variable.
++
+[source,terminal,subs="attributes+"]
+----
+export MAVEN_OPTS=--add-modules=java.se
+----
+
+. Build the project:
++
+[source,terminal,subs="attributes+"]
+----
+$ mvn clean install
+----
++
+You can access the generated reports.

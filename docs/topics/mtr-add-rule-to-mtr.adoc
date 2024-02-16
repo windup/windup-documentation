@@ -1,0 +1,18 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="add-rule-to-mtr_{context}"]
+= Adding a rule to the {ProductName}
+
+A {ProductName} rule is installed by copying the rule to the appropriate {ProductShortName} folder. {ProductShortName} scans for rules, which are files with the `.windup.xml` extension in the following locations:
+
+* Directory specified by the `--userRulesDirectory` argument on the {ProductShortName} command line.
+* `<{ProductShortName}_HOME>/rules/` directory. `<{ProductShortName}_HOME>` is the directory where you install and run the {ProductName} executable.
+* `${user.home}/.{LC_PSN}/rules/` directory. This directory is created by {ProductShortName} the first time it is run. it contains rules, add-ons, and the {ProductShortName} log.
++
+[NOTE]
+====
+In a Windows operating system, the rules are located in `\Documents and Settings\<USER_NAME>\.{LC_PSN}\rules\` or `\Users\<USER_NAME>\.{LC_PSN}\rules\`.
+====

@@ -1,0 +1,43 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="exclude-files-and-packages_{context}"]
+= Configuring {ProductShortName} to exclude packages and files
+
+[id="exclude-packages_{context}"]
+== Excluding packages
+
+You can exclude packages during decompilation and analysis to increase performance. References to these packages remain in the application's source code but excluding them avoids the decompilation and analysis of proprietary classes.
+
+Any packages that match the defined value are excluded. For example, you can use `com.acme` to exclude both `com.acme.example` and `com.acme.roadrunner`.
+
+You can exclude packages by either of the following methods:
+
+* Using the `--excludePackages` argument.
+* Specifying the packages in a file contained within one of the ignored locations. Each package should be included on a separate line, and the file must end in `.package-ignore.txt`. For example, see `<{ProductShortName}_HOME>/ignore/proprietary.package-ignore.txt`.
+
+[id="exclude-files_{context}"]
+== Excluding files
+
+{ProductShortName} can exclude specific files, such as included libraries or dependencies, during scanning and report generation. Excluded files are defined in a file with the `.{LC_PSN}-ignore.txt` or `.windup-ignore.txt` extension within one of the ignored locations.
+
+These files contain a regex string detailing the name to exclude, with one file listed per line. For example, you can exclude the library `ant.jar` and any Java source files beginning with `Example` with a file containing the following:
+
+----
+.*ant.jar
+.*Example.*\.java
+----
+
+[id="ignored-locations_{context}"]
+== Searching locations for exclusion
+
+{ProductShortName} searches the following locations:
+
+* `~/.{LC_PSN}/ignore/`
+* `~/.windup/ignore/`
+* `<{ProductShortName}_HOME>/ignore/`
+* Any files and folders specified by the `--userIgnorePath` argument
+
+Each of these files must conform to the rules specified for excluding packages or files, depending on the type of content to be excluded.

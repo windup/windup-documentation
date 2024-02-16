@@ -1,0 +1,27 @@
+// Module included in the following assemblies:
+//
+// * docs/vsc-extension-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="installing-vs-code-extension_{context}"]
+= Installing the {ProductShortName} extension for Visual Studio Code
+
+You can install the {ProductShortName} extension for Visual Studio Code (VS Code).
+
+.Prerequisites
+include::snippet_jdk-hardware-mac-prerequisites.adoc[]
+
+.Procedure
+
+. Set the environmental variable `JAVA_HOME`:
++
+[source, terminal,subs="attributes+"]
+----
+$ export JAVA_HOME=jdk11
+----
+
+. In VS Code, click the *Extensions* icon on the Activity bar to open the *Extensions* view.
+. Enter `{ProductName}` in the Search field.
+. Select the *{ProductName}* extension and click *Install*.
++
+The {ProductShortName} extension icon (image:vs_extension_icon.png[{ProductShortName} code extension]) is displayed on the Activity bar.

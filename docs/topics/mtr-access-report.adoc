@@ -1,0 +1,34 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="access-report_{context}"]
+= Accessing reports
+
+When you run the {ProductName}, a report is generated in the `<OUTPUT_REPORT_DIRECTORY>` that you specify using the `--output` argument in the command line.
+
+The output directory contains the following files and subdirectories:
+
+----
+<OUTPUT_REPORT_DIRECTORY>/
+├── index.html          // Landing page for the report
+├── <EXPORT_FILE>.csv   // Optional export of data in CSV format
+├── archives/           // Archives extracted from the application
+├── mavenized/          // Optional Maven project structure
+├── reports/            // Generated HTML reports
+├── stats/              // Performance statistics
+----
+
+.Procedure
+
+. Obtain the path of the `index.html` file of your report from the output that appears after you run {ProductShortName}:
++
+----
+Report created: <OUTPUT_REPORT_DIRECTORY>/index.html
+              Access it at this URL: file:///<OUTPUT_REPORT_DIRECTORY>/index.html
+----
+
+. Open the `index.html` file by using a browser.
++
+The generated report is displayed.

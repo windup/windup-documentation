@@ -1,0 +1,15 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="review-existing-rules_{context}"]
+= Reviewing existing {ProductShortName} XML rules
+
+{ProductShortName} XML-based rules are located on GitHub at the following location: link:https://github.com/windup/windup-rulesets/tree/master/rules/rules-reviewed[https://github.com/windup/windup-rulesets/tree/master/rules/rules-reviewed].
+
+You can fork and clone the {ProductShortName} XML rules on your local machine.
+
+Rules are grouped by target platform and function. When you create a new rule, it is helpful to find a rule that is similar to the one you need and use it as a starting template.
+
+New rules are continually added, so it is a good idea to check back frequently to review the updates.

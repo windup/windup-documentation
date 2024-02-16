@@ -1,0 +1,33 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: REFERENCE
+[id="where-syntax_{context}"]
+= `<where>` syntax
+
+You can define parameters that specify a matching pattern to be used in other elements of an XML rule. This can help simplify the patterns for complex matching expressions.
+
+Use the `<where>` element to define a parameter. Specify the parameter name using the `param` attribute and supply the pattern using the `<matches>` element. This parameter can then be referenced elsewhere in the rule definition using the syntax `{<PARAM_NAME>}`.
+
+You can view the link:http://windup.jboss.org/schema/windup-jboss-ruleset.xsd[complete XML rule schema].
+
+The following example rule defines a parameter named `subpackage` that specifies a pattern of `(activeio|activemq)`.
+
+[source,xml,subs="attributes+"]
+----
+<rule id="generic-catchall-00600">
+  <when>
+    <javaclass references="org.apache.{subpackage}.{*}">
+    </javaclass>
+  </when>
+  <perform>
+    ...
+  </perform>
+  <where param="subpackage">
+    <matches pattern="(activeio|activemq)" />
+  </where>
+</rule>
+----
+
+The pattern defined by `subpackage` will then be substituted in the `<javaclass>` `references` attribute. This causes the rule to match on [x-]`org.apache.activeio.*` and `org.apache.activemq.*` packages.

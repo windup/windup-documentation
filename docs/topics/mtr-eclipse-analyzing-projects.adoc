@@ -1,0 +1,17 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="eclipse-analyzing-projects_{context}"]
+= Analyzing projects
+
+You can analyze your projects by running the {PluginName} with a saved run configuration.
+
+.Procedure
+
+. In the *{ProductShortName}* perspective, click the *Run* button (image:run_exc.png[Run button]) and select a run configuration.
++
+The {PluginName} analyzes your projects. The *Issue Explorer* displays migration issues that are detected with the ruleset.
+
+. When you have finished analyzing your projects, stop the {ProductShortName} server in the *Issue Explorer* to conserve memory.
