@@ -1,0 +1,29 @@
+// Module included in the following assemblies:
+//
+// * docs/intellij-idea-plugin-guide/master.adoc
+
+[id="intellij-idea-plugin-reviewing-issues_{context}"]
+= Reviewing issues
+
+You can use the {ProductShortName} plugin icons to prioritize issues based on their severity. You can see which issues have a _Quick Fix_ automatic code replacement and which do not.
+
+The results of an analysis are displayed in a directory format, showing the _hints_ and _classifications_ for each application analyzed.
+
+A _hint_ is a read-only snippet of code that contains a single issue that you should or must address before you can modernize or migrate an application. Often a Quick Fix is suggested, which you can accept or ignore.
+
+A _classification_ is a file that has an issue but does not have any suggested Quick Fixes. You can edit a classification.
+
+.Procedure
+
+. In the {ProductName} view, select a run configuration directory in the left pane.
++
+. Click *Results*.
++
+The modules and applications of the run configuration are displayed, with hints and classifications beneath each application.
+
+. Prioritize issues based on the following icons, which are displayed next to each hint:
+
+** image:intellij-idea-mandatory.png[Mandatory] : You must fix this issue in order to migrate or modernize the application.
+** image:intellij-idea-potential.png[Warning] : You might need to fix this issue in order to migrate or modernize the application
+
+. Optional: To learn more about a hint, right-click it and select *Show More Details*.

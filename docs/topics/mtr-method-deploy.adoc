@@ -1,0 +1,16 @@
+// Module included in the following assemblies:
+//
+// * docs/getting-started-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="method-deploy_{context}"]
+= Deploy phase
+
+.Red Hat migration methodology: Deploy phase
+image::RHAMT_AMM_Methodology_446947_0617_ECE_Deploy.png[Red Hat migration methodology: Deploy]
+
+The _Deploy_ phase is when you run the plan created in the Design phase. In this phase, you scale the overall transformation process to complete the plan and bring all applications to their new production environment.
+
+The plan is run in iterations to deliver value incrementally. With each iteration, you continuously validate against the plan and document findings to improve the next sprint.
+
+The use of the {ProductName} {PluginName} increases speed in each iteration. It can be used with Eclipse, and marks migration issues directly in the source code, provides inline hints, and offers code change suggestions. See the link:{EclipseCrsGuideURL}[_{EclipseCrsGuideTitle}_] for information on how to use the {PluginName}.

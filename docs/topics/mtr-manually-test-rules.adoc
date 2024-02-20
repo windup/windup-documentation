@@ -1,0 +1,24 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="manually-test-rules_{context}"]
+= Manually testing an XML rule
+
+You can run an XML rule against your application file to test it:
+
+[source,terminal,subs="attributes+"]
+----
+$ <{ProductShortName}_HOME>/bin/windup-cli [--sourceMode] --input <INPUT_ARCHIVE_OR_FOLDER> --output <OUTPUT_REPORT_DIRECTORY> --target <TARGET_TECHNOLOGY> --packages <PACKAGE_1> <PACKAGE_2> <PACKAGE_N>
+----
+
+You should see the following result:
+
+[options="nowrap",subs="attributes+"]
+----
+Report created: <OUTPUT_REPORT_DIRECTORY>/index.html
+              Access it at this URL: file:///<OUTPUT_REPORT_DIRECTORY>/index.html
+----
+
+More examples of how to run {ProductShortName} are located in the {ProductName} {ProductDocUserGuideURL}[_{UserCLIBookName}_].

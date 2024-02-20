@@ -1,0 +1,50 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+
+[id="eclipse-installing-plugin_{context}"]
+= Installing in a connected environment
+
+You need a connected environment to install the {PluginName}.
+
+The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Developers 2023-03.
+
+.Prerequisites
+
+include::snippet_jdk-hardware-mac-prerequisites.adoc[leveloffset=0]
+
+* link:https://www.eclipse.org/downloads/packages/release/2023-03/r/eclipse-ide-java-developers[Eclipse IDE for Java Enterprise Developers 2023-03]
+* JBoss Tools, installed from the link:https://marketplace.eclipse.org/content/jboss-tools[Eclipse Marketplace]
+* link:http://download.eclipse.org/mylyn/releases/latest[Mylyn SDK and frameworks], installed with Eclipse
+
+[NOTE]
+====
+Eclipse is pre-configured for Java 17, and the plugin operates directly with Java 17.
+
+You can also run the plugin with Java 11, which requires setting the JRE version to Java 11 when creating up a new Eclipse  project or importing an existing one. See step 6 below.
+====
+
+.Procedure
+
+. Launch Eclipse.
+. From the menu bar, select *Help* -> *Install New Software*.
+. Next to the *Work with* field, click *Add*.
+. In the *Name* field, enter `{ProductShortName}`.
+. In the *Location* field, enter
+ifdef::mtr[]
+`https://marketplace.eclipse.org/content/migration-toolkit-runtimes-mtr` and click *OK*.
+endif::[]
+ifdef::mta[]
+`https://marketplace.eclipse.org/content/migration-toolkit-applications-mta` and click *OK*.
+endif::[]
+. Select the Java version to use.
+** If using Java 11, in the *JRE* list, select *JavaSE 11*.
+** If using Java 17, leave the *JRE* selection unchanged.
+
+[start=7]
+. Select all the *JBoss Tools - {ProductShortName}* check boxes and click *Next*.
+. Review the installation details and click *Next*.
+. Accept the terms of the license agreement and click *Finish*.
+. Restart Eclipse.

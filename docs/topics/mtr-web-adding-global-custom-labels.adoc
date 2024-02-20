@@ -1,0 +1,25 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="web-adding-global-custom-labels_{context}"]
+= Adding global custom labels
+
+{ProductShortName} includes a preconfigured set of global labels, which apply to all projects.
+
+You can define your own custom global labels.
+
+.Procedure
+
+. In the {WebName}, click *Labels configuration*.
+. Click *Add label*.
+. To upload a labelset file, click the *Upload* tab, click *Browse*, select one or more files, and click *Close*.
++
+A labelset file must have a `.windup.label.xml` extension. The uploaded file is stored on the {ProductShortName} server.
++
+. To register the server path of a labelset file, click the *Server path* tab, enter the *Labels* path, and click *Save*.
++
+Registering the server path ensures that the {ProductShortName} server always uses the latest version of the labelset files.
++
+The *Custom labels* list displays the labels.

@@ -1,0 +1,27 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="web-adding-global-custom-rules_{context}"]
+= Adding global custom rules
+
+{ProductShortName} includes a preconfigured set of global rules, which apply to all projects.
+
+You can define your own custom global rules.
+
+For information on writing custom {ProductShortName} rules, see the {ProductShortName} link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_].
+
+.Procedure
+
+. In the {WebName}, click *Rules configuration*.
+. Click *Add rules*.
+. To upload a ruleset file, click the *Upload* tab, click *Browse*, select one or more files, and click *Close*.
++
+A ruleset file must have a `.windup.xml` extension. The uploaded file is stored on the {ProductShortName} server.
++
+. To register the server path of a ruleset file, click the *Server path* tab, enter the *Rules* path, and click *Save*.
++
+Registering the server path ensures that the {ProductShortName} server always uses the latest version of the ruleset files.
++
+The *Custom rules* list displays the rules.

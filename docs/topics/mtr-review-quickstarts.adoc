@@ -1,0 +1,65 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="review-quickstarts_{context}"]
+= Reviewing the {ProductName} quickstarts
+
+The {ProductName} quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.
+
+Each quickstart has a `README.adoc` file that contains instructions for that quickstart.
+
+You can download a `.zip` file of the latest version of the quickstarts. If you prefer to work with the source code, you can fork and clone the `windup-quickstarts` project repository.
+
+[id="download_quickstart_zip_{context}"]
+== Downloading the latest quickstart
+
+You can download the latest release of a quickstart.
+
+.Procedure
+
+. Launch a browser and navigate to link:https://github.com/windup/windup-quickstarts/releases[https://github.com/windup/windup-quickstarts/releases].
+. Click the latest release to download the `.zip` file to your local file system.
+. Extract the archive files to a local directory.
++
+You can review the quickstart `README.adoc` file.
+
+[id="use-quickstart-github-project_{context}"]
+== Forking and cloning the quickstart GitHub project
+
+You can fork and clone the Quickstart Github project on your local machine.
+
+.Prerequisites
+
+* You must have link:http://git-scm.com/[`git`] client installed.
+
+.Procedure
+
+. Click *Fork* on the https://github.com/windup/windup-quickstarts/[{ProductName} quickstart] GitHub page to create the project in your own Git. The forked GitHub repository URL should look like this: `\https://github.com/<YOUR_USER_NAME>/windup-quickstarts.git`.
+
+. Clone the {ProductName} quickstart repository to your local file system:
++
+----
+$ git clone https://github.com/<YOUR_USER_NAME>/windup-quickstarts.git
+----
++
+This creates a `windup-quickstarts` directory on your local file system.
+
+. Navigate to the newly created directory:
++
+----
+$ cd windup-quickstarts/
+----
+
+. To retrieve the latest code updates, add the remote `upstream` repository so that you can fetch changes to the original forked repository:
++
+----
+$ git remote add upstream https://github.com/windup/windup-quickstarts.git
+----
+
+. Download the latest files from the `upstream` repository:
++
+----
+$ git fetch upstream
+----

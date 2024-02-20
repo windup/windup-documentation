@@ -1,0 +1,108 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="web-create-project_{context}"]
+= Creating a project
+
+You can create a project in the {WebName} with the *Create project* wizard.
+
+.Procedure
+
+. In the {WebName}, click *Projects*.
+. Click *Create project*.
+. Enter a unique name for the project, an optional description, and click *Next*.
++
+. To upload applications, click the *Upload* tab, click *Browse*, select the application files you want to upload, and click *Close*.
++
+Uploading applications stores them directly on the {ProductShortName} server.
+
+. To register a server path, click the *Server path* tab and enter the *Server-side path* of the application in the field.
++
+Registering the server path of an application ensures that {ProductShortName} always uses the latest version.
+. Click *Next*.
+. Click one or more transformation targets.
++
+image::web-console-transformation-targets.png[Transformation targets]
+. Click *Next*.
+. Select packages and click *>* to include them in the analysis.
+. Click *Next*.
++
+. If you want to add a custom rule, click *Add rule*.
++
+See the link:{ProductDocRulesGuideURL}[{RulesDevBookName}] for more information.
+
+* To upload a ruleset file, click the *Upload* tab, click *Browse*, select one or more files, and click *Close*.
++
+A ruleset file must have a `.windup.xml` extension. The uploaded file is stored on the {ProductShortName} server.
++
+* To register the server path of a ruleset file, click the *Server path* tab, enter the *Rules* path, and click *Save*.
++
+Registering the server path ensures that the {ProductShortName} server always uses the latest version of the ruleset files.
++
+. Click *Next*.
++
+. If you want to add a custom label, click *Add label*.
+* To upload a labelset file, click the *Upload* tab, click *Browse*, select one or more files, and click *Close*.
++
+A labelset file must have a `.windup.label.xml` extension. The uploaded file is stored on the {ProductShortName} server.
++
+* To register a server path, click the *Server path* tab, enter the *Labels path* of the label files in the field, and click *Save*.
++
+Registering the server path ensures that the {ProductShortName} server always uses the latest version of the labelset files.
++
+. Click *Next*.
++
+. Review the following *Advanced options* and make any necessary changes:
+
+* *Target*
+* *Source*
+* *Exclude tags*: Rules with these tags are not processed.
+* *Additional classpath*: Enter a space-delimited list of additional `.jar` files or directories so that they are available for decompilation or other analysis.
+* *Application name*
+* *Mavenize group ID*
+* *Ignore path*: Enter a path for files to exclude from analysis.
+* *Export CSV*: Exports the report data as a CSV file.
+* *Export Summary*: Generates an `analysisSummary.json` export file in the output directory. The file contains analysis summary information for each application analyzed, including the number of incidents and story points by category, and all of the technology tags associated with the analyzed applications.
+* *Export reports zip*: Creates a `reports.zip` file in the output folder. The file contains the analysis output, typically, the reports. If requested, it can also contain the CSV export files.
+* *Disable Tattletale*: Disables generation of a Tattletale report for each application.
+* *Class Not Found analysis*: Enables analysis of Java files that are not available on the class path.
++
+[NOTE]
+====
+This option should not be used if some classes are unavailable for analysis.
+====
+
+* *Compatible Files report*: Generating a Compatible Files report might take a long time for large applications.
+* *Exploded app*: The input directory contains the unpackaged source files of an application.
+* *Keep work dirs*: Retains temporary files, for example, the graph database or extracted archive files, for debugging purposes.
+* *Skip reports*: HTML reports are not generated. Must be enabled if you enabled *Export CSV*.
+* *Allow network access*: Validates any XML files within the analyzed applications against their schema.
++
+[NOTE]
+====
+This option might reduce performance.
+====
+* *Mavenize*: Creates a Maven project directory structure based on the structure and content of the application.
+* *Source mode*: Indicates that the application files are raw source files, not compiled binaries. The sourceMode argument has been deprecated. There is no longer the need to specify it. MTR can intuitively process any inputs that are presented to it.  In addition, project source folders can be analyzed with binary inputs within the same analysis execution.
+* *Analyze known libraries*: Analyze known software artifacts embedded within your application.  By default, {ProductShortName} only analyzes application code.
++
+[NOTE]
+====
+This option might result in a longer execution time and a large number of migration issues being reported.
+====
+* *Transaction analysis*: [Tech Preview] Generates a Transactions report that displays the call stack, which executes operations on relational database tables. The Enable Transaction Analysis feature supports Spring Data JPA and the traditional `preparedStatement()` method for SQL statement execution. It does not support ORM frameworks, such as Hibernate.
++
+[NOTE]
+====
+Transaction analysis is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them
+in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+====
+* *Skip source code reports:* Adding this option skips generating a _Source code report_ when generating the application analysis report. Use this advanced option when concerned about source code information appearing in the application analysis.
+
+. Click *Next*.
++
+. Review your project and click *Save* or *Save and run*.
++
+The project is displayed in the *Projects* screen.

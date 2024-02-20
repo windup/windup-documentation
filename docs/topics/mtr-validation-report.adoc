@@ -1,0 +1,23 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="validation-report_{context}"]
+= About validation reports
+
+Validation reports provide details about test rules and failures and contain the following sections:
+
+* *Summary*
++
+This section contains the total number of tests run and reports the number of errors and failures. It displays the total success rate and the time taken, in seconds, for the report to be generated.
+
+* *Package List*
++
+This section contains the number of tests executed for each package and reports the number of errors and failures. It displays the success rate and the time taken, in seconds, for each package to be analyzed.
++
+A single package named `org.jboss.windup.rules.tests` is displayed unless additional test cases have been defined.
+
+* *Test Cases*
++
+This section describes the test cases. Each failure includes a *Details* section that can be expanded to show the stack trace for the assertion, including a human-readable line indicating the source of the error.

@@ -1,0 +1,57 @@
+// Module included in the following assemblies:
+//
+// * docs/maven-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="maven-multi-module_{context}"]
+= Running the {MavenNameTitle} with multiple modules
+
+To use the {MavenName} in a project with multiple modules, place the configuration inside the parent's `pom.xml`. The {MavenName} will generate a single report that contains the analysis for the parent and any child modules.
+
+NOTE: It is strongly recommended to set `inherited` to false in multi-module projects; otherwise, the {MavenName} will run when each child is compiled, resulting in multiple executions of the {MavenName} against the child modules. Setting `inherited` to false results in each project being analyzed a single time and drastically decreased run times.
+
+To run the {MavenName} in a project with multiple modules, perform the following steps.
+
+. Include the following plugin inside the parent project's `pom.xml`. The following is a sample `pom.xml` for a parent module.
++
+[source,xml,options="nowrap",subs="attributes+"]
+----
+<plugin>
+    <groupId>org.jboss.windup.plugin</groupId>
+    <artifactId>{LC_PSN}-maven-plugin</artifactId>
+    <version>{ProductDistributionVersion}</version>
+    <inherited>false</inherited>
+    <executions>
+        <execution>
+            <id>run-windup</id>
+            <phase>package</phase>
+            <goals>
+                <goal>windup</goal>
+            </goals>
+        </execution>
+    </executions>
+    <configuration>
+        <input>${project.basedir}</input>
+        <target>eap:7</target> <1>
+        <windupHome>>/PATH/TO/{CLIName}/<</windupHome>
+    </configuration>
+</plugin>
+----
+<1> Specify a migration target. At least one migration target must be supplied within the configuration.
++
+This `pom.xml` file differs from the default in the following attributes:
++
+* `inherited`: Defined at the plugin level, this attribute indicates whether or not this configuration should be used in child modules. Set to `false` for performance improvements.
+* `input`: Specifies the path to the directory containing the projects to be analyzed. This attribute defaults to `{project.basedir}/src/main`, and should be defined if the parent project does not have source code to analyze.
+* `windupHome`: A path to an extracted copy of the {ProductShortName} {CLIName}. This attribute is optional, but is recommended as a performance improvement.
++
+The above example demonstrates a set of recommended arguments.
+
+. Build the parent project. During the build process, the {MavenName} runs against all children in the project without further configuration.
++
+[source,terminal,subs="attributes+"]
+----
+$ mvn clean install
+----
+
+. Once completed, you can access the generated reports. This report contains the analysis for the parent and all children.
