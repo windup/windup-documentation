@@ -1,0 +1,25 @@
+// Module included in the following assemblies:
+//
+// * docs/vsc-extension-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="vs-code-extension-interface_{context}"]
+= {ProductShortName} extension interface
+
+
+
+The interface of the {ProductName} ({ProductShortName}) extension is designed to make it easier for you to find information and perform actions:
+
+* In the left pane, you can see a directory tree named *Analysis Results* with a report icon at its top. You can click the icon to open the {ProductShortName} report in your browser. Beneath the report icon are the other elements of the tree: the applications analyzed by {ProductShortName}, the rulesets used, and the issues discovered by the analysis.
+* In the upper right pane, you can configure an analysis.
+* In the lower right pane, you can see the settings of the configuration, including source, target, and advanced options. You can view the progress of an analysis in this pane. When the analysis is completed, you can click the *Open Report* button to open the {ProductShortName} report, which describes any issues you need to address before you migrate or modernize your application. For more information, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports] in the _{UserCLIBookName}_.
+
+.{ProductShortName} extension interface
+
+ifdef::mta[]
+
+endif::[]
+
+ifdef::mtr[]
+image::mtr-extension-interface.png[{ProductShortName} extension interface]
+endif::[]

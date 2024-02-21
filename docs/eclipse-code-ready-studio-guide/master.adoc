@@ -19,7 +19,7 @@ include::topics/making-open-source-more-inclusive.adoc[]
 [id="introduction_{context}"]
 == Introduction
 
-include::topics/about-ide-addons.adoc[leveloffset=+2]
+include::topics/mta-about-ide-addons.adoc[leveloffset=+2]
 include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
 [id="installing-plugin_{context}"]
@@ -27,25 +27,25 @@ include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
 You can install the {PluginName} in a connected or a restricted network environment.
 
-include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
+include::topics/mta-eclipse-installing-plugin.adoc[leveloffset=+2]
 :!eclipse-code-ready-studio-guide:
 :context: disconnected
 :disconnected:
-include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
+include::topics/mta-eclipse-installing-plugin.adoc[leveloffset=+2]
 :!disconnected:
 :context: eclipse-code-ready-studio-guide
 :eclipse-code-ready-studio-guide:
-include::topics/eclipse-accessing-tools.adoc[leveloffset=+2]
+include::topics/mta-eclipse-accessing-tools.adoc[leveloffset=+2]
 
 [id="analyzing-projects-with-plugin_{context}"]
 == Analyzing your projects with the {PluginName}
 
 You can analyze your projects with the {PluginName} by creating a run configuration, running an analysis, and then reviewing and resolving migration issues detected by the {PluginName}.
 
-include::topics/eclipse-configuring-run.adoc[leveloffset=+2]
-include::topics/eclipse-analyzing-projects.adoc[leveloffset=+2]
-include::topics/eclipse-reviewing-issues.adoc[leveloffset=+2]
-include::topics/eclipse-resolving-issues.adoc[leveloffset=+2]
+include::topics/mta-eclipse-configuring-run.adoc[leveloffset=+2]
+include::topics/mta-eclipse-analyzing-projects.adoc[leveloffset=+2]
+include::topics/mta-eclipse-reviewing-issues.adoc[leveloffset=+2]
+include::topics/mta-eclipse-resolving-issues.adoc[leveloffset=+2]
 
 // TODO: Uncomment when uninstalling works and this is ready
 // include::topics/plugin-uninstall.adoc[leveloffset=+1]
@@ -57,9 +57,9 @@ The {PluginName} comes with a core set of *System* rules for analyzing projects 
 
 You can create and import custom rulesets.
 
-include::topics/eclipse-viewing-rules.adoc[leveloffset=+2]
-include::topics/eclipse-creating-custom-ruleset.adoc[leveloffset=+2]
-include::topics/eclipse-importing-custom-ruleset.adoc[leveloffset=+2]
-include::topics/eclipse-submitting-ruleset.adoc[leveloffset=+2]
+include::topics/mta-eclipse-viewing-rules.adoc[leveloffset=+2]
+include::topics/mta-eclipse-creating-custom-ruleset.adoc[leveloffset=+2]
+include::topics/mta-eclipse-importing-custom-ruleset.adoc[leveloffset=+2]
+include::topics/mta-eclipse-submitting-ruleset.adoc[leveloffset=+2]
 
 :!eclipse-code-ready-studio-guide:

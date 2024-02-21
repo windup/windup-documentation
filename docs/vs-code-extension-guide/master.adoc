@@ -18,31 +18,31 @@ include::topics/making-open-source-more-inclusive.adoc[]
 == Introduction
 
 // About the VS Code extension
-include::topics/about-ide-addons.adoc[leveloffset=+2]
+include::topics/mta-about-ide-addons.adoc[leveloffset=+2]
 
 // About {ProductName}
 include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
 // Install the extension
-include::topics/installing-vs-code-extension.adoc[leveloffset=+1]
+include::topics/mta-installing-vs-code-extension.adoc[leveloffset=+1]
 
 [id="analyzing-projects-with-vs-code-extension_{context}"]
 == Analyzing your projects with the {ProductShortName} extension
 
 You can analyze your projects with the {ProductShortName} extension by creating a run configuration and running an analysis.
 
-include::topics/vs-code-extension-interface.adoc[leveloffset=+2]
+include::topics/mta-vs-code-extension-interface.adoc[leveloffset=+2]
 
-include::topics/vs-code-extension-run-configuration.adoc[leveloffset=+2]
+include::topics/mta-vs-code-extension-run-configuration.adoc[leveloffset=+2]
 
 [id="reviewing-and-resolving-issues-with-vs-code-extension_{context}"]
 == Reviewing and resolving migration issues
 
 You can review and resolve migration issues identified by the {ProductShortName} extension in the left pane.
 
-include::topics/vs-code-extension-reviewing-issues.adoc[leveloffset=+2]
+include::topics/mta-vs-code-extension-reviewing-issues.adoc[leveloffset=+2]
 
-include::topics/vs-code-extension-resolving-issues.adoc[leveloffset=+2]
+include::topics/mta-vs-code-extension-resolving-issues.adoc[leveloffset=+2]
 
 
 :!vsc-extension-guide:

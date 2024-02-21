@@ -1,0 +1,20 @@
+// Module included in the following assemblies:
+//
+// * docs/vsc-extension-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="vs-code-extension-reviewing-issues_{context}"]
+= Reviewing issues
+
+You can use the {ProductShortName} extension icons to prioritize issues based on their severity.
+
+.Procedure
+
+. Select a run configuration directory on the left pane.
+. Expand its folders to view the *Hints* generated for each application file.
+. Select a hint to view the source code.
+. Right-click a hint and select *View Details* to view the Rule ID and other information.
+. Prioritize issues based on the following icons, which are displayed next to each hint:
+
+** image:vs_mandatory.png[Mandatory] : The issue must be fixed for a successful migration.
+** image:vs_potential.png[Warning] : The issue might need to be addressed during migration.

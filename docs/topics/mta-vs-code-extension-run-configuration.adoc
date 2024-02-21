@@ -1,0 +1,34 @@
+// Module included in the following assemblies:
+//
+// * docs/vsc-extension-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="vs-code-extension-run-configuration_{context}"]
+= Configuring a run configuration
+
+You can configure multiple run configurations to run against each project you import to VS Code.
+
+.Prerequisites
+
+* `{mta-cli}` executable installed. You can download the `{mta-cli}` executable from link:{DevDownloadPageURL}[{LC_PSN} download].
+
+.Procedure
+
+. In *Extensions* view, click the {ProductName} icon (image:vs_extension_icon.png[{ProductShortName} code extension]) on the Activity bar.
+. Click the *+* (plus sign) next to *{ProductName}* to add a run configuration.
+. Complete the following configuration fields:
+
+** *Name*: Enter a meaningful name for the analysis configuration or accept the default.
+
+** *cli*: Enter the path to the cli executable. For example: `$HOME/{mta-cli}-{ProductDistributionVersion}/bin/{mta-cli}`.
+
+** *Input*: Set to the path of the project that you have open within your IDE by clicking *Add* and doing one of the following:
+
+*** Enter the input file or directory and press Enter.
+*** Click *Open File Explorer* and select the directory.
+
+** *Target*: Select one or more target migration paths.
+
+. Right-click the run configuration and select *Run*.
++
+When the analysis is completed, you can click the *Open Report* button to open the {ProductShortName} report, which describes any issues you need to address before you migrate or modernize your application. For more information, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports] in the _{UserCLIBookName}_.

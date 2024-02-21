@@ -1,0 +1,40 @@
+// Module included in the following assemblies:
+//
+// * docs/intellij-idea-plugin-guide/master.adoc
+
+[id="intellij-idea-plugin-run-configuration_{context}"]
+= Creating a run configuration
+
+You can create multiple run configurations to run against each project you import to IntelliJ IDEA.
+
+.Procedure
+
+. In the *Projects* view, click the project you want to analyze.
+. On the left side of the screen, click the *{ProductName}* tab.
++
+If this is your first configuration, the run configuration panel is displayed on the right.
+
+. If this is not your first configuration, right-click configuration in the list and select *New configuration*.
++
+The run configuration panel is displayed on the right.
+
+. Complete the following configuration fields:
+
+** *cli*: Enter the path to the cli executable. For example: `$HOME/{LC_PSN}-cli-{ProductDistributionVersion}/bin/{mta-cli}`.
+** *Input*: Click *Add* and enter the input file or directory.
+** *Target*: Select one or more target migration paths.
++
+[NOTE]
+====
+The location shown in the *Output* is set by the plugin.
+====
+
+. In the list of configurations, right-click the new configuration and select *Run Analysis*.
++
+The *Console ({ProductShortName})* terminal emulator opens, displaying information about the progress of the analysis.
++
+When the analysis is completed, you can click either *Report* or *Results* below the name of the configuration file you ran.
+
+** *Reports* opens the {ProductShortName} report, which describes any issues you need to address before you migrate or modernize your application. For more information, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports] in the _{UserCLIBookName}_.
+
+** *Results* opens a directory displaying hints (issues) per application.

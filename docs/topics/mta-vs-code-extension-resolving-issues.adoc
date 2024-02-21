@@ -1,0 +1,32 @@
+// Module included in the following assemblies:
+//
+// * docs/vsc-extension-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="vs-code-extension-resolving-issues_{context}"]
+= Resolving issues
+
+You can resolve issues by editing the code of a file with a hint
+
+
+////
+ == Using a Quick Fix
+
+You can use a Quick Fix automatic code replacement to save time and ensure consistency in resolving repetitive issues.
+
+.Procedure
+
+. In the left pane, right-click an issue that has the Quick Fix icon (image:vs_optional.png[Optional or Quick Fix]) and select *Preview Quick Fix*.
+. To accept the suggested fix, right-click the issue again and select *Apply Quick Fix.*
+. Optional: Right-click the issue and select *Mark as Complete* or *Delete*.
+////
+
+== Editing the code of a file
+
+You can edit the file of a project imported to VS Code.
+
+.Procedure
+
+. In the left pane, right-click an issue and select *Open Code*.
+. Make any changes needed to the code and save the file.
+. Optional: Right-click the issue and select *Mark as Complete* or *Delete*.
