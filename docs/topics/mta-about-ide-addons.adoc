@@ -1,0 +1,21 @@
+// Module included in the following assemblies:
+//
+// * docs/vs-code-extension-guide/master.adoc
+// * docs/intellij-idea-plugin-guide/master.adoc
+// * docs/eclipse-code-ready-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="about-ide-addons_{context}"]
+= About the {ProductShortName} {AddonType} for {IDEName}
+
+You can migrate and modernize applications by using the {ProductName} ({ProductShortName}) {AddonType} for {IDEName}.
+
+The {ProductShortName} {AddonType} analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.
+
+ifdef::vsc-extension-guide[]
+The {ProductShortName} extension is also compatible with Visual Studio Codespaces, the Microsoft cloud-hosted development environment.
+endif::[]
+
+ifdef::idea-plugin-guide[]
+The {AddonType} supports both the Community Edition and the Ultimate version of {IDEName}.
+endif::[]

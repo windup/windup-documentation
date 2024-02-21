@@ -1,0 +1,23 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="eclipse-importing-custom-ruleset_{context}"]
+= Importing a custom ruleset
+
+You can import a custom ruleset into the {PluginName} to analyze your projects.
+
+.Prerequisites
+
+* Custom ruleset file with a `.windup.xml` extension.
++
+See the link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_] for information about creating rulesets.
+
+.Procedure
+
+. Click the *Rulesets* tab.
+. Click the Import Ruleset icon (image:import-repository.png[Import ruleset icon]).
+. Browse to and select the XML rule file to import.
++
+The custom ruleset is displayed when you expand *Custom* on the *Rulesets* tab.

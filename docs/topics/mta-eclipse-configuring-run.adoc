@@ -1,0 +1,35 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="eclipse-configuring-run_{context}"]
+= Creating a run configuration
+
+You can create a run configuration in the *Issue Explorer*. A run configuration specifies the project to analyze, migration path, and additional options.
+
+You can create multiple run configurations. Each run configuration must have a unique name.
+
+.Prerequisite
+
+* You must import your projects into the Eclipse IDE.
+
+.Procedure
+
+. In the *Issue Explorer*, click the {ProductShortName} icon (image:Product_Icon-Migration_Toolkit-RGB.png[{ProductShortName} button]) to create a run configuration.
+. On the *Input* tab, complete the following fields:
+.. Select a migration path.
+.. Beside the *Projects* field, click *Add* and select one or more projects.
+.. Beside the *Packages* field, click *Add* and select one or more the packages.
++
+[NOTE]
+====
+Specifying the packages for analysis reduces the run time. If you do not select any packages, all packages in the project are scanned.
+====
+
+. On the *Options* tab, you can select *Generate Report* to generate an HTML report. The report is displayed in the *Report* tab and saved as a file.
++
+Other options are displayed. See link:{ProductDocUserGuideURL}#cli-args_cli-guide[About {ProductShortName} command-line arguments] in the _{UserCLIBookName}_ for details.
+
+. On the *Rules* tab, you can select custom rulesets that you have imported or created for the {PluginName}.
+. Click *Run* to start the analysis.
