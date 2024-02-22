@@ -1,0 +1,77 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-20
+
+:_mod-docs-content-type: REFERENCE
+
+[id="custom-questionnaire-fields_{context}"]
+= The custom questionnaire fields
+
+Every custom questionnaire field marked as *required* is mandatory and must be completed. Otherwise, the YAML syntax will not validate on upload. Each subsection of the field defines a new struct/object in YAML, for example:
+
+[source,yaml]
+----
+...
+name: Testing
+thresholds:
+    red: 30
+    yellow: 45
+    unknown: 5
+...
+----
+
+
+
+.The custom questionnaire fields
+[options="header"]
+|====
+|Questionnaire filed|Description
+|`name` (required) |The name of the questionnaire. This field must be unique for the entire {ProductShortName} instance.
+|`description` (optional)|A short description of the questionnaire.
+|`thresholds` (required) a|The definition of a threshold for each risk category of the application or archetype that is considered to be affected by that risk level. The threshold values can be the following:
+
+* `red` (required): Numeric percentage, for example, `30` for `30%`, of red answers that the questionnaire can have until the risk level is considered red.
+* `yellow` (required): Numeric percentage, for example, `30` for `30%`, of yellow answers that the questionnaire can have until the risk level is considered yellow.
+* `unknown` (required): Numeric percentage, for example, `30` for `30%`, of unknown answers that the questionnaire can have until the risk level is considered
+unknown.
+
+The higher risk level always takes precedence. For example, if the `yellow` threshold is set to 30% and `red` to 5%, and the answers for the application or archetype are set to have 35% `yellow` and 6% `red`, the risk level for the application or archetype is red.
+
+|`riskMessages` (required) a| Messages to be displayed in reports for each risk category. The _risk_messages_ map is defined by the following fields:
+
+* `red` (required, string): A message to be displayed in reports for the red risk level.
+* `yellow` (required, string): A message to be displayed in reports for the yellow risk level.
+* `green` (required, string): A message to be displayed in reports for the green risk level.
+* `unknown` (required, string): A message to be displayed in reports for the unknown risk level.
+|`sections` (required) a|A list of sections that the questionnaire must include.
+
+* `name` (required, string): A name to be displayed for the section.
+* `order` (required, int): An order of the question in the section.
+* `comment` (optional, string): A descripton the section.
+* `questions` (required): A list of questions that belong to the section.
+** `order` (required, int): An order of the question in the section.
+** `text` (required, string): A question to be asked.
+** `explanation` (optional, string): An additional explanation for the question.
+** `includeFor` (optional): A list that defines if a question must be displayed if any of the tags included in this list is present in the target application or archetype.
+*** `category` (required, string): A category of the target tag.
+*** `tag` (required, string): A target tag.
+** `excludeFor` (optional): A list that defines if a question must be skipped if any of the tags included in the list is present in the target application or archetype.
+*** `category` (required, string): A category of the target tag.
+*** `tag` (required, string): A target tag.
+** `answers` (required): A list of answers for the given question.
+*** `order` (required, int): An order of the question in the section.
+*** `text` (required, string): An answer for the question.
+*** `risk` (required): An implied risk level (red, yellow, green, or unknown) of the current answer. 
+*** `rationale` (optional, string): A justification for the answer that is being considered a risk.
+*** `mitigation` (optional, string): An explanation of the potential mitigation strategy for the risk implied by the answer.
+*** `applyTags` (optional): A list of tags to be automatically applied to the assessed application or archetype if this answer is selected.
+**** `category` (required, string): A category of the target tag.
+**** `tag` (required,string): A target tag.
+*** `autoAnswerFor` (optional, list): A list of tags that will lead to this answer being automatically selected when the application or archetype is assessed.
+**** `category` (required, string): A category of the target tag.
+**** `tag` (required, string): A target tag.
+|====
+
+
+[role="_additional-resources"]
+.Additional resources
+* xref:yaml-template-for-custom-questionnaire_user-interface-guide[The YAML template for the custom questionnaire]

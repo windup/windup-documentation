@@ -5,13 +5,13 @@
 
 :_content-type: PROCEDURE
 [id="mta-view-questionnaire_{context}"]
-= Viewing a questionnaire
+= Viewing an assessment questionnaire
+
+You can display the question contained in the assessment questionnaire with the answer choices and weight displayed in the drop-down menu.
 
 .Procedure
 
-To view a questionnaire:
-
 . In the *Administration* view, select *Assessment questionnaires*.
-. Click the Options menu {kebab}.
-. Select *View*.
-. The question contained in the questionnaire are displayed, with the answer choices and weigth displayed in the drop-down option.
+. Click the Options menu ({kebab}).
+. Select *View* for the questionnaire you want to display.
+. Optional: In the drop-down menu, display the answer choices and weight for the chosen questionnaire.

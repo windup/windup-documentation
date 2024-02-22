@@ -3,39 +3,39 @@
 // * docs/web-console-guide/master.adoc
 :_content-type: REFERENCE
 [id="mta-assessment-changes-700_{context}"]
-= Assessment module introduction
+= The Assessment module features
 
-The *Assessment* module in {ProductFullName} offers the following functionality for assessing and analyzing applications:
+The {ProductFullName} *Assessment* module offers the following features for assessing and analyzing applications:
 
-.Assessment hub
+Assessment hub::
+The *Assessment* hub integrates with the *Application inventory*.
 
-The *Assessment* hub integrates tightly with the *Application inventory*.
+Enhanced assessment questionnaire capabilities::
+In {ProductShortName} 7.0, you can import and export assessment questionnaires. You can also design custom questionnaires with a downloadable template by using the YAML syntax, which includes the following features:
 
-.Enhanced questionnaire capabilities
+* Conditional questions: You can include or exclude questions based on the application or archetype if a certain tag is present on this application or archetype.
+* Application auto-tagging based on answers: You can define tags to be applied to applications if a certain answer was provided.
+* Automated answers from tags in application archetypes.
 
-Previously, {ProductShortName} supported a single, built-in questionnaire. {ProductShortName} 7.0 not only includes that questionnaire, but also supports importing and exporting questionnaires. You can design custom questionnaires using YAML syntax, with a downloadable template provided. The syntax provides:
++
+For more information, see xref:mta-custom-questionnaire_user-interface-guide[The custom assessment questionnaire].
 
-* Conditional questions: The syntax supports excluding or including questions based on the application or archetype if a certain tag is present on the application or archetype.
-* Application auto-tagging according to answers: The syntax supports defining tags to be applied to applications if a certain answer has been provided.
-* Automated answers from tags in application archetypes
+NOTE: You can customize and save the default questionnaire. For more information, see xref:mta-default-questionnaire_user-interface-guide[The default asssessment questionnaire].
 
-For more details, see xref:mta-custom-questionnaire_user-interface-guide[Custom questionnaire].
+Multiple assessment questionnaires::
+The *Assessment* module supports multiple questionnaires, relevant to one or more applications.
 
-The default questionnaire remains in {ProductShortName} but can now be customized and saved. For more details, see xref:mta-default-questionnaire_user-interface-guide[Default questionnaire].
+Archetypes::
+You can group applications with similar characteristics into archetypes. This allows you to assess multiple applications at once. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All associated applications inherit assessment and review from the archetypes to which they belong. Automated answers are provided by the following tags in application archetypes:
 
-.Multiple questionnaires
+* *Criteria tags* that the archetype requires to include an application as a member.
+* *Archetype tags* that are applied to the group of applications that is known as an archetype. These tags are applied to the archetype entity.
 
-Assessment supports multiple questionnaires, relevant to one or more applications.
++
+For more information, see xref:mta-archetypes_user-interface-guide[Working with Archetypes].
 
-.Archetypes
+NOTE: The `Copy assessment/review` option has been removed from MTA 7.0. Use the Archetype feature instead.
 
-You can group applications with similar characteristics into archetypes. This allows you to assess multiple applications at once, rather having to assess each one separately. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All associated applications inherit assessment and review from the archetypes to which they belong. Automated answers are provided by tags in application archetypes.
 
-* *Criteria tags* are tags that the archetype requires to include an application as a member.
-* *Archetype tags* are tags that are applied to the group of applications that is known as an archetype. They are applied to the archetype entity.
 
-For more details, see xref:mta-archetypes_user-interface-guide[Working with Archetypes].
 
-.Copy assessment/review option
-
-The Archetype feature makes the previous Copy assessment/review option redundant, so it has been removed from {ProductShortName} 7.0.

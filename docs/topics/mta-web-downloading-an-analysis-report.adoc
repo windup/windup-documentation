@@ -6,17 +6,15 @@
 [id="mta-web-downloading-an-analysis-report_{context}"]
 = Downloading an analysis report
 
-For your convenience, you can download analysis reports. By default, this option is disabled, but you can enable it as described below.
+For your convenience, you can download analysis reports. By default, this option is disabled, but you can it enable by using the {ProductShortName} user interface.
 
 .Procedure
 
 . In *Administration* view, click *General*.
 . Toggle the *Allow reports to be downloaded after running an analysis.*  switch.
-. Go to *Migration* view and click *Application inventory*.
+. Go to the *Migration* view and click *Application inventory*.
 . Open the page of the application for which you ran an analysis.
 . Click *Reports*.
-. Click the *HTML* or *YAML* link.
-+
-Clicking the *HTML* link downloads a compressed file named `analysis-report-app-<application_name>.tar`. Extracting the file creates a folder with the same name as the application.
-+
-Clicking the *YAML* link downloads an uncompressed file named `analysis-report-app-<application_name>.yaml`.
+. Click either the *HTML* or *YAML* link:
+* By clicking the *HTML* link, you download the compressed `analysis-report-app-<application_name>.tar` file. Extracting the file creates a folder with the same name as the application.
+* By clicking the *YAML* link, you download the uncompressed `analysis-report-app-<application_name>.yaml` file.

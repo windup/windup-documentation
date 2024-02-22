@@ -6,27 +6,25 @@
 [id="mta-web-creating-jira-issues-for-migration-wave_{context}"]
 = Creating Jira issues for a migration wave
 
-You can use a migration wave for creating Jira issues automatically for each application assigned to the migration wave.
-
-.Procedure
-
-. In *Migration* view, click *Migration waves*.
-. Click the Options menu ({kebab}) to the right of the migration wave for which you want to create Jira issues and select *Export to Issue Manager*.
-+
-The *Export to Issue Manager* window opens.
-. Select the instance type (Jira Cloud or Jira Server/Datacenter).
-. Select the instance, project and issue type from the lists.
-. Click *Export*.
-+
-The status of the migration wave on the *Migration waves* page changes to `Issues Created`. To see the status of each individual application of a migration wave, click the *Status* column.
-+
-A separate Jira issue is created for each application associated with the migration wave. The following fields of each issue are filled in automatically:
+You can use a migration wave to create Jira issues automatically for each application assigned to the migration wave. A separate Jira issue is created for each application associated with the migration wave. The following fields of each issue are filled in automatically:
 
 * Title: `Migrate <application name>`
 * Reporter: Username of the token owner
 * Description: `Created by Konveyor`
 
-====
+NOTE: You cannot delete an application if it is linked to a Jira ticket or is associated with a migration wave. To unlink the application from the Jira ticket, click the `Unlink from Jira` icon in the details view of the application or in the details view of a migration wave.
+
+
+.Procedure
+
+. In the *Migration* view, click *Migration waves*.
+. Click the Options menu ({kebab}) to the right of the migration wave for which you want to create Jira issues and select *Export to Issue Manager*. The *Export to Issue Manager* window opens.
+. Select the Jira Cloud or Jira Server/Datacenter instance type.
+. Select the instance, project, and issue type from the lists.
+. Click *Export*. The status of the migration wave on the *Migration waves* page changes to `Issues Created`.
+. Optional: To see the status of each individual application of a migration wave, click the *Status* column.
+. Optional: To see if any particular application is associated with a migration wave, open the application's *Details* tab on the *Application inventory* page.
+
 ////
 [NOTE]
 ====
@@ -34,11 +32,3 @@ After you exported a migration wave to the Issue Manager and the Jira issues are
 ====
 ////
 
-[NOTE]
-====
-On the *Application inventory* page, you can see if any particular application is associated with a migration wave by opening the application's *Details* tab.
-
-You cannot delete an application if it is linked to a Jira ticket or if it is associated with a Migration wave.
-
-To unlink an application from a Jira ticket, click the `Unlink from Jira` icon in the details view of the application or in the details view of a Migration wave.
-====

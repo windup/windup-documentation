@@ -5,58 +5,16 @@
 
 :_content-type: CONCEPT
 [id="mta-archetypes_{context}"]
-= Working with Archetypes
+= Working with archetypes
 
-{ProductFullName} includes *archetypes* that group applications that are assessed for migration, according to common characteristics. These application groups, or *archetypes*, enable {ProductShortName} to apply questionnaires populated with questions that apply to common application characteristics.
+An *archetype* is a group of applications with common characteristics. You can use archetypes to assess multiple applications at once. By using archetypes, {ProductName} ({ProductShortName}) can apply questionnaires populated with questions that apply to common application characteristics.
 
-Application *archetypes* are defined by criteria tags and the application taxonomy. Each archetype selects the how the _assessment module_ assesses the applications according to the charecteristics defined in that archetype. If the tags of an application match the criteria tags of an archetype, then the application is associated with the archetype.
+Application archetypes are defined by criteria tags and the application taxonomy. Each archetype defines how the _assessment module_ assesses the application according to the characteristics defined in that archetype. If the tags of an application match the criteria tags of an archetype, the application is associated with the archetype.
 
-Creation of an archetype is defined by a series of *tags*, *stakeholders*, and *stakeholder groups*.
+Creation of an archetype is defined by a series of *tags*, *stakeholders*, and *stakeholder groups*. The tags include the following types:
 
 * *Criteria tags* are tags that the archetype requires to include an application as a member.
 +
-[NOTE]
-.Criteria tags do not partially match an application
-====
-For example, if application _a_ only has tag _a_, but the archetype _a_ criteria tags include tag _a_ AND tag _b_, then application _a_ will not be a member of archetype _a_.
-====
+NOTE: If the archetype criteria tags match an application only partially, this application cannot be a member of the archetype. For example, if the application _a_ only has tag _a_, but the archetype _a_ criteria tags include tags _a_ AND _b_, the application _a_ will not be a member of the archetype _a_.
+
 * *Archetype tags* are tags that are applied to the group of applications that is known as an archetype. They are applied to the archetype entity.
-
-
-[id="mta-define-archetype_{context}"]
-== Defining an archetype
-
-. Open the {ProductShortName} web console.
-. In the left menu, click *Archetypes* and then click *Create new archetype*.
-. In the form that opens, enter the following information for the new archetype:
-
-.. *Name*: Name of the new archetype. (mandatory)
-.. *Description*: Description of the new archetype. (optional)
-.. *Criteria Tags*: Tags that associate the assessed applications with the archetype. (mandatory). If criteria tags are updated, the process to calculate the applications, with which the archetype is associated with, is triggered again.
-.. *Archetype Tags*: That the archetype assesses in the application. (mandatory)
-.. *Stakeholder(s)*: Specific stakeholders involved in the application development and migration. (optional)
-.. *Stakeholders Group(s)*: Groups of stakeholders involved in the application development and migration. (optional)
-
-. Click *Create*. The new archetype appears in the list.
-
-After you create an archetype, every application in the inventory whose tags match those of the archetype is automatically associated to that archetype.
-
-[id="mta-inheritance-archetype_{context}"]
-=== Archetype inheritance
-
-Inheritance is the default, meaning that all the associated applications inherit _assessment_ and _review_ from the archetype groups to which they belong. However, inheritance can be overridden. Inherited _assessment_ and _review_ is overridden for an application by completing an individual assessment and review.
-
-[id="mta-assessment-archetype_{context}"]
-==== Archetype assessment
-
-An archetype is considered to have been _assessed_ when all required questionnaires have been answered.
-
-An archetype is considered reviewed when it has been reviewed once, even though multiple questionnaires have been marked as required.
-
-If an application is associated with archetypes, the application is considered assessed when all associated archetypes have been assessed.
-
-
-[id="mta-deleting-archetype_{context}"]
-== Deleting an archetype
-
-Deleting an archetype deletes any associated assessment. All associated applications move to an *Unassessed* state.

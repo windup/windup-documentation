@@ -5,25 +5,18 @@
 
 :_content-type: PROCEDURE
 [id="mta-delete-questionnaire_{context}"]
-= Deleting a questionnaire
+= Deleting an assessment questionnaire
 
-You can delete a questionnaire.
+When you delete an assessment questionnaire, its answers for all applications that use it in all archetypes are also deleted.
 
-[IMPORTANT]
-.Deleting a questionnaire
-====
-Deleting a questionnaire deletes its answers for all applications that use it in all archetypes.
-====
+IMPORTANT: You cannot delete the *Legacy Pathfinder* default questionnaire.
+
 
 .Procedure
 
 . In the *Administration* view, select *Assessment questionnaires*.
-. Select the questionnaire.
-. Click the Options menu {kebab}.
+. Select the questionnaire you want to delete.
+. Click the Options menu ({kebab}).
 . Select *Delete*.
-. Confirm delete by clicking on the *Name* of the questionnaire.
+. Confirm deleting by clicking on the *Name* of the questionnaire.
 
-[NOTE]
-====
-The *Legacy Pathfinder* questionnaire cannot be deleted.
-====

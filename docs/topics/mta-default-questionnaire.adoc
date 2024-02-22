@@ -5,15 +5,15 @@
 
 :_content-type: REFERENCE
 [id="mta-default-questionnaire_{context}"]
-= Default questionnaire
+= The default assessment questionnaire
 
-The default questionnaire is named **Legacy Pathfinder**. Pathfinder is a questionnaire-based tool that evaluates the suitability of applications for modernization in containers on an enterprise Kubernetes platform. 
+*Legacy Pathfinder* is the default {ProductName} ({ProductShortName}) questionnaire. Pathfinder is a questionnaire-based tool that you can use to evaluate the suitability of applications for modernization in containers on an enterprise Kubernetes platform. 
 
-Through interaction with the questionnaire and the review process, the system is enriched with application knowledge, which is exposed through a collection of reports. The reports provide information about applications suitability for Kubernetes, highlight associated risks, and generate an adoption plan informed by the applications' prioritization, business criticality and dependencies.
+Through interaction with the default questionnaire and the review process, you provide the system with application knowledge by collecting assessment reports. These reports contain information about applications suitability for Kubernetes, highlight associated risks, and generate an adoption plan informed by the applications' prioritization, business criticality and dependencies.
 
-The default questionnaire can be exported to YAML.
+You can export the default questionnaire to a YAML file:
 
-.To view the Legacy Pathfinder YAML, click (here).
+.The Legacy Pathfinder YAML file
 [%collapsible%closed]
 ====
 [source,yaml]
@@ -1180,6 +1180,4 @@ riskMessages:
 builtin: true
 ----
 ====
-
-.Procedure
 
