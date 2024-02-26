@@ -40,7 +40,7 @@ For more details, see link:https://access.redhat.com/security/cve/cve-2023-26159
 
 .CVE-2022-46751: Improper Restriction of XML External Entity Reference, XML Injection vulnerability in Apache Ivy
 
-In version of Apache Ivy before 2.5.2, parsing XML files, either its own configuration, Ivy files or Apache Maven POMs, it will allow downloading external document type definitions and expand any entity references contained. This process can be used to exfiltrate data, access resources only the machine running Ivy has access to, or disturb the execution of Ivy in different ways. This issue has been resolved in {ProductShortName} version 6.2.2.
+In version of Apache Ivy before 2.5.2, parsing XML files, either its configuration, Ivy files or Apache Maven POMs, it allows downloading external document type definitions and expand any entity references contained. This process can be used to exfiltrate data, access resources only the machine running Ivy has access to, or disturb the execution of Ivy in different ways. This issue has been resolved in {ProductShortName} version 6.2.2.
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2022-46751[(CVE-2022-46751)].
 
@@ -52,7 +52,7 @@ For more details, see link:https://access.redhat.com/security/cve/cve-2023-2976[
 
 .CVE-2023-35116:  Versions of jackson-databind before 2.15.2 could allow attackers to cause a denial of service or other unspecified impact (disputed)
 
-Versions of `jackson-databind`before 2.15.2 could allow attackers to cause a denial of service or other unspecified impact. The vendor believes that this is not a valid vulnerability because the steps of constructing a cyclic data structure and trying to serialize it cannot be achieved by an external attacker. This issue has been resolved in {ProductShortName} version 6.2.2.
+Versions of `jackson-databind` before 2.15.2 could allow attackers to cause a denial of service or other unspecified impact. The vendor believes that this is not a valid vulnerability because the steps of constructing a cyclic data structure and trying to serialize it cannot be achieved by an external attacker. This issue has been resolved in {ProductShortName} version 6.2.2.
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-35116[(CVE-2023-35116)].
 

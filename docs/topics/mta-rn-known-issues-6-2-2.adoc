@@ -32,9 +32,9 @@ A race condition in `go-resty` can result in HTTP request body disclosure across
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-45286[(CVE-2023-45286)].
 
-.CVE-2023-48631: Adobe's css-tools versions 4.3.1 and earlier are affected by an Improper Input Validation vulnerability
+.CVE-2023-48631: Adobe's `css-tools` versions 4.3.1 and earlier are affected by an Improper Input Validation vulnerability
 
-A Regular Expression Denial of Service (ReDoS) vulnerability was found in Adobe's css-tools when parsing CSS. This issue occurs due to improper input validation and may allow an attacker to use a carefully crafted input string to cause a denial of service, especially when attempting to parse CSS.
+A Regular Expression Denial of Service (ReDoS) vulnerability was found in Adobe's `css-tools` when parsing CSS. This issue occurs due to improper input validation and may allow an attacker to use a carefully crafted input string to cause a denial of service, when attempting to parse CSS.
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-48631[(CVE-2023-48631)].
 
