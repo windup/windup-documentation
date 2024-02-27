@@ -4,13 +4,16 @@
 
 :_content-type: CONCEPT
 [id="about-the-web-console_{context}"]
-= About the {WebName}
+= The {ProductShortName} {WebName}
 
 
 ifdef::mtr[]
-The {WebName} for the {ProductName} allows a team of users to assess and prioritize migration and modernization efforts for a large number of applications. It allows you to group applications into projects for analysis and provides numerous reports that highlight the results.
+By using the {WebName} for the {ProductName}, a team of users can assess and prioritize migration and modernization efforts for a large number of applications. You can use the {WebName} to group applications into projects for analysis and provide numerous reports that highlight the results.
 endif::[]
 
 ifdef::mta[]
-The {WebName} for the {ProductName} lets you assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift or analyze the changes that must be made in the code of an application in order to containerize the application.
+By using the {WebName} for the {ProductName}, you can perform the following tasks:
+
+* Assess the risks involved in containerizing an application for hybrid cloud environments on Red Hat OpenShift.
+* Analyze the changes that must be made in the code of an application to containerize the application.
 endif::[]

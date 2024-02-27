@@ -4,9 +4,17 @@
 
 :_content-type: CONCEPT
 [id="mta-about-the-intro-to-mta-guide_{context}"]
-= About the {IntroToMTABookName}
+= Introduction to the {ProductName}
 
-This guide is for architects, engineers, consultants, and others who want to use the {ProductName} ({ProductShortName}) to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. It provides an overview of the {ProductName} and how to get started using the tools to plan and run your migration.
+{ProductFullName} is a set of tools that you can use to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. {ProductShortName} looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application. MTA also generates a detailed report that evaluates a migration or modernization path. By using this report, you can estimate the effort required for large-scale projects and reduce the work involved. 
+
+
+By using the {ProductShortName}, you can perform the following tasks:
+
+* Use the {ProductShortName} extensive default questionnaire to assess your applications, or create your own custom questionnaire to estimate the difficulty, time, and other resources needed to prepare an application for containerization. You can use the results of an assessment for discussions between stakeholders to determine which applications are suitable for containerization.
+* Analyze applications by applying one or more sets of rules to each application. You can use these rules to determine which specific lines of the application must be modified before the application can be modernized.
+* Examine application artifacts, including project source directories and application archives, and produce an HTML report that highlights areas that require changes.
+
 
 [NOTE]
 ====
