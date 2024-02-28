@@ -27,7 +27,7 @@ The YAML syntax supports excluding or including questions based on tags existing
 
 
 Automated answers based on tags present on the assessed application or archetype::
-Automated answers are automatically selected when the application or archetype is assessed. For example, if an application or archetype has the `Runtime/Quarkus` tag, the `Quarkus` answer is automatically selected, and if an application or archetype has the `Runtime/Spring Boot` tag, the `Spring Boot` answer choice is automatically selected:
+Automated answers are selected based on the tags existing on the application or archetype. For example, if an application or archetype has the `Runtime/Quarkus` tag, the `Quarkus` answer is automatically selected, and if an application or archetype has the `Runtime/Spring Boot` tag, the `Spring Boot` answer is automatically selected:
 +
 [source,yaml]
 ----
