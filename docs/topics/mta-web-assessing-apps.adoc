@@ -6,7 +6,7 @@
 [id="mta-web-assessing-apps_{context}"]
 = Assessing an application by using the MTA assessment questionnaire
 
-You can use the {ProductFullName} built-in questionnaire to determine the risks involved in containerizing an application before reviewing the application. For more information, see xref:mta-default-questionnaire_user-interface-guide[The default assessment questionnaire].
+You can use the default Legacy Pathfinder {ProductFullName} questionnaire to determine the risks involved in containerizing an application before reviewing the application. For more information, see xref:mta-default-questionnaire_user-interface-guide[The default assessment questionnaire].
 
 NOTE: To assess risks involved in containerizing applications, you can also create and use custom questionnaires. In this case, use the `Skipping assessment` option during the assessment. For more information, see xref:mta-custom-questionnaire_user-interface-guide[The custom assessment questionnaire].
 
