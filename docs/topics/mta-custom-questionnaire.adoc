@@ -59,7 +59,7 @@ With this feature, tags are automatically applied to the assessed application or
 * *tag*: Definition for the target tag as (`String`).
 --
 +
-For example, if the selected answer is `Quarkus`, the `Runtime/Quarkus` tag is applied to the assessed application or archetype, and if the selected answer is `Spring Boot`, the `Runtime/Spring Boot` tag is applied to the assessed application or archetype:
+For example, if the selected answer is `Quarkus`, the `Runtime/Quarkus` tag is applied to the assessed application or archetype. If the selected answer is `Spring Boot`, the `Runtime/Spring Boot` tag is applied to the assessed application or archetype:
 +
 [source,yaml]
 ----
