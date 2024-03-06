@@ -10,7 +10,7 @@
 You can use the {ProductFullName} to import a custom assessment questionnaire by using a custom YAML syntax to define the questionnaire. The YAML syntax supports the following features:
 
 Conditional questions::
-The YAML syntax supports excluding or including questions based on tags existing on the application or archetype, for example:
+The YAML syntax supports including or excluding questions based on tags existing on the application or archetype, for example:
 +
 [source,yaml]
 ----

@@ -9,7 +9,7 @@
 
 *Legacy Pathfinder* is the default {ProductName} ({ProductShortName}) questionnaire. Pathfinder is a questionnaire-based tool that you can use to evaluate the suitability of applications for modernization in containers on an enterprise Kubernetes platform. 
 
-Through interaction with the default questionnaire and the review process, you provide the system with application knowledge by collecting assessment reports. These reports contain information about applications suitability for Kubernetes, highlight associated risks, and generate an adoption plan informed by the applications' prioritization, business criticality and dependencies.
+Through interaction with the default questionnaire and the review process, the system is enriched with application knowledge exposed through the collection of assessment reports.
 
 You can export the default questionnaire to a YAML file:
 

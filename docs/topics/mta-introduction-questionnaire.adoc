@@ -7,7 +7,7 @@
 [id="mta-introduction-questionnaire_{context}"]
 = MTA assessment questionnaires
 
-You can use the {ProductName} ({ProductShortName}) to assess the risks involved in containerizing an application. You can use either a xref:mta-default-questionnaire_user-interface-guide[default] or xref:mta-custom-questionnaire_user-interface-guide[custom] assessment questionnaire.
+The {ProductName} ({ProductShortName}) uses an assessment questionnaire, either xref:mta-default-questionnaire_user-interface-guide[default] or xref:mta-custom-questionnaire_user-interface-guide[custom], to assess the risks involved in containerizing an application. 
 
 IMPORTANT: You must perform the application assessment prior to reviewing the application.
 

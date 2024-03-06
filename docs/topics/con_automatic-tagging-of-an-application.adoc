@@ -8,7 +8,7 @@
 
 [role="_abstract"]
 
-{ProductShortName} translates the technology stack information that the analysis module collects into tags and automatically adds the tags to the application. Automatic tagging is especially useful when dealing with large portfolios of applications.
+{ProductShortName} can automatically add tags to the application based on the application analysis. Automatic tagging is especially useful when dealing with large portfolios of applications.
 
 Automatic tagging of applications is enabled by default. You can disable automatic tagging by deselecting the *Enable automated tagging* checkbox in the *Advanced* section of the *Analysis configuration* wizard.
 

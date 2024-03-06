@@ -14,8 +14,8 @@ Enhanced assessment questionnaire capabilities::
 In {ProductShortName} 7.0, you can import and export assessment questionnaires. You can also design custom questionnaires with a downloadable template by using the YAML syntax, which includes the following features:
 
 * Conditional questions: You can include or exclude questions based on the application or archetype if a certain tag is present on this application or archetype.
-* Application auto-tagging based on answers: You can define tags to be applied to applications if a certain answer was provided.
-* Automated answers from tags in application archetypes.
+* Application auto-tagging based on answers: You can define tags to be applied to applications or archetypes if a certain answer was provided.
+* Automated answers from tags in applications or archetypes.
 
 +
 For more information, see xref:mta-custom-questionnaire_user-interface-guide[The custom assessment questionnaire].
@@ -29,13 +29,10 @@ Archetypes::
 You can group applications with similar characteristics into archetypes. This allows you to assess multiple applications at once. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes. Automated answers are provided by the following tags in application archetypes:
 
 * *Criteria tags* that the archetype requires to include an application as a member.
-* *Archetype tags* that are applied to the group of applications that is known as an archetype. These tags are applied to the archetype entity.
+* *Archetype tags* that are applied to the archetype entity.
 
 +
 For more information, see xref:mta-archetypes_user-interface-guide[Working with Archetypes].
-
-NOTE: The `Copy assessment/review` option has been removed from MTA 7.0. Use the Archetype feature instead.
-
 
 
 

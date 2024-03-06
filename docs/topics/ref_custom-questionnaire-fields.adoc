@@ -45,10 +45,10 @@ The higher risk level always takes precedence. For example, if the `yellow` thre
 |`sections` (required) a|A list of sections that the questionnaire must include.
 
 * `name` (required, string): A name to be displayed for the section.
-* `order` (required, int): An order of the question in the section.
+* `order` (required, integer): An order of the question in the section.
 * `comment` (optional, string): A descripton the section.
 * `questions` (required): A list of questions that belong to the section.
-** `order` (required, int): An order of the question in the section.
+** `order` (required, integer): An order of the question in the section.
 ** `text` (required, string): A question to be asked.
 ** `explanation` (optional, string): An additional explanation for the question.
 ** `includeFor` (optional): A list that defines if a question must be displayed if any of the tags included in this list is present in the target application or archetype.
@@ -58,7 +58,7 @@ The higher risk level always takes precedence. For example, if the `yellow` thre
 *** `category` (required, string): A category of the target tag.
 *** `tag` (required, string): A target tag.
 ** `answers` (required): A list of answers for the given question.
-*** `order` (required, int): An order of the question in the section.
+*** `order` (required, integer): An order of the question in the section.
 *** `text` (required, string): An answer for the question.
 *** `risk` (required): An implied risk level (red, yellow, green, or unknown) of the current answer. 
 *** `rationale` (optional, string): A justification for the answer that is being considered a risk.
