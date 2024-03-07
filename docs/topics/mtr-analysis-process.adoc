@@ -1,0 +1,9 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide-mtr/master.adoc
+
+:_content-type: REFERENCE
+[id="analysis-process_{context}"]
+= {ProductShortName} analysis process
+
+The analysis process decompiles (if required) and analyses the input applications. A graph database underpins the analysis process, but the data within that database is transient and deleted when the analysis is completed. A collection of static reports presents the analysis results. One of the reports is the Source Code report, which presents migration issues in the context of the source files where they were discovered. An optional runtime parameter, `skipSourceCodeReports` (refer to link:cli-args.adoc[section A.1]) can disable generating the Source Code report. The application logic is not exposed in the collection of reports.
