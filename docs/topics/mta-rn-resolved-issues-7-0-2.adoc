@@ -8,6 +8,14 @@
 
 The following highlighted issues have been resolved in {ProductFullName} version 7.0.2.
 
+```suggestion
+.CVE-2022-1962: golang: go/parser stack exhaustion in all Parse* functions  Security
+
+A flaw was found in versions of the golang standard library, go/parser before Go 1.17.12 and Go 1.18.4. When calling any Parse functions on the Go source code, which contains deeply nested types or declarations, a panic can occur due to stack exhaustion. This issue allows an attacker to impact system availability.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2022-1962[(CVE-2022-1962)].
+
+
 .MTA CLI does not function as expected on Arm-based machines
 
 In previous versions of {ProductShortName} 7.0, there was an issue with the Command-line interface (CLI) not functioning as expected on Arm CPU architecture. This issue has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-2160[(MTA-21600)]
