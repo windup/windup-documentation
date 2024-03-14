@@ -24,7 +24,7 @@ thresholds:
 .The custom questionnaire fields
 [options="header"]
 |====
-|Questionnaire filed|Description
+|Questionnaire field|Description
 |`name` (required) |The name of the questionnaire. This field must be unique for the entire {ProductShortName} instance.
 |`description` (optional)|A short description of the questionnaire.
 |`thresholds` (required) a|The definition of a threshold for each risk category of the application or archetype that is considered to be affected by that risk level. The threshold values can be the following:

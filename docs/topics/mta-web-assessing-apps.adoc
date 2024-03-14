@@ -8,8 +8,6 @@
 
 You can use the default Legacy Pathfinder {ProductFullName} questionnaire to determine the risks involved in containerizing an application before reviewing the application. For more information, see xref:mta-default-questionnaire_user-interface-guide[The default assessment questionnaire].
 
-NOTE: To assess risks involved in containerizing applications, you can also create and use custom questionnaires. In this case, use the `Skipping assessment` option during the assessment. For more information, see xref:mta-custom-questionnaire_user-interface-guide[The custom assessment questionnaire].
-
 IMPORTANT: You can assess only one application at a time.
 
 .Prerequisites
@@ -29,16 +27,5 @@ NOTE: You can also add *Stakeholder Groups* or *Stakeholders* in the *Controls* 
 
 . Click *Next*.
 . Answer each *Application assessment* question and click *Next*.
-. Click *Save and Review* to review the assessment:
-.. In the *Review* pane, click *Proposed action* to select the action to perform on the application.
-.. Click *Effort estimate* to select the estimated effort to migrate the application.
-.. Enter values for *Business criticality* and *Work priority* on a scale of 1 to 10.
-.. Enter *Comments* of the assessment.
-.. Scroll down to view the *Assessment summary*.
-.. Click *Submit review* to save the assessment review.
-+
-The applications list appears to confirm the status of the application assessment:
-
-* The *In-progess* icon under the *Assessment* column for the application shows that {ProductShortName} is assessing the application.
-* The *Completed* icon under the *Assessment* column for the application shows that {ProductShortName} has completed assessing the application.
+. Click *Save* to review the assessment and proceed with the steps in xref:mta-web-reviewing-apps_user-interface-guide[Reviewing an application].
 

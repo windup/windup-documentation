@@ -26,11 +26,7 @@ Multiple assessment questionnaires::
 The *Assessment* module supports multiple questionnaires, relevant to one or more applications.
 
 Archetypes::
-You can group applications with similar characteristics into archetypes. This allows you to assess multiple applications at once. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes. Automated answers are provided by the following tags in application archetypes:
-
-* *Criteria tags* that the archetype requires to include an application as a member.
-* *Archetype tags* that are applied to the archetype entity.
-
+You can group applications with similar characteristics into archetypes. This allows you to assess multiple applications at once. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes. 
 +
 For more information, see xref:mta-archetypes_user-interface-guide[Working with Archetypes].
 
