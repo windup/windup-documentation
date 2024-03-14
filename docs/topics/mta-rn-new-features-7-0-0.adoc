@@ -40,6 +40,20 @@ New rules that use YAML syntax to support metadata, `message` and `tag` actions,
 
 {ProductShortName} 7.0.0 produces dynamic analysis reports that collect aggregated issues and dependencies across the application portfolio. They identify portfolio-wide trends, drill down to specific lines in source code, and fully integrate with {ProductShortName} User Interface (UI).
 
+
+.Document adding support for ARO/ROSA for MTA 7.0.2
+
+
+.Support added for Azure Red Hat OpenShift (ARO)
+
+{ProductShortName} 7.0.0 introduces support for Azure Red Hat OpenShift (ARO).
+
+
+.Support added for Red Hat OpenShift on AWS (ROSA)
+
+{ProductShortName} 7.0.0 introduces support for Red Hat OpenShift on AWS (ROSA).
+
+
 .Multi-language analysis
 
 {ProductShortName} 7.0.0 supports migrating applications written in Java and Golang implemented in Language Server Protocol (LSP).
