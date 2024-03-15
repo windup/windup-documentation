@@ -31,8 +31,8 @@ You can create a new application by using the {ProductName} {ProductShortName} u
 .. *Branch*: An application code branch in the repository.
 .. *Root path*: [get info] (optional/mandatory).
 . Click *Binary* and enter the following fields:
-.. *Group*: [get info] (optional/mandatory).
-.. *Artifact*: [get info] (optional/mandatory).
+.. *Group*: The Maven group for the application artifact (optional/mandatory).
+.. *Artifact*: The Maven artifact for the application (optional/mandatory).
 .. *Version*: A software version of the application.
-.. *Packaging*: [get info] (optional/mandatory).
+.. *Packaging*: The packaging for the application artifact, for example, `JAR`, `WAR`, or `EAR` (optional/mandatory).
 . Click *Create*. The dialog closes and the new application appears in the list of defined applications.
