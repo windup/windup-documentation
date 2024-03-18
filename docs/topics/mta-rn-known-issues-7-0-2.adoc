@@ -8,9 +8,6 @@
 
 {ProductFullName} version 7.0.2 has the following known issues.
 
-.Eclipse IDE: {ProductShortName} Run_configuration not functioning as expected
-
-In {ProductShortName} 7.0.2, the {ProductShortName} *Run_configuration*, within Eclipse, is not functioning as expected. This issue is scheduled to be resolved in {ProductShortName} 7.0.3. link:https://issues.redhat.com/browse/MTA-2264[(MTA-2264)]
 
 .Failure to connect to Jira server using basic authentication
 
