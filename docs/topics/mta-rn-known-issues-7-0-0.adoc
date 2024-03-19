@@ -41,8 +41,6 @@ In {ProductShortName} 7.0.0, some XML custom rule files are converted to the new
 
 To resolve this issue, whenever a custom rule has a pattern ending in `.{*}` and location one of `IMPORT` or `PACKAGE`, the pattern `.{*}` can be changed to `{*}`.
 
-
-
 In the following example XML rule, note that the `when` condition is `javaclass references` ="javax.{*}"`. 
 
 
