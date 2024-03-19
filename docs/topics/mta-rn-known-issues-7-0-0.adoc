@@ -37,7 +37,10 @@ This warning, appropriate for the first assessment, incorrectly reappears on sub
 
 .Custom rule for javax.* package import is not triggered when uploaded as an XML file
 
-In {ProductShortName} 7.0.0, the XML custom rule files are converted to the new YAML format during analysis. However, when using `javax-to-jakarta-package` as a custom rules file, it is not triggered after conversion
+In {ProductShortName} 7.0.0, some XML custom rule files are converted to the new YAML format during analysis. The root cause of this issue is that Java search patterns, which use `IMPORT` or `PACKAGE` as `location`, should not end in `.{*}` but just `{*}`. 
+
+To resolve this issue, whenever a custom rule has a pattern ending in `.{*}` and location one of `IMPORT` or `PACKAGE`, the pattern `.{*}` can be changed to `{*}`.
+
 
 
 In the following example XML rule, note that when condition is javaclass references ="javax.{*}"`.
