@@ -40,6 +40,11 @@ This warning, appropriate for the first assessment, incorrectly reappears on sub
 In {ProductShortName} 7.0.0, the XML custom rule files are converted to the new YAML format during analysis. However, when using `javax-to-jakarta-package` as a custom rules file, it is not triggered after conversion
 
 
+In the following example XML rule, note that when condition is javaclass references ="javax.{*}"`.
+
+If you amend this to `javaclass references="javax{*}"`, the rule converts correctly.
+
+
 .To view the javax-package-custom-target.windup.xml, click here.
 [%collapsible%closed]
 ====
