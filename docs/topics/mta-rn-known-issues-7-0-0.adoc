@@ -79,7 +79,7 @@ For example, when using `javax-package-custom-target.windup.xml` as a custom rul
 ----
 ====
 
-The suggested workaround is to convert the XML file to a YAML file
+The suggested workaround is to convert the XML file to a YAML file. The TAML file is the result of a conversion from XML. 
 
 In this example, use the following YAML file instead.
 
