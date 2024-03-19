@@ -43,7 +43,6 @@ To resolve this issue, whenever a custom rule has a pattern ending in `.{*}` and
 
 In the following example XML rule, note that the `when` condition is `javaclass references` ="javax.{*}"`. 
 
-
 If you amend this to `javaclass references="javax{*}"`, the rule converts correctly.
 
 
