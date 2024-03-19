@@ -68,7 +68,7 @@ If you amend this to `javaclass references="javax{*}"`, the rule converts correc
     <rules>
         <rule id="javax-package-custom-target-00001">
             <when>
-                <javaclass references="javax.{*}">
+                <javaclass references="javax{*}">
                     <location>IMPORT</location>
                 </javaclass>
             </when>
