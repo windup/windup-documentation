@@ -78,7 +78,7 @@ In {ProductShortName} 7.0.0, the XML custom rule files are converted to the new 
 ----
 ====
 
-The suggested workaround is to convert the XML file to a YAML file. The TAML file is the result of a conversion from XML. 
+The suggested workaround is to use the following YAML file instead. The YAML file is the result of a conversion from XML. 
 
 In this example, use the following YAML file instead.
 
