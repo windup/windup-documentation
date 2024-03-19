@@ -37,7 +37,7 @@ This warning, appropriate for the first assessment, incorrectly reappears on sub
 
 .Custom rule for javax.* package import is not triggered when uploaded as an XML file
 
-In {ProductShortName} 7.0.0, the XML custom rule files are converted to the new YAML format during analysis. However, when a `javax.\*` package import is not triggered when uploaded as an XML file.
+In {ProductShortName} 7.0.0, the XML custom rule files are converted to the new YAML format during analysis. However, when using `javax-to-jakarta-package` as a custom rules file, it is not triggered after conversion
 
 For example, when using `javax-package-custom-target.windup.xml` as a custom rules file, it is not triggered after conversion.
 
