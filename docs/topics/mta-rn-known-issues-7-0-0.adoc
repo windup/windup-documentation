@@ -86,7 +86,7 @@ In this example, use the following YAML file instead.
 .To view the 01-javax-package-custom-target.windup.yaml, click (here).
 [%collapsible%closed]
 ====
-[source,xml]
+[source,yaml]
 ----
 - category: potential
   customVariables: []
