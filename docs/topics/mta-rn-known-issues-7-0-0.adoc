@@ -84,7 +84,6 @@ If you amend this to `javaclass references="javax{*}"`, the rule converts correc
 ----
 ====
 
-The suggested workaround is to use the following YAML file instead. The YAML file is the result of a conversion from XML. 
 
 
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/browse/MTA-2060?filter=12428334[Known Issues in Jira].
