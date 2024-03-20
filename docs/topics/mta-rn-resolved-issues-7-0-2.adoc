@@ -16,7 +16,7 @@ A flaw was found in versions of the Golang standard library `go/parser`, before 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2022-1962[(CVE-2022-1962)].
 
 
-.MTA CLI does not function as expected on ARM-based machines
+.{ProductShortName} CLI does not function as expected on ARM-based machines
 
 In previous versions of {ProductShortName} 7.0, there was an issue with the Command-line interface (CLI) not functioning as expected on ARM CPU architecture.
 
