@@ -35,7 +35,7 @@ The system repeatedly shows a warning message about overriding an inherited asse
 
 This warning, appropriate for the first assessment, incorrectly reappears on subsequent reassessments, suggesting that the application is still inheriting its assessment, even after it has been overridden. link:https://issues.redhat.com/browse/MTA-1825[MTA-1825]
 
-.Custom rule for javax.* package import is not triggered when uploaded as an XML file
+.Custom rule for javax.{*} package import is not triggered when uploaded as an XML file
 
 In {ProductShortName} 7.0.0, some XML custom rule files are converted to the new YAML format during analysis. The root cause of this issue is that Java search patterns, which use `IMPORT` or `PACKAGE` as `location`, should not end in `.{*}` but just `{*}`. 
 
