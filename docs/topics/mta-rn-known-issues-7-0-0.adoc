@@ -37,7 +37,7 @@ This warning, appropriate for the first assessment, incorrectly reappears on sub
 
 .Custom rule for javax.{*} package import is not triggered when uploaded as an XML file
 
-In {ProductShortName} 7.0.0, some XML custom rule files are converted to the new YAML format during analysis. The root cause of this issue is Java search patterns that use `IMPORT` as `location`, should not end in `.{\*}` but `{\*}`. link:https://issues.redhat.com/browse/MTA-2000[MTA-2000]
+In {ProductShortName} 7.0.0, some XML custom rule files are converted to the new YAML format during analysis. The root cause of this issue is Java search patterns that use `IMPORT` as `location`, should not end in `.{\*}` but should end in `{*}`. link:https://issues.redhat.com/browse/MTA-2000[MTA-2000]
 
 To resolve this issue, whenever a custom rule has a pattern ending in `.{\*}` and location `IMPORT`, the pattern `.{*}` can be changed to `{*}` and the location changed to `PACKAGE`.
 
