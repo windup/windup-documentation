@@ -1,0 +1,16 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: CONCEPT
+[id="rn-new-features-7-0-2_{context}"]
+= New features
+
+
+This section describes the new features and improvements of the {ProductFullName} 7.0.2.
+
+
+.Multiarch support for {ProductShortName} CLI introduced
+
+In {ProductShortName} 7.0.2, multiarch support for for {ProductShortName} CLI is introduced. Multiarch support includes both ARM architecture on Linux machines and Apple Silicon Macs.
+
