@@ -41,8 +41,6 @@ In {ProductShortName} 7.0.0, some XML custom rule files are converted to the new
 
 To resolve this issue, whenever a custom rule has a pattern ending in `.{\*}` and location `IMPORT`, the pattern `.{*}` can be changed to `{*}` and the location changed to `PACKAGE`, as in the following example:.
 
-
-
 .To view the javax-package-custom-target.windup.xml, click here.
 [%collapsible%closed]
 ====
