@@ -6,20 +6,19 @@
 [id="mta-web-edit-application_{context}"]
 = Editing an application
 
-You can edit an existing application in the Application Inventory and the re-run an assessment or an analysis.
+You can edit an existing application in the *Application Inventory* and re-run an assessment or analysis for this application.
 
 .Prerequisites
 
-* Be logged on to an {ProductShortName} server.
+* You are logged in to an {ProductShortName} server.
 
 .Procedure
 
-. In *Migration* view, click *Application Inventory*.
-
+. In the *Migration* view, click *Application Inventory*.
 // image::mta-assessment-apps-01.png[MTA Application inventory]
-
 . In the {ProductShortName} user interface, select the *Migration* working mode.
-. Click *Application Inventory* in the left menu bar. A list of all the available applications appears in the main pane.
-. Click *Edit* {edit} to open the application settings, and review the application settings. See procedure above for a list of application settings.
-. If you changed any application settings, then click *Save*.
+. Click *Application Inventory* in the left menu bar. A list of available applications appears in the main pane.
+. Click *Edit* ({edit}) to open the application settings.
+. Review the application settings. For a list of application settings, see xref:mta-web-adding-applications_user-interface-guide[Adding an application].
+. If you changed any application settings, click *Save*.
 

@@ -1,0 +1,26 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="displaying-the-tags-of-an-application_{context}"]
+= Displaying application tags
+
+[role="_abstract"]
+You can display the tags attached to a particular application.
+
+NOTE: You can display the tags that were attached automatically only _after_ you have run an application analysis.
+
+.Procedure
+
+. In the *Migration* view, click *Application inventory*.
+. Click the *Analysis* tab.
+. Click the name of the required application. A side pane opens. 
+. Click the *Tags* tab. The tags attached to the application are displayed.
++
+[NOTE]
+====
+You can filter the tags by source and tag category:
+
+* The sources are *Analysis* and *Manual*.
+* You can display the categories in a drop-down list. The categories are, for example, *HTTP*, *MVC*, *Web*, *Observability*, *Persistence*, *Application Type*, or *Data Center*.
+====

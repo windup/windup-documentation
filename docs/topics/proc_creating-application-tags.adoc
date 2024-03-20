@@ -1,0 +1,18 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="creating-application-tags_{context}"]
+= Creating application tags
+
+[role="_abstract"]
+You can create custom tags for applications that {ProductShortName} assesses or analyzes.
+
+.Procedure
+
+. In the *Migration* view, click *Controls*.
+. Click the *Tags* tab.
+. Click *Create tag*.
+. In the *Name* field in the opened dialogue, enter a unique name for the tag.
+. Click the *Tag category* field and select the category tag to associate with the tag.
+. Click *Create*.

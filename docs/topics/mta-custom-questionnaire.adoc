@@ -5,194 +5,13 @@
 
 :_content-type: REFERENCE
 [id="mta-custom-questionnaire_{context}"]
-= Custom questionnaire
+= The custom assessment questionnaire
 
-{ProductFullName} allows you to import custom questionnaires using a custom YAML syntax for questionnaire definition.
+You can use the {ProductFullName} to import a custom assessment questionnaire by using a custom YAML syntax to define the questionnaire. The YAML syntax supports the following features:
 
-The syntax supports:
-
-* Conditional questions
-* Automated answers based on tags present on the assessed application or archetype
-* Autotagging of applications based on answers
-
-[id="mta-assessment-questionnaire-fields_{context}"]
-== Questionnaire fields
-
-
-* `name`: Name of the questionnaire. `name` is required and must be unique for the entire {ProductShortName} instance.
-* `description`: An optional short description of the questionnaire.
-* `thresholds`: Required the threshold definition for each risk category for the application or the archetype to be considered affected by that risk level. The higher risk level always takes precedence. For example, if yellow threshold is established in 30% and red in 5%, and the answers for an application or archetype to have 35% yellow and 6% red, the risk level for the application or archetype will be red.
-** `red`: Required numeric percentage (example: `30` for `30%`) of red answers the questionnaire can have until the risk level is considered red.
-** `yellow`: Required numeric percentage (example: `30` for `30%`) of yellow answers the questionnaire can have until the risk level is considered
-yellow.
-** `unknown`: Required numeric percentage (example: `30` for `30%`) of unknown answers the questionnaire can have until the risk level is considered
-unknown.
-* `riskMessages`: Required messages to be displayed in reports for each risk category. The _risk_messages_ map is defined by the following fields:
-** `red`: Required string message to display in reports for the red risk level.
-** `yellow`: Required string message to display in reports for the yellow risk level.
-** `green`: Required string message to display in reports for the green risk level.
-** `unknown`: Required string message to display in reports for the unknown risk level.
-* `sections`: Required list of sections that the questionnaire will include.
-** `name`: Name is the required string to be displayed for the section.
-** `order`: Required int order in which the question should appear in the section.
-** `comment`: Optional string to describe the section.
-** `questions`: Required list of questions that belong to the section.
-*** `order`: Required int order in which the question should appear in the section.
-*** `text`: Required string of the question to be asked.
-*** `explanation`: Optional string of additional explanations for the question.
-*** `includeFor`: Optional list that defines a question should be displayed if any of the tags included in the list is present in the target application or archetype.
-**** `category`: Required string category of the target tag.
-**** `tag`: Required string for the target tag.
-*** `excludeFor`: Optional list defines that a question should be skipped if any of the tags included in the list is present in the target application or archetype.
-**** `category`: Required string category of the target tag.
-**** `tag`: Required string for the target tag.
-*** `answers`: Required list of answers for the given question.
-**** `order`: Required int order in which the question should appear in the section.
-**** `text`: Required string the actual answer for the question.
-**** `risk`: Required to be one of red, yellow, green, or unknown. The risk level of the current answer implied.
-**** `rationale`: Optional string explaining the justification for the answer being considered a risk.
-**** `mitigation`: Optional string for an explanation of the potential mitigation strategy for the risk implied by this answer.
-**** `applyTags`: Optional list that defines a list of tags to be automatically applied to the assessed application or archetype if this answer is selected.
-***** `category`: Required string category of the target tag.
-***** `tag`: Required string for the target tag.
-**** `autoAnswerFor`: Optional list defines a list of tags that will lead to this answer being automatically selected when the application or archetype is assessed.
-
-***** `category`: Required string category of the target tag.
-***** `tag`: Required string for the target tag.
-
-
-[NOTE]
-====
-. Anything marked as *required* is mandatory and must be completed. Otherwise, the
-YAML will not validate on upload.
-. Each subsection defines a new struct/object in YAML. For example:
+Conditional questions::
+The YAML syntax supports including or excluding questions based on tags existing on the application or archetype. For example, if the application or archetype has the `Language/Java` tag, the `What is the main JAVA framework used in your application?` question is included in the questionnaire:
 +
-[source,yaml]
-----
-...
-name: Testing
-thresholds:
-    red: 30
-    yellow: 45
-    unknown: 5
-...
-----
-====
-
-[id="mta-custom-questionnaire-yaml-template_{context}"]
-== YAML template
-
-A YAML template is provided to guide you through building your custom questionnaire.
-
-The template is available for download by clicking *Download YAML template* on the *Assessment questionnaires* page.
-
-
-.To view the YAML template, click (here).
-[%collapsible%closed]
-====
-[source,yaml]
-----
-name: Uploadable Cloud Readiness Questionnaire Template
-description: This questionnaire is an example template for assessing cloud readiness. It serves as a guide for users to create and customize their own questionnaire templates.
-required: true
-sections:
-  - order: 1
-    name: Application Technologies
-    questions:
-      - order: 1
-        text: What is the main technology in your application?
-        explanation: Identify the main framework or technology used in your application.
-        includeFor:
-          - category: Language
-            tag: Java
-        answers:
-          - order: 1
-            text: Quarkus
-            risk: green
-            rationale: Quarkus is a modern, container-friendly framework.
-            mitigation: No mitigation needed.
-            applyTags:
-              - category: Runtime
-                tag: Quarkus
-            autoAnswerFor:
-              - category: Runtime
-                tag: Quarkus
-          - order: 2
-            text: Spring Boot
-            risk: green
-            rationale: Spring Boot is versatile and widely used.
-            mitigation: Ensure container compatibility.
-            applyTags:
-              - category: Runtime
-                tag: Spring Boot
-            autoAnswerFor:
-              - category: Runtime
-                tag: Spring Boot
-          - order: 3
-            text: Legacy Monolithic Application
-            risk: red
-            rationale: Legacy monoliths are challenging for cloud adaptation.
-            mitigation: Consider refactoring into microservices.
-      - order: 2
-        text: Does your application use a microservices architecture?
-        explanation: Assess if the application is built using a microservices architecture.
-        answers:
-          - order: 1
-            text: Yes
-            risk: green
-            rationale: Microservices are well-suited for cloud environments.
-            mitigation: Continue monitoring service dependencies.
-          - order: 2
-            text: No
-            risk: yellow
-            rationale: Non-microservices architectures may face scalability issues.
-            mitigation: Assess the feasibility of transitioning to microservices.
-          - order: 3
-            text: Unknown
-            risk: unknown
-            rationale: Lack of clarity on architecture can lead to unplanned issues.
-            mitigation: Conduct an architectural review.
-
-      - order: 3
-        text: Is your application's data storage cloud-optimized?
-        explanation: Evaluate if the data storage solution is optimized for cloud usage.
-        includeFor:
-          - category: Language
-            tag: Java
-        answers:
-          - order: 1
-            text: Cloud-Native Storage Solution
-            risk: green
-            rationale: Cloud-native solutions offer scalability and resilience.
-            mitigation: Ensure regular backups and disaster recovery plans.
-          - order: 2
-            text: Traditional On-Premises Storage
-            risk: red
-            rationale: Traditional storage might not scale well in the cloud.
-            mitigation: Explore cloud-based storage solutions.
-          - order: 3
-            text: Hybrid Storage Approach
-            risk: yellow
-            rationale: Hybrid solutions may have integration complexities.
-            mitigation: Evaluate and optimize cloud integration points.
-thresholds:
-  red: 1
-  yellow: 30
-  unknown: 15
-riskMessages:
-  red: Requires deep changes in architecture or lifecycle
-  yellow: Cloud friendly but needs minor changes
-  green: Cloud Native
-  unknown: More information needed
-----
-====
-
-
-[id="mta-conditional-questionnaire_{context}"]
-== Conditional questions
-
-The syntax supports excluding or including questions based on tags existing on the application or archetype. For example:
-
 [source,yaml]
 ----
 ...
@@ -207,13 +26,9 @@ The syntax supports excluding or including questions based on tags existing on t
 ----
 
 
-[id="mta-automated-answers_{context}"]
-== Automated answers
-
-Automated answers mean that answers are automatically selected when the application or archetype is assessed.
-
-In the following example, if an application or archetype is tagged `Runtime/Quarkus`, then the `Quarkus` answer is automatically selected. While if an application or archetype is tagged `Runtime/Spring Boot`, then the 'Spring Boot' answer choice is automatically selected.
-
+Automated answers based on tags present on the assessed application or archetype::
+Automated answers are selected based on the tags existing on the application or archetype. For example, if an application or archetype has the `Runtime/Quarkus` tag, the `Quarkus` answer is automatically selected, and if an application or archetype has the `Runtime/Spring Boot` tag, the `Spring Boot` answer is automatically selected:
++
 [source,yaml]
 ----
 ...
@@ -236,21 +51,16 @@ In the following example, if an application or archetype is tagged `Runtime/Quar
 ----
 
 
-[id="mta-autotagging-answers_{context}"]
-== Autotagging of applications based on answers
-
-Autotagging of applications based on answers means that tags are automatically applied to the assessed application or archetype, if this answer is selected.
-
-The tags are transitive.
-
-Each tag is defined by the following two required elements:
-
+Autotagging of applications based on answers::
+With this feature, tags are automatically applied to the assessed application or archetype based on the answer if this answer is selected. The tags are transitive. Each tag is defined by the following elements:
++
+--
 * *category*: Category of the target tag (`String`).
 * *tag*: Definition for the target tag as (`String`).
-
-In the following example, if the answer selected is `Quarkus`, then the `Runtime/Quarkus` tag is applied to the assessed application or archetype. While if the answer selected is `Spring Boot`, then the `Runtime/Spring Boot` tag is applied to the assessed application or archetype.
-
-
+--
++
+For example, if the selected answer is `Quarkus`, the `Runtime/Quarkus` tag is applied to the assessed application or archetype. If the selected answer is `Spring Boot`, the `Runtime/Spring Boot` tag is applied to the assessed application or archetype:
++
 [source,yaml]
 ----
 ...

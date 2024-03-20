@@ -10,9 +10,9 @@ You can analyze more than one application at a time against more than one transf
 
 .Procedure
 
-. In *Migration* view, click *Application inventory*.
+. In the *Migration* view, click *Application inventory*.
 . Click the *Analysis* tab.
-. Select the applications you want to analyze.
+. Select an application that you want to analyze.
 +
 // ![](/Tackle2/AppAssessAnalyze/SelectManageCred.png)
 
@@ -21,37 +21,34 @@ You can analyze more than one application at a time against more than one transf
 +
 // ![](/Tackle2/AppAssessAnalyze/AnalysisMode.png)
 
-. Select the *Analysis mode* from the list. Valid options are:
+. Select the *Analysis mode* from the list:
 * Binary.
 * Source code.
 * Source code and dependencies.
 * Upload a local binary. This option only appears if you are analyzing a single application.
 
-. If you choose *Upload a local binary*, a window opens and you are prompted to *Upload a local binary*. Either drag and drop a file into the area provided or click *Upload* and then select the file to upload.
-
+. If you choose *Upload a local binary*, you are prompted to *Upload a local binary*. Either drag and drop a file into the area provided or click *Upload* and select the file to upload.
 . Click *Next*.
 . Select one or more target options for the analysis:
 
-* Application server migration to:
+* Application server migration to either the following platforms:
 ** JBoss EAP 7
 ** JBoss EAP 8
 * Containerization
 * Quarkus
 * OracleJDK to OpenJDK
-* OpenJDK - upgrades to one of the following JDK versions:
+* OpenJDK. Use this option to upgrade to either of the following JDK versions:
 ** OpenJDK 11
 ** OpenJDK 17
 ** OpenJDK 21
-* Linux - ensures there are no Microsoft Windows paths hard-coded into your applications
-* Jakarta EE 9 - for migrating from Java EE 8 to Jakarta EE 9
+* Linux. Use this option to ensure that there are no Microsoft Windows paths hard-coded into your applications.
+* Jakarta EE 9. Use this option to migrate from Java EE 8.
 * Spring Boot on Red Hat Runtimes
 * Open Liberty
-* Camel - for migrating from Apache Camel 2 to Apache Camel 3 and from Apache Camel 3 to Apache Camel 4
+* Camel. Use this option to migrate from Apache Camel 2 to Apache Camel 3 or from Apache Camel 3 to Apache Camel 4.
 * Azure
 ** Azure App Service
 ** Azure Kubernetes Service
-
-
 
 . Click *Next*.
 . Select one of the following *Scope* options to better focus the analysis:
@@ -59,30 +56,26 @@ You can analyze more than one application at a time against more than one transf
 * Application and internal dependencies only.
 * Application and all dependencies, including known Open Source libraries.
 * Select the list of packages to be analyzed manually. If you choose this option, type the file name and click *Add*.
-* Exclude packages. If you choose this option, type the name of the package name and click *Add*.
+* Exclude packages. If you choose this option, type the name of the package and click *Add*.
 
 . Click *Next*.
-. In *Advanced*, you can attach additional custom rules to the analysis. Select *Manual* or *Repository*.
-+
-[NOTE]
-====
-Attaching custom rules is optional if you have already attached a migration target to the analysis. If you have not attached any migration target, you must attach rules.
-====
-** In *Manual* mode, click *Add Rules*. Then either drag and drop the relevant files or select them from their directory and click *Add*.
+. In *Advanced*, you can attach additional custom rules to the analysis by selecting the *Manual* or *Repository* mode:
+** In the *Manual* mode, click *Add Rules*. Drag and drop the relevant files or select the files from their directory and click *Add*.
 ** In *Repository* mode, you can add rule files from a Git or Subversion repository.
-. Set any of the following options, if needed:
++
+IMPORTANT: Attaching custom rules is optional if you have already attached a migration target to the analysis. If you have not attached any migration target, you must attach rules.
 
+. Optional: Set any of the following options:
 * Target
 * Source(s)
-* Excluded rules tags: Rules with these tags are not processed. Add or delete as needed.
-* Enable automated tagging: Select the checkbox to automatically attach tags to the application. This checkbox is selected by default.
-
+* Excluded rules tags. Rules with these tags are not processed. Add or delete as needed.
+* Enable automated tagging. Select the checkbox to automatically attach tags to the application. This checkbox is selected by default.
 +
 [NOTE]
 ====
 Automatically attached tags are displayed only _after_ you run the analysis.
 
-You can attach tags to the application manually, instead of enabling automated tagging or in addition to it.
+You can attach tags to the application manually instead of enabling automated tagging or in addition to it.
 ====
 +
 [NOTE]
@@ -92,9 +85,9 @@ Analysis engines use standard rules for a comprehensive set of migration targets
 
 . Click *Next*.
 . In *Review*, verify the analysis parameters.
-. Click *Run*.
+. Click *Run*. 
 +
-Analysis status is `Scheduled` as {ProductShortName} downloads the image for the container to execute. When the image is downloaded, the status changes to `In-progress.`
+The analysis status is `Scheduled` as {ProductShortName} downloads the image for the container to execute. When the image is downloaded, the status changes to `In-progress.`
 +
 [NOTE]
 ====
@@ -105,14 +98,4 @@ Analysis takes minutes to hours to run depending on the size of the application 
 ====
 {ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time.  With more cluster capacity, more analysis processes can be executed in parallel.
 ====
-. When analysis is complete, you can click the *Report* link to see the results of the analysis.
-
-[id="viewing-analysis-details_{context}"]
-== Viewing analysis details
-
-You can view the details of an analysis by clicking the Options menu {kebab} and selecting *Analysis details*. The details are displayed in the *Analysis details for customers* window. You can choose either YAML or JSON format.
-
-[NOTE]
-====
-You can view the details of an analysis only after you start running the analysis. If the status of an analysis is *Not started*, the *Analysis details* option is disabled.
-====
+. When analysis is complete, click the *Report* link to see the results of the analysis.

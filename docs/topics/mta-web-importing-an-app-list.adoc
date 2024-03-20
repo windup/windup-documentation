@@ -6,27 +6,22 @@
 [id="mta-web-importing-an-app-list_{context}"]
 = Importing a list of applications
 
-You can import a .csv file containing a list of applications and their attributes to the {ProductName} ({ProductShortName}) {WebName}.
+You can import a `.csv` file that contains a list of applications and their attributes to the {ProductName} ({ProductShortName}) {WebName}.
 
-[NOTE]
-====
-Importing a list of applications only adds applications, it does not overwrite any existing ones.
-====
+NOTE: Importing a list of applications does not overwrite any of the existing applications.
 
 .Procedure
 
 . Review the import file to ensure it contains all the required information in the required format.
-. In *Migration* view, click *Application Inventory*.
-. Click the Options menu {kebab} to the right of *Review*.
+. In the *Migration* view, click *Application Inventory*.
+. Click the Options menu ({kebab}).
 . Click *Import*.
 +
 // ![](/Tackle2/AddingApps/Import.png)
-. Browse to the desired file and click *Open*.
-. Optional: Select *Enable automatic creation of missing entities*. By default, this option is selected.
-. Verify the import has completed and check the number of rows accepted or rejected.
+. Select the desired file and click *Open*.
+. Optional: Select *Enable automatic creation of missing entities*. This option is selected by default.
+. Verify that the import has completed and check the number of accepted or rejected rows.
 . Review the imported applications by clicking the arrow to the left of the checkbox.
 +
-[IMPORTANT]
-====
-Rows accepted may not match the number of applications in the Application inventory list because some rows are dependencies.  To verify, check the *Record Type* column of the CSV file for applications defined as `1` and dependencies as `2`.
-====
+IMPORTANT: Accepted rows might not match the number of applications in the Application inventory list because some rows are dependencies. To verify, check the *Record Type* column of the CSV file for applications defined as `1` and dependencies defined as `2`.
+

@@ -5,15 +5,15 @@
 
 :_content-type: PROCEDURE
 [id="mta-export-questionnaire_{context}"]
-= Exporting a questionnaire
+= Exporting an assessment questionnaire
+
+In the {ProductName} ({ProductShortName}) 7.0, you can export an assessment questionnaire to the desired location on your system. 
 
 .Procedure
 
-Export a questionnaire:
-
 . In the *Administration* view, select *Assessment questionnaires*.
-. Select the questionnaire.
-. Click the Options menu {kebab}.
+. Select the desired questionnaire.
+. Click the Options menu ({kebab}).
 . Select *Export*.
 . Select the location of the download.
 . Click *Save*.

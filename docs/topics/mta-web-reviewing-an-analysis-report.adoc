@@ -8,12 +8,12 @@
 
 An {ProductShortName} analysis report contains a number of sections, including a listing of the technologies used by the application, the dependencies of the application, and the lines of code that must be changed to successfully migrate or modernize the application.
 
-For more information on the contents of an {ProductShortName} analysis report, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports]
+For more information about the contents of an {ProductShortName} analysis report, see link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports].
 
 .Procedure
 
-1. In *Migration* view, click *Application inventory*.
-2. Expand the application with a completed analysis.
-3. Click *Reports*.
-4. Click the dependencies or source links.
-5. Click the tabs to review the report.
+. In the *Migration* view, click *Application inventory*.
+. Expand the application with a completed analysis.
+. Click *Reports*.
+. Click the dependencies or source links.
+. Click the tabs to review the report.

@@ -1,0 +1,10 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+
+:_mod-docs-content-type: CONCEPT
+
+[id="archetype-inheritance_{context}"]
+= Archetype inheritance
+
+[role="_abstract"]
+Inheritance, which is the default setting, means that all applications associated with the archetype inherit the _assessment_ and _review_ from the archetype groups to which these applications belong. However, you can override inheritance for the application by completing an individual assessment and review.
