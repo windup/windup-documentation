@@ -6,7 +6,10 @@
 [id="migration-paths_{context}"]
 = Supported {ProductName} migration paths
 
-The {ProductName} ({ProductShortName}) supports migrations from third-party enterprise application servers, such as Oracle WebLogic Server, to JBoss Enterprise Application Platform (JBoss EAP), and upgrades to the latest release of JBoss EAP.
+The {ProductName} ({ProductShortName}) supports the following migrations:
+
+* Migrating from third-party enterprise application servers, such as Oracle WebLogic Server, to JBoss Enterprise Application Platform (JBoss EAP).
+* Upgrading to the latest release of JBoss EAP.
 
 {ProductShortName} provides a comprehensive set of rules to assess the suitability of your applications for containerization and deployment on Red Hat OpenShift Container Platform (RHOCP). You can run an {ProductShortName} analysis to assess your applications' suitability for migration to multiple target platforms.
 
