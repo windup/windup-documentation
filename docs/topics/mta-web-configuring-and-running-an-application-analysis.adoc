@@ -59,7 +59,7 @@ You can analyze more than one application at a time against more than one transf
 * Exclude packages. If you choose this option, type the name of the package and click *Add*.
 
 . Click *Next*.
-. In *Advanced*, you can attach additional custom rules to the analysis by select the *Manual* or *Repository* mode:
+. In *Advanced*, you can attach additional custom rules to the analysis by selecting the *Manual* or *Repository* mode:
 ** In the *Manual* mode, click *Add Rules*. Drag and drop the relevant files or select the files from their directory and click *Add*.
 ** In *Repository* mode, you can add rule files from a Git or Subversion repository.
 +

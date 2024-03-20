@@ -24,8 +24,8 @@ By using ready-made custom migration targets, you can avoid configuring custom r
 ** If you selected *Upload manually*, upload or drag and drop the required rule files from your local drive.
 ** If you selected *Retrieve from a repository*, complete the following steps:
 ... Choose *Git* or *Subversion*.
-... Enter the *Source repository*, *Branch*, and *Root path*.
+... Enter the *Source repository*, *Branch*, and *Root path* fields.
 ... If the repository requires credentials, enter these credentials in the *Associated credentials* field.
 . Click *Create*.
 +
-The new migration target appears on the *Custom migration targets* page. It can now be used by non-admin users in *Migration* view.
+The new migration target appears on the *Custom migration targets* page. It can now be used by non-admin users in the *Migration* view.

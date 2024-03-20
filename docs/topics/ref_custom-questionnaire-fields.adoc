@@ -6,7 +6,7 @@
 [id="custom-questionnaire-fields_{context}"]
 = The custom questionnaire fields
 
-Every custom questionnaire field marked as *required* is mandatory and must be completed. Otherwise, the YAML syntax will not validate on upload. Each subsection of the field defines a new struct/object in YAML, for example:
+Every custom questionnaire field marked as *required* is mandatory and must be completed. Otherwise, the YAML syntax will not validate on upload. Each subsection of the field defines a new structure or object in YAML, for example:
 
 [source,yaml]
 ----

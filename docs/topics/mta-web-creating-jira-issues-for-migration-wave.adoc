@@ -9,7 +9,7 @@
 You can use a migration wave to create Jira issues automatically for each application assigned to the migration wave. A separate Jira issue is created for each application associated with the migration wave. The following fields of each issue are filled in automatically:
 
 * Title: `Migrate <application name>`
-* Reporter: Username of the token owner
+* Reporter: Username of the token owner.
 * Description: `Created by Konveyor`
 
 NOTE: You cannot delete an application if it is linked to a Jira ticket or is associated with a migration wave. To unlink the application from the Jira ticket, click the `Unlink from Jira` icon in the details view of the application or in the details view of a migration wave.

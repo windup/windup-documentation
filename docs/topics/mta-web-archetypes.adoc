@@ -7,7 +7,7 @@
 [id="mta-archetypes_{context}"]
 = Working with archetypes
 
-An *archetype* is a group of applications with common characteristics. You can use archetypes to assess multiple applications at once. By using archetypes, {ProductName} ({ProductShortName}) can apply questionnaires populated with questions that apply to common application characteristics.
+An *archetype* is a group of applications with common characteristics. You can use archetypes to assess multiple applications at once. By using archetypes, the {ProductName} ({ProductShortName}) can apply questionnaires populated with questions that apply to common application characteristics.
 
 Application archetypes are defined by criteria tags and the application taxonomy. Each archetype defines how the _assessment module_ assesses the application according to the characteristics defined in that archetype. If the tags of an application match the criteria tags of an archetype, the application is associated with the archetype.
 
@@ -17,4 +17,4 @@ Creation of an archetype is defined by a series of *tags*, *stakeholders*, and *
 +
 NOTE: If the archetype criteria tags match an application only partially, this application cannot be a member of the archetype. For example, if the application _a_ only has tag _a_, but the archetype _a_ criteria tags include tags _a_ AND _b_, the application _a_ will not be a member of the archetype _a_.
 
-* *Archetype tags* are tags that are applied to the group of applications that is known as an archetype. They are applied to the archetype entity.
+* *Archetype tags* are tags that are applied to the archetype entity.

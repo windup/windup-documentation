@@ -27,9 +27,12 @@ You can create a new application by using the {ProductName} {ProductShortName} u
 .. *Comments*: Relevant comments on the migrated application.
 . Click *Source code* and enter the following fields:
 .. *Repository type*: *Git* or *Subversion*.
-.. *Source Repository*: A URL of the repository where the software code is saved.
-.. *Branch*: An application code branch in the repository.
-.. *Root path*: [get info] (optional/mandatory).
+.. *Source repository*: A URL of the repository where the software code is saved.
+.. *Branch*: An application code branch in the repository (optional).
+.. *Root path*: A root path inside the repository for the target application (optional).
+
++
+NOTE: If you enter any value in either the *Branch* or *Root path* fields, the *Source repository* field becomes mandatory.
 . Optional: Click *Binary* and enter the following fields:
 .. *Group*: The Maven group for the application artifact.
 .. *Artifact*: The Maven artifact for the application.
