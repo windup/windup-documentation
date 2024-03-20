@@ -86,32 +86,6 @@ If you amend this to `javaclass references="javax{*}"`, the rule converts correc
 
 The suggested workaround is to use the following YAML file instead. The YAML file is the result of a conversion from XML. 
 
-In this example, use the following YAML file instead.
-
-.To view the 01-javax-package-custom-target.windup.yaml, click here.
-[%collapsible%closed]
-====
-[source,yaml]
-----
-- category: potential
-  customVariables: []
-  description: CUSTOM RULE for javax.* package import
-  effort: 1
-  labels:
-  - konveyor.io/target=phil7
-  - konveyor.io/target=phil
-  - konveyor.io/source
-  links:
-  - title: Renamed Packages
-    url: https://github.com/wildfly-extras/batavia/blob/master/impl/ecl/src/main/resources/org/wildfly/extras/transformer/eclipse/jakarta-renames.properties
-  message: '`javax.*` packages must be renamed to `jakarta.*` for Jakarta EE9 compatibility.'
-  ruleID: javax-package-custom-target-00001
-  when:
-    java.referenced:
-      location: package
-      pattern: javax*
-----
-====
 
 The file is the conversion result from XML to YAML format, with the line `location: IMPORT` was changed to `location: package`.
 
