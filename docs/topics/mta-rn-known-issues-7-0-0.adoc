@@ -87,9 +87,6 @@ If you amend this to `javaclass references="javax{*}"`, the rule converts correc
 The suggested workaround is to use the following YAML file instead. The YAML file is the result of a conversion from XML. 
 
 
-The file is the conversion result from XML to YAML format, with the line `location: IMPORT` was changed to `location: package`.
-
-
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/browse/MTA-2060?filter=12428334[Known Issues in Jira].
 
 // using filter - project in (MTA) AND type = Bug AND createdDate >= 2021-01-01 AND createdDate <= 2024-01-30 AND (resolutiondate > 2024-01-30 OR resolutiondate is EMPTY) AND Priority in (Blocker, Critical, Major) ORDER BY priority DESC, key DESC
