@@ -1,0 +1,16 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="manual-tagging-of-an-application_{context}"]
+= Manually tagging an application
+
+You can tag an application manually, both before or after you run an application analysis.
+
+.Procedure
+
+. In the *Migration* view, click *Application inventory*.
+. Click the *Analysis* tab.
+. In the row of the required application, click the pen icon. The *Update application* window opens.
+. Select the desired tags from the *Select a tag(s)* drop-down list.
+. Click *Save*.

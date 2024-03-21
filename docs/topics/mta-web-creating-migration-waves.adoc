@@ -4,36 +4,27 @@
 
 :_content-type: PROCEDURE
 [id="mta-web-creating-migration-waves_{context}"]
-= Creating migration waves
+= Creating a migration wave
 
-Creating a migration wave is a way to group applications that you want to migrate on a given schedule.
-
-In addition, a migration wave enables you to track each migration by exporting a list of the wave's applications to the Jira issue management system. This automatically creates a separate Jira issue for each application of the migration wave.
+By creating a migration wave, you can group applications that you want to migrate on a given schedule. You can also track each migration by exporting a list of the wave's applications to the Jira issue management system. This automatically creates a separate Jira issue for each application of the migration wave.
 
 .Procedure
 
-. In *Migration* view, click *Migration waves*.
-. Click *Create new*.
-+
-The *New migration wave* window opens.
+. In the *Migration* view, click *Migration waves*.
+. Click *Create new*. The *New migration wave* window opens.
 . Enter the following information or select from drop-down lists:
-* Name (optional; if not given, you can use the start and end dates to identify migration waves)
-* Potential start date; it must be later than the current date
-* Potential end date; it must be later than the start date
+* Name (optional). If the name is not given, you can use the start and end dates to identify migration waves.
+* Potential start date. This date must be later than the current date.
+* Potential end date. This date must be later than the start date.
 * Stakeholders (optional)
 * Stakeholder groups (optional)
-. Click *Create*.
+. Click *Create*. The new migration wave appears in the list of existing migration waves.
+. To assign applications to the migration wave, click the Options menu ({kebab}) to the right of the migration wave and select *Manage applications*.
 +
-The new migration wave appears in the list of existing migration waves.
-. To assign applications to a migration wave, click the Options menu ({kebab}) to the right of the migration wave and select *Manage applications* from the menu.
+The *Manage applications* window opens that displays the list of applications that are not assigned to any other migration wave.
+. Select the checkboxes of the applications that you want to assign to the migration wave.
+. Click *Save*.
 +
-The *Manage applications* window opens. The window displays the list of applications that are not assigned to any other migration wave.
-. Select the checkboxes of the applications that you want to assign to the migration wave and click *Save*.
-+
-[NOTE]
-====
-The owner and the contributors of each application associated with the migration wave are automatically added to the migration wave's list of stakeholders.
-====
-. To update a migration wave, select *Update* from its *Options* menu (three dots).
-+
-The *Update migration wave* window opens.
+NOTE: The owner and the contributors of each application associated with the migration wave are automatically added to the migration wave's list of stakeholders.
+
+. Optional: To update a migration wave, select *Update* from the migration wave's *Options* menu (three dots). The *Update migration wave* window opens.

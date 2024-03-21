@@ -4,19 +4,20 @@
 
 :_content-type: PROCEDURE
 [id="mta-web-downloading-app-list-template_{context}"]
-= Downloading a CSV template for importing application lists
+= Downloading a CSV template 
 
-You can download a CSV template for importing application lists.
+You can download a CSV template for importing application lists by using the {ProductFullName} user interface.
 
 .Procedure
 
-. In *Migration* view, click *Application inventory*.
+. In the *Migration* view, click *Application inventory*.
 +
 // ![](/Tackle2/AddingApps/SelectMngImport.png)
 
-. Click the Options menu {kebab} to the right of *Review*.
+. Click the Options menu ({kebab}) to the right of *Review*.
 . Click *Manage imports* to open the *Application imports* page.
 +
 // ![](/Tackle2/AddingApps/DownloadCSV.png)
 
-. Click the Options menu {kebab} to the right of *Import* and then click *Download CSV template*.
+. Click the Options menu ({kebab}) to the right of *Import*.
+. Click *Download CSV template*.

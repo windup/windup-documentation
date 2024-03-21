@@ -1,0 +1,20 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="opening-an-existing-application_{context}"]
+= Opening an existing application in MTA 
+
+You can open and edit an application that has already been defined in {ProductShortName}.
+
+.Prerequisites
+
+* You are logged in to an {ProductShortName} server.
+
+.Procedure
+
+. In the {ProductShortName} user interface, select the *Migration* working mode.
+. Click *Application Inventory* in the left menu bar. A list of the available applications appears in the main pane.
+. Click `edit` ({edit}) to open and review the application settings. 
++
+For the more information about the list of application settings, see xref:creating-an-application_user-interface-guide[Creating an application by using MTA].

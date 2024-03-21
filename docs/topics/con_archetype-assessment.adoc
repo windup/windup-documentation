@@ -1,0 +1,14 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+
+:_mod-docs-content-type: CONCEPT
+
+[id="archetype-assessment_{context}"]
+= Archetype assessment
+
+[role="_abstract"]
+An archetype is considered assessed when all required questionnaires have been answered.
+
+An archetype is considered reviewed when it has been reviewed once even if multiple questionnaires have been marked as required.
+
+If an application is associated with archetypes, this application is considered assessed when all associated archetypes have been assessed.

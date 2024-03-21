@@ -17,3 +17,7 @@
 * *Enhanced Role-Based Access Control (RBAC)* powered by link:https://access.redhat.com/products/red-hat-single-sign-on[Red Hat Single Sign-On] to define new differentiated personas (administrator, architect, and migrator) with different permissions to suit the needs of each user, including credentials management for multiple credential types.
 
 * *Administration perspective* to provide tool-wide configuration management for administrators.
+
+* *Support for Red Hat OpenShift on AWS (ROSA)* is introduced in {ProductShortName} 7.0.0.
+
+* *Support added for Azure Red Hat OpenShift (ARO)* is introduced in {ProductShortName} 7.0.0.

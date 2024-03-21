@@ -1,0 +1,44 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="creating-an-application_{context}"]
+= Creating an application by using MTA
+
+[role="_abstract"]
+You can create a new application by using the {ProductName} {ProductShortName} user interface.
+
+.Prerequisites
+
+* You are logged in to an {ProductShortName} server.
+
+.Procedure
+
+. In the {ProductShortName} user interface, select the *Migration* working mode.
+. Click *Application Inventory* in the left menu bar.
+. Click *Create new*. The *New application* dialog appears.
+. In the form, enter the following information:
+.. *Name*: A unique name for the new application.
+.. *Description*: A short description of the application (optional).
+.. *Business service*: A purpose of the application (optional).
+.. *Tags*: Software tags that characterize the application.
+.. *Owner*: A registered software owner from the drop-down list (optional).
+.. *Contributors*: Contributors from the drop-down list (optional).
+.. *Comments*: Relevant comments on the migrated application.
+. Click *Source code* and enter the following fields:
+.. *Repository type*: *Git* or *Subversion*.
+.. *Source repository*: A URL of the repository where the software code is saved.
+.. *Branch*: An application code branch in the repository (optional).
+.. *Root path*: A root path inside the repository for the target application (optional).
+
++
+NOTE: If you enter any value in either the *Branch* or *Root path* fields, the *Source repository* field becomes mandatory.
+. Optional: Click *Binary* and enter the following fields:
+.. *Group*: The Maven group for the application artifact.
+.. *Artifact*: The Maven artifact for the application.
+.. *Version*: A software version of the application.
+.. *Packaging*: The packaging for the application artifact, for example, `JAR`, `WAR`, or `EAR`.
+
++
+NOTE: If you enter any value in any of the Binary section fields, all fields automatically become mandatory.
+. Click *Create*. The dialog closes and the new application appears in the list of defined applications.

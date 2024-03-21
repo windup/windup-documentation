@@ -1,0 +1,92 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes-7.0/master.adoc
+
+:_content-type: REFERENCE
+[id="mta-rn-resolved-issues-7-0-2_{context}"]
+= Resolved issues
+
+The following highlighted issues have been resolved in {ProductFullName} version 7.0.2.
+
+
+.CVE-2022-1962: Golang: go/parser stack exhaustion in all Parse* functions  Security
+
+A flaw was found in versions of the Golang standard library `go/parser`, before Go 1.17.12 and Go 1.18.4. When calling any Parse functions on the Go source code, which contains deeply nested types or declarations, a panic can occur due to stack exhaustion. This issue allows an attacker to impact system availability.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2022-1962[(CVE-2022-1962)].
+
+
+.{ProductShortName} CLI does not function as expected on ARM-based machines
+
+In previous versions of {ProductShortName} 7.0, there was an issue with the Command-line interface (CLI) not functioning as expected on ARM CPU architecture.
+
+* {ProductShortName} CLI does not work on Mac ARM-based machines. link:https://issues.redhat.com/browse/MTA-2160[(MTA-2160)]
+
+* {ProductShortName} CLI does not work on Linux ARM-based machines. link:https://issues.redhat.com/browse/MTA-2351[(MTA-2351)]
+
+These issues have been resolved in {ProductShortName} 7.0.2.
+
+.Missing text below graphs on the Reports page
+
+In previous versions of {ProductShortName} {DocInfoProductNumber}, the text below graphs was missing on the *Reports* page. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-1868[(MTA-1868)]
+
+
+.Assessment status is `In progress` instead of `Not started`
+
+In previous versions of {ProductShortName} 7.0, the *Assessment* status was `In progress` instead of `Not started` when the application was associated with an archived questionnaire. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-1956[(MTA-1956)]
+
+.Turning off `Use Refresh Tokens` breaks {ProductShortName} UI
+
+In previous versions of {ProductShortName}, turning off the `Use Refresh Tokens`, which is a feature in the Red Hat build of Keycloak, could have adversely impacted {ProductShortName}. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-1255[(MTA-1255)]
+
+.Exporting a questionnaire includes unnecessary metadata
+
+In previous versions of {ProductShortName} 7.0, exporting a questionnaire could include unnecessary metadata. This unnecessary metadata had the potential to make reimporting the questionnaire a more difficult task, as it might conflict with already existing data. This has been resolved in {ProductShortName} 7.0.2, with exports not including any environment-specific data. link:https://issues.redhat.com/browse/MTA-1721[(MTA-1721)]
+
+.Source and dependency analysis of applications built with JDKs before 11 fails compilation
+
+In previous versions of {ProductShortName}, source and dependency analysis of applications built with Java Development Kits (JDKs) earlier than version 11 could fail before compilation was completed. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-1785[(MTA-1785)]
+
+.Application drawer incorrectly lists assessed archetypes when there are no required questionnaires
+
+In previous versions of {ProductShortName} 7.0, the application drawer incorrectly showed that the associated archetypes had been assessed, when there were no required questionnaires and when an application was associated with unassessed archetypes. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-1967[(MTA-1967)]
+
+.Inherited assessment tags should be listed as assessment tags instead of archetype tags on the app drawer
+
+In previous versions of {ProductShortName} 7.0, inherited assessment tags should have been listed as assessment tags instead of archetype tags on the app drawer. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-1972[(MTA-1972)]
+
+.Application Assessment status shows `Completed` instead of `Not started` for inherited assessment after the questionnaire is archived
+
+In previous versions of {ProductShortName} 7.0, the *Application Assessment* status showed `Completed` instead of `Not started` for inherited assessment after the questionnaire was archived. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-1973[(MTA-1973)]
+
+.Application inventory page shows no applications after accessing dependencies
+
+In previous versions of {ProductShortName} 7.0, the *Application inventory* page showed no applications after accessing dependencies. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-2007[(MTA-2007)]
+
+.Dependencies does not filter and navigate to the affected applications
+
+In previous versions of {ProductShortName} 7.0, dependencies did not filter and navigate to the affected applications, instead of showing only the affected applications. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-2008[(MTA-2008)]
+
+.Analyzer `unable to connect` message seen on the Single Application issues page
+
+In previous versions of {ProductShortName} 7.0, on an analysis clicking on *Issues* and then navigating to the *Single application* page, no data was shown and an `Unable to connect` message was shown. There was an error retrieving data, showing a `Check your connection and try again` error. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-2047[(MTA-2047)]
+
+.Issues contain variable names instead of values
+
+In previous versions of {ProductShortName} 7.0, issues occasionally contained variable names instead of values. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-2067[(MTA-2067)]
+
+.Rules from technology usage appear as issues
+
+In previous versions of {ProductShortName} 7.0, rules from technology usage appeared as issues. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-2099[(MTA-2099)]
+
+.{ProductShortName} CLI does not have a version flag
+
+In previous versions of {ProductShortName} 7.0, there was no version flag for the {ProductShortName} CLI, such as `mta-cli --version` to show the current version installed. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-2201[(MTA-2201)]
+
+.Application list in the Archetype side drawer does not scale well
+
+In previous versions of {ProductShortName} 7.0, the *Application* list in the Archetype side drawer did not scale well when a large number of applications were associated with the archetype. It is likely that a massive number of applications could cause the drawer not to load properly. This has been resolved in {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-2283[(MTA-2283)]
+
+
+
+For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12429435[Resolved Issues in Jira].

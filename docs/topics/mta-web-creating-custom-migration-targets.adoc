@@ -6,26 +6,26 @@
 [id="mta-web-creating-custom-migration-targets_{context}"]
 = Creating custom migration targets
 
-Architects or users with `admin` permissions can create and maintain custom rulesets associated with custom migration targets. Architects can upload custom rule files and assign them to various custom migration targets. The custom migration targets are then available for selecting in the analysis configuration wizard.
+Architects or users with `admin` permissions can create and maintain custom rulesets associated with custom migration targets. Architects can upload custom rule files and assign them to various custom migration targets. The custom migration targets can then be selected in the analysis configuration wizard.
 
-Using ready-made custom migration targets makes unnecessary the cumbersome task of configuring custom rules for each analysis run. This simplifies analysis configuration and execution for non-admin users or third-party developers and makes using the {ProductShortName} tool easier and more straightforward.
+By using ready-made custom migration targets, you can avoid configuring custom rules for each analysis run. This simplifies analysis configuration and execution for non-admin users or third-party developers.
 
 .Prerequisites
 
-* You must be logged in as a user with `admin` permissions.
+* You are logged in as a user with `admin` permissions.
 
 .Procedure
 
-. In *Administration* view, click *Custom migration targets*.
+. In the *Administration* view, click *Custom migration targets*.
 . Click *Create new*.
-. Fill in the name and description of the target.
+. Enter the name and description of the target.
 . In the *Image* section, upload an image file for the target's icon. The file can be in either PNG or JPEG format, up to 1 MB. If you do not upload any file, a default icon is used.
-. In the *Custom rules* section, select either *Upload manually* or *Retrieve from a repository*.
-** If you have selected *Upload manually*, upload or drag and drop the required rule files from your local drive.
-** If you have selected *Retrieve from a repository*, proceed as follows:
+. In the *Custom rules* section, select either *Upload manually* or *Retrieve from a repository*:
+** If you selected *Upload manually*, upload or drag and drop the required rule files from your local drive.
+** If you selected *Retrieve from a repository*, complete the following steps:
 ... Choose *Git* or *Subversion*.
-... Fill in *Source repository*, *Branch* and *Root path*.
-... If the repository requires credentials, enter them in the *Associated credentials* field.
+... Enter the *Source repository*, *Branch*, and *Root path* fields.
+... If the repository requires credentials, enter these credentials in the *Associated credentials* field.
 . Click *Create*.
 +
-The new migration target appears on the *Custom migration targets* page. It can now be used by non-admin users in *Migration* view.
+The new migration target appears on the *Custom migration targets* page. It can now be used by non-admin users in the *Migration* view.

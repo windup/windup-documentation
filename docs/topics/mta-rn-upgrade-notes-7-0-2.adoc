@@ -1,0 +1,51 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes-7.0/master.adoc
+
+:_content-type: REFERENCE
+[id="mta-rn-upgrade-notes-7-0-2_{context}"]
+= Upgrade notes
+
+The following are upgrade notes for {ProductFullName}
+
+.Upgrade from {ProductShortName} 6.2.1 to {ProductShortName} 7.0.2
+
+Upgrade directly from {ProductShortName} 6.2.1 to {ProductShortName} 7.0.2.
+
+.Pathfinder assessment migration fails on upgrade from {ProductShortName} 6.2.1 to {ProductShortName} 7.0.0
+
+In previous version of {ProductShortName} 7.0.0, when {ProductShortName} 6.2.1 is installed, and you attempt to switch the channel to `stable-7.0`, the operator upgrade succeeds, but a task in the operator pod fails. This failure resulted in existing pathfinder assessments not being migrated to {ProductShortName} 7.0.0. As this bug has been resolved in {ProductShortName} 7.0.1, it is suggested to upgrade directly from {ProductShortName} 6.2.1 to {ProductShortName} 7.0.2. link:https://issues.redhat.com/browse/MTA-2139[MTA-2139]
+
+[IMPORTANT]
+.Enabling questionnaire for assessments
+====
+On upgrading from MTA 6.2.1 to MTA 7.0.1 , completed assessment are shown as *In progress*.
+Enable the legacy Pathfinder questionnaire to see the completed status of assessment.
+====
+
+.Hub database volume size
+
+In version 7.0.2 of {ProductShortName}, the default size of the hub database volume has been increased to 10GiB.
+
+If your storage class does not support volume expansion, then an upgrade from 6.2.1 to 7.0.2 will result in a failure due to the operator trying to change the volume size from 5GiB to 10GiB.
+
+To avoid this issue, you can directly set the volume size by setting:
+
+[source,yaml]
+----
+...
+hub_database_volume_size: 5Gi
+...
+----
+
+By doing this, you will avoid the operator trying to resize the volume.
+
+If this value was set when the previous version was deployed, there is no need to take any action, as it will work as expected.
+
+
+.Existing data
+
+When upgrading to {ProductShortName} 7.0.0, all existing data will be retained, except for individual analysis reports for applications.
+
+As both the analysis and reporting engines have been replaced with this version, you will be required to conduct a re-run of the analysis in order to obtain data on issues and dependencies.
+

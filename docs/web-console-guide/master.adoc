@@ -121,44 +121,55 @@ A Jira connection that was used for xref:../../../docs/topics/mta-web-creating-j
 
 //6
 [id="assessing-and-analyzing-applications"]
-== Assessing and analyzing applications
-You can use the {ProductName} ({ProductShortName}) {WebName} to both assess and to analyze applications.
+== Assessing and analyzing applications with MTA
+You can use the {ProductName} ({ProductShortName}) {WebName} to assess and analyze applications:
 
-Assessing applications refers to estimating the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors. The results of an assessment can be used as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work, and which are not suitable for containerization.
+* When assessing applications, {ProductShortName} estimates the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors. You can use the results of an assessment for discussions between stakeholders to determine whether applications are suitable for containerization.
 
-Analyzing applications refers to using rules to determine which specific lines in an application must be modified before the application can be migrated or modernized.
+* When analyzing applications, {ProductShortName} uses rules to determine which specific lines in an application must be modified before the application can be migrated or modernized.
 
 include::topics/mta-assessment-changes-700.adoc[leveloffset=+2]
+include::topics/mta-introduction-questionnaire.adoc[leveloffset=+2]
+include::topics/mta-default-questionnaire.adoc[leveloffset=+3]
+include::topics/mta-custom-questionnaire.adoc[leveloffset=+3]
+include::topics/ref_yaml-template-for-custom-questionnaire.adoc[leveloffset=+4]
+include::topics/ref_custom-questionnaire-fields.adoc[leveloffset=+4]
+include::topics/proc_listing-available-assessment-questionnaires.adoc[leveloffset=+3]
+include::topics/mta-view-questionnaire.adoc[leveloffset=+3]
+include::topics/mta-export-questionnaire.adoc[leveloffset=+3]
+include::topics/mta-import-questionnaire.adoc[leveloffset=+3]
+include::topics/mta-delete-questionnaire.adoc[leveloffset=+3]
 
-include::topics/mta-web-assessing-apps.adoc[leveloffset=+2]
-
-include::topics/mta-introduction-questionnaire.adoc[leveloffset=+3]
-include::topics/mta-custom-questionnaire.adoc[leveloffset=+4]
-include::topics/mta-default-questionnaire.adoc[leveloffset=+4]
-include::topics/mta-export-questionnaire.adoc[leveloffset=+4]
-include::topics/mta-import-questionnaire.adoc[leveloffset=+4]
-include::topics/mta-view-questionnaire.adoc[leveloffset=+4]
-include::topics/mta-delete-questionnaire.adoc[leveloffset=+4]
-
-include::topics/mta-web-assessment-module.adoc[leveloffset=+3]
-
-include::topics/mta-web-run-assessment.adoc[leveloffset=+4]
-include::topics/mta-web-viewing-an-assessment-report.adoc[leveloffset=+4]
+//include::topics/mta-web-assessing-apps.adoc[leveloffset=+2]
+include::topics/mta-web-assessment-module.adoc[leveloffset=+2]
+include::topics/proc_creating-an-application.adoc[leveloffset=+3]
+include::topics/proc_opening-an-existing-application.adoc[leveloffset=+3]
+include::topics/mta-web-assessing-apps.adoc[leveloffset=+3]
+include::topics/mta-web-reviewing-apps.adoc[leveloffset=+2]
+include::topics/mta-web-review-tab.adoc[leveloffset=+3]
+include::topics/mta-web-viewing-an-assessment-report.adoc[leveloffset=+3]
+//include::topics/mta-web-run-assessment.adoc[leveloffset=+4]
 
 // include::topics/mta-web-skipping-assessment-of-apps.adoc[leveloffset=+3]
 
-
 include::topics/mta-web-tagging-an-application.adoc[leveloffset=+2]
-
-include::topics/mta-web-reviewing-apps.adoc[leveloffset=+2]
-
-include::topics/mta-web-review-tab.adoc[leveloffset=+2]
+include::topics/proc_manual-tagging-of-an-application.adoc[leveloffset=+3]
+include::topics/con_automatic-tagging-of-an-application.adoc[leveloffset=+3]
+include::topics/proc_displaying-the-tags-of-an-application.adoc[leveloffset=+3]
+include::topics/proc_creating-application-tags.adoc[leveloffset=+3]
+include::topics/proc_editing-application-tags.adoc[leveloffset=+3]
+include::topics/proc_editing-tag-categories.adoc[leveloffset=+3]
 
 include::topics/mta-web-archetypes.adoc[leveloffset=+2]
+include::topics/proc_defining-an-archetype.adoc[leveloffset=+3]
+include::topics/con_archetype-inheritance.adoc[leveloffset=+3]
+include::topics/con_archetype-assessment.adoc[leveloffset=+3]
+include::topics/proc_deleting-an-archetype.adoc[leveloffset=+3]
 // include::topics/mta-web-applying-assessments-to-other-apps.adoc[leveloffset=+3]
 
-
-include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[leveloffset=+2]
+include::topics/proc_analyzing-an-application.adoc[leveloffset=+2]
+include::topics/mta-web-configuring-and-running-an-application-analysis.adoc[leveloffset=+3]
+include::topics/proc_displaying-the-analysis-details.adoc[leveloffset=+3]
 include::topics/mta-web-reviewing-an-analysis-report.adoc[leveloffset=+3]
 include::topics/mta-web-downloading-an-analysis-report.adoc[leveloffset=+3]
 
@@ -168,14 +179,14 @@ include::topics/mta-web-creating-custom-migration-targets.adoc[leveloffset=+2]
 
 //7
 [id=working-with-applications-in-the-ui]
-== Working with Applications
+== Managing applications with MTA
 
-You can use the {ProductFullName} {WebName} to do the following:
+You can use the {ProductFullName} {WebName} to perform the following tasks:
 
-* Add applications
-* Assign application credentials
-* Import a list of applications
-* Download a CSV template for importing application lists
+* Add applications.
+* Assign application credentials.
+* Import a list of applications.
+* Download a CSV template for importing application lists.
 
 include::topics/mta-web-application-attributes.adoc[leveloffset=+2]
 include::topics/mta-web-adding-applications.adoc[leveloffset=+2]

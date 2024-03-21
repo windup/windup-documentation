@@ -1,0 +1,14 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="displaying-the-analysis-details_{context}"]
+= Displaying the analysis details
+
+[role="_abstract"]
+You can view the details of an analysis only after you start running the analysis. If the status of an analysis is *Not started*, the *Analysis details* option is disabled.
+
+.Procedure
+
+. Click the Options menu ({kebab}).
+. Select *Analysis details*. The details are displayed in the *Analysis details for customers* window. You can choose either the YAML or JSON format.

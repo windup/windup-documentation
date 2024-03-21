@@ -1,0 +1,9 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+:_mod-docs-content-type: PROCEDURE
+
+[id="deleting-an-archetype_{context}"]
+= Deleting an archetype
+
+[role="_abstract"]
+Deleting an archetype deletes any associated assessment. All associated applications move to the *Unassessed* state.

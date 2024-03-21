@@ -1,0 +1,15 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-2-21
+
+:_mod-docs-content-type: CONCEPT
+
+[id="automatic-tagging-of-an-application_{context}"]
+= Automatic tagging
+
+[role="_abstract"]
+
+{ProductShortName} can automatically add tags to the application based on the application analysis. Automatic tagging is especially useful when dealing with large portfolios of applications.
+
+Automatic tagging of applications is enabled by default. You can disable automatic tagging by deselecting the *Enable automated tagging* checkbox in the *Advanced* section of the *Analysis configuration* wizard.
+
+NOTE: To tag an application automatically, make sure that the *Enable automated tagging* checkbox is selected _before_ you run an application analysis.
