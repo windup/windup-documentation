@@ -9,18 +9,18 @@ include::topics/templates/document-attributes.adoc[]
 :getting-started-guide:
 
 :_content-type: ASSEMBLY
-= Introduction to the {ProductName}
+= Getting started with the {ProductName}
 
 //Inclusive language statement
 include::topics/making-open-source-more-inclusive.adoc[]
 
-== Introduction
+// == Introduction
 
 // About the {IntroToMTABookName}
-include::topics/mta-about-the-intro-to-mta-guide.adoc[leveloffset=+2]
+include::topics/mta-about-the-intro-to-mta-guide.adoc[leveloffset=+1]
 
 // About the Toolkit
-include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+1]
+// Info included in the module above ^ include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+1]
 
 // Windup Features
 include::topics/new-mta-features.adoc[leveloffset=+2]
@@ -28,13 +28,14 @@ include::topics/new-mta-features.adoc[leveloffset=+2]
 // Windup Rules
 include::topics/about-rules.adoc[leveloffset=+2]
 
-== Supported configurations
+//== Supported configurations
 
 // Supported Migration Paths
-include::topics/migration-paths.adoc[leveloffset=+2]
+include::topics/migration-paths.adoc[leveloffset=+1]
 
 // Prerequisites
-== Prerequisites
+== Prerequisites for the {ProductName} installation
+
 include::topics/snippet_jdk-hardware-mac-prerequisites.adoc[]
 
 // At a later date, we may wish to add the following section, once it is revised: For tips on how to optimize performance, see link:{ProductDocUserGuideURL}#optimize_performance[Optimizing {ProductShortName} performance] in {ProductShortName} _{UserCLIBookName}_.
@@ -58,19 +59,17 @@ include::topics/getting-started-about-ide-addons.adoc[leveloffset=+2]
 // include::topics/about-maven.adoc[leveloffset=+2]
 
 [appendix]
-== Reference material
-
-=== Additional resources
+== Getting involved in the {ProductName} development
 
 // Get Involved
-include::topics/get-involved.adoc[leveloffset=+3]
+include::topics/get-involved.adoc[leveloffset=+2]
 
-// Important Links
-include::topics/important-links.adoc[leveloffset=+3]
-
-==== Reporting issues
+=== Reporting issues
 
 {ProductShortName} uses Jira as its issue tracking system. If you encounter an issue executing {ProductShortName}, submit a link:{JiraWindupURL}[Jira issue].
+
+// Important Links
+include::topics/important-links.adoc[leveloffset=+2]
 
 
 // **********************************

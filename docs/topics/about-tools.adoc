@@ -4,9 +4,9 @@
 
 :_content-type: CONCEPT
 [id="about-tools_{context}"]
-= About the tools
+= The {ProductName} tools
 
-The {ProductName} ({ProductShortName}) provides several tools to assist you in the various stages of your migration and modernization efforts. Review the details of each tool to determine which one is right for your project.
+You can use the following {ProductFullName} tools for assistance in the various stages of your migration and modernization efforts: 
 
 ifdef::mta[]
 * User interface
@@ -18,8 +18,10 @@ endif::[]
 
 * {ProductName} Operator
 * CLI
-* IDE addons for:
+* IDE add-ons for the following applications:
 ** Eclipse
 ** Visual Studio Code, Visual Studio Codespaces, and Eclipse Che
 ** IntelliJ IDEA
 * {MavenName}
+
+Review the details of each tool to determine which tool is suitable for your project.

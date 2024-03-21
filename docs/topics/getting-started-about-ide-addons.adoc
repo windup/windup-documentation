@@ -5,12 +5,17 @@
 
 :_content-type: CONCEPT
 [id="getting-started-about-ide-addons_{context}"]
-= About the IDE Addons
+= The {ProductShortName} IDE add-ons
 
-You can migrate and modernize applications by using the {ProductName} ({ProductShortName}) addons for:
+You can migrate and modernize applications by using the {ProductFullName} add-ons for the following applications:
 
 * Eclipse
 * Visual Studio Code, Visual Studio Codespaces, and Eclipse Che
 * IntelliJ IDEA, both the Community and Ultimate versions
 
-Each addon analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.
+You can use these add-on to perform the following tasks:
+
+* Analyze your projects by using customizable sets of rules.
+* Mark issues in the source code.
+* Fix the issues by using the provided guidance.
+* Use the automatic code replacement, if possible.

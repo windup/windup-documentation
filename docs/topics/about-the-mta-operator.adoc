@@ -4,10 +4,9 @@
 
 :_content-type: CONCEPT
 [id="about-the-mta-operator_{context}"]
-= About the {ProductShortName} Operator
+= The {ProductShortName} Operator
 
+By using the {ProductName} Operator, you can install the {WebName} on OpenShift Container Platform versions 4.13-4.15.
 
-You can install the {WebName} on OpenShift Container Platform versions 4.13-4.15 with the Migration Toolkit for Applications Operator.
-
-For more information on prerequisites to install {ProductShortName} Operator, see link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles].
+For more information about the prerequisites for the {ProductShortName} Operator installation, see link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles].
 

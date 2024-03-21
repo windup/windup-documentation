@@ -4,19 +4,17 @@
 
 :_content-type: CONCEPT
 [id="new-mta-features_{context}"]
-= {ProductShortName} Features
+= The {ProductShortName} features
 
-{ProductName} ({ProductShortName}) is an integrated assembly of tools that  lets you better assess, prioritize and modernize your applications across hybrid cloud environments on Red Hat OpenShift, the industry’s leading Kubernetes platform.
+{ProductFullName} provides the following features to simplify upgrades with more migration paths:
 
-Now designed for easier upgrades with more migration paths, {ProductShortName} includes:
+* *New application inventory and assessment modules* to assist organizations in managing, classifying, and tagging their applications while assessing application suitability for deployment in containers, including flagging potential risks for migration strategies.
 
-* *New application inventory and assessment modules* that assist organizations in managing, classifying and tagging their applications while assessing application suitability for deployment in containers, including flagging potential risks for migration strategies.
+* *Full integration with source code and binary repositories* to automate the retrieval of applications for analysis along with proxy integration, including HTTP and HTTPS proxy configuration managed in the user interface.
 
-* *Full integration with source code and binary repositories* to automate the retrieval of applications for analysis along with proxy integration including HTTP and HTTPS proxy configuration managed in the user interface.
+* *Improved analysis capabilities* with new analysis modes, including source and dependency modes that parse repositories to gather dependencies and add these dependencies to the overall scope of the analysis. You can also use a simplified user experience to configure the analysis scope, including open source libraries.
 
-* *Improved analysis capabilities* with new analysis modes, including source and dependency modes that parse repositories to gather dependencies and add them to the overall scope of the analysis. There is also a simplified user experience to configure the analysis scope, including open source libraries.
-
-* *Enhanced Role-Based Access Control (RBAC)* powered by link:https://access.redhat.com/products/red-hat-single-sign-on[Red Hat Single Sign-On], defining three new differentiated personas with different permissions to suit the needs of each user (administrator, architect and migrator) including credentials management for multiple credential types.
+* *Enhanced Role-Based Access Control (RBAC)* powered by link:https://access.redhat.com/products/red-hat-single-sign-on[Red Hat Single Sign-On] to define new differentiated personas (administrator, architect, and migrator) with different permissions to suit the needs of each user, including credentials management for multiple credential types.
 
 * *Administration perspective* to provide tool-wide configuration management for administrators.
 
