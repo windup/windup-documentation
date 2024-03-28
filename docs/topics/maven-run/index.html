@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/topics/maven-run/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/topics/maven-run/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/topics/maven-run/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="maven-run_{context}">Running the {MavenNameTitle}</h1>
+<div class="paragraph">
+<p>The {MavenName} is run by including a reference to the plugin inside your application&#8217;s <code>pom.xml</code> file. When the application is built, the {MavenName} is run and generates the reports for analysis.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Java Development Kit (JDK) installed.</p>
+<div class="paragraph">
+<p>{ProductShortName} supports the following JDKs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenJDK 11</p>
+</li>
+<li>
+<p>Oracle JDK 11</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>8 GB RAM</p>
+</li>
+<li>
+<p>macOS installation: the value of <code>maxproc</code> must be <code>2048</code> or greater.</p>
+</li>
+<li>
+<p>The Maven <code>settings.xml</code> file <a href="https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.4/html-single/development_guide/index#configure_the_jboss_eap_maven_repository_using_the_maven_settings">configured</a> to direct Maven to use the JBoss EAP Maven repository.</p>
+</li>
+<li>
+<p>To run the {MavenName} on OpenJDK 17 or Oracle JDK17, you first need to set MAVEN_OPTS on the command line by running the following command:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">export MAVEN_OPTS="--add-modules=java.se --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.util.stream=ALL-UNNAMED"</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Add the following <code>&lt;plugin&gt;</code> to your application&#8217;s <code>pom.xml</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">[...]
+&lt;plugin&gt;
+    &lt;groupId&gt;org.jboss.windup.plugin&lt;/groupId&gt;
+    &lt;artifactId&gt;{LC_PSN}-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;{ProductDistributionVersion}&lt;/version&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;run-windup&lt;/id&gt;
+            &lt;phase&gt;package&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;windup&lt;/goal&gt;
+            &lt;/goals&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+    &lt;configuration&gt;
+        &lt;target&gt;eap:7&lt;/target&gt; <b class="conum">(1)</b>
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+[...]</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Specify a migration target. At least one migration target must be supplied within the configuration.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Add <code>--add-modules=java.se</code> to the <code>MAVEN_OPTS</code> environment variable.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">export MAVEN_OPTS=--add-modules=java.se</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Build the project:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ mvn clean install</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can access the generated reports.</p>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

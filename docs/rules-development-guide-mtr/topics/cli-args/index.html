@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/rules-development-guide-mtr/topics/cli-args/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/rules-development-guide-mtr/topics/cli-args/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/rules-development-guide-mtr/topics/cli-args/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="cli-args_{context}">About {ProductShortName} command-line arguments</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following is a detailed description of the available {ProductShortName} command line arguments.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To run the {ProductShortName} command without prompting, for example when executing from a script, you must use the following arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>--batchMode</code></p>
+</li>
+<li>
+<p><code>--overwrite</code></p>
+</li>
+<li>
+<p><code>--input</code></p>
+</li>
+<li>
+<p><code>--target</code></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. {ProductShortName} CLI arguments</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--additionalClassPath</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A space-delimited list of additional JAR files or directories to add to the class path so that they are available for decompilation or other analysis.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--addonDir</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Add the specified directory as a custom add-on repository.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--analyzeKnownLibraries</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to analyze known software artifacts embedded within your application. By default, {ProductShortName} only analyzes application code.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This option may result in a longer execution time and a large number of migration issues being reported.</p>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--batchMode</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to specify that {ProductShortName} should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in to the command line.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--debug</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to run {ProductShortName} in debug mode.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--disableTattletale</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to disable generation of the Tattletale report. If both <code>enableTattletale</code> and <code>disableTattletale</code> are set to true, then <code>disableTattletale</code> will be ignored and the Tattletale report will still be generated.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--discoverPackages</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to list all available packages in the input binary application.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--enableClassNotFoundAnalysis</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to enable analysis of Java files that are not available on the class path. This should not be used if some classes will be unavailable at analysis time.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--enableCompatibleFilesReport</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to enable generation of the Compatible Files report. Due to processing all files without found issues, this report may take a long time for large applications.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--enableTattletale</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to enable generation of a Tattletale report for each application. This option is enabled by default when <code>eap</code> is in the included target. If both <code>enableTattletale</code> and <code>disableTattletale</code> are set to true, then <code>disableTattletale</code> will be ignored and the Tattletale report will still be generated.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--enableTransactionAnalysis</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>[Technology Preview] Flag to enable generation of a Transactions report that displays the call stack, which executes operations on relational database tables. The Enable Transaction Analysis feature supports Spring Data JPA and the traditional <code>preparedStatement()</code> method for SQL statement execution. It does not support ORM frameworks, such as Hibernate.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>enableTransactionAnalysis is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them
+in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--excludePackages</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A space-delimited list of packages to exclude from evaluation. For example, entering <code>com.mycompany.commonutilities</code> excludes all classes whose package names begin with <code>com.mycompany.commonutilities</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--excludeTags</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A space-delimited list of tags to exclude. When specified, rules with these tags will not be processed. To see the full list of tags, use the <code>--listTags</code> argument.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--explodedApp</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to indicate that the provided input directory contains source files for a single application.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--exportCSV</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to export the report data to a CSV file on your local file system. {ProductShortName} creates the file in the directory specified by the <code>--output</code> argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--exportSummary</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to instruct {ProductShortName} to generate an <code>analysisSummary.json</code> export file in the output directory. The file contains analysis summary information for each application analyzed, including the number of incidents and story points by category, and all of the technology tags associated with the analyzed applications.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--exportZipReport</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>This argument creates a <code>reports.zip</code> file in the output folder. The file contains the analysis output, typically, the reports. If requested, it can also contain the CSV export files.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Display the {ProductShortName} help message.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--immutableAddonDir</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Add the specified directory as a custom read-only add-on repository.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--includeTags</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A space-delimited list of tags to use. When specified, only rules with these tags will be processed. To see the full list of tags, use the <code>--listTags</code> argument.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A space-delimited list of the path to the file or directory containing one or more applications to be analyzed. This argument is required.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--install</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify add-ons to install. The syntax is <code>&lt;GROUP_ID&gt;:&lt;ARTIFACT_ID&gt;[:&lt;VERSION&gt;]</code>. For example, <code>--install core-addon-x</code> or <code>--install org.example.addon:example:1.0.0</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--keepWorkDirs</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to instruct {ProductShortName} to not delete temporary working files, such as the graph database and extracted archive files. This is useful for debugging purposes.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--legacyReports</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to instruct {ProductShortName} to generate the old format reports instead of the new format reports.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--list</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to list installed add-ons.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--listSourceTechnologies</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to list all available source technologies.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--listTags</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to list all available tags.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--listTargetTechnologies</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to list all available target technologies.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--mavenize</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to create a Maven project directory structure based on the structure and content of the application. This creates <code>pom.xml</code> files using the appropriate Java EE API and the correct dependencies between project modules. See also the <code>--mavenizeGroupId</code> option.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--mavenizeGroupId</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>When used with the <code>--mavenize</code> option, all generated <code>pom.xml</code> files will use the provided value for their <code>&lt;groupId&gt;</code>. If this argument is omitted, {ProductShortName} will attempt to determine an appropriate <code>&lt;groupId&gt;</code> based on the application, or will default to <code>com.mycompany.mavenized</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--online</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to allow network access for features that require it. Currently only validating XML schemas against external resources relies on Internet access. Note that this comes with a performance penalty.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--output</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify the path to the directory to output the report information generated by {ProductShortName}.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--overwrite</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to force delete the existing output directory specified by <code>--output</code>. If you do not specify this argument and the <code>--output</code> directory exists, you are prompted to choose whether to overwrite the contents.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do not overwrite a report output directory that contains important information.</p>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--packages</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A space-delimited list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--remove</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Remove the specified add-ons. The syntax is <code>&lt;GROUP_ID&gt;:&lt;ARTIFACT_ID&gt;[:&lt;VERSION&gt;]</code>. For example, <code>--remove core-addon-x</code> or <code>--remove org.example.addon:example:1.0.0</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--skipReports</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to indicate that HTML reports should not be generated. A common use of this argument is when exporting report data to a CSV file using <code>--exportCSV</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--source</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the <code>--target</code> argument, helps to determine which rulesets are used. Use the <code>--listSourceTechnologies</code> argument to list all available sources.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--sourceMode</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to indicate that the application to be evaluated contains source files rather than compiled binaries. The sourceMode argument has been deprecated. There is no longer the need to specify it. {ProductShortName} can intuitively process any inputs that are presented to it.  In addition, project source folders can be analyzed with binary inputs within the same analysis execution.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--target</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the <code>--source</code> argument, helps to determine which rulesets are used. Use the <code>--listTargetTechnologies</code> argument to list all available targets.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--userIgnorePath</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify a location, in addition to <code>${user.home}/.{LC_PSN}/ignore/</code>, for {ProductShortName} to identify files that should be ignored.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--userLabelsDirectory</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify a location for {ProductShortName} to look for custom Target Runtime Labels. The value can be a directory containing label files or a single label file. The Target Runtime Label files must use the <code>.windup.label.xml</code> suffix. The shipped Target Runtime Labels are defined within <code>${ProductShortName}_HOME/rules/migration-core/core.windup.label.xml</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--userRulesDirectory</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify a location, in addition to <code>&lt;{ProductShortName}_HOME&gt;/rules/</code> and <code>${user.home}/.{LC_PSN}/rules/</code>, for {ProductShortName} to look for custom {ProductShortName} rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the <code>.windup.xml</code> suffix.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--version</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Display the {ProductShortName} version.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--skipSourceCodeReports</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>This option skips generating a <em>Source code report</em> when generating the application analysis report. Use this advanced option when concerned about source code information appearing in the application analysis.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-input-argument_{context}">Specifying the input</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A space-delimited list of the path to the file or directory containing one or more applications to be analyzed. This argument is required.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight nowrap"><code>--input &lt;INPUT_ARCHIVE_OR_DIRECTORY&gt; [...]</code></pre>
+</div>
+</div>
+<div id="cli-input-file-type-arguments_{context}" class="paragraph">
+<p>Depending on whether the input file type provided to the <code>--input</code> argument is a file or directory, it will be evaluated as follows depending on the additional arguments provided.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Directory</dt>
+<dd>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">--explodedApp</th>
+<th class="tableblock halign-left valign-top">--sourceMode</th>
+<th class="tableblock halign-left valign-top">Neither Argument</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The directory is evaluated as a single application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The directory is evaluated as a single application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each subdirectory is evaluated as an application.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt class="hdlist1">File</dt>
+<dd>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">--explodedApp</th>
+<th class="tableblock halign-left valign-top">--sourceMode</th>
+<th class="tableblock halign-left valign-top">Neither Argument</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Argument is ignored; the file is evaluated as a single application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The file is evaluated as a compressed project.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The file is evaluated as a single application.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-output-argument_{context}">Specifying the output directory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Specify the path to the directory to output the report information generated by {ProductShortName}.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight nowrap"><code>--output &lt;OUTPUT_REPORT_DIRECTORY&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If omitted, the report will be generated in an <code>&lt;INPUT_ARCHIVE_OR_DIRECTORY&gt;.report</code> directory.</p>
+</li>
+<li>
+<p>If the output directory exists, you will be prompted with the following (with a default of N).</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>Overwrite all contents of "/home/username/&lt;OUTPUT_REPORT_DIRECTORY&gt;" (anything already in the directory will be deleted)? [y,N]</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>However, if you specify the <code>--overwrite</code> argument, {ProductShortName} will proceed to delete and recreate the directory. See the description of this argument for more information.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-source-argument_{context}">Setting the source technology</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the <code>--target</code> argument, helps to determine which rulesets are used. Use the <code>--listSourceTechnologies</code> argument to list all available sources.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight nowrap"><code>--source &lt;SOURCE_1&gt; &lt;SOURCE_2&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>--source</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, <code>--source eap:5</code>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When migrating to JBoss EAP, be sure to specify the version, for example, <code>eap:6</code>. Specifying only <code>eap</code> will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="{ProductDocIntroToMTAGuideURL}/index#migration_paths_getting-started-guide">Supported migration paths</a> in <em>Introduction to the Migration Toolkit for Applications</em> for the appropriate JBoss EAP version.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-target-argument_{context}">Setting the target technology</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the <code>--source</code> argument, helps to determine which rulesets are used. If you do not specify this option, you are prompted to select a target. Use the <code>--listTargetTechnologies</code> argument to list all available targets.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight nowrap"><code>--target &lt;TARGET_1&gt; &lt;TARGET_2&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>--target</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, <code>--target eap:7</code>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When migrating to JBoss EAP, be sure to specify the version in the target, for example, <code>eap:6</code>. Specifying only <code>eap</code> will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="{ProductDocIntroToMTAGuideURL}/index#migration_paths_getting-started-guide">Supported migration paths</a> in <em>Introduction to the Migration Toolkit for Applications</em> for the appropriate JBoss EAP version.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-packages-argument_{context}">Selecting packages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A space-delimited list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight nowrap"><code>--packages &lt;PACKAGE_1&gt; &lt;PACKAGE_2&gt; &lt;PACKAGE_N&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or third party packages. The <code>&lt;PACKAGE_N&gt;</code> argument is a package prefix; all subpackages will be scanned. For example, to scan the packages <code>com.mycustomapp</code> and <code>com.myotherapp</code>, use <code>--packages com.mycustomapp com.myotherapp</code> argument on the command line.</p>
+</li>
+<li>
+<p>While you can provide package names for standard Java EE third party software like <code>org.apache</code>, it is usually best not to include them as they should not impact the migration effort.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you omit the <code>--packages</code> argument, every package in the application is scanned, which can impact performance.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/release-notes/topics/testing-rules/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/release-notes/topics/testing-rules/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/release-notes/topics/testing-rules/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="testing-rules_{context}">Testing XML rules</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you have created an XML rule, you should create a test rule to ensure that it works.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-a-test-rule">Creating a test rule</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Test rules are created using a process similar to the process for creating an XML rule, with the following differences:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Test rules should be placed in a <code>tests/</code> directory beneath the rule to be tested.</p>
+</li>
+<li>
+<p>Any data, such as test classes, should be placed in a <code>data/</code> directory beneath the <code>tests/</code> directory.</p>
+</li>
+<li>
+<p>Test rules should use the <code>.windup.test.xml</code> extension.</p>
+</li>
+<li>
+<p>These rules use the structure defined in the Test XML Rule Structure.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition, it is recommended to create a test rule that follows the name of the rule it tests. For instance, if a rule were created with a filename of <code>proprietary-rule.{LC_PSN}.xml</code>, the test rule should be called <code>proprietary-rule.windup.test.xml</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="test-xml-rule-structure_{context}">Test XML rule structure</h3>
+<div class="paragraph">
+<p>All test XML rules are defined as elements within <code>ruletests</code> which contain one or more <code>rulesets</code>. For more details, see the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">{ProductShortName} XML rule schema</a>.</p>
+</div>
+<div class="paragraph">
+<p>A ruletest is a group of one or more tests that targets a specific area of migration. This is the basic structure of the <code>&lt;ruletest&gt;</code> element.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;ruletest id="&lt;RULE_TOPIC&gt;-test"&gt;</code>: Defines this as a unique {ProductShortName} ruletest and gives it a unique ruletest id.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;testDataPath&gt;</code>: Defines the path to any data, such as classes or files, used for testing.</p>
+</li>
+<li>
+<p><code>&lt;sourceMode&gt;</code>: Indicates if the passed in data only contains source files. If an archive, such as an EAR, WAR, or JAR, is in use, then this should be set to <code>false</code>. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><code>&lt;rulePath&gt;</code>: The path to the rule to be tested. This should end in the name of the rule to test.</p>
+</li>
+<li>
+<p><code>&lt;ruleset&gt;</code>: Rulesets containing the logic of the test cases. These are identical to the ones defined in Rulesets.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="test-xml-rule-syntax">Test XML rule syntax</h3>
+<div class="paragraph">
+<p>In addition to the tags in the standard XML rule syntax, the following <code>when</code> conditions are commonly used for creating test rules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;not&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;iterable-filter&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;classification-exists&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;hint-exists&gt;</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to the tags in the standard <code>perform action</code> syntax, the following <code>perform</code> conditions are commonly used as actions in test rules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;fail&gt;</code></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="not-syntax_{context}">&lt;not&gt; syntax</h4>
+<h5 id="summary" class="discrete">Summary</h5>
+<div class="paragraph">
+<p>The <code>&lt;not&gt;</code> element is the standard logical <em>not</em> operator, and is commonly used to perform a <code>&lt;fail&gt;</code> if the condition is not met.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a test rule that fails if only a specific message exists at the end of the analysis.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+          id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;testDataPath&gt;data/&lt;/testDataPath&gt;
+  &lt;rulePath&gt;../proprietary-servlet.windup.xml&lt;/rulePath&gt;
+  &lt;ruleset&gt;
+    &lt;rules&gt;
+      &lt;rule id="proprietary-servlet-01000-test"&gt;
+        &lt;when&gt;
+          &lt;!--
+	    The `&lt;not&gt;` will perform a logical _not_ operator on the elements within.
+	  --&gt;
+          &lt;not&gt;
+            &lt;!--
+	      The defined `&lt;iterable-filter&gt;` has a size of `1`. This rule will only match on a single instance of the defined hint.
+	    --&gt;
+            &lt;iterable-filter size="1"&gt;
+              &lt;hint-exists message="Replace the proprietary @ProprietaryServlet annotation with the Java EE 7 standard @WebServlet annotation*" /&gt;
+            &lt;/iterable-filter&gt;
+          &lt;/not&gt;
+        &lt;/when&gt;
+        &lt;!--
+	  This `&lt;perform&gt;` element is only executed if the previous `&lt;when&gt;` condition is false.
+          This ensures that it only executes if there is not a single instance of the defined hint.
+        --&gt;
+        &lt;perform&gt;
+          &lt;fail message="Hint for @ProprietaryServlet was not found!" /&gt;
+        &lt;/perform&gt;
+      &lt;/rule&gt;
+    &lt;/rules&gt;
+  &lt;/ruleset&gt;
+&lt;/ruletest&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>&lt;not&gt;</code> element has no unique attributes or child elements.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="iterable-filter-syntax_{context}">&lt;iterable-filter&gt; syntax</h4>
+<h5 id="summary-2" class="discrete">Summary</h5>
+<div class="paragraph">
+<p>The <code>&lt;iterable-filter&gt;</code> element counts the number of times a condition is verified. For additional information, see the <a href="{LinkAPI}org/jboss/windup/rules/general/IterableFilter.html">IterableFilter</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example that looks for four instances of the specified message.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+          id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;testDataPath&gt;data/&lt;/testDataPath&gt;
+  &lt;rulePath&gt;../proprietary-servlet.{LC_PSN}.xml&lt;/rulePath&gt;
+  &lt;ruleset&gt;
+    &lt;rules&gt;
+      &lt;rule id="proprietary-servlet-03000-test"&gt;
+        &lt;when&gt;
+          &lt;!--
+	    The `&lt;not&gt;` will perform a logical _not_ operator on the elements within.
+	  --&gt;
+          &lt;not&gt;
+	    &lt;!--
+	      The defined `&lt;iterable-filter&gt;` has a size of `4`. This rule will only match on four instances of the defined hint.
+	    --&gt;
+            &lt;iterable-filter size="4"&gt;
+              &lt;hint-exists message="Replace the proprietary @ProprietaryInitParam annotation with the Java EE 7 standard @WebInitParam annotation*" /&gt;
+            &lt;/iterable-filter&gt;
+          &lt;/not&gt;
+        &lt;/when&gt;
+	&lt;!--
+	  This `&lt;perform&gt;` element is only executed if the previous `&lt;when&gt;` condition is false.
+	  In this configuration, it only executes if there are not four instances of the defined hint.
+	--&gt;
+        &lt;perform&gt;
+          &lt;fail message="Hint for @ProprietaryInitParam was not found!" /&gt;
+        &lt;/perform&gt;
+      &lt;/rule&gt;
+    &lt;/rules&gt;
+  &lt;/ruleset&gt;
+&lt;/ruletest&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>&lt;iterable-filter&gt;</code> element has no unique child elements.</p>
+</div>
+<h5 id="iterable-filter-element-attributes" class="discrete">&lt;iterable-filter&gt; element attributes</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of times to be verified.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="classification_exists_syntax_{context}">&lt;classification-exists&gt; syntax</h4>
+<div class="paragraph">
+<p>The <code>&lt;classification-exists&gt;</code> element determines if a specific classification title has been included in the analysis. For additional information, see the <a href="{LinkAPI}org/jboss/windup/reporting/config/ClassificationExists.html">ClassificationExists</a> class.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When testing for a message that contains special characters, such as <code>[</code> or <code>'</code>, you must escape each special character with a backslash (<code>\</code>) to correctly match.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following is an example that searches for a specific classification title.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+          id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;testDataPath&gt;data/&lt;/testDataPath&gt;
+  &lt;rulePath&gt;../weblogic.{LC_PSN}.xml&lt;/rulePath&gt;
+  &lt;ruleset&gt;
+    &lt;rules&gt;
+      &lt;rule id="weblogic-01000-test"&gt;
+        &lt;when&gt;
+          &lt;!--
+	    The `&lt;not&gt;` will perform a logical _not_ operator on the elements within.
+	  --&gt;
+          &lt;not&gt;
+	    &lt;!--
+	      The defined `&lt;classification-exists&gt;` is attempting to match on the defined title.
+	      This classification would have been generated by a matching `&lt;classification title="WebLogic scheduled job" .../&gt;` rule.
+	    --&gt;
+            &lt;classification-exists classification="WebLogic scheduled job" /&gt;
+          &lt;/not&gt;
+        &lt;/when&gt;
+	&lt;!--
+	  This `&lt;perform&gt;` element is only executed if the previous `&lt;when&gt;` condition is false.
+	  In this configuration, it only executes if there is not a matching classification.
+	--&gt;
+        &lt;perform&gt;
+          &lt;fail message="Triggerable not found" /&gt;
+        &lt;/perform&gt;
+      &lt;/rule&gt;
+    &lt;/rules&gt;
+  &lt;/ruleset&gt;
+&lt;/ruletest&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>&lt;classification-exists&gt;</code> has no unique child elements.</p>
+</div>
+<h5 id="classification-exists-element-attributes" class="discrete">&lt;classification-exists&gt; element attributes</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>&lt;classification&gt;</code> <code>title</code> to search for.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional argument that restricts matching to files that contain the defined filename.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="hint-exists-syntax_{context}">&lt;hint-exists&gt; syntax</h4>
+<div class="paragraph">
+<p>The <code>&lt;hint-exists&gt;</code> element determines if a specific hint has been included in the analysis. It searches for any instances of the defined message, and is typically used to search for the beginning or a specific class inside of a <code>&lt;message&gt;</code> element. For additional information, see the <a href="{LinkAPI}org/jboss/windup/reporting/config/HintExists.html">HintExists</a> class.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When testing for a message that contains special characters, such as <code>[</code> or <code>'</code>, you must escape each special character with a backslash (<code>\</code>) to correctly match.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following is an example that searches for a specific hint.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+          id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;testDataPath&gt;data/&lt;/testDataPath&gt;
+  &lt;rulePath&gt;../weblogic.windup.xml&lt;/rulePath&gt;
+  &lt;ruleset&gt;
+    &lt;rules&gt;
+      &lt;rule id="weblogic-eap7-05000-test"&gt;
+        &lt;when&gt;
+          &lt;!--
+	    The `&lt;not&gt;` will perform a logical _not_ operator on the elements within.
+	  --&gt;
+          &lt;not&gt;
+	    &lt;!--
+	      The defined `&lt;hint-exists&gt;` is attempting to match on the defined message.
+	      This message would have been generated by a matching `&lt;message&gt;` element on the `&lt;hint&gt;` condition.
+	    --&gt;
+            &lt;hint-exists message="Replace with the Java EE standard method .*javax\.transaction\.TransactionManager\.resume\(Transaction tx\).*" /&gt;
+          &lt;/not&gt;
+        &lt;/when&gt;
+	&lt;!--
+	  This `&lt;perform&gt;` element is only executed if the previous `&lt;when&gt;` condition is false.
+	  In this configuration, it only executes if there is not a matching hint.
+	--&gt;
+        &lt;perform&gt;
+          &lt;fail message="Note to replace with standard TransactionManager.resume is missing!" /&gt;
+        &lt;/perform&gt;
+      &lt;/rule&gt;
+    &lt;/rules&gt;
+  &lt;/ruleset&gt;
+&lt;/ruletest&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>&lt;hint-exists&gt;</code> element has no unique child elements.</p>
+</div>
+<h5 id="hint-exists-element-attributes" class="discrete">&lt;hint-exists&gt; element attributes</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>&lt;hint&gt;</code> <code>message</code> to search for.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional argument that restricts matching to <code>InLineHintModels</code> that reference the given filename.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="fail-syntax_{context}">&lt;fail&gt; syntax</h4>
+<div class="paragraph">
+<p>The <code>&lt;fail&gt;</code> element reports the execution as a failure and displays the associated message. It is commonly used in conjunction with the <code>&lt;not&gt;</code> condition to display a message only if the conditions are not met.</p>
+</div>
+<div class="paragraph">
+<p>The <code>&lt;fail&gt;</code> element has no unique child elements.</p>
+</div>
+<h5 id="fail-element-attributes" class="discrete">&lt;fail&gt; element attributes</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message to be displayed.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

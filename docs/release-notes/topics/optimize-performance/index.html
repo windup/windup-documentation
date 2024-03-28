@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/release-notes/topics/optimize-performance/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/release-notes/topics/optimize-performance/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/release-notes/topics/optimize-performance/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="optimize-performance_{context}">Optimizing {ProductShortName} performance</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>{ProductShortName} performance depends on a number of factors, including hardware configuration, the number and types of files in the application, the size and number of applications to be evaluated, and whether the application contains source or compiled code. For example, a file that is larger than 10 MB may need a lot of time to process.</p>
+</div>
+<div class="paragraph">
+<p>In general, {ProductShortName} spends about 40% of the time decompiling classes, 40% of the time executing rules, and the remainder of the time processing other tasks and generating reports. This section describes what you can do to improve the performance of {ProductShortName}.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deploying-and-running-the-application">Deploying and running the application</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Try these suggestions first before upgrading hardware.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If possible, run {ProductShortName} against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.</p>
+</li>
+<li>
+<p>Specify a comma-separated list of the packages to be evaluated by {ProductShortName} using the <code>--packages</code> argument on the <code>&lt;{ProductShortName}_HOME&gt;/bin/{LC_PSN}-cli</code> command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.</p>
+</li>
+<li>
+<p>Specify the <code>--excludeTags</code> argument where possible to exclude them from processing.</p>
+</li>
+<li>
+<p>Avoid decompiling and analyzing any unnecessary packages and files, such as proprietary packages or included dependencies.</p>
+</li>
+<li>
+<p>Increase your ulimit when analyzing large applications. See <a href="https://access.redhat.com/solutions/60746">this Red Hat Knowledgebase article</a> for instructions on how to do this for Red Hat Enterprise Linux.</p>
+</li>
+<li>
+<p>If you have access to a server that has better resources than your laptop or desktop machine, you may want to consider running {ProductShortName} on that server.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="upgrading-hardware">Upgrading hardware</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If the application and command-line suggestions above do not improve performance, you may need to upgrade your hardware.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you have access to a server that has better resources than your laptop/desktop, then you may want to consider running {ProductShortName} on that server.</p>
+</li>
+<li>
+<p>Very large applications that require decompilation have large memory requirements. 8 GB RAM is recommended. This allows 3 - 4 GB RAM for use by the JVM.</p>
+</li>
+<li>
+<p>An upgrade from a single or dual-core to a quad-core CPU processor provides better performance.</p>
+</li>
+<li>
+<p>Disk space and fragmentation can impact performance. A fast disk, especially a solid-state drive (SSD), with greater than 4 GB of defragmented disk space should improve performance.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

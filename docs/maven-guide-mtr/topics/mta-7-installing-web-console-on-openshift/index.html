@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/maven-guide-mtr/topics/mta-7-installing-web-console-on-openshift/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/maven-guide-mtr/topics/mta-7-installing-web-console-on-openshift/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/maven-guide-mtr/topics/mta-7-installing-web-console-on-openshift/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mta-7-installing-web-console-on-openshift_{context}">Installing the {ProductName} {WebName}</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can install the {ProductName} ({ProductShortName}) {WebName} as part of the process of installing the {ProductShortName} Operator on the OpenShift Container Platform.</p>
+</div>
+<div class="paragraph">
+<p>The {ProductShortName} Operator is a structural layer that manages resources deployed on Kubernetes (database, front end, back end) to automatically create an {ProductShortName} instance.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="openshift-persistent-volume-requirements_{context}">Persistent volume requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To successfully deploy, the {ProductShortName} Operator requires 3 RWO persistent volumes (PVs) used by different components. If the <code>rwx_supported</code> configuration option is set to <code>true</code>, the {ProductShortName} Operator requires an additional 2 RWX PVs that are used by Maven and the hub file storage. The PVs are described in the table below:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Required persistent volumes</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Default size</th>
+<th class="tableblock halign-left valign-top">Access mode</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub database</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hub database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub bucket</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hub file storage; required if the <code>rwx_supported</code> configuration option is set to <code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>keycloak postgresql</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keycloak back end database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pathfinder postgresql</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pathfinder back end database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven m2 cache; required if the <code>rwx_supported</code> configuration option is set to <code>true</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-the-productname-operator-and-the-webname">Installing the {ProductName} Operator and the {WebName}</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can install the {ProductName} ({ProductShortName}) and the {WebName} on OpenShift Container Platform versions 4.13-4.15 when you install the {ProductName} Operator.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>4 vCPUs, 8 GiB RAM, and 40 GiB persistent storage.</p>
+</li>
+<li>
+<p>OpenShift Container Platform 4.13-4.15 installed.</p>
+</li>
+<li>
+<p>You must be logged in as a user with <code>cluster-admin</code> permissions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://access.redhat.com/support/policy/updates/openshift_operators">OpenShift Operator Life Cycles</a>.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the OpenShift Container Platform web console, click <strong>Operators → OperatorHub</strong>.</p>
+</li>
+<li>
+<p>Use the <strong>Filter by keyword</strong> field to search for <strong>MTA</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Migration Toolkit for Applications</strong> Operator and then click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Install Operator</strong> page, click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Operators → Installed Operators</strong> to verify that the {ProductShortName} Operator appears in the <code>openshift-mta</code> project with the status <code>Succeeded</code>.</p>
+</li>
+<li>
+<p>Click the <strong>{ProductShortName}</strong> Operator.</p>
+</li>
+<li>
+<p>Under <strong>Provided APIs</strong>, locate <strong>Tackle</strong>, and click <strong>Create Instance</strong>.</p>
+<div class="paragraph">
+<p>The <strong>Create Tackle</strong> window opens in <strong>Form</strong> view.</p>
+</div>
+</li>
+<li>
+<p>Review the custom resource (CR) settings. The default choices should be acceptable, but make sure to check the system requirements for storage, memory, and cores.</p>
+</li>
+<li>
+<p>To work directly with the YAML file, click <strong>YAML</strong> view and review the CR settings that are listed in the <code>spec</code> section of the YAML file.</p>
+<div class="paragraph">
+<p>The most commonly used CR settings are listed in this table:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Tackle CR settings</caption>
+<colgroup>
+<col style="width: 36.3636%;">
+<col style="width: 13.6363%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache_data_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the cache volume; ignored when <code>rwx_supported=false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache_storage_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default storage class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage class used for the cache volume; ignored when <code>rwx_supported=false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>feature_auth_required</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>True</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to indicate whether keycloak authorization is required (single user/&#8220;noauth&#8221;)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>feature_isolate_namespace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>True</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to indicate whether namespace isolation using network policies is enabled</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_database_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>10 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the Hub database volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_bucket_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the Hub bucket volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_bucket_storage_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default storage class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage class used for the bucket volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>keycloak_database_data_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the Keycloak database volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pathfinder_database_data_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the Pathfinder database volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven_data_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the Maven m2 cache volume; deprecated in {ProductShortName} 6.0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rwx_storage_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage class requested for the Tackle RWX volumes; deprecated in {ProductShortName} 6.0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rwx_supported</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>True</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to indicate whether the cluster storage supports RWX mode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rwo_storage_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage class requested for the Tackle RW0 volumes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rhsso_external_access</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>False</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to indicate whether a dedicated route is created to access the {ProductShortName} managed RHSSO instance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_limits_cpu</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of CPUs the pod is allowed to use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_limits_memory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>4GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays <code>OOMKilled</code> errors.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_requests_cpu</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum number of CPUs the pod needs to run</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_requests_memory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>4GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum amount of memory the pod needs to run</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title">Example YAML file</div>
+<div class="content">
+<pre>kind: Tackle
+apiVersion: tackle.konveyor.io/v1alpha1
+metadata:
+  name: mta
+  namespace: openshift-mta
+spec:
+  hub_bucket_volume_size: "25Gi"
+  maven_data_volume_size: "25Gi"
+  rwx_supported: "false"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Edit the CR settings if needed, and then click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Workloads &#8594; Pods</strong> to verify that the MTA pods are running.</p>
+</li>
+<li>
+<p>Access the {WebName} from your browser by using the route exposed by the <code>{LC_PSN}-ui</code> application within OpenShift.</p>
+</li>
+<li>
+<p>Use the following credentials to log in:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>User name</strong>: admin</p>
+</li>
+<li>
+<p><strong>Password</strong>: Passw0rd!</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When prompted, create a new password.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-mta-operator-in-disconnected-environment_{context}">Installing the {ProductName} Operator in a disconnected {ocp-short} environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can install the {ProductShortName} Operator in a disconnected environment by following the instructions in <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/4.15/html/installing/disconnected-installation-mirroring#installing-mirroring-disconnected">generic procedure</a>.</p>
+</div>
+<div class="paragraph">
+<p>In step 1 of the generic procedure, configure the image set for mirroring as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">kind: ImageSetConfiguration
+apiVersion: mirror.openshift.io/v1alpha2
+storageConfig:
+  registry:
+    imageURL: registry.to.mirror.to
+    skipTLS: false
+mirror:
+  operators:
+  - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.15
+    packages:
+    - name: mta-operator
+      channels:
+      - name: stable-v7.0
+    - name: rhsso-operator
+      channels:
+      - name: stable
+  helm: {}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="memory-requirements-for-running-productshortname-on-red-hat-openshift-local">Memory requirements for running {ProductShortName} on Red Hat OpenShift Local</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When installed on <a href="https://developers.redhat.com/products/openshift-local/overview">Red Hat OpenShift Local</a>, {ProductShortName} requires a minimum amount of memory to complete its analysis. Adding memory makes the analysis process run faster. The table below describes the {ProductShortName} performance with varying amounts of memory.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. OpenShift Local {ProductShortName} memory requirements</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Memory (GiB)</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>10</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{ProductShortName} cannot run the analysis due to insufficient memory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>11</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{ProductShortName} cannot run the analysis due to insufficient memory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>12</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>{ProductShortName} works and the analysis is completed in approximately 3 minutes</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>15</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{ProductShortName} works and the analysis is completed in less than 2 minutes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>20</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{ProductShortName} works quickly, and the analysis is completed in less than 1 minute</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The test results indicate that the minimum amount of memory for running {ProductShortName} on OpenShift Local is <strong>12 GiB</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The tests were performed by running the {ProductShortName} binary analysis through the {WebName}.</p>
+</li>
+<li>
+<p>All the analyses used the <code>tackle-testapp</code> binary.</p>
+</li>
+<li>
+<p>All the tests were conducted on an OpenShift Local cluster without the monitoring tools installed.</p>
+</li>
+<li>
+<p>Installing the cluster monitoring tools requires an additional 5 GiB of memory.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="eviction-threshold_{context}">Eviction threshold</h3>
+<div class="paragraph">
+<p>Each node has a certain amount of memory allocated to it. Some of that memory is reserved for system services. The rest of the memory is intended for running pods. If the pods use more than their allocated amount of memory, an out-of-memory event is triggered and the node is terminated with a <code>OOMKilled</code> error.</p>
+</div>
+<div class="paragraph">
+<p>To prevent out-of-memory events and protect nodes, use the <code>--eviction-hard</code> setting. This setting specifies the threshold of memory availability below which the node evicts pods. The value of the setting can be absolute or a percentage.</p>
+</div>
+<div class="ulist">
+<div class="title">Example of node memory allocation settings</div>
+<ul>
+<li>
+<p>Node capacity: <code>32 GiB</code></p>
+</li>
+<li>
+<p><code>--system-reserved</code> setting: <code>3 GiB</code></p>
+</li>
+<li>
+<p><code>--eviction-hard</code> setting: <code>100 MiB</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The amount of memory available for running pods on this node is 28.9 GiB. This amount is calculated by subtracting the <code>system-reserved</code> and <code>eviction-hard</code> values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="red-hat-single-sign-on">Red Hat Single Sign-On</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>{ProductShortName} delegates authentication and authorization to a
+<a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6">Red
+Hat Single Sign-On</a> (RHSSO) instance managed by the {ProductShortName} operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the {ProductShortName} operator also manages the configuration of a dedicated
+<a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms">realm</a> that contains all the roles and permissions that {ProductShortName} requires.</p>
+</div>
+<div class="paragraph">
+<p>If an advanced configuration is required in the {ProductShortName} managed RHSSO instance, such as <a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider">adding
+a provider for User Federation</a> or <a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker">integrating
+identity providers</a>, users can log into the RHSSO <a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console">Admin
+Console</a> through the <code>/auth/admin</code> subpath in the <code>{LC_PSN}-ui</code> route. The admin credentials to access the {ProductShortName} managed RHSSO instance can be retrieved from the <code>credential-mta-rhsso</code> secret available in the namespace in which the {WebName} was installed.</p>
+</div>
+<div class="paragraph">
+<p>A dedicated route for the {ProductShortName} managed RHSSO instance can be created by setting the <code>rhsso_external_access</code> parameter to <code>True</code> in the <strong>Tackle CR</strong> that manages the {ProductShortName} instance.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see
+<a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts">Red
+Hat Single Sign-On features and concepts</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="roles-and-permissions">Roles and Permissions</h3>
+<div class="paragraph">
+<p>The following table contains the roles and permissions (scopes) that {ProductShortName} seeds the managed RHSSO instance with:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 34%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tackle-admin</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Resource Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Verbs</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">adoptionplans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">post<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.facts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assessments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+patch<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">businessservices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jobfunctions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">proxies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reviews</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholdergroups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tagtypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tickets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trackers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rulebundles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tackle-architect</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Resource Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Verbs</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">adoptionplans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">post<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.facts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assessments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+patch<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">businessservices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jobfunctions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">proxies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reviews</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholdergroups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tagtypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trackers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tickets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rulebundles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tackle-migrator</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Resource Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Verbs</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">adoptionplans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">post<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.facts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assessments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br>
+post<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">businessservices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jobfunctions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">proxies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reviews</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholdergroups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tagtypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tackers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tickets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rulebundles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

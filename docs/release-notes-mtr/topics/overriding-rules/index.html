@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/release-notes-mtr/topics/overriding-rules/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/release-notes-mtr/topics/overriding-rules/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/release-notes-mtr/topics/overriding-rules/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="overriding-rules_{context}">Overriding rules</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can override core rules distributed with {ProductShortName} or even custom rules. For example, you can change the matching conditions, effort, or hint text for a rule. This is done by making a copy of the original rule, marking it as a rule override, and making the necessary adjustments.</p>
+</div>
+<div class="paragraph">
+<p>You can disable a rule by creating a rule override with an empty <code>&lt;rule&gt;</code> element.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overriding-a-rule">Overriding a rule</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can override a core or custom rule.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Copy the XML file that contains the rule you want to override to the custom rules directory.</p>
+<div class="paragraph">
+<p>Custom rules can be placed in <code>&lt;{ProductShortName}_HOME&gt;/rules</code>, <code>${user.home}/.{LC_PSN}/rules/</code>, or a directory specified by the <code>--userRulesDirectory</code> command-line argument.</p>
+</div>
+</li>
+<li>
+<p>Edit the XML file so that it contains only the <code>&lt;rule&gt;</code> elements for the rules that you want to override.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Rules from the original ruleset that are not overridden by the new ruleset are run as normal.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Ensure that you keep the same rule and ruleset IDs. When you copy the original rule XML, this ensures that the IDs match.</p>
+</li>
+<li>
+<p>Ensure that the target technology in the override ruleset matches one of the targets that you specified for running the analysis.</p>
+</li>
+<li>
+<p>Add the <code>&lt;overrideRules&gt;true&lt;/overrideRules&gt;</code> element to the ruleset metadata.</p>
+</li>
+<li>
+<p>Update the rule definition.</p>
+<div class="paragraph">
+<p>You can change anything in the rule definition. The new rule overrides the original rule in its entirety.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following rule override example changes the <code>effort</code> of the <code>weblogic-02000</code> rule in the <code>weblogic</code> ruleset from <code>1</code> to <code>3</code>:</p>
+</div>
+<div class="listingblock">
+<div class="title">Rule override definition example</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset id="weblogic"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt; <b class="conum">(1)</b>
+    &lt;metadata&gt;
+        ...
+        &lt;overrideRules&gt;true&lt;/overrideRules&gt; <b class="conum">(2)</b>
+    &lt;/metadata&gt;
+    &lt;rules&gt;
+        &lt;rule id="weblogic-02000" xmlns="http://windup.jboss.org/schema/jboss-ruleset"&gt; <b class="conum">(3)</b>
+            &lt;when&gt;
+                &lt;javaclass references="weblogic.utils.StringUtils.{*}"/&gt;
+            &lt;/when&gt;
+            &lt;perform&gt;
+                &lt;hint effort="3" category-id="mandatory" title="WebLogic StringUtils Usage"&gt; <b class="conum">(4)</b>
+                    &lt;message&gt;Replace with the StringUtils class from Apache Commons.&lt;/message&gt;
+                    &lt;link href="https://commons.apache.org/proper/commons-lang/" title="Apache Commons Lang"/&gt;
+                    &lt;tag&gt;weblogic&lt;/tag&gt;
+                &lt;/hint&gt;
+            &lt;/perform&gt;
+        &lt;/rule&gt;
+    &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Ensure that the <code>ruleset id</code> matches the original <code>ruleset id</code>.</p>
+</li>
+<li>
+<p>Add <code>&lt;overrideRules&gt;true&lt;/overrideRules&gt;</code> to the <code>&lt;metadata&gt;</code> section.</p>
+</li>
+<li>
+<p>Ensure that the <code>rule id</code> matches the original <code>rule id</code>.</p>
+</li>
+<li>
+<p>Updated <code>effort</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When you run {ProductShortName}, this rule overrides the original rule with the same rule ID. You can verify that the new rule was used by viewing the contents of the Rule Provider Executions Overview.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="disabling-a-rule">Disabling a rule</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To disable a rule, create a rule override definition with an empty <code>&lt;rule&gt;</code> element according to the following example:</p>
+</div>
+<div class="listingblock">
+<div class="title">Rule override definition example to disable a rule</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset id="weblogic"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+    &lt;metadata&gt;
+        ...
+        &lt;overrideRules&gt;true&lt;/overrideRules&gt;
+    &lt;/metadata&gt;
+    &lt;rules&gt;
+        &lt;rule id="weblogic-02000" xmlns="http://windup.jboss.org/schema/jboss-ruleset"&gt;
+        <b class="conum">(1)</b>
+        &lt;/rule&gt;
+    &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>The <code>&lt;rule&gt;</code> element is empty so that the <code>weblogic-02000</code> rule in the <code>weblogic</code> ruleset is disabled.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

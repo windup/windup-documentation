@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/review-quickstarts/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/review-quickstarts/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/review-quickstarts/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="review-quickstarts_{context}">Reviewing the {ProductName} quickstarts</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The {ProductName} quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.</p>
+</div>
+<div class="paragraph">
+<p>Each quickstart has a <code>README.adoc</code> file that contains instructions for that quickstart.</p>
+</div>
+<div class="paragraph">
+<p>You can download a <code>.zip</code> file of the latest version of the quickstarts. If you prefer to work with the source code, you can fork and clone the <code>windup-quickstarts</code> project repository.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="download_quickstart_zip_{context}">Downloading the latest quickstart</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can download the latest release of a quickstart.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Launch a browser and navigate to <a href="https://github.com/windup/windup-quickstarts/releases">https://github.com/windup/windup-quickstarts/releases</a>.</p>
+</li>
+<li>
+<p>Click the latest release to download the <code>.zip</code> file to your local file system.</p>
+</li>
+<li>
+<p>Extract the archive files to a local directory.</p>
+<div class="paragraph">
+<p>You can review the quickstart <code>README.adoc</code> file.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-quickstart-github-project_{context}">Forking and cloning the quickstart GitHub project</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can fork and clone the Quickstart Github project on your local machine.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have <a href="http://git-scm.com/"><code>git</code></a> client installed.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>Fork</strong> on the <a href="https://github.com/windup/windup-quickstarts/">{ProductName} quickstart</a> GitHub page to create the project in your own Git. The forked GitHub repository URL should look like this: <code>https://github.com/&lt;YOUR_USER_NAME&gt;/windup-quickstarts.git</code>.</p>
+</li>
+<li>
+<p>Clone the {ProductName} quickstart repository to your local file system:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git clone https://github.com/&lt;YOUR_USER_NAME&gt;/windup-quickstarts.git</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This creates a <code>windup-quickstarts</code> directory on your local file system.</p>
+</div>
+</li>
+<li>
+<p>Navigate to the newly created directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cd windup-quickstarts/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>To retrieve the latest code updates, add the remote <code>upstream</code> repository so that you can fetch changes to the original forked repository:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git remote add upstream https://github.com/windup/windup-quickstarts.git</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Download the latest files from the <code>upstream</code> repository:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git fetch upstream</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

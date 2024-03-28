@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/release-notes/topics/mavenize/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/release-notes/topics/mavenize/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/release-notes/topics/mavenize/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mavenize_{context}">Mavenizing your application</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>{ProductShortName} provides the ability to generate an Apache Maven project structure based on the application provided. This will create a directory structure with the necessary Maven Project Object Model (POM) files that specify the appropriate dependencies.</p>
+</div>
+<div class="paragraph">
+<p>Note that this feature is not intended to create a final solution for your project. It is meant to give you a starting point and identify the necessary dependencies and APIs for your application. Your project may require further customization.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="generating-the-maven-project-structure">Generating the Maven project structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can generate a Maven project structure for the provided application by passing in the <code>--mavenize</code> flag when executing {ProductShortName}.</p>
+</div>
+<div class="paragraph">
+<p>The following example runs {ProductShortName} using the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> test application:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ &lt;{ProductShortName}_HOME&gt;/{mta-cli} --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --target eap:6 --packages com.acme org.apache --mavenize</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This generates the Maven project structure in the <code>/path/to/output/mavenized</code> directory.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can only use the <code>--mavenize</code> option when providing a compiled application for the <code>--input</code> argument. This feature is not available when running {ProductShortName} against source code.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You can also use the <code>--mavenizeGroupId</code> option to specify the <code>&lt;groupId&gt;</code> to be used for the POM files. If unspecified, {ProductShortName} will attempt to identify an appropriate <code>&lt;groupId&gt;</code> for the application, or will default to <code>com.mycompany.mavenized</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reviewing-the-maven-project-structure">Reviewing the Maven project structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>/path/to/output/mavenized/&lt;APPLICATION_NAME&gt;/</code> directory contains the following items:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A root <code>POM</code> file. This is the <code>pom.xml</code> file at the top-level directory.</p>
+</li>
+<li>
+<p>A BOM file. This is the <code>POM</code> file in the directory ending with <code>-bom</code>.</p>
+</li>
+<li>
+<p>One or more application <code>POM</code> files. Each module has its <code>POM</code> file in a directory named after the archive.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The example <code>jee-example-app-1.0.0.ear</code> application is an EAR archive that contains a WAR and several JARs. There is a separate directory created for each of these artifacts. Below is the Maven project structure created for this application.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">/path/to/output/mavenized/jee-example-app/
+    jee-example-app-bom/pom.xml
+    jee-example-app-ear/pom.xml
+    jee-example-services2-jar/pom.xml
+    jee-example-services-jar/pom.xml
+    jee-example-web-war/pom.xml
+    pom.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Review each of the generated files and customize as appropriate for your project. To learn more about Maven POM files, see the <a href="https://maven.apache.org/guides/introduction/introduction-to-the-pom.html">Introduction to the POM</a> section of the Apache Maven documentation.</p>
+</div>
+<h3 id="root-pom-file_{context}" class="discrete">Root POM file</h3>
+<div class="paragraph">
+<p>The root POM file for the <code>jee-example-app-1.0.0.ear</code> application can be found at <code>/path/to/output/mavenized/jee-example-app/pom.xml</code>. This file identifies the directories for all of the project modules.</p>
+</div>
+<div class="paragraph">
+<p>The following modules are listed in the root POM for the example <code>jee-example-app-1.0.0.ear</code> application.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;modules&gt;
+  &lt;module&gt;jee-example-app-bom&lt;/module&gt;
+  &lt;module&gt;jee-example-services2-jar&lt;/module&gt;
+  &lt;module&gt;jee-example-services-jar&lt;/module&gt;
+  &lt;module&gt;jee-example-web-war&lt;/module&gt;
+  &lt;module&gt;jee-example-app-ear&lt;/module&gt;
+&lt;/modules&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Be sure to reorder the list of modules if necessary so that they are listed in an appropriate build order for your project.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The root POM is also configured to use the <a href="https://maven.repository.redhat.com/">Red Hat JBoss Enterprise Application Platform Maven repository</a> to download project dependencies.</p>
+</div>
+<h3 id="bom-file_{context}" class="discrete">BOM file</h3>
+<div class="paragraph">
+<p>The Bill of Materials (BOM) file is generated in the directory ending in <code>-bom</code>. For the example <code>jee-example-app-1.0.0.ear</code> application, the BOM file can be found at <code>/path/to/output/mavenized/jee-example-app/jee-example-app-bom/pom.xml</code>. The purpose of this BOM is to have the versions of third-party dependencies used by the project defined in one place. For more information on using a BOM, see the <a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">Introduction to the dependency mechanism</a> section of the Apache Maven documentation.</p>
+</div>
+<div class="paragraph">
+<p>The following dependencies are listed in the BOM for the example <code>jee-example-app-1.0.0.ear</code> application</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;dependencyManagement&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;log4j&lt;/groupId&gt;
+      &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+      &lt;version&gt;1.2.6&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;commons-lang&lt;/groupId&gt;
+      &lt;artifactId&gt;commons-lang&lt;/artifactId&gt;
+      &lt;version&gt;2.5&lt;/version&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;</code></pre>
+</div>
+</div>
+<h3 id="app-pom-files_{context}" class="discrete">Application POM files</h3>
+<div class="paragraph">
+<p>Each application module that can be mavenized has a separate directory containing its POM file. The directory name contains the name of the archive and ends in a <code>-jar</code>, <code>-war</code>, or <code>-ear</code> suffix, depending on the archive type.</p>
+</div>
+<div class="paragraph">
+<p>Each application POM file lists that module&#8217;s dependencies, including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Third-party libraries</p>
+</li>
+<li>
+<p>Java EE APIs</p>
+</li>
+<li>
+<p>Application submodules</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the POM file for the <code>jee-example-app-1.0.0.ear</code> EAR, <code>/path/to/output/mavenized/jee-example-app/jee-example-app-ear/pom.xml</code>, lists the following dependencies.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;log4j&lt;/groupId&gt;
+    &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+    &lt;version&gt;1.2.6&lt;/version&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.jboss.seam&lt;/groupId&gt;
+    &lt;artifactId&gt;jee-example-web-war&lt;/artifactId&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+    &lt;type&gt;war&lt;/type&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.jboss.seam&lt;/groupId&gt;
+    &lt;artifactId&gt;jee-example-services-jar&lt;/artifactId&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.jboss.seam&lt;/groupId&gt;
+    &lt;artifactId&gt;jee-example-services2-jar&lt;/artifactId&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

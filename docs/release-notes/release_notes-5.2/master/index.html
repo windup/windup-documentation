@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>{ReleaseNotesName} | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="{ReleaseNotesName}" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/release-notes/release_notes-5.2/master/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/release-notes/release_notes-5.2/master/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="{ReleaseNotesName}" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"{ReleaseNotesName}","url":"https://windup.github.io/windup-documentation/docs/release-notes/release_notes-5.2/master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1>{ReleaseNotesName}</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#making-open-source-more-inclusive">Making open source more inclusive</a></li>
+<li><a href="#rn-new-features_release-notes">1. New features</a></li>
+<li><a href="#rn-known-issues_release-notes">2. Known issues</a></li>
+<li><a href="#rn-resolved-issues_release-notes">3. Resolved issues</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="making-open-source-more-inclusive">Making open source more inclusive</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rn-new-features_release-notes">1. New features</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes the new features of the Migration Toolkit for Applications (MTA) 7.0.1.</p>
+</div>
+<div class="paragraph">
+<div class="title">Analyze Known Libraries</div>
+<p>You can now use the <code>analyzeKnownLibraries</code> advanced option to analyze libraries embedded within your applications. This feature lets you go beyond the default behavior of MTA, which is to only analyze application code.</p>
+</div>
+<div class="paragraph">
+<div class="title">Rules for migrating from OpenJDK 8 to OpenJDK 11</div>
+<p>MTA now includes rules to help you migrate applications from OpenJDK 8 (Java 8) to 11.</p>
+</div>
+<div class="paragraph">
+<div class="title">Technology Reports</div>
+<p>The technology reports have been enriched. The reports include new technologies, technology tags, and technology classifications.</p>
+</div>
+<div class="paragraph">
+<div class="title">Apply all Quick Fixes</div>
+<p>In the MTA IDE plugins and extensions, you can now apply all suggested quick fixes at once, rather than one by one.</p>
+</div>
+<div class="paragraph">
+<div class="title">Rules for migrating from Spring Boot to Quarkus</div>
+<p>Additional rules have been added to support migrating from Spring Boot to Quarkus.</p>
+</div>
+<div class="paragraph">
+<div class="title">Rules for migrating from IBM WebSphere to Open Liberty</div>
+<p>A comprehensive collection of rules has been added to support migrating traditional IBM WebSphere applications to Open Liberty.</p>
+</div>
+<div class="ulist">
+<div class="title">New OpenRewrite capabilities including additional recipes</div>
+<ul>
+<li>
+<p>The integration of MTA with OpenRewrite has been extended to support multiple migration paths.</p>
+</li>
+<li>
+<p>An additional recipe for the <code>javax</code> to <code>jakarta</code> transformation path has been added, as well as the first Spring Boot to Quarkus recipe.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>OpenRewrite is provided as Technology Preview only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs), might not be functionally complete, and Red Hat does not recommend to use them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="https://access.redhat.com/support/offerings/techpreview">Technology Preview features support scope</a> on the Red&nbsp;Hat Customer Portal for information about the support scope for Technology Preview features.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rn-known-issues_release-notes">2. Known issues</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At the time of release, the following known issues have been identified as major issues worth highlighting.</p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all known issues, see the list of <a href="https://issues.redhat.com/issues/?filter=12393203">MTA 1.0.0 known issues</a> in Jira.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Major known issues</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3227">WINDUP-3227</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Migration - Application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>IncludeTags</code> advanced option does not work.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3266">WINDUP-3266</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IntelliJ extension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When you run an analysis via the extension, an exception related to <code>getFile</code> occurs intermittently.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3267">WINDUP-3267</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web console</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There is no option in the web console to navigate to or to download mavenized <code>pom.xml</code> files generated if you enable the <code>mavenized</code> option.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3318">WINDUP-3318</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web console on OpenShift Container Platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When you upload MTA custom labels and enable advanced options, analysis fails.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3322">WINDUP-3322</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web console</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When you edit any project and make any changes to a custom rule or a custom label, the <strong>Save</strong> and <strong>Save and Run</strong> buttons remain disabled. Workaround: You can make these changes in the <strong>Analysis configuration</strong> screen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUPRULE-762">WINDUPRULE-762</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web console</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When an analysis that you run on OpenShift Container Platform from MTA fails, logs are not visible.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3367">WINDUP-3367</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenShift Container Platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When you enable FIPS on OpenJDK 11 and then install MTA 5.3.0.Final on OpenShift Container Platform, some pods do not come up.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rn-resolved-issues_release-notes">3. Resolved issues</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>At the time of the release, the following resolved issues have been identified as major issues worth highlighting:</p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all issues resolved in this release, see the list of <a href="https://issues.redhat.com/browse/WINDUP-3317?filter=12393204">MTA 7.0.1 resolved issues</a> in Jira.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Major resolved issues</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">Component</th>
+<th class="tableblock halign-left valign-top">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-2622">WINDUP-2622</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web console on OpenShift Container Platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Custom rules do not work on OpenShift Container Platform.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3234">WINDUP-3234</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rules engine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When an analysis using source mode is run on an application source directory that has the target subdirectory, the contents of the target subdirectory are added to the analysis scope. This leads to duplication or possible errors in the results.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3263">WINDUP-3263</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Migration - Application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>excludePackages</code> argument does not work.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3233">WINDUP-3233</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rules engine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POM files inside a binary are not consistently analyzed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://issues.redhat.com/browse/WINDUP-3336">WINDUP-3336</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Web console</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There is a package discovery problem in the MTA user interface when running in source mode.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

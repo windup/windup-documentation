@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/eclipse-code-ready-studio-guide/topics/installing-cli-tool/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/eclipse-code-ready-studio-guide/topics/installing-cli-tool/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/eclipse-code-ready-studio-guide/topics/installing-cli-tool/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="installing-cli-tool_{context}">Installing the {CLINameTitle}</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Red Hat Container Registry Authentication for <code>registry.redhat.io</code>. Red Hat distributes container images from registry.redhat.io, which requires authentication. For more details, see <a href="https://access.redhat.com/RegistryAuthentication">Red Hat Container Registry Authentication</a>.</p>
+</li>
+<li>
+<p>Podman must be installed</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Podman</div>
+<div class="paragraph">
+<p>Podman is a daemonless, open source, Linux native tool designed to make it easy to find, run, build, share and deploy applications using Open Containers Initiative (OCI) Containers and Container Images.
+Podman provides a command line interface (CLI) familiar to anyone who has used the Docker Container Engine.
+For more information on installing and using Podman, see <a href="https://podman.io/docs/installation">Podman installation instructions</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-downloadable-cli-zip_{context}">Installing the {CLINameTitle} <code>.zip</code> file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>To install using the downloadable <code>.zip</code> file:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the <a href="{DevDownloadPageURL}">{ProductShortName} Download page</a> and download the OS specific CLI file or the <code>src</code> file:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>mta-7.0.0-cli-linux.zip</p>
+</li>
+<li>
+<p>mta-7.0.0-cli-macos.zip</p>
+</li>
+<li>
+<p>mta-7.0.0-cli-windows.zip</p>
+</li>
+<li>
+<p>mta-7.0.0-cli-src.zip</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Extract the <code>.zip</code> file to a directory of your choice. The <code>.zip</code> file extracts a single binary, called <strong>mta-cli</strong>.</p>
+<div class="paragraph">
+<p>When you encounter <code>&lt;{ProductShortName}_HOME&gt;</code> in this guide, replace it with the actual path to your {ProductShortName} installation.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-using-podman_{context}">Installing the {CLINameTitle} using Podman</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Red Hat Container Registry Authentication for <code>registry.redhat.io</code>. Red Hat distributes container images from registry.redhat.io, which requires authentication. For more details, see <a href="https://access.redhat.com/RegistryAuthentication">Red Hat Container Registry Authentication</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>To install using <code>podman pull</code>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To use Podman to authenticate to registry.redhat.io:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">podman login registry.redhat.io
+Username: &lt;username&gt;
+Password: &lt;***********&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Issue:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">podman cp $(podman create registry.redhat.com/mta-toolkit/mta-mta-cli-rhel9:{ProductVersion}):/usr/local/bin/mta-cli ./</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command will copy the binary <code>PATH</code> for system-wide use.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Although installation using Podman is possible, downloading installing the <code>.zip</code> file is the preferred installation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

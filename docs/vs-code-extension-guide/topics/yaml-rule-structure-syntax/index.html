@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/yaml-rule-structure-syntax/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/yaml-rule-structure-syntax/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/yaml-rule-structure-syntax/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="yaml-rule-structure-syntax_{context}">YAML rule structure and syntax</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>{ProductShortName} rules are written in YAML. Each rule consists of metadata, conditions and actions, which instruct the analyzer to take specified actions when given conditions match.</p>
+</div>
+<div class="paragraph">
+<p>A YAML rule file in {ProductShortName} contains one or more YAML rules.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="yaml-rule-metadata_{context}">Rule metadata</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rule metadata contains general information about the rule. The structure of metadata is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">ruleId: "unique_id" <b class="conum">(1)</b>
+labels: <b class="conum">(2)</b>
+  # key=value pair
+  - "label1=val1"
+  # valid label with value omitted
+  - "label2"
+  # valid label with empty value
+  - "label3="
+  # subdomain prefixed key
+  - "konveyor.io/label1=val1"
+effort: 1 <b class="conum">(3)</b>
+category: mandatory <b class="conum">(4)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>The ID must be unique within the ruleset to which the rule belongs.</p>
+</li>
+<li>
+<p>See below for a description of the label format.</p>
+</li>
+<li>
+<p><code>effort</code> is an integer value that indicates the level of effort needed to fix this issue.</p>
+</li>
+<li>
+<p><code>category</code> describes the severity of the issue for migration. The value can be either <code>mandatory</code>, <code>optional</code> or <code>potential</code>. For a description of these categories, see <a href="#yaml-rule-categories_{context}">Rule categories</a>.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="yaml-rule-labels_{context}">Rule labels</h3>
+<div class="paragraph">
+<p>Labels are <code>key=val</code> pairs specified for rules or rulesets as well as dependencies. For dependencies, a provider adds the labels to the dependencies when retrieving them. Labels on a ruleset are automatically inherited by all the rules that belong to it.</p>
+</div>
+<div class="paragraph">
+<div class="title">Label format</div>
+<p>Labels are specified under the <code>labels</code> field as a list of strings in <code>key=val</code> format as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">labels:
+- "key1=val1"
+- "key2=val2"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The key of a label can be subdomain-prefixed:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">labels:
+- "konveyor.io/key1=val1"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The value of a label can be empty:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">labels:
+- "konveyor.io/key="</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The value of a label can be omitted. In that case, it is treated as an empty value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">labels:
+- "konveyor.io/key"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Reserved labels</div>
+<p>The analyzer defines some labels that have special meaning as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>konveyor.io/source</code>: Identifies the source technology to which a rule or a ruleset applies</p>
+</li>
+<li>
+<p><code>konveyor.io/target</code>: Identifies the target technology to which a rule or a ruleset applies</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Label selector</div>
+<p>The analyzer CLI takes the <code>--label-selector</code> field as an option. It is a string expression that supports logical AND, OR and NOT operations. You can use it to filter-in or filter-out rules by their labels.</p>
+</div>
+<div class="paragraph">
+<p><em>Examples:</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To filter-in all rules that have a label with the key <code>konveyor.io/source</code> and value <code>eap6</code>:</p>
+<div class="paragraph">
+<p><code>--label-selector="konveyor.io/source=eap6"</code></p>
+</div>
+</li>
+<li>
+<p>To filter-in all rules that have a label with the key <code>konveyor.io/source</code> and any value:</p>
+<div class="paragraph">
+<p><code>--label-selector="konveyor.io/source"</code></p>
+</div>
+</li>
+<li>
+<p>To perform logical AND operations on matches of multiple rules using the <code>&amp;&amp;</code> operator:</p>
+<div class="paragraph">
+<p><code>--label-selector="key1=val1 &amp;&amp; key2"</code></p>
+</div>
+</li>
+<li>
+<p>To perform logical OR operations on matches of multiple rules using the <code>||</code> operator:</p>
+<div class="paragraph">
+<p><code>--label-selector="key1=val1 || key2"</code></p>
+</div>
+</li>
+<li>
+<p>To perform a NOT operation to filter-out rules that have <code>key1=val1</code> label set using the <code>!</code> operator:</p>
+<div class="paragraph">
+<p><code>--label-selector="!key1=val1"</code></p>
+</div>
+</li>
+<li>
+<p>To group sub-expressions and control precedence using AND:</p>
+<div class="paragraph">
+<p><code>--label-selector="(key1=val1 || key2=val2) &amp;&amp; !val3"</code></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Dependency labels</div>
+<p>The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency, such as its programming language and whether the dependency is open-source or internal.</p>
+</div>
+<div class="paragraph">
+<p>Currently, the analyzer adds the following labels to dependencies:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">labels:
+- konveyor.io/dep-source=internal
+- konveyor.io/language=java</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Dependency label selector</div>
+<p>The analyzer CLI accepts the <code>--dep-label-selector</code> option, which allows filtering-in or filtering-out incidents generated from a dependency by their labels.</p>
+</div>
+<div class="paragraph">
+<p>For example, the analyzer adds a <code>konveyor.io/dep-source</code> label to dependencies with a value that indicates whether the dependency is a known open-source dependency.</p>
+</div>
+<div class="paragraph">
+<p>To exclude incidents for all such open-source dependencies, you can use <code>--dep-label-selector</code> as follows:</p>
+</div>
+<div class="paragraph">
+<p><code>konveyor-analyzer &#8230;&#8203; --dep-label-selector !konveyor.io/dep-source=open-source</code></p>
+</div>
+<div class="paragraph">
+<p>The Java provider in the analyzer can also add an exclude label to a list of packages. To exclude all such packages, you can use <code>--dep-label-selector</code> and the <code>!</code> operator as follows:</p>
+</div>
+<div class="paragraph">
+<p><code>konveyor-analyzer &#8230;&#8203; --dep-label-selector !konveyor.io/exclude</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="yaml-rule-categories_{context}">Rule categories</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mandatory</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>You must resolve the issue for a successful migration, otherwise, the resulting application is not expected to build or run successfully. An example of such an issue is proprietary APIs that are not supported on the target platform.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>optional</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you do not resolve the issue, the application is expected to work, but the results might not be optimal. If you do not make the change at the time of migration, you need to put it on the schedule soon after your migration is completed. An example of such an issue is EJB 2.x code not upgraded to EJB 3.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>potential</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>You need to examine the issue during the migration process, but there is not enough information to determine whether resolving the issue is mandatory for the migration to succeed. An example of such an issue is migrating a third-party proprietary type when there is no directly compatible type on the target platform.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="yaml-rule-actions_{context}">Rule Actions</h3>
+<div class="paragraph">
+<p>Rules can include 2 types of actions: <em>message</em> and <em>tag</em>. Each rule includes one of them or both.</p>
+</div>
+<div class="paragraph">
+<div class="title">Message actions</div>
+<p>A message action creates an issue with a message when the rule matches. The custom data exported by providers can also be used in the message.</p>
+</div>
+<div class="paragraph">
+<p><code>message: "helpful message about the issue"</code></p>
+</div>
+<div class="paragraph">
+<p><em>Example:</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">- ruleID: test-rule
+  when:
+    &lt;CONDITION&gt;
+  message: Test rule matched. Please resolve this migration issue.</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Optionally, a message can include hyperlinks to external URLs that provide relevant information about the issue or a quick fix.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">links:
+  - url: "konveyor.io"
+    title: "Short title for the link"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A message can also be a template to include information about the match interpolated through custom variables on the rule.</p>
+</div>
+<div class="paragraph">
+<div class="title">Tag actions</div>
+<p>A tag action instructs the analyzer to generate one or more tags for the application when a match is found. Each string in the <code>tag</code> field can be a comma-separated list of tags. Optionally, you can assign categories to tags.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">tag:
+  - "tag1,tag2,tag3"
+  - "Category=tag4,tag5"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Example</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">- ruleID: test-rule
+  when:
+    &lt;CONDITION&gt;
+  tag:
+  - Language=Golang
+  - Env=production
+  - Source Code</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A tag can be a string or a <code>key=val</code> pair, where the key is treated as a tag category in {ProductShortName}. Any rule that has a tag action is referred to as a “tagging rule” in this document.</p>
+</div>
+<div class="paragraph">
+<p>Note that issues are not created for rules that contain only tag actions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="yaml-rule-conditions_{context}">Rule conditions</h3>
+<div class="paragraph">
+<p>Each rule has a <code>when</code> block, which specifies a condition that needs to be met for {ProductShortName} to perform a certain action.</p>
+</div>
+<div class="paragraph">
+<p>The <code>when</code> block contains one condition, but that condition can have multiple conditions nested under it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  &lt;condition&gt;
+    &lt;nested-condition&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>{ProductShortName} supports three types of conditions: <code>provider</code>, <code>and</code>, and <code>or</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="provider-conditions">Provider conditions</h4>
+<div class="paragraph">
+<p>{ProductShortName} supports multi-language source code analysis. Searching for a specific language in the source code is enabled using the <code>provider</code> condition. This condition defines a search query for a specific language provider.  The <code>provider</code> condition also specifies which of the provider&#8217;s "capabilities" to use for analyzing the code.</p>
+</div>
+<div class="paragraph">
+<p>The <code>provider</code> condition has the form <code>&lt;provider_name&gt;.&lt;capability&gt;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  &lt;provider_name&gt;.&lt;capability&gt;
+    &lt;input_fields&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The analyzer currently supports the following <code>provider</code> conditions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>builtin</code></p>
+</li>
+<li>
+<p><code>java</code></p>
+</li>
+<li>
+<p><code>go</code></p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="builtin-provider"><code>builtin</code> provider</h5>
+<div class="paragraph">
+<p><code>builtin</code> is an internal provider that can analyze various files and internal metadata generated by the engine.</p>
+</div>
+<div class="paragraph">
+<p>This provider has the following capabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>file</code></p>
+</li>
+<li>
+<p><code>filecontent</code></p>
+</li>
+<li>
+<p><code>xml</code></p>
+</li>
+<li>
+<p><code>json</code></p>
+</li>
+<li>
+<p><code>hasTags</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title"><code>file</code></div>
+<p>The <code>file</code> capability enables the provider to search for files in the source code that match a given pattern.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  builtin.file:
+    pattern: "&lt;regex_to_match_filenames&gt;"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title"><code>filecontent</code></div>
+<p>The <code>filecontent</code> capability enables the provider to search for content that matches a given pattern.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  builtin.filecontent:
+    filePattern: "&lt;regex_to_match_filenames_to_scope_search&gt;"
+    pattern: "&lt;regex_to_match_content_in_the_matching_files&gt;"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title"><code>xml</code></div>
+<p>The <code>xml</code> capability enables the provider to query XPath expressions on a list of provided XML files. This capability takes 2 input parameters, <code>xpath</code> and <code>filepaths</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  builtin.xml:
+    xpath: "&lt;xpath_expressions&gt;" <b class="conum">(1)</b>
+    filepaths: <b class="conum">(2)</b>
+      - "/src/file1.xml"
+      - "/src/file2.xml"</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p><code>xpath</code> must be a valid XPath expression.</p>
+</li>
+<li>
+<p><code>filepaths</code> is a list of files to apply the XPath query to.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title"><code>json</code></div>
+<p>The <code>json</code> capability enables the provider to query XPath expressions on a list of provided JSON files. Currently, <code>json</code> only takes XPath as input and performs the search on all JSON files in the codebase.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  builtin.json:
+    xpath: "&lt;xpath_expressions&gt;" <b class="conum">(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p><code>xpath</code> must be a valid XPath expression.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title"><code>hasTags</code></div>
+<p>The <code>hasTags</code> capability enables the provider to query application tags. It queries the internal data structure to check whether the application has the given tags.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  # when more than one tags are given, a logical AND is implied
+  hasTags: <b class="conum">(1)</b>
+    - "tag1"
+    - "tag2"</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>When more than one tags is given, a logical AND is implied.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="java-provider"><code>java</code> provider</h5>
+<div class="paragraph">
+<p>The <code>java</code> provider analyzes Java source code.</p>
+</div>
+<div class="paragraph">
+<p>This provider has the following capabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>referenced</code></p>
+</li>
+<li>
+<p><code>dependency</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title"><code>referenced</code></div>
+<p>The <code>referenced</code> capability enables the provider to find references in the source code. This capability takes two input parameters, <code>pattern</code> and <code>location</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  java.referenced:
+    pattern: "&lt;pattern&gt;" <b class="conum">(1)</b>
+    location: "&lt;location&gt;" <b class="conum">(2)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>A RegEx pattern to match, for example, <code>org.kubernetes.*</code></p>
+</li>
+<li>
+<p>Specifies the exact location where the pattern needs to be matched, for example, <code>IMPORT</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The supported locations are the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>CONSTRUCTOR_CALL</code></p>
+</li>
+<li>
+<p><code>TYPE</code></p>
+</li>
+<li>
+<p><code>INHERITANCE</code></p>
+</li>
+<li>
+<p><code>METHOD_CALL</code></p>
+</li>
+<li>
+<p><code>ANNOTATION</code></p>
+</li>
+<li>
+<p><code>IMPLEMENTS_TYPE</code></p>
+</li>
+<li>
+<p><code>ENUM_CONSTANT</code></p>
+</li>
+<li>
+<p><code>RETURN_TYPE</code></p>
+</li>
+<li>
+<p><code>IMPORT</code></p>
+</li>
+<li>
+<p><code>VARIABLE_DECLARATION</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title"><code>dependency</code></div>
+<p>The <code>dependency</code> capability  enables the provider to find dependencies for a given application. {ProductShortName} generates a list of the application&#8217;s dependencies, and you can use this capability to query the list and check whether a certain dependency exists for the application within a given range of the dependency&#8217;s versions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  java.dependency:
+    name: "&lt;dependency_name&gt;" <b class="conum">(1)</b>
+    upperbound: "&lt;version_string&gt;" <b class="conum">(2)</b>
+    lowerbound: "&lt;version_string&gt;" <b class="conum">(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Name of the dependency to search for</p>
+</li>
+<li>
+<p>Upper bound on the version of the dependency</p>
+</li>
+<li>
+<p>Lower bound on the version of the dependency</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="go-provider"><code>go</code> provider</h5>
+<div class="paragraph">
+<p>The <code>go</code> provider analyzes Go source code.  This provider&#8217;s capabilities are <code>referenced</code> and <code>dependency</code>.</p>
+</div>
+<div class="paragraph">
+<div class="title"><code>referenced</code></div>
+<p>The <code>referenced</code> capability enables the provider to find references in the source code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  go.referenced: "&lt;regex_to_find_reference&gt;"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title"><code>dependency</code></div>
+<p>The <code>dependency</code> capability  enables the provider to find dependencies for an application.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  go.dependency:
+    name: "&lt;dependency_name&gt;" <b class="conum">(1)</b>
+    upperbound: "&lt;version_string&gt;" <b class="conum">(2)</b>
+    lowerbound: "&lt;version_string&gt;" <b class="conum">(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Name of the dependency to search for</p>
+</li>
+<li>
+<p>Upper bound on the version of the dependency</p>
+</li>
+<li>
+<p>Lower bound on the version of the dependency</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="custom-variables">Custom variables</h4>
+<div class="paragraph">
+<p>Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule’s action (see <a href="#yaml-rule-actions_{context}">Message actions</a>). They can be added to a rule in the <code>customVariables</code> field:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">- ruleID: lang-ref-004
+   customVariables:
+   - pattern: '([A-z]+)\.get\(\)' <b class="conum">(1)</b>
+      name: VariableName <b class="conum">(2)</b>
+    message: "Found generic call - {{ VariableName }}" <b class="conum">(3)</b>
+  when:
+      java.referenced:
+          location: METHOD_CALL
+          pattern: com.example.apps.GenericClass.get</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p><code>pattern</code>: A RegEx pattern that is matched on the source code line when a match is found</p>
+</li>
+<li>
+<p><code>name</code>: The name of the variable that can be used in templates</p>
+</li>
+<li>
+<p><code>message</code>: A template for a message using a custom variable</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="logical-conditions">Logical conditions</h3>
+<div class="paragraph">
+<p>The analyzer provides two basic logical conditions, <code>and</code> and <code>or</code>, which enable you to aggregate results of other conditions and create more complex queries.</p>
+</div>
+<div class="sect3">
+<h4 id="and-condition"><code>and</code> condition</h4>
+<div class="paragraph">
+<p>The <code>and</code> condition performs a logical AND operation on the results of an array of conditions. An <code>and</code> condition matches when <em>all</em> of its child conditions match.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  and:
+    - &lt;condition1&gt;
+    - &lt;condition2&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Example</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  and:
+    - java.dependency:
+        name: junit.junit
+        upperbound: 4.12.2
+        lowerbound: 4.4.0
+    - java.referenced:
+        location: IMPORT
+        pattern: junit.junit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Conditions can also be nested within other conditions.</p>
+</div>
+<div class="paragraph">
+<p><em>Example</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  and:
+  - and:
+    - go.referenced: "*CustomResourceDefinition*"
+    - java.referenced:
+        pattern: "*CustomResourceDefinition*"
+  - go.referenced: "*CustomResourceDefinition*"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="or-condition"><code>or</code> condition</h4>
+<div class="paragraph">
+<p>The <code>or</code> condition performs a logical OR operation on the results of an array of conditions. An <code>or</code> condition matches when <em>any</em> of its child conditions matches.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  or:
+    - &lt;condition1&gt;
+    - &lt;condition2&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Example</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  or:
+  - java.dependency:
+      name: junit.junit
+      upperbound: 4.12.2
+      lowerbound: 4.4.0
+  - java.referenced:
+      location: IMPORT
+      pattern: junit.junit</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rulesets">Rulesets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A set of rules forms a ruleset. {ProductShortName} does not require every rule file to belong to a ruleset, but you can use rulesets to group multiple rules that achieve a common goal and to pass the rules to the rules engine.</p>
+</div>
+<div class="paragraph">
+<p>You can create a ruleset by placing one or more YAML rules in a directory and creating a <code>ruleset.yaml</code> file at the directory root. When you pass this directory as input to the {ProductShortName} {CLIName} using the <code>--rules</code> option, all rules in this directory are treated as a part of the ruleset defined by <code>ruleset.yaml</code> file.</p>
+</div>
+<div class="paragraph">
+<p>The <code>ruleset.yaml</code> file stores the metadata of the ruleset.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">name: "Name of the ruleset" <b class="conum">(1)</b>
+description: "Description of the ruleset"
+labels: <b class="conum">(2)</b>
+  - key=val</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>The name must be unique within the provided rulesets.</p>
+</li>
+<li>
+<p>Ruleset labels are inherited by all rules that belong to the ruleset.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

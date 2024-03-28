@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/eclipse-reviewing-issues/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/eclipse-reviewing-issues/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/eclipse-reviewing-issues/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="eclipse-reviewing-issues_{context}">Reviewing issues</h1>
+<div class="paragraph">
+<p>You can review issues identified by the {PluginName}.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>Window</strong> &#8594; <strong>Show View</strong> &#8594; <strong>Issue Explorer</strong>.</p>
+</li>
+<li>
+<p>Optional: Filter the issues by clicking the Options menu {kebab}, selecting <strong>Group By</strong> and an option.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/mta_group_by.png" alt="Issue Explorer &quot;Group By&quot; options">
+</div>
+</div>
+</li>
+<li>
+<p>Right-click and select <strong>Issue Details</strong> to view information about the issue, including its severity and how to address it.</p>
+<div class="paragraph">
+<p>The following icons indicate the severity and state of an issue:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Issue icons</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Icon</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../topics/images/error.png" alt="Mandatory">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue must be fixed for a successful migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../topics/images/info.gif" alt="Optional">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue is optional to fix for migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../topics/images/warning.png" alt="Warning">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue might need to be addressed during migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../topics/images/fixedIssue.gif" alt="Resolved">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue was resolved.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../topics/images/stale_issue.gif" alt="Stale">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The issue is stale. The code marked as an issue was modified since the last time that {ProductShortName} identified it as an issue.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../topics/images/quickfix_error.png" alt="Mandatory with quick fix">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A quick fix is available for this issue, which is mandatory to fix for a successful migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../topics/images/quickfix_info.png" alt="Optional with quick fix">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A quick fix is available for this issue, which is optional to fix for migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="../topics/images/quickfix_warning.png" alt="Warning with quick fix">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A quick fix is available for this issue, which may potentially be an issue during migration.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Double-click an issue to open the associated line of code in an editor.</p>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

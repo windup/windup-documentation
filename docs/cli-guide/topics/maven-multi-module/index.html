@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/cli-guide/topics/maven-multi-module/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/cli-guide/topics/maven-multi-module/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/cli-guide/topics/maven-multi-module/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="maven-multi-module_{context}">Running the {MavenNameTitle} with multiple modules</h1>
+<div class="paragraph">
+<p>To use the {MavenName} in a project with multiple modules, place the configuration inside the parent&#8217;s <code>pom.xml</code>. The {MavenName} will generate a single report that contains the analysis for the parent and any child modules.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+It is strongly recommended to set <code>inherited</code> to false in multi-module projects; otherwise, the {MavenName} will run when each child is compiled, resulting in multiple executions of the {MavenName} against the child modules. Setting <code>inherited</code> to false results in each project being analyzed a single time and drastically decreased run times.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To run the {MavenName} in a project with multiple modules, perform the following steps.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Include the following plugin inside the parent project&#8217;s <code>pom.xml</code>. The following is a sample <code>pom.xml</code> for a parent module.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;plugin&gt;
+    &lt;groupId&gt;org.jboss.windup.plugin&lt;/groupId&gt;
+    &lt;artifactId&gt;{LC_PSN}-maven-plugin&lt;/artifactId&gt;
+    &lt;version&gt;{ProductDistributionVersion}&lt;/version&gt;
+    &lt;inherited&gt;false&lt;/inherited&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;run-windup&lt;/id&gt;
+            &lt;phase&gt;package&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;windup&lt;/goal&gt;
+            &lt;/goals&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+    &lt;configuration&gt;
+        &lt;input&gt;${project.basedir}&lt;/input&gt;
+        &lt;target&gt;eap:7&lt;/target&gt; <b class="conum">(1)</b>
+        &lt;windupHome&gt;&gt;/PATH/TO/{CLIName}/&lt;&lt;/windupHome&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Specify a migration target. At least one migration target must be supplied within the configuration.</p>
+<div class="paragraph">
+<p>This <code>pom.xml</code> file differs from the default in the following attributes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>inherited</code>: Defined at the plugin level, this attribute indicates whether or not this configuration should be used in child modules. Set to <code>false</code> for performance improvements.</p>
+</li>
+<li>
+<p><code>input</code>: Specifies the path to the directory containing the projects to be analyzed. This attribute defaults to <code>{project.basedir}/src/main</code>, and should be defined if the parent project does not have source code to analyze.</p>
+</li>
+<li>
+<p><code>windupHome</code>: A path to an extracted copy of the {ProductShortName} {CLIName}. This attribute is optional, but is recommended as a performance improvement.</p>
+<div class="paragraph">
+<p>The above example demonstrates a set of recommended arguments.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Build the parent project. During the build process, the {MavenName} runs against all children in the project without further configuration.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ mvn clean install</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Once completed, you can access the generated reports. This report contains the analysis for the parent and all children.</p>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

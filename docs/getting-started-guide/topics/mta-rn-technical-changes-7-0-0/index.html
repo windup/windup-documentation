@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/getting-started-guide/topics/mta-rn-technical-changes-7-0-0/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/getting-started-guide/topics/mta-rn-technical-changes-7-0-0/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/getting-started-guide/topics/mta-rn-technical-changes-7-0-0/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mta-rn-technical-changes-7-0-0_{context}">Technical changes</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following technical changes have been made in {ProductFullName} 7.0.0:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Maven Plugin has been deprecated.</p>
+</li>
+<li>
+<p>Language Server Protocol (LSP) Analyzer change.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-rn-technical-changes-rules-7-0-0_{context}">Rules</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Rules can only be written in YAML</div>
+<p>Rules written in Groovy and Java are discontinued in {ProductShortName} version 7.0.0. Some of the previous Groovy Java rules have been converted to YAML rules wherever possible.</p>
+</div>
+<div class="paragraph">
+<p>An important modification to the rule&#8217;s engine is that it is no longer possible to query anything apart from the tags stored within the engine&#8217;s internal data structures. This means that all the features that were enabled by using the <code>graph-query</code> element in the rule are no longer available.</p>
+</div>
+<div class="paragraph">
+<div class="title">Java Class child elements not supported in {ProductShortName}</div>
+<p>The Java Class child elements <code>annotation-list</code>, <code>annotation-type</code> and <code>annotation-literal</code> are not supported in {ProductShortName} version 7.0.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">Elements &lt;project&gt; and &lt;dependency&gt; are merged into one dependency condition</div>
+<p>The capabilities of &lt;project&gt; and &lt;dependency&gt; elements in the old syntax are merged into one dependency condition in the new rules syntax.</p>
+</div>
+<div class="paragraph">
+<div class="title">Transformation capabilities of <code>xslt</code> element are discontinued</div>
+<p>XML transformation capabilities offered by the <code>xslt</code> element are discontinued.</p>
+</div>
+<div class="paragraph">
+<div class="title">Explicit <code>iteration</code> element is discontinued</div>
+<p>The explicit <code>iteration</code> element is discontinued in {ProductShortName} version 7.0.0. If a condition returns a list of items via the <code>as</code> construct, iteration is implied.</p>
+</div>
+<div class="paragraph">
+<div class="title">Test rules not supported in the current version</div>
+<p>Test rules are not supported in {ProductShortName} version 7.0.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">Overriding a rule discontinued</div>
+<p>Overriding a rule is discontinued in {ProductShortName} version 7.0.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">Creating custom rule categories discontinued</div>
+<p>Creating custom rule categories is discontinued in {ProductShortName} version 7.0.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">Information and optional categories of rules are discontinued.</div>
+<p>In {ProductShortName} version 7.0.0, any previous rules of information and optional categories will only create technology tags.</p>
+</div>
+<div class="paragraph">
+<div class="title">Java analysis capabilities</div>
+<p>In {ProductShortName} version 7.0.0, the following Java analysis capabilities have been deprecated:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ability to match on specific arguments of a Java method constructor is not supported in the current version</p>
+</li>
+<li>
+<p>Matching Java references from JavaServer Pages (JSP) files are not supported in the current version</p>
+</li>
+<li>
+<p><code>Mavenizing</code> a Java project, meaning write a POM and possibly move code around so that it builds in Maven, is discontinued.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Analysis report changes</div>
+<p>The following functionality in Analysis reports has been deprecated:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Story points are shown as integers. The “level of effort” view and their mappings are deprecated in {ProductShortName} version 7.0.0.</p>
+</li>
+<li>
+<p>Transactions reports are deprecated in {ProductShortName} version 7.0.0.</p>
+</li>
+<li>
+<p>The view for “Archives shared by multiple applications” is deprecated in {ProductShortName} version 7.0.0.</p>
+</li>
+<li>
+<p>The view for “Review rule providers execution overview” deprecated in {ProductShortName} version 7.0.0.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

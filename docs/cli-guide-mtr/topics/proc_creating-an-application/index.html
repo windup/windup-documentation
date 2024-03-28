@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/cli-guide-mtr/topics/proc_creating-an-application/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/cli-guide-mtr/topics/proc_creating-an-application/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/cli-guide-mtr/topics/proc_creating-an-application/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="creating-an-application_{context}">Creating an application by using MTA</h1>
+<div class="paragraph _abstract">
+<p>You can create a new application by using the {ProductName} {ProductShortName} user interface.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You are logged in to an {ProductShortName} server.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the {ProductShortName} user interface, select the <strong>Migration</strong> working mode.</p>
+</li>
+<li>
+<p>Click <strong>Application Inventory</strong> in the left menu bar.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>. The <strong>New application</strong> dialog appears.</p>
+</li>
+<li>
+<p>In the form, enter the following information:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Name</strong>: A unique name for the new application.</p>
+</li>
+<li>
+<p><strong>Description</strong>: A short description of the application (optional).</p>
+</li>
+<li>
+<p><strong>Business service</strong>: A purpose of the application (optional).</p>
+</li>
+<li>
+<p><strong>Tags</strong>: Software tags that characterize the application.</p>
+</li>
+<li>
+<p><strong>Owner</strong>: A registered software owner from the drop-down list (optional).</p>
+</li>
+<li>
+<p><strong>Contributors</strong>: Contributors from the drop-down list (optional).</p>
+</li>
+<li>
+<p><strong>Comments</strong>: Relevant comments on the migrated application.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Click <strong>Source code</strong> and enter the following fields:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Repository type</strong>: <strong>Git</strong> or <strong>Subversion</strong>.</p>
+</li>
+<li>
+<p><strong>Source repository</strong>: A URL of the repository where the software code is saved.</p>
+</li>
+<li>
+<p><strong>Branch</strong>: An application code branch in the repository (optional).</p>
+</li>
+<li>
+<p><strong>Root path</strong>: A root path inside the repository for the target application (optional).</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you enter any value in either the <strong>Branch</strong> or <strong>Root path</strong> fields, the <strong>Source repository</strong> field becomes mandatory.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Optional: Click <strong>Binary</strong> and enter the following fields:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Group</strong>: The Maven group for the application artifact.</p>
+</li>
+<li>
+<p><strong>Artifact</strong>: The Maven artifact for the application.</p>
+</li>
+<li>
+<p><strong>Version</strong>: A software version of the application.</p>
+</li>
+<li>
+<p><strong>Packaging</strong>: The packaging for the application artifact, for example, <code>JAR</code>, <code>WAR</code>, or <code>EAR</code>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you enter any value in any of the Binary section fields, all fields automatically become mandatory.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>. The dialog closes and the new application appears in the list of defined applications.</p>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

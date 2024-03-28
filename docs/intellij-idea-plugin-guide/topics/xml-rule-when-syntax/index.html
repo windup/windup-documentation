@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/xml-rule-when-syntax/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/xml-rule-when-syntax/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/xml-rule-when-syntax/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="xml-rule-when-syntax_{context}"><code>&lt;when&gt;</code> syntax</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Conditions allowed in the <code>when</code> portion of a rule must extend <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html">GraphOperation</a> and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.</p>
+</div>
+<div class="paragraph">
+<p>The complete XML rule schema is located here: <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd" class="bare">http://windup.jboss.org/schema/windup-jboss-ruleset.xsd</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following sections describe the more common XML <code>when</code> rule conditions.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;javaclass&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;xmlfile&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;project&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;filecontent&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;file&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;has-hint&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;has-classification&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;graph-query&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;dependency&gt; condition syntax</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By default, if more than one <code>when</code> rule condition is provided, then all conditions must be met for the rule to match.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="javaclass-syntax_{context}">&lt;javaclass&gt; syntax</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="summary">Summary</h3>
+<div class="paragraph">
+<p>Use the <code>&lt;javaclass&gt;</code> element to find imports, methods, variable declarations, annotations, class implementations, and other items related to Java classes. For a better understanding of the <code>&lt;javaclass&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/condition/JavaClass.html">JavaClass</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that tests for WebLogic-specific Apache XML packages:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="weblogic-03000"&gt;
+    &lt;when&gt;
+        &lt;javaclass references="weblogic.apache.xml.{*}" /&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;hint title="WebLogic Specific Apache XML Package" effort="1" category-id="mandatory"&gt;
+            &lt;message&gt;
+                Code using this package should be replaced with code using the org.apache.xml package from [Apache
+                Xerces](http://xerces.apache.org/).
+            &lt;/message&gt;
+        &lt;/hint&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="construct-a-javaclass-element">Construct a &lt;javaclass&gt; element</h3>
+<div class="sect3">
+<h4 id="javaclass-element-attributes">&lt;javaclass&gt; element attributes</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">references</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CLASS_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The package or class name to match on. Wildcard characters can be used. This attribute is required.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+For performance reasons, you should not start the reference with wildcard characters. For example, use <code>weblogic.apache.xml.{*}</code> instead of <code>{web}.apache.xml.{*}</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">references="weblogic.apache.xml.{*}"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">matchesSource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An exact regex to match. This is useful to distinguish hard-coded strings. This attribute is required.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">matchesSource="log4j.logger"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A variable name assigned to the rule so that it can be used as a reference in later processing. See the <code>from</code> attribute below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">as="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Begin the search query with the filtered result from a previous search identified by its <code>as</code> VARIABLE_NAME.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">from="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PATH_FILTER</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">in="{*}File1"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="javaclass-child-elements">&lt;javaclass&gt; child elements</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Child Element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;location&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/ast/java/data/TypeReferenceLocation.html">TypeReferenceLocation</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;location&gt;IMPORT&lt;/location&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;annotation-literal&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match on literal values inside of annotations.</p>
+</div>
+<div class="paragraph">
+<p>The following example matches on <code>@MyAnnotation(myvalue="test")</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;javaclass references="org.package.MyAnnotation"&gt;
+    &lt;location&gt;ANNOTATION&lt;/location&gt;
+    &lt;annotation-literal name="myvalue" pattern="test"/&gt;
+&lt;/javaclass&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that in this case, the <code>&lt;javaclass&gt;</code> refers to an annotation (<code>@MyAnnotation</code>), so the top-level annotation filter, <code>&lt;annotation-literal&gt;</code> must specify the <code>name</code> attribute. If the <code>&lt;javaclass&gt;</code> referred to a class that is annotated, then the top-level annotation filter used would be <code>&lt;annotation-type&gt;</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;annotation-type&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match on a particular annotation type. You can supply subconditions to be matched against the annotation elements.</p>
+</div>
+<div class="paragraph">
+<p>The below example would match on a <code>Calendar</code> field declaration annotated with <code>@MyAnnotation(myvalue="test")</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;javaclass references="java.util.Calendar"&gt;
+    &lt;location&gt;FIELD_DECLARATION&lt;/location&gt;
+    &lt;annotation-type pattern="org.package.MyAnnotation"&gt;
+        &lt;annotation-literal name="myvalue" pattern="test"/&gt;
+    &lt;/annotation-type&gt;
+&lt;/javaclass&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;annotation-list&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match on an item in an array within an annotation. If an array index is not specified, the condition will be matched if it applies to any item in the array. You can supply subconditions to be matched against this element.</p>
+</div>
+<div class="paragraph">
+<p>The below example would match on <code>@MyAnnotation(mylist={"one","two"})</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;javaclass references="org.package.MyAnnotation" &gt;
+    &lt;location&gt;ANNOTATION&lt;/location&gt;
+    &lt;annotation-list name="mylist"&gt;
+        &lt;annotation-literal pattern="two"/&gt;
+    &lt;/annotation-list&gt;
+&lt;/javaclass&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that in this case, the <code>&lt;javaclass&gt;</code> refers to an annotation (<code>@MyAnnotation</code>), so the top-level annotation filter, <code>&lt;annotation-list&gt;</code> must specify the <code>name</code> attribute. If the <code>&lt;javaclass&gt;</code> referred to a class that is annotated, then the top-level annotation filter used would be <code>&lt;annotation-type&gt;</code>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="xmlfile-syntax_{context}">&lt;xmlfile&gt; syntax</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="summary-2">Summary</h3>
+<div class="paragraph">
+<p>Use the <code>&lt;xmlfile&gt;</code> element to find information in XML files. For a better understanding of the <code>&lt;xmlfile&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/condition/XmlFile.html">XmlFile</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that tests for an XML file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;rule id="&lt;UNIQUE_RULE_ID&gt;"&gt;
+    &lt;when&gt;
+        &lt;xmlfile matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"&gt;
+            &lt;namespace prefix="w" uri="http://java.sun.com/xml/ns/javaee"/&gt;
+        &lt;/xmlfile&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;hint title="Title for Hint from XML"&gt;
+            &lt;message&gt;Container Auth&lt;/message&gt;
+        &lt;/hint&gt;
+        &lt;xslt description="Example XSLT Conversion" extension="-converted-example.xml"
+              template="/exampleconversion.xsl"/&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="construct-an-xmlfile-element">Construct an &lt;xmlfile&gt; element</h3>
+<div class="sect3">
+<h4 id="xmlfile-element-attributes">&lt;xmlfile&gt; element attributes</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">matches</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XPATH</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match on an XML file condition.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xpathResultMatch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XPATH_RESULT_STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Return results that match the given regex.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">&lt;xmlfile matches="//foo/text()"
+  xpathResultMatch="Text from foo."/&gt;</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A variable name assigned to the rule so that it can be used as a reference in later processing. See the <code>from</code> attribute below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">as="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PATH_FILTER</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">in="{*}File1"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Begin the search query with the filtered result from a previous search identified by its <code>as</code> VARIABLE_NAME.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">from="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">public-id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUBLIC_ID</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The DTD public-id regex.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">public-id="public"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="xmlfile-matches-custom-functions">&lt;xmlfile&gt; <code>matches</code> custom functions</h4>
+<div class="paragraph">
+<p>The <code>matches</code> attribute may use several built-in custom XPath functions,
+which may have useful side effects, like setting the matched value on the rule variables stack.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>windup:matches()</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match a XPath expression against a string, possibly containing {ProductShortName} parameterization placeholders.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">matches="windup:matches(//foo/@class, '{javaclassname}')"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will match all <code>&lt;foo/&gt;</code> elements with a <code>class</code> attribute and store their value into <code>javaclassname</code> parameter for each iteration.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="xmlfile-child-elements">&lt;xmlfile&gt; child elements</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Child element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;namespace&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The namespace referenced in XML files. This element contains two optional attributes: The <code>prefix</code> and the <code>uri</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;namespace prefix="abc" uri="http://maven.apache.org/POM/4.0.0"/&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-syntax_{context}">&lt;project&gt; syntax</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="summary-3">Summary</h3>
+<div class="paragraph">
+<p>Use the <code>&lt;project&gt;</code> element to query the Maven POM file for the project characteristics. For a better understanding of the <code>&lt;project&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html">Project</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that checks for a JUnit dependency version between 2.0.0.Final and 2.2.0.Final.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="UNIQUE_RULE_ID"&gt;
+    &lt;when&gt;
+        &lt;project&gt;
+            &lt;artifact groupId="junit" artifactId="junit" fromVersion="2.0.0.Final" toVersion="2.2.0.Final"/&gt;
+        &lt;/project&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;lineitem message="The project uses junit with the version between 2.0.0.Final and 2.2.0.Final"/&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="construct-a-project-element">Construct a &lt;project&gt; element</h3>
+<div class="sect3">
+<h4 id="project-element-attributes">&lt;project&gt; element attributes</h4>
+<div class="paragraph">
+<p>The <code>&lt;project&gt;</code> element is used to match against the project&#8217;s Maven POM file. You can use this condition to query for dependencies of the project. It does not have any attributes itself.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="project-child-elements">&lt;project&gt; child elements</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Child element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;artifact&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Subcondition used within <code>&lt;project&gt;</code> to query against project dependencies. The <code>&lt;artifact&gt;</code> element attributes are described below.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="artifact-element-attributes">&lt;artifact&gt; element attributes</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groupId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PROJECT_GROUP_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match on the project <code>&lt;groupId&gt;</code> of the dependency.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">artifactId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PROJECT_ARTIFACT_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match on the project <code>&lt;artifactId&gt;</code> of the dependency.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fromVersion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FROM_VERSION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the lower version bound of the artifact. For example <code>2.0.0.Final</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">toVersion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TO_VERSION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the upper version bound of the artifact. For example <code>2.2.0.Final</code>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>It is possible to qualify the element within the POM file that contains the artifact that the rule is searching for.
+This is achieved using the optional <code>&lt;location&gt;</code> element.
+The example below shows a rule that is searching for an artifact within the <code>&lt;plugins&gt;</code> element of the POM file.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/search_for_artifact.png" alt="rule searching for artifact">
+</div>
+</div>
+<div class="paragraph">
+<p>The valid list of locations is as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DEPENDENCY_MANAGEMENT</p>
+</li>
+<li>
+<p>DEPENDENCIES</p>
+</li>
+<li>
+<p>PLUGIN_MANAGEMENT</p>
+</li>
+<li>
+<p>PLUGINS</p>
+</li>
+<li>
+<p>PARENT</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="filecontent-syntax_{context}">&lt;filecontent&gt; syntax</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="summary-4">Summary</h3>
+<div class="paragraph">
+<p>Use the <code>&lt;filecontent&gt;</code> element to find strings or text within files, for example, a line in a Properties file. For a better understanding of the <code>&lt;filecontent&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/FileContent.html">FileContent</a> class.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="construct-a-filecontent-element">Construct a &lt;filecontent&gt; element</h3>
+<div class="sect3">
+<h4 id="filecontent-element-attributes">&lt;filecontent&gt; element attributes</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pattern</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match the file contents against the provided parameterized string. This attribute is required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filename</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match the file names against the provided parameterized string.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A variable name assigned to the rule so that it can be used as a reference in later processing. See the <code>from</code> attribute below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">as="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Begin the search query with the filtered result from a previous search identified by its <code>as</code> VARIABLE_NAME.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">from="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="file-syntax_{context}">&lt;file&gt; syntax</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="summary-5">Summary</h3>
+<div class="paragraph">
+<p>Use the <code>&lt;file&gt;</code> element to find the existence of files with a specific name, for example, an <code>ibm-webservices-ext.xmi</code> file. For a better understanding of the <code>&lt;file&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/File.html">File</a> class.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="construct-a-file-element">Construct a &lt;file&gt; element</h3>
+<div class="sect3">
+<h4 id="file-element-attributes">&lt;file&gt; element attributes</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filename</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match the file names against the provided parameterized string. This attribute is required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A variable name assigned to the rule so that it can be used as a reference in later processing. See the <code>from</code> attribute below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">as="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Begin the search query with the filtered result from a previous search identified by its <code>as</code> VARIABLE_NAME.</p>
+</div>
+<div class="paragraph">
+<p><em>Example:</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">from="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="has-hint-syntax_{context}">&lt;has-hint&gt; syntax</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="summary-6">Summary</h3>
+<div class="paragraph">
+<p>Use the <code>&lt;has-hint&gt;</code> element to test whether a file or line has a hint already associated with it. It is primarily used to prevent firing if a hint already exists, or to implement rules for default execution when no other conditions apply. For a better understanding of the <code>&lt;has-hint&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/HasHint.html">HasHint</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that checks to see if a hint exists for an IBM JMS destination message, and if not, includes it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="websphere-jms-eap7-03000"&gt;
+  &lt;when&gt;
+    &lt;javaclass references="{package}.{prefix}{type}Message" /&gt;
+  &lt;/when&gt;
+  &lt;perform&gt;
+    &lt;iteration&gt;
+      &lt;when&gt;
+        &lt;not&gt;
+          &lt;has-hint /&gt;
+        &lt;/not&gt;
+      &lt;/when&gt;
+      &lt;perform&gt;
+        &lt;hint title="IBM JMS destination message" effort="1" category-id="mandatory"&gt;
+          &lt;message&gt;
+            JMS `{package}.{prefix}{type}Message` messages represent the actual data passed through JMS destinations. This reference should be
+            replaced with the Java EE standard API `javax.jms.{type}Message`.
+          &lt;/message&gt;
+          &lt;link href="https://docs.oracle.com/javaee/7/tutorial/jms-concepts003.htm#sthref2271" title="Java EE 7 JMS Tutorial - Message API" /&gt;
+          &lt;tag&gt;jms&lt;/tag&gt;
+          &lt;tag&gt;websphere&lt;/tag&gt;
+        &lt;/hint&gt;
+      &lt;/perform&gt;
+    &lt;/iteration&gt;
+  &lt;/perform&gt;
+  &lt;where param="type"&gt;
+    &lt;matches pattern="(Text|Stream|Object|Map|Bytes)?" /&gt;
+  &lt;/where&gt;
+  &lt;where param="prefix"&gt;
+    &lt;matches pattern="(JMS|MQe|MQ)" /&gt;
+  &lt;/where&gt;
+  &lt;where param="package"&gt;
+    &lt;matches pattern="com.ibm(\..*)?\.jms" /&gt;
+  &lt;/where&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="construct-a-has-hint">Construct a &lt;has-hint&gt;</h3>
+<div class="paragraph">
+<p>The <code>&lt;has-hint&gt;</code> element is used to determine if a hint exists for a file or line. It does not have any child elements.</p>
+</div>
+<div class="sect3">
+<h4 id="has-hint-element-attributes">&lt;has-hint&gt; element attributes</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional argument allowing you to match the hint against the provided message string.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="has-classification-syntax_{context}">&lt;has-classification&gt; syntax</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="summary-7">Summary</h3>
+<div class="paragraph">
+<p>Use the <code>&lt;has-classification&gt;</code> element to test whether a file or line has a classification. It is primarily used to prevent firing if a classification already exists, or to implement rules for default execution when no other conditions apply. For a better understanding of the <code>&lt;has-classification&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/HasClassification.html">HasClassification</a> class.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="construct-a-has-classification">Construct a &lt;has-classification&gt;</h3>
+<div class="paragraph">
+<p>The <code>has-classification</code> element is used to determine if a specified classification exists. It does not have any child elements.</p>
+</div>
+<div class="sect3">
+<h4 id="has-classification-element-attributes">&lt;has-classification&gt; element attributes</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional title to match the classification against.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="graph-query-syntax_{context}">&lt;graph-query&gt; syntax</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="summary-8">Summary</h3>
+<div class="paragraph">
+<p>Use the <code>&lt;graph-query&gt;</code> element to search the generated graph for any elements. This element is primarily used to search for specific archives. For a better understanding of the <code>&lt;graph-query&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/parser/xml/when/QueryHandler.html">QueryHandler</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that tests to determine if any <code>ehcache</code> packages are found.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="embedded-cache-libraries-01000"&gt;
+    &lt;when&gt;
+        &lt;graph-query discriminator="JarArchiveModel"&gt;
+            &lt;property name="fileName" searchType="regex"&gt;.*ehcache.*\.jar$&lt;/property&gt;
+        &lt;/graph-query&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;classification title="Caching - Ehcache embedded library" category-id="cloud-mandatory" effort="5"&gt;
+            &lt;description&gt;
+                The application embeds an Ehcache library.
+
+                Cloud readiness issue as potential state information that is not persisted to a backing service.
+            &lt;/description&gt;
+        &lt;/classification&gt;
+        &lt;technology-tag level="INFORMATIONAL"&gt;Ehcache (embedded)&lt;/technology-tag&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="construct-a-graph-query">Construct a &lt;graph-query&gt;</h3>
+<div class="sect3">
+<h4 id="graph-query-element-attributes">&lt;graph-query&gt; element attributes</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">discriminator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MODEL_TYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of model to use for searching. This can be any valid model; however, it is recommended to use the <code>JarArchiveModel</code> for examining archives. This attribute is required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A variable name assigned to the rule so that it can be used as a reference in later processing. See the <code>from</code> attribute below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">as="MyEjbRule"</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Begin the search query with the filtered result from a previous search identified by its <code>as</code> VARIABLE_NAME.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">from="MyEjbRule"</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="graph-query-properties">&lt;graph-query&gt; properties</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the attribute to match against within the chosen model. When using any file-based models, it is recommended to match on <code>fileName</code>. This attribute is required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">property-type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the expected type of property, either <code>STRING</code> or <code>BOOLEAN</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">searchType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">property-search-type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines how the condition is matched. If set to <code>equals</code>, then an exact match must be made. If using <code>regex</code>, then regular expressions can be used.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dependency-syntax_{context}">&lt;dependency&gt; syntax</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="summary-9">Summary</h3>
+<div class="paragraph">
+<p>Use the <code>&lt;dependency&gt;</code> element to search dependencies defined within the application&#8217;s POM file to determine whether they are supported by the target runtime.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that checks for all artifacts belonging to the <code>org.springframework.boot</code> group that have a version up to, and including, 1.6.0.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="springboot-00001"&gt;
+    &lt;!-- rule condition, when it could be fired --&gt;
+    &lt;when&gt;
+        &lt;dependency groupId="org.springframework.boot" artifactId="{*}" toVersion="1.6.0" /&gt;
+    &lt;/when&gt;
+    &lt;!-- rule operation, what to do if it is fired --&gt;
+    &lt;perform&gt;
+        &lt;hint title="Unsupported version of Spring Boot" effort="3" category-id="mandatory"&gt;
+            &lt;message&gt;Spring Boot has to be updated to Spring Boot 2.0 before being able to be migrated to a version supported by Red Hat Runtimes&lt;/message&gt;
+            &lt;link href="https://access.redhat.com/articles/3349341" title="RHOAR Spring Boot Supported Configurations" /&gt;
+            &lt;link href="https://access.redhat.com/articles/3348731" title="RHOAR Component Details Overview" /&gt;
+            &lt;link href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide" title="Spring Boot 2.0 Migration Guide" /&gt;
+        &lt;/hint&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

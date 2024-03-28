@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/rules-testing-junit/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/rules-testing-junit/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/rules-testing-junit/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="rules-testng-junit_{context}">Testing the rules by using JUnit</h1>
+<div class="paragraph">
+<p>Once a test rule has been created, it can be analyzed as part of a JUnit test to confirm that the rule meets all criteria for execution. The <code>WindupRulesMultipleTests</code> class in the {ProductShortName} rules repository is designed to test multiple rules simultaneously, and provides feedback on any missing requirements.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Fork and clone the {ProductShortName} XML rules. The location of this repository will be referred to as &lt;RULESETS_REPO&gt;.</p>
+</li>
+<li>
+<p>Create a test XML rule.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Creating the JUnit test configuration</div>
+<p>The following instructions detail creating a JUnit test using Eclipse. When using a different IDE, it is recommended to consult your IDE&#8217;s documentation for instructions on creating a JUnit test.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Import the {ProductShortName} rulesets repository into your IDE.</p>
+</li>
+<li>
+<p>Copy the custom rules, along with the corresponding tests and data, into <code>&lt;/path/to/RULESETS_REPO&gt;/rules-reviewed/&lt;RULE_NAME&gt;/</code>. This should create the following directory structure.</p>
+<div class="listingblock">
+<div class="title">Directory structure</div>
+<div class="content">
+<pre class="highlight nowrap"><code>├── *rules-reviewed/*  _(Root directory of the rules found within the project)_
+│   ├── *&lt;RULE_NAME&gt;/*  _(Directory to contain the newly developed rule and tests)_
+│   │   ├── *&lt;RULE_NAME&gt;.windup.xml*  _(Custom rule)_
+│   │   ├── *tests/*  _(Directory that contains any test rules and data)_
+│   │   │   ├── *&lt;RULE_NAME&gt;.windup.test.xml* _(Test rule)_
+│   │   │   └── *data/*  _(Optional directory to contain test rule data)_</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Select <strong>Run</strong> from the top menu bar.</p>
+</li>
+<li>
+<p>Select <strong>Run Configurations&#8230;&#8203;</strong> from the drop down that appears.</p>
+</li>
+<li>
+<p>Right-click <strong>JUnit</strong> from the options on the left side and select <strong>New</strong>.</p>
+</li>
+<li>
+<p>Enter the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong>: A name for your JUnit test, such as <code>WindupRulesMultipleTests</code>.</p>
+</li>
+<li>
+<p><strong>Project</strong>: Ensure this is set to <code>windup-rulesets</code>.</p>
+</li>
+<li>
+<p><strong>Test class</strong>: Set this to <code>org.jboss.windup.rules.tests.WindupRulesMultipleTests</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/junit-test.png" alt="junit test">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select the <strong>Arguments</strong> tab, and add the <code>-DrunTestsMatching=&lt;RULE_NAME&gt;</code> VM argument. For instance, if your rule name was <code>community-rules</code>, then you would add <code>-DrunTestsMatching=community-rules</code> as seen in the following image.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/junit-test-arguments.png" alt="junit test arguments">
+</div>
+</div>
+</li>
+<li>
+<p>Click <strong>Run</strong> in the bottom right corner to begin the test.</p>
+<div class="paragraph">
+<p>When the execution completes, the results are available for analysis. If all tests passed, then the test rule is correctly formatted. If all tests did not pass, it is recommended to address each of the issues raised in the test failures.</p>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

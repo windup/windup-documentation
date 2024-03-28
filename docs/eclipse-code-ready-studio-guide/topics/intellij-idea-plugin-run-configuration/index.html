@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/eclipse-code-ready-studio-guide/topics/intellij-idea-plugin-run-configuration/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/eclipse-code-ready-studio-guide/topics/intellij-idea-plugin-run-configuration/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/eclipse-code-ready-studio-guide/topics/intellij-idea-plugin-run-configuration/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="intellij-idea-plugin-run-configuration_{context}">Creating a run configuration</h1>
+<div class="paragraph">
+<p>You can create multiple run configurations to run against each project you import to IntelliJ IDEA.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Projects</strong> view, click the project you want to analyze.</p>
+</li>
+<li>
+<p>On the left side of the screen, click the <strong>{ProductName}</strong> tab.</p>
+<div class="paragraph">
+<p>If this is your first configuration, the run configuration panel is displayed on the right.</p>
+</div>
+</li>
+<li>
+<p>If this is not your first configuration, right-click configuration in the list and select <strong>New configuration</strong>.</p>
+<div class="paragraph">
+<p>The run configuration panel is displayed on the right.</p>
+</div>
+</li>
+<li>
+<p>Complete the following configuration fields:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>cli</strong>: Enter the path to the cli executable. For example: <code>$HOME/{LC_PSN}-cli-{ProductDistributionVersion}/bin/{mta-cli}</code>.</p>
+</li>
+<li>
+<p><strong>Input</strong>: Click <strong>Add</strong> and enter the input file or directory.</p>
+</li>
+<li>
+<p><strong>Target</strong>: Select one or more target migration paths.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The location shown in the <strong>Output</strong> is set by the plugin.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the list of configurations, right-click the new configuration and select <strong>Run Analysis</strong>.</p>
+<div class="paragraph">
+<p>The <strong>Console ({ProductShortName})</strong> terminal emulator opens, displaying information about the progress of the analysis.</p>
+</div>
+<div class="paragraph">
+<p>When the analysis is completed, you can click either <strong>Report</strong> or <strong>Results</strong> below the name of the configuration file you ran.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Reports</strong> opens the {ProductShortName} report, which describes any issues you need to address before you migrate or modernize your application. For more information, see <a href="{ProductDocUserGuideURL}#review-reports_cli-guide">Reviewing the reports</a> in the <em>CLI Guide</em>.</p>
+</li>
+<li>
+<p><strong>Results</strong> opens a directory displaying hints (issues) per application.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

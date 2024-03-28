@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Release Notes | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Release Notes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/release-notes-mtr/master/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/release-notes-mtr/master/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Release Notes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Release Notes","url":"https://windup.github.io/windup-documentation/docs/release-notes-mtr/master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1>Release Notes</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#making-open-source-more-inclusive">Making open source more inclusive</a></li>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#mtr-1-2-4">2. MTR 1.2.4</a>
+<ul class="sectlevel2">
+<li><a href="#rn-new-features-1-2-4_release-notes">2.1. New features</a></li>
+<li><a href="#mtr-rn-known-issues-1-2-4_release-notes">2.2. Known issues</a></li>
+<li><a href="#mtr-rn-resolved-issues-1-2-4_release-notes">2.3. Resolved issues</a></li>
+</ul>
+</li>
+<li><a href="#mtr-1-2-3">3. MTR 1.2.3</a>
+<ul class="sectlevel2">
+<li><a href="#rn-new-features-1-2-3_release-notes">3.1. New features</a></li>
+<li><a href="#mtr-rn-known-issues-1-2-3_release-notes">3.2. Known issues</a></li>
+<li><a href="#mtr-rn-resolved-issues-1-2-3_release-notes">3.3. Resolved issues</a></li>
+</ul>
+</li>
+<li><a href="#mtr-1-2-2">4. MTR 1.2.2</a>
+<ul class="sectlevel2">
+<li><a href="#mtr-rn-known-issues-1-2-2_release-notes">4.1. Known issues</a></li>
+<li><a href="#mtr-rn-resolved-issues-1-2-2_release-notes">4.2. Resolved issues</a></li>
+</ul>
+</li>
+<li><a href="#mtr-1-2-1">5. MTR 1.2.1</a>
+<ul class="sectlevel2">
+<li><a href="#mtr-rn-known-issues-1-2-1_release-notes">5.1. Known issues</a></li>
+<li><a href="#mtr-rn-resolved-issues-1-2-1_release-notes">5.2. Resolved issues</a></li>
+</ul>
+</li>
+<li><a href="#mtr-1-2-0">6. MTR 1.2.0</a>
+<ul class="sectlevel2">
+<li><a href="#rn-new-features-1-2-0_release-notes">6.1. New features</a>
+<ul class="sectlevel3">
+<li><a href="#rn-new-rulesets-targets-1-2-0">6.1.1. New rulesets and targets</a></li>
+</ul>
+</li>
+<li><a href="#mtr-rn-known-issues-1-2-0_release-notes">6.2. Known issues</a></li>
+<li><a href="#mtr-rn-resolved-issues-1-2-0_release-notes">6.3. Resolved issues</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="making-open-source-more-inclusive">Making open source more inclusive</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Migration Toolkit for Runtimes (MTR) provides an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications, such as migrating JBoss Enterprise Application Platform (EAP) 7 to 8 or migrating from any other application server towards EAP at scale. MTR provides the same migration solution as provided in the Migration Toolkit for Applications 5 releases.</p>
+</div>
+<div class="paragraph">
+<p>These release notes cover all Z-stream releases of MTR 1.2 with the most recent release listed first.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mtr-1-2-4">2. MTR 1.2.4</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="rn-new-features-1-2-4_release-notes">2.1. New features</h3>
+<div class="paragraph">
+<p>This section describes the new features of the Migration Toolkit for Runtimes (MTR) 1.2.4:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>New rules support the migration of Red Hat JBoss Enterprise Application Platform (EAP 7) to EAP 8.</p>
+</li>
+<li>
+<p>New rules support the migration of Jakarta EE applications to Quarkus.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mtr-rn-known-issues-1-2-4_release-notes">2.2. Known issues</h3>
+<div class="paragraph">
+<p>For a complete list of all known issues, see the list of <a href="https://issues.redhat.com/issues/?filter=12427974">MTR 1.2.4 known issues</a> in Jira.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mtr-rn-resolved-issues-1-2-4_release-notes">2.3. Resolved issues</h3>
+<div class="paragraph">
+<div class="title">CVE-2023-26159: <code>follow-redirects</code> package before 1.15.4 are vulnerable to Improper Input Validation</div>
+<p>Versions of the <code>follow-redirects</code> package before 1.15.4 are vulnerable to Improper Input Validation. This vulnerability is due to the improper handling of URLs by the <code>url.parse()</code> function. When a new URL returns an error, it can be manipulated to misinterpret the hostname. An attacker could exploit this weakness to redirect traffic to a malicious site, potentially leading to information disclosure, phishing attacks, or other security breaches.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-26159">(CVE-2023-26159)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2022-25883: Regular Expression Denial of Service (ReDoS) vulnerability was discovered in the <code>node-semver</code> package</div>
+<p>Versions of the <code>semver</code> npm package before 7.5.2 are vulnerable to Regular Expression Denial of Service (ReDoS). This ReDoS vulnerability comes from the <code>new Range</code> function, when untrusted user data is provided as a range.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2022-25883">(CVE-2022-25883)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-26136: <code>tough-cookie</code> package before 4.1.3 are vulnerable to Prototype Pollution</div>
+<p>Versions of the <code>tough-cookie</code> package before 4.1.3 are vulnerable to Prototype Pollution. This vulnerability is due to improper handling of Cookies when using <code>CookieJar</code> in <code>rejectPublicSuffixes=false</code> mode. This issue arises from the manner in which the objects are initialized.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-26136">(CVE-2023-26136)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-35116: <code>jackson-databind</code> before 2.15.2 are vulnerable to Denial of Service or other unspecified impact</div>
+<p>Versions of the <code>jackson-databind</code> library before 2.15.2 are vulnerable to Denial of Service (DoS) attacks or other unspecified impacts using a crafted object that uses cyclic dependencies.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-35116">(CVE-2023-35116)</a>.</p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all issues resolved in this release, see the list of <a href="https://issues.redhat.com/issues/?filter=12427973">MTR 1.2.4 resolved issues</a> in Jira.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mtr-1-2-3">3. MTR 1.2.3</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="rn-new-features-1-2-3_release-notes">3.1. New features</h3>
+<div class="paragraph">
+<p>This section describes the new features of the Migration Toolkit for Runtimes (MTR) 1.2.3:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>New rules support for Camel 4.1.</p>
+</li>
+<li>
+<p>New rules support the migration of Java EE applications to Quarkus.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mtr-rn-known-issues-1-2-3_release-notes">3.2. Known issues</h3>
+<div class="paragraph">
+<p>For a complete list of all known issues, see the list of <a href="https://issues.redhat.com/issues/?filter=12424625">MTR 1.2.3 known issues</a> in Jira.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mtr-rn-resolved-issues-1-2-3_release-notes">3.3. Resolved issues</h3>
+<div class="paragraph">
+<div class="title">CVE-2023-1436 org.keycloak-keycloak-parent: Jettison: Uncontrolled Recursion in JSONArray</div>
+<p>A flaw in <strong>Jettison</strong>, which was utilized by MTR, triggers an infinite recursion when constructing a <code>JSONarray</code> from a Collection where one of the elements self-references. This flaw throws a <code>StackOverflowError</code> exception. <a href="https://issues.redhat.com/browse/WINDUP-3772">(WINDUP-3772)</a></p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2023-1436">CVE-2023-1436</a></p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all issues resolved in this release, see the list of <a href="https://issues.redhat.com/issues/?filter=12424615">MTR 1.2.3 resolved issues</a> in Jira.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mtr-1-2-2">4. MTR 1.2.2</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="mtr-rn-known-issues-1-2-2_release-notes">4.1. Known issues</h3>
+<div class="paragraph">
+<p>For a complete list of all known issues, see the list of <a href="https://issues.redhat.com/browse/WINDUP-4043?filter=12423183">MTR 1.2.2 known issues</a> in Jira.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mtr-rn-resolved-issues-1-2-2_release-notes">4.2. Resolved issues</h3>
+<div class="paragraph">
+<div class="title">CVE-2023-44487 netty-codec-http2: HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack)</div>
+<p>A flaw was found in handling multiplexed streams in the HTTP/2 protocol, which was utilized by Migration Toolkit for Runtimes (MTR). A client could repeatedly make a request for a new multiplex stream and immediately send an <code>RST_STREAM</code> frame to cancel it. This creates additional workload for the server in terms of setting up and dismantling streams, while avoiding any server-side limitations on the maximum number of active streams per connection, resulting in a denial of service due to server resource consumption. <a href="https://issues.redhat.com/browse/WINDUP-4072">(WINDUP-4072)</a></p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-44487">(CVE-2023-44487)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-37460 plexus-archiver: Arbitrary File Creation in AbstractUnArchiver</div>
+<p>A flaw was found in the Plexus Archiver, which was utilized by MTR. While using <code>AbstractUnArchiver</code> for extracting, an archive could lead to arbitrary file creation and possible remote code execution (RCE). This flaw will bypass directory destination verification if an archive with an entry in the destination directory as a symbolic link whose target does not exist. The plexus-archiver is a test scoped artifact so not included in any of the MTR distributions. <a href="https://issues.redhat.com/browse/WINDUP-4053">(WINDUP-4053)</a></p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-37460">(CVE-2023-37460)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">EAP 7.3 and EAP 7.4 rules with target EAP 7.0 and above</div>
+<p>This MTR release makes a correction to some rules to support migrating to EAP 7.3 and above, to ensure the rules are ignored if the target is EAP 7.2 or below. <a href="https://issues.redhat.com/browse/WINDUPRULE-1038">(WINDUPRULE-1038)</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mtr-1-2-1">5. MTR 1.2.1</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="mtr-rn-known-issues-1-2-1_release-notes">5.1. Known issues</h3>
+<div class="paragraph">
+<p>For a complete list of all known issues, see the list of <a href="https://issues.redhat.com/browse/WINDUP-4043?filter=12422643">MTR 1.2.1 known issues</a> in Jira.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mtr-rn-resolved-issues-1-2-1_release-notes">5.2. Resolved issues</h3>
+<div class="paragraph">
+<div class="title">CVE-2023-44487 netty-codec-http2: HTTP/2</div>
+<p>Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack). The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly. <a href="https://issues.redhat.com/browse/WINDUP-4056">(WINDUP-4056)</a></p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all issues resolved in this release, see the list of <a href="https://issues.redhat.com/browse/WINDUP-3952?filter=12422644">MTR 1.2.1 resolved issues</a> in Jira.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mtr-1-2-0">6. MTR 1.2.0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="rn-new-features-1-2-0_release-notes">6.1. New features</h3>
+<div class="paragraph">
+<p>This section describes the new features of the Migration Toolkit for Runtimes (MTR) 1.2.0.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Decompilation and analysis of applications based on Java 17</p>
+</li>
+<li>
+<p>Rules Override enhancement: A new condition has been added for overriding an existing rule. In addition to matching <code>rulesetId</code> and <code>ruleId</code>, the target technology in the override ruleset must match one of the targets that the user specified for running the analysis.</p>
+</li>
+<li>
+<p>Eclipse Plugin Java 17 compatibility</p>
+</li>
+<li>
+<p>Upgrade of the Windup Operator: Adopted <code>Quarkus 2.13.7.Final</code> and the <code>Quarkus Operator SDK 4.0.8</code></p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="rn-new-rulesets-targets-1-2-0">6.1.1. New rulesets and targets</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>OpenJDK 21: Rules to support the upgrading to OpenJDK 21.</p>
+</li>
+<li>
+<p>Red Hat JBoss Web Server 6: Rules to support the upgrade of JWS and Tomcat applications to JWS 6 and Tomcat 10.</p>
+</li>
+<li>
+<p>Camel 4: Comprehensive rulesets supporting upgrade to all Y-stream releases of Camel 3 and Camel 4.</p>
+</li>
+<li>
+<p>More migration rules to support Red Hat JBoss EAP 8 and Hibernate 6.</p>
+</li>
+<li>
+<p>Java/Jakarta EE to Quarkus: New rulesets support migrating Java/Jakarta EE applications to Quarkus 3. These rulesets cover the <em>quarkification</em> of the project, along with JAX-RS and CDI technologies. Additional rules that support this migration path are still under development and will be made available in future Z-stream releases.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mtr-rn-known-issues-1-2-0_release-notes">6.2. Known issues</h3>
+<div class="paragraph">
+<p>For a complete list of all known issues, see the list of <a href="https://issues.redhat.com/browse/WINDUP-3470?filter=12419394">MTR 1.2.0 known issues</a> in Jira.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mtr-rn-resolved-issues-1-2-0_release-notes">6.3. Resolved issues</h3>
+<div class="paragraph">
+<p>For a complete list of all issues resolved in this release, see the list of <a href="https://issues.redhat.com/browse/WINDUP-3632?filter=12419395">MTR 1.2.0 resolved issues</a> in Jira.</p>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

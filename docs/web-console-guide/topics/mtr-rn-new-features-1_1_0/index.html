@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/web-console-guide/topics/mtr-rn-new-features-1_1_0/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/web-console-guide/topics/mtr-rn-new-features-1_1_0/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/web-console-guide/topics/mtr-rn-new-features-1_1_0/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="rn-new-features-11_{context}">New features</h1>
+<div class="paragraph">
+<p>This section describes the new features of the {ProductName} ({ProductShortName}) 1.1.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">New reports</div>
+<p>{ProductShortName} generates rich reports using <strong>PatternFly4</strong>. The reports present the same content as in previous versions, but are easier to navigate and presented better, in the consistent Web Console user interface. You can still generate reports in the original format using the <strong>legacyReports</strong> advanced option.</p>
+</div>
+<div class="ulist">
+<div class="title">New advanced options</div>
+<ul>
+<li>
+<p><strong>exitCodes</strong> ensures that {ProductShortName} returns a zero return code with a successful analysis, and a non-zero return code with a failed analysis.</p>
+</li>
+<li>
+<p><strong>exportSummary</strong> generates a JSON file in the output folder of each analyzed application. This file contains the story points and incident count (by category), along with the application&#8217;s collection of technology tags.</p>
+</li>
+<li>
+<p><strong>exportZipReport</strong> creates a <code>report.zip</code> file of all the analysis outputs - reports, <code>.csv</code> files and <code>.json</code> files, when requested.</p>
+</li>
+<li>
+<p><strong>legacyReports</strong> generates reports in the original report format, instead of the newer PatternFly4 format (see above).</p>
+</li>
+<li>
+<p><strong>skipSourceCodeReports</strong> The <em>Source Code</em> report shows migration issues within the context of the application&#8217;s source code. Showing the source code of all analyzed applications may raise security concerns. This option generates all reports except the source code report.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">New rulesets and targets</div>
+<p>{ProductShortName} contains a complete set of rules that supports EAP 8.0 Beta and Hibernate 6.2.</p>
+</div>
+<div class="paragraph">
+<p>A new <strong>discovery</strong> target only executes the rules that identify technologies embedded within the application, informing the migration strategy for each application by efficiently showing its technology landscape.</p>
+</div>
+<div class="paragraph">
+<p>Hibernate users now have a new <strong>hibernate6</strong> target <em>shortcut</em>. The analysis uses all the rulesets with a <code>hibernate:6</code> or <code>jakarta-ee</code> target.</p>
+</div>
+<div class="paragraph">
+<p>Multiple targets can be mapped to a single target <em>shortcut</em>.</p>
+</div>
+<div class="paragraph">
+<div class="title">New technology tags</div>
+<p>This version of {ProductShortName} includes Java EE deployment descriptors-based technology tags, such as <strong>EJB 3.2</strong>. It generates enterprise Java EE technology tags for Jakarta EE applications.</p>
+</div>
+<div class="paragraph">
+<div class="title">Web UI package selection</div>
+<p>A new package selection step requires you to activate package selection to include a list of packages for the analysis. This change aligns the Web UI with CLI behavior.</p>
+</div>
+<div class="paragraph">
+<div class="title">Java compatibility</div>
+<p>{ProductShortName} CLI, Web UI, and Maven now support the following versions of Java:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenJDK 11</p>
+</li>
+<li>
+<p>Oracle JDK 11</p>
+</li>
+<li>
+<p>Eclipse Temurin JDK 11</p>
+</li>
+<li>
+<p>OpenJDK 17</p>
+</li>
+<li>
+<p>Oracle JDK 17</p>
+</li>
+<li>
+<p>Eclipse Temurin JDK 17</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Future releases are planned to include IDE plugins and extensions that support Java 17. These releases require Oracle JDK 11 or OpenJDK 11.</p>
+</div>
+<div class="paragraph">
+<div class="title">Updated Nexus index of known software artifacts</div>
+<p>Last update 21 March 2023.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

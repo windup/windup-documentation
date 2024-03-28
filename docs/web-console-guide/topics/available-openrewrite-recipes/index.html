@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/web-console-guide/topics/available-openrewrite-recipes/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/web-console-guide/topics/available-openrewrite-recipes/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/web-console-guide/topics/available-openrewrite-recipes/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="available-openrewrite-recipes_{context}">Available OpenRewrite recipes</h1>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Available OpenRewrite recipes</caption>
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 26%;">
+<col style="width: 26%;">
+<col style="width: 26%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Migration path</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top">rewrite.configLocation</th>
+<th class="tableblock halign-left valign-top">activeRecipes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java EE to Jakarta EE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replace import of <code>javax</code> packages with equivalent <code>jakarta</code> packages</p>
+<p class="tableblock">Replace <code>javax</code> artifacts, declared within <code>pom.xml</code> files, with the <code>jakarta</code> equivalents</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;{ProductShortName}_HOME&gt;/rules/openrewrite/jakarta \ /javax/imports/rewrite.yml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.jboss.windup.JavaxToJakarta</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java EE to Jakarta EE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rename bootstrapping files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;{ProductShortName}_HOME&gt;/rules/openrewrite/jakarta \ /javax/bootstrapping/rewrite.yml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.jboss.windup.jakarta.javax. \ BootstrappingFiles</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java EE to Jakarta EE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transform <code>persistence.xml</code> configuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;{ProductShortName}_HOME&gt;/rules/openrewrite/jakarta \ /javax/xml/rewrite.yml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.jboss.windup.javax-jakarta. \ PersistenceXML</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot to Quarkus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replace <code>spring.jpa.hibernate.ddl-auto</code> property within files matching <code>application*.properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;{ProductShortName}_HOME&gt;/rules/openrewrite/quarkus \ /springboot/properties/rewrite.yml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.jboss.windup.sb-quarkus.Properties</code></p></td>
+</tr>
+</tbody>
+</table>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
