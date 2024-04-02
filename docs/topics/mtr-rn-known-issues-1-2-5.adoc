@@ -7,6 +7,16 @@
 
 = Known issues
 
-For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12427974[MTR 1.2.5 known issues] in Jira.
+The following are major known issues:
+
+// .[(WINDUP-4116)]
+
+// .Analysis gets stuck when migrating from `openjdk11` to `openjdk21` [(WINDUP-4097)]
+
+// .Broken links in integration tests [(WINDUPRULE-1039)]
+
+
+
+For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12432747[MTR 1.2.5 known issues] in Jira.
 
 
