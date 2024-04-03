@@ -39,7 +39,7 @@ This warning, appropriate for the first assessment, incorrectly reappears on sub
 
 In {ProductShortName} 7.0.0, some XML custom rule files are converted to the new YAML format during analysis. The root cause is that Java search patterns that use `IMPORT` as `location` and end in `.{*}`, do not function as expected. link:https://issues.redhat.com/browse/MTA-2000[MTA-2000]
 
-To resolve this issue, whenever a custom rule has a pattern ending in `.{\*}` and location `IMPORT`, the pattern `.{*}` can be changed to `{*}` and the location changed to `PACKAGE`, as in the following example:.
+To resolve this issue, whenever a custom rule has a pattern ending in `.{\*}` and location `IMPORT`, the pattern `.{*}` can be changed to `{*}` and the location changed to `PACKAGE`, as in the following example.
 
 .To view the javax-package-custom-target.windup.xml, click here.
 [%collapsible%closed]
