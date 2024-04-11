@@ -9,6 +9,29 @@
 
 The following are major known issues:
 
+.NPE in MTR when application is submitted for anlysis
+
+The package discovery fails due to a Null Pointer Exception (MPE). link:https://issues.redhat.com/browse/WINDUP-4116[(WINDUP-4116)]
+
+.Triggering analysis gets stuck when the target is OpenJDK21
+
+When triggering an anlysis on OpenJDK11 to OpenJDK21, the analysis gets stuck. link:https://issues.redhat.com/browse/WINDUP-4097[(WINDUP-4097)]
+
+.Broken links in Integration test
+
+Links are broken when running the Integration test.link:https://issues.redhat.com/browse/WINDUPRULE-1039[(WINDUPRULE-1039)]
+
+.Generated report cannot open in Eclipse IDE
+
+link:https://issues.redhat.com/browse/WINDUP-4043[(WINDUP-4043)]
+
+.`--legacyReports` option is always on in VSCode
+
+link:https://issues.redhat.com/browse/WINDUP-3962[(WINDUP-3962)]
+
+.Spawn ENOENT error when MTA runs VSCode plugin
+
+link:https://issues.redhat.com/browse/WINDUP-3887[(WINDUP-3887)]
 
 For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12432747[MTR 1.2.5 known issues] in Jira.
 
