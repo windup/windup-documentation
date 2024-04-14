@@ -23,15 +23,22 @@ Links are broken when running the Integration test.link:https://issues.redhat.co
 
 .Generated report cannot open in Eclipse IDE
 
-link:https://issues.redhat.com/browse/WINDUP-4043[(WINDUP-4043)]
+Eclipse IDE cannot open reports generated from {ProductShortName} 6.3.0, {ProductShortName} CLI 1.2.0, and Eclipse 2023-06. link:https://issues.redhat.com/browse/WINDUP-4043[(WINDUP-4043)]
 
 .`--legacyReports` option is always on in VSCode
 
-link:https://issues.redhat.com/browse/WINDUP-3962[(WINDUP-3962)]
+`--legacyReports` option is always on in VScode when running {ProductShortName} 6.2.0. This prevents viewing the `PatternFly 4` style pattern reports. link:https://issues.redhat.com/browse/WINDUP-3962[(WINDUP-3962)]
 
+// Is this MTA or MTR?
 .Spawn ENOENT error when MTA runs VSCode plugin
 
-link:https://issues.redhat.com/browse/WINDUP-3887[(WINDUP-3887)]
+When running MTA on a Java project, a Spawn ENOENT error is reported. link:https://issues.redhat.com/browse/WINDUP-3887[(WINDUP-3887)]
+
+.PF4 analysis report is empty
+
+The generated `PF4` analysis report is empty when using `mtr-vdcode-extension-1.1.0-556.vsix` plugin on Eclipse Che. link:https://issues.redhat.com/browse/WINDUP-3885[(WINDUP-3885)]
+
+.link:[()]
 
 For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12432747[MTR 1.2.5 known issues] in Jira.
 
