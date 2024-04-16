@@ -11,11 +11,13 @@
 
 .Failure to connect to Jira server using basic authentication
 
-In {ProductShortName} 7.0.2, connecting to a Jira server using basic authentication, meaning _username_ and _password_, fails. This issue is scheduled to be resolved in {ProductShortName} 7.0.3. link:https://issues.redhat.com/browse/MTA-2427[(MTA-2427)]  
+In {ProductShortName} 7.0.2, connecting to a Jira server using basic authentication, meaning _username_ and _password_, fails. This issue is scheduled to be resolved in {ProductShortName} 7.0.3. link:https://issues.redhat.com/browse/MTA-2427[(MTA-2427)]
 
 .Unable to turn on Enable insecure communication switch
 
 In {ProductShortName} 7.0.2, it is not possible to turn on the `Enable insecure communication` switch when creating or editing a Jira instance. This issue is scheduled to be resolved in {ProductShortName} 7.0.3. link:https://issues.redhat.com/browse/MTA-2426[(MTA-2426)]
+
+{ProductShortName} 7.0.2 and 7.0.3 fails to run analysis on a directory of multiple applications. The cause of this failure is caused as the analyzer is expecting a `pom.xml` file in the root directory. link:https://issues.redhat.com/browse/MTA-2765[(MTA-2765)]
 
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12431570[Known Issues in Jira].
 
