@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: CONCEPT
+[id="rn-new-features-1-2-5_{context}"]
+= New features
+
+// This section describes the new features of the {ProductName} ({ProductShortName}) 1.2.5:
+
+{ProductName} ({ProductShortName}) 1.2.5 has the following new features:
+
+.New ruleset for MicroProfile metrics replaces old ruleset
+
+A new ruleset for MicroProfile (MP) metrics replaces the old ruleset. link:https://issues.redhat.com/browse/WINDUPRULE-1043[(WINDUPRULE-1043)]
+
+.New ruleset for MicroProfile OpenTracing replaces the old ruleset
+
+A new ruleset for MicroProfile (MP) OpenTracing replaces the old ruleset. link:https://issues.redhat.com/browse/WINDUPRULE-1044[(WINDUPRULE-1044)]
