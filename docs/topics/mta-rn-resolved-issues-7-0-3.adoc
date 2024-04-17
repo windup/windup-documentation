@@ -8,6 +8,16 @@
 
 The following highlighted issues have been resolved in {ProductFullName} version 7.0.3.
 
-.
+.Returned `Multi select filter` option in `All issues` page
+
+The option has been returned to select several names from a drop-down list of applications. link:https://issues.redhat.com/browse/MTA-2560[(MTA-2560)]
+
+.Fixed failed analysis on DC clusters
+
+Failed upload and analysis on a disconnected cluster has been fixed. The failed analysis returned the error `Error: exit status 128`. This issue has been resolved in {ProductShortName} 7.0.3. link:https://issues.redhat.com/browse/MTA-2513[(MTA-2513)]
+
+.Fixed incorrect assessment status when running an assessment on two questionnaires 
+
+In {ProductShortName} 7.0.2, running two questionnaires showed the `Assessment` status as `Not started` instead of `In progress`. This has been fixed in {ProductShortName} 7.0.3, and now the Assessment status shows `In progress` after one questionnaire or Archetype is started. list:https://issues.redhat.com/browse/MTA-2409[(MTA-2409)] list:[(MTA-2410,] list:https://issues.redhat.com/browse/MTA-2410[MTA-2410)]
 
 For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12434260[Resolved Issues in Jira].
