@@ -14,7 +14,7 @@ The option has been returned to select several names from a drop-down list of ap
 
 .Fixed failed analysis on DC clusters
 
-Failed upload and analysis on a disconnected cluster has been fixed. The failed analysis returned the error `Error: exit status 128`. This issue has been resolved in {ProductShortName} 7.0.3. link:https://issues.redhat.com/browse/MTA-2513[(MTA-2513)]
+Failed upload and analysis on a disconnected cluster has been fixed. The failed analysis returned the `Error: exit status 128` error. This issue has been resolved in {ProductShortName} 7.0.3. link:https://issues.redhat.com/browse/MTA-2513[(MTA-2513)]
 
 .Fixed incorrect assessment status when running an assessment on two questionnaires 
 
@@ -23,13 +23,13 @@ In {ProductShortName} 7.0.2, running two questionnaires showed the `Assessment` 
 .Analysis fails on MacOS
 // Copied from Known issues.
 
-Running the `analyze` command on a MacOS machine does not work when Podman does not have enough memory. The analysis failed with timout, without returning an error. 
+Running the `analyze` command on a MacOS machine does not work when Podman does not have enough memory. The analysis failed with timeout, without returning an error. 
 
 Workaround: Set Podman memory to at least 4GB. Podman on MacOS sets default memory to 2GB, which is not enough to run {ProductShortName}. link:https://issues.redhat.com/browse/MTA-2518[(MTA-2518)]
 
-. Tests failed when the `output.yaml` file was saved to a different directory than the default
+.Tests failed when the `output.yaml` file was saved to a different directory than the default
 // Copied from Known issues.
 
-When running a CLI command to analyze an application, the analysis required saving the `output.yaml` file only than the default directory. Setting the analysis to save to a different directory caused the analysis to fail and return an error. This issue was resolved in {ProductShortName} 7.0.3. list:https://issues.redhat.com/browse/MTA-2654[(MTA-2654)] 
+When running a CLI command to analyze an application, the analysis required saving the `output.yaml` file only in the default directory. Setting the analysis to save to a different directory caused the analysis to fail and return an error. This issue was resolved in {ProductShortName} 7.0.3. list:https://issues.redhat.com/browse/MTA-2654[(MTA-2654)] 
 
 For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12434260[Resolved Issues in Jira].

@@ -16,12 +16,12 @@ In order to automate {ProductShortName}, the IntelliJ IDE plugin Keymap actions 
 .Eclipse IDE cannot run {ProductShortName} analysis
 
 // Get more information
-Eplipse IDE cannot run {ProductShortName} plugin and perfom analysis. link:https://issues.redhat.com/browse/MTA-2563[(MTA-2563)]
+Eclipse IDE cannot run {ProductShortName} plugin and perform analysis. link:https://issues.redhat.com/browse/MTA-2563[(MTA-2563)]
 
 .Analysis fails on MacOS
 // Moved to resolved issues once fixed?
 
-Running the `analyze` command on a MacOS machine does not work when Podman does not have enough memory. The analysis failed with timout, without returning an error. 
+Running the `analyze` command on a MacOS machine does not work when Podman does not have enough memory. The analysis failed with timeout, without returning an error. 
 
 Workaround: Set Podman memory to at least 4GB. Podman on MacOS sets default memory to 2GB, which is not enough to run {ProductShortName}. link:https://issues.redhat.com/browse/MTA-2518[(MTA-2518)]
 
@@ -30,15 +30,15 @@ Workaround: Set Podman memory to at least 4GB. Podman on MacOS sets default memo
 
 Running an analysis using a custom rule does not work. The link:https://issues.redhat.com/browse/MTA-2015[(MTA-2015)]
 
-.`Applications` page loads slowly when thare are many applications
+.`Applications` page loads slowly when there are many applications
 // Any more information?
 
 When the Application Inventory has to list many applications, the page loads slowly. link:https://issues.redhat.com/browse/MTA-2497[(MTA-2497)]
 
-. Tests fail when the `output.yaml` file is saved to a different directory than the default
+.Tests fail when the `output.yaml` file is saved to a different directory than the default
 // Copied to Resolved issues.
 
-When running a CLI command to analyze an application, the analysis requires saving the `output.yaml` file only than the default directory. Setting the analysis to save to a different directory causes the analysis to fail and return an error. list:https://issues.redhat.com/browse/MTA-2654[(MTA-2654)] 
+When running a CLI command to analyze an application, the analysis requires saving the `output.yaml` file only in the default directory. Setting the analysis to save to a different directory causes the analysis to fail and return an error. list:https://issues.redhat.com/browse/MTA-2654[(MTA-2654)] 
 
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12434259[Known Issues in Jira].
 
