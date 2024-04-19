@@ -22,16 +22,14 @@ You can analyze more than one application at a time against more than one transf
 // ![](/Tackle2/AppAssessAnalyze/AnalysisMode.png)
 
 . Select the *Analysis mode* from the list:
-* Binary.
-* Source code.
-* Source code and dependencies.
-* Upload a local binary. This option only appears if you are analyzing a single application.
-
-. If you choose *Upload a local binary*, you are prompted to *Upload a local binary*. Either drag and drop a file into the area provided or click *Upload* and select the file to upload.
+* Binary
+* Source code
+* Source code and dependencies
+* Upload a local binary. This option only appears if you are analyzing a single application. If you chose this option, you are prompted to *Upload a local binary*. Either drag a file into the area provided or click *Upload* and select the file to upload.
 . Click *Next*.
 . Select one or more target options for the analysis:
 
-* Application server migration to either the following platforms:
+* Application server migration to either of the following platforms:
 ** JBoss EAP 7
 ** JBoss EAP 8
 * Containerization
@@ -49,7 +47,7 @@ You can analyze more than one application at a time against more than one transf
 * Azure
 ** Azure App Service
 ** Azure Kubernetes Service
-
+he only reason to add this feature to other Considerations doc is if this feature is something new and majo 
 . Click *Next*.
 . Select one of the following *Scope* options to better focus the analysis:
 
@@ -60,8 +58,8 @@ You can analyze more than one application at a time against more than one transf
 
 . Click *Next*.
 . In *Advanced*, you can attach additional custom rules to the analysis by selecting the *Manual* or *Repository* mode:
-** In the *Manual* mode, click *Add Rules*. Drag and drop the relevant files or select the files from their directory and click *Add*.
-** In *Repository* mode, you can add rule files from a Git or Subversion repository.
+** In the *Manual* mode, click *Add Rules*. Drag the relevant files or select the files from their directory and click *Add*.
+** In the *Repository* mode, you can add rule files from a Git or Subversion repository.
 +
 IMPORTANT: Attaching custom rules is optional if you have already attached a migration target to the analysis. If you have not attached any migration target, you must attach rules.
 
@@ -96,6 +94,9 @@ Analysis takes minutes to hours to run depending on the size of the application 
 +
 [TIP]
 ====
-{ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time.  With more cluster capacity, more analysis processes can be executed in parallel.
+{ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time. With more cluster capacity, more analysis processes can be executed in parallel.
 ====
 . When analysis is complete, click the *Report* link to see the results of the analysis.
+. Optional: Display the details of the analysis:
+.. Click the Options menu ({kebab}).
+.. Select *Analysis details*. The details are displayed in the *Analysis details for customers* window. You can choose either the YAML or JSON format.

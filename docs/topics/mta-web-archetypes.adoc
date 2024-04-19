@@ -18,3 +18,5 @@ Creation of an archetype is defined by a series of *tags*, *stakeholders*, and *
 NOTE: If the archetype criteria tags match an application only partially, this application cannot be a member of the archetype. For example, if the application _a_ only has tag _a_, but the archetype _a_ criteria tags include tags _a_ AND _b_, the application _a_ will not be a member of the archetype _a_.
 
 * *Archetype tags* are tags that are applied to the archetype entity.
+
+NOTE: All applications associated with the archetype inherit the _assessment_ and _review_ from the archetype groups to which these applications belong. This is the default setting. You can override inheritance for the application by completing an individual assessment and review.

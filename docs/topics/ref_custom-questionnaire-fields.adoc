@@ -46,7 +46,7 @@ The higher risk level always takes precedence. For example, if the `yellow` thre
 
 * `name` (required, string): A name to be displayed for the section.
 * `order` (required, integer): An order of the question in the section.
-* `comment` (optional, string): A descripton the section.
+* `comment` (optional, string): A description the section.
 * `questions` (required): A list of questions that belong to the section.
 ** `order` (required, integer): An order of the question in the section.
 ** `text` (required, string): A question to be asked.

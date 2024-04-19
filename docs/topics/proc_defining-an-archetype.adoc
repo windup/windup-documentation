@@ -14,10 +14,10 @@ When you create an archetype, an application in the inventory is automatically a
 . In the left menu, click *Archetypes*.
 . Click *Create new archetype*.
 . In the form that opens, enter the following information for the new archetype:
-.. *Name*: A name of the new archetype (mandatory).
-.. *Description*: A description of the new archetype (optional).
-.. *Criteria Tags*: Tags that associate the assessed applications with the archetype (mandatory). If criteria tags are updated, the process to calculate the applications, which the archetype is associated with, is triggered again.
-.. *Archetype Tags*: Tags that the archetype assesses in the application (mandatory).
-.. *Stakeholder(s)*: Specific stakeholders involved in the application development and migration (optional).
-.. *Stakeholders Group(s)*: Groups of stakeholders involved in the application development and migration (optional).
-. Click *Create*. The new archetype appears in the list.
+* *Name*: A name of the new archetype (mandatory).
+* *Description*: A description of the new archetype (optional).
+* *Criteria Tags*: Tags that associate the assessed applications with the archetype (mandatory). If criteria tags are updated, the process to calculate the applications, which the archetype is associated with, is triggered again.
+* *Archetype Tags*: Tags that the archetype assesses in the application (mandatory).
+* *Stakeholder(s)*: Specific stakeholders involved in the application development and migration (optional).
+* *Stakeholders Group(s)*: Groups of stakeholders involved in the application development and migration (optional).
+. Click *Create*.
