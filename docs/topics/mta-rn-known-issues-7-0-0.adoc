@@ -35,6 +35,52 @@ The system repeatedly shows a warning message about overriding an inherited asse
 
 This warning, appropriate for the first assessment, incorrectly reappears on subsequent reassessments, suggesting that the application is still inheriting its assessment, even after it has been overridden. link:https://issues.redhat.com/browse/MTA-1825[MTA-1825]
 
+.Custom rule for javax.{*} package import is not triggered when uploaded as an XML file
+
+In {ProductShortName} 7.0.0, some XML custom rule files are converted to the new YAML format during analysis. The root cause is that Java search patterns that use `IMPORT` as `location` and end in `.{*}`, do not function as expected. link:https://issues.redhat.com/browse/MTA-2000[MTA-2000]
+
+To resolve this issue, whenever a custom rule has a pattern ending in `.{\*}` and location `IMPORT`, the pattern `.{*}` can be changed to `{*}` and the location changed to `PACKAGE`, as in the following example.
+
+.To view the javax-package-custom-target.windup.xml, click here.
+[%collapsible%closed]
+====
+[source,xml]
+----
+<?xml version="1.0"?>
+<ruleset xmlns="http://windup.jboss.org/schema/jboss-ruleset" id="javax-package"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        <description>
+            This ruleset evaluates whether a custom target can be used within a custom rule
+        </description>
+        <dependencies>
+            <addon id="org.jboss.windup.rules,windup-rules-javaee,3.0.0.Final" />
+            <addon id="org.jboss.windup.rules,windup-rules-java,3.0.0.Final" />
+        </dependencies>
+        <targetTechnology id="phil" versionRange="[7,8)" />
+    </metadata>
+    <rules>
+        <rule id="javax-package-custom-target-00001">
+            <when>
+                <javaclass references="javax{*}">
+                    <location>PACKAGE</location>
+                </javaclass>
+            </when>
+            <perform>
+                <hint title="CUSTOM RULE for javax.* package import" effort="1" category-id="potential">
+                    <message>`javax.*` packages must be renamed to `jakarta.*` for Jakarta EE9 compatibility.</message>
+                    <link title="Renamed Packages" href="https://github.com/wildfly-extras/batavia/blob/master/impl/ecl/src/main/resources/org/wildfly/extras/transformer/eclipse/jakarta-renames.properties"/>
+                </hint>
+            </perform>
+        </rule>
+    </rules>
+</ruleset>
+----
+====
+
+
+
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/browse/MTA-2060?filter=12428334[Known Issues in Jira].
 
 // using filter - project in (MTA) AND type = Bug AND createdDate >= 2021-01-01 AND createdDate <= 2024-01-30 AND (resolutiondate > 2024-01-30 OR resolutiondate is EMPTY) AND Priority in (Blocker, Critical, Major) ORDER BY priority DESC, key DESC
