@@ -25,13 +25,13 @@ thresholds:
 [options="header"]
 |====
 |Questionnaire field|Description
-|`name` (required) |The name of the questionnaire. This field must be unique for the entire {ProductShortName} instance.
-|`description` (optional)|A short description of the questionnaire.
+|`name` (required, string) |The name of the questionnaire. This field must be unique for the entire {ProductShortName} instance.
+|`description` (optional, string)|A short description of the questionnaire.
 |`thresholds` (required) a|The definition of a threshold for each risk category of the application or archetype that is considered to be affected by that risk level. The threshold values can be the following:
 
-* `red` (required): Numeric percentage, for example, `30` for `30%`, of red answers that the questionnaire can have until the risk level is considered red.
-* `yellow` (required): Numeric percentage, for example, `30` for `30%`, of yellow answers that the questionnaire can have until the risk level is considered yellow.
-* `unknown` (required): Numeric percentage, for example, `30` for `30%`, of unknown answers that the questionnaire can have until the risk level is considered
+* `red` (required, unsigned integer): Numeric percentage, for example, `30` for `30%`, of red answers that the questionnaire can have until the risk level is considered red.
+* `yellow` (required, unsigned integer): Numeric percentage, for example, `30` for `30%`, of yellow answers that the questionnaire can have until the risk level is considered yellow.
+* `unknown` (required, unsigned integer): Numeric percentage, for example, `30` for `30%`, of unknown answers that the questionnaire can have until the risk level is considered
 unknown.
 
 The higher risk level always takes precedence. For example, if the `yellow` threshold is set to 30% and `red` to 5%, and the answers for the application or archetype are set to have 35% `yellow` and 6% `red`, the risk level for the application or archetype is red.

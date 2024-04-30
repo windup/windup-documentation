@@ -11,7 +11,6 @@ You can analyze more than one application at a time against more than one transf
 .Procedure
 
 . In the *Migration* view, click *Application inventory*.
-. Click the *Analysis* tab.
 . Select an application that you want to analyze.
 +
 // ![](/Tackle2/AppAssessAnalyze/SelectManageCred.png)
@@ -44,10 +43,7 @@ You can analyze more than one application at a time against more than one transf
 * Spring Boot on Red Hat Runtimes
 * Open Liberty
 * Camel. Use this option to migrate from Apache Camel 2 to Apache Camel 3 or from Apache Camel 3 to Apache Camel 4.
-* Azure
-** Azure App Service
-** Azure Kubernetes Service
-he only reason to add this feature to other Considerations doc is if this feature is something new and majo 
+* Azure App Service
 . Click *Next*.
 . Select one of the following *Scope* options to better focus the analysis:
 
@@ -99,4 +95,4 @@ Analysis takes minutes to hours to run depending on the size of the application 
 . When analysis is complete, click the *Report* link to see the results of the analysis.
 . Optional: Display the details of the analysis:
 .. Click the Options menu ({kebab}).
-.. Select *Analysis details*. The details are displayed in the *Analysis details for customers* window. You can choose either the YAML or JSON format.
+.. Select *Analysis details*. You can choose either the YAML or JSON format.

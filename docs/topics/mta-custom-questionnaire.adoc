@@ -52,7 +52,7 @@ Automated answers are selected based on the tags existing on the application or 
 
 
 Automatic tagging of applications based on answers::
-With this feature, tags are automatically applied to the assessed application or archetype based on the answer if this answer is selected. The tags are transitive. Each tag is defined by the following elements:
+During the assessment, tags are automatically applied to the application or archetype based on the answer if this answer is selected. Note that the tags are transitive. Therefore, the tags are removed if the assessment is discarded. Each tag is defined by the following elements:
 +
 --
 * *category*: Category of the target tag (`String`).

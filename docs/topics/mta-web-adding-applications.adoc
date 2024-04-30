@@ -22,13 +22,13 @@ Before creating an application, set up business services, check tags and tag cat
 . In the *Migration* view, click *Application Inventory*.
 . Click *Create new*.
 . Under *Basic information*, enter the following fields:
-* *Name*:A unique name for the new application.  
+* *Name*: A unique name for the new application.  
 * *Description*: A short description of the application (optional).
 * *Business service*: A purpose of the application (optional).
 * *Manual tags*: Software tags that characterize the application (optional, one or more).
 * *Owner*: A registered software owner from the drop-down list (optional). 
 * *Contributors*: Contributors from the drop-down list (optional, one or more).
-* *Comments*: Relevant comments on the migrated application (optional).
+* *Comments*: Relevant comments on the application (optional).
 
 . Click *Source Code* and enter the following fields:
 // ![](/Tackle2/AddingApps/NewAppSource.png)
