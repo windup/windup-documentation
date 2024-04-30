@@ -1,0 +1,46 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: PROCEDURE
+
+[id="cli-tool-known-issues_{context}"]
+= {CLINameTitle} known issues
+
+.Limitations with Podman on Microsoft Windows
+
+{CLINameTitle} is built and distributed with support for Microsoft Windows.
+
+
+However, when running any container image based on Red Hat Enterprise Linux 9 (RHEL9) or Universal Base Image 9 (UBI9), the following error can be returned when starting the container:
+
+[source,terminal]
+----
+Fatal glibc error: CPU does not support x86-64-v2
+----
+
+This error is caused because Red Hat Enterprise Linux 9 or Universal Base Image 9 container images must be run on a CPU architecture that supports `x86-64-v2`.
+
+For more details, see link: https://access.redhat.com/solutions/7057314 [(Running Red Hat Enterprise Linux 9 (RHEL) or Universal Base Image (UBI) 9 container images fail with "Fatal glibc error: CPU does not support x86-64-v2")].
+
+{CLINameTitle} runs the container runtime correctly. However, different container runtime configurations are not supported.
+
+Although unsupported, you can run {CLINameTitle} with *Docker* instead of *Podman*, which would resolve this issue.
+
+To achieve this, you replace the `PODMAN_BIN` path with the path to Docker.
+
+For example, if you experience this issue, instead of issuing:
+
+[source,terminal]
+----
+PODMAN_BIN=/usr/local/bin/docker mta-cli analyze
+----
+
+You replace `PODMAN_BIN` with the path to docker:
+
+[source,terminal]
+----
+<Docker Root Dir>=/usr/local/bin/docker mta-cli analyze
+----
+
+While this is not supported, it would allow you to explore {CLINameTitle} while you work to upgrade your hardware or move to hardware that supports `x86_64-v2`.
