@@ -9,7 +9,7 @@
 
 .Limitations with Podman on Microsoft Windows
 
-{CLINameTitle} is built and distributed with support for Microsoft Windows.
+The {CLINameTitle} is built and distributed with support for Microsoft Windows.
 
 
 However, when running any container image based on Red Hat Enterprise Linux 9 (RHEL9) or Universal Base Image 9 (UBI9), the following error can be returned when starting the container:
@@ -21,7 +21,7 @@ Fatal glibc error: CPU does not support x86-64-v2
 
 This error is caused because Red Hat Enterprise Linux 9 or Universal Base Image 9 container images must be run on a CPU architecture that supports `x86-64-v2`.
 
-For more details, see link: https://access.redhat.com/solutions/7057314 [(Running Red Hat Enterprise Linux 9 (RHEL) or Universal Base Image (UBI) 9 container images fail with "Fatal glibc error: CPU does not support x86-64-v2")].
+For more details, see link:https://access.redhat.com/solutions/7057314[(Running Red Hat Enterprise Linux 9 (RHEL) or Universal Base Image (UBI) 9 container images fail with "Fatal glibc error: CPU does not support x86-64-v2")].
 
 {CLINameTitle} runs the container runtime correctly. However, different container runtime configurations are not supported.
 
@@ -36,7 +36,7 @@ For example, if you experience this issue, instead of issuing:
 PODMAN_BIN=/usr/local/bin/docker mta-cli analyze
 ----
 
-You replace `PODMAN_BIN` with the path to docker:
+You replace `PODMAN_BIN` with the path to Docker:
 
 [source,terminal]
 ----
