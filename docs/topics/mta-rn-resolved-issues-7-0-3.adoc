@@ -18,7 +18,7 @@ Failed upload and analysis on a disconnected cluster has been fixed. The failed 
 
 .Fixed incorrect assessment status when running an assessment on two questionnaires 
 
-In {ProductShortName} 7.0.2, running two questionnaires showed the `Assessment` status as `Not started` instead of `In progress`. This has been fixed in {ProductShortName} 7.0.3, and now the Assessment status shows `In progress` after one questionnaire or Archetype is started. list:https://issues.redhat.com/browse/MTA-2409[(MTA-2409)] list:[(MTA-2410,] list:https://issues.redhat.com/browse/MTA-2410[MTA-2410)]
+In {ProductShortName} 7.0.2, running two questionnaires displayed the `Assessment` status as `Not started` instead of `In progress`. With this update, the problem has been fixed. As a result, the Assessment status shows `In progress` after one questionnaire or archetype is started. list:https://issues.redhat.com/browse/MTA-2409[(MTA-2409)] list:[(MTA-2410,] list:https://issues.redhat.com/browse/MTA-2410[MTA-2410)]
 
 .Analysis fails on MacOS
 // Copied from Known issues.
