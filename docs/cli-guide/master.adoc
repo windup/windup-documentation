@@ -34,6 +34,9 @@ include::topics/about-cli.adoc[leveloffset=+2]
 // Install the CLI
 include::topics/installing-cli-tool.adoc[leveloffset=+2]
 
+// CLI known issues
+include::topics/cli-tool-known-issues.adoc[leveloffset=+3]
+
 // Run the CLI
 include::topics/mta-cli-run.adoc[leveloffset=+2]
 
