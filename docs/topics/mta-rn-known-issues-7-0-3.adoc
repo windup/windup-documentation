@@ -21,9 +21,9 @@ Eclipse IDE cannot run the {ProductShortName} plugin and perform application ana
 .Analysis fails on MacOS
 // Moved to resolved issues once fixed?
 
-Running the `analyze` command on a MacOS machine does not work when Podman does not have enough memory. The analysis failed with timeout, without returning an error. 
+Running the `analyze` command on a MacOS machine does not work when Podman does not have enough memory. The analysis fails with timeout, without returning an error. 
 
-Workaround: Set Podman memory to at least 4GB. Podman on MacOS sets default memory to 2GB, which is not enough to run {ProductShortName}. link:https://issues.redhat.com/browse/MTA-2518[(MTA-2518)]
+To workaround this problem, set the Podman memory to at least 4GB. Podman on MacOS sets default memory to 2GB, which is not enough to run {ProductShortName}. link:https://issues.redhat.com/browse/MTA-2518[(MTA-2518)]
 
 .Custom rules do not work
 // Need more information. I don't really understand what is happening.
