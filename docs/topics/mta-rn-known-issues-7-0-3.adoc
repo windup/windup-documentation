@@ -25,10 +25,10 @@ Running the `analyze` command on a MacOS machine does not work when Podman does 
 
 To workaround this problem, set the Podman memory to at least 4GB. Podman on MacOS sets default memory to 2GB, which is not enough to run {ProductShortName}. link:https://issues.redhat.com/browse/MTA-2518[(MTA-2518)]
 
-.Custom rules do not work
+.Custom rules do not work during application analysis
 // Need more information. I don't really understand what is happening.
 
-Running an analysis using a custom rule does not work. The link:https://issues.redhat.com/browse/MTA-2015[(MTA-2015)]
+Running an application analysis by using a custom rule does not work. Currently, there is no workaround available. link:https://issues.redhat.com/browse/MTA-2015[(MTA-2015)]
 
 .`Applications` page loads slowly when there are many applications
 // Any more information?
