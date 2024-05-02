@@ -16,7 +16,7 @@ The IntelliJ IDE plugin Keymap actions do not work which prevents the {ProductSh
 .Eclipse IDE cannot run the {ProductShortName} analysis
 
 // Get more information
-Eclipse IDE cannot run {ProductShortName} plugin and perform analysis. link:https://issues.redhat.com/browse/MTA-2563[(MTA-2563)]
+Eclipse IDE cannot run the {ProductShortName} plugin and perform application analysis. Currently, there is no workaround available. link:https://issues.redhat.com/browse/MTA-2563[(MTA-2563)]
 
 .Analysis fails on MacOS
 // Moved to resolved issues once fixed?
