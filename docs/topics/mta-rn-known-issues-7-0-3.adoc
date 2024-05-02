@@ -13,7 +13,7 @@ This part provides known issues present in {ProductFullName} version 7.0.3:
 
 The IntelliJ IDE plugin Keymap actions do not work which prevents the {ProductShortName} automation. Currently, there is no workaround available. link:https://issues.redhat.com/browse/MTA-2460[(MTA-2460)]
 
-.Eclipse IDE cannot run {ProductShortName} analysis
+.Eclipse IDE cannot run the {ProductShortName} analysis
 
 // Get more information
 Eclipse IDE cannot run {ProductShortName} plugin and perform analysis. link:https://issues.redhat.com/browse/MTA-2563[(MTA-2563)]
