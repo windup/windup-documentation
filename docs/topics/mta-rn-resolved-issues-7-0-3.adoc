@@ -14,7 +14,7 @@ The `Multi select filter` option has been returned to select several names from 
 
 .Fixed failed analysis on DC clusters
 
-Failed upload and analysis on a disconnected cluster has been fixed. The failed analysis returned the `Error: exit status 128` error. This issue has been resolved in {ProductShortName} 7.0.3. link:https://issues.redhat.com/browse/MTA-2513[(MTA-2513)]
+Failed upload and analysis on a disconnected cluster has been fixed. The failed analysis returned the `Error: exit status 128` error. link:https://issues.redhat.com/browse/MTA-2513[(MTA-2513)]
 
 .Fixed incorrect assessment status when running an assessment on two questionnaires 
 
