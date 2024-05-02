@@ -30,10 +30,10 @@ To workaround this problem, set the Podman memory to at least 4GB. Podman on Mac
 
 Running an application analysis by using a custom rule does not work. Currently, there is no workaround available. link:https://issues.redhat.com/browse/MTA-2015[(MTA-2015)]
 
-.`Applications` page loads slowly when there are many applications
+.The `Applications` page loads slowly when there are many applications
 // Any more information?
 
-When the Application Inventory has to list many applications, the page loads slowly. link:https://issues.redhat.com/browse/MTA-2497[(MTA-2497)]
+When the Application Inventory has to list many applications, the page loads slowly. Currently, there is no workaround available. link:https://issues.redhat.com/browse/MTA-2497[(MTA-2497)]
 
 .Tests fail when the `output.yaml` file is saved to a different directory than the default
 // Copied to Resolved issues.
