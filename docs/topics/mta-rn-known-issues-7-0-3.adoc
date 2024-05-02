@@ -11,7 +11,7 @@ This part provides known issues present in {ProductFullName} version 7.0.3:
 .IntelliJ IDE plugin Keymap actions do not work
 // Scheduled to be fixed in 7.0.3. Move this to resolved issues once fixed?
 
-In order to automate {ProductShortName}, the IntelliJ IDE plugin Keymap actions must work. They currently do not work.  link:https://issues.redhat.com/browse/MTA-2460[(MTA-2460)]
+The IntelliJ IDE plugin Keymap actions do not work which prevents the {ProductShortName} automation. Currently, there is no workaround available. link:https://issues.redhat.com/browse/MTA-2460[(MTA-2460)]
 
 .Eclipse IDE cannot run {ProductShortName} analysis
 
