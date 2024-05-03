@@ -33,10 +33,10 @@ To install using the downloadable `.zip` file:
 
 . Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the OS specific CLI file or the `src` file:
 +
-* mta-7.0.0-cli-linux.zip
-* mta-7.0.0-cli-macos.zip
-* mta-7.0.0-cli-windows.zip
-* mta-7.0.0-cli-src.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-linux.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-macos.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-windows.zip
+* {ProductShortNameLower}-{ProductVersion}-cli-src.zip
 
 . Extract the `.zip` file to a directory of your choice. The `.zip` file extracts a single binary, called *mta-cli*.
 +
