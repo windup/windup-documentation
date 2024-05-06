@@ -42,6 +42,12 @@ To install using the downloadable `.zip` file:
 +
 When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
 
+. Enter the following to install and and start running {ProductShortName} CLI
++
+[source,terminal]
+----
+[MTA CLI command]
+----
 
 [id="installing-using-podman_{context}"]
 == Installing the {CLINameTitle} using Podman
