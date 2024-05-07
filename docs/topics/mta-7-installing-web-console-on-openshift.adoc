@@ -9,6 +9,8 @@
 
 You can install the {ProductName} ({ProductShortName}) {WebName} on all Red Hat OpenShift cloud services and Red Hat OpenShift self-managed editions.
 
+IMPORTANT: To be able to create {ProductShortName} instances, you must first install the {ProductShortName} Operator.	
+
 The {ProductShortName} Operator is a structural layer that manages resources deployed on OpenShift (database, front end, back end) to automatically create an {ProductShortName} instance.
 
 [id="openshift-persistent-volume-requirements_{context}"]
@@ -52,7 +54,7 @@ To successfully deploy, the {ProductShortName} Operator requires 3 RWO persisten
 
 == Installing the {ProductName} Operator and the {WebName}
 
-You can install the {ProductName} ({ProductShortName}) and the {WebName} on Red Hat OpenShift versions 4.13-4.15 when you install the {ProductName} Operator.
+You can install the {ProductName} ({ProductShortName}) and the {WebName} on Red Hat OpenShift versions 4.13-4.15.
 
 .Prerequisites
 
