@@ -19,8 +19,7 @@
 
 {ProductShortName} uses an extensive default questionnaire as the basis for assessing your applications. You can also create your own custom questionnaire, enabling you to estimate the difficulty, time, and other resources needed to prepare an application for containerization. You can use the results of your assessment as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work before being modernized, and which are not suitable for containerization.
 
-
-{ProductShortName} analyzes applications by applying one or more rulesets to each application considered, to determine which specific lines of that application must be modified before it can be migrated or modernized.
+{ProductShortName} analyzes applications by applying one or more rulesets to each application considered, determining which specific lines of that application must be modified before it can be migrated or modernized.
 
 {ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas that need changes.
 
