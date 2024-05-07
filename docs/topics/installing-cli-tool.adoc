@@ -42,12 +42,9 @@ To install using the downloadable `.zip` file:
 +
 When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
 
-. Enter the following to install and and start running {ProductShortName} CLI
+. Copy or save the `mta-cli` binary to a known directory.
 +
-[source,terminal]
-----
-[MTA CLI command]
-----
+Continue to link:https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/7.0/html/cli_guide/installing_and_running_the_cli#cli-run_cli-guide[Running the CLI] to run the CLI command.
 
 [id="installing-using-podman_{context}"]
 == Installing the {CLINameTitle} using Podman
