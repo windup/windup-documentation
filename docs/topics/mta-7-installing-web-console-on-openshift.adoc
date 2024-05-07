@@ -59,7 +59,7 @@ You can install the {ProductName} ({ProductShortName}) and the {WebName} on Red 
 .Prerequisites
 
 * 4 vCPUs, 8 GiB RAM, and 40 GiB persistent storage.
-* Any cloud services or self- hosted edition of Red Hat OpenShift on versions 4.13-4.15.
+* Any cloud services or self-hosted edition of Red Hat OpenShift on versions 4.13-4.15.
 * You must be logged in as a user with `cluster-admin` permissions.
 
 For more information, see link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles].
