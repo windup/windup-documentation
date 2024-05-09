@@ -19,8 +19,8 @@ You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems
 [NOTE]
 .Podman
 ====
-Podman is a daemonless, open source, Linux native tool designed to make it easy to find, run, build, share and deploy applications using Open Containers Initiative (OCI) Containers and Container Images.
-Podman provides a command line interface (CLI) familiar to anyone who has used the Docker Container Engine.
+Podman is a daemonless, open source, Linux-native tool designed to make it easy to find, run, build, share, and deploy applications using Open Containers Initiative (OCI) Containers and Container Images.
+Podman provides a command-line interface (CLI) familiar to anyone who has used the Docker Container Engine.
 For more information on installing and using Podman, see link:https://podman.io/docs/installation[Podman installation instructions].
 ====
 
@@ -31,7 +31,7 @@ For more information on installing and using Podman, see link:https://podman.io/
 
 To install using the downloadable `.zip` file:
 
-. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the OS specific CLI file or the `src` file:
+. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the OS-specific CLI file or the `src` file:
 +
 * {ProductShortNameLower}-{ProductVersion}-cli-linux.zip
 * {ProductShortNameLower}-{ProductVersion}-cli-macos.zip
@@ -74,7 +74,7 @@ This command will copy the binary `PATH` for system-wide use.
 +
 [WARNING]
 ====
-Although installation using Podman is possible, downloading installing the `.zip` file is the preferred installation.
+Although installation using Podman is possible, downloading and installing the `.zip` file is the preferred installation.
 ====
 
 
