@@ -1,0 +1,69 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes-6.2/master.adoc
+
+:_content-type: REFERENCE
+[id="mta-rn-resolved-issues-6-2-2_{context}"]
+= Resolved issues
+
+The following highlighted issues have been resolved in {ProductFullName} version 6.2.2.
+
+.CVE-2022-45693: Vulnerability in Jettison
+
+Versions of Jettison before v1.5.2 are vulnerable to a Denial of Service (DoS) caused by a stack-based buffer overflow. By sending a specially crafted request using the map parameter, a remote attacker could exploit this vulnerability to cause a DoS attack. This issue has been resolved in {ProductShortName} version 6.2.2.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2022-45693[(CVE-2022-45693)].
+
+.CVE-2023-29406: HTTP/1 client does not fully validate the contents of the Host header
+
+Versions of Golang before 1.19.11 are vulnerable to HTTP header injection, caused by improper contents validation of Host header by the HTTP/1 client. A maliciously crafted Host header can inject additional headers or entire requests. In version 1.19.11 Golang, and later, the `HTTP/1` client now refuses to send requests containing an invalid `Request.Host` or `Request.URL.Host` value. This issue has been resolved in {ProductShortName} version 6.2.2.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-29406[(CVE-2023-29406)].
+
+.CVE-2023-29409: Extremely large RSA keys in certificate chains can cause a client/server to expend significant CPU time verifying signatures
+
+Extremely large RSA keys in certificate chains can cause a client/server to expend significant CPU time verifying signatures. A Denial of Service (DoS) vulnerability was found in the Golang Go package, caused by an uncontrolled resource consumption flaw. By persuading a victim to use a specially crafted certificate with large RSA keys, a remote attacker can cause a client/server to expend significant CPU time verifying signatures, resulting in a denial of service condition. This issue has been resolved in {ProductShortName} version 6.2.2.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-29409[(CVE-2023-29409)].
+
+.CVE-2022-1962: Uncontrolled recursion in the Parse functions in `go/parser`
+
+In versions of Golang, before 1.17.12 and 1.18.4, a flaw was found in the standard library `go/parser`, uncontrolled recursion could allow an attacker to cause a panic due to stack exhaustion via deeply nested types or declarations. This issue has been resolved in {ProductShortName} version 6.2.2.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2022-1962[(CVE-2022-1962)].
+
+.CVE-2023-26159: Improper handling of URLs by the `url.parse()` function
+
+In versions of the `follow-redirects` package before 1.15.4, there is a vulnerability to Improper Input Validation. This flaw is caused by the improper handling of URLs by the `url.parse()` function. When new `URL()` throws an error, it can be manipulated to misinterpret the hostname. An attacker could exploit this weakness to redirect traffic to a malicious site, and could lead to information disclosure, phishing attacks, or other security breaches. This issue has been resolved in {ProductShortName} version 6.2.2.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-26159[(CVE-2023-26159)].
+
+.CVE-2022-46751: Improper Restriction of XML External Entity Reference, XML Injection vulnerability in Apache Ivy
+
+In version of Apache Ivy before 2.5.2, parsing XML files, either its configuration, Ivy files or Apache Maven POMs, it allows downloading external document type definitions and expand any entity references contained. This process can be used to exfiltrate data, access resources only the machine running Ivy has access to, or disturb the execution of Ivy in different ways. This issue has been resolved in {ProductShortName} version 6.2.2.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2022-46751[(CVE-2022-46751)].
+
+.CVE-2023-2976: Java's default temporary directory for file creation in `FileBackedOutputStream`
+
+Version of Google Guava versions 1.0 to 31.1 could allow a local authenticated attacker to obtain sensitive information. This is caused by a flaw with using Java's default temporary directory for file creation in `FileBackedOutputStream`. Using Java's default temporary directory for file creation in `FileBackedOutputStream` on Unix systems, could allow other users and apps on the machine with access to the default Java temporary directory to be able to access the files created by the class. This issue has been resolved in {ProductShortName} version 6.2.2.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-2976[(CVE-2023-2976)].
+
+.CVE-2023-35116:  Versions of jackson-databind before 2.15.2 could allow attackers to cause a denial of service or other unspecified impact (disputed)
+
+Versions of `jackson-databind` before 2.15.2 could allow attackers to cause a denial of service or other unspecified impact. The vendor believes that this is not a valid vulnerability because the steps of constructing a cyclic data structure and trying to serialize it cannot be achieved by an external attacker. This issue has been resolved in {ProductShortName} version 6.2.2.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-35116[(CVE-2023-35116)].
+
+.CVE-2023-1436:  An infinite recursion is triggered in Jettison when constructing a JSONArray
+
+An infinite recursion is triggered in Jettison when constructing a `JSONArray` from a Collection that contains a self-reference in one of its elements. This leads to a `StackOverflowError` exception being returned.
+This issue has been resolved in {ProductShortName} version 6.2.2.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-1436[(CVE-2023-1436)].
+
+For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12429605[Resolved Issues in Jira].
+
+
+// project = MTA AND issuetype = Bug AND status in (Verified, "Release Pending", Closed) AND priority in (Blocker, Critical, Major) AND fixVersion = "MTA 6.2.2" AND component not in (Documentation, QE-Task) ORDER BY priority DESC
