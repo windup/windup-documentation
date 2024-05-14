@@ -8,6 +8,6 @@
 
 You can attach various tags to the application that you want to analyze. You can use tags to classify applications and instantly identify application information, for example, an application type, data center location, and technologies used within the application. You can also use tagging to associate archetypes to applications for automatic assessment. For more information about archetypes, see xref:mta-archetypes_user-interface-guide[Working with archetypes].
 
-Tagging can be either xref:manual-tagging-of-an-application_user-interface-guide[manual] or xref:automatic-tagging-of-an-application_user-interface-guide[automatic].
+Tagging can be done xref:automatic-tagging-of-an-application_user-interface-guide[automatically] during the analysis xref:manual-tagging-of-an-application_user-interface-guide[manually] at any time.
 
 NOTE: Manual and automatic tagging are not interchangeable but complementary. For example, an analysis can only tag the application based on its technologies. If you want to tag the application also with the location of the data center where it is deployed, you need to tag the application manually.
