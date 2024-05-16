@@ -10,4 +10,4 @@ You can attach various tags to the application that you are analyzing. You can u
 
 Tagging can be done xref:automatic-tagging-of-an-application_user-interface-guide[automatically] during the analysis xref:manual-tagging-of-an-application_user-interface-guide[manually] at any time.
 
-NOTE: Manual and automatic tagging are not interchangeable but complementary. For example, an analysis can only tag the application based on its technologies. If you want to tag the application also with the location of the data center where it is deployed, you need to tag the application manually.
+NOTE: Not all tags can be assigned automatically. For example, an analysis can only tag the application based on its technologies. If you want to tag the application also with the location of the data center where it is deployed, you need to tag the application manually.
