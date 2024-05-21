@@ -26,11 +26,13 @@ The {ProductName} ({ProductShortName}) supports the following migrations:
 |Spring Boot in Red Hat Runtimes
 |Quarkus 
 |Open Liberty
+|Azure App Service
 
 |Oracle WebLogic Server
 |{icon-check}
 |{icon-check}
 |{icon-check}
+|-
 |-
 |-
 |-
@@ -46,10 +48,12 @@ The {ProductName} ({ProductShortName}) supports the following migrations:
 |-
 |-
 |{icon-check}
+|-
 
 |JBoss EAP 4
 |{icon-x} footnoteref:[note2,Although {ProductShortName} does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform to JBoss EAP 7.]
 |{icon-check} |{icon-check}
+|-
 |-
 |-
 |-
@@ -65,11 +69,13 @@ The {ProductName} ({ProductShortName}) supports the following migrations:
 |-
 |-
 |-
+|-
 
 |JBoss EAP 6
 |{icon-check}
 |{icon-check}
 |{icon-check}
+|-
 |-
 |-
 |-
@@ -85,9 +91,11 @@ The {ProductName} ({ProductShortName}) supports the following migrations:
 |-
 |{icon-check}
 |-
+|-
 
 |Thorntail
 |{icon-check} footnoteref:[note3,Requires JBoss Enterprise Application Platform expansion pack 2 (EAP XP 2)]
+|-
 |-
 |-
 |-
@@ -105,6 +113,7 @@ The {ProductName} ({ProductShortName}) supports the following migrations:
 |-
 |-
 |-
+|-
 
 |Camel 2
 |-
@@ -112,6 +121,7 @@ The {ProductName} ({ProductShortName}) supports the following migrations:
 |{icon-check}
 |-
 |{icon-check}
+|-
 |-
 |-
 |-
@@ -125,11 +135,13 @@ The {ProductName} ({ProductShortName}) supports the following migrations:
 |{icon-check}
 |{icon-check}
 |-
+|-
 
 |Any Java application
 |-
 |{icon-check}
 |{icon-check}
+|-
 |-
 |-
 |-
@@ -145,4 +157,16 @@ The {ProductName} ({ProductShortName}) supports the following migrations:
 |-
 |-
 |-
+|-
+
+|Azure
+|-
+|-
+|-
+|-
+|-
+|-
+|-
+|-
+|{icon-check}
 |===
