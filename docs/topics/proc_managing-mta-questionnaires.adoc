@@ -1,0 +1,69 @@
+:_newdoc-version: 2.15.0
+:_template-generated: 2024-4-30
+:_mod-docs-content-type: PROCEDURE
+
+[id="managing-mta-questionnaires_{context}"]
+= Managing assessment questionnaires
+
+[role="_abstract"]
+By using the {ProductShortName} user interface, you can perform the following actions on assessment questionnaires:
+
+* Display the questionnaire. You can also diplay the answer choices and their associated risk weight.
+* Export the questionnaire to the desired location on your system. 
+* Import the questionnaire from your system. 
++
+WARNING: The name of the imported questionnaire must be unique.
+If the name, which is defined in the YAML syntax (`name:<name of questionnaire>`), is duplicated, the import will fail with the following error message: `UNIQUE constraint failed: Questionnaire.Name`.
+* Delete an assessment questionnaire.
++
+WARNING: When you delete the questionnaire, its answers for all applications that use it in all archetypes are also deleted.
++
+IMPORTANT: You cannot delete the *Legacy Pathfinder* default questionnaire.
+
+
+
+.Procedure
+
+* Depending on your scenario, perform one of the following actions:
+
+** Display the quest the assessment questionnaire:
+. In the *Administration* view, select *Assessment questionnaires*.
+. Click the Options menu ({kebab}).
+. Select *View* for the questionnaire you want to display.
+. Optional: Click the arrow to the left from the question to display the answer choices and their risk weight.
+
+** Export the assessment questionnaire:
+. In the *Administration* view, select *Assessment questionnaires*.
+. Select the desired questionnaire.
+. Click the Options menu ({kebab}).
+. Select *Export*.
+. Select the location of the download.
+. Click *Save*.
+
+** Import the assessment questionnaire:
+. In the *Administration* view, select *Assessment questionnaires*.
+. Click *Import questionnaire*.
+. Click *Upload*.
+. Navigate to the location of your questionnaire.
+. Click *Open*.
+. Import the desired questionnaire by clicking *Import*.
+
+** Delete the assessment questionnaire:
+. In the *Administration* view, select *Assessment questionnaires*.
+. Select the questionnaire you want to delete.
+. Click the Options menu ({kebab}).
+. Select *Delete*.
+. Confirm deleting by entering on the *Name* of the questionnaire.
+
+
+
+
+
+
+
+[role="_additional-resources"]
+.Additional resources
+* xref:mta-default-questionnaire_user-interface-guide[The default assessment questionnaire]
+* xref:mta-custom-questionnaire_user-interface-guide[The custom assessment questionnaire]
+
+

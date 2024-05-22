@@ -19,7 +19,7 @@ By using ready-made custom migration targets, you can avoid configuring custom r
 . In the *Administration* view, click *Custom migration targets*.
 . Click *Create new*.
 . Enter the name and description of the target.
-. In the *Image* section, upload an image file for the target's icon. The file can be in either PNG or JPEG format, up to 1 MB. If you do not upload any file, a default icon is used.
+. In the *Image* section, upload an image file for the target's icon. The file can be in either the PNG or JPEG format, up to 1 MB. If you do not upload any file, a default icon is used.
 . In the *Custom rules* section, select either *Upload manually* or *Retrieve from a repository*:
 ** If you selected *Upload manually*, upload or drag and drop the required rule files from your local drive.
 ** If you selected *Retrieve from a repository*, complete the following steps:

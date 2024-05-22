@@ -10,7 +10,9 @@
 You can use the {ProductFullName} to import a custom assessment questionnaire by using a custom YAML syntax to define the questionnaire. The YAML syntax supports the following features:
 
 Conditional questions::
-The YAML syntax supports including or excluding questions based on tags existing on the application or archetype. For example, if the application or archetype has the `Language/Java` tag, the `What is the main JAVA framework used in your application?` question is included in the questionnaire:
+The YAML syntax supports including or excluding questions based on tags existing on the application or archetype, for example:
+
+* If the application or archetype has the `Language/Java` tag, the `What is the main JAVA framework used in your application?` question is included in the questionnaire:
 +
 [source,yaml]
 ----
@@ -25,6 +27,22 @@ The YAML syntax supports including or excluding questions based on tags existing
 ...
 ----
 
+* If the application or archetype has the `Deployment/Serverless` and `Architecture/Monolith` tag, the `Are you currently using any form of container orchestration?` question is excluded from the questionnaire:
++
+[source,yaml]
+----
+...
+  questions:
+    - order: 4
+      text: Are you currently using any form of container orchestration?
+      explanation: Determine if the application utilizes container orchestration tools like Kubernetes, Docker Swarm, etc.
+      excludeFor:
+        - category: Deployment
+          tag: Serverless
+        - category: Architecture
+          tag: Monolith
+...
+----
 
 Automated answers based on tags present on the assessed application or archetype::
 Automated answers are selected based on the tags existing on the application or archetype. For example, if an application or archetype has the `Runtime/Quarkus` tag, the `Quarkus` answer is automatically selected, and if an application or archetype has the `Runtime/Spring Boot` tag, the `Spring Boot` answer is automatically selected:
@@ -51,8 +69,8 @@ Automated answers are selected based on the tags existing on the application or 
 ----
 
 
-Autotagging of applications based on answers::
-With this feature, tags are automatically applied to the assessed application or archetype based on the answer if this answer is selected. The tags are transitive. Each tag is defined by the following elements:
+Automatic tagging of applications based on answers::
+During the assessment, tags are automatically applied to the application or archetype based on the answer if this answer is selected. Note that the tags are transitive. Therefore, the tags are removed if the assessment is discarded. Each tag is defined by the following elements:
 +
 --
 * *category*: Category of the target tag (`String`).
