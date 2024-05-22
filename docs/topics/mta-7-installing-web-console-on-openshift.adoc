@@ -7,9 +7,11 @@
 
 = Installing the {ProductName} {WebName}
 
-You can install the {ProductName} ({ProductShortName}) {WebName} as part of the process of installing the {ProductShortName} Operator on the OpenShift Container Platform.
+You can install the {ProductName} ({ProductShortName}) {WebName} on all Red Hat OpenShift cloud services and Red Hat OpenShift self-managed editions.
 
-The {ProductShortName} Operator is a structural layer that manages resources deployed on Kubernetes (database, front end, back end) to automatically create an {ProductShortName} instance.
+IMPORTANT: To be able to create {ProductShortName} instances, you must first install the {ProductShortName} Operator.	
+
+The {ProductShortName} Operator is a structural layer that manages resources deployed on OpenShift, such as database, front end, and back end, to automatically create an {ProductShortName} instance.
 
 [id="openshift-persistent-volume-requirements_{context}"]
 == Persistent volume requirements
@@ -52,19 +54,19 @@ To successfully deploy, the {ProductShortName} Operator requires 3 RWO persisten
 
 == Installing the {ProductName} Operator and the {WebName}
 
-You can install the {ProductName} ({ProductShortName}) and the {WebName} on OpenShift Container Platform versions 4.13-4.15 when you install the {ProductName} Operator.
+You can install the {ProductName} ({ProductShortName}) and the {WebName} on Red Hat OpenShift versions 4.13-4.15.
 
 .Prerequisites
 
 * 4 vCPUs, 8 GiB RAM, and 40 GiB persistent storage.
-* OpenShift Container Platform 4.13-4.15 installed.
+* Any cloud services or self-hosted edition of Red Hat OpenShift on versions 4.13-4.15.
 * You must be logged in as a user with `cluster-admin` permissions.
 
 For more information, see link:https://access.redhat.com/support/policy/updates/openshift_operators[OpenShift Operator Life Cycles].
 
 .Procedure
 
-. In the OpenShift Container Platform web console, click *Operators → OperatorHub*.
+. In the Red Hat OpenShift web console, click *Operators → OperatorHub*.
 . Use the *Filter by keyword* field to search for *MTA*.
 . Click the *Migration Toolkit for Applications* Operator and then click *Install*.
 . On the *Install Operator* page, click *Install*.
@@ -181,7 +183,7 @@ spec:
 . When prompted, create a new password.
 
 [id="installing-mta-operator-in-disconnected-environment_{context}"]
-== Installing the {ProductName} Operator in a disconnected {ocp-short} environment
+== Installing the {ProductName} Operator in a disconnected Red Hat OpenShift environment
 
 You can install the {ProductShortName} Operator in a disconnected environment by following the instructions in link:https://access.redhat.com/documentation/en-us/openshift_container_platform/4.15/html/installing/disconnected-installation-mirroring#installing-mirroring-disconnected[generic procedure].
 
