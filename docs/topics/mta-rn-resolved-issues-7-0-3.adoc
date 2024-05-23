@@ -38,7 +38,7 @@ A flaw was found in Adobe CSS Tools. Operation input validation may result in a 
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-26364[(CVE-2023-26364)].
 
-.CVE-2023-45287: Golang: `crypto/tls`: Timing Side Channel Attack in an RSA-Based TLS Key exchanges 
+.CVE-2023-45287: Golang: `crypto/tls`: Timing Side Channel Attack in an RSA-Based TLS Key exchanges
 
 A flaw was found in the Golang `crypto/tls` standard library. In versions before 1.20, the package was vulnerable to a Timing side-channel attack by observing the time it took for RSA-based Transport Layer Security (TLS) key exchanges, which was not constant. The flaw allowed for potential timing attacks, where the removal of `PKCS#1` padding could have leaked and potentially exposed session key bits.
 
@@ -46,7 +46,7 @@ For more details, see link:https://access.redhat.com/security/cve/cve-2023-45287
 
 .CVE-2023-39326: Golang: `net/http/internal`: denial of service (DoS) caused by resource consumption from HTTP requests
 
-A flaw was found in the Golang `net/http/internal` package that could cause a malicious HTTP sender to cause a receiver reading from a request or response body to read many more bytes from the network than are in the body.  This flaw could cause the receiver to fail to read the response, possibly leading to a denial of service (DoS).
+A flaw was found in the Golang `net/http/internal` package that could cause a malicious HTTP sender to cause a receiver reading from a request or response body to read many more bytes from the network than are in the body. This flaw could cause the receiver to fail to read the response, possibly leading to a denial of service (DoS).
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-39326[(CVE-2023-39326)].
 
@@ -58,27 +58,27 @@ For more details, see link:https://access.redhat.com/security/cve/cve-2023-48631
 
 .CVE-2023-26159: `follow-redirects` package: Improper Input Validation caused by the improper handling of URLs by the `url.parse()` function 
 
-An Improper Input Validation flaw was found in the `follow-redirects` package, versions before 1.15.4. due to the improper handling of URLs by the `url.parse()` function. This flaw could be exploited by manipulating the hostname when the new `URL()` throws an error, leading to a misinterpretation and potential redirection of traffic to a malicious site.
+An Improper Input Validation flaw was found in the `follow-redirects` package, in versions before 1.15.4. due to the improper handling of URLs by the `url.parse()` function. This flaw could be exploited by manipulating the hostname when the new `URL()` throws an error, leading to a misinterpretation and potential redirection of traffic to a malicious site.
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-26159[(CVE-2023-26159)].
 
 .CVE-2024-24786: A flaw was found in Golang's protobuf module, where the unmarshal function can enter an infinite loop
-  
+
 A flaw was found in the `protojson.Unmarshal` function that could cause the function to enter an infinite loop when unmarshaling certain forms of invalid JSON messages. This condition could occur when unmarshaling into a message that contained a `google.protobuf.Any` value, or when the `UnmarshalOptions.DiscardUnknown` option was set in a JSON-formatted message.
- 
+
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-24786[(CVE-2024-24786)].
 
 .CVE-2024-28849: `follow-redirects` package: could cause a possible credential leak
-  
+
 A flaw was found in versions of the `follow-redirects` package before 1.1.5. This flaw occurs when `follow-redirects` handles cross-domain redirects. It fails to clear the `proxy-authentication` header, which may contain credentials, while it clears the authorization header. As a result, this vulnerability could potentially lead to the leak of sensitive credentials. 
- 
+
 For more details, see line:https://access.redhat.com/security/cve/CVE-2024-28849[(CVE-2024-28849)].
 
-.Fixed incorrect assessment status when running an assessment on two questionnaires 
+.Fixed incorrect assessment status when running an assessment on two questionnaires
 
-In {ProductShortName} 7.0.2, running two questionnaires displayed the `Assessment` status as `Not started` instead of `In progress`. With this update, the problem has been resolved. As a result, the *Assessment* status shows `In progress` after one questionnaire or archetype is started. 
+In {ProductShortName} 7.0.2, running two questionnaires displayed the `Assessment` status as `Not started` instead of `In progress`. With this update, the problem has been resolved. As a result, the *Assessment* status shows `In progress` after one questionnaire or archetype is started.
 
-* link:https://issues.redhat.com/browse/MTA-2409[(MTA-2409)] 
+* link:https://issues.redhat.com/browse/MTA-2409[(MTA-2409)]
 
 * link:https://issues.redhat.com/browse/MTA-2410[(MTA-2410)]
 
