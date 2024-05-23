@@ -7,13 +7,12 @@
 [id="installing-cli-tool_{context}"]
 = Installing the {CLINameTitle}
 
-You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems.
-
+You can install the {ProductShortName} {CLINameTitle} on Linux, Windows, or macOS operating systems.
 
 .Prerequisites
 
 * Red Hat Container Registry Authentication for `registry.redhat.io`. Red Hat distributes container images from registry.redhat.io, which requires authentication. For more details, see link:https://access.redhat.com/RegistryAuthentication[Red Hat Container Registry Authentication].
-* Podman must be installed
+* Podman must be installed on the computer 
 
 +
 [NOTE]
@@ -24,6 +23,20 @@ Podman provides a command line interface (CLI) familiar to anyone who has used t
 For more information on installing and using Podman, see link:https://podman.io/docs/installation[Podman installation instructions].
 ====
 
+Installation options
+
+This section offers two options to install {ProductShortName} {CLINameTitle}:
+
+* Downloading a `.zip` file and installing it using a command line
+* Running PodMan on your computer and installing using PodMan commands
+
++
+[WARNING]
+====
+Although installation using Podman is possible, downloading installing the `.zip` file is the preferred installation.
+====
+
+
 [id="installing-downloadable-cli-zip_{context}"]
 == Installing the {CLINameTitle} `.zip` file
 
@@ -31,12 +44,21 @@ For more information on installing and using Podman, see link:https://podman.io/
 
 To install using the downloadable `.zip` file:
 
-. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the OS specific CLI file or the `src` file:
+. Navigate to the link:https://developers.redhat.com/products/mta/download[{ProductShortName} Download page] and download the OS specific CLI file or the `mta-{ProductVersion}-cli-src` file:
 +
-* {ProductShortNameLower}-{ProductVersion}-cli-linux.zip
-* {ProductShortNameLower}-{ProductVersion}-cli-macos.zip
-* {ProductShortNameLower}-{ProductVersion}-cli-windows.zip
-* {ProductShortNameLower}-{ProductVersion}-cli-src.zip
+* Migration Toolkit {CLINameTitle} -{CLINameTitle} for Linux x86_64
+* Migration Toolkit {CLINameTitle} -{CLINameTitle} for Linux aarch64
+* Migration Toolkit {CLINameTitle} -{CLINameTitle} for macOS x86_64
+* Migration Toolkit {CLINameTitle} -{CLINameTitle} for macOS aarch64
+* Migration Toolkit {CLINameTitle} -{CLINameTitle} for Windows x86_64
+* Migration Toolkit {CLINameTitle} -{CLINameTitle} for Windows aarch64
+* Migration Toolkit {CLINameTitle} -{CLINameTitle} for {ProductShortName} source Code
+
++
+[NOTE]
+====
+Do not download and install the {ProductShortName} source Code file if your computer runs one of the above operating systems.
+====
 
 . Extract the `.zip` file to a directory of your choice. The `.zip` file extracts a single binary, called *mta-cli*.
 +
@@ -64,10 +86,17 @@ To install using `podman pull`:
 [source,terminal]
 ----
 podman login registry.redhat.io
+----
+
+. Enter your `Username` and `Password`.
++
+[source,terminal]
+---- 
 Username: <username>
 Password: <***********>
 ----
-. Issue:
+
+. Copy the binary `PATH` for system-wide use.
 +
 [source,terminal]
 ----
@@ -75,10 +104,5 @@ podman cp $(podman create registry.redhat.com/mta-toolkit/mta-mta-cli-rhel9:{Pro
 ----
 +
 This command will copy the binary `PATH` for system-wide use.
-+
-[WARNING]
-====
-Although installation using Podman is possible, downloading installing the `.zip` file is the preferred installation.
-====
 
 
