@@ -95,6 +95,8 @@ podman login registry.redhat.io
 Username: <username>
 Password: <***********>
 ----
++
+If your `Usernam` and `Password` are correct, the terminal line should show `Login Succeeded!`.
 
 . Copy the binary `PATH` for system-wide use.
 +
