@@ -22,5 +22,22 @@ Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves thi
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-28849[(CVE-2024-28849)]
 
+.CVE-2024-29131:
+
+A vulnerability was found in Apache Commons-Configuration2, where a Stack Overflow Error can occur when adding a property in AbstractListDelimiterHandler.flattenIterator(). This issue could allow an attacker to corrupt memory or execute a denial of service attack by crafting malicious property that triggers an out-of-bounds write issue when processed by the vulnerable method. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29131[(CVE-2024-29131)]
+
+.CVE-2024-29133
+
+A vulnerability was found in Apache Commons-Configuration2, where a Stack Overflow Error occurs when calling ListDelimiterHandler.flatten(Object, int) with a cyclical object tree. This issue could allow an attacker to trigger an out-of-bounds write that could lead to memory corruption or cause a denial of service condition. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29133[(CVE-2024-29133)]
+
+.CVE-2024-29180: `webpack-dev-middleware` lack of URL validation may lead to file leak
+
+A flaw was found in the webpack-dev-middleware package, where it failed to validate the supplied URL address sufficiently before returning local files. This flaw allows an attacker to craft URLs to return arbitrary local files from the developer's machine. The lack of normalization before calling the middleware also allows the attacker to perform path traversal attacks on the target environment. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29180[(CVE-2024-29180)]
 
 For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435317[MTR 1.2.6 resolved issues] in Jira.
