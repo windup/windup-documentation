@@ -15,7 +15,7 @@ When the Application Inventory has to list many applications, the page loads slo
 
 .Failure to run analysis on a directory of multiple applications
 
-{ProductShortName} 7.0.2 and 7.0.3 fails to run analysis on a directory of multiple applications. The cause of this failure is that the analyzer is expecting a `pom.xml` file in the root directory. link:https://issues.redhat.com/browse/MTA-2765[(MTA-2765)]
+{ProductShortName} 7.0.2 and 7.0.3 fail to run analysis on a directory of multiple applications. The cause of this failure is that the analyzer is expecting a `pom.xml` file in the root directory. link:https://issues.redhat.com/browse/MTA-2765[(MTA-2765)]
 
 
 For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12434259[Known Issues in Jira].
