@@ -42,7 +42,7 @@ For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29133
 
 .CVE-2024-29180: `webpack-dev-middleware` lack of URL validation may lead to file leak
 
-A flaw was found in the webpack-dev-middleware package, where it failed to validate the supplied URL address sufficiently before returning local files. This flaw allows an attacker to craft URLs to return arbitrary local files from the developer's machine. The lack of normalization before calling the middleware also allows the attacker to perform path traversal attacks on the target environment. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+A flaw was found in the `webpack-dev-middleware` package, where it failed to validate the supplied URL address sufficiently before returning local files. This flaw allows an attacker to craft URLs to return arbitrary local files from the developer's machine. The lack of normalization before calling the middleware also allows the attacker to perform path traversal attacks on the target environment. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29180[(CVE-2024-29180)]
 
