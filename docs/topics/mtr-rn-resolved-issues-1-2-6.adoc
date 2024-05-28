@@ -36,7 +36,7 @@ For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29131
 
 .CVE-2024-29133: Out-of-bounds Write vulnerability in Apache Commons Configuration
 
-A vulnerability was found in Apache Commons-Configuration2, where a Stack Overflow Error occurs when calling ListDelimiterHandler.flatten(Object, int) with a cyclical object tree. This issue could allow an attacker to trigger an out-of-bounds write that could lead to memory corruption or cause a denial of service condition. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+A vulnerability was found in Apache Commons-Configuration2, where a Stack Overflow Error occurs when calling the `ListDelimiterHandler.flatten(Object, int)` method with a cyclical object tree. This issue could allow an attacker to trigger an out-of-bounds write that could lead to memory corruption or cause a denial of service (DoS) attach. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29133[(CVE-2024-29133)]
 
