@@ -30,7 +30,7 @@ For more details, see link:https://access.redhat.com/security/cve/CVE-2024-28849
 
 .CVE-2024-29131: Out-of-bounds Write vulnerability in Apache Commons Configuration
 
-A vulnerability was found in Apache Commons-Configuration2, where a Stack Overflow Error can occur when adding a property in AbstractListDelimiterHandler.flattenIterator(). This issue could allow an attacker to corrupt memory or execute a denial of service attack by crafting malicious property that triggers an out-of-bounds write issue when processed by the vulnerable method. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+A vulnerability was found in Apache Commons-Configuration2, where a Stack Overflow Error can occur when adding a property in the `AbstractListDelimiterHandler.flattenIterator()` method. This issue could allow an attacker to corrupt memory or execute a denial of service (DoS) attack by crafting a malicious property that triggers an out-of-bounds write issue when processed by the vulnerable method. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29131[(CVE-2024-29131)]
 
