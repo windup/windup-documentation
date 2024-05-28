@@ -11,7 +11,7 @@ The following known issues are in the {ProductShortName} 1.2.6 release:
 
 .Unable to migrate application to {ProductShortName} due to a `SEVERE [org.jboss.windup.web.services.messaging.PackageDiscoveryMDB]` error
 
-When uploading files for analyze, the server log would print a `SEREVE` message, and the webpage could freeze at the discovering and fetching packages stage, returning an `SEVERE [org.jboss.windup.web.services.messaging.PackageDiscoveryMDB]` error. This error is caused by a `null: java.lang.NullPointerException`. link:https://issues.redhat.com/browse/WINDUP-4189[(WINDUP-4189)]
+When uploading files for analyze, the server log would return a `SEVERE [org.jboss.windup.web.services.messaging.PackageDiscoveryMDB]` error. This error is caused by a `null: java.lang.NullPointerException`. link:https://issues.redhat.com/browse/WINDUP-4189[(WINDUP-4189)]
 
 
 For a complete list of all known issues, see the list of link:https://issues.redhat.com/issues/?filter=12436484[MTR 1.2.6 known issues] in Jira.
