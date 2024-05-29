@@ -7,7 +7,7 @@
 [id="about-cli_{context}"]
 = The {ProductShortName} {CLINameTitle}
 
-The {ProductShortName} {CLIName} is a command-line tool that you can use to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without using the other tools. The {CLIName} includes a wide array of customization options, enabling you to tune the {ProductShortName} analysis options or integrate with external automation tools.
+The {ProductName} {CLIName} is a command-line tool that you can use to assess and manage migration and modernization efforts for applications. It produces many reports that highlight the analysis without having to use the other tools. The {CLIName} includes a wide array of customization options, enabling you to tune the {ProductShortName} analysis options or integrate with external automation tools.
 
 ifndef::cli-guide[]
 For more information about using the {CLIName}, see link:{ProductDocUserGuideURL}[_{UserCLIBookName}_].
