@@ -27,8 +27,8 @@ Installation options
 
 This section offers two options to install {ProductShortName} {CLINameTitle}:
 
-* Downloading a `.zip` file and installing it using a command line
-* Running Podman on your computer and installing using Podman commands
+* Downloading a `.zip` file and installing it using a command line.
+* Running Podman on your computer and install {ProductShortName} {CLIName} using Podman commands.
 
 +
 [WARNING]
@@ -96,7 +96,7 @@ Username: <username>
 Password: <***********>
 ----
 +
-If your `Usernam` and `Password` are correct, the terminal line should show `Login Succeeded!`.
+If your `Username` and `Password` are correct, the terminal line should show `Login Succeeded!`.
 
 . Copy the binary `PATH` for system-wide use.
 +
