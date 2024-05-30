@@ -28,5 +28,6 @@ A flaw was discovered in the `follow-redirects` package that clears authorizatio
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-28849[(CVE-2024-28849)]
 
+For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435655[Resolved Issues in Jira].
 // project = MTA AND issuetype = Bug AND status in (Verified, "Release Pending", Closed) AND priority in (Blocker, Critical, Major) AND fixVersion = "MTA 6.2.3" AND component not in (Documentation, QE-Task) ORDER BY priority DESC
 
