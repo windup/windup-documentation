@@ -1,0 +1,101 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes-7.0/master.adoc
+
+:_content-type: REFERENCE
+[id="mta-rn-resolved-issues-7-0-3_{context}"]
+= Resolved issues
+
+This section provides highlighted issues that have been resolved in {ProductFullName} version 7.0.3.
+
+.CVE-2024-29180: A flaw was found in the `webpack-dev-middleware` package, where it failed to validate the supplied URL address sufficiently
+
+A flaw was found in versions of the `webpack-dev-middleware` package before versions 7.1.0 and 6.1.2, in which it failed to validate the supplied URL address sufficiently before returning local files. This flaw allowed an attacker to craft URLs to return arbitrary local files from the developer's machine. The lack of normalization before calling the middleware also allowed the attacker to perform path traversal attacks on the target environment.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2024-29180[(CVE-2024-29180)].
+
+.CVE-2023-45288: Golang: `net/http, x/net/http2`: unlimited number of CONTINUATION frames can cause a denial-of-service (DoS) attack
+
+A flaw was discovered with the implementation of the `HTTP/2` protocol in the Go programming language. There were insufficient limitations on the number of CONTINUATION frames sent within a single stream. An attacker could potentially exploit this to cause a denial-of-service (DoS) attack.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-45288[(CVE-2023-45288)].
+
+.CVE-2023-45857: Axios flaw can expose confidential data stored in cookies
+
+A flaw was found in Axios that may expose the confidential `XSRF-TOKEN` stored in cookies by including it in the HTTP header `X-XSRF-TOKEN` for every request made to any host. This issue can allow a remote attacker to bypass security measures and view sensitive data.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-45857[(CVE-2023-45857)].
+
+.CVE-2023-45286: `go-resty`: HTTP request body disclosure in github.com/go-resty/resty/v2
+
+A race condition in `go-resty` can result in HTTP request body disclosure across requests. The race condition can be triggered when `sync.Pool.Put` is called with the same `bytes.Buffer` more than once during request retries. This can lead to a situation where an unrelated server receives the request body, potentially exposing sensitive information. 
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-45286[(CVE-2023-45286)].
+
+.CVE-2023-26364: CSS tools: Improper Input Validation causes Denial of Service via Regular
+
+A flaw was found in Adobe CSS Tools. Operation input validation may result in a minor denial of service while parsing malicious CSS with the parse component. User interaction and privileges are not required to jeopardize an environment.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-26364[(CVE-2023-26364)].
+
+.CVE-2023-45287: Golang: `crypto/tls`: Timing Side Channel Attack in an RSA-Based TLS Key exchanges
+
+A flaw was found in the Golang `crypto/tls` standard library. In versions before 1.20, the package was vulnerable to a Timing side-channel attack by observing the time it took for RSA-based Transport Layer Security (TLS) key exchanges, which was not constant. The flaw allowed for potential timing attacks, where the removal of `PKCS#1` padding could have leaked and potentially exposed session key bits.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-45287[(CVE2023-45287)].
+
+.CVE-2023-39326: Golang: `net/http/internal`: denial of service (DoS) caused by resource consumption from HTTP requests
+
+A flaw was found in the Golang `net/http/internal` package that could cause a malicious HTTP sender to cause a receiver reading from a request or response body to read many more bytes from the network than are in the body. This flaw could cause the receiver to fail to read the response, possibly leading to a denial of service (DoS).
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-39326[(CVE-2023-39326)].
+
+.CVE-2023-48631: Improper Input Validation vulnerability affecting Adobe `css-tools`
+
+A Regular Expression Denial of Service (ReDoS) flaw was found in Adobe's `css-tools`, versions 4.3.1 and earlier, when parsing CSS. This vulnerability could lead to a denial of service when attempting to parse CSS due to improper input validation and could allow an attacker to use an input string to cause a denial of service, especially when attempting to parse CSS.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-48631[(CVE-2023-48631)].
+
+.CVE-2023-26159: `follow-redirects` package: Improper Input Validation caused by the improper handling of URLs by the `url.parse()` function 
+
+An Improper Input Validation flaw was found in the `follow-redirects` package, in versions before 1.15.4. due to the improper handling of URLs by the `url.parse()` function. This flaw could be exploited by manipulating the hostname when the new `URL()` throws an error, leading to a misinterpretation and potential redirection of traffic to a malicious site.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-26159[(CVE-2023-26159)].
+
+.CVE-2024-24786: A flaw was found in Golang's protobuf module, where the unmarshal function can enter an infinite loop
+
+A flaw was found in the `protojson.Unmarshal` function that could cause the function to enter an infinite loop when unmarshaling certain forms of invalid JSON messages. This condition could occur when unmarshaling into a message that contained a `google.protobuf.Any` value, or when the `UnmarshalOptions.DiscardUnknown` option was set in a JSON-formatted message.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2024-24786[(CVE-2024-24786)].
+
+.CVE-2024-28849: `follow-redirects` package: could cause a possible credential leak
+
+A flaw was found in versions of the `follow-redirects` package before 1.1.5. This flaw occurs when `follow-redirects` handles cross-domain redirects. It fails to clear the `proxy-authentication` header, which may contain credentials, while it clears the authorization header. As a result, this vulnerability could potentially lead to the leak of sensitive credentials. 
+
+For more details, see line:https://access.redhat.com/security/cve/CVE-2024-28849[(CVE-2024-28849)].
+
+.Fixed incorrect assessment status when running an assessment on two questionnaires
+
+In {ProductShortName} 7.0.2, running two questionnaires displayed the `Assessment` status as `Not started` instead of `In progress`. With this update, the problem has been resolved. As a result, the *Assessment* status shows `In progress` after one questionnaire or archetype is started.
+
+* link:https://issues.redhat.com/browse/MTA-2409[(MTA-2409)]
+
+* link:https://issues.redhat.com/browse/MTA-2410[(MTA-2410)]
+
+.Failure to connect to a Jira server using basic authentication
+
+In {ProductShortName} 7.0.2, connecting to a Jira server using basic authentication, meaning username and password, failed. This issue has been resolved in {ProductShortName} 7.0.3. link:https://issues.redhat.com/browse/MTA-2427[(MTA-2427)]
+
+.Unable to activate the `Enable insecure communication` switch
+
+In {ProductShortName} 7.0.2, it was not possible to enable on the `Enable insecure communication` switch when creating or editing a Jira instance. This issue has been resolved in {ProductShortName} 7.0.3. link:https://issues.redhat.com/browse/MTA-2426[(MTA-2426)]
+
+.Binary analysis fails for a JAR file that has no external dependencies
+
+In {ProductShortName} 7.0.2, the binary analysis failed for a Java archive (JAR) file that had no external dependencies. This issue has been resolved in {ProductShortName} 7.0.3. link:https://issues.redhat.com/browse/MTA-2661[(MTA-2661)]
+
+.The IntelliJ IDE plugin's key map actions are not functioning as expected.
+
+In previous releases of {ProductShortName}, the IntelliJ IDE plugin key map actions are not functioning as expected. Even though the {ProductShortName} extension opens, it does not focus on it. Therefore, the other actions will not work. link:https://issues.redhat.com/browse/MTA-2460[(MTA-2460)]
+
+For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435634[Resolved Issues in Jira].

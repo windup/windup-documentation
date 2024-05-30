@@ -4,51 +4,52 @@
 
 :_content-type: PROCEDURE
 [id="mta-web-adding-applications_{context}"]
-= Adding an application
+= Adding a new application
 
-You can add an application to the *Application Inventory* for assessment and analysis.
+You can add a new application to the *Application Inventory* for subsequent assessment and analysis.
 
 [TIP]
 ====
 Before creating an application, set up business services, check tags and tag categories, and create additions as needed.
 ====
 
+.Prerequisites
+
+* You are logged in to an {ProductShortName} server.
+
 .Procedure
 
 . In the *Migration* view, click *Application Inventory*.
 . Click *Create new*.
-. Under *Basic information*, enter the following information or choose from a list:
+. Under *Basic information*, enter the following fields:
+* *Name*: A unique name for the new application.  
+* *Description*: A short description of the application (optional).
+* *Business service*: A purpose of the application (optional).
+* *Manual tags*: Software tags that characterize the application (optional, one or more).
+* *Owner*: A registered software owner from the drop-down list (optional). 
+* *Contributors*: Contributors from the drop-down list (optional, one or more).
+* *Comments*: Relevant comments on the application (optional).
 
-* Name
-* Description (optional)
-* Business service (optional)
-* Manual tags (optional, one or more)
-* Owner (optional)
-* Contributors (optional, one or more)
-* Comments (optional)
-
-. Click the arrow to the left of *Source Code*.
-+
+. Click *Source Code* and enter the following fields:
 // ![](/Tackle2/AddingApps/NewAppSource.png)
-+
-. Enter the following information:
+* *Repository type*: *Git* or *Subversion*.
+* *Source repository*: A URL of the repository where the software code is saved.
+* *Branch*: An application code branch in the repository (optional).
+* *Root path*: A root path inside the repository for the target application (optional).
 
-* Repository type (*Git* or *Subversion*)
-* Source repository
-* Branch
-* Root path
++ 
+NOTE: If you enter any value in either the Branch or Root path fields, the Source repository field becomes mandatory. 
 
-. Click the arrow to the left of *Binary*.
-+
+. Optional: Click *Binary* and enter the following fields:
 // ![](/Tackle2/AddingApps/NewAppBinary.png)
-+
-. Enter the following information:
+* *Group*: The Maven group for the application artifact.
+* *Artifact*: The Maven artifact for the application. 
+* *Version*: A software version of the application.
+* *Packaging*: The packaging for the application artifact, for example, `JAR`, `WAR`, or `EAR`.
 
-* Group
-* Artifact
-* Version
-* Packaging
++ 
+NOTE: If you enter any value in any of the Binary section fields, all fields automatically become mandatory. 
 
-. Click *Create*.
+. Click *Create*. The new application appears in the list of defined applications.
 
 // [Verification]

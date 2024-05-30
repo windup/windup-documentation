@@ -4,9 +4,13 @@
 
 :_content-type: PROCEDURE
 [id="mta-web-assessing-apps_{context}"]
-= Assessing an application by using the MTA assessment questionnaire
+= Assessing an application
 
-You can use the default Legacy Pathfinder {ProductFullName} questionnaire to determine the risks involved in containerizing an application before reviewing the application. For more information, see xref:mta-default-questionnaire_user-interface-guide[The default assessment questionnaire].
+You can estimate the risks and costs involved in preparing applications for containerization by performing application assessment. You can assess an application and display the currently saved assessments by using the Assessment module.
+
+The {ProductFullName} assesses applications according to a set of questions relevant to the application, such as dependencies.
+
+To assess the application, you can use the default xref:mta-default-questionnaire_user-interface-guide[Legacy Pathfinder] {ProductShortName} questionnaire or import your xref:mta-custom-questionnaire_user-interface-guide[custom] questionnaires.
 
 IMPORTANT: You can assess only one application at a time.
 
@@ -28,4 +32,10 @@ NOTE: You can also add *Stakeholder Groups* or *Stakeholders* in the *Controls* 
 . Click *Next*.
 . Answer each *Application assessment* question and click *Next*.
 . Click *Save* to review the assessment and proceed with the steps in xref:mta-web-reviewing-apps_user-interface-guide[Reviewing an application].
+
+[role="_additional-resources"]
+.Additional resources
+* xref:mta-default-questionnaire_user-interface-guide[The default assessment questionnaire]
+* xref:mta-custom-questionnaire_user-interface-guide[The custom assessment questionnaire]
+* xref:managing-mta-questionnaires_user-interface-guide[Managing assessment questionnaires]
 

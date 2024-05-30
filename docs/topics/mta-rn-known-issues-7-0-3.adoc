@@ -1,0 +1,22 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: REFERENCE
+[id="rn-known-issues-7-0-3_{context}"]
+= Known issues
+
+This section provides highlighted known issues in {ProductFullName} version 7.0.3:
+
+
+.The `Applications` page loads slowly when there are many applications
+
+When the Application Inventory has to list many applications, the page loads slowly. Currently, there is no workaround available. link:https://issues.redhat.com/browse/MTA-2497[(MTA-2497)]
+
+.Failure to run analysis on a directory of multiple applications
+
+{ProductShortName} 7.0.2 and 7.0.3 fail to run analysis on a directory of multiple applications. The cause of this failure is that the analyzer is expecting a `pom.xml` file in the root directory. link:https://issues.redhat.com/browse/MTA-2765[(MTA-2765)]
+
+
+For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12434259[Known Issues in Jira].
+
