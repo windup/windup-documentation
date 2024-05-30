@@ -64,7 +64,7 @@ Do not download and install the {ProductShortName} source code file if your comp
 +
 When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
 
-. Copy or save the `mta-cli` binary, or `mta-cli.exe` in Windows, to a known directory.
+. Copy or save the `mta-cli` binary, `darwin-mta-cli in macOS, or `mta-cli.exe` in Windows, to a known directory.
 +
 Continue to xref:cli-run_cli-guide[Running the CLI] to run the CLI command.
 
