@@ -32,6 +32,12 @@ For more details, see link:https://access.redhat.com/security/cve/CVE-2024-28849
 
 A flaw was found in how Apache `httpd` implements the `HTTP/2` protocol, which impacts earlier versions of {ProductShortName}. This flaw means that there are insufficient limitations placed on the amount of `CONTINUATION` frames that can be sent within a single stream. This issue could allow an unauthenticated remote attacker to send packets to vulnerable servers, which could use up memory resources and cause a denial of service (DoS). Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
 
+.CVE-2023-45288: Golang `net/http, x/net/http2`: unlimited number of `CONTINUATION` frames can cause a denial-of-service (DoS) attack
+
+A flaw was discovered with the implementation of the `HTTP/2` protocol in the Go programming language, which impacts previous versions of {ProductShortName}. There were insufficient limitations on the number of `CONTINUATION` frames sent within a single stream. An attacker could potentially exploit this to cause a denial-of-service (DoS) attack. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2023-45288[(CVE-2023-45288)].
+
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-27316[(CVE-2024-27316)]
 
 For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435655[Resolved Issues in Jira].
