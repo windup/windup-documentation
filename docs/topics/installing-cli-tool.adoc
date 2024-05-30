@@ -23,17 +23,17 @@ Podman provides a command line interface (CLI) familiar to anyone who has used t
 For more information on installing and using Podman, see link:https://podman.io/docs/installation[Podman installation instructions].
 ====
 
-Installation options
+.Installation options
 
-This section offers two options to install {ProductShortName} {CLINameTitle}:
+You can run either of the following two options to install {ProductShortName} {CLINameTitle}:
 
-* Downloading a `.zip` file and installing it using a command line.
-* Running Podman on your computer and install {ProductShortName} {CLIName} using Podman commands.
+* Downloading the appropriate {ProductShortName} {CLINameTitle} `.zip` file, according to your operating system, and installing by using the command line.
+* Running Podman on your computer and installing {ProductShortName} {CLIName} using Podman commands.
 
 +
 [WARNING]
 ====
-Although installation using Podman is possible, downloading and installing the `.zip` file is the preferred installation.
+Although installation using Podman is possible, downloading and installing the {ProductShortName} {CLIName} `.zip` file is the preferred installation.
 ====
 
 
