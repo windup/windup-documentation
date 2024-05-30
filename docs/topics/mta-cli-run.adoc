@@ -3,6 +3,22 @@
 // * docs/cli-guide/master.adoc
 
 :_content-type: PROCEDURE
+[id="mta-cli-syntax_{context}"]
+== {ProductShortName} {mta-cli} syntax
+
+Use the following commands and flags to run {ProductShortName} in {mta-cli}:
+
+.Commands
+
+`./mta-cli analyze`: Runs an analysis of the application
+
+.Flags
+
+
+
+
+
+:_content-type: PROCEDURE
 [id="cli-run_{context}"]
 = Running the {CLINameTitle}
 
