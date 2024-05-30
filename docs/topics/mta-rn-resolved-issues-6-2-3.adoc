@@ -15,6 +15,11 @@ A flaw was found in how the `Envoy` proxy implements the `HTTP/2` codec, which i
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2024-30255[(CVE-2024-30255)].
 
+.CVE-2024-29180: `webpack-dev-middleware` lack of URL validation may lead to file leak
+
+A flaw was found in the `webpack-dev-middleware` package, which impacts earlier versions of {ProductShortName}, where it failed to validate the supplied URL address sufficiently before returning local files. This flaw allows an attacker to craft URLs to return arbitrary local files from the developer's machine. The lack of normalization before calling the middleware also allows the attacker to perform path traversal attacks on the target environment. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29180[(CVE-2024-29180)]
 
 For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435655[Resolved Issues in Jira].
 
