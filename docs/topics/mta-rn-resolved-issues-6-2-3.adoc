@@ -21,10 +21,9 @@ A flaw was found in the `webpack-dev-middleware` package, which impacts earlier 
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29180[(CVE-2024-29180)]
 
-
 .CVE-2024-28849: `follow-redirects` package clears authorization headers
 
-A flaw was discovered in the `follow-redirects` package that clears authorization headers, but it fails to clear the `proxy-authentication` headers. This flaw impacts earlier versions of {ProductShortName}. It could lead to credential leakage, which could have a high impact on data confidentiality. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
+A flaw was found in the `follow-redirects` package that clears authorization headers, but it fails to clear the `proxy-authentication` headers. This flaw impacts earlier versions of {ProductShortName}. It could lead to credential leakage, which could have a high impact on data confidentiality. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-28849[(CVE-2024-28849)]
 
