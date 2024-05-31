@@ -11,7 +11,7 @@ The following highlighted issues have been resolved in {ProductShortName} versio
 
 .CVE-2024-30255: `mta-hub-container` envoy: HTTP/2 CPU exhaustion due to CONTINUATION frame flood
 
-A flaw was found in how the `Envoy` proxy implements the `HTTP/2` codec, which impacts earlier versions of {ProductShortName}. There are insufficient limitations placed on the number of `CONTINUATION` frames that can be sent within a single stream. This issue could be resolved. If an unauthenticated remote attacker sends messages to vulnerable servers, this could cause issues by using up resources and causing a denial of service (DoS). Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
+A flaw was found in how the `Envoy` proxy implements the `HTTP/2` protocol stack, which impacts earlier versions of {ProductShortName}. There are insufficient limitations placed on the number of `CONTINUATION` frames that can be sent within a single stream. This issue could be resolved. If an unauthenticated remote attacker sends messages to vulnerable servers, this could cause issues by using up resources and causing a denial of service (DoS). Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2024-30255[(CVE-2024-30255)].
 
