@@ -35,7 +35,7 @@ For more details, see link:https://access.redhat.com/security/cve/CVE-2024-27316
 
 .CVE-2023-45288: Golang `net/http, x/net/http2`: unlimited number of `CONTINUATION` frames can cause a denial-of-service (DoS) attack
 
-A flaw was discovered with the implementation of the `HTTP/2` protocol in the Go programming language, which impacts previous versions of {ProductShortName}. There were insufficient limitations on the number of `CONTINUATION` frames sent within a single stream. An attacker could potentially exploit this to cause a denial-of-service (DoS) attack. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
+A flaw was found in the implementation of the `HTTP/2` protocol in the Go programming language, which impacts previous versions of {ProductShortName}. There were insufficient limitations on the number of `CONTINUATION` frames sent within a single stream. An attacker could potentially exploit this to cause a denial-of-service (DoS) attack. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-45288[(CVE-2023-45288)].
 
