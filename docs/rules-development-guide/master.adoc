@@ -31,7 +31,7 @@ include::topics/about-rules.adoc[leveloffset=+2]
 
 Each analyzer rule is a set of instructions that are used to analyze source code and detect issues that are problematic for migration.
 
-The analyzer parses user-provided rules, applies them to applications' source code, and generates issues for matched rules. A collection of one or more rules forms a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal. The analyzer CLI takes rulesets as input arguments.
+The analyzer parses user-provided rules, applies them to applications' source code, and generates issues for matched rules. A collection of one or more rules forms a ruleset. Creating rulesets provides a way of organizing multiple rules that achieve a common goal. The analyzer CLI takes rulesets as input arguments. TEST TEST
 
 include::topics/yaml-rule-structure-syntax.adoc[leveloffset=+2]
 
