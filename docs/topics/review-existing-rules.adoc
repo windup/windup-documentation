@@ -17,7 +17,11 @@ New XML rules are occasionally added, so it is a good idea to check back frequen
 NOTE
 .YAML rules
 ====
-XML rules are in the process of being replaced with newer YAML rules. Most of the XML rules library has been converted to comparable YAML rules. 
+.Existing {ProductShortName} rules `.yaml` files
+
+XML rules are in the process of being replaced with newer YAML rules. 
+
+Most of the `.xml` rules files have been converted to comparable `.yaml` rule files. 
 
 These YAML-based rules are located on GitHub at the following location: link:https://github.com/konveyor/rulesets/tree/main/default/generated[https://github.com/konveyor/rulesets/tree/main/default/generated].
 
