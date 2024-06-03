@@ -12,4 +12,16 @@ You can fork and clone the {ProductShortName} XML rules on your local machine.
 
 Rules are grouped by target platform and function. When you create a new rule, it is helpful to find a rule that is similar to the one you need and use it as a starting template.
 
-New rules are continually added, so it is a good idea to check back frequently to review the updates.
+New XML rules are occasionally added, so it is a good idea to check back frequently to review the updates.
+
+NOTE
+.YAML rules
+====
+XML rules are in the process of being replaced with newer YAML rules. Most of the XML rules library has been converted to comparable YAML rules. 
+
+These YAML-based rules are located on GitHub at the following location: link:https://github.com/konveyor/rulesets/tree/main/default/generated[https://github.com/konveyor/rulesets/tree/main/default/generated].
+
+The rules are numbered and grouped according to target platform. When you create a new rule, it is helpful to find a rule that is similar to the one you need and use it as a starting template. 
+
+New YAML rules are continuously added, so it is a good idea to check back frequently to review the updates.
+====
