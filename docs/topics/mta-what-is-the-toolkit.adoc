@@ -15,14 +15,16 @@
 [discrete]
 == What is the {ProductName}
 
-{ProductName} ({ProductShortName}) accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user or command line interfaces.
+{ProductName} ({ProductShortName}) accelerates large-scale application modernization efforts across hybrid cloud environments on {ocp-full} ({ocp-first}). This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift using the user interface or command line interface.
 
-{ProductShortName} uses an extensive default questionnaire as the basis for assessing your applications. You can also create your own custom questionnaires, enabling you to estimate the difficulty, time, and other resources needed to prepare an application for containerization:
+{ProductShortName} uses an extensive default questionnaire as the basis for assessing your applications for difficulty, time, and other resources needed to prepare an application for containerization. You can also create your own custom questionnaires. 
+
+The {ProductShortName} analysis reports assses the resources required to containerize an application. It separates the assessed applications according to 3 tiers:
 * Applications that are good candidates for containerization
 * Applications that require significant work before being modernized
 * Applications that are not suitable for containerization
 
-{ProductShortName} analyzes applications by applying one or more rulesets to each application considered, determining which specific lines of that application require modification before it can be migrated or modernized.
+{ProductShortName} analyzes applications by applying one or more rulesets to each application considered. The rulesets determine the specific lines of that application require modification before it can be migrated or modernized.
 
 {ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas that need changes.
 
