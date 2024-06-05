@@ -22,13 +22,13 @@ Navigate to the directory and open the `<APPLICATION_NAME>-output` directory, wh
 
 .Procedure
 
-. Open the `index.html` file in the output directory that you specified in the {ProductShortName} `./analyze` command:
+. In the `<APPLICATION_NAME>-output` directory that you specified in the {ProductShortName} `./analyze` command, open the `index.html` file:
 +
 ----
 Report created: <OUTPUT_REPORT_DIRECTORY>/index.html
               Access it at this URL: file:///<OUTPUT_REPORT_DIRECTORY>/index.html
 ----
 
-. The `index.html` file opens in a browser bey default.
+. The `index.html` file opens in a browser by default.
 +
-The generated report appears in the browser window.
+The browser window shows the generated report.
