@@ -99,7 +99,7 @@ The `<not>` element has no unique attributes or child elements.
 [discrete]
 ===== Summary
 
-The `<iterable-filter>` element counts the number of times a condition is verified. For additional information, see the link:{LinkAPI}org/jboss/windup/rules/general/IterableFilter.html[IterableFilter] class.
+The `<iterable-filter>` element counts the number of times a condition is verified. For additional information, see the link:{LinkAPI}rules-base/api/src/main/java/org/jboss/windup/rules/general/IterableFilter.java[IterableFilter] class.
 
 The following is an example that looks for four instances of the specified message.
 
@@ -158,7 +158,7 @@ The `<iterable-filter>` element has no unique child elements.
 [id="classification_exists_syntax_{context}"]
 ==== <classification-exists> syntax
 
-The `<classification-exists>` element determines if a specific classification title has been included in the analysis. For additional information, see the link:{LinkAPI}org/jboss/windup/reporting/config/ClassificationExists.html[ClassificationExists] class.
+The `<classification-exists>` element determines if a specific classification title has been included in the analysis. For additional information, see the link:{LinkAPI}reporting/api/src/main/java/org/jboss/windup/reporting/config/ClassificationExists.java[ClassificationExists] class.
 
 [IMPORTANT]
 ====
@@ -226,7 +226,7 @@ The `<classification-exists>` has no unique child elements.
 [id="hint-exists-syntax_{context}"]
 ==== <hint-exists> syntax
 
-The `<hint-exists>` element determines if a specific hint has been included in the analysis. It searches for any instances of the defined message, and is typically used to search for the beginning or a specific class inside of a `<message>` element. For additional information, see the link:{LinkAPI}org/jboss/windup/reporting/config/HintExists.html[HintExists] class.
+The `<hint-exists>` element determines if a specific hint has been included in the analysis. It searches for any instances of the defined message, and is typically used to search for the beginning or a specific class inside of a `<message>` element. For additional information, see the link:{LinkAPI}reporting/api/src/main/java/org/jboss/windup/reporting/config/HintExists.java[HintExists] class.
 
 [IMPORTANT]
 ====

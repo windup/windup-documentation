@@ -105,7 +105,7 @@ endif::[]
 :ProductDocVscGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/visual_studio_code_extension_guide
 :ProductDocIntelliJGuideURL: https://access.redhat.com/documentation/en-us/{DocInfoProductNameURL}/{DocInfoProductNumber}/html-single/intellij_idea_plugin_guide
 :OpenShiftDocsURL: https://docs.openshift.com/container-platform/{OpenShiftProductNumber}
-:LinkAPI: http://windup.github.io/windup/docs/latest/javadoc/
+:LinkAPI: https://github.com/windup/windup/blob/master/
 
 //Links to MTA and MTR Jira project pages:
 :JiraMTRURL: https://issues.redhat.com/projects/WINDUP
