@@ -46,4 +46,28 @@ A flaw was found in the `webpack-dev-middleware` package, where it failed to val
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29180[(CVE-2024-29180)]
 
+.CVE-2023-4639: `org.keycloak-keycloak-parent` undertow Cookie Smuggling and Spoofing 
+
+A flaw was found in Undertow, which incorrectly parses cookies with certain value-delimiting characters in incoming requests. This vulnerability has the potential to enable an attacker to construct a cookie value to intercept `HttpOnly` cookie values or spoof arbitrary additional cookie values, resulting in unauthorized data access or modification. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2023-4639[(CVE-2023-4639)].
+
+.CVE-2023-36479: `com.google.guava-guava-parent` improper addition of quotation marks to user inputs in Jetty CGI Servlet 
+
+A flaw was found in Jetty's `org.eclipse.jetty.servlets.CGI` Servlet, which permits incorrect command execution in specific circumstances, such as requests with certain characters in requested filenames. This issue could allow an attacker to run permitted commands besides the ones requested. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2023-36479[(CVE-2023-36479)].
+
+.CVE-2023-26364: `css-tools` improper input validation causes denial of service
+
+A flaw was found in `@adobe/css-tools`, which could potentially lead to a minor denial of service (DoS) when parsing CSS. User interaction and privileges are not required to jeopardize an environment. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2023-26364[(CVE-2023-26364)].
+
+.CVE-2023-48631: `css-tools`: regular expression denial of service
+
+A flaw was found in `@adobe/css-tools`, which could lead to a regular expression denial of service (ReDoS) when attempting to parse CSS. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2023-48631[(CVE-2023-48631)].
+
 For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435317[MTR 1.2.6 resolved issues] in Jira.
