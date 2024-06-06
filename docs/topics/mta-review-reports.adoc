@@ -17,12 +17,12 @@ $ <{ProductShortName}_HOME>/bin/{mta-cli} --input /home/username/{mta-cli}-sourc
 ----
 endif::cli-guide[]
 
-Use a browser to open the `index.html` file located in the report output directory. This opens a landing page that lists the applications that were processed.  Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.
+Use a browser to open the `index.html` file located in the report output directory. This opens a landing page that lists the applications that were processed. Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.
 
 .Application list
 image::3-1-applications.png[Application list]
 
-NOTE: The incidents and estimated story points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
+NOTE: The incidents and estimated story points change as new rules are added to {ProductShortName}. The values here might not match what you see when you test this application.
 
 The following table lists all of the reports and pages that can be accessed from this main {ProductShortName} landing page. Click the name of the application, *jee-example-app-1.0.0.ear*, to view the application report.
 
@@ -78,7 +78,7 @@ The top navigation bar lists the various reports that contain additional details
 | Provides a concise summary of all issues that require attention.
 
 | Application details
-| Provides a detailed overview of all resources found within the application that may need attention during the migration.
+| Provides a detailed overview of all resources found within the application that might need attention during the migration.
 
 | Technologies
 | Displays all embedded libraries grouped by functionality, allowing you to quickly view the technologies used in each application.
@@ -141,7 +141,7 @@ This report includes details about every issue that was raised by the selected m
 .Issues report
 image::3-4-issues-report.png[Issues report]
 
-Each reported issue may be expanded, by clicking on the title, to obtain additional details. The following information is provided.
+Each reported issue can be expanded, by clicking on the title, to obtain additional details. The following information is provided.
 
 * A list of files where the incidents occurred, along with the number of incidents within each file. If the file is a Java source file, then clicking the filename will direct you to the corresponding Source report.
 * A detailed description of the issue. This description outlines the problem, provides any known solutions, and references supporting documentation regarding either the issue or resolution.
