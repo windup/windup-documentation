@@ -38,10 +38,10 @@ include::topics/installing-cli-tool.adoc[leveloffset=+1]
 include::topics/mta-cli-run.adoc[leveloffset=+1]
 
 // Analyze application source code
-include::topics/mta-cli-analyze.adoc[leveloffset=+3]
+include::topics/mta-cli-analyze.adoc[leveloffset=+2]
 
 // Transform XML rules to YAML
-include::topics/mta-cli-transform.adoc[leveloffset=+3]
+include::topics/mta-cli-transform.adoc[leveloffset=+2]
 
 // Use OpenRewrite recipes
 // include::topics/mta-using-openrewrite-recipes.adoc[leveloffset=+3]
