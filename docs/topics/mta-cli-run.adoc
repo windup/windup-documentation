@@ -12,7 +12,7 @@ You can run {ProductShortName} against your application.
 
 . Open a terminal and navigate to the `<{ProductShortName}_HOME>/` directory.
 
-. Run the `{mta-cli}` script, or `{mta-cli}.exe` for Windows, or darwin-{mta-cli} for macOS, and specify the appropriate arguments:
+. Run the `{mta-cli}` script, or `{mta-cli}.exe` for Windows, or `darwin-{mta-cli}` for macOS, and specify the appropriate arguments:
 
 +
 [source,terminal,subs="attributes+"]
