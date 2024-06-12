@@ -1,0 +1,73 @@
+// Module included in the following assemblies:
+//
+// * docs/release-notes-mtr/mtr_release_notes-1.2/master.adoc
+
+:_content-type: REFERENCE
+[id="mtr-rn-resolved-issues-1-2-6_{context}"]
+= Resolved issues
+
+{ProductShortName} 1.2.6 has the following resolved issues:
+
+.CVE-2024-1132: `org.keycloak-keycloak-parent`: keycloak path transversal in redirection validation
+
+A flaw was discovered in Keycloak, where it does not properly validate URLs included in a redirect. This flaw could allow an attacker to construct a malicious request to bypass validation and access other URLs and sensitive information within the domain or conduct further attacks. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2024-1132[(CVE-2024-1132)].
+
+.CVE-2023-45857: Axios 1.5 exposes confidential data stored in cookies
+
+A flaw was discovered in Axios 1.5.1 that accidentally revealed the confidential `XSRF-TOKEN`, stored in cookies, by including it in the HTTP header `X-XSRF-TOKEN` for every request made to any host, thereby allowing attackers to view sensitive information. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2023-45857[(CVE-2023-45857)].
+
+
+.CVE-2024-28849: `follow-redirects` package clears authorization headers
+
+A flaw was discovered in the `follow-redirects` package, which clears authorization headers, but it fails to clear the `proxy-authentication` headers. This flaw could lead to credential leakage, which could have a high impact on data confidentiality.
+Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2024-28849[(CVE-2024-28849)]
+
+.CVE-2024-29131: Out-of-bounds Write vulnerability in Apache Commons Configuration
+
+A vulnerability was found in Apache Commons-Configuration2, where a Stack Overflow Error can occur when adding a property in the `AbstractListDelimiterHandler.flattenIterator()` method. This issue could allow an attacker to corrupt memory or execute a denial of service (DoS) attack by crafting a malicious property that triggers an out-of-bounds write issue when processed by the vulnerable method. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29131[(CVE-2024-29131)]
+
+.CVE-2024-29133: Out-of-bounds Write vulnerability in Apache Commons Configuration
+
+A vulnerability was found in Apache Commons-Configuration2, where a Stack Overflow Error occurs when calling the `ListDelimiterHandler.flatten(Object, int)` method with a cyclical object tree. This issue could allow an attacker to trigger an out-of-bounds write that could lead to memory corruption or cause a denial of service (DoS) attach. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29133[(CVE-2024-29133)]
+
+.CVE-2024-29180: `webpack-dev-middleware` lack of URL validation may lead to file leak
+
+A flaw was found in the `webpack-dev-middleware` package, where it failed to validate the supplied URL address sufficiently before returning local files. This flaw allows an attacker to craft URLs to return arbitrary local files from the developer's machine. The lack of normalization before calling the middleware also allows the attacker to perform path traversal attacks on the target environment. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29180[(CVE-2024-29180)]
+
+.CVE-2023-4639: `org.keycloak-keycloak-parent` undertow Cookie Smuggling and Spoofing 
+
+A flaw was found in Undertow, which incorrectly parses cookies with certain value-delimiting characters in incoming requests. This vulnerability has the potential to enable an attacker to construct a cookie value to intercept `HttpOnly` cookie values or spoof arbitrary additional cookie values, resulting in unauthorized data access or modification. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2023-4639[(CVE-2023-4639)].
+
+.CVE-2023-36479: `com.google.guava-guava-parent` improper addition of quotation marks to user inputs in Jetty CGI Servlet 
+
+A flaw was found in Jetty's `org.eclipse.jetty.servlets.CGI` Servlet, which permits incorrect command execution in specific circumstances, such as requests with certain characters in requested filenames. This issue could allow an attacker to run permitted commands besides the ones requested. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2023-36479[(CVE-2023-36479)].
+
+.CVE-2023-26364: `css-tools` improper input validation causes denial of service
+
+A flaw was found in `@adobe/css-tools`, which could potentially lead to a minor denial of service (DoS) when parsing CSS. User interaction and privileges are not required to jeopardize an environment. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2023-26364[(CVE-2023-26364)].
+
+.CVE-2023-48631: `css-tools`: regular expression denial of service
+
+A flaw was found in `@adobe/css-tools`, which could lead to a regular expression denial of service (ReDoS) when attempting to parse CSS. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2023-48631[(CVE-2023-48631)].
+
+For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435317[MTR 1.2.6 resolved issues] in Jira.
