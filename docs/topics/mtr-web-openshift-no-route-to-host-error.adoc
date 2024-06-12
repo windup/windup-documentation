@@ -1,0 +1,18 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: REFERENCE
+[id="web-openshift-no-route-to-host-error_{context}"]
+= `No route to host` error
+
+The `No route to host` error in the `{LC_PSN}-web-console-executor` log indicates that the `{LC_PSN}-web-console-executor` pod cannot connect to the `{LC_PSN}-web-console` pod:
+
+[source,terminal,subs="attributes+"]
+----
+13:44:03,501 SEVERE [org.jboss.windup.web.messaging.executor.ExecutorBootstrap] (main) Could not start messaging listener due to: Failed to connect to any server. Servers tried: [http-remoting://192.0.2.4:8080 (java.net.NoRouteToHostException: No route to host)]: javax.naming.CommunicationException: Failed to connect to any server. Servers tried: [http-remoting://192.0.2.4:8080 (java.net.NoRouteToHostException: No route to host)]
+----
+
+This error occurs because the `{LC_PSN}-web-console-executor` pod starts running before the `{LC_PSN}-web-console` pod.
+
+Check the `{LC_PSN}-web-console-executor` log after the `{LC_PSN}-web-console` pod has been running for a few minutes.

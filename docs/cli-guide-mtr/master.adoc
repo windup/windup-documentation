@@ -17,18 +17,18 @@ include::topics/making-open-source-more-inclusive.adoc[]
 == Introduction
 
 // About the {UserCLIBookName}
-include::topics/about-cli-guide.adoc[leveloffset=+2]
+include::topics/mtr-about-cli-guide.adoc[leveloffset=+2]
 
 // About {ProductName}
-include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics/mtr-what-is-the-toolkit.adoc[leveloffset=+2]
 
 // About the {CLINameTitle}
-include::topics/about-cli.adoc[leveloffset=+2]
+include::topics/mtr-about-cli.adoc[leveloffset=+2]
 
 == Installing and Running the CLI
 
 // Install the CLI
-include::topics/installing-web-console-or-cli-tool.adoc[leveloffset=+2]
+include::topics/mtr-installing-web-console-or-cli-tool.adoc[leveloffset=+2]
 
 // Run the CLI
 include::topics/cli-run.adoc[leveloffset=+2]
@@ -37,47 +37,47 @@ include::topics/cli-run.adoc[leveloffset=+2]
 include::topics/mtr-using-openrewrite-recipes.adoc[leveloffset=+3]
 
 // Available OpenRewrite recipes
-include::topics/available-openrewrite-recipes.adoc[leveloffset=+4]
+include::topics/mtr-available-openrewrite-recipes.adoc[leveloffset=+4]
 
 // Access the Report
-include::topics/access-report.adoc[leveloffset=+2]
+include::topics/mtr-access-report.adoc[leveloffset=+2]
 
 // Review the Reports
-include::topics/review-reports.adoc[leveloffset=+1]
+include::topics/mtr-review-reports.adoc[leveloffset=+1]
 
 // Export the Report in CSV Format
-include::topics/csv-export.adoc[leveloffset=+1]
+include::topics/mtr-csv-export.adoc[leveloffset=+1]
 
 // Mavenize Your Application
-include::topics/mavenize.adoc[leveloffset=+1]
+include::topics/mtr-mavenize.adoc[leveloffset=+1]
 
 // Optimize {ProductShortName} Performance
-include::topics/optimize-performance.adoc[leveloffset=+1]
+include::topics/mtr-optimize-performance.adoc[leveloffset=+1]
 
 // Configure {ProductShortName} to Exclude Files and Packages
-include::topics/exclude-files-and-packages.adoc[leveloffset=+2]
+include::topics/mtr-exclude-files-and-packages.adoc[leveloffset=+2]
 
 [appendix]
 == Reference material
 
 // {ProductShortName} Command-line Arguments
-include::topics/cli-args.adoc[leveloffset=+2]
+include::topics/mtr-cli-args.adoc[leveloffset=+2]
 
 // Added in 4.3.0: list of supported Tech Tags
-include::topics/tech-tags.adoc[leveloffset=+2]
+include::topics/mtr-tech-tags.adoc[leveloffset=+2]
 
 // Rule Story Points
-include::topics/about-story-points.adoc[leveloffset=+2]
+include::topics/mtr-about-story-points.adoc[leveloffset=+2]
 
 For more information on categorizing tasks, see link:{ProductDocRulesGuideURL}/rule_categories_rules-development-guide#rule_categories_rules-development-guide[Using custom rule categories].
 
 === Additional Resources
 
 // Get Involved
-include::topics/get-involved.adoc[leveloffset=+3]
+include::topics/mtr-get-involved.adoc[leveloffset=+3]
 
 // Important Links
-include::topics/important-links.adoc[leveloffset=+3]
+include::topics/mtr-important-links.adoc[leveloffset=+3]
 
 // Report Issues with {ProductShortName}
 

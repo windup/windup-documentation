@@ -21,29 +21,29 @@ include::topics/making-open-source-more-inclusive.adoc[]
 [id="introduction_{context}"]
 == Introduction
 
-include::topics/about-ide-addons.adoc[leveloffset=+2]
-include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics/mtr-about-ide-addons.adoc[leveloffset=+2]
+include::topics/mtr-what-is-the-toolkit.adoc[leveloffset=+2]
 
 [id="installing-plugin_{context}"]
 == Installing and configuring the {PluginName}
 
 You can install the {PluginName} and configure it to use the {ProductShortName} CLI for analysis execution.
 
-include::topics/eclipse-installing-plugin.adoc[leveloffset=+2]
+include::topics/mtr-eclipse-installing-plugin.adoc[leveloffset=+2]
 
-include::topics/eclipse-configuring-plugin-for-cli.adoc[leveloffset=+2]
+include::topics/mtr-eclipse-configuring-plugin-for-cli.adoc[leveloffset=+2]
 
-include::topics/eclipse-accessing-tools.adoc[leveloffset=+1]
+include::topics/mtr-eclipse-accessing-tools.adoc[leveloffset=+1]
 
 [id="analyzing-projects-with-plugin_{context}"]
 == Analyzing your projects with the {PluginName}
 
 You can analyze your projects with the {PluginName} by creating a run configuration, running an analysis, and then reviewing and resolving migration issues detected by the {PluginName}.
 
-include::topics/eclipse-configuring-run.adoc[leveloffset=+2]
-include::topics/eclipse-analyzing-projects.adoc[leveloffset=+2]
-include::topics/eclipse-reviewing-issues.adoc[leveloffset=+2]
-include::topics/eclipse-resolving-issues.adoc[leveloffset=+2]
+include::topics/mtr-eclipse-configuring-run.adoc[leveloffset=+2]
+include::topics/mtr-eclipse-analyzing-projects.adoc[leveloffset=+2]
+include::topics/mtr-eclipse-reviewing-issues.adoc[leveloffset=+2]
+include::topics/mtr-eclipse-resolving-issues.adoc[leveloffset=+2]
 
 // TODO: Uncomment when uninstalling works and this is ready
 // include::topics/plugin-uninstall.adoc[leveloffset=+1]
@@ -55,9 +55,9 @@ The {PluginName} comes with a core set of *System* rules for analyzing projects 
 
 You can create and import custom rulesets.
 
-include::topics/eclipse-viewing-rules.adoc[leveloffset=+2]
-include::topics/eclipse-creating-custom-ruleset.adoc[leveloffset=+2]
-include::topics/eclipse-importing-custom-ruleset.adoc[leveloffset=+2]
-include::topics/eclipse-submitting-ruleset.adoc[leveloffset=+2]
+include::topics/mtr-eclipse-viewing-rules.adoc[leveloffset=+2]
+include::topics/mtr-eclipse-creating-custom-ruleset.adoc[leveloffset=+2]
+include::topics/mtr-eclipse-importing-custom-ruleset.adoc[leveloffset=+2]
+include::topics/mtr-eclipse-submitting-ruleset.adoc[leveloffset=+2]
 
 :!eclipse-code-ready-studio-guide:

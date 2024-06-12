@@ -1,0 +1,19 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="web-review-reports_{context}"]
+= Reviewing reports
+
+The {ProductShortName} {WebName} provides a set of detailed reports that can help you decide if you need to make any changes to your applications. You access these reports from the *Analysis results* screen.
+
+The reports are described in detail in link:{ProductDocUserGuideURL}#review-reports_cli-guide[Reviewing the reports] in the _{UserCLIBookName}_.
+
+.Procedure
+. In the {WebName}, click *Analysis results*.
+. Click the *Reports* icon {reports} beside the analysis you want to investigate.
++
+The *All applications* screen of the reports is displayed.
++
+image::3-1-applications.png[Analysis logs screen]

@@ -1,0 +1,27 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="plugin-components_{context}"]
+= About {PluginName} components
+
+The following components are available in the {ProductShortName} perspective when using the {PluginName} to analyze projects.
+
+Issue Explorer:: This view allows you to explore the {ProductShortName} issues for projects that have been analyzed.
++
+If this view is not visible in the {ProductShortName} perspective, you can open it by selecting *Window* -> *Show View* -> *Issue Explorer*.
+
+{ProductShortName} Server:: The {ProductShortName} server is a separate process that runs the {ProductShortName} analysis, flags the migration issues, and generates the reports.
++
+You can start, stop, and view the status of the {ProductShortName} server from *Issue Explorer*.
+
+Issue Details:: This view shows detailed information about the selected {ProductShortName} issue, including the hint, severity, and any additional resources.
++
+If this view is not visible in the {ProductShortName} perspective, you can open it by selecting *Window* -> *Show View* -> *Issue Details*.
+
+{ProductShortName} Report:: This view shows the HTML reports that are generated when {ProductShortName} is executed. From the report landing page you can navigate to detailed reports, such as Application Details, Issues, and Dependencies.
++
+Note that the {ProductShortName} run configuration used must have the *Generate Report* option selected in order for {ProductShortName} reports to be generated.
++
+If this view is not visible in the {ProductShortName} perspective, you can open it by selecting *Window* -> *Show View* -> *{ProductShortName} Report*.
