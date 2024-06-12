@@ -10,7 +10,7 @@
 
 .CVE-2024-1132: `org.keycloak-keycloak-parent`: keycloak path transversal in redirection validation
 
-A flaw was discovered in Keycloak, where it does not properly validate URLs included in a redirect. This flaw could allow an attacker to construct a malicious request to bypass validation and access other URLs and sensitive information within the domain or conduct further attacks. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
+A flaw was discovered in Keycloak, where it does not properly validate URLs included in a redirect. This flaw could allow an attacker to construct a malicious request to bypass validation, access other URLs and sensitive information within the domain, or conduct further attacks. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-1132[(CVE-2024-1132)].
 
@@ -40,19 +40,19 @@ A vulnerability was found in Apache Commons-Configuration2, where a Stack Overfl
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29133[(CVE-2024-29133)]
 
-.CVE-2024-29180: `webpack-dev-middleware` lack of URL validation may lead to file leak
+.CVE-2024-29180: `webpack-dev-middleware` lack of URL validation may lead to a file leak
 
 A flaw was found in the `webpack-dev-middleware` package, where it failed to validate the supplied URL address sufficiently before returning local files. This flaw allows an attacker to craft URLs to return arbitrary local files from the developer's machine. The lack of normalization before calling the middleware also allows the attacker to perform path traversal attacks on the target environment. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2024-29180[(CVE-2024-29180)]
 
-.CVE-2023-4639: `org.keycloak-keycloak-parent` undertow Cookie Smuggling and Spoofing 
+.CVE-2023-4639: `org.keycloak-keycloak-parent` undertow Cookie Smuggling and Spoofing
 
 A flaw was found in Undertow, which incorrectly parses cookies with certain value-delimiting characters in incoming requests. This vulnerability has the potential to enable an attacker to construct a cookie value to intercept `HttpOnly` cookie values or spoof arbitrary additional cookie values, resulting in unauthorized data access or modification. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2023-4639[(CVE-2023-4639)].
 
-.CVE-2023-36479: `com.google.guava-guava-parent` improper addition of quotation marks to user inputs in Jetty CGI Servlet 
+.CVE-2023-36479: `com.google.guava-guava-parent` improper addition of quotation marks to user inputs in Jetty CGI Servlet
 
 A flaw was found in Jetty's `org.eclipse.jetty.servlets.CGI` Servlet, which permits incorrect command execution in specific circumstances, such as requests with certain characters in requested filenames. This issue could allow an attacker to run permitted commands besides the ones requested. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.
 
