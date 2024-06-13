@@ -31,11 +31,8 @@ effort: 1 <3>
 category: mandatory <4>
 ----
 <1> The ID must be unique within the ruleset to which the rule belongs.
-
 <2> See below for a description of the label format.
-
 <3> `effort` is an integer value that indicates the level of effort needed to fix this issue.
-
 <4> `category` describes the severity of the issue for migration. The value can be either `mandatory`, `optional` or `potential`. For a description of these categories, see xref:yaml-rule-categories_{context}[Rule categories].
 
 [id="yaml-rule-labels_{context}"]
@@ -334,7 +331,7 @@ The `java` provider analyzes Java source code.
 This provider has the following capabilities:
 
 * `referenced`
-* `dependency`.
+* `dependency`
 
 .`referenced`
 
@@ -348,7 +345,7 @@ when:
     location: "<location>" <2>
 ----
 <1> A RegEx pattern to match, for example, `org.kubernetes.*`
-<2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`
+<2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`.
 
 The supported locations are the following:
 
@@ -375,9 +372,9 @@ when:
     upperbound: "<version_string>" <2>
     lowerbound: "<version_string>" <3>
 ----
-<1> Name of the dependency to search for
-<2> Upper bound on the version of the dependency
-<3> Lower bound on the version of the dependency
+<1> Name of the dependency to search for.
+<2> Upper bound on the version of the dependency.
+<3> Lower bound on the version of the dependency.
 
 ===== `go` provider
 
@@ -405,9 +402,9 @@ when:
     upperbound: "<version_string>" <2>
     lowerbound: "<version_string>" <3>
 ----
-<1> Name of the dependency to search for
-<2> Upper bound on the version of the dependency
-<3> Lower bound on the version of the dependency
+<1> Name of the dependency to search for.
+<2> Upper bound on the version of the dependency.
+<3> Lower bound on the version of the dependency.
 
 ==== Custom variables
 
@@ -426,9 +423,9 @@ Provider conditions can have associated custom variables. You can use custom var
           pattern: com.example.apps.GenericClass.get
 
 ----
-<1> `pattern`: A RegEx pattern that is matched on the source code line when a match is found
-<2> `name`: The name of the variable that can be used in templates
-<3> `message`: A template for a message using a custom variable
+<1> `pattern`: A RegEx pattern that is matched on the source code line when a match is found.
+<2> `name`: The name of the variable that can be used in templates.
+<3> `message`: A template for a message using a custom variable.
 
 
 === Logical conditions
@@ -521,5 +518,4 @@ labels: <2>
   - key=val
 ----
 <1> The name must be unique within the provided rulesets.
-
 <2> Ruleset labels are inherited by all rules that belong to the ruleset.
