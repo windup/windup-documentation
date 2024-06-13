@@ -6,7 +6,7 @@
 [id="access-report_{context}"]
 = Reports
 
-{ProductShortName} {CLIName} analyzes the application and generates a report of the analysis results. The report is saved to the `<OUTPUT_REPORT_DIRECTORY>` that you specified in the `./ analyze` command`, after the `--output` argument.
+{ProductShortName} {CLIName} analyzes the application and generates a report of the analysis results. The report is saved to the `<OUTPUT_REPORT_DIRECTORY>` that you specified in the `./ analyze` command, after the `--output` argument.
 
 Navigate to the directory and open the `<APPLICATION_NAME>-output` directory, which contains the following files and subdirectories:
 
