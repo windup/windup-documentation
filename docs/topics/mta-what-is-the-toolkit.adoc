@@ -13,20 +13,28 @@
 = About the {ProductName}
 
 [discrete]
-== What is the {ProductName}?
+== What is the {ProductName}
 
-{ProductName} ({ProductShortName}) accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.
+{ProductName} ({ProductShortName}) accelerates large-scale application modernization efforts across hybrid cloud environments on {ocp-first}. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift using the user interface or command line interface.
 
-{ProductShortName} uses an extensive default questionnaire as the basis for assessing your applications, or you can create your own custom questionnaire, enabling you to estimate the difficulty, time, and other resources needed to prepare an application for containerization. You can use the results of an assessment as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work first, and which are not suitable for containerization.
+{ProductShortName} uses an extensive default questionnaire as the basis for assessing your applications for difficulty, time, and other resources needed to prepare an application for containerization. You can also create your own custom questionnaires. 
 
-{ProductShortName} analyzes applications by applying one or more rulesets to each application considered to determine which specific lines of that application must be modified before it can be modernized.
+The {ProductShortName} analysis reports assess the resources required to containerize an application. It separates the assessed applications according to 3 tiers:
 
-{ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes.
+* Applications that are good candidates for containerization
+
+* Applications that require significant work before being modernized
+
+* Applications that are not suitable for containerization
+
+{ProductShortName} analyzes applications by applying one or more rulesets to each application considered. The rulesets find the specific lines of that application require modification before migrating or modernizing the application.
+
+{ProductShortName} examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas that need changes.
 
 
 [discrete]
-== How does the {ProductName} simplify migration?
+== How the {ProductName} simplifies migration
 
-The {ProductName} looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.
+The {ProductName} analyzes the application by looking for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.
 
-{ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.
+After analyzing the application, {ProductShortName} generates a detailed report evaluating a migration or modernization path. This report can help you estimate the effort required for large-scale projects and reduce the work involved.

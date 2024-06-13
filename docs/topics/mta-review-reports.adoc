@@ -17,12 +17,12 @@ $ <{ProductShortName}_HOME>/bin/{mta-cli} --input /home/username/{mta-cli}-sourc
 ----
 endif::cli-guide[]
 
-Use a browser to open the `index.html` file located in the report output directory. This opens a landing page that lists the applications that were processed.  Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.
+Use a browser to open the `index.html` file located in the report output directory. This opens a landing page that lists the applications that were processed. Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.
 
 .Application list
 image::3-1-applications.png[Application list]
 
-NOTE: The incidents and estimated story points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
+NOTE: The incidents and estimated story points change as new rules are added to {ProductShortName}. The values here might not match what you see when you test this application.
 
 The following table lists all of the reports and pages that can be accessed from this main {ProductShortName} landing page. Click the name of the application, *jee-example-app-1.0.0.ear*, to view the application report.
 
@@ -46,10 +46,15 @@ The following table lists all of the reports and pages that can be accessed from
 
 Note that if an application shares archives with other analyzed applications, you will see a breakdown of how many story points are from shared archives and how many are unique to this application.
 
-.Shared archives
-image::3-2-shared-archives.png[Shared archives]
+// .Shared archives
+// image::3-2-shared-archives.png[Shared archives]
 
 Information about the archives that are shared among applications can be found in the Archives Shared by Multiple Applications reports.
+
+If an application has dependencies, clicking the *Dependencies* tab to see a list of the application's dependencies.  
+
+.Dependencies
+image::3-2-a-dependencies.png[Dependencies]
 
 [id="review-application-report_{context}"]
 == Application report
@@ -66,6 +71,7 @@ The dashboard gives an overview of the entire application migration effort. It s
 
 .Dashboard
 image::3-3-dashboard.png[Dashboard]
+// The image I have from the static HTML file does not show any Issues or Share archives. Is there a sample application that I can run that shows these?
 
 The top navigation bar lists the various reports that contain additional details about the migration of this application. Note that only those reports that are applicable to the current application will be available.
 
@@ -78,7 +84,7 @@ The top navigation bar lists the various reports that contain additional details
 | Provides a concise summary of all issues that require attention.
 
 | Application details
-| Provides a detailed overview of all resources found within the application that may need attention during the migration.
+| Provides a detailed overview of all resources found within the application that might need attention during the migration.
 
 | Technologies
 | Displays all embedded libraries grouped by functionality, allowing you to quickly view the technologies used in each application.
@@ -141,7 +147,7 @@ This report includes details about every issue that was raised by the selected m
 .Issues report
 image::3-4-issues-report.png[Issues report]
 
-Each reported issue may be expanded, by clicking on the title, to obtain additional details. The following information is provided.
+Each reported issue can be expanded, by clicking on the title, to obtain additional details. The following information is provided.
 
 * A list of files where the incidents occurred, along with the number of incidents within each file. If the file is a Java source file, then clicking the filename will direct you to the corresponding Source report.
 * A detailed description of the issue. This description outlines the problem, provides any known solutions, and references supporting documentation regarding either the issue or resolution.
