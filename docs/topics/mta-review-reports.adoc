@@ -46,10 +46,15 @@ The following table lists all of the reports and pages that can be accessed from
 
 Note that if an application shares archives with other analyzed applications, you will see a breakdown of how many story points are from shared archives and how many are unique to this application.
 
-.Shared archives
-image::3-2-shared-archives.png[Shared archives]
+// .Shared archives
+// image::3-2-shared-archives.png[Shared archives]
 
 Information about the archives that are shared among applications can be found in the Archives Shared by Multiple Applications reports.
+
+If an application has dependencies, clicking the *Dependencies* tab to see a list of the application's dependencies.  
+
+.Dependencies
+image::3-2-a-dependencies.png[Dependencies]
 
 [id="review-application-report_{context}"]
 == Application report
