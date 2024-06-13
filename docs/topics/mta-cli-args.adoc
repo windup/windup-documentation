@@ -207,7 +207,7 @@ A space-delimited list of the packages to be evaluated by {ProductShortName}. It
 ----
 ----
 
-* In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or third party packages. The `<PACKAGE_N>` argument is a package prefix; all subpackages will be scanned. For example, to scan the packages `com.mycustomapp` and `com.myotherapp`, use `--packages com.mycustomapp com.myotherapp` argument on the command line.
-* While you can provide package names for standard Java EE third party software like `org.apache`, it is usually best not to include them as they should not impact the migration effort.
+* In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or third-party packages. The `<PACKAGE_N>` argument is a package prefix; all subpackages will be scanned. For example, to scan the packages `com.mycustomapp` and `com.myotherapp`, use `--packages com.mycustomapp com.myotherapp` argument on the command line.
+* While you can provide package names for standard Java EE third-party software like `org.apache`, it is usually best not to include them as they should not impact the migration effort.
 
 ////
