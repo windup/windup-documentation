@@ -81,6 +81,12 @@ A flaw was found in the `follow-redirects` package. This flaw is caused by the i
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-26159[(CVE-2023-26159)].
 
+.CVE-2023-26364: `css-tools` improper input validation causes denial of service
+
+A flaw was found in `@adobe/css-tools`, which could potentially lead to a minor denial of service (DoS) when parsing CSS. User interaction and privileges are not required to jeopardize an environment. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2023-26364[(CVE-2023-26364)].
+
 .CVE-2023-48631: `css-tools`: regular expression denial of service
 
 A flaw was found in `@adobe/css-tools`, which could lead to a regular expression denial of service (ReDoS) when attempting to parse CSS. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
