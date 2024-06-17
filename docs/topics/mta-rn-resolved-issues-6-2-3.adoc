@@ -51,5 +51,11 @@ A flaw was found in Apache Commons Compress versions 1.3 through 1.25.0. The fla
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2024-25710[(CVE-2024-25710)].
 
+.CVE-2024-26308: Allocation of Resources Without Limits or Throttling vulnerability in Apache Commons Compress
+
+A flaw was found in Apache Commons Compress versions. The flaw, known as `Allocation of Resources Without Limits or Throttling`, allows for the exploitation of resources without any limits or throttling. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2024-26308[(CVE-2024-26308)].
+
 For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435655[Resolved Issues in Jira].
 // project = MTA AND issuetype = Bug AND status in (Verified, "Release Pending", Closed) AND priority in (Blocker, Critical, Major) AND fixVersion = "MTA 6.2.3" AND component not in (Documentation, QE-Task) ORDER BY priority DESC
