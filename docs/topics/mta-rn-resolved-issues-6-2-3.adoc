@@ -57,5 +57,11 @@ A flaw was found in Apache Commons Compress versions. The flaw, known as `Alloca
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2024-26308[(CVE-2024-26308)].
 
+.CVE-2024-1300: `io.vertx:vertx-core`memory leak when a TCP server is configured with TLS and SNI support
+
+A flaw was found in the Eclipse`Vert.x` toolkit. This flaw can cause a memory leak on TCP servers configured with TLS and SNI support and could allow attackers to send TLS client hello messages with fake server names, triggering a JVM `out-of-memory` (OOM) error. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2024-1300[(CVE-2024-1300)].
+
 For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435655[Resolved Issues in Jira].
 // project = MTA AND issuetype = Bug AND status in (Verified, "Release Pending", Closed) AND priority in (Blocker, Critical, Major) AND fixVersion = "MTA 6.2.3" AND component not in (Documentation, QE-Task) ORDER BY priority DESC
