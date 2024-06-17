@@ -45,5 +45,11 @@ A flaw was discovered in Axios 1.5.1 that accidentally revealed the confidential
 
 For more details, see link:https://access.redhat.com/security/cve/CVE-2023-45857[(CVE-2023-45857)].
 
+.CVE-2024-25710: Apache Commons Compress: Denial of service caused by an infinite loop for a corrupted DUMP file
+
+A flaw was found in Apache Commons Compress versions 1.3 through 1.25.0. The flaw allows for an infinite loop, posing potential danger by causing denial of service (DoS) and impacting availability. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/cve-2024-25710[(CVE-2024-25710)].
+
 For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435655[Resolved Issues in Jira].
 // project = MTA AND issuetype = Bug AND status in (Verified, "Release Pending", Closed) AND priority in (Blocker, Critical, Major) AND fixVersion = "MTA 6.2.3" AND component not in (Documentation, QE-Task) ORDER BY priority DESC
