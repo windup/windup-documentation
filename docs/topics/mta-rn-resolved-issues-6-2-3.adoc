@@ -39,6 +39,11 @@ A flaw was found in the implementation of the `HTTP/2` protocol in the Go progra
 
 For more details, see link:https://access.redhat.com/security/cve/cve-2023-45288[(CVE-2023-45288)].
 
+.CVE-2023-45857: Axios 1.5 exposes confidential data stored in cookies
+
+A flaw was discovered in Axios 1.5.1 that accidentally revealed the confidential `XSRF-TOKEN`, stored in cookies, by including it in the HTTP header `X-XSRF-TOKEN` for every request made to any host, thereby allowing attackers to view sensitive information. Users are recommended to upgrade to {ProductShortName} 6.2.3, which resolves this issue.
+
+For more details, see link:https://access.redhat.com/security/cve/CVE-2023-45857[(CVE-2023-45857)].
 
 For a complete list of all issues resolved in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435655[Resolved Issues in Jira].
 // project = MTA AND issuetype = Bug AND status in (Verified, "Release Pending", Closed) AND priority in (Blocker, Critical, Major) AND fixVersion = "MTA 6.2.3" AND component not in (Documentation, QE-Task) ORDER BY priority DESC
