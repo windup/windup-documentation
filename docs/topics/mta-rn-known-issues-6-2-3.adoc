@@ -1,0 +1,14 @@
+// Module included in the following assemblies:
+//
+// * docs/release_notes/master.adoc
+
+:_content-type: REFERENCE
+[id="rn-known-issues-6-2-3_{context}"]
+= Known issues
+
+// {ProductFullName} version 6.2.3 has the following issues.
+{ProductShortName} version 6.2.3 has no major known issues.
+
+For a complete list of all known issues in this release, see the list of link:https://issues.redhat.com/issues/?filter=12435654[Known Issues in Jira].
+
+// filter == project = MTA AND issuetype = Bug AND status in (New, ASSIGNED, POST, MODIFIED, ON_QA) AND affectedVersion <= "MTA 6.2.2" AND affectedVersion >= "MTA 6.2.0" AND affectedVersion < "MTA 7.0.0" OR fixVersion > "MTA 6.2.2" AND component not in( documentation, QE-Task, qe-tests) ORDER BY fixVersion ASC
