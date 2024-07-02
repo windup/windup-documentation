@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/installing-web-console-on-openshift/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/installing-web-console-on-openshift/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/installing-web-console-on-openshift/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="installing-web-console-on-openshift_{context}">Installing the {WebName} on {ocp-short} 4.11 and later</h1>
+<div class="paragraph">
+<p>You can install the {WebName} on {ocp-short} 4.11 and later versions with the {ProductName} Operator.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>6 vCPUs, 8 GB RAM, and 40 GB persistent storage.</p>
+</li>
+<li>
+<p>One or more projects in which you can install the {WebName}.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do not install the {WebName} in a default project.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><code>cluster-admin</code> privileges to install the {DocInfoProductName} Operator.</p>
+</li>
+<li>
+<p><code>project-admin-user</code> privileges to install the {WebName} application in a project.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Configuring Red Hat Single Sign-on (SSO)</div>
+<p>You must decide at installation time whether the {WebName} requires authentication. If it does, you must first install and configure Red Hat SSO and input some RH SSO settings when instantiating the MTR Operator.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Authentication can not be added or removed after installation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Red Hat SSO administration console.</p>
+</li>
+<li>
+<p>Add a realm named <strong>windup</strong>.</p>
+</li>
+<li>
+<p>In the realm, create a client named <strong>windup-web</strong>.</p>
+</li>
+<li>
+<p>Check that <strong>Access Type</strong> is set to <code>public</code>. Set <strong>Valid Redirect URIs</strong> and <strong>Web Origins</strong> to <code>*</code>. Click *Save*.</p>
+<div class="paragraph">
+<p>Note that after the {ProductShortName} operator has been instantiated, the <strong>Valid Redirect URIs</strong> and <strong>Web Origins</strong> fields have to be set to the secure-mtr-web-console route.</p>
+</div>
+</li>
+<li>
+<p>Create a role named <strong>user</strong>.</p>
+</li>
+<li>
+<p>Create a user with any name.</p>
+</li>
+<li>
+<p>Set the credentials of the user, disable <strong>Temporary</strong>, and assign the role "user" to the user.</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Installing the {ProductShortName} Operator</div>
+<ol class="arabic">
+<li>
+<p>Log in to the OpenShift web console as a user with <code>cluster-admin</code> privileges.</p>
+</li>
+<li>
+<p>Click <strong>Operators</strong> &#8594; <strong>OperatorHub</strong>.</p>
+</li>
+<li>
+<p>Use the <strong>Search by keyword</strong> field to locate the <strong>{DocInfoProductName}</strong> Operator.</p>
+</li>
+<li>
+<p>Click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>Select a project from the <strong>Installed Namespace</strong> list and click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Operators</strong> &#8594; <strong>Installed Operators</strong> to verify that the Operator is installed.</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Installing the {WebName} application</div>
+<ol class="arabic">
+<li>
+<p>Log in to the OpenShift web console as a user with <code>project-admin-user</code> privileges.</p>
+</li>
+<li>
+<p>Switch to the <strong>Migration</strong> perspective and click <strong>+Add</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Add</strong> view, click <strong>Operator Backed</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>{DocInfoProductName}</strong> Operator.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>Review the application settings. If the {WebName} requires authentication, input the RH SSO settings and click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Topology</strong> view, click the <code>mtr-web-console</code> application and then click the <strong>Resources</strong> tab.</p>
+</li>
+<li>
+<p>If authentication is required, set the RH SSO <strong>Valid Redirect URIs</strong> and <strong>Web Origins</strong> fields to the secure-mtr-web-console route.</p>
+</li>
+<li>
+<p>Click the <code>secure-mtr-web-console</code> route to open the {WebName} in a new browser window.</p>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

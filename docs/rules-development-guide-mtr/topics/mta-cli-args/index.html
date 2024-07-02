@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/rules-development-guide-mtr/topics/mta-cli-args/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/rules-development-guide-mtr/topics/mta-cli-args/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/rules-development-guide-mtr/topics/mta-cli-args/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="cli-args_{context}">About {ProductShortName} command-line arguments</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following is a detailed description of the available {ProductShortName} command line arguments.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To run the {ProductShortName} command, for example when executing from a script, you must use the following arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>--overwrite</code></p>
+</li>
+<li>
+<p><code>--input</code></p>
+</li>
+<li>
+<p><code>--target</code></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. {ProductShortName} CLI arguments</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--analyze-known-libraries</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to analyze known software artifacts embedded within your application. By default, {ProductShortName} only analyzes application code.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This option may result in a longer execution time and a large number of migration issues being reported.</p>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--help</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Display the {ProductShortName} help message.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--input</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A space-delimited list of the path to the file or directory containing one or more applications to be analyzed. This argument is required.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--list-sources</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>list rules for available migration sources</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--list-sources</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to list all available source technologies.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--list-targets</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to list all available target technologies.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--output</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify the path to the directory to output the report information generated by {ProductShortName}.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do not overwrite a report output directory that contains important information.</p>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--rules stringArray</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Filename or directory containing rule files</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--source</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the <code>--target</code> argument, helps to determine which rulesets are used. Use the <code>--listSourceTechnologies</code> argument to list all available sources.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--target</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the <code>--source</code> argument, helps to determine which rulesets are used. Use the <code>--list-targets</code> argument to list all available targets.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-input-argument_{context}">Specifying the input</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A space-delimited list of the path to the file or directory containing one or more applications to be analyzed. This argument is required.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight nowrap"><code>--input &lt;INPUT_ARCHIVE_OR_DIRECTORY&gt; [...]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-input-file-type-arguments_{context}">Analyze application source code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Usage: <code>{mta-cli} analyze [flags]</code></p>
+</div>
+<div class="paragraph">
+<p>The following flags are available:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. {ProductShortName} Analyze application</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--analyze-known-libraries</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>analyze known open-source libraries</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-h, --help</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>help for analyze</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i, --input string</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>path to application source code or a binary</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--json-output</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>create analysis and dependency output as json</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--list-sources</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>list rules for available migration sources</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--list-targets</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>list rules for available migration targets</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-l, --label-selector string</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>run rules based on specified label selector expression</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--maven-settings string</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>path to a custom maven settings file to use</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--overwrite</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>overwrite output directory</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--skip-static-report</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>do not generate static report</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-m, --mode string</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>analysis mode" <code>full</code> (default) or <code>source-only</code></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-o, --output string</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>path to the directory for analysis output</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--rules stringArray</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>filename or directory containing rule files</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--skip-static-report</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>do not generate static report</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-s, --source string</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>source technology to consider for analysis. To specify multiple sources, repeat the parameter: --source &lt;source_1&gt; --source &lt;source_2&gt; etc.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-t, --target string</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>target technology to consider for analysis. To specify multiple targets, repeat the parameter: --target &lt;target_1&gt; --target &lt;target_2&gt; etc.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="cli-input-file-type-arguments-global-flags_{context}">Global flags</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. {ProductShortName} Analyze application</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--log-level uint32</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>log level (default 4)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--no-cleanup</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>do not cleanup temporary resources</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-output-argument_{context}">Specifying the output directory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Specify the path to the directory to output the report information generated by {ProductShortName}.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight nowrap"><code>--output &lt;OUTPUT_REPORT_DIRECTORY&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>--output</code> argument is mandatory. If omitted, an error is returned:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>Error: required flag(s) "output" not set</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>However, if you specify the <code>--overwrite</code> argument, {ProductShortName} will proceed to delete and recreate the directory. See the description of this argument for more information.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-source-argument_{context}">Setting the source technology</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the <code>--target</code> argument, helps to determine which rulesets are used. Use the <code>--list-sources</code> argument to list all available sources.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight nowrap"><code>--source &lt;SOURCE_1&gt; &lt;SOURCE_2&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>--source</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, <code>--source eap5</code>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When migrating to JBoss EAP, be sure to specify the version, for example, <code>eap6</code>. Specifying only <code>eap</code> will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="{ProductDocIntroToMTAGuideURL}/index#migration_paths_getting-started-guide">Supported migration paths</a> in <em>Introduction to the Migration Toolkit for Applications</em> for the appropriate JBoss EAP version.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cli-target-argument_{context}">Setting the target technology</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the <code>--source</code> argument, helps to determine which rulesets are used. If you do not provide a target, mta-cli analyzes the input based on the source and discovery rules. Use the <code>--list-targets</code> argument to list all available targets.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight nowrap"><code>--target &lt;TARGET_1&gt; &lt;TARGET_2&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>--target</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, <code>--target eap7</code>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When migrating to JBoss EAP, be sure to specify the version in the target, for example, <code>eap6</code>. Specifying only <code>eap</code> will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="{ProductDocIntroToMTAGuideURL}/index#migration_paths_getting-started-guide">Supported migration paths</a> in <em>Introduction to the Migration Toolkit for Applications</em> for the appropriate JBoss EAP version.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

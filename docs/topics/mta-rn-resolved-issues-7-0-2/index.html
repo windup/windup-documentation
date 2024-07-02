@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/topics/mta-rn-resolved-issues-7-0-2/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/topics/mta-rn-resolved-issues-7-0-2/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/topics/mta-rn-resolved-issues-7-0-2/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mta-rn-resolved-issues-7-0-2_{context}">Resolved issues</h1>
+<div class="paragraph">
+<p>The following highlighted issues have been resolved in {ProductFullName} version 7.0.2.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2022-1962: Golang: go/parser stack exhaustion in all Parse* functions  Security</div>
+<p>A flaw was found in versions of the Golang standard library <code>go/parser</code>, before Go 1.17.12 and Go 1.18.4. When calling any Parse functions on the Go source code, which contains deeply nested types or declarations, a panic can occur due to stack exhaustion. This issue allows an attacker to impact system availability.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2022-1962">(CVE-2022-1962)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">{ProductShortName} CLI does not function as expected on ARM-based machines</div>
+<p>In previous versions of {ProductShortName} 7.0, there was an issue with the Command-line interface (CLI) not functioning as expected on ARM CPU architecture.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>{ProductShortName} CLI does not work on Mac ARM-based machines. <a href="https://issues.redhat.com/browse/MTA-2160">(MTA-2160)</a></p>
+</li>
+<li>
+<p>{ProductShortName} CLI does not work on Linux ARM-based machines. <a href="https://issues.redhat.com/browse/MTA-2351">(MTA-2351)</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These issues have been resolved in {ProductShortName} 7.0.2.</p>
+</div>
+<div class="paragraph">
+<div class="title">Missing text below graphs on the Reports page</div>
+<p>In previous versions of {ProductShortName} {DocInfoProductNumber}, the text below graphs was missing on the <strong>Reports</strong> page. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1868">(MTA-1868)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Assessment status is <code>In progress</code> instead of <code>Not started</code></div>
+<p>In previous versions of {ProductShortName} 7.0, the <strong>Assessment</strong> status was <code>In progress</code> instead of <code>Not started</code> when the application was associated with an archived questionnaire. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1956">(MTA-1956)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Turning off <code>Use Refresh Tokens</code> breaks {ProductShortName} UI</div>
+<p>In previous versions of {ProductShortName}, turning off the <code>Use Refresh Tokens</code>, which is a feature in the Red Hat build of Keycloak, could have adversely impacted {ProductShortName}. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1255">(MTA-1255)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Exporting a questionnaire includes unnecessary metadata</div>
+<p>In previous versions of {ProductShortName} 7.0, exporting a questionnaire could include unnecessary metadata. This unnecessary metadata had the potential to make reimporting the questionnaire a more difficult task, as it might conflict with already existing data. This has been resolved in {ProductShortName} 7.0.2, with exports not including any environment-specific data. <a href="https://issues.redhat.com/browse/MTA-1721">(MTA-1721)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Source and dependency analysis of applications built with JDKs before 11 fails compilation</div>
+<p>In previous versions of {ProductShortName}, source and dependency analysis of applications built with Java Development Kits (JDKs) earlier than version 11 could fail before compilation was completed. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1785">(MTA-1785)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Application drawer incorrectly lists assessed archetypes when there are no required questionnaires</div>
+<p>In previous versions of {ProductShortName} 7.0, the application drawer incorrectly showed that the associated archetypes had been assessed, when there were no required questionnaires and when an application was associated with unassessed archetypes. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1967">(MTA-1967)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Inherited assessment tags should be listed as assessment tags instead of archetype tags on the app drawer</div>
+<p>In previous versions of {ProductShortName} 7.0, inherited assessment tags should have been listed as assessment tags instead of archetype tags on the app drawer. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1972">(MTA-1972)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Application Assessment status shows <code>Completed</code> instead of <code>Not started</code> for inherited assessment after the questionnaire is archived</div>
+<p>In previous versions of {ProductShortName} 7.0, the <strong>Application Assessment</strong> status showed <code>Completed</code> instead of <code>Not started</code> for inherited assessment after the questionnaire was archived. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1973">(MTA-1973)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Application inventory page shows no applications after accessing dependencies</div>
+<p>In previous versions of {ProductShortName} 7.0, the <strong>Application inventory</strong> page showed no applications after accessing dependencies. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2007">(MTA-2007)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Dependencies does not filter and navigate to the affected applications</div>
+<p>In previous versions of {ProductShortName} 7.0, dependencies did not filter and navigate to the affected applications, instead of showing only the affected applications. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2008">(MTA-2008)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Analyzer <code>unable to connect</code> message seen on the Single Application issues page</div>
+<p>In previous versions of {ProductShortName} 7.0, on an analysis clicking on <strong>Issues</strong> and then navigating to the <strong>Single application</strong> page, no data was shown and an <code>Unable to connect</code> message was shown. There was an error retrieving data, showing a <code>Check your connection and try again</code> error. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2047">(MTA-2047)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Issues contain variable names instead of values</div>
+<p>In previous versions of {ProductShortName} 7.0, issues occasionally contained variable names instead of values. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2067">(MTA-2067)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Rules from technology usage appear as issues</div>
+<p>In previous versions of {ProductShortName} 7.0, rules from technology usage appeared as issues. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2099">(MTA-2099)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">{ProductShortName} CLI does not have a version flag</div>
+<p>In previous versions of {ProductShortName} 7.0, there was no version flag for the {ProductShortName} CLI, such as <code>mta-cli --version</code> to show the current version installed. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2201">(MTA-2201)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Application list in the Archetype side drawer does not scale well</div>
+<p>In previous versions of {ProductShortName} 7.0, the <strong>Application</strong> list in the Archetype side drawer did not scale well when a large number of applications were associated with the archetype. It is likely that a massive number of applications could cause the drawer not to load properly. This has been resolved in {ProductShortName} 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2283">(MTA-2283)</a></p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all issues resolved in this release, see the list of <a href="https://issues.redhat.com/issues/?filter=12429435">Resolved Issues in Jira</a>.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/getting-started-guide-mtr/topics/mta-cli-run/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/getting-started-guide-mtr/topics/mta-cli-run/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/getting-started-guide-mtr/topics/mta-cli-run/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="cli-run_{context}">Running the {CLINameTitle}</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can run {ProductShortName} against your application.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open a terminal and navigate to the <code>&lt;{ProductShortName}_HOME&gt;/</code> directory.</p>
+</li>
+<li>
+<p>Execute the <code>{mta-cli}</code> script, or <code>{mta-cli}.exe</code> for Windows, and specify the appropriate arguments:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ ./{mta-cli} analyze --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/output --source weblogic --target eap6 \</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>--input</code>: The application to be evaluated.</p>
+</li>
+<li>
+<p><code>--output</code>: The output directory for the generated reports.</p>
+</li>
+<li>
+<p><code>--source</code>: The source technology for the application migration.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Access the report.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-examples_{context}">{ProductShortName} command examples</h2>
+<div class="sectionbody">
+<h3 id="running-productshortname-on-an-application-archive" class="discrete">Running {ProductShortName} on an application archive</h3>
+<div class="paragraph">
+<p>The following command analyzes the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;{ProductShortName}_HOME&gt;/{mta-cli} analyze \
+    --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/report-output/ --source eap5 --target eap7 \</code></pre>
+</div>
+</div>
+<h3 id="running-productshortname-on-source-code" class="discrete">Running {ProductShortName} on source code</h3>
+<div class="paragraph">
+<p>The following command analyzes the <a href="https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2">seam-booking-5.2</a> example source code for migrating to JBoss EAP 6.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;{ProductShortName}_HOME&gt;/{mta-cli} analyze --mode source-only --input /path/to/seam-booking-5.2/ \
+    --output /path/to/report-output/ --target eap6 --packages org.jboss.seam</code></pre>
+</div>
+</div>
+<h3 id="running-cloud-readiness-rules" class="discrete">Running cloud-readiness rules</h3>
+<div class="paragraph">
+<p>The following command analyzes the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;{ProductShortName}_HOME&gt;/{mta-cli} analyze --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/report-output/ \
+    --target eap7</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

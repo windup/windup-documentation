@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/getting-started-guide/topics/maven-arguments/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/getting-started-guide/topics/maven-arguments/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/getting-started-guide/topics/maven-arguments/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="maven-arguments_{context}">About {MavenNameTitle} arguments</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following is a detailed description of the available {ProductShortName} {MavenName} arguments.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. {ProductShortName} {MavenName} arguments</caption>
+<colgroup>
+<col style="width: 40%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Argument</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">analyzeKnownLibraries</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to analyze known software artifacts embedded within your application. By default, {ProductShortName} only analyzes application code.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This option may result in a longer execution time and a large number of migration issues being reported.</p>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">customLoggingPropertiesFile</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An absolute path to a <code>logging.properties</code> file that contains a <code>java.util.logging.LogManager</code> logging configuration. If the specified path is invalid, or the option is not specified, then the logging reverts to using the <code>logging.properties</code> file included with the {MavenName}.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">disableTattletale</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to disable generation of the Tattletale report. If both <code>enableTattletale</code> and <code>disableTattletale</code> are set to true, then <code>disableTattletale</code> will be ignored, and the Tattletale report will still be generated.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enableCompatibleFilesReport</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to enable generation of the Compatible Files report. Due to processing all files without found issues, this report may take a long time for large applications.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enableTattletale</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to enable generation of a Tattletale report for each application. This option is enabled by default when <code>eap</code> is in the included target. If both <code>enableTattletale</code> and <code>disableTattletale</code> are set to true, then <code>disableTattletale</code> will be ignored, and the Tattletale report will still be generated.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enableTransactionAnalysis</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>[Technology Preview] Flag to enable generation of a Transactions report that displays the call stack, which executes operations on relational database tables. The Enable Transaction Analysis feature supports Spring Data JPA and the traditional <code>preparedStatement()</code> method for SQL statement execution. It does not support ORM frameworks such as Hibernate.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>enableTransactionAnalysis is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them
+in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">excludePackages</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A list of packages to exclude from evaluation. For example, entering "com.mycompany.commonutilities" would exclude all classes whose package name begins with "com.mycompany.commonutilities".</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">excludeTags</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A list of tags to exclude. When specified, rules with these tags will not be processed.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">explodedApps</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to indicate that the provided input directory contains source files for a single application.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exportCSV</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to export the report data to a CSV file on your local file system. {ProductShortName} creates the file in the directory specified by the <code>outputDirectory</code> argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">includeTags</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A list of tags to use. When specified, only rules with these tags will be processed.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inputDirectory</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify the path to the directory containing the applications to be analyzed. This argument defaults to <code>{project.basedir}/src/main/</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keepWorkDirs</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to instruct {ProductShortName} to not delete temporary working files, such as the graph database and unzipped archives. This is useful for debugging purposes.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">legacyReports</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to instruct {ProductShortName} to generate the old format reports instead of the new format reports.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">packages</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A list of the packages to be evaluated by {ProductShortName}. This argument is required.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">offlineMode</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to operate in offline mode, disabling network access features, such as scheme validation. Used to improve performance.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">outputDirectory</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify the path to the directory to output the report information generated by {ProductShortName}. This argument defaults to <code>{project.build.directory}/windup-report</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">overwrite</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to force delete the existing output directory specified by <code>outputDirectory</code>. Defaults to <code>true</code>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Be careful not to specify a report output directory that contains important information!</p>
+</div>
+</td>
+</tr>
+</table>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sourceTechnologies</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the <code>targetTechnologies</code> argument, helps to determine which rulesets are used.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sourceMode</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Flag to indicate that the application to be evaluated contains source files rather than compiled binaries. Defaults to <code>true</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">targetTechnologies</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the <code>sourceTechnologies</code> argument, helps to determine which rulesets are used.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">userIgnorePath</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify a location for {ProductShortName} to identify files that should be ignored.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">userRulesDirectory</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify a location for {ProductShortName} to look for custom {ProductShortName} rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the <code>.windup.xml</code> suffix.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">windupHome</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An optional argument that points to the root of an extracted {ProductShortName} {CLIName}. By referencing a local installation of the {CLIName}, the {MavenName} has direct access to all of the indexes, resulting in a performance increase.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">windupVersion</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify the version of {ProductShortName} to run. By default, this is the {MavenName}'s build version.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="maven-input-argument_{context}">Specifying the input directory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A path to the file or directory containing one or more applications to be analyzed. This defaults to <code>{project.basedir}/src/main/</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;inputDirectory&gt;
+    &lt;INPUT_ARCHIVE_OR_DIRECTORY&gt;
+&lt;/inputDirectory&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="maven-input-file-type-arguments_{context}">Evaluating an input file</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Depending on whether the input file type provided to the <code>inputDirectory</code> argument is a file or directory, it will be evaluated as follows depending on the additional arguments provided.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Directory</dt>
+<dd>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">--explodedApp</th>
+<th class="tableblock halign-left valign-top">--sourceMode</th>
+<th class="tableblock halign-left valign-top">Neither Argument</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The directory is evaluated as a single application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The directory is evaluated as a single application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each subdirectory is evaluated as an application.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt class="hdlist1">File</dt>
+<dd>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">--explodedApp</th>
+<th class="tableblock halign-left valign-top">--sourceMode</th>
+<th class="tableblock halign-left valign-top">Neither Argument</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Argument is ignored; the file is evaluated as a single application.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The file is evaluated as a compressed project.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The file is evaluated as a single application.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="maven-output-argument_{context}">Specifying the output directory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Specify the path to the directory to output the report information generated by {ProductShortName}.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;outputDirectory&gt;
+    &lt;OUTPUT_REPORT_DIRECTORY&gt;
+&lt;/outputDirectory&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If omitted, the report will be generated in the <code>{project.build.directory}/windup-report</code> directory.</p>
+</li>
+<li>
+<p>If the output directory exists, it will be overwritten based on the value of the <code>overwrite</code> argument. This argument defaults to <code>true</code>, and causes {ProductShortName} to delete and recreate the directory.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="maven-source-argument_{context}">Setting the source technology</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the <code>targetTechnologies</code> argument, helps to determine which rulesets are used.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;sourceTechnologies&gt;
+    &lt;source&gt;eap:6&lt;/source&gt;
+&lt;/sourceTechnologies&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>sourceTechnologies</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven version range syntax</a>. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, <code>&lt;source&gt;eap:5&lt;/source&gt;</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="maven-target-argument_{context}">Setting the target argument</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the <code>sourceTechnologies</code> argument, helps to determine which rulesets are used. This argument is required</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;targetTechnologies&gt;
+  &lt;target&gt;eap:7&lt;/target&gt;
+&lt;/targetTechnologies&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>targetTechnologies</code> argument now provides version support, which follows the <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">Maven Version Range Specification</a>. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, <code>&lt;target&gt;eap:7&lt;/target&gt;</code>.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When migrating to JBoss EAP, be sure to specify the version in the target, for example, <code>eap:6</code>. Specifying only <code>eap</code> will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="{ProductDocIntroToMTAGuideURL}/index#supported_configurations">Supported migration paths</a> in <em>Introduction to the Migration Toolkit for Applications</em> for the appropriate JBoss EAP version.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="maven-packages-argument_{context}">Selecting packages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;packages&gt;
+  &lt;package&gt;
+    &lt;PACKAGE_1&gt;
+  &lt;/package&gt;
+  &lt;package&gt;
+    &lt;PACKAGE_2&gt;
+  &lt;/package&gt;
+&lt;/packages&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or third party packages. The <code>&lt;PACKAGE_N&gt;</code> argument is a package prefix; all subpackages will be scanned. For example, to scan the packages <code>com.mycustomapp</code> and <code>com.myotherapp</code>, use the following snippet in your <code>pom.xml</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;packages&gt;
+  &lt;package&gt;com.mycustomapp&lt;/package&gt;
+  &lt;package&gt;com.myotherapp&lt;/package&gt;
+&lt;/packages&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>While you can provide package names for standard Java EE third party software like <code>org.apache</code>, it is usually best not to include them as they should not impact the migration effort.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide-mtr/topics/execute/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide-mtr/topics/execute/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide-mtr/topics/execute/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="execute_{context}">Running the {CLINameTitle}</h1>
+<div class="paragraph">
+<p>You can run {ProductShortName} against your application.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open a terminal and navigate to the <code>&lt;{ProductShortName}_HOME&gt;/bin/</code> directory.</p>
+</li>
+<li>
+<p>Execute the <code>{LC_PSN}-cli</code> script, or <code>{LC_PSN}-cli.bat</code> for Windows, and specify the appropriate arguments:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ ./{LC_PSN}-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/output --source weblogic --target eap:6 --packages com.acme org.apache</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>--input</code>: The application to be evaluated.</p>
+</li>
+<li>
+<p><code>--output</code>: The output directory for the generated reports.</p>
+</li>
+<li>
+<p><code>--source</code>: The source technology for the application migration.</p>
+</li>
+<li>
+<p><code>--target</code>: The target technology for the application migration.</p>
+</li>
+<li>
+<p><code>--packages</code>: The packages to be evaluated. This argument is highly recommended to improve performance.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Access the report.</p>
+</li>
+</ol>
+</div>
+<h2 id="command-examples_{context}" class="discrete">{ProductShortName} Command examples</h2>
+<h3 id="running-productshortname-on-an-application-archive" class="discrete">Running {ProductShortName} on an application archive</h3>
+<div class="paragraph">
+<p>The following command analyzes the <code>com.acme</code> and <code>org.apache</code> packages of the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;{ProductShortName}_HOME&gt;/bin/{LC_PSN}-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/report-output/ --source eap:5 --target eap:7 --packages com.acme org.apache</code></pre>
+</div>
+</div>
+<h3 id="running-productshortname-on-source-code" class="discrete">Running {ProductShortName} on source code</h3>
+<div class="paragraph">
+<p>The following command analyzes the <code>org.jboss.seam</code> packages of the <a href="https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2">seam-booking-5.2</a> example source code for migrating to JBoss EAP 6.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ &lt;{ProductShortName}_HOME&gt;/bin/{LC_PSN}-cli --sourceMode --input /path/to/seam-booking-5.2/ --output /path/to/report-output/ --target eap:6 --packages org.jboss.seam</code></pre>
+</div>
+</div>
+<h3 id="running-cloud-readiness-rules" class="discrete">Running cloud-readiness rules</h3>
+<div class="paragraph">
+<p>The following command analyzes the <code>com.acme</code> and <code>org.apache</code> packages of the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ &lt;{ProductShortName}_HOME&gt;/bin/{LC_PSN}-cli --input /path/to/jee-example-app-1.0.0.ear --output /path/to/report-output/ --target eap:7 --target cloud-readiness --packages com.acme org.apache</code></pre>
+</div>
+</div>
+<h3 id="overriding-productshortname-properties" class="discrete">Overriding {ProductShortName} properties</h3>
+<div class="paragraph">
+<p>To override the default <em>Fernflower</em> decompiler, pass the <code>-Dwindup.decompiler</code> argument on the command line. For example, to use the <em>Procyon</em> decompiler, use the following syntax:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ &lt;{ProductShortName}_HOME&gt;/bin/{LC_PSN}-cli -Dwindup.decompiler=procyon --input &lt;INPUT_ARCHIVE_OR_DIRECTORY&gt; --output &lt;OUTPUT_REPORT_DIRECTORY&gt; --target &lt;TARGET_TECHNOLOGY&gt; --packages &lt;PACKAGE_1&gt; &lt;PACKAGE_2&gt;</code></pre>
+</div>
+</div>
+<h2 id="cli-bash-completion_{context}" class="discrete">About {ProductShortName} {CLINameTitle} Bash completion</h2>
+<div class="paragraph">
+<p>The {ProductShortName} {CLIName} provides an option to enable Bash completion for Linux systems, allowing the {ProductShortName} command-line arguments to be auto completed by pressing the Tab key when entering the commands. For instance, when Bash completion is enabled, entering the following displays a list of available arguments.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ &lt;{ProductShortName}_HOME&gt;/bin/{LC_PSN}-cli [TAB]</code></pre>
+</div>
+</div>
+<h3 id="bash-completion-temporary_{context}" class="discrete">Enabling Bash completion</h3>
+<div class="paragraph">
+<p>To enable Bash completion for the current shell, execute the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ source &lt;{ProductShortName}_HOME&gt;/bash-completion/{LC_PSN}-cli</code></pre>
+</div>
+</div>
+<h3 id="bash-completion-persistent_{context}" class="discrete">Enabling persistent Bash completion</h3>
+<div class="paragraph">
+<p>The following commands allow Bash completion to persist across restarts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To enable Bash completion for a specific user across system restarts, include the following line in that user&#8217;s <code>~/.bashrc</code> file.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>source &lt;{ProductShortName}_HOME&gt;/bash-completion/{LC_PSN}-cli</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>To enable Bash completion for all users across system restarts, copy the {ProductName} {CLIName} Bash completion file to the <code>/etc/bash_completion.d/</code> directory as the root user.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code># cp &lt;{ProductShortName}_HOME&gt;/bash-completion/{LC_PSN}-cli /etc/bash_completion.d/</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<h2 id="accessing-help_{context}" class="discrete">Accessing {ProductShortName} help</h2>
+<div class="paragraph">
+<p>To see the complete list of available arguments for the <code>{LC_PSN}-cli</code> command, open a terminal, navigate to the <code>&lt;{ProductShortName}_HOME&gt;</code> directory, and execute the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ &lt;{ProductShortName}_HOME&gt;/bin/{LC_PSN}-cli --help</code></pre>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

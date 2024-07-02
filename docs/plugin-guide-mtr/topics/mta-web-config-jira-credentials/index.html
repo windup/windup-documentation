@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/plugin-guide-mtr/topics/mta-web-config-jira-credentials/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/plugin-guide-mtr/topics/mta-web-config-jira-credentials/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/plugin-guide-mtr/topics/mta-web-config-jira-credentials/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mta-web-config-jira-credentials_{context}">Configuring Jira credentials</h1>
+<div class="paragraph">
+<p>To define a Jira instance in {ProductShortName} and establish a connection to that instance, you must first create an {ProductShortName} credential to authenticate to the Jira instance&#8217;s API.</p>
+</div>
+<div class="paragraph">
+<p>Two types of credentials are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Basic auth</strong> - for Jira Cloud and a private Jira server or data center</p>
+</li>
+<li>
+<p><strong>Bearer Token</strong> - for a private Jira server or data center</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To create an {ProductShortName} credential, follow the procedure below.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Credentials</strong>.</p>
+<div class="paragraph">
+<p>The <strong>Credentials</strong> page opens.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong></p>
+</li>
+<li>
+<p><strong>Description</strong> (optional)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the <strong>Type</strong> list, select <strong>Basic Auth (Jira)</strong> or <strong>Bearer Token (Jira)</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you selected <strong>Basic Auth (Jira)</strong>, proceed as follows:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the <strong>Email</strong> field, enter your email.</p>
+</li>
+<li>
+<p>In the <strong>Token</strong> field, depending on the specific Jira configuration, enter either your token generated on the Jira site or your Jira login password.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To obtain a Jira token, you need to log in to the Jira site.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>The new credential appears on the <strong>Credentials</strong> page.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>If you selected <strong>Bearer Token (Jira)</strong>, proceed as follows:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the <strong>Token</strong> field, enter your token generated on the Jira site.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>The new credential appears on the <strong>Credentials</strong> page.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can edit a credential by clicking <strong>Edit</strong>.</p>
+</div>
+<div class="paragraph">
+<p>To delete a credential, click <strong>Delete</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot delete a credential that has already been assigned to a Jira connection instance.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

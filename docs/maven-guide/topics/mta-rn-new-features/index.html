@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/maven-guide/topics/mta-rn-new-features/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/maven-guide/topics/mta-rn-new-features/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/maven-guide/topics/mta-rn-new-features/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mta-rn-new-features_{context}">New features and improvements</h1>
+<div class="paragraph">
+<p>This section describes the new features and improvements of the {ProductName} ({ProductShortName}) 6.0.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">Application inventory module</div>
+<p>New application portfolio driven UI that enables organizations to manage and classify their applications using an extensible tagging model.</p>
+</div>
+<div class="paragraph">
+<div class="title">Application assessment module</div>
+<p>A questionnaire based tool that assesses the suitability of applications for deployment in containers within an enterprise Kubernetes platform, highlighting potential risks that should be considered when deciding which migration strategy to follow.</p>
+</div>
+<div class="paragraph">
+<div class="title">Administrator perspective</div>
+<p>Dedicated perspective to manage tool-wide configuration, it has a similar approach and design to the OpenShift Administrator Perspective.</p>
+</div>
+<div class="paragraph">
+<div class="title">Enhanced RBAC</div>
+<p>Three new differentiated personas with different permissions — Administrator, Architect and Migrator.</p>
+</div>
+<div class="paragraph">
+<div class="title">Integration with repositories</div>
+<p>Full integration with source code (Git, Subversion) and binaries (Maven) repositories to automate the retrieval of applications for analysis.</p>
+</div>
+<div class="paragraph">
+<div class="title">Credentials management</div>
+<p>Secure store for multiple credential types (source control, Maven settings files, proxy). Credentials are managed by Administrators and assigned by Architects to applications.</p>
+</div>
+<div class="paragraph">
+<div class="title">Proxy integration</div>
+<p>HTTP and HTTPS proxy configuration can be managed in the {ProductShortName} UI.</p>
+</div>
+<div class="paragraph">
+<div class="title">Enhanced analysis modes</div>
+<p>Aside from source and binary analysis modes, now {ProductShortName} includes the Source + Dependencies mode that parses the POM file available in the source repository to gather dependencies from corporate or public artifact repositories, adding them to the scope of the analysis.</p>
+</div>
+<div class="paragraph">
+<div class="title">Analysis scope selection</div>
+<p>Simplified user experience to configure the analysis scope, with the possibility to force the analysis of known Open Source libraries.</p>
+</div>
+<div class="paragraph">
+<div class="title">Authless deployment</div>
+<p>{ProductShortName} can now be optionally deployed without Keycloak, allowing full unauthenticated admin access to the tool. This is especially useful when deploying the tool in resource constrained environments like local instances of Minikube, where only a single user would have access to it.</p>
+</div>
+<div class="paragraph">
+<div class="title">Additional migration paths</div>
+<p>New transformation targets have been added to {ProductShortName}:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenJDK 11 to OpenJDK 17</p>
+</li>
+<li>
+<p>EAP and Spring Boot applications to Azure App Service</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Seamless upgrades</div>
+<p>{ProductShortName} lifecycle is now managed by a new operator with Capability Level II, allowing seamless upgrades between GA versions.</p>
+</div>
+<div class="paragraph">
+<div class="title">Transaction report</div>
+<p>A new transaction report is now available in the application analysis reports. This new option analyzes the application data layer and provides detailed information about  how transactions propagate across different layers, expressing it as a sequence of service entries, call graphs and SQL statements.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Transaction report is provided as Technology Preview only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs), might not be functionally complete, and Red Hat does not recommend to use them for production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="{KBArticleTechnologyPreview}">Technology Preview features support scope</a> on the Red&nbsp;Hat Customer Portal for information about the support scope for Technology Preview features.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

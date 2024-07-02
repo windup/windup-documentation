@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/eclipse-code-ready-studio-guide-mtr/topics/mtr-rn-resolved-issues-1-2-2/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/eclipse-code-ready-studio-guide-mtr/topics/mtr-rn-resolved-issues-1-2-2/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/eclipse-code-ready-studio-guide-mtr/topics/mtr-rn-resolved-issues-1-2-2/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mtr-rn-resolved-issues-1-2-2_{context}">Resolved issues</h1>
+<div class="paragraph">
+<div class="title">CVE-2023-44487 netty-codec-http2: HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable to a DDoS attack (Rapid Reset Attack)</div>
+<p>A flaw was found in handling multiplexed streams in the HTTP/2 protocol, which was utilized by {ProductFullName}. A client could repeatedly make a request for a new multiplex stream and immediately send an <code>RST_STREAM</code> frame to cancel it. This creates additional workload for the server in terms of setting up and dismantling streams, while avoiding any server-side limitations on the maximum number of active streams per connection, resulting in a denial of service due to server resource consumption. <a href="https://issues.redhat.com/browse/WINDUP-4072">(WINDUP-4072)</a></p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-44487">(CVE-2023-44487)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-37460 plexus-archiver: Arbitrary File Creation in AbstractUnArchiver</div>
+<p>A flaw was found in the Plexus Archiver, which was utilized by {ProductShortName}. While using <code>AbstractUnArchiver</code> for extracting, an archive could lead to arbitrary file creation and possible remote code execution (RCE). This flaw will bypass directory destination verification if an archive with an entry in the destination directory as a symbolic link whose target does not exist. The plexus-archiver is a test scoped artifact so not included in any of the {ProductShortName} distributions. <a href="https://issues.redhat.com/browse/WINDUP-4053">(WINDUP-4053)</a></p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-37460">(CVE-2023-37460)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">EAP 7.3 and EAP 7.4 rules with target EAP 7.0 and above</div>
+<p>This {ProductShortName} release makes a correction to some rules to support migrating to EAP 7.3 and above, to ensure the rules are ignored if the target is EAP 7.2 or below. <a href="https://issues.redhat.com/browse/WINDUPRULE-1038">(WINDUPRULE-1038)</a></p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

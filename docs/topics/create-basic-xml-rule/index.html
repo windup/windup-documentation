@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/topics/create-basic-xml-rule/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/topics/create-basic-xml-rule/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/topics/create-basic-xml-rule/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="create-basic-xml-rule_{context}">Creating a basic XML rule</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes how to create an {ProductShortName} XML rule. This assumes that you already have {ProductShortName} installed. See the {ProductShortName} {ProductDocUserGuideURL}[<em>CLI Guide</em>] for installation instructions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-a-basic-xml-rule-template">Creating a basic XML rule template</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>{ProductShortName} XML rules consist of <em>conditions</em> and <em>actions</em> and use the following rule pattern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when(condition)
+  perform(action)
+otherwise(action)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create a file with the following contents, which is the basic syntax for XML rules.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The XML file name must include the <code>.windup.xml</code> extension. Otherwise, {ProductShortName} does not evaluate the new rule.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset id="unique-ruleset-id"
+  xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;metadata&gt;
+    &lt;!-- Metadata about the rule including a description,
+         source technology, target technology, and any
+         add-on dependencies --&gt;
+  &lt;/metadata&gt;
+&lt;rules&gt;
+    &lt;rule id="unique-ruleset-id-01000"&gt;
+        &lt;when&gt;
+            &lt;!-- Test a condition... --&gt;
+        &lt;/when&gt;
+        &lt;perform&gt;
+            &lt;!-- Perform this action when condition is satisfied --&gt;
+        &lt;/perform&gt;
+        &lt;otherwise&gt;
+            &lt;!-- Perform this action when condition is not satisfied --&gt;
+        &lt;/otherwise&gt;
+    &lt;/rule&gt;
+  &lt;rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-the-ruleset-metadata">Creating the ruleset metadata</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The XML ruleset <code>metadata</code> element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>&lt;metadata&gt;</code> example</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;ruleset id="unique-ruleset-id"
+  xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;metadata&gt;
+    &lt;description&gt;
+            This is the description.
+    &lt;/description&gt;
+    &lt;dependencies&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final"/&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final"/&gt;
+    &lt;/dependencies&gt;
+    &lt;sourceTechnology id="weblogic" versionRange="(10,12]"/&gt;
+    &lt;sourceTechnology id="ejb" versionRange="(2,3]"/&gt;
+    &lt;targetTechnology id="eap" versionRange="(5,6]"/&gt;
+    &lt;targetTechnology id="ejb" versionRange="(2,3]"/&gt;
+    &lt;tag&gt;require-stateless&lt;/tag&gt;
+    &lt;tag&gt;require-nofilesystem-io&lt;/tag&gt;
+    &lt;executeAfter&gt;AfterRulesetId&lt;/executeAfter&gt;
+    &lt;executeBefore&gt;BeforeRulesetId&lt;/executeBefore&gt;
+  &lt;/metadata&gt;
+  &lt;rules&gt;
+    ...
+  &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-a-rule">Creating a rule</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Individual rules are contained within the <code>&lt;rules&gt;</code> element. They comprise one or more <code>when</code> conditions and perform actions.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">XML rule schema</a> for valid rule syntax.</p>
+</div>
+<div class="sect2">
+<h3 id="create-when-condition_{context}">Creating a <code>&lt;when&gt;</code> condition</h3>
+<div class="paragraph">
+<p>The XML rule <code>&lt;when&gt;</code> element tests for a condition. The following is a list of valid <code>&lt;when&gt;</code> conditions.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;and&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The standard logical <em>and</em> operator.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;filecontent&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find strings or text within files, for example, properties files.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;file-mapping&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define file names to internal stored File model.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;javaclass&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test for a match in a Java class.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;javaclass-ignore&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exclude javaclass that you would like to ignore in processing discovery.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;not&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The standard logical <em>not</em> operator.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;or&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The standard logical <em>or</em> operator.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;package-mapping&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define package names to organization or libraries.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;project&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test for project characteristics, such as dependencies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;true&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Always match.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;xmlfile&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test for a match in an XML file.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-perform-action_{context}">Creating a <code>&lt;perform&gt;</code> action</h3>
+<div class="paragraph">
+<p>The XML rule <code>&lt;perform&gt;</code> element performs the action when the condition is met. Operations allowed in this section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project line item reporting. The following is a list of valid <code>&lt;perform&gt;</code> actions.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;classification&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This operation adds metadata that you want to apply to the entire file. For example, if the Java Class is a JMS Message Listener, you can add a Classification with the title "JMS Message Listener" that includes information that applies to the entire file. You can also set an effort level for the entire file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;hint&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This operation adds metadata to a line within the file. This provides a hint or inline information about how to migrate a section of code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;iteration&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This specifies to iterate over an implicit or explicit variable defined within the rule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;lineitem&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This provides a high-level message that is displayed in the application overview page.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;link&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This provides an HTML link to additional information or documentation about the migration task.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;xslt&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This specifies how to transform an XML file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

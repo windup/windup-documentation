@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/mtr-rn-resolved-issues-1-2-6/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/mtr-rn-resolved-issues-1-2-6/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/mtr-rn-resolved-issues-1-2-6/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mtr-rn-resolved-issues-1-2-6_{context}">Resolved issues</h1>
+<div class="paragraph">
+<p>{ProductShortName} 1.2.6 has the following resolved issues:</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2024-1132: <code>org.keycloak-keycloak-parent</code>: keycloak path transversal in redirection validation</div>
+<p>A flaw was discovered in Keycloak, where it does not properly validate URLs included in a redirect. This flaw could allow an attacker to construct a malicious request to bypass validation, access other URLs and sensitive information within the domain, or conduct further attacks. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2024-1132">(CVE-2024-1132)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-45857: Axios 1.5 exposes confidential data stored in cookies</div>
+<p>A flaw was discovered in Axios 1.5.1 that accidentally revealed the confidential <code>XSRF-TOKEN</code>, stored in cookies, by including it in the HTTP header <code>X-XSRF-TOKEN</code> for every request made to any host, thereby allowing attackers to view sensitive information. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2023-45857">(CVE-2023-45857)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2024-28849: <code>follow-redirects</code> package clears authorization headers</div>
+<p>A flaw was discovered in the <code>follow-redirects</code> package, which clears authorization headers, but it fails to clear the <code>proxy-authentication</code> headers. This flaw could lead to credential leakage, which could have a high impact on data confidentiality.
+Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2024-28849">(CVE-2024-28849)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2024-29131: Out-of-bounds Write vulnerability in Apache Commons Configuration</div>
+<p>A vulnerability was found in Apache Commons-Configuration2, where a Stack Overflow Error can occur when adding a property in the <code>AbstractListDelimiterHandler.flattenIterator()</code> method. This issue could allow an attacker to corrupt memory or execute a denial of service (DoS) attack by crafting a malicious property that triggers an out-of-bounds write issue when processed by the vulnerable method. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2024-29131">(CVE-2024-29131)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2024-29133: Out-of-bounds Write vulnerability in Apache Commons Configuration</div>
+<p>A vulnerability was found in Apache Commons-Configuration2, where a Stack Overflow Error occurs when calling the <code>ListDelimiterHandler.flatten(Object, int)</code> method with a cyclical object tree. This issue could allow an attacker to trigger an out-of-bounds write that could lead to memory corruption or cause a denial of service (DoS) attach. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2024-29133">(CVE-2024-29133)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2024-29180: <code>webpack-dev-middleware</code> lack of URL validation may lead to a file leak</div>
+<p>A flaw was found in the <code>webpack-dev-middleware</code> package, where it failed to validate the supplied URL address sufficiently before returning local files. This flaw allows an attacker to craft URLs to return arbitrary local files from the developer&#8217;s machine. The lack of normalization before calling the middleware also allows the attacker to perform path traversal attacks on the target environment. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2024-29180">(CVE-2024-29180)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-4639: <code>org.keycloak-keycloak-parent</code> undertow Cookie Smuggling and Spoofing</div>
+<p>A flaw was found in Undertow, which incorrectly parses cookies with certain value-delimiting characters in incoming requests. This vulnerability has the potential to enable an attacker to construct a cookie value to intercept <code>HttpOnly</code> cookie values or spoof arbitrary additional cookie values, resulting in unauthorized data access or modification. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2023-4639">(CVE-2023-4639)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-36479: <code>com.google.guava-guava-parent</code> improper addition of quotation marks to user inputs in Jetty CGI Servlet</div>
+<p>A flaw was found in Jetty&#8217;s <code>org.eclipse.jetty.servlets.CGI</code> Servlet, which permits incorrect command execution in specific circumstances, such as requests with certain characters in requested filenames. This issue could allow an attacker to run permitted commands besides the ones requested. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2023-36479">(CVE-2023-36479)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-26364: <code>css-tools</code> improper input validation causes denial of service</div>
+<p>A flaw was found in <code>@adobe/css-tools</code>, which could potentially lead to a minor denial of service (DoS) when parsing CSS. User interaction and privileges are not required to jeopardize an environment. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2023-26364">(CVE-2023-26364)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-48631: <code>css-tools</code>: regular expression denial of service</div>
+<p>A flaw was found in <code>@adobe/css-tools</code>, which could lead to a regular expression denial of service (ReDoS) when attempting to parse CSS. Users are recommended to upgrade to {ProductShortName} 1.2.6, which resolves this issue.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2023-48631">(CVE-2023-48631)</a>.</p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all issues resolved in this release, see the list of <a href="https://issues.redhat.com/issues/?filter=12435317">MTR 1.2.6 resolved issues</a> in Jira.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

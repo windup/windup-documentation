@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/release-notes/master/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/release-notes/master/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/release-notes/master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1>Release Notes</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#making-open-source-more-inclusive">Making open source more inclusive</a></li>
+<li><a href="#release-notes-introduction">1. Introduction</a></li>
+<li><a href="#mta-7-0-3">2. MTA 7-0-3</a>
+<ul class="sectlevel2">
+<li><a href="#rn-known-issues-7-0-3_release-notes">2.1. Known issues</a>
+<ul class="sectlevel3">
+<li><a href="#cli-tool-known-issues-703_release-notes">2.1.1. CLI known issues</a></li>
+</ul>
+</li>
+<li><a href="#mta-rn-resolved-issues-7-0-3_release-notes">2.2. Resolved issues</a></li>
+</ul>
+</li>
+<li><a href="#mta-7-0-2">3. MTA 7-0-2</a>
+<ul class="sectlevel2">
+<li><a href="#rn-new-features-7-0-2_release-notes">3.1. New features</a></li>
+<li><a href="#rn-known-issues-7-0-2_release-notes">3.2. Known issues</a>
+<ul class="sectlevel3">
+<li><a href="#cli-tool-known-issues-702_release-notes">3.2.1. CLI known issues</a></li>
+</ul>
+</li>
+<li><a href="#mta-rn-resolved-issues-7-0-2_release-notes">3.3. Resolved issues</a></li>
+<li><a href="#mta-rn-upgrade-notes-7-0-2_release-notes">3.4. Upgrade notes</a></li>
+</ul>
+</li>
+<li><a href="#mta-7-0-1">4. MTA 7-0-1</a>
+<ul class="sectlevel2">
+<li><a href="#rn-known-issues-7-0-1_release-notes">4.1. Known issues</a>
+<ul class="sectlevel3">
+<li><a href="#cli-tool-known-issues-701_release-notes">4.1.1. CLI known issues</a></li>
+</ul>
+</li>
+<li><a href="#mta-rn-resolved-issues-7-0-1_release-notes">4.2. Resolved issues</a></li>
+<li><a href="#mta-rn-upgrade-notes-7-0-1_release-notes">4.3. Upgrade notes</a></li>
+</ul>
+</li>
+<li><a href="#mta-7-0-0">5. MTA 7-0-0</a>
+<ul class="sectlevel2">
+<li><a href="#rn-new-features-7-0-0_release-notes">5.1. New features</a></li>
+<li><a href="#rn-known-issues-7-0-0_release-notes">5.2. Known issues</a></li>
+<li><a href="#mta-rn-resolved-issues-7-0-0_release-notes">5.3. Resolved issues</a></li>
+<li><a href="#mta-rn-upgrade-notes-7-0-0_release-notes">5.4. Upgrade notes</a></li>
+<li><a href="#mta-rn-technical-changes-7-0-0_release-notes">5.5. Technical changes</a>
+<ul class="sectlevel3">
+<li><a href="#mta-rn-technical-changes-rules-7-0-0_release-notes">5.5.1. Rules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="making-open-source-more-inclusive">Making open source more inclusive</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="release-notes-introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Migration Toolkit for Applications 7.0 accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-7-0-3">2. MTA 7-0-3</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="rn-known-issues-7-0-3_release-notes">2.1. Known issues</h3>
+<div class="paragraph">
+<p>This section provides highlighted known issues in Migration Toolkit for Applications (MTA) version 7.0.3:</p>
+</div>
+<div class="paragraph">
+<div class="title">The <code>Applications</code> page loads slowly when there are many applications</div>
+<p>When the Application Inventory has to list many applications, the page loads slowly. Currently, there is no workaround available. <a href="https://issues.redhat.com/browse/MTA-2497">(MTA-2497)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Failure to run analysis on a directory of multiple applications</div>
+<p>MTA 7.0.2 and 7.0.3 fail to run analysis on a directory of multiple applications. The cause of this failure is that the analyzer is expecting a <code>pom.xml</code> file in the root directory. <a href="https://issues.redhat.com/browse/MTA-2765">(MTA-2765)</a></p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all known issues in this release, see the list of <a href="https://issues.redhat.com/issues/?filter=12434259">Known Issues in Jira</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="cli-tool-known-issues-703_release-notes">2.1.1. CLI known issues</h4>
+<div class="paragraph">
+<div class="title">Limitations with Podman on Microsoft Windows</div>
+<p>The CLI is built and distributed with support for Microsoft Windows.</p>
+</div>
+<div class="paragraph">
+<p>However, when running any container image based on Red Hat Enterprise Linux 9 (RHEL9) or Universal Base Image 9 (UBI9), the following error can be returned when starting the container:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Fatal glibc error: CPU does not support x86-64-v2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This error is caused because Red Hat Enterprise Linux 9 or Universal Base Image 9 container images must be run on a CPU architecture that supports <code>x86-64-v2</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/solutions/7057314">(Running Red Hat Enterprise Linux 9 (RHEL) or Universal Base Image (UBI) 9 container images fail with "Fatal glibc error: CPU does not support x86-64-v2")</a>.</p>
+</div>
+<div class="paragraph">
+<p>CLI runs the container runtime correctly. However, different container runtime configurations are not supported.</p>
+</div>
+<div class="paragraph">
+<p>Although unsupported, you can run CLI with <strong>Docker</strong> instead of <strong>Podman</strong>, which would resolve this issue.</p>
+</div>
+<div class="paragraph">
+<p>To achieve this, you replace the <code>PODMAN_BIN</code> path with the path to Docker.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you experience this issue, instead of issuing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">PODMAN_BIN=/usr/local/bin/docker mta-cli analyze</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You replace <code>PODMAN_BIN</code> with the path to Docker:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">&lt;Docker Root Dir&gt;=/usr/local/bin/docker mta-cli analyze</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>While this is not supported, it would allow you to explore CLI while you work to upgrade your hardware or move to hardware that supports <code>x86_64-v2</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-rn-resolved-issues-7-0-3_release-notes">2.2. Resolved issues</h3>
+<div class="paragraph">
+<p>This section provides highlighted issues that have been resolved in Migration Toolkit for Applications (MTA) version 7.0.3.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2024-29180: A flaw was found in the <code>webpack-dev-middleware</code> package, where it failed to validate the supplied URL address sufficiently</div>
+<p>A flaw was found in versions of the <code>webpack-dev-middleware</code> package before versions 7.1.0 and 6.1.2, in which it failed to validate the supplied URL address sufficiently before returning local files. This flaw allowed an attacker to craft URLs to return arbitrary local files from the developer&#8217;s machine. The lack of normalization before calling the middleware also allowed the attacker to perform path traversal attacks on the target environment.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2024-29180">(CVE-2024-29180)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-45288: Golang: <code>net/http, x/net/http2</code>: unlimited number of CONTINUATION frames can cause a denial-of-service (DoS) attack</div>
+<p>A flaw was discovered with the implementation of the <code>HTTP/2</code> protocol in the Go programming language. There were insufficient limitations on the number of CONTINUATION frames sent within a single stream. An attacker could potentially exploit this to cause a denial-of-service (DoS) attack.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-45288">(CVE-2023-45288)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-45857: Axios flaw can expose confidential data stored in cookies</div>
+<p>A flaw was found in Axios that may expose the confidential <code>XSRF-TOKEN</code> stored in cookies by including it in the HTTP header <code>X-XSRF-TOKEN</code> for every request made to any host. This issue can allow a remote attacker to bypass security measures and view sensitive data.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-45857">(CVE-2023-45857)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-45286: <code>go-resty</code>: HTTP request body disclosure in github.com/go-resty/resty/v2</div>
+<p>A race condition in <code>go-resty</code> can result in HTTP request body disclosure across requests. The race condition can be triggered when <code>sync.Pool.Put</code> is called with the same <code>bytes.Buffer</code> more than once during request retries. This can lead to a situation where an unrelated server receives the request body, potentially exposing sensitive information. </p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-45286">(CVE-2023-45286)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-26364: CSS tools: Improper Input Validation causes Denial of Service via Regular</div>
+<p>A flaw was found in Adobe CSS Tools. Operation input validation may result in a minor denial of service while parsing malicious CSS with the parse component. User interaction and privileges are not required to jeopardize an environment.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-26364">(CVE-2023-26364)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-45287: Golang: <code>crypto/tls</code>: Timing Side Channel Attack in an RSA-Based TLS Key exchanges</div>
+<p>A flaw was found in the Golang <code>crypto/tls</code> standard library. In versions before 1.20, the package was vulnerable to a Timing side-channel attack by observing the time it took for RSA-based Transport Layer Security (TLS) key exchanges, which was not constant. The flaw allowed for potential timing attacks, where the removal of <code>PKCS#1</code> padding could have leaked and potentially exposed session key bits.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-45287">(CVE2023-45287)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-39326: Golang: <code>net/http/internal</code>: denial of service (DoS) caused by resource consumption from HTTP requests</div>
+<p>A flaw was found in the Golang <code>net/http/internal</code> package that could cause a malicious HTTP sender to cause a receiver reading from a request or response body to read many more bytes from the network than are in the body. This flaw could cause the receiver to fail to read the response, possibly leading to a denial of service (DoS).</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-39326">(CVE-2023-39326)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-48631: Improper Input Validation vulnerability affecting Adobe <code>css-tools</code></div>
+<p>A Regular Expression Denial of Service (ReDoS) flaw was found in Adobe&#8217;s <code>css-tools</code>, versions 4.3.1 and earlier, when parsing CSS. This vulnerability could lead to a denial of service when attempting to parse CSS due to improper input validation and could allow an attacker to use an input string to cause a denial of service, especially when attempting to parse CSS.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-48631">(CVE-2023-48631)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-26159: <code>follow-redirects</code> package: Improper Input Validation caused by the improper handling of URLs by the <code>url.parse()</code> function </div>
+<p>An Improper Input Validation flaw was found in the <code>follow-redirects</code> package, in versions before 1.15.4. due to the improper handling of URLs by the <code>url.parse()</code> function. This flaw could be exploited by manipulating the hostname when the new <code>URL()</code> throws an error, leading to a misinterpretation and potential redirection of traffic to a malicious site.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-26159">(CVE-2023-26159)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2024-24786: A flaw was found in Golang&#8217;s protobuf module, where the unmarshal function can enter an infinite loop</div>
+<p>A flaw was found in the <code>protojson.Unmarshal</code> function that could cause the function to enter an infinite loop when unmarshaling certain forms of invalid JSON messages. This condition could occur when unmarshaling into a message that contained a <code>google.protobuf.Any</code> value, or when the <code>UnmarshalOptions.DiscardUnknown</code> option was set in a JSON-formatted message.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2024-24786">(CVE-2024-24786)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2024-28849: <code>follow-redirects</code> package: could cause a possible credential leak</div>
+<p>A flaw was found in versions of the <code>follow-redirects</code> package before 1.1.5. This flaw occurs when <code>follow-redirects</code> handles cross-domain redirects. It fails to clear the <code>proxy-authentication</code> header, which may contain credentials, while it clears the authorization header. As a result, this vulnerability could potentially lead to the leak of sensitive credentials. </p>
+</div>
+<div class="paragraph">
+<p>For more details, see line:https://access.redhat.com/security/cve/CVE-2024-28849[(CVE-2024-28849)].</p>
+</div>
+<div class="paragraph">
+<div class="title">Fixed incorrect assessment status when running an assessment on two questionnaires</div>
+<p>In MTA 7.0.2, running two questionnaires displayed the <code>Assessment</code> status as <code>Not started</code> instead of <code>In progress</code>. With this update, the problem has been resolved. As a result, the <strong>Assessment</strong> status shows <code>In progress</code> after one questionnaire or archetype is started.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://issues.redhat.com/browse/MTA-2409">(MTA-2409)</a></p>
+</li>
+<li>
+<p><a href="https://issues.redhat.com/browse/MTA-2410">(MTA-2410)</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Failure to connect to a Jira server using basic authentication</div>
+<p>In MTA 7.0.2, connecting to a Jira server using basic authentication, meaning username and password, failed. This issue has been resolved in MTA 7.0.3. <a href="https://issues.redhat.com/browse/MTA-2427">(MTA-2427)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Unable to activate the <code>Enable insecure communication</code> switch</div>
+<p>In MTA 7.0.2, it was not possible to enable on the <code>Enable insecure communication</code> switch when creating or editing a Jira instance. This issue has been resolved in MTA 7.0.3. <a href="https://issues.redhat.com/browse/MTA-2426">(MTA-2426)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Binary analysis fails for a JAR file that has no external dependencies</div>
+<p>In MTA 7.0.2, the binary analysis failed for a Java archive (JAR) file that had no external dependencies. This issue has been resolved in MTA 7.0.3. <a href="https://issues.redhat.com/browse/MTA-2661">(MTA-2661)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">The IntelliJ IDE plugin&#8217;s key map actions are not functioning as expected.</div>
+<p>In previous releases of MTA, the IntelliJ IDE plugin key map actions are not functioning as expected. Even though the MTA extension opens, it does not focus on it. Therefore, the other actions will not work. <a href="https://issues.redhat.com/browse/MTA-2460">(MTA-2460)</a></p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all issues resolved in this release, see the list of <a href="https://issues.redhat.com/issues/?filter=12435634">Resolved Issues in Jira</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-7-0-2">3. MTA 7-0-2</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="rn-new-features-7-0-2_release-notes">3.1. New features</h3>
+<div class="paragraph">
+<p>This section describes the new features and improvements of the Migration Toolkit for Applications (MTA) 7.0.2.</p>
+</div>
+<div class="paragraph">
+<div class="title">Multiarch support for MTA CLI introduced</div>
+<p>In MTA 7.0.2, multiarch support for for MTA CLI is introduced. Multiarch support includes both ARM architecture on Linux machines and Apple Silicon Macs.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rn-known-issues-7-0-2_release-notes">3.2. Known issues</h3>
+<div class="paragraph">
+<p>Migration Toolkit for Applications (MTA) version 7.0.2 has the following known issues.</p>
+</div>
+<div class="paragraph">
+<div class="title">Failure to connect to Jira server using basic authentication</div>
+<p>In MTA 7.0.2, connecting to a Jira server using basic authentication, meaning <em>username</em> and <em>password</em>, fails. This issue is scheduled to be resolved in MTA 7.1.0. <a href="https://issues.redhat.com/browse/MTA-2427">(MTA-2427)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Unable to turn on Enable insecure communication switch</div>
+<p>In MTA 7.0.2, it is not possible to turn on the <code>Enable insecure communication</code> switch when creating or editing a Jira instance. This issue is scheduled to be resolved in MTA 7.0.3. <a href="https://issues.redhat.com/browse/MTA-2426">(MTA-2426)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Unable to run analysis on a directory of multiple applications</div>
+<p>MTA 7.0.2 and 7.0.3 fails to run analysis on a directory of multiple applications. The cause of this failure is caused as the analyzer is expecting a <code>pom.xml</code> file in the root directory. <a href="https://issues.redhat.com/browse/MTA-2765">(MTA-2765)</a></p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all known issues in this release, see the list of <a href="https://issues.redhat.com/issues/?filter=12431570">Known Issues in Jira</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="cli-tool-known-issues-702_release-notes">3.2.1. CLI known issues</h4>
+<div class="paragraph">
+<div class="title">Limitations with Podman on Microsoft Windows</div>
+<p>The CLI is built and distributed with support for Microsoft Windows.</p>
+</div>
+<div class="paragraph">
+<p>However, when running any container image based on Red Hat Enterprise Linux 9 (RHEL9) or Universal Base Image 9 (UBI9), the following error can be returned when starting the container:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Fatal glibc error: CPU does not support x86-64-v2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This error is caused because Red Hat Enterprise Linux 9 or Universal Base Image 9 container images must be run on a CPU architecture that supports <code>x86-64-v2</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/solutions/7057314">(Running Red Hat Enterprise Linux 9 (RHEL) or Universal Base Image (UBI) 9 container images fail with "Fatal glibc error: CPU does not support x86-64-v2")</a>.</p>
+</div>
+<div class="paragraph">
+<p>CLI runs the container runtime correctly. However, different container runtime configurations are not supported.</p>
+</div>
+<div class="paragraph">
+<p>Although unsupported, you can run CLI with <strong>Docker</strong> instead of <strong>Podman</strong>, which would resolve this issue.</p>
+</div>
+<div class="paragraph">
+<p>To achieve this, you replace the <code>PODMAN_BIN</code> path with the path to Docker.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you experience this issue, instead of issuing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">PODMAN_BIN=/usr/local/bin/docker mta-cli analyze</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You replace <code>PODMAN_BIN</code> with the path to Docker:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">&lt;Docker Root Dir&gt;=/usr/local/bin/docker mta-cli analyze</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>While this is not supported, it would allow you to explore CLI while you work to upgrade your hardware or move to hardware that supports <code>x86_64-v2</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-rn-resolved-issues-7-0-2_release-notes">3.3. Resolved issues</h3>
+<div class="paragraph">
+<p>The following highlighted issues have been resolved in Migration Toolkit for Applications (MTA) version 7.0.2.</p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2022-1962: Golang: go/parser stack exhaustion in all Parse* functions  Security</div>
+<p>A flaw was found in versions of the Golang standard library <code>go/parser</code>, before Go 1.17.12 and Go 1.18.4. When calling any Parse functions on the Go source code, which contains deeply nested types or declarations, a panic can occur due to stack exhaustion. This issue allows an attacker to impact system availability.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/CVE-2022-1962">(CVE-2022-1962)</a>.</p>
+</div>
+<div class="paragraph">
+<div class="title">MTA CLI does not function as expected on ARM-based machines</div>
+<p>In previous versions of MTA 7.0, there was an issue with the Command-line interface (CLI) not functioning as expected on ARM CPU architecture.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>MTA CLI does not work on Mac ARM-based machines. <a href="https://issues.redhat.com/browse/MTA-2160">(MTA-2160)</a></p>
+</li>
+<li>
+<p>MTA CLI does not work on Linux ARM-based machines. <a href="https://issues.redhat.com/browse/MTA-2351">(MTA-2351)</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These issues have been resolved in MTA 7.0.2.</p>
+</div>
+<div class="paragraph">
+<div class="title">Missing text below graphs on the Reports page</div>
+<p>In previous versions of MTA 7.0, the text below graphs was missing on the <strong>Reports</strong> page. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1868">(MTA-1868)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Assessment status is <code>In progress</code> instead of <code>Not started</code></div>
+<p>In previous versions of MTA 7.0, the <strong>Assessment</strong> status was <code>In progress</code> instead of <code>Not started</code> when the application was associated with an archived questionnaire. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1956">(MTA-1956)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Turning off <code>Use Refresh Tokens</code> breaks MTA UI</div>
+<p>In previous versions of MTA, turning off the <code>Use Refresh Tokens</code>, which is a feature in the Red Hat build of Keycloak, could have adversely impacted MTA. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1255">(MTA-1255)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Exporting a questionnaire includes unnecessary metadata</div>
+<p>In previous versions of MTA 7.0, exporting a questionnaire could include unnecessary metadata. This unnecessary metadata had the potential to make reimporting the questionnaire a more difficult task, as it might conflict with already existing data. This has been resolved in MTA 7.0.2, with exports not including any environment-specific data. <a href="https://issues.redhat.com/browse/MTA-1721">(MTA-1721)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Source and dependency analysis of applications built with JDKs before 11 fails compilation</div>
+<p>In previous versions of MTA, source and dependency analysis of applications built with Java Development Kits (JDKs) earlier than version 11 could fail before compilation was completed. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1785">(MTA-1785)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Application drawer incorrectly lists assessed archetypes when there are no required questionnaires</div>
+<p>In previous versions of MTA 7.0, the application drawer incorrectly showed that the associated archetypes had been assessed, when there were no required questionnaires and when an application was associated with unassessed archetypes. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1967">(MTA-1967)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Inherited assessment tags should be listed as assessment tags instead of archetype tags on the app drawer</div>
+<p>In previous versions of MTA 7.0, inherited assessment tags should have been listed as assessment tags instead of archetype tags on the app drawer. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1972">(MTA-1972)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Application Assessment status shows <code>Completed</code> instead of <code>Not started</code> for inherited assessment after the questionnaire is archived</div>
+<p>In previous versions of MTA 7.0, the <strong>Application Assessment</strong> status showed <code>Completed</code> instead of <code>Not started</code> for inherited assessment after the questionnaire was archived. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-1973">(MTA-1973)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Application inventory page shows no applications after accessing dependencies</div>
+<p>In previous versions of MTA 7.0, the <strong>Application inventory</strong> page showed no applications after accessing dependencies. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2007">(MTA-2007)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Dependencies does not filter and navigate to the affected applications</div>
+<p>In previous versions of MTA 7.0, dependencies did not filter and navigate to the affected applications, instead of showing only the affected applications. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2008">(MTA-2008)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Analyzer <code>unable to connect</code> message seen on the Single Application issues page</div>
+<p>In previous versions of MTA 7.0, on an analysis clicking on <strong>Issues</strong> and then navigating to the <strong>Single application</strong> page, no data was shown and an <code>Unable to connect</code> message was shown. There was an error retrieving data, showing a <code>Check your connection and try again</code> error. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2047">(MTA-2047)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Issues contain variable names instead of values</div>
+<p>In previous versions of MTA 7.0, issues occasionally contained variable names instead of values. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2067">(MTA-2067)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Rules from technology usage appear as issues</div>
+<p>In previous versions of MTA 7.0, rules from technology usage appeared as issues. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2099">(MTA-2099)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">MTA CLI does not have a version flag</div>
+<p>In previous versions of MTA 7.0, there was no version flag for the MTA CLI, such as <code>mta-cli --version</code> to show the current version installed. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2201">(MTA-2201)</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Application list in the Archetype side drawer does not scale well</div>
+<p>In previous versions of MTA 7.0, the <strong>Application</strong> list in the Archetype side drawer did not scale well when a large number of applications were associated with the archetype. It is likely that a massive number of applications could cause the drawer not to load properly. This has been resolved in MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2283">(MTA-2283)</a></p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all issues resolved in this release, see the list of <a href="https://issues.redhat.com/issues/?filter=12429435">Resolved Issues in Jira</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-rn-upgrade-notes-7-0-2_release-notes">3.4. Upgrade notes</h3>
+<div class="paragraph">
+<p>The following are upgrade notes for Migration Toolkit for Applications (MTA)</p>
+</div>
+<div class="paragraph">
+<div class="title">Upgrade from MTA 6.2.1 to MTA 7.0.2</div>
+<p>Upgrade directly from MTA 6.2.1 to MTA 7.0.2.</p>
+</div>
+<div class="paragraph">
+<div class="title">Pathfinder assessment migration fails on upgrade from MTA 6.2.1 to MTA 7.0.0</div>
+<p>In previous version of MTA 7.0.0, when MTA 6.2.1 is installed, and you attempt to switch the channel to <code>stable-7.0</code>, the operator upgrade succeeds, but a task in the operator pod fails. This failure resulted in existing pathfinder assessments not being migrated to MTA 7.0.0. As this bug has been resolved in MTA 7.0.1, it is suggested to upgrade directly from MTA 6.2.1 to MTA 7.0.2. <a href="https://issues.redhat.com/browse/MTA-2139">MTA-2139</a></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="title">Enabling questionnaire for assessments</div>
+<div class="paragraph">
+<p>On upgrading from MTA 6.2.1 to MTA 7.0.1 , completed assessment are shown as <strong>In progress</strong>.
+Enable the legacy Pathfinder questionnaire to see the completed status of assessment.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Hub database volume size</div>
+<p>In version 7.0.2 of MTA, the default size of the hub database volume has been increased to 10GiB.</p>
+</div>
+<div class="paragraph">
+<p>If your storage class does not support volume expansion, then an upgrade from 6.2.1 to 7.0.2 will result in a failure due to the operator trying to change the volume size from 5GiB to 10GiB.</p>
+</div>
+<div class="paragraph">
+<p>To avoid this issue, you can directly set the volume size by setting:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">...
+hub_database_volume_size: 5Gi
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By doing this, you will avoid the operator trying to resize the volume.</p>
+</div>
+<div class="paragraph">
+<p>If this value was set when the previous version was deployed, there is no need to take any action, as it will work as expected.</p>
+</div>
+<div class="paragraph">
+<div class="title">Existing data</div>
+<p>When upgrading to MTA 7.0.0, all existing data will be retained, except for individual analysis reports for applications.</p>
+</div>
+<div class="paragraph">
+<p>As both the analysis and reporting engines have been replaced with this version, you will be required to conduct a re-run of the analysis in order to obtain data on issues and dependencies.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-7-0-1">4. MTA 7-0-1</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="rn-known-issues-7-0-1_release-notes">4.1. Known issues</h3>
+<div class="paragraph">
+<p>Migration Toolkit for Applications (MTA) version 7.0.1 has the following issues.</p>
+</div>
+<div class="paragraph">
+<div class="title">MTA CLI does not function on machines using ARM based architecture</div>
+<p>MTA CLI does not function on machines using ARM based architecture. The workaround is to use the upstream images, which will function as expected as they are built using multi-arch. To do this, issue:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-ruby" data-lang="ruby">RUNNER_IMG=quay.io/konveyor/kantra:latest CMD_NAME=kantra ./mta-cli analyze ...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Delayed permission update and user deactivation in <code>RBAC</code></div>
+<p>When deleting, deactivating or degrading the role of a user, such as changing the user from <code>Admin</code> to <code>Migrator</code>, the change can take several minutes to take effect. This delay in changing the user status can pose an operational or security risk. <a href="https://issues.redhat.com/browse/MTA-1809">MTA-1809</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Re-enabling Keycloak breaks MTA</div>
+<p>Keycloak is enabled by default. If you disable and then re-enable Keycloak, you cannot perform any actions in the MTA web console after logging in again.</p>
+</div>
+<div class="paragraph">
+<p>This error is caused as the <code>credential-mta-rhsso</code> secret is updated when <code>auth/Keycloak</code> is disabled and re-enabled.</p>
+</div>
+<div class="paragraph">
+<p>The suggested workaround is to restore the old password in the <code>credential-mta-rhsso</code> secret, after re-enabling <code>auth</code>. <a href="https://issues.redhat.com/browse/MTA-1152">MTA-1152</a></p>
+</div>
+<div class="paragraph">
+<div class="title">org.apache.derby.derby dependency not analyzed</div>
+<p>The <code>org.apache.derby.derby</code> dependency is not analyzed. <a href="https://issues.redhat.com/browse/MTA-1817">MTA-1817</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Redundant warning on reassessment of applications with inherited assessments</div>
+<p>The system repeatedly shows a warning message about overriding an inherited assessment when reassessing an application.</p>
+</div>
+<div class="paragraph">
+<p>This warning, appropriate for the first assessment, incorrectly reappears on subsequent reassessments, suggesting that the application is still inheriting its assessment, even after it has been overridden. <a href="https://issues.redhat.com/browse/MTA-1825">MTA-1825</a></p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all known issues in this release, see the list of <a href="https://issues.redhat.com/issues/?filter=12429307">Known Issues in Jira</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="cli-tool-known-issues-701_release-notes">4.1.1. CLI known issues</h4>
+<div class="paragraph">
+<div class="title">Limitations with Podman on Microsoft Windows</div>
+<p>The CLI is built and distributed with support for Microsoft Windows.</p>
+</div>
+<div class="paragraph">
+<p>However, when running any container image based on Red Hat Enterprise Linux 9 (RHEL9) or Universal Base Image 9 (UBI9), the following error can be returned when starting the container:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Fatal glibc error: CPU does not support x86-64-v2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This error is caused because Red Hat Enterprise Linux 9 or Universal Base Image 9 container images must be run on a CPU architecture that supports <code>x86-64-v2</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/solutions/7057314">(Running Red Hat Enterprise Linux 9 (RHEL) or Universal Base Image (UBI) 9 container images fail with "Fatal glibc error: CPU does not support x86-64-v2")</a>.</p>
+</div>
+<div class="paragraph">
+<p>CLI runs the container runtime correctly. However, different container runtime configurations are not supported.</p>
+</div>
+<div class="paragraph">
+<p>Although unsupported, you can run CLI with <strong>Docker</strong> instead of <strong>Podman</strong>, which would resolve this issue.</p>
+</div>
+<div class="paragraph">
+<p>To achieve this, you replace the <code>PODMAN_BIN</code> path with the path to Docker.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you experience this issue, instead of issuing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">PODMAN_BIN=/usr/local/bin/docker mta-cli analyze</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You replace <code>PODMAN_BIN</code> with the path to Docker:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">&lt;Docker Root Dir&gt;=/usr/local/bin/docker mta-cli analyze</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>While this is not supported, it would allow you to explore CLI while you work to upgrade your hardware or move to hardware that supports <code>x86_64-v2</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-rn-resolved-issues-7-0-1_release-notes">4.2. Resolved issues</h3>
+<div class="paragraph">
+<p>The following highlighted issues have been resolved in Migration Toolkit for Applications (MTA) version 7.0.1.</p>
+</div>
+<div class="paragraph">
+<div class="title">Pathfinder assessment migration fails on upgrade from MTA 6.2.1 to MTA 7.0.0</div>
+<p>In previous version of MTA 7.0.0, when MTA 6.2.1 is installed, and you attempt to switch the channel to <code>stable-7.0</code>, the operator upgrade succeeds, but a task in the operator pod fails. This failure resulted in existing pathfinder assessments not being migrated to MTA 7.0.0. This bug is resolved in MTA 7.0.1. <a href="https://issues.redhat.com/browse/MTA-2139">MTA-2139</a></p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all issues resolved in this release, see the list of <a href="https://issues.redhat.com/issues/?filter=12429435">Resolved Issues in Jira</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-rn-upgrade-notes-7-0-1_release-notes">4.3. Upgrade notes</h3>
+<div class="paragraph">
+<p>The following are upgrade notes for Migration Toolkit for Applications (MTA)</p>
+</div>
+<div class="paragraph">
+<div class="title">Upgrade from MTA 6.2.1 to MTA 7.0.1</div>
+<p>Upgrade directly from MTA 6.2.1 to MTA 7.0.1.</p>
+</div>
+<div class="paragraph">
+<div class="title">Pathfinder assessment migration fails on upgrade from MTA 6.2.1 to MTA 7.0.0</div>
+<p>In previous version of MTA 7.0.0, when MTA 6.2.1 is installed, and you attempt to switch the channel to <code>stable-7.0</code>, the operator upgrade succeeds, but a task in the operator pod fails. This failure resulted in existing pathfinder assessments not being migrated to MTA 7.0.0. As this bug has been resolved in MTA 7.0.1, it is suggested to upgrade directly from MTA 6.2.1 to MTA 7.0.1. <a href="https://issues.redhat.com/browse/MTA-2139">MTA-2139</a></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="title">Enabling questionnaire for assessments</div>
+<div class="paragraph">
+<p>On upgrading from MTA 6.2.1 to MTA 7.0.1 , completed assessment are shown as <strong>In progress</strong>.
+Enable the legacy Pathfinder questionnaire to see the completed status of assessment.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Hub database volume size</div>
+<p>In version 7.0.1 of MTA, the default size of the hub database volume has been increased to 10GiB.</p>
+</div>
+<div class="paragraph">
+<p>If your storage class does not support volume expansion, then an upgrade from 6.2.1 to 7.0.1 will result in a failure due to the operator trying to change the volume size from 5GiB to 10GiB.</p>
+</div>
+<div class="paragraph">
+<p>To avoid this issue, you can directly set the volume size by setting:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">...
+hub_database_volume_size: 5Gi
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By doing this, you will avoid the operator trying to resize the volume.</p>
+</div>
+<div class="paragraph">
+<p>If this value was set when the previous version was deployed, there is no need to take any action, as it will work as expected.</p>
+</div>
+<div class="paragraph">
+<div class="title">Existing data</div>
+<p>When upgrading to MTA 7.0.0, all existing data will be retained, except for individual analysis reports for applications.</p>
+</div>
+<div class="paragraph">
+<p>As both the analysis and reporting engines have been replaced with this version, you will be required to conduct a re-run of the analysis in order to obtain data on issues and dependencies.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-7-0-0">5. MTA 7-0-0</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="rn-new-features-7-0-0_release-notes">5.1. New features</h3>
+<div class="paragraph">
+<p>This section describes the new features and improvements of the Migration Toolkit for Applications (MTA) 7.0.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">Enhanced assessment module with custom questionnaire</div>
+<p>In MTA 7.0.0, the assessment module has been enhanced. The assessment module in this release allows you to import questionnaires using a custom YAML syntax for questionnaire definition.</p>
+</div>
+<div class="paragraph">
+<div class="title">Grouping applications for assessment into archetypes</div>
+<p>In MTA 7.0.0, you can assess and analyze entire groups of applications or <strong>archetypes</strong>, according to common characteristics.</p>
+</div>
+<div class="paragraph">
+<p>Application <strong>archetypes</strong> are defined according to criteria tags and application taxonomy. Each archetype selects how the applications are assessed according to its characteristics.</p>
+</div>
+<div class="paragraph">
+<div class="title">Unlink applications from JIRA</div>
+<p>In MTA 7.0.0, you now have the ability to unlink an application from a Jira ticket, so that you can manage the links between applications and tickets more effectively. To unlink an application from a Jira ticket, click the <code>Unlink from Jira</code> icon in the details view of the application or in the details view of a Migration wave.</p>
+</div>
+<div class="paragraph">
+<div class="title">YAML syntax for new rules</div>
+<p>New rules that use YAML syntax to support metadata, <code>message</code> and <code>tag</code> actions, rule conditions, provider conditions for <strong>Java</strong> and <strong>Go</strong> providers, and other file tagging and characteristics.</p>
+</div>
+<div class="paragraph">
+<div class="title">Dynamic reports</div>
+<p>MTA 7.0.0 produces dynamic analysis reports that collect aggregated issues and dependencies across the application portfolio. They identify portfolio-wide trends, drill down to specific lines in source code, and fully integrate with MTA User Interface (UI).</p>
+</div>
+<div class="paragraph">
+<div class="title">Support added for Azure Red Hat OpenShift (ARO)</div>
+<p>MTA 7.0.0 introduces support for Azure Red Hat OpenShift (ARO).</p>
+</div>
+<div class="paragraph">
+<div class="title">Support added for Red Hat OpenShift on AWS (ROSA)</div>
+<p>MTA 7.0.0 introduces support for Red Hat OpenShift on AWS (ROSA).</p>
+</div>
+<div class="paragraph">
+<div class="title">Multi-language analysis</div>
+<p>MTA 7.0.0 supports migrating applications written in Java and Golang implemented in Language Server Protocol (LSP).</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Multi-language analysis for Golang is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+</div>
+<div class="paragraph">
+<p>For more information about the support scope of Red Hat Technology Preview features, see <a href="https://access.redhat.com/support/offerings/techpreview/">Technology Preview Features Support Scope</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rn-known-issues-7-0-0_release-notes">5.2. Known issues</h3>
+<div class="paragraph">
+<p>Migration Toolkit for Applications (MTA) version 7.0.0 has the following issues.</p>
+</div>
+<div class="paragraph">
+<div class="title">Pathfinder assessment migration fails on upgrade from MTA 6.2.1 to MTA 7.0.0</div>
+<p>If MTA 6.2.1 is installed, when attempting to switch the channel to <code>stable-7.0</code>, the operator upgrade succeeds, but a task in the operator pod fails. This failure results in existing pathfinder assessments not being migrated to MTA 7.0.0. This bug will be resolved in MTA 7.0.1. No assessment data will be lost, it is will simply not be visible in the UI until the release of MTA 7.0.1. <a href="https://issues.redhat.com/browse/MTA-2139">MTA-2139</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Delayed permission update and user deactivation in <code>RBAC</code></div>
+<p>When deleting, deactivating or degrading the role of a user, such as changing the user from <code>Admin</code> to <code>Migrator</code>, the change can take several minutes to take effect. This delay in changing the user status can pose an operational or security risk. <a href="https://issues.redhat.com/browse/MTA-1809">MTA-1809</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Re-enabling Keycloak breaks MTA</div>
+<p>Keycloak is enabled by default. If you disable and then re-enable Keycloak, you cannot perform any actions in the MTA web console after logging in again.</p>
+</div>
+<div class="paragraph">
+<p>This error is caused as the <code>credential-mta-rhsso</code> secret is updated when <code>auth/Keycloak</code> is disabled and re-enabled.</p>
+</div>
+<div class="paragraph">
+<p>The suggested workaround is to restore the old password in the <code>credential-mta-rhsso</code> secret, after re-enabling <code>auth</code>. <a href="https://issues.redhat.com/browse/MTA-1152">MTA-1152</a></p>
+</div>
+<div class="paragraph">
+<div class="title">org.apache.derby.derby dependency not analyzed</div>
+<p>The <code>org.apache.derby.derby</code> dependency is not analyzed. <a href="https://issues.redhat.com/browse/MTA-1817">MTA-1817</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Redundant warning on reassessment of applications with inherited assessments</div>
+<p>The system repeatedly shows a warning message about overriding an inherited assessment when reassessing an application.</p>
+</div>
+<div class="paragraph">
+<p>This warning, appropriate for the first assessment, incorrectly reappears on subsequent reassessments, suggesting that the application is still inheriting its assessment, even after it has been overridden. <a href="https://issues.redhat.com/browse/MTA-1825">MTA-1825</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Custom rule for javax.{*} package import is not triggered when uploaded as an XML file</div>
+<p>In MTA 7.0.0, some XML custom rule files are converted to the new YAML format during analysis. The root cause is that Java search patterns that use <code>IMPORT</code> as <code>location</code> and end in <code>.{*}</code>, do not function as expected. <a href="https://issues.redhat.com/browse/MTA-2000">MTA-2000</a></p>
+</div>
+<div class="paragraph">
+<p>To resolve this issue, whenever a custom rule has a pattern ending in <code>.{*}</code> and location <code>IMPORT</code>, the pattern <code>.{*}</code> can be changed to <code>{*}</code> and the location changed to <code>PACKAGE</code>, as in the following example.</p>
+</div>
+<details>
+<summary class="title">To view the javax-package-custom-target.windup.xml, click here.</summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset xmlns="http://windup.jboss.org/schema/jboss-ruleset" id="javax-package"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+    &lt;metadata&gt;
+        &lt;description&gt;
+            This ruleset evaluates whether a custom target can be used within a custom rule
+        &lt;/description&gt;
+        &lt;dependencies&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-javaee,3.0.0.Final" /&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-java,3.0.0.Final" /&gt;
+        &lt;/dependencies&gt;
+        &lt;targetTechnology id="phil" versionRange="[7,8)" /&gt;
+    &lt;/metadata&gt;
+    &lt;rules&gt;
+        &lt;rule id="javax-package-custom-target-00001"&gt;
+            &lt;when&gt;
+                &lt;javaclass references="javax{*}"&gt;
+                    &lt;location&gt;PACKAGE&lt;/location&gt;
+                &lt;/javaclass&gt;
+            &lt;/when&gt;
+            &lt;perform&gt;
+                &lt;hint title="CUSTOM RULE for javax.* package import" effort="1" category-id="potential"&gt;
+                    &lt;message&gt;`javax.*` packages must be renamed to `jakarta.*` for Jakarta EE9 compatibility.&lt;/message&gt;
+                    &lt;link title="Renamed Packages" href="https://github.com/wildfly-extras/batavia/blob/master/impl/ecl/src/main/resources/org/wildfly/extras/transformer/eclipse/jakarta-renames.properties"/&gt;
+                &lt;/hint&gt;
+            &lt;/perform&gt;
+        &lt;/rule&gt;
+    &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p>For a complete list of all known issues in this release, see the list of <a href="https://issues.redhat.com/browse/MTA-2060?filter=12428334">Known Issues in Jira</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-rn-resolved-issues-7-0-0_release-notes">5.3. Resolved issues</h3>
+<div class="paragraph">
+<p>The following highlighted issues have been resolved in Migration Toolkit for Applications (MTA) version 7.0.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">No update notification after editing fields</div>
+<p>In previous versions of MTA, no <code>Update Notification</code> appeared at top of window after the fields <code>Application</code>, <code>Job Function</code>, and <code>Business services</code> were updated. <a href="https://issues.redhat.com/browse/MTA-1024">MTA-1024</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Not possible to create a Jira instance behind a proxy</div>
+<p>In previous versions of MTA, it was not possible to create a Jira instance (issues.stage.redhat.com) behind a proxy. <a href="https://issues.redhat.com/browse/MTA-849">MTA-849</a></p>
+</div>
+<div class="paragraph">
+<div class="title">CVE-2023-6291: A flaw was found in the <code>redirect_uri validation</code> logic</div>
+<p>A flaw was found in the <code>redirect_uri validation</code> logic that allows for a bypass of otherwise explicitly allowed hosts. The problem arises in the <code>verifyRedirectUri</code> method, which attempts to enforce rules on <code>user-controllable</code> input, but can cause a desynchronization in how Keycloak and browsers interpret URLs.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/security/cve/cve-2023-6291">(CVE-2023-6291)</a>.</p>
+</div>
+<div class="paragraph">
+<p>For a complete list of all issues resolved in this release, see the list of <a href="https://issues.redhat.com/issues/?filter=12420807">Resolved Issues in Jira</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-rn-upgrade-notes-7-0-0_release-notes">5.4. Upgrade notes</h3>
+<div class="paragraph">
+<p>The following are upgrade notes for Migration Toolkit for Applications (MTA)</p>
+</div>
+<div class="paragraph">
+<div class="title">Hub database volume size</div>
+<p>In version 7.0.0 of MTA, the default size of the hub database volume has been increased to 10GiB.</p>
+</div>
+<div class="paragraph">
+<p>If your storage class does not support volume expansion, then an upgrade from 6.2.1 to 7.0.0 will result in a failure due to the operator trying to change the volume size from 5GiB to 10GiB.</p>
+</div>
+<div class="paragraph">
+<p>To avoid this issue, you can directly set the volume size by setting:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">...
+hub_database_volume_size: 5Gi
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By doing this, you will avoid the operator trying to resize the volume.</p>
+</div>
+<div class="paragraph">
+<p>If this value was set when the previous version was deployed, there is no need to take any action, as it will work as expected.</p>
+</div>
+<div class="paragraph">
+<div class="title">Existing data</div>
+<p>When upgrading to MTA 7.0.0, all existing data will be retained, except for individual analysis reports for applications.</p>
+</div>
+<div class="paragraph">
+<p>As both the analysis and reporting engines have been replaced with this version, you will be required to conduct a re-run of the analysis in order to obtain data on issues and dependencies.</p>
+</div>
+<div class="paragraph">
+<div class="title">Version upgrade</div>
+<p>You can upgrade to MTA 7.0.0 from 6.2.1. It is not recommended to pursue any alternative upgrade route. If you wish to upgrade from a previous version, it is recommended to proceed in a sequential manner until you finally upgrade from MTA version 6.2.1 to 7.0.0.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-rn-technical-changes-7-0-0_release-notes">5.5. Technical changes</h3>
+<div class="paragraph">
+<p>The following technical changes have been made in Migration Toolkit for Applications (MTA) 7.0.0:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Maven Plugin has been deprecated.</p>
+</li>
+<li>
+<p>Language Server Protocol (LSP) Analyzer change.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="mta-rn-technical-changes-rules-7-0-0_release-notes">5.5.1. Rules</h4>
+<div class="paragraph">
+<div class="title">Rules can only be written in YAML</div>
+<p>Rules written in Groovy and Java are discontinued in MTA version 7.0.0. Some of the previous Groovy Java rules have been converted to YAML rules wherever possible.</p>
+</div>
+<div class="paragraph">
+<p>An important modification to the rule&#8217;s engine is that it is no longer possible to query anything apart from the tags stored within the engine&#8217;s internal data structures. This means that all the features that were enabled by using the <code>graph-query</code> element in the rule are no longer available.</p>
+</div>
+<div class="paragraph">
+<div class="title">Java Class child elements not supported in MTA</div>
+<p>The Java Class child elements <code>annotation-list</code>, <code>annotation-type</code> and <code>annotation-literal</code> are not supported in MTA version 7.0.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">Elements &lt;project&gt; and &lt;dependency&gt; are merged into one dependency condition</div>
+<p>The capabilities of &lt;project&gt; and &lt;dependency&gt; elements in the old syntax are merged into one dependency condition in the new rules syntax.</p>
+</div>
+<div class="paragraph">
+<div class="title">Transformation capabilities of <code>xslt</code> element are discontinued</div>
+<p>XML transformation capabilities offered by the <code>xslt</code> element are discontinued.</p>
+</div>
+<div class="paragraph">
+<div class="title">Explicit <code>iteration</code> element is discontinued</div>
+<p>The explicit <code>iteration</code> element is discontinued in MTA version 7.0.0. If a condition returns a list of items via the <code>as</code> construct, iteration is implied.</p>
+</div>
+<div class="paragraph">
+<div class="title">Test rules not supported in the current version</div>
+<p>Test rules are not supported in MTA version 7.0.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">Overriding a rule discontinued</div>
+<p>Overriding a rule is discontinued in MTA version 7.0.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">Creating custom rule categories discontinued</div>
+<p>Creating custom rule categories is discontinued in MTA version 7.0.0.</p>
+</div>
+<div class="paragraph">
+<div class="title">Information and optional categories of rules are discontinued.</div>
+<p>In MTA version 7.0.0, any previous rules of information and optional categories will only create technology tags.</p>
+</div>
+<div class="paragraph">
+<div class="title">Java analysis capabilities</div>
+<p>In MTA version 7.0.0, the following Java analysis capabilities have been deprecated:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ability to match on specific arguments of a Java method constructor is not supported in the current version</p>
+</li>
+<li>
+<p>Matching Java references from JavaServer Pages (JSP) files are not supported in the current version</p>
+</li>
+<li>
+<p><code>Mavenizing</code> a Java project, meaning write a POM and possibly move code around so that it builds in Maven, is discontinued.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Analysis report changes</div>
+<p>The following functionality in Analysis reports has been deprecated:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Story points are shown as integers. The “level of effort” view and their mappings are deprecated in MTA version 7.0.0.</p>
+</li>
+<li>
+<p>Transactions reports are deprecated in MTA version 7.0.0.</p>
+</li>
+<li>
+<p>The view for “Archives shared by multiple applications” is deprecated in MTA version 7.0.0.</p>
+</li>
+<li>
+<p>The view for “Review rule providers execution overview” deprecated in MTA version 7.0.0.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

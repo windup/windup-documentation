@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/cli-guide/topics/rule-categories/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/cli-guide/topics/rule-categories/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/cli-guide/topics/rule-categories/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="rule-categories_{context}">Using custom rule categories</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can create custom rule categories and assign {ProductShortName} rules to them.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Although {ProductShortName} processes rules with the legacy <code>severity</code> field, you must update your custom rules to use the new <code>category-id</code> field.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="add_custom_category_{context}">Adding a custom category</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can add a custom category to the rule category file.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Edit the rule category file, which is located at <code>&lt;{ProductShortName}_HOME&gt;/rules/migration-core/core.windup.categories.xml</code>.</p>
+</li>
+<li>
+<p>Add a new <code>&lt;category&gt;</code> element and fill in the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>id</code>: The ID that {ProductShortName} rules use to reference the category.</p>
+</li>
+<li>
+<p><code>priority</code>: The sorting priority relative to other categories. The category with the lowest value is displayed first.</p>
+</li>
+<li>
+<p><code>name</code>: The display name of the category.</p>
+</li>
+<li>
+<p><code>description</code>: The description of the category.</p>
+<div class="listingblock">
+<div class="title">Custom rule category example</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;categories&gt;
+    ...
+    &lt;category id="custom-category" priority="20000"&gt;
+        &lt;name&gt;Custom Category&lt;/name&gt;
+        &lt;description&gt;This is a custom category.&lt;/description&gt;
+    &lt;/category&gt;
+&lt;/categories&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This category is ready to be referenced by {ProductShortName} rules.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="assign_custom_category_{context}">Assigning a rule to a custom category</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can assign a rule to your new custom category.</p>
+</div>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>In your {ProductShortName} rule, update the <code>category-id</code> field as in the following example.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="rule-id"&gt;
+    &lt;when&gt;
+        ...
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;hint title="Rule Title" effort="1" category-id="custom-category"&gt;
+            &lt;message&gt;Hint message.&lt;/message&gt;
+        &lt;/hint&gt;
+    &lt;/perform&gt;
+ &lt;/rule&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If this rule condition is met, incidents identified by this rule use your custom category. The custom category is displayed on the dashboard and in the Issues report.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/custom_rule_category.png" alt="Custom rule category on the Dashboard">
+</div>
+<div class="title">Figure 1. Custom category on the dashboard</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>CLI Guide | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="CLI Guide" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/cli-guide/master/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/cli-guide/master/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CLI Guide" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"CLI Guide","url":"https://windup.github.io/windup-documentation/docs/cli-guide/master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="cli-guide">CLI Guide</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#making-open-source-more-inclusive">Making open source more inclusive</a></li>
+<li><a href="#introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#about-cli-guide_cli-guide">1.1. About the CLI Guide</a></li>
+<li><a href="#mta-what-is-the-toolkit_cli-guide">1.2. About the Migration Toolkit for Applications</a>
+<ul class="sectlevel3">
+<li><a href="#migration-paths_cli-guide">1.2.1. Supported Migration Toolkit for Applications migration paths</a></li>
+</ul>
+</li>
+<li><a href="#about-cli_cli-guide">1.3. The MTA CLI</a></li>
+</ul>
+</li>
+<li><a href="#installing-and-running-the-cli">2. Installing and Running the CLI</a>
+<ul class="sectlevel2">
+<li><a href="#installing-cli-tool_cli-guide">2.1. Installing the CLI</a>
+<ul class="sectlevel3">
+<li><a href="#installing-downloadable-cli-zip_cli-guide">2.1.1. Installing the CLI <code>.zip</code> file</a></li>
+<li><a href="#installing-using-podman_cli-guide">2.1.2. Installing the CLI using Podman</a></li>
+<li><a href="#cli-tool-known-issues_cli-guide">2.1.3. CLI known issues</a></li>
+</ul>
+</li>
+<li><a href="#cli-run_cli-guide">2.2. Running the CLI</a>
+<ul class="sectlevel3">
+<li><a href="#command-examples_cli-guide">2.2.1. MTA command examples</a></li>
+<li><a href="#mta-cli-analyze_cli-guide">2.2.2. Performing analysis using the command line</a></li>
+<li><a href="#mta-cli-transform_cli-guide">2.2.3. Performing transformation using the command line</a></li>
+</ul>
+</li>
+<li><a href="#access-report_cli-guide">2.3. Accessing reports</a></li>
+</ul>
+</li>
+<li><a href="#review-reports_cli-guide">3. Reviewing the reports</a>
+<ul class="sectlevel2">
+<li><a href="#review-application-report_cli-guide">3.1. Application report</a>
+<ul class="sectlevel3">
+<li><a href="#dashboard">3.1.1. Dashboard</a></li>
+<li><a href="#issues-report_cli-guide">3.1.2. Issues report</a></li>
+<li><a href="#application-details-report">3.1.3. Application details report</a></li>
+<li><a href="#technology-report-application_cli-guide">3.1.4. Technologies report</a></li>
+<li><a href="#source-report">3.1.5. Source report</a></li>
+</ul>
+</li>
+<li><a href="#technology-report_cli-guide">3.2. Technologies report</a></li>
+<li><a href="#cli-packages-argument_cli-guide">3.3. Selecting packages</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="making-open-source-more-inclusive">Making open source more inclusive</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="about-cli-guide_cli-guide">1.1. About the CLI Guide</h3>
+<div class="paragraph">
+<p>This guide is for engineers, consultants, and others who want to use the Migration Toolkit for Applications (MTA) to migrate Java applications or other components. It describes how to install and run the CLI, review the generated reports, and take advantage of additional features.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-what-is-the-toolkit_cli-guide">1.2. About the Migration Toolkit for Applications</h3>
+<h4 id="what-is-the-migration-toolkit-for-applications" class="discrete">What is the Migration Toolkit for Applications?</h4>
+<div class="paragraph">
+<p>Migration Toolkit for Applications (MTA) accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.</p>
+</div>
+<div class="paragraph">
+<p>MTA uses an extensive default questionnaire as the basis for assessing your applications, or you can create your own custom questionnaire, enabling you to estimate the difficulty, time, and other resources needed to prepare an application for containerization. You can use the results of an assessment as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work first, and which are not suitable for containerization.</p>
+</div>
+<div class="paragraph">
+<p>MTA analyzes applications by applying one or more rulesets to each application considered to determine which specific lines of that application must be modified before it can be modernized.</p>
+</div>
+<div class="paragraph">
+<p>MTA examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes.</p>
+</div>
+<h4 id="how-does-the-migration-toolkit-for-applications-simplify-migration" class="discrete">How does the Migration Toolkit for Applications simplify migration?</h4>
+<div class="paragraph">
+<p>The Migration Toolkit for Applications looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
+</div>
+<div class="paragraph">
+<p>MTA generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
+</div>
+<div class="sect3">
+<h4 id="migration-paths_cli-guide">1.2.1. Supported Migration Toolkit for Applications migration paths</h4>
+<div class="paragraph">
+<p>The Migration Toolkit for Applications (MTA) supports the following migrations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Migrating from third-party enterprise application servers, such as Oracle WebLogic Server, to JBoss Enterprise Application Platform (JBoss EAP).</p>
+</li>
+<li>
+<p>Upgrading to the latest release of JBoss EAP.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>MTA provides a comprehensive set of rules to assess the suitability of your applications for containerization and deployment on Red Hat OpenShift Container Platform (RHOCP). You can run an MTA analysis to assess your applications' suitability for migration to multiple target platforms.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 99%;">
+<caption class="title">Table 1. Supported migration paths: Source platform &#8658; Target platform</caption>
+<colgroup>
+<col style="width: 19.1919%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.1011%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Source platform&#160;&#8658;</th>
+<th class="tableblock halign-left valign-top">Migration to JBoss EAP 7 &amp; 8</th>
+<th class="tableblock halign-left valign-top">OpenShift (cloud readiness)</th>
+<th class="tableblock halign-left valign-top">OpenJDK 11, 17, and 21</th>
+<th class="tableblock halign-left valign-top">Jakarta EE 9</th>
+<th class="tableblock halign-left valign-top">Camel 3 &amp; 4</th>
+<th class="tableblock halign-left valign-top">Spring Boot in Red Hat Runtimes</th>
+<th class="tableblock halign-left valign-top">Quarkus</th>
+<th class="tableblock halign-left valign-top">Open Liberty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle WebLogic Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IBM WebSphere Application Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718; <sup class="footnote" id="_footnote_note2">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thorntail</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714; <sup class="footnote" id="_footnote_note3">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle JDK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Camel 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any Java application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any Java EE application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mta/use-cases">MTA for developers</a> web page.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about-cli_cli-guide">1.3. The MTA CLI</h3>
+<div class="paragraph">
+<p>The CLI is a command-line tool in the Migration Toolkit for Applications that you can use to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without using the other tools. The CLI includes a wide array of customization options. By using the CLI, you can tune MTA analysis options or integrate with external automation tools.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-and-running-the-cli">2. Installing and Running the CLI</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="installing-cli-tool_cli-guide">2.1. Installing the CLI</h3>
+<div class="paragraph">
+<p>You can install the CLI on Linux, Windows, or macOS operating systems.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Red Hat Container Registry Authentication for <code>registry.redhat.io</code>. Red Hat distributes container images from registry.redhat.io, which requires authentication. For more details, see <a href="https://access.redhat.com/RegistryAuthentication">Red Hat Container Registry Authentication</a>.</p>
+</li>
+<li>
+<p>Podman must be installed</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="title">Podman</div>
+<div class="paragraph">
+<p>Podman is a daemonless, open source, Linux-native tool designed to make it easy to find, run, build, share, and deploy applications using Open Containers Initiative (OCI) Containers and Container Images.
+Podman provides a command-line interface (CLI) familiar to anyone who has used the Docker Container Engine.
+For more information on installing and using Podman, see <a href="https://podman.io/docs/installation">Podman installation instructions</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="installing-downloadable-cli-zip_cli-guide">2.1.1. Installing the CLI <code>.zip</code> file</h4>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>To install using the downloadable <code>.zip</code> file:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Navigate to the <a href="https://developers.redhat.com/products/mta/download">MTA Download page</a> and download the OS-specific CLI file or the <code>src</code> file:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>mta-7.0.3-cli-linux.zip</p>
+</li>
+<li>
+<p>mta-7.0.3-cli-macos.zip</p>
+</li>
+<li>
+<p>mta-7.0.3-cli-windows.zip</p>
+</li>
+<li>
+<p>mta-7.0.3-cli-src.zip</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Extract the <code>.zip</code> file to a directory of your choice. The <code>.zip</code> file extracts a single binary, called <strong>mta-cli</strong>.</p>
+<div class="paragraph">
+<p>When you encounter <code>&lt;MTA_HOME&gt;</code> in this guide, replace it with the actual path to your MTA installation.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installing-using-podman_cli-guide">2.1.2. Installing the CLI using Podman</h4>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Red Hat Container Registry Authentication for <code>registry.redhat.io</code>. Red Hat distributes container images from registry.redhat.io, which requires authentication. For more details, see <a href="https://access.redhat.com/RegistryAuthentication">Red Hat Container Registry Authentication</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>To install using <code>podman pull</code>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To use Podman to authenticate to registry.redhat.io:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">podman login registry.redhat.io
+Username: &lt;username&gt;
+Password: &lt;***********&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Issue:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">podman cp $(podman create registry.redhat.com/mta-toolkit/mta-mta-cli-rhel9:{ProductVersion}):/usr/local/bin/mta-cli ./</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command will copy the binary <code>PATH</code> for system-wide use.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Although installation using Podman is possible, downloading and installing the <code>.zip</code> file is the preferred installation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cli-tool-known-issues_cli-guide">2.1.3. CLI known issues</h4>
+<div class="paragraph">
+<div class="title">Limitations with Podman on Microsoft Windows</div>
+<p>The CLI is built and distributed with support for Microsoft Windows.</p>
+</div>
+<div class="paragraph">
+<p>However, when running any container image based on Red Hat Enterprise Linux 9 (RHEL9) or Universal Base Image 9 (UBI9), the following error can be returned when starting the container:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Fatal glibc error: CPU does not support x86-64-v2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This error is caused because Red Hat Enterprise Linux 9 or Universal Base Image 9 container images must be run on a CPU architecture that supports <code>x86-64-v2</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more details, see <a href="https://access.redhat.com/solutions/7057314">(Running Red Hat Enterprise Linux 9 (RHEL) or Universal Base Image (UBI) 9 container images fail with "Fatal glibc error: CPU does not support x86-64-v2")</a>.</p>
+</div>
+<div class="paragraph">
+<p>CLI runs the container runtime correctly. However, different container runtime configurations are not supported.</p>
+</div>
+<div class="paragraph">
+<p>Although unsupported, you can run CLI with <strong>Docker</strong> instead of <strong>Podman</strong>, which would resolve this issue.</p>
+</div>
+<div class="paragraph">
+<p>To achieve this, you replace the <code>PODMAN_BIN</code> path with the path to Docker.</p>
+</div>
+<div class="paragraph">
+<p>For example, if you experience this issue, instead of issuing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">PODMAN_BIN=/usr/local/bin/docker mta-cli analyze</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You replace <code>PODMAN_BIN</code> with the path to Docker:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">&lt;Docker Root Dir&gt;=/usr/local/bin/docker mta-cli analyze</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>While this is not supported, it would allow you to explore CLI while you work to upgrade your hardware or move to hardware that supports <code>x86_64-v2</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cli-run_cli-guide">2.2. Running the CLI</h3>
+<div class="paragraph">
+<p>You can run MTA against your application.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open a terminal and navigate to the <code>&lt;MTA_HOME&gt;/</code> directory.</p>
+</li>
+<li>
+<p>Execute the <code>mta-cli</code> script, or <code>mta-cli.exe</code> for Windows, and specify the appropriate arguments:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ ./mta-cli analyze --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/output --source weblogic --target eap6 \</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>--input</code>: The application to be evaluated.</p>
+</li>
+<li>
+<p><code>--output</code>: The output directory for the generated reports.</p>
+</li>
+<li>
+<p><code>--source</code>: The source technology for the application migration.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Access the report.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="command-examples_cli-guide">2.2.1. MTA command examples</h4>
+<h5 id="running-mta-on-an-application-archive" class="discrete">Running MTA on an application archive</h5>
+<div class="paragraph">
+<p>The following command analyzes the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> example EAR archive for migrating from JBoss EAP 5 to JBoss EAP 7:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;MTA_HOME&gt;/mta-cli analyze \
+    --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/report-output/ --source eap5 --target eap7 \</code></pre>
+</div>
+</div>
+<h5 id="running-mta-on-source-code" class="discrete">Running MTA on source code</h5>
+<div class="paragraph">
+<p>The following command analyzes the <a href="https://github.com/windup/windup/tree/master/test-files/seam-booking-5.2">seam-booking-5.2</a> example source code for migrating to JBoss EAP 6.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;MTA_HOME&gt;/mta-cli analyze --mode source-only --input /path/to/seam-booking-5.2/ \
+    --output /path/to/report-output/ --target eap6 --packages org.jboss.seam</code></pre>
+</div>
+</div>
+<h5 id="running-cloud-readiness-rules" class="discrete">Running cloud-readiness rules</h5>
+<div class="paragraph">
+<p>The following command analyzes the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> example EAR archive for migrating to JBoss EAP 7. It also evaluates for cloud readiness:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;MTA_HOME&gt;/mta-cli analyze --input /path/to/jee-example-app-1.0.0.ear \
+    --output /path/to/report-output/ \
+    --target eap7</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-cli-analyze_cli-guide">2.2.2. Performing analysis using the command line</h4>
+<div class="paragraph">
+<p><code>Analyze</code> allows running source code and binary analysis using <code>analyzer-lsp</code>.</p>
+</div>
+<div class="listingblock">
+<div class="title">To run analysis on application source code, run the following command:</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">mta-cli analyze --input=&lt;path/to/source/code&gt; --output=&lt;path/to/output/dir&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All flags:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Analyze application source code
+
+Usage:
+  mta-cli analyze [flags]
+
+Flags:
+      --analyze-known-libraries   analyze known open-source libraries
+  -h, --help                      help for analyze
+  -i, --input string              path to application source code or a binary
+      --json-output               create analysis and dependency output as json
+      --list-sources              list rules for available migration sources
+      --list-targets              list rules for available migration targets
+  -l, --label-selector string     run rules based on specified label selector expression
+      --maven-settings string     path to a custom maven settings file to use
+      --overwrite                 overwrite output directory
+      --skip-static-report        do not generate the static report
+  -m, --mode string               analysis mode. Must be one of 'full' or 'source-only' (default "full")
+  -o, --output string             path to the directory for analysis output
+      --rules stringArray         filename or directory containing rule files
+      --skip-static-report        do not generate the static report
+  -s, --source string             source technology to consider for analysis. To specify multiple sources, repeat the parameter: --source &lt;source_1&gt; --source &lt;source_2&gt; etc.
+  -t, --target string             target technology to consider for analysis. To specify multiple targets, repeat the parameter: --target &lt;target_1&gt; --target &lt;target_2&gt; etc.
+
+Global Flags:
+      --log-level uint32   log level (default 4)
+      --no-cleanup         do not cleanup temporary resources</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Usage example</div>
+<ol class="arabic">
+<li>
+<p>Get an example application to run analysis on.</p>
+</li>
+<li>
+<p>List available target technologies.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">mta-cli analyze --list-targets</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run an analysis with a specified target technology, for example <code>cloud-readiness</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">mta-cli analyze --input=&lt;path-to/example-applications/example-1&gt; --output=&lt;path-to-output-dir&gt; --target=cloud-readiness</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Several analysis reports are created in your specified output path:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ ls ./output/ -1
+analysis.log
+dependencies.yaml
+dependency.log
+output.yaml
+static-report</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><code>output.yaml</code> is the file that contains the issues report.</p>
+</div>
+<div class="paragraph">
+<p><code>static-report</code> contains the static HTML report.</p>
+</div>
+<div class="paragraph">
+<p><code>dependencies.yaml</code> contains a dependencies report.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-cli-transform_cli-guide">2.2.3. Performing transformation using the command line</h4>
+<div class="paragraph">
+<p>Transform has two sub commands - <code>openrewrite</code> and <code>rules</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Transform application source code or mta XML rules
+
+Usage:
+  mta-cli transform [flags]
+  mta-cli transform [command]
+
+Available Commands:
+  openrewrite Transform application source code using OpenRewrite recipes
+  rules       Convert XML rules to YAML
+
+Flags:
+  -h, --help   help for transform
+
+Global Flags:
+      --log-level uint32   log level (default 4)
+      --no-cleanup         do not cleanup temporary resources
+
+Use "mta-cli transform [command] --help" for more information about a command.</code></pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="openrewrite"><code>OpenRewrite</code></h5>
+<div class="paragraph">
+<p>The <code>openrewrite</code> sub command allows running <code>OpenRewrite</code> recipes on source code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Transform application source code using OpenRewrite recipes
+
+Usage:
+  mta-cli transform openrewrite [flags]
+
+Flags:
+  -g, --goal string     target goal (default "dryRun")
+  -h, --help            help for openrewrite
+  -i, --input string    path to application source code directory
+  -l, --list-targets    list all available OpenRewrite recipes
+  -s, --maven-settings string   path to a custom maven settings file to use
+  -t, --target string   target openrewrite recipe to use. Run --list-targets to get a list of packaged recipes.
+
+Global Flags:
+      --log-level uint32   log level (default 4)
+      --no-cleanup         do not cleanup temporary resources</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">To run <code>transform openrewrite</code> on application source code, run the following command:</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">mta-cli transform openrewrite --input=&lt;path/to/source/code&gt; --target=&lt;exactly_one_target_from_the_list&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can only use a single target to run the <code>transform overwrite</code> command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="rules"><code>Rules</code></h5>
+<div class="paragraph">
+<p>The <code>rules</code> sub command allows converting mta XML rules to analyzer-lsp YAML rules using <code>windup-shim</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Convert XML rules to YAML
+
+Usage:
+  mta-cli transform rules [flags]
+
+Flags:
+  -h, --help                help for rules
+  -i, --input stringArray   path to XML rule file(s) or directory
+  -o, --output string       path to output directory
+
+Global Flags:
+      --log-level int   log level (default 5)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">To run <code>transform rules</code> on application source code, run the following:</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">mta-cli transform rules --input=&lt;path/to/xmlrules&gt; --output=&lt;path/to/output/dir&gt;</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Usage example</div>
+<ol class="arabic">
+<li>
+<p>Get an example application to transform source code.</p>
+</li>
+<li>
+<p>View the available OpenRewrite recipes.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">mta-cli transform openrewrite --list-targets</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run a recipe on the example application.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">mta-cli transform openrewrite --input=&lt;path-to/jakartaee-duke&gt; --target=jakarta-imports</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Inspect the <code>jakartaee-duke</code> application source code diff to see the transformation</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="available-openrewrite-recipes_cli-guide">Available OpenRewrite recipes</h5>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Available OpenRewrite recipes</caption>
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 26%;">
+<col style="width: 26%;">
+<col style="width: 26%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Migration path</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+<th class="tableblock halign-left valign-top">rewrite.configLocation</th>
+<th class="tableblock halign-left valign-top">activeRecipes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java EE to Jakarta EE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replace import of <code>javax</code> packages with equivalent <code>jakarta</code> packages</p>
+<p class="tableblock">Replace <code>javax</code> artifacts, declared within <code>pom.xml</code> files, with the <code>jakarta</code> equivalents</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;MTA_HOME&gt;/rules/openrewrite/jakarta \ /javax/imports/rewrite.yml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.jboss.windup.JavaxToJakarta</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java EE to Jakarta EE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rename bootstrapping files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;MTA_HOME&gt;/rules/openrewrite/jakarta \ /javax/bootstrapping/rewrite.yml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.jboss.windup.jakarta.javax. \ BootstrappingFiles</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java EE to Jakarta EE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transform <code>persistence.xml</code> configuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;MTA_HOME&gt;/rules/openrewrite/jakarta \ /javax/xml/rewrite.yml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.jboss.windup.javax-jakarta. \ PersistenceXML</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot to Quarkus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replace <code>spring.jpa.hibernate.ddl-auto</code> property within files matching <code>application*.properties</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;MTA_HOME&gt;/rules/openrewrite/quarkus \ /springboot/properties/rewrite.yml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>org.jboss.windup.sb-quarkus.Properties</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="access-report_cli-guide">2.3. Accessing reports</h3>
+<div class="paragraph">
+<p>When you run the Migration Toolkit for Applications, a report is generated in the <code>&lt;OUTPUT_REPORT_DIRECTORY&gt;</code> that you specify using the <code>--output</code> argument in the command line.</p>
+</div>
+<div class="paragraph">
+<p>The output directory contains the following files and subdirectories:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;OUTPUT_REPORT_DIRECTORY&gt;/
+├── index.html          // Landing page for the report
+├── &lt;EXPORT_FILE&gt;.csv   // Optional export of data in CSV format
+├── archives/           // Archives extracted from the application
+├── mavenized/          // Optional Maven project structure
+├── reports/            // Generated HTML reports
+├── stats/              // Performance statistics</pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Obtain the path of the <code>index.html</code> file of your report from the output that appears after you run MTA:</p>
+<div class="listingblock">
+<div class="content">
+<pre>Report created: &lt;OUTPUT_REPORT_DIRECTORY&gt;/index.html
+              Access it at this URL: file:///&lt;OUTPUT_REPORT_DIRECTORY&gt;/index.html</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Open the <code>index.html</code> file by using a browser.</p>
+<div class="paragraph">
+<p>The generated report is displayed.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="review-reports_cli-guide">3. Reviewing the reports</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The report examples shown in the following sections are a result of analyzing the <code>com.acme</code> and <code>org.apache</code> packages in the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> example application, which is located in the MTA GitHub source repository.</p>
+</div>
+<div class="paragraph">
+<p>The report was generated using the following command.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">$ &lt;MTA_HOME&gt;/bin/mta-cli --input /home/username/mta-cli-source/test-files/jee-example-app-1.0.0.ear/ --output /home/username/mta-cli-reports/jee-example-app-1.0.0.ear-report --target eap6 --packages com.acme org.apache</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use a browser to open the <code>index.html</code> file located in the report output directory. This opens a landing page that lists the applications that were processed.  Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-1-applications.png" alt="Application list">
+</div>
+<div class="title">Figure 1. Application list</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The incidents and estimated story points change as new rules are added to MTA. The values here may not match what you see when you test this application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following table lists all of the reports and pages that can be accessed from this main MTA landing page. Click the name of the application, <strong>jee-example-app-1.0.0.ear</strong>, to view the application report.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Page</th>
+<th class="tableblock halign-left valign-top">How to Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the name of the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technologies report</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the <strong>Technologies</strong> link at the top of the page.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Archives shared by multiple applications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the <strong>Archives shared by multiple applications</strong> link. Note that this link is only available when there are shared archives across multiple applications.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rule providers execution overview</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the <strong>Rule providers execution overview</strong> link at the bottom of the page.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note that if an application shares archives with other analyzed applications, you will see a breakdown of how many story points are from shared archives and how many are unique to this application.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-2-shared-archives.png" alt="Shared archives">
+</div>
+<div class="title">Figure 2. Shared archives</div>
+</div>
+<div class="paragraph">
+<p>Information about the archives that are shared among applications can be found in the Archives Shared by Multiple Applications reports.</p>
+</div>
+<div class="sect2">
+<h3 id="review-application-report_cli-guide">3.1. Application report</h3>
+<div class="sect3">
+<h4 id="dashboard">3.1.1. Dashboard</h4>
+<div class="paragraph">
+<p>Access this report from the report landing page by clicking on the application name in the <strong>Application List</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The dashboard gives an overview of the entire application migration effort. It summarizes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The incidents and story points by category</p>
+</li>
+<li>
+<p>The incidents and story points by level of effort of the suggested changes</p>
+</li>
+<li>
+<p>The incidents by package</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-3-dashboard.png" alt="Dashboard">
+</div>
+<div class="title">Figure 3. Dashboard</div>
+</div>
+<div class="paragraph">
+<p>The top navigation bar lists the various reports that contain additional details about the migration of this application. Note that only those reports that are applicable to the current application will be available.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Report</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides a concise summary of all issues that require attention.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Application details</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides a detailed overview of all resources found within the application that may need attention during the migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technologies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all embedded libraries grouped by functionality, allowing you to quickly view the technologies used in each application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all Java-packaged dependencies found within the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unparsable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows all files that MTA could not parse in the expected format. For instance, a file with a <code>.xml</code> or <code>.wsdl</code> suffix is assumed to be an XML file. If the XML parser fails, the issue is reported here and also where the individual file is listed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remote services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all remote services references that were found within the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EJBs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains a list of EJBs found within the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBPM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains all of the JBPM-related resources that were discovered during analysis.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JPA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains details on all JPA-related resources that were found in the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hibernate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains details on all Hibernate-related resources that were found in the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server resources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all server resources (for example, JNDI resources) in the input application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Beans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains a list of Spring Beans found during the analysis.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hard-coded IP addresses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides a list of all hard-coded IP addresses that were found in the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ignored files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lists the files found in the application that, based on certain rules and MTA configuration, were not processed. See the <code>--userIgnorePath</code> option for more information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">About</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describes the current version of MTA and provides helpful links for further assistance.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="issues-report_cli-guide">3.1.2. Issues report</h4>
+<div class="paragraph">
+<p>Access this report from the dashboard by clicking the <strong>Issues</strong> link.</p>
+</div>
+<div class="paragraph">
+<p>This report includes details about every issue that was raised by the selected migration paths. The following information is provided for each issue encountered:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A title to summarize the issue.</p>
+</li>
+<li>
+<p>The total number of incidents, or times the issue was encountered.</p>
+</li>
+<li>
+<p>The rule story points to resolve a single instance of the issue.</p>
+</li>
+<li>
+<p>The estimated level of effort to resolve the issue.</p>
+</li>
+<li>
+<p>The total story points to resolve every instance encountered. This is calculated by multiplying the number of incidents found by the story points per incident.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-4-issues-report.png" alt="Issues report">
+</div>
+<div class="title">Figure 4. Issues report</div>
+</div>
+<div class="paragraph">
+<p>Each reported issue may be expanded, by clicking on the title, to obtain additional details. The following information is provided.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A list of files where the incidents occurred, along with the number of incidents within each file. If the file is a Java source file, then clicking the filename will direct you to the corresponding Source report.</p>
+</li>
+<li>
+<p>A detailed description of the issue. This description outlines the problem, provides any known solutions, and references supporting documentation regarding either the issue or resolution.</p>
+</li>
+<li>
+<p>A direct link, entitled <strong>Show Rule</strong>, to the rule that generated the issue.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-5-expanded-issue.png" alt="Expanded rule in the issues report">
+</div>
+<div class="title">Figure 5. Expanded issue</div>
+</div>
+<div class="paragraph">
+<p>Issues are sorted into four categories by default. Information on these categories is available at ask Category.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="application-details-report">3.1.3. Application details report</h4>
+<div class="paragraph">
+<p>Access this report from the dashboard by clicking the <strong>Application Details</strong> link.</p>
+</div>
+<div class="paragraph">
+<p>The report lists the story points, the Java incidents by package, and a count of the occurrences of the technologies found in the application. Next is a display of application messages generated during the migration process. Finally, there is a breakdown of this information for each archive analyzed during the process.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-6-application-details-report.png" alt="Application Details report">
+</div>
+<div class="title">Figure 6. Application Details report</div>
+</div>
+<div class="paragraph">
+<p>Expand the <code>jee-example-app-1.0.0.ear/jee-example-services.jar</code> to review the story points, Java incidents by package, and a count of the occurrences of the technologies found in this archive. This summary begins with a total of the story points assigned to its migration, followed by a table detailing the changes required for each file in the archive. The report contains the following columns.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the file being analyzed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technology</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of file being analyzed, for example, <strong>Decompiled Java File</strong> or <strong>Properties</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warnings about areas of code that need review or changes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Story Points</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Level of effort required to migrate the file.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note that if an archive is duplicated several times in an application, it will be listed just once in the report and will be tagged with <code>[Included multiple times]</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-7-duplicate-archive-in-application.png" alt="Duplicate archive">
+</div>
+<div class="title">Figure 7. Duplicate archive in an application</div>
+</div>
+<div class="paragraph">
+<p>The story points for archives that are duplicated within an application will be counted only once in the total story point count for that application.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="technology-report-application_cli-guide">3.1.4. Technologies report</h4>
+<div class="paragraph">
+<p>Access this report from the dashboard by clicking the <strong>Technologies</strong> link.</p>
+</div>
+<div class="paragraph">
+<p>The report lists the occurrences of technologies, grouped by function, in the analyzed application. It is an overview of the technologies found in the application, and is designed to assist users in quickly understanding each application&#8217;s purpose.</p>
+</div>
+<div class="paragraph">
+<p>The image below shows the technologies used in the <code>jee-example-app</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-8-technologies-in-application.png" alt="Technology report Application view">
+</div>
+<div class="title">Figure 8. Technologies in an application</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="source-report">3.1.5. Source report</h4>
+<div class="paragraph">
+<p>The Source report displays the migration issues in the context of the source file in which they were discovered.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-10-source-report.png" alt="Source Report">
+</div>
+<div class="title">Figure 9. Source report</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="technology-report_cli-guide">3.2. Technologies report</h3>
+<div class="paragraph">
+<p>Access this report from the report landing page by clicking the <strong>Technologies</strong> link.</p>
+</div>
+<div class="paragraph">
+<p>This report provides an aggregate listing of the technologies used, grouped by function, for the analyzed applications. It shows how the technologies are distributed, and is typically reviewed after analyzing a large number of applications to group the applications and identify patterns. It also shows the size, number of libraries, and story point totals of each application.</p>
+</div>
+<div class="paragraph">
+<p>Clicking any of the headers, such as <strong>Markup</strong>, sorts the results in descending order. Selecting the same header again will resort the results in ascending order. The currently selected header is identified in bold, next to a directional arrow, indicating the direction of the sort.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-11-technologies-used-across-multiple-applications.png" alt="Technologies used across multiple applications">
+</div>
+<div class="title">Figure 10. Technologies used across multiple applications</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cli-packages-argument_cli-guide">3.3. Selecting packages</h3>
+<div class="paragraph">
+<p>A space-delimited list of the packages to be evaluated by MTA. It is highly recommended to use this argument.</p>
+</div>
+<div class="listingblock">
+<div class="title">Usage</div>
+<div class="content">
+<pre class="highlight nowrap"><code></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or third party packages. The <code>&lt;PACKAGE_N&gt;</code> argument is a package prefix; all subpackages will be scanned. For example, to scan the packages <code>com.mycustomapp</code> and <code>com.myotherapp</code>, use <code>--packages com.mycustomapp com.myotherapp</code> argument on the command line.</p>
+</li>
+<li>
+<p>While you can provide package names for standard Java EE third party software like <code>org.apache</code>, it is usually best not to include them as they should not impact the migration effort.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Although MTA does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform to JBoss EAP 7.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Requires JBoss Enterprise Application Platform expansion pack 2 (EAP XP 2)
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

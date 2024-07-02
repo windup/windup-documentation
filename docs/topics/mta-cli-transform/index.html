@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/topics/mta-cli-transform/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/topics/mta-cli-transform/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/topics/mta-cli-transform/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mta-cli-transform_{context}">Performing transformation using the command line</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Transform has two sub commands - <code>openrewrite</code> and <code>rules</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Transform application source code or {LC_PSN} XML rules
+
+Usage:
+  {mta-cli} transform [flags]
+  {mta-cli} transform [command]
+
+Available Commands:
+  openrewrite Transform application source code using OpenRewrite recipes
+  rules       Convert XML rules to YAML
+
+Flags:
+  -h, --help   help for transform
+
+Global Flags:
+      --log-level uint32   log level (default 4)
+      --no-cleanup         do not cleanup temporary resources
+
+Use "{mta-cli} transform [command] --help" for more information about a command.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="openrewrite"><code>OpenRewrite</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>openrewrite</code> sub command allows running <code>OpenRewrite</code> recipes on source code.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Transform application source code using OpenRewrite recipes
+
+Usage:
+  {mta-cli} transform openrewrite [flags]
+
+Flags:
+  -g, --goal string     target goal (default "dryRun")
+  -h, --help            help for openrewrite
+  -i, --input string    path to application source code directory
+  -l, --list-targets    list all available OpenRewrite recipes
+  -s, --maven-settings string   path to a custom maven settings file to use
+  -t, --target string   target openrewrite recipe to use. Run --list-targets to get a list of packaged recipes.
+
+Global Flags:
+      --log-level uint32   log level (default 4)
+      --no-cleanup         do not cleanup temporary resources</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">To run <code>transform openrewrite</code> on application source code, run the following command:</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">{mta-cli} transform openrewrite --input=&lt;path/to/source/code&gt; --target=&lt;exactly_one_target_from_the_list&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can only use a single target to run the <code>transform overwrite</code> command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rules"><code>Rules</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>rules</code> sub command allows converting {LC_PSN} XML rules to analyzer-lsp YAML rules using <code>windup-shim</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">Convert XML rules to YAML
+
+Usage:
+  {mta-cli} transform rules [flags]
+
+Flags:
+  -h, --help                help for rules
+  -i, --input stringArray   path to XML rule file(s) or directory
+  -o, --output string       path to output directory
+
+Global Flags:
+      --log-level int   log level (default 5)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">To run <code>transform rules</code> on application source code, run the following:</div>
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">{mta-cli} transform rules --input=&lt;path/to/xmlrules&gt; --output=&lt;path/to/output/dir&gt;</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Usage example</div>
+<ol class="arabic">
+<li>
+<p>Get an example application to transform source code.</p>
+</li>
+<li>
+<p>View the available OpenRewrite recipes.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">{mta-cli} transform openrewrite --list-targets</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run a recipe on the example application.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">{mta-cli} transform openrewrite --input=&lt;path-to/jakartaee-duke&gt; --target=jakarta-imports</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Inspect the <code>jakartaee-duke</code> application source code diff to see the transformation</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

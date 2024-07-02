@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide-mtr/topics/mta-web-administration-view/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide-mtr/topics/mta-web-administration-view/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/vs-code-extension-guide-mtr/topics/mta-web-administration-view/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mta-web-administration-view_{context}">User Interface views</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The {ProductName} ({ProductShortName}) {WebName} and has two user interfaces with different functionalities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Administration view</p>
+</li>
+<li>
+<p>Migration view</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="administration-view">Administration view</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you are an administrator, you can use the <strong>Administration</strong> view of {ProductShortName} {WebName} to manage the configuration of an instance.</p>
+</div>
+<div class="sect2">
+<h3 id="credentials">Credentials</h3>
+<div class="paragraph">
+<p>You can use <strong>Credentials</strong> view to create and manage credentials to access private repositories.</p>
+</div>
+<div class="paragraph">
+<p>The credentials page displays the available credentials, <strong>Edit</strong> and <strong>Delete</strong> buttons and the following fields:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong></p>
+</li>
+<li>
+<p><strong>Description</strong></p>
+</li>
+<li>
+<p><strong>Type</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Source Control</strong></p>
+</li>
+<li>
+<p><strong>Username/Password</strong></p>
+</li>
+<li>
+<p><strong>Source Private Key/Passphrase</strong></p>
+</li>
+<li>
+<p><strong>Maven Settings File</strong></p>
+</li>
+<li>
+<p><strong>Proxy</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Type specific information</strong></p>
+</li>
+<li>
+<p><strong>Created by</strong></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Credential information entered, such as keys and passphrases, is hidden or displayed as [Encrypted], except for Maven settings files.  When Maven setting files are created, the file is uploaded and its contents are displayed in the text box to enable the user to make changes if desired. [Encrypted] only appears on edit for Maven Settings files.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="repositories">Repositories</h3>
+<div class="paragraph">
+<p>The repository management module configures how the repositories can be consumed by {ProductShortName} {WebName} and has the following options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Git configuration</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Consume insecure Git repositories</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Subversion configuration</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Consume insecure Subversion repositories</strong></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Maven configuration</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Manage repository size</strong></p>
+</li>
+<li>
+<p><strong>Consume insecure artifact repositories</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proxy">Proxy</h3>
+<div class="paragraph">
+<p>You can configure HTTP and HTTPS proxy settings and credentials with the following steps.</p>
+</div>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>In the <strong>Proxy</strong> view configure the proxies and enter the following information:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Proxy host</p>
+</li>
+<li>
+<p>Proxy port</p>
+</li>
+<li>
+<p>Optional: Authentication</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Proxy credentials</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

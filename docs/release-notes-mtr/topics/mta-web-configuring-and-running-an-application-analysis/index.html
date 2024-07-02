@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/release-notes-mtr/topics/mta-web-configuring-and-running-an-application-analysis/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/release-notes-mtr/topics/mta-web-configuring-and-running-an-application-analysis/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/release-notes-mtr/topics/mta-web-configuring-and-running-an-application-analysis/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mta-web-configuring-and-running-an-application-analysis_{context}">Configuring and running an application analysis</h1>
+<div class="paragraph">
+<p>You can analyze more than one application at a time against more than one transformation target in the same analysis.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application inventory</strong>.</p>
+</li>
+<li>
+<p>Select an application that you want to analyze.</p>
+</li>
+<li>
+<p>Review the credentials assigned to the application.</p>
+</li>
+<li>
+<p>Click <strong>Analyze</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Analysis mode</strong> from the list:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Binary</p>
+</li>
+<li>
+<p>Source code</p>
+</li>
+<li>
+<p>Source code and dependencies</p>
+</li>
+<li>
+<p>Upload a local binary. This option only appears if you are analyzing a single application. If you chose this option, you are prompted to <strong>Upload a local binary</strong>. Either drag a file into the area provided or click <strong>Upload</strong> and select the file to upload.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select one or more target options for the analysis:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Application server migration to either of the following platforms:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>JBoss EAP 7</p>
+</li>
+<li>
+<p>JBoss EAP 8</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Containerization</p>
+</li>
+<li>
+<p>Quarkus</p>
+</li>
+<li>
+<p>OracleJDK to OpenJDK</p>
+</li>
+<li>
+<p>OpenJDK. Use this option to upgrade to either of the following JDK versions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenJDK 11</p>
+</li>
+<li>
+<p>OpenJDK 17</p>
+</li>
+<li>
+<p>OpenJDK 21</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Linux. Use this option to ensure that there are no Microsoft Windows paths hard-coded into your applications.</p>
+</li>
+<li>
+<p>Jakarta EE 9. Use this option to migrate from Java EE 8.</p>
+</li>
+<li>
+<p>Spring Boot on Red Hat Runtimes</p>
+</li>
+<li>
+<p>Open Liberty</p>
+</li>
+<li>
+<p>Camel. Use this option to migrate from Apache Camel 2 to Apache Camel 3 or from Apache Camel 3 to Apache Camel 4.</p>
+</li>
+<li>
+<p>Azure App Service</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select one of the following <strong>Scope</strong> options to better focus the analysis:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Application and internal dependencies only.</p>
+</li>
+<li>
+<p>Application and all dependencies, including known Open Source libraries.</p>
+</li>
+<li>
+<p>Select the list of packages to be analyzed manually. If you choose this option, type the file name and click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Exclude packages. If you choose this option, type the name of the package and click <strong>Add</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>In <strong>Advanced</strong>, you can attach additional custom rules to the analysis by selecting the <strong>Manual</strong> or <strong>Repository</strong> mode:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In the <strong>Manual</strong> mode, click <strong>Add Rules</strong>. Drag the relevant files or select the files from their directory and click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Repository</strong> mode, you can add rule files from a Git or Subversion repository.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Attaching custom rules is optional if you have already attached a migration target to the analysis. If you have not attached any migration target, you must attach rules.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Optional: Set any of the following options:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Target</p>
+</li>
+<li>
+<p>Source(s)</p>
+</li>
+<li>
+<p>Excluded rules tags. Rules with these tags are not processed. Add or delete as needed.</p>
+</li>
+<li>
+<p>Enable automated tagging. Select the checkbox to automatically attach tags to the application. This checkbox is selected by default.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Automatically attached tags are displayed only <em>after</em> you run the analysis.</p>
+</div>
+<div class="paragraph">
+<p>You can attach tags to the application manually instead of enabling automated tagging or in addition to it.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Analysis engines use standard rules for a comprehensive set of migration targets, but if the target is not included or is a customized framework, custom rules can be added. Only manually uploaded custom rule files are validated.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>In <strong>Review</strong>, verify the analysis parameters.</p>
+</li>
+<li>
+<p>Click <strong>Run</strong>.</p>
+<div class="paragraph">
+<p>The analysis status is <code>Scheduled</code> as {ProductShortName} downloads the image for the container to execute. When the image is downloaded, the status changes to <code>In-progress.</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Analysis takes minutes to hours to run depending on the size of the application and the capacity and resources of the cluster.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>{ProductShortName} relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time. With more cluster capacity, more analysis processes can be executed in parallel.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>When analysis is complete, click the <strong>Report</strong> link to see the results of the analysis.</p>
+</li>
+<li>
+<p>Optional: Display the details of the analysis:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click the Options menu ({kebab}).</p>
+</li>
+<li>
+<p>Select <strong>Analysis details</strong>. You can choose either the YAML or JSON format.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Reviewing the reports | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Reviewing the reports" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/cli-guide-mtr/topics/mta-review-reports/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/cli-guide-mtr/topics/mta-review-reports/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Reviewing the reports" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Reviewing the reports","url":"https://windup.github.io/windup-documentation/docs/cli-guide-mtr/topics/mta-review-reports/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="review-reports_{context}">Reviewing the reports</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The report examples shown in the following sections are a result of analyzing the <code>com.acme</code> and <code>org.apache</code> packages in the <a href="https://github.com/windup/windup/blob/master/test-files/jee-example-app-1.0.0.ear">jee-example-app-1.0.0.ear</a> example application, which is located in the {ProductShortName} GitHub source repository.</p>
+</div>
+<div class="paragraph">
+<p>Use a browser to open the <code>index.html</code> file located in the report output directory. This opens a landing page that lists the applications that were processed.  Each row contains a high-level overview of the story points, number of incidents, and technologies encountered in that application.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-1-applications.png" alt="Application list">
+</div>
+<div class="title">Figure 1. Application list</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The incidents and estimated story points change as new rules are added to {ProductShortName}. The values here may not match what you see when you test this application.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following table lists all of the reports and pages that can be accessed from this main {ProductShortName} landing page. Click the name of the application, <strong>jee-example-app-1.0.0.ear</strong>, to view the application report.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Page</th>
+<th class="tableblock halign-left valign-top">How to Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the name of the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technologies report</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the <strong>Technologies</strong> link at the top of the page.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Archives shared by multiple applications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the <strong>Archives shared by multiple applications</strong> link. Note that this link is only available when there are shared archives across multiple applications.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rule providers execution overview</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Click the <strong>Rule providers execution overview</strong> link at the bottom of the page.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note that if an application shares archives with other analyzed applications, you will see a breakdown of how many story points are from shared archives and how many are unique to this application.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-2-shared-archives.png" alt="Shared archives">
+</div>
+<div class="title">Figure 2. Shared archives</div>
+</div>
+<div class="paragraph">
+<p>Information about the archives that are shared among applications can be found in the Archives Shared by Multiple Applications reports.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="review-application-report_{context}">Application report</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="dashboard">Dashboard</h3>
+<div class="paragraph">
+<p>Access this report from the report landing page by clicking on the application name in the <strong>Application List</strong>.</p>
+</div>
+<div class="paragraph">
+<p>The dashboard gives an overview of the entire application migration effort. It summarizes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The incidents and story points by category</p>
+</li>
+<li>
+<p>The incidents and story points by level of effort of the suggested changes</p>
+</li>
+<li>
+<p>The incidents by package</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-3-dashboard.png" alt="Dashboard">
+</div>
+<div class="title">Figure 3. Dashboard</div>
+</div>
+<div class="paragraph">
+<p>The top navigation bar lists the various reports that contain additional details about the migration of this application. Note that only those reports that are applicable to the current application will be available.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Report</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides a concise summary of all issues that require attention.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Application details</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides a detailed overview of all resources found within the application that may need attention during the migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technologies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all embedded libraries grouped by functionality, allowing you to quickly view the technologies used in each application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all Java-packaged dependencies found within the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unparsable</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shows all files that {ProductShortName} could not parse in the expected format. For instance, a file with a <code>.xml</code> or <code>.wsdl</code> suffix is assumed to be an XML file. If the XML parser fails, the issue is reported here and also where the individual file is listed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Remote services</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all remote services references that were found within the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EJBs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains a list of EJBs found within the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBPM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains all of the JBPM-related resources that were discovered during analysis.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JPA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains details on all JPA-related resources that were found in the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hibernate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains details on all Hibernate-related resources that were found in the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server resources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Displays all server resources (for example, JNDI resources) in the input application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Beans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains a list of Spring Beans found during the analysis.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hard-coded IP addresses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides a list of all hard-coded IP addresses that were found in the application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ignored files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">About</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="issues-report_{context}">Issues report</h3>
+<div class="paragraph">
+<p>Access this report from the dashboard by clicking the <strong>Issues</strong> link.</p>
+</div>
+<div class="paragraph">
+<p>This report includes details about every issue that was raised by the selected migration paths. The following information is provided for each issue encountered:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A title to summarize the issue.</p>
+</li>
+<li>
+<p>The total number of incidents, or times the issue was encountered.</p>
+</li>
+<li>
+<p>The rule story points to resolve a single instance of the issue.</p>
+</li>
+<li>
+<p>The estimated level of effort to resolve the issue.</p>
+</li>
+<li>
+<p>The total story points to resolve every instance encountered. This is calculated by multiplying the number of incidents found by the story points per incident.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-4-issues-report.png" alt="Issues report">
+</div>
+<div class="title">Figure 4. Issues report</div>
+</div>
+<div class="paragraph">
+<p>Each reported issue may be expanded, by clicking on the title, to obtain additional details. The following information is provided.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A list of files where the incidents occurred, along with the number of incidents within each file. If the file is a Java source file, then clicking the filename will direct you to the corresponding Source report.</p>
+</li>
+<li>
+<p>A detailed description of the issue. This description outlines the problem, provides any known solutions, and references supporting documentation regarding either the issue or resolution.</p>
+</li>
+<li>
+<p>A direct link, entitled <strong>Show Rule</strong>, to the rule that generated the issue.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-5-expanded-issue.png" alt="Expanded rule in the issues report">
+</div>
+<div class="title">Figure 5. Expanded issue</div>
+</div>
+<div class="paragraph">
+<p>Issues are sorted into four categories by default. Information on these categories is available at ask Category.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="application-details-report">Application details report</h3>
+<div class="paragraph">
+<p>Access this report from the dashboard by clicking the <strong>Application Details</strong> link.</p>
+</div>
+<div class="paragraph">
+<p>The report lists the story points, the Java incidents by package, and a count of the occurrences of the technologies found in the application. Next is a display of application messages generated during the migration process. Finally, there is a breakdown of this information for each archive analyzed during the process.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-6-application-details-report.png" alt="Application Details report">
+</div>
+<div class="title">Figure 6. Application Details report</div>
+</div>
+<div class="paragraph">
+<p>Expand the <code>jee-example-app-1.0.0.ear/jee-example-services.jar</code> to review the story points, Java incidents by package, and a count of the occurrences of the technologies found in this archive. This summary begins with a total of the story points assigned to its migration, followed by a table detailing the changes required for each file in the archive. The report contains the following columns.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the file being analyzed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Technology</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of file being analyzed, for example, <strong>Decompiled Java File</strong> or <strong>Properties</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Issues</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Warnings about areas of code that need review or changes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Story Points</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Level of effort required to migrate the file.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note that if an archive is duplicated several times in an application, it will be listed just once in the report and will be tagged with <code>[Included multiple times]</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-7-duplicate-archive-in-application.png" alt="Duplicate archive">
+</div>
+<div class="title">Figure 7. Duplicate archive in an application</div>
+</div>
+<div class="paragraph">
+<p>The story points for archives that are duplicated within an application will be counted only once in the total story point count for that application.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="technology-report-application_{context}">Technologies report</h3>
+<div class="paragraph">
+<p>Access this report from the dashboard by clicking the <strong>Technologies</strong> link.</p>
+</div>
+<div class="paragraph">
+<p>The report lists the occurrences of technologies, grouped by function, in the analyzed application. It is an overview of the technologies found in the application, and is designed to assist users in quickly understanding each application&#8217;s purpose.</p>
+</div>
+<div class="paragraph">
+<p>The image below shows the technologies used in the <code>jee-example-app</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-8-technologies-in-application.png" alt="Technology report Application view">
+</div>
+<div class="title">Figure 8. Technologies in an application</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="source-report">Source report</h3>
+<div class="paragraph">
+<p>The Source report displays the migration issues in the context of the source file in which they were discovered.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-10-source-report.png" alt="Source Report">
+</div>
+<div class="title">Figure 9. Source report</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="technology-report_{context}">Technologies report</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Access this report from the report landing page by clicking the <strong>Technologies</strong> link.</p>
+</div>
+<div class="paragraph">
+<p>This report provides an aggregate listing of the technologies used, grouped by function, for the analyzed applications. It shows how the technologies are distributed, and is typically reviewed after analyzing a large number of applications to group the applications and identify patterns. It also shows the size, number of libraries, and story point totals of each application.</p>
+</div>
+<div class="paragraph">
+<p>Clicking any of the headers, such as <strong>Markup</strong>, sorts the results in descending order. Selecting the same header again will resort the results in ascending order. The currently selected header is identified in bold, next to a directional arrow, indicating the direction of the sort.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-11-technologies-used-across-multiple-applications.png" alt="Technologies used across multiple applications">
+</div>
+<div class="title">Figure 10. Technologies used across multiple applications</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

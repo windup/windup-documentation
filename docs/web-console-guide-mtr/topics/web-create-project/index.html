@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/web-console-guide-mtr/topics/web-create-project/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/web-console-guide-mtr/topics/web-create-project/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/web-console-guide-mtr/topics/web-create-project/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="web-create-project_{context}">Creating a project</h1>
+<div class="paragraph">
+<p>You can create a project in the {WebName} with the <strong>Create project</strong> wizard.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the {WebName}, click <strong>Projects</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create project</strong>.</p>
+</li>
+<li>
+<p>Enter a unique name for the project, an optional description, and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>To upload applications, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select the application files you want to upload, and click <strong>Close</strong>.</p>
+<div class="paragraph">
+<p>Uploading applications stores them directly on the {ProductShortName} server.</p>
+</div>
+</li>
+<li>
+<p>To register a server path, click the <strong>Server path</strong> tab and enter the <strong>Server-side path</strong> of the application in the field.</p>
+<div class="paragraph">
+<p>Registering the server path of an application ensures that {ProductShortName} always uses the latest version.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Click one or more transformation targets.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/web-console-transformation-targets.png" alt="Transformation targets">
+</div>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select packages and click <strong>&gt;</strong> to include them in the analysis.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>If you want to add a custom rule, click <strong>Add rule</strong>.</p>
+<div class="paragraph">
+<p>See the <a href="{ProductDocRulesGuideURL}">Rules Development Guide</a> for more information.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To upload a ruleset file, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select one or more files, and click <strong>Close</strong>.</p>
+<div class="paragraph">
+<p>A ruleset file must have a <code>.windup.xml</code> extension. The uploaded file is stored on the {ProductShortName} server.</p>
+</div>
+</li>
+<li>
+<p>To register the server path of a ruleset file, click the <strong>Server path</strong> tab, enter the <strong>Rules</strong> path, and click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>Registering the server path ensures that the {ProductShortName} server always uses the latest version of the ruleset files.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>If you want to add a custom label, click <strong>Add label</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To upload a labelset file, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select one or more files, and click <strong>Close</strong>.</p>
+<div class="paragraph">
+<p>A labelset file must have a <code>.windup.label.xml</code> extension. The uploaded file is stored on the {ProductShortName} server.</p>
+</div>
+</li>
+<li>
+<p>To register a server path, click the <strong>Server path</strong> tab, enter the <strong>Labels path</strong> of the label files in the field, and click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>Registering the server path ensures that the {ProductShortName} server always uses the latest version of the labelset files.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Review the following <strong>Advanced options</strong> and make any necessary changes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Target</strong></p>
+</li>
+<li>
+<p><strong>Source</strong></p>
+</li>
+<li>
+<p><strong>Exclude tags</strong>: Rules with these tags are not processed.</p>
+</li>
+<li>
+<p><strong>Additional classpath</strong>: Enter a space-delimited list of additional <code>.jar</code> files or directories so that they are available for decompilation or other analysis.</p>
+</li>
+<li>
+<p><strong>Application name</strong></p>
+</li>
+<li>
+<p><strong>Mavenize group ID</strong></p>
+</li>
+<li>
+<p><strong>Ignore path</strong>: Enter a path for files to exclude from analysis.</p>
+</li>
+<li>
+<p><strong>Export CSV</strong>: Exports the report data as a CSV file.</p>
+</li>
+<li>
+<p><strong>Export Summary</strong>: Generates an <code>analysisSummary.json</code> export file in the output directory. The file contains analysis summary information for each application analyzed, including the number of incidents and story points by category, and all of the technology tags associated with the analyzed applications.</p>
+</li>
+<li>
+<p><strong>Export reports zip</strong>: Creates a <code>reports.zip</code> file in the output folder. The file contains the analysis output, typically, the reports. If requested, it can also contain the CSV export files.</p>
+</li>
+<li>
+<p><strong>Disable Tattletale</strong>: Disables generation of a Tattletale report for each application.</p>
+</li>
+<li>
+<p><strong>Class Not Found analysis</strong>: Enables analysis of Java files that are not available on the class path.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This option should not be used if some classes are unavailable for analysis.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Compatible Files report</strong>: Generating a Compatible Files report might take a long time for large applications.</p>
+</li>
+<li>
+<p><strong>Exploded app</strong>: The input directory contains the unpackaged source files of an application.</p>
+</li>
+<li>
+<p><strong>Keep work dirs</strong>: Retains temporary files, for example, the graph database or extracted archive files, for debugging purposes.</p>
+</li>
+<li>
+<p><strong>Skip reports</strong>: HTML reports are not generated. Must be enabled if you enabled <strong>Export CSV</strong>.</p>
+</li>
+<li>
+<p><strong>Allow network access</strong>: Validates any XML files within the analyzed applications against their schema.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This option might reduce performance.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Mavenize</strong>: Creates a Maven project directory structure based on the structure and content of the application.</p>
+</li>
+<li>
+<p><strong>Source mode</strong>: Indicates that the application files are raw source files, not compiled binaries. The sourceMode argument has been deprecated. There is no longer the need to specify it. MTR can intuitively process any inputs that are presented to it.  In addition, project source folders can be analyzed with binary inputs within the same analysis execution.</p>
+</li>
+<li>
+<p><strong>Analyze known libraries</strong>: Analyze known software artifacts embedded within your application.  By default, {ProductShortName} only analyzes application code.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This option might result in a longer execution time and a large number of migration issues being reported.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Transaction analysis</strong>: [Tech Preview] Generates a Transactions report that displays the call stack, which executes operations on relational database tables. The Enable Transaction Analysis feature supports Spring Data JPA and the traditional <code>preparedStatement()</code> method for SQL statement execution. It does not support ORM frameworks, such as Hibernate.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Transaction analysis is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them
+in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Skip source code reports:</strong> Adding this option skips generating a <em>Source code report</em> when generating the application analysis report. Use this advanced option when concerned about source code information appearing in the application analysis.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Review your project and click <strong>Save</strong> or <strong>Save and run</strong>.</p>
+<div class="paragraph">
+<p>The project is displayed in the <strong>Projects</strong> screen.</p>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

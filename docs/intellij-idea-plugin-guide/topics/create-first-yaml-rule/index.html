@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/create-first-yaml-rule/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/create-first-yaml-rule/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide/topics/create-first-yaml-rule/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="create-first-yaml-rule_{context}">Creating your first YAML rule</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section guides you through the process of creating and testing your first {ProductShortName} YAML-based rule. This assumes that you have already installed {ProductShortName}. See <a href="{ProductDocUserGuideURL}/index#installing_and_running_the_cli">Installing and running the CLI</a> in the <em>CLI Guide</em> for installation instructions.</p>
+</div>
+<div class="paragraph">
+<p>In this example, you will create a rule to discover instances where an application defines a <code>jboss-web.xml</code> file containing a <code>&lt;class-loading&gt;</code> element and to provide a link to the documentation that describes how to migrate the code.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-yaml-file-for-the-rule_{context}">Creating a YAML file for the rule</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a YAML file for your first rule.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">$ mkdir /home/&lt;USER&gt;/rule.yaml</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-creating-data-to-test-the-rule_{context}">Creating data to test the rule</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create <code>jboss-web.xml</code> and <code>pom.xml</code> files in a directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">mkdir /home/&lt;USER&gt;/data/
+touch /home/&lt;USER&gt;/data/jboss-web.xml
+touch /home/&lt;USER&gt;/data/pom.xml</pre>
+</div>
+</div>
+</li>
+<li>
+<p>In the <code>jboss-web.xml</code> file you created, paste the following content:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">&lt;!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Application 4.2//EN" "http://www.jboss.org/j2ee/dtd/jboss-web_4_2.dtd"&gt;
+&lt;jboss-web&gt;
+    &lt;class-loading java2ClassLoadingCompliance="false"&gt;
+        &lt;loader-repository&gt;
+            seam.jboss.org:loader=@projectName@
+            &lt;loader-repository-config&gt;java2ParentDelegation=false&lt;/loader-repository-config&gt;
+        &lt;/loader-repository&gt;
+    &lt;/class-loading&gt;
+&lt;/jboss-web&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>In the <code>pom.xml</code> file you created, paste the following content:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+  &lt;groupId&gt;test&lt;/groupId&gt;
+  &lt;artifactId&gt;test&lt;/artifactId&gt;
+  &lt;version&gt;1.1.0-SNAPSHOT&lt;/version&gt;
+
+  &lt;properties&gt;
+	&lt;maven.compiler.source&gt;1.7&lt;/maven.compiler.source&gt;
+	&lt;maven.compiler.target&gt;1.7&lt;/maven.compiler.target&gt;
+  &lt;/properties&gt;
+
+  &lt;dependencies&gt;
+  &lt;/dependencies&gt;
+&lt;/project&gt;</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-creating-the-rule_{context}">Creating the rule</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>MTA YAML-based rules use the following rule pattern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">when(condition)
+  perform(action)</pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <code>rule.yaml</code> file you created, paste the following contents:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">- ruleID: &lt;UNIQUE_RULE_ID&gt; <b class="conum">(1)</b>
+  description: &lt;DESCRIPTION&gt; <b class="conum">(2)</b>
+  when:
+    &lt;CONDITION(S)&gt; <b class="conum">(3)</b>
+  message: &lt;MESSAGE&gt; <b class="conum">(4)</b>
+  labels: &lt;LABELS&gt; <b class="conum">(5)</b>
+  effort: &lt;EFFORT&gt; <b class="conum">(6)</b>
+  links:
+  - &lt;LINKS&gt; <b class="conum">(7)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Unique ID for your rule, for instance, <code>jboss5-web-class-loading</code>.</p>
+</li>
+<li>
+<p>Text description of the rule.</p>
+</li>
+<li>
+<p>Complete the <code>when</code> block specifying one or more conditions:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Use the <code>builtin</code> provider’s XML capability because this rule checks for a match in an XML file.</p>
+</li>
+<li>
+<p>To match on the <code>class-loading</code> element that is a child of <code>jboss-web</code>, use the XPath expression <code>jboss-web/web-loading</code> as an XML query. In this case, you need just one condition:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">when:
+  builtin.xml:
+    xpath: jboss-web/class-loading</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Helpful message explaining the migration issue. The message is generated in the report when the rule matches. For example:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">message: The class-loading element is no longer valid in the jboss-web.xml file.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>List of string labels for the rule.</p>
+</li>
+<li>
+<p>Number of expected story points to fix this issue.</p>
+</li>
+<li>
+<p>One or more hyperlinks pointing to documentation around the migration issues that you find.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">links:
+- url: https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6
+  title: Create or Modify Files That Control Class Loading in JBoss EAP 6</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The rule is now complete and looks similar to the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">- ruleID: jboss5-web-class-loading
+  description: Find class loading element in JBoss XML file.
+  when:
+    builtin.xml:
+      xpath: jboss-web/class-loading
+  message: The class-loading element is no longer valid in the jboss-web.xml file.
+  effort: 3
+  links:
+  - url: https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6
+    title: Create or Modify Files That Control Class Loading in JBoss EAP 6</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-installing-the-rule_{context}">Installing the rule</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Point the CLI  to the rule file you created :</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">–rules /home/&lt;USER&gt;/rules.yaml</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-testing-the-rule_{context}">Testing the rule</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>To test the rule, point the input to the test data you created and pass the rule using the rules option in MTA CLI:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">mta-cli analyze --input /home/&lt;USER&gt;/data/ --output /home/&lt;USER&gt;/output/ --rules /home/&lt;USER&gt;/rules.yaml</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-reviewing-the-report_{context}">Reviewing the report</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Review the report to be sure that it provides the expected results.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Once the analysis is complete, the command outputs the path to the HTML report:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">INFO[0066] Static report created. Access it at this URL:  URL="file:/home/&lt;USER&gt;/output/static-report/index.html"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Open <code>/home/&lt;USER_NAME&gt;/output/static-report/index.html</code> in a web browser.</p>
+</div>
+</li>
+<li>
+<p>Navigate to the <strong>Issues</strong> tab in the left menu.</p>
+</li>
+<li>
+<p>Verify that the rule is executed:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the <strong>Issues</strong> table, type <code>JBoss XML</code> in the search bar.</p>
+</li>
+<li>
+<p>Verify that the issue with the title <code>Find class loading element in JBoss XML file</code> is present in the table.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Click the <strong>jboss-web.xml</strong> link to open the affected file.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/release-notes-mtr/topics/validation-report-understanding/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/release-notes-mtr/topics/validation-report-understanding/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/release-notes-mtr/topics/validation-report-understanding/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="validation-report-understanding_{context}">Creating a validation report</h1>
+<div class="paragraph">
+<p>You can create a validation report for your custom rules.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must fork and clone the {ProductShortName} XML rules.</p>
+</li>
+<li>
+<p>You must have one or more test XML rules to validate.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the local <code>windup-rulesets</code> repository.</p>
+</li>
+<li>
+<p>Create a directory for your custom rules and tests: <code>windup-rulesets/rules-reviewed/myTests</code>.</p>
+</li>
+<li>
+<p>Copy your custom rules and tests to the <code>windup-rulesets/rules-reviewed/&lt;myTests&gt;</code> directory.</p>
+</li>
+<li>
+<p>Run the following command from the root directory of the <code>windup-rulesets</code> repository:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mvn -Dtest=WindupRulesMultipleTests -DrunTestsMatching=&lt;myTests&gt; clean &lt;myReport&gt;:report <b class="conum">(1)</b> <b class="conum">(2)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Specify the directory containing your custom rules and tests. If you omit the <code>-DrunTestsMatching</code> argument, the validation report will include all the tests and take much longer to generate.</p>
+</li>
+<li>
+<p>Specify your report name.</p>
+<div class="paragraph">
+<p>The validation report is created in the <code>windup-rulesets/target/site/</code> repository.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

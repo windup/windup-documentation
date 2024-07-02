@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/maven-guide-mtr/topics/eclipse-installing-plugin/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/maven-guide-mtr/topics/eclipse-installing-plugin/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/maven-guide-mtr/topics/eclipse-installing-plugin/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="eclipse-installing-plugin_{context}">Installing in a connected environment</h1>
+<div class="paragraph">
+<p>You need a connected environment to install the {PluginName}.</p>
+</div>
+<div class="paragraph">
+<p>The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Developers 2023-03.</p>
+</div>
+<div class="paragraph">
+<div class="title">Prerequisites</div>
+<p>Unresolved directive in eclipse-installing-plugin.adoc - include::snippet_jdk-hardware-mac-prerequisites.adoc[leveloffset=0]</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.eclipse.org/downloads/packages/release/2023-03/r/eclipse-ide-java-developers">Eclipse IDE for Java Enterprise Developers 2023-03</a></p>
+</li>
+<li>
+<p>JBoss Tools, installed from the <a href="https://marketplace.eclipse.org/content/jboss-tools">Eclipse Marketplace</a></p>
+</li>
+<li>
+<p><a href="http://download.eclipse.org/mylyn/releases/latest">Mylyn SDK and frameworks</a>, installed with Eclipse</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Eclipse is pre-configured for Java 17, and the plugin operates directly with Java 17.</p>
+</div>
+<div class="paragraph">
+<p>You can also run the plugin with Java 11, which requires setting the JRE version to Java 11 when creating up a new Eclipse  project or importing an existing one. See step 6 below.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Launch Eclipse.</p>
+</li>
+<li>
+<p>From the menu bar, select <strong>Help</strong> &#8594; <strong>Install New Software</strong>.</p>
+</li>
+<li>
+<p>Next to the <strong>Work with</strong> field, click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Name</strong> field, enter <code>{ProductShortName}</code>.</p>
+</li>
+<li>
+<p>In the <strong>Location</strong> field, enter</p>
+</li>
+<li>
+<p>Select the Java version to use.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If using Java 11, in the <strong>JRE</strong> list, select <strong>JavaSE 11</strong>.</p>
+</li>
+<li>
+<p>If using Java 17, leave the <strong>JRE</strong> selection unchanged.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="7">
+<li>
+<p>Select all the <strong>JBoss Tools - {ProductShortName}</strong> check boxes and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Review the installation details and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Accept the terms of the license agreement and click <strong>Finish</strong>.</p>
+</li>
+<li>
+<p>Restart Eclipse.</p>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

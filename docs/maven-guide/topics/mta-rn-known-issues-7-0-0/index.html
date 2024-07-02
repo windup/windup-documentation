@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/maven-guide/topics/mta-rn-known-issues-7-0-0/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/maven-guide/topics/mta-rn-known-issues-7-0-0/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/maven-guide/topics/mta-rn-known-issues-7-0-0/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="rn-known-issues-7-0-0_{context}">Known issues</h1>
+<div class="paragraph">
+<p>{ProductFullName} version 7.0.0 has the following issues.</p>
+</div>
+<div class="paragraph">
+<div class="title">Pathfinder assessment migration fails on upgrade from {ProductShortName} 6.2.1 to {ProductShortName} 7.0.0</div>
+<p>If {ProductShortName} 6.2.1 is installed, when attempting to switch the channel to <code>stable-7.0</code>, the operator upgrade succeeds, but a task in the operator pod fails. This failure results in existing pathfinder assessments not being migrated to {ProductShortName} 7.0.0. This bug will be resolved in {ProductShortName} 7.0.1. No assessment data will be lost, it is will simply not be visible in the UI until the release of {ProductShortName} 7.0.1. <a href="https://issues.redhat.com/browse/MTA-2139">MTA-2139</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Delayed permission update and user deactivation in <code>RBAC</code></div>
+<p>When deleting, deactivating or degrading the role of a user, such as changing the user from <code>Admin</code> to <code>Migrator</code>, the change can take several minutes to take effect. This delay in changing the user status can pose an operational or security risk. <a href="https://issues.redhat.com/browse/MTA-1809">MTA-1809</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Re-enabling Keycloak breaks {ProductShortName}</div>
+<p>Keycloak is enabled by default. If you disable and then re-enable Keycloak, you cannot perform any actions in the {ProductShortName} web console after logging in again.</p>
+</div>
+<div class="paragraph">
+<p>This error is caused as the <code>credential-mta-rhsso</code> secret is updated when <code>auth/Keycloak</code> is disabled and re-enabled.</p>
+</div>
+<div class="paragraph">
+<p>The suggested workaround is to restore the old password in the <code>credential-mta-rhsso</code> secret, after re-enabling <code>auth</code>. <a href="https://issues.redhat.com/browse/MTA-1152">MTA-1152</a></p>
+</div>
+<div class="paragraph">
+<div class="title">org.apache.derby.derby dependency not analyzed</div>
+<p>The <code>org.apache.derby.derby</code> dependency is not analyzed. <a href="https://issues.redhat.com/browse/MTA-1817">MTA-1817</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Redundant warning on reassessment of applications with inherited assessments</div>
+<p>The system repeatedly shows a warning message about overriding an inherited assessment when reassessing an application.</p>
+</div>
+<div class="paragraph">
+<p>This warning, appropriate for the first assessment, incorrectly reappears on subsequent reassessments, suggesting that the application is still inheriting its assessment, even after it has been overridden. <a href="https://issues.redhat.com/browse/MTA-1825">MTA-1825</a></p>
+</div>
+<div class="paragraph">
+<div class="title">Custom rule for javax.{*} package import is not triggered when uploaded as an XML file</div>
+<p>In {ProductShortName} 7.0.0, some XML custom rule files are converted to the new YAML format during analysis. The root cause is that Java search patterns that use <code>IMPORT</code> as <code>location</code> and end in <code>.{*}</code>, do not function as expected. <a href="https://issues.redhat.com/browse/MTA-2000">MTA-2000</a></p>
+</div>
+<div class="paragraph">
+<p>To resolve this issue, whenever a custom rule has a pattern ending in <code>.{*}</code> and location <code>IMPORT</code>, the pattern <code>.{*}</code> can be changed to <code>{*}</code> and the location changed to <code>PACKAGE</code>, as in the following example.</p>
+</div>
+<details>
+<summary class="title">To view the javax-package-custom-target.windup.xml, click here.</summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset xmlns="http://windup.jboss.org/schema/jboss-ruleset" id="javax-package"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+    &lt;metadata&gt;
+        &lt;description&gt;
+            This ruleset evaluates whether a custom target can be used within a custom rule
+        &lt;/description&gt;
+        &lt;dependencies&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-javaee,3.0.0.Final" /&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-java,3.0.0.Final" /&gt;
+        &lt;/dependencies&gt;
+        &lt;targetTechnology id="phil" versionRange="[7,8)" /&gt;
+    &lt;/metadata&gt;
+    &lt;rules&gt;
+        &lt;rule id="javax-package-custom-target-00001"&gt;
+            &lt;when&gt;
+                &lt;javaclass references="javax{*}"&gt;
+                    &lt;location&gt;PACKAGE&lt;/location&gt;
+                &lt;/javaclass&gt;
+            &lt;/when&gt;
+            &lt;perform&gt;
+                &lt;hint title="CUSTOM RULE for javax.* package import" effort="1" category-id="potential"&gt;
+                    &lt;message&gt;`javax.*` packages must be renamed to `jakarta.*` for Jakarta EE9 compatibility.&lt;/message&gt;
+                    &lt;link title="Renamed Packages" href="https://github.com/wildfly-extras/batavia/blob/master/impl/ecl/src/main/resources/org/wildfly/extras/transformer/eclipse/jakarta-renames.properties"/&gt;
+                &lt;/hint&gt;
+            &lt;/perform&gt;
+        &lt;/rule&gt;
+    &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+</div>
+</details>
+<div class="paragraph">
+<p>For a complete list of all known issues in this release, see the list of <a href="https://issues.redhat.com/browse/MTA-2060?filter=12428334">Known Issues in Jira</a>.</p>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/cli-guide/topics/xml-rule-syntax/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/cli-guide/topics/xml-rule-syntax/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/cli-guide/topics/xml-rule-syntax/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="xml-rule-syntax_{context}">XML rule structure</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets. For more details, see the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">{ProductShortName} XML rule schema</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rulesets">Rulesets</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A ruleset is a group of one or more rules that targets a specific area of migration. This is the basic structure of the <code>&lt;ruleset&gt;</code> element.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;ruleset id="&lt;UNIQUE_RULESET_ID&gt;"&gt;</strong>: Defines this as an {ProductShortName} ruleset and gives it a unique ruleset ID.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;metadata&gt;</strong>: The metadata about the ruleset.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;description&gt;</strong>: The description of the ruleset.</p>
+</li>
+<li>
+<p><strong>&lt;dependencies/&gt;</strong>: The rule add-ons required by this ruleset.</p>
+</li>
+<li>
+<p><strong> &lt;sourceTechnology/&gt;</strong>: The source technology.</p>
+</li>
+<li>
+<p><strong> &lt;targetTechnology/&gt;</strong>: The target technology.</p>
+</li>
+<li>
+<p><strong> &lt;overrideRules/&gt;</strong>: Setting to <code>true</code> indicates that rules in this ruleset override rules with the same ID from the core ruleset distributed with {ProductShortName}. Both the ruleset id and the rule id must match a rule within the core ruleset, or the rule will be ignored. In addition, the target technology in this ruleset must match one of the targets that you specified for running the analysis.</p>
+<div class="paragraph">
+<p>This is <code>false</code> by default.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>&lt;rules&gt;</strong>: A set of individual rules.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;rule id="&lt;UNIQUE_RULE_ID&gt;"&gt;</strong>: Defines the rule and gives it a unique ID. It is recommended to include the ruleset ID as part of the rule ID, for example, <code>&lt;UNIQUE_RULESET_ID_UNIQUE_RULE_ID&gt;</code>. One or more rules can be defined for a ruleset.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;when&gt;</strong>: The conditions to match on.</p>
+</li>
+<li>
+<p><strong>&lt;perform&gt;</strong>: The action to be performed when the rule condition is matched.</p>
+</li>
+<li>
+<p><strong>&lt;otherwise&gt;</strong>: The action to be performed when the rule condition is not matched. This element takes the same child elements as the <code>&lt;perform&gt;</code> element.</p>
+</li>
+<li>
+<p><strong>&lt;where&gt;</strong>: A string pattern defined as a parameter, which can be used elsewhere in the rule definition.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>&lt;file-mapping/&gt;</strong>: Maps an extension to a graph type.</p>
+</li>
+<li>
+<p><strong>&lt;package-mapping/&gt;</strong>: Maps from a package pattern (regular expression) to an organization name.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="predefined-rules">Predefined rules</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>{ProductShortName} provides predefined rules for common migration requirements. These core {ProductShortName} rules are located in the {ProductShortName} installation at <code>&lt;{ProductShortName}_HOME&gt;/rules/migration-core/</code>.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a core {ProductShortName} rule that matches on a proprietary utility class.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset xmlns="http://windup.jboss.org/schema/jboss-ruleset" id="weblogic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+
+    &lt;metadata&gt;
+        &lt;description&gt;
+            This ruleset provides analysis of WebLogic proprietary classes and constructs that may require individual attention when migrating to JBoss EAP 6+.
+        &lt;/description&gt;
+        &lt;dependencies&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final" /&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final" /&gt;
+        &lt;/dependencies&gt;
+        &lt;sourceTechnology id="weblogic" /&gt;
+        &lt;targetTechnology id="eap" versionRange="[6,)" /&gt;
+        &lt;tag&gt;reviewed-2015-06-02&lt;/tag&gt;
+        &lt;tag&gt;weblogic&lt;/tag&gt;
+    &lt;/metadata&gt;
+    &lt;rules&gt;
+        ...
+        &lt;rule id="weblogic-02000"&gt;
+            &lt;when&gt;
+                &lt;javaclass references="weblogic.utils.StringUtils.{*}" /&gt;
+            &lt;/when&gt;
+            &lt;perform&gt;
+                &lt;hint title="WebLogic StringUtils usage" effort="1" category-id="mandatory"&gt;
+                    &lt;message&gt;Replace with the `StringUtils` class from Apache Commons.&lt;/message&gt;
+                    &lt;link href="https://commons.apache.org/proper/commons-lang/" title="Apache Commons Lang" /&gt;
+                    &lt;tag&gt;weblogic&lt;/tag&gt;
+                &lt;/hint&gt;
+            &lt;/perform&gt;
+        &lt;/rule&gt;
+        ...
+    &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

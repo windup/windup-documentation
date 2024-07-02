@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/getting-started-guide/topics/create-yaml-rule/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/getting-started-guide/topics/create-yaml-rule/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/getting-started-guide/topics/create-yaml-rule/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="create-yaml-rule_{context}">Creating a YAML rule</h1>
+<div class="paragraph">
+<p>Each rule file contains one or more YAML rules. Every rule comprises metadata, conditions and actions.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create a <code>when</code> condition.</p>
+<div class="paragraph">
+<p>The <code>when</code> condition of a YAML rule can be <code>provider</code>, <code>and</code> or <code>or</code>.</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Create a <code>provider</code> condition</p>
+<div class="paragraph">
+<p>The provider condition is used to define a search query for a specific language provider and to invoke a certain capability of the provider.</p>
+</div>
+<div class="paragraph">
+<p>The condition&#8217;s general format is <code>&lt;provider_name&gt;.&lt;capability&gt;</code>. The condition also has inner fields to specify details of the search. The way you create a <code>provider</code> condition and its inner fields depends on which provider you use and which capability you invoke.</p>
+</div>
+<div class="paragraph">
+<p>The table below lists the available providers and their capabilities. Select a provider and its capability that suit the purpose of the rule you want to create. This part of the condition does not contain any of the condition&#8217;s fields yet.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 25%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Provider</th>
+<th class="tableblock halign-left valign-top">Capability</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><code>java</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>referenced</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds references of a pattern with an optional code location for detailed searches</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dependency</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Checks whether the application has a given dependency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" rowspan="5"><p class="tableblock"><code>builtin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Searches XML files using XPath queries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>json</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Searches JSON files using JSONPath queries</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>filecontent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Searches content in regular files using RegEx patterns</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>file</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds files with names matching a given pattern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hasTags</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Checks whether a tag is created for the application through a tagging rule</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock">go</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>referenced</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds references of a pattern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dependency</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Checks whether the application has a given dependency</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The example below shows a <code>java</code> provider condition that uses the <code>referenced</code> capability.</p>
+</div>
+<div class="paragraph">
+<p><em>Example</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  java.referenced:</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Add suitable fields to the <code>provider</code> condition.</p>
+<div class="paragraph">
+<p>The table below lists all available providers, their capabilities, and their fields. Select the fields that belong to the provider and capability that you have chosen. Note that some fields are mandatory.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 15%;">
+<col style="width: 15%;">
+<col style="width: 20%;">
+<col style="width: 15%;">
+<col style="width: 35%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Provider</th>
+<th class="tableblock halign-left valign-top">Capability</th>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Required?</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle" rowspan="6"><p class="tableblock"><code>java</code></p></td>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><code>referenced</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RegEx pattern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>location</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source code location; see below for a list of all supported search locations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" rowspan="4"><p class="tableblock"><code>dependency</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the dependency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nameregex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RegEx pattern to match the name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>upperbound</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches version numbers lower than or equal to</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lowerbound</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches version numbers greater than or equal to</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" rowspan="9"><p class="tableblock"><code>builtin</code></p></td>
+<td class="tableblock halign-left valign-middle" rowspan="3"><p class="tableblock"><code>xml</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xpath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XPath query</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>namespaces</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A map to scope down query to namespaces</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>filepaths</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional list of files to scope down search</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><code>json</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>xpath</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XPath query</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>filepaths</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional list of files to scope down search</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" rowspan="2"><p class="tableblock"><code>filecontent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RegEx pattern to match in content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>filePattern</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only searches in files with names matching this pattern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>file</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finds files with names matching this pattern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hasTags</code></p></td>
+<td class="tableblock halign-right valign-top" colspan="3"><p class="tableblock">This is an inline list of string tags. See <em>Tag Action</em> for details on tag format.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" rowspan="5"><p class="tableblock"><code>go</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>referenced</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pattern</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RegEx pattern</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle" rowspan="4"><p class="tableblock"><code>dependency</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the dependency</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>nameregex</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RegEx pattern to match the name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>upperbound</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches version numbers lower than or equal to</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lowerbound</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matches version numbers greater than or equal to</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following search locations can be used to scope down <code>java</code> searches:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CONSTRUCTOR_CALL</p>
+</li>
+<li>
+<p>TYPE</p>
+</li>
+<li>
+<p>INHERITANCE</p>
+</li>
+<li>
+<p>METHOD_CALL</p>
+</li>
+<li>
+<p>ANNOTATION</p>
+</li>
+<li>
+<p>IMPLEMENTS_TYPE</p>
+</li>
+<li>
+<p>ENUM_CONSTANT</p>
+</li>
+<li>
+<p>RETURN_TYPE</p>
+</li>
+<li>
+<p>IMPORT</p>
+</li>
+<li>
+<p>VARIABLE_DECLARATION</p>
+<div class="paragraph">
+<p>The example below shows the <code>when</code> condition of a rule that searches for references of a package.</p>
+</div>
+<div class="paragraph">
+<p><em>Example</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  java.referenced:
+    location: PACKAGE
+    pattern: org.jboss.*</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Create an <code>AND</code> or <code>OR</code> condition</p>
+<div class="ulist">
+<ul>
+<li>
+<p>An <code>and</code> condition matches when <em>all</em> of its child conditions match. Create an <code>and</code> condition as follows:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  and:
+  - java.dependency:
+      name: junit.junit
+      upperbound: 4.12.2
+      lowerbound: 4.4.0
+  - java.referenced:
+      location: IMPORT
+      pattern: junit.junit</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>An <code>or</code> condition matches when <em>any</em> of its child conditions match. Create an <code>or</code> condition as follows:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when:
+  or:
+  - java.dependency:
+      name: junit.junit
+      upperbound: 4.12.2
+      lowerbound: 4.4.0
+  - java.referenced:
+      location: IMPORT
+      pattern: junit.junit</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

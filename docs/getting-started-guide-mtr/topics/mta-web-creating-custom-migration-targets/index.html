@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/getting-started-guide-mtr/topics/mta-web-creating-custom-migration-targets/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/getting-started-guide-mtr/topics/mta-web-creating-custom-migration-targets/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/getting-started-guide-mtr/topics/mta-web-creating-custom-migration-targets/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="mta-web-creating-custom-migration-targets_{context}">Creating custom migration targets</h1>
+<div class="paragraph">
+<p>Architects or users with <code>admin</code> permissions can create and maintain custom rulesets associated with custom migration targets. Architects can upload custom rule files and assign them to various custom migration targets. The custom migration targets can then be selected in the analysis configuration wizard.</p>
+</div>
+<div class="paragraph">
+<p>By using ready-made custom migration targets, you can avoid configuring custom rules for each analysis run. This simplifies analysis configuration and execution for non-admin users or third-party developers.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You are logged in as a user with <code>admin</code> permissions.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Administration</strong> view, click <strong>Custom migration targets</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter the name and description of the target.</p>
+</li>
+<li>
+<p>In the <strong>Image</strong> section, upload an image file for the target&#8217;s icon. The file can be in either the PNG or JPEG format, up to 1 MB. If you do not upload any file, a default icon is used.</p>
+</li>
+<li>
+<p>In the <strong>Custom rules</strong> section, select either <strong>Upload manually</strong> or <strong>Retrieve from a repository</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you selected <strong>Upload manually</strong>, upload or drag and drop the required rule files from your local drive.</p>
+</li>
+<li>
+<p>If you selected <strong>Retrieve from a repository</strong>, complete the following steps:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Choose <strong>Git</strong> or <strong>Subversion</strong>.</p>
+</li>
+<li>
+<p>Enter the <strong>Source repository</strong>, <strong>Branch</strong>, and <strong>Root path</strong> fields.</p>
+</li>
+<li>
+<p>If the repository requires credentials, enter these credentials in the <strong>Associated credentials</strong> field.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+<div class="paragraph">
+<p>The new migration target appears on the <strong>Custom migration targets</strong> page. It can now be used by non-admin users in the <strong>Migration</strong> view.</p>
+</div>
+</li>
+</ol>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/csv-export/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/csv-export/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/vs-code-extension-guide/topics/csv-export/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="csv-export_{context}">Exporting the report in CSV format</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>{ProductName} ({ProductShortName}) provides the ability to export the report data, including the classifications and hints, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields separated by commas (<code>,</code>).</p>
+</div>
+<div class="paragraph">
+<p>The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel, OpenOffice Calc, or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from an {ProductShortName} report.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="export-the-report_{context}">Exporting the report</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="importing-the-csv-file-into-a-spreadsheet-program">Importing the CSV file into a spreadsheet program</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Launch the spreadsheet software, for example, Microsoft Excel.</p>
+</li>
+<li>
+<p>Choose <strong>File</strong> &#8594; <strong>Open</strong>.</p>
+</li>
+<li>
+<p>Browse to the CSV exported file and select it.</p>
+</li>
+<li>
+<p>The data is now ready to analyze in the spreadsheet software.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="about-the-csv-data-structure">About the CSV data structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The CSV formatted output file contains the following data fields:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Rule Id</dt>
+<dd>
+<p>The ID of the rule that generated the given item.</p>
+</dd>
+<dt class="hdlist1">Problem type</dt>
+<dd>
+<p><em>hint</em> or <em>classification</em></p>
+</dd>
+<dt class="hdlist1">Title</dt>
+<dd>
+<p>The title of the <em>classification</em> or <em>hint</em>. This field summarizes the issue for the given item.</p>
+</dd>
+<dt class="hdlist1">Description</dt>
+<dd>
+<p>The detailed description of the issue for the given item.</p>
+</dd>
+<dt class="hdlist1">Links</dt>
+<dd>
+<p>URLs that provide additional information about the issue. A link consists of two attributes: the link and a description of the link.</p>
+</dd>
+<dt class="hdlist1">Application</dt>
+<dd>
+<p>The name of the application for which this item was generated.</p>
+</dd>
+<dt class="hdlist1">File Name</dt>
+<dd>
+<p>The name of the file for the given item.</p>
+</dd>
+<dt class="hdlist1">File Path</dt>
+<dd>
+<p>The file path for the given item.</p>
+</dd>
+<dt class="hdlist1">Line</dt>
+<dd>
+<p>The line number of the file for the given item.</p>
+</dd>
+<dt class="hdlist1">Story points</dt>
+<dd>
+<p>The number of story points, which represent the level of effort, assigned to the given item.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
