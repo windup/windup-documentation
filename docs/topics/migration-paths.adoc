@@ -11,9 +11,11 @@ The {ProductName} ({ProductShortName}) supports the following migrations:
 * Migrating from third-party enterprise application servers, such as Oracle WebLogic Server, to JBoss Enterprise Application Platform (JBoss EAP).
 * Upgrading to the latest release of JBoss EAP.
 
+* Migrating from a Windows-only .NET 4.5 Framework to a cross-platform .NET 8.0 framework
+
 {ProductShortName} provides a comprehensive set of rules to assess the suitability of your applications for containerization and deployment on Red Hat OpenShift Container Platform (RHOCP). You can run an {ProductShortName} analysis to assess your applications' suitability for migration to multiple target platforms.
 
-.Supported migration paths: Source platform &#8658; Target platform
+.Supported Java migration paths: Source platform &#8658; Target platform
 [width="99%",cols="19%,10%,10%,10%,10%,10%,10%,10%,10%",options="^,header"]
 |===
 
@@ -49,7 +51,8 @@ The {ProductName} ({ProductShortName}) supports the following migrations:
 
 |JBoss EAP 4
 |{icon-x} footnoteref:[note2,Although {ProductShortName} does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform to JBoss EAP 7.]
-|{icon-check} |{icon-check}
+|{icon-check} 
+|{icon-check}
 |-
 |-
 |-
@@ -145,4 +148,17 @@ The {ProductName} ({ProductShortName}) supports the following migrations:
 |-
 |-
 |-
+|===
+
+.Supported .NET migration paths: Source platform &#8658; Target platform
+
+[options="^,header"]
+|===
+
+|Source platform{nbsp}&#8658;|OpenShift (cloud readiness)|Migration to .NET 8.0
+
+| .NET Framework 4.5+ (Windows only)
+|{icon-check}
+|{icon-check}
+
 |===

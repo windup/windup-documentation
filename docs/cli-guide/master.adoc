@@ -19,6 +19,10 @@ include::topics/making-open-source-more-inclusive.adoc[]
 // About the {UserCLIBookName}
 include::topics/about-cli-guide.adoc[leveloffset=+2]
 
+:FeatureName: .NET migration
+include::topics/snippets/technology-preview.adoc[]
+
+
 // About {ProductName}
 include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
