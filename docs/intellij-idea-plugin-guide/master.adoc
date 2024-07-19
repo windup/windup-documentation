@@ -20,28 +20,28 @@ include::topics/making-open-source-more-inclusive.adoc[]
 == Introduction
 
 // About the IntelliJ IDEA plugin
-include::topics/about-ide-addons.adoc[leveloffset=+2]
+include::topics/mta-about-ide-addons.adoc[leveloffset=+2]
 
 // About {ProductName}
 include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
 
 // Install the plugin
-include::topics/installing-intellij-idea-plugin.adoc[leveloffset=+1]
+include::topics/mta-installing-intellij-idea-plugin.adoc[leveloffset=+1]
 
 [id="analyzing-projects-with-idea-plugin"]
 == Analyzing your projects with the {ProductShortName} plugin
 
 You can analyze your projects with the {ProductShortName} plugin by creating a run configuration and running an analysis.
 
-include::topics/intellij-idea-plugin-run-configuration.adoc[leveloffset=+2]
+include::topics/mta-intellij-idea-plugin-run-configuration.adoc[leveloffset=+2]
 
 [id="reviewing-and-resolving-migration-issues"]
 == Reviewing and resolving migration issues
 
 You can review and resolve migration issues identified by the {ProductShortName} plugin in the left pane.
 
-include::topics/intellij-idea-plugin-reviewing-issues.adoc[leveloffset=+2]
+include::topics/mta-intellij-idea-plugin-reviewing-issues.adoc[leveloffset=+2]
 
-include::topics/intellij-idea-plugin-resolving-issues.adoc[leveloffset=+2]
+include::topics/mta-intellij-idea-plugin-resolving-issues.adoc[leveloffset=+2]
 
 :!idea-plugin:

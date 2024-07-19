@@ -1,0 +1,15 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="eclipse-resolving-issues_{context}"]
+= Resolving issues
+
+You can resolve issues detected by the {PluginName} by performing one of the following actions:
+
+* You can double-click the issue to open it in an editor and edit the source code.
++
+The issue displays a Stale icon (image:stale_issue.gif[Stale]) until the next time you run the {PluginName}.
+* You can right-click the issue and select *Mark as Fixed*.
+* If the issue displays a Quick Fix icon (image:quickfix_error.png[Mandatory with quick fix] image:quickfix_info.png[Optional with quick fix] image:quickfix_warning.png[Warning with quick fix]), you can right-click the issue and select *Preview Quick Fix* and then *Apply Quick Fix*.
