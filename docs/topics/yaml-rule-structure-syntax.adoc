@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-:_content-type: REFERENCE
+:_mod-docs-content-type: REFERENCE
 [id="yaml-rule-structure-syntax_{context}"]
 = YAML rule structure and syntax
 
@@ -31,11 +31,8 @@ effort: 1 <3>
 category: mandatory <4>
 ----
 <1> The ID must be unique within the ruleset to which the rule belongs.
-
 <2> See below for a description of the label format.
-
 <3> `effort` is an integer value that indicates the level of effort needed to fix this issue.
-
 <4> `category` describes the severity of the issue for migration. The value can be either `mandatory`, `optional` or `potential`. For a description of these categories, see xref:yaml-rule-categories_{context}[Rule categories].
 
 [id="yaml-rule-labels_{context}"]
@@ -118,7 +115,7 @@ _Examples:_
 
 .Dependency labels
 
-The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency, such as its programming language and whether the dependency is open-source or internal.
+The analyzer engine adds labels to dependencies. These labels provide additional information about a dependency, such as its programming language and whether the dependency is open source or internal.
 
 Currently, the analyzer adds the following labels to dependencies:
 
@@ -133,9 +130,9 @@ labels:
 
 The analyzer CLI accepts the `--dep-label-selector` option, which allows filtering-in or filtering-out incidents generated from a dependency by their labels.
 
-For example, the analyzer adds a `konveyor.io/dep-source` label to dependencies with a value that indicates whether the dependency is a known open-source dependency.
+For example, the analyzer adds a `konveyor.io/dep-source` label to dependencies with a value that indicates whether the dependency is a known open source dependency.
 
-To exclude incidents for all such open-source dependencies, you can use `--dep-label-selector` as follows:
+To exclude incidents for all such open source dependencies, you can use `--dep-label-selector` as follows:
 
 `konveyor-analyzer ... --dep-label-selector !konveyor.io/dep-source=open-source`
 
@@ -233,7 +230,7 @@ when:
 
 ==== Provider conditions
 
-{ProductShortName} supports multi-language source code analysis. Searching for a specific language in the source code is enabled using the `provider` condition. This condition defines a search query for a specific language provider.  The `provider` condition also specifies which of the provider's "capabilities" to use for analyzing the code.
+{ProductShortName} supports multi-language source code analysis. Searching for a specific language in the source code is enabled using the `provider` condition. This condition defines a search query for a specific language provider. The `provider` condition also specifies which of the provider's "capabilities" to use for analyzing the code.
 
 The `provider` condition has the form `<provider_name>.<capability>`:
 
@@ -320,12 +317,12 @@ The `hasTags` capability enables the provider to query application tags. It quer
 [source,terminal]
 ----
 when:
-  # when more than one tags are given, a logical AND is implied
+  # when more than one tag is given, a logical AND is implied
   hasTags: <1>
     - "tag1"
     - "tag2"
 ----
-<1> When more than one tags is given, a logical AND is implied.
+<1> When more than one tag is given, a logical AND is implied.
 
 ===== `java` provider
 
@@ -334,7 +331,7 @@ The `java` provider analyzes Java source code.
 This provider has the following capabilities:
 
 * `referenced`
-* `dependency`.
+* `dependency`
 
 .`referenced`
 
@@ -347,8 +344,8 @@ when:
     pattern: "<pattern>" <1>
     location: "<location>" <2>
 ----
-<1> A RegEx pattern to match, for example, `org.kubernetes.*`
-<2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`
+<1> A regular expression pattern to match, for example, `org.kubernetes.*`.
+<2> Specifies the exact location where the pattern needs to be matched, for example, `IMPORT`.
 
 The supported locations are the following:
 
@@ -375,13 +372,13 @@ when:
     upperbound: "<version_string>" <2>
     lowerbound: "<version_string>" <3>
 ----
-<1> Name of the dependency to search for
-<2> Upper bound on the version of the dependency
-<3> Lower bound on the version of the dependency
+<1> Name of the dependency to search for.
+<2> Upper bound on the version of the dependency.
+<3> Lower bound on the version of the dependency.
 
 ===== `go` provider
 
-The `go` provider analyzes Go source code.  This provider's capabilities are `referenced` and `dependency`.
+The `go` provider analyzes Go source code. This provider's capabilities are `referenced` and `dependency`.
 
 .`referenced`
 
@@ -405,13 +402,13 @@ when:
     upperbound: "<version_string>" <2>
     lowerbound: "<version_string>" <3>
 ----
-<1> Name of the dependency to search for
-<2> Upper bound on the version of the dependency
-<3> Lower bound on the version of the dependency
+<1> Name of the dependency to search for.
+<2> Upper bound on the version of the dependency.
+<3> Lower bound on the version of the dependency.
 
 ==== Custom variables
 
-Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule’s action (see xref:yaml-rule-actions_{context}[Message actions]). They can be added to a rule in the `customVariables` field:
+Provider conditions can have associated custom variables. You can use custom variables to capture relevant information from the matched line in the source code. The values of these variables are interpolated with data matched in the source code. These values can be used to generate detailed templated messages in a rule's action (see xref:yaml-rule-actions_{context}[Message actions]). They can be added to a rule in the `customVariables` field:
 
 [source,terminal]
 ----
@@ -426,9 +423,9 @@ Provider conditions can have associated custom variables. You can use custom var
           pattern: com.example.apps.GenericClass.get
 
 ----
-<1> `pattern`: A RegEx pattern that is matched on the source code line when a match is found
-<2> `name`: The name of the variable that can be used in templates
-<3> `message`: A template for a message using a custom variable
+<1> `pattern`: A regular expression pattern that is matched on the source code line when a match is found.
+<2> `name`: The name of the variable that can be used in templates.
+<3> `message`: A template for a message using a custom variable.
 
 
 === Logical conditions
@@ -521,5 +518,4 @@ labels: <2>
   - key=val
 ----
 <1> The name must be unique within the provided rulesets.
-
 <2> Ruleset labels are inherited by all rules that belong to the ruleset.

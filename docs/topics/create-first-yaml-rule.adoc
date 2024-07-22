@@ -2,7 +2,7 @@
 //
 // * docs/rules-development-guide/master.adoc
 
-:_content-type: PROCEDURE
+:_mod-docs-content-type: PROCEDURE
 [id="create-first-yaml-rule_{context}"]
 = Creating your first YAML rule
 
@@ -13,7 +13,7 @@ In this example, you will create a rule to discover instances where an applicati
 [id="creating-yaml-file-for-the-rule_{context}"]
 == Creating a YAML file for the rule
 
-Create a YAML file for your first rule.
+* Create a YAML file for your first rule.
 
 [options="nowrap",subs="attributes+"]
 ----
@@ -82,7 +82,7 @@ when(condition)
 
 .Procedure
 
-. In the `rule.yaml` file you created, paste the following contents:
+* In the `rule.yaml` file you created, paste the following contents:
 +
 [options="nowrap",subs="attributes+"]
 ----
@@ -97,10 +97,10 @@ when(condition)
   - <LINKS> <7>
 ----
 +
-<1> Unique ID for your rule, for instance, `jboss5-web-class-loading`.
+<1> Unique ID for your rule. For example, `jboss5-web-class-loading`.
 <2> Text description of the rule.
 <3> Complete the `when` block specifying one or more conditions:
-.. Use the `builtin` provider’s XML capability because this rule checks for a match in an XML file.
+.. Use the `builtin` provider's XML capability because this rule checks for a match in an XML file.
 .. To match on the `class-loading` element that is a child of `jboss-web`, use the XPath expression `jboss-web/web-loading` as an XML query. In this case, you need just one condition:
 +
 [options="nowrap",subs="attributes+"]
@@ -146,7 +146,7 @@ The rule is now complete and looks similar to the following:
 == Installing the rule
 
 .Procedure
-. Point the CLI  to the rule file you created :
+* Point the CLI  to the rule file you created :
 +
 [options="nowrap",subs="attributes+"]
 ----
@@ -157,7 +157,7 @@ The rule is now complete and looks similar to the following:
 == Testing the rule
 
 .Procedure
-To test the rule, point the input to the test data you created and pass the rule using the rules option in MTA CLI:
+* To test the rule, point the input to the test data you created and pass the rule using the rules option in MTA CLI:
 
 [options="nowrap",subs="attributes+"]
 ----
