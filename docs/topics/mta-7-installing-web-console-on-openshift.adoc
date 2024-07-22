@@ -161,7 +161,7 @@ The most commonly used CR settings are listed in this table:
 |====
 +
 .Example YAML file
-[sample,YAML]
+[source,YAML]
 ----
 kind: Tackle
 apiVersion: tackle.konveyor.io/v1alpha1
@@ -220,7 +220,6 @@ When installed on https://developers.redhat.com/products/openshift-local/overvie
 |Memory (GiB)
 |Description
 
-
 |`10`
 |{ProductShortName} cannot run the analysis due to insufficient memory
 
@@ -264,17 +263,11 @@ To prevent out-of-memory events and protect nodes, use the `--eviction-hard` set
 
 The amount of memory available for running pods on this node is 28.9 GiB. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
 
-
 == Red Hat Single Sign-On
-{ProductShortName} delegates authentication and authorization to a
-https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
-Hat Single Sign-On] (RHSSO) instance managed by the {ProductShortName} operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the {ProductShortName} operator also manages the configuration of a dedicated
+{ProductShortName} delegates authentication and authorization to a https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red Hat Single Sign-On] (RHSSO) instance managed by the {ProductShortName} operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the {ProductShortName} operator also manages the configuration of a dedicated
 https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms[realm] that contains all the roles and permissions that {ProductShortName} requires.
 
-If an advanced configuration is required in the {ProductShortName} managed RHSSO instance, such as https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding
-a provider for User Federation] or https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating
-identity providers], users can log into the RHSSO https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[Admin
-Console] through the `/auth/admin` subpath in the `{LC_PSN}-ui` route. The admin credentials to access the {ProductShortName} managed RHSSO instance can be retrieved from the `credential-mta-rhsso` secret available in the namespace in which the {WebName} was installed.
+If an advanced configuration is required in the {ProductShortName} managed RHSSO instance, such as https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating identity providers], administrators can log in to the RHSSO https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[Admin Console] through the `/auth/admin` subpath in the `{LC_PSN}-ui` route. The admin credentials to access the {ProductShortName} managed RHSSO instance can be retrieved from the `credential-mta-rhsso` secret available in the namespace in which the {WebName} was installed.
 
 A dedicated route for the {ProductShortName} managed RHSSO instance can be created by setting the `rhsso_external_access` parameter to `True` in the *Tackle CR* that manages the {ProductShortName} instance.
 
@@ -282,7 +275,41 @@ For more information, see
 https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red
 Hat Single Sign-On features and concepts].
 
-=== Roles and Permissions
+=== Roles, Personas, Users, and Permissions
+
+{ProductShortName} makes use of three roles, each of which corresponds to a persona:
+
+.Roles and personas
+[cols="50%,50%", options="header"]
+|====
+|Role
+|Persona
+
+|`tackle-admin`
+|Administrator
+
+|`tackle-architect`
+|Architect
+
+|`tackle-migrator`
+|Migrator
+|====
+
+The roles are already defined in your RHSSO instance. You do not need to create them.
+
+If you are an {ProductShortName} administrator, you can create users in your RHSSO and assign each user one or more roles, one role per persona.
+
+==== Roles and Personas
+
+Although a user can have more than one role, each role corresponds to a specific persona:
+
+* Administrator: An administrator has all the permissions that architects and migrators have, along with access to some application-wide configuration parameters that other users can consume but cannot change or view. Examples: Git credentials, Maven `settings.xml` files.
+
+* Architect: A technical lead for the migration project that can create and modify applications and information related to them. An architect cannot modify or delete sensitive information, but can consume it. Example: Associate an existing credential to the repository of a specific application.
+
+* Migrator: A developer who can analyze applications, but not create, modify, or delete them.
+
+==== Roles and permissions
 
 The following table contains the roles and permissions (scopes) that {ProductShortName} seeds the managed RHSSO instance with:
 
