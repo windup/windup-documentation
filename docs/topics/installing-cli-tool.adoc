@@ -67,7 +67,7 @@ Password: <***********>
 +
 [source,terminal]
 ----
-podman cp $(podman create registry.redhat.com/mta-toolkit/mta-mta-cli-rhel9:{ProductVersion}):/usr/local/bin/mta-cli ./
+podman cp $(podman create registry.redhat.io/mta/mta-rhel8-operator:{PodmanProductVersion}):/usr/local/bin ./
 ----
 +
 This command will copy the binary `PATH` for system-wide use.
