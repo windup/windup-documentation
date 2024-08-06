@@ -72,7 +72,7 @@ For more details, see link:https://access.redhat.com/security/cve/CVE-2024-24786
 
 A flaw was found in versions of the `follow-redirects` package before 1.1.5. This flaw occurs when `follow-redirects` handles cross-domain redirects. It fails to clear the `proxy-authentication` header, which may contain credentials, while it clears the authorization header. As a result, this vulnerability could potentially lead to the leak of sensitive credentials. 
 
-For more details, see line:https://access.redhat.com/security/cve/CVE-2024-28849[(CVE-2024-28849)].
+For more details, see link:https://access.redhat.com/security/cve/cveCVE-2024-28849[(CVE-2024-28849)].
 
 .Fixed incorrect assessment status when running an assessment on two questionnaires
 
