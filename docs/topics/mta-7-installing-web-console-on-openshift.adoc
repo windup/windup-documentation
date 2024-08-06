@@ -316,6 +316,26 @@ Administrators have complete access to both the *Administration* and *Migration*
 +
 Architects and migrators do not have any access to the *Administration* view. They cannot even see it. Architects and migrators can see all elements of *Migration* view, but their ability to perform actions in *Migration* view depends on the permissions granted to their role.
 
+
+The ability of administrators, architects, and migrators to access the *Administration* and *Migration* views of the (ProductShortName) {WebName} is summarized in the table below:
+
+.Roles vs. access to {ProductShortName} views
+[cols=",,,",options="header",]
+|===
+|Menu
+|Architect
+|Migrator
+|Admin
+|Administration
+|No
+|No
+|Yes
+|Migration
+|Yes
+|Yes
+|Yes
+|===
+
 [id="mta-roles-permissions_{context}"]
 ==== Roles and permissions
 
