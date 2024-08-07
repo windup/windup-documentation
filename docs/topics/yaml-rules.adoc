@@ -1,0 +1,26 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="open-yaml-rule_{context}"]
+= Using existing YAML rules
+
+You can open and edit existing {ProductShortName} YAML-based rule. This assumes that you have already installed {ProductShortName}. See link:{ProductDocUserGuideURL}/index#installing_and_running_the_cli[Installing and running the CLI] in the _{UserCLIBookName}_ for installation instructions.
+
+To access the repository of YAML rule files, you must fork and clone an existing rule from the Red Hat Konveyor rules repository.
+
+[id="yaml-rules-repository_{context}"]
+== Replicate YAML rules library
+
+You can fork and clone the {ProductShortName} YAML rule files on your local machine.
+
+The YAML-based rules are located on GitHub at the following location: link:https://github.com/konveyor/rulesets/tree/main/default/generated[https://github.com/konveyor/rulesets/tree/main/default/generated].
+
+The rules are numbered and grouped according to target platform. When you create a new rule, it is helpful to find a rule that is similar to the one you need and use it as a starting template. 
+
+New YAML rules are continuously added, so it is a good idea to check back frequently to review the updates.
+
+
+
+
