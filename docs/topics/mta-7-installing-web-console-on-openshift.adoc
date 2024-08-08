@@ -40,18 +40,13 @@ To successfully deploy, the {ProductShortName} Operator requires 3 RWO persisten
 |RWO
 |Keycloak back end database
 
-|`pathfinder postgresql`
-|1 GiB
-|RWO
-|Pathfinder back end database
-
 |`cache`
 |100 GiB
 |RWX
 |Maven m2 cache; required if the `rwx_supported` configuration option is set to `true`
 |====
 
-[id="installing-mtv-operator-and-ui_{context}"]
+[id="installing-mta-operator-and-ui_{context}"]
 == Installing the {ProductName} Operator and the {WebName}
 
 You can install the {ProductName} ({ProductShortName}) and the {WebName} on Red Hat OpenShift versions 4.13-4.15.
@@ -210,7 +205,7 @@ mirror:
   helm: {}
 ----
 
-[id="memory-requirements-mtv-openshift-local_{context}"]
+[id="memory-requirements-mta-openshift-local_{context}"]
 == Memory requirements for running {ProductShortName} on Red Hat OpenShift Local
 
 When installed on https://developers.redhat.com/products/openshift-local/overview[Red Hat OpenShift Local], {ProductShortName} requires a minimum amount of memory to complete its analysis. Adding memory makes the analysis process run faster. The table below describes the {ProductShortName} performance with varying amounts of memory.
@@ -306,11 +301,11 @@ If you are an {ProductShortName} administrator, you can create users in your RHS
 
 Although a user can have more than one role, each role corresponds to a specific persona:
 
-* Administrator: An administrator has all the permissions that architects and migrators have, along with access to some application-wide configuration parameters that other users can consume but cannot change or view. Examples: Git credentials, Maven `settings.xml` files.
+* Administrator: An administrator has all the permissions that architects and migrators have,  along with the ability to create some application-wide configuration parameters that other users can consume but cannot change or view. Examples: Git credentials, Maven `settings.xml` files.
 +
 Administrators have complete access to both the *Administration* and *Migration* views. Administrators can perform all actions supported by these views.
 
-* Architect: A technical lead for the migration project that can create and modify applications and information related to them. An architect cannot modify or delete sensitive information, but can consume it. Example: Associate an existing credential to the repository of a specific application.
+* Architect:  A technical lead for the migration project who can run assessments and can create and modify applications and information related to them. An architect cannot modify or delete sensitive information, but can consume it. Example: Associate an existing credential to the repository of a specific application.
 
 * Migrator: A user who can analyze applications, but not create, modify, or delete them.
 +
