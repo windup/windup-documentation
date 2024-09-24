@@ -1,0 +1,80 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-09-24
+:_mod-docs-content-type: PROCEDURE
+
+[id="installing-java-development-kit_{context}"]
+= Installing Java Development Kit
+
+You must have the Java Development Kit (JDK) installed on your system prior to installing the Eclipse integrated development environment (IDE). {ProductFullName} supports the following JDKs: 		
+
+* OpenJDK 11 							
+* OpenJDK 17 							
+* Oracle JDK 11 							
+* Oracle JDK 17 							
+* Eclipse Temurin™ JDK 11 							
+* Eclipse Temurin™ JDK 17 		
+
+.Procedure
+
+. From the link:https://www.oracle.com/java/technologies/downloads/#java11[Oracle JDK download page], download the JDK `tar.gz` file suitable for your system.
++ 
+[NOTE]
+====
+You need to accept the Oracle license agreement to proceed.
+====
++
+Alternatively, you can download JDK by using the command-line interface:
++
+[source,terminal,subs="attributes+"]
+----
+$ wget https://download.oracle.com/java/11/latest/<jdk-file>
+----
+
+. Extract the `tar.gz` file:
++
+[source,terminal,subs="attributes+"]
+----
+$ tar -xzf <jdk-file>
+----
+
+. Optional: To make JDK available system-wide, move the extracted folder to the `/opt` directory: 
++
+[source,terminal,subs="attributes+"]
+----
+$ sudo mv <jdk-extracted-folder> /opt/<jdk-file>
+----
+
+. Set up the `JAVA_HOME` environment variable and add the JDK `bin` directory to the `PATH` variable:
+
+.. Open the `.bashrc` file:
++
+[source,terminal,subs="attributes+"]
+----
+$ nano ~/.bashrc
+----
+
+.. Add the following lines to the file:
++
+[source,terminal,subs="attributes+"]
+----
+export JAVA_HOME=/opt/<jdk-file>
+export PATH=$PATH:$JAVA_HOME/bin
+----
+
+.. Save the file and close it. 
+.. To apply the new changes, reload the file:
++
+[source,terminal,subs="attributes+"]
+----
+$ source ~/.bashrc
+----
+
+
+.Verification
+
+* Use the `java --version` command to verify the installed JDK version:
++
+[source,terminal,subs="attributes+"]
+----
+$ java --version
+----
