@@ -1,0 +1,25 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-09-24
+:_mod-docs-content-type: PROCEDURE
+
+[id="adding-jboss-tools-dependencies-for-the-mta-plug-in_{context}"]
+= Adding Jboss Tools dependencies for the {ProductShortName} plug-in
+
+JBoss Tools dependencies are required by Eclipse during the {ProductFullName} plug-in installation process. 
+
+.Prerequisites
+
+* You have the Java Development Kit (JDK) installed on your system. For more information, see xref:installing-java-development-kit_eclipse-code-ready-studio-guide[Installing Java Development Kit]. {ProductShortName} supports the following JDKs: 
+
+* OpenJDK 11 							
+* OpenJDK 17 							
+* Oracle JDK 11 							
+* Oracle JDK 17 							
+* Eclipse Temurin™ JDK 11 							
+* Eclipse Temurin™ JDK 17 		
+
+.Procedure
+
+. Launch Eclipse. 					
+. From the menu bar, select *Help Install New Software*. 					
+. Add the JBoss Tools update website by specifying the `\https://download.jboss.org/jbosstools/photon/development/updates/` location.

@@ -9,7 +9,7 @@
 
 You need a connected environment to install the {PluginName}.
 
-The {PluginName} has been tested with the Eclipse IDE for Java Enterprise Developers 2023-03.
+The {PluginName} has been tested with the Eclipse integrated development environment (IDE) for Java Enterprise Developers 2023-03.
 
 .Prerequisites
 
@@ -17,6 +17,11 @@ include::snippet_jdk-hardware-mac-prerequisites.adoc[leveloffset=0]
 
 * link:https://www.eclipse.org/downloads/packages/release/2023-03/r/eclipse-ide-java-developers[Eclipse IDE for Java Enterprise Developers 2023-03]
 * JBoss Tools, installed from the link:https://marketplace.eclipse.org/content/jboss-tools[Eclipse Marketplace]
++
+[IMPORTANT]
+====
+You must also add JBoss Tools dependencies that are required by Eclipse during the {ProductShortName} plug-in installation process. For more information, see xref:adding-jboss-tools-dependencies-for-the-mta-plug-in_eclipse-code-ready-studio-guide[Adding JBoss Tools dependencies for the {ProductShortName} plug-in].
+====
 * link:http://download.eclipse.org/mylyn/releases/latest[Mylyn SDK and frameworks], installed with Eclipse
 
 [NOTE]

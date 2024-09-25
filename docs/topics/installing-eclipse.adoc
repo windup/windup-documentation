@@ -1,0 +1,68 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2024-09-24
+:_mod-docs-content-type: PROCEDURE
+
+[id="installing-eclipse_{context}"]
+= Installing Eclipse
+
+Eclipse is an integrated development environment (IDE) that you can use to install the {ProductFullName} plug-in used for migrating and modernizing applications. 			
+
+.Prerequisites
+
+* You have the Java Development Kit (JDK) installed on your system. For more information, see xref:installing-java-development-kit_eclipse-code-ready-studio-guide[Installing Java Development Kit]. {ProductShortName} supports the following JDKs: 	
+	
+** OpenJDK 11 							
+** OpenJDK 17 							
+** Oracle JDK 11 							
+** Oracle JDK 17 							
+** Eclipse Temurin™ JDK 11 							
+** Eclipse Temurin™ JDK 17 		
+
+.Procedure
+
+. From the link:https://www.eclipse.org/downloads/packages/release/2024-03/r[Eclipse download page], download the required Eclipse IDE `tar.gz` file, for example, *Eclipse IDE for Java Developers*.
+. Extract the `tar.gz` file:
++
+[source,terminal,subs="attributes+"]
+----
+$ tar -xzf <file_name>.tar.gz
+----
+
+. Optional: To make Eclipse available system-wide, move the extracted folder to the `/opt` directory: 
++
+[source,terminal,subs="attributes+"]
+----
+$ sudo mv eclipse /opt/eclipse
+----
+
+. Optional: To make Eclipse launch from the command line, create a symbolic link to the executable:
++
+[source,terminal,subs="attributes+"]
+----
+$ sudo ln -s /opt/eclipse/eclipse /usr/bin/eclipse
+----
+
+. Optional: To launch Eclipse from you application menu, create a desktop entry:
+
+.. Create a new `eclipse.desktop` file:
++
+[source,terminal,subs="attributes+"]
+----
+sudo nano /usr/share/applications/eclipse.desktop
+----
+
+.. Add the following content to the `eclipse.desktop` file:
++
+[source,terminal,subs="attributes+"]
+----
+[Desktop Entry]
+Name=Eclipse IDE 2024-03
+Type=Application
+Exec=/opt/eclipse/eclipse
+Terminal=false
+Icon=/opt/eclipse/icon.xpm
+Comment=Intergrated DEvelopment Environment
+NoDisplay=false
+Categories=Development;IDE;
+Name[en]=Eclipse IDE 2024-03
+----
