@@ -1,0 +1,5499 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/web-console-guide/master/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/web-console-guide/master/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/web-console-guide/master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1>User Interface Guide</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#making-open-source-more-inclusive">Making open source more inclusive</a></li>
+<li><a href="#mta-6-ui-guide-introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#mta-about-console-guide_user-interface-guide">1.1. About the User Interface Guide</a></li>
+<li><a href="#mta-what-is-the-toolkit_user-interface-guide">1.2. About the Migration Toolkit for Applications</a></li>
+<li><a href="#about-the-user-interface_user-interface-guide">1.3. About the user interface</a></li>
+</ul>
+</li>
+<li><a href="#mta-6-ui-interface-views">2. User interface views</a></li>
+<li><a href="#mta-7-installing-web-console-on-openshift_user-interface-guide">3. Installing the Migration Toolkit for Applications user interface</a>
+<ul class="sectlevel2">
+<li><a href="#openshift-persistent-volume-requirements_user-interface-guide">3.1. Persistent volume requirements</a></li>
+<li><a href="#installing-the-migration-toolkit-for-applications-operator-and-the-user-interface">3.2. Installing the Migration Toolkit for Applications Operator and the user interface</a></li>
+<li><a href="#installing-mta-operator-in-disconnected-environment_user-interface-guide">3.3. Installing the Migration Toolkit for Applications Operator in a disconnected Red Hat OpenShift environment</a></li>
+<li><a href="#memory-requirements-for-running-mta-on-red-hat-openshift-local">3.4. Memory requirements for running MTA on Red Hat OpenShift Local</a>
+<ul class="sectlevel3">
+<li><a href="#eviction-threshold_user-interface-guide">3.4.1. Eviction threshold</a></li>
+</ul>
+</li>
+<li><a href="#red-hat-single-sign-on">3.5. Red Hat Single Sign-On</a>
+<ul class="sectlevel3">
+<li><a href="#roles-and-permissions">3.5.1. Roles and Permissions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#configuring-the-instance-environment">4. Configuring the instance environment</a>
+<ul class="sectlevel2">
+<li><a href="#general-configuration">4.1. General</a></li>
+<li><a href="#configuring-credentials">4.2. Configuring credentials</a>
+<ul class="sectlevel3">
+<li><a href="#mta-web-config-source-control-credentials_user-interface-guide">4.2.1. Configuring source control credentials</a></li>
+<li><a href="#mta-web-config-maven-credentials_user-interface-guide">4.2.2. Configuring Maven credentials</a></li>
+<li><a href="#mta-web-config-proxy-credentials_user-interface-guide">4.2.3. Configuring proxy credentials</a></li>
+</ul>
+</li>
+<li><a href="#configuring-repositories">4.3. Configuring repositories</a>
+<ul class="sectlevel3">
+<li><a href="#mta-web-config-git-repos_user-interface-guide">4.3.1. Configuring Git repositories</a></li>
+<li><a href="#mta-web-config-subversion-repos_user-interface-guide">4.3.2. Configuring subversion repositories</a></li>
+<li><a href="#configuring-maven-repositories">4.3.3. Configuring a Maven repository and reducing its size</a></li>
+</ul>
+</li>
+<li><a href="#mta-web-proxy-config_user-interface-guide">4.4. Configuring HTTP and HTTPS proxy settings</a></li>
+<li><a href="#mta-web-seeding-instances_user-interface-guide">4.5. Seeding an instance</a>
+<ul class="sectlevel3">
+<li><a href="#creating-a-new-stakeholder-group">4.5.1. Creating a new stakeholder group</a></li>
+<li><a href="#creating-a-new-job-function">4.5.2. Creating a new job function</a></li>
+<li><a href="#creating-a-new-stakeholder">4.5.3. Creating a new stakeholder</a></li>
+<li><a href="#creating-a-new-business-service">4.5.4. Creating a new business service</a></li>
+<li><a href="#creating-new-tag-categories">4.5.5. Creating new tag categories</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#creating-configuring-jira-connection">5. Creating and configuring a Jira connection</a>
+<ul class="sectlevel2">
+<li><a href="#mta-web-config-jira-credentials_user-interface-guide">5.1. Configuring Jira credentials</a></li>
+<li><a href="#mta-web-create-config-jira-connection_user-interface-guide">5.2. Creating and configuring a Jira connection</a></li>
+</ul>
+</li>
+<li><a href="#working-with-applications-in-the-ui">6. Managing applications with MTA</a>
+<ul class="sectlevel2">
+<li><a href="#mta-web-adding-applications_user-interface-guide">6.1. Adding a new application</a></li>
+<li><a href="#mta-web-edit-application_user-interface-guide">6.2. Editing an application</a></li>
+<li><a href="#mta-web-assigning-application-credentials_user-interface-guide">6.3. Assigning credentials to an application</a></li>
+<li><a href="#mta-web-importing-an-app-list_user-interface-guide">6.4. Importing a list of applications</a></li>
+<li><a href="#mta-web-downloading-app-list-template_user-interface-guide">6.5. Downloading a CSV template</a></li>
+<li><a href="#mta-web-creating-migration-waves_user-interface-guide">6.6. Creating a migration wave</a></li>
+<li><a href="#mta-web-creating-jira-issues-for-migration-wave_user-interface-guide">6.7. Creating Jira issues for a migration wave</a></li>
+</ul>
+</li>
+<li><a href="#assessing-and-analyzing-applications">7. Assessing and analyzing applications with MTA</a>
+<ul class="sectlevel2">
+<li><a href="#mta-assessment-changes-700_user-interface-guide">7.1. The Assessment module features</a></li>
+<li><a href="#mta-introduction-questionnaire_user-interface-guide">7.2. MTA assessment questionnaires</a>
+<ul class="sectlevel3">
+<li><a href="#mta-default-questionnaire_user-interface-guide">7.2.1. The default assessment questionnaire</a></li>
+<li><a href="#mta-custom-questionnaire_user-interface-guide">7.2.2. The custom assessment questionnaire</a></li>
+</ul>
+</li>
+<li><a href="#managing-mta-questionnaires_user-interface-guide">7.3. Managing assessment questionnaires</a></li>
+<li><a href="#mta-web-assessing-apps_user-interface-guide">7.4. Assessing an application</a></li>
+<li><a href="#mta-web-reviewing-apps_user-interface-guide">7.5. Reviewing an application</a></li>
+<li><a href="#mta-web-viewing-an-assessment-report_user-interface-guide">7.6. Reviewing an assessment report</a></li>
+<li><a href="#mta-web-tagging-an-application_user-interface-guide">7.7. Tagging an application</a>
+<ul class="sectlevel3">
+<li><a href="#creating-application-tags_user-interface-guide">7.7.1. Creating application tags</a></li>
+<li><a href="#manual-tagging-of-an-application_user-interface-guide">7.7.2. Manually tagging an application</a></li>
+<li><a href="#automatic-tagging-of-an-application_user-interface-guide">7.7.3. Automatic tagging</a></li>
+<li><a href="#displaying-the-tags-of-an-application_user-interface-guide">7.7.4. Displaying application tags</a></li>
+</ul>
+</li>
+<li><a href="#mta-archetypes_user-interface-guide">7.8. Working with archetypes</a>
+<ul class="sectlevel3">
+<li><a href="#defining-an-archetype_user-interface-guide">7.8.1. Creating an archetype</a></li>
+<li><a href="#archetype-assessment_user-interface-guide">7.8.2. Archetype assessment</a></li>
+<li><a href="#deleting-an-archetype_user-interface-guide">7.8.3. Deleting an archetype</a></li>
+</ul>
+</li>
+<li><a href="#analyzing-an-application_user-interface-guide">7.9. Analyzing an application</a>
+<ul class="sectlevel3">
+<li><a href="#mta-web-configuring-and-running-an-application-analysis_user-interface-guide">7.9.1. Configuring and running an application analysis</a></li>
+<li><a href="#mta-web-reviewing-an-analysis-report_user-interface-guide">7.9.2. Reviewing an analysis report</a></li>
+<li><a href="#mta-web-downloading-an-analysis-report_user-interface-guide">7.9.3. Downloading an analysis report</a></li>
+</ul>
+</li>
+<li><a href="#mta-web-creating-custom-migration-targets_user-interface-guide">7.10. Creating custom migration targets</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="making-open-source-more-inclusive">Making open source more inclusive</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-6-ui-guide-introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="mta-about-console-guide_user-interface-guide">1.1. About the User Interface Guide</h3>
+<div class="paragraph">
+<p>This guide is for architects, engineers, consultants, and others who want to use the Migration Toolkit for Applications (MTA) user interface to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The migration solution that was provided in the Migration Toolkit for Applications 5.<em>x</em> releases (migration and modernization of Java applications) is now available with Migration Toolkit for Runtimes 1.0.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-what-is-the-toolkit_user-interface-guide">1.2. About the Migration Toolkit for Applications</h3>
+<h4 id="what-is-the-migration-toolkit-for-applications" class="discrete">What is the Migration Toolkit for Applications?</h4>
+<div class="paragraph">
+<p>Migration Toolkit for Applications (MTA) accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.</p>
+</div>
+<div class="paragraph">
+<p>MTA uses an extensive default questionnaire as the basis for assessing your applications, or you can create your own custom questionnaire, enabling you to estimate the difficulty, time, and other resources needed to prepare an application for containerization. You can use the results of an assessment as the basis for discussions between stakeholders to determine which applications are good candidates for containerization, which require significant work first, and which are not suitable for containerization.</p>
+</div>
+<div class="paragraph">
+<p>MTA analyzes applications by applying one or more rulesets to each application considered to determine which specific lines of that application must be modified before it can be modernized.</p>
+</div>
+<div class="paragraph">
+<p>MTA examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes.</p>
+</div>
+<h4 id="how-does-the-migration-toolkit-for-applications-simplify-migration" class="discrete">How does the Migration Toolkit for Applications simplify migration?</h4>
+<div class="paragraph">
+<p>The Migration Toolkit for Applications looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
+</div>
+<div class="paragraph">
+<p>MTA generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about-the-user-interface_user-interface-guide">1.3. About the user interface</h3>
+<div class="paragraph">
+<p>The user interface for the Migration Toolkit for Applications allows a team of users to assess and analyze applications for risks and suitability for migration to hybrid cloud environments on Red Hat OpenShift.</p>
+</div>
+<div class="paragraph">
+<p>Use the user interface to assess and analyze your applications to get insights about potential pitfalls in the adoption process, at both the portfolio and application levels as you inventory, assess, analyze, and manage applications for faster migration to OpenShift.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-6-ui-interface-views">2. User interface views</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Migration Toolkit for Applications (MTA) user interface has two views:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Administration view</p>
+</li>
+<li>
+<p>Migration view</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In <strong>Administration</strong> view, you configure the instance environment, working with credentials, repositories, HTTP and HTTPS proxy definitions, custom migration targets, and issue management.</p>
+</div>
+<div class="paragraph">
+<p>In <strong>Migration</strong> view, you perform application assessments and analyses, review reports, and add applications for assessment and analysis.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="mta-7-installing-web-console-on-openshift_user-interface-guide">3. Installing the Migration Toolkit for Applications user interface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can install the Migration Toolkit for Applications (MTA) user interface on all Red Hat OpenShift cloud services and Red Hat OpenShift self-managed editions.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+To be able to create MTA instances, you must first install the MTA Operator.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The MTA Operator is a structural layer that manages resources deployed on OpenShift, such as database, front end, and back end, to automatically create an MTA instance.</p>
+</div>
+<div class="sect2">
+<h3 id="openshift-persistent-volume-requirements_user-interface-guide">3.1. Persistent volume requirements</h3>
+<div class="paragraph">
+<p>To successfully deploy, the MTA Operator requires 3 RWO persistent volumes (PVs) used by different components. If the <code>rwx_supported</code> configuration option is set to <code>true</code>, the MTA Operator requires an additional 2 RWX PVs that are used by Maven and the hub file storage. The PVs are described in the table below:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Required persistent volumes</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Default size</th>
+<th class="tableblock halign-left valign-top">Access mode</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub database</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hub database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub bucket</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hub file storage; required if the <code>rwx_supported</code> configuration option is set to <code>true</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>keycloak postgresql</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keycloak back end database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pathfinder postgresql</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWO</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pathfinder back end database</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 GiB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RWX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maven m2 cache; required if the <code>rwx_supported</code> configuration option is set to <code>true</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="installing-the-migration-toolkit-for-applications-operator-and-the-user-interface">3.2. Installing the Migration Toolkit for Applications Operator and the user interface</h3>
+<div class="paragraph">
+<p>You can install the Migration Toolkit for Applications (MTA) and the user interface on Red Hat OpenShift versions 4.13-4.15.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>4 vCPUs, 8 GiB RAM, and 40 GiB persistent storage.</p>
+</li>
+<li>
+<p>Any cloud services or self-hosted edition of Red Hat OpenShift on versions 4.13-4.15.</p>
+</li>
+<li>
+<p>You must be logged in as a user with <code>cluster-admin</code> permissions.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://access.redhat.com/support/policy/updates/openshift_operators">OpenShift Operator Life Cycles</a>.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the Red Hat OpenShift web console, click <strong>Operators → OperatorHub</strong>.</p>
+</li>
+<li>
+<p>Use the <strong>Filter by keyword</strong> field to search for <strong>MTA</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Migration Toolkit for Applications</strong> Operator and then click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>On the <strong>Install Operator</strong> page, click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Operators → Installed Operators</strong> to verify that the MTA Operator appears in the <code>openshift-mta</code> project with the status <code>Succeeded</code>.</p>
+</li>
+<li>
+<p>Click the <strong>MTA</strong> Operator.</p>
+</li>
+<li>
+<p>Under <strong>Provided APIs</strong>, locate <strong>Tackle</strong>, and click <strong>Create Instance</strong>.</p>
+<div class="paragraph">
+<p>The <strong>Create Tackle</strong> window opens in <strong>Form</strong> view.</p>
+</div>
+</li>
+<li>
+<p>Review the custom resource (CR) settings. The default choices should be acceptable, but make sure to check the system requirements for storage, memory, and cores.</p>
+</li>
+<li>
+<p>To work directly with the YAML file, click <strong>YAML</strong> view and review the CR settings that are listed in the <code>spec</code> section of the YAML file.</p>
+<div class="paragraph">
+<p>The most commonly used CR settings are listed in this table:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Tackle CR settings</caption>
+<colgroup>
+<col style="width: 36.3636%;">
+<col style="width: 13.6363%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Default</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache_data_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the cache volume; ignored when <code>rwx_supported=false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>cache_storage_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default storage class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage class used for the cache volume; ignored when <code>rwx_supported=false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>feature_auth_required</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>True</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to indicate whether keycloak authorization is required (single user/&#8220;noauth&#8221;)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>feature_isolate_namespace</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>True</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to indicate whether namespace isolation using network policies is enabled</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_database_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>10 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the Hub database volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_bucket_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the Hub bucket volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>hub_bucket_storage_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default storage class</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage class used for the bucket volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>keycloak_database_data_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the Keycloak database volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pathfinder_database_data_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the Pathfinder database volume</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven_data_volume_size</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100 GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Size requested for the Maven m2 cache volume; deprecated in MTA 6.0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rwx_storage_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage class requested for the Tackle RWX volumes; deprecated in MTA 6.0.1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rwx_supported</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>True</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to indicate whether the cluster storage supports RWX mode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rwo_storage_class</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NA</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage class requested for the Tackle RW0 volumes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rhsso_external_access</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>False</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Flag to indicate whether a dedicated route is created to access the MTA managed RHSSO instance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_limits_cpu</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum number of CPUs the pod is allowed to use</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_limits_memory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>4GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maximum amount of memory the pod is allowed to use. You can increase this limit if the pod displays <code>OOMKilled</code> errors.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_requests_cpu</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum number of CPUs the pod needs to run</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>analyzer_container_requests_memory</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>4GiB</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Minimum amount of memory the pod needs to run</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title">Example YAML file</div>
+<div class="content">
+<pre>kind: Tackle
+apiVersion: tackle.konveyor.io/v1alpha1
+metadata:
+  name: mta
+  namespace: openshift-mta
+spec:
+  hub_bucket_volume_size: "25Gi"
+  maven_data_volume_size: "25Gi"
+  rwx_supported: "false"</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Edit the CR settings if needed, and then click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Workloads &#8594; Pods</strong> to verify that the MTA pods are running.</p>
+</li>
+<li>
+<p>Access the user interface from your browser by using the route exposed by the <code>mta-ui</code> application within OpenShift.</p>
+</li>
+<li>
+<p>Use the following credentials to log in:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>User name</strong>: admin</p>
+</li>
+<li>
+<p><strong>Password</strong>: Passw0rd!</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When prompted, create a new password.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installing-mta-operator-in-disconnected-environment_user-interface-guide">3.3. Installing the Migration Toolkit for Applications Operator in a disconnected Red Hat OpenShift environment</h3>
+<div class="paragraph">
+<p>You can install the MTA Operator in a disconnected environment by following the instructions in <a href="https://access.redhat.com/documentation/en-us/openshift_container_platform/4.15/html/installing/disconnected-installation-mirroring#installing-mirroring-disconnected">generic procedure</a>.</p>
+</div>
+<div class="paragraph">
+<p>In step 1 of the generic procedure, configure the image set for mirroring as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">kind: ImageSetConfiguration
+apiVersion: mirror.openshift.io/v1alpha2
+storageConfig:
+  registry:
+    imageURL: registry.to.mirror.to
+    skipTLS: false
+mirror:
+  operators:
+  - catalog: registry.redhat.io/redhat/redhat-operator-index:v4.15
+    packages:
+    - name: mta-operator
+      channels:
+      - name: stable-v7.0
+    - name: rhsso-operator
+      channels:
+      - name: stable
+  helm: {}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="memory-requirements-for-running-mta-on-red-hat-openshift-local">3.4. Memory requirements for running MTA on Red Hat OpenShift Local</h3>
+<div class="paragraph">
+<p>When installed on <a href="https://developers.redhat.com/products/openshift-local/overview">Red Hat OpenShift Local</a>, MTA requires a minimum amount of memory to complete its analysis. Adding memory makes the analysis process run faster. The table below describes the MTA performance with varying amounts of memory.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. OpenShift Local MTA memory requirements</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Memory (GiB)</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>10</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MTA cannot run the analysis due to insufficient memory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>11</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MTA cannot run the analysis due to insufficient memory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>12</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MTA works and the analysis is completed in approximately 3 minutes</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>15</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MTA works and the analysis is completed in less than 2 minutes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>20</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MTA works quickly, and the analysis is completed in less than 1 minute</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The test results indicate that the minimum amount of memory for running MTA on OpenShift Local is <strong>12 GiB</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The tests were performed by running the MTA binary analysis through the user interface.</p>
+</li>
+<li>
+<p>All the analyses used the <code>tackle-testapp</code> binary.</p>
+</li>
+<li>
+<p>All the tests were conducted on an OpenShift Local cluster without the monitoring tools installed.</p>
+</li>
+<li>
+<p>Installing the cluster monitoring tools requires an additional 5 GiB of memory.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="eviction-threshold_user-interface-guide">3.4.1. Eviction threshold</h4>
+<div class="paragraph">
+<p>Each node has a certain amount of memory allocated to it. Some of that memory is reserved for system services. The rest of the memory is intended for running pods. If the pods use more than their allocated amount of memory, an out-of-memory event is triggered and the node is terminated with a <code>OOMKilled</code> error.</p>
+</div>
+<div class="paragraph">
+<p>To prevent out-of-memory events and protect nodes, use the <code>--eviction-hard</code> setting. This setting specifies the threshold of memory availability below which the node evicts pods. The value of the setting can be absolute or a percentage.</p>
+</div>
+<div class="ulist">
+<div class="title">Example of node memory allocation settings</div>
+<ul>
+<li>
+<p>Node capacity: <code>32 GiB</code></p>
+</li>
+<li>
+<p><code>--system-reserved</code> setting: <code>3 GiB</code></p>
+</li>
+<li>
+<p><code>--eviction-hard</code> setting: <code>100 MiB</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The amount of memory available for running pods on this node is 28.9 GiB. This amount is calculated by subtracting the <code>system-reserved</code> and <code>eviction-hard</code> values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="red-hat-single-sign-on">3.5. Red Hat Single Sign-On</h3>
+<div class="paragraph">
+<p>MTA delegates authentication and authorization to a
+<a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6">Red
+Hat Single Sign-On</a> (RHSSO) instance managed by the MTA operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the MTA operator also manages the configuration of a dedicated
+<a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms">realm</a> that contains all the roles and permissions that MTA requires.</p>
+</div>
+<div class="paragraph">
+<p>If an advanced configuration is required in the MTA managed RHSSO instance, such as <a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider">adding
+a provider for User Federation</a> or <a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker">integrating
+identity providers</a>, users can log into the RHSSO <a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console">Admin
+Console</a> through the <code>/auth/admin</code> subpath in the <code>mta-ui</code> route. The admin credentials to access the MTA managed RHSSO instance can be retrieved from the <code>credential-mta-rhsso</code> secret available in the namespace in which the user interface was installed.</p>
+</div>
+<div class="paragraph">
+<p>A dedicated route for the MTA managed RHSSO instance can be created by setting the <code>rhsso_external_access</code> parameter to <code>True</code> in the <strong>Tackle CR</strong> that manages the MTA instance.</p>
+</div>
+<div class="paragraph">
+<p>For more information, see
+<a href="https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts">Red
+Hat Single Sign-On features and concepts</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="roles-and-permissions">3.5.1. Roles and Permissions</h4>
+<div class="paragraph">
+<p>The following table contains the roles and permissions (scopes) that MTA seeds the managed RHSSO instance with:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 34%;">
+<col style="width: 33%;">
+<col style="width: 33%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tackle-admin</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Resource Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Verbs</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">adoptionplans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">post<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.facts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assessments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+patch<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">businessservices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jobfunctions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">proxies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reviews</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholdergroups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tagtypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tickets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trackers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rulebundles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tackle-architect</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Resource Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Verbs</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">adoptionplans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">post<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.facts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assessments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+patch<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">businessservices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jobfunctions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">proxies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reviews</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholdergroups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tagtypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trackers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tickets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rulebundles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tackle-migrator</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Resource Name</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Verbs</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addons</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">adoptionplans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">post<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.facts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">applications.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">assessments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br>
+post<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">businessservices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dependencies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">identities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">imports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">jobfunctions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">proxies</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reviews</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholdergroups</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stakeholders</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tags</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tagtypes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tasks.bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete<br>
+get<br>
+post<br>
+put<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tackers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tickets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cache</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">files</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rulebundles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get<br></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuring-the-instance-environment">4. Configuring the instance environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can configure the following in <strong>Administration</strong> view:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>General</p>
+</li>
+<li>
+<p>Credentials</p>
+</li>
+<li>
+<p>Repositories</p>
+</li>
+<li>
+<p>HTTP and HTTPS proxy settings</p>
+</li>
+<li>
+<p>Custom migration targets</p>
+</li>
+<li>
+<p>Issue management</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="general-configuration">4.1. General</h3>
+<div class="paragraph">
+<p>You can enable or disable the following options:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Reviewing applications without running an assessment first</p>
+</li>
+<li>
+<p>Downloading HTML reports</p>
+</li>
+<li>
+<p>Downloading CSV reports</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuring-credentials">4.2. Configuring credentials</h3>
+<div class="paragraph">
+<p>You can configure the following types of credentials in <strong>Administration</strong> view:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Source control</p>
+</li>
+<li>
+<p>Maven</p>
+</li>
+<li>
+<p>Proxy</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="mta-web-config-source-control-credentials_user-interface-guide">4.2.1. Configuring source control credentials</h4>
+<div class="paragraph">
+<p>You can configure source control credentials in the <strong>Credentials</strong> view of the Migration Toolkit for Applications (MTA) user interface.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Credentials</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Description (Optional)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the <strong>Type</strong> list, select <strong>Source Control</strong>.</p>
+</li>
+<li>
+<p>In the <strong>User credentials</strong> list, select <strong>Credential Type</strong> and enter the requested information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Username/Password</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Username</p>
+</li>
+<li>
+<p>Password (hidden)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>SCM Private Key/Passphrase</p>
+<div class="ulist">
+<ul>
+<li>
+<p>SCM Private Key</p>
+</li>
+<li>
+<p>Private Key Passphrase (hidden)</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Type-specific credential information such as keys and passphrases is either hidden or shown as [Encrypted].</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+<div class="paragraph">
+<p>MTA validates the input and creates a new credential. SCM keys must be parsed and checked for validity. If the validation fails, the following error message is displayed: <code>“not a valid key/XML file”</code>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-web-config-maven-credentials_user-interface-guide">4.2.2. Configuring Maven credentials</h4>
+<div class="paragraph">
+<p>You can configure new Maven credentials in the <strong>Credentials</strong> view of the Migration Toolkit for Applications (MTA) user interface.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Credentials</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Description (Optional)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the <strong>Type</strong> list, select <strong>Maven Settings File.</strong></p>
+</li>
+<li>
+<p>Upload the settings file or paste its contents.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+<div class="paragraph">
+<p>MTA validates the input and creates a new credential. The Maven <code>settings.xml</code> file must be parsed and checked for validity. If the validation fails, the following error message is displayed: <code>“not a valid key/XML file”</code>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-web-config-proxy-credentials_user-interface-guide">4.2.3. Configuring proxy credentials</h4>
+<div class="paragraph">
+<p>You can configure proxy credentials in the <strong>Credentials</strong> view of the Migration Toolkit for Applications (MTA) user interface.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Credentials</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Description (Optional)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the <strong>Type</strong> list, select <strong>Proxy</strong>.</p>
+</li>
+<li>
+<p>Enter the following information.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Username</p>
+</li>
+<li>
+<p>Password</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Type-specific credential information such as keys and passphrases is either hidden or shown as [Encrypted].</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+<div class="paragraph">
+<p>MTA validates the input and creates a new credential.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuring-repositories">4.3. Configuring repositories</h3>
+<div class="paragraph">
+<p>You can configure the following types of repositories in <strong>Administration</strong> view:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Git</p>
+</li>
+<li>
+<p>Subversion</p>
+</li>
+<li>
+<p>Maven</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="mta-web-config-git-repos_user-interface-guide">4.3.1. Configuring Git repositories</h4>
+<div class="paragraph">
+<p>You can configure Git repositories in the <strong>Repositories</strong> view of the Migration Toolkit for Applications (MTA) user interface.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Repositories</strong> and then click <strong>Git</strong>.</p>
+</li>
+<li>
+<p>Toggle the <strong>Consume insecure Git repositories</strong> switch to the right.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-web-config-subversion-repos_user-interface-guide">4.3.2. Configuring subversion repositories</h4>
+<div class="paragraph">
+<p>You can configure subversion repositories in the <strong>Repositories</strong> view of the Migration Toolkit for Applications (MTA) user interface.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Repositories</strong> and then click <strong>Subversion</strong>.</p>
+</li>
+<li>
+<p>Toggle the <strong>Consume insecure Subversion repositories</strong> switch to the right.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="configuring-maven-repositories">4.3.3. Configuring a Maven repository and reducing its size</h4>
+<div class="paragraph">
+<p>You can use the MTA user interface to both configure a Maven repository and to reduce its size.</p>
+</div>
+<div class="sect4">
+<h5 id="mta-web-config-maven-repo_user-interface-guide">Configuring a Maven repository</h5>
+<div class="paragraph">
+<p>You can configure a Maven repository in the <strong>Repositories</strong> view of the Migration Toolkit for Applications (MTA) user interface.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the <code>rwx_supported</code> configuration option of the Tackle CR is set to <code>false</code>, the <strong>Consume insecure artifact repositories</strong> switch is disabled and this procedure is not possible.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Repositories</strong> and then click <strong>Maven</strong>.</p>
+</li>
+<li>
+<p>Toggle the <strong>Consume insecure artifact repositories</strong> switch to the right.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="mta-web-config-maven-repo-size_user-interface-guide">Reducing the size of a Maven repository</h5>
+<div class="paragraph">
+<p>You can reduce the size of a Maven repository in the <strong>Repositories</strong> view of the Migration Toolkit for Applications (MTA) user interface.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the <code>rwx_supported</code> configuration option of the Tackle CR is set to <code>false</code>, both the <strong>Local artifact repository</strong> field and the <strong>Clear repository</strong> button are disabled and this procedure is not possible.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Repositories</strong> and then click <strong>Maven</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Clear repository</strong> link.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Depending on the size of the repository, the size change may not be evident despite the function working properly.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-proxy-config_user-interface-guide">4.4. Configuring HTTP and HTTPS proxy settings</h3>
+<div class="paragraph">
+<p>You can configure HTTP and HTTPS proxy settings with this management module.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Administration</strong> view, click <strong>Proxy</strong>.</p>
+</li>
+<li>
+<p>Toggle <strong>HTTP proxy</strong> or <strong>HTTPS proxy</strong> to enable the proxy connection.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Proxy host</p>
+</li>
+<li>
+<p>Proxy port</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Optional: Toggle <strong>HTTP proxy credentials</strong> or <strong>HTTPS proxy credentials</strong> to enable authentication.</p>
+</li>
+<li>
+<p>Click <strong>Insert</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-seeding-instances_user-interface-guide">4.5. Seeding an instance</h3>
+<div class="paragraph">
+<p>If you are a project architect, you can configure the instance&#8217;s key parameters in the Controls window, before migration. The parameters can be added and edited as needed.
+The following parameters define applications, individuals, teams, verticals or areas within an organization affected or participating in the migration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Stakeholders</p>
+</li>
+<li>
+<p>Stakeholder groups</p>
+</li>
+<li>
+<p>Job functions</p>
+</li>
+<li>
+<p>Business services</p>
+</li>
+<li>
+<p>Tag categories</p>
+</li>
+<li>
+<p>Tags</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can create and configure an instance in any order. However, the suggested order below is the most efficient for creating stakeholders and tags.</p>
+</div>
+<div class="paragraph">
+<p>Stakeholders:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create Stakeholder groups</p>
+</li>
+<li>
+<p>Create Job functions</p>
+</li>
+<li>
+<p>Create Stakeholders</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Tags:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create Tag categories</p>
+</li>
+<li>
+<p>Create Tags</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Stakeholders and defined by:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Email</p>
+</li>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Job function</p>
+</li>
+<li>
+<p>Stakeholder groups</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="creating-a-new-stakeholder-group">4.5.1. Creating a new stakeholder group</h4>
+<div class="paragraph">
+<p>There are no default stakeholder groups defined. You can create a new stakeholder group by following the procedure below.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Migration</strong> view, click <strong>Controls</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Stakeholder groups</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Description</p>
+</li>
+<li>
+<p>Member(s)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-new-job-function">4.5.2. Creating a new job function</h4>
+<div class="paragraph">
+<p>Migration Toolkit for Applications (MTA) uses the job function attribute to classify stakeholders and provides a list of default values that can be expanded.</p>
+</div>
+<div class="paragraph">
+<p>You can create a new job function, which is not in the default list, by following the procedure below.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Migration</strong> view, click <strong>Controls</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Job functions</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter a job function title in the <strong>Name</strong> text box.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-new-stakeholder">4.5.3. Creating a new stakeholder</h4>
+<div class="paragraph">
+<p>You can create a new migration project stakeholder by following the procedure below.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Migration</strong> view, click <strong>Controls</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Stakeholders</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Email</p>
+</li>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Job function - custom functions can be created</p>
+</li>
+<li>
+<p>Stakeholder group</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-new-business-service">4.5.4. Creating a new business service</h4>
+<div class="paragraph">
+<p>Migration Toolkit for Applications (MTA) uses the business service attribute to specify the departments within the organization that use the application and that are affected by the migration.</p>
+</div>
+<div class="paragraph">
+<p>You can create a new business service by following the procedure below.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Migration</strong> view, click <strong>Controls</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Business services</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Description</p>
+</li>
+<li>
+<p>Owner</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-new-tag-categories">4.5.5. Creating new tag categories</h4>
+<div class="paragraph">
+<p>Migration Toolkit for Applications (MTA) uses tags in multiple categories and provides a list of default values. You can create a new tag category by following the procedure below.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Migration</strong> view, click <strong>Controls</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Tags</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create tag category</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Rank - the order in which the tags appear on the applications</p>
+</li>
+<li>
+<p>Color</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="sect4">
+<h5 id="creating-new-tags">Creating new tags</h5>
+<div class="paragraph">
+<p>You can create a new tag, which is not in the default list, by following the procedure below.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Migration</strong> view, click <strong>Controls</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Tags</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create tag</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name</p>
+</li>
+<li>
+<p>Tag category</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-configuring-jira-connection">5. Creating and configuring a Jira connection</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can track application migrations by creating a Jira issue for each migration from within the MTA user interface. To be able to create Jira issues, you first need to do the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create an MTA credential to authenticate to the API of the Jira instance that you create in the next step.</p>
+</li>
+<li>
+<p>Create a Jira instance in MTA and establish a connection to that instance.</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="mta-web-config-jira-credentials_user-interface-guide">5.1. Configuring Jira credentials</h3>
+<div class="paragraph">
+<p>To define a Jira instance in MTA and establish a connection to that instance, you must first create an MTA credential to authenticate to the Jira instance&#8217;s API.</p>
+</div>
+<div class="paragraph">
+<p>Two types of credentials are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Basic auth</strong> - for Jira Cloud and a private Jira server or data center</p>
+</li>
+<li>
+<p><strong>Bearer Token</strong> - for a private Jira server or data center</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To create an MTA credential, follow the procedure below.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, click <strong>Credentials</strong>.</p>
+<div class="paragraph">
+<p>The <strong>Credentials</strong> page opens.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong></p>
+</li>
+<li>
+<p><strong>Description</strong> (optional)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the <strong>Type</strong> list, select <strong>Basic Auth (Jira)</strong> or <strong>Bearer Token (Jira)</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you selected <strong>Basic Auth (Jira)</strong>, proceed as follows:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the <strong>Email</strong> field, enter your email.</p>
+</li>
+<li>
+<p>In the <strong>Token</strong> field, depending on the specific Jira configuration, enter either your token generated on the Jira site or your Jira login password.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To obtain a Jira token, you need to log in to the Jira site.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>The new credential appears on the <strong>Credentials</strong> page.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>If you selected <strong>Bearer Token (Jira)</strong>, proceed as follows:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In the <strong>Token</strong> field, enter your token generated on the Jira site.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>The new credential appears on the <strong>Credentials</strong> page.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You can edit a credential by clicking <strong>Edit</strong>.</p>
+</div>
+<div class="paragraph">
+<p>To delete a credential, click <strong>Delete</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You cannot delete a credential that has already been assigned to a Jira connection instance.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-create-config-jira-connection_user-interface-guide">5.2. Creating and configuring a Jira connection</h3>
+<div class="paragraph">
+<p>To create a Jira instance in MTA and establish a connection to that instance, follow the procedure below.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, under <strong>Issue Management</strong>, click <strong>Jira</strong>.</p>
+<div class="paragraph">
+<p>The <strong>Jira configuration</strong> page opens.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+<div class="paragraph">
+<p>The <strong>New instance</strong> window opens.</p>
+</div>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name of the instance</p>
+</li>
+<li>
+<p>URL of the web interface of your Jira account</p>
+</li>
+<li>
+<p>Instance type - select either <strong>Jira Cloud</strong> or <strong>Jira Server/Data center</strong> from the list</p>
+</li>
+<li>
+<p>Credentials - select from the list</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the selected instance type is <strong>Jira Cloud</strong>, only <strong>Basic Auth</strong> credentials are displayed in the list.</p>
+</div>
+<div class="paragraph">
+<p>If the selected instance type is <strong>Jira Server/Data center</strong>, both <strong>Basic Auth</strong> and <strong>Token Bearer</strong> credentials are displayed. Choose the type that is appropriate for the particular configuration of your Jira server or data center.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>By default, a connection cannot be established with a server with an invalid certificate. To override this restriction, toggle the <strong>Enable insecure communication</strong> switch.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+<div class="paragraph">
+<p>The new connection instance appears on the <strong>Jira configuration</strong> page.</p>
+</div>
+<div class="paragraph">
+<p>Once the connection has been established and authorized, the status in the <strong>Connection</strong> column becomes <strong>Connected</strong>.</p>
+</div>
+<div class="paragraph">
+<p>If the <strong>Connection</strong> status becomes <code>Not connected</code>, click the status to see the reason for the error.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The <strong>Jira configuration</strong> table has filtering by <strong>Name</strong> and <strong>URL</strong> and sorting by <strong>Instance name</strong> and <strong>URL</strong>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A Jira connection that was used for <a href="../../../docs/topics/mta-web-creating-jira-issues-for-migration-wave.html#mta-web-creating-jira-issues-for-migration-wave_user-interface-guide">creating issues for a migration wave</a> cannot be removed as long as the issues exist in Jira, even after the migration wave is deleted.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="working-with-applications-in-the-ui">6. Managing applications with MTA</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use the Migration Toolkit for Applications (MTA) user interface to perform the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add applications.</p>
+</li>
+<li>
+<p>Assign application credentials.</p>
+</li>
+<li>
+<p>Import a list of applications.</p>
+</li>
+<li>
+<p>Download a CSV template for importing application lists.</p>
+</li>
+<li>
+<p>Create application migration waves.</p>
+</li>
+<li>
+<p>Create Jira issues for migration waves.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>MTA user interface applications have the following attributes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Name (free text)</p>
+</li>
+<li>
+<p>Description (optional, free text)</p>
+</li>
+<li>
+<p>Business service (optional, chosen from a list)</p>
+</li>
+<li>
+<p>Tags (optional, chosen from a list)</p>
+</li>
+<li>
+<p>Owner (optional, chosen from a list)</p>
+</li>
+<li>
+<p>Contributors (optional, chosen from a list)</p>
+</li>
+<li>
+<p>Source code (a path entered by the user)</p>
+</li>
+<li>
+<p>Binary (a path entered by the user)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="mta-web-adding-applications_user-interface-guide">6.1. Adding a new application</h3>
+<div class="paragraph">
+<p>You can add a new application to the <strong>Application Inventory</strong> for subsequent assessment and analysis.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Before creating an application, set up business services, check tags and tag categories, and create additions as needed.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You are logged in to an MTA server.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application Inventory</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Under <strong>Basic information</strong>, enter the following fields:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong>: A unique name for the new application.</p>
+</li>
+<li>
+<p><strong>Description</strong>: A short description of the application (optional).</p>
+</li>
+<li>
+<p><strong>Business service</strong>: A purpose of the application (optional).</p>
+</li>
+<li>
+<p><strong>Manual tags</strong>: Software tags that characterize the application (optional, one or more).</p>
+</li>
+<li>
+<p><strong>Owner</strong>: A registered software owner from the drop-down list (optional).</p>
+</li>
+<li>
+<p><strong>Contributors</strong>: Contributors from the drop-down list (optional, one or more).</p>
+</li>
+<li>
+<p><strong>Comments</strong>: Relevant comments on the application (optional).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Source Code</strong> and enter the following fields:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Repository type</strong>: <strong>Git</strong> or <strong>Subversion</strong>.</p>
+</li>
+<li>
+<p><strong>Source repository</strong>: A URL of the repository where the software code is saved.</p>
+</li>
+<li>
+<p><strong>Branch</strong>: An application code branch in the repository (optional).</p>
+</li>
+<li>
+<p><strong>Root path</strong>: A root path inside the repository for the target application (optional).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you enter any value in either the Branch or Root path fields, the Source repository field becomes mandatory.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Optional: Click <strong>Binary</strong> and enter the following fields:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Group</strong>: The Maven group for the application artifact.</p>
+</li>
+<li>
+<p><strong>Artifact</strong>: The Maven artifact for the application.</p>
+</li>
+<li>
+<p><strong>Version</strong>: A software version of the application.</p>
+</li>
+<li>
+<p><strong>Packaging</strong>: The packaging for the application artifact, for example, <code>JAR</code>, <code>WAR</code>, or <code>EAR</code>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you enter any value in any of the Binary section fields, all fields automatically become mandatory.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>. The new application appears in the list of defined applications.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-edit-application_user-interface-guide">6.2. Editing an application</h3>
+<div class="paragraph">
+<p>You can edit an existing application in the <strong>Application Inventory</strong> and re-run an assessment or analysis for this application.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You are logged in to an MTA server.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application Inventory</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Migration</strong> working mode.</p>
+</li>
+<li>
+<p>Click <strong>Application Inventory</strong> in the left menu bar. A list of available applications appears in the main pane.</p>
+</li>
+<li>
+<p>Click <strong>Edit</strong> (<span class="image"><img src="../topics/images/icon-edit.png" alt="icon edit" title="*Edit* icon"></span>) to open the application settings.</p>
+</li>
+<li>
+<p>Review the application settings. For a list of application settings, see <a href="#mta-web-adding-applications_user-interface-guide">Adding an application</a>.</p>
+</li>
+<li>
+<p>If you changed any application settings, click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-assigning-application-credentials_user-interface-guide">6.3. Assigning credentials to an application</h3>
+<div class="paragraph">
+<p>You can assign credentials to one or more applications.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application inventory</strong>.</p>
+</li>
+<li>
+<p>Click the Options menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>) to the right of <strong>Analyze</strong> and select <strong>Manage credentials</strong>.</p>
+</li>
+<li>
+<p>Select one credential from the <strong>Source credentials</strong> list and from the <strong>Maven settings</strong> list.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-importing-an-app-list_user-interface-guide">6.4. Importing a list of applications</h3>
+<div class="paragraph">
+<p>You can import a <code>.csv</code> file that contains a list of applications and their attributes to the Migration Toolkit for Applications (MTA) user interface.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Importing a list of applications does not overwrite any of the existing applications.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Review the import file to ensure it contains all the required information in the required format.</p>
+</li>
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application Inventory</strong>.</p>
+</li>
+<li>
+<p>Click the Options menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>).</p>
+</li>
+<li>
+<p>Click <strong>Import</strong>.</p>
+</li>
+<li>
+<p>Select the desired file and click <strong>Open</strong>.</p>
+</li>
+<li>
+<p>Optional: Select <strong>Enable automatic creation of missing entities</strong>. This option is selected by default.</p>
+</li>
+<li>
+<p>Verify that the import has completed and check the number of accepted or rejected rows.</p>
+</li>
+<li>
+<p>Review the imported applications by clicking the arrow to the left of the checkbox.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Accepted rows might not match the number of applications in the Application inventory list because some rows are dependencies. To verify, check the <strong>Record Type</strong> column of the CSV file for applications defined as <code>1</code> and dependencies defined as <code>2</code>.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-downloading-app-list-template_user-interface-guide">6.5. Downloading a CSV template</h3>
+<div class="paragraph">
+<p>You can download a CSV template for importing application lists by using the Migration Toolkit for Applications (MTA) user interface.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application inventory</strong>.</p>
+</li>
+<li>
+<p>Click the Options menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>) to the right of <strong>Review</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Manage imports</strong> to open the <strong>Application imports</strong> page.</p>
+</li>
+<li>
+<p>Click the Options menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>) to the right of <strong>Import</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Download CSV template</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-creating-migration-waves_user-interface-guide">6.6. Creating a migration wave</h3>
+<div class="paragraph">
+<p>A migration wave is a group applications that you can migrate on a given schedule. You can track each migration by exporting a list of the wave&#8217;s applications to the Jira issue management system. This automatically creates a separate Jira issue for each application of the migration wave.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Migration waves</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>. The <strong>New migration wave</strong> window opens.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong> (optional). If the name is not given, you can use the start and end dates to identify migration waves.</p>
+</li>
+<li>
+<p><strong>Potential start date</strong>. This date must be later than the current date.</p>
+</li>
+<li>
+<p><strong>Potential end date</strong>. This date must be later than the start date.</p>
+</li>
+<li>
+<p><strong>Stakeholders</strong> (optional)</p>
+</li>
+<li>
+<p><strong>Stakeholder groups</strong> (optional)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>. The new migration wave appears in the list of existing migration waves.</p>
+</li>
+<li>
+<p>To assign applications to the migration wave, click the Options menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>) to the right of the migration wave and select <strong>Manage applications</strong>.</p>
+<div class="paragraph">
+<p>The <strong>Manage applications</strong> window opens that displays the list of applications that are not assigned to any other migration wave.</p>
+</div>
+</li>
+<li>
+<p>Select the checkboxes of the applications that you want to assign to the migration wave.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+The owner and the contributors of each application associated with the migration wave are automatically added to the migration wave&#8217;s list of stakeholders.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Optional: To update a migration wave, select <strong>Update</strong> from the migration wave&#8217;s <strong>Options</strong> menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>). The <strong>Update migration wave</strong> window opens.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-creating-jira-issues-for-migration-wave_user-interface-guide">6.7. Creating Jira issues for a migration wave</h3>
+<div class="paragraph">
+<p>You can use a migration wave to create Jira issues automatically for each application assigned to the migration wave. A separate Jira issue is created for each application associated with the migration wave. The following fields of each issue are filled in automatically:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Title: <code>Migrate &lt;application name&gt;</code></p>
+</li>
+<li>
+<p>Reporter: Username of the token owner.</p>
+</li>
+<li>
+<p>Description: <code>Created by Konveyor</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You cannot delete an application if it is linked to a Jira ticket or is associated with a migration wave. To unlink the application from the Jira ticket, click the <code>Unlink from Jira</code> icon in the details view of the application or in the details view of a migration wave.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You configured Jira connection. For more information, see <a href="#creating-configuring-jira-connection">Creating and configuring a Jira connection</a>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Migration waves</strong>.</p>
+</li>
+<li>
+<p>Click the Options menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>) to the right of the migration wave for which you want to create Jira issues and select <strong>Export to Issue Manager</strong>. The <strong>Export to Issue Manager</strong> window opens.</p>
+</li>
+<li>
+<p>Select the Jira Cloud or Jira Server/Datacenter instance type.</p>
+</li>
+<li>
+<p>Select the instance, project, and issue type from the lists.</p>
+</li>
+<li>
+<p>Click <strong>Export</strong>. The status of the migration wave on the <strong>Migration waves</strong> page changes to <code>Issues Created</code>.</p>
+</li>
+<li>
+<p>Optional: To see the status of each individual application of a migration wave, click the <strong>Status</strong> column.</p>
+</li>
+<li>
+<p>Optional: To see if any particular application is associated with a migration wave, open the application&#8217;s <strong>Details</strong> tab on the <strong>Application inventory</strong> page.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="assessing-and-analyzing-applications">7. Assessing and analyzing applications with MTA</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use the Migration Toolkit for Applications (MTA) user interface to assess and analyze applications:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When assessing applications, MTA estimates the risks and costs involved in preparing applications for containerization, including time, personnel, and other factors. You can use the results of an assessment for discussions between stakeholders to determine whether applications are suitable for containerization.</p>
+</li>
+<li>
+<p>When analyzing applications, MTA uses rules to determine which specific lines in an application must be modified before the application can be migrated or modernized.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="mta-assessment-changes-700_user-interface-guide">7.1. The Assessment module features</h3>
+<div class="paragraph">
+<p>The Migration Toolkit for Applications (MTA) <strong>Assessment</strong> module offers the following features for assessing and analyzing applications:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Assessment hub</dt>
+<dd>
+<p>The <strong>Assessment</strong> hub integrates with the <strong>Application inventory</strong>.</p>
+</dd>
+<dt class="hdlist1">Enhanced assessment questionnaire capabilities</dt>
+<dd>
+<p>In MTA 7.0, you can import and export assessment questionnaires. You can also design custom questionnaires with a downloadable template by using the YAML syntax, which includes the following features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Conditional questions: You can include or exclude questions based on the application or archetype if a certain tag is present on this application or archetype.</p>
+</li>
+<li>
+<p>Application auto-tagging based on answers: You can define tags to be applied to applications or archetypes if a certain answer was provided.</p>
+</li>
+<li>
+<p>Automated answers from tags in applications or archetypes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="#mta-custom-questionnaire_user-interface-guide">The custom assessment questionnaire</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can customize and save the default questionnaire. For more information, see <a href="#mta-default-questionnaire_user-interface-guide">The default assessment questionnaire</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Multiple assessment questionnaires</dt>
+<dd>
+<p>The <strong>Assessment</strong> module supports multiple questionnaires, relevant to one or more applications.</p>
+</dd>
+<dt class="hdlist1">Archetypes</dt>
+<dd>
+<p>You can group applications with similar characteristics into archetypes. This allows you to assess multiple applications at once. Each archetype has a shared taxonomy of tags, stakeholders, and stakeholder groups. All applications inherit assessment and review from their assigned archetypes.</p>
+<div class="paragraph">
+<p>For more information, see <a href="#mta-archetypes_user-interface-guide">Working with archetypes</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-introduction-questionnaire_user-interface-guide">7.2. MTA assessment questionnaires</h3>
+<div class="paragraph">
+<p>The Migration Toolkit for Applications (MTA) uses an assessment questionnaire, either <a href="#mta-default-questionnaire_user-interface-guide">default</a> or <a href="#mta-custom-questionnaire_user-interface-guide">custom</a>, to assess the risks involved in containerizing an application.</p>
+</div>
+<div class="paragraph">
+<p>The assessment report provides information about applications and risks associated with migration. The report also generates an adoption plan informed by the prioritization, business criticality, and dependencies of the applications submitted for assessment.</p>
+</div>
+<div class="sect3">
+<h4 id="mta-default-questionnaire_user-interface-guide">7.2.1. The default assessment questionnaire</h4>
+<div class="paragraph">
+<p><strong>Legacy Pathfinder</strong> is the default Migration Toolkit for Applications (MTA) questionnaire. Pathfinder is a questionnaire-based tool that you can use to evaluate the suitability of applications for modernization in containers on an enterprise Kubernetes platform. </p>
+</div>
+<div class="paragraph">
+<p>Through interaction with the default questionnaire and the review process, the system is enriched with application knowledge exposed through the collection of assessment reports.</p>
+</div>
+<div class="paragraph">
+<p>You can export the default questionnaire to a YAML file:</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. The Legacy Pathfinder YAML file</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">name: Legacy Pathfinder
+description: ''
+sections:
+  - order: 1
+    name: Application details
+    questions:
+      - order: 1
+        text: &gt;-
+          Does the application development team understand and actively develop
+          the application?
+        explanation: &gt;-
+          How much knowledge does the team have about the application's
+          development or usage?
+        answers:
+          - order: 2
+            text: &gt;-
+              Maintenance mode, no SME knowledge or adequate documentation
+              available
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: &gt;-
+              Little knowledge, no development (example: third-party or
+              commercial off-the-shelf application)
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: Maintenance mode, SME knowledge is available
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: Actively developed, SME knowledge is available
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: greenfield application
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 2
+        text: How is the application supported in production?
+        explanation: &gt;-
+          Does the team have sufficient knowledge to support the application in
+          production?
+        answers:
+          - order: 3
+            text: &gt;-
+              Multiple teams provide support using an established escalation
+              model
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: &gt;-
+              External support provider with a ticket-driven escalation process;
+              no inhouse support resources
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: &gt;-
+              Separate internal support team, separate from the development
+              team, with little interaction between the teams
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: &gt;-
+              SRE (Site Reliability Engineering) approach with a knowledgeable
+              and experienced operations team
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: &gt;-
+              DevOps approach with the same team building the application and
+              supporting it in production
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 3
+        text: &gt;-
+          How much time passes from when code is committed until the application
+          is deployed to production?
+        explanation: What is the development latency?
+        answers:
+          - order: 3
+            text: 2-6 months
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: Not tracked
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: More than 6 months
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: 8-30 days
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: 1-7 days
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 6
+            text: Less than 1 day
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 4
+        text: How often is the application deployed to production?
+        explanation: Deployment frequency
+        answers:
+          - order: 3
+            text: Between once a month and once every 6 months
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: Not tracked
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: Less than once every 6 months
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: Weekly
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: Daily
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 6
+            text: Several times a day
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 5
+        text: &gt;-
+          What is the application's mean time to recover (MTTR) from failure in
+          a production environment?
+        explanation: Average time for the application to recover from failure
+        answers:
+          - order: 5
+            text: Less than 1 hour
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: Not tracked
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: 1-7 days
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: 1 month or more
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: 1-24 hours
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 6
+        text: Does the application have legal and/or licensing requirements?
+        explanation: &gt;-
+          Legal and licensing requirements must be assessed to determine their
+          possible impact (cost, fault reporting) on the container platform
+          hosting the application. Examples of legal requirements: isolated
+          clusters, certifications, compliance with the Payment Card Industry
+          Data Security Standard or the Health Insurance Portability and
+          Accountability Act. Examples of licensing requirements: per server,
+          per CPU.
+        answers:
+          - order: 1
+            text: Multiple legal and licensing requirements
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: 'Licensing requirements (examples: per server, per CPU)'
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: &gt;-
+              Legal requirements (examples: cluster isolation, hardware, PCI or
+              HIPAA compliance)
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: None
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 7
+        text: Which model best describes the application architecture?
+        explanation: Describe the application architecture in simple terms.
+        answers:
+          - order: 3
+            text: &gt;-
+              Complex monolith, strict runtime dependency startup order,
+              non-resilient architecture
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: Independently deployable components
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: &gt;-
+              Massive monolith (high memory and CPU usage), singleton
+              deployment, vertical scale only
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: &gt;-
+              Massive monolith (high memory and CPU usage), non-singleton
+              deployment, complex to scale horizontally
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: 'Resilient monolith (examples: retries, circuit breakers)'
+            risk: green
+            rationale: ''
+            mitigation: ''
+  - order: 2
+    name: Application dependencies
+    questions:
+      - order: 1
+        text: Does the application require specific hardware?
+        explanation: &gt;-
+          OpenShift Container Platform runs only on x86, IBM Power, or IBM Z
+          systems
+        answers:
+          - order: 3
+            text: 'Requires specific computer hardware (examples: GPUs, RAM, HDDs)'
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: Requires CPU that is not supported by red Hat
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: 'Requires custom or legacy hardware (example: USB device)'
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: Requires CPU that is supported by red Hat
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 2
+        text: What operating system does the application require?
+        explanation: &gt;-
+          Only Linux and certain Microsoft Windows versions are supported in
+          containers. Check the latest versions and requirements.
+        answers:
+          - order: 4
+            text: Microsoft Windows
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: &gt;-
+              Operating system that is not compatible with OpenShift Container
+              Platform (examples: OS X, AIX, Unix, Solaris)
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: Linux with custom kernel drivers or a specific kernel version
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: 'Linux with custom capabilities (examples: seccomp, root access)'
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: Standard Linux distribution
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 3
+        text: &gt;-
+          Does the vendor provide support for a third-party component running in
+          a container?
+        explanation: Will the vendor support a component if you run it in a container?
+        answers:
+          - order: 2
+            text: No vendor support for containers
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: Not recommended to run the component in a container
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: &gt;-
+              Vendor supports containers but with limitations (examples:
+              functionality is restricted, component has not been tested)
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: &gt;-
+              Vendor supports their application running in containers but you
+              must build your own images
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: Vendor fully supports containers, provides certified images
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 6
+            text: No third-party components required
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 4
+        text: Incoming/northbound dependencies
+        explanation: Systems or applications that call the application
+        answers:
+          - order: 3
+            text: &gt;-
+              Many dependencies exist, can be changed because the systems are
+              internally managed
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: Internal dependencies only
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: &gt;-
+              Dependencies are difficult or expensive to change because they are
+              legacy or third-party
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: &gt;-
+              Many dependencies exist, can be changed but the process is
+              expensive and time-consuming
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: No incoming/northbound dependencies
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 5
+        text: Outgoing/southbound dependencies
+        explanation: Systems or applications that the application calls
+        answers:
+          - order: 3
+            text: Application not ready until dependencies are verified available
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: &gt;-
+              Dependency availability only verified when application is
+              processing traffic
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: Dependencies require a complex and strict startup order
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: Limited processing available if dependencies are unavailable
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: No outgoing/southbound dependencies
+            risk: green
+            rationale: ''
+            mitigation: ''
+  - order: 3
+    name: Application architecture
+    questions:
+      - order: 1
+        text: &gt;-
+          How resilient is the application? How well does it recover from
+          outages and restarts?
+        explanation: &gt;-
+          If the application or one of its dependencies fails, how does the
+          application recover from failure? Is manual intervention required?
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: &gt;-
+              Application cannot be restarted cleanly after failure, requires
+              manual intervention
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: &gt;-
+              Application fails when a soutbound dependency is unavailable and
+              does not recover automatically
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: &gt;-
+              Application functionality is limited when a dependency is
+              unavailable but recovers when the dependency is available
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: &gt;-
+              Application employs resilient architecture patterns (examples:
+              circuit breakers, retry mechanisms)
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: &gt;-
+              Application containers are randomly terminated to test resiliency;
+              chaos engineering principles are followed
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 2
+        text: How does the external world communicate with the application?
+        explanation: &gt;-
+          What protocols do external clients use to communicate with the
+          application?
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: 'Non-TCP/IP protocols (examples: serial, IPX, AppleTalk)'
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: TCP/IP, with host name or IP address encapsulated in the payload
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: 'TCP/UDP without host addressing (example: SSH)'
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: TCP/UDP encapsulated, using TLS with SNI header
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: HTTP/HTTPS
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 3
+        text: How does the application manage its internal state?
+        explanation: &gt;-
+          If the application must manage or retain an internal state, how is
+          this done?
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: State maintained in non-shared, non-ephemeral storage
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: Application components use shared memory within a pod
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: &gt;-
+              State is managed externally by another product (examples:
+              Zookeeper or red Hat Data Grid)
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: Disk shared between application instances
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: Stateless or ephemeral container storage
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 4
+        text: How does the application handle service discovery?
+        explanation: How does the application discover services?
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: &gt;-
+              Uses technologies that are not compatible with Kubernetes
+              (examples: hardcoded IP addresses, custom cluster manager)
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: &gt;-
+              Requires an application or cluster restart to discover new service
+              instances
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: &gt;-
+              Uses technologies that are compatible with Kubernetes but require
+              specific libraries or services (examples: HashiCorp Consul,
+              Netflix Eureka)
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: Uses Kubernetes DNS name resolution
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: Does not require service discovery
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 5
+        text: How is the application clustering managed?
+        explanation: &gt;-
+          Does the application require clusters? If so, how is clustering
+          managed?
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: 'Manually configured clustering (example: static clusters)'
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: Managed by an external off-PaaS cluster manager
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: &gt;-
+              Managed by an application runtime that is compatible with
+              Kubernetes
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: No cluster management required
+            risk: green
+            rationale: ''
+            mitigation: ''
+  - order: 4
+    name: Application observability
+    questions:
+      - order: 1
+        text: How does the application use logging and how are the logs accessed?
+        explanation: How the application logs are accessed
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: Logs are unavailable or are internal with no way to export them
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: &gt;-
+              Logs are in a custom binary format, exposed with non-standard
+              protocols
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: Logs are exposed using syslog
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: Logs are written to a file system, sometimes as multiple files
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: 'Logs are forwarded to an external logging system (example: Splunk)'
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 6
+            text: 'Logs are configurable (example: can be sent to stdout)'
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 2
+        text: Does the application provide metrics?
+        explanation: &gt;-
+          Are application metrics available, if necessary (example: OpenShift
+          Container Platform collects CPU and memory metrics)?
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: No metrics available
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: Metrics collected but not exposed externally
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: 'Metrics exposed using binary protocols (examples: SNMP, JMX)'
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: &gt;-
+              Metrics exposed using a third-party solution (examples: Dynatrace,
+              AppDynamics)
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: &gt;-
+              Metrics collected and exposed with built-in Prometheus endpoint
+              support
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 3
+        text: &gt;-
+          How easy is it to determine the application's health and readiness to
+          handle traffic?
+        explanation: &gt;-
+          How do we determine an application's health (liveness) and readiness
+          to handle traffic?
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: No health or readiness query functionality available
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: Basic application health requires semi-complex scripting
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: Dedicated, independent liveness and readiness endpoints
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: Monitored and managed by a custom watchdog process
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: Health is verified by probes running synthetic transactions
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 4
+        text: What best describes the application's runtime characteristics?
+        explanation: &gt;-
+          How would the profile of an application appear during runtime
+          (examples: graphs showing CPU and memory usage, traffic patterns,
+          latency)? What are the implications for a serverless application?
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: &gt;-
+              Deterministic and predictable real-time execution or control
+              requirements
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: &gt;-
+              Sensitive to latency (examples: voice applications, high frequency
+              trading applications)
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: Constant traffic with a broad range of CPU and memory usage
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: Intermittent traffic with predictable CPU and memory usage
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: Constant traffic with predictable CPU and memory usage
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 5
+        text: How long does it take the application to be ready to handle traffic?
+        explanation: How long the application takes to boot
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: More than 5 minutes
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: 2-5 minutes
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: 1-2 minutes
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: 10-60 seconds
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: Less than 10 seconds
+            risk: green
+            rationale: ''
+            mitigation: ''
+  - order: 5
+    name: Application cross-cutting concerns
+    questions:
+      - order: 1
+        text: How is the application tested?
+        explanation: &gt;-
+          Is the application is tested? Is it easy to test (example: automated
+          testing)? Is it tested in production?
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: No testing or minimal manual testing only
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: Minimal automated testing, focused on the user interface
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: &gt;-
+              Some automated unit and regression testing, basic CI/CD pipeline
+              testing; modern test practices are not followed
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: &gt;-
+              Highly repeatable automated testing (examples: unit, integration,
+              smoke tests) before deploying to production; modern test practices
+              are followed
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: &gt;-
+              Chaos engineering approach, constant testing in production
+              (example: A/B testing + experimentation)
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 2
+        text: How is the application configured?
+        explanation: &gt;-
+          How is the application configured? Is the configuration method
+          appropriate for a container? External servers are runtime
+          dependencies.
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: &gt;-
+              Configuration files compiled during installation and configured
+              using a user interface
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: &gt;-
+              Configuration files are stored externally (example: in a database)
+              and accessed using specific environment keys (examples: host name,
+              IP address)
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: Multiple configuration files in multiple file system locations
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: &gt;-
+              Configuration files built into the application and enabled using
+              system properties at runtime
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: &gt;-
+              Configuration retrieved from an external server (examples: Spring
+              Cloud Config Server, HashiCorp Consul)
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 6
+            text: &gt;-
+              Configuration loaded from files in a single configurable location;
+              environment variables used
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 4
+        text: How is the application deployed?
+        explanation: &gt;-
+          How the application is deployed and whether the deployment process is
+          suitable for a container platform
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: Simple automated deployment scripts
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: Manual deployment using a user interface
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: Manual deployment with some automation
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: &gt;-
+              Automated deployment with manual intervention or complex promotion
+              through pipeline stages
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: &gt;-
+              Automated deployment with a full CI/CD pipeline, minimal
+              intervention for promotion through pipeline stages
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 6
+            text: Fully automated (GitOps), blue-green, or canary deployment
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 5
+        text: Where is the application deployed?
+        explanation: Where does the application run?
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: Bare metal server
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: 'Virtual machine (examples: red Hat Virtualization, VMware)'
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: 'Private cloud (example: red Hat OpenStack Platform)'
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: &gt;-
+              Public cloud provider (examples: Amazon Web Services, Microsoft
+              Azure, Google Cloud Platform)
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: &gt;-
+              Platform as a service (examples: Heroku, Force.com, Google App
+              Engine)
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 7
+            text: Other. Specify in the comments field
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 6
+            text: Hybrid cloud (public and private cloud providers)
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 6
+        text: How mature is the containerization process, if any?
+        explanation: If the team has used containers in the past, how was it done?
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: Application runs in a container on a laptop or desktop
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: Some experience with containers but not yet fully defined
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: &gt;-
+              Proficient with containers and container platforms (examples:
+              Swarm, Kubernetes)
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: Application containerization has not yet been attempted
+            risk: green
+            rationale: ''
+            mitigation: ''
+      - order: 3
+        text: How does the application acquire security keys or certificates?
+        explanation: &gt;-
+          How does the application retrieve credentials, keys, or certificates?
+          External systems are runtime dependencies.
+        answers:
+          - order: 0
+            text: unknown
+            risk: unknown
+            rationale: ''
+            mitigation: ''
+          - order: 1
+            text: Hardware security modules or encryption devices
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 2
+            text: &gt;-
+              Keys/certificates bound to IP addresses and generated at runtime
+              for each application instance
+            risk: red
+            rationale: ''
+            mitigation: ''
+          - order: 3
+            text: Keys/certificates compiled into the application
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 4
+            text: Loaded from a shared disk
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 5
+            text: &gt;-
+              Retrieved from an external server (examples: HashiCorp Vault,
+              CyberArk Conjur)
+            risk: yellow
+            rationale: ''
+            mitigation: ''
+          - order: 6
+            text: Loaded from files
+            risk: green
+            rationale: ''
+            mitigation: ''
+          - order: 7
+            text: Not required
+            risk: green
+            rationale: ''
+            mitigation: ''
+thresholds:
+  red: 5
+  yellow: 30
+  unknown: 5
+riskMessages:
+  red: ''
+  yellow: ''
+  green: ''
+  unknown: ''
+builtin: true</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-custom-questionnaire_user-interface-guide">7.2.2. The custom assessment questionnaire</h4>
+<div class="paragraph">
+<p>You can use the Migration Toolkit for Applications (MTA) to import a custom assessment questionnaire by using a custom YAML syntax to define the questionnaire. The YAML syntax supports the following features:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Conditional questions</dt>
+<dd>
+<p>The YAML syntax supports including or excluding questions based on tags existing on the application or archetype, for example:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the application or archetype has the <code>Language/Java</code> tag, the <code>What is the main JAVA framework used in your application?</code> question is included in the questionnaire:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">...
+  questions:
+    - order: 1
+      text: What is the main JAVA framework used in your application?
+      explanation: Identify the primary JAVA framework used in your application.
+      includeFor:
+        - category: Language
+          tag: Java
+...</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>If the application or archetype has the <code>Deployment/Serverless</code> and <code>Architecture/Monolith</code> tag, the <code>Are you currently using any form of container orchestration?</code> question is excluded from the questionnaire:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">...
+  questions:
+    - order: 4
+      text: Are you currently using any form of container orchestration?
+      explanation: Determine if the application utilizes container orchestration tools like Kubernetes, Docker Swarm, etc.
+      excludeFor:
+        - category: Deployment
+          tag: Serverless
+        - category: Architecture
+          tag: Monolith
+...</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Automated answers based on tags present on the assessed application or archetype</dt>
+<dd>
+<p>Automated answers are selected based on the tags existing on the application or archetype. For example, if an application or archetype has the <code>Runtime/Quarkus</code> tag, the <code>Quarkus</code> answer is automatically selected, and if an application or archetype has the <code>Runtime/Spring Boot</code> tag, the <code>Spring Boot</code> answer is automatically selected:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">...
+  text: What is the main technology in your application?
+    explanation: Identify the main framework or technology used in your application.
+      answers:
+        - order: 1
+          text: Quarkus
+          risk: green
+          autoAnswerFor:
+            - category: Runtime
+              tag: Quarkus
+        - order: 2
+          text: Spring Boot
+          risk: green
+          autoAnswerFor:
+            - category: Runtime
+              tag: Spring Boot
+...</code></pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Automatic tagging of applications based on answers</dt>
+<dd>
+<p>During the assessment, tags are automatically applied to the application or archetype based on the answer if this answer is selected. Note that the tags are transitive. Therefore, the tags are removed if the assessment is discarded. Each tag is defined by the following elements:</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>category</strong>: Category of the target tag (<code>String</code>).</p>
+</li>
+<li>
+<p><strong>tag</strong>: Definition for the target tag as (<code>String</code>).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>For example, if the selected answer is <code>Quarkus</code>, the <code>Runtime/Quarkus</code> tag is applied to the assessed application or archetype. If the selected answer is <code>Spring Boot</code>, the <code>Runtime/Spring Boot</code> tag is applied to the assessed application or archetype:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">...
+questions:
+  - order: 1
+    text: What is the main technology in your application?
+    explanation: Identify the main framework or technology used in your application.
+    answers:
+      - order: 1
+        text: Quarkus
+        risk: green
+        applyTags:
+          - category: Runtime
+            tag: Quarkus
+      - order: 2
+        text: Spring Boot
+        risk: green
+        applyTags:
+          - category: Runtime
+            tag: Spring Boot
+...</code></pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="sect4">
+<h5 id="yaml-template-for-custom-questionnaire_user-interface-guide">The YAML template for the custom questionnaire</h5>
+<div class="paragraph _abstract">
+<p>You can use the following YAML template to build your custom questionnaire. You can download this template by clicking <strong>Download YAML template</strong> on the <strong>Assessment questionnaires</strong> page.</p>
+</div>
+<details>
+<summary class="title">The YAML template for the custom questionnaire</summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">name: Uploadable Cloud Readiness Questionnaire Template
+description: This questionnaire is an example template for assessing cloud readiness. It serves as a guide for users to create and customize their own questionnaire templates.
+required: true
+sections:
+  - order: 1
+    name: Application Technologies
+    questions:
+      - order: 1
+        text: What is the main technology in your application?
+        explanation: Identify the main framework or technology used in your application.
+        includeFor:
+          - category: Language
+            tag: Java
+        answers:
+          - order: 1
+            text: Quarkus
+            risk: green
+            rationale: Quarkus is a modern, container-friendly framework.
+            mitigation: No mitigation needed.
+            applyTags:
+              - category: Runtime
+                tag: Quarkus
+            autoAnswerFor:
+              - category: Runtime
+                tag: Quarkus
+          - order: 2
+            text: Spring Boot
+            risk: green
+            rationale: Spring Boot is versatile and widely used.
+            mitigation: Ensure container compatibility.
+            applyTags:
+              - category: Runtime
+                tag: Spring Boot
+            autoAnswerFor:
+              - category: Runtime
+                tag: Spring Boot
+          - order: 3
+            text: Legacy Monolithic Application
+            risk: red
+            rationale: Legacy monoliths are challenging for cloud adaptation.
+            mitigation: Consider refactoring into microservices.
+      - order: 2
+        text: Does your application use a microservices architecture?
+        explanation: Assess if the application is built using a microservices architecture.
+        answers:
+          - order: 1
+            text: Yes
+            risk: green
+            rationale: Microservices are well-suited for cloud environments.
+            mitigation: Continue monitoring service dependencies.
+          - order: 2
+            text: No
+            risk: yellow
+            rationale: Non-microservices architectures may face scalability issues.
+            mitigation: Assess the feasibility of transitioning to microservices.
+          - order: 3
+            text: Unknown
+            risk: unknown
+            rationale: Lack of clarity on architecture can lead to unplanned issues.
+            mitigation: Conduct an architectural review.
+
+      - order: 3
+        text: Is your application's data storage cloud-optimized?
+        explanation: Evaluate if the data storage solution is optimized for cloud usage.
+        includeFor:
+          - category: Language
+            tag: Java
+        answers:
+          - order: 1
+            text: Cloud-Native Storage Solution
+            risk: green
+            rationale: Cloud-native solutions offer scalability and resilience.
+            mitigation: Ensure regular backups and disaster recovery plans.
+          - order: 2
+            text: Traditional On-Premises Storage
+            risk: red
+            rationale: Traditional storage might not scale well in the cloud.
+            mitigation: Explore cloud-based storage solutions.
+          - order: 3
+            text: Hybrid Storage Approach
+            risk: yellow
+            rationale: Hybrid solutions may have integration complexities.
+            mitigation: Evaluate and optimize cloud integration points.
+thresholds:
+  red: 1
+  yellow: 30
+  unknown: 15
+riskMessages:
+  red: Requires deep changes in architecture or lifecycle
+  yellow: Cloud friendly but needs minor changes
+  green: Cloud Native
+  unknown: More information needed</code></pre>
+</div>
+</div>
+</div>
+</details>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#custom-questionnaire-fields_user-interface-guide">The custom questionnaire fields</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="custom-questionnaire-fields_user-interface-guide">The custom questionnaire fields</h5>
+<div class="paragraph">
+<p>Every custom questionnaire field marked as <strong>required</strong> is mandatory and must be completed. Otherwise, the YAML syntax will not validate on upload. Each subsection of the field defines a new structure or object in YAML, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">...
+name: Testing
+thresholds:
+    red: 30
+    yellow: 45
+    unknown: 5
+...</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. The custom questionnaire fields</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Questionnaire field</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>name</code> (required, string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the questionnaire. This field must be unique for the entire MTA instance.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>description</code> (optional, string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A short description of the questionnaire.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>thresholds</code> (required)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The definition of a threshold for each risk category of the application or archetype that is considered to be affected by that risk level. The threshold values can be the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>red</code> (required, unsigned integer): Numeric percentage, for example, <code>30</code> for <code>30%</code>, of red answers that the questionnaire can have until the risk level is considered red.</p>
+</li>
+<li>
+<p><code>yellow</code> (required, unsigned integer): Numeric percentage, for example, <code>30</code> for <code>30%</code>, of yellow answers that the questionnaire can have until the risk level is considered yellow.</p>
+</li>
+<li>
+<p><code>unknown</code> (required, unsigned integer): Numeric percentage, for example, <code>30</code> for <code>30%</code>, of unknown answers that the questionnaire can have until the risk level is considered
+unknown.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The higher risk level always takes precedence. For example, if the <code>yellow</code> threshold is set to 30% and <code>red</code> to 5%, and the answers for the application or archetype are set to have 35% <code>yellow</code> and 6% <code>red</code>, the risk level for the application or archetype is red.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>riskMessages</code> (required)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Messages to be displayed in reports for each risk category. The <em>risk_messages</em> map is defined by the following fields:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>red</code> (required, string): A message to be displayed in reports for the red risk level.</p>
+</li>
+<li>
+<p><code>yellow</code> (required, string): A message to be displayed in reports for the yellow risk level.</p>
+</li>
+<li>
+<p><code>green</code> (required, string): A message to be displayed in reports for the green risk level.</p>
+</li>
+<li>
+<p><code>unknown</code> (required, string): A message to be displayed in reports for the unknown risk level.</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sections</code> (required)</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A list of sections that the questionnaire must include.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>name</code> (required, string): A name to be displayed for the section.</p>
+</li>
+<li>
+<p><code>order</code> (required, integer): An order of the question in the section.</p>
+</li>
+<li>
+<p><code>comment</code> (optional, string): A description the section.</p>
+</li>
+<li>
+<p><code>questions</code> (required): A list of questions that belong to the section.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>order</code> (required, integer): An order of the question in the section.</p>
+</li>
+<li>
+<p><code>text</code> (required, string): A question to be asked.</p>
+</li>
+<li>
+<p><code>explanation</code> (optional, string): An additional explanation for the question.</p>
+</li>
+<li>
+<p><code>includeFor</code> (optional): A list that defines if a question must be displayed if any of the tags included in this list is present in the target application or archetype.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>category</code> (required, string): A category of the target tag.</p>
+</li>
+<li>
+<p><code>tag</code> (required, string): A target tag.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>excludeFor</code> (optional): A list that defines if a question must be skipped if any of the tags included in the list is present in the target application or archetype.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>category</code> (required, string): A category of the target tag.</p>
+</li>
+<li>
+<p><code>tag</code> (required, string): A target tag.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>answers</code> (required): A list of answers for the given question.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>order</code> (required, integer): An order of the question in the section.</p>
+</li>
+<li>
+<p><code>text</code> (required, string): An answer for the question.</p>
+</li>
+<li>
+<p><code>risk</code> (required): An implied risk level (red, yellow, green, or unknown) of the current answer.</p>
+</li>
+<li>
+<p><code>rationale</code> (optional, string): A justification for the answer that is being considered a risk.</p>
+</li>
+<li>
+<p><code>mitigation</code> (optional, string): An explanation of the potential mitigation strategy for the risk implied by the answer.</p>
+</li>
+<li>
+<p><code>applyTags</code> (optional): A list of tags to be automatically applied to the assessed application or archetype if this answer is selected.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>category</code> (required, string): A category of the target tag.</p>
+</li>
+<li>
+<p><code>tag</code> (required,string): A target tag.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>autoAnswerFor</code> (optional, list): A list of tags that will lead to this answer being automatically selected when the application or archetype is assessed.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>category</code> (required, string): A category of the target tag.</p>
+</li>
+<li>
+<p><code>tag</code> (required, string): A target tag.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#yaml-template-for-custom-questionnaire_user-interface-guide">The YAML template for the custom questionnaire</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="managing-mta-questionnaires_user-interface-guide">7.3. Managing assessment questionnaires</h3>
+<div class="paragraph _abstract">
+<p>By using the MTA user interface, you can perform the following actions on assessment questionnaires:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Display the questionnaire. You can also diplay the answer choices and their associated risk weight.</p>
+</li>
+<li>
+<p>Export the questionnaire to the desired location on your system.</p>
+</li>
+<li>
+<p>Import the questionnaire from your system.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+The name of the imported questionnaire must be unique.
+If the name, which is defined in the YAML syntax (<code>name:&lt;name of questionnaire&gt;</code>), is duplicated, the import will fail with the following error message: <code>UNIQUE constraint failed: Questionnaire.Name</code>.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Delete an assessment questionnaire.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+When you delete the questionnaire, its answers for all applications that use it in all archetypes are also deleted.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+You cannot delete the <strong>Legacy Pathfinder</strong> default questionnaire.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Depending on your scenario, perform one of the following actions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Display the quest the assessment questionnaire:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <strong>Administration</strong> view, select <strong>Assessment questionnaires</strong>.</p>
+</li>
+<li>
+<p>Click the Options menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>).</p>
+</li>
+<li>
+<p>Select <strong>View</strong> for the questionnaire you want to display.</p>
+</li>
+<li>
+<p>Optional: Click the arrow to the left from the question to display the answer choices and their risk weight.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Export the assessment questionnaire:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <strong>Administration</strong> view, select <strong>Assessment questionnaires</strong>.</p>
+</li>
+<li>
+<p>Select the desired questionnaire.</p>
+</li>
+<li>
+<p>Click the Options menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>).</p>
+</li>
+<li>
+<p>Select <strong>Export</strong>.</p>
+</li>
+<li>
+<p>Select the location of the download.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Import the assessment questionnaire:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <strong>Administration</strong> view, select <strong>Assessment questionnaires</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Import questionnaire</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Upload</strong>.</p>
+</li>
+<li>
+<p>Navigate to the location of your questionnaire.</p>
+</li>
+<li>
+<p>Click <strong>Open</strong>.</p>
+</li>
+<li>
+<p>Import the desired questionnaire by clicking <strong>Import</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Delete the assessment questionnaire:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In the <strong>Administration</strong> view, select <strong>Assessment questionnaires</strong>.</p>
+</li>
+<li>
+<p>Select the questionnaire you want to delete.</p>
+</li>
+<li>
+<p>Click the Options menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>).</p>
+</li>
+<li>
+<p>Select <strong>Delete</strong>.</p>
+</li>
+<li>
+<p>Confirm deleting by entering on the <strong>Name</strong> of the questionnaire.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#mta-default-questionnaire_user-interface-guide">The default assessment questionnaire</a></p>
+</li>
+<li>
+<p><a href="#mta-custom-questionnaire_user-interface-guide">The custom assessment questionnaire</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-assessing-apps_user-interface-guide">7.4. Assessing an application</h3>
+<div class="paragraph">
+<p>You can estimate the risks and costs involved in preparing applications for containerization by performing application assessment. You can assess an application and display the currently saved assessments by using the Assessment module.</p>
+</div>
+<div class="paragraph">
+<p>The Migration Toolkit for Applications (MTA) assesses applications according to a set of questions relevant to the application, such as dependencies.</p>
+</div>
+<div class="paragraph">
+<p>To assess the application, you can use the default <a href="#mta-default-questionnaire_user-interface-guide">Legacy Pathfinder</a> MTA questionnaire or import your <a href="#mta-custom-questionnaire_user-interface-guide">custom</a> questionnaires.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+You can assess only one application at a time.
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You are logged in to an MTA server.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the MTA user interface, select the <strong>Migration</strong> view.</p>
+</li>
+<li>
+<p>Click <strong>Application inventory</strong> in the left menu bar. A list of the available applications appears in the main pane.</p>
+</li>
+<li>
+<p>Select the application you want to assess.</p>
+</li>
+<li>
+<p>Click the <strong>Options</strong> menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>) at the right end of the row and select <strong>Assess</strong> from the drop-down menu.</p>
+</li>
+<li>
+<p>From the list of available questionnaires, click <strong>Take</strong> for the desired questionnaire.</p>
+</li>
+<li>
+<p>Select <strong>Stakeholders</strong> and <strong>Stakeholder groups</strong> from the lists to track who contributed to the assessment for future reference.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can also add <strong>Stakeholder Groups</strong> or <strong>Stakeholders</strong> in the <strong>Controls</strong> pane of the <strong>Migration</strong> view. For more information, see <a href="#mta-web-seeding-instances_user-interface-guide">Seeding an instance</a>.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Answer each <strong>Application assessment</strong> question and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong> to review the assessment and proceed with the steps in <a href="#mta-web-reviewing-apps_user-interface-guide">Reviewing an application</a>.</p>
+</li>
+</ol>
+</div>
+<div class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="#mta-default-questionnaire_user-interface-guide">The default assessment questionnaire</a></p>
+</li>
+<li>
+<p><a href="#mta-custom-questionnaire_user-interface-guide">The custom assessment questionnaire</a></p>
+</li>
+<li>
+<p><a href="#managing-mta-questionnaires_user-interface-guide">Managing assessment questionnaires</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-reviewing-apps_user-interface-guide">7.5. Reviewing an application</h3>
+<div class="paragraph">
+<p>You can use the Migration Toolkit for Applications (MTA) user interface to determine the migration strategy and work priority for each application.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+You can review only one application at a time.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application inventory</strong>.</p>
+</li>
+<li>
+<p>Select the application you want to review.</p>
+</li>
+<li>
+<p>Review the application by performing either of the following actions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <strong>Save and Review</strong> while assessing the application. For more information, see <a href="#mta-web-assessing-apps_user-interface-guide">Assessing an application</a>.</p>
+</li>
+<li>
+<p>Click the Options menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>) at the right end of the row and select <strong>Review</strong> from the drop-down list. The application <strong>Review</strong> parameters appear in the main pane.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/mta-web-assessment-review-01.png" alt="Application review">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Proposed action</strong> and select the action.</p>
+</li>
+<li>
+<p>Click <strong>Effort estimate</strong> and set the level of effort required to perform the assessment with the selected questionnaire.</p>
+</li>
+<li>
+<p>In the <strong>Business criticality</strong> field, enter how critical the application is to the business.</p>
+</li>
+<li>
+<p>In the <strong>Work priority</strong> field, enter the application&#8217;s priority.</p>
+</li>
+<li>
+<p>Optional: Enter the assessment questionnaire comments in the <strong>Comments</strong> field.</p>
+</li>
+<li>
+<p>Click <strong>Submit review</strong>.</p>
+<div class="paragraph">
+<p>The fields from <strong>Review</strong> are now populated on the <strong>Application details</strong> page.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-viewing-an-assessment-report_user-interface-guide">7.6. Reviewing an assessment report</h3>
+<div class="paragraph">
+<p>An MTA assessment report displays an aggregated assessment of the data obtained from multiple questionnaires for multiple applications.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Reports</strong>. The aggregated assessment report for all applications is displayed.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/mta-assessment-report.png" alt="Assessment report">
+</div>
+</div>
+</li>
+<li>
+<p>Depending on your scenario, perform one of the following actions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Display a report on the data from a particular questionnaire:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Select the required questionnaire from a drop-down list of all questionnaires in the <strong>Current landscape</strong> pane of the report. By default, all questionnaires are selected.</p>
+</li>
+<li>
+<p>In the <strong>Identified risks</strong> pane of the report, sort the displayed list by application name, level of risk, questionnaire, questionnaire section, question, and answer.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Display a report for a specific application:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click the link in the <strong>Applications</strong> column in the <strong>Identified risks</strong> pane of the report. The <strong>Application inventory</strong> page opens. The applications included in the link are displayed as a list.</p>
+</li>
+<li>
+<p>Click the required application. The <strong>Assessment</strong> side pane opens.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To see the assessed risk level for the application, open the <strong>Details</strong> tab.</p>
+</li>
+<li>
+<p>To see the details of the assessment, open the <strong>Reviews</strong> tab.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-tagging-an-application_user-interface-guide">7.7. Tagging an application</h3>
+<div class="paragraph">
+<p>You can attach various tags to the application that you are analyzing. You can use tags to classify applications and instantly identify application information, for example, an application type, data center location, and technologies used within the application. You can also use tagging to associate archetypes to applications for automatic assessment. For more information about archetypes, see <a href="#mta-archetypes_user-interface-guide">Working with archetypes</a>.</p>
+</div>
+<div class="paragraph">
+<p>Tagging can be done <a href="#automatic-tagging-of-an-application_user-interface-guide">automatically</a> during the analysis <a href="#manual-tagging-of-an-application_user-interface-guide">manually</a> at any time.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Not all tags can be assigned automatically. For example, an analysis can only tag the application based on its technologies. If you want to tag the application also with the location of the data center where it is deployed, you need to tag the application manually.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="creating-application-tags_user-interface-guide">7.7.1. Creating application tags</h4>
+<div class="paragraph _abstract">
+<p>You can create custom tags for applications that MTA assesses or analyzes.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Controls</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Tags</strong> tab.</p>
+</li>
+<li>
+<p>Click <strong>Create tag</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Name</strong> field in the opened dialogue, enter a unique name for the tag.</p>
+</li>
+<li>
+<p>Click the <strong>Tag category</strong> field and select the category tag to associate with the tag.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>Optional: Edit the created tag or tag category:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit the tag:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>In the list of tag categories under the <strong>Tags</strong> tab, open the list of tags in the desired category.</p>
+</li>
+<li>
+<p>Select <strong>Edit</strong> from the drop-down menu and edit the tag name in the <strong>Name</strong> field.</p>
+</li>
+<li>
+<p>Click the <strong>Tag category</strong> field and select the category tag to associate with the tag.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Edit the tag category:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Under the <strong>Tags</strong> tab, select a defined tag category and click <strong>Edit</strong>.</p>
+</li>
+<li>
+<p>Edit the tag category’s name in the <strong>Name</strong> field.</p>
+</li>
+<li>
+<p>Edit the category’s <strong>Rank</strong> value.</p>
+</li>
+<li>
+<p>Click the <strong>Color</strong> field and select a color for the tag category.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="manual-tagging-of-an-application_user-interface-guide">7.7.2. Manually tagging an application</h4>
+<div class="paragraph">
+<p>You can tag an application manually, both before or after you run an application analysis.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application inventory</strong>.</p>
+</li>
+<li>
+<p>In the row of the required application, click <strong>Edit</strong> (<span class="image"><img src="../topics/images/icon-edit.png" alt="icon edit" title="*Edit* icon"></span>). The <strong>Update application</strong> window opens.</p>
+</li>
+<li>
+<p>Select the desired tags from the <strong>Select a tag(s)</strong> drop-down list.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="automatic-tagging-of-an-application_user-interface-guide">7.7.3. Automatic tagging</h4>
+<div class="paragraph _abstract">
+<p>MTA can automatically add tags to the application based on the application analysis. Automatic tagging is especially useful when dealing with large portfolios of applications.</p>
+</div>
+<div class="paragraph">
+<p>Automatic tagging of applications is enabled by default. You can disable automatic tagging by deselecting the <strong>Enable automated tagging</strong> checkbox in the <strong>Advanced</strong> section of the <strong>Analysis configuration</strong> wizard.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+To tag an application automatically, make sure that the <strong>Enable automated tagging</strong> checkbox is selected <em>before</em> you run an application analysis.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="displaying-the-tags-of-an-application_user-interface-guide">7.7.4. Displaying application tags</h4>
+<div class="paragraph _abstract">
+<p>You can display the tags attached to a particular application.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can display the tags that were attached automatically only <em>after</em> you have run an application analysis.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application inventory</strong>.</p>
+</li>
+<li>
+<p>Click the name of the required application. A side pane opens.</p>
+</li>
+<li>
+<p>Click the <strong>Tags</strong> tab. The tags attached to the application are displayed.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-archetypes_user-interface-guide">7.8. Working with archetypes</h3>
+<div class="paragraph">
+<p>An <strong>archetype</strong> is a group of applications with common characteristics. You can use archetypes to assess multiple applications at once. By using archetypes, the Migration Toolkit for Applications (MTA) can apply questionnaires populated with questions that apply to common application characteristics.</p>
+</div>
+<div class="paragraph">
+<p>Application archetypes are defined by criteria tags and the application taxonomy. Each archetype defines how the <em>assessment module</em> assesses the application according to the characteristics defined in that archetype. If the tags of an application match the criteria tags of an archetype, the application is associated with the archetype.</p>
+</div>
+<div class="paragraph">
+<p>Creation of an archetype is defined by a series of <strong>tags</strong>, <strong>stakeholders</strong>, and <strong>stakeholder groups</strong>. The tags include the following types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Criteria tags</strong> are tags that the archetype requires to include an application as a member.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If the archetype criteria tags match an application only partially, this application cannot be a member of the archetype. For example, if the application <em>a</em> only has tag <em>a</em>, but the archetype <em>a</em> criteria tags include tags <em>a</em> AND <em>b</em>, the application <em>a</em> will not be a member of the archetype <em>a</em>.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Archetype tags</strong> are tags that are applied to the archetype entity.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+All applications associated with the archetype inherit the <em>assessment</em> and <em>review</em> from the archetype groups to which these applications belong. This is the default setting. You can override inheritance for the application by completing an individual assessment and review.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="defining-an-archetype_user-interface-guide">7.8.1. Creating an archetype</h4>
+<div class="paragraph _abstract">
+<p>When you create an archetype, an application in the inventory is automatically associated to that archetype if this application has the tags that match the tags of the archetype.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open the MTA web console.</p>
+</li>
+<li>
+<p>In the left menu, click <strong>Archetypes</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new archetype</strong>.</p>
+</li>
+<li>
+<p>In the form that opens, enter the following information for the new archetype:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong>: A name of the new archetype (mandatory).</p>
+</li>
+<li>
+<p><strong>Description</strong>: A description of the new archetype (optional).</p>
+</li>
+<li>
+<p><strong>Criteria Tags</strong>: Tags that associate the assessed applications with the archetype (mandatory). If criteria tags are updated, the process to calculate the applications, which the archetype is associated with, is triggered again.</p>
+</li>
+<li>
+<p><strong>Archetype Tags</strong>: Tags that the archetype assesses in the application (mandatory).</p>
+</li>
+<li>
+<p><strong>Stakeholder(s)</strong>: Specific stakeholders involved in the application development and migration (optional).</p>
+</li>
+<li>
+<p><strong>Stakeholders Group(s)</strong>: Groups of stakeholders involved in the application development and migration (optional).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="archetype-assessment_user-interface-guide">7.8.2. Archetype assessment</h4>
+<div class="paragraph _abstract">
+<p>An archetype is considered assessed when all required questionnaires have been answered.</p>
+</div>
+<div class="paragraph">
+<p>An archetype is considered reviewed when it has been reviewed once even if multiple questionnaires have been marked as required.</p>
+</div>
+<div class="paragraph">
+<p>If an application is associated with archetypes, this application is considered assessed when all associated archetypes have been assessed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-an-archetype_user-interface-guide">7.8.3. Deleting an archetype</h4>
+<div class="paragraph _abstract">
+<p>Deleting an archetype deletes any associated assessment. All associated applications move to the <strong>Unassessed</strong> state.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="analyzing-an-application_user-interface-guide">7.9. Analyzing an application</h3>
+<div class="paragraph _abstract">
+<p>You can use the Migration Toolkit for Applications (MTA) user interface to configure and run an application analysis. The analysis determines which specific lines in the application must be modified before the application can be migrated or modernized.</p>
+</div>
+<div class="sect3">
+<h4 id="mta-web-configuring-and-running-an-application-analysis_user-interface-guide">7.9.1. Configuring and running an application analysis</h4>
+<div class="paragraph">
+<p>You can analyze more than one application at a time against more than one transformation target in the same analysis.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application inventory</strong>.</p>
+</li>
+<li>
+<p>Select an application that you want to analyze.</p>
+</li>
+<li>
+<p>Review the credentials assigned to the application.</p>
+</li>
+<li>
+<p>Click <strong>Analyze</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>Analysis mode</strong> from the list:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Binary</p>
+</li>
+<li>
+<p>Source code</p>
+</li>
+<li>
+<p>Source code and dependencies</p>
+</li>
+<li>
+<p>Upload a local binary. This option only appears if you are analyzing a single application. If you chose this option, you are prompted to <strong>Upload a local binary</strong>. Either drag a file into the area provided or click <strong>Upload</strong> and select the file to upload.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select one or more target options for the analysis:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Application server migration to either of the following platforms:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>JBoss EAP 7</p>
+</li>
+<li>
+<p>JBoss EAP 8</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Containerization</p>
+</li>
+<li>
+<p>Quarkus</p>
+</li>
+<li>
+<p>OracleJDK to OpenJDK</p>
+</li>
+<li>
+<p>OpenJDK. Use this option to upgrade to either of the following JDK versions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenJDK 11</p>
+</li>
+<li>
+<p>OpenJDK 17</p>
+</li>
+<li>
+<p>OpenJDK 21</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Linux. Use this option to ensure that there are no Microsoft Windows paths hard-coded into your applications.</p>
+</li>
+<li>
+<p>Jakarta EE 9. Use this option to migrate from Java EE 8.</p>
+</li>
+<li>
+<p>Spring Boot on Red Hat Runtimes</p>
+</li>
+<li>
+<p>Open Liberty</p>
+</li>
+<li>
+<p>Camel. Use this option to migrate from Apache Camel 2 to Apache Camel 3 or from Apache Camel 3 to Apache Camel 4.</p>
+</li>
+<li>
+<p>Azure App Service</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select one of the following <strong>Scope</strong> options to better focus the analysis:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Application and internal dependencies only.</p>
+</li>
+<li>
+<p>Application and all dependencies, including known Open Source libraries.</p>
+</li>
+<li>
+<p>Select the list of packages to be analyzed manually. If you choose this option, type the file name and click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>Exclude packages. If you choose this option, type the name of the package and click <strong>Add</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>In <strong>Advanced</strong>, you can attach additional custom rules to the analysis by selecting the <strong>Manual</strong> or <strong>Repository</strong> mode:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In the <strong>Manual</strong> mode, click <strong>Add Rules</strong>. Drag the relevant files or select the files from their directory and click <strong>Add</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Repository</strong> mode, you can add rule files from a Git or Subversion repository.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+Attaching custom rules is optional if you have already attached a migration target to the analysis. If you have not attached any migration target, you must attach rules.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Optional: Set any of the following options:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Target</p>
+</li>
+<li>
+<p>Source(s)</p>
+</li>
+<li>
+<p>Excluded rules tags. Rules with these tags are not processed. Add or delete as needed.</p>
+</li>
+<li>
+<p>Enable automated tagging. Select the checkbox to automatically attach tags to the application. This checkbox is selected by default.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Automatically attached tags are displayed only <em>after</em> you run the analysis.</p>
+</div>
+<div class="paragraph">
+<p>You can attach tags to the application manually instead of enabling automated tagging or in addition to it.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Analysis engines use standard rules for a comprehensive set of migration targets, but if the target is not included or is a customized framework, custom rules can be added. Only manually uploaded custom rule files are validated.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>In <strong>Review</strong>, verify the analysis parameters.</p>
+</li>
+<li>
+<p>Click <strong>Run</strong>.</p>
+<div class="paragraph">
+<p>The analysis status is <code>Scheduled</code> as MTA downloads the image for the container to execute. When the image is downloaded, the status changes to <code>In-progress.</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Analysis takes minutes to hours to run depending on the size of the application and the capacity and resources of the cluster.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>MTA relies on Kubernetes scheduling capabilities to determine how many analyzer instances are created based on cluster capacity. If several applications are selected for analysis, by default, only one analyzer can be provisioned at a time. With more cluster capacity, more analysis processes can be executed in parallel.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>When analysis is complete, click the <strong>Report</strong> link to see the results of the analysis.</p>
+</li>
+<li>
+<p>Optional: Display the details of the analysis:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click the Options menu (<span class="image"><img src="../topics/images/kebab.png" alt="kebab" title="Options menu"></span>).</p>
+</li>
+<li>
+<p>Select <strong>Analysis details</strong>. You can choose either the YAML or JSON format.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-web-reviewing-an-analysis-report_user-interface-guide">7.9.2. Reviewing an analysis report</h4>
+<div class="paragraph">
+<p>An MTA analysis report contains a number of sections, including a listing of the technologies used by the application, the dependencies of the application, and the lines of code that must be changed to successfully migrate or modernize the application.</p>
+</div>
+<div class="paragraph">
+<p>For more information about the contents of an MTA analysis report, see <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_applications/7.0/html-single/cli_guide#review-reports_cli-guide">Reviewing the reports</a>.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Migration</strong> view, click <strong>Application inventory</strong>.</p>
+</li>
+<li>
+<p>Expand the application with a completed analysis.</p>
+</li>
+<li>
+<p>Click <strong>Reports</strong>.</p>
+</li>
+<li>
+<p>Click the dependencies or source links.</p>
+</li>
+<li>
+<p>Click the tabs to review the report.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-web-downloading-an-analysis-report_user-interface-guide">7.9.3. Downloading an analysis report</h4>
+<div class="paragraph">
+<p>For your convenience, you can download analysis reports. Note that by default this option is disabled.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In <strong>Administration</strong> view, click <strong>General</strong>.</p>
+</li>
+<li>
+<p>Toggle the <strong>Allow reports to be downloaded after running an analysis.</strong>  switch.</p>
+</li>
+<li>
+<p>Go to the <strong>Migration</strong> view and click <strong>Application inventory</strong>.</p>
+</li>
+<li>
+<p>Open the page of the application for which you ran an analysis.</p>
+</li>
+<li>
+<p>Click <strong>Reports</strong>.</p>
+</li>
+<li>
+<p>Click either the <strong>HTML</strong> or <strong>YAML</strong> link:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>By clicking the <strong>HTML</strong> link, you download the compressed <code>analysis-report-app-&lt;application_name&gt;.tar</code> file. Extracting this file creates a folder with the same name as the application.</p>
+</li>
+<li>
+<p>By clicking the <strong>YAML</strong> link, you download the uncompressed <code>analysis-report-app-&lt;application_name&gt;.yaml</code> file.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mta-web-creating-custom-migration-targets_user-interface-guide">7.10. Creating custom migration targets</h3>
+<div class="paragraph">
+<p>Architects or users with <code>admin</code> permissions can create and maintain custom rulesets associated with custom migration targets. Architects can upload custom rule files and assign them to various custom migration targets. The custom migration targets can then be selected in the analysis configuration wizard.</p>
+</div>
+<div class="paragraph">
+<p>By using ready-made custom migration targets, you can avoid configuring custom rules for each analysis run. This simplifies analysis configuration and execution for non-admin users or third-party developers.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You are logged in as a user with <code>admin</code> permissions.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <strong>Administration</strong> view, click <strong>Custom migration targets</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create new</strong>.</p>
+</li>
+<li>
+<p>Enter the name and description of the target.</p>
+</li>
+<li>
+<p>In the <strong>Image</strong> section, upload an image file for the target&#8217;s icon. The file can be in either the PNG or JPEG format, up to 1 MB. If you do not upload any file, a default icon is used.</p>
+</li>
+<li>
+<p>In the <strong>Custom rules</strong> section, select either <strong>Upload manually</strong> or <strong>Retrieve from a repository</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you selected <strong>Upload manually</strong>, upload or drag and drop the required rule files from your local drive.</p>
+</li>
+<li>
+<p>If you selected <strong>Retrieve from a repository</strong>, complete the following steps:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Choose <strong>Git</strong> or <strong>Subversion</strong>.</p>
+</li>
+<li>
+<p>Enter the <strong>Source repository</strong>, <strong>Branch</strong>, and <strong>Root path</strong> fields.</p>
+</li>
+<li>
+<p>If the repository requires credentials, enter these credentials in the <strong>Associated credentials</strong> field.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+<div class="paragraph">
+<p>The new migration target appears on the <strong>Custom migration targets</strong> page. It can now be used by non-admin users in the <strong>Migration</strong> view.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><br></p>
+</div>
+<div class="paragraph">
+<p><em class="right">Revised on 2024-10-09 20:09:46 CDT</em></p>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

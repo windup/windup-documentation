@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/web-console-guide-mtr/master/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/web-console-guide-mtr/master/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/web-console-guide-mtr/master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1>Web Console Guide</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#making-open-source-more-inclusive">Making open source more inclusive</a></li>
+<li><a href="#introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#about-console-guide_web-console-guide">1.1. About the Web Console</a></li>
+<li><a href="#what-is-the-toolkit_web-console-guide">1.2. About the Migration Toolkit for Runtimes</a></li>
+<li><a href="#about-the-web-console_web-console-guide">1.3. The MTR web console</a></li>
+</ul>
+</li>
+<li><a href="#installing-the-web-console">2. Installing the web console</a>
+<ul class="sectlevel2">
+<li><a href="#installing-web-console-linux-win-mac_web-console-guide">2.1. Installing the web console on Linux, Windows, or macOS</a></li>
+<li><a href="#installing-web-console-on-openshift_web-console-guide">2.2. Installing the web console on OpenShift Container Platform 4.11 and later</a>
+<ul class="sectlevel3">
+<li><a href="#troubleshooting-a-web-console-installation-on-openshift">2.2.1. Troubleshooting a web console installation on OpenShift</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#using-the-web-console-to-analyze-applications">3. Using the web console to analyze applications</a>
+<ul class="sectlevel2">
+<li><a href="#web-create-project_web-console-guide">3.1. Creating a project</a></li>
+<li><a href="#web-running-saved-analysis_web-console-guide">3.2. Running a saved analysis</a></li>
+<li><a href="#web-view-results_web-console-guide">3.3. Viewing analysis results</a></li>
+<li><a href="#web-review-reports_web-console-guide">3.4. Reviewing reports</a></li>
+<li><a href="#web-updating-an-analysis_web-console-guide">3.5. Updating an analysis configuration</a></li>
+<li><a href="#web-adding-global-custom-rules_web-console-guide">3.6. Adding global custom rules</a></li>
+<li><a href="#web-adding-global-custom-labels_web-console-guide">3.7. Adding global custom labels</a></li>
+</ul>
+</li>
+<li><a href="#configuring-web-console-authentication-for-linux-windows-macos_web-console-guide">4. Configuring authentication for the web console on Linux, Windows, or macOS</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="making-open-source-more-inclusive">Making open source more inclusive</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="about-console-guide_web-console-guide">1.1. About the Web Console</h3>
+<div class="paragraph">
+<p>This guide is for engineers, consultants, and others who want to use the Migration Toolkit for Runtimes (MTR) to migrate or modernize Java applications or other components. It describes how to install and use the web console to manage migration or modernization projects and analyze applications.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="what-is-the-toolkit_web-console-guide">1.2. About the Migration Toolkit for Runtimes</h3>
+<h4 id="what-is-the-migration-toolkit-for-runtimes" class="discrete">What is the Migration Toolkit for Runtimes?</h4>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes (MTR) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
+</div>
+<div class="paragraph">
+<p>MTR examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. MTR supports many migration paths, including the following examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrading to the latest release of Red Hat JBoss Enterprise Application Platform</p>
+</li>
+<li>
+<p>Migrating from Oracle WebLogic or IBM WebSphere Application Server to Red Hat JBoss Enterprise Application Platform</p>
+</li>
+<li>
+<p>Containerizing applications and making them cloud-ready</p>
+</li>
+<li>
+<p>Migrating from Java Spring Boot to Quarkus</p>
+</li>
+<li>
+<p>Updating from Oracle JDK to OpenJDK</p>
+</li>
+<li>
+<p>Upgrading from OpenJDK 8 to OpenJDK 11</p>
+</li>
+<li>
+<p>Upgrading from OpenJDK 11 to OpenJDK 17</p>
+</li>
+<li>
+<p>Upgrading from OpenJDK 17 to OpenJDK 21</p>
+</li>
+<li>
+<p>Migrating EAP Java applications to Azure</p>
+</li>
+<li>
+<p>Migrating Spring Boot Java applications to Azure</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mtr/use-cases">MTR for developers</a> web page.</p>
+</div>
+<h4 id="how-does-the-migration-toolkit-for-runtimes-simplify-migration" class="discrete">How does the Migration Toolkit for Runtimes simplify migration?</h4>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
+</div>
+<div class="paragraph">
+<p>MTR generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
+</div>
+<h4 id="how-do-i-learn-more" class="discrete">How do I learn more?</h4>
+<div class="paragraph">
+<p>See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/introduction_to_the_migration_toolkit_for_runtimes">Introduction to the Migration Toolkit for Runtimes</a> to learn more about the features, supported configurations, system requirements, and available tools in the Migration Toolkit for Runtimes.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about-the-web-console_web-console-guide">1.3. The MTR web console</h3>
+<div class="paragraph">
+<p>By using the web console for the Migration Toolkit for Runtimes, a team of users can assess and prioritize migration and modernization efforts for a large number of applications. You can use the web console to group applications into projects for analysis and provide numerous reports that highlight the results.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-the-web-console">2. Installing the web console</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can install the web console on Linux, Windows, macOS, or Red Hat OpenShift Container Platform.</p>
+</div>
+<div class="sect2">
+<h3 id="installing-web-console-linux-win-mac_web-console-guide">2.1. Installing the web console on Linux, Windows, or macOS</h3>
+<div class="paragraph">
+<p>You can install the web console on Linux, Windows, or macOS operating systems and access the web console in a browser.</p>
+</div>
+<div class="paragraph">
+<p>The web console has been tested with Chrome and Firefox.</p>
+</div>
+<div class="paragraph">
+<div class="title">Prerequisites</div>
+<p>The following are the prerequisites for the Migration Toolkit for Runtimes (MTR) installation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java Development Kit (JDK) is installed. MTR supports the following JDKs:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenJDK 11</p>
+</li>
+<li>
+<p>OpenJDK 17</p>
+</li>
+<li>
+<p>Oracle JDK 11</p>
+</li>
+<li>
+<p>Oracle JDK 17</p>
+</li>
+<li>
+<p>Eclipse Temurin™ JDK 11</p>
+</li>
+<li>
+<p>Eclipse Temurin™ JDK 17</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>8 GB RAM</p>
+</li>
+<li>
+<p>macOS installation: the value of <code>maxproc</code> must be <code>2048</code> or greater.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the <a href="https://developers.redhat.com/products/mtr/download">MTR Download page</a> and download the web console <code>Local install &amp; OpenShift</code> file.</p>
+</li>
+<li>
+<p>Extract the <code>.zip</code> file to a directory of your choice.</p>
+<div class="paragraph">
+<p>When you encounter <code>&lt;MTR_HOME&gt;</code> in this guide, replace it with the actual path to your MTR installation.</p>
+</div>
+</li>
+<li>
+<p>By default, no authentication is required. If you wish to enable authentication, do this before starting the web console.</p>
+</li>
+<li>
+<p>Start the web console:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Linux or macOS operating system:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;MTR_HOME&gt;/run_windup.sh</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Windows operating system:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">C:\&lt;MTR_HOME&gt;\run_windup.bat</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Open a browser and navigate to <code>http://localhost:8080/windup-ui</code>.</p>
+<div class="paragraph">
+<p>If authentication is not configured, the Projects screen is displayed in your browser.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/mtr_web_console.png" alt="web console projects screen">
+</div>
+<div class="title">Figure 1. MTR Projects screen</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installing-web-console-on-openshift_web-console-guide">2.2. Installing the web console on OpenShift Container Platform 4.11 and later</h3>
+<div class="paragraph">
+<p>You can install the web console on OpenShift Container Platform 4.11 and later versions with the Migration Toolkit for Runtimes Operator.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>6 vCPUs, 8 GB RAM, and 40 GB persistent storage.</p>
+</li>
+<li>
+<p>One or more projects in which you can install the web console.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do not install the web console in a default project.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><code>cluster-admin</code> privileges to install the Migration Toolkit for Runtimes Operator.</p>
+</li>
+<li>
+<p><code>project-admin-user</code> privileges to install the web console application in a project.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Configuring Red Hat Single Sign-on (SSO)</div>
+<p>You must decide at installation time whether the web console requires authentication. If it does, you must first install and configure Red Hat SSO and input some RH SSO settings when instantiating the MTR Operator.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Authentication can not be added or removed after installation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the Red Hat SSO administration console.</p>
+</li>
+<li>
+<p>Add a realm named <strong>windup</strong>.</p>
+</li>
+<li>
+<p>In the realm, create a client named <strong>windup-web</strong>.</p>
+</li>
+<li>
+<p>Check that <strong>Access Type</strong> is set to <code>public</code>. Set <strong>Valid Redirect URIs</strong> and <strong>Web Origins</strong> to <code>*</code>. Click *Save*.</p>
+<div class="paragraph">
+<p>Note that after the MTR operator has been instantiated, the <strong>Valid Redirect URIs</strong> and <strong>Web Origins</strong> fields have to be set to the secure-mtr-web-console route.</p>
+</div>
+</li>
+<li>
+<p>Create a role named <strong>user</strong>.</p>
+</li>
+<li>
+<p>Create a user with any name.</p>
+</li>
+<li>
+<p>Set the credentials of the user, disable <strong>Temporary</strong>, and assign the role "user" to the user.</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Installing the MTR Operator</div>
+<ol class="arabic">
+<li>
+<p>Log in to the OpenShift web console as a user with <code>cluster-admin</code> privileges.</p>
+</li>
+<li>
+<p>Click <strong>Operators</strong> &#8594; <strong>OperatorHub</strong>.</p>
+</li>
+<li>
+<p>Use the <strong>Search by keyword</strong> field to locate the <strong>Migration Toolkit for Runtimes</strong> Operator.</p>
+</li>
+<li>
+<p>Click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>Select a project from the <strong>Installed Namespace</strong> list and click <strong>Install</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Operators</strong> &#8594; <strong>Installed Operators</strong> to verify that the Operator is installed.</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Installing the web console application</div>
+<ol class="arabic">
+<li>
+<p>Log in to the OpenShift web console as a user with <code>project-admin-user</code> privileges.</p>
+</li>
+<li>
+<p>Switch to the <strong>Migration</strong> perspective and click <strong>+Add</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Add</strong> view, click <strong>Operator Backed</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Migration Toolkit for Runtimes</strong> Operator.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>Review the application settings. If the web console requires authentication, input the RH SSO settings and click <strong>Create</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Topology</strong> view, click the <code>mtr-web-console</code> application and then click the <strong>Resources</strong> tab.</p>
+</li>
+<li>
+<p>If authentication is required, set the RH SSO <strong>Valid Redirect URIs</strong> and <strong>Web Origins</strong> fields to the secure-mtr-web-console route.</p>
+</li>
+<li>
+<p>Click the <code>secure-mtr-web-console</code> route to open the web console in a new browser window.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="troubleshooting-a-web-console-installation-on-openshift">2.2.1. Troubleshooting a web console installation on OpenShift</h4>
+<div class="paragraph">
+<p>This section describes how to troubleshoot a web console installation on OpenShift Container Platform.</p>
+</div>
+<div class="sect4">
+<h5 id="proc_web-downloading-logs-console_web-console-guide">Downloading logs using the OpenShift console</h5>
+<div class="paragraph _abstract">
+<p>You can download pod logs using the OpenShift console.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Open the OpenShift console and navigate to <strong>Applications</strong> &#8594; <strong>Pods</strong>.</p>
+</li>
+<li>
+<p>Click the <code>mtr-web-console</code> pod.</p>
+</li>
+<li>
+<p>Click <strong>Logs</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Download</strong> to download and save a log.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="proc_web-downloading-logs-cli_web-console-guide">Downloading logs using the CLI</h5>
+<div class="paragraph _abstract">
+<p>You can download pod logs using the CLI.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Obtain the pod names:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc get pods -n &lt;project-name&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output resembles the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">NAME                       READY     STATUS      RESTARTS   AGE
+eap-builder-1-build        0/1       Completed   0          1d
+mtr-postgresql-1-hfbdn     1/1       Running     0          1d
+mtr-sso-1-build            0/1       Completed   0          1d
+mtr-web-console-1-build    0/1       Completed   0          1d
+mtr-web-console-1-vt7s5    1/1       Running     1          1d
+sso-1-wjl2n                1/1       Running     1          1d</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Use <code>oc logs</code> to examine the pod log:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc logs &lt;pod&gt;</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can redirect the output to obtain a copy of the current log:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ oc logs &lt;pod&gt; &gt; ./&lt;pod&gt;.log</pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="web-openshift-no-route-to-host-error_web-console-guide"><code>No route to host</code> error</h5>
+<div class="paragraph">
+<p>The <code>No route to host</code> error in the <code>mtr-web-console-executor</code> log indicates that the <code>mtr-web-console-executor</code> pod cannot connect to the <code>mtr-web-console</code> pod:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">13:44:03,501 SEVERE [org.jboss.windup.web.messaging.executor.ExecutorBootstrap] (main) Could not start messaging listener due to: Failed to connect to any server. Servers tried: [http-remoting://192.0.2.4:8080 (java.net.NoRouteToHostException: No route to host)]: javax.naming.CommunicationException: Failed to connect to any server. Servers tried: [http-remoting://192.0.2.4:8080 (java.net.NoRouteToHostException: No route to host)]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This error occurs because the <code>mtr-web-console-executor</code> pod starts running before the <code>mtr-web-console</code> pod.</p>
+</div>
+<div class="paragraph">
+<p>Check the <code>mtr-web-console-executor</code> log after the <code>mtr-web-console</code> pod has been running for a few minutes.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="web-openshift-insufficient-resources_web-console-guide">Resolving insufficient resources</h5>
+<div class="paragraph">
+<p>The following conditions indicate insufficient resources:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>mtr-web-console</code> pod is not running and the following error is displayed on the <strong>Events</strong> tab of the <strong>Pod Details</strong> screen in the OpenShift console:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">0/9 nodes are available: 4 Insufficient cpu, 4 MatchNodeSelector, 9 Insufficient memory.</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>The <code>mtr-web-console-deploy</code>, <code>mtr-web-console-executor-deploy</code>, and <code>mtr-web-console-postgresql-deploy</code> pods time out and the following error is displayed in the logs:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">error: update acceptor rejected mtr-web-console-executor-1: Pods for rc 'mtr/mtr-web-console-executor-1' took longer than 600 seconds to become available</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Install and run the <a href="https://docs.openshift.com/container-platform/4.11/nodes/clusters/nodes-cluster-resource-levels.html">cluster capacity tool</a> to determine how many pods you can schedule.</p>
+</li>
+<li>
+<p>Change the load on the cluster resources by performing one of the following actions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Increase the <a href="https://docs.openshift.com/container-platform/4.11/nodes/clusters/nodes-cluster-limit-ranges.html">limit ranges</a> or the <a href="https://docs.openshift.com/container-platform/4.11/applications/quotas/quotas-setting-per-project.html">resource quotas</a> of your project.</p>
+</li>
+<li>
+<p>Reduce the requested resources of your project. The web console requires a minimum of 4 vCPUs and 8 GB RAM.</p>
+</li>
+<li>
+<p>Run fewer jobs.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Redeploy the web console.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="reporting-issues">Reporting issues</h5>
+<div class="paragraph">
+<p>MTR uses Jira as its issue tracking system. If you encounter an issue executing MTR, submit a <a href="https://issues.redhat.com/projects/WINDUP">Jira issue</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="using-the-web-console-to-analyze-applications">3. Using the web console to analyze applications</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can create a project in the web console to analyze your applications.</p>
+</div>
+<div class="paragraph">
+<p>Each project groups the applications for a specific analysis, which you can configure with custom rules and labels.</p>
+</div>
+<div class="paragraph">
+<p>The analysis process generates reports that describe the readiness of your applications for migration or modernization.</p>
+</div>
+<div class="sect2">
+<h3 id="web-create-project_web-console-guide">3.1. Creating a project</h3>
+<div class="paragraph">
+<p>You can create a project in the web console with the <strong>Create project</strong> wizard.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the web console, click <strong>Projects</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Create project</strong>.</p>
+</li>
+<li>
+<p>Enter a unique name for the project, an optional description, and click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>To upload applications, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select the application files you want to upload, and click <strong>Close</strong>.</p>
+<div class="paragraph">
+<p>Uploading applications stores them directly on the MTR server.</p>
+</div>
+</li>
+<li>
+<p>To register a server path, click the <strong>Server path</strong> tab and enter the <strong>Server-side path</strong> of the application in the field.</p>
+<div class="paragraph">
+<p>Registering the server path of an application ensures that MTR always uses the latest version.</p>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Click one or more transformation targets.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/web-console-transformation-targets.png" alt="Transformation targets">
+</div>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Select packages and click <strong>&gt;</strong> to include them in the analysis.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>If you want to add a custom rule, click <strong>Add rule</strong>.</p>
+<div class="paragraph">
+<p>See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/rules_development_guide">Rules Development Guide</a> for more information.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To upload a ruleset file, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select one or more files, and click <strong>Close</strong>.</p>
+<div class="paragraph">
+<p>A ruleset file must have a <code>.windup.xml</code> extension. The uploaded file is stored on the MTR server.</p>
+</div>
+</li>
+<li>
+<p>To register the server path of a ruleset file, click the <strong>Server path</strong> tab, enter the <strong>Rules</strong> path, and click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>Registering the server path ensures that the MTR server always uses the latest version of the ruleset files.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>If you want to add a custom label, click <strong>Add label</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To upload a labelset file, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select one or more files, and click <strong>Close</strong>.</p>
+<div class="paragraph">
+<p>A labelset file must have a <code>.windup.label.xml</code> extension. The uploaded file is stored on the MTR server.</p>
+</div>
+</li>
+<li>
+<p>To register a server path, click the <strong>Server path</strong> tab, enter the <strong>Labels path</strong> of the label files in the field, and click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>Registering the server path ensures that the MTR server always uses the latest version of the labelset files.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Review the following <strong>Advanced options</strong> and make any necessary changes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Target</strong></p>
+</li>
+<li>
+<p><strong>Source</strong></p>
+</li>
+<li>
+<p><strong>Exclude tags</strong>: Rules with these tags are not processed.</p>
+</li>
+<li>
+<p><strong>Additional classpath</strong>: Enter a space-delimited list of additional <code>.jar</code> files or directories so that they are available for decompilation or other analysis.</p>
+</li>
+<li>
+<p><strong>Application name</strong></p>
+</li>
+<li>
+<p><strong>Mavenize group ID</strong></p>
+</li>
+<li>
+<p><strong>Ignore path</strong>: Enter a path for files to exclude from analysis.</p>
+</li>
+<li>
+<p><strong>Export CSV</strong>: Exports the report data as a CSV file.</p>
+</li>
+<li>
+<p><strong>Export Summary</strong>: Generates an <code>analysisSummary.json</code> export file in the output directory. The file contains analysis summary information for each application analyzed, including the number of incidents and story points by category, and all of the technology tags associated with the analyzed applications.</p>
+</li>
+<li>
+<p><strong>Export reports zip</strong>: Creates a <code>reports.zip</code> file in the output folder. The file contains the analysis output, typically, the reports. If requested, it can also contain the CSV export files.</p>
+</li>
+<li>
+<p><strong>Disable Tattletale</strong>: Disables generation of a Tattletale report for each application.</p>
+</li>
+<li>
+<p><strong>Class Not Found analysis</strong>: Enables analysis of Java files that are not available on the class path.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This option should not be used if some classes are unavailable for analysis.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Compatible Files report</strong>: Generating a Compatible Files report might take a long time for large applications.</p>
+</li>
+<li>
+<p><strong>Exploded app</strong>: The input directory contains the unpackaged source files of an application.</p>
+</li>
+<li>
+<p><strong>Keep work dirs</strong>: Retains temporary files, for example, the graph database or extracted archive files, for debugging purposes.</p>
+</li>
+<li>
+<p><strong>Skip reports</strong>: HTML reports are not generated. Must be enabled if you enabled <strong>Export CSV</strong>.</p>
+</li>
+<li>
+<p><strong>Allow network access</strong>: Validates any XML files within the analyzed applications against their schema.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This option might reduce performance.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Mavenize</strong>: Creates a Maven project directory structure based on the structure and content of the application.</p>
+</li>
+<li>
+<p><strong>Source mode</strong>: Indicates that the application files are raw source files, not compiled binaries. The sourceMode argument has been deprecated. There is no longer the need to specify it. MTR can intuitively process any inputs that are presented to it.  In addition, project source folders can be analyzed with binary inputs within the same analysis execution.</p>
+</li>
+<li>
+<p><strong>Analyze known libraries</strong>: Analyze known software artifacts embedded within your application.  By default, MTR only analyzes application code.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This option might result in a longer execution time and a large number of migration issues being reported.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Transaction analysis</strong>: [Tech Preview] Generates a Transactions report that displays the call stack, which executes operations on relational database tables. The Enable Transaction Analysis feature supports Spring Data JPA and the traditional <code>preparedStatement()</code> method for SQL statement execution. It does not support ORM frameworks, such as Hibernate.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Transaction analysis is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them
+in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Skip source code reports:</strong> Adding this option skips generating a <em>Source code report</em> when generating the application analysis report. Use this advanced option when concerned about source code information appearing in the application analysis.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+<li>
+<p>Review your project and click <strong>Save</strong> or <strong>Save and run</strong>.</p>
+<div class="paragraph">
+<p>The project is displayed in the <strong>Projects</strong> screen.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="web-running-saved-analysis_web-console-guide">3.2. Running a saved analysis</h3>
+<div class="paragraph">
+<p>You can run a saved analysis.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the web console, click <strong>Analysis results</strong>.</p>
+</li>
+<li>
+<p>Select a project.</p>
+</li>
+<li>
+<p>Click <strong>Run analysis</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>A progress bar displays the progress of your analysis.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="web-view-results_web-console-guide">3.3. Viewing analysis results</h3>
+<div class="paragraph">
+<p>The results of all analyses are grouped and listed by project on the <strong>Analysis results</strong> screen.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the web console, click <strong>Analysis results</strong>.</p>
+</li>
+<li>
+<p>Select a project from the list.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/AnalysisResults1.png" alt="Analysis results screen">
+</div>
+</div>
+<div class="paragraph">
+<p>The Analysis Reports can be accessed via the Reports bar chart icon or by the Reports action on the right-hand side of the screen.</p>
+</div>
+</li>
+<li>
+<p>Click on the number of the analysis you want to review to see details of the analysis configuration settings and the analysis execution statistics.</p>
+<div class="paragraph">
+<p>The results are displayed in the <strong>Results</strong> screen, which contains two tabs: <strong>Details</strong> and <strong>Logs</strong>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The <strong>Details</strong> tab displays important details of the analysis, such as status, start date, duration, and configuration settings.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/AnalysisResults2.png" alt="Analysis details screen">
+</div>
+<div class="title">Figure 2. Analysis details screen</div>
+</div>
+<div class="paragraph">
+<p>The <strong>Logs</strong> tab displays the logs generated during the analysis.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/AnalysisLogs.png" alt="Analysis logs screen">
+</div>
+<div class="title">Figure 3. Analysis logs screen</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="web-review-reports_web-console-guide">3.4. Reviewing reports</h3>
+<div class="paragraph">
+<p>The MTR web console provides a set of detailed reports that can help you decide if you need to make any changes to your applications. You access these reports from the <strong>Analysis results</strong> screen.</p>
+</div>
+<div class="paragraph">
+<p>The reports are described in detail in <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/cli_guide#review-reports_cli-guide">Reviewing the reports</a> in the <em>CLI Guide</em>.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the web console, click <strong>Analysis results</strong>.</p>
+</li>
+<li>
+<p>Click the <strong>Reports</strong> icon <span class="image"><img src="../topics/images/reports.png" alt="reports" title="*Reports* icon"></span> beside the analysis you want to investigate.</p>
+<div class="paragraph">
+<p>The <strong>All applications</strong> screen of the reports is displayed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-1-applications.png" alt="Analysis logs screen">
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="web-updating-an-analysis_web-console-guide">3.5. Updating an analysis configuration</h3>
+<div class="paragraph">
+<p>You can update an analysis configuration, for example, with a different transformation target, advanced option, or a custom rule. Then you can run the updated analysis in your project.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the web console, click <strong>Analysis configuration</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/3-5-analysis-configuration-mtr-1-2.png" alt="Analysis configuration screen">
+</div>
+</div>
+</li>
+<li>
+<p>Select a <strong>Project</strong>.</p>
+</li>
+<li>
+<p>Click the appropriate tabs and make your changes.</p>
+</li>
+<li>
+<p>Click <strong>Save</strong> or <strong>Save and run</strong>.</p>
+<div class="paragraph">
+<p>The project is displayed in the <strong>Projects</strong> screen.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="web-adding-global-custom-rules_web-console-guide">3.6. Adding global custom rules</h3>
+<div class="paragraph">
+<p>MTR includes a preconfigured set of global rules, which apply to all projects.</p>
+</div>
+<div class="paragraph">
+<p>You can define your own custom global rules.</p>
+</div>
+<div class="paragraph">
+<p>For information on writing custom MTR rules, see the MTR <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/rules_development_guide"><em>Rules Development Guide</em></a>.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the web console, click <strong>Rules configuration</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Add rules</strong>.</p>
+</li>
+<li>
+<p>To upload a ruleset file, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select one or more files, and click <strong>Close</strong>.</p>
+<div class="paragraph">
+<p>A ruleset file must have a <code>.windup.xml</code> extension. The uploaded file is stored on the MTR server.</p>
+</div>
+</li>
+<li>
+<p>To register the server path of a ruleset file, click the <strong>Server path</strong> tab, enter the <strong>Rules</strong> path, and click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>Registering the server path ensures that the MTR server always uses the latest version of the ruleset files.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Custom rules</strong> list displays the rules.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="web-adding-global-custom-labels_web-console-guide">3.7. Adding global custom labels</h3>
+<div class="paragraph">
+<p>MTR includes a preconfigured set of global labels, which apply to all projects.</p>
+</div>
+<div class="paragraph">
+<p>You can define your own custom global labels.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the web console, click <strong>Labels configuration</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Add label</strong>.</p>
+</li>
+<li>
+<p>To upload a labelset file, click the <strong>Upload</strong> tab, click <strong>Browse</strong>, select one or more files, and click <strong>Close</strong>.</p>
+<div class="paragraph">
+<p>A labelset file must have a <code>.windup.label.xml</code> extension. The uploaded file is stored on the MTR server.</p>
+</div>
+</li>
+<li>
+<p>To register the server path of a labelset file, click the <strong>Server path</strong> tab, enter the <strong>Labels</strong> path, and click <strong>Save</strong>.</p>
+<div class="paragraph">
+<p>Registering the server path ensures that the MTR server always uses the latest version of the labelset files.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>Custom labels</strong> list displays the labels.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configuring-web-console-authentication-for-linux-windows-macos_web-console-guide">4. Configuring authentication for the web console on Linux, Windows, or macOS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can configure the web console to require authentication for access. To  enable authentication, you have to install Red Hat Single Sign-On (SSO).</p>
+</div>
+<h3 id="enabling-authentication_web-console-guide" class="discrete">Enabling authentication</h3>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Adjust the port number that the Red Hat SSO server opens to avoid conflicts with the port that the web console uses by entering the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Linux and macOS:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ ./standalone.sh -Djboss.socket.binding.port-offset=&lt;offset_value&gt;</pre>
+</div>
+</div>
+</li>
+<li>
+<p>For Windows:</p>
+<div class="listingblock">
+<div class="content">
+<pre>&gt; ...\bin\standalone.bat -Djboss.socket.binding.port-offset=&lt;offset_value&gt;</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Open the Red Hat SSO administration console from <code>http://localhost:8180</code>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Username: <code>admin</code></p>
+</li>
+<li>
+<p>Password: <code>admin</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Add a realm named <strong>mtr</strong>.</p>
+</li>
+<li>
+<p>In the realm, create a client named <strong>mtr-web</strong>.</p>
+</li>
+<li>
+<p>Check that <strong>Access Type</strong> is set to <code>public</code>.</p>
+</li>
+<li>
+<p>Set <strong>Valid Redirect URIs</strong> to <code>http://localhost:8080/windup-ui/*</code>.</p>
+</li>
+<li>
+<p>Set <strong>Web Origins</strong> to <code>*</code> and click <strong>Save</strong>.</p>
+</li>
+<li>
+<p>Create a role named <strong>user</strong>.</p>
+</li>
+<li>
+<p>Create a user with any name.</p>
+</li>
+<li>
+<p>Set the credentials of the user, disable <strong>Temporary</strong>, and assign the role "user" to the user.</p>
+</li>
+<li>
+<p>Switch the web console to <strong>Authentication required</strong> mode by doing the following:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Export the following ENV variables:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Linux and macOS:</p>
+<div class="listingblock">
+<div class="content">
+<pre>export SSO_AUTH_SERVER_URL=http://localhost:8180/auth
+export SSO_REALM=windup
+export SSO_SSL_REQUIRED=EXTERNAL
+export SSO_CLIENT_ID=windup-web</pre>
+</div>
+</div>
+</li>
+<li>
+<p>For Windows:</p>
+<div class="listingblock">
+<div class="content">
+<pre>set SSO_AUTH_SERVER_URL=http://localhost:8180/auth
+set SSO_REALM=windup
+set SSO_SSL_REQUIRED=EXTERNAL
+set SSO_CLIENT_ID=windup-web</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Environment variables that are set by the <code>set</code> command in CMD are local, available to the current CMD session only. Use the Windows Control Panel to permanently set the environment variables.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Run the following script:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Linux and macOS:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ &lt;MTR_HOME&gt;/switch_to_authentication_required.sh</pre>
+</div>
+</div>
+</li>
+<li>
+<p>For Windows:</p>
+<div class="listingblock">
+<div class="content">
+<pre>C:\&lt;MTR_HOME&gt;\switch_to_authentication_required.bat</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Start the web console by entering the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Linux and macOS:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ &lt;MTR_HOME&gt;/run_windup.sh</pre>
+</div>
+</div>
+</li>
+<li>
+<p>For Windows:</p>
+<div class="listingblock">
+<div class="content">
+<pre>C:\&lt;MTR_HOME&gt;\run_windup.bat</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Open the browser at <code>http://localhost:8080/windup-ui</code>.</p>
+</li>
+</ol>
+</div>
+<h3 id="disabling-authentication_web-console-guide" class="discrete">Disabling authentication</h3>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Run the following script:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For Linux and macOS:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ &lt;MTR_HOME&gt;/switch_to_automatic_authentication.sh</pre>
+</div>
+</div>
+</li>
+<li>
+<p>For Windows:</p>
+<div class="listingblock">
+<div class="content">
+<pre>C:\&lt;MTR_HOME&gt;\switch_to_automatic_authentication.bat</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><br></p>
+</div>
+<div class="paragraph">
+<p><em class="right">Revised on 2024-10-09 20:09:46 CDT</em></p>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

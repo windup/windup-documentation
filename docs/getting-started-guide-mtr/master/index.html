@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/getting-started-guide-mtr/master/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/getting-started-guide-mtr/master/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/getting-started-guide-mtr/master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1>Introduction to the Migration Toolkit for Runtimes</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#making-open-source-more-inclusive">Making open source more inclusive</a></li>
+<li><a href="#introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#about-the-intro-to-mta-guide_getting-started-guide">1.1. About the Introduction to the Migration Toolkit for Applications</a></li>
+</ul>
+</li>
+<li><a href="#what-is-the-toolkit_getting-started-guide">2. About the Migration Toolkit for Runtimes</a>
+<ul class="sectlevel2">
+<li><a href="#features_getting-started-guide">2.1. MTR Features</a></li>
+<li><a href="#about-rules_getting-started-guide">2.2. The MTR rules</a></li>
+</ul>
+</li>
+<li><a href="#supported-configurations">3. Supported configurations</a>
+<ul class="sectlevel2">
+<li><a href="#migration-paths_getting-started-guide">3.1. Supported Migration Toolkit for Runtimes migration paths</a></li>
+</ul>
+</li>
+<li><a href="#prerequisites">4. Prerequisites</a></li>
+<li><a href="#about-tools_getting-started-guide">5. The Migration Toolkit for Runtimes tools</a>
+<ul class="sectlevel2">
+<li><a href="#about-cli_getting-started-guide">5.1. The MTR CLI</a></li>
+<li><a href="#about-the-web-console_getting-started-guide">5.2. The MTR web console</a></li>
+<li><a href="#eclipse-about-plugin_getting-started-guide">5.3. About the MTR plugin for Eclipse</a></li>
+<li><a href="#about-vscode-extension_getting-started-guide">5.4. About the MTR extension for Visual Studio Code</a></li>
+<li><a href="#about-maven_getting-started-guide">5.5. About the Maven Plugin</a></li>
+</ul>
+</li>
+<li><a href="#planning-your-application-migration">6. Planning your application migration</a>
+<ul class="sectlevel2">
+<li><a href="#migration-goals_getting-started-guide">6.1. Goals of assessing a migration</a></li>
+<li><a href="#migration-approach_getting-started-guide">6.2. Red Hat&#8217;s application migration approach</a>
+<ul class="sectlevel3">
+<li><a href="#migration-best-practices_getting-started-guide">6.2.1. Best practices</a></li>
+<li><a href="#migration-methodology_getting-started-guide">6.2.2. Methodology</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#reference-material">Appendix A: Reference material</a>
+<ul class="sectlevel2">
+<li><a href="#additional-resources">A.1. Additional resources</a>
+<ul class="sectlevel3">
+<li><a href="#get-involved_getting-started-guide">A.1.1. Contributing to the project</a></li>
+<li><a href="#important-links_getting-started-guide">A.1.2. Migration Toolkit for Runtimes development resources</a></li>
+<li><a href="#reporting-issues">A.1.3. Reporting issues</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="making-open-source-more-inclusive">Making open source more inclusive</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction">1. Introduction</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="about-the-intro-to-mta-guide_getting-started-guide">1.1. About the Introduction to the Migration Toolkit for Applications</h3>
+<div class="paragraph">
+<p>This guide is for engineers, consultants, and others who want to use the Migration Toolkit for Runtimes (MTR) to migrate Java applications or other components. It provides an overview of the Migration Toolkit for Runtimes and how to get started using the tools to plan and run your migration.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what-is-the-toolkit_getting-started-guide">2. About the Migration Toolkit for Runtimes</h2>
+<div class="sectionbody">
+<h3 id="what-is-the-migration-toolkit-for-runtimes" class="discrete">What is the Migration Toolkit for Runtimes?</h3>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes (MTR) is an extensible and customizable rule-based tool that simplifies the migration and modernization of Java applications.</p>
+</div>
+<div class="paragraph">
+<p>MTR examines application artifacts, including project source directories and application archives, and then produces an HTML report highlighting areas needing changes. MTR supports many migration paths, including the following examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgrading to the latest release of Red Hat JBoss Enterprise Application Platform</p>
+</li>
+<li>
+<p>Migrating from Oracle WebLogic or IBM WebSphere Application Server to Red Hat JBoss Enterprise Application Platform</p>
+</li>
+<li>
+<p>Containerizing applications and making them cloud-ready</p>
+</li>
+<li>
+<p>Migrating from Java Spring Boot to Quarkus</p>
+</li>
+<li>
+<p>Updating from Oracle JDK to OpenJDK</p>
+</li>
+<li>
+<p>Upgrading from OpenJDK 8 to OpenJDK 11</p>
+</li>
+<li>
+<p>Upgrading from OpenJDK 11 to OpenJDK 17</p>
+</li>
+<li>
+<p>Upgrading from OpenJDK 17 to OpenJDK 21</p>
+</li>
+<li>
+<p>Migrating EAP Java applications to Azure</p>
+</li>
+<li>
+<p>Migrating Spring Boot Java applications to Azure</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information about use cases and migration paths, see the <a href="https://developers.redhat.com/products/mtr/use-cases">MTR for developers</a> web page.</p>
+</div>
+<h3 id="how-does-the-migration-toolkit-for-runtimes-simplify-migration" class="discrete">How does the Migration Toolkit for Runtimes simplify migration?</h3>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes looks for common resources and known trouble spots when migrating applications. It provides a high-level view of the technologies used by the application.</p>
+</div>
+<div class="paragraph">
+<p>MTR generates a detailed report evaluating a migration or modernization path. This report can help you to estimate the effort required for large-scale projects and to reduce the work involved.</p>
+</div>
+<div class="sect2">
+<h3 id="features_getting-started-guide">2.1. MTR Features</h3>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes (MTR) provides a number of capabilities to assist with planning and executing migration projects.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Planning and work estimation</dt>
+<dd>
+<p>MTR assists project managers by detailing the type of work and estimation of effort to complete the tasks. Level of effort is represented in MTR reports as story points. Actual estimates will be based on the skills required and the classification of migration work needed.</p>
+</dd>
+<dt class="hdlist1">Identifying migration issues and providing solutions</dt>
+<dd>
+<p>MTR identifies migration issues and highlights specific points in the code where an issue occurs. MTR suggests code changes and provides additional resources to help engineers resolve the specific issue.</p>
+</dd>
+<dt class="hdlist1">Detailed reporting</dt>
+<dd>
+<p>MTR produces numerous reports to give both high-level views of the migration effort and details of specific migration tasks. You can view migration issues across all applications, charts and summary information about issues in an application, a breakdown of issues by module in the application, reports of technologies used, and dependencies on other applications and services. You can also examine source files to see the line of code where an issue occurs. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/cli_guide"><em>CLI Guide</em></a> for more information on the available MTR reports.</p>
+</dd>
+<dt class="hdlist1">Built-in rules and migration paths</dt>
+<dd>
+<p>MTR comes with a core set of rules to provide migration assistance for several common migration paths. These rules identify the use of proprietary functionality from other application servers or deprecated subsystems from previous versions of JBoss EAP. MTR also contains rules to identify common migration issues, such as hard-coded IP addresses and JNDI lookups.</p>
+</dd>
+<dt class="hdlist1">Rule extensibility and customization</dt>
+<dd>
+<p>MTR provides the ability to create powerful and complex rules. You can expand upon the core set of rules provided by MTR and create rules to identify additional issues that are important for your migration project. You can also override core rules and create custom rule categories. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/rules_development_guide"><em>Rules Development Guide</em></a> for more information on customizing MTR rules.</p>
+</dd>
+<dt class="hdlist1">Ability to analyze source code or application archives</dt>
+<dd>
+<p>MTR can evaluate application archives or source code, and can evaluate multiple applications together. It can identify archives that are shared across multiple applications, which can help with more accurate effort estimation.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about-rules_getting-started-guide">2.2. The MTR rules</h3>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes (MTR) contains rule-based migration tools (analyzers) that you can use to analyze the application user interfaces (APIs), technologies, and architectures used by the applications you plan to migrate. MTR analyzer rules use the following rule pattern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>when(condition)
+ message(message)
+ tag(tags)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use the MTR rules internally to perform the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Extract files from archives.</p>
+</li>
+<li>
+<p>Decompile files.</p>
+</li>
+<li>
+<p>Scan and classify file types.</p>
+</li>
+<li>
+<p>Analyze XML and other file content.</p>
+</li>
+<li>
+<p>Analyze the application code.</p>
+</li>
+<li>
+<p>Build the reports.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>MTR builds a data model based on the rule execution results and stores component data and relationships in a graph database. This database can then be queried and updated as required by the migration rules and for reporting purposes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can create your own custom analyzer rules. You can use custom rules to identify the use of custom libraries or other components that might not be covered by the provided standard migration rules.</p>
+</div>
+<div class="paragraph">
+<p>For instructions on how to write custom rules, see [<em>Rules Development Guide</em>].</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="supported-configurations">3. Supported configurations</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="migration-paths_getting-started-guide">3.1. Supported Migration Toolkit for Runtimes migration paths</h3>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes (MTR) supports the following migrations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Migrating from third-party enterprise application servers, such as Oracle WebLogic Server, to JBoss Enterprise Application Platform (JBoss EAP).</p>
+</li>
+<li>
+<p>Upgrading to the latest release of JBoss EAP.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>MTR provides a comprehensive set of rules to assess the suitability of your applications for containerization and deployment on Red Hat OpenShift Container Platform (RHOCP). You can run an MTR analysis to assess your applications' suitability for migration to multiple target platforms.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 99%;">
+<caption class="title">Table 1. Supported migration paths: Source platform &#8658; Target platform</caption>
+<colgroup>
+<col style="width: 19.1919%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.101%;">
+<col style="width: 10.1011%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Source platform&#160;&#8658;</th>
+<th class="tableblock halign-left valign-top">Migration to JBoss EAP 7 &amp; 8</th>
+<th class="tableblock halign-left valign-top">OpenShift (cloud readiness)</th>
+<th class="tableblock halign-left valign-top">OpenJDK 11, 17, and 21</th>
+<th class="tableblock halign-left valign-top">Jakarta EE 9</th>
+<th class="tableblock halign-left valign-top">Camel 3 &amp; 4</th>
+<th class="tableblock halign-left valign-top">Spring Boot in Red Hat Runtimes</th>
+<th class="tableblock halign-left valign-top">Quarkus</th>
+<th class="tableblock halign-left valign-top">Open Liberty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle WebLogic Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IBM WebSphere Application Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2718; <sup class="footnote" id="_footnote_note2">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JBoss EAP 7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thorntail</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714; <sup class="footnote" id="_footnote_note3">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle JDK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Camel 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spring Boot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any Java application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any Java EE application</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&#x2714;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="prerequisites">4. Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following are the prerequisites for the Migration Toolkit for Runtimes (MTR) installation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java Development Kit (JDK) is installed. MTR supports the following JDKs:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenJDK 11</p>
+</li>
+<li>
+<p>OpenJDK 17</p>
+</li>
+<li>
+<p>Oracle JDK 11</p>
+</li>
+<li>
+<p>Oracle JDK 17</p>
+</li>
+<li>
+<p>Eclipse Temurin™ JDK 11</p>
+</li>
+<li>
+<p>Eclipse Temurin™ JDK 17</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>8 GB RAM</p>
+</li>
+<li>
+<p>macOS installation: the value of <code>maxproc</code> must be <code>2048</code> or greater.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="about-tools_getting-started-guide">5. The Migration Toolkit for Runtimes tools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use the following Migration Toolkit for Runtimes (MTR) tools for assistance in the various stages of your migration and modernization efforts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Web console</p>
+</li>
+<li>
+<p>Migration Toolkit for Runtimes Operator</p>
+</li>
+<li>
+<p>CLI</p>
+</li>
+<li>
+<p>IDE add-ons for the following applications:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Eclipse</p>
+</li>
+<li>
+<p>Visual Studio Code, Visual Studio Codespaces, and Eclipse Che</p>
+</li>
+<li>
+<p>IntelliJ IDEA</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Maven plugin</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Review the details of each tool to determine which tool is suitable for your project.</p>
+</div>
+<div class="sect2">
+<h3 id="about-cli_getting-started-guide">5.1. The MTR CLI</h3>
+<div class="paragraph">
+<p>The CLI is a command-line tool in the Migration Toolkit for Runtimes that you can use to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without using the other tools. The CLI includes a wide array of customization options. By using the CLI, you can tune MTR analysis options or integrate with external automation tools.</p>
+</div>
+<div class="paragraph">
+<p>For more information about using the CLI, see <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/cli_guide"><em>CLI Guide</em></a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about-the-web-console_getting-started-guide">5.2. The MTR web console</h3>
+<div class="paragraph">
+<p>By using the web console for the Migration Toolkit for Runtimes, a team of users can assess and prioritize migration and modernization efforts for a large number of applications. You can use the web console to group applications into projects for analysis and provide numerous reports that highlight the results.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="eclipse-about-plugin_getting-started-guide">5.3. About the MTR plugin for Eclipse</h3>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes (MTR) plugin for Eclipse helps you migrate and modernize applications.</p>
+</div>
+<div class="paragraph">
+<p>The MTR plugin analyzes your projects using customizable rulesets, marks migration issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, or Quick Fixes, if possible.</p>
+</div>
+<div class="paragraph">
+<p>For more information on using the MTR plugin, see the MTR <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/eclipse_plugin_guide"><em>Eclipse and Red Hat CodeReady Studio Plugin Guide</em></a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about-vscode-extension_getting-started-guide">5.4. About the MTR extension for Visual Studio Code</h3>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes (MTR) extension for Visual Studio Code helps you migrate and modernize applications.</p>
+</div>
+<div class="paragraph">
+<p>The MTR extension is also compatible with Visual Studio Codespaces, the Microsoft cloud-hosted development environment.</p>
+</div>
+<div class="paragraph">
+<p>The MTR extension analyzes your projects using customizable rulesets, marks issues in the source code, provides guidance to fix the issues, and offers automatic code replacement, if possible.</p>
+</div>
+<div class="paragraph">
+<p>For more information about using the MTR extension, see the MTR <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/visual_studio_code_extension_guide"><em>Visual Studio Code Extension Guide</em></a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about-maven_getting-started-guide">5.5. About the Maven Plugin</h3>
+<div class="paragraph">
+<p>The Maven plugin for the Migration Toolkit for Runtimes integrates into the Maven build process, allowing developers to continuously evaluate migration and modernization efforts with each iteration of source code. It provides numerous reports that highlight the analysis results, and is designed for developers who want updates with each build.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="planning-your-application-migration">6. Planning your application migration</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="migration-goals_getting-started-guide">6.1. Goals of assessing a migration</h3>
+<div class="paragraph">
+<p>Many organizations are faced with the challenges of keeping their existing business operations running, while also trying to innovate. There are typically increased expectations to deliver new functionality faster and to reduce cost.</p>
+</div>
+<div class="paragraph">
+<p>When assessing a migration or modernization effort, it is important to address the challenges that are specific to your organization. Common challenges that organizations face are limited budgets, lack of in-house skills, perceived risks, no known predictable process, and accurate effort estimation in a timely manner.</p>
+</div>
+<div class="paragraph">
+<p>In general, the goals when assessing a large-scale middleware migration or modernization effort are the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Predicting the level of effort and cost</p>
+</li>
+<li>
+<p>Scheduling application migrations and handling conflicts</p>
+</li>
+<li>
+<p>Identifying all potential risks at a code, infrastructure, process, or knowledge level</p>
+</li>
+<li>
+<p>Predicting the return on investment to make the business case</p>
+</li>
+<li>
+<p>Identifying and mitigating risks to the business</p>
+</li>
+<li>
+<p>Minimizing disruption to existing business operations</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Red Hat has developed a strategy to minimize risk and make application migration and modernizations more efficient.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="migration-approach_getting-started-guide">6.2. Red Hat&#8217;s application migration approach</h3>
+<div class="paragraph">
+<p>Red Hat has defined a strategy to make large-scale application migrations to Red Hat JBoss Middleware quantifiable, less costly, less risky, and easier to complete.</p>
+</div>
+<div class="paragraph">
+<p>Migrating from proprietary or outdated middleware platforms to Red Hat JBoss Middleware gives you lightweight, modular, and cloud-ready middleware with a supporting application infrastructure to make teams more productive. JBoss Middleware and other Red Hat technologies also provide great opportunities to modernize your application development and delivery, allowing you to innovate more quickly.</p>
+</div>
+<div class="sect3">
+<h4 id="migration-best-practices_getting-started-guide">6.2.1. Best practices</h4>
+<div class="paragraph">
+<p>Red Hat recommends the following practices when planning and executing a migration or modernization:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a centralized collaboration platform for information sharing.</p>
+<div class="paragraph">
+<p>Comprehensive and accessible documentation is important so that knowledge can be easily shared and to ensure that effort is not duplicated by solving the same issue twice. It is recommended to document the following items:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A step-by-step guide for migrating or modernizing an application from scratch.</p>
+</li>
+<li>
+<p>A collection of solutions to known and encountered issues.</p>
+</li>
+<li>
+<p>Information about the new platform.</p>
+</li>
+<li>
+<p>A record of the changes made to specific pilot projects.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Reuse, automate, and standardize as much as possible.</p>
+<div class="paragraph">
+<p>Consider reusing existing components instead of creating new ones. Automate processes related to the application lifecycle, such as builds, configuration, deployment, and tests. Standardize and document software packaging format, configuration management, libraries, and dependencies.</p>
+</div>
+</li>
+<li>
+<p>Use a proven and repeatable methodology.</p>
+<div class="paragraph">
+<p>The recommendation is to follow a practical approach and make as few changes as possible to get a functionally identical application.</p>
+</div>
+</li>
+<li>
+<p>Involve Red Hat technical expertise early for the chosen Red Hat Middleware components.</p>
+<div class="paragraph">
+<p>This is crucial to make your migrations and modernizations low risk, predictable, and efficient. Contact Red Hat Consulting for assistance.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="migration-methodology_getting-started-guide">6.2.2. Methodology</h4>
+<div class="paragraph">
+<p>Red Hat&#8217;s recommended methodology is a proven, scalable approach that helps you to incrementally plan and conduct a migration or modernization.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/RHAMT_AMM_Methodology_446947_0517_ECE.png" alt="Red Hat migration methodology">
+</div>
+<div class="title">Figure 1. Red Hat migration methodology</div>
+</div>
+<div class="paragraph">
+<p>The approach consists of the following phases:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Discover</dt>
+<dd>
+<p>Explore the technologies and identify concerns, organization requirements and challenges. Discuss options and potential approaches.</p>
+</dd>
+<dt class="hdlist1">Design</dt>
+<dd>
+<p>Identify and mitigate the biggest risks from an application, infrastructure, process, and knowledge perspective. Establish a strategy for the solution. Prove the technology and build the business case.</p>
+</dd>
+<dt class="hdlist1">Deploy</dt>
+<dd>
+<p>Scale the modernization or migration iteratively by executing the previously defined strategy according to a well-defined delivery model.</p>
+</dd>
+</dl>
+</div>
+<div class="sect4">
+<h5 id="method-discover_getting-started-guide">Discover phase</h5>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/RHAMT_AMM_Methodology_446947_0617_ECE_Discover.png" alt="Red Hat Migration Methodology: Discover">
+</div>
+<div class="title">Figure 2. Red Hat migration methodology: Discover phase</div>
+</div>
+<div class="paragraph">
+<p>The <em>Discover</em> phase is when you gather all stakeholders and decision-makers together to understand the current state and business drivers, and to determine the migration or modernization needs.</p>
+</div>
+<div class="paragraph">
+<p>In this phase, you can do the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Explore technologies and discuss potential approaches.</p>
+</li>
+<li>
+<p>Identify the existing pain points, concerns, requirements, and some potential challenges.</p>
+</li>
+<li>
+<p>Define the high-level business priorities, and scope the assessment.</p>
+</li>
+<li>
+<p>Determine in what ways you want to modernize your application development and delivery to allow you to innovate more rapidly.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Typically, this can be covered in a day in a workshop with Red Hat experts.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="method-design_getting-started-guide">Design phase</h5>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/RHAMT_AMM_Methodology_446947_0617_ECE_Design.png" alt="Red Hat migration methodology: Design">
+</div>
+<div class="title">Figure 3. Red Hat migration methodology: Design phase</div>
+</div>
+<div class="paragraph">
+<p>The <em>Design</em> phase is when you identify all risks, define a strategy and target architecture, prove the technology, and build the business case. This phase consists of the following steps:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Assess</dt>
+<dd>
+<div class="paragraph">
+<p>Examine the existing infrastructure, architecture, technologies, and applications. Identify dependencies, knowledge, processes, and lifecycles. Define the desired infrastructure, architecture, technologies, and applications. Determine the feasibility and potential risks. Draft a plan and provide rough estimates.</p>
+</div>
+<div class="paragraph">
+<p>Analyzing applications using the Migration Toolkit for Runtimes web console or CLI helps to determine dependencies, potential risks, and relative effort. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html/web_console_guide/index"><em>Web Console Guide</em></a> or <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/cli_guide"><em>CLI Guide</em></a> for information on how to use these tools.</p>
+</div>
+</dd>
+<dt class="hdlist1">Prove</dt>
+<dd>
+<div class="paragraph">
+<p>Solve and document the identified technical risks, for example, high risk items and issues with unknown effort. Build and shape the new platform infrastructure. Refine the estimates based on the outcomes.</p>
+</div>
+</dd>
+<dt class="hdlist1">Pilot</dt>
+<dd>
+<div class="paragraph">
+<p>Choose a small set of representative applications to transform. Finalize the target platform infrastructure as necessary. Update the documentation as the process is fine-tuned. This pilot consists of one or several iterations of the migration execution, which is scaled during the Deploy phase.</p>
+</div>
+<div class="paragraph">
+<p>Use the Migration Toolkit for Runtimes MTR plugin to accelerate the code migration. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/eclipse_plugin_guide"><em>Eclipse and Red Hat CodeReady Studio Plugin Guide</em></a> for information on how to use the MTR plugin.</p>
+</div>
+</dd>
+<dt class="hdlist1">Plan</dt>
+<dd>
+<div class="paragraph">
+<p>Based on the outcomes of the previous steps, sharpen the estimates and refine the project plan. Define the rollout strategy to be used in the Deploy phase to complete the migration. Prepare and schedule the relevant <a href="https://www.redhat.com/en/services/training">technical enablement courses</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect4">
+<h5 id="method-deploy_getting-started-guide">Deploy phase</h5>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/RHAMT_AMM_Methodology_446947_0617_ECE_Deploy.png" alt="Red Hat migration methodology: Deploy">
+</div>
+<div class="title">Figure 4. Red Hat migration methodology: Deploy phase</div>
+</div>
+<div class="paragraph">
+<p>The <em>Deploy</em> phase is when you run the plan created in the Design phase. In this phase, you scale the overall transformation process to complete the plan and bring all applications to their new production environment.</p>
+</div>
+<div class="paragraph">
+<p>The plan is run in iterations to deliver value incrementally. With each iteration, you continuously validate against the plan and document findings to improve the next sprint.</p>
+</div>
+<div class="paragraph">
+<p>The use of the Migration Toolkit for Runtimes MTR plugin increases speed in each iteration. It can be used with Eclipse, and marks migration issues directly in the source code, provides inline hints, and offers code change suggestions. See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/eclipse_plugin_guide"><em>Eclipse and Red Hat CodeReady Studio Plugin Guide</em></a> for information on how to use the MTR plugin.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference-material">Appendix A: Reference material</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="additional-resources">A.1. Additional resources</h3>
+<div class="sect3">
+<h4 id="get-involved_getting-started-guide">A.1.1. Contributing to the project</h4>
+<div class="paragraph">
+<p>To help the Migration Toolkit for Runtimes cover most application constructs and server configurations, including yours, you can help with any of the following items:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Send an email to <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a> and let us know what MTR migration rules must cover.</p>
+</li>
+<li>
+<p>Provide example applications to test migration rules.</p>
+</li>
+<li>
+<p>Identify application components and problem areas that might be difficult to migrate:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Write a short description of the problem migration areas.</p>
+</li>
+<li>
+<p>Write a brief overview describing how to solve the problem in migration areas.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Try Migration Toolkit for Runtimes on your application. Make sure to report any issues you meet.</p>
+</li>
+<li>
+<p>Contribute to the Migration Toolkit for Runtimes rules repository:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Write a Migration Toolkit for Runtimes rule to identify or automate a migration process.</p>
+</li>
+<li>
+<p>Create a test for the new rule.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information, see <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/rules_development_guide"><em>Rules Development Guide</em></a>.</p>
+</div>
+</li>
+<li>
+<p>Contribute to the project source code:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a core rule.</p>
+</li>
+<li>
+<p>Improve MTR performance or efficiency.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Any level of involvement is greatly appreciated!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="important-links_getting-started-guide">A.1.2. Migration Toolkit for Runtimes development resources</h4>
+<div class="paragraph">
+<p>Use the following resources to learn and contribute to the Migration Toolkit for Runtimes development:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>MTR forums: <a href="https://developer.jboss.org/en/windup" class="bare">https://developer.jboss.org/en/windup</a></p>
+</li>
+<li>
+<p>Jira issue tracker: <a href="https://issues.redhat.com/projects/WINDUP" class="bare">https://issues.redhat.com/projects/WINDUP</a></p>
+</li>
+<li>
+<p>MTR mailing list: <a href="mailto:jboss-migration-feedback@redhat.com">jboss-migration-feedback@redhat.com</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="reporting-issues">A.1.3. Reporting issues</h4>
+<div class="paragraph">
+<p>MTR uses Jira as its issue tracking system. If you encounter an issue executing MTR, submit a <a href="https://issues.redhat.com/projects/WINDUP">Jira issue</a>.</p>
+</div>
+<div class="paragraph">
+<p><br></p>
+</div>
+<div class="paragraph">
+<p><em class="right">Revised on 2024-10-09 20:09:46 CDT</em></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Although MTR does not currently provide rules for this migration path, Red Hat Consulting can assist with migration from any source platform to JBoss EAP 7.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. Requires JBoss Enterprise Application Platform expansion pack 2 (EAP XP 2)
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

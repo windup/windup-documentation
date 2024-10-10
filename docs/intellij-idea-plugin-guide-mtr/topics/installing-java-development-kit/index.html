@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide-mtr/topics/installing-java-development-kit/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide-mtr/topics/installing-java-development-kit/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/intellij-idea-plugin-guide-mtr/topics/installing-java-development-kit/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="installing-java-development-kit_{context}">Installing Java Development Kit</h1>
+<div class="paragraph">
+<p>You must have the Java Development Kit (JDK) installed on your system prior to installing the Eclipse integrated development environment (IDE). {ProductFullName} supports the following JDKs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenJDK 11</p>
+</li>
+<li>
+<p>OpenJDK 17</p>
+</li>
+<li>
+<p>Oracle JDK 11</p>
+</li>
+<li>
+<p>Oracle JDK 17</p>
+</li>
+<li>
+<p>Eclipse Temurin™ JDK 11</p>
+</li>
+<li>
+<p>Eclipse Temurin™ JDK 17</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>From the <a href="https://www.oracle.com/java/technologies/downloads/#java11">Oracle JDK download page</a>, download the JDK <code>tar.gz</code> file suitable for your system.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You need to accept the Oracle license agreement to proceed.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can download JDK by using the command-line interface:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ wget https://download.oracle.com/java/11/latest/&lt;jdk-file&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Extract the <code>tar.gz</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ tar -xzf &lt;jdk-file&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Optional: To make JDK available system-wide, move the extracted folder to the <code>/opt</code> directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ sudo mv &lt;jdk-extracted-folder&gt; /opt/&lt;jdk-file&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Set up the <code>JAVA_HOME</code> environment variable and add the JDK <code>bin</code> directory to the <code>PATH</code> variable:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Open the <code>.bashrc</code> file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ nano ~/.bashrc</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add the following lines to the file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">export JAVA_HOME=/opt/&lt;jdk-file&gt;
+export PATH=$PATH:$JAVA_HOME/bin</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Save the file and close it.</p>
+</li>
+<li>
+<p>To apply the new changes, reload the file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ source ~/.bashrc</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="ulist">
+<div class="title">Verification</div>
+<ul>
+<li>
+<p>Use the <code>java --version</code> command to verify the installed JDK version:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ java --version</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>

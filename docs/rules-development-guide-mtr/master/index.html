@@ -1,0 +1,3853 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windup Documentation | Windup Documentation</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windup Documentation" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Windup Documentation" />
+<meta property="og:description" content="Windup Documentation" />
+<link rel="canonical" href="https://windup.github.io/windup-documentation/docs/rules-development-guide-mtr/master/" />
+<meta property="og:url" content="https://windup.github.io/windup-documentation/docs/rules-development-guide-mtr/master/" />
+<meta property="og:site_name" content="Windup Documentation" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windup Documentation" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Windup Documentation","headline":"Windup Documentation","url":"https://windup.github.io/windup-documentation/docs/rules-development-guide-mtr/master/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <header class="page-header">
+        <h1>Windup Documentation</h1>
+      
+        <p><a href="https://github.com/windup/windup-documentation">View on GitHub</a></p>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="rules-development-guide">Rules Development Guide</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#making-open-source-more-inclusive">Making open source more inclusive</a></li>
+<li><a href="#introduction_rules-development-guide-mtr">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#rules-guide-intro_rules-development-guide-mtr">1.1. About the Rules Development Guide</a>
+<ul class="sectlevel3">
+<li><a href="#about-home-var_rules-development-guide-mtr">1.1.1. Use of <code>&lt;MTR_HOME&gt;</code> in this guide</a></li>
+</ul>
+</li>
+<li><a href="#about-rules_rules-development-guide-mtr">1.2. The MTR rules</a></li>
+</ul>
+</li>
+<li><a href="#getting-started-rules_rules-development-guide-mtr">2. Getting started with rules</a>
+<ul class="sectlevel2">
+<li><a href="#create-first-xml-rule_rules-development-guide-mtr">2.1. Creating your first XML rule</a>
+<ul class="sectlevel3">
+<li><a href="#creating-directory-structure-for-the-rule_rules-development-guide-mtr">2.1.1. Creating the directory structure for the rule</a></li>
+<li><a href="#mta-creating-data-to-test-the-rule_rules-development-guide-mtr">2.1.2. Creating data to test the rule</a></li>
+<li><a href="#creating-the-rule_rules-development-guide-mtr">2.1.3. Creating the rule</a></li>
+<li><a href="#mta-installing-rule-in-directory_rules-development-guide-mtr">2.1.4. Installing the rule</a></li>
+<li><a href="#mta-testing-the-rule_rules-development-guide-mtr">2.1.5. Testing the rule</a></li>
+<li><a href="#mta-reviewing-the-report_rules-development-guide-mtr">2.1.6. Reviewing the reports</a></li>
+</ul>
+</li>
+<li><a href="#review-quickstarts_rules-development-guide-mtr">2.2. Reviewing the Migration Toolkit for Runtimes quickstarts</a>
+<ul class="sectlevel3">
+<li><a href="#download_quickstart_zip_rules-development-guide-mtr">2.2.1. Downloading the latest quickstart</a></li>
+<li><a href="#use-quickstart-github-project_rules-development-guide-mtr">2.2.2. Forking and cloning the quickstart GitHub project</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#creating-xml-rules_rules-development-guide-mtr">3. Creating XML rules</a>
+<ul class="sectlevel2">
+<li><a href="#xml-rule-syntax_rules-development-guide-mtr">3.1. XML rule structure</a>
+<ul class="sectlevel3">
+<li><a href="#rulesets">3.1.1. Rulesets</a></li>
+<li><a href="#predefined-rules">3.1.2. Predefined rules</a></li>
+</ul>
+</li>
+<li><a href="#create-basic-xml-rule_rules-development-guide-mtr">3.2. Creating a basic XML rule</a>
+<ul class="sectlevel3">
+<li><a href="#creating-a-basic-xml-rule-template">3.2.1. Creating a basic XML rule template</a></li>
+<li><a href="#creating-the-ruleset-metadata">3.2.2. Creating the ruleset metadata</a></li>
+<li><a href="#creating-a-rule">3.2.3. Creating a rule</a></li>
+</ul>
+</li>
+<li><a href="#xml-rules-syntax-mtr_rules-development-guide-mtr">3.3. XML rule syntax</a>
+<ul class="sectlevel3">
+<li><a href="#xml-rule-when-syntax_rules-development-guide-mtr">3.3.1. <code>&lt;when&gt;</code> syntax</a></li>
+<li><a href="#xml-rule-perform-syntax_rules-development-guide-mtr">3.3.2. <code>&lt;perform&gt;</code> syntax</a></li>
+<li><a href="#where-syntax_rules-development-guide-mtr">3.3.3. <code>&lt;where&gt;</code> syntax</a></li>
+</ul>
+</li>
+<li><a href="#add-rule-to-mtr_rules-development-guide-mtr">3.4. Adding a rule to the Migration Toolkit for Runtimes</a></li>
+</ul>
+</li>
+<li><a href="#testing-rules_rules-development-guide-mtr">4. Testing XML rules</a>
+<ul class="sectlevel2">
+<li><a href="#creating-a-test-rule">4.1. Creating a test rule</a>
+<ul class="sectlevel3">
+<li><a href="#test-xml-rule-structure_rules-development-guide-mtr">4.1.1. Test XML rule structure</a></li>
+<li><a href="#test-xml-rule-syntax">4.1.2. Test XML rule syntax</a></li>
+</ul>
+</li>
+<li><a href="#manually-test-rules_rules-development-guide-mtr">4.2. Manually testing an XML rule</a></li>
+<li><a href="#rules-testng-junit_rules-development-guide-mtr">4.3. Testing the rules by using JUnit</a></li>
+<li><a href="#validation-report_rules-development-guide-mtr">4.4. About validation reports</a>
+<ul class="sectlevel3">
+<li><a href="#validation-report-understanding_rules-development-guide-mtr">4.4.1. Creating a validation report</a></li>
+<li><a href="#validation-report-errors_rules-development-guide-mtr">4.4.2. Validation report error messages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#overriding-rules_rules-development-guide-mtr">5. Overriding rules</a>
+<ul class="sectlevel2">
+<li><a href="#overriding-a-rule">5.1. Overriding a rule</a></li>
+<li><a href="#disabling-a-rule">5.2. Disabling a rule</a></li>
+</ul>
+</li>
+<li><a href="#rule-categories_rules-development-guide-mtr">6. Using custom rule categories</a>
+<ul class="sectlevel2">
+<li><a href="#add_custom_category_rules-development-guide-mtr">6.1. Adding a custom category</a></li>
+<li><a href="#assign_custom_category_rules-development-guide-mtr">6.2. Assigning a rule to a custom category</a></li>
+</ul>
+</li>
+<li><a href="#reference-material">Appendix A: Reference material</a>
+<ul class="sectlevel2">
+<li><a href="#about-story-points_rules-development-guide-mtr">A.1. About rule story points</a>
+<ul class="sectlevel3">
+<li><a href="#what-are-story-points">A.1.1. What are story points?</a></li>
+<li><a href="#how-story-points-are-estimated-in-rules">A.1.2. How story points are estimated in rules</a></li>
+<li><a href="#task-category">A.1.3. Task category</a></li>
+</ul>
+</li>
+<li><a href="#additional-resources">A.2. Additional resources</a>
+<ul class="sectlevel3">
+<li><a href="#review-existing-rules_rules-development-guide-mtr">A.2.1. Reviewing existing MTR XML rules</a></li>
+<li><a href="#rules-important-links_rules-development-guide-mtr">A.2.2. Additional resources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="making-open-source-more-inclusive">Making open source more inclusive</h2>
+<div class="sectionbody">
+<div class="paragraph _abstract">
+<p>Red Hat is committed to replacing problematic language in our code, documentation, and web properties. We are beginning with these four terms: master, slave, blacklist, and whitelist. Because of the enormity of this endeavor, these changes will be implemented gradually over several upcoming releases. For more details, see <a href="https://www.redhat.com/en/blog/making-open-source-more-inclusive-eradicating-problematic-language">our CTO Chris Wright&#8217;s message</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction_rules-development-guide-mtr">1. Introduction</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="rules-guide-intro_rules-development-guide-mtr">1.1. About the Rules Development Guide</h3>
+<div class="paragraph">
+<p>This guide is intended for software engineers who want to create custom YAML-based rules for Migration Toolkit for Runtimes (MTR) tools.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/introduction_to_the_migration_toolkit_for_runtimes"><em>Introduction to the Migration Toolkit for Applications</em></a> for an overview and the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/cli_guide"><em>CLI Guide</em></a> for details.</p>
+</div>
+<div class="sect3">
+<h4 id="about-home-var_rules-development-guide-mtr">1.1.1. Use of <code>&lt;MTR_HOME&gt;</code> in this guide</h4>
+<div class="paragraph">
+<p>This guide uses the <code>&lt;MTR_HOME&gt;</code> replaceable variable to denote the path to your MTR installation. The installation directory is the <code>mtr-1.2.6.GA-offline</code> directory where you extracted the MTR <code>.zip</code> file.</p>
+</div>
+<div class="paragraph">
+<p>When you encounter <code>&lt;MTR_HOME&gt;</code> in this guide, replace it with the actual path to your MTR installation.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="about-rules_rules-development-guide-mtr">1.2. The MTR rules</h3>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes (MTR) contains rule-based migration tools (analyzers) that you can use to analyze the application user interfaces (APIs), technologies, and architectures used by the applications you plan to migrate. MTR analyzer rules use the following rule pattern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>when(condition)
+ message(message)
+ tag(tags)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use the MTR rules internally to perform the following tasks:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Extract files from archives.</p>
+</li>
+<li>
+<p>Decompile files.</p>
+</li>
+<li>
+<p>Scan and classify file types.</p>
+</li>
+<li>
+<p>Analyze XML and other file content.</p>
+</li>
+<li>
+<p>Analyze the application code.</p>
+</li>
+<li>
+<p>Build the reports.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>MTR builds a data model based on the rule execution results and stores component data and relationships in a graph database. This database can then be queried and updated as required by the migration rules and for reporting purposes.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can create your own custom analyzer rules. You can use custom rules to identify the use of custom libraries or other components that might not be covered by the provided standard migration rules.</p>
+</div>
+<div class="paragraph">
+<p>For instructions on how to write custom rules, see [<em>Rules Development Guide</em>].</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-started-rules_rules-development-guide-mtr">2. Getting started with rules</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can get started creating custom MTR rules by creating a rule or by reviewing the quickstarts.</p>
+</div>
+<div class="sect2">
+<h3 id="create-first-xml-rule_rules-development-guide-mtr">2.1. Creating your first XML rule</h3>
+<div class="paragraph">
+<p>This section guides you through the process of creating and testing your first MTR XML-based rule. This assumes that you have already installed MTR. See <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/cli_guide/index#installing_and_running_the_cli">Installing and running the CLI</a> in the <em>CLI Guide</em> for installation instructions.</p>
+</div>
+<div class="paragraph">
+<p>In this example, you will write a rule to discover instances where an application defines a <code>jboss-web.xml</code> file containing a <code>&lt;class-loading&gt;</code> element and provide a link to the documentation that describes how to migrate the code.</p>
+</div>
+<div class="sect3">
+<h4 id="creating-directory-structure-for-the-rule_rules-development-guide-mtr">2.1.1. Creating the directory structure for the rule</h4>
+<div class="paragraph">
+<p>Create a directory structure to contain your first rule and the data file to use for testing.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">$ mkdir -p /home/&lt;USER_NAME&gt;/migration-rules/rules
+$ mkdir -p /home/&lt;USER_NAME&gt;/migration-rules/data</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This directory structure will also be used to hold the generated MTR reports.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-creating-data-to-test-the-rule_rules-development-guide-mtr">2.1.2. Creating data to test the rule</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a <code>jboss-web.xml</code> file in the <code>/home/&lt;USER_NAME&gt;/migration-rules/data/</code> subdirectory.</p>
+</li>
+<li>
+<p>Copy in the following content.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;!DOCTYPE jboss-web PUBLIC "-//JBoss//DTD Web Application 4.2//EN" "http://www.jboss.org/j2ee/dtd/jboss-web_4_2.dtd"&gt;
+&lt;jboss-web&gt;
+    &lt;class-loading java2ClassLoadingCompliance="false"&gt;
+        &lt;loader-repository&gt;
+            seam.jboss.org:loader=@projectName@
+            &lt;loader-repository-config&gt;java2ParentDelegation=false&lt;/loader-repository-config&gt;
+        &lt;/loader-repository&gt;
+    &lt;/class-loading&gt;
+&lt;/jboss-web&gt;</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-the-rule_rules-development-guide-mtr">2.1.3. Creating the rule</h4>
+<div class="paragraph">
+<p>MTR XML-based rules use the following rule pattern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>when(condition)
+  perform(action)
+otherwise(action)</pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>In the <code>/home/&lt;USER_NAME&gt;/migration-rules/rules/</code> directory, create a file named <code>JBoss5-web-class-loading.windup.xml</code> that contains the following content:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset id="&lt;UNIQUE_RULESET_ID&gt;"
+  xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;metadata&gt;
+      &lt;description&gt;
+          &lt;!-- Ruleset Description --&gt;
+      &lt;/description&gt;
+      &lt;dependencies&gt;
+          &lt;!-- Ruleset Dependencies --&gt;
+      &lt;/dependencies&gt;
+      &lt;sourceTechnology id="&lt;SOURCE_ID&gt;" versionRange="&lt;SOURCE_VERSION_RANGE&gt;"/&gt;
+      &lt;targetTechnology id="&lt;TARGET_ID&gt;" versionRange="&lt;TARGET_VERSION_RANGE&gt;"/&gt;
+      &lt;tag&gt;Reviewed-2015-05-01&lt;/tag&gt;
+  &lt;/metadata&gt;
+  &lt;rules&gt;
+      &lt;rule id="&lt;UNIQUE_RULE_ID&gt;"&gt;
+        &lt;when&gt;
+            &lt;!-- Test for a condition here --&gt;
+        &lt;/when&gt;
+        &lt;perform&gt;
+            &lt;!-- Perform an action --&gt;
+        &lt;/perform&gt;
+      &lt;/rule&gt;
+   &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The XML file name must include the <code>.windup.xml</code> extension. Otherwise, MTR does not evaluate the new rule.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Add a unique identifier for the ruleset and rule:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Replace <code>&lt;UNIQUE_RULESET_ID&gt;</code> with an appropriate ruleset ID, for example, <code>JBoss5-web-class-loading</code>.</p>
+</li>
+<li>
+<p>Replace <code>&lt;UNIQUE_RULE_ID&gt;</code> with an appropriate rule ID, for example, <code>JBoss5-web-class-loading_001</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Add the following ruleset add-on dependencies:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;dependencies&gt;
+  &lt;addon id="org.jboss.windup.rules,windup-rules-javaee,3.0.0.Final"/&gt;
+  &lt;addon id="org.jboss.windup.rules,windup-rules-java,3.0.0.Final"/&gt;
+&lt;/dependencies&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add the source and target technologies:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Replace <code>&lt;SOURCE_ID&gt;</code> with <code>eap</code>.</p>
+</li>
+<li>
+<p>Replace <code>&lt;TARGET_ID&gt;</code> with <code>eap</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Set the source and target technology versions.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Replace <code>&lt;SOURCE_VERSION_RANGE&gt;</code> with <code>(4,5)</code>.</p>
+</li>
+<li>
+<p>Replace <code>&lt;TARGET_VERSION_RANGE&gt;</code> with <code>(6,)</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See the Apache Maven <a href="http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html">version range specification</a> for more information.</p>
+</div>
+</li>
+<li>
+<p>Complete the <code>when</code> condition. Because this rule tests for a match in an XML file, <code>xmlfile</code> is used to evaluate the files.</p>
+<div class="paragraph">
+<p>To match on the <code>class-loading</code> element that is a child of <code>jboss-web</code>, use the xpath expression <code>jboss-web/class-loading</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;when&gt;
+    &lt;xmlfile matches="jboss-web/class-loading" /&gt;
+&lt;/when&gt;</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Complete the <code>perform</code> action for this rule.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Add a classification with a descriptive title and a level of effort of <code>1</code>.</p>
+</li>
+<li>
+<p>Provide a hint with an informative message and a link to documentation that describes the migration details.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;perform&gt;
+    &lt;iteration&gt;
+        &lt;classification title="JBoss Web Application Descriptor" effort="1"/&gt;
+        &lt;hint title="JBoss Web XML class-loading element is no longer valid"&gt;
+          &lt;message&gt;
+            The class-loading element is no longer valid in the jboss-web.xml file.
+          &lt;/message&gt;
+          &lt;link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" title="Create or Modify Files That Control Class Loading in JBoss EAP 6"/&gt;
+        &lt;/hint&gt;
+    &lt;/iteration&gt;
+&lt;/perform&gt;</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The rule is now complete and should look like the following example.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset id="JBoss5-web-class-loading"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+    &lt;metadata&gt;
+        &lt;description&gt;
+            This ruleset looks for the class-loading element in a jboss-web.xml file, which is no longer valid in JBoss EAP 6
+        &lt;/description&gt;
+         &lt;dependencies&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-javaee,3.0.0.Final"/&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-java,3.0.0.Final"/&gt;
+        &lt;/dependencies&gt;
+        &lt;sourceTechnology id="eap" versionRange="(4,5)"/&gt;
+        &lt;targetTechnology id="eap" versionRange="[6,)"/&gt;
+    &lt;/metadata&gt;
+    &lt;rules&gt;
+        &lt;rule id="JBoss5-web-class-loading_001"&gt;
+            &lt;when&gt;
+                &lt;xmlfile matches="jboss-web/class-loading" /&gt;
+            &lt;/when&gt;
+            &lt;perform&gt;
+                &lt;iteration&gt;
+                    &lt;classification title="JBoss Web Application Descriptor" effort="1"/&gt;
+                    &lt;hint title="JBoss Web XML class-loading element is no longer valid"&gt;
+                      &lt;message&gt;
+                        The class-loading element is no longer valid in the jboss-web.xml file.
+                      &lt;/message&gt;
+                      &lt;link href="https://access.redhat.com/documentation/en-US/JBoss_Enterprise_Application_Platform/6.4/html-single/Migration_Guide/index.html#Create_or_Modify_Files_That_Control_Class_Loading_in_JBoss_Enterprise_Application_Platform_6" title="Create or modify files that control class loading in JBoss EAP 6"/&gt;
+                    &lt;/hint&gt;
+                &lt;/iteration&gt;
+            &lt;/perform&gt;
+        &lt;/rule&gt;
+     &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-installing-rule-in-directory_rules-development-guide-mtr">2.1.4. Installing the rule</h4>
+<div class="paragraph">
+<p>An MTR rule is installed by placing the rule into the appropriate directory.</p>
+</div>
+<div class="paragraph">
+<p>Copy the <code>JBoss5-web-class-loading.windup.xml</code> file to the <code>&lt;MTR_HOME&gt;/rules/</code> directory.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code>$ cp /home/&lt;USER_NAME&gt;/migration-rules/rules/JBoss5-web-class-loading.windup.xml &lt;MTR_HOME&gt;/rules/</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-testing-the-rule_rules-development-guide-mtr">2.1.5. Testing the rule</h4>
+<div class="paragraph">
+<p>Open a terminal and run the following command, passing the test file as an input argument and a directory for the output report.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">$ &lt;MTR_HOME&gt;/bin/mta-cli --sourceMode --input /home/&lt;USER_NAME&gt;/migration-rules/data --output /home/&lt;USER_NAME&gt;/migration-rules/reports --target eap:6</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see the following result.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">Report created: /home/&lt;USER_NAME&gt;/migration-rules/reports/index.html
+              Access it at this URL: file:///home/&lt;USER_NAME&gt;/migration-rules/reports/index.html</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mta-reviewing-the-report_rules-development-guide-mtr">2.1.6. Reviewing the reports</h4>
+<div class="paragraph">
+<p>Review the report to be sure that it provides the expected results. For a more detailed walkthrough of MTR reports, see the <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/cli_guide#review-reports_cli-guide">Reviewing the reports</a> section of the MTR <em>CLI Guide</em>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open <code>/home/&lt;USER_NAME&gt;/migration-rules/reports/index.html</code> in a web browser.</p>
+</li>
+<li>
+<p>Verify that the rule ran successfully.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>From the main landing page, click the <strong>Rule providers execution overview</strong> link to open the Rule Providers Execution Overview.</p>
+</li>
+<li>
+<p>Find the <code>JBoss5-web-class-loading_001</code> rule and verify that its <strong>Status?</strong> is <code>Condition met</code> and its <strong>Result?</strong> is <code>success</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/executed-test-rule.png" alt="Test rule execution">
+</div>
+<div class="title">Figure 1. Test rule execution</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Verify that the rule matches the test data:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>From the main landing page, click the name of the application or input folder, which is <code>data</code> in this example.</p>
+</li>
+<li>
+<p>Click the <strong>Application Details</strong> report link.</p>
+</li>
+<li>
+<p>Click the <strong>jboss-web.xml</strong> link to view the <strong>Source Report</strong>.</p>
+<div class="paragraph">
+<p>You can see that the <code>&lt;class-loading&gt;</code> line is highlighted, and the hint from the custom rule is shown inline.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/test-rule-details.png" alt="Rule match">
+</div>
+<div class="title">Figure 2. Rule match</div>
+</div>
+<div class="paragraph">
+<p>The top of the file lists the classifications for matching rules. You can use the link icon to view the details for that rule. Notice that in this example, the <code>jboss-web.xml</code> file matched on another rule (<code>JBoss web application descriptor (jboss-web.xml)</code>) that produced <code>1</code> story point. This story point, combined with the <code>1</code> story point from our custom rule, brings the total story points for this file to <code>2</code>.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="review-quickstarts_rules-development-guide-mtr">2.2. Reviewing the Migration Toolkit for Runtimes quickstarts</h3>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes quickstarts provide working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.</p>
+</div>
+<div class="paragraph">
+<p>Each quickstart has a <code>README.adoc</code> file that contains instructions for that quickstart.</p>
+</div>
+<div class="paragraph">
+<p>You can download a <code>.zip</code> file of the latest version of the quickstarts. If you prefer to work with the source code, you can fork and clone the <code>windup-quickstarts</code> project repository.</p>
+</div>
+<div class="sect3">
+<h4 id="download_quickstart_zip_rules-development-guide-mtr">2.2.1. Downloading the latest quickstart</h4>
+<div class="paragraph">
+<p>You can download the latest release of a quickstart.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Launch a browser and navigate to <a href="https://github.com/windup/windup-quickstarts/releases">https://github.com/windup/windup-quickstarts/releases</a>.</p>
+</li>
+<li>
+<p>Click the latest release to download the <code>.zip</code> file to your local file system.</p>
+</li>
+<li>
+<p>Extract the archive files to a local directory.</p>
+<div class="paragraph">
+<p>You can review the quickstart <code>README.adoc</code> file.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="use-quickstart-github-project_rules-development-guide-mtr">2.2.2. Forking and cloning the quickstart GitHub project</h4>
+<div class="paragraph">
+<p>You can fork and clone the Quickstart Github project on your local machine.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must have <a href="http://git-scm.com/"><code>git</code></a> client installed.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>Fork</strong> on the <a href="https://github.com/windup/windup-quickstarts/">Migration Toolkit for Runtimes quickstart</a> GitHub page to create the project in your own Git. The forked GitHub repository URL should look like this: <code>https://github.com/&lt;YOUR_USER_NAME&gt;/windup-quickstarts.git</code>.</p>
+</li>
+<li>
+<p>Clone the Migration Toolkit for Runtimes quickstart repository to your local file system:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git clone https://github.com/&lt;YOUR_USER_NAME&gt;/windup-quickstarts.git</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This creates a <code>windup-quickstarts</code> directory on your local file system.</p>
+</div>
+</li>
+<li>
+<p>Navigate to the newly created directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ cd windup-quickstarts/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>To retrieve the latest code updates, add the remote <code>upstream</code> repository so that you can fetch changes to the original forked repository:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git remote add upstream https://github.com/windup/windup-quickstarts.git</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Download the latest files from the <code>upstream</code> repository:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git fetch upstream</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="creating-xml-rules_rules-development-guide-mtr">3. Creating XML rules</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="xml-rule-syntax_rules-development-guide-mtr">3.1. XML rule structure</h3>
+<div class="paragraph">
+<p>This section describes the basic structure of XML rules. All XML rules are defined as elements within rulesets. For more details, see the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">MTR XML rule schema</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="rulesets">3.1.1. Rulesets</h4>
+<div class="paragraph">
+<p>A ruleset is a group of one or more rules that targets a specific area of migration. This is the basic structure of the <code>&lt;ruleset&gt;</code> element.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;ruleset id="&lt;UNIQUE_RULESET_ID&gt;"&gt;</strong>: Defines this as an MTR ruleset and gives it a unique ruleset ID.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;metadata&gt;</strong>: The metadata about the ruleset.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;description&gt;</strong>: The description of the ruleset.</p>
+</li>
+<li>
+<p><strong>&lt;dependencies/&gt;</strong>: The rule add-ons required by this ruleset.</p>
+</li>
+<li>
+<p><strong> &lt;sourceTechnology/&gt;</strong>: The source technology.</p>
+</li>
+<li>
+<p><strong> &lt;targetTechnology/&gt;</strong>: The target technology.</p>
+</li>
+<li>
+<p><strong> &lt;overrideRules/&gt;</strong>: Setting to <code>true</code> indicates that rules in this ruleset override rules with the same ID from the core ruleset distributed with MTR. Both the ruleset id and the rule id must match a rule within the core ruleset, or the rule will be ignored. In addition, the target technology in this ruleset must match one of the targets that you specified for running the analysis.</p>
+<div class="paragraph">
+<p>This is <code>false</code> by default.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>&lt;rules&gt;</strong>: A set of individual rules.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;rule id="&lt;UNIQUE_RULE_ID&gt;"&gt;</strong>: Defines the rule and gives it a unique ID. It is recommended to include the ruleset ID as part of the rule ID, for example, <code>&lt;UNIQUE_RULESET_ID_UNIQUE_RULE_ID&gt;</code>. One or more rules can be defined for a ruleset.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&lt;when&gt;</strong>: The conditions to match on.</p>
+</li>
+<li>
+<p><strong>&lt;perform&gt;</strong>: The action to be performed when the rule condition is matched.</p>
+</li>
+<li>
+<p><strong>&lt;otherwise&gt;</strong>: The action to be performed when the rule condition is not matched. This element takes the same child elements as the <code>&lt;perform&gt;</code> element.</p>
+</li>
+<li>
+<p><strong>&lt;where&gt;</strong>: A string pattern defined as a parameter, which can be used elsewhere in the rule definition.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>&lt;file-mapping/&gt;</strong>: Maps an extension to a graph type.</p>
+</li>
+<li>
+<p><strong>&lt;package-mapping/&gt;</strong>: Maps from a package pattern (regular expression) to an organization name.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="predefined-rules">3.1.2. Predefined rules</h4>
+<div class="paragraph">
+<p>MTR provides predefined rules for common migration requirements. These core MTR rules are located in the MTR installation at <code>&lt;MTR_HOME&gt;/rules/migration-core/</code>.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a core MTR rule that matches on a proprietary utility class.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset xmlns="http://windup.jboss.org/schema/jboss-ruleset" id="weblogic" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+
+    &lt;metadata&gt;
+        &lt;description&gt;
+            This ruleset provides analysis of WebLogic proprietary classes and constructs that may require individual attention when migrating to JBoss EAP 6+.
+        &lt;/description&gt;
+        &lt;dependencies&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final" /&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final" /&gt;
+        &lt;/dependencies&gt;
+        &lt;sourceTechnology id="weblogic" /&gt;
+        &lt;targetTechnology id="eap" versionRange="[6,)" /&gt;
+        &lt;tag&gt;reviewed-2015-06-02&lt;/tag&gt;
+        &lt;tag&gt;weblogic&lt;/tag&gt;
+    &lt;/metadata&gt;
+    &lt;rules&gt;
+        ...
+        &lt;rule id="weblogic-02000"&gt;
+            &lt;when&gt;
+                &lt;javaclass references="weblogic.utils.StringUtils.{*}" /&gt;
+            &lt;/when&gt;
+            &lt;perform&gt;
+                &lt;hint title="WebLogic StringUtils usage" effort="1" category-id="mandatory"&gt;
+                    &lt;message&gt;Replace with the `StringUtils` class from Apache Commons.&lt;/message&gt;
+                    &lt;link href="https://commons.apache.org/proper/commons-lang/" title="Apache Commons Lang" /&gt;
+                    &lt;tag&gt;weblogic&lt;/tag&gt;
+                &lt;/hint&gt;
+            &lt;/perform&gt;
+        &lt;/rule&gt;
+        ...
+    &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-basic-xml-rule_rules-development-guide-mtr">3.2. Creating a basic XML rule</h3>
+<div class="paragraph">
+<p>This section describes how to create an MTR XML rule. This assumes that you already have MTR installed. See the MTR <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/cli_guide"><em>CLI Guide</em></a> for installation instructions.</p>
+</div>
+<div class="sect3">
+<h4 id="creating-a-basic-xml-rule-template">3.2.1. Creating a basic XML rule template</h4>
+<div class="paragraph">
+<p>MTR XML rules consist of <em>conditions</em> and <em>actions</em> and use the following rule pattern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">when(condition)
+  perform(action)
+otherwise(action)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create a file with the following contents, which is the basic syntax for XML rules.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The XML file name must include the <code>.windup.xml</code> extension. Otherwise, MTR does not evaluate the new rule.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset id="unique-ruleset-id"
+  xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;metadata&gt;
+    &lt;!-- Metadata about the rule including a description,
+         source technology, target technology, and any
+         add-on dependencies --&gt;
+  &lt;/metadata&gt;
+&lt;rules&gt;
+    &lt;rule id="unique-ruleset-id-01000"&gt;
+        &lt;when&gt;
+            &lt;!-- Test a condition... --&gt;
+        &lt;/when&gt;
+        &lt;perform&gt;
+            &lt;!-- Perform this action when condition is satisfied --&gt;
+        &lt;/perform&gt;
+        &lt;otherwise&gt;
+            &lt;!-- Perform this action when condition is not satisfied --&gt;
+        &lt;/otherwise&gt;
+    &lt;/rule&gt;
+  &lt;rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-the-ruleset-metadata">3.2.2. Creating the ruleset metadata</h4>
+<div class="paragraph">
+<p>The XML ruleset <code>metadata</code> element provides additional information about the ruleset such as a description, the source and target technologies, and add-on dependencies. The metadata also allows for specification of tags, which allow you to provide additional information about a ruleset.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>&lt;metadata&gt;</code> example</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;ruleset id="unique-ruleset-id"
+  xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;metadata&gt;
+    &lt;description&gt;
+            This is the description.
+    &lt;/description&gt;
+    &lt;dependencies&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-javaee,2.0.1.Final"/&gt;
+            &lt;addon id="org.jboss.windup.rules,windup-rules-java,2.0.0.Final"/&gt;
+    &lt;/dependencies&gt;
+    &lt;sourceTechnology id="weblogic" versionRange="(10,12]"/&gt;
+    &lt;sourceTechnology id="ejb" versionRange="(2,3]"/&gt;
+    &lt;targetTechnology id="eap" versionRange="(5,6]"/&gt;
+    &lt;targetTechnology id="ejb" versionRange="(2,3]"/&gt;
+    &lt;tag&gt;require-stateless&lt;/tag&gt;
+    &lt;tag&gt;require-nofilesystem-io&lt;/tag&gt;
+    &lt;executeAfter&gt;AfterRulesetId&lt;/executeAfter&gt;
+    &lt;executeBefore&gt;BeforeRulesetId&lt;/executeBefore&gt;
+  &lt;/metadata&gt;
+  &lt;rules&gt;
+    ...
+  &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="creating-a-rule">3.2.3. Creating a rule</h4>
+<div class="paragraph">
+<p>Individual rules are contained within the <code>&lt;rules&gt;</code> element. They comprise one or more <code>when</code> conditions and perform actions.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">XML rule schema</a> for valid rule syntax.</p>
+</div>
+<div class="sect4">
+<h5 id="create-when-condition_rules-development-guide-mtr">Creating a <code>&lt;when&gt;</code> condition</h5>
+<div class="paragraph">
+<p>The XML rule <code>&lt;when&gt;</code> element tests for a condition. The following is a list of valid <code>&lt;when&gt;</code> conditions.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;and&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The standard logical <em>and</em> operator.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;filecontent&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find strings or text within files, for example, properties files.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;file-mapping&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define file names to internal stored File model.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;javaclass&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test for a match in a Java class.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;javaclass-ignore&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exclude javaclass that you would like to ignore in processing discovery.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;not&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The standard logical <em>not</em> operator.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;or&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The standard logical <em>or</em> operator.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;package-mapping&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define package names to organization or libraries.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;project&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test for project characteristics, such as dependencies.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;true&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Always match.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;xmlfile&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test for a match in an XML file.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The specific syntax is dependent on whether you are creating a rule to evaluate Java class, an XML file, a project, or file content.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="create-perform-action_rules-development-guide-mtr">Creating a <code>&lt;perform&gt;</code> action</h5>
+<div class="paragraph">
+<p>The XML rule <code>&lt;perform&gt;</code> element performs the action when the condition is met. Operations allowed in this section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project line item reporting. The following is a list of valid <code>&lt;perform&gt;</code> actions.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;classification&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This operation adds metadata that you want to apply to the entire file. For example, if the Java Class is a JMS Message Listener, you can add a Classification with the title "JMS Message Listener" that includes information that applies to the entire file. You can also set an effort level for the entire file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;hint&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This operation adds metadata to a line within the file. This provides a hint or inline information about how to migrate a section of code.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;iteration&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This specifies to iterate over an implicit or explicit variable defined within the rule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;lineitem&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This provides a high-level message that is displayed in the application overview page.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;link&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This provides an HTML link to additional information or documentation about the migration task.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;xslt&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This specifies how to transform an XML file.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="xml-rules-syntax-mtr_rules-development-guide-mtr">3.3. XML rule syntax</h3>
+<div class="sect3">
+<h4 id="xml-rule-when-syntax_rules-development-guide-mtr">3.3.1. <code>&lt;when&gt;</code> syntax</h4>
+<div class="paragraph">
+<p>Conditions allowed in the <code>when</code> portion of a rule must extend <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html">GraphOperation</a> and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.</p>
+</div>
+<div class="paragraph">
+<p>The complete XML rule schema is located here: <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd" class="bare">http://windup.jboss.org/schema/windup-jboss-ruleset.xsd</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following sections describe the more common XML <code>when</code> rule conditions.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;javaclass&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;xmlfile&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;project&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;filecontent&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;file&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;has-hint&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;has-classification&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;graph-query&gt; condition syntax</p>
+</li>
+<li>
+<p>&lt;dependency&gt; condition syntax</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>By default, if more than one <code>when</code> rule condition is provided, then all conditions must be met for the rule to match.</p>
+</div>
+<div class="sect4">
+<h5 id="javaclass-syntax_rules-development-guide-mtr">&lt;javaclass&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary">Summary</h6>
+<div class="paragraph">
+<p>Use the <code>&lt;javaclass&gt;</code> element to find imports, methods, variable declarations, annotations, class implementations, and other items related to Java classes. For a better understanding of the <code>&lt;javaclass&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/condition/JavaClass.html">JavaClass</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that tests for WebLogic-specific Apache XML packages:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="weblogic-03000"&gt;
+    &lt;when&gt;
+        &lt;javaclass references="weblogic.apache.xml.{*}" /&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;hint title="WebLogic Specific Apache XML Package" effort="1" category-id="mandatory"&gt;
+            &lt;message&gt;
+                Code using this package should be replaced with code using the org.apache.xml package from [Apache
+                Xerces](http://xerces.apache.org/).
+            &lt;/message&gt;
+        &lt;/hint&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="construct-a-javaclass-element">Construct a &lt;javaclass&gt; element</h6>
+<div class="sect6">
+<h7 id="javaclass-element-attributes">&lt;javaclass&gt; element attributes</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">references</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CLASS_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The package or class name to match on. Wildcard characters can be used. This attribute is required.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+For performance reasons, you should not start the reference with wildcard characters. For example, use <code>weblogic.apache.xml.{*}</code> instead of <code>{web}.apache.xml.{*}</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">references="weblogic.apache.xml.{*}"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">matchesSource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>An exact regex to match. This is useful to distinguish hard-coded strings. This attribute is required.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">matchesSource="log4j.logger"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A variable name assigned to the rule so that it can be used as a reference in later processing. See the <code>from</code> attribute below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">as="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Begin the search query with the filtered result from a previous search identified by its <code>as</code> VARIABLE_NAME.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">from="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PATH_FILTER</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">in="{*}File1"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect6">
+<h7 id="javaclass-child-elements">&lt;javaclass&gt; child elements</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Child Element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;location&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/ast/java/data/TypeReferenceLocation.html">TypeReferenceLocation</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;location&gt;IMPORT&lt;/location&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;annotation-literal&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match on literal values inside of annotations.</p>
+</div>
+<div class="paragraph">
+<p>The following example matches on <code>@MyAnnotation(myvalue="test")</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;javaclass references="org.package.MyAnnotation"&gt;
+    &lt;location&gt;ANNOTATION&lt;/location&gt;
+    &lt;annotation-literal name="myvalue" pattern="test"/&gt;
+&lt;/javaclass&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that in this case, the <code>&lt;javaclass&gt;</code> refers to an annotation (<code>@MyAnnotation</code>), so the top-level annotation filter, <code>&lt;annotation-literal&gt;</code> must specify the <code>name</code> attribute. If the <code>&lt;javaclass&gt;</code> referred to a class that is annotated, then the top-level annotation filter used would be <code>&lt;annotation-type&gt;</code>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;annotation-type&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match on a particular annotation type. You can supply subconditions to be matched against the annotation elements.</p>
+</div>
+<div class="paragraph">
+<p>The below example would match on a <code>Calendar</code> field declaration annotated with <code>@MyAnnotation(myvalue="test")</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;javaclass references="java.util.Calendar"&gt;
+    &lt;location&gt;FIELD_DECLARATION&lt;/location&gt;
+    &lt;annotation-type pattern="org.package.MyAnnotation"&gt;
+        &lt;annotation-literal name="myvalue" pattern="test"/&gt;
+    &lt;/annotation-type&gt;
+&lt;/javaclass&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;annotation-list&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match on an item in an array within an annotation. If an array index is not specified, the condition will be matched if it applies to any item in the array. You can supply subconditions to be matched against this element.</p>
+</div>
+<div class="paragraph">
+<p>The below example would match on <code>@MyAnnotation(mylist={"one","two"})</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;javaclass references="org.package.MyAnnotation" &gt;
+    &lt;location&gt;ANNOTATION&lt;/location&gt;
+    &lt;annotation-list name="mylist"&gt;
+        &lt;annotation-literal pattern="two"/&gt;
+    &lt;/annotation-list&gt;
+&lt;/javaclass&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that in this case, the <code>&lt;javaclass&gt;</code> refers to an annotation (<code>@MyAnnotation</code>), so the top-level annotation filter, <code>&lt;annotation-list&gt;</code> must specify the <code>name</code> attribute. If the <code>&lt;javaclass&gt;</code> referred to a class that is annotated, then the top-level annotation filter used would be <code>&lt;annotation-type&gt;</code>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="xmlfile-syntax_rules-development-guide-mtr">&lt;xmlfile&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-2">Summary</h6>
+<div class="paragraph">
+<p>Use the <code>&lt;xmlfile&gt;</code> element to find information in XML files. For a better understanding of the <code>&lt;xmlfile&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/condition/XmlFile.html">XmlFile</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that tests for an XML file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;rule id="&lt;UNIQUE_RULE_ID&gt;"&gt;
+    &lt;when&gt;
+        &lt;xmlfile matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"&gt;
+            &lt;namespace prefix="w" uri="http://java.sun.com/xml/ns/javaee"/&gt;
+        &lt;/xmlfile&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;hint title="Title for Hint from XML"&gt;
+            &lt;message&gt;Container Auth&lt;/message&gt;
+        &lt;/hint&gt;
+        &lt;xslt description="Example XSLT Conversion" extension="-converted-example.xml"
+              template="/exampleconversion.xsl"/&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="construct-an-xmlfile-element">Construct an &lt;xmlfile&gt; element</h6>
+<div class="sect6">
+<h7 id="xmlfile-element-attributes">&lt;xmlfile&gt; element attributes</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">matches</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XPATH</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match on an XML file condition.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xpathResultMatch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XPATH_RESULT_STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Return results that match the given regex.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">&lt;xmlfile matches="//foo/text()"
+  xpathResultMatch="Text from foo."/&gt;</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A variable name assigned to the rule so that it can be used as a reference in later processing. See the <code>from</code> attribute below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">as="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PATH_FILTER</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">in="{*}File1"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Begin the search query with the filtered result from a previous search identified by its <code>as</code> VARIABLE_NAME.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">from="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">public-id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUBLIC_ID</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The DTD public-id regex.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">public-id="public"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect6">
+<h7 id="xmlfile-matches-custom-functions">&lt;xmlfile&gt; <code>matches</code> custom functions</h7>
+<div class="paragraph">
+<p>The <code>matches</code> attribute may use several built-in custom XPath functions,
+which may have useful side effects, like setting the matched value on the rule variables stack.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Function</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>windup:matches()</code></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Match a XPath expression against a string, possibly containing MTR parameterization placeholders.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">matches="windup:matches(//foo/@class, '{javaclassname}')"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will match all <code>&lt;foo/&gt;</code> elements with a <code>class</code> attribute and store their value into <code>javaclassname</code> parameter for each iteration.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect6">
+<h7 id="xmlfile-child-elements">&lt;xmlfile&gt; child elements</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Child element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;namespace&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The namespace referenced in XML files. This element contains two optional attributes: The <code>prefix</code> and the <code>uri</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;namespace prefix="abc" uri="http://maven.apache.org/POM/4.0.0"/&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="project-syntax_rules-development-guide-mtr">&lt;project&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-3">Summary</h6>
+<div class="paragraph">
+<p>Use the <code>&lt;project&gt;</code> element to query the Maven POM file for the project characteristics. For a better understanding of the <code>&lt;project&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html">Project</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that checks for a JUnit dependency version between 2.0.0.Final and 2.2.0.Final.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="UNIQUE_RULE_ID"&gt;
+    &lt;when&gt;
+        &lt;project&gt;
+            &lt;artifact groupId="junit" artifactId="junit" fromVersion="2.0.0.Final" toVersion="2.2.0.Final"/&gt;
+        &lt;/project&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;lineitem message="The project uses junit with the version between 2.0.0.Final and 2.2.0.Final"/&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="construct-a-project-element">Construct a &lt;project&gt; element</h6>
+<div class="sect6">
+<h7 id="project-element-attributes">&lt;project&gt; element attributes</h7>
+<div class="paragraph">
+<p>The <code>&lt;project&gt;</code> element is used to match against the project&#8217;s Maven POM file. You can use this condition to query for dependencies of the project. It does not have any attributes itself.</p>
+</div>
+</div>
+<div class="sect6">
+<h7 id="project-child-elements">&lt;project&gt; child elements</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Child element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;artifact&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Subcondition used within <code>&lt;project&gt;</code> to query against project dependencies. The <code>&lt;artifact&gt;</code> element attributes are described below.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect6">
+<h7 id="artifact-element-attributes">&lt;artifact&gt; element attributes</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groupId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PROJECT_GROUP_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match on the project <code>&lt;groupId&gt;</code> of the dependency.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">artifactId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PROJECT_ARTIFACT_ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match on the project <code>&lt;artifactId&gt;</code> of the dependency.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fromVersion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FROM_VERSION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the lower version bound of the artifact. For example <code>2.0.0.Final</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">toVersion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TO_VERSION</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specify the upper version bound of the artifact. For example <code>2.2.0.Final</code>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>It is possible to qualify the element within the POM file that contains the artifact that the rule is searching for.
+This is achieved using the optional <code>&lt;location&gt;</code> element.
+The example below shows a rule that is searching for an artifact within the <code>&lt;plugins&gt;</code> element of the POM file.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/search_for_artifact.png" alt="rule searching for artifact">
+</div>
+</div>
+<div class="paragraph">
+<p>The valid list of locations is as follows:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DEPENDENCY_MANAGEMENT</p>
+</li>
+<li>
+<p>DEPENDENCIES</p>
+</li>
+<li>
+<p>PLUGIN_MANAGEMENT</p>
+</li>
+<li>
+<p>PLUGINS</p>
+</li>
+<li>
+<p>PARENT</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="filecontent-syntax_rules-development-guide-mtr">&lt;filecontent&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-4">Summary</h6>
+<div class="paragraph">
+<p>Use the <code>&lt;filecontent&gt;</code> element to find strings or text within files, for example, a line in a Properties file. For a better understanding of the <code>&lt;filecontent&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/FileContent.html">FileContent</a> class.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="construct-a-filecontent-element">Construct a &lt;filecontent&gt; element</h6>
+<div class="sect6">
+<h7 id="filecontent-element-attributes">&lt;filecontent&gt; element attributes</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pattern</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match the file contents against the provided parameterized string. This attribute is required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filename</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match the file names against the provided parameterized string.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A variable name assigned to the rule so that it can be used as a reference in later processing. See the <code>from</code> attribute below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">as="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Begin the search query with the filtered result from a previous search identified by its <code>as</code> VARIABLE_NAME.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">from="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="file-syntax_rules-development-guide-mtr">&lt;file&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-5">Summary</h6>
+<div class="paragraph">
+<p>Use the <code>&lt;file&gt;</code> element to find the existence of files with a specific name, for example, an <code>ibm-webservices-ext.xmi</code> file. For a better understanding of the <code>&lt;file&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/File.html">File</a> class.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="construct-a-file-element">Construct a &lt;file&gt; element</h6>
+<div class="sect6">
+<h7 id="file-element-attributes">&lt;file&gt; element attributes</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filename</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Match the file names against the provided parameterized string. This attribute is required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A variable name assigned to the rule so that it can be used as a reference in later processing. See the <code>from</code> attribute below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">as="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Begin the search query with the filtered result from a previous search identified by its <code>as</code> VARIABLE_NAME.</p>
+</div>
+<div class="paragraph">
+<p><em>Example:</em></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">from="MyEjbRule"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="has-hint-syntax_rules-development-guide-mtr">&lt;has-hint&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-6">Summary</h6>
+<div class="paragraph">
+<p>Use the <code>&lt;has-hint&gt;</code> element to test whether a file or line has a hint already associated with it. It is primarily used to prevent firing if a hint already exists, or to implement rules for default execution when no other conditions apply. For a better understanding of the <code>&lt;has-hint&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/HasHint.html">HasHint</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that checks to see if a hint exists for an IBM JMS destination message, and if not, includes it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="websphere-jms-eap7-03000"&gt;
+  &lt;when&gt;
+    &lt;javaclass references="{package}.{prefix}{type}Message" /&gt;
+  &lt;/when&gt;
+  &lt;perform&gt;
+    &lt;iteration&gt;
+      &lt;when&gt;
+        &lt;not&gt;
+          &lt;has-hint /&gt;
+        &lt;/not&gt;
+      &lt;/when&gt;
+      &lt;perform&gt;
+        &lt;hint title="IBM JMS destination message" effort="1" category-id="mandatory"&gt;
+          &lt;message&gt;
+            JMS `{package}.{prefix}{type}Message` messages represent the actual data passed through JMS destinations. This reference should be
+            replaced with the Java EE standard API `javax.jms.{type}Message`.
+          &lt;/message&gt;
+          &lt;link href="https://docs.oracle.com/javaee/7/tutorial/jms-concepts003.htm#sthref2271" title="Java EE 7 JMS Tutorial - Message API" /&gt;
+          &lt;tag&gt;jms&lt;/tag&gt;
+          &lt;tag&gt;websphere&lt;/tag&gt;
+        &lt;/hint&gt;
+      &lt;/perform&gt;
+    &lt;/iteration&gt;
+  &lt;/perform&gt;
+  &lt;where param="type"&gt;
+    &lt;matches pattern="(Text|Stream|Object|Map|Bytes)?" /&gt;
+  &lt;/where&gt;
+  &lt;where param="prefix"&gt;
+    &lt;matches pattern="(JMS|MQe|MQ)" /&gt;
+  &lt;/where&gt;
+  &lt;where param="package"&gt;
+    &lt;matches pattern="com.ibm(\..*)?\.jms" /&gt;
+  &lt;/where&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="construct-a-has-hint">Construct a &lt;has-hint&gt;</h6>
+<div class="paragraph">
+<p>The <code>&lt;has-hint&gt;</code> element is used to determine if a hint exists for a file or line. It does not have any child elements.</p>
+</div>
+<div class="sect6">
+<h7 id="has-hint-element-attributes">&lt;has-hint&gt; element attributes</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional argument allowing you to match the hint against the provided message string.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="has-classification-syntax_rules-development-guide-mtr">&lt;has-classification&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-7">Summary</h6>
+<div class="paragraph">
+<p>Use the <code>&lt;has-classification&gt;</code> element to test whether a file or line has a classification. It is primarily used to prevent firing if a classification already exists, or to implement rules for default execution when no other conditions apply. For a better understanding of the <code>&lt;has-classification&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/HasClassification.html">HasClassification</a> class.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="construct-a-has-classification">Construct a &lt;has-classification&gt;</h6>
+<div class="paragraph">
+<p>The <code>has-classification</code> element is used to determine if a specified classification exists. It does not have any child elements.</p>
+</div>
+<div class="sect6">
+<h7 id="has-classification-element-attributes">&lt;has-classification&gt; element attributes</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional title to match the classification against.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="graph-query-syntax_rules-development-guide-mtr">&lt;graph-query&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-8">Summary</h6>
+<div class="paragraph">
+<p>Use the <code>&lt;graph-query&gt;</code> element to search the generated graph for any elements. This element is primarily used to search for specific archives. For a better understanding of the <code>&lt;graph-query&gt;</code> condition, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/parser/xml/when/QueryHandler.html">QueryHandler</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that tests to determine if any <code>ehcache</code> packages are found.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="embedded-cache-libraries-01000"&gt;
+    &lt;when&gt;
+        &lt;graph-query discriminator="JarArchiveModel"&gt;
+            &lt;property name="fileName" searchType="regex"&gt;.*ehcache.*\.jar$&lt;/property&gt;
+        &lt;/graph-query&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;classification title="Caching - Ehcache embedded library" category-id="cloud-mandatory" effort="5"&gt;
+            &lt;description&gt;
+                The application embeds an Ehcache library.
+
+                Cloud readiness issue as potential state information that is not persisted to a backing service.
+            &lt;/description&gt;
+        &lt;/classification&gt;
+        &lt;technology-tag level="INFORMATIONAL"&gt;Ehcache (embedded)&lt;/technology-tag&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="construct-a-graph-query">Construct a &lt;graph-query&gt;</h6>
+<div class="sect6">
+<h7 id="graph-query-element-attributes">&lt;graph-query&gt; element attributes</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">discriminator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MODEL_TYPE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of model to use for searching. This can be any valid model; however, it is recommended to use the <code>JarArchiveModel</code> for examining archives. This attribute is required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">as</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A variable name assigned to the rule so that it can be used as a reference in later processing. See the <code>from</code> attribute below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">as="MyEjbRule"</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Begin the search query with the filtered result from a previous search identified by its <code>as</code> VARIABLE_NAME.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">from="MyEjbRule"</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect6">
+<h7 id="graph-query-properties">&lt;graph-query&gt; properties</h7>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the attribute to match against within the chosen model. When using any file-based models, it is recommended to match on <code>fileName</code>. This attribute is required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">property-type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the expected type of property, either <code>STRING</code> or <code>BOOLEAN</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">searchType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">property-search-type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines how the condition is matched. If set to <code>equals</code>, then an exact match must be made. If using <code>regex</code>, then regular expressions can be used.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="dependency-syntax_rules-development-guide-mtr">&lt;dependency&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-9">Summary</h6>
+<div class="paragraph">
+<p>Use the <code>&lt;dependency&gt;</code> element to search dependencies defined within the application&#8217;s POM file to determine whether they are supported by the target runtime.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that checks for all artifacts belonging to the <code>org.springframework.boot</code> group that have a version up to, and including, 1.6.0.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="springboot-00001"&gt;
+    &lt;!-- rule condition, when it could be fired --&gt;
+    &lt;when&gt;
+        &lt;dependency groupId="org.springframework.boot" artifactId="{*}" toVersion="1.6.0" /&gt;
+    &lt;/when&gt;
+    &lt;!-- rule operation, what to do if it is fired --&gt;
+    &lt;perform&gt;
+        &lt;hint title="Unsupported version of Spring Boot" effort="3" category-id="mandatory"&gt;
+            &lt;message&gt;Spring Boot has to be updated to Spring Boot 2.0 before being able to be migrated to a version supported by Red Hat Runtimes&lt;/message&gt;
+            &lt;link href="https://access.redhat.com/articles/3349341" title="RHOAR Spring Boot Supported Configurations" /&gt;
+            &lt;link href="https://access.redhat.com/articles/3348731" title="RHOAR Component Details Overview" /&gt;
+            &lt;link href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide" title="Spring Boot 2.0 Migration Guide" /&gt;
+        &lt;/hint&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="xml-rule-perform-syntax_rules-development-guide-mtr">3.3.2. <code>&lt;perform&gt;</code> syntax</h4>
+<div class="paragraph">
+<p>Operations available in the <code>perform</code> section of the rule include the classification of application resources, in-line hints for migration steps, links to migration information, and project lineitem reporting. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.</p>
+</div>
+<div class="paragraph">
+<p>You can view the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">complete XML rule schema</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following sections describe the more common XML rule perform actions.</p>
+</div>
+<div class="sect4">
+<h5 id="classification-syntax_rules-development-guide-mtr">&lt;classification&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-10">Summary</h6>
+<div class="paragraph">
+<p>The <code>&lt;classification&gt;</code> element is used to identify or classify application resources that match the rule. It provides a title that is displayed in the report, a level of effort, and it can also provide links to additional information about how to migrate this resource classification. For a better understanding of the <code>&lt;classification&gt;</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/classification/Classification.html">Classification</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that classifies a resource as a WebLogic EAR application deployment descriptor file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="XmlWebLogicRules_10vvyf"&gt;
+    &lt;when&gt;
+        &lt;xmlfile as="default" matches="/*[local-name()='weblogic-application']"&gt;&lt;/xmlfile&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;iteration&gt;
+            &lt;classification title="Weblogic EAR Application Descriptor" effort="3"/&gt;
+        &lt;/iteration&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="classification-element-attributes">&lt;classification&gt; element attributes</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The title given to this resource. This attribute is required.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">title="JBoss Seam Components"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BYTE</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The level of effort assigned to this resource.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">effort="2"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">category-id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A reference to a category as defined in <code>MTR_HOME/rules/migration-core/core.windup.categories.xml</code>. The default categories are <code>mandatory</code>, <code>optional</code>, <code>potential</code>, and <code>information</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">category-id="mandatory"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">of</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create a new classification for the given reference.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">of="MySeamRule"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="classification-child-elements">&lt;classification&gt; child elements</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Child element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;link&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Provides a link URI and text title for additional information.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;classification title="Websphere Startup Service" effort="4"&gt;
+   &lt;link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Singleton.html" title="EJB3.1 Singleton Bean"/&gt;
+   &lt;link href="http://docs.oracle.com/javaee/6/api/javax/ejb/Startup.html" title="EJB3.1 Startup Bean"/&gt;
+&lt;/classification&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;tag&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Provides additional custom information for the classification.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;tag&gt;Seam3&lt;/tag&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;description&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Description of this resource</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;description&gt;JBoss Seam components must be replaced&lt;/description&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="link-syntax_rules-development-guide-mtr">&lt;link&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-11">Summary</h6>
+<div class="paragraph">
+<p>The <code>&lt;link&gt;</code> element is used in classifications or hints to provide links to informational content. For a better understanding of the <code>&lt;link&gt;</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Link.html">Link</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that creates links to additional information.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="SeamToCDIRules_2fmb"&gt;
+    &lt;when&gt;
+        &lt;javaclass references="org.jboss.seam.{*}" as="default"/&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;iteration&gt;
+            &lt;classification title="SEAM Component" effort="1"&gt;
+                &lt;link href="http://www.seamframework.org/Seam3/Seam2ToSeam3MigrationNotes" title="Seam 2 to Seam 3 Migration Notes"/&gt;
+                &lt;link href="http://docs.jboss.org/weld/reference/latest/en-US/html/example.html" title="JSF Web Application Example"/&gt;
+                &lt;link href="http://docs.jboss.org/weld/reference/latest/en-US/html/contexts.html" title="JBoss Context Documentation"/&gt;
+                &lt;link href="http://www.andygibson.net/blog/tutorial/cdi-conversations-part-2/" title="CDI Conversations Blog Post"/&gt;
+            &lt;/classification&gt;
+        &lt;/iteration&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="link-element-attributes">&lt;link&gt; element attributes</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">href</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The URI for the referenced link.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">href="https://access.redhat.com/articles/1249423"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A title for the link.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">title="Migrate WebLogic Proprietary Servlet Annotations"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="hint-syntax_rules-development-guide-mtr">&lt;hint&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-12">Summary</h6>
+<div class="paragraph">
+<p>The <code>&lt;hint&gt;</code> element is used to provide a hint or inline information about how to migrate a section of code. For a better understanding of the <code>&lt;hint&gt;</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/Hint.html">Hint</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that creates a hint.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="WebLogicWebServiceRules_8jyqn"&gt;
+    &lt;when&gt;
+        &lt;javaclass references="weblogic.wsee.connection.transport.http.HttpTransportInfo.setUsername({*})" as="default"&gt;
+            &lt;location&gt;METHOD&lt;/location&gt;
+        &lt;/javaclass&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;iteration&gt;
+            &lt;hint title="Proprietary web-service" category-id="mandatory" effort="3"&gt;
+                &lt;message&gt;Replace proprietary web-service authentication with JAX-WS standards.&lt;/message&gt;
+                &lt;link href="http://java-x.blogspot.com/2009/03/invoking-web-services-through-proxy.html" title="JAX-WS Proxy Password Example"/&gt;
+            &lt;/hint&gt;
+        &lt;/iteration&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="hint-element-attributes">&lt;hint&gt; element attributes</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Title this hint using the specified string. This attribute is required.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">title="JBoss Seam Component Hint"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">category-id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A reference to a category as defined in <code>MTR_HOME/rules/migration-core/core.windup.categories.xml</code>. The default categories are <code>mandatory</code>, <code>optional</code>, <code>potential</code>, and <code>information</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">category-id="mandatory"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create a new Hint in the FileLocationModel resolved by the given variable.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">in="Foo"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BYTE</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The level of effort assigned to this resource.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">effort="2"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="hint-child-elements">&lt;hint&gt; child elements</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Child element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;message&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A message describing the migration hint.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;message&gt;EJB 2.0 is deprecated&lt;/message&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;link&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Identify or classify links to informational content.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;link href="http://docs.oracle.com/javaee/6/api/" title="Java Platform, Enterprise Edition 6
+API Specification" /&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;tag&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Define a custom tag for this <code>hint</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;tag&gt;Needs review&lt;/tag&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;quickfix&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Contains information to be used by the MTR plugin to perform quick fixes when the rule condition is met.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;quickfix name="slink-qf" type="REPLACE"&gt;
+    &lt;replacement&gt;h:link&lt;/replacement&gt;
+    &lt;search&gt;s:link&lt;/search&gt;
+&lt;/quickfix&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="xslt-syntax_rules-development-guide-mtr">&lt;xslt&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-13">Summary</h6>
+<div class="paragraph">
+<p>The <code>&lt;xslt&gt;</code> element specifies how to transform an XML file. For a better understanding of the <code>&lt;xslt&gt;</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/operation/xslt/XSLTTransformation.html">XSLTTransformation</a>  class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of rule that defines an XSLT action.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="XmlWebLogicRules_6bcvk"&gt;
+    &lt;when&gt;
+        &lt;xmlfile as="default" matches="/weblogic-ejb-jar"/&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;iteration&gt;
+            &lt;classification title="Weblogic EJB XML" effort="3"/&gt;
+            &lt;xslt title="JBoss EJB Descriptor (Windup-Generated)" template="transformations/xslt/weblogic-ejb-to-jboss.xsl" extension="-jboss.xml"/&gt;
+        &lt;/iteration&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="xslt-element-attributes">&lt;xslt&gt; element attributes</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Sets the title for this XSLTTransformation in the report. This attribute is required.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">title="XSLT Transformed Output"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">of</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Create a new transformation for the given reference.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">of="testVariable_instance"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extension</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Sets the extension for this XSLTTransformation. This attribute is required.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">extension="-result.html"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">template</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Sets the XSL template. This attribute is required.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">template="simpleXSLT.xsl"</pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">effort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BYTE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The level of effort required for the transformation.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="xslt-child-elements">&lt;xslt&gt; child elements</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Child element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;xslt-parameter&gt;</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Specify XSLTTransformation parameters as property value pairs</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;xslt-parameter property="title" value="EJB Transformation"/&gt;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="lineitem-syntax_rules-development-guide-mtr">&lt;lineitem&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-14">Summary</h6>
+<div class="paragraph">
+<p>The <code>&lt;lineitem&gt;</code> element is used to provide  general migration requirements for the application, such as the need to replace deprecated libraries or the need to resolve potential class loading issues. This information is displayed on the project or application overview page. For a better understanding of the <code>&lt;lineitem&gt;</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/operation/LineItem.html">LineItem</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that creates a lineitem message.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="weblogic_servlet_annotation_1000"&gt;
+    &lt;when&gt;
+        &lt;javaclass references="weblogic.servlet.annotation.WLServlet" as="default"&gt;
+            &lt;location&gt;ANNOTATION&lt;/location&gt;
+        &lt;/javaclass&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;hint effort="1"&gt;
+            &lt;message&gt;Replace the proprietary WebLogic @WLServlet annotation with the Java EE 6 standard @WebServlet annotation.&lt;/message&gt;
+            &lt;link href="https://access.redhat.com/articles/1249423" title="Migrate WebLogic Proprietary Servlet Annotations" /&gt;
+            &lt;lineitem message="Proprietary WebLogic @WLServlet annotation found in file."/&gt;
+        &lt;/hint&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="lineitem-element-attributes">&lt;lineitem&gt; element attributes</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">STRING</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A lineitem message.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">message="Proprietary code found."</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="iteration-syntax_rules-development-guide-mtr">&lt;iteration&gt; syntax</h5>
+<div class="sect5">
+<h6 id="summary-15">Summary</h6>
+<div class="paragraph">
+<p>The <code>&lt;iteration&gt;</code> element specifies to iterate over an implicit or explicit variable defined within the rule. For a better understanding of the <code>&lt;iteration&gt;</code> action, see the JavaDoc for the <a href="http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/Iteration.html">Iteration</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a rule that performs an iteration.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="jboss-eap5-xml-19000"&gt;
+    &lt;when&gt;
+        &lt;xmlfile as="jboss-app" matches="/jboss-app"/&gt;
+        &lt;xmlfile as="jboss-app-no-DTD" matches="/jboss-app" public-id=""/&gt;
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;iteration over="jboss-app"&gt;
+            &lt;classification title="JBoss application Descriptor" effort="5"/&gt;
+        &lt;/iteration&gt;
+        &lt;iteration over="jboss-app-no-DTD"&gt;
+            &lt;classification title="JBoss application descriptor with missing DTD" effort="5"/&gt;
+        &lt;/iteration&gt;
+        &lt;iteration over="jboss-app-no-DTD"&gt;
+            &lt;xslt title="JBoss application descriptor - JBoss 5 (Windup-generated)" template="transformations/xslt/jboss-app-to-jboss5.xsl" extension="-jboss5.xml"/&gt;
+        &lt;/iteration&gt;
+    &lt;/perform&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect5">
+<h6 id="iteration-element-attributes">&lt;iteration&gt; element attributes</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">over</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VARIABLE_NAME</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Iterate over the condition identified by this VARIABLE_NAME.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">over="jboss-app"</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect5">
+<h6 id="iteration-child-elements">&lt;iteration&gt; child elements</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Child Element</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;iteration&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Child elements include a <code>when</code> condition, along with the actions <code>iteration</code>, <code>classification</code>, <code>hint</code>, <code>xslt</code>, <code>lineitem</code>, and <code>otherwise</code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="where-syntax_rules-development-guide-mtr">3.3.3. <code>&lt;where&gt;</code> syntax</h4>
+<div class="paragraph">
+<p>You can define parameters that specify a matching pattern to be used in other elements of an XML rule. This can help simplify the patterns for complex matching expressions.</p>
+</div>
+<div class="paragraph">
+<p>Use the <code>&lt;where&gt;</code> element to define a parameter. Specify the parameter name using the <code>param</code> attribute and supply the pattern using the <code>&lt;matches&gt;</code> element. This parameter can then be referenced elsewhere in the rule definition using the syntax <code>{&lt;PARAM_NAME&gt;}</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can view the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">complete XML rule schema</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following example rule defines a parameter named <code>subpackage</code> that specifies a pattern of <code>(activeio|activemq)</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="generic-catchall-00600"&gt;
+  &lt;when&gt;
+    &lt;javaclass references="org.apache.{subpackage}.{*}"&gt;
+    &lt;/javaclass&gt;
+  &lt;/when&gt;
+  &lt;perform&gt;
+    ...
+  &lt;/perform&gt;
+  &lt;where param="subpackage"&gt;
+    &lt;matches pattern="(activeio|activemq)" /&gt;
+  &lt;/where&gt;
+&lt;/rule&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The pattern defined by <code>subpackage</code> will then be substituted in the <code>&lt;javaclass&gt;</code> <code>references</code> attribute. This causes the rule to match on <code>org.apache.activeio.*</code> and <code>org.apache.activemq.*</code> packages.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-rule-to-mtr_rules-development-guide-mtr">3.4. Adding a rule to the Migration Toolkit for Runtimes</h3>
+<div class="paragraph">
+<p>A Migration Toolkit for Runtimes rule is installed by copying the rule to the appropriate MTR folder. MTR scans for rules, which are files with the <code>.windup.xml</code> extension in the following locations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Directory specified by the <code>--userRulesDirectory</code> argument on the MTR command line.</p>
+</li>
+<li>
+<p><code>&lt;MTR_HOME&gt;/rules/</code> directory. <code>&lt;MTR_HOME&gt;</code> is the directory where you install and run the Migration Toolkit for Runtimes executable.</p>
+</li>
+<li>
+<p><code>${user.home}/.mtr/rules/</code> directory. This directory is created by MTR the first time it is run. it contains rules, add-ons, and the MTR log.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In a Windows operating system, the rules are located in <code>\Documents and Settings\&lt;USER_NAME&gt;\.mtr\rules\</code> or <code>\Users\&lt;USER_NAME&gt;\.mtr\rules\</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="testing-rules_rules-development-guide-mtr">4. Testing XML rules</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you have created an XML rule, you should create a test rule to ensure that it works.</p>
+</div>
+<div class="sect2">
+<h3 id="creating-a-test-rule">4.1. Creating a test rule</h3>
+<div class="paragraph">
+<p>Test rules are created using a process similar to the process for creating an XML rule, with the following differences:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Test rules should be placed in a <code>tests/</code> directory beneath the rule to be tested.</p>
+</li>
+<li>
+<p>Any data, such as test classes, should be placed in a <code>data/</code> directory beneath the <code>tests/</code> directory.</p>
+</li>
+<li>
+<p>Test rules should use the <code>.windup.test.xml</code> extension.</p>
+</li>
+<li>
+<p>These rules use the structure defined in the Test XML Rule Structure.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition, it is recommended to create a test rule that follows the name of the rule it tests. For example, if a rule were created with a filename of <code>proprietary-rule.mtr.xml</code>, the test rule should be called <code>proprietary-rule.windup.test.xml</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="test-xml-rule-structure_rules-development-guide-mtr">4.1.1. Test XML rule structure</h4>
+<div class="paragraph">
+<p>All test XML rules are defined as elements within <code>ruletests</code> which contain one or more <code>rulesets</code>. For more details, see the <a href="http://windup.jboss.org/schema/windup-jboss-ruleset.xsd">MTR XML rule schema</a>.</p>
+</div>
+<div class="paragraph">
+<p>A ruletest is a group of one or more tests that targets a specific area of migration. This is the basic structure of the <code>&lt;ruletest&gt;</code> element.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;ruletest id="&lt;RULE_TOPIC&gt;-test"&gt;</code>: Defines this as a unique MTR ruletest and gives it a unique ruletest id.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;testDataPath&gt;</code>: Defines the path to any data, such as classes or files, used for testing.</p>
+</li>
+<li>
+<p><code>&lt;sourceMode&gt;</code>: Indicates if the passed in data only contains source files. If an archive, such as an EAR, WAR, or JAR, is in use, then this should be set to <code>false</code>. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><code>&lt;rulePath&gt;</code>: The path to the rule to be tested. This should end in the name of the rule to test.</p>
+</li>
+<li>
+<p><code>&lt;ruleset&gt;</code>: Rulesets containing the logic of the test cases. These are identical to the ones defined in Rulesets.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="test-xml-rule-syntax">4.1.2. Test XML rule syntax</h4>
+<div class="paragraph">
+<p>In addition to the tags in the standard XML rule syntax, the following <code>when</code> conditions are commonly used for creating test rules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;not&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;iterable-filter&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;classification-exists&gt;</code></p>
+</li>
+<li>
+<p><code>&lt;hint-exists&gt;</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition to the tags in the standard <code>perform action</code> syntax, the following <code>perform</code> conditions are commonly used as actions in test rules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;fail&gt;</code></p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="not-syntax_rules-development-guide-mtr">&lt;not&gt; syntax</h5>
+<h6 id="summary-16" class="discrete">Summary</h6>
+<div class="paragraph">
+<p>The <code>&lt;not&gt;</code> element is the standard logical <em>not</em> operator, and is commonly used to perform a <code>&lt;fail&gt;</code> if the condition is not met.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example of a test rule that fails if only a specific message exists at the end of the analysis.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+          id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;testDataPath&gt;data/&lt;/testDataPath&gt;
+  &lt;rulePath&gt;../proprietary-servlet.windup.xml&lt;/rulePath&gt;
+  &lt;ruleset&gt;
+    &lt;rules&gt;
+      &lt;rule id="proprietary-servlet-01000-test"&gt;
+        &lt;when&gt;
+          &lt;!--
+	    The `&lt;not&gt;` will perform a logical _not_ operator on the elements within.
+	  --&gt;
+          &lt;not&gt;
+            &lt;!--
+	      The defined `&lt;iterable-filter&gt;` has a size of `1`. This rule will only match on a single instance of the defined hint.
+	    --&gt;
+            &lt;iterable-filter size="1"&gt;
+              &lt;hint-exists message="Replace the proprietary @ProprietaryServlet annotation with the Java EE 7 standard @WebServlet annotation*" /&gt;
+            &lt;/iterable-filter&gt;
+          &lt;/not&gt;
+        &lt;/when&gt;
+        &lt;!--
+	  This `&lt;perform&gt;` element is only executed if the previous `&lt;when&gt;` condition is false.
+          This ensures that it only executes if there is not a single instance of the defined hint.
+        --&gt;
+        &lt;perform&gt;
+          &lt;fail message="Hint for @ProprietaryServlet was not found!" /&gt;
+        &lt;/perform&gt;
+      &lt;/rule&gt;
+    &lt;/rules&gt;
+  &lt;/ruleset&gt;
+&lt;/ruletest&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>&lt;not&gt;</code> element has no unique attributes or child elements.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="iterable-filter-syntax_rules-development-guide-mtr">&lt;iterable-filter&gt; syntax</h5>
+<h6 id="summary-17" class="discrete">Summary</h6>
+<div class="paragraph">
+<p>The <code>&lt;iterable-filter&gt;</code> element counts the number of times a condition is verified. For additional information, see the <a href="https://github.com/windup/windup/blob/master/rules-base/api/src/main/java/org/jboss/windup/rules/general/IterableFilter.java">IterableFilter</a> class.</p>
+</div>
+<div class="paragraph">
+<p>The following is an example that looks for four instances of the specified message.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+          id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;testDataPath&gt;data/&lt;/testDataPath&gt;
+  &lt;rulePath&gt;../proprietary-servlet.mtr.xml&lt;/rulePath&gt;
+  &lt;ruleset&gt;
+    &lt;rules&gt;
+      &lt;rule id="proprietary-servlet-03000-test"&gt;
+        &lt;when&gt;
+          &lt;!--
+	    The `&lt;not&gt;` will perform a logical _not_ operator on the elements within.
+	  --&gt;
+          &lt;not&gt;
+	    &lt;!--
+	      The defined `&lt;iterable-filter&gt;` has a size of `4`. This rule will only match on four instances of the defined hint.
+	    --&gt;
+            &lt;iterable-filter size="4"&gt;
+              &lt;hint-exists message="Replace the proprietary @ProprietaryInitParam annotation with the Java EE 7 standard @WebInitParam annotation*" /&gt;
+            &lt;/iterable-filter&gt;
+          &lt;/not&gt;
+        &lt;/when&gt;
+	&lt;!--
+	  This `&lt;perform&gt;` element is only executed if the previous `&lt;when&gt;` condition is false.
+	  In this configuration, it only executes if there are not four instances of the defined hint.
+	--&gt;
+        &lt;perform&gt;
+          &lt;fail message="Hint for @ProprietaryInitParam was not found!" /&gt;
+        &lt;/perform&gt;
+      &lt;/rule&gt;
+    &lt;/rules&gt;
+  &lt;/ruleset&gt;
+&lt;/ruletest&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>&lt;iterable-filter&gt;</code> element has no unique child elements.</p>
+</div>
+<h6 id="iterable-filter-element-attributes" class="discrete">&lt;iterable-filter&gt; element attributes</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The number of times to be verified.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="classification_exists_syntax_rules-development-guide-mtr">&lt;classification-exists&gt; syntax</h5>
+<div class="paragraph">
+<p>The <code>&lt;classification-exists&gt;</code> element determines if a specific classification title has been included in the analysis. For additional information, see the <a href="https://github.com/windup/windup/blob/master/reporting/api/src/main/java/org/jboss/windup/reporting/config/ClassificationExists.java">ClassificationExists</a> class.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When testing for a message that contains special characters, such as <code>[</code> or <code>'</code>, you must escape each special character with a backslash (<code>\</code>) to correctly match.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following is an example that searches for a specific classification title.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+          id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;testDataPath&gt;data/&lt;/testDataPath&gt;
+  &lt;rulePath&gt;../weblogic.mtr.xml&lt;/rulePath&gt;
+  &lt;ruleset&gt;
+    &lt;rules&gt;
+      &lt;rule id="weblogic-01000-test"&gt;
+        &lt;when&gt;
+          &lt;!--
+	    The `&lt;not&gt;` will perform a logical _not_ operator on the elements within.
+	  --&gt;
+          &lt;not&gt;
+	    &lt;!--
+	      The defined `&lt;classification-exists&gt;` is attempting to match on the defined title.
+	      This classification would have been generated by a matching `&lt;classification title="WebLogic scheduled job" .../&gt;` rule.
+	    --&gt;
+            &lt;classification-exists classification="WebLogic scheduled job" /&gt;
+          &lt;/not&gt;
+        &lt;/when&gt;
+	&lt;!--
+	  This `&lt;perform&gt;` element is only executed if the previous `&lt;when&gt;` condition is false.
+	  In this configuration, it only executes if there is not a matching classification.
+	--&gt;
+        &lt;perform&gt;
+          &lt;fail message="Triggerable not found" /&gt;
+        &lt;/perform&gt;
+      &lt;/rule&gt;
+    &lt;/rules&gt;
+  &lt;/ruleset&gt;
+&lt;/ruletest&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>&lt;classification-exists&gt;</code> has no unique child elements.</p>
+</div>
+<h6 id="classification-exists-element-attributes" class="discrete">&lt;classification-exists&gt; element attributes</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>&lt;classification&gt;</code> <code>title</code> to search for.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional argument that restricts matching to files that contain the defined filename.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="hint-exists-syntax_rules-development-guide-mtr">&lt;hint-exists&gt; syntax</h5>
+<div class="paragraph">
+<p>The <code>&lt;hint-exists&gt;</code> element determines if a specific hint has been included in the analysis. It searches for any instances of the defined message, and is typically used to search for the beginning or a specific class inside of a <code>&lt;message&gt;</code> element. For additional information, see the <a href="https://github.com/windup/windup/blob/master/reporting/api/src/main/java/org/jboss/windup/reporting/config/HintExists.java">HintExists</a> class.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When testing for a message that contains special characters, such as <code>[</code> or <code>'</code>, you must escape each special character with a backslash (<code>\</code>) to correctly match.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following is an example that searches for a specific hint.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight nowrap"><code class="language-xml" data-lang="xml">&lt;ruletest xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+          id="proprietary-servlet-test" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+  &lt;testDataPath&gt;data/&lt;/testDataPath&gt;
+  &lt;rulePath&gt;../weblogic.windup.xml&lt;/rulePath&gt;
+  &lt;ruleset&gt;
+    &lt;rules&gt;
+      &lt;rule id="weblogic-eap7-05000-test"&gt;
+        &lt;when&gt;
+          &lt;!--
+	    The `&lt;not&gt;` will perform a logical _not_ operator on the elements within.
+	  --&gt;
+          &lt;not&gt;
+	    &lt;!--
+	      The defined `&lt;hint-exists&gt;` is attempting to match on the defined message.
+	      This message would have been generated by a matching `&lt;message&gt;` element on the `&lt;hint&gt;` condition.
+	    --&gt;
+            &lt;hint-exists message="Replace with the Java EE standard method .*javax\.transaction\.TransactionManager\.resume\(Transaction tx\).*" /&gt;
+          &lt;/not&gt;
+        &lt;/when&gt;
+	&lt;!--
+	  This `&lt;perform&gt;` element is only executed if the previous `&lt;when&gt;` condition is false.
+	  In this configuration, it only executes if there is not a matching hint.
+	--&gt;
+        &lt;perform&gt;
+          &lt;fail message="Note to replace with standard TransactionManager.resume is missing!" /&gt;
+        &lt;/perform&gt;
+      &lt;/rule&gt;
+    &lt;/rules&gt;
+  &lt;/ruleset&gt;
+&lt;/ruletest&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>&lt;hint-exists&gt;</code> element has no unique child elements.</p>
+</div>
+<h6 id="hint-exists-element-attributes" class="discrete">&lt;hint-exists&gt; element attributes</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>&lt;hint&gt;</code> <code>message</code> to search for.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An optional argument that restricts matching to <code>InLineHintModels</code> that reference the given filename.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="fail-syntax_rules-development-guide-mtr">&lt;fail&gt; syntax</h5>
+<div class="paragraph">
+<p>The <code>&lt;fail&gt;</code> element reports the execution as a failure and displays the associated message. It is commonly used in conjunction with the <code>&lt;not&gt;</code> condition to display a message only if the conditions are not met.</p>
+</div>
+<div class="paragraph">
+<p>The <code>&lt;fail&gt;</code> element has no unique child elements.</p>
+</div>
+<h6 id="fail-element-attributes" class="discrete">&lt;fail&gt; element attributes</h6>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message to be displayed.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="manually-test-rules_rules-development-guide-mtr">4.2. Manually testing an XML rule</h3>
+<div class="paragraph">
+<p>You can run an XML rule against your application file to test it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-terminal" data-lang="terminal">$ &lt;MTR_HOME&gt;/mta-cli [--sourceMode] --input &lt;INPUT_ARCHIVE_OR_FOLDER&gt; --output &lt;OUTPUT_REPORT_DIRECTORY&gt; --target &lt;TARGET_TECHNOLOGY&gt; --packages &lt;PACKAGE_1&gt; &lt;PACKAGE_2&gt; &lt;PACKAGE_N&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should see the following result:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">Report created: &lt;OUTPUT_REPORT_DIRECTORY&gt;/index.html
+              Access it at this URL: file:///&lt;OUTPUT_REPORT_DIRECTORY&gt;/index.html</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>More examples of how to run MTR are located in the Migration Toolkit for Runtimes <a href="https://access.redhat.com/documentation/en-us/migration_toolkit_for_runtimes/1.2/html-single/cli_guide"><em>CLI Guide</em></a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rules-testng-junit_rules-development-guide-mtr">4.3. Testing the rules by using JUnit</h3>
+<div class="paragraph">
+<p>Once a test rule has been created, it can be analyzed as part of a JUnit test to confirm that the rule meets all criteria for execution. The <code>WindupRulesMultipleTests</code> class in the MTR rules repository is designed to test multiple rules simultaneously, and provides feedback on any missing requirements.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>Fork and clone the MTR XML rules. The location of this repository will be referred to as &lt;RULESETS_REPO&gt;.</p>
+</li>
+<li>
+<p>Create a test XML rule.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Creating the JUnit test configuration</div>
+<p>The following instructions detail creating a JUnit test using Eclipse. When using a different IDE, it is recommended to consult your IDE&#8217;s documentation for instructions on creating a JUnit test.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Import the MTR rulesets repository into your IDE.</p>
+</li>
+<li>
+<p>Copy the custom rules, along with the corresponding tests and data, into <code>&lt;/path/to/RULESETS_REPO&gt;/rules-reviewed/&lt;RULE_NAME&gt;/</code>. This should create the following directory structure.</p>
+<div class="listingblock">
+<div class="title">Directory structure</div>
+<div class="content">
+<pre class="highlight nowrap"><code>├── *rules-reviewed/*  _(Root directory of the rules found within the project)_
+│   ├── *&lt;RULE_NAME&gt;/*  _(Directory to contain the newly developed rule and tests)_
+│   │   ├── *&lt;RULE_NAME&gt;.windup.xml*  _(Custom rule)_
+│   │   ├── *tests/*  _(Directory that contains any test rules and data)_
+│   │   │   ├── *&lt;RULE_NAME&gt;.windup.test.xml* _(Test rule)_
+│   │   │   └── *data/*  _(Optional directory to contain test rule data)_</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Select <strong>Run</strong> from the top menu bar.</p>
+</li>
+<li>
+<p>Select <strong>Run Configurations&#8230;&#8203;</strong> from the drop down that appears.</p>
+</li>
+<li>
+<p>Right-click <strong>JUnit</strong> from the options on the left side and select <strong>New</strong>.</p>
+</li>
+<li>
+<p>Enter the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Name</strong>: A name for your JUnit test, such as <code>WindupRulesMultipleTests</code>.</p>
+</li>
+<li>
+<p><strong>Project</strong>: Ensure this is set to <code>windup-rulesets</code>.</p>
+</li>
+<li>
+<p><strong>Test class</strong>: Set this to <code>org.jboss.windup.rules.tests.WindupRulesMultipleTests</code>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/junit-test.png" alt="junit test">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Select the <strong>Arguments</strong> tab, and add the <code>-DrunTestsMatching=&lt;RULE_NAME&gt;</code> VM argument. For instance, if your rule name was <code>community-rules</code>, then you would add <code>-DrunTestsMatching=community-rules</code> as seen in the following image.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/junit-test-arguments.png" alt="junit test arguments">
+</div>
+</div>
+</li>
+<li>
+<p>Click <strong>Run</strong> in the bottom right corner to begin the test.</p>
+<div class="paragraph">
+<p>When the execution completes, the results are available for analysis. If all tests passed, then the test rule is correctly formatted. If all tests did not pass, it is recommended to address each of the issues raised in the test failures.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="validation-report_rules-development-guide-mtr">4.4. About validation reports</h3>
+<div class="paragraph">
+<p>Validation reports provide details about test rules and failures and contain the following sections:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Summary</strong></p>
+<div class="paragraph">
+<p>This section contains the total number of tests run and reports the number of errors and failures. It displays the total success rate and the time taken, in seconds, for the report to be generated.</p>
+</div>
+</li>
+<li>
+<p><strong>Package List</strong></p>
+<div class="paragraph">
+<p>This section contains the number of tests executed for each package and reports the number of errors and failures. It displays the success rate and the time taken, in seconds, for each package to be analyzed.</p>
+</div>
+<div class="paragraph">
+<p>A single package named <code>org.jboss.windup.rules.tests</code> is displayed unless additional test cases have been defined.</p>
+</div>
+</li>
+<li>
+<p><strong>Test Cases</strong></p>
+<div class="paragraph">
+<p>This section describes the test cases. Each failure includes a <strong>Details</strong> section that can be expanded to show the stack trace for the assertion, including a human-readable line indicating the source of the error.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="validation-report-understanding_rules-development-guide-mtr">4.4.1. Creating a validation report</h4>
+<div class="paragraph">
+<p>You can create a validation report for your custom rules.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You must fork and clone the MTR XML rules.</p>
+</li>
+<li>
+<p>You must have one or more test XML rules to validate.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Navigate to the local <code>windup-rulesets</code> repository.</p>
+</li>
+<li>
+<p>Create a directory for your custom rules and tests: <code>windup-rulesets/rules-reviewed/myTests</code>.</p>
+</li>
+<li>
+<p>Copy your custom rules and tests to the <code>windup-rulesets/rules-reviewed/&lt;myTests&gt;</code> directory.</p>
+</li>
+<li>
+<p>Run the following command from the root directory of the <code>windup-rulesets</code> repository:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ mvn -Dtest=WindupRulesMultipleTests -DrunTestsMatching=&lt;myTests&gt; clean &lt;myReport&gt;:report <b class="conum">(1)</b> <b class="conum">(2)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Specify the directory containing your custom rules and tests. If you omit the <code>-DrunTestsMatching</code> argument, the validation report will include all the tests and take much longer to generate.</p>
+</li>
+<li>
+<p>Specify your report name.</p>
+<div class="paragraph">
+<p>The validation report is created in the <code>windup-rulesets/target/site/</code> repository.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="validation-report-errors_rules-development-guide-mtr">4.4.2. Validation report error messages</h4>
+<div class="paragraph">
+<p>Validation reports contain errors encountered while running the rules and tests.</p>
+</div>
+<div class="paragraph">
+<p>The following table contains error messages and how to resolve the errors.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Validation report error messages</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 35%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Error message</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No test file matching rule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This error occurs when a rule file exists without a corresponding test file.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a test file for the existing rule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test rule Ids &lt;RULE_NAME&gt; not found!</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This error is thrown when a rule exists without a corresponding ruletest.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create a test for the existing rule.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XML parse fail on file &lt;FILE_NAME&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The syntax in the XML file is invalid, and unable to be parsed successfully by the rule validator.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Correct the invalid syntax.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test file path from <code>&lt;testDataPath&gt;</code> tag has not been found. Expected path to test file is: &lt;RULE_DATA_PATH&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No files are found in the path defined in the <code>&lt;testDataPath&gt;</code> tag within the test rule.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create the path defined in the <code>&lt;testDataPath&gt;</code> tag, and ensure all necessary data files are located within this directory.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The rule with id="&lt;RULE_ID&gt;" has not been executed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The rule with the provided id has not been executed during this validation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ensure that a test data file exists that matches the conditions defined in the specified rule.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overriding-rules_rules-development-guide-mtr">5. Overriding rules</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can override core rules distributed with MTR or even custom rules. For example, you can change the matching conditions, effort, or hint text for a rule. This is done by making a copy of the original rule, marking it as a rule override, and making the necessary adjustments.</p>
+</div>
+<div class="paragraph">
+<p>You can disable a rule by creating a rule override with an empty <code>&lt;rule&gt;</code> element.</p>
+</div>
+<div class="sect2">
+<h3 id="overriding-a-rule">5.1. Overriding a rule</h3>
+<div class="paragraph">
+<p>You can override a core or custom rule.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Copy the XML file that contains the rule you want to override to the custom rules directory.</p>
+<div class="paragraph">
+<p>Custom rules can be placed in <code>&lt;MTR_HOME&gt;/rules</code>, <code>${user.home}/.mtr/rules/</code>, or a directory specified by the <code>--userRulesDirectory</code> command-line argument.</p>
+</div>
+</li>
+<li>
+<p>Edit the XML file so that it contains only the <code>&lt;rule&gt;</code> elements for the rules that you want to override.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Rules from the original ruleset that are not overridden by the new ruleset are run as normal.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Ensure that you keep the same rule and ruleset IDs. When you copy the original rule XML, this ensures that the IDs match.</p>
+</li>
+<li>
+<p>Ensure that the target technology in the override ruleset matches one of the targets that you specified for running the analysis.</p>
+</li>
+<li>
+<p>Add the <code>&lt;overrideRules&gt;true&lt;/overrideRules&gt;</code> element to the ruleset metadata.</p>
+</li>
+<li>
+<p>Update the rule definition.</p>
+<div class="paragraph">
+<p>You can change anything in the rule definition. The new rule overrides the original rule in its entirety.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following rule override example changes the <code>effort</code> of the <code>weblogic-02000</code> rule in the <code>weblogic</code> ruleset from <code>1</code> to <code>3</code>:</p>
+</div>
+<div class="listingblock">
+<div class="title">Rule override definition example</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset id="weblogic"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt; <b class="conum">(1)</b>
+    &lt;metadata&gt;
+        ...
+        &lt;overrideRules&gt;true&lt;/overrideRules&gt; <b class="conum">(2)</b>
+    &lt;/metadata&gt;
+    &lt;rules&gt;
+        &lt;rule id="weblogic-02000" xmlns="http://windup.jboss.org/schema/jboss-ruleset"&gt; <b class="conum">(3)</b>
+            &lt;when&gt;
+                &lt;javaclass references="weblogic.utils.StringUtils.{*}"/&gt;
+            &lt;/when&gt;
+            &lt;perform&gt;
+                &lt;hint effort="3" category-id="mandatory" title="WebLogic StringUtils Usage"&gt; <b class="conum">(4)</b>
+                    &lt;message&gt;Replace with the StringUtils class from Apache Commons.&lt;/message&gt;
+                    &lt;link href="https://commons.apache.org/proper/commons-lang/" title="Apache Commons Lang"/&gt;
+                    &lt;tag&gt;weblogic&lt;/tag&gt;
+                &lt;/hint&gt;
+            &lt;/perform&gt;
+        &lt;/rule&gt;
+    &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Ensure that the <code>ruleset id</code> matches the original <code>ruleset id</code>.</p>
+</li>
+<li>
+<p>Add <code>&lt;overrideRules&gt;true&lt;/overrideRules&gt;</code> to the <code>&lt;metadata&gt;</code> section.</p>
+</li>
+<li>
+<p>Ensure that the <code>rule id</code> matches the original <code>rule id</code>.</p>
+</li>
+<li>
+<p>Updated <code>effort</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When you run MTR, this rule overrides the original rule with the same rule ID. You can verify that the new rule was used by viewing the contents of the Rule Provider Executions Overview.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="disabling-a-rule">5.2. Disabling a rule</h3>
+<div class="paragraph">
+<p>To disable a rule, create a rule override definition with an empty <code>&lt;rule&gt;</code> element according to the following example:</p>
+</div>
+<div class="listingblock">
+<div class="title">Rule override definition example to disable a rule</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;ruleset id="weblogic"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"&gt;
+    &lt;metadata&gt;
+        ...
+        &lt;overrideRules&gt;true&lt;/overrideRules&gt;
+    &lt;/metadata&gt;
+    &lt;rules&gt;
+        &lt;rule id="weblogic-02000" xmlns="http://windup.jboss.org/schema/jboss-ruleset"&gt;
+        <b class="conum">(1)</b>
+        &lt;/rule&gt;
+    &lt;/rules&gt;
+&lt;/ruleset&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>The <code>&lt;rule&gt;</code> element is empty so that the <code>weblogic-02000</code> rule in the <code>weblogic</code> ruleset is disabled.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="rule-categories_rules-development-guide-mtr">6. Using custom rule categories</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can create custom rule categories and assign MTR rules to them.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Although MTR processes rules with the legacy <code>severity</code> field, you must update your custom rules to use the new <code>category-id</code> field.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="add_custom_category_rules-development-guide-mtr">6.1. Adding a custom category</h3>
+<div class="paragraph">
+<p>You can add a custom category to the rule category file.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Edit the rule category file, which is located at <code>&lt;MTR_HOME&gt;/rules/migration-core/core.windup.categories.xml</code>.</p>
+</li>
+<li>
+<p>Add a new <code>&lt;category&gt;</code> element and fill in the following parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>id</code>: The ID that MTR rules use to reference the category.</p>
+</li>
+<li>
+<p><code>priority</code>: The sorting priority relative to other categories. The category with the lowest value is displayed first.</p>
+</li>
+<li>
+<p><code>name</code>: The display name of the category.</p>
+</li>
+<li>
+<p><code>description</code>: The description of the category.</p>
+<div class="listingblock">
+<div class="title">Custom rule category example</div>
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0"?&gt;
+&lt;categories&gt;
+    ...
+    &lt;category id="custom-category" priority="20000"&gt;
+        &lt;name&gt;Custom Category&lt;/name&gt;
+        &lt;description&gt;This is a custom category.&lt;/description&gt;
+    &lt;/category&gt;
+&lt;/categories&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This category is ready to be referenced by MTR rules.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="assign_custom_category_rules-development-guide-mtr">6.2. Assigning a rule to a custom category</h3>
+<div class="paragraph">
+<p>You can assign a rule to your new custom category.</p>
+</div>
+<div class="paragraph">
+<div class="title">Procedure</div>
+<p>In your MTR rule, update the <code>category-id</code> field as in the following example.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;rule id="rule-id"&gt;
+    &lt;when&gt;
+        ...
+    &lt;/when&gt;
+    &lt;perform&gt;
+        &lt;hint title="Rule Title" effort="1" category-id="custom-category"&gt;
+            &lt;message&gt;Hint message.&lt;/message&gt;
+        &lt;/hint&gt;
+    &lt;/perform&gt;
+ &lt;/rule&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If this rule condition is met, incidents identified by this rule use your custom category. The custom category is displayed on the dashboard and in the Issues report.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../topics/images/custom_rule_category.png" alt="Custom rule category on the Dashboard">
+</div>
+<div class="title">Figure 3. Custom category on the dashboard</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference-material">Appendix A: Reference material</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="about-story-points_rules-development-guide-mtr">A.1. About rule story points</h3>
+<div class="sect3">
+<h4 id="what-are-story-points">A.1.1. What are story points?</h4>
+<div class="paragraph">
+<p><em>Story points</em> are an abstract metric commonly used in Agile software development to estimate the <em>level of effort</em> needed to implement a feature or change.</p>
+</div>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes uses story points to express the level of effort needed to migrate particular application constructs, and the application as a whole. It does not necessarily translate to man-hours, but the value should be consistent across tasks.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-story-points-are-estimated-in-rules">A.1.2. How story points are estimated in rules</h4>
+<div class="paragraph">
+<p>Estimating the level of effort for the story points for a rule can be tricky. The following are the general guidelines MTR uses when estimating the level of effort required for a rule.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 15%;">
+<col style="width: 60%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Level of Effort</th>
+<th class="tableblock halign-left valign-top">Story Points</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An informational warning with very low or no priority for migration.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trivial</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The migration is a trivial change or a simple library swap with no or minimal API changes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Complex</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The changes required for the migration task are complex, but have a documented solution.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redesign</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The migration task requires a redesign or a complete library change, with significant API changes.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rearchitecture</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The migration requires a complete rearchitecture of the component or subsystem.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unknown</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The migration solution is not known and may need a complete rewrite.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="task-category">A.1.3. Task category</h4>
+<div class="paragraph">
+<p>In addition to the level of effort, you can categorize migration tasks to indicate the severity of the task. The following categories are used to group issues to help prioritize the migration effort.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Mandatory</dt>
+<dd>
+<p>The task must be completed for a successful migration. If the changes are not made, the resulting application will not build or run successfully. Examples include replacement of proprietary APIs that are not supported in the target platform.</p>
+</dd>
+<dt class="hdlist1">Optional</dt>
+<dd>
+<p>If the migration task is not completed, the application should work, but the results may not be optimal. If the change is not made at the time of migration, it is recommended to put it on the schedule soon after your migration is completed.</p>
+</dd>
+<dt class="hdlist1">Potential</dt>
+<dd>
+<p>The task should be examined during the migration process, but there is not enough detailed information to determine if the task is mandatory for the migration to succeed. An example of this would be migrating a third-party proprietary type where there is no directly compatible type.</p>
+</dd>
+<dt class="hdlist1">Information</dt>
+<dd>
+<p>The task is included to inform you of the existence of certain files. These may need to be examined or modified as part of the modernization effort, but changes are typically not required.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>For more information on categorizing tasks, see <a href="#rule-categories_rules-development-guide-mtr">Using custom rule categories</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="additional-resources">A.2. Additional resources</h3>
+<div class="sect3">
+<h4 id="review-existing-rules_rules-development-guide-mtr">A.2.1. Reviewing existing MTR XML rules</h4>
+<div class="paragraph">
+<p>MTR XML-based rules are located on GitHub at the following location: <a href="https://github.com/windup/windup-rulesets/tree/master/rules/rules-reviewed">https://github.com/windup/windup-rulesets/tree/master/rules/rules-reviewed</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can fork and clone the MTR XML rules on your local machine.</p>
+</div>
+<div class="paragraph">
+<p>Rules are grouped by target platform and function. When you create a new rule, it is helpful to find a rule that is similar to the one you need and use it as a starting template.</p>
+</div>
+<div class="paragraph">
+<p>New rules are continually added, so it is a good idea to check back frequently to review the updates.</p>
+</div>
+<div class="sect4">
+<h5 id="fork-ruleset-repo_rules-development-guide-mtr">Forking and cloning the Migration Toolkit for Runtimes XML rules</h5>
+<div class="paragraph">
+<p>The Migration Toolkit for Runtimes <code>windup-rulesets</code> repository provides working examples of how to create custom Java-based rule add-ons and XML rules. You can use them as a starting point for creating your own custom rules.</p>
+</div>
+<div class="paragraph">
+<p>You must have the <a href="http://git-scm.com/"><code>git</code></a> client installed on your machine.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click the <code>Fork</code> link on the <a href="https://github.com/windup/windup-rulesets/">Migration Toolkit for Runtimes Rulesets</a> GitHub page to create the project in your own Git. The forked GitHub repository URL created by the fork should look like this: <code>https://github.com/&lt;YOUR_USER_NAME&gt;/windup-rulesets.git</code>.</p>
+</li>
+<li>
+<p>Clone your Migration Toolkit for Runtimes rulesets repository to your local file system:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">$ git clone https://github.com/&lt;YOUR_USER_NAME&gt;/windup-rulesets.git</pre>
+</div>
+</div>
+</li>
+<li>
+<p>This creates and populates a <code>windup-rulesets</code> directory on your local file system. Navigate to the newly created directory, for example</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">$ cd windup-rulesets/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>If you want to be able to retrieve the latest code updates, add the remote <code>upstream</code> repository so you can fetch any changes to the original forked repository.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">$ git remote add upstream https://github.com/windup/windup-rulesets.git</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the latest files from the <code>upstream</code> repository.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">$ git fetch upstream</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="rules-important-links_rules-development-guide-mtr">A.2.2. Additional resources</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>MTR Jira issue tracker: <a href="https://issues.redhat.com/projects/WINDUP" class="bare">https://issues.redhat.com/projects/WINDUP</a></p>
+</li>
+<li>
+<p>MTR mailing list: <a href="mailto:windup-eng@redhat.com">windup-eng@redhat.com</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><br></p>
+</div>
+<div class="paragraph">
+<p><em class="right">Revised on 2024-10-09 20:09:46 CDT</em></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+      <footer class="site-footer">
+        <span class="site-footer-renderer"><p align="center"><a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"></a></p></span>
+        
+          <span class="site-footer-owner"><p align="center"><a href="https://github.com/windup/windup-documentation">windup-documentation</a> is maintained by <a href="https://github.com/windup">windup</a>.</p></span>
+        
+      </footer>
+    </main>
+  </body>
+</html>
