@@ -16,35 +16,32 @@ include::topics/making-open-source-more-inclusive.adoc[]
 
 == Introduction
 
-// About the {UserCLIBookName}
-include::topics/about-cli-guide.adoc[leveloffset=+2]
-
 // About {ProductName}
 include::topics/mta-what-is-the-toolkit.adoc[leveloffset=+2]
-
-include::topics/migration-paths.adoc[leveloffset=+3]
-
-For more information about use cases and migration paths, see the link:https://developers.redhat.com/products/mta/use-cases[{ProductShortName} for developers] web page.
 
 // About the {CLINameTitle}
 include::topics/about-cli.adoc[leveloffset=+2]
 
-== Installing and Running the CLI
+// About the {UserCLIBookName}
+include::topics/about-cli-guide.adoc[leveloffset=+2]
+
+// Supported migration paths
+include::topics/migration-paths.adoc[leveloffset=+3]
+
+For more information about use cases and migration paths, see the link:https://developers.redhat.com/products/mta/use-cases[{ProductShortName} for developers] web page.
+
 
 // Install the CLI
-include::topics/installing-cli-tool.adoc[leveloffset=+2]
-
-// CLI known issues
-include::topics/cli-tool-known-issues.adoc[leveloffset=+3]
+include::topics/installing-cli-tool.adoc[leveloffset=+1]
 
 // Run the CLI
-include::topics/mta-cli-run.adoc[leveloffset=+2]
+include::topics/mta-cli-run.adoc[leveloffset=+1]
 
 // Analyze application source code
-include::topics/mta-cli-analyze.adoc[leveloffset=+3]
+include::topics/mta-cli-analyze.adoc[leveloffset=+2]
 
 // Transform XML rules to YAML
-include::topics/mta-cli-transform.adoc[leveloffset=+3]
+include::topics/mta-cli-transform.adoc[leveloffset=+2]
 
 // Use OpenRewrite recipes
 // include::topics/mta-using-openrewrite-recipes.adoc[leveloffset=+3]
@@ -52,11 +49,11 @@ include::topics/mta-cli-transform.adoc[leveloffset=+3]
 // Available OpenRewrite recipes
 include::topics/available-openrewrite-recipes.adoc[leveloffset=+4]
 
-// Access the Report
-include::topics/access-report.adoc[leveloffset=+2]
+// Reports
+include::topics/access-report.adoc[leveloffset=+1]
 
 // Review the Reports
-include::topics/mta-review-reports.adoc[leveloffset=+1]
+include::topics/mta-review-reports.adoc[leveloffset=+2]
 
 // Export the Report in CSV Format
 // include::topics/csv-export.adoc[leveloffset=+1]
