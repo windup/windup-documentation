@@ -1,0 +1,12 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: PROCEDURE
+
+[id="installing-cli-tool-disconnected_{context}"]
+= Installing the {CLINameTitle} in a disconnected environment
+
+You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems in a disconnected environment.
+
+To do this in {ProductShortName} 7.0., you must use `podman pull` to create the CLI image on the machine before disconnecting from the internet. At the same time, you must also download the CLI binary.
