@@ -2,9 +2,8 @@
 //
 // * docs/web-console-guide/master.adoc
 
-:_content-type: PROCEDURE
+:_mod-docs-content-type: PROCEDURE
 [id="mta-7-installing-web-console-on-openshift_{context}"]
-
 = Installing the {ProductName} {WebName}
 
 You can install the {ProductName} ({ProductShortName}) {WebName} on all Red Hat OpenShift cloud services and Red Hat OpenShift self-managed editions.
@@ -16,7 +15,7 @@ The {ProductShortName} Operator is a structural layer that manages resources dep
 [id="openshift-persistent-volume-requirements_{context}"]
 == Persistent volume requirements
 
-To successfully deploy, the {ProductShortName} Operator requires 3 RWO persistent volumes (PVs) used by different components. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires an additional 2 RWX PVs that are used by Maven and the hub file storage. The PVs are described in the table below:
+To successfully deploy, the {ProductShortName} Operator requires 2 RWO persistent volumes (PVs) used by different components. If the `rwx_supported` configuration option is set to `true`, the {ProductShortName} Operator requires an additional 2 RWX PVs that are used by Maven and the hub file storage. The PVs are described in the following table:
 
 .Required persistent volumes
 [cols="25%,25%,25%,25%", options="header"]
@@ -41,17 +40,13 @@ To successfully deploy, the {ProductShortName} Operator requires 3 RWO persisten
 |RWO
 |Keycloak back end database
 
-|`pathfinder postgresql`
-|1 GiB
-|RWO
-|Pathfinder back end database
-
 |`cache`
 |100 GiB
 |RWX
 |Maven m2 cache; required if the `rwx_supported` configuration option is set to `true`
 |====
 
+[id="installing-mta-operator-and-ui_{context}"]
 == Installing the {ProductName} Operator and the {WebName}
 
 You can install the {ProductName} ({ProductShortName}) and the {WebName} on Red Hat OpenShift versions 4.13-4.15.
@@ -161,7 +156,7 @@ The most commonly used CR settings are listed in this table:
 |====
 +
 .Example YAML file
-[sample,YAML]
+[source,YAML]
 ----
 kind: Tackle
 apiVersion: tackle.konveyor.io/v1alpha1
@@ -210,6 +205,7 @@ mirror:
   helm: {}
 ----
 
+[id="memory-requirements-mta-openshift-local_{context}"]
 == Memory requirements for running {ProductShortName} on Red Hat OpenShift Local
 
 When installed on https://developers.redhat.com/products/openshift-local/overview[Red Hat OpenShift Local], {ProductShortName} requires a minimum amount of memory to complete its analysis. Adding memory makes the analysis process run faster. The table below describes the {ProductShortName} performance with varying amounts of memory.
@@ -219,7 +215,6 @@ When installed on https://developers.redhat.com/products/openshift-local/overvie
 |====
 |Memory (GiB)
 |Description
-
 
 |`10`
 |{ProductShortName} cannot run the analysis due to insufficient memory
@@ -264,25 +259,80 @@ To prevent out-of-memory events and protect nodes, use the `--eviction-hard` set
 
 The amount of memory available for running pods on this node is 28.9 GiB. This amount is calculated by subtracting the `system-reserved` and `eviction-hard` values from the overall capacity of the node. If the memory usage exceeds this amount, the node starts evicting pods.
 
-
+[id="rhsso-overview-mta_{context}"]
 == Red Hat Single Sign-On
-{ProductShortName} delegates authentication and authorization to a
-https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red
-Hat Single Sign-On] (RHSSO) instance managed by the {ProductShortName} operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the {ProductShortName} operator also manages the configuration of a dedicated
+{ProductShortName} delegates authentication and authorization to a https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6[Red Hat Single Sign-On] (RHSSO) instance managed by the {ProductShortName} operator. Aside from controlling the full lifecycle of the managed RHSSO instance, the {ProductShortName} operator also manages the configuration of a dedicated
 https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms[realm] that contains all the roles and permissions that {ProductShortName} requires.
 
-If an advanced configuration is required in the {ProductShortName} managed RHSSO instance, such as https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding
-a provider for User Federation] or https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating
-identity providers], users can log into the RHSSO https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[Admin
-Console] through the `/auth/admin` subpath in the `{LC_PSN}-ui` route. The admin credentials to access the {ProductShortName} managed RHSSO instance can be retrieved from the `credential-mta-rhsso` secret available in the namespace in which the {WebName} was installed.
+If an advanced configuration is required in the {ProductShortName} managed RHSSO instance, such as https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/user-storage-federation#adding_a_provider[adding a provider for User Federation] or https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/identity_broker[integrating identity providers], administrators can log in to the RHSSO https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/configuring_realms#using_the_admin_console[Admin Console] through the `/auth/admin` subpath in the `{LC_PSN}-ui` route. The admin credentials to access the {ProductShortName} managed RHSSO instance can be retrieved from the `credential-mta-rhsso` secret available in the namespace in which the {WebName} was installed.
 
 A dedicated route for the {ProductShortName} managed RHSSO instance can be created by setting the `rhsso_external_access` parameter to `True` in the *Tackle CR* that manages the {ProductShortName} instance.
 
 For more information, see
-https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red
-Hat Single Sign-On features and concepts].
+https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.6/html/server_administration_guide/red_hat_single_sign_on_features_and_concepts[Red Hat Single Sign-On features and concepts].
 
-=== Roles and Permissions
+[id="mta-roles-personas-users-permissions_{context}"]
+=== Roles, Personas, Users, and Permissions
+
+{ProductShortName} makes use of three roles, each of which corresponds to a persona:
+
+.Roles and personas
+[cols="50%,50%", options="header"]
+|====
+|Role
+|Persona
+
+|`tackle-admin`
+|Administrator
+
+|`tackle-architect`
+|Architect
+
+|`tackle-migrator`
+|Migrator
+|====
+
+The roles are already defined in your RHSSO instance. You do not need to create them.
+
+If you are an {ProductShortName} administrator, you can create users in your RHSSO and assign each user one or more roles, one role per persona.
+
+[id="mta-roles-personas-ui-views_{context}"]
+==== Roles, personas, and access to {WebName} views
+
+Although a user can have more than one role, each role corresponds to a specific persona:
+
+* Administrator: An administrator has all the permissions that architects and migrators have,  along with the ability to create some application-wide configuration parameters that other users can consume but cannot change or view. Examples: Git credentials, Maven `settings.xml` files.
++
+Administrators have complete access to both the *Administration* and *Migration* views. Administrators can perform all actions supported by these views.
+
+* Architect:  A technical lead for the migration project who can run assessments and can create and modify applications and information related to them. An architect cannot modify or delete sensitive information, but can consume it. Example: Associate an existing credential to the repository of a specific application.
+
+* Migrator: A user who can analyze applications, but not create, modify, or delete them.
++
+Architects and migrators do not have any access to the *Administration* view. They cannot even see it. Architects and migrators can see all elements of *Migration* view, but their ability to perform actions in *Migration* view depends on the permissions granted to their role.
+
+
+The ability of administrators, architects, and migrators to access the *Administration* and *Migration* views of the {ProductShortName} {WebName} is summarized in the table below:
+
+.Roles vs. access to {ProductShortName} views
+[cols=",,,",options="header",]
+|===
+|Menu
+|Architect
+|Migrator
+|Admin
+|Administration
+|No
+|No
+|Yes
+|Migration
+|Yes
+|Yes
+|Yes
+|===
+
+[id="mta-roles-permissions_{context}"]
+==== Roles and permissions
 
 The following table contains the roles and permissions (scopes) that {ProductShortName} seeds the managed RHSSO instance with:
 
