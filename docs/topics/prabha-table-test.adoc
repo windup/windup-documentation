@@ -1,0 +1,73 @@
+// Module included in the following assemblies:
+//
+// * docs/release-notes-mtr/master.adoc
+
+:_content-type: PROCEDURE
+
+[id="prabha-test-table_{context}"]
+= Prabha Test Table
+
+[source,yaml]
+----
+# Multiline string with literal block syntax -preserved new lines
+string1: |
+   Line1
+   line2
+   "line3"
+  line4
+
+# Multiline strings with folded block syntax - new lines are not preserved, leading and trailing spaces are ignored
+  string1: >
+   Line1
+   line2
+   "line3"
+  line4
+# Collection sequence data types
+ # sequence ArrayList example
+ - One
+ - two
+ - Three
+
+  # Another way of sequence  syntax example
+  [one, two, three]
+
+### dictionary
+  mysqldatabase:
+    hostname: localhost
+    port: 
+    username: root # <1>
+    password: root # <2>
+----
+<1> The username is `root`.
+<2> The password is `root`.
+
+.Prabha's Table Title
+[cols='3,3,3,3,3']
+|===
+|Column 1 | Column 2 | Column 3 | Column 4 | Column 5
+
+3+|This table merges three cells in column 1, row 1 
+|This is colunm 4, row 1
+|This is colunm 5, row 1
+
+|This is column 1, row 2
+|This is colunm 2, row 2
+|This is colunm 3, row 2
+|This is colunm 4, row 2
+|This is colunm 5, row 2
+
+|===
+
+This is an inline `code`.
+
+.Another Table
+[cols="2,2"]
+|===
+|Column 1 | Column 2
+
+2+|Cell 1 row 1
+
+|Cell 2 row 1
+|Cell 2 row 2
+
+|===
