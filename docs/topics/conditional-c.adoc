@@ -1,0 +1,33 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+// * docs/getting-started-guide/master.adoc
+:env-gitlab1:
+
+:_content-type: CONCEPT
+[id="conditional-c_{context}"]
+= Conditional C
+
+The {CLIName} is a command-line tool in the {ProductName} that you can use to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without using the other tools. The {CLIName} includes a wide array of customization options. By using the {CLIName}, you can tune {ProductShortName} analysis options or integrate with external automation tools.
+
+//include::conditional-a.adoc[leveloffset=+1]
+//include::conditional-b.adoc[leveloffset=+1]
+
+
+ifndef::cli-guide[]
+For more information about using the {CLIName}, see link:{ProductDocUserGuideURL}[_{UserCLIBookName}_].
+endif::cli-guide[]
+
+ifdef::env-github1[]
+This content is for GitHub only.
+endif::env-github1[]
+
+ifdef::env-gitlab[]
+This content is for GitLab only.
+endif::env-gitlab[]
+
+ifndef::env-github1[]
+This is definitely not for Github!
+endif::env-github1[]
+
+:!env-gitlab1:

@@ -1,0 +1,42 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+// * docs/getting-started-guide/master.adoc
+:env-gitlab:
+
+:_content-type: CONCEPT
+[id="ascii-testing_{context}"]
+= Ascii Testing
+
+The {CLIName} is a command-line tool in the {ProductName} that you can use to assess and prioritize migration and modernization efforts for applications. It provides numerous reports that highlight the analysis without using the other tools. The {CLIName} includes a wide array of customization options. By using the {CLIName}, you can tune {ProductShortName} analysis options or integrate with external automation tools.
+
+ifndef::cli-guide[]
+For more information about using the {CLIName}, see link:{ProductDocUserGuideURL}[_{UserCLIBookName}_].
+endif::cli-guide[]
+
+
+ifndef::env-gitlab1[]
+You got the negative conditional right.
+
+ifdef::env-gitlab[]
+Nested condition because why not.
+endif::env-gitlab[]
+
+endif::env-gitlab1[]
+
+:!env-gitlab:
+
+.Merged Table
+[cols="3,3,3"]
+|===
+|Column 1 | Column 2 | Column 3
+
+2+|Cell 1 and 2 are merged
+|Cell 3
+
+|Another cell
+|One more cell
+|Cells!
+
+|===
+
