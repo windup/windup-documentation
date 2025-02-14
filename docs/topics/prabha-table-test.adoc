@@ -40,20 +40,3 @@ string1: |
 ----
 <1> The username is `root`.
 <2> The password is `root`.
-
-.Prabha's Table Title
-[cols='3,3,3,3,3']
-|===
-|Column 1 | Column 2 | Column 3 | Column 4 | Column 5
-
-3+|This table merges three cells in column 1, row 1 
-|This is colunm 4, row 1
-|This is colunm 5, row 1
-
-|This is column 1, row 2
-|This is colunm 2, row 2
-|This is colunm 3, row 2
-|This is colunm 4, row 2
-|This is colunm 5, row 2
-
-|===
