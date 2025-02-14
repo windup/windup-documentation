@@ -1,0 +1,51 @@
+
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-02-14
+:_mod-docs-content-type: PROCEDURE
+
+[id="a-procedure_{context}"]
+= A Procedure
+
+:var-1:
+
+This is a procedure for Linux users.
+
+.Prerequisites
+
+* Ensure that you revised the basics of AsciiDoc.
+
+.Procedure
+
+. Create a directory called test. 
++
+[source,bash]
+----
+mkdir test
+----
+. Use _touch_ to create an empty file.
++
+[source,bash]
+----
+touch <empty-file-name>
+----
+. Use *vi* to open the file.
++
+[source,bash]
+----
+vi _<empty-file-name>_
+----
+
+.Verification
+
+Delete this section if it does not apply to your module. Provide the user with verification methods for the procedure, such as expected output or commands that confirm success or failure.
+
+ifdef::var-1[]
+It works!
+
+ifndef::github[]
+Not for GitHub!
+
+endif::github[]
+endif::var-1[]
+
+:!var-1:

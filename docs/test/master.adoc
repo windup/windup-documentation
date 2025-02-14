@@ -1,0 +1,22 @@
+:_newdoc-version: 2.18.3
+:_template-generated: 2025-02-14
+
+ifdef::context[:parent-context-of-my-assembly: {context}]
+
+:_mod-docs-content-type: ASSEMBLY
+
+ifndef::context[]
+[id="my-assembly"]
+endif::[]
+ifdef::context[]
+[id="my-assembly_{context}"]
+endif::[]
+= My Assembly
+
+:context: my-assembly
+
+This paragraph is the assembly introduction. It explains what the user will accomplish by working through the modules in the assembly and sets the context for the user story the assembly is based on.
+
+== My Topics
+
+include::topic/proc_a-procedure.adoc[leveloffset=+2]
