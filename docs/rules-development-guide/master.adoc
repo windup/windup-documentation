@@ -26,6 +26,9 @@ include::topics/mta-about-home-var.adoc[leveloffset=+3]
 // MTA Rules
 include::topics/about-rules.adoc[leveloffset=+2]
 
+// YAML rule files
+include::topics/yaml-rules.adoc[leveloffset=+3]
+
 [id="creating-yaml-rules_{context}"]
 == Creating YAML rules
 
