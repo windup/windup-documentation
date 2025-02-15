@@ -9,7 +9,7 @@
 
 You can install the {ProductName} ({ProductShortName}) {WebName} on all Red Hat OpenShift cloud services and Red Hat OpenShift self-managed editions.
 
-IMPORTANT: To be able to create {ProductShortName} instances, you must first install the {ProductShortName} Operator.	
+IMPORTANT: To be able to create {ProductShortName} instances, you must first install the {ProductShortName} Operator.
 
 The {ProductShortName} Operator is a structural layer that manages resources deployed on OpenShift, such as database, front end, and back end, to automatically create an {ProductShortName} instance.
 
@@ -210,7 +210,128 @@ mirror:
   helm: {}
 ----
 
-== Memory requirements for running {ProductShortName} on Red Hat OpenShift Local
+[id="mta-7-installing-on-openshift_local_{context}"]
+== Installing and configuring the {ProductName} Operator in a Red Hat OpenShift Local environment
+
+Red Hat OpenShift Local provides a quick and easy way to set up a local OpenShift cluster on your desktop or laptop. This allows you to test your applications and configuration parameters before sending them to production.
+
+=== Operating system requirements
+
+Red Hat OpenShift Local requires the following minimum version of a supported operating system:
+
+==== Requirements on Microsoft Windows
+
+On Microsoft Windows, Red Hat OpenShift Local requires the Windows 10 Fall Creators Update (version 1709) or later. Red Hat OpenShift Local does not work on earlier versions of Microsoft Windows. Microsoft Windows 10 Home Edition is not supported.
+
+==== Requirements on macOS
+
+On macOS, Red Hat OpenShift Local requires macOS 11 Big Sur or later. Red Hat OpenShift Local does not work on earlier versions of macOS.
+
+==== Requirements on Linux
+
+On Linux, Red Hat OpenShift Local is supported only on the latest two Red Hat Enterprise Linux/CentOS 8 and 9 minor releases and on the latest two stable Fedora releases.
+
+When using Red Hat Enterprise Linux, the machine running Red Hat OpenShift Local must be registered with the Red Hat Customer Portal.
+
+Ubuntu 18.04 LTS or later and Debian 10 or later are not supported and might require manual set up of the host machine.
+See Required software packages to install the required packages for your Linux distribution.
+
+===== Required software packages for Linux
+
+Red Hat OpenShift Local requires the `libvirt` and `NetworkManager` packages to run on Linux:
+
+* *Fedora/Red Hat Enterprise Linux* issue:
+
++
+[source,terminal]
+----
+sudo dnf install NetworkManage
+----
+
+* *Debian/Ubuntu* issue:
++
+[source,terminal]
+----
+sudo apt install qemu-kvm libvirt-daemon libvirt-daemon-system network-manager
+----
+
+=== Installing the {ProductName} Operator in a Red Hat OpenShift Local environment
+
+To install OpenShift Local:
+
+. Download the latest release of link:https://console.redhat.com/openshift/create/local[Red Hat OpenShift Local]( for your platform.
+
+.. Download **OpenShift Local**.
+
+.. Download **pull secret**.
+
+. Assuming you saved the archive in the `~/Downloads directory` follow these steps:
+
++
+[source,terminal]
+----
+cd ~/Downloads
+----
+
++
+[source,terminal]
+----
+tar xvf crc-linux-amd64.tar.xz
+----
+
+. Copy the `crc` executable to it:
+
++
+[source,terminal]
+----
+cp ~/Downloads/crc-linux-<version-number>-amd64/crc ~/bin/crc
+----
+. Add the `~/bin/crc` directory to your `$PATH` variable:
+
++
+[source,terminal]
+----
+export PATH=$PATH:$HOME/bin/crc
+----
++
+[source,terminal]
+----
+echo 'export PATH=$PATH:$HOME/bin/crc' >> ~/.bashrc
+----
+
+. Disable telemetry, issue the following command:
+
++
+[source,terminal]
+----
+crc config set consent-telemetry no
+----
+
+[NOTE]
+====
+For macOS, download the relevant *crc-macos-installer.pkg*.
+
+. Navigate to *Downloads* using *Finder*.
+. Double-click on `crc-macos-installer.pkg`.
+====
+
+### Setting up Red Hat OpenShift Local
+
+The `crc setup` command performs operations to set up the environment of your host machine for the OpenShift Local instance.
+
+The `crc setup` command creates the `~/.crc directory`
+
+1. Set up your host machine for OpenShift Local:
+
++
+[source,terminal]
+----
+crc setup
+----
+
+
+
+=== Memory requirements for running {ProductShortName} on Red Hat OpenShift Local
 
 When installed on https://developers.redhat.com/products/openshift-local/overview[Red Hat OpenShift Local], {ProductShortName} requires a minimum amount of memory to complete its analysis. Adding memory makes the analysis process run faster. The table below describes the {ProductShortName} performance with varying amounts of memory.
 
