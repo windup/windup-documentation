@@ -1,0 +1,31 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="optimize-performance_{context}"]
+= Optimizing {ProductShortName} performance
+
+{ProductShortName} performance depends on a number of factors, including hardware configuration, the number and types of files in the application, the size and number of applications to be evaluated, and whether the application contains source or compiled code. For example, a file that is larger than 10 MB may need a lot of time to process.
+
+In general, {ProductShortName} spends about 40% of the time decompiling classes, 40% of the time executing rules, and the remainder of the time processing other tasks and generating reports. This section describes what you can do to improve the performance of {ProductShortName}.
+
+== Deploying and running the application
+
+Try these suggestions first before upgrading hardware.
+
+* If possible, run {ProductShortName} against the source code instead of the archives. This eliminates the need to decompile additional JARs and archives.
+* Specify a comma-separated list of the packages to be evaluated by {ProductShortName} using the `--packages` argument on the `<{ProductShortName}_HOME>/bin/{LC_PSN}-cli` command line. If you omit this argument, {ProductShortName} will decompile everything, which has a big impact on performance.
+* Specify the `--excludeTags` argument where possible to exclude them from processing.
+* Avoid decompiling and analyzing any unnecessary packages and files, such as proprietary packages or included dependencies.
+* Increase your ulimit when analyzing large applications. See link:https://access.redhat.com/solutions/60746[this Red Hat Knowledgebase article] for instructions on how to do this for Red Hat Enterprise Linux.
+* If you have access to a server that has better resources than your laptop or desktop machine, you may want to consider running {ProductShortName} on that server.
+
+== Upgrading hardware
+
+If the application and command-line suggestions above do not improve performance, you may need to upgrade your hardware.
+
+* If you have access to a server that has better resources than your laptop/desktop, then you may want to consider running {ProductShortName} on that server.
+* Very large applications that require decompilation have large memory requirements. 8 GB RAM is recommended. This allows 3 - 4 GB RAM for use by the JVM.
+* An upgrade from a single or dual-core to a quad-core CPU processor provides better performance.
+* Disk space and fragmentation can impact performance. A fast disk, especially a solid-state drive (SSD), with greater than 4 GB of defragmented disk space should improve performance.

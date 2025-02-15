@@ -1,0 +1,22 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="eclipse-submitting-ruleset_{context}"]
+= Submitting a custom ruleset
+
+You can submit your custom ruleset for inclusion in the official {ProductShortName} rule repository. This allows your custom rules to be reviewed and included in subsequent releases of {ProductShortName}.
+
+.Procedure
+
+. Click the *Rulesets* tab.
+. Click the Arrow icon (image:plugin-dropdown.png[Dropdown]) and select *Submit Ruleset*.
+. Complete the following fields:
+
+* *Summary*: Describe the purpose of the rule. This becomes the title of the submission.
+* *Code Sample*: Enter an example of the source code that the rule should run against.
+* *Description*: Enter a brief description of the rule.
+
+. Click *Choose Files* and select the ruleset file.
+. Click *Submit*.

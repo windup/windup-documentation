@@ -1,0 +1,22 @@
+// Module included in the following assemblies:
+//
+// * docs/intellij-idea-plugin-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="intellij-idea-plugin-extension_{context}"]
+= Installing the {ProductShortName} plugin for IntelliJ IDEA
+
+You can install the {ProductShortName} plugin in the Ultimate and the Community Edition releases of IntelliJ IDEA.
+
+.Prerequisites
+include::snippet_jdk-hardware-mac-prerequisites.adoc[]
+
+* The latest version of `{LC_PSN}-cli` from the link:{DevDownloadPageURL}[{ProductShortName} download page]
+
+.Procedure
+
+. In IntelliJ IDEA, click the *Plugins* tab on the Welcome screen.
+. Enter `{ProductName}` in the Search field on the *Marketplace* tab.
+. Select the *{ProductName} ({ProductShortName}) by Red Hat* plugin and click *Install*.
++
+The plugin is listed on the *Installed* tab.

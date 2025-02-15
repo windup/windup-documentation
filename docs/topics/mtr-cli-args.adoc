@@ -1,0 +1,210 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: REFERENCE
+[id="cli-args_{context}"]
+= About {ProductShortName} command-line arguments
+
+The following is a detailed description of the available {ProductShortName} command line arguments.
+
+[NOTE]
+====
+To run the {ProductShortName} command without prompting, for example when executing from a script, you must use the following arguments:
+
+* `--batchMode`
+* `--overwrite`
+* `--input`
+* `--target`
+====
+
+.{ProductShortName} CLI arguments
+[cols="40%,60%a",options="header",]
+|====
+|Argument |Description
+|--additionalClassPath |A space-delimited list of additional JAR files or directories to add to the class path so that they are available for decompilation or other analysis.
+|--addonDir |Add the specified directory as a custom add-on repository.
+|--analyzeKnownLibraries | Flag to analyze known software artifacts embedded within your application. By default, {ProductShortName} only analyzes application code.
+
+[NOTE]
+====
+This option may result in a longer execution time and a large number of migration issues being reported.
+====
+
+|--batchMode |Flag to specify that {ProductShortName} should be run in a non-interactive mode without prompting for confirmation. This mode takes the default values for any parameters not passed in to the command line.
+|--debug |Flag to run {ProductShortName} in debug mode.
+|--disableTattletale | Flag to disable generation of the Tattletale report. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
+|--discoverPackages |Flag to list all available packages in the input binary application.
+|--enableClassNotFoundAnalysis |Flag to enable analysis of Java files that are not available on the class path. This should not be used if some classes will be unavailable at analysis time.
+|--enableCompatibleFilesReport |Flag to enable generation of the Compatible Files report. Due to processing all files without found issues, this report may take a long time for large applications.
+|--enableTattletale |Flag to enable generation of a Tattletale report for each application. This option is enabled by default when `eap` is in the included target. If both `enableTattletale` and `disableTattletale` are set to true, then `disableTattletale` will be ignored and the Tattletale report will still be generated.
+|--enableTransactionAnalysis |[Technology Preview] Flag to enable generation of a Transactions report that displays the call stack, which executes operations on relational database tables. The Enable Transaction Analysis feature supports Spring Data JPA and the traditional `preparedStatement()` method for SQL statement execution. It does not support ORM frameworks, such as Hibernate.
+
+[NOTE]
+====
+enableTransactionAnalysis is a Technology Preview feature only. Technology Preview features are not supported with Red Hat production service level agreements (SLAs) and might not be functionally complete. Red Hat does not recommend using them
+in production. These features provide early access to upcoming product features, enabling customers to test functionality and provide feedback during the development process.
+====
+
+|--excludePackages |A space-delimited list of packages to exclude from evaluation. For example, entering `com.mycompany.commonutilities` excludes all classes whose package names begin with `com.mycompany.commonutilities`.
+|--excludeTags |A space-delimited list of tags to exclude. When specified, rules with these tags will not be processed. To see the full list of tags, use the `--listTags` argument.
+|--explodedApp |Flag to indicate that the provided input directory contains source files for a single application.
+|--exportCSV |Flag to export the report data to a CSV file on your local file system. {ProductShortName} creates the file in the directory specified by the `--output` argument. The CSV file can be imported into a spreadsheet program for data manipulation and analysis.
+|--exportSummary |Flag to instruct {ProductShortName} to generate an `analysisSummary.json` export file in the output directory. The file contains analysis summary information for each application analyzed, including the number of incidents and story points by category, and all of the technology tags associated with the analyzed applications.
+|--exportZipReport |This argument creates a `reports.zip` file in the output folder. The file contains the analysis output, typically, the reports. If requested, it can also contain the CSV export files.
+|--help |Display the {ProductShortName} help message.
+|--immutableAddonDir |Add the specified directory as a custom read-only add-on repository.
+|--includeTags| A space-delimited list of tags to use. When specified, only rules with these tags will be processed. To see the full list of tags, use the `--listTags` argument.
+|--input |A space-delimited list of the path to the file or directory containing one or more applications to be analyzed. This argument is required.
+|--install |Specify add-ons to install. The syntax is `<GROUP_ID>:<ARTIFACT_ID>[:<VERSION>]`. For example, `--install core-addon-x` or `--install org.example.addon:example:1.0.0`.
+|--keepWorkDirs| Flag to instruct {ProductShortName} to not delete temporary working files, such as the graph database and extracted archive files. This is useful for debugging purposes.
+|--legacyReports| Flag to instruct {ProductShortName} to generate the old format reports instead of the new format reports.
+|--list| Flag to list installed add-ons.
+|--listSourceTechnologies| Flag to list all available source technologies.
+|--listTags| Flag to list all available tags.
+|--listTargetTechnologies| Flag to list all available target technologies.
+|--mavenize| Flag to create a Maven project directory structure based on the structure and content of the application. This creates `pom.xml` files using the appropriate Java EE API and the correct dependencies between project modules. See also the `--mavenizeGroupId` option.
+|--mavenizeGroupId| When used with the `--mavenize` option, all generated `pom.xml` files will use the provided value for their `<groupId>`. If this argument is omitted, {ProductShortName} will attempt to determine an appropriate `<groupId>` based on the application, or will default to `com.mycompany.mavenized`.
+|--online |Flag to allow network access for features that require it. Currently only validating XML schemas against external resources relies on Internet access. Note that this comes with a performance penalty.
+|--output |Specify the path to the directory to output the report information generated by {ProductShortName}.
+|--overwrite |Flag to force delete the existing output directory specified by `--output`. If you do not specify this argument and the `--output` directory exists, you are prompted to choose whether to overwrite the contents.
+
+[IMPORTANT]
+====
+Do not overwrite a report output directory that contains important information.
+====
+
+|--packages| A space-delimited list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.
+|--remove |Remove the specified add-ons. The syntax is `<GROUP_ID>:<ARTIFACT_ID>[:<VERSION>]`. For example, `--remove core-addon-x` or `--remove org.example.addon:example:1.0.0`.
+|--skipReports |Flag to indicate that HTML reports should not be generated. A common use of this argument is when exporting report data to a CSV file using `--exportCSV`.
+|--source |A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources.
+|--sourceMode |Flag to indicate that the application to be evaluated contains source files rather than compiled binaries. The sourceMode argument has been deprecated. There is no longer the need to specify it. {ProductShortName} can intuitively process any inputs that are presented to it.  In addition, project source folders can be analyzed with binary inputs within the same analysis execution.
+|--target |A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the `--source` argument, helps to determine which rulesets are used. Use the `--listTargetTechnologies` argument to list all available targets.
+|--userIgnorePath |Specify a location, in addition to `${user.home}/.{LC_PSN}/ignore/`, for {ProductShortName} to identify files that should be ignored.
+|--userLabelsDirectory |Specify a location for {ProductShortName} to look for custom Target Runtime Labels. The value can be a directory containing label files or a single label file. The Target Runtime Label files must use the [x-]`.windup.label.xml` suffix. The shipped Target Runtime Labels are defined within `${ProductShortName}_HOME/rules/migration-core/core.windup.label.xml`.
+|--userRulesDirectory |Specify a location, in addition to `<{ProductShortName}_HOME>/rules/` and `${user.home}/.{LC_PSN}/rules/`, for {ProductShortName} to look for custom {ProductShortName} rules. The value can be a directory containing ruleset files or a single ruleset file. The ruleset files must use the [x-]`.windup.xml` suffix.
+|--version |Display the {ProductShortName} version.
+|--skipSourceCodeReports |This option skips generating a _Source code report_ when generating the application analysis report. Use this advanced option when concerned about source code information appearing in the application analysis.
+|====
+
+[id="cli-input-argument_{context}"]
+== Specifying the input
+
+A space-delimited list of the path to the file or directory containing one or more applications to be analyzed. This argument is required.
+
+.Usage
+[source,options="nowrap",subs="attributes+"]
+----
+--input <INPUT_ARCHIVE_OR_DIRECTORY> [...]
+----
+
+[id="cli-input-file-type-arguments_{context}"]
+
+Depending on whether the input file type provided to the `--input` argument is a file or directory, it will be evaluated as follows depending on the additional arguments provided.
+
+Directory::
++
+[cols="1,1,1",options="header"]
+|====
+| --explodedApp
+| --sourceMode
+| Neither Argument
+
+| The directory is evaluated as a single application.
+| The directory is evaluated as a single application.
+| Each subdirectory is evaluated as an application.
+|====
+
+File::
++
+[cols="1,1,1",options="header"]
+|====
+| --explodedApp
+| --sourceMode
+| Neither Argument
+
+| Argument is ignored; the file is evaluated as a single application.
+| The file is evaluated as a compressed project.
+| The file is evaluated as a single application.
+|====
+
+[id="cli-output-argument_{context}"]
+== Specifying the output directory
+
+Specify the path to the directory to output the report information generated by {ProductShortName}.
+
+.Usage
+[source,options="nowrap",subs="attributes+"]
+----
+--output <OUTPUT_REPORT_DIRECTORY>
+----
+
+* If omitted, the report will be generated in an `<INPUT_ARCHIVE_OR_DIRECTORY>.report` directory.
+* If the output directory exists, you will be prompted with the following (with a default of N).
++
+[source,options="nowrap",subs="attributes+"]
+----
+Overwrite all contents of "/home/username/<OUTPUT_REPORT_DIRECTORY>" (anything already in the directory will be deleted)? [y,N]
+----
+
+However, if you specify the `--overwrite` argument, {ProductShortName} will proceed to delete and recreate the directory. See the description of this argument for more information.
+
+[id="cli-source-argument_{context}"]
+== Setting the source technology
+
+A space-delimited list of one or more source technologies, servers, platforms, or frameworks to migrate from. This argument, in conjunction with the `--target` argument, helps to determine which rulesets are used. Use the `--listSourceTechnologies` argument to list all available sources.
+
+.Usage
+[source,options="nowrap",subs="attributes+"]
+----
+--source <SOURCE_1> <SOURCE_2>
+----
+
+The `--source` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax]. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, `--source eap:5`.
+
+[WARNING]
+====
+When migrating to JBoss EAP, be sure to specify the version, for example, `eap:6`. Specifying only `eap` will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.
+
+See link:{ProductDocIntroToMTAGuideURL}/index#migration_paths_getting-started-guide[Supported migration paths] in _{IntroToMTABookName}_ for the appropriate JBoss EAP version.
+====
+
+[id="cli-target-argument_{context}"]
+== Setting the target technology
+
+A space-delimited list of one or more target technologies, servers, platforms, or frameworks to migrate to. This argument, in conjunction with the `--source` argument, helps to determine which rulesets are used. If you do not specify this option, you are prompted to select a target. Use the `--listTargetTechnologies` argument to list all available targets.
+
+.Usage
+[source,options="nowrap",subs="attributes+"]
+----
+--target <TARGET_1> <TARGET_2>
+----
+
+
+The `--target` argument now provides version support, which follows the link:http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html[Maven version range syntax]. This instructs {ProductShortName} to only run the rulesets matching the specified versions. For example, `--target eap:7`.
+
+[WARNING]
+====
+When migrating to JBoss EAP, be sure to specify the version in the target, for example, `eap:6`. Specifying only `eap` will run rulesets for all versions of JBoss EAP, including those not relevant to your migration path.
+
+See link:{ProductDocIntroToMTAGuideURL}/index#migration_paths_getting-started-guide[Supported migration paths] in _{IntroToMTABookName}_ for the appropriate JBoss EAP version.
+====
+
+[id="cli-packages-argument_{context}"]
+== Selecting packages
+
+A space-delimited list of the packages to be evaluated by {ProductShortName}. It is highly recommended to use this argument.
+
+.Usage
+[source,options="nowrap",subs="attributes+"]
+----
+--packages <PACKAGE_1> <PACKAGE_2> <PACKAGE_N>
+----
+
+* In most cases, you are interested only in evaluating custom application class packages and not standard Java EE or third party packages. The `<PACKAGE_N>` argument is a package prefix; all subpackages will be scanned. For example, to scan the packages `com.mycustomapp` and `com.myotherapp`, use `--packages com.mycustomapp com.myotherapp` argument on the command line.
+* While you can provide package names for standard Java EE third party software like `org.apache`, it is usually best not to include them as they should not impact the migration effort.
+
+[WARNING]
+====
+If you omit the `--packages` argument, every package in the application is scanned, which can impact performance.
+====

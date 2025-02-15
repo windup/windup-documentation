@@ -16,22 +16,22 @@ include::topics/making-open-source-more-inclusive.adoc[]
 == Introduction
 
 // About the {WebConsoleBookName}
-include::topics/about-console-guide.adoc[leveloffset=+2]
+include::topics/mtr-about-console-guide.adoc[leveloffset=+2]
 
 // About {ProductName}
-include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics/mtr-what-is-the-toolkit.adoc[leveloffset=+2]
 
 // About the {WebName}
-include::topics/about-the-web-console.adoc[leveloffset=+2]
+include::topics/mtr-about-the-web-console.adoc[leveloffset=+2]
 
 == Installing the {WebName}
 
 You can install the {WebName} on Linux, Windows, macOS, or {ocp-full}.
 
 // Installing on Linux, Windows, macOS
-include::topics/installing-web-console-or-cli-tool.adoc[leveloffset=+2]
+include::topics/mtr-installing-web-console-or-cli-tool.adoc[leveloffset=+2]
 // Installing on OCP
-include::topics/installing-web-console-on-openshift.adoc[leveloffset=+2]
+include::topics/mtr-installing-web-console-on-openshift.adoc[leveloffset=+2]
 
 ==== Troubleshooting a {WebName} installation on OpenShift
 
@@ -41,9 +41,9 @@ This section describes how to troubleshoot a {WebName} installation on OpenShift
 include::topics/proc_web-downloading-logs-console.adoc[leveloffset=+4]
 
 //Downloading logs with the CLI
-include::topics/proc_web-downloading-logs-cli.adoc[leveloffset=+4]
-include::topics/web-openshift-no-route-to-host-error.adoc[leveloffset=+4]
-include::topics/web-openshift-insufficient-resources.adoc[leveloffset=+4]
+include::topics/mtr-proc_web-downloading-logs-cli.adoc[leveloffset=+4]
+include::topics/mtr-web-openshift-no-route-to-host-error.adoc[leveloffset=+4]
+include::topics/mtr-web-openshift-insufficient-resources.adoc[leveloffset=+4]
 
 // Reporting issues
 
@@ -60,28 +60,28 @@ Each project groups the applications for a specific analysis, which you can conf
 The analysis process generates reports that describe the readiness of your applications for migration or modernization.
 
 // Creating a project
-include::topics/web-create-project.adoc[leveloffset=+2]
+include::topics/mtr-web-create-project.adoc[leveloffset=+2]
 
 // Running a saved analysis
-include::topics/web-running-saved-analysis.adoc[leveloffset=+2]
+include::topics/mtr-web-running-saved-analysis.adoc[leveloffset=+2]
 
 // Viewing the Results of an Analysis
-include::topics/web-view-results.adoc[leveloffset=+2]
+include::topics/mtr-web-view-results.adoc[leveloffset=+2]
 
 // Review the Reports
-include::topics/web-review-reports.adoc[leveloffset=+2]
+include::topics/mtr-web-review-reports.adoc[leveloffset=+2]
 
 //Reconfigure Analysis
-include::topics/web-updating-an-analysis.adoc[leveloffset=+2]
+include::topics/mtr-web-updating-an-analysis.adoc[leveloffset=+2]
 
 // Using Custom Rules
-include::topics/web-adding-global-custom-rules.adoc[leveloffset=+2]
+include::topics/mtr-web-adding-global-custom-rules.adoc[leveloffset=+2]
 
 // Using Custom Labels
-include::topics/web-adding-global-custom-labels.adoc[leveloffset=+2]
+include::topics/mtr-web-adding-global-custom-labels.adoc[leveloffset=+2]
 
 // Require Authentication for {ProductWebName}
-include::topics/configuring-web-console-authentication-for-linux-windows-macos.adoc[leveloffset=+1]
+include::topics/mtr-configuring-web-console-authentication-for-linux-windows-macos.adoc[leveloffset=+1]
 
 // TODO: eventually add steps for reverting back to no auth required
 

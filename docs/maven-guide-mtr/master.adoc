@@ -16,49 +16,49 @@ include::topics/making-open-source-more-inclusive.adoc[]
 == Introduction
 
 // About the {MavenBookName}
-include::topics/about-maven-guide.adoc[leveloffset=+2]
+include::topics/mtr-about-maven-guide.adoc[leveloffset=+2]
 
 // About {ProductName}
-include::topics/what-is-the-toolkit.adoc[leveloffset=+2]
+include::topics/mtr-what-is-the-toolkit.adoc[leveloffset=+2]
 
 // About {MavenNameTitle}
-include::topics/about-maven.adoc[leveloffset=+2]
+include::topics/mtr-about-maven.adoc[leveloffset=+2]
 
 == Getting started
 
 // Run the {MavenNameTitle}
-include::topics/maven-run.adoc[leveloffset=+2]
+include::topics/mtr-maven-run.adoc[leveloffset=+2]
 
 // Run the {MavenNameTitle} with Multiple Modules
-include::topics/maven-multi-module.adoc[leveloffset=+2]
+include::topics/mtr-maven-multi-module.adoc[leveloffset=+2]
 
 // Access the Report
-include::topics/maven-access-reports.adoc[leveloffset=+2]
+include::topics/mtr-maven-access-reports.adoc[leveloffset=+2]
 
 // Export the Report in CSV Format
-include::topics/csv-export.adoc[leveloffset=+1]
+include::topics/mtr-csv-export.adoc[leveloffset=+1]
 
 [appendix]
 == Reference material
 
 // {MavenNameTitle} Arguments
-include::topics/maven-arguments.adoc[leveloffset=+2]
+include::topics/mtr-maven-arguments.adoc[leveloffset=+2]
 
 // Default `logging.properties` in {MavenShortName}
-include::topics/maven-logging-properties.adoc[leveloffset=+2]
+include::topics/mtr-maven-logging-properties.adoc[leveloffset=+2]
 
 // Rule Story Points
-include::topics/about-story-points.adoc[leveloffset=+2]
+include::topics/mtr-about-story-points.adoc[leveloffset=+2]
 
 For more information on categorizing tasks, see link:{ProductDocRulesGuideURL}/rule_categories_rules-development-guide#rule_categories_rules-development-guide[Using custom rule categories].
 
 === Additional resources
 
 // Get Involved
-include::topics/get-involved.adoc[leveloffset=+3]
+include::topics/mtr-get-involved.adoc[leveloffset=+3]
 
 // Important Links
-include::topics/important-links.adoc[leveloffset=+3]
+include::topics/mtr-important-links.adoc[leveloffset=+3]
 
 // Report Issues with {ProductShortName}
 

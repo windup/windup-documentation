@@ -1,0 +1,45 @@
+// Module included in the following assemblies:
+//
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="proc_web-downloading-logs-cli_{context}"]
+= Downloading logs using the CLI
+[role="_abstract"]
+
+You can download pod logs using the CLI.
+
+.Procedure
+
+. Obtain the pod names:
++
+----
+$ oc get pods -n <project-name>
+----
++
+The output resembles the following:
++
+[source,terminal,subs="attributes+"]
+----
+NAME                       READY     STATUS      RESTARTS   AGE
+eap-builder-1-build        0/1       Completed   0          1d
+{LC_PSN}-postgresql-1-hfbdn     1/1       Running     0          1d
+{LC_PSN}-sso-1-build            0/1       Completed   0          1d
+{LC_PSN}-web-console-1-build    0/1       Completed   0          1d
+{LC_PSN}-web-console-1-vt7s5    1/1       Running     1          1d
+sso-1-wjl2n                1/1       Running     1          1d
+----
+
+. Use `oc logs` to examine the pod log:
++
+----
+$ oc logs <pod>
+----
++
+[NOTE]
+====
+You can redirect the output to obtain a copy of the current log:
+----
+$ oc logs <pod> > ./<pod>.log
+----
+====

@@ -1,0 +1,40 @@
+// Module included in the following assemblies:
+//
+// * docs/intellij-idea-plugin-guide/master.adoc
+
+[id="intellij-idea-plugin-resolving-issues_{context}"]
+= Resolving issues
+
+You can resolve issues by doing one of the following:
+
+* Using a _Quick Fix_ to fix a code snippet that has a hint
+* Editing the code of a file that appears in a classification
+
+== Using a Quick Fix
+
+You can use a Quick Fix automatic code replacement to save time and ensure consistency in resolving repetitive issues. Quick Fixes are available for many issues displayed in the *Hints* section of the *Results* directory.
+
+.Procedure
+
+. In the left pane, click a hint that has an error indicator.
++
+Any Quick Fixes are displayed as child folders with the Quick Fix icon (image:intellij-idea-info.png[Quickfix]) on their left side.
+. Right-click a Quick Fix and select *Preview Quick Fix*.
++
+The current code and the suggested change are displayed in the *Preview Quick Fix* window.
+. To accept the suggested fix, click *Apply Quick Fix*.
+. Optional: Right-click the issue and select *Mark As Complete*.
++
+A green check (image:intellij-idea-ok.png[Complete]) is displayed by the hint, replacing the error indicator.
+
+== Editing the code of a file
+
+You can directly edit a file displayed in the *Classifications* section of the *Results* directory. These files do not have any Quick Fixes.
+
+.Procedure
+
+. In the left pane, click the file you want to edit.
+. Make any changes needed to the code and save the file.
+. Optional: Right-click the issue and select *Mark as Complete* or *Delete*.
++
+If you select *Mark as Complete*, a green check (image:intellij-idea-ok.png[Complete]) is displayed by the hint, replacing the error indicator.

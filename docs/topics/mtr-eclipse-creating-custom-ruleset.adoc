@@ -1,0 +1,31 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="eclipse-creating-custom-ruleset_{context}"]
+= Creating a custom ruleset
+
+You can create a custom ruleset in the *{ProductShortName}* perspective.
+
+See the link:{ProductDocRulesGuideURL}[_{RulesDevBookName}_] to learn more about creating custom XML rules.
+
+.Procedure
+
+. Click the *Rulesets* tab.
+. Click the Create Ruleset icon (image:repository-new.gif[Create ruleset icon]).
+. Select a project and a directory for the ruleset.
+. Enter the file name.
++
+[NOTE]
+====
+The file must have the extension `.windup.xml`.
+====
+
+. Enter a ruleset ID, for example, `my-ruleset-id`.
+. Optional: Select *Generate quickstart template* to add basic rule templates to the file.
+. Click *Finish*.
+. The ruleset file opens in an editor and you can add and edit rules in the file.
+. Click the *Source* tab to edit the XML source of the ruleset file.
+
+You can select the new ruleset when you create a run configuration.

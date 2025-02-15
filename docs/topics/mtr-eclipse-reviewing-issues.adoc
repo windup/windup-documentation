@@ -1,0 +1,36 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="eclipse-reviewing-issues_{context}"]
+= Reviewing issues
+
+You can review issues identified by the {PluginName}.
+
+.Procedure
+
+. Click *Window* -> *Show View* -> *Issue Explorer*.
+. Optional: Filter the issues by clicking the Options menu {kebab}, selecting *Group By* and an option.
++
+image::mta_group_by.png[Issue Explorer "Group By" options]
+
+. Right-click and select *Issue Details* to view information about the issue, including its severity and how to address it.
++
+The following icons indicate the severity and state of an issue:
++
+.Issue icons
+[cols="20%a,80%",options="header",]
+|====
+|Icon |Description
+|image::error.png[Mandatory] |The issue must be fixed for a successful migration.
+|image::info.gif[Optional] |The issue is optional to fix for migration.
+|image::warning.png[Warning] |The issue might need to be addressed during migration.
+|image::fixedIssue.gif[Resolved] |The issue was resolved.
+|image::stale_issue.gif[Stale] |The issue is stale. The code marked as an issue was modified since the last time that {ProductShortName} identified it as an issue.
+|image::quickfix_error.png[Mandatory with quick fix] |A quick fix is available for this issue, which is mandatory to fix for a successful migration.
+|image::quickfix_info.png[Optional with quick fix] |A quick fix is available for this issue, which is optional to fix for migration.
+|image::quickfix_warning.png[Warning with quick fix] |A quick fix is available for this issue, which may potentially be an issue during migration.
+|====
+
+. Double-click an issue to open the associated line of code in an editor.

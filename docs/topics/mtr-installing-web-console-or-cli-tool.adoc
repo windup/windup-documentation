@@ -1,0 +1,72 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+// * docs/web-console-guide/master.adoc
+
+:_content-type: PROCEDURE
+ifdef::cli-guide[]
+[id="installing-web-console-or-cli-tool_{context}"]
+= Installing the {CLINameTitle}
+
+You can install the {CLINameTitle} on Linux, Windows, or macOS operating systems.
+endif::[]
+ifdef::web-console-guide[]
+
+[id="installing-web-console-linux-win-mac_{context}"]
+= Installing the {WebName} on Linux, Windows, or macOS
+
+You can install the {WebName} on Linux, Windows, or macOS operating systems and access the {WebName} in a browser.
+
+The {WebName} has been tested with Chrome and Firefox.
+endif::[]
+
+.Prerequisites
+include::snippet_jdk-hardware-mac-prerequisites.adoc[]
+
+.Procedure
+
+ifdef::cli-guide[]
+. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the `Migration Toolkit CLI` file.
+endif::[]
+ifdef::web-console-guide[]
+. Navigate to the link:{DevDownloadPageURL}[{ProductShortName} Download page] and download the {WebName} `Local install & OpenShift` file.
+endif::[]
+
+. Extract the `.zip` file to a directory of your choice.
++
+[NOTE]
+====
+If you are installing on a Windows operating system:
+
+. Extract the `.zip` file to a folder named `LC_PSN` to avoid a `Path too long` error. Alternatively, extract the file with link:https://www.7-zip.org/download.html[7-Zip] to a folder of any name you choose.
+. If a *Confirm file replace* window is displayed during extraction, click *Yes to all*.
+====
++
+When you encounter `<{ProductShortName}_HOME>` in this guide, replace it with the actual path to your {ProductShortName} installation.
+
+
+ifdef::web-console-guide[]
+. By default, no authentication is required. If you wish to enable authentication, do this before starting the web console.
+. Start the {WebName}:
+
+* Linux or macOS operating system:
++
+[source,terminal,subs="attributes+"]
+----
+$ <{ProductShortName}_HOME>/run_windup.sh
+----
+
+* Windows operating system:
++
+[source,terminal,subs="attributes+"]
+----
+C:\<{ProductShortName}_HOME>\run_windup.bat
+----
++
+. Open a browser and navigate to `\http://localhost:8080/windup-ui`.
++
+If authentication is not configured, the Projects screen is displayed in your browser.
++
+.{ProductShortName} Projects screen
+image::mtr_web_console.png[web console projects screen]
+endif::[]

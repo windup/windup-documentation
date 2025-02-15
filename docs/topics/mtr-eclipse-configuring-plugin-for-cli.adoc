@@ -1,0 +1,20 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+
+[id="eclipse-configuring-plugin-for-cli_{context}"]
+= Configuring the {PluginName} to use the {ProductShortName} CLI for analysis execution
+
+You can configure the {PluginName} to use the {ProductShortName} CLI for analysis execution.
+
+.Prerequisites
+
+* You have downloaded the {ProductShortName} CLI from the Developers Website or Customer Portal and installed it locally.
+
+.Procedure
+
+. Click the *Configure MTR* icon to open the configuration settings.
+. Populate the CLI field with the path to the parent directory of the CLI.
+. Click *Apply*.

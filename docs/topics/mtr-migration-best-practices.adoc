@@ -1,0 +1,30 @@
+// Module included in the following assemblies:
+//
+// * docs/getting-started-guide/master.adoc
+
+:_content-type: CONCEPT
+[id="migration-best-practices_{context}"]
+= Best practices
+
+Red Hat recommends the following practices when planning and executing a migration or modernization:
+
+* Create a centralized collaboration platform for information sharing.
++
+Comprehensive and accessible documentation is important so that knowledge can be easily shared and to ensure that effort is not duplicated by solving the same issue twice. It is recommended to document the following items:
++
+** A step-by-step guide for migrating or modernizing an application from scratch.
+** A collection of solutions to known and encountered issues.
+** Information about the new platform.
+** A record of the changes made to specific pilot projects.
+
+* Reuse, automate, and standardize as much as possible.
++
+Consider reusing existing components instead of creating new ones. Automate processes related to the application lifecycle, such as builds, configuration, deployment, and tests. Standardize and document software packaging format, configuration management, libraries, and dependencies.
+
+* Use a proven and repeatable methodology.
++
+The recommendation is to follow a practical approach and make as few changes as possible to get a functionally identical application.
+
+* Involve Red Hat technical expertise early for the chosen Red Hat Middleware components.
++
+This is crucial to make your migrations and modernizations low risk, predictable, and efficient. Contact Red Hat Consulting for assistance.

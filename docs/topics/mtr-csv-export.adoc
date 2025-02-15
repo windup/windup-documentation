@@ -1,0 +1,61 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+// * docs/maven-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="csv-export_{context}"]
+= Exporting the report in CSV format
+
+{ProductName} ({ProductShortName}) provides the ability to export the report data, including the classifications and hints, to a flat file on your local file system.  The export function currently supports the CSV file format, which presents the report data as fields separated by commas (`,`).
+
+The CSV file can be imported and manipulated by spreadsheet software such as Microsoft Excel, OpenOffice Calc, or LibreOffice Calc. Spreadsheet software provides the ability to sort, analyze, evaluate, and manage the result data from an {ProductShortName} report.
+
+[id="export-the-report_{context}"]
+== Exporting the report
+
+ifdef::cli-guide[]
+To export the report as a CSV file, run {ProductShortName} with the `--exportCSV` argument. A CSV file is created in the directory specified by the `--output` argument for each application analyzed.
+
+All discovered issues, spanning all the analyzed applications, are included in the `AllIssues.csv` file that is exported to the root directory of the report.
+endif::cli-guide[]
+
+ifdef::maven-guide[]
+To export the report as a CSV file, run {ProductShortName} with the `exportCSV` argument set to `true`.
+
+A CSV file is created in the directory specified by the `--output` argument for each application analyzed. All discovered issues, spanning all the analyzed applications, are included in `AllIssues.csv` file.
+
+The CSV files are exported to the directory specified by the `outputDirectory` argument.
+endif::maven-guide[]
+
+ifdef::cli-guide[]
+[discrete]
+=== Accessing the report from the application report
+
+If you have exported the CSV report, you can download all of the CSV issues in the Issues Report. To download these issues, click *Download All Issues CSV* in the Issues Report.
+
+.Issues report with CSV download
+image::4-1-issues-report-with-csv-download.png[Issues report with CSV download]
+endif::cli-guide[]
+
+== Importing the CSV file into a spreadsheet program
+
+. Launch the spreadsheet software, for example, Microsoft Excel.
+. Choose *File* -> *Open*.
+. Browse to the CSV exported file and select it.
+. The data is now ready to analyze in the spreadsheet software.
+
+== About the CSV data structure
+
+The CSV formatted output file contains the following data fields:
+
+Rule Id:: The ID of the rule that generated the given item.
+Problem type:: _hint_ or _classification_
+Title:: The title of the _classification_ or _hint_. This field summarizes the issue for the given item.
+Description:: The detailed description of the issue for the given item.
+Links:: URLs that provide additional information about the issue. A link consists of two attributes: the link and a description of the link.
+Application:: The name of the application for which this item was generated.
+File Name:: The name of the file for the given item.
+File Path:: The file path for the given item.
+Line:: The line number of the file for the given item.
+Story points:: The number of story points, which represent the level of effort, assigned to the given item.

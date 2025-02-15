@@ -1,0 +1,100 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="overriding-rules_{context}"]
+= Overriding rules
+
+You can override core rules distributed with {ProductShortName} or even custom rules. For example, you can change the matching conditions, effort, or hint text for a rule. This is done by making a copy of the original rule, marking it as a rule override, and making the necessary adjustments.
+
+You can disable a rule by creating a rule override with an empty `<rule>` element.
+
+== Overriding a rule
+
+You can override a core or custom rule.
+
+.Procedure
+
+. Copy the XML file that contains the rule you want to override to the custom rules directory.
++
+Custom rules can be placed in `<{ProductShortName}_HOME>/rules`, `${user.home}/.{LC_PSN}/rules/`, or a directory specified by the `--userRulesDirectory` command-line argument.
+
+. Edit the XML file so that it contains only the `<rule>` elements for the rules that you want to override.
++
+[NOTE]
+====
+Rules from the original ruleset that are not overridden by the new ruleset are run as normal.
+====
+
+. Ensure that you keep the same rule and ruleset IDs. When you copy the original rule XML, this ensures that the IDs match.
+
+. Ensure that the target technology in the override ruleset matches one of the targets that you specified for running the analysis.
+
+. Add the `<overrideRules>true</overrideRules>` element to the ruleset metadata.
+
+. Update the rule definition.
++
+You can change anything in the rule definition. The new rule overrides the original rule in its entirety.
+
+The following rule override example changes the `effort` of the `weblogic-02000` rule in the `weblogic` ruleset from `1` to `3`:
+
+.Rule override definition example
+[source,xml,subs="attributes+"]
+----
+<?xml version="1.0"?>
+<ruleset id="weblogic"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd"> <1>
+    <metadata>
+        ...
+        <overrideRules>true</overrideRules> <2>
+    </metadata>
+    <rules>
+        <rule id="weblogic-02000" xmlns="http://windup.jboss.org/schema/jboss-ruleset"> <3>
+            <when>
+                <javaclass references="weblogic.utils.StringUtils.{*}"/>
+            </when>
+            <perform>
+                <hint effort="3" category-id="mandatory" title="WebLogic StringUtils Usage"> <4>
+                    <message>Replace with the StringUtils class from Apache Commons.</message>
+                    <link href="https://commons.apache.org/proper/commons-lang/" title="Apache Commons Lang"/>
+                    <tag>weblogic</tag>
+                </hint>
+            </perform>
+        </rule>
+    </rules>
+</ruleset>
+----
+<1> Ensure that the `ruleset id` matches the original `ruleset id`.
+<2> Add `<overrideRules>true</overrideRules>` to the `<metadata>` section.
+<3> Ensure that the `rule id` matches the original `rule id`.
+<4> Updated `effort`.
+
+When you run {ProductShortName}, this rule overrides the original rule with the same rule ID. You can verify that the new rule was used by viewing the contents of the Rule Provider Executions Overview.
+
+== Disabling a rule
+
+To disable a rule, create a rule override definition with an empty `<rule>` element according to the following example:
+
+.Rule override definition example to disable a rule
+[source,xml,subs="attributes+"]
+----
+<?xml version="1.0"?>
+<ruleset id="weblogic"
+    xmlns="http://windup.jboss.org/schema/jboss-ruleset"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://windup.jboss.org/schema/jboss-ruleset http://windup.jboss.org/schema/jboss-ruleset/windup-jboss-ruleset.xsd">
+    <metadata>
+        ...
+        <overrideRules>true</overrideRules>
+    </metadata>
+    <rules>
+        <rule id="weblogic-02000" xmlns="http://windup.jboss.org/schema/jboss-ruleset">
+        <1>
+        </rule>
+    </rules>
+</ruleset>
+----
+<1> The `<rule>` element is empty so that the `weblogic-02000` rule in the `weblogic` ruleset is disabled.

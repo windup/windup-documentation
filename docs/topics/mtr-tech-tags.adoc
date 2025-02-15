@@ -1,0 +1,386 @@
+// Module included in the following assemblies:
+//
+// * docs/cli-guide/master.adoc
+
+:_content-type: REFERENCE
+[id="tech-tags_{context}"]
+= Supported technology tags
+
+The following technology tags are supported in {ProductShortName} {ProductVersion}:
+
+* 0MQ Client
+* 3scale
+* Acegi Security
+* AcrIS Security
+* ActiveMQ library
+* Airframe
+* Airlift Log Manager
+* AKKA JTA
+* Akka Testkit
+* Amazon SQS Client
+* AMQP Client
+* Anakia
+* AngularFaces
+* ANTLR StringTemplate
+* AOP Alliance
+* Apache Accumulo Client
+* Apache Aries
+* Apache Commons JCS
+* Apache Commons Validator
+* Apache Flume
+* Apache Geronimo
+* Apache Hadoop
+* Apache HBase Client
+* Apache Ignite
+* Apache Karaf
+* Apache Mahout
+* Apache Meecrowave JTA
+* Apache Sirona JTA
+* Apache Synapse
+* Apache Tapestry
+* Apiman
+* Applet
+* Arquillian
+* AspectJ
+* Atomikos JTA
+* Avalon Logkit
+* Axion Driver
+* Axis
+* Axis2
+* BabbageFaces
+* Bean Validation
+* BeanInject
+* Blaze
+* Blitz4j
+* BootsFaces
+* Bouncy Castle
+* ButterFaces
+* Cache API
+* Cactus
+* Camel
+* Camel Messaging Client
+* Camunda
+* Cassandra Client
+* CDI
+* Cfg Engine
+* Chunk Templates
+* Cloudera
+* Coherence
+* Common Annotations
+* Composite Logging
+* Composite Logging JCL
+* Concordion
+* CSS
+* Cucumber
+* Dagger
+* DbUnit
+* Demoiselle JTA
+* Derby Driver
+* Drools
+* DVSL
+* Dynacache
+* EAR Deployment
+* Easy Rules
+* EasyMock
+* Eclipse RCP
+* EclipseLink
+* Ehcache
+* EJB
+* EJB XML
+* Elasticsearch
+* Entity Bean
+* EtlUnit
+* Eureka
+* Everit JTA
+* Evo JTA
+* Feign
+* File system Logging
+* FormLayoutMaker
+* FreeMarker
+* Geronimo JTA
+* GFC Logging
+* GIN
+* GlassFish JTA
+* Google Guice
+* Grails
+* Grapht DI
+* Guava Testing
+* GWT
+* H2 Driver
+* Hamcrest
+* Handlebars
+* HavaRunner
+* Hazelcast
+* Hdiv
+* Hibernate
+* Hibernate Cfg
+* Hibernate Mapping
+* Hibernate OGM
+* HighFaces
+* HornetQ Client
+* HSQLDB Driver
+* HTTP Client
+* HttpUnit
+* ICEfaces
+* Ickenham
+* Ignite JTA
+* Ikasan
+* iLog
+* Infinispan
+* Injekt for Kotlin
+* Iroh
+* Istio
+* Jamon
+* Jasypt
+* Java EE Batch
+* Java EE Batch API
+* Java EE JACC
+* Java EE JAXB
+* Java EE JAXR
+* Java EE JSON-P
+* Java Transaction API
+* JavaFX
+* JavaScript
+* Javax Inject
+* JAX-RS
+* JAX-WS
+* JayWire
+* JBehave
+* JBoss Cache
+* JBoss EJB XML
+* JBoss logging
+* JBoss Transactions
+* JBoss Web XML
+* JBossMQ Client
+* JBPM
+* JCA
+* Jcabi Log
+* JCache
+* JCunit
+* JDBC
+* JDBC datasources
+* JDBC XA datasources
+* Jersey
+* Jetbrick Template
+* Jetty
+* JFreeChart
+* JFunk
+* JGoodies
+* JMock
+* JMockit
+* JMS Connection Factory
+* JMS Queue
+* JMS Topic
+* JMustache
+* JNA
+* JNI
+* JNLP
+* JPA entities
+* JPA Matchers
+* JPA named queries
+* JPA XML
+* JSecurity
+* JSF
+* JSF Page
+* JSilver
+* JSON-B
+* JSP Page
+* JSTL
+* JTA
+* Jukito
+* JUnit
+* Ka DI
+* Keyczar
+* Kibana
+* KLogger
+* Kodein
+* Kotlin Logging
+* KouInject
+* KumuluzEE JTA
+* LevelDB Client
+* Liferay
+* LiferayFaces
+* Lift JTA
+* Log.io
+* Log4J
+* Log4s
+* Logback
+* Logging Utils
+* Logstash
+* Lumberjack
+* Macros
+* Magicgrouplayout
+* Mail
+* Management EJB
+* MapR
+* MckoiSQLDB Driver
+* Memcached
+* Message (MDB)
+* Micro DI
+* Micrometer
+* Microsoft SQL Driver
+* MiGLayout
+* MinLog
+* Mixer
+* Mockito
+* MongoDB Client
+* Monolog
+* Morphia
+* MRules
+* Mule
+* Mule Functional Test Framework
+* MultithreadedTC
+* Mycontainer JTA
+* MyFaces
+* MySQL Driver
+* Narayana Arjuna
+* Needle
+* Neo4j
+* NLOG4J
+* Nuxeo JTA/JCA
+* OACC
+* OAUTH
+* OCPsoft Logging Utils
+* OmniFaces
+* OpenFaces
+* OpenPojo
+* OpenSAML
+* OpenWS
+* OPS4J Pax Logging Service
+* Oracle ADF
+* Oracle DB Driver
+* Oracle Forms
+* Orion EJB XML
+* Orion Web XML
+* Oscache
+* OTR4J
+* OW2 JTA
+* OW2 Log Util
+* OWASP CSRF Guard
+* OWASP ESAPI
+* Peaberry
+* Pega
+* Persistence units
+* Petals EIP
+* PicketBox
+* PicketLink
+* PicoContainer
+* Play
+* Play Test
+* Plexus Container
+* Polyforms DI
+* Portlet
+* PostgreSQL Driver
+* PowerMock
+* PrimeFaces
+* Properties
+* Qpid Client
+* RabbitMQ Client
+* RandomizedTesting Runner
+* Resource Adapter
+* REST Assured
+* Restito
+* RichFaces
+* RMI
+* RocketMQ Client
+* Rythm Template Engine
+* SAML
+* Santuario
+* Scalate
+* Scaldi
+* Scribe
+* Seam
+* Security Realm
+* ServiceMix
+* Servlet
+* ShiftOne
+* Shiro
+* Silk DI
+* SLF4J
+* Snippetory Template Engine
+* SNMP4J
+* Socket handler logging
+* Spark
+* Specsy
+* Spock
+* Spring
+* Spring Batch
+* Spring Boot
+* Spring Boot Actuator
+* Spring Boot Cache
+* Spring Boot Flo
+* Spring Cloud Config
+* Spring Cloud Function
+* Spring Data
+* Spring Data JPA
+* spring DI
+* Spring Integration
+* Spring JMX
+* Spring Messaging Client
+* Spring MVC
+* Spring Properties
+* Spring Scheduled
+* Spring Security
+* Spring Shell
+* Spring Test
+* Spring Transactions
+* Spring Web
+* SQLite Driver
+* SSL
+* Standard Widget Toolkit (SWT)
+* Stateful (SFSB)
+* Stateless (SLSB)
+* Sticky Configured
+* Stripes
+* Struts
+* SubCut
+* Swagger
+* SwarmCache
+* Swing
+* SwitchYard
+* Syringe
+* Talend ESB
+* Teiid
+* TensorFlow
+* Test Interface
+* TestNG
+* Thymeleaf
+* TieFaces
+* tinylog
+* Tomcat
+* Tornado Inject
+* Trimou
+* Trunk JGuard
+* Twirl
+* Twitter Util Logging
+* UberFire
+* Unirest
+* Unitils
+* Vaadin
+* Velocity
+* Vlad
+* Water Template Engine
+* Web Services Metadata
+* Web Session
+* Web XML File
+* WebLogic Web XML
+* Webmacro
+* WebSocket
+* WebSphere EJB
+* WebSphere EJB Ext
+* WebSphere Web XML
+* WebSphere WS Binding
+* WebSphere WS Extension
+* Weka
+* Weld
+* WF Core JTA
+* Wicket
+* Winter
+* WSDL
+* WSO2
+* WSS4J
+* XACML
+* XFire
+* XMLUnit
+* Zbus Client
+* Zipkin

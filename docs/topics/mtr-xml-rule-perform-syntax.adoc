@@ -1,0 +1,672 @@
+// Module included in the following assemblies:
+//
+// * docs/rules-development-guide/master.adoc
+
+:_content-type: REFERENCE
+[id="xml-rule-when-syntax_{context}"]
+= `<when>` syntax
+
+Conditions allowed in the `when` portion of a rule must extend http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/operation/GraphOperation.html[GraphOperation] and currently include evaluation of Java classes, XML files, projects, and file content. Because XML rules are modeled after the Java-based rule add-ons, links to JavaDocs for the related Java classes are provided for a better understanding of how they behave.
+
+The complete XML rule schema is located here: http://windup.jboss.org/schema/windup-jboss-ruleset.xsd.
+
+The following sections describe the more common XML `when` rule conditions.
+
+* <javaclass> condition syntax
+* <xmlfile> condition syntax
+* <project> condition syntax
+* <filecontent> condition syntax
+* <file> condition syntax
+* <has-hint> condition syntax
+* <has-classification> condition syntax
+* <graph-query> condition syntax
+* <dependency> condition syntax
+
+By default, if more than one `when` rule condition is provided, then all conditions must be met for the rule to match.
+
+[id="javaclass-syntax_{context}"]
+== <javaclass> syntax
+
+=== Summary
+
+Use the `<javaclass>` element to find imports, methods, variable declarations, annotations, class implementations, and other items related to Java classes. For a better understanding of the `<javaclass>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/java/condition/JavaClass.html[JavaClass] class.
+
+The following is an example of a rule that tests for WebLogic-specific Apache XML packages:
+
+[source,xml,subs="attributes+"]
+----
+<rule id="weblogic-03000">
+    <when>
+        <javaclass references="weblogic.apache.xml.{*}" />
+    </when>
+    <perform>
+        <hint title="WebLogic Specific Apache XML Package" effort="1" category-id="mandatory">
+            <message>
+                Code using this package should be replaced with code using the org.apache.xml package from [Apache
+                Xerces](http://xerces.apache.org/).
+            </message>
+        </hint>
+    </perform>
+</rule>
+----
+
+=== Construct a <javaclass> element
+
+==== <javaclass> element attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute name
+|Type
+|Description
+
+|references
+|CLASS_NAME
+a|The package or class name to match on. Wildcard characters can be used. This attribute is required.
+
+NOTE: For performance reasons, you should not start the reference with wildcard characters. For example, use [x-]`weblogic.apache.xml.{*}` instead of [x-]`{web}.apache.xml.{*}`.
+
+[options="nowrap"]
+----
+references="weblogic.apache.xml.{*}"
+----
+|matchesSource
+|STRING
+a|An exact regex to match. This is useful to distinguish hard-coded strings. This attribute is required.
+
+[options="nowrap"]
+----
+matchesSource="log4j.logger"
+----
+
+|as
+|VARIABLE_NAME
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+[options="nowrap"]
+----
+as="MyEjbRule"
+----
+
+|from
+|VARIABLE_NAME
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME.
+
+[options="nowrap"]
+----
+from="MyEjbRule"
+----
+
+|in
+|PATH_FILTER
+a|Filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
+
+[options="nowrap"]
+----
+in="{*}File1"
+----
+
+|====
+
+==== <javaclass> child elements
+
+[cols="1,4", options="header"]
+|====
+|Child Element
+|Description
+
+|<location>
+a|The location where the reference was found in a Java class. Location can refer to annotations, field and variable declarations, imports, and methods. For the complete list of valid values, see the JavaDoc for http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/ast/java/data/TypeReferenceLocation.html[TypeReferenceLocation].
+
+[source,xml,subs="attributes+"]
+----
+<location>IMPORT</location>
+----
+
+|<annotation-literal>
+a|Match on literal values inside of annotations.
+
+The following example matches on `@MyAnnotation(myvalue="test")`.
+
+[source,xml,subs="attributes+"]
+----
+<javaclass references="org.package.MyAnnotation">
+    <location>ANNOTATION</location>
+    <annotation-literal name="myvalue" pattern="test"/>
+</javaclass>
+----
+
+Note that in this case, the `<javaclass>` refers to an annotation (`@MyAnnotation`), so the top-level annotation filter, `<annotation-literal>` must specify the `name` attribute. If the `<javaclass>` referred to a class that is annotated, then the top-level annotation filter used would be `<annotation-type>`.
+
+|<annotation-type>
+a|Match on a particular annotation type. You can supply subconditions to be matched against the annotation elements.
+
+The below example would match on a `Calendar` field declaration annotated with `@MyAnnotation(myvalue="test")`.
+
+[source,xml,subs="attributes+"]
+----
+<javaclass references="java.util.Calendar">
+    <location>FIELD_DECLARATION</location>
+    <annotation-type pattern="org.package.MyAnnotation">
+        <annotation-literal name="myvalue" pattern="test"/>
+    </annotation-type>
+</javaclass>
+----
+
+|<annotation-list>
+a|Match on an item in an array within an annotation. If an array index is not specified, the condition will be matched if it applies to any item in the array. You can supply subconditions to be matched against this element.
+
+The below example would match on `@MyAnnotation(mylist={"one","two"})`.
+
+[source,xml,subs="attributes+"]
+----
+<javaclass references="org.package.MyAnnotation" >
+    <location>ANNOTATION</location>
+    <annotation-list name="mylist">
+        <annotation-literal pattern="two"/>
+    </annotation-list>
+</javaclass>
+----
+
+Note that in this case, the `<javaclass>` refers to an annotation (`@MyAnnotation`), so the top-level annotation filter, `<annotation-list>` must specify the `name` attribute. If the `<javaclass>` referred to a class that is annotated, then the top-level annotation filter used would be `<annotation-type>`.
+
+|====
+
+[id="xmlfile-syntax_{context}"]
+== <xmlfile> syntax
+
+=== Summary
+
+Use the `<xmlfile>` element to find information in XML files. For a better understanding of the `<xmlfile>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/apps/xml/condition/XmlFile.html[XmlFile] class.
+
+The following is an example of a rule that tests for an XML file:
+
+----
+<rule id="<UNIQUE_RULE_ID>">
+    <when>
+        <xmlfile matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']">
+            <namespace prefix="w" uri="http://java.sun.com/xml/ns/javaee"/>
+        </xmlfile>
+    </when>
+    <perform>
+        <hint title="Title for Hint from XML">
+            <message>Container Auth</message>
+        </hint>
+        <xslt description="Example XSLT Conversion" extension="-converted-example.xml"
+              template="/exampleconversion.xsl"/>
+    </perform>
+</rule>
+----
+
+=== Construct an <xmlfile> element
+
+==== <xmlfile> element attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute name
+|Type
+|Description
+
+|matches
+|XPATH
+a|Match on an XML file condition.
+
+[options="nowrap"]
+----
+matches="/w:web-app/w:resource-ref/w:res-auth[text() = 'Container']"
+----
+
+|xpathResultMatch
+|XPATH_RESULT_STRING
+a|Return results that match the given regex.
+
+[options="nowrap"]
+----
+<xmlfile matches="//foo/text()"
+  xpathResultMatch="Text from foo."/>
+----
+
+|as
+|VARIABLE_NAME
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+[options="nowrap"]
+----
+as="MyEjbRule"
+----
+
+|in
+|PATH_FILTER
+a|Used to filter input files matching this regex (regular expression) naming pattern. Wildcard characters can be used.
+
+[options="nowrap"]
+----
+in="{*}File1"
+----
+
+|from
+|VARIABLE_NAME
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME.
+
+[options="nowrap"]
+----
+from="MyEjbRule"
+----
+
+|public-id
+|PUBLIC_ID
+a|The DTD public-id regex.
+
+[options="nowrap"]
+----
+public-id="public"
+----
+
+|====
+
+==== <xmlfile> `matches` custom functions
+
+The `matches` attribute may use several built-in custom XPath functions,
+which may have useful side effects, like setting the matched value on the rule variables stack.
+
+[cols="1,1", options="header"]
+|====
+|Function
+|Description
+
+|`windup:matches()`
+a|Match a XPath expression against a string, possibly containing {ProductShortName} parameterization placeholders.
+
+[options="nowrap"]
+----
+matches="windup:matches(//foo/@class, '{javaclassname}')"
+----
+This will match all `<foo/>` elements with a `class` attribute and store their value into `javaclassname` parameter for each iteration.
+
+|====
+
+==== <xmlfile> child elements
+
+[cols="1,4", options="header"]
+|====
+|Child element
+|Description
+
+|<namespace>
+a|The namespace referenced in XML files. This element contains two optional attributes: The `prefix` and the `uri`.
+
+[source,xml,subs="attributes+"]
+----
+<namespace prefix="abc" uri="http://maven.apache.org/POM/4.0.0"/>
+----
+
+|====
+
+[id="project-syntax_{context}"]
+== <project> syntax
+
+=== Summary
+
+Use the `<project>` element to query the Maven POM file for the project characteristics. For a better understanding of the `<project>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/project/condition/Project.html[Project] class.
+
+The following is an example of a rule that checks for a JUnit dependency version between 2.0.0.Final and 2.2.0.Final.
+[source,xml,subs="attributes+"]
+----
+<rule id="UNIQUE_RULE_ID">
+    <when>
+        <project>
+            <artifact groupId="junit" artifactId="junit" fromVersion="2.0.0.Final" toVersion="2.2.0.Final"/>
+        </project>
+    </when>
+    <perform>
+        <lineitem message="The project uses junit with the version between 2.0.0.Final and 2.2.0.Final"/>
+    </perform>
+</rule>
+----
+
+=== Construct a <project> element
+
+==== <project> element attributes
+
+The `<project>` element is used to match against the project's Maven POM file. You can use this condition to query for dependencies of the project. It does not have any attributes itself.
+
+==== <project> child elements
+
+[cols="1,4", options="header"]
+|====
+|Child element
+|Description
+
+|<artifact>
+a|Subcondition used within `<project>` to query against project dependencies. The `<artifact>` element attributes are described below.
+|====
+
+==== <artifact> element attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute name
+|Type
+|Description
+
+|groupId
+|PROJECT_GROUP_ID
+|Match on the project `<groupId>` of the dependency.
+
+|artifactId
+|PROJECT_ARTIFACT_ID
+|Match on the project `<artifactId>` of the dependency.
+
+|fromVersion
+|FROM_VERSION
+|Specify the lower version bound of the artifact. For example `2.0.0.Final`.
+
+|toVersion
+|TO_VERSION
+|Specify the upper version bound of the artifact. For example `2.2.0.Final`.
+|====
+
+It is possible to qualify the element within the POM file that contains the artifact that the rule is searching for.
+This is achieved using the optional `<location>` element.
+The example below shows a rule that is searching for an artifact within the `<plugins>` element of the POM file.
+
+image::search_for_artifact.png[rule searching for artifact]
+
+The valid list of locations is as follows:
+
+* DEPENDENCY_MANAGEMENT
+* DEPENDENCIES
+* PLUGIN_MANAGEMENT
+* PLUGINS
+* PARENT
+
+[id="filecontent-syntax_{context}"]
+== <filecontent> syntax
+
+=== Summary
+
+Use the `<filecontent>` element to find strings or text within files, for example, a line in a Properties file. For a better understanding of the `<filecontent>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/FileContent.html[FileContent] class.
+
+=== Construct a <filecontent> element
+
+==== <filecontent> element attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute name
+|Type
+|Description
+
+|pattern
+|String
+|Match the file contents against the provided parameterized string. This attribute is required.
+
+|filename
+|String
+|Match the file names against the provided parameterized string.
+
+|as
+|VARIABLE_NAME
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+[options="nowrap"]
+----
+as="MyEjbRule"
+----
+
+|from
+|VARIABLE_NAME
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME.
+
+[options="nowrap"]
+----
+from="MyEjbRule"
+----
+
+|====
+
+
+[id="file-syntax_{context}"]
+== <file> syntax
+
+=== Summary
+
+Use the `<file>` element to find the existence of files with a specific name, for example, an `ibm-webservices-ext.xmi` file. For a better understanding of the `<file>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/rules/files/condition/File.html[File] class.
+
+=== Construct a <file> element
+
+==== <file> element attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute name
+|Type
+|Description
+
+|filename
+|String
+|Match the file names against the provided parameterized string. This attribute is required.
+
+|as
+|VARIABLE_NAME
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+[options="nowrap"]
+----
+as="MyEjbRule"
+----
+
+|from
+|VARIABLE_NAME
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME.
+
+_Example:_
+
+[options="nowrap"]
+----
+from="MyEjbRule"
+----
+
+|====
+
+[id="has-hint-syntax_{context}"]
+== <has-hint> syntax
+
+=== Summary
+
+Use the `<has-hint>` element to test whether a file or line has a hint already associated with it. It is primarily used to prevent firing if a hint already exists, or to implement rules for default execution when no other conditions apply. For a better understanding of the `<has-hint>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/HasHint.html[HasHint] class.
+
+The following is an example of a rule that checks to see if a hint exists for an IBM JMS destination message, and if not, includes it.
+
+[source,xml,subs="attributes+"]
+----
+<rule id="websphere-jms-eap7-03000">
+  <when>
+    <javaclass references="{package}.{prefix}{type}Message" />
+  </when>
+  <perform>
+    <iteration>
+      <when>
+        <not>
+          <has-hint />
+        </not>
+      </when>
+      <perform>
+        <hint title="IBM JMS destination message" effort="1" category-id="mandatory">
+          <message>
+            JMS `{package}.{prefix}{type}Message` messages represent the actual data passed through JMS destinations. This reference should be
+            replaced with the Java EE standard API `javax.jms.{type}Message`.
+          </message>
+          <link href="https://docs.oracle.com/javaee/7/tutorial/jms-concepts003.htm#sthref2271" title="Java EE 7 JMS Tutorial - Message API" />
+          <tag>jms</tag>
+          <tag>websphere</tag>
+        </hint>
+      </perform>
+    </iteration>
+  </perform>
+  <where param="type">
+    <matches pattern="(Text|Stream|Object|Map|Bytes)?" />
+  </where>
+  <where param="prefix">
+    <matches pattern="(JMS|MQe|MQ)" />
+  </where>
+  <where param="package">
+    <matches pattern="com.ibm(\..*)?\.jms" />
+  </where>
+</rule>
+----
+
+=== Construct a <has-hint>
+
+The `<has-hint>` element is used to determine if a hint exists for a file or line. It does not have any child elements.
+
+==== <has-hint> element attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute name
+|Type
+|Description
+
+|message
+|String
+|An optional argument allowing you to match the hint against the provided message string.
+|====
+
+[id="has-classification-syntax_{context}"]
+== <has-classification> syntax
+
+=== Summary
+
+Use the `<has-classification>` element to test whether a file or line has a classification. It is primarily used to prevent firing if a classification already exists, or to implement rules for default execution when no other conditions apply. For a better understanding of the `<has-classification>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/reporting/config/HasClassification.html[HasClassification] class.
+
+=== Construct a <has-classification>
+
+The `has-classification` element is used to determine if a specified classification exists. It does not have any child elements.
+
+==== <has-classification> element attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute name
+|Type
+|Description
+
+|title
+|String
+|An optional title to match the classification against.
+|====
+
+[id="graph-query-syntax_{context}"]
+== <graph-query> syntax
+
+=== Summary
+
+Use the `<graph-query>` element to search the generated graph for any elements. This element is primarily used to search for specific archives. For a better understanding of the `<graph-query>` condition, see the JavaDoc for the http://windup.github.io/windup/docs/latest/javadoc/org/jboss/windup/config/parser/xml/when/QueryHandler.html[QueryHandler] class.
+
+The following is an example of a rule that tests to determine if any `ehcache` packages are found.
+
+[source,xml,subs="attributes+"]
+----
+<rule id="embedded-cache-libraries-01000">
+    <when>
+        <graph-query discriminator="JarArchiveModel">
+            <property name="fileName" searchType="regex">.*ehcache.*\.jar$</property>
+        </graph-query>
+    </when>
+    <perform>
+        <classification title="Caching - Ehcache embedded library" category-id="cloud-mandatory" effort="5">
+            <description>
+                The application embeds an Ehcache library.
+
+                Cloud readiness issue as potential state information that is not persisted to a backing service.
+            </description>
+        </classification>
+        <technology-tag level="INFORMATIONAL">Ehcache (embedded)</technology-tag>
+    </perform>
+</rule>
+----
+
+=== Construct a <graph-query>
+
+==== <graph-query> element attributes
+
+[cols="1,1,3", options="header"]
+|====
+|Attribute Name
+|Type
+|Description
+
+|discriminator
+|MODEL_TYPE
+|The type of model to use for searching. This can be any valid model; however, it is recommended to use the `JarArchiveModel` for examining archives. This attribute is required.
+
+|as
+|VARIABLE_NAME
+a|A variable name assigned to the rule so that it can be used as a reference in later processing. See the `from` attribute below.
+
+[source,terminal,subs="attributes+"]
+----
+as="MyEjbRule"
+----
+
+|from
+|VARIABLE_NAME
+a|Begin the search query with the filtered result from a previous search identified by its `as` VARIABLE_NAME.
+
+[source,terminal,subs="attributes+"]
+----
+from="MyEjbRule"
+----
+|====
+
+==== <graph-query> properties
+
+[cols="1,1,3", options="header"]
+|====
+|Property Name
+|Type
+|Description
+
+|name
+|String
+|The name of the attribute to match against within the chosen model. When using any file-based models, it is recommended to match on `fileName`. This attribute is required.
+
+|type
+|property-type
+|Defines the expected type of property, either `STRING` or `BOOLEAN`.
+
+|searchType
+|property-search-type
+|Defines how the condition is matched. If set to `equals`, then an exact match must be made. If using `regex`, then regular expressions can be used.
+
+|====
+
+[id="dependency-syntax_{context}"]
+== <dependency> syntax
+
+=== Summary
+
+Use the `<dependency>` element to search dependencies defined within the application's POM file to determine whether they are supported by the target runtime.
+
+The following is an example of a rule that checks for all artifacts belonging to the `org.springframework.boot` group that have a version up to, and including, 1.6.0.
+
+[source,xml,subs="attributes+"]
+----
+<rule id="springboot-00001">
+    <!-- rule condition, when it could be fired -->
+    <when>
+        <dependency groupId="org.springframework.boot" artifactId="{*}" toVersion="1.6.0" />
+    </when>
+    <!-- rule operation, what to do if it is fired -->
+    <perform>
+        <hint title="Unsupported version of Spring Boot" effort="3" category-id="mandatory">
+            <message>Spring Boot has to be updated to Spring Boot 2.0 before being able to be migrated to a version supported by Red Hat Runtimes</message>
+            <link href="https://access.redhat.com/articles/3349341" title="RHOAR Spring Boot Supported Configurations" />
+            <link href="https://access.redhat.com/articles/3348731" title="RHOAR Component Details Overview" />
+            <link href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Migration-Guide" title="Spring Boot 2.0 Migration Guide" />
+        </hint>
+    </perform>
+</rule>
+----

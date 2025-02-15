@@ -1,0 +1,21 @@
+// Module included in the following assemblies:
+//
+// * docs/eclipse-code-ready-studio-guide/master.adoc
+
+:_content-type: PROCEDURE
+[id="plugin-viewing-rules_{context}"]
+= Viewing rules
+
+You can view system and custom rules, if any, for the {PluginName}.
+
+.Prerequisites
+
+* To view system rules, the {ProductShortName} server must be running.
+
+.Procedure
+
+. Click the *Rulesets* tab.
+. Expand *System* to view system rulesets or *Custom* to view custom rulesets.
+. Expand a ruleset.
+. Double-click a rule to open it in a viewer.
+. Click the *Source* tab to view the XML source of the rule.
