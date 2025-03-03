@@ -1,0 +1,11 @@
+<title>Introduction to the {ProductName}</title>
+<productname>{DocInfoProductName}</productname>
+<productnumber>{DocInfoProductNumber}</productnumber>
+<subtitle>Learn how to use the {ProductName} to migrate and modernize Java applications and components.</subtitle>
+<abstract>
+    <para>This guide provides information to help you get started with the {ProductName}.</para>
+</abstract>
+<authorgroup>
+    <orgname>Red Hat Customer Content Services</orgname>
+</authorgroup>
+<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />

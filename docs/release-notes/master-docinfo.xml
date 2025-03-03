@@ -1,0 +1,16 @@
+<title>Release Notes</title>
+<productname>{DocInfoProductName}</productname>
+<productnumber>{DocInfoProductNumber}</productnumber>
+<subtitle>New features, known issues, and resolved issues</subtitle>
+<abstract>
+    <para>
+        {ProductName} {DocInfoProductNumber} accelerates large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift. This solution provides insight throughout the adoption process, at both the portfolio and application levels: inventory, assess, analyze, and manage applications for faster migration to OpenShift via the user interface.
+    </para>
+	<para>
+		This document describes new features and improvements, known issues, and resolved issues for the {DocInfoProductName}, version {DocInfoProductNumber}.
+	</para>
+</abstract>
+<authorgroup>
+    <orgname>Red Hat Customer Content Services</orgname>
+</authorgroup>
+<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />

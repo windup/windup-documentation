@@ -1,0 +1,11 @@
+<title>{WebConsoleBookName}</title>
+<productname>{DocInfoProductName}</productname>
+<productnumber>{DocInfoProductNumber}</productnumber>
+<subtitle>Use the {ProductName} {WebName} to group your applications into projects for analysis.</subtitle>
+<abstract>
+    <para>This guide describes how to use the {ProductName} {WebName} to accelerate large-scale application modernization efforts across hybrid cloud environments on Red Hat OpenShift.</para>
+</abstract>
+<authorgroup>
+    <orgname>Red Hat Customer Content Services</orgname>
+</authorgroup>
+<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
